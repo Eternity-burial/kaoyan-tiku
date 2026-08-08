@@ -4111,10 +4111,20 @@
     function renderNotesMarkdown(src) {
       if (!src) return '';
       var html;
-      // breaks:true → 单换行渲染为 <br>，所见即所得（空行仍是段落间距）
-      try { html = sanitizeNotesHtml(marked.parse(src, { breaks: true })); } catch (e) { html = String(src).replace(/</g, '&lt;'); }
+      try {
+        // 先抽离 $...$/$$...$$ 公式占位，避免 marked 的 Markdown 转义吞掉 LaTeX 反斜杠（如 \{、\\）
+        var mathSpans = [];
+        var protectedSrc = src.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$/g, function (m) {
+          mathSpans.push(m);
+          return '' + (mathSpans.length - 1) + '';
+        });
+        // breaks:true → 单换行渲染为 <br>，所见即所得（空行仍是段落间距）
+        var md = marked.parse(protectedSrc, { breaks: true });
+        html = sanitizeNotesHtml(md);
+      } catch (e) { html = String(src).replace(/</g, '&lt;'); }
       var holder = document.createElement('div');
       holder.innerHTML = html;
+      restoreMathPlaceholders(holder, mathSpans); // 在 DOM 中还原公式为纯文本，避免消毒器二次破坏
       try {
         renderMathInElement(holder, {
           delimiters: [
@@ -4125,6 +4135,31 @@
         });
       } catch (e) {}
       return sanitizeNotesHtml(holder.innerHTML);
+    }
+
+    // 把 N 占位符还原为原始 LaTeX 文本（text node，不经 HTML 解析）
+    function restoreMathPlaceholders(root, spans) {
+      if (!spans.length || !root) return;
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      var nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        var txt = node.nodeValue || '';
+        if (txt.indexOf('') === -1) continue;
+        var frag = document.createDocumentFragment();
+        var re = /([0-9]+)/g, m, last = 0, hit = false;
+        while ((m = re.exec(txt)) !== null) {
+          if (m.index > last) frag.appendChild(document.createTextNode(txt.substring(last, m.index)));
+          var idx = parseInt(m[1], 10);
+          if (spans[idx] !== undefined) frag.appendChild(document.createTextNode(spans[idx]));
+          last = m.index + m[0].length;
+          hit = true;
+        }
+        if (!hit) continue;
+        if (last < txt.length) frag.appendChild(document.createTextNode(txt.substring(last)));
+        node.parentNode.replaceChild(frag, node);
+      }
     }
 
     // 编辑时右侧实时预览（防抖）
