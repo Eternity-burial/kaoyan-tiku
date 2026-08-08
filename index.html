@@ -2765,6 +2765,7 @@
         }
       }
       updateFilterButtons();
+      saveGlobalFilters(); // 筛选状态持久化（跨会话记忆）
       const filtered = getFilteredIndices();
       updateFilterCounts();
       if (filtered.length > 0 && !isFiltered(current)) {
@@ -2799,6 +2800,40 @@
       try { sBad = JSON.parse(localStorage.getItem(sBadStorageKey())) || {}; } catch (e) { sBad = {}; }
     }
     function saveSBad() { localStorage.setItem(sBadStorageKey(), JSON.stringify(sBad)); }
+
+    // ===== 全局 UI 状态持久化（跨会话记忆） =====
+    // 全局键：状态筛选（跨章节/科目保持）；科目键：解析显示偏好（showSolution 当前态 + defaultShowSolution 默认态）
+    function globalUIFilterKey() { return 'kaoyan_ui_filters'; }
+    function uiSolutionStorageKey() { return curSubjectId + '_ui_solution'; }
+
+    function loadGlobalFilters() {
+      var saved = null;
+      try { saved = JSON.parse(localStorage.getItem(globalUIFilterKey())); } catch (e) { saved = null; }
+      if (!saved || !Array.isArray(saved) || saved.length === 0) {
+        currentFilters = new Set(['all']);
+        return;
+      }
+      // 只保留合法筛选键；「全部」与其他组合互斥
+      var valid = ['all', 'proficient', 'vague', 'wrong', 'unmarked'].filter(function (k) { return saved.indexOf(k) !== -1; });
+      if (valid.indexOf('all') !== -1) currentFilters = new Set(['all']);
+      else if (valid.length > 0) currentFilters = new Set(valid);
+      else currentFilters = new Set(['all']);
+    }
+    function saveGlobalFilters() {
+      try { localStorage.setItem(globalUIFilterKey(), JSON.stringify(Array.from(currentFilters))); } catch (e) {}
+    }
+
+    function loadSolutionPref() {
+      var v = null;
+      try { v = JSON.parse(localStorage.getItem(uiSolutionStorageKey())); } catch (e) { v = null; }
+      if (v && typeof v.def === 'boolean') defaultShowSolution = v.def;
+      else defaultShowSolution = true;
+      if (v && typeof v.show === 'boolean') showSolution = v.show;
+      else showSolution = defaultShowSolution;
+    }
+    function saveSolutionPref() {
+      try { localStorage.setItem(uiSolutionStorageKey(), JSON.stringify({ show: !!showSolution, def: !!defaultShowSolution })); } catch (e) {}
+    }
 
     // ===== 笔记数据 =====
     let notesData = {};
@@ -3489,6 +3524,7 @@
       }
       closeAllTitlePanels(); // 关闭可能残留的标题下拉面板（切换后重建）
       loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+      loadSolutionPref(); renderSolDefaultBtn(); updateSolutionUI(); // 解析默认按科目记忆
       renderTitle(); renderStats(); renderNav();
       // 若全局筛选激活且恢复的位置被筛掉，则跳到第一条筛中题，避免落在不可见题上
       if (!isAllFilterActive()) {
@@ -4287,12 +4323,14 @@
 
     function toggleSolution() {
       showSolution = !showSolution;
+      saveSolutionPref(); // 解析显示开关持久化（按科目记忆）
       updateSolutionUI();
     }
 
     function toggleDefaultSolution() {
       defaultShowSolution = !defaultShowSolution;
       showSolution = defaultShowSolution;
+      saveSolutionPref(); // 解析默认偏好持久化（按科目记忆）
       renderSolDefaultBtn();
       updateSolutionUI();
     }
@@ -5221,10 +5259,18 @@ ${cardsHTML}
       current = 0; subMode = false;
     }
 
+    loadGlobalFilters(); loadSolutionPref(); // 恢复筛选状态与解析默认（解析默认按科目）
     loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+    // 若恢复的筛选状态激活且当前题被筛掉，跳到第一条筛中题，避免落在不可见题上
+    if (!isAllFilterActive()) {
+      const filtered = getFilteredIndices();
+      if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
+    }
     renderTitle();
     renderStats();
     renderNav(); switchTo(current); updateFilterCounts();
+    updateFilterButtons(); // 恢复筛选按钮高亮（需在 renderNav 之后，按钮已重建）
+    renderSolDefaultBtn(); updateSolutionUI();
     // 首次加载（无已选科目）弹出科目选择（等 DOM 就绪，科目弹窗 HTML 在脚本后）
     if (!savedSubject) document.addEventListener('DOMContentLoaded', function () { openSubjectPicker(); });
   </script>
