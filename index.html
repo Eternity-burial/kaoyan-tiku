@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>数一题库</title>
+  <title>考研题库</title>
+  <link rel="stylesheet" href="lib/katex/katex.min.css">
   <style>
     * {
       margin: 0;
@@ -12,57 +13,33 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --primary: #660874;
-      --primary-dark: #4d0659;
-      --primary-light: #8a2b9c;
-      --primary-alpha: rgba(102, 8, 116, 0.5);
-      --bg: #f5f5f5;
-      --card-bg: #fff;
-      --text: #333;
-      --text-muted: #888;
-      --border: #dadce0;
-      --mastered: #34C759;
-      --mastered-dark: #248A3D;
-      --mastered-alpha: rgba(36, 138, 61, 0.3);
-      --uncertain: #FF9500;
-      --uncertain-dark: #C45500;
-      --uncertain-alpha: rgba(255, 149, 0, 0.3);
-      --unfamiliar: #FF3B30;
-      --unfamiliar-dark: #BE160C;
-      --unfamiliar-alpha: rgba(255, 59, 48, 0.3);
-      --gel-top: #f8f9fa;
-      --gel-bot: #e8ecf0;
-      --gel-hov-top: #eef1f5;
-      --gel-hov-bot: #dde2e8;
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 4px 14px rgba(0, 0, 0, 0.1);
-      --radius-sm: 8px;
-      --radius-pill: 9999px;
-    }
-
     body {
       font-family: "Microsoft YaHei", sans-serif;
-      background: linear-gradient(135deg, #f0ecf5 0%, #e8f0f8 50%, #f5f0ec 100%);
       min-height: 100vh;
-      padding: 20px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(174, 154, 232, 0.25), transparent 31%),
+        radial-gradient(circle at 88% 16%, rgba(140, 190, 226, 0.22), transparent 30%),
+        radial-gradient(circle at 72% 88%, rgba(238, 190, 154, 0.18), transparent 32%),
+        #eef2f7;
+      background-attachment: fixed;
+      padding: 24px;
     }
 
     /* ===== 三栏布局 ===== */
     .app-layout {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       width: 100%;
-      max-width: 1500px;
+      max-width: 1480px;
       margin: 0 auto;
       align-items: flex-start;
     }
 
     .sidebar-left {
-      flex: 0 0 140px;
+      flex: 0 0 168px;
       position: sticky;
-      top: 20px;
+      top: 24px;
     }
 
     .main-content {
@@ -71,9 +48,9 @@
     }
 
     .sidebar-right {
-      flex: 0 0 260px;
+      flex: 0 0 268px;
       position: sticky;
-      top: 20px;
+      top: 24px;
       max-height: calc(100vh - 40px);
       overflow-y: auto;
       scrollbar-width: thin;
@@ -253,7 +230,7 @@
 
 
 
-    /* ===== 进度统计（沿用原 .chapter-selector 毛玻璃风格） ===== */
+    /* ===== 进度统计 ===== */
     #statsBlock {
       position: relative;
       margin-bottom: 12px;
@@ -468,6 +445,7 @@
 
     /* ===== 章节标题栏（三级面板式下拉） ===== */
     .chapter-title-bar {
+      position: relative;
       margin: 2px 0 16px;
       color: #303342;
       font-weight: bold;
@@ -587,75 +565,184 @@
       box-shadow: 0 7px 16px rgba(77, 6, 89, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.28);
     }
 
-    /* ===== 全局仪表盘 ===== */
+    /* ===== 全局仪表盘（环形热力图） ===== */
     .dashboard-panel {
       display: flex;
       flex-direction: column;
       gap: 12px;
       overflow-y: auto;
       flex: 1;
+      padding: 4px;
     }
-    .dashboard-list {
+    .db-overview {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      overflow-y: auto;
+      align-items: center;
+      gap: 16px;
     }
-    .dash-chapter-card {
+    .db-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      width: 100%;
+    }
+    .db-donut-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 14px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .db-donut-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 8, 116, 0.15);
+    }
+    .db-donut-card canvas {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+    }
+    .db-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .db-back-btn {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: var(--radius-pill);
+      padding: 3px 10px;
+      font-size: 0.8em;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .db-back-btn:hover {
+      background: rgba(102, 8, 116, 0.08);
+    }
+    .wb-back-btn {
+      position: absolute;
+      left: 0; /* JS 动态对齐下方图片区左缘 */
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 3px 10px;
+      font-size: 0.8em;
+      border-radius: var(--radius-pill);
+      z-index: 5;
+    }
+    .db-detail-title {
+      font-weight: 700;
+      font-size: 1.1em;
+      color: var(--primary);
+    }
+    .db-subject-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+    .db-subject-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+      max-height: calc(100vh - 250px);
+      overflow-y: auto;
+      padding: 2px 6px 6px 2px;
+    }
+    .db-subject-header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      flex: 0 0 auto;
+      font-weight: 700;
+      font-size: 1.02em;
+      color: var(--primary);
+      padding: 6px 8px;
+      border-bottom: 2px solid rgba(102, 8, 116, 0.16);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 6px 6px 0 0;
+    }
+    .db-subject-count {
+      font-weight: 400;
+      font-size: 0.82em;
+      color: #8b8f9d;
+    }
+    .db-subject-subheader {
+      flex: 0 0 auto;
+      font-size: 0.84em;
+      font-weight: 600;
+      color: #8b8f9d;
+      margin: 2px 0 -2px;
+      padding: 3px 4px;
+    }
+    @media (max-width: 900px) {
+      .db-subject-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .db-chapter-card {
       background: rgba(255, 255, 255, 0.65);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 10px;
-      padding: 14px 16px;
+      padding: 12px 16px;
       border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      transition: background 0.2s;
     }
-    .dash-chapter-name {
+    .db-chapter-card:hover {
+      background: rgba(102, 8, 116, 0.05);
+    }
+    .db-chapter-name {
       font-weight: 600;
-      font-size: 0.95em;
-      margin-bottom: 10px;
+      font-size: 0.92em;
+      margin-bottom: 8px;
       color: var(--text);
     }
-    .dash-progress-bar {
-      height: 8px;
+    .db-chapter-bar {
+      height: 6px;
       background: #e8e9f0;
-      border-radius: 4px;
-      margin-bottom: 8px;
+      border-radius: 3px;
+      margin-bottom: 6px;
       overflow: hidden;
     }
-    .dash-progress-fill {
+    .db-chapter-fill {
       height: 100%;
       background: var(--primary);
-      border-radius: 4px;
+      border-radius: 3px;
       transition: width 0.3s;
     }
-    .dash-stats-row {
+    .db-chapter-stats {
       display: flex;
-      gap: 14px;
-      font-size: 0.82em;
-      color: var(--text-light);
+      gap: 12px;
+      font-size: 0.78em;
     }
-    .dash-stat-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
+    .db-stat {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .db-stat-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      margin-right: 4px;
-      vertical-align: middle;
     }
-    .dash-stat-dot.proficient {
-      background: var(--proficient);
-    }
-    .dash-stat-dot.vague {
-      background: var(--vague);
-    }
-    .dash-stat-dot.wrong {
-      background: var(--wrong);
-    }
-    .dash-stat-dot.unmarked {
-      background: #ccc;
-    }
-
     /* ===== 错题本 ===== */
     .wrongbook-panel {
       display: flex;
@@ -675,38 +762,71 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 10px;
-      padding: 14px 16px;
+      padding: 14px 12px;
       border: 1px solid rgba(255, 255, 255, 0.6);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
     .wrongbook-chapter-name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
       font-weight: 600;
       font-size: 0.95em;
       margin-bottom: 10px;
       color: var(--text);
     }
+    .wrongbook-status-count { display: inline-flex; gap: 6px; flex: 0 0 auto; }
+    .wrongbook-status-count .ws {
+      font-size: 0.72em;
+      font-weight: 600;
+      color: #fff;
+      border-radius: var(--radius-pill);
+      padding: 2px 8px;
+      border: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    .ws.w-wrong {
+      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
+      border-color: var(--unfamiliar-dark);
+    }
+    .ws.w-vague {
+      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%);
+      border-color: var(--uncertain-dark);
+    }
     .wrongbook-q-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr)); /* 每行 5 个 */
+      gap: 4px;
     }
     .wrongbook-q-item {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 32px;
-      border-radius: 8px;
-      background: var(--wrong);
+      min-width: 0;
+      min-height: 28px;
+      padding: 2px 4px;
+      border: 1px solid var(--unfamiliar-dark);
+      border-radius: var(--radius-pill);
+      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
       color: #fff;
-      font-size: 0.82em;
+      font-size: 11px;
       font-weight: 600;
+      box-shadow: 0 1px 4px rgba(255, 59, 48, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: all 0.15s;
     }
     .wrongbook-q-item:hover {
-      transform: scale(1.08);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    .wrongbook-q-item.vague {
+      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%);
+      border-color: var(--uncertain-dark);
+      box-shadow: 0 1px 4px rgba(255, 149, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
     .wrongbook-empty {
       text-align: center;
@@ -715,7 +835,7 @@
       padding: 40px 0;
     }
 
-    /* ===== 题号网格 (CSS Grid, 动态列数，右侧栏) ===== */
+    /* ===== 进度统计（右侧栏） ===== */
     .stats-panel {
       width: 100%;
     }
@@ -756,7 +876,7 @@
       display: inline-block;
     }
 
-    /* ===== 题号网格 (CSS Grid, 动态列数，右侧栏) ===== */
+    /* ===== 题号网格（右侧栏） ===== */
     .qnav-label {
       font-size: 13px;
       color: var(--text-muted);
@@ -982,7 +1102,35 @@
       cursor: zoom-in;
     }
 
-    /* ===== 灯箱（方案A：模态全屏） ===== */
+    /* ===== 图片标注（marker.js 3）叠加容器 ===== */
+    .annot-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
+    .annot-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* 不拦截图片点击，仅显示标注 */
+    }
+    .annot-overlay markerjs-viewer,
+    .annot-overlay .markerjs-viewer {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .annot-overlay markerjs-viewer svg,
+    .annot-overlay .markerjs-viewer svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* ===== 灯箱（全屏模态） ===== */
     .lightbox-overlay {
       position: fixed;
       top: 0;
@@ -1043,6 +1191,56 @@
       line-height: 1;
     }
 
+    .lightbox-annot-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .lightbox-annot-overlay markerjs-viewer,
+    .lightbox-annot-overlay .markerjs-viewer {
+      width: 100%;
+      height: 100%;
+    }
+
+    .lightbox-annotate {
+      position: absolute;
+      top: 20px;
+      right: 84px;
+      height: 44px;
+      padding: 0 20px;
+      border: none;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 22px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10000;
+      line-height: 1;
+    }
+    .lightbox-annotate:hover {
+      background: rgba(102, 8, 116, 0.75);
+    }
+    .lightbox-annotate.has-annot {
+      background: rgba(255, 149, 0, 0.35);
+    }
+    .lightbox-annotate.has-annot:hover {
+      background: rgba(255, 149, 0, 0.6);
+    }
+
     .lightbox-close:hover {
       background: rgba(255, 255, 255, 0.28);
     }
@@ -1058,6 +1256,196 @@
       letter-spacing: 0.5px;
     }
 
+    /* marker.js 宿主需固定 flex：否则其内联 display 被清除后回退 block 会导致布局塌缩 */
+    mjs-marker-area { display: flex; }
+
+    /* ===== 标注工具栏（Snipaste 风格 — 单排底部居中） ===== */
+    .annot-toolbar {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      padding: 4px 6px;
+      background: rgba(32, 34, 44, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 0 0 0.5px rgba(255,255,255,0.06);
+      z-index: 10002;
+      max-width: 98vw;
+      flex-wrap: nowrap;          /* 核心：绝不换行，保持单排 */
+      white-space: nowrap;
+      justify-content: center;
+      user-select: none;
+    }
+    .at-btn {
+      min-width: 28px;
+      height: 30px;
+      padding: 0 4px;
+      flex: 0 0 auto;             /* 图标按钮禁止收缩 */
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: #c8cdd8;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.12s ease;
+      line-height: 1;
+      white-space: nowrap;
+      position: relative;
+    }
+    .at-btn svg { display: block; width: 17px; height: 17px; }
+    .at-btn:hover {
+      background: rgba(255, 255, 255, 0.10);
+      color: #e8ecf2;
+    }
+    .at-btn:active { background: rgba(255, 255, 255, 0.06); }
+    .at-btn.active {
+      background: rgba(102, 8, 116, 0.78);
+      color: #fff;
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
+    }
+    .at-btn.active:hover { background: rgba(126, 10, 144, 0.85); }
+    .at-sep {
+      width: 1px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.14);
+      margin: 0 3px;
+      flex-shrink: 0;
+    }
+    /* 颜色按钮（色点 + 下拉箭头） */
+    .at-color-swatch {
+      min-width: 30px;
+      padding: 0 3px;
+      gap: 2px;
+    }
+    .at-color-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ff0000;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+    /* 粗细复合控件（- 滑块 + 数值） */
+    .at-width-wrap {
+      flex: 0 1 78px;             /* 允许整体收缩，单排兜底 */
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 1px;
+      margin: 0 1px;
+    }
+    .at-width-step {
+      width: 18px;
+      min-width: 18px;
+      height: 26px;
+      padding: 0;
+      border: none;
+      border-radius: 4px;
+      background: transparent;
+      color: #c8cdd8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .at-width-step:hover { background: rgba(255, 255, 255, 0.10); color: #fff; }
+    .at-width {
+      flex: 1 1 32px;
+      min-width: 0;               /* 允许 range 收缩 */
+      accent-color: #a855f7;
+      cursor: pointer;
+      margin: 0;
+    }
+    .at-width-val {
+      font-size: 10px;
+      color: #9aa0ab;
+      width: 12px;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+    .at-save {
+      flex: 0 1 auto;
+      background: rgba(102, 8, 116, 0.72);
+      color: #fff;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 0 8px;
+    }
+    .at-save:hover { background: rgba(126, 10, 144, 0.88); }
+    .at-cancel {
+      flex: 0 1 auto;
+      background: rgba(255, 255, 255, 0.08);
+      color: #bcc2cc;
+      font-size: 12px;
+      padding: 0 6px;
+    }
+    .at-cancel:hover { background: rgba(255, 255, 255, 0.15); color: #e8ecf2; }
+
+    /* ===== 预设色板弹层（工具栏上方居中） ===== */
+    .annot-palette {
+      position: absolute;
+      bottom: 62px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10003;
+      background: rgba(32, 34, 44, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+      padding: 8px;
+      max-width: 265px;
+    }
+    .annot-palette-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      max-width: 245px;           /* 每排 10 个 20px + 间隙（20 色共两行） */
+    }
+    .at-swatch {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-sizing: border-box;
+      border: 2px solid rgba(255, 255, 255, 0.22);
+      transition: transform 0.1s, border-color 0.1s;
+    }
+    .at-swatch:hover { transform: scale(1.15); border-color: rgba(255, 255, 255, 0.6); }
+    .at-swatch.active { outline: 2px solid #fff; outline-offset: 1px; border-color: transparent; }
+    .annot-palette-custom {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 7px;
+      padding-top: 7px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #9aa0ab;
+      font-size: 12px;
+    }
+    .annot-palette-custom input[type="color"] {
+      width: 22px;
+      height: 22px;
+      padding: 0;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      background: none;
+      cursor: pointer;
+    }
+
+    /* ===== 当前题号标签（图片上方，偏左） ===== */
     /* ===== 当前题号标签（图片上方，偏左） ===== */
     .q-label {
       width: 100%;
@@ -1151,6 +1539,19 @@
       margin: 0 auto;
     }
 
+    /* 分片解析图容器（多张解析图垂直堆叠） */
+    .solution-imgs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .solution-imgs .solution-img {
+      margin: 0 auto;
+    }
+
     /* 题目图/解析图不达标按钮 */
     .gel-btn.btn-qbad-toggle .func-name {
       color: var(--unfamiliar);
@@ -1206,6 +1607,7 @@
       --card-bg: rgba(255, 255, 255, 0.97);
       --text: #252735;
       --text-muted: #747887;
+      --text-light: #b8bcc6;
       --border: rgba(71, 76, 101, 0.14);
       --mastered: #34C759;
       --mastered-dark: #248A3D;
@@ -1216,6 +1618,7 @@
       --unfamiliar: #FF3B30;
       --unfamiliar-dark: #BE160C;
       --unfamiliar-alpha: rgba(255, 59, 48, 0.2);
+      --wrong: #BE160C;
       --gel-top: rgba(255, 255, 255, 0.92);
       --gel-bot: rgba(246, 247, 251, 0.92);
       --gel-hov-top: #ffffff;
@@ -1229,32 +1632,6 @@
       --radius-pill: 12px;
       --glass-bg: rgba(255, 255, 255, 0.66);
       --glass-border: rgba(255, 255, 255, 0.72);
-    }
-
-    body {
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(174, 154, 232, 0.25), transparent 31%),
-        radial-gradient(circle at 88% 16%, rgba(140, 190, 226, 0.22), transparent 30%),
-        radial-gradient(circle at 72% 88%, rgba(238, 190, 154, 0.18), transparent 32%),
-        #eef2f7;
-      background-attachment: fixed;
-      padding: 24px;
-    }
-
-    .app-layout {
-      gap: 20px;
-      max-width: 1480px;
-    }
-
-    .sidebar-left {
-      flex-basis: 168px;
-      top: 24px;
-    }
-
-    .sidebar-right {
-      flex-basis: 268px;
-      top: 24px;
     }
 
     .filter-toolbar,
@@ -1428,7 +1805,7 @@
     }
 
     .main-area {
-      max-width: 920px;
+      max-width: 980px;
       padding: 24px 26px 28px;
       background: rgba(255, 255, 255, 0.55);
       border: 1px solid rgba(255, 255, 255, 0.55);
@@ -1628,6 +2005,10 @@
         margin-top: 4px;
       }
 
+      .notes-duo {
+        flex-direction: column;
+      }
+
       .main-area {
         padding: 16px 14px 20px;
         border-radius: 15px;
@@ -1695,59 +2076,29 @@
       margin-top: 10px;
     }
 
-    .notes-toggle {
+    .notes-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      cursor: pointer;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .notes-title {
       font-size: 13px;
       font-weight: 500;
       color: #555b6c;
-      background: rgba(255, 255, 255, 0.6);
-      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-      transition: all 160ms ease;
-      width: 100%;
-      justify-content: flex-start;
     }
 
-    .notes-toggle:hover {
-      border-color: rgba(102, 8, 116, 0.34);
-      box-shadow: 0 8px 18px rgba(53, 58, 89, 0.1), inset 0 1px 0 #fff;
-      transform: translateY(-1px);
-    }
-
-    .notes-toggle.has-content {
-      color: var(--primary);
-      border-color: rgba(102, 8, 116, 0.3);
-      background: rgba(102, 8, 116, 0.04);
-    }
-
-    .notes-toggle .note-preview {
-      flex: 1;
-      text-align: left;
-      font-size: 12px;
-      color: #888;
-      word-break: break-all;
-    }
-
-    .notes-toggle.has-content .note-preview {
-      color: #555;
-    }
-
-    .notes-body {
-      display: none;
-      margin-top: 8px;
-    }
-
-    .notes-body.open {
-      display: block;
+    .notes-duo {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 8px;
     }
 
     .notes-textarea {
+      flex: 1;
       width: 100%;
+      min-width: 0;
       min-height: 80px;
       padding: 10px 12px;
       border: 1px solid var(--border);
@@ -1775,9 +2126,16 @@
       font-size: 15px;
       line-height: 1.7;
       color: var(--text);
-      white-space: pre-wrap;
       word-break: break-word;
       min-height: 40px;
+      overflow-wrap: break-word;
+    }
+
+    .notes-preview {
+      flex: 1;
+      min-width: 0;
+      max-height: 300px;
+      overflow-y: auto;
     }
 
     .notes-render:empty::after {
@@ -1786,10 +2144,69 @@
       font-style: italic;
     }
 
+    /* ===== 笔记 Markdown 排版 ===== */
+    .notes-render h1, .notes-render h2, .notes-render h3, .notes-render h4 {
+      margin: 0.6em 0 0.35em;
+      line-height: 1.35;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .notes-render h1 { font-size: 1.5em; border-bottom: 1px solid rgba(102, 8, 116, 0.15); padding-bottom: 0.2em; }
+    .notes-render h2 { font-size: 1.3em; }
+    .notes-render h3 { font-size: 1.15em; }
+    .notes-render h4 { font-size: 1.05em; }
+    .notes-render p { margin: 0.35em 0; }
+    .notes-render ul, .notes-render ol { margin: 0.35em 0; padding-left: 1.6em; }
+    .notes-render li { margin: 0.15em 0; }
+    .notes-render blockquote {
+      margin: 0.5em 0;
+      padding: 0.2em 1em;
+      border-left: 3px solid rgba(102, 8, 116, 0.35);
+      color: #666;
+      background: rgba(102, 8, 116, 0.04);
+      border-radius: 0 6px 6px 0;
+    }
+    .notes-render code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.88em;
+      background: rgba(102, 8, 116, 0.08);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: #8a2b9c;
+    }
+    .notes-render pre {
+      margin: 0.5em 0;
+      padding: 10px 12px;
+      background: #f1f2f6;
+      border: 1px solid rgba(71, 76, 101, 0.12);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .notes-render pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+    .notes-render a { color: var(--primary); text-decoration: none; }
+    .notes-render a:hover { text-decoration: underline; }
+    .notes-render table {
+      border-collapse: collapse;
+      margin: 0.5em 0;
+      max-width: 100%;
+      display: block;
+      overflow-x: auto;
+    }
+    .notes-render th, .notes-render td {
+      border: 1px solid rgba(71, 76, 101, 0.18);
+      padding: 5px 10px;
+    }
+    .notes-render th { background: rgba(102, 8, 116, 0.06); font-weight: 700; }
+    .notes-render img { max-width: 100%; height: auto; border-radius: 6px; }
+    .notes-render hr { border: none; border-top: 1px solid rgba(71, 76, 101, 0.18); margin: 0.8em 0; }
+
     .notes-actions {
       display: flex;
       gap: 8px;
-      margin-top: 8px;
       justify-content: flex-end;
     }
 
@@ -1861,6 +2278,22 @@
     .shortcut-close-hint {
       text-align: center; margin-top: 20px; font-size: 12px; color: #999;
     }
+    /* 科目选择模态 */
+    .subject-list {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .subject-option {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.6); cursor: pointer; font-size: 15px; color: #333;
+      font-family: inherit; text-align: left;
+    }
+    .subject-option:hover {
+      background: rgba(255,255,255,0.95); border-color: var(--primary);
+    }
+    .subject-option .subj-desc {
+      font-size: 12px; color: #999;
+    }
   </style>
 </head>
 
@@ -1893,15 +2326,18 @@
 
       <button id="btnSolDefault" class="sol-default-btn">解析默认：显示<span class="sol-key">Shift+Space</span></button>
 
-      <button id="btnDashboard" class="sol-default-btn" style="margin-top:8px">全局进度</button>
-      <button id="btnWrongBook" class="sol-default-btn" style="margin-top:8px">错题本</button>
-      <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助</button>
+      <button id="btnDashboard" class="sol-default-btn" style="margin-top:8px">全局进度<span class="sol-key">V</span></button>
+      <button id="btnWrongBook" class="sol-default-btn" style="margin-top:8px">错题本<span class="sol-key">B</span></button>
+      <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
+      <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
 
     </div>
 
     <div class="main-content">
 
       <div class="chapter-title-bar" id="chapterTitleBar">
+        <button class="db-back-btn wb-back-btn" id="btnBackWrongBook" style="display:none">返回错题本</button>
+        <button class="db-back-btn wb-back-btn" id="btnBackDashboard" style="display:none">返回总览</button>
         <div class="title-dropdown" id="ddWb">
           <button class="title-trigger" id="trigWb"><span class="title-trigger-text" id="txtWb"></span><span class="title-arrow">▾</span></button>
           <div class="title-panel" id="panelWb"></div>
@@ -1914,6 +2350,11 @@
           <button class="title-trigger" id="trigChapter"><span class="title-trigger-text" id="txtChapter"></span><span class="title-arrow">▾</span></button>
           <div class="title-panel" id="panelChapter"></div>
         </div>
+        <div class="title-dropdown wrongbook-wb-dd" id="ddWbWrongbook" style="display:none">
+          <button class="title-trigger wrongbook-wb-trig" id="trigWbWrongbook"><span class="title-trigger-text" id="txtWbWrongbook"></span><span class="title-arrow">▾</span></button>
+          <div class="title-panel" id="panelWbWrongbook"></div>
+        </div>
+        <span class="panel-title" id="panelTitle" style="display:none"></span>
       </div>
 
       <div class="main-area" id="mainArea">
@@ -1935,24 +2376,22 @@
         <div class="img-bad-warning" id="qBadWarning">题目图质量不达标</div>
         <div class="q-label" id="qLabel"></div>
         <div class="sub-select-bar" id="subSelectBar" style="display:none"></div>
-        <img id="questionImg" class="question-img" src="" alt="题目">
+        <div class="annot-wrapper" id="qAnnotWrap">
+          <img id="questionImg" class="question-img" src="" alt="题目">
+          <div class="annot-overlay" id="qAnnotOverlay"></div>
+        </div>
         <div class="toggle-bar">
           <button id="btnToggle" class="gel-btn btn-toggle"><span class="func-name">隐藏解析</span><span
               class="key">Space</span></button>
         </div>
         <div class="solution-area show" id="solutionArea">
           <div class="img-bad-warning solution-warn" id="sBadWarning">解析图质量不达标</div>
-          <img id="solutionImg" class="solution-img" src="" alt="解析">
+          <div class="solution-imgs" id="solutionImgs"></div>
         </div>
 
         <div class="notes-section" id="notesSection">
-          <button class="notes-toggle" id="notesToggle">
-            <span>笔记</span>
-            <span class="note-preview" id="notePreview"></span>
-          </button>
-          <div class="notes-body" id="notesBody">
-            <textarea class="notes-textarea" id="notesTextarea" placeholder="输入笔记内容..."></textarea>
-            <div class="notes-render" id="notesRender" style="display:none"></div>
+          <div class="notes-header">
+            <span class="notes-title">笔记</span>
             <div class="notes-actions">
               <button id="btnNoteEdit">编辑</button>
               <button id="btnNoteSave" class="btn-save" style="display:none">保存</button>
@@ -1960,13 +2399,24 @@
               <button id="btnNoteDelete">删除</button>
             </div>
           </div>
+          <div class="notes-duo" id="notesDuo" style="display:none">
+            <textarea class="notes-textarea" id="notesTextarea" placeholder="支持 Markdown 与 $LaTeX$ 公式，Enter 保存 / Shift+Enter 换行"></textarea>
+            <div class="notes-render notes-preview" id="notesPreview"></div>
+          </div>
+          <div class="notes-render" id="notesRender"></div>
         </div>
         </div><!-- #mainAreaContent -->
         <div class="dashboard-panel" id="dashboardPanel" style="display:none">
-          <div class="dashboard-list" id="dashboardList"></div>
+          <div class="db-overview" id="dbOverview">
+            <div class="db-grid" id="dbGrid"></div>
+          </div>
+          <div class="db-detail" id="dbDetail" style="display:none">
+            <div class="db-detail-title" id="dbDetailTitle"></div>
+            <div class="db-subject-grid" id="dbDetailList"></div>
+          </div>
         </div>
         <div class="wrongbook-panel" id="wrongBookPanel" style="display:none">
-          <div class="wrongbook-list" id="wrongBookList"></div>
+          <div class="db-subject-grid" id="wrongBookGrid"></div>
         </div>
       </div>
 
@@ -1985,9 +2435,15 @@
 
   </div><!-- .app-layout -->
 
+  <!-- 本地离线库：Markdown（marked）+ LaTeX（KaTeX）+ 消毒（DOMPurify）+ 图片标注（marker.js 3） -->
+  <script src="lib/dompurify/purify.min.js"></script>
+  <script src="lib/marked/marked.umd.min.js"></script>
+  <script src="lib/katex/katex.min.js"></script>
+  <script src="lib/katex/contrib/auto-render.min.js"></script>
+  <script src="lib/markerjs3/markerjs3.umd.js"></script>
   <script>
-    // ===== 章节数据 =====
-    const CHAPTERS = [
+    // ===== 章节数据（数学 shu1） =====
+    const SHU1_CHAPTERS = [
 {id:"ch1",number:1,name:"基础30讲 - 高数 - 第1讲 函数极限与连续",short:"第1讲 函数极限与连续",total:54,cols:5,wb:"基础30讲",subj:"高数",relPath:"基础30讲/高数/第1讲 函数极限与连续",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16", "例1-17", "例1-18", "例1-19", "例1-20", "例1-21", "例1-22", "例1-23", "例1-24", "例1-25", "例1-26", "例1-27", "例1-28", "例1-29", "例1-30", "例1-31", "例1-32", "例1-33", "例1-34", "例1-35", "例1-36", "例1-37", "例1-38", "1-1", "1-2", "1-3", "1-4", "1-5", "1-6", "1-7", "1-8", "1-9", "1-10", "1-11", "1-12", "1-13", "1-14", "1-15", "1-16"]},
 {id:"ch2",number:2,name:"基础30讲 - 高数 - 第2讲 数列极限",short:"第2讲 数列极限",total:26,cols:5,wb:"基础30讲",subj:"高数",relPath:"基础30讲/高数/第2讲 数列极限",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12", "例2-13", "例2-14", "例2-15", "例2-16", "例2-17", "例2-18", "2-1", "2-2", "2-3", "2-4", "2-5", "2-6", "2-7", "2-8"]},
 {id:"ch3",number:3,name:"基础30讲 - 高数 - 第3讲 一元函数微分学的概念",short:"第3讲 一元函数微分学的概念",total:21,cols:5,wb:"基础30讲",subj:"高数",relPath:"基础30讲/高数/第3讲 一元函数微分学的概念",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "3-1", "3-2", "3-3", "3-4", "3-5", "3-6", "3-7", "3-8", "3-9"]},
@@ -2018,109 +2474,109 @@
 {id:"ch28",number:28,name:"基础30讲 - 概率论 - 第4讲 随机变量的数字特征",short:"第4讲 随机变量的数字特征",total:26,cols:5,wb:"基础30讲",subj:"概率论",relPath:"基础30讲/概率论/第4讲 随机变量的数字特征",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "4-1", "4-2", "4-3", "4-4", "4-5", "4-6", "4-7", "4-8", "4-9", "4-10", "4-11", "4-12", "4-13", "4-14"]},
 {id:"ch29",number:29,name:"基础30讲 - 概率论 - 第5讲 大数定律与中心极限定理",short:"第5讲 大数定律与中心极限定理",total:11,cols:5,wb:"基础30讲",subj:"概率论",relPath:"基础30讲/概率论/第5讲 大数定律与中心极限定理",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "5-1", "5-2", "5-3", "5-4", "5-5"]},
 {id:"ch30",number:30,name:"基础30讲 - 概率论 - 第6讲 数理统计",short:"第6讲 数理统计",total:29,cols:5,wb:"基础30讲",subj:"概率论",relPath:"基础30讲/概率论/第6讲 数理统计",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "6-1", "6-2", "6-3", "6-4", "6-5", "6-6", "6-7", "6-8", "6-9", "6-10", "6-11", "6-12"]},
-{id:"ch31",number:31,name:"张宇强化36讲 - 高数 - 第1讲 函数极限与连续",short:"第1讲 函数极限与连续",total:15,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第1讲 函数极限与连续",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15"]},
-{id:"ch32",number:32,name:"张宇强化36讲 - 高数 - 第2讲 数列极限",short:"第2讲 数列极限",total:13,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第2讲 数列极限",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12", "例2-13"]},
-{id:"ch33",number:33,name:"张宇强化36讲 - 高数 - 第3讲 一元函数微分学的概念",short:"第3讲 一元函数微分学的概念",total:8,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第3讲 一元函数微分学的概念",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8"]},
-{id:"ch34",number:34,name:"张宇强化36讲 - 高数 - 第4讲 一元函数微分学的计算",short:"第4讲 一元函数微分学的计算",total:9,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第4讲 一元函数微分学的计算",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9"]},
-{id:"ch35",number:35,name:"张宇强化36讲 - 高数 - 第5讲 一元函数微分学的应用（一）—几何应用",short:"第5讲 一元函数微分学的应用（一）—几何应用",total:9,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第5讲 一元函数微分学的应用（一）—几何应用",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9"]},
-{id:"ch36",number:36,name:"张宇强化36讲 - 高数 - 第6讲 一元函数微分学的应用（二）—中值定理等",short:"第6讲 一元函数微分学的应用（二）—中值定理等",total:22,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第6讲 一元函数微分学的应用（二）—中值定理等",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21", "例6-22"]},
-{id:"ch37",number:37,name:"张宇强化36讲 - 高数 - 第7讲 一元函数微分学的应用（三）—物理应用与经济应用",short:"第7讲 一元函数微分学的应用（三）—物理应用与经济应用",total:5,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第7讲 一元函数微分学的应用（三）—物理应用与经济应用",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5"]},
-{id:"ch38",number:38,name:"张宇强化36讲 - 高数 - 第8讲 一元函数积分学的概念与性质",short:"第8讲 一元函数积分学的概念与性质",total:8,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第8讲 一元函数积分学的概念与性质",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8"]},
-{id:"ch39",number:39,name:"张宇强化36讲 - 高数 - 第9讲 一元函数积分学的概念与性质",short:"第9讲 一元函数积分学的概念与性质",total:22,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第9讲 一元函数积分学的概念与性质",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22"]},
-{id:"ch40",number:40,name:"张宇强化36讲 - 高数 - 第10讲 一元函数积分学的应用（一）—几何应用",short:"第10讲 一元函数积分学的应用（一）—几何应用",total:15,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第10讲 一元函数积分学的应用（一）—几何应用",labels:["例10-1", "例10-2", "例10-3", "例10-4", "例10-5", "例10-6", "例10-7", "例10-8", "例10-9", "例10-10", "例10-11", "例10-12", "例10-13", "例10-14", "例10-15"]},
-{id:"ch41",number:41,name:"张宇强化36讲 - 高数 - 第11讲 一元函数积分学的应用（二）—积分等式与积分不等式",short:"第11讲 一元函数积分学的应用（二）—积分等式与积分不等式",total:19,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第11讲 一元函数积分学的应用（二）—积分等式与积分不等式",labels:["例11-1", "例11-2", "例11-3", "例11-4", "例11-5", "例11-6", "例11-7", "例11-8", "例11-9", "例11-10", "例11-11", "例11-12", "例11-13", "例11-14", "例11-15", "例11-16", "例11-17", "例11-18", "例11-19"]},
-{id:"ch42",number:42,name:"张宇强化36讲 - 高数 - 第12讲 一元函数积分学的应用（三）—物理应用与经济应用",short:"第12讲 一元函数积分学的应用（三）—物理应用与经济应用",total:7,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第12讲 一元函数积分学的应用（三）—物理应用与经济应用",labels:["例12-1", "例12-2", "例12-3", "例12-4", "例12-5", "例12-6", "例12-7"]},
-{id:"ch43",number:43,name:"张宇强化36讲 - 高数 - 第13讲 多元函数微分学",short:"第13讲 多元函数微分学",total:32,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第13讲 多元函数微分学",labels:["例13-1", "例13-2", "例13-3", "例13-4", "例13-5", "例13-6", "例13-7", "例13-8", "例13-9", "例13-10", "例13-11", "例13-12", "例13-13", "例13-14", "例13-15", "例13-16", "例13-17", "例13-18", "例13-19", "例13-20", "例13-21", "例13-22", "例13-23", "例13-24", "例13-25", "例13-26", "例13-27", "例13-28", "例13-29", "例13-30", "例13-31", "例13-32"]},
-{id:"ch44",number:44,name:"张宇强化36讲 - 高数 - 第14讲 二重积分",short:"第14讲 二重积分",total:8,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第14讲 二重积分",labels:["例14-1", "例14-2", "例14-3", "例14-4", "例14-5", "例14-6", "例14-7", "例14-8"]},
-{id:"ch45",number:45,name:"张宇强化36讲 - 高数 - 第15讲 微分方程",short:"第15讲 微分方程",total:19,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第15讲 微分方程",labels:["例15-1", "例15-2", "例15-3", "例15-4", "例15-5", "例15-6", "例15-7", "例15-8", "例15-9", "例15-10", "例15-11", "例15-12", "例15-13", "例15-14", "例15-15", "例15-16", "例15-17", "例15-18", "例15-19"]},
-{id:"ch46",number:46,name:"张宇强化36讲 - 高数 - 第16讲 无穷级数（仅数一、三）",short:"第16讲 无穷级数（仅数一、三）",total:57,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第16讲 无穷级数（仅数一、三）",labels:["例16-1", "例16-2", "例16-3", "例16-4", "例16-5", "例16-6", "例16-7", "例16-8", "例16-9", "例16-10", "例16-11", "例16-12", "例16-13", "例16-14", "例16-15", "例16-16", "例16-17", "例16-18", "例16-19", "例16-20", "例16-21", "例16-22", "例16-23", "例16-24", "例16-25", "例16-26", "例16-27", "例16-28", "例16-29", "例16-30", "例16-31", "例16-32", "例16-33", "例16-34", "例16-35", "例16-36", "例16-37", "例16-38", "例16-39", "例16-40", "例16-41", "例16-42", "例16-43", "例16-44", "例16-45", "例16-46", "例16-47", "例16-48", "例16-49", "例16-50", "例16-51", "例16-52", "例16-53", "例16-54", "例16-55", "例16-56", "例16-57"]},
-{id:"ch47",number:47,name:"张宇强化36讲 - 高数 - 第17讲 多元函数积分学的预备知识（仅数一）",short:"第17讲 多元函数积分学的预备知识（仅数一）",total:7,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第17讲 多元函数积分学的预备知识（仅数一）",labels:["例17-1", "例17-2", "例17-3", "例17-4", "例17-5", "例17-6", "例17-7"]},
-{id:"ch48",number:48,name:"张宇强化36讲 - 高数 - 第18讲 多元函数积分学（仅数一）",short:"第18讲 多元函数积分学（仅数一）",total:29,cols:5,wb:"张宇强化36讲",subj:"高数",relPath:"强化36讲/高数/第18讲 多元函数积分学（仅数一）",labels:["例18-1", "例18-2", "例18-3", "例18-4", "例18-5", "例18-6", "例18-7", "例18-8", "例18-9", "例18-10", "例18-11", "例18-12", "例18-13", "例18-14", "例18-15", "例18-16", "例18-17", "例18-18", "例18-19", "例18-20", "例18-21", "例18-22", "例18-23", "例18-24", "例18-25", "例18-26", "例18-27", "例18-28", "例18-29"]},
-{id:"ch49",number:49,name:"张宇强化36讲 - 线代 - 第1讲 行列式",short:"第1讲 行列式",total:7,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第1讲 行列式",labels:["例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8"]},
-{id:"ch50",number:50,name:"张宇强化36讲 - 线代 - 第2讲 余子式和代数余子式的计算",short:"第2讲 余子式和代数余子式的计算",total:4,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第2讲 余子式和代数余子式的计算",labels:["例2-1", "例2-2", "例2-3", "例2-4"]},
-{id:"ch51",number:51,name:"张宇强化36讲 - 线代 - 第3讲 矩阵运算",short:"第3讲 矩阵运算",total:20,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第3讲 矩阵运算",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15", "例3-16", "例3-17", "例3-18", "例3-19", "例3-20"]},
-{id:"ch52",number:52,name:"张宇强化36讲 - 线代 - 第4讲 矩阵的秩",short:"第4讲 矩阵的秩",total:9,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第4讲 矩阵的秩",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9"]},
-{id:"ch53",number:53,name:"张宇强化36讲 - 线代 - 第5讲 线性方程组",short:"第5讲 线性方程组",total:10,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第5讲 线性方程组",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10"]},
-{id:"ch54",number:54,name:"张宇强化36讲 - 线代 - 第6讲 向量组",short:"第6讲 向量组",total:7,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第6讲 向量组",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7"]},
-{id:"ch55",number:55,name:"张宇强化36讲 - 线代 - 第7讲 特征值与特征向量",short:"第7讲 特征值与特征向量",total:4,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第7讲 特征值与特征向量",labels:["例7-1", "例7-2", "例7-3", "例7-4"]},
-{id:"ch56",number:56,name:"张宇强化36讲 - 线代 - 第8讲 相似理论",short:"第8讲 相似理论",total:10,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第8讲 相似理论",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10"]},
-{id:"ch57",number:57,name:"张宇强化36讲 - 线代 - 第9讲 二次型",short:"第9讲 二次型",total:15,cols:5,wb:"张宇强化36讲",subj:"线代",relPath:"强化36讲/线代/第9讲 二次型",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15"]},
-{id:"ch58",number:58,name:"张宇强化36讲 - 概率论 - 第1讲 随机事件和概率",short:"第1讲 随机事件和概率",total:10,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第1讲 随机事件和概率",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10"]},
-{id:"ch59",number:59,name:"张宇强化36讲 - 概率论 - 第2讲 一维随机变量及其分布",short:"第2讲 一维随机变量及其分布",total:12,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第2讲 一维随机变量及其分布",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12"]},
-{id:"ch60",number:60,name:"张宇强化36讲 - 概率论 - 第3讲 一维随机变量函数的分布",short:"第3讲 一维随机变量函数的分布",total:6,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第3讲 一维随机变量函数的分布",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6"]},
-{id:"ch61",number:61,name:"张宇强化36讲 - 概率论 - 第4讲 多维随机变量及其分布",short:"第4讲 多维随机变量及其分布",total:4,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第4讲 多维随机变量及其分布",labels:["例4-1", "例4-2", "例4-3", "例4-4"]},
-{id:"ch62",number:62,name:"张宇强化36讲 - 概率论 - 第5讲 多维随机变量函数的分布",short:"第5讲 多维随机变量函数的分布",total:9,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第5讲 多维随机变量函数的分布",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9"]},
-{id:"ch63",number:63,name:"张宇强化36讲 - 概率论 - 第6讲 数字特征",short:"第6讲 数字特征",total:10,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第6讲 数字特征",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10"]},
-{id:"ch64",number:64,name:"张宇强化36讲 - 概率论 - 第7讲 大数定律与中心极限定理",short:"第7讲 大数定律与中心极限定理",total:3,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第7讲 大数定律与中心极限定理",labels:["例7-1", "例7-2", "例7-3"]},
-{id:"ch65",number:65,name:"张宇强化36讲 - 概率论 - 第8讲 统计量及其分布",short:"第8讲 统计量及其分布",total:5,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第8讲 统计量及其分布",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5"]},
-{id:"ch66",number:66,name:"张宇强化36讲 - 概率论 - 第9讲 参数估计与假设检验",short:"第9讲 参数估计与假设检验",total:12,cols:5,wb:"张宇强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第9讲 参数估计与假设检验",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12"]},
-{id:"ch67",number:67,name:"数一1000题 - 基础篇-高数 - 第1章 函数极限与连续",short:"第1章 函数极限与连续",total:23,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第1章 函数极限与连续",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16", "例1-17", "例1-18", "例1-19", "例1-20", "例1-21", "例1-22", "例1-23"]},
-{id:"ch68",number:68,name:"数一1000题 - 基础篇-高数 - 第2讲 数列极限",short:"第2讲 数列极限",total:12,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第2讲 数列极限",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12"]},
-{id:"ch69",number:69,name:"数一1000题 - 基础篇-高数 - 第3章 一元函数微分学的概念",short:"第3章 一元函数微分学的概念",total:15,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第3章 一元函数微分学的概念",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15"]},
-{id:"ch70",number:70,name:"数一1000题 - 基础篇-高数 - 第4章 一元函数微分学的计算",short:"第4章 一元函数微分学的计算",total:18,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第4章 一元函数微分学的计算",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16", "例4-17", "例4-18"]},
-{id:"ch71",number:71,name:"数一1000题 - 基础篇-高数 - 第5章 一元函数微分学的应用（一）—几何应用",short:"第5章 一元函数微分学的应用（一）—几何应用",total:24,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第5章 一元函数微分学的应用（一）—几何应用",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15", "例5-16", "例5-17", "例5-18", "例5-19", "例5-20", "例5-21", "例5-22", "例5-23", "例5-24"]},
-{id:"ch72",number:72,name:"数一1000题 - 基础篇-高数 - 第6章 一元函数微分学的应用（二）—中值定理与不等式",short:"第6章 一元函数微分学的应用（二）—中值定理与不等式",total:22,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第6章 一元函数微分学的应用（二）—中值定理与不等式",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21", "例6-22"]},
-{id:"ch73",number:73,name:"数一1000题 - 基础篇-高数 - 第7章 一元函数微分学的应用（三）—物理应用",short:"第7章 一元函数微分学的应用（三）—物理应用",total:5,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第7章 一元函数微分学的应用（三）—物理应用",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5"]},
-{id:"ch74",number:74,name:"数一1000题 - 基础篇-高数 - 第8章 一元函数积分学的概念与性质",short:"第8章 一元函数积分学的概念与性质",total:25,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第8章 一元函数积分学的概念与性质",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12", "例8-13", "例8-14", "例8-15", "例8-16", "例8-17", "例8-18", "例8-19", "例8-20", "例8-21", "例8-22", "例8-23", "例8-24", "例8-25"]},
-{id:"ch75",number:75,name:"数一1000题 - 基础篇-高数 - 第9章 一元函数积分学的计算",short:"第9章 一元函数积分学的计算",total:36,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第9章 一元函数积分学的计算",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27", "例9-28", "例9-29", "例9-30", "例9-31", "例9-32", "例9-33", "例9-34", "例9-35", "例9-36"]},
-{id:"ch76",number:76,name:"数一1000题 - 基础篇-高数 - 第10章 一元函数积分的应用（一）—几何应用",short:"第10章 一元函数积分的应用（一）—几何应用",total:19,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第10章 一元函数积分的应用（一）—几何应用",labels:["例10-1", "例10-2", "例10-3", "例10-4", "例10-5", "例10-6", "例10-7", "例10-8", "例10-9", "例10-10", "例10-11", "例10-12", "例10-13", "例10-14", "例10-15", "例10-16", "例10-17", "例10-18", "例10-19"]},
-{id:"ch77",number:77,name:"数一1000题 - 基础篇-高数 - 第11章 一元函数积分学的应用（二）—积分等式与积分不等式",short:"第11章 一元函数积分学的应用（二）—积分等式与积分不等式",total:11,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第11章 一元函数积分学的应用（二）—积分等式与积分不等式",labels:["例11-1", "例11-2", "例11-3", "例11-4", "例11-5", "例11-6", "例11-7", "例11-8", "例11-9", "例11-10", "例11-11"]},
-{id:"ch78",number:78,name:"数一1000题 - 基础篇-高数 - 第12章 一元函数积分学的应用（三）—物理应用",short:"第12章 一元函数积分学的应用（三）—物理应用",total:7,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第12章 一元函数积分学的应用（三）—物理应用",labels:["例12-1", "例12-2", "例12-3", "例12-4", "例12-5", "例12-6", "例12-7"]},
-{id:"ch79",number:79,name:"数一1000题 - 基础篇-高数 - 第13章 多元函数微分学",short:"第13章 多元函数微分学",total:24,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第13章 多元函数微分学",labels:["例13-1", "例13-2", "例13-3", "例13-4", "例13-5", "例13-6", "例13-7", "例13-8", "例13-9", "例13-10", "例13-11", "例13-12", "例13-13", "例13-14", "例13-15", "例13-16", "例13-17", "例13-18", "例13-19", "例13-20", "例13-21", "例13-22", "例13-23", "例13-24"]},
-{id:"ch80",number:80,name:"数一1000题 - 基础篇-高数 - 第14章 二重积分",short:"第14章 二重积分",total:24,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第14章 二重积分",labels:["例14-1", "例14-2", "例14-3", "例14-4", "例14-5", "例14-6", "例14-7", "例14-8", "例14-9", "例14-10", "例14-11", "例14-12", "例14-13", "例14-14", "例14-15", "例14-16", "例14-17", "例14-18", "例14-19", "例14-20", "例14-21", "例14-22", "例14-23", "例14-24"]},
-{id:"ch81",number:81,name:"数一1000题 - 基础篇-高数 - 第15章 微分方程",short:"第15章 微分方程",total:21,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第15章 微分方程",labels:["例15-1", "例15-2", "例15-3", "例15-4", "例15-5", "例15-6", "例15-7", "例15-8", "例15-9", "例15-10", "例15-11", "例15-12", "例15-13", "例15-14", "例15-15", "例15-16", "例15-17", "例15-18", "例15-19", "例15-20", "例15-21"]},
-{id:"ch82",number:82,name:"数一1000题 - 基础篇-高数 - 第16章 无穷级数",short:"第16章 无穷级数",total:19,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第16章 无穷级数",labels:["例16-1", "例16-2", "例16-3", "例16-4", "例16-5", "例16-6", "例16-7", "例16-8", "例16-9", "例16-10", "例16-11", "例16-12", "例16-13", "例16-14", "例16-15", "例16-16", "例16-17", "例16-18", "例16-19"]},
-{id:"ch83",number:83,name:"数一1000题 - 基础篇-高数 - 第17章 多元函数积分学的预备知识",short:"第17章 多元函数积分学的预备知识",total:14,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第17章 多元函数积分学的预备知识",labels:["例17-1", "例17-2", "例17-3", "例17-4", "例17-5", "例17-6", "例17-7", "例17-8", "例17-9", "例17-10", "例17-11", "例17-12", "例17-13", "例17-14"]},
-{id:"ch84",number:84,name:"数一1000题 - 基础篇-高数 - 第18章 多元函数积分学",short:"第18章 多元函数积分学",total:16,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第18章 多元函数积分学",labels:["例18-1", "例18-2", "例18-3", "例18-4", "例18-5", "例18-6", "例18-7", "例18-8", "例18-9", "例18-10", "例18-11", "例18-12", "例18-13", "例18-14", "例18-15", "例18-16"]},
-{id:"ch85",number:85,name:"数一1000题 - 基础篇-高数 - 零基础",short:"零基础",total:16,cols:5,wb:"数一1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/零基础",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16"]},
-{id:"ch86",number:86,name:"数一1000题 - 强化篇-高数 - 第1章 函数极限与连续",short:"第1章 函数极限与连续",total:38,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第1章 函数极限与连续",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16", "例1-17", "例1-18", "例1-19", "例1-20", "例1-21", "例1-22", "例1-23", "例1-24", "例1-25", "例1-26", "例1-27", "例1-28", "例1-29", "例1-30", "例1-31", "例1-32", "例1-33", "例1-34", "例1-35", "例1-36", "例1-37", "例1-38"]},
-{id:"ch87",number:87,name:"数一1000题 - 强化篇-高数 - 第2章 数列极限",short:"第2章 数列极限",total:11,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第2章 数列极限",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11"]},
-{id:"ch88",number:88,name:"数一1000题 - 强化篇-高数 - 第3章 一元函数微分学的概念",short:"第3章 一元函数微分学的概念",total:22,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第3章 一元函数微分学的概念",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15", "例3-16", "例3-17", "例3-18", "例3-19", "例3-20", "例3-21", "例3-22"]},
-{id:"ch89",number:89,name:"数一1000题 - 强化篇-高数 - 第4章 一元函数微分学的计算",short:"第4章 一元函数微分学的计算",total:16,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第4章 一元函数微分学的计算",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16"]},
-{id:"ch90",number:90,name:"数一1000题 - 强化篇-高数 - 第5章 一元函数微分学的应用—几何应用",short:"第5章 一元函数微分学的应用—几何应用",total:33,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第5章 一元函数微分学的应用—几何应用",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15", "例5-16", "例5-17", "例5-18", "例5-19", "例5-20", "例5-21", "例5-22", "例5-23", "例5-24", "例5-25", "例5-26", "例5-27", "例5-28", "例5-29", "例5-30", "例5-31", "例5-32", "例5-33"]},
-{id:"ch91",number:91,name:"数一1000题 - 强化篇-高数 - 第6章 一元函数为分析的应用—中值定理等",short:"第6章 一元函数为分析的应用—中值定理等",total:21,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第6章 一元函数为分析的应用—中值定理等",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21"]},
-{id:"ch92",number:92,name:"数一1000题 - 强化篇-高数 - 第7章 一元函数微分学的应用—物理应用",short:"第7章 一元函数微分学的应用—物理应用",total:3,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第7章 一元函数微分学的应用—物理应用",labels:["例7-1", "例7-2", "例7-3"]},
-{id:"ch93",number:93,name:"数一1000题 - 强化篇-高数 - 第8章 一元函数积分学的概念与性质",short:"第8章 一元函数积分学的概念与性质",total:19,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第8章 一元函数积分学的概念与性质",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12", "例8-13", "例8-14", "例8-15", "例8-16", "例8-17", "例8-18", "例8-19"]},
-{id:"ch94",number:94,name:"数一1000题 - 强化篇-高数 - 第9章 一元函数积分学的计算",short:"第9章 一元函数积分学的计算",total:28,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第9章 一元函数积分学的计算",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27", "例9-28"]},
-{id:"ch95",number:95,name:"数一1000题 - 强化篇-高数 - 第10章 一元函数积分学的应用—几何应用",short:"第10章 一元函数积分学的应用—几何应用",total:26,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第10章 一元函数积分学的应用—几何应用",labels:["例10-1", "例10-2", "例10-3", "例10-4", "例10-5", "例10-6", "例10-7", "例10-8", "例10-9", "例10-10", "例10-11", "例10-12", "例10-13", "例10-14", "例10-15", "例10-16", "例10-17", "例10-18", "例10-19", "例10-20", "例10-21", "例10-22", "例10-23", "例10-24", "例10-25", "例10-26"]},
-{id:"ch96",number:96,name:"数一1000题 - 强化篇-高数 - 第11章 一元函数积分学的应用—积分等式与积分不等式",short:"第11章 一元函数积分学的应用—积分等式与积分不等式",total:9,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第11章 一元函数积分学的应用—积分等式与积分不等式",labels:["例11-1", "例11-2", "例11-3", "例11-4", "例11-5", "例11-6", "例11-7", "例11-8", "例11-9"]},
-{id:"ch97",number:97,name:"数一1000题 - 强化篇-高数 - 第12章 一元函数积分学的应用—物理应用",short:"第12章 一元函数积分学的应用—物理应用",total:5,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第12章 一元函数积分学的应用—物理应用",labels:["例12-1", "例12-2", "例12-3", "例12-4", "例12-5"]},
-{id:"ch98",number:98,name:"数一1000题 - 强化篇-高数 - 第13章 多元函数微分学",short:"第13章 多元函数微分学",total:40,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第13章 多元函数微分学",labels:["例13-1", "例13-2", "例13-3", "例13-4", "例13-5", "例13-6", "例13-7", "例13-8", "例13-9", "例13-10", "例13-11", "例13-12", "例13-13", "例13-14", "例13-15", "例13-16", "例13-17", "例13-18", "例13-19", "例13-20", "例13-21", "例13-22", "例13-23", "例13-24", "例13-25", "例13-26", "例13-27", "例13-28", "例13-29", "例13-30", "例13-31", "例13-32", "例13-33", "例13-34", "例13-35", "例13-36", "例13-37", "例13-38", "例13-39", "例13-40"]},
-{id:"ch99",number:99,name:"数一1000题 - 强化篇-高数 - 第14章 二重积分",short:"第14章 二重积分",total:41,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第14章 二重积分",labels:["例14-1", "例14-2", "例14-3", "例14-4", "例14-5", "例14-6", "例14-7", "例14-8", "例14-9", "例14-10", "例14-11", "例14-12", "例14-13", "例14-14", "例14-15", "例14-16", "例14-17", "例14-18", "例14-19", "例14-20", "例14-21", "例14-22", "例14-23", "例14-24", "例14-25", "例14-26", "例14-27", "例14-28", "例14-29", "例14-30", "例14-31", "例14-32", "例14-33", "例14-34", "例14-35", "例14-36", "例14-37", "例14-38", "例14-39", "例14-40", "例14-41"]},
-{id:"ch100",number:100,name:"数一1000题 - 强化篇-高数 - 第15章 微分方程",short:"第15章 微分方程",total:40,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第15章 微分方程",labels:["例15-1", "例15-2", "例15-3", "例15-4", "例15-5", "例15-6", "例15-7", "例15-8", "例15-9", "例15-10", "例15-11", "例15-12", "例15-13", "例15-14", "例15-15", "例15-16", "例15-17", "例15-18", "例15-19", "例15-20", "例15-21", "例15-22", "例15-23", "例15-24", "例15-25", "例15-26", "例15-27", "例15-28", "例15-29", "例15-30", "例15-31", "例15-32", "例15-33", "例15-34", "例15-35", "例15-36", "例15-37", "例15-38", "例15-39", "例15-40"]},
-{id:"ch101",number:101,name:"数一1000题 - 强化篇-高数 - 第16章 无穷级数",short:"第16章 无穷级数",total:40,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第16章 无穷级数",labels:["例16-1", "例16-2", "例16-3", "例16-4", "例16-5", "例16-6", "例16-7", "例16-8", "例16-9", "例16-10", "例16-11", "例16-12", "例16-13", "例16-14", "例16-15", "例16-16", "例16-17", "例16-18", "例16-19", "例16-20", "例16-21", "例16-22", "例16-23", "例16-24", "例16-25", "例16-26", "例16-27", "例16-28", "例16-29", "例16-30", "例16-31", "例16-32", "例16-33", "例16-34", "例16-35", "例16-36", "例16-37", "例16-38", "例16-39", "例16-40"]},
-{id:"ch102",number:102,name:"数一1000题 - 强化篇-高数 - 第17章 多元函数积分学的预备知识",short:"第17章 多元函数积分学的预备知识",total:15,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第17章 多元函数积分学的预备知识",labels:["例17-1", "例17-2", "例17-3", "例17-4", "例17-5", "例17-6", "例17-7", "例17-8", "例17-9", "例17-10", "例17-11", "例17-12", "例17-13", "例17-14", "例17-15"]},
-{id:"ch103",number:103,name:"数一1000题 - 强化篇-高数 - 第18章 多元函数积分学",short:"第18章 多元函数积分学",total:29,cols:5,wb:"数一1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第18章 多元函数积分学",labels:["例18-1", "例18-2", "例18-3", "例18-4", "例18-5", "例18-6", "例18-7", "例18-8", "例18-9", "例18-10", "例18-11", "例18-12", "例18-13", "例18-14", "例18-15", "例18-16", "例18-17", "例18-18", "例18-19", "例18-20", "例18-21", "例18-22", "例18-23", "例18-24", "例18-25", "例18-26", "例18-27", "例18-28", "例18-29"]},
-{id:"ch104",number:104,name:"数一1000题 - 基础篇-线代 - 第1章 行列式",short:"第1章 行列式",total:11,cols:5,wb:"数一1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第1章 行列式",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11"]},
-{id:"ch105",number:105,name:"数一1000题 - 基础篇-线代 - 第2章 矩阵",short:"第2章 矩阵",total:19,cols:5,wb:"数一1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第2章 矩阵",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12", "例2-13", "例2-14", "例2-15", "例2-16", "例2-17", "例2-18", "例2-19"]},
-{id:"ch106",number:106,name:"数一1000题 - 基础篇-线代 - 第3章 向量组",short:"第3章 向量组",total:15,cols:5,wb:"数一1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第3章 向量组",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15"]},
-{id:"ch107",number:107,name:"数一1000题 - 基础篇-线代 - 第4章 线性方程组",short:"第4章 线性方程组",total:17,cols:5,wb:"数一1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第4章 线性方程组",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16", "例4-17"]},
-{id:"ch108",number:108,name:"数一1000题 - 基础篇-线代 - 第5章 特征值与特征向量",short:"第5章 特征值与特征向量",total:23,cols:5,wb:"数一1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第5章 特征值与特征向量",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15", "例5-16", "例5-17", "例5-18", "例5-19", "例5-20", "例5-21", "例5-22", "例5-23"]},
-{id:"ch109",number:109,name:"数一1000题 - 基础篇-线代 - 第6章 二次型",short:"第6章 二次型",total:22,cols:5,wb:"数一1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第6章 二次型",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-21", "例6-22", "例6-23", "例6-24", "例6-25", "例6-26", "例6-27"]},
-{id:"ch110",number:110,name:"数一1000题 - 强化篇-线代 - 第1章 行列式",short:"第1章 行列式",total:7,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第1章 行列式",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7"]},
-{id:"ch111",number:111,name:"数一1000题 - 强化篇-线代 - 第2章 余子式和代数余子式的计算",short:"第2章 余子式和代数余子式的计算",total:4,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第2章 余子式和代数余子式的计算",labels:["例2-1", "例2-2", "例2-3", "例2-4"]},
-{id:"ch112",number:112,name:"数一1000题 - 强化篇-线代 - 第3章 矩阵运算",short:"第3章 矩阵运算",total:10,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第3章 矩阵运算",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10"]},
-{id:"ch113",number:113,name:"数一1000题 - 强化篇-线代 - 第4章 矩阵的秩",short:"第4章 矩阵的秩",total:8,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第4章 矩阵的秩",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8"]},
-{id:"ch114",number:114,name:"数一1000题 - 强化篇-线代 - 第5章 线性方程组",short:"第5章 线性方程组",total:15,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第5章 线性方程组",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15"]},
-{id:"ch115",number:115,name:"数一1000题 - 强化篇-线代 - 第6章 向量组",short:"第6章 向量组",total:11,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第6章 向量组",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11"]},
-{id:"ch116",number:116,name:"数一1000题 - 强化篇-线代 - 第7章 特征值与特征向量",short:"第7章 特征值与特征向量",total:9,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第7章 特征值与特征向量",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5", "例7-6", "例7-7", "例7-8", "例7-9"]},
-{id:"ch117",number:117,name:"数一1000题 - 强化篇-线代 - 第8章 相似理论",short:"第8章 相似理论",total:21,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第8章 相似理论",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12", "例8-13", "例8-14", "例8-15", "例8-16", "例8-17", "例8-18", "例8-19", "例8-20", "例8-21"]},
-{id:"ch118",number:118,name:"数一1000题 - 强化篇-线代 - 第9章 二次型",short:"第9章 二次型",total:27,cols:5,wb:"数一1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第9章 二次型",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27"]},
-{id:"ch119",number:119,name:"数一1000题 - 基础篇-概率论 - 第1章 随机事件与概率",short:"第1章 随机事件与概率",total:14,cols:5,wb:"数一1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第1章 随机事件与概率",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14"]},
-{id:"ch120",number:120,name:"数一1000题 - 基础篇-概率论 - 第2章 一维随机变量及其分布",short:"第2章 一维随机变量及其分布",total:11,cols:5,wb:"数一1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第2章 一维随机变量及其分布",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11"]},
-{id:"ch121",number:121,name:"数一1000题 - 基础篇-概率论 - 第3章 多维随机变量的数字特征",short:"第3章 多维随机变量的数字特征",total:14,cols:5,wb:"数一1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第3章 多维随机变量的数字特征",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14"]},
-{id:"ch122",number:122,name:"数一1000题 - 基础篇-概率论 - 第4章 随机变量的数字特征",short:"第4章 随机变量的数字特征",total:21,cols:5,wb:"数一1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第4章 随机变量的数字特征",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16", "例4-17", "例4-18", "例4-19", "例4-20", "例4-21"]},
-{id:"ch123",number:123,name:"数一1000题 - 基础篇-概率论 - 第5章 大数定律与中心极限定理",short:"第5章 大数定律与中心极限定理",total:8,cols:5,wb:"数一1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第5章 大数定律与中心极限定理",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8"]},
-{id:"ch124",number:124,name:"数一1000题 - 基础篇-概率论 - 第6章 数理统计",short:"第6章 数理统计",total:24,cols:5,wb:"数一1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第6章 数理统计",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21", "例6-22", "例6-23", "例6-24"]},
-{id:"ch125",number:125,name:"数一1000题 - 强化篇-概率论 - 第1章 随机事件和概率",short:"第1章 随机事件和概率",total:6,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第1章 随机事件和概率",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6"]},
-{id:"ch126",number:126,name:"数一1000题 - 强化篇-概率论 - 第2章 一维随机变量及其分布",short:"第2章 一维随机变量及其分布",total:9,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第2章 一维随机变量及其分布",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9"]},
-{id:"ch127",number:127,name:"数一1000题 - 强化篇-概率论 - 第3章 一维随机变量函数的分布",short:"第3章 一维随机变量函数的分布",total:7,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第3章 一维随机变量函数的分布",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7"]},
-{id:"ch128",number:128,name:"数一1000题 - 强化篇-概率论 - 第4章 多维随机变量及其分布",short:"第4章 多维随机变量及其分布",total:7,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第4章 多维随机变量及其分布",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7"]},
-{id:"ch129",number:129,name:"数一1000题 - 强化篇-概率论 - 第5章 多维随机变量函数的分布",short:"第5章 多维随机变量函数的分布",total:12,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第5章 多维随机变量函数的分布",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12"]},
-{id:"ch130",number:130,name:"数一1000题 - 强化篇-概率论 - 第6章 数字特征",short:"第6章 数字特征",total:21,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第6章 数字特征",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21"]},
-{id:"ch131",number:131,name:"数一1000题 - 强化篇-概率论 - 第7章 大数定律与中心极限定理",short:"第7章 大数定律与中心极限定理",total:4,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第7章 大数定律与中心极限定理",labels:["例7-1", "例7-2", "例7-3", "例7-4"]},
-{id:"ch132",number:132,name:"数一1000题 - 强化篇-概率论 - 第8章 统计量及其分布",short:"第8章 统计量及其分布",total:12,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第8章 统计量及其分布",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12"]},
-{id:"ch133",number:133,name:"数一1000题 - 强化篇-概率论 - 第9章 参数估计与假设检验",short:"第9章 参数估计与假设检验",total:30,cols:5,wb:"数一1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第9章 参数估计与假设检验",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27", "例9-28", "例9-29", "例9-30"]},
+{id:"ch31",number:31,name:"强化36讲 - 高数 - 第1讲 函数极限与连续",short:"第1讲 函数极限与连续",total:15,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第1讲 函数极限与连续",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15"]},
+{id:"ch32",number:32,name:"强化36讲 - 高数 - 第2讲 数列极限",short:"第2讲 数列极限",total:13,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第2讲 数列极限",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12", "例2-13"]},
+{id:"ch33",number:33,name:"强化36讲 - 高数 - 第3讲 一元函数微分学的概念",short:"第3讲 一元函数微分学的概念",total:8,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第3讲 一元函数微分学的概念",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8"]},
+{id:"ch34",number:34,name:"强化36讲 - 高数 - 第4讲 一元函数微分学的计算",short:"第4讲 一元函数微分学的计算",total:9,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第4讲 一元函数微分学的计算",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9"]},
+{id:"ch35",number:35,name:"强化36讲 - 高数 - 第5讲 一元函数微分学的应用（一）—几何应用",short:"第5讲 一元函数微分学的应用（一）—几何应用",total:9,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第5讲 一元函数微分学的应用（一）—几何应用",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9"]},
+{id:"ch36",number:36,name:"强化36讲 - 高数 - 第6讲 一元函数微分学的应用（二）—中值定理等",short:"第6讲 一元函数微分学的应用（二）—中值定理等",total:22,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第6讲 一元函数微分学的应用（二）—中值定理等",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21", "例6-22"]},
+{id:"ch37",number:37,name:"强化36讲 - 高数 - 第7讲 一元函数微分学的应用（三）—物理应用与经济应用",short:"第7讲 一元函数微分学的应用（三）—物理应用与经济应用",total:5,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第7讲 一元函数微分学的应用（三）—物理应用与经济应用",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5"]},
+{id:"ch38",number:38,name:"强化36讲 - 高数 - 第8讲 一元函数积分学的概念与性质",short:"第8讲 一元函数积分学的概念与性质",total:8,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第8讲 一元函数积分学的概念与性质",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8"]},
+{id:"ch39",number:39,name:"强化36讲 - 高数 - 第9讲 一元函数积分学的概念与性质",short:"第9讲 一元函数积分学的概念与性质",total:22,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第9讲 一元函数积分学的概念与性质",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22"]},
+{id:"ch40",number:40,name:"强化36讲 - 高数 - 第10讲 一元函数积分学的应用（一）—几何应用",short:"第10讲 一元函数积分学的应用（一）—几何应用",total:15,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第10讲 一元函数积分学的应用（一）—几何应用",labels:["例10-1", "例10-2", "例10-3", "例10-4", "例10-5", "例10-6", "例10-7", "例10-8", "例10-9", "例10-10", "例10-11", "例10-12", "例10-13", "例10-14", "例10-15"]},
+{id:"ch41",number:41,name:"强化36讲 - 高数 - 第11讲 一元函数积分学的应用（二）—积分等式与积分不等式",short:"第11讲 一元函数积分学的应用（二）—积分等式与积分不等式",total:19,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第11讲 一元函数积分学的应用（二）—积分等式与积分不等式",labels:["例11-1", "例11-2", "例11-3", "例11-4", "例11-5", "例11-6", "例11-7", "例11-8", "例11-9", "例11-10", "例11-11", "例11-12", "例11-13", "例11-14", "例11-15", "例11-16", "例11-17", "例11-18", "例11-19"]},
+{id:"ch42",number:42,name:"强化36讲 - 高数 - 第12讲 一元函数积分学的应用（三）—物理应用与经济应用",short:"第12讲 一元函数积分学的应用（三）—物理应用与经济应用",total:7,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第12讲 一元函数积分学的应用（三）—物理应用与经济应用",labels:["例12-1", "例12-2", "例12-3", "例12-4", "例12-5", "例12-6", "例12-7"]},
+{id:"ch43",number:43,name:"强化36讲 - 高数 - 第13讲 多元函数微分学",short:"第13讲 多元函数微分学",total:32,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第13讲 多元函数微分学",labels:["例13-1", "例13-2", "例13-3", "例13-4", "例13-5", "例13-6", "例13-7", "例13-8", "例13-9", "例13-10", "例13-11", "例13-12", "例13-13", "例13-14", "例13-15", "例13-16", "例13-17", "例13-18", "例13-19", "例13-20", "例13-21", "例13-22", "例13-23", "例13-24", "例13-25", "例13-26", "例13-27", "例13-28", "例13-29", "例13-30", "例13-31", "例13-32"]},
+{id:"ch44",number:44,name:"强化36讲 - 高数 - 第14讲 二重积分",short:"第14讲 二重积分",total:8,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第14讲 二重积分",labels:["例14-1", "例14-2", "例14-3", "例14-4", "例14-5", "例14-6", "例14-7", "例14-8"]},
+{id:"ch45",number:45,name:"强化36讲 - 高数 - 第15讲 微分方程",short:"第15讲 微分方程",total:19,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第15讲 微分方程",labels:["例15-1", "例15-2", "例15-3", "例15-4", "例15-5", "例15-6", "例15-7", "例15-8", "例15-9", "例15-10", "例15-11", "例15-12", "例15-13", "例15-14", "例15-15", "例15-16", "例15-17", "例15-18", "例15-19"]},
+{id:"ch46",number:46,name:"强化36讲 - 高数 - 第16讲 无穷级数（仅数一、三）",short:"第16讲 无穷级数（仅数一、三）",total:57,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第16讲 无穷级数（仅数一、三）",labels:["例16-1", "例16-2", "例16-3", "例16-4", "例16-5", "例16-6", "例16-7", "例16-8", "例16-9", "例16-10", "例16-11", "例16-12", "例16-13", "例16-14", "例16-15", "例16-16", "例16-17", "例16-18", "例16-19", "例16-20", "例16-21", "例16-22", "例16-23", "例16-24", "例16-25", "例16-26", "例16-27", "例16-28", "例16-29", "例16-30", "例16-31", "例16-32", "例16-33", "例16-34", "例16-35", "例16-36", "例16-37", "例16-38", "例16-39", "例16-40", "例16-41", "例16-42", "例16-43", "例16-44", "例16-45", "例16-46", "例16-47", "例16-48", "例16-49", "例16-50", "例16-51", "例16-52", "例16-53", "例16-54", "例16-55", "例16-56", "例16-57"]},
+{id:"ch47",number:47,name:"强化36讲 - 高数 - 第17讲 多元函数积分学的预备知识（仅数一）",short:"第17讲 多元函数积分学的预备知识（仅数一）",total:7,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第17讲 多元函数积分学的预备知识（仅数一）",labels:["例17-1", "例17-2", "例17-3", "例17-4", "例17-5", "例17-6", "例17-7"]},
+{id:"ch48",number:48,name:"强化36讲 - 高数 - 第18讲 多元函数积分学（仅数一）",short:"第18讲 多元函数积分学（仅数一）",total:29,cols:5,wb:"强化36讲",subj:"高数",relPath:"强化36讲/高数/第18讲 多元函数积分学（仅数一）",labels:["例18-1", "例18-2", "例18-3", "例18-4", "例18-5", "例18-6", "例18-7", "例18-8", "例18-9", "例18-10", "例18-11", "例18-12", "例18-13", "例18-14", "例18-15", "例18-16", "例18-17", "例18-18", "例18-19", "例18-20", "例18-21", "例18-22", "例18-23", "例18-24", "例18-25", "例18-26", "例18-27", "例18-28", "例18-29"]},
+{id:"ch49",number:49,name:"强化36讲 - 线代 - 第1讲 行列式",short:"第1讲 行列式",total:7,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第1讲 行列式",labels:["例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8"]},
+{id:"ch50",number:50,name:"强化36讲 - 线代 - 第2讲 余子式和代数余子式的计算",short:"第2讲 余子式和代数余子式的计算",total:4,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第2讲 余子式和代数余子式的计算",labels:["例2-1", "例2-2", "例2-3", "例2-4"]},
+{id:"ch51",number:51,name:"强化36讲 - 线代 - 第3讲 矩阵运算",short:"第3讲 矩阵运算",total:20,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第3讲 矩阵运算",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15", "例3-16", "例3-17", "例3-18", "例3-19", "例3-20"]},
+{id:"ch52",number:52,name:"强化36讲 - 线代 - 第4讲 矩阵的秩",short:"第4讲 矩阵的秩",total:9,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第4讲 矩阵的秩",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9"]},
+{id:"ch53",number:53,name:"强化36讲 - 线代 - 第5讲 线性方程组",short:"第5讲 线性方程组",total:10,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第5讲 线性方程组",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10"]},
+{id:"ch54",number:54,name:"强化36讲 - 线代 - 第6讲 向量组",short:"第6讲 向量组",total:7,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第6讲 向量组",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7"]},
+{id:"ch55",number:55,name:"强化36讲 - 线代 - 第7讲 特征值与特征向量",short:"第7讲 特征值与特征向量",total:4,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第7讲 特征值与特征向量",labels:["例7-1", "例7-2", "例7-3", "例7-4"]},
+{id:"ch56",number:56,name:"强化36讲 - 线代 - 第8讲 相似理论",short:"第8讲 相似理论",total:10,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第8讲 相似理论",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10"]},
+{id:"ch57",number:57,name:"强化36讲 - 线代 - 第9讲 二次型",short:"第9讲 二次型",total:15,cols:5,wb:"强化36讲",subj:"线代",relPath:"强化36讲/线代/第9讲 二次型",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15"]},
+{id:"ch58",number:58,name:"强化36讲 - 概率论 - 第1讲 随机事件和概率",short:"第1讲 随机事件和概率",total:10,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第1讲 随机事件和概率",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10"]},
+{id:"ch59",number:59,name:"强化36讲 - 概率论 - 第2讲 一维随机变量及其分布",short:"第2讲 一维随机变量及其分布",total:12,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第2讲 一维随机变量及其分布",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12"]},
+{id:"ch60",number:60,name:"强化36讲 - 概率论 - 第3讲 一维随机变量函数的分布",short:"第3讲 一维随机变量函数的分布",total:6,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第3讲 一维随机变量函数的分布",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6"]},
+{id:"ch61",number:61,name:"强化36讲 - 概率论 - 第4讲 多维随机变量及其分布",short:"第4讲 多维随机变量及其分布",total:4,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第4讲 多维随机变量及其分布",labels:["例4-1", "例4-2", "例4-3", "例4-4"]},
+{id:"ch62",number:62,name:"强化36讲 - 概率论 - 第5讲 多维随机变量函数的分布",short:"第5讲 多维随机变量函数的分布",total:9,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第5讲 多维随机变量函数的分布",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9"]},
+{id:"ch63",number:63,name:"强化36讲 - 概率论 - 第6讲 数字特征",short:"第6讲 数字特征",total:10,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第6讲 数字特征",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10"]},
+{id:"ch64",number:64,name:"强化36讲 - 概率论 - 第7讲 大数定律与中心极限定理",short:"第7讲 大数定律与中心极限定理",total:3,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第7讲 大数定律与中心极限定理",labels:["例7-1", "例7-2", "例7-3"]},
+{id:"ch65",number:65,name:"强化36讲 - 概率论 - 第8讲 统计量及其分布",short:"第8讲 统计量及其分布",total:5,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第8讲 统计量及其分布",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5"]},
+{id:"ch66",number:66,name:"强化36讲 - 概率论 - 第9讲 参数估计与假设检验",short:"第9讲 参数估计与假设检验",total:12,cols:5,wb:"强化36讲",subj:"概率论",relPath:"强化36讲/概率论/第9讲 参数估计与假设检验",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12"]},
+{id:"ch67",number:67,name:"1000题 - 基础篇-高数 - 第1章 函数极限与连续",short:"第1章 函数极限与连续",total:23,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第1章 函数极限与连续",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16", "例1-17", "例1-18", "例1-19", "例1-20", "例1-21", "例1-22", "例1-23"]},
+{id:"ch68",number:68,name:"1000题 - 基础篇-高数 - 第2讲 数列极限",short:"第2讲 数列极限",total:12,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第2讲 数列极限",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12"]},
+{id:"ch69",number:69,name:"1000题 - 基础篇-高数 - 第3章 一元函数微分学的概念",short:"第3章 一元函数微分学的概念",total:15,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第3章 一元函数微分学的概念",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15"]},
+{id:"ch70",number:70,name:"1000题 - 基础篇-高数 - 第4章 一元函数微分学的计算",short:"第4章 一元函数微分学的计算",total:18,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第4章 一元函数微分学的计算",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16", "例4-17", "例4-18"]},
+{id:"ch71",number:71,name:"1000题 - 基础篇-高数 - 第5章 一元函数微分学的应用（一）—几何应用",short:"第5章 一元函数微分学的应用（一）—几何应用",total:24,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第5章 一元函数微分学的应用（一）—几何应用",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15", "例5-16", "例5-17", "例5-18", "例5-19", "例5-20", "例5-21", "例5-22", "例5-23", "例5-24"]},
+{id:"ch72",number:72,name:"1000题 - 基础篇-高数 - 第6章 一元函数微分学的应用（二）—中值定理与不等式",short:"第6章 一元函数微分学的应用（二）—中值定理与不等式",total:22,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第6章 一元函数微分学的应用（二）—中值定理与不等式",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21", "例6-22"]},
+{id:"ch73",number:73,name:"1000题 - 基础篇-高数 - 第7章 一元函数微分学的应用（三）—物理应用",short:"第7章 一元函数微分学的应用（三）—物理应用",total:5,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第7章 一元函数微分学的应用（三）—物理应用",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5"]},
+{id:"ch74",number:74,name:"1000题 - 基础篇-高数 - 第8章 一元函数积分学的概念与性质",short:"第8章 一元函数积分学的概念与性质",total:25,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第8章 一元函数积分学的概念与性质",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12", "例8-13", "例8-14", "例8-15", "例8-16", "例8-17", "例8-18", "例8-19", "例8-20", "例8-21", "例8-22", "例8-23", "例8-24", "例8-25"]},
+{id:"ch75",number:75,name:"1000题 - 基础篇-高数 - 第9章 一元函数积分学的计算",short:"第9章 一元函数积分学的计算",total:36,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第9章 一元函数积分学的计算",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27", "例9-28", "例9-29", "例9-30", "例9-31", "例9-32", "例9-33", "例9-34", "例9-35", "例9-36"]},
+{id:"ch76",number:76,name:"1000题 - 基础篇-高数 - 第10章 一元函数积分的应用（一）—几何应用",short:"第10章 一元函数积分的应用（一）—几何应用",total:19,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第10章 一元函数积分的应用（一）—几何应用",labels:["例10-1", "例10-2", "例10-3", "例10-4", "例10-5", "例10-6", "例10-7", "例10-8", "例10-9", "例10-10", "例10-11", "例10-12", "例10-13", "例10-14", "例10-15", "例10-16", "例10-17", "例10-18", "例10-19"]},
+{id:"ch77",number:77,name:"1000题 - 基础篇-高数 - 第11章 一元函数积分学的应用（二）—积分等式与积分不等式",short:"第11章 一元函数积分学的应用（二）—积分等式与积分不等式",total:11,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第11章 一元函数积分学的应用（二）—积分等式与积分不等式",labels:["例11-1", "例11-2", "例11-3", "例11-4", "例11-5", "例11-6", "例11-7", "例11-8", "例11-9", "例11-10", "例11-11"]},
+{id:"ch78",number:78,name:"1000题 - 基础篇-高数 - 第12章 一元函数积分学的应用（三）—物理应用",short:"第12章 一元函数积分学的应用（三）—物理应用",total:7,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第12章 一元函数积分学的应用（三）—物理应用",labels:["例12-1", "例12-2", "例12-3", "例12-4", "例12-5", "例12-6", "例12-7"]},
+{id:"ch79",number:79,name:"1000题 - 基础篇-高数 - 第13章 多元函数微分学",short:"第13章 多元函数微分学",total:24,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第13章 多元函数微分学",labels:["例13-1", "例13-2", "例13-3", "例13-4", "例13-5", "例13-6", "例13-7", "例13-8", "例13-9", "例13-10", "例13-11", "例13-12", "例13-13", "例13-14", "例13-15", "例13-16", "例13-17", "例13-18", "例13-19", "例13-20", "例13-21", "例13-22", "例13-23", "例13-24"]},
+{id:"ch80",number:80,name:"1000题 - 基础篇-高数 - 第14章 二重积分",short:"第14章 二重积分",total:24,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第14章 二重积分",labels:["例14-1", "例14-2", "例14-3", "例14-4", "例14-5", "例14-6", "例14-7", "例14-8", "例14-9", "例14-10", "例14-11", "例14-12", "例14-13", "例14-14", "例14-15", "例14-16", "例14-17", "例14-18", "例14-19", "例14-20", "例14-21", "例14-22", "例14-23", "例14-24"]},
+{id:"ch81",number:81,name:"1000题 - 基础篇-高数 - 第15章 微分方程",short:"第15章 微分方程",total:21,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第15章 微分方程",labels:["例15-1", "例15-2", "例15-3", "例15-4", "例15-5", "例15-6", "例15-7", "例15-8", "例15-9", "例15-10", "例15-11", "例15-12", "例15-13", "例15-14", "例15-15", "例15-16", "例15-17", "例15-18", "例15-19", "例15-20", "例15-21"]},
+{id:"ch82",number:82,name:"1000题 - 基础篇-高数 - 第16章 无穷级数",short:"第16章 无穷级数",total:19,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第16章 无穷级数",labels:["例16-1", "例16-2", "例16-3", "例16-4", "例16-5", "例16-6", "例16-7", "例16-8", "例16-9", "例16-10", "例16-11", "例16-12", "例16-13", "例16-14", "例16-15", "例16-16", "例16-17", "例16-18", "例16-19"]},
+{id:"ch83",number:83,name:"1000题 - 基础篇-高数 - 第17章 多元函数积分学的预备知识",short:"第17章 多元函数积分学的预备知识",total:14,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第17章 多元函数积分学的预备知识",labels:["例17-1", "例17-2", "例17-3", "例17-4", "例17-5", "例17-6", "例17-7", "例17-8", "例17-9", "例17-10", "例17-11", "例17-12", "例17-13", "例17-14"]},
+{id:"ch84",number:84,name:"1000题 - 基础篇-高数 - 第18章 多元函数积分学",short:"第18章 多元函数积分学",total:16,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/第18章 多元函数积分学",labels:["例18-1", "例18-2", "例18-3", "例18-4", "例18-5", "例18-6", "例18-7", "例18-8", "例18-9", "例18-10", "例18-11", "例18-12", "例18-13", "例18-14", "例18-15", "例18-16"]},
+{id:"ch85",number:85,name:"1000题 - 基础篇-高数 - 零基础",short:"零基础",total:16,cols:5,wb:"1000题",subj:"基础篇-高数",relPath:"1000题/基础篇/高数/零基础",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16"]},
+{id:"ch86",number:86,name:"1000题 - 强化篇-高数 - 第1章 函数极限与连续",short:"第1章 函数极限与连续",total:38,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第1章 函数极限与连续",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16", "例1-17", "例1-18", "例1-19", "例1-20", "例1-21", "例1-22", "例1-23", "例1-24", "例1-25", "例1-26", "例1-27", "例1-28", "例1-29", "例1-30", "例1-31", "例1-32", "例1-33", "例1-34", "例1-35", "例1-36", "例1-37", "例1-38"]},
+{id:"ch87",number:87,name:"1000题 - 强化篇-高数 - 第2章 数列极限",short:"第2章 数列极限",total:11,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第2章 数列极限",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11"]},
+{id:"ch88",number:88,name:"1000题 - 强化篇-高数 - 第3章 一元函数微分学的概念",short:"第3章 一元函数微分学的概念",total:22,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第3章 一元函数微分学的概念",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15", "例3-16", "例3-17", "例3-18", "例3-19", "例3-20", "例3-21", "例3-22"]},
+{id:"ch89",number:89,name:"1000题 - 强化篇-高数 - 第4章 一元函数微分学的计算",short:"第4章 一元函数微分学的计算",total:16,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第4章 一元函数微分学的计算",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16"]},
+{id:"ch90",number:90,name:"1000题 - 强化篇-高数 - 第5章 一元函数微分学的应用—几何应用",short:"第5章 一元函数微分学的应用—几何应用",total:33,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第5章 一元函数微分学的应用—几何应用",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15", "例5-16", "例5-17", "例5-18", "例5-19", "例5-20", "例5-21", "例5-22", "例5-23", "例5-24", "例5-25", "例5-26", "例5-27", "例5-28", "例5-29", "例5-30", "例5-31", "例5-32", "例5-33"]},
+{id:"ch91",number:91,name:"1000题 - 强化篇-高数 - 第6章 一元函数为分析的应用—中值定理等",short:"第6章 一元函数为分析的应用—中值定理等",total:21,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第6章 一元函数为分析的应用—中值定理等",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21"]},
+{id:"ch92",number:92,name:"1000题 - 强化篇-高数 - 第7章 一元函数微分学的应用—物理应用",short:"第7章 一元函数微分学的应用—物理应用",total:3,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第7章 一元函数微分学的应用—物理应用",labels:["例7-1", "例7-2", "例7-3"]},
+{id:"ch93",number:93,name:"1000题 - 强化篇-高数 - 第8章 一元函数积分学的概念与性质",short:"第8章 一元函数积分学的概念与性质",total:19,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第8章 一元函数积分学的概念与性质",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12", "例8-13", "例8-14", "例8-15", "例8-16", "例8-17", "例8-18", "例8-19"]},
+{id:"ch94",number:94,name:"1000题 - 强化篇-高数 - 第9章 一元函数积分学的计算",short:"第9章 一元函数积分学的计算",total:28,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第9章 一元函数积分学的计算",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27", "例9-28"]},
+{id:"ch95",number:95,name:"1000题 - 强化篇-高数 - 第10章 一元函数积分学的应用—几何应用",short:"第10章 一元函数积分学的应用—几何应用",total:26,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第10章 一元函数积分学的应用—几何应用",labels:["例10-1", "例10-2", "例10-3", "例10-4", "例10-5", "例10-6", "例10-7", "例10-8", "例10-9", "例10-10", "例10-11", "例10-12", "例10-13", "例10-14", "例10-15", "例10-16", "例10-17", "例10-18", "例10-19", "例10-20", "例10-21", "例10-22", "例10-23", "例10-24", "例10-25", "例10-26"]},
+{id:"ch96",number:96,name:"1000题 - 强化篇-高数 - 第11章 一元函数积分学的应用—积分等式与积分不等式",short:"第11章 一元函数积分学的应用—积分等式与积分不等式",total:9,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第11章 一元函数积分学的应用—积分等式与积分不等式",labels:["例11-1", "例11-2", "例11-3", "例11-4", "例11-5", "例11-6", "例11-7", "例11-8", "例11-9"]},
+{id:"ch97",number:97,name:"1000题 - 强化篇-高数 - 第12章 一元函数积分学的应用—物理应用",short:"第12章 一元函数积分学的应用—物理应用",total:5,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第12章 一元函数积分学的应用—物理应用",labels:["例12-1", "例12-2", "例12-3", "例12-4", "例12-5"]},
+{id:"ch98",number:98,name:"1000题 - 强化篇-高数 - 第13章 多元函数微分学",short:"第13章 多元函数微分学",total:40,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第13章 多元函数微分学",labels:["例13-1", "例13-2", "例13-3", "例13-4", "例13-5", "例13-6", "例13-7", "例13-8", "例13-9", "例13-10", "例13-11", "例13-12", "例13-13", "例13-14", "例13-15", "例13-16", "例13-17", "例13-18", "例13-19", "例13-20", "例13-21", "例13-22", "例13-23", "例13-24", "例13-25", "例13-26", "例13-27", "例13-28", "例13-29", "例13-30", "例13-31", "例13-32", "例13-33", "例13-34", "例13-35", "例13-36", "例13-37", "例13-38", "例13-39", "例13-40"]},
+{id:"ch99",number:99,name:"1000题 - 强化篇-高数 - 第14章 二重积分",short:"第14章 二重积分",total:41,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第14章 二重积分",labels:["例14-1", "例14-2", "例14-3", "例14-4", "例14-5", "例14-6", "例14-7", "例14-8", "例14-9", "例14-10", "例14-11", "例14-12", "例14-13", "例14-14", "例14-15", "例14-16", "例14-17", "例14-18", "例14-19", "例14-20", "例14-21", "例14-22", "例14-23", "例14-24", "例14-25", "例14-26", "例14-27", "例14-28", "例14-29", "例14-30", "例14-31", "例14-32", "例14-33", "例14-34", "例14-35", "例14-36", "例14-37", "例14-38", "例14-39", "例14-40", "例14-41"]},
+{id:"ch100",number:100,name:"1000题 - 强化篇-高数 - 第15章 微分方程",short:"第15章 微分方程",total:40,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第15章 微分方程",labels:["例15-1", "例15-2", "例15-3", "例15-4", "例15-5", "例15-6", "例15-7", "例15-8", "例15-9", "例15-10", "例15-11", "例15-12", "例15-13", "例15-14", "例15-15", "例15-16", "例15-17", "例15-18", "例15-19", "例15-20", "例15-21", "例15-22", "例15-23", "例15-24", "例15-25", "例15-26", "例15-27", "例15-28", "例15-29", "例15-30", "例15-31", "例15-32", "例15-33", "例15-34", "例15-35", "例15-36", "例15-37", "例15-38", "例15-39", "例15-40"]},
+{id:"ch101",number:101,name:"1000题 - 强化篇-高数 - 第16章 无穷级数",short:"第16章 无穷级数",total:40,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第16章 无穷级数",labels:["例16-1", "例16-2", "例16-3", "例16-4", "例16-5", "例16-6", "例16-7", "例16-8", "例16-9", "例16-10", "例16-11", "例16-12", "例16-13", "例16-14", "例16-15", "例16-16", "例16-17", "例16-18", "例16-19", "例16-20", "例16-21", "例16-22", "例16-23", "例16-24", "例16-25", "例16-26", "例16-27", "例16-28", "例16-29", "例16-30", "例16-31", "例16-32", "例16-33", "例16-34", "例16-35", "例16-36", "例16-37", "例16-38", "例16-39", "例16-40"]},
+{id:"ch102",number:102,name:"1000题 - 强化篇-高数 - 第17章 多元函数积分学的预备知识",short:"第17章 多元函数积分学的预备知识",total:15,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第17章 多元函数积分学的预备知识",labels:["例17-1", "例17-2", "例17-3", "例17-4", "例17-5", "例17-6", "例17-7", "例17-8", "例17-9", "例17-10", "例17-11", "例17-12", "例17-13", "例17-14", "例17-15"]},
+{id:"ch103",number:103,name:"1000题 - 强化篇-高数 - 第18章 多元函数积分学",short:"第18章 多元函数积分学",total:29,cols:5,wb:"1000题",subj:"强化篇-高数",relPath:"1000题/强化篇/高数/第18章 多元函数积分学",labels:["例18-1", "例18-2", "例18-3", "例18-4", "例18-5", "例18-6", "例18-7", "例18-8", "例18-9", "例18-10", "例18-11", "例18-12", "例18-13", "例18-14", "例18-15", "例18-16", "例18-17", "例18-18", "例18-19", "例18-20", "例18-21", "例18-22", "例18-23", "例18-24", "例18-25", "例18-26", "例18-27", "例18-28", "例18-29"]},
+{id:"ch104",number:104,name:"1000题 - 基础篇-线代 - 第1章 行列式",short:"第1章 行列式",total:11,cols:5,wb:"1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第1章 行列式",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11"]},
+{id:"ch105",number:105,name:"1000题 - 基础篇-线代 - 第2章 矩阵",short:"第2章 矩阵",total:19,cols:5,wb:"1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第2章 矩阵",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12", "例2-13", "例2-14", "例2-15", "例2-16", "例2-17", "例2-18", "例2-19"]},
+{id:"ch106",number:106,name:"1000题 - 基础篇-线代 - 第3章 向量组",short:"第3章 向量组",total:15,cols:5,wb:"1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第3章 向量组",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15"]},
+{id:"ch107",number:107,name:"1000题 - 基础篇-线代 - 第4章 线性方程组",short:"第4章 线性方程组",total:17,cols:5,wb:"1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第4章 线性方程组",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16", "例4-17"]},
+{id:"ch108",number:108,name:"1000题 - 基础篇-线代 - 第5章 特征值与特征向量",short:"第5章 特征值与特征向量",total:23,cols:5,wb:"1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第5章 特征值与特征向量",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15", "例5-16", "例5-17", "例5-18", "例5-19", "例5-20", "例5-21", "例5-22", "例5-23"]},
+{id:"ch109",number:109,name:"1000题 - 基础篇-线代 - 第6章 二次型",short:"第6章 二次型",total:22,cols:5,wb:"1000题",subj:"基础篇-线代",relPath:"1000题/基础篇/线代/第6章 二次型",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-21", "例6-22", "例6-23", "例6-24", "例6-25", "例6-26", "例6-27"]},
+{id:"ch110",number:110,name:"1000题 - 强化篇-线代 - 第1章 行列式",short:"第1章 行列式",total:7,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第1章 行列式",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7"]},
+{id:"ch111",number:111,name:"1000题 - 强化篇-线代 - 第2章 余子式和代数余子式的计算",short:"第2章 余子式和代数余子式的计算",total:4,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第2章 余子式和代数余子式的计算",labels:["例2-1", "例2-2", "例2-3", "例2-4"]},
+{id:"ch112",number:112,name:"1000题 - 强化篇-线代 - 第3章 矩阵运算",short:"第3章 矩阵运算",total:10,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第3章 矩阵运算",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10"]},
+{id:"ch113",number:113,name:"1000题 - 强化篇-线代 - 第4章 矩阵的秩",short:"第4章 矩阵的秩",total:8,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第4章 矩阵的秩",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8"]},
+{id:"ch114",number:114,name:"1000题 - 强化篇-线代 - 第5章 线性方程组",short:"第5章 线性方程组",total:15,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第5章 线性方程组",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12", "例5-13", "例5-14", "例5-15"]},
+{id:"ch115",number:115,name:"1000题 - 强化篇-线代 - 第6章 向量组",short:"第6章 向量组",total:11,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第6章 向量组",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11"]},
+{id:"ch116",number:116,name:"1000题 - 强化篇-线代 - 第7章 特征值与特征向量",short:"第7章 特征值与特征向量",total:9,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第7章 特征值与特征向量",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5", "例7-6", "例7-7", "例7-8", "例7-9"]},
+{id:"ch117",number:117,name:"1000题 - 强化篇-线代 - 第8章 相似理论",short:"第8章 相似理论",total:21,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第8章 相似理论",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12", "例8-13", "例8-14", "例8-15", "例8-16", "例8-17", "例8-18", "例8-19", "例8-20", "例8-21"]},
+{id:"ch118",number:118,name:"1000题 - 强化篇-线代 - 第9章 二次型",short:"第9章 二次型",total:27,cols:5,wb:"1000题",subj:"强化篇-线代",relPath:"1000题/强化篇/线代/第9章 二次型",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27"]},
+{id:"ch119",number:119,name:"1000题 - 基础篇-概率论 - 第1章 随机事件与概率",short:"第1章 随机事件与概率",total:14,cols:5,wb:"1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第1章 随机事件与概率",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14"]},
+{id:"ch120",number:120,name:"1000题 - 基础篇-概率论 - 第2章 一维随机变量及其分布",short:"第2章 一维随机变量及其分布",total:11,cols:5,wb:"1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第2章 一维随机变量及其分布",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11"]},
+{id:"ch121",number:121,name:"1000题 - 基础篇-概率论 - 第3章 多维随机变量的数字特征",short:"第3章 多维随机变量的数字特征",total:14,cols:5,wb:"1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第3章 多维随机变量的数字特征",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14"]},
+{id:"ch122",number:122,name:"1000题 - 基础篇-概率论 - 第4章 随机变量的数字特征",short:"第4章 随机变量的数字特征",total:21,cols:5,wb:"1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第4章 随机变量的数字特征",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7", "例4-8", "例4-9", "例4-10", "例4-11", "例4-12", "例4-13", "例4-14", "例4-15", "例4-16", "例4-17", "例4-18", "例4-19", "例4-20", "例4-21"]},
+{id:"ch123",number:123,name:"1000题 - 基础篇-概率论 - 第5章 大数定律与中心极限定理",short:"第5章 大数定律与中心极限定理",total:8,cols:5,wb:"1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第5章 大数定律与中心极限定理",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8"]},
+{id:"ch124",number:124,name:"1000题 - 基础篇-概率论 - 第6章 数理统计",short:"第6章 数理统计",total:24,cols:5,wb:"1000题",subj:"基础篇-概率论",relPath:"1000题/基础篇/概率论/第6章 数理统计",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21", "例6-22", "例6-23", "例6-24"]},
+{id:"ch125",number:125,name:"1000题 - 强化篇-概率论 - 第1章 随机事件和概率",short:"第1章 随机事件和概率",total:6,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第1章 随机事件和概率",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6"]},
+{id:"ch126",number:126,name:"1000题 - 强化篇-概率论 - 第2章 一维随机变量及其分布",short:"第2章 一维随机变量及其分布",total:9,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第2章 一维随机变量及其分布",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9"]},
+{id:"ch127",number:127,name:"1000题 - 强化篇-概率论 - 第3章 一维随机变量函数的分布",short:"第3章 一维随机变量函数的分布",total:7,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第3章 一维随机变量函数的分布",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7"]},
+{id:"ch128",number:128,name:"1000题 - 强化篇-概率论 - 第4章 多维随机变量及其分布",short:"第4章 多维随机变量及其分布",total:7,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第4章 多维随机变量及其分布",labels:["例4-1", "例4-2", "例4-3", "例4-4", "例4-5", "例4-6", "例4-7"]},
+{id:"ch129",number:129,name:"1000题 - 强化篇-概率论 - 第5章 多维随机变量函数的分布",short:"第5章 多维随机变量函数的分布",total:12,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第5章 多维随机变量函数的分布",labels:["例5-1", "例5-2", "例5-3", "例5-4", "例5-5", "例5-6", "例5-7", "例5-8", "例5-9", "例5-10", "例5-11", "例5-12"]},
+{id:"ch130",number:130,name:"1000题 - 强化篇-概率论 - 第6章 数字特征",short:"第6章 数字特征",total:21,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第6章 数字特征",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17", "例6-18", "例6-19", "例6-20", "例6-21"]},
+{id:"ch131",number:131,name:"1000题 - 强化篇-概率论 - 第7章 大数定律与中心极限定理",short:"第7章 大数定律与中心极限定理",total:4,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第7章 大数定律与中心极限定理",labels:["例7-1", "例7-2", "例7-3", "例7-4"]},
+{id:"ch132",number:132,name:"1000题 - 强化篇-概率论 - 第8章 统计量及其分布",short:"第8章 统计量及其分布",total:12,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第8章 统计量及其分布",labels:["例8-1", "例8-2", "例8-3", "例8-4", "例8-5", "例8-6", "例8-7", "例8-8", "例8-9", "例8-10", "例8-11", "例8-12"]},
+{id:"ch133",number:133,name:"1000题 - 强化篇-概率论 - 第9章 参数估计与假设检验",short:"第9章 参数估计与假设检验",total:30,cols:5,wb:"1000题",subj:"强化篇-概率论",relPath:"1000题/强化篇/概率论/第9章 参数估计与假设检验",labels:["例9-1", "例9-2", "例9-3", "例9-4", "例9-5", "例9-6", "例9-7", "例9-8", "例9-9", "例9-10", "例9-11", "例9-12", "例9-13", "例9-14", "例9-15", "例9-16", "例9-17", "例9-18", "例9-19", "例9-20", "例9-21", "例9-22", "例9-23", "例9-24", "例9-25", "例9-26", "例9-27", "例9-28", "例9-29", "例9-30"]},
 {id:"ch134",number:134,name:"李范全书 - 高数 - 第1章 极限、连续与求极限的方法",short:"第1章 极限、连续与求极限的方法",total:41,cols:5,wb:"李范全书",subj:"高数",relPath:"李范全书/高数/第1章 极限、连续与求极限的方法",labels:["例1-1", "例1-2", "例1-3", "例1-4", "例1-5", "例1-6", "例1-7", "例1-8", "例1-9", "例1-10", "例1-11", "例1-12", "例1-13", "例1-14", "例1-15", "例1-16", "例1-17", "例1-18", "例1-19", "例1-20", "例1-21", "例1-22", "例1-23", "例1-24", "例1-25", "例1-26", "例1-27", "例1-28", "例1-29", "例1-30", "例1-31", "例1-32", "例1-33", "例1-34", "例1-35", "例1-36", "例1-37", "例1-38", "例1-39", "例1-40", "例1-41"]},
 {id:"ch135",number:135,name:"李范全书 - 高数 - 第2章 一元函数的导数与微分概念及其计算",short:"第2章 一元函数的导数与微分概念及其计算",total:39,cols:5,wb:"李范全书",subj:"高数",relPath:"李范全书/高数/第2章 一元函数的导数与微分概念及其计算",labels:["例2-1", "例2-2", "例2-3", "例2-4", "例2-5", "例2-6", "例2-7", "例2-8", "例2-9", "例2-10", "例2-11", "例2-12", "例2-13", "例2-14", "例2-15", "例2-16", "例2-17", "例2-18", "例2-19", "例2-20", "例2-21", "例2-22", "例2-23", "例2-24", "例2-25", "例2-26", "例2-27", "例2-28", "例2-29", "例2-30", "例2-31", "例2-32", "例2-33", "例2-34", "例2-35", "例2-36", "例2-37", "例2-38", "例2-39"]},
 {id:"ch136",number:136,name:"李范全书 - 高数 - 第3章 一元函数积分概念、计算及应用",short:"第3章 一元函数积分概念、计算及应用",total:63,cols:5,wb:"李范全书",subj:"高数",relPath:"李范全书/高数/第3章 一元函数积分概念、计算及应用",labels:["例3-1", "例3-2", "例3-3", "例3-4", "例3-5", "例3-6", "例3-7", "例3-8", "例3-9", "例3-10", "例3-11", "例3-12", "例3-13", "例3-14", "例3-15", "例3-16", "例3-17", "例3-18", "例3-19", "例3-20", "例3-21", "例3-22", "例3-23", "例3-24", "例3-25", "例3-26", "例3-27", "例3-28", "例3-29", "例3-30", "例3-31", "例3-32", "例3-33", "例3-34", "例3-35", "例3-36", "例3-37", "例3-38", "例3-39", "例3-40", "例3-41", "例3-42", "例3-43", "例3-44", "例3-45", "例3-46", "例3-47", "例3-48", "例3-49", "例3-50", "例3-51", "例3-52", "例3-53", "例3-54", "例3-55", "例3-56", "例3-57", "例3-58", "例3-59", "例3-60", "例3-61", "例3-62", "例3-63"]},
@@ -2146,6 +2602,58 @@
 {id:"ch156",number:156,name:"李范全书 - 概率论 - 第6章 数理统计的基本概念",short:"第6章 数理统计的基本概念",total:17,cols:5,wb:"李范全书",subj:"概率论",relPath:"李范全书/概率论/第6章 数理统计的基本概念",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17"]},
 {id:"ch157",number:157,name:"李范全书 - 概率论 - 第7章 参数估计和假设检验",short:"第7章 参数估计和假设检验",total:20,cols:5,wb:"李范全书",subj:"概率论",relPath:"李范全书/概率论/第7章 参数估计和假设检验",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5", "例7-6", "例7-7", "例7-8", "例7-9", "例7-10", "例7-11", "例7-12", "例7-13", "例7-14", "例7-15", "例7-16", "例7-17", "例7-18", "例7-19", "例7-20"]}
 ];
+    // ===== 科目（subject）数据模型：数学 + 822 控制工程基础 =====
+    const SUBJECTS = [
+      {
+        id: 'shu1', name: '数学', storageSuffix: 's1', initChapterId: 'ch1', navCols: 5,
+        partOrder: ['例题', '习题'],
+        wbOrder: [
+          { wb: '基础30讲', label: '基础30讲' },
+          { wb: '强化36讲', label: '强化36讲' },
+          { wb: '1000题', label: '1000题' },
+          { wb: '李范全书', label: '李范全书' }
+        ],
+        subjOrder: ['高数', '线代', '概率论'],
+        classifyLabel: function (label) { return label.startsWith('例') ? '例题' : '习题'; },
+        getImgPath: function (ch, label) {
+          let prefix, numPart;
+          if (label.startsWith('例')) { prefix = 'ex'; numPart = label.substring(1); }
+          else { prefix = 'pb'; numPart = label; }
+          return '考研题库/' + ch.relPath + '/' + prefix + '_' + numPart;
+        },
+        chapters: SHU1_CHAPTERS
+      },
+      {
+        id: '822', name: '控制工程基础', storageSuffix: '822', initChapterId: 'ch1', navCols: 5,
+        partOrder: ['习题', '例题', '章末例题'],
+        wbOrder: [ { wb: '控制工程基础', label: '控制工程基础' } ],
+        subjOrder: ['控制工程基础'],
+        classifyLabel: function (label) {
+          if (/^例\d+-\d+/.test(label)) return '例题';
+          if (/^例题\d*/.test(label)) return '章末例题';
+          return '习题';
+        },
+        getImgPath: function (ch, label) {
+          if (/^例\d+-\d+$/.test(label)) return '考研题库/' + ch.relPath + '/' + ch.id + '_ex_' + label.replace('例', '');
+          if (/^例题\d+$/.test(label)) return '考研题库/' + ch.relPath + '/' + ch.id + '_ce_' + label.replace('例题', '');
+          return '考研题库/' + ch.relPath + '/' + ch.id + '_pb_' + label.replace(/\s+/g, '_');
+        },
+        chapters: [
+          { id: 'ch1', number: 1, name: '第1章 概论', short: '1 概论', total: 12, cols: 4, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch1', labels: ['1-1 (1)', '1-1 (2)', '1-1 (3)', '1-1 (4)', '1-2', '1-3', '1-4', '1-5 (a)', '1-5 (b)', '1-6', '例题1', '例题2'] },
+          { id: 'ch2', number: 2, name: '第2章 控制系统的动态数学模型', short: '2 动态数学模型', total: 104, cols: 8, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch2', labels: ['例2-1', '例2-2', '例2-3', '例2-4', '例2-5', '例2-6', '例2-7', '例2-8', '例2-9', '例2-10', '例2-11', '例2-12', '例2-13', '例2-14', '例2-15', '例2-16', '例2-17', '例2-18', '例2-19', '例2-20', '例2-21', '例2-22', '例2-23', '例2-24', '例2-25', '例2-26', '例2-27', '例2-28', '例2-29', '例2-30', '例题1', '例题2', '例题3', '例题4', '例题5', '2-1 (1)', '2-1 (2)', '2-1 (3)', '2-1 (4)', '2-1 (5)', '2-1 (6)', '2-1 (7)', '2-1 (8)', '2-2 (1)', '2-2 (2)', '2-2 (3)', '2-2 (4)', '2-2 (5)', '2-2 (6)', '2-2 (7)', '2-3 (1)', '2-3 (2)', '2-3 (3)', '2-4', '2-5', '2-6 (1)', '2-6 (2)', '2-6 (3)', '2-6 (4)', '2-7 (1)', '2-7 (2)', '2-8', '2-9 (a)', '2-9 (b)', '2-9 (c)', '2-9 (d)', '2-9 (e)', '2-9 (f)', '2-9 (g)', '2-10 (a)', '2-10 (b)', '2-10 (c)', '2-11 (a)', '2-11 (b)', '2-11 (c)', '2-11 (d)', '2-12 (a)', '2-12 (b)', '2-13', '2-14', '2-15 (1)', '2-15 (2)', '2-16', '2-17', '2-18', '2-19', '2-20 (a)', '2-20 (b)', '2-20 (c)', '2-21 (1)', '2-21 (2)', '2-21 (3)', '2-21 (4)', '2-22 (a)', '2-22 (b)', '2-22 (c)', '2-23 (1)', '2-23 (2)', '2-23 (3)', '2-23 (4)', '2-24', '2-25', '2-26 (a)', '2-26 (b)'] },
+          { id: 'ch3', number: 3, name: '第3章 时域瞬态响应分析', short: '3 时域瞬态响应', total: 54, cols: 18, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch3', labels: ['3-1', '3-2', '3-3', '3-4(1)', '3-4(2)', '3-4(3)', '3-5(1)', '3-5(2)', '3-6', '3-7(1)', '3-7(2)', '3-8', '3-9', '3-10', '3-11', '3-12(1)', '3-12(2)', '3-12(3)', '3-12(4)', '3-13(1)', '3-13(2)', '3-13(3)', '3-14', '3-15', '3-16', '3-17', '3-18', '3-19(1)', '3-19(2)', '3-20', '3-21(1)', '3-21(2)', '3-22', '3-23(a)', '3-23(b)', '3-23(c)', '3-23(d)', '3-23(e)', '3-24', '3-25', '3-26(1)', '3-26(2)', '3-27(1)', '3-27(2)', '3-28', '3-29', '3-30(1)', '3-30(2)', '3-30(3)', '3-30(4)', '3-31', '3-32(1)', '3-32(2)', '3-33'] },
+          { id: 'ch4', number: 4, name: '第4章 控制系统的频率特性', short: '4 频率特性', total: 54, cols: 18, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch4', labels: ['4-1 (1)', '4-1 (2)', '4-1 (3)', '4-1 (4)', '4-1 (5)', '4-1 (6)', '4-1 (7)', '4-1 (8)', '4-2 (1)', '4-2 (2)', '4-3 (1)', '4-3 (2)', '4-4', '4-5', '4-6 (a)', '4-6 (b)', '4-6 (c)', '4-6 (d)', '4-6 (e)', '4-7', '4-8 (1)', '4-8 (2)', '4-8 (3)', '4-8 (4)', '4-9 (1)', '4-9 (2)', '4-10', '4-11 (h)', '4-11 (i)', '4-11 (j)', '4-11 (k)', '4-11 (l)', '4-12 (1)', '4-12 (2)', '4-12 (3)', '4-12 (4)', '4-12 (5)', '4-12 (6)', '4-13 (a)', '4-13 (b)', '4-14', '4-15 (1)', '4-15 (2)', '4-15 (3)', '4-16', '4-17', '4-18', '4-19 (1)', '4-19 (2)', '4-20', '4-21 (a)', '4-21 (b)', '4-21 (c)', '4-21 (d)'] },
+          { id: 'ch5', number: 5, name: '第5章 控制系统的稳定性分析', short: '5 稳定性分析', total: 40, cols: 14, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch5', labels: ['5-1', '5-2', '5-3 (1)', '5-3 (2)', '5-4 (1)', '5-4 (2)', '5-4 (3)', '5-4 (4)', '5-5 (1)', '5-5 (2)', '5-5 (3)', '5-5 (4)', '5-6 (1)', '5-6 (2)', '5-6 (3)', '5-7', '5-8', '5-9 (1)', '5-9 (2)', '5-10', '5-11 (1)', '5-11 (2)', '5-12', '5-13', '5-14', '5-15', '5-16', '5-17 (1)', '5-17 (2)', '5-18', '5-19', '5-20', '5-21 (a)', '5-21 (b)', '5-22', '5-23', '5-24', '5-25', '5-26 (1)', '5-26 (2)'] },
+          { id: 'ch6', number: 6, name: '第6章 控制系统的误差分析和计算', short: '6 误差分析和计算', total: 29, cols: 10, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch6', labels: ['6-1(1)', '6-1(2)', '6-1(3)', '6-1(4)', '6-2(1)', '6-2(2)', '6-3', '6-4(1)', '6-4(2)', '6-5(1)', '6-5(2)', '6-6', '6-7(1)', '6-7(2)', '6-8(1)', '6-8(2)', '6-8(3)', '6-9(1)', '6-9(2)', '6-10', '6-11', '6-12', '6-13(1)', '6-13(2)', '6-14', '6-15(1)', '6-15(2)', '6-16(1)', '6-16(2)'] },
+          { id: 'ch7', number: 7, name: '第7章 控制系统的综合与校正', short: '7 综合与校正', total: 22, cols: 8, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch7', labels: ['7-1', '7-2', '7-3', '7-4', '7-5', '7-6', '7-7', '7-8 (1)', '7-8 (2)', '7-9', '7-10', '7-11', '7-12', '7-13', '7-14', '7-15 (1)', '7-15 (2)', '7-16', '7-17', '7-18', '7-19', '7-20'] },
+          { id: 'ch9', number: 9, name: '第9章 计算机控制系统', short: '9 计算机控制', total: 56, cols: 14, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch9', labels: ['10-1', '10-2', '10-3', '10-4', '10-5(1)', '10-5(2)', '10-5(3)', '10-6(1)', '10-6(2)', '10-6(3)', '10-6(4)', '10-6(5)', '10-7(1)', '10-7(2)', '10-7(3)', '10-8(1)', '10-8(2)', '10-8(3)', '10-8(4)', '10-9(1)', '10-9(2)', '10-9(3)', '10-9(4)', '10-10(1)', '10-10(2)', '10-11(1)', '10-11(2)', '10-11(3)', '10-11(4)', '10-12(a)', '10-12(b)', '10-12(c)', '10-12(d)', '10-12(e)', '10-12(f)', '10-13', '10-14', '10-15(1)', '10-15(2)', '10-15(3)', '10-15(4)', '10-16(1)', '10-16(2)', '10-17(1)', '10-17(2)', '10-18', '10-19', '10-20(1)', '10-20(2)', '10-21(1)', '10-21(2)', '10-22(1)', '10-22(2)', '10-23(1)', '10-23(2)', '10-23(3)'] }
+        ]
+      }
+    ];
+    let curSubjectId = 'shu1';
+    let curSubject = SUBJECTS[0];
+    let CHAPTERS = curSubject.chapters;   // 当前科目章节数组（原 const 改 let，切换科目时重赋值）
+    function getCurrentSubject() { return curSubject; }
 // ===== 状态变量 (0-based) =====
     let currentChapterId = 'ch1';
     let current = 0;
@@ -2192,15 +2700,23 @@
     }
 
     // 题组内当前筛选下可见的索引列表
-    function groupVisibleIndices(g) {
-      const set = new Set(getFilteredIndices());
+    // filteredSet 可传入预计算的筛中索引集合，避免在 renderNav 等热路径中反复调用 getFilteredIndices()。
+    // 传入 null 且当前为「全部」筛选时，直接返回整组（跳过 Set 构建）。
+    function groupVisibleIndices(g, filteredSet) {
+      if (!filteredSet) {
+        if (isAllFilterActive()) {
+          return Array.from({ length: g.count }, (_, k) => g.startIdx + k);
+        }
+        filteredSet = new Set(getFilteredIndices());
+      }
       const out = [];
-      for (let k = 0; k < g.count; k++) { const idx = g.startIdx + k; if (set.has(idx)) out.push(idx); }
+      for (let k = 0; k < g.count; k++) { const idx = g.startIdx + k; if (filteredSet.has(idx)) out.push(idx); }
       return out;
     }
-    function storageKey() { return currentChapterId + '_s1_status'; }
-    function qBadStorageKey() { return currentChapterId + '_s1_qbad'; }
-    function sBadStorageKey() { return currentChapterId + '_s1_sbad'; }
+    function storageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_status'; }
+    function qBadStorageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_qbad'; }
+    function sBadStorageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_sbad'; }
+    function chapterStatusKey(ch) { return ch.id + '_' + curSubject.storageSuffix + '_status'; }
     function totalQuestions() { return getChapter().total; }
 
     // ===== 筛选相关 =====
@@ -2243,7 +2759,6 @@
         return currentFilters.has(statuses[i]);
       });
     }
-    function filteredTotal() { return getFilteredIndices().length; }
     function filteredIndex(idx) { return getFilteredIndices().indexOf(idx); }
     function isFiltered(idx) { return filteredIndex(idx) !== -1; }
 
@@ -2263,7 +2778,7 @@
 
     // ===== 笔记数据 =====
     let notesData = {};
-    function notesStorageKey() { return currentChapterId + '_s1_notes'; }
+    function notesStorageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_notes'; }
     function loadNotes() {
       try { notesData = JSON.parse(localStorage.getItem(notesStorageKey())) || {}; } catch (e) { notesData = {}; }
     }
@@ -2277,20 +2792,10 @@
       return '';
     }
 
-    // ===== 图片路径 =====
+    // ===== 图片路径（按当前科目的 getImgPath） =====
         function getImgPath(idx) {
       const ch = getChapter();
-      const label = ch.labels[idx];
-      const relPath = ch.relPath;
-      let prefix, numPart;
-      if (label.startsWith('例')) {
-        prefix = 'ex';
-        numPart = label.substring(1);
-      } else {
-        prefix = 'pb';
-        numPart = label;
-      }
-      return '数一题库/' + relPath + '/' + prefix + '_' + numPart;
+      return curSubject.getImgPath(ch, ch.labels[idx]);
     }
 
 
@@ -2302,11 +2807,37 @@
       current = 0;
       showSolution = defaultShowSolution;
       subMode = false;
-      applyFilter('all');
       loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+      // 每次切章先清除错题本返回状态（错题本跳题会在 switchTo 之后重新置位）
+      showWrongBookReturnBtn(false);
+      // 全局筛选跨章保持：不重置、不按章恢复，仅加载本章数据后定位到第一条筛中题
+      // 定位规则：默认落在本章第一个分区（按科目 partOrder）的起始题；
+      // 若全局筛选激活且该分区无筛中题，则顺延到后续分区第一条筛中题（否则回退到起点）。
+      updateFilterButtons();
+      updateFilterCounts();
+      const partOrder = getPartOrder();
+      let target = 0;
+      if (partOrder.length > 0) {
+        const firstLabel = classifyLabel(ch.labels[0]);
+        if (firstLabel === partOrder[0]) {
+          // 起点即第一分区起始：直接落在第一条筛中题（无筛选时即 0）
+          const filtered = getFilteredIndices();
+          target = filtered.length > 0 ? filtered[0] : 0;
+        } else {
+          // 起点不在第一分区（如 822 源序 ch2 例题在前、partOrder 习题在前）：
+          // 优先落在第一分区的第一条筛中题；无筛中题时顺延到后续分区的第一条筛中题；再不行回退 0
+          const filtered = getFilteredIndices();
+          const filteredInFirst = filtered.find(i => classifyLabel(ch.labels[i]) === partOrder[0]);
+          if (filteredInFirst !== undefined) { target = filteredInFirst; }
+          else {
+            const other = filtered.find(i => classifyLabel(ch.labels[i]) !== partOrder[0]);
+            if (other !== undefined) { target = other; } else { target = 0; }
+          }
+        }
+      }
       renderTitle();
-      renderStats();
-      renderNav(); switchTo(0);
+      // switchTo 内部已调用 renderStats + renderNav，此处不重复渲染
+      switchTo(target);
     }
 
     function gotoPrevChapter() {
@@ -2319,8 +2850,6 @@
     }
 
     // ===== 章节标题栏（三级面板式下拉） =====
-    var _titleUpdating = false;
-
     function getUniqueWbs() {
       var wbs = [];
       CHAPTERS.forEach(function(c) { if (c.wb && wbs.indexOf(c.wb) === -1) wbs.push(c.wb); });
@@ -2351,20 +2880,15 @@
       });
     }
 
-    // 书籍展示名称映射 + 固定排序
-    var WB_ORDER = [
-      { wb: '基础30讲', label: '基础30讲' },
-      { wb: '张宇强化36讲', label: '强化30讲' },
-      { wb: '数一1000题', label: '1000题' },
-      { wb: '李范全书', label: '李范全书' }
-    ];
+    // 书籍展示名称 + 固定排序（按当前科目的 wbOrder）
     function getSortedWbs() {
-      var existing = getUniqueWbs(); // 已导入的 wb 原始值
+      var existing = getUniqueWbs();
       var result = [];
-      WB_ORDER.forEach(function(entry) {
+      var order = curSubject ? curSubject.wbOrder : [];
+      order.forEach(function(entry) {
         if (existing.indexOf(entry.wb) !== -1) result.push(entry);
       });
-      return result; // [{wb, label}, ...]
+      return result;
     }
 
     // 填充书籍面板
@@ -2387,14 +2911,14 @@
       });
     }
 
-    // 学科固定排序
-    var SUBJ_ORDER = ['高数', '线代', '概率论'];
+    // 学科固定排序（按当前科目的 subjOrder）
     function getSortedSubjs(wb) {
       var subjs = [];
       CHAPTERS.forEach(function(c) { if (c.wb === wb && c.subj && subjs.indexOf(c.subj) === -1) subjs.push(c.subj); });
       var sorted = [];
-      SUBJ_ORDER.forEach(function(s) { if (subjs.indexOf(s) !== -1) sorted.push(s); });
-      subjs.forEach(function(s) { if (sorted.indexOf(s) === -1) sorted.push(s); }); // 未在 ORDER 中的放末尾
+      var order = curSubject ? curSubject.subjOrder : [];
+      order.forEach(function(s) { if (subjs.indexOf(s) !== -1) sorted.push(s); });
+      subjs.forEach(function(s) { if (sorted.indexOf(s) === -1) sorted.push(s); }); // 未列出的学科放末尾
       return sorted;
     }
 
@@ -2422,15 +2946,11 @@
     }
 
     function renderTitle() {
-      _titleUpdating = true;
       var ch = getChapter();
       var wb = ch.wb || '';
       var subj = ch.subj || '';
 
-      var wbLabel = wb; // 默认用原始值，查找映射
-      for (var i = 0; i < WB_ORDER.length; i++) {
-        if (WB_ORDER[i].wb === wb) { wbLabel = WB_ORDER[i].label; break; }
-      }
+      var wbLabel = getWbLabel(wb); // 按当前科目的 wbOrder 映射显示名
       document.getElementById('txtWb').textContent = wbLabel;
       document.getElementById('txtSubj').textContent = subj;
       document.getElementById('txtChapter').textContent = ch.short;
@@ -2438,7 +2958,6 @@
       fillWbPanel(wb);
       fillSubjPanel(wb, subj);
       fillChapterPanel(wb, subj, ch.id);
-      _titleUpdating = false;
     }
 
     // 面板展开/收起 + 外部点击关闭
@@ -2461,6 +2980,7 @@
         togglePanel('ddWb', 'trigWb');
         togglePanel('ddSubj', 'trigSubj');
         togglePanel('ddChapter', 'trigChapter');
+        togglePanel('ddWbWrongbook', 'trigWbWrongbook');
 
         document.addEventListener('click', function(e) {
           var openPanels = document.querySelectorAll('.title-panel.open');
@@ -2472,12 +2992,11 @@
       });
     })();
 
-    // ===== 自动分区：从 label 推断所属类别 =====
-    const PART_ORDER = ['例题', '习题'];
+    // ===== 自动分区：从 label 推断所属类别（按当前科目） =====
+    function getPartOrder() { return curSubject ? curSubject.partOrder : ['例题', '习题']; }
 
     function classifyLabel(label) {
-      if (label.startsWith('例')) return '例题';
-      return '习题';
+      return curSubject ? curSubject.classifyLabel(label) : (label.startsWith('例') ? '例题' : '习题');
     }
 
     // ===== 渲染章节统计面板 =====
@@ -2503,83 +3022,367 @@
         '</div>';
     }
 
-    // ===== 全局仪表盘 =====
-    let dashboardOpen = false;
+
+    // ===== 全局仪表盘（环形热力图） =====
+    // 书籍列表按当前科目（数学 4 本 / 822 1 本），用 getSortedWbs()
+    var dashboardOpen = false;
+    // 全局进度处于详情视图时，用于「返回总览」按钮与鼠标后退键回总览
+    var dashboardDetailReturn = false;
+
+    function getBookChapters(wb) {
+      return CHAPTERS.filter(function(c) { return c.wb === wb && c.total > 0; });
+    }
+
+    function getChProgress(ch) {
+      var key = chapterStatusKey(ch);
+      var statusObj;
+      try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
+      var done = 0;
+      for (var i = 0; i < ch.total; i++) {
+        var s = statusObj[i];
+        if (s === 'proficient' || s === 'vague' || s === 'wrong') done++;
+      }
+      return { progress: ch.total > 0 ? done / ch.total : 0, done: done, total: ch.total };
+    }
+
+    function getChStats(ch) {
+      var key = chapterStatusKey(ch);
+      var statusObj;
+      try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
+      var proficient = 0, vague = 0, wrong = 0;
+      for (var i = 0; i < ch.total; i++) {
+        var s = statusObj[i];
+        if (s === 'proficient') proficient++;
+        else if (s === 'vague') vague++;
+        else if (s === 'wrong') wrong++;
+      }
+      var done = proficient + vague + wrong;
+      return {
+        proficient: proficient, vague: vague, wrong: wrong,
+        unmarked: ch.total - done, done: done,
+        pct: ch.total > 0 ? Math.round(done / ch.total * 100) : 0
+      };
+    }
+
+    function dbLerpColor(c1, c2, t) {
+      return [
+        Math.round(c1[0] + (c2[0] - c1[0]) * t),
+        Math.round(c1[1] + (c2[1] - c1[1]) * t),
+        Math.round(c1[2] + (c2[2] - c1[2]) * t)
+      ];
+    }
+
+    function drawDonut(canvas, chapters, label) {
+      var ctx = canvas.getContext('2d');
+      var dpr = window.devicePixelRatio || 1;
+      var size = 260;
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      canvas.style.width = size + 'px';
+      canvas.style.height = size + 'px';
+      ctx.scale(dpr, dpr);
+
+      var cx = size / 2, cy = size / 2;
+      var outerR = 108;
+      var innerR = 28;
+      var ringCount = chapters.length;
+      if (ringCount === 0) {
+        ctx.fillStyle = '#999';
+        ctx.font = '14px "Microsoft YaHei",sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('(无数据)', cx, cy);
+        return;
+      }
+      var ringWidth = (outerR - innerR) / ringCount;
+
+      ctx.clearRect(0, 0, size, size);
+
+      var purpleDark = [102, 8, 116];
+      var purpleLight = [225, 190, 231];
+      var totalDone = 0, totalQ = 0;
+
+      // Inner to outer: inner ring = chapter 0 (第1讲), outer ring = last chapter
+      for (var i = 0; i < ringCount; i++) {
+        var ri = innerR + i * ringWidth;
+        var ro = innerR + (i + 1) * ringWidth;
+        var pr = getChProgress(chapters[i]);
+        totalDone += pr.done;
+        totalQ += pr.total;
+        var p = pr.progress;
+        var color = dbLerpColor(purpleLight, purpleDark, p);
+        var cStr = 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
+
+        // Filled arc (clockwise from top)
+        ctx.beginPath();
+        ctx.arc(cx, cy, ro, -Math.PI / 2, -Math.PI / 2 + p * 2 * Math.PI);
+        ctx.arc(cx, cy, ri, -Math.PI / 2 + p * 2 * Math.PI, -Math.PI / 2, true);
+        ctx.closePath();
+        ctx.fillStyle = cStr;
+        ctx.fill();
+
+        // Unfilled arc
+        if (p < 1) {
+          ctx.beginPath();
+          ctx.arc(cx, cy, ro, -Math.PI / 2 + p * 2 * Math.PI, -Math.PI / 2 + 2 * Math.PI);
+          ctx.arc(cx, cy, ri, -Math.PI / 2 + 2 * Math.PI, -Math.PI / 2 + p * 2 * Math.PI, true);
+          ctx.closePath();
+          ctx.fillStyle = '#e8e8e8';
+          ctx.fill();
+        }
+      }
+
+      // Center circle with slight shadow
+      ctx.beginPath();
+      ctx.arc(cx, cy, innerR, 0, 2 * Math.PI);
+      ctx.fillStyle = '#fff';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(0,0,0,0.08)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Center text
+      var pct = totalQ > 0 ? Math.round(totalDone / totalQ * 100) : 0;
+      ctx.fillStyle = '#333';
+      ctx.font = 'bold 12px "Microsoft YaHei","PingFang SC",sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, cx, cy - 9);
+      ctx.fillStyle = '#660874';
+      ctx.font = 'bold 17px "Microsoft YaHei","PingFang SC",sans-serif';
+      ctx.fillText(pct + '%', cx, cy + 11);
+    }
+
+    function setPanelTitle(text, wrongbookMode) {
+      var bar = document.getElementById('chapterTitleBar');
+      var panelTitle = document.getElementById('panelTitle');
+      if (!bar || !panelTitle) return;
+      var dropdowns = bar.querySelectorAll('.title-dropdown');
+      if (text) {
+        panelTitle.textContent = text;
+        panelTitle.style.display = '';
+        dropdowns.forEach(function(d) {
+          if (wrongbookMode && d.id === 'ddWbWrongbook') d.style.display = ''; // 错题本模式保留书籍下拉
+          else d.style.display = 'none';
+        });
+      } else {
+        panelTitle.style.display = 'none';
+        dropdowns.forEach(function(d) {
+          if (d.id === 'ddWbWrongbook') d.style.display = 'none'; // 退出错题本模式隐藏书籍下拉
+          else d.style.display = '';
+        });
+      }
+    }
+
     function toggleDashboard() {
       dashboardOpen = !dashboardOpen;
-      const panel = document.getElementById('dashboardPanel');
-      const content = document.getElementById('mainAreaContent');
-      const chapTitle = document.getElementById('chapterTitle');
-      const btn = document.getElementById('btnDashboard');
+      var panel = document.getElementById('dashboardPanel');
+      var content = document.getElementById('mainAreaContent');
+      var btn = document.getElementById('btnDashboard');
       if (dashboardOpen) {
-        renderDashboard();
+        renderDashboardOverview();
         panel.style.display = '';
         content.style.display = 'none';
-        chapTitle.textContent = '全局学习进度';
-        btn.textContent = '返回章节';
+        setPanelTitle('全局学习进度');
+        btn.innerHTML = '返回章节<span class="sol-key">V</span>';
+        showWrongBookReturnBtn(false); // 打开全局进度时隐藏错题本返回按钮
+        // 若错题本同时打开则关闭，避免两个面板重叠
+        if (wrongBookOpen) {
+          wrongBookOpen = false;
+          document.getElementById('wrongBookPanel').style.display = 'none';
+          document.getElementById('btnWrongBook').innerHTML = '错题本<span class="sol-key">B</span>';
+        }
       } else {
         panel.style.display = 'none';
         content.style.display = '';
+        showDashboardBackBtn(false);
+        setPanelTitle('');
         renderTitle();
-        btn.textContent = '全局进度';
+        btn.innerHTML = '全局进度<span class="sol-key">V</span>';
       }
     }
-    function renderDashboard() {
-      const list = document.getElementById('dashboardList');
-      let html = '';
-      for (const ch of CHAPTERS) {
-        if (ch.total === 0) continue;
-        const name = ch.short || ch.name;
-        const key = ch.id + '_s1_status';
-        let statusObj;
-        try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
-        const total = ch.total;
-        let proficient = 0, vague = 0, wrong = 0;
-        for (let i = 0; i < total; i++) {
-          const s = statusObj[i];
-          if (s === 'proficient') proficient++;
-          else if (s === 'vague') vague++;
-          else if (s === 'wrong') wrong++;
+
+    function showDashboardBackBtn(show) {
+      const btn = document.getElementById('btnBackDashboard');
+      if (btn) {
+        btn.style.display = show ? '' : 'none';
+        if (show) alignBackBtnToMainArea(btn); // 显示时动态对齐下方图片区左缘
+      }
+      dashboardDetailReturn = show;
+    }
+    function backToDashboardOverview() {
+      // 从详情视图回到全局进度总览
+      renderDashboardOverview();
+    }
+    function renderDashboardOverview() {
+      showDashboardBackBtn(false);
+      document.getElementById('dbOverview').style.display = '';
+      document.getElementById('dbDetail').style.display = 'none';
+
+      var grid = document.getElementById('dbGrid');
+      var html = '';
+      var books = getSortedWbs(); // 按当前科目返回 {wb,label} 列表
+      for (var b = 0; b < books.length; b++) {
+        var wb = books[b].wb;
+        var label = books[b].label;
+        var cid = 'dbCanvas' + b;
+        html += '<div class="db-donut-card" data-wb="' + wb + '" onclick="openDashboardDetail(\'' + wb + '\')">' +
+          '<canvas id="' + cid + '"></canvas>' +
+        '</div>';
+      }
+      grid.innerHTML = html;
+
+      // Draw donuts after DOM update
+      setTimeout(function() {
+        for (var b = 0; b < books.length; b++) {
+          var wb = books[b].wb;
+          var chapters = getBookChapters(wb);
+          var canvas = document.getElementById('dbCanvas' + b);
+          if (canvas) drawDonut(canvas, chapters, books[b].label);
         }
-        const done = proficient + vague + wrong;
-        const unmarked = total - done;
-        const pct = total > 0 ? Math.round(done / total * 100) : 0;
-        html += '<div class="dash-chapter-card">' +
-          '<div class="dash-chapter-name">' + name + '</div>' +
-          '<div class="dash-progress-bar"><div class="dash-progress-fill" style="width:' + pct + '%"></div></div>' +
-          '<div class="dash-stats-row">' +
-            '<span><span class="dash-stat-dot proficient"></span>熟练 ' + proficient + '</span>' +
-            '<span><span class="dash-stat-dot vague"></span>模糊 ' + vague + '</span>' +
-            '<span><span class="dash-stat-dot wrong"></span>需复习 ' + wrong + '</span>' +
-            '<span><span class="dash-stat-dot unmarked"></span>未做 ' + unmarked + '</span>' +
+      }, 20);
+    }
+
+    function openDashboardDetail(wb) {
+      showDashboardBackBtn(true);
+      document.getElementById('dbOverview').style.display = 'none';
+      document.getElementById('dbDetail').style.display = '';
+      document.getElementById('dbDetailTitle').textContent = getWbLabel(wb) + ' — 章节进度';
+
+      var chapters = getBookChapters(wb);
+      var grid = document.getElementById('dbDetailList');
+
+      function cardHtml(ch) {
+        var name = ch.short || ch.name;
+        var stats = getChStats(ch);
+        return '<div class="db-chapter-card" data-cid="' + ch.id + '" onclick="jumpToChapter(\'' + ch.id + '\')">' +
+          '<div class="db-chapter-name">' + name + '</div>' +
+          '<div class="db-chapter-bar"><div class="db-chapter-fill" style="width:' + stats.pct + '%"></div></div>' +
+          '<div class="db-chapter-stats">' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#34C759"></span>熟练 ' + stats.proficient + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#FF9500"></span>模糊 ' + stats.vague + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#FF3B30"></span>需复习 ' + stats.wrong + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#ccc"></span>未做 ' + stats.unmarked + '</span>' +
           '</div></div>';
       }
-      list.innerHTML = html;
+
+      // 按主学科分组，列顺序：高数 → 线代 → 概率论（其余排后）
+      var colMap = {};
+      chapters.forEach(function(ch) {
+        var bs = baseSubject(ch.subj);
+        (colMap[bs] = colMap[bs] || []).push(ch);
+      });
+      var SUBJECT_ORDER = ['高数', '线代', '概率论'];
+      var colKeys = [];
+      SUBJECT_ORDER.forEach(function(s) { if (colMap[s]) colKeys.push(s); });
+      Object.keys(colMap).forEach(function(s) { if (colKeys.indexOf(s) === -1) colKeys.push(s); });
+
+      var html = '';
+      colKeys.forEach(function(bs) {
+        var colChs = colMap[bs];
+        html += '<div class="db-subject-col">' +
+          '<div class="db-subject-header">' + bs + ' <span class="db-subject-count">' + colChs.length + ' 章</span></div>';
+        // 列内含"基础篇/强化篇"多篇（如1000题）时，加子分组标题
+        var hasSub = colChs.some(function(ch) { return /^(基础篇|强化篇)/.test(ch.subj); });
+        if (hasSub) {
+          ['基础篇', '强化篇'].forEach(function(pfx) {
+            var group = colChs.filter(function(ch) { return String(ch.subj).indexOf(pfx) === 0; });
+            if (group.length === 0) return;
+            html += '<div class="db-subject-subheader">' + pfx + '</div>';
+            group.forEach(function(ch) { html += cardHtml(ch); });
+          });
+        } else {
+          colChs.forEach(function(ch) { html += cardHtml(ch); });
+        }
+        html += '</div>';
+      });
+      grid.innerHTML = html;
     }
+
+    function jumpToChapter(chapterId) {
+      // Close dashboard panel
+      dashboardOpen = false;
+      showDashboardBackBtn(false);
+      document.getElementById('dashboardPanel').style.display = 'none';
+      document.getElementById('mainAreaContent').style.display = '';
+      document.getElementById('btnDashboard').innerHTML = '全局进度<span class="sol-key">V</span>';
+      setPanelTitle('');
+      renderTitle();
+      // Switch to the chapter
+      switchChapter(chapterId);
+    }
+
+    // Back button
+    document.addEventListener('DOMContentLoaded', function() {
+      // 「返回总览」按钮：全局进度处于详情视图时显示，点击回到总览（同时绑定后退）
+      const dbBack = document.getElementById('btnBackDashboard');
+      if (dbBack) dbBack.addEventListener('click', function() {
+        backToDashboardOverview();
+      });
+      // 「返回错题本」按钮：从错题本跳题后显示，点击回到错题本面板（同时绑定后退）
+      const wbBack = document.getElementById('btnBackWrongBook');
+      if (wbBack) wbBack.addEventListener('click', function() {
+        backToWrongBook();
+      });
+    });
 
     // ===== 错题本 =====
     let wrongBookOpen = false;
+    // 从错题本跳题后，用于「返回错题本」按钮与鼠标后退键回错题本
+    let wrongBookReturn = false;
+    function showWrongBookReturnBtn(show) {
+      const btn = document.getElementById('btnBackWrongBook');
+      if (btn) {
+        btn.style.display = show ? '' : 'none';
+        if (show) alignBackBtnToMainArea(btn); // 显示时动态对齐下方图片区左缘
+      }
+      wrongBookReturn = show;
+    }
+    function alignBackBtnToMainArea(btn) {
+      // left = 主区域左缘相对标题栏左缘的偏移（动态计算，避免硬编码宽度）
+      const mainArea = document.querySelector('.main-area');
+      const bar = document.getElementById('chapterTitleBar');
+      if (!mainArea || !bar) return;
+      const barRect = bar.getBoundingClientRect();
+      const mainRect = mainArea.getBoundingClientRect();
+      btn.style.left = (mainRect.left - barRect.left) + 'px';
+    }
+    function backToWrongBook() {
+      // 从题目页回到错题本面板
+      wrongBookOpen = true;
+      const panel = document.getElementById('wrongBookPanel');
+      const dashPanel = document.getElementById('dashboardPanel');
+      const content = document.getElementById('mainAreaContent');
+      const btn = document.getElementById('btnWrongBook');
+      renderWrongBook();
+      dashPanel.style.display = 'none';
+      content.style.display = 'none';
+      panel.style.display = '';
+      btn.innerHTML = '返回章节<span class="sol-key">B</span>';
+      if (dashboardOpen) { dashboardOpen = false; showDashboardBackBtn(false); document.getElementById('btnDashboard').innerHTML = '全局进度<span class="sol-key">V</span>'; }
+      showWrongBookReturnBtn(false); // 回到错题本后隐藏返回按钮
+    }
     function toggleWrongBook() {
       wrongBookOpen = !wrongBookOpen;
       const panel = document.getElementById('wrongBookPanel');
       const dashPanel = document.getElementById('dashboardPanel');
       const content = document.getElementById('mainAreaContent');
-      const chapTitle = document.getElementById('chapterTitle');
       const btn = document.getElementById('btnWrongBook');
       if (wrongBookOpen) {
         renderWrongBook();
         dashPanel.style.display = 'none';
         content.style.display = 'none';
         panel.style.display = '';
-        chapTitle.textContent = '错题本';
-        btn.textContent = '返回章节';
+        btn.innerHTML = '返回章节<span class="sol-key">B</span>';
+        showWrongBookReturnBtn(false); // 打开错题本面板本身时不显示返回按钮
         // 关闭仪表盘
-        if (dashboardOpen) { dashboardOpen = false; document.getElementById('btnDashboard').textContent = '全局进度'; }
+        if (dashboardOpen) { dashboardOpen = false; showDashboardBackBtn(false); document.getElementById('btnDashboard').innerHTML = '全局进度<span class="sol-key">V</span>'; }
       } else {
         panel.style.display = 'none';
         content.style.display = '';
+        setPanelTitle('');
         renderTitle();
-        btn.textContent = '错题本';
+        btn.innerHTML = '错题本<span class="sol-key">B</span>';
+        showWrongBookReturnBtn(false);
       }
     }
 
@@ -2590,54 +3393,248 @@
       document.getElementById('shortcutOverlay').classList.toggle('show', shortcutHelpOpen);
     }
 
+    // ===== 科目选择模态 =====
+    let subjectPickerOpen = false;
+    function openSubjectPicker() {
+      subjectPickerOpen = true;
+      document.getElementById('subjectOverlay').classList.add('show');
+    }
+    function closeSubjectPicker() {
+      subjectPickerOpen = false;
+      document.getElementById('subjectOverlay').classList.remove('show');
+    }
+
+    // ===== 记住上次位置（章节 + 题目 + 小题模式），按科目分别保存 =====
+    // 键 kaoyan_resume = JSON { '<科目id>': { ch: 章节id, idx: 题目索引, sub: 是否小题模式 } }
+    function saveResume() {
+      var map = {};
+      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
+      map[curSubjectId] = { ch: currentChapterId, idx: current, sub: !!subMode };
+      try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
+    }
+    function loadResume(subjectId) {
+      var map = {};
+      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
+      var r = map[subjectId];
+      if (!r || !r.ch) return null;
+      var subj = SUBJECTS.find(function (s) { return s.id === subjectId; });
+      if (!subj) return null;
+      var ch = subj.chapters.find(function (c) { return c.id === r.ch; });
+      if (!ch || ch.total === 0) return null;
+      var idx = Math.min(Math.max(0, r.idx || 0), ch.total - 1);
+      // 小题模式仅当该题属于含子题的父题组时才恢复，避免无子题时残留
+      var subOk = false;
+      if (r.sub) {
+        ensureGroups(ch);
+        var g = ch.groupForIdx[idx];
+        subOk = !!(g && g.isParent && g.count > 1);
+      }
+      return { ch: r.ch, idx: idx, sub: subOk };
+    }
+    function switchSubject(subjectId) {
+      const subj = SUBJECTS.find(s => s.id === subjectId);
+      if (!subj) return;
+      saveResume(); // 先记录当前科目停的位置，再切换
+      curSubjectId = subjectId;
+      curSubject = subj;
+      CHAPTERS = subj.chapters;
+      var resume = loadResume(subjectId);
+      if (resume) {
+        currentChapterId = resume.ch;
+        current = resume.idx;
+        subMode = resume.sub;
+      } else {
+        currentChapterId = subj.initChapterId;
+        current = 0; subMode = false;
+      }
+      localStorage.setItem('kaoyan_subject', subjectId);
+      // 关闭可能打开的全局进度/错题本面板，避免旧科目 DOM 残留
+      if (dashboardOpen) {
+        dashboardOpen = false; dashboardDetailReturn = false;
+        document.getElementById('dashboardPanel').style.display = 'none';
+        document.getElementById('mainAreaContent').style.display = '';
+        document.getElementById('btnDashboard').innerHTML = '全局进度<span class="sol-key">V</span>';
+        showDashboardBackBtn(false); setPanelTitle('');
+      }
+      if (wrongBookOpen) {
+        wrongBookOpen = false; wrongBookReturn = false; wrongBookWb = null;
+        document.getElementById('wrongBookPanel').style.display = 'none';
+        document.getElementById('mainAreaContent').style.display = '';
+        document.getElementById('btnWrongBook').innerHTML = '错题本<span class="sol-key">B</span>';
+        showWrongBookReturnBtn(false); setPanelTitle('');
+      }
+      closeAllTitlePanels(); // 关闭可能残留的标题下拉面板（切换后重建）
+      loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+      renderTitle(); renderStats(); renderNav();
+      // 若全局筛选激活且恢复的位置被筛掉，则跳到第一条筛中题，避免落在不可见题上
+      if (!isAllFilterActive()) {
+        const filtered = getFilteredIndices();
+        if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
+      }
+      switchTo(current); updateFilterCounts();
+      closeSubjectPicker();
+    }
+    function pickSubject(id) {
+      const s = SUBJECTS.find(x => x.id === id);
+      if (s) switchSubject(id);
+      closeSubjectPicker();
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnSwitch = document.getElementById('btnSwitchSubject');
+      if (btnSwitch) btnSwitch.onclick = openSubjectPicker;
+      document.querySelectorAll('#subjectOverlay .subject-option').forEach(function (btn) {
+        btn.addEventListener('click', function () { pickSubject(btn.dataset.subject); });
+      });
+      const so = document.getElementById('subjectOverlay');
+      if (so) so.addEventListener('click', function (e) { if (e.target === this) closeSubjectPicker(); });
+    });
+
+    // 鼠标侧键后退：详情视图/从错题本跳题后，鼠标后退键回总览或错题本
+    document.addEventListener('mouseup', function (e) {
+      if (e.button !== 3) return; // 按钮 3 = 浏览器后退键（XButton1）
+      if (dashboardDetailReturn) backToDashboardOverview();
+      else if (wrongBookReturn) backToWrongBook();
+    });
+    // 窗口尺寸变化时，若返回按钮可见则重新对齐
+    window.addEventListener('resize', function () {
+      if (dashboardDetailReturn) {
+        const dbtn = document.getElementById('btnBackDashboard');
+        if (dbtn) alignBackBtnToMainArea(dbtn);
+      }
+      if (wrongBookReturn) {
+        const btn = document.getElementById('btnBackWrongBook');
+        if (btn) alignBackBtnToMainArea(btn);
+      }
+    });
+
+    // ===== 错题本辅助函数 =====
+    // 主学科：去掉"基础篇-/强化篇-"前缀（与全局进度一致）
+    function baseSubject(subj) { return String(subj).replace(/^(基础篇|强化篇)[-—]/, ''); }
+    function getWbLabel(wb) {
+      var order = curSubject ? curSubject.wbOrder : [];
+      for (var i = 0; i < order.length; i++) { if (order[i].wb === wb) return order[i].label; }
+      return wb;
+    }
+    let wrongBookWb = null; // 错题本书籍筛选（null=未初始化，首次打开时跟随当前章节栏书籍）
+
+    function updateWrongBookTitle() {
+      // 错题本模式：保留标题栏书籍下拉，标题固定为「错题本」
+      setPanelTitle('错题本', true);
+    }
+
+    function fillWrongBookWbPanel() {
+      // 收集有错/糊题的书籍
+      var wbSet = new Set();
+      for (const ch of CHAPTERS) {
+        if (ch.total === 0) continue;
+        var key = chapterStatusKey(ch);
+        var statusObj;
+        try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
+        for (var i = 0; i < ch.total; i++) {
+          if (statusObj[i] === 'wrong' || statusObj[i] === 'vague') { wbSet.add(ch.wb); break; }
+        }
+      }
+      var entries = [];
+      var order = curSubject ? curSubject.wbOrder : [];
+      order.forEach(function(e) { if (wbSet.has(e.wb)) entries.push({ wb: e.wb, label: e.label }); });
+      wbSet.forEach(function(w) { if (!entries.some(function(e) { return e.wb === w; })) entries.push({ wb: w, label: w }); });
+      var defaultWb = order.length > 0 ? order[0].wb : (entries.length > 0 ? entries[0].wb : '');
+      // 首次打开（null）：跟随当前章节栏选中的书籍；若该书无错题则回退到第一个有错题的书籍
+      if (wrongBookWb === null) {
+        var curWb = getChapter() ? getChapter().wb : null;
+        wrongBookWb = (curWb && entries.some(function(e) { return e.wb === curWb; })) ? curWb : (entries.length > 0 ? entries[0].wb : defaultWb);
+      } else if (!entries.some(function(e) { return e.wb === wrongBookWb; })) {
+        wrongBookWb = entries.length > 0 ? entries[0].wb : defaultWb;
+      }
+      document.getElementById('txtWbWrongbook').textContent = getWbLabel(wrongBookWb);
+      fillPanel('panelWbWrongbook', entries, 'wb', 'label', wrongBookWb, function(entry) {
+        wrongBookWb = entry.wb;
+        renderWrongBook();
+      });
+    }
+
     function renderWrongBook() {
-      const list = document.getElementById('wrongBookList');
-      let html = '';
+      fillWrongBookWbPanel();
+      updateWrongBookTitle();
+      const grid = document.getElementById('wrongBookGrid');
+
+      // 按书籍筛选 + 按学科分组收集
+      const colMap = {};
       let totalWrong = 0;
       for (const ch of CHAPTERS) {
         if (ch.total === 0) continue;
-        const key = ch.id + '_s1_status';
+        if (ch.wb !== wrongBookWb) continue;
+        const key = chapterStatusKey(ch);
         let statusObj;
         try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
         const wrongIndices = [];
+        const vagueIndices = [];
         for (let i = 0; i < ch.total; i++) {
           if (statusObj[i] === 'wrong') wrongIndices.push(i);
+          else if (statusObj[i] === 'vague') vagueIndices.push(i);
         }
-        if (wrongIndices.length === 0) continue;
-        totalWrong += wrongIndices.length;
-        const name = ch.short || ch.name;
-        const labels = ch.labels || [];
-        html += '<div class="wrongbook-chapter-card">' +
-          '<div class="wrongbook-chapter-name">' + name + '（' + wrongIndices.length + '题）</div>' +
-          '<div class="wrongbook-q-grid">';
-        for (const idx of wrongIndices) {
-          const label = labels[idx] || (idx + 1);
-          html += '<span class="wrongbook-q-item" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题">' + label + '</span>';
-        }
-        html += '</div></div>';
+        if (wrongIndices.length + vagueIndices.length === 0) continue;
+        totalWrong += wrongIndices.length + vagueIndices.length;
+        const bs = baseSubject(ch.subj);
+        (colMap[bs] = colMap[bs] || []).push({ ch, wrongIndices, vagueIndices });
       }
+
+      let html = '';
       if (totalWrong === 0) {
-        html = '<div class="wrongbook-empty">暂无标记为「需复习」的题目</div>';
+        html = '<div class="wrongbook-empty">暂无标记为「需复习」「模糊」的题目</div>';
+      } else {
+        // 列顺序：高数 → 线代 → 概率论（其余排后）
+        const SUBJECT_ORDER = ['高数', '线代', '概率论'];
+        const colKeys = [];
+        SUBJECT_ORDER.forEach(function(s) { if (colMap[s]) colKeys.push(s); });
+        Object.keys(colMap).forEach(function(s) { if (colKeys.indexOf(s) === -1) colKeys.push(s); });
+        colKeys.forEach(function(bs) {
+          const items = colMap[bs];
+          html += '<div class="db-subject-col">' +
+            '<div class="db-subject-header">' + bs + ' <span class="db-subject-count">' + items.length + ' 讲</span></div>';
+          items.forEach(function(item) {
+            const ch = item.ch;
+            const name = ch.short || ch.name;
+            const labels = ch.labels || [];
+            html += '<div class="wrongbook-chapter-card">' +
+              '<div class="wrongbook-chapter-name">' + name +
+              '<span class="wrongbook-status-count">' +
+              (item.vagueIndices.length ? '<span class="ws w-vague">糊 ' + item.vagueIndices.length + '</span>' : '') +
+              (item.wrongIndices.length ? '<span class="ws w-wrong">错 ' + item.wrongIndices.length + '</span>' : '') +
+              '</span></div>' +
+              '<div class="wrongbook-q-grid">';
+            for (const idx of item.vagueIndices) {
+              const label = labels[idx] || (idx + 1);
+              html += '<span class="wrongbook-q-item vague" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题（模糊）">' + label + '</span>';
+            }
+            for (const idx of item.wrongIndices) {
+              const label = labels[idx] || (idx + 1);
+              html += '<span class="wrongbook-q-item" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题（需复习）">' + label + '</span>';
+            }
+            html += '</div></div>';
+          });
+          html += '</div>';
+        });
       }
-      list.innerHTML = html;
+      grid.innerHTML = html;
 
       // 点击跳转
-      list.querySelectorAll('.wrongbook-q-item').forEach(function(el) {
+      grid.querySelectorAll('.wrongbook-q-item').forEach(function(el) {
         el.addEventListener('click', function() {
-          const cid = parseInt(this.getAttribute('data-chapter'));
+          const cid = this.getAttribute('data-chapter');
           const idx = parseInt(this.getAttribute('data-index'));
           // 关闭错题本
           wrongBookOpen = false;
           document.getElementById('wrongBookPanel').style.display = 'none';
           document.getElementById('mainAreaContent').style.display = '';
-          document.getElementById('btnWrongBook').textContent = '错题本';
+          document.getElementById('btnWrongBook').innerHTML = '错题本<span class="sol-key">B</span>';
+          setPanelTitle(''); // 恢复章节下拉栏（与 dashboard 跳转一致）
           renderTitle();
-          // 切换章节并跳转
+          // 切换章节并跳转到目标题
           switchChapter(cid);
-          current = idx;
-          renderQuestion();
-          updateNavBadge();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          switchTo(idx);
+          // 标记从错题本进入，显示「返回错题本」按钮
+          showWrongBookReturnBtn(true);
         });
       });
     }
@@ -2651,8 +3648,10 @@
       const cols = effectiveCols();
       nav.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
       const labels = ch.labels;
-      const filteredSet = new Set(getFilteredIndices());
       const curGroup = ch.groupForIdx[current];
+      // 预计算筛中索引集合，renderNav 内多处使用，避免重复调用 getFilteredIndices()。
+      // 「全部」筛选下无需构建集合（所有组均可见）。
+      const filteredSet = isAllFilterActive() ? null : new Set(getFilteredIndices());
 
       function appendBadges(btn, i) {
         const labels = ch.labels;
@@ -2669,6 +3668,7 @@
       // 自动从 labels 推断分区（连续同类别归为一个 partition）
       var parts = []; // [{label, startIdx, endIdx}]
       var curPart = null;
+      var partOrder = getPartOrder(); // 当前科目分区顺序
       for (var i = 0; i < labels.length; i++) {
         var cat = classifyLabel(labels[i]);
         if (!curPart || curPart.label !== cat) {
@@ -2679,18 +3679,18 @@
       }
       if (curPart) curPart.endIdx = labels.length;
 
-      // 按 PART_ORDER 排序渲染
+      // 按 partOrder 排序渲染
       parts.sort(function(a, b) {
-        return PART_ORDER.indexOf(a.label) - PART_ORDER.indexOf(b.label);
+        return partOrder.indexOf(a.label) - partOrder.indexOf(b.label);
       });
-      // 补全 PART_ORDER 中缺失的分区（如无例题则显示"无"）
-      PART_ORDER.forEach(function(po) {
+      // 补全 partOrder 中缺失的分区（如无例题则显示"无"）
+      partOrder.forEach(function(po) {
         if (!parts.some(function(p) { return p.label === po; })) {
           parts.push({ label: po, startIdx: -1, endIdx: -1 });
         }
       });
       parts.sort(function(a, b) {
-        return PART_ORDER.indexOf(a.label) - PART_ORDER.indexOf(b.label);
+        return partOrder.indexOf(a.label) - partOrder.indexOf(b.label);
       });
 
       parts.forEach(function(part) {
@@ -2725,7 +3725,7 @@
 
           if (inCurGroup && (!g.isParent || !subMode)) { cls = 'active'; }
 
-          var visIdx = groupVisibleIndices(g);
+          var visIdx = groupVisibleIndices(g, filteredSet);
           var groupHasVisible = isAllFilterActive() || visIdx.length > 0;
           if (!groupHasVisible) cls += ' filtered-out';
 
@@ -2868,7 +3868,8 @@
       const ch = getChapter();
       ensureGroups(ch);
       if (isAllFilterActive()) return ch.subGroups.slice();
-      return ch.subGroups.filter(g => groupVisibleIndices(g).length > 0);
+      const filteredSet = new Set(getFilteredIndices());
+      return ch.subGroups.filter(g => groupVisibleIndices(g, filteredSet).length > 0);
     }
 
     function currentGroup() {
@@ -2878,7 +3879,8 @@
     }
 
     function effectiveCols() {
-      return 5;
+      // 每行列数：按科目配置（数学/822 均为 5），与 822 原工具一致；忽略章节数据中的 cols 字段
+      return (curSubject && curSubject.navCols) ? curSubject.navCols : 5;
     }
 
     // A：上一题（题组级：跳上一题组最后一个可见子题；子题级：组内-1，越界跳上一组末尾）
@@ -2941,13 +3943,91 @@
       }
     }
 
+    // ===== 分片解析图：_solution.png + _solution_2.png + _solution_3.png ... =====
+    let _solutionImgGen = 0; // 世代号：切题过快时丢弃过期分片回调
+    function setSolutionImages(base) {
+      const container = document.getElementById('solutionImgs');
+      if (!container) return;
+      container.innerHTML = '';
+      const gen = ++_solutionImgGen;
+      function tryAdd(n) {
+        const src = n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png';
+        const img = document.createElement('img');
+        img.className = 'solution-img';
+        img.alt = '解析' + (n > 1 ? '（' + n + '）' : '');
+        img.onload = function () {
+          if (gen !== _solutionImgGen) return; // 已有更新的题目在加载，丢弃
+          // 每个解析图包一层标注叠加容器
+          const wrap = document.createElement('div');
+          wrap.className = 'annot-wrapper';
+          const overlay = document.createElement('div');
+          overlay.className = 'annot-overlay';
+          overlay.style.display = 'none';
+          wrap.appendChild(img);
+          wrap.appendChild(overlay);
+          container.appendChild(wrap);
+          img.classList.toggle('sbad-border', !!sBad[current]); // 异步加载后才生效，需在追加时补齐边框
+          // 若该图有标注，加载完成后叠加显示
+          if (hasAnnotation(src)) renderImageAnnotation(src, img, overlay);
+          tryAdd(n + 1); // 加载成功则继续探测下一张
+        };
+        img.onerror = function () {
+          // 未找到该分片，停止探测；若第 1 张（_solution.png）就缺失且尚无任何分片加载成功，给出占位提示
+          if (gen === _solutionImgGen && n === 1 && container.children.length === 0) {
+            const ph = document.createElement('div');
+            ph.className = 'section-empty';
+            ph.style.textAlign = 'center';
+            ph.style.padding = '12px';
+            ph.textContent = '（该题暂无解析图）';
+            container.appendChild(ph);
+          }
+        };
+        img.src = src;
+      }
+      tryAdd(1);
+    }
+
+    // ===== 普通浏览标注叠加（切题即见） =====
+    var _annotViewers = {}; // key: src，value: MarkerView 实例
+    function clearImageAnnotation(src) {
+      const v = _annotViewers[src];
+      if (v) { try { v.remove(); } catch (e) {} delete _annotViewers[src]; }
+    }
+    function renderImageAnnotation(src, imgEl, overlayEl) {
+      // 移除旧的 overlay
+      if (overlayEl) overlayEl.innerHTML = '';
+      clearImageAnnotation(src);
+      const state = getAnnotation(src);
+      if (!state || typeof markerjs3 === 'undefined' || !overlayEl) return;
+      overlayEl.style.display = '';
+      try {
+        const viewer = new markerjs3.MarkerView();
+        _annotViewers[src] = viewer;
+        overlayEl.appendChild(viewer);
+        viewer.targetImage = imgEl;
+        viewer.show(state);
+      } catch (e) { /* 标注渲染失败时静默 */ }
+    }
+    function renderQuestionAnnotations() {
+      const img = document.getElementById('questionImg');
+      const overlay = document.getElementById('qAnnotOverlay');
+      const src = img && img.src;
+      if (!src || !overlay) return;
+      if (img.complete && img.naturalWidth > 0) {
+        renderImageAnnotation(src, img, overlay);
+      } else {
+        img.onload = function() { renderImageAnnotation(src, img, overlay); };
+      }
+    }
+
     function switchTo(idx) {
       current = idx;
       showSolution = defaultShowSolution;
       const ch = getChapter();
       const base = getImgPath(idx);
       document.getElementById('questionImg').src = base + '_question.png';
-      document.getElementById('solutionImg').src = base + '_solution.png';
+      setSolutionImages(base);
+      renderQuestionAnnotations(); // 叠加已保存的图片标注（切题即见）
       updateSolutionUI();
       // 更新题号标签
       ensureGroups(ch);
@@ -2966,6 +4046,7 @@
       renderNotes();
       renderStats();
       renderNav();
+      saveResume(); // 记住当前停的章节/题目/小题模式，刷新或切科目前保留
       document.getElementById('questionImg').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
@@ -2977,73 +4058,85 @@
       document.getElementById('qBadWarning').classList.toggle('show', !!qBad[current]);
       document.getElementById('sBadWarning').classList.toggle('show', !!sBad[current]);
       document.getElementById('questionImg').classList.toggle('qbad-border', !!qBad[current]);
-      document.getElementById('solutionImg').classList.toggle('sbad-border', !!sBad[current]);
+      document.querySelectorAll('#solutionImgs .solution-img').forEach(img => {
+        img.classList.toggle('sbad-border', !!sBad[current]);
+      });
     }
 
     // ===== 笔记渲染 =====
-    function renderNotes() {
-      const ch = getChapter();
-      const label = ch.labels[current];
-      const hasNote = notesData[label];
-      const toggle = document.getElementById('notesToggle');
-      const preview = document.getElementById('notePreview');
-      const body = document.getElementById('notesBody');
-      const textarea = document.getElementById('notesTextarea');
-      const render = document.getElementById('notesRender');
-      const btnEdit = document.getElementById('btnNoteEdit');
-      const btnSave = document.getElementById('btnNoteSave');
-      const btnCancel = document.getElementById('btnNoteCancel');
-      const btnDelete = document.getElementById('btnNoteDelete');
-
-      if (hasNote) {
-        toggle.classList.add('has-content');
-        preview.textContent = hasNote;
-      } else {
-        toggle.classList.remove('has-content');
-        preview.textContent = '';
-      }
-
-      // 进入查看模式
-      body.classList.remove('open');
-      textarea.style.display = 'none';
-      render.style.display = '';
-      render.textContent = hasNote || '';
-      btnEdit.style.display = '';
-      btnSave.style.display = 'none';
-      btnCancel.style.display = 'none';
-      btnDelete.style.display = hasNote ? '' : 'none';
+    // Markdown + LaTeX 渲染：marked 转 HTML → DOMPurify 消毒 → auto-render 渲染 KaTeX → 再次消毒
+    // 两次消毒：marked 默认放行内联 HTML（防 <img onerror> 等注入）；KaTeX \href 可能生成链接（防 javascript: 链接）
+    function sanitizeNotesHtml(html) {
+      if (typeof DOMPurify === 'undefined') return String(html).replace(/<[^>]*>/g, ''); // 无 DOMPurify 时兜底去标签
+      return DOMPurify.sanitize(html, { ADD_ATTR: ['target'] });
+    }
+    function renderNotesMarkdown(src) {
+      if (!src) return '';
+      var html;
+      try { html = sanitizeNotesHtml(marked.parse(src)); } catch (e) { html = String(src).replace(/</g, '&lt;'); }
+      var holder = document.createElement('div');
+      holder.innerHTML = html;
+      try {
+        renderMathInElement(holder, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      } catch (e) {}
+      return sanitizeNotesHtml(holder.innerHTML);
     }
 
-    function toggleNotes() {
-      const body = document.getElementById('notesBody');
-      const isOpen = body.classList.toggle('open');
-      if (isOpen && notesData[getChapter().labels[current]]) {
-        // 有内容：直接进编辑模式
-        enterEditMode();
-      }
+    // 编辑时右侧实时预览（防抖）
+    var notesPreviewTimer = null;
+    function updateNotesPreview() {
+      clearTimeout(notesPreviewTimer);
+      notesPreviewTimer = setTimeout(function() {
+        var preview = document.getElementById('notesPreview');
+        var textarea = document.getElementById('notesTextarea');
+        if (preview) preview.innerHTML = renderNotesMarkdown(textarea ? textarea.value : '');
+      }, 200);
+    }
+
+    // 查看模式：渲染结果常驻显示在「笔记」下方
+    function renderNotes() {
+      const label = getChapter().labels[current];
+      const hasNote = notesData[label];
+      const duo = document.getElementById('notesDuo');
+      if (duo) duo.style.display = 'none'; // 非编辑态隐藏双栏编辑区
+      const render = document.getElementById('notesRender');
+      render.style.display = '';
+      render.innerHTML = renderNotesMarkdown(hasNote || '');
+      document.getElementById('btnNoteEdit').style.display = '';
+      document.getElementById('btnNoteSave').style.display = 'none';
+      document.getElementById('btnNoteCancel').style.display = 'none';
+      document.getElementById('btnNoteDelete').style.display = hasNote ? '' : 'none';
     }
 
     function enterEditMode() {
-      const body = document.getElementById('notesBody');
-      const textarea = document.getElementById('notesTextarea');
+      const duo = document.getElementById('notesDuo');
       const render = document.getElementById('notesRender');
       const btnEdit = document.getElementById('btnNoteEdit');
       const btnSave = document.getElementById('btnNoteSave');
       const btnCancel = document.getElementById('btnNoteCancel');
       const btnDelete = document.getElementById('btnNoteDelete');
 
-      body.classList.add('open');
       const label = getChapter().labels[current];
+      const textarea = document.getElementById('notesTextarea');
       textarea.value = notesData[label] || '';
-      textarea.style.display = '';
+      duo.style.display = '';
       render.style.display = 'none';
       btnEdit.style.display = 'none';
       btnSave.style.display = '';
       btnCancel.style.display = '';
       btnDelete.style.display = 'none';
       textarea.focus();
+      updateNotesPreview();
 
-      // 回车保存，Shift+回车换行
+      // 实时预览（防抖）
+      textarea.oninput = updateNotesPreview;
+      // Enter 保存，Shift+Enter 换行
       textarea.onkeydown = function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
           e.preventDefault();
@@ -3062,12 +4155,12 @@
         delete notesData[label];
       }
       saveNotes();
-      renderNotes();
+      renderNotes(); // 保存后回到查看模式（渲染结果）
       renderNav();
     }
 
     function cancelNoteEdit() {
-      renderNotes();
+      renderNotes(); // 取消后回到查看模式（渲染结果）
     }
 
     function deleteNote() {
@@ -3079,8 +4172,7 @@
     }
 
     function focusNotes() {
-      const toggle = document.getElementById('notesToggle');
-      enterEditMode();
+      enterEditMode(); // N 键：直接进入编辑
     }
 
     function toggleQBad() { qBad[current] = !qBad[current]; if (!qBad[current]) delete qBad[current]; saveQBad(); updateQBadBtn(); updateImgBadWarnings(); renderNav(); }
@@ -3096,9 +4188,12 @@
     }
 
     function setStatus(status) {
-      if (statuses[current] === status) { delete statuses[current]; }
+      const togglingOff = statuses[current] === status;
+      if (togglingOff) { delete statuses[current]; }
       else { statuses[current] = status; }
       saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
+      // 标注熟练度后自动跳转下一道题（取消标注时仅撤销状态，不跳转）
+      if (!togglingOff) navNext();
     }
 
     function toggleSolution() {
@@ -3144,24 +4239,8 @@
       setCount('unmarked', unmarked);
     }
 
-    // ===== 灯箱（方案A：图片点击全屏） =====
+    // ===== 灯箱（图片点击全屏） =====
     let lbScale = 1, lbTranslateX = 0, lbTranslateY = 0, lbDragging = false, lbLastX = 0, lbLastY = 0;
-
-    function openLightbox(src) {
-      const overlay = document.getElementById('lightbox');
-      const img = document.getElementById('lightboxImg');
-      img.src = src;
-      lbScale = 1; lbTranslateX = 0; lbTranslateY = 0;
-      img.style.transform = '';
-      overlay.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      const overlay = document.getElementById('lightbox');
-      overlay.classList.remove('show');
-      document.body.style.overflow = '';
-    }
 
     function lbApplyTransform() {
       const img = document.getElementById('lightboxImg');
@@ -3178,10 +4257,12 @@
         const src = this.src;
         if (src && !src.endsWith('/')) openLightbox(src);
       });
-      // 解析图片也可点击打开灯箱
-      document.getElementById('solutionImg').addEventListener('click', function () {
-        const src = this.src;
-        if (src && !src.endsWith('/')) openLightbox(src);
+      // 解析图片（含分片）也可点击打开灯箱
+      document.getElementById('solutionImgs').addEventListener('click', function (e) {
+        if (e.target && e.target.tagName === 'IMG') {
+          const src = e.target.src;
+          if (src && !src.endsWith('/')) openLightbox(src);
+        }
       });
 
       document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
@@ -3228,6 +4309,608 @@
       });
     });
 
+    // ===== 图片标注（marker.js 3）：矢量数据持久化 =====
+    var imgAnnotations = {}; // key: 图片 src，value: markerArea.getState() 的矢量 JSON
+    function annotKey(imgSrc) { return 'annot_' + imgSrc; }
+    function loadAnnotations() {
+      try {
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (k && k.indexOf('annot_') === 0) {
+            try { imgAnnotations[k.substring(6)] = JSON.parse(localStorage.getItem(k)); } catch (e) {}
+          }
+        }
+      } catch (e) {}
+    }
+    function saveAnnotation(imgSrc, state) {
+      imgAnnotations[imgSrc] = state;
+      try { localStorage.setItem(annotKey(imgSrc), JSON.stringify(state)); } catch (e) {}
+    }
+    function getAnnotation(imgSrc) { return imgAnnotations[imgSrc] || null; }
+    function clearAnnotation(imgSrc) {
+      delete imgAnnotations[imgSrc];
+      try { localStorage.removeItem(annotKey(imgSrc)); } catch (e) {}
+    }
+    function hasAnnotation(imgSrc) { return !!getAnnotation(imgSrc); }
+    loadAnnotations();
+
+    // ===== 灯箱标注编辑（marker.js 3 + 自建 Snipaste 风格工具栏） =====
+    var lbCurrentSrc = null;     // 灯箱当前打开的图片 src
+    var lbMarkerArea = null;     // 当前 MarkerArea 实例
+    var lbAnnotMode = false;     // 是否处于标注模式
+    var lbAnnotColor = '#ff0000'; // 当前标注颜色
+    var lbAnnotWidth = 4;        // 当前标注粗细
+    var lbLastAnnotTool = 'LineMarker';   // 最近一次绘图工具（Tab/右键/横向滚轮用）
+    var lbCurrentAnnotTool = 'LineMarker'; // 当前激活工具
+    var lbCurrentAnnotEditor = null;       // 当前未注册的绘图编辑器（Shift 锁定时覆写坐标）
+    var lbAnnotShiftWasOn = false;         // 拖动期间是否按住 Shift（释放时再吸一次）
+
+    // 工具按钮 → marker typeName（按工具栏从左到右顺序，横向滚轮/Tab 循环用）
+    var ANNOT_TOOLS = ['LineMarker', 'FrameMarker', 'HighlighterMarker', 'FreehandMarker'];
+
+    // 每个标注工具各自的默认颜色/粗细（Snipaste：不同标注形状分别记忆颜色）。
+    // 切到某工具时载入其记忆值；用户调整后按工具分别保存，不再互相串扰。
+    var ANNOT_TOOL_STYLES = {
+      LineMarker:        { color: '#ff0000', width: 4 },  // 直线：红 4
+      FrameMarker:       { color: '#ff0000', width: 4 },  // 矩形：红 4
+      HighlighterMarker: { color: '#ffff00', width: 20 }, // 高亮：亮黄 20
+      FreehandMarker:    { color: '#ff0000', width: 3 }   // 画笔：红 3
+    };
+
+    // 预设色板（Microsoft Office 标准 20 色，Snipaste 等标注工具调色板底层即此套 RGB）
+    var ANNOT_COLORS = [
+      '#000000', '#7f7f7f', // 黑 / 灰
+      '#880015', '#ed1c24', // 深红 / 红
+      '#ff7f27', '#fff200', // 橙 / 黄
+      '#22b14c', '#00a2e8', // 绿 / 青
+      '#3f48cc', '#a349a4', // 蓝 / 紫
+      '#ffffff', '#c3c3c3', // 白 / 浅灰
+      '#b97a57', '#ffaec9', // 棕 / 粉
+      '#ffc90e', '#efe4b0', // 明黄 / 米黄
+      '#b5e61d', '#99d9ea', // 黄绿 / 浅青
+      '#7092be', '#c8bfe7'  // 蓝灰 / 浅紫
+    ];
+
+    function openLightbox(src) {
+      closeAnnotator();
+      const overlay = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      lbCurrentSrc = src;
+      img.src = src;
+      lbScale = 1; lbTranslateX = 0; lbTranslateY = 0;
+      img.style.transform = '';
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      updateAnnotateBtn();
+      openAnnotator(); // 点击图片默认即进入标注模式
+    }
+
+    function showLightboxAnnotationOverlay() {
+      const lbOverlay = document.getElementById('lightboxAnnotOverlay');
+      if (!lbOverlay || typeof markerjs3 === 'undefined') return;
+      lbOverlay.innerHTML = '';
+      const hasA = hasAnnotation(lbCurrentSrc);
+      if (!lbCurrentSrc || !hasA) { lbOverlay.style.display = 'none'; return; }
+      const img = document.getElementById('lightboxImg');
+      lbOverlay.style.display = '';
+      const apply = function () {
+        const mview = new markerjs3.MarkerView();
+        lbOverlay.appendChild(mview);
+        mview.targetImage = img;
+        mview.show(getAnnotation(lbCurrentSrc));
+      };
+      if (img.complete && img.naturalWidth > 0) apply();
+      else { img.onload = function() { apply(); }; }
+    }
+
+    function updateAnnotateBtn() {
+      const btn = document.getElementById('lightboxAnnotate');
+      if (!btn) return;
+      if (!lbCurrentSrc) { btn.style.display = 'none'; return; }
+      btn.style.display = '';
+      var hasAny = hasAnnotation(lbCurrentSrc);
+      btn.textContent = hasAny ? '标注（已有）' : '标注';
+      btn.classList.toggle('has-annot', hasAny);
+    }
+
+    // 应用当前颜色/粗细到编辑器（新建 marker 时生效）
+    function applyAnnotStyle() {
+      if (!lbMarkerArea) return;
+      const editor = lbMarkerArea.currentMarkerEditor;
+      if (!editor) return;
+      try {
+        if (lbAnnotColor) editor.strokeColor = lbAnnotColor;
+        if (lbAnnotWidth) editor.strokeWidth = lbAnnotWidth;
+      } catch (e) {}
+    }
+
+    // 高亮当前工具按钮
+    function highlightAnnotTool(tool) {
+      document.querySelectorAll('#annotToolbar .at-tool').forEach(function (b) {
+        b.classList.toggle('active', b.dataset.tool === tool);
+      });
+    }
+
+    // 载入某工具的已记忆/默认颜色粗细，并同步到 UI
+    function loadAnnotToolStyle(tool) {
+      const s = ANNOT_TOOL_STYLES[tool];
+      if (!s) return;
+      lbAnnotColor = s.color;
+      lbAnnotWidth = s.width;
+      const w = document.getElementById('annotWidth');
+      if (w) w.value = lbAnnotWidth;
+      updateAnnotWidthUI();
+      updateAnnotColorUI();
+    }
+
+    // 切换标注工具（select → 选择模式；否则 createMarker）
+    // 每次切工具载入该工具记忆的颜色/粗细（Snipaste：按形状记忆颜色），
+    // 因此高亮不再被重置回默认，画笔也不会继承高亮的 20 粗细。
+    function selectAnnotTool(toolName) {
+      if (!lbMarkerArea) return;
+      lbCurrentAnnotTool = toolName;
+      lbLastAnnotTool = toolName;
+      lbCurrentAnnotEditor = null;
+      if (toolName !== 'select') loadAnnotToolStyle(toolName); // 载入该工具记忆值
+      let editor = null;
+      try {
+        if (toolName === 'select') {
+          lbMarkerArea.switchToSelectMode();
+        } else {
+          editor = lbMarkerArea.createMarker(toolName);
+        }
+      } catch (e) {}
+      // 工具就绪后应用颜色/粗细（createMarker 返回当前编辑器）
+      if (editor) {
+        try {
+          if (lbAnnotColor) editor.strokeColor = lbAnnotColor;
+          if (lbAnnotWidth) editor.strokeWidth = lbAnnotWidth;
+        } catch (e) {}
+        lbCurrentAnnotEditor = editor; // 供 Shift 锁定使用
+      }
+      highlightAnnotTool(toolName);
+    }
+
+    function closeAnnotator() {
+      // 销毁 MarkerArea，退出标注模式，回到灯箱查看
+      if (lbMarkerArea) {
+        try { lbMarkerArea.remove(); } catch (e) {}
+        lbMarkerArea = null;
+      }
+      lbAnnotMode = false;
+      const img = document.getElementById('lightboxImg');
+      const overlay = document.getElementById('lightbox');
+      if (img) img.style.display = '';
+      const hint = overlay && overlay.querySelector('.lightbox-hint');
+      if (hint) { hint.style.display = ''; hint.textContent = '滚轮缩放 / 拖拽移动 / 双击或点击背景关闭'; }
+      const tb = document.getElementById('annotToolbar');
+      if (tb) tb.style.display = 'none';
+      // 关闭预设色板
+      const pal = document.getElementById('annotPalette');
+      if (pal) pal.style.display = 'none';
+      updateAnnotateBtn();
+      // 回到查看：刷新灯箱标注叠加
+      if (lbCurrentSrc) showLightboxAnnotationOverlay();
+    }
+
+    function openAnnotator() {
+      if (typeof markerjs3 === 'undefined') { alert('标注组件未加载'); return; }
+      if (!lbCurrentSrc) return;
+      closeAnnotator(); // 清掉残留
+      const img = document.getElementById('lightboxImg');
+      const overlay = document.getElementById('lightbox');
+      // 隐藏原图、标注叠加与提示，注入 MarkerArea
+      img.style.display = 'none';
+      const lbOverlay = document.getElementById('lightboxAnnotOverlay');
+      if (lbOverlay) { lbOverlay.style.display = 'none'; lbOverlay.innerHTML = ''; }
+      const hint = overlay.querySelector('.lightbox-hint');
+      if (hint) hint.style.display = 'none';
+      const ma = new markerjs3.MarkerArea();
+      lbMarkerArea = ma;
+      ma.targetImage = img; // 复用灯箱中原图引用
+      // 已有标注则恢复
+      const state = getAnnotation(lbCurrentSrc);
+      if (state) {
+        try { ma.restoreState(state); } catch (e) {}
+      }
+      overlay.appendChild(ma);
+      // 滚轮缩放/右键粗细/横向切工具（capture 拦截，避免冒泡到 overlay 缩放监听）
+      ma.addEventListener('wheel', onAnnotWheel, { passive: false, capture: true });
+      // Shift 锁定：marker.js 的 window pointermove/up 在 appendChild 时已注册且永不移除，
+      // remove+add 让本监听排在 marker.js 之后执行，从而能在其更新 x2/y2 后覆写为水平/竖直
+      window.removeEventListener('pointermove', onAnnotPointerMove);
+      window.addEventListener('pointermove', onAnnotPointerMove);
+      window.removeEventListener('pointerup', onAnnotPointerUp);
+      window.addEventListener('pointerup', onAnnotPointerUp);
+      // 显示工具栏，默认选择直线
+      const tb = document.getElementById('annotToolbar');
+      if (tb) {
+        tb.style.display = '';
+        document.getElementById('annotWidth').value = lbAnnotWidth;
+        updateAnnotWidthUI();
+      }
+      buildAnnotPalette(); // 重建预设色板（含高亮当前色）
+      lbAnnotMode = true;
+      lbCurrentAnnotTool = 'LineMarker';
+      lbLastAnnotTool = 'LineMarker';
+      selectAnnotTool('LineMarker'); // 进入即用直线
+      const annotBtn = document.getElementById('lightboxAnnotate');
+      if (annotBtn) {
+        annotBtn.textContent = '退出标注';
+        annotBtn.classList.remove('has-annot');
+      }
+    }
+
+    // 工具栏事件绑定（DOMContentLoaded 后调用）
+    function bindAnnotToolbar() {
+      const tb = document.getElementById('annotToolbar');
+      if (!tb) return;
+      tb.addEventListener('click', function (e) {
+        const btn = e.target.closest('.at-btn, .at-width-step');
+        if (!btn) return;
+        const action = btn.dataset.action;
+        const tool = btn.dataset.tool;
+        if (action === 'undo')        { doUndo(); return; }
+        if (action === 'redo')        { doRedo(); return; }
+        if (action === 'save')        { saveAnnotationFromArea(); return; }
+        if (action === 'cancel')      { closeAnnotator(); return; }
+        if (action === 'width-minus') { adjustAnnotWidth(-1); return; }
+        if (action === 'width-plus')  { adjustAnnotWidth(1); return; }
+        if (tool && ANNOT_TOOLS.indexOf(tool) >= 0) { selectAnnotTool(tool); }
+      });
+
+      // 粗细滑块实时应用（同步到当前工具的记忆值）
+      document.getElementById('annotWidth').addEventListener('input', function (e) {
+        lbAnnotWidth = parseInt(e.target.value, 10) || 1;
+        const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
+        if (s) s.width = lbAnnotWidth;
+        updateAnnotWidthUI();
+        if (lbMarkerArea) applyAnnotStyle();
+      });
+
+      // 颜色按钮：开关预设色板
+      const colorBtn = document.getElementById('annotColorSwatch');
+      if (colorBtn) colorBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleAnnotPalette();
+      });
+
+      // 色板：预设色点击
+      const pal = document.getElementById('annotPalette');
+      if (pal) pal.addEventListener('click', function (e) {
+        const s = e.target.closest('.at-swatch');
+        if (s) { setAnnotColor(s.dataset.color); toggleAnnotPalette(false); return; }
+      });
+
+      // 色板：自定义色
+      const custom = document.getElementById('annotColorCustom');
+      if (custom) custom.addEventListener('input', function (e) { setAnnotColor(e.target.value); });
+
+      // 点击工具栏外部关闭色板
+      document.addEventListener('click', function (e) {
+        if (!pal || pal.style.display === 'none') return;
+        if (!e.target.closest('#annotPalette') && !e.target.closest('#annotColorSwatch')) {
+          pal.style.display = 'none';
+        }
+      });
+
+      // 右键结束当前标注编辑（画折线/多边形时）
+      document.getElementById('lightbox').addEventListener('contextmenu', onAnnotContextMenu, true);
+    }
+
+
+    function refreshPageOverlays() {
+      renderQuestionAnnotations();
+      // 解析图标注由 setSolutionImages 在加载时处理；此处重新渲染当前解析图
+      const container = document.getElementById('solutionImgs');
+      if (container) {
+        const base = getImgPath(current);
+        setSolutionImages(base); // 重新探测，触发 hasAnnotation 叠加
+      }
+    }
+
+    function closeLightbox() {
+      closeAnnotator();
+      const overlay = document.getElementById('lightbox');
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
+      lbCurrentSrc = null;
+    }
+
+    // 标注按钮事件（在 DOMContentLoaded 中绑定）
+    document.addEventListener('DOMContentLoaded', function () {
+      const annotBtn = document.getElementById('lightboxAnnotate');
+      if (annotBtn) {
+        annotBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (lbAnnotMode) { saveAnnotationFromArea(); }
+          else openAnnotator();
+        });
+      }
+      // 灯箱内标注叠加容器（注入 HTML 之后在下方补建）
+      const overlay = document.getElementById('lightbox');
+      if (overlay && !document.getElementById('lightboxAnnotOverlay')) {
+        const lbOverlay = document.createElement('div');
+        lbOverlay.className = 'lightbox-annot-overlay';
+        lbOverlay.id = 'lightboxAnnotOverlay';
+        lbOverlay.style.display = 'none';
+        overlay.appendChild(lbOverlay);
+      }
+      bindAnnotToolbar(); // 自建工具栏事件
+      // Shift 锁定监听在 openAnnotator 中「remove+add」以排在 marker.js 之后执行
+    });
+
+    // ===== 标注模式键盘交互（Snipaste 式） =====
+    function handleAnnotKeydown(e) {
+      const key = e.key.toLowerCase();
+
+      // Alt：退出标注（进入/退出标注的快捷键），保存并回到灯箱查看
+      if (e.key === 'Alt') {
+        e.preventDefault();
+        saveAnnotationFromArea();
+        return;
+      }
+
+      if (e.ctrlKey || e.metaKey) {
+        switch (key) {
+          case 'z': e.preventDefault(); e.shiftKey ? doRedo() : doUndo(); break;
+          case 'y': e.preventDefault(); doRedo(); break;
+          case 's': e.preventDefault(); saveAnnotationFromArea(); break;
+        }
+        return; // 其它 Ctrl 组合放行（如 Ctrl+C 复制）
+      }
+      if (e.altKey) return;
+
+      switch (key) {
+        case ' ':        e.preventDefault(); toggleAnnotToolbar(); return; // 空格：显隐工具栏
+        case 'tab':      e.preventDefault(); cycleAnnotTool(); return;     // Tab：在直线/矩形/高亮/画笔间切换
+        case 'escape':   e.preventDefault(); closeAnnotator(); return;     // Esc：退出标注
+        case 'delete':
+        case 'backspace': e.preventDefault(); deleteAnnotSelection(); return;
+      }
+
+      // 工具快捷键：直线/矩形/高亮/画笔
+      const map = { l: 'LineMarker', r: 'FrameMarker', h: 'HighlighterMarker', b: 'FreehandMarker' };
+      if (map[key]) {
+        e.preventDefault();
+        selectAnnotTool(map[key]); // 切工具即载入该工具记忆的颜色/粗细
+      }
+    }
+
+    function selectAnnotToolFromKey(tool) {
+      selectAnnotTool(tool);
+    }
+
+    // Tab 在工具栏工具顺序中循环（直线 → 矩形 → 高亮 → 画笔）
+    function cycleAnnotTool() {
+      let i = ANNOT_TOOLS.indexOf(lbCurrentAnnotTool);
+      if (i < 0) i = 0;
+      const next = ANNOT_TOOLS[(i + 1) % ANNOT_TOOLS.length];
+      selectAnnotToolFromKey(next);
+    }
+
+    // 空格显隐工具栏（Snipaste：空格显示/隐藏标注工具条）
+    function toggleAnnotToolbar() {
+      const tb = document.getElementById('annotToolbar');
+      if (!tb) return;
+      const hide = tb.style.display !== 'none';
+      tb.style.display = hide ? 'none' : '';
+      const hint = document.querySelector('#lightbox .lightbox-hint');
+      if (hint) {
+        if (hide) {
+          hint.textContent = '工具栏已隐藏，按空格重新显示';
+          hint.style.display = '';
+        } else {
+          hint.textContent = '滚轮缩放 / 拖拽移动 / 双击或点击背景关闭 · 空格隐藏工具栏';
+          hint.style.display = '';
+        }
+      }
+    }
+
+    // 右键结束当前标注编辑（连续绘制同一工具）
+    function onAnnotContextMenu(e) {
+      if (!lbAnnotMode) return;
+      if (e.target && e.target.closest && e.target.closest('#annotToolbar')) return; // 工具栏上右键不拦截
+      e.preventDefault();
+      finishCurrentAnnot();
+    }
+
+    function finishCurrentAnnot() {
+      if (!lbMarkerArea) return;
+      try {
+        lbMarkerArea.switchToSelectMode(); // 内部 deselect → 收尾当前编辑
+        const t = lbLastAnnotTool;
+        if (t && t !== 'select') {
+          // 重新进入同工具，便于连续绘制
+          selectAnnotTool(t);
+        }
+      } catch (e) {}
+    }
+
+    // Shift 锁定直线为水平或竖直（Snipaste：按住 Shift 画直线）
+    // marker.js 的 onPointerMove/onPointerUp 绑定在 window 上且先于本监听器注册，
+    // 会先按局部坐标更新 marker.x2/y2；此处只做「吸到水平/竖直」的覆写。
+    function snapAnnotToAxis() {
+      if (!lbAnnotMode) return false;
+      const tool = lbCurrentAnnotTool;
+      if (tool !== 'LineMarker') return false;
+      const ed = lbCurrentAnnotEditor;
+      if (!ed || (ed.state !== 'creating' && ed.state !== 'select')) return false;
+      const marker = ed.marker;
+      if (!marker || typeof marker.x1 !== 'number' || typeof marker.y1 !== 'number') return false;
+      const x1 = marker.x1, y1 = marker.y1;
+      const dx = marker.x2 - x1, dy = marker.y2 - y1;
+      try {
+        if (Math.abs(dx) >= Math.abs(dy)) marker.y2 = y1; // 水平锁定
+        else marker.x2 = x1;                              // 竖直锁定
+        marker.adjustVisual();
+        if (ed.adjustControlBox) ed.adjustControlBox();
+      } catch (err) {}
+      return true;
+    }
+    function onAnnotPointerMove(e) {
+      if (e.shiftKey) {
+        lbAnnotShiftWasOn = true;
+        snapAnnotToAxis();
+      } else {
+        lbAnnotShiftWasOn = false;
+      }
+    }
+    // 释放时 marker.js 的 resize 会用末帧坐标覆盖，需再吸一次（需记录 Shift 状态）
+    function onAnnotPointerUp(e) {
+      if (lbAnnotShiftWasOn) {
+        snapAnnotToAxis();
+        lbAnnotShiftWasOn = false;
+      }
+    }
+
+    // 滚轮交互（capture 拦截，阻止冒泡到 overlay 缩放）：
+    //   - 普通滚轮（deltaY）→ 缩放（光标处）
+    //   - 右键按住 + 滚轮 → 调节画笔粗细
+    //   - 横向滚轮（deltaX）→ 切换工具
+    function onAnnotWheel(e) {
+      if (!lbAnnotMode) return;
+      e.preventDefault();
+      e.stopPropagation();
+
+      // 右键按住：调节粗细（Snipaste：右键+滚轮）
+      if (e.buttons === 2 || e.button === 2) {
+        const delta = (e.deltaY < 0) ? 1 : -1;
+        adjustAnnotWidth(delta);
+        return;
+      }
+
+      // 横向滚轮：切换工具（|deltaX| 明显大于 |deltaY| 时判定为横向）
+      const dx = e.deltaX || 0, dy = e.deltaY || 0;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 1) {
+        cycleAnnotToolByDelta(dx > 0 ? 1 : -1);
+        return;
+      }
+
+      // 普通滚轮：缩放（光标处）
+      zoomAnnotAt(e.clientX, e.clientY, dy < 0 ? 1.15 : 0.87);
+    }
+
+    // 在光标处缩放（保持光标下的图片坐标不漂移）
+    function zoomAnnotAt(cx, cy, factor) {
+      const ma = lbMarkerArea;
+      if (!ma) return;
+      const cc = ma.shadowRoot && ma.shadowRoot.querySelector('.canvas-container');
+      if (!cc) return;
+      const cr = cc.getBoundingClientRect();
+      const Cx = cr.left + cr.width / 2, Cy = cr.top + cr.height / 2;
+      const oldZoom = ma._zoomLevel || 1;
+      const newZoom = Math.min(Math.max(oldZoom * factor, 0.5), 5);
+      if (newZoom === oldZoom) return;
+      const ddx = (cx - Cx - (ma._panX || 0)) / oldZoom;
+      const ddy = (cy - Cy - (ma._panY || 0)) / oldZoom;
+      ma._zoomLevel = newZoom;
+      ma._panX = (ma._panX || 0) + (oldZoom - newZoom) * ddx;
+      ma._panY = (ma._panY || 0) + (oldZoom - newZoom) * ddy;
+      ma.applyTransform();
+      try { ma.adjustEditorsZoom(); } catch (e) {}
+    }
+
+    // 横向滚轮切换工具（在工具栏工具顺序中循环）
+    function cycleAnnotToolByDelta(dir) {
+      let i = ANNOT_TOOLS.indexOf(lbCurrentAnnotTool);
+      if (i < 0) i = ANNOT_TOOLS.indexOf(lbLastAnnotTool);
+      if (i < 0) i = 0;
+      const next = ANNOT_TOOLS[(i + dir + ANNOT_TOOLS.length) % ANNOT_TOOLS.length];
+      selectAnnotToolFromKey(next);
+    }
+
+    function adjustAnnotWidth(d) {
+      lbAnnotWidth = Math.max(1, Math.min(30, (lbAnnotWidth || 1) + d));
+      const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
+      if (s) s.width = lbAnnotWidth; // 同步到当前工具的记忆值
+      const w = document.getElementById('annotWidth');
+      if (w) w.value = lbAnnotWidth;
+      updateAnnotWidthUI();
+      if (lbMarkerArea) applyAnnotStyle();
+    }
+
+    // 撤销 / 重做 / 删除
+    function doUndo() {
+      if (lbMarkerArea) { try { lbMarkerArea.undo(); } catch (err) {} }
+    }
+    function doRedo() {
+      if (lbMarkerArea) { try { lbMarkerArea.redo(); } catch (err) {} }
+    }
+    function deleteAnnotSelection() {
+      if (lbMarkerArea) { try { lbMarkerArea.deleteSelectedMarkers(); } catch (err) {} }
+    }
+
+    // ===== 颜色 / 粗细 UI =====
+    function buildAnnotPalette() {
+      const wrap = document.getElementById('annotPaletteSwatches');
+      if (!wrap) return;
+      wrap.innerHTML = '';
+      ANNOT_COLORS.forEach(function (c) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'at-swatch';
+        b.dataset.color = c;
+        b.style.background = c;
+        b.title = c;
+        wrap.appendChild(b);
+      });
+      updateAnnotColorUI();
+    }
+    function toggleAnnotPalette(show) {
+      const p = document.getElementById('annotPalette');
+      if (!p) return;
+      const willShow = (typeof show === 'boolean') ? show : (p.style.display === 'none');
+      p.style.display = willShow ? '' : 'none';
+      if (willShow) updateAnnotColorUI();
+    }
+    function setAnnotColor(hex) {
+      lbAnnotColor = hex;
+      const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
+      if (s) s.color = hex; // 同步到当前工具的记忆值
+      updateAnnotColorUI();
+      if (lbMarkerArea) applyAnnotStyle();
+    }
+    function updateAnnotColorUI() {
+      const dot = document.getElementById('annotColorDot');
+      if (dot) dot.style.background = lbAnnotColor;
+      document.querySelectorAll('#annotPalette .at-swatch').forEach(function (s) {
+        s.classList.toggle('active', String(s.dataset.color || '').toLowerCase() === String(lbAnnotColor).toLowerCase());
+      });
+    }
+    function updateAnnotWidthUI() {
+      const v = document.getElementById('annotWidthVal');
+      if (v) v.textContent = lbAnnotWidth;
+    }
+
+    // 从当前 MarkerArea 读取并保存（点「保存」按钮时）
+    function saveAnnotationFromArea() {
+      if (!lbCurrentSrc) return;
+      if (lbMarkerArea) {
+        try { lbMarkerArea.switchToSelectMode(); } catch (e) {} // 收尾：finalize 未完成的图形
+        let st;
+        try { st = lbMarkerArea.getState(); } catch (e) {}
+        if (st && Array.isArray(st.markers)) {
+          // 过滤空图形（0 尺寸图形）
+          st.markers = st.markers.filter(function (m) {
+            if (!m) return false;
+            var f = m.frame;
+            if (f && f.width === 0 && f.height === 0) return false;
+            return true;
+          });
+        }
+        // 无有效标注则清理，避免残留空状态
+        if (st && st.markers && st.markers.length === 0) {
+          clearAnnotation(lbCurrentSrc);
+        } else if (st) {
+          saveAnnotation(lbCurrentSrc, st);
+        }
+      }
+      closeAnnotator();
+      updateAnnotateBtn();
+      refreshPageOverlays();
+    }
+
     // ===== 事件绑定 =====
     document.getElementById('btnToggle').onclick = toggleSolution;
     document.getElementById('btnSolDefault').onclick = toggleDefaultSolution;
@@ -3241,7 +4924,6 @@
     document.getElementById('btnSBad').onclick = toggleSBad;
 
     // 笔记按钮事件
-    document.getElementById('notesToggle').onclick = toggleNotes;
     document.getElementById('btnNoteEdit').onclick = enterEditMode;
     document.getElementById('btnNoteSave').onclick = saveNote;
     document.getElementById('btnNoteCancel').onclick = cancelNoteEdit;
@@ -3273,9 +4955,12 @@
       }
       const statusLabel = statusFilter === 'vague' ? '模糊' : '需复习';
       const statusColor = statusFilter === 'vague' ? '#C45500' : '#BE160C';
-      const cardsHTML = items.map((item, idx) =>
-        `<div class="card"><h3>${idx + 1}. ${item.label}</h3><img src="${item.qImg}" alt="题目" onerror="this.style.display='none'"></div>`
-      ).join('');
+      const cardsHTML = items.map((item, idx) => {
+        // 导出窗口是 about:blank，相对路径无法解析；转成绝对路径（file:// 或 http(s)://）
+        let abs = item.qImg;
+        try { abs = new URL(item.qImg, window.location.href).href; } catch (e) {}
+        return `<div class="card"><h3>${idx + 1}. ${item.label}</h3><img src="${abs}" alt="题目" onerror="this.style.display='none'"></div>`;
+      }).join('');
 
       const w = window.open('', '_blank', 'width=900,height=700');
       w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${ch.name} — ${statusLabel}题</title>
@@ -3291,7 +4976,7 @@ h1{font-size:20px;text-align:center;margin-bottom:4px}
 <h1>${ch.name}</h1>
 <div class="subtitle">${statusLabel}题 · 共 ${items.length} 题</div>
 ${cardsHTML}
-<script>window.onload=function(){window.print()}<\\/script>
+<script>window.onload=function(){window.print()}<\/script>
 </body></html>`);
       w.document.close();
     }
@@ -3302,11 +4987,36 @@ ${cardsHTML}
     // Q = 上一章, E = 下一章
     // Z = 熟练, X = 模糊, C = 需复习, Space = 解析
     // R = 题目图不达标, T = 解析图不达标
+    // V = 全局进度, B = 错题本, G = 切换科目
+    // Alt = 进入/退出标注（灯箱打开时）
     // Shift+A/Z/X/C/N = 筛选 全部/熟练/模糊/需复习/未标记
     document.addEventListener('keydown', function (e) {
+      // 标注模式下吃掉全部按键（Snipaste 式：避免切题/改状态等全局快捷键误触发）。
+      // 需在 INPUT 判断之前：标注工具栏含 range 输入（粗细滑块），焦点在其上时 Alt 退出仍须生效。
+      if (lbAnnotMode) { handleAnnotKeydown(e); return; }
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
       const key = e.key.toLowerCase();
       const isShift = e.shiftKey;
+
+      // 面板（全局进度/错题本/快捷键帮助/科目选择）打开时，仅允许面板相关按键，避免误操作隐藏的章节
+      if (subjectPickerOpen) {
+        // 科目选择弹窗独占：只放行 G（重新打开/切换）与 Esc（关闭），H 等不再叠加其它弹窗
+        if (key !== 'g' && key !== 'escape') return;
+      } else if (dashboardOpen || wrongBookOpen || shortcutHelpOpen) {
+        const panelKeys = ['h', 'escape'];
+        if (dashboardOpen || wrongBookOpen) panelKeys.push('v', 'b');
+        if (!panelKeys.includes(key)) return;
+      }
+
+      // Alt：进入标注（进入/退出标注的快捷键；仅灯箱打开时生效）
+      if (e.key === 'Alt' && !e.ctrlKey && !e.metaKey) {
+        const lbEl = document.getElementById('lightbox');
+        if (lbEl && lbEl.classList.contains('show')) {
+          e.preventDefault();
+          openAnnotator();
+        }
+        return;
+      }
 
       // Shift 筛选快捷键
       if (isShift) {
@@ -3319,6 +5029,18 @@ ${cardsHTML}
           case ' ': e.preventDefault(); toggleDefaultSolution(); return;
         }
       }
+
+      // 灯箱打开（未处于标注模式）时：只放行灯箱自己的快捷键（Esc 关闭、+/=/0 缩放），
+      // 屏蔽切题/改状态等全局快捷键，避免在放大查看图片时背后静默切换题目。
+      if (document.getElementById('lightbox').classList.contains('show')) {
+        if (key === 'escape') { closeLightbox(); return; }
+        // +、=、-、0 在下方 switch 中按灯箱缩放处理
+        if (key !== '+' && key !== '=' && key !== '-' && key !== '0') return;
+      }
+
+      // 带修饰键（Ctrl / Alt / Cmd）的普通键不放行：避免 Ctrl+A、Ctrl+W、Alt+A 等误触发放大/切题/改状态
+      // （Shift 组合已在上方处理；Alt 进入标注已在前面单独处理）
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
 
       switch (key) {
         // 上一题 / 下一题（题组级 / 子题级，见 navPrev / navNext）
@@ -3342,10 +5064,21 @@ ${cardsHTML}
         case 'r': toggleQBad(); break;
         case 't': toggleSBad(); break;
         // 笔记与帮助
-        case 'n': focusNotes(); break;
+        case 'n': e.preventDefault(); focusNotes(); break;
         case 'h': toggleShortcutHelp(); break;
+        // 全局进度 / 错题本
+        case 'v': toggleDashboard(); break;
+        case 'b': toggleWrongBook(); break;
+        // 切换科目（打开科目选择弹窗）
+        case 'g': openSubjectPicker(); break;
         // 灯箱快捷键
-        case 'escape': if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; } if (shortcutHelpOpen) { toggleShortcutHelp(); return; } break;
+        case 'escape':
+          if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
+          if (subjectPickerOpen) { closeSubjectPicker(); return; }
+          if (shortcutHelpOpen) { toggleShortcutHelp(); return; }
+          if (dashboardOpen) { toggleDashboard(); return; }
+          if (wrongBookOpen) { toggleWrongBook(); return; }
+          break;
         case '=':
         case '+': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = Math.min(lbScale * 1.2, 5); lbApplyTransform(); return; } break;
         case '-': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = Math.max(lbScale / 1.2, 0.5); lbApplyTransform(); return; } break;
@@ -3354,10 +5087,28 @@ ${cardsHTML}
     });
 
     // ===== 初始化 =====
+    // 读取上次选择的科目（默认数学），加载其章节数组
+    var savedSubject = localStorage.getItem('kaoyan_subject');
+    curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'shu1';
+    curSubject = SUBJECTS.find(function (s) { return s.id === curSubjectId; });
+    CHAPTERS = curSubject.chapters;
+    // 恢复上次停的章节/题目/小题模式（无记录时从该科目默认章节第 1 题开始）
+    var resume = loadResume(curSubjectId);
+    if (resume) {
+      currentChapterId = resume.ch;
+      current = resume.idx;
+      subMode = resume.sub;
+    } else {
+      currentChapterId = curSubject.initChapterId;
+      current = 0; subMode = false;
+    }
+
     loadStatuses(); loadQBad(); loadSBad(); loadNotes();
     renderTitle();
     renderStats();
-    renderNav(); switchTo(0); updateFilterCounts();
+    renderNav(); switchTo(current); updateFilterCounts();
+    // 首次加载（无已选科目）弹出科目选择（等 DOM 就绪，科目弹窗 HTML 在脚本后）
+    if (!savedSubject) document.addEventListener('DOMContentLoaded', function () { openSubjectPicker(); });
   </script>
 
   <div class="shortcut-overlay" id="shortcutOverlay">
@@ -3398,6 +5149,25 @@ ${cardsHTML}
         <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>N</kbd></span><span class="desc">未标记</span></div>
       </div>
       <div class="shortcut-group">
+        <div class="shortcut-group-title">面板</div>
+        <div class="shortcut-row"><span class="key"><kbd>V</kbd></span><span class="desc">全局进度</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>B</kbd></span><span class="desc">错题本</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>G</kbd></span><span class="desc">切换科目</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">标注（灯箱内）</div>
+        <div class="shortcut-row"><span class="key"><kbd>Alt</kbd></span><span class="desc">进入/退出标注</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>滚轮</kbd></span><span class="desc">缩放图片（光标处）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>右键</kbd> + <kbd>滚轮</kbd></span><span class="desc">调节画笔粗细</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>滚轮左右推</kbd></span><span class="desc">切换工具</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>拖动</kbd></span><span class="desc">直线锁定水平或竖直</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Space</kbd></span><span class="desc">显示/隐藏标注工具栏</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Tab</kbd></span><span class="desc">切换工具（直线→矩形→高亮→画笔）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Esc</kbd></span><span class="desc">退出标注 / 关闭灯箱</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>+</kbd>/<kbd>-</kbd>/<kbd>0</kbd></span><span class="desc">灯箱放大/缩小/复位（查看模式）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>其它</kbd></span><span class="desc">灯箱打开时屏蔽切题/改状态快捷键</span></div>
+      </div>
+      <div class="shortcut-group">
         <div class="shortcut-group-title">其他</div>
         <div class="shortcut-row"><span class="key"><kbd>N</kbd></span><span class="desc">编辑笔记</span></div>
         <div class="shortcut-row"><span class="key"><kbd>H</kbd></span><span class="desc">打开/关闭此帮助</span></div>
@@ -3406,10 +5176,76 @@ ${cardsHTML}
     </div>
   </div>
 
+  <!-- 科目选择模态 -->
+  <div class="shortcut-overlay" id="subjectOverlay">
+    <div class="shortcut-modal" style="max-width: 420px">
+      <h2>选择科目</h2>
+      <div class="subject-list">
+        <button class="subject-option" data-subject="shu1">数学<span class="subj-desc">高数 / 线代 / 概率论</span></button>
+        <button class="subject-option" data-subject="822">控制工程基础<span class="subj-desc">822 专业课</span></button>
+      </div>
+      <div class="shortcut-close-hint">点击背景关闭 · Esc 关闭</div>
+    </div>
+  </div>
+
   <div class="lightbox-overlay" id="lightbox">
     <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-annotate" id="lightboxAnnotate">标注</button>
     <img class="lightbox-img" id="lightboxImg" src="" alt="">
     <div class="lightbox-hint">滚轮缩放 / 拖拽移动 / 双击或点击背景关闭</div>
+    <!-- Snipaste 风格标注工具栏（单排底部居中） -->
+    <div class="annot-toolbar" id="annotToolbar" style="display:none">
+      <!-- 撤销 / 重做 -->
+      <button class="at-btn" data-action="undo" title="撤销 (Ctrl+Z)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+      </button>
+      <button class="at-btn" data-action="redo" title="重做 (Ctrl+Y)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      </button>
+      <span class="at-sep"></span>
+      <!-- 直线 / 矩形 / 高亮 / 画笔 -->
+      <button class="at-btn at-tool active" data-tool="LineMarker" title="直线 (L)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="19" x2="20" y2="5"/></svg>
+      </button>
+      <button class="at-btn at-tool" data-tool="FrameMarker" title="矩形 (R)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="1.5"/></svg>
+      </button>
+      <button class="at-btn at-tool" data-tool="HighlighterMarker" title="高亮 (H)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20 19 6l-2-2L3 18z"/><path d="M12 8l2 2"/></svg>
+      </button>
+      <button class="at-btn at-tool" data-tool="FreehandMarker" title="画笔 (B)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.83 2.83 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+      </button>
+      <span class="at-sep"></span>
+      <!-- 颜色（预设色板弹层） -->
+      <button class="at-btn at-color-swatch" id="annotColorSwatch" title="颜色">
+        <span class="at-color-dot" id="annotColorDot"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <!-- 粗细（滚轮 / 滑块 / +/-） -->
+      <div class="at-width-wrap" id="annotWidthWrap" title="粗细（滚轮或拖动调整）">
+        <button class="at-width-step" data-action="width-minus" title="变细">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <input type="range" class="at-width" id="annotWidth" min="1" max="30" value="3">
+        <button class="at-width-step" data-action="width-plus" title="变粗">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg>
+        </button>
+        <span class="at-width-val" id="annotWidthVal">3</span>
+      </div>
+      <span class="at-sep"></span>
+      <!-- 保存 / 退出 -->
+      <button class="at-btn at-save" data-action="save" title="保存标注 (Ctrl+S)">保存</button>
+      <button class="at-btn at-cancel" data-action="cancel" title="退出标注 (Esc)">退出</button>
+    </div>
+    <!-- 预设色板弹层（工具栏上方居中） -->
+    <div class="annot-palette" id="annotPalette" style="display:none">
+      <div class="annot-palette-swatches" id="annotPaletteSwatches"></div>
+      <div class="annot-palette-custom">
+        <input type="color" id="annotColorCustom" value="#ff0000" title="自定义颜色">
+        <span>自定义</span>
+      </div>
+    </div>
   </div>
 
 </body>
