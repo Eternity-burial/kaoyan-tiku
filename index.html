@@ -4111,7 +4111,8 @@
     function renderNotesMarkdown(src) {
       if (!src) return '';
       var html;
-      try { html = sanitizeNotesHtml(marked.parse(src)); } catch (e) { html = String(src).replace(/</g, '&lt;'); }
+      // breaks:true → 单换行渲染为 <br>，所见即所得（空行仍是段落间距）
+      try { html = sanitizeNotesHtml(marked.parse(src, { breaks: true })); } catch (e) { html = String(src).replace(/</g, '&lt;'); }
       var holder = document.createElement('div');
       holder.innerHTML = html;
       try {
