@@ -1033,7 +1033,8 @@
     }
 
     .note-dot {
-      color: var(--primary);
+      /* 玫粉，区别于主色紫（避免与当前题激活紫撞）、标注青、熟练绿/模糊橙/需复习红 */
+      color: #e91e8c;
       font-weight: bold;
       font-size: 13px;
     }
@@ -1470,9 +1471,7 @@
     }
 
     /* ===== 当前题号标签（图片上方，偏左） ===== */
-    /* ===== 当前题号标签（图片上方，偏左） ===== */
     .q-label {
-      position: relative; /* 角标定位基准 */
       width: 100%;
       text-align: left;
       font-size: 17px;
@@ -1481,20 +1480,6 @@
       margin-bottom: 8px;
       letter-spacing: 0.5px;
     }
-    /* 题号右上角「有笔记 / 有图片标注」提示圆点（橙色，与标注已有态同色） */
-    .q-label::after {
-      content: '';
-      position: absolute;
-      top: 3px;
-      right: 4px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #00a2e8; /* 青色，与 annot-dot 一致，区别于模糊橙 */
-      box-shadow: 0 0 0 2px var(--bg);
-      display: none;
-    }
-    .q-label.has-flag::after { display: block; }
 
     /* ===== 子题选择栏（图片上方） ===== */
     .sub-select-bar {
@@ -4095,7 +4080,6 @@
         qLabelText = labels[current];
       }
       document.getElementById('qLabel').textContent = qLabelText;
-      updateQLabelFlag(); // 题号右上角「有笔记/有标注」提示
       updateStatusBtns(); updateQBadBtn(); updateSBadBtn(); updateImgBadWarnings();
       renderNotes();
       renderStats();
@@ -4168,12 +4152,8 @@
       document.getElementById('btnNoteDelete').style.display = hasNote ? '' : 'none';
     }
 
-    // ===== 题号右上角「有笔记 / 有标注」提示 =====
-    // 当前题是否有图片标注（题目图或解析图任意分片有标注即算）
-    function hasCurrentQuestionAnnotations() {
-      return hasQuestionImagesAnnotated(current);
-    }
-    // 指定题号 idx 的题目图/解析图是否有标注（右侧导航角标复用）
+    // ===== 题号右上角「有笔记 / 有标注」提示（右侧导航角标） =====
+    // 指定题号 idx 的题目图/解析图是否有标注
     function hasQuestionImagesAnnotated(idx) {
       const ch = getChapter();
       const base = curSubject.getImgPath(ch, ch.labels[idx]);
@@ -4183,13 +4163,7 @@
       }
       return false;
     }
-    // 有笔记（按当前题号 label）或任一图片有标注 → 题号右上角亮圆点
-    function updateQLabelFlag() {
-      const el = document.getElementById('qLabel');
-      if (!el) return;
-      const hasNote = !!notesData[getChapter().labels[current]];
-      el.classList.toggle('has-flag', hasNote || hasCurrentQuestionAnnotations());
-    }
+    // 有笔记（按当前题号 label）或任一图片有标注 → 右侧导航题号亮提示圆点（见 renderNav/appendBadges）
 
     function enterEditMode() {
       const duo = document.getElementById('notesDuo');
@@ -4233,7 +4207,6 @@
       }
       saveNotes();
       renderNotes(); // 保存后回到查看模式（渲染结果）
-      updateQLabelFlag();
       renderNav();
     }
 
@@ -4246,7 +4219,6 @@
       delete notesData[label];
       saveNotes();
       renderNotes();
-      updateQLabelFlag();
       renderNav();
     }
 
@@ -4267,12 +4239,14 @@
     }
 
     function setStatus(status) {
-      const togglingOff = statuses[current] === status;
+      const had = statuses[current];
+      const togglingOff = had === status;
       if (togglingOff) { delete statuses[current]; }
       else { statuses[current] = status; }
       saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
-      // 标注熟练度后自动跳转下一道题（取消标注时仅撤销状态，不跳转）
-      if (!togglingOff) navNext();
+      // 仅当该题原本没有掌握度标记、首次打标时才自动跳下一题；
+      // 改标已有标记（或取消标记）都停在当前题，方便连续调整
+      if (!togglingOff && !had) navNext();
     }
 
     function toggleSolution() {
@@ -5016,7 +4990,6 @@
       closeAnnotator();
       updateAnnotateBtn();
       refreshPageOverlays();
-      updateQLabelFlag(); // 题号右上角标注提示同步
       renderNav(); // 右侧导航角标同步（标注新增/清除）
     }
 
