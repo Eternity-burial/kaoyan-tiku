@@ -950,6 +950,23 @@
       box-shadow: 0 2px 8px rgba(102, 8, 116, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
 
+    /* 带掌握度颜色的题号按钮 hover 时保持状态色，不被后面的主题 hover 白底覆盖 */
+    .qnav button.proficient:hover {
+      background: linear-gradient(180deg, var(--mastered) 0%, var(--mastered-dark) 100%) !important;
+      color: #fff !important;
+      border-color: var(--mastered-dark);
+    }
+    .qnav button.vague:hover {
+      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%) !important;
+      color: #fff !important;
+      border-color: var(--uncertain-dark);
+    }
+    .qnav button.wrong:hover {
+      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%) !important;
+      color: #fff !important;
+      border-color: var(--unfamiliar-dark);
+    }
+
     /* 分块按钮（有子题的题组） */
     .qnav button.has-subs {
       position: relative;
@@ -1017,6 +1034,12 @@
 
     .note-dot {
       color: var(--primary);
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .annot-dot {
+      color: #ff9500;
       font-weight: bold;
       font-size: 13px;
     }
@@ -3670,12 +3693,24 @@
 
       function appendBadges(btn, i) {
         const labels = ch.labels;
-        if (qBad[i] || sBad[i] || notesData[labels[i]]) {
+        // 该题组内任一题有笔记或有图片标注，就在题号右上角亮提示圆点
+        let groupHasNote = false, groupHasAnnot = false;
+        const g0 = ch.groupForIdx[i];
+        const start = g0 ? g0.startIdx : i;
+        const count = g0 ? g0.count : 1;
+        for (var k = 0; k < count; k++) {
+          const idx = start + k;
+          if (notesData[labels[idx]]) groupHasNote = true;
+          if (hasQuestionImagesAnnotated(idx)) groupHasAnnot = true;
+          if (groupHasNote && groupHasAnnot) break;
+        }
+        if (qBad[i] || sBad[i] || groupHasNote || groupHasAnnot) {
           const badgeSpan = document.createElement('span');
           badgeSpan.className = 'img-badges';
           if (qBad[i]) { const d = document.createElement('span'); d.className = 'qbad-dot'; d.textContent = 'Q'; badgeSpan.appendChild(d); }
           if (sBad[i]) { const d = document.createElement('span'); d.className = 'sbad-dot'; d.textContent = 'S'; badgeSpan.appendChild(d); }
-          if (notesData[labels[i]]) { const d = document.createElement('span'); d.className = 'note-dot'; d.textContent = '●'; badgeSpan.appendChild(d); }
+          if (groupHasNote) { const d = document.createElement('span'); d.className = 'note-dot'; d.textContent = '●'; badgeSpan.appendChild(d); }
+          if (groupHasAnnot) { const d = document.createElement('span'); d.className = 'annot-dot'; d.textContent = '●'; badgeSpan.appendChild(d); }
           btn.appendChild(badgeSpan);
         }
       }
@@ -4135,9 +4170,13 @@
     // ===== 题号右上角「有笔记 / 有标注」提示 =====
     // 当前题是否有图片标注（题目图或解析图任意分片有标注即算）
     function hasCurrentQuestionAnnotations() {
-      const base = getImgPath(current);
+      return hasQuestionImagesAnnotated(current);
+    }
+    // 指定题号 idx 的题目图/解析图是否有标注（右侧导航角标复用）
+    function hasQuestionImagesAnnotated(idx) {
+      const ch = getChapter();
+      const base = curSubject.getImgPath(ch, ch.labels[idx]);
       if (hasAnnotation(base + '_question.png')) return true;
-      // 解析图分片：_solution.png / _solution_2.png / _solution_3.png ...
       for (var n = 1; n <= 20; n++) {
         if (hasAnnotation(n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png')) return true;
       }
@@ -4977,6 +5016,7 @@
       updateAnnotateBtn();
       refreshPageOverlays();
       updateQLabelFlag(); // 题号右上角标注提示同步
+      renderNav(); // 右侧导航角标同步（标注新增/清除）
     }
 
     // ===== 事件绑定 =====
