@@ -1448,6 +1448,7 @@
     /* ===== 当前题号标签（图片上方，偏左） ===== */
     /* ===== 当前题号标签（图片上方，偏左） ===== */
     .q-label {
+      position: relative; /* 角标定位基准 */
       width: 100%;
       text-align: left;
       font-size: 17px;
@@ -1456,6 +1457,20 @@
       margin-bottom: 8px;
       letter-spacing: 0.5px;
     }
+    /* 题号右上角「有笔记 / 有图片标注」提示圆点（橙色，与标注已有态同色） */
+    .q-label::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff9500;
+      box-shadow: 0 0 0 2px var(--bg);
+      display: none;
+    }
+    .q-label.has-flag::after { display: block; }
 
     /* ===== 子题选择栏（图片上方） ===== */
     .sub-select-bar {
@@ -4044,6 +4059,7 @@
         qLabelText = labels[current];
       }
       document.getElementById('qLabel').textContent = qLabelText;
+      updateQLabelFlag(); // 题号右上角「有笔记/有标注」提示
       updateStatusBtns(); updateQBadBtn(); updateSBadBtn(); updateImgBadWarnings();
       renderNotes();
       renderStats();
@@ -4116,6 +4132,25 @@
       document.getElementById('btnNoteDelete').style.display = hasNote ? '' : 'none';
     }
 
+    // ===== 题号右上角「有笔记 / 有标注」提示 =====
+    // 当前题是否有图片标注（题目图或解析图任意分片有标注即算）
+    function hasCurrentQuestionAnnotations() {
+      const base = getImgPath(current);
+      if (hasAnnotation(base + '_question.png')) return true;
+      // 解析图分片：_solution.png / _solution_2.png / _solution_3.png ...
+      for (var n = 1; n <= 20; n++) {
+        if (hasAnnotation(n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png')) return true;
+      }
+      return false;
+    }
+    // 有笔记（按当前题号 label）或任一图片有标注 → 题号右上角亮圆点
+    function updateQLabelFlag() {
+      const el = document.getElementById('qLabel');
+      if (!el) return;
+      const hasNote = !!notesData[getChapter().labels[current]];
+      el.classList.toggle('has-flag', hasNote || hasCurrentQuestionAnnotations());
+    }
+
     function enterEditMode() {
       const duo = document.getElementById('notesDuo');
       const render = document.getElementById('notesRender');
@@ -4158,6 +4193,7 @@
       }
       saveNotes();
       renderNotes(); // 保存后回到查看模式（渲染结果）
+      updateQLabelFlag();
       renderNav();
     }
 
@@ -4170,6 +4206,7 @@
       delete notesData[label];
       saveNotes();
       renderNotes();
+      updateQLabelFlag();
       renderNav();
     }
 
@@ -4939,6 +4976,7 @@
       closeAnnotator();
       updateAnnotateBtn();
       refreshPageOverlays();
+      updateQLabelFlag(); // 题号右上角标注提示同步
     }
 
     // ===== 事件绑定 =====
