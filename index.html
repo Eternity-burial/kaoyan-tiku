@@ -1039,7 +1039,8 @@
     }
 
     .annot-dot {
-      color: #ff9500;
+      /* 用青色（标注色板 #00a2e8）区分于模糊橙/笔记紫/熟练绿/需复习红 */
+      color: #00a2e8;
       font-weight: bold;
       font-size: 13px;
     }
@@ -1489,7 +1490,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #ff9500;
+      background: #00a2e8; /* 青色，与 annot-dot 一致，区别于模糊橙 */
       box-shadow: 0 0 0 2px var(--bg);
       display: none;
     }
@@ -3054,7 +3055,7 @@
         '<div class="stats-bar-wrap"><div class="stats-bar-fill" style="width:' + pct + '%"></div></div>' +
         '<div class="stats-counts">' +
           '<span><span class="sc-dot" style="background:#248A3D"></span>熟练 ' + proficient + '</span>' +
-          '<span><span class="sc-dot" style="background:#C45500"></span>模糊 ' + vague + '</span>' +
+          '<span><span class="sc-dot" style="background:#FF9500"></span>模糊 ' + vague + '</span>' +
           '<span><span class="sc-dot" style="background:#BE160C"></span>需复习 ' + wrong + '</span>' +
           '<span><span class="sc-dot" style="background:#bbb"></span>未做 ' + unmarked + '</span>' +
         '</div>';
@@ -5062,7 +5063,7 @@
         return;
       }
       const statusLabel = statusFilter === 'vague' ? '模糊' : '需复习';
-      const statusColor = statusFilter === 'vague' ? '#C45500' : '#BE160C';
+      const statusColor = statusFilter === 'vague' ? '#FF9500' : '#BE160C';
       const cardsHTML = items.map((item, idx) => {
         // 导出窗口是 about:blank，相对路径无法解析；转成绝对路径（file:// 或 http(s)://）
         let abs = item.qImg;
