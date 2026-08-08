@@ -4008,11 +4008,25 @@
         area.classList.add('show');
         btn.innerHTML = '<span class="func-name">隐藏解析</span><span class="key">Space</span>';
         btn.classList.add('hide');
+        // 从隐藏切换为显示时，重新加载解析图并叠加标注：
+        // 隐藏期间图片无实际尺寸，标注叠加会被跳过（避免 NaN 放大 bug），
+        // 显示后再重新探测/渲染，等图片有尺寸后 onload 里会正常叠加。
+        refreshSolutionAnnotations();
       } else {
         area.classList.remove('show');
         btn.innerHTML = '<span class="func-name">显示解析</span><span class="key">Space</span>';
         btn.classList.remove('hide');
       }
+    }
+    // 对当前已加载的解析图重新叠加标注（隐藏→显示后调用，修复 NaN 放大 bug）
+    function refreshSolutionAnnotations() {
+      const container = document.getElementById('solutionImgs');
+      if (!container) return;
+      container.querySelectorAll('.annot-wrapper').forEach(function (wrap) {
+        const img = wrap.querySelector('.solution-img');
+        const overlay = wrap.querySelector('.annot-overlay');
+        if (img && overlay) renderImageAnnotation(img.src, img, overlay);
+      });
     }
 
     // ===== 分片解析图：_solution.png + _solution_2.png + _solution_3.png ... =====
@@ -4073,6 +4087,9 @@
       clearImageAnnotation(key);
       const state = getAnnotation(key);
       if (!state || typeof markerjs3 === 'undefined' || !overlayEl) return;
+      // 若图片处于 display:none（解析默认隐藏）或尚未布局出实际尺寸，此时创建 MarkerView 会用 0 尺寸
+      // 计算 SVG 矩阵 → NaN → 标注区域被放大/错乱。等图片可见后再渲染（见 updateSolutionUI 的重新触发）。
+      if (imgEl.getBoundingClientRect().width === 0 || imgEl.getBoundingClientRect().height === 0) return;
       overlayEl.style.display = '';
       try {
         const viewer = new markerjs3.MarkerView();
@@ -4395,6 +4412,30 @@
       document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
       overlay.addEventListener('click', function (e) { if (e.target === overlay) closeLightbox(); });
 
+      // 标注模式下点击非图片背景：与查看模式一致地退出（保存标注并回到灯箱查看）。
+      // mjs-marker-area 铺满灯箱，需在 capture 阶段拦截：命中 marker-area 本身或其后代空白区即视为背景点击。
+      overlay.addEventListener('click', function (e) {
+        if (!lbAnnotMode) return;
+        const ma = lbMarkerArea;
+        if (!ma) return;
+        // 工具栏 / 标注按钮 / 关闭按钮上的点击不拦截
+        if (e.target.closest && e.target.closest('#annotToolbar, #lightboxAnnotate, #lightboxClose')) return;
+        // 判断是否点在图内：标记编辑区（canvas-container）内的图片/控件算图内，其余算背景
+        let insideImage = false;
+        try {
+          const cc = ma.shadowRoot && ma.shadowRoot.querySelector('.canvas-container');
+          const imgEl = cc && cc.querySelector('img');
+          if (imgEl && imgEl.getBoundingClientRect) {
+            const r = imgEl.getBoundingClientRect();
+            insideImage = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+          }
+        } catch (err) {}
+        if (!insideImage) {
+          e.stopPropagation();
+          saveAnnotationFromArea(); // 保存当前标注并退出标注模式（回到灯箱查看）
+        }
+      }, true);
+
       // 灯箱滚轮缩放
       overlay.addEventListener('wheel', function (e) {
         e.preventDefault();
@@ -4660,7 +4701,22 @@
       if (lbOverlay) { lbOverlay.style.display = 'none'; lbOverlay.innerHTML = ''; }
       const hint = overlay.querySelector('.lightbox-hint');
       if (hint) hint.style.display = 'none';
-      const ma = new markerjs3.MarkerArea();
+      // 创建 MarkerArea 时屏蔽其内置在 .canvas-container 上的滚轮平移监听：
+      // 该监听是匿名且不可解绑，若不屏蔽，滚轮会同时触发它（平移）和我们的 onAnnotWheel（缩放），
+      // 两个 transform 叠加导致图片撕裂/重叠。做法：临时替换 addEventListener 跳过该绑定。
+      const origAE = Element.prototype.addEventListener;
+      Element.prototype.addEventListener = function (type, fn, opts) {
+        if (type === 'wheel' && this.classList && this.classList.contains('canvas-container')) {
+          return; // 跳过内置滚轮平移
+        }
+        return origAE.call(this, type, fn, opts);
+      };
+      let ma;
+      try {
+        ma = new markerjs3.MarkerArea();
+      } finally {
+        Element.prototype.addEventListener = origAE;
+      }
       lbMarkerArea = ma;
       ma.targetImage = img; // 复用灯箱中原图引用
       // 已有标注则恢复
