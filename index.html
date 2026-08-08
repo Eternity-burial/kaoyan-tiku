@@ -3988,21 +3988,23 @@
     }
 
     // ===== 普通浏览标注叠加（切题即见） =====
-    var _annotViewers = {}; // key: src，value: MarkerView 实例
+    var _annotViewers = {}; // key: 归一化 src，value: MarkerView 实例
     function clearImageAnnotation(src) {
-      const v = _annotViewers[src];
-      if (v) { try { v.remove(); } catch (e) {} delete _annotViewers[src]; }
+      const key = normalizeAnnotSrc(src);
+      const v = _annotViewers[key];
+      if (v) { try { v.remove(); } catch (e) {} delete _annotViewers[key]; }
     }
     function renderImageAnnotation(src, imgEl, overlayEl) {
+      const key = normalizeAnnotSrc(src);
       // 移除旧的 overlay
       if (overlayEl) overlayEl.innerHTML = '';
-      clearImageAnnotation(src);
-      const state = getAnnotation(src);
+      clearImageAnnotation(key);
+      const state = getAnnotation(key);
       if (!state || typeof markerjs3 === 'undefined' || !overlayEl) return;
       overlayEl.style.display = '';
       try {
         const viewer = new markerjs3.MarkerView();
-        _annotViewers[src] = viewer;
+        _annotViewers[key] = viewer;
         overlayEl.appendChild(viewer);
         viewer.targetImage = imgEl;
         viewer.show(state);
@@ -4311,25 +4313,53 @@
 
     // ===== 图片标注（marker.js 3）：矢量数据持久化 =====
     var imgAnnotations = {}; // key: 图片 src，value: markerArea.getState() 的矢量 JSON
-    function annotKey(imgSrc) { return 'annot_' + imgSrc; }
+    // 统一 key：图片 src 可能来自 img.src（绝对 file:// URL）或 getImgPath 拼出的相对路径。
+    // 灯箱用绝对路径存取、解析图加载用相对路径查询，必须归一化成同一个 key 才能对上。
+    function normalizeAnnotSrc(imgSrc) {
+      try { return new URL(imgSrc, window.location.href).href; } catch (e) { return imgSrc; }
+    }
+    function annotKey(imgSrc) { return 'annot_' + normalizeAnnotSrc(imgSrc); }
     function loadAnnotations() {
       try {
         for (var i = 0; i < localStorage.length; i++) {
           var k = localStorage.key(i);
           if (k && k.indexOf('annot_') === 0) {
-            try { imgAnnotations[k.substring(6)] = JSON.parse(localStorage.getItem(k)); } catch (e) {}
+            try { imgAnnotations[normalizeAnnotSrc(k.substring(6))] = JSON.parse(localStorage.getItem(k)); } catch (e) {}
           }
         }
       } catch (e) {}
     }
+    // 清理旧的相对路径 key（历史版本保存过 考研题库/... 相对路径的 key）。
+    // 现在统一用绝对路径 key，避免同一张图出现「相对+绝对」两个 key 互相覆盖。
+    // 只在启动时做一次，幂等：相对 key 的标注会以绝对 key 为准。
+    function cleanupLegacyAnnotKeys() {
+      try {
+        for (var i = localStorage.length - 1; i >= 0; i--) {
+          var k = localStorage.key(i);
+          if (k && k.indexOf('annot_') === 0) {
+            var raw = k.substring(6);
+            var abs = normalizeAnnotSrc(raw);
+            if (raw !== abs) { // 说明存的是相对路径（会被归一化成绝对路径）
+              var absKey = 'annot_' + abs;
+              if (!localStorage.getItem(absKey)) { // 绝对 key 不存在才迁移，避免覆盖新数据
+                localStorage.setItem(absKey, localStorage.getItem(k));
+              }
+              localStorage.removeItem(k);
+            }
+          }
+        }
+      } catch (e) {}
+    }
+    cleanupLegacyAnnotKeys();
     function saveAnnotation(imgSrc, state) {
-      imgAnnotations[imgSrc] = state;
+      imgAnnotations[normalizeAnnotSrc(imgSrc)] = state;
       try { localStorage.setItem(annotKey(imgSrc), JSON.stringify(state)); } catch (e) {}
     }
-    function getAnnotation(imgSrc) { return imgAnnotations[imgSrc] || null; }
+    function getAnnotation(imgSrc) { return imgAnnotations[normalizeAnnotSrc(imgSrc)] || null; }
     function clearAnnotation(imgSrc) {
-      delete imgAnnotations[imgSrc];
-      try { localStorage.removeItem(annotKey(imgSrc)); } catch (e) {}
+      const key = normalizeAnnotSrc(imgSrc);
+      delete imgAnnotations[key];
+      try { localStorage.removeItem('annot_' + key); } catch (e) {}
     }
     function hasAnnotation(imgSrc) { return !!getAnnotation(imgSrc); }
     loadAnnotations();
