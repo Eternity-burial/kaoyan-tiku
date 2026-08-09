@@ -4902,6 +4902,75 @@
       } catch (e) {}
     }
     migrateQ1000NoteKeys();
+    // 822 内容前插迁移（一次性，幂等）：
+    // 用户新增教材内容时，ch3~ch9 的 labels 数组前插了「例题+章末例题」，按下标存储的
+    // 熟练度/达标标记（status/qbad/sbad）整体错位到例题上。把旧下标 k → k + offset 搬回
+    // （offset=前置例题+章末例题数；习题块相对顺序新旧完全一致，故按偏移精确搬移）。
+    // 同时归一 ch3/ch6/ch9 等旧笔记键括号：3-4(1) → 当前标签 3-4 (1)。
+    // 幂等：标记键 kaoyan_mig822_shift 先置位防重入（二次位移会彻底错乱）。
+    // 备份：迁移前把原对象存到 __bak822_<key>，可在 F12 → Application 手动恢复。
+    function migrate822IndexShift() {
+      try {
+        if (localStorage.getItem('kaoyan_mig822_shift')) return;
+        localStorage.setItem('kaoyan_mig822_shift', '1'); // 先置位，即便中途失败也不重复位移
+        var m822 = SUBJECTS.find(function (s) { return s.id === '822'; });
+        if (!m822) return;
+        // 仅本次内容前插的章节（ch1/ch2 数组未变、本就例题前置，绝不能迁移）
+        var AFFECTED = ['ch3', 'ch4', 'ch5', 'ch6', 'ch7', 'ch9'];
+        AFFECTED.forEach(function (cid) {
+          var ch = m822.chapters.find(function (c) { return c.id === cid; });
+          if (!ch) return;
+          // offset = 第一个「习题」下标 = 前置 例题+章末例题 数量（由 classifyLabel 现算，不写死）
+          var offset = 0;
+          while (offset < ch.labels.length && m822.classifyLabel(ch.labels[offset]) !== '习题') offset++;
+          if (offset === 0) return;
+          // 1) 下标类数据位移：status / qbad / sbad
+          ['_status', '_qbad', '_sbad'].forEach(function (suffix) {
+            var key = cid + '_' + m822.storageSuffix + suffix;
+            var raw = localStorage.getItem(key);
+            if (!raw) return;
+            var obj; try { obj = JSON.parse(raw); } catch (e) { obj = null; }
+            if (!obj) return;
+            if (!localStorage.getItem('__bak822_' + key)) localStorage.setItem('__bak822_' + key, raw);
+            var out = {};
+            var changed = false;
+            for (var k in obj) {
+              if (!Object.prototype.hasOwnProperty.call(obj, k)) continue;
+              var idx = parseInt(k, 10);
+              if (isNaN(idx)) continue;
+              var nk = String(idx + offset);
+              if (out[nk] !== undefined) continue; // 保底：不覆盖已搬入的目标
+              out[nk] = obj[k];
+              changed = true;
+            }
+            if (changed) localStorage.setItem(key, JSON.stringify(out));
+          });
+          // 2) 笔记键括号归一：去空格归一 → 当前标签（3-4(1) → 3-4 (1)），仅移键不移值
+          var nKey = cid + '_' + m822.storageSuffix + '_notes';
+          var nRaw = localStorage.getItem(nKey);
+          if (nRaw) {
+            var nObj; try { nObj = JSON.parse(nRaw); } catch (e) { nObj = null; }
+            if (nObj) {
+              if (!localStorage.getItem('__bak822_' + nKey)) localStorage.setItem('__bak822_' + nKey, nRaw);
+              var normToLabel = {};
+              ch.labels.forEach(function (l) { normToLabel[l.replace(/\s+/g, '')] = l; });
+              var nChanged = false;
+              for (var noteK in nObj) {
+                if (!Object.prototype.hasOwnProperty.call(nObj, noteK)) continue;
+                var cur = normToLabel[noteK.replace(/\s+/g, '')];
+                if (cur && cur !== noteK && !Object.prototype.hasOwnProperty.call(nObj, cur)) {
+                  nObj[cur] = nObj[noteK];
+                  delete nObj[noteK];
+                  nChanged = true;
+                }
+              }
+              if (nChanged) localStorage.setItem(nKey, JSON.stringify(nObj));
+            }
+          }
+        });
+      } catch (e) {}
+    }
+    migrate822IndexShift();
     function saveAnnotation(imgSrc, state) {
       imgAnnotations[normalizeAnnotSrc(imgSrc)] = state;
       try { localStorage.setItem(annotKey(imgSrc), JSON.stringify(state)); } catch (e) {}
