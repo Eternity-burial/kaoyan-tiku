@@ -5629,6 +5629,26 @@ ${cardsHTML}
       }
     });
 
+    // ===== 横向滚轮切题（常规状态，效果同 A/D 键） =====
+    // 触控板/横向滚轮左右推 → navPrev()/navNext()。防护与键盘 handler 对齐：
+    // - 标注模式（lbAnnotMode）不动（灯箱标注里横向滚轮是切工具）
+    // - INPUT/TEXTAREA 焦点不动（避免输入框内横向滚动误切题）
+    // - 面板/弹窗打开不动（与键盘 A/D 被拦截一致）
+    // - 灯箱打开不动（灯箱滚轮是缩放）
+    // - 仅当横向位移明显主导（|dx| 显著大于 |dy|）才切题，防止普通纵向滚动误触发
+    document.addEventListener('wheel', function (e) {
+      if (lbAnnotMode) return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen) return;
+      if (document.getElementById('lightbox').classList.contains('show')) return;
+      // 横向滚轮：|dx| 明显大于 |dy| 且达到阈值才判定为切题意图（避免纵向滚动/微小平移误触发）
+      const dx = e.deltaX || 0, dy = e.deltaY || 0;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 2) {
+        if (dx > 0) navNext();
+        else navPrev();
+      }
+    }, { passive: false });
+
     // ===== 初始化 =====
     // 读取上次选择的科目（默认数学），加载其章节数组
     var savedSubject = localStorage.getItem('kaoyan_subject');
@@ -5674,6 +5694,7 @@ ${cardsHTML}
         <div class="shortcut-row"><span class="key"><kbd>Q</kbd></span><span class="desc">上一章</span></div>
         <div class="shortcut-row"><span class="key"><kbd>E</kbd></span><span class="desc">下一章</span></div>
         <div class="shortcut-row"><span class="key"><kbd>F</kbd></span><span class="desc">进入/退出小题选择模式</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>滚轮左右推</kbd></span><span class="desc">上一题/下一题（同 A/D，常规状态）</span></div>
       </div>
       <div class="shortcut-group">
         <div class="shortcut-group-title">掌握度</div>
