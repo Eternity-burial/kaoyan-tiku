@@ -828,6 +828,16 @@
       border-color: var(--uncertain-dark);
       box-shadow: 0 1px 4px rgba(255, 149, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
+    /* 错题本里 1000题 题目的角标 */
+    .wrongbook-q-item .q1000-tag {
+      font-size: 0.72em;
+      font-weight: 600;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: var(--radius-pill);
+      padding: 0 3px;
+      margin-left: 3px;
+    }
     .wrongbook-empty {
       text-align: center;
       color: var(--text-light);
@@ -874,6 +884,21 @@
       height: 8px;
       border-radius: 50%;
       display: inline-block;
+    }
+
+    /* 合并章节（1000题并入）的按书分段统计块 */
+    .stats-seg {
+      padding: 6px 0;
+    }
+    .stats-seg + .stats-seg {
+      border-top: 1px dashed #e2e3ea;
+      margin-top: 6px;
+    }
+    .stats-seg-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+      font-weight: 600;
     }
 
     /* ===== 题号网格（右侧栏） ===== */
@@ -2626,6 +2651,103 @@
 {id:"ch156",number:156,name:"李范全书 - 概率论 - 第6章 数理统计的基本概念",short:"第6章 数理统计的基本概念",total:17,cols:5,wb:"李范全书",subj:"概率论",relPath:"李范全书/概率论/第6章 数理统计的基本概念",labels:["例6-1", "例6-2", "例6-3", "例6-4", "例6-5", "例6-6", "例6-7", "例6-8", "例6-9", "例6-10", "例6-11", "例6-12", "例6-13", "例6-14", "例6-15", "例6-16", "例6-17"]},
 {id:"ch157",number:157,name:"李范全书 - 概率论 - 第7章 参数估计和假设检验",short:"第7章 参数估计和假设检验",total:20,cols:5,wb:"李范全书",subj:"概率论",relPath:"李范全书/概率论/第7章 参数估计和假设检验",labels:["例7-1", "例7-2", "例7-3", "例7-4", "例7-5", "例7-6", "例7-7", "例7-8", "例7-9", "例7-10", "例7-11", "例7-12", "例7-13", "例7-14", "例7-15", "例7-16", "例7-17", "例7-18", "例7-19", "例7-20"]}
 ];
+    // ===== 1000题并入 30讲/36讲（题目区合并；进度仍按书分开） =====
+    // 1000题基础篇并入基础30讲、强化篇并入强化36讲；零基础(ch85)变为「第0讲」。
+    // 合并只影响浏览/题目区：30讲/36讲章节在原地追加 q1000Id(伴章)并生成合并 labels；
+    // 1000题章节对象(ch67-133)保留作为数据源与统计单元(wb 不变)。
+    // 进度按书分开的机制：合并章节的「自身部分」与「1000题部分」分别落到本章/伴章各自的存储键，
+    // 由内存态 statuses[qBad/sBad/notes] 用合并索引承载，load/save 时按书拆开读写。
+    (function merge1000IntoBooks() {
+      var SHU1 = SHU1_CHAPTERS;
+      var baseSubjectName = function (subj) { return String(subj).replace(/^(基础篇|强化篇)[-—]/, ''); };
+      // 提取 short 前缀（"第N讲"/"第N章"）与描述部分
+      function splitShort(short) {
+        var m = /^(第\d+(?:讲|章)\s*)(.*)$/.exec(String(short));
+        return m ? { prefix: m[1], desc: m[2] } : { prefix: '', desc: String(short) };
+      }
+      function joinShort(prefix, desc) { return (prefix + ' ' + desc).replace(/\s+/g, ' ').trim(); }
+
+      // 1) 零基础 ch85 → 第0讲：改字段并移到 30讲·高数 最前（ch1 之前）
+      var zeroIdx = -1;
+      for (var z = 0; z < SHU1.length; z++) { if (SHU1[z].id === 'ch85') { zeroIdx = z; break; } }
+      if (zeroIdx !== -1) {
+        var zero = SHU1[zeroIdx];
+        SHU1.splice(zeroIdx, 1);
+        zero.wb = '基础30讲';
+        zero.subj = '高数';
+        zero.number = 0;
+        zero.short = '第0讲 零基础';
+        zero.name = '基础30讲 - 高数 - 第0讲 零基础';
+        zero.statsWb = '1000题';          // 进度仍按 1000题 统计
+        zero.statsSubj = '基础篇-高数';
+        var ch1Idx = 0;
+        for (var c = 0; c < SHU1.length; c++) { if (SHU1[c].id === 'ch1') { ch1Idx = c; break; } }
+        SHU1.splice(ch1Idx, 0, zero);
+      }
+
+      // 2) 1000题章节 label 去「例」（与文件重命名 ex_→pb_ 一致）
+      // 含第0讲（ch85，wb 已改 '基础30讲' 但 statsWb 仍为 '1000题'）
+      for (var a = 0; a < SHU1.length; a++) {
+        var cA = SHU1[a];
+        if (cA.wb === '1000题' || cA.statsWb === '1000题') {
+          cA.labels = cA.labels.map(function (l) { return String(l).replace(/^例/, ''); });
+        }
+      }
+
+      // 3) 配对：按 (书, 学科) 分组后的顺序下标一一配对
+      // base 侧（30讲/36讲）subj 即主学科名；1000题侧 subj 为 '基础篇-高数' 形式。
+      // 基础30讲 分组的 base 侧排除第0讲（statsWb 已改 '1000题' 的第0讲只作展示、不参与配对）。
+      function groupBase(book, subj) {
+        return SHU1.filter(function (c) {
+          return c.wb === book && c.subj === subj && c.total > 0 && !c.statsWb;
+        });
+      }
+      function groupQ(book, subj) {
+        return SHU1.filter(function (c) {
+          return c.wb === book && c.subj === subj && c.total > 0;
+        });
+      }
+      var books3 = ['基础30讲', '强化36讲'];
+      var booksQ = ['1000题', '1000题'];
+      var qPrefix = ['基础篇', '强化篇'];
+      var mainSubjs = ['高数', '线代', '概率论'];
+      for (var bIdx = 0; bIdx < books3.length; bIdx++) {
+        var book3 = books3[bIdx];
+        var bookQ = booksQ[bIdx];
+        var qpfx = qPrefix[bIdx];
+        for (var s = 0; s < mainSubjs.length; s++) {
+          var ms = mainSubjs[s];
+          var baseChs = groupBase(book3, ms);
+          var qChs = groupQ(bookQ, qpfx + '-' + ms);
+          for (var p = 0; p < baseChs.length && p < qChs.length; p++) {
+            var bc = baseChs[p];
+            var qc = qChs[p];
+            bc.q1000Id = qc.id;
+
+            // 章节名统一：只统一描述部分，前缀（第N讲/第N章）各自保留
+            // 高数：描述以 1000题 为准；概率论：描述以 30讲/36讲 为准；线代两书一致
+            var bs = splitShort(bc.short);
+            var qs = splitShort(qc.short);
+            if (ms === '高数') {
+              // 高数：base 章节描述 ← 1000题 描述；1000题 short 不变
+              bc.short = joinShort(bs.prefix, qs.desc);
+              bc.name = bc.wb + ' - ' + bc.subj + ' - ' + bc.short;
+            } else if (ms === '概率论') {
+              // 概率论：1000题 章节描述 ← base 章节描述；base short 不变
+              qc.short = joinShort(qs.prefix, bs.desc);
+              qc.name = qc.wb + ' - ' + qc.subj + ' - ' + qc.short;
+            }
+            // 线代：两书目录名一致，不改
+
+            // 合并 labels
+            bc.ownTotal = bc.labels.length;
+            bc.q1000Total = qc.total;
+            bc.labels = bc.labels.concat(qc.labels);
+            bc.total = bc.labels.length;
+          }
+        }
+      }
+    })();
     // ===== 科目（subject）数据模型：数学 + 822 控制工程基础 =====
     const SUBJECTS = [
       {
@@ -2695,6 +2817,25 @@
     }
 
     function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId); }
+    function chapterById(id) { return CHAPTERS.find(c => c.id === id); }
+
+    // ===== 合并章节（1000题并入30讲/36讲）辅助 =====
+    // 当前索引所属分区：idx 落在合并章节的 1000题 段 → '1000题'；否则按标签分类
+    function partOfIdx(idx) {
+      const ch = getChapter();
+      if (ch && ch.q1000Total && idx >= ch.ownTotal) return '1000题';
+      return classifyLabel(ch ? ch.labels[idx] : '');
+    }
+    // 笔记命名空间键：避免「30讲例1-1」与「1000题1-1」笔记键冲突。
+    // 返回 '<源章节id>::<标签>'，源章节 = 1000题伴章（1000段）或本章（自身段）。
+    function notesKeyFor(idx) {
+      const ch = getChapter();
+      const label = ch.labels[idx];
+      if (ch.q1000Total && idx >= ch.ownTotal) {
+        return chapterById(ch.q1000Id).id + '::' + label;
+      }
+      return ch.id + '::' + label;
+    }
 
     // ===== 题组（父题/子题）解析 =====
     // 去掉 label 末尾括号及内容（支持 (1)、(a)、(I)、全角括号），得到父题号
@@ -2787,19 +2928,66 @@
     function filteredIndex(idx) { return getFilteredIndices().indexOf(idx); }
     function isFiltered(idx) { return filteredIndex(idx) !== -1; }
 
-    // ===== localStorage 持久化 =====
+    // ===== localStorage 持久化（按书分离：合并章节的自身部分与1000题部分分开存取） =====
+    // 合并章节（ch 有 q1000Id）：内存态 statuses/qBad/sBad 用合并索引承载，
+    // 保存时按 [本章自身段, 1000题伴章段] 拆到两本书各自的存储键，加载时反向合并。
+    // 非合并章节与现状完全一致（单一源）。→ 进度天然按书分开。
+    function statusSources() {
+      const ch = getChapter();
+      // 合并章节：自身段长度为 ownTotal；非合并章节用 total
+      const srcs = [{ ch: ch, offset: 0, len: (ch.q1000Total ? ch.ownTotal : ch.total) }];
+      if (ch && ch.q1000Id) {
+        srcs.push({ ch: chapterById(ch.q1000Id), offset: ch.ownTotal, len: ch.q1000Total });
+      }
+      return srcs;
+    }
+    // 通用：按「源章节+偏移」拆合（statuses/qBad/sBad 共用）
+    function loadIndexedObj(readRaw) {
+      const out = {};
+      statusSources().forEach(function (src) {
+        let o = {};
+        try { o = JSON.parse(readRaw(src.ch)) || {}; } catch (e) { o = {}; }
+        for (var k = 0; k < src.len; k++) {
+          if (o[k] !== undefined) out[src.offset + k] = o[k];
+        }
+      });
+      return out;
+    }
+    function saveIndexedObj(obj, writeRaw, removeRaw) {
+      statusSources().forEach(function (src) {
+        const part = {};
+        for (var k = 0; k < src.len; k++) {
+          if (obj[src.offset + k] !== undefined) part[k] = obj[src.offset + k];
+        }
+        const keys = Object.keys(part);
+        if (keys.length > 0) writeRaw(src.ch, JSON.stringify(part));
+        else if (removeRaw) removeRaw(src.ch); // 空源不写、清掉残留空对象，保持存储干净
+      });
+    }
     function loadStatuses() {
-      try { statuses = JSON.parse(localStorage.getItem(storageKey())) || {}; } catch (e) { statuses = {}; }
+      statuses = loadIndexedObj(function (ch) { return localStorage.getItem(chapterStatusKey(ch)); });
     }
-    function saveStatuses() { localStorage.setItem(storageKey(), JSON.stringify(statuses)); }
+    function saveStatuses() {
+      saveIndexedObj(statuses,
+        function (ch, val) { localStorage.setItem(chapterStatusKey(ch), val); },
+        function (ch) { localStorage.removeItem(chapterStatusKey(ch)); });
+    }
     function loadQBad() {
-      try { qBad = JSON.parse(localStorage.getItem(qBadStorageKey())) || {}; } catch (e) { qBad = {}; }
+      qBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); });
     }
-    function saveQBad() { localStorage.setItem(qBadStorageKey(), JSON.stringify(qBad)); }
+    function saveQBad() {
+      saveIndexedObj(qBad,
+        function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_qbad', val); },
+        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); });
+    }
     function loadSBad() {
-      try { sBad = JSON.parse(localStorage.getItem(sBadStorageKey())) || {}; } catch (e) { sBad = {}; }
+      sBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
     }
-    function saveSBad() { localStorage.setItem(sBadStorageKey(), JSON.stringify(sBad)); }
+    function saveSBad() {
+      saveIndexedObj(sBad,
+        function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_sbad', val); },
+        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
+    }
 
     // ===== 全局 UI 状态持久化（跨会话记忆） =====
     // 全局键：状态筛选（跨章节/科目保持）；科目键：解析显示偏好（showSolution 当前态 + defaultShowSolution 默认态）
@@ -2835,13 +3023,43 @@
       try { localStorage.setItem(uiSolutionStorageKey(), JSON.stringify({ show: !!showSolution, def: !!defaultShowSolution })); } catch (e) {}
     }
 
-    // ===== 笔记数据 =====
+    // ===== 笔记数据（按书分离：复合键 '<源章节id>::<label>'） =====
+    // 合并章节的 1000题 段笔记落到 1000题 伴章的存储对象（键 1-1），自身段落到本章对象（键 例1-1）。
+    // 复合键含源章节 id，天然避免「30讲例1-1」与「1000题1-1」互相覆盖。
     let notesData = {};
-    function notesStorageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_notes'; }
-    function loadNotes() {
-      try { notesData = JSON.parse(localStorage.getItem(notesStorageKey())) || {}; } catch (e) { notesData = {}; }
+    function notesSourceId(idx) {
+      const ch = getChapter();
+      if (ch.q1000Total && idx >= ch.ownTotal) return chapterById(ch.q1000Id).id;
+      return ch.id;
     }
-    function saveNotes() { localStorage.setItem(notesStorageKey(), JSON.stringify(notesData)); }
+    function loadNotes() {
+      const ch = getChapter();
+      notesData = {};
+      const srcIds = [ch.id];
+      if (ch.q1000Id) srcIds.push(ch.q1000Id);
+      srcIds.forEach(function (cid) {
+        let o = {};
+        try { o = JSON.parse(localStorage.getItem(cid + '_' + curSubject.storageSuffix + '_notes')) || {}; } catch (e) { o = {}; }
+        for (var k in o) { if (Object.prototype.hasOwnProperty.call(o, k)) notesData[cid + '::' + k] = o[k]; }
+      });
+    }
+    function saveNotes() {
+      const ch = getChapter();
+      const srcIds = [ch.id];
+      if (ch.q1000Id) srcIds.push(ch.q1000Id);
+      srcIds.forEach(function (cid) {
+        const part = {};
+        for (var k in notesData) {
+          if (Object.prototype.hasOwnProperty.call(notesData, k) && k.indexOf(cid + '::') === 0) {
+            part[k.substring(cid.length + 2)] = notesData[k];
+          }
+        }
+        const key = cid + '_' + curSubject.storageSuffix + '_notes';
+        const keys = Object.keys(part);
+        if (keys.length > 0) localStorage.setItem(key, JSON.stringify(part));
+        else localStorage.removeItem(key); // 空源不写、清残留空对象
+      });
+    }
 
     function getStatusClass(idx) {
       const s = statuses[idx];
@@ -2854,6 +3072,11 @@
     // ===== 图片路径（按当前科目的 getImgPath） =====
         function getImgPath(idx) {
       const ch = getChapter();
+      // 合并章节的 1000题 段：路径路由到 1000题 伴章（标签与目录均为 pb_ 前缀）
+      if (ch.q1000Total && idx >= ch.ownTotal) {
+        const qc = chapterById(ch.q1000Id);
+        return curSubject.getImgPath(qc, qc.labels[idx - ch.ownTotal]);
+      }
       return curSubject.getImgPath(ch, ch.labels[idx]);
     }
 
@@ -2951,10 +3174,13 @@
     }
 
     // 填充书籍面板
+    // 1000题已并入 30讲/36讲：标题栏书籍下拉不再单独列 1000题（进度统计仍按书分开）。
     function fillWbPanel(activeWb) {
-      var entries = getSortedWbs();
+      var entries = getSortedWbs().filter(function(e) { return e.wb !== '1000题'; });
       fillPanel('panelWb', entries, 'wb', 'label', activeWb, function(entry) {
         document.getElementById('txtWb').textContent = entry.label;
+        // 切书先尝试恢复该书的停靠位置；无记录才落到第一学科第一章节
+        if (applyResumeBook(entry.wb)) return;
         var subjs = getSortedSubjs(entry.wb);
         if (subjs.length > 0) {
           var firstSubj = subjs[0];
@@ -2996,8 +3222,10 @@
     }
 
     // 填充章节面板
+    // 只列「浏览章节」：排除 wb==='1000题' 的章节（1000题 已并入 30讲/36讲 题目区，
+    // 其章节仅作为数据源/统计单元；第0讲已改 wb='基础30讲' 会正常列出）。
     function fillChapterPanel(wb, subj, activeId) {
-      var chs = CHAPTERS.filter(function(c) { return c.wb === wb && c.subj === subj; });
+      var chs = CHAPTERS.filter(function(c) { return c.wb === wb && c.subj === subj && c.wb !== '1000题'; });
       fillPanel('panelChapter', chs, 'id', 'short', activeId, function(ch) {
         document.getElementById('txtChapter').textContent = ch.short;
         switchChapter(ch.id);
@@ -3052,33 +3280,50 @@
     })();
 
     // ===== 自动分区：从 label 推断所属类别（按当前科目） =====
-    function getPartOrder() { return curSubject ? curSubject.partOrder : ['例题', '习题']; }
+    // 合并章节（1000题并入）分区顺序为 例题 → 习题 → 1000题；其余章节用科目 partOrder
+    function getPartOrder() {
+      const ch = getChapter();
+      if (ch && ch.q1000Total) return ['例题', '习题', '1000题'];
+      return curSubject ? curSubject.partOrder : ['例题', '习题'];
+    }
 
     function classifyLabel(label) {
       return curSubject ? curSubject.classifyLabel(label) : (label.startsWith('例') ? '例题' : '习题');
     }
 
     // ===== 渲染章节统计面板 =====
+    // 合并章节（1000题并入）按书分两块统计：第1块=自身部分，第2块=1000题部分；
+    // 进度分别累计，实现「进度按书分开」。非合并章节单块渲染（与现状一致）。
     function renderStats() {
-      const total = totalQuestions();
-      let proficient = 0, vague = 0, wrong = 0, unmarked = 0;
-      for (let i = 0; i < total; i++) {
-        const s = statuses[i];
-        if (s === 'proficient') proficient++;
-        else if (s === 'vague') vague++;
-        else if (s === 'wrong') wrong++;
-        else unmarked++;
-      }
-      const done = proficient + vague + wrong;
-      const pct = total > 0 ? Math.round(done / total * 100) : 0;
-      document.getElementById('statsPanel').innerHTML =
-        '<div class="stats-bar-wrap"><div class="stats-bar-fill" style="width:' + pct + '%"></div></div>' +
-        '<div class="stats-counts">' +
-          '<span><span class="sc-dot" style="background:#248A3D"></span>熟练 ' + proficient + '</span>' +
-          '<span><span class="sc-dot" style="background:#FF9500"></span>模糊 ' + vague + '</span>' +
-          '<span><span class="sc-dot" style="background:#BE160C"></span>需复习 ' + wrong + '</span>' +
-          '<span><span class="sc-dot" style="background:#bbb"></span>未做 ' + unmarked + '</span>' +
+      const ch = getChapter();
+      const hasMerge = ch && ch.q1000Total;
+      const segs = hasMerge
+        ? [{ label: getWbLabel(ch.wb), start: 0, len: ch.ownTotal },
+           { label: '1000题', start: ch.ownTotal, len: ch.q1000Total }]
+        : [{ label: '', start: 0, len: ch.total }];
+      const html = segs.map(function (seg) {
+        let prof = 0, vag = 0, wr = 0, un = 0;
+        for (let i = seg.start; i < seg.start + seg.len; i++) {
+          const s = statuses[i];
+          if (s === 'proficient') prof++;
+          else if (s === 'vague') vag++;
+          else if (s === 'wrong') wr++;
+          else un++;
+        }
+        const done = prof + vag + wr;
+        const pct = seg.len > 0 ? Math.round(done / seg.len * 100) : 0;
+        return '<div class="stats-seg">' +
+          (seg.label ? '<div class="stats-seg-label">' + seg.label + '</div>' : '') +
+          '<div class="stats-bar-wrap"><div class="stats-bar-fill" style="width:' + pct + '%"></div></div>' +
+          '<div class="stats-counts">' +
+            '<span><span class="sc-dot" style="background:#248A3D"></span>熟练 ' + prof + '</span>' +
+            '<span><span class="sc-dot" style="background:#FF9500"></span>模糊 ' + vag + '</span>' +
+            '<span><span class="sc-dot" style="background:#BE160C"></span>需复习 ' + wr + '</span>' +
+            '<span><span class="sc-dot" style="background:#bbb"></span>未做 ' + un + '</span>' +
+          '</div>' +
         '</div>';
+      }).join('');
+      document.getElementById('statsPanel').innerHTML = html;
     }
 
 
@@ -3089,7 +3334,8 @@
     var dashboardDetailReturn = false;
 
     function getBookChapters(wb) {
-      return CHAPTERS.filter(function(c) { return c.wb === wb && c.total > 0; });
+      // 第0讲（statsWb='1000题' 但 wb 已改 '基础30讲'）按 statsWb 归属统计书
+      return CHAPTERS.filter(function(c) { return (c.statsWb || c.wb) === wb && c.total > 0; });
     }
 
     function getChProgress(ch) {
@@ -3097,11 +3343,13 @@
       var statusObj;
       try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
       var done = 0;
-      for (var i = 0; i < ch.total; i++) {
+      // 合并章节只统计自身部分（1000题部分由其伴章章对象统计）→ 进度按书分开
+      var len = ch.ownTotal || ch.total;
+      for (var i = 0; i < len; i++) {
         var s = statusObj[i];
         if (s === 'proficient' || s === 'vague' || s === 'wrong') done++;
       }
-      return { progress: ch.total > 0 ? done / ch.total : 0, done: done, total: ch.total };
+      return { progress: len > 0 ? done / len : 0, done: done, total: len };
     }
 
     function getChStats(ch) {
@@ -3109,7 +3357,8 @@
       var statusObj;
       try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
       var proficient = 0, vague = 0, wrong = 0;
-      for (var i = 0; i < ch.total; i++) {
+      var len = ch.ownTotal || ch.total;
+      for (var i = 0; i < len; i++) {
         var s = statusObj[i];
         if (s === 'proficient') proficient++;
         else if (s === 'vague') vague++;
@@ -3118,8 +3367,8 @@
       var done = proficient + vague + wrong;
       return {
         proficient: proficient, vague: vague, wrong: wrong,
-        unmarked: ch.total - done, done: done,
-        pct: ch.total > 0 ? Math.round(done / ch.total * 100) : 0
+        unmarked: len - done, done: done,
+        pct: len > 0 ? Math.round(done / len * 100) : 0
       };
     }
 
@@ -3463,12 +3712,17 @@
       document.getElementById('subjectOverlay').classList.remove('show');
     }
 
-    // ===== 记住上次位置（章节 + 题目 + 小题模式），按科目分别保存 =====
-    // 键 kaoyan_resume = JSON { '<科目id>': { ch: 章节id, idx: 题目索引, sub: 是否小题模式 } }
+    // ===== 记住上次位置（章节 + 题目 + 小题模式），按科目、再按书籍分别保存 =====
+    // 键 kaoyan_resume = JSON {
+    //   '<科目id>': { ch, idx, sub },                      // 切科目时恢复
+    //   '<科目id>::<书籍wb>': { ch, idx, sub }             // 切书籍时恢复
+    // }
     function saveResume() {
       var map = {};
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
       map[curSubjectId] = { ch: currentChapterId, idx: current, sub: !!subMode };
+      var wb = getChapter() ? getChapter().wb : '';
+      if (wb) map[curSubjectId + '::' + wb] = { ch: currentChapterId, idx: current, sub: !!subMode };
       try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
     }
     function loadResume(subjectId) {
@@ -3489,6 +3743,34 @@
         subOk = !!(g && g.isParent && g.count > 1);
       }
       return { ch: r.ch, idx: idx, sub: subOk };
+    }
+    // 切换到某本书时恢复该书停靠位置（切书不回到第1讲第1题）。
+    // 返回 true 表示已恢复；false 表示无记录/记录失效，调用方走「第一学科第一章节」。
+    function applyResumeBook(wb) {
+      var map = {};
+      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
+      var r = map[curSubjectId + '::' + wb];
+      if (!r || !r.ch) return false;
+      var ch = CHAPTERS.find(function (c) { return c.id === r.ch; });
+      if (!ch || ch.total === 0 || ch.wb !== wb) return false;
+      var idx = Math.min(Math.max(0, r.idx || 0), ch.total - 1);
+      var subOk = false;
+      if (r.sub) {
+        ensureGroups(ch);
+        var g = ch.groupForIdx[idx];
+        subOk = !!(g && g.isParent && g.count > 1);
+      }
+      currentChapterId = ch.id;
+      current = idx;
+      subMode = subOk;
+      loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+      // 若全局筛选激活且恢复的位置被筛掉，跳到第一条筛中题，避免落在不可见题上
+      if (!isAllFilterActive()) {
+        const filtered = getFilteredIndices();
+        if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
+      }
+      renderTitle(); switchTo(current); updateFilterCounts();
+      return true;
     }
     function switchSubject(subjectId) {
       const subj = SUBJECTS.find(s => s.id === subjectId);
@@ -3583,15 +3865,28 @@
     }
 
     function fillWrongBookWbPanel() {
-      // 收集有错/糊题的书籍
+      // 收集有错/糊题的书籍（1000题已并入 30讲/36讲：不再单列 1000题 书，
+      // 其错题归入对应 base 书卡；第0讲 wb 已改 '基础30讲' 也并入）。
       var wbSet = new Set();
       for (const ch of CHAPTERS) {
         if (ch.total === 0) continue;
+        if (ch.wb === '1000题') continue; // 数据源章节：错题由其 base 伴章汇总
         var key = chapterStatusKey(ch);
         var statusObj;
         try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
-        for (var i = 0; i < ch.total; i++) {
+        var ownLen = ch.ownTotal || ch.total;
+        for (var i = 0; i < ownLen; i++) {
           if (statusObj[i] === 'wrong' || statusObj[i] === 'vague') { wbSet.add(ch.wb); break; }
+        }
+        // 1000题 伴章部分也归入 base 书
+        if (ch.q1000Id && !wbSet.has(ch.wb)) {
+          var qc = chapterById(ch.q1000Id);
+          var qkey = chapterStatusKey(qc);
+          var qobj;
+          try { qobj = JSON.parse(localStorage.getItem(qkey)) || {}; } catch (e) { qobj = {}; }
+          for (var q = 0; q < qc.total; q++) {
+            if (qobj[q] === 'wrong' || qobj[q] === 'vague') { wbSet.add(ch.wb); break; }
+          }
         }
       }
       var entries = [];
@@ -3618,20 +3913,35 @@
       updateWrongBookTitle();
       const grid = document.getElementById('wrongBookGrid');
 
-      // 按书籍筛选 + 按学科分组收集
+      // 按书籍筛选 + 按学科分组收集。
+      // 合并章节（有 q1000Id）：自身部分(ownTotal) + 伴章 1000题 部分(偏移 ownTotal) 一起进 base 书卡。
       const colMap = {};
       let totalWrong = 0;
       for (const ch of CHAPTERS) {
         if (ch.total === 0) continue;
         if (ch.wb !== wrongBookWb) continue;
-        const key = chapterStatusKey(ch);
-        let statusObj;
-        try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
+        if (ch.wb === '1000题') continue;
         const wrongIndices = [];
         const vagueIndices = [];
-        for (let i = 0; i < ch.total; i++) {
+        // 自身部分
+        var key = chapterStatusKey(ch);
+        let statusObj;
+        try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
+        var ownLen = ch.ownTotal || ch.total;
+        for (let i = 0; i < ownLen; i++) {
           if (statusObj[i] === 'wrong') wrongIndices.push(i);
           else if (statusObj[i] === 'vague') vagueIndices.push(i);
+        }
+        // 1000题 伴章部分（偏移到合并索引）
+        if (ch.q1000Id) {
+          var qc = chapterById(ch.q1000Id);
+          var qkey = chapterStatusKey(qc);
+          let qobj;
+          try { qobj = JSON.parse(localStorage.getItem(qkey)) || {}; } catch (e) { qobj = {}; }
+          for (let q = 0; q < qc.total; q++) {
+            if (qobj[q] === 'wrong') wrongIndices.push(ch.ownTotal + q);
+            else if (qobj[q] === 'vague') vagueIndices.push(ch.ownTotal + q);
+          }
         }
         if (wrongIndices.length + vagueIndices.length === 0) continue;
         totalWrong += wrongIndices.length + vagueIndices.length;
@@ -3663,13 +3973,18 @@
               (item.wrongIndices.length ? '<span class="ws w-wrong">错 ' + item.wrongIndices.length + '</span>' : '') +
               '</span></div>' +
               '<div class="wrongbook-q-grid">';
-            for (const idx of item.vagueIndices) {
+            function qItem(idx, cls, statTitle) {
               const label = labels[idx] || (idx + 1);
-              html += '<span class="wrongbook-q-item vague" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题（模糊）">' + label + '</span>';
+              // 合并章节：索引落在 1000题 段时加「1000」小标记
+              const isQ = ch.q1000Total && idx >= ch.ownTotal;
+              const tag = isQ ? '<span class="ws q1000-tag">1000</span>' : '';
+              return '<span class="wrongbook-q-item ' + cls + '" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题（' + statTitle + '）">' + label + tag + '</span>';
+            }
+            for (const idx of item.vagueIndices) {
+              html += qItem(idx, 'vague', '模糊');
             }
             for (const idx of item.wrongIndices) {
-              const label = labels[idx] || (idx + 1);
-              html += '<span class="wrongbook-q-item" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题（需复习）">' + label + '</span>';
+              html += qItem(idx, '', '需复习');
             }
             html += '</div></div>';
           });
@@ -3722,7 +4037,7 @@
         const count = g0 ? g0.count : 1;
         for (var k = 0; k < count; k++) {
           const idx = start + k;
-          if (notesData[labels[idx]]) groupHasNote = true;
+          if (notesData[notesKeyFor(idx)]) groupHasNote = true;
           if (hasQuestionImagesAnnotated(idx)) groupHasAnnot = true;
           if (groupHasNote && groupHasAnnot) break;
         }
@@ -3738,11 +4053,12 @@
       }
 
       // 自动从 labels 推断分区（连续同类别归为一个 partition）
+      // 合并章节用 partOfIdx(i)：1000题 段独立成「1000题」分区，不并入「例题/习题」
       var parts = []; // [{label, startIdx, endIdx}]
       var curPart = null;
       var partOrder = getPartOrder(); // 当前科目分区顺序
       for (var i = 0; i < labels.length; i++) {
-        var cat = classifyLabel(labels[i]);
+        var cat = partOfIdx(i);
         if (!curPart || curPart.label !== cat) {
           if (curPart) curPart.endIdx = i;
           curPart = { label: cat, startIdx: i, endIdx: -1 };
@@ -4248,8 +4564,7 @@
 
     // 查看模式：渲染结果常驻显示在「笔记」下方
     function renderNotes() {
-      const label = getChapter().labels[current];
-      const hasNote = notesData[label];
+      const hasNote = notesData[notesKeyFor(current)];
       const duo = document.getElementById('notesDuo');
       if (duo) duo.style.display = 'none'; // 非编辑态隐藏双栏编辑区
       const render = document.getElementById('notesRender');
@@ -4264,8 +4579,8 @@
     // ===== 题号右上角「有笔记 / 有标注」提示（右侧导航角标） =====
     // 指定题号 idx 的题目图/解析图是否有标注
     function hasQuestionImagesAnnotated(idx) {
-      const ch = getChapter();
-      const base = curSubject.getImgPath(ch, ch.labels[idx]);
+      // 用 getImgPath(idx) 自动路由到伴章路径（1000题 段）
+      const base = getImgPath(idx);
       if (hasAnnotation(base + '_question.png')) return true;
       for (var n = 1; n <= 20; n++) {
         if (hasAnnotation(n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png')) return true;
@@ -4284,7 +4599,7 @@
 
       const label = getChapter().labels[current];
       const textarea = document.getElementById('notesTextarea');
-      textarea.value = notesData[label] || '';
+      textarea.value = notesData[notesKeyFor(current)] || '';
       duo.style.display = '';
       render.style.display = 'none';
       btnEdit.style.display = 'none';
@@ -4306,13 +4621,13 @@
     }
 
     function saveNote() {
-      const label = getChapter().labels[current];
+      const nk = notesKeyFor(current);
       const textarea = document.getElementById('notesTextarea');
       const val = textarea.value.trim();
       if (val) {
-        notesData[label] = val;
+        notesData[nk] = val;
       } else {
-        delete notesData[label];
+        delete notesData[nk];
       }
       saveNotes();
       renderNotes(); // 保存后回到查看模式（渲染结果）
@@ -4324,8 +4639,7 @@
     }
 
     function deleteNote() {
-      const label = getChapter().labels[current];
-      delete notesData[label];
+      delete notesData[notesKeyFor(current)];
       saveNotes();
       renderNotes();
       renderNav();
@@ -4520,6 +4834,7 @@
     // 清理旧的相对路径 key（历史版本保存过 考研题库/... 相对路径的 key）。
     // 现在统一用绝对路径 key，避免同一张图出现「相对+绝对」两个 key 互相覆盖。
     // 只在启动时做一次，幂等：相对 key 的标注会以绝对 key 为准。
+    // 另：1000题 图片已物理重命名 ex_→pb_，把旧 annot_...ex_... 标注 key 迁到 pb_。
     function cleanupLegacyAnnotKeys() {
       try {
         for (var i = localStorage.length - 1; i >= 0; i--) {
@@ -4527,11 +4842,19 @@
           if (k && k.indexOf('annot_') === 0) {
             var raw = k.substring(6);
             var abs = normalizeAnnotSrc(raw);
-            if (raw !== abs) { // 说明存的是相对路径（会被归一化成绝对路径）
-              var absKey = 'annot_' + abs;
-              if (!localStorage.getItem(absKey)) { // 绝对 key 不存在才迁移，避免覆盖新数据
-                localStorage.setItem(absKey, localStorage.getItem(k));
-              }
+            var target = abs;
+            // 1000题 重命名迁移：目录含 1000题 且文件名为 ex_ 前缀 → pb_
+            // 注：new URL 会对中文 percent-encode，需 decode 后匹配，再经 new URL 重新编码回存储格式
+            var decoded = abs;
+            try { decoded = decodeURIComponent(abs); } catch (e) {}
+            if (decoded.indexOf('/1000题/') !== -1 && /[\\/]ex_[^\\/]+$/.test(decoded)) {
+              var decodedNew = decoded.replace(/([\\/])ex_/g, '$1pb_');
+              try { target = new URL(decodedNew, window.location.href).href; } catch (e) { target = decodedNew; }
+            }
+            if (raw !== abs || target !== abs) { // 相对路径归一化 或 ex_→pb_ 迁移
+              var newKey = 'annot_' + target;
+              // 目标 key 不存在才迁移，避免覆盖新数据
+              if (!localStorage.getItem(newKey)) localStorage.setItem(newKey, localStorage.getItem(k));
               localStorage.removeItem(k);
             }
           }
@@ -4539,6 +4862,38 @@
       } catch (e) {}
     }
     cleanupLegacyAnnotKeys();
+    // 笔记键迁移：1000题章节（源数据 wb==='1000题'，含合并后改 wb 的第0讲 ch85）
+    // 历史笔记键带「例」前缀（例X-Y），文件已重命名 ex_→pb_ 后去「例」为 X-Y。
+    // 幂等：仅当目标键不存在时迁移。启动时执行一次，也可手动调用。
+    function migrateQ1000NoteKeys() {
+      try {
+        var STORAGE = curSubject.storageSuffix || 's1';
+        var q1000Chs = SHU1_CHAPTERS.filter(function (c) {
+          return (c.wb === '1000题' || c.statsWb === '1000题') && c.labels;
+        });
+        q1000Chs.forEach(function (ch) {
+          var key = ch.id + '_' + STORAGE + '_notes';
+          var raw = localStorage.getItem(key);
+          if (!raw) return;
+          var obj;
+          try { obj = JSON.parse(raw); } catch (e) { obj = null; }
+          if (!obj) return;
+          var changed = false;
+          for (var k in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, k) && /^例\d+-\d+/.test(k)) {
+              var newK = k.replace(/^例/, '');
+              if (!Object.prototype.hasOwnProperty.call(obj, newK)) {
+                obj[newK] = obj[k];
+                changed = true;
+              }
+              delete obj[k];
+            }
+          }
+          if (changed) localStorage.setItem(key, JSON.stringify(obj));
+        });
+      } catch (e) {}
+    }
+    migrateQ1000NoteKeys();
     function saveAnnotation(imgSrc, state) {
       imgAnnotations[normalizeAnnotSrc(imgSrc)] = state;
       try { localStorage.setItem(annotKey(imgSrc), JSON.stringify(state)); } catch (e) {}
