@@ -4908,7 +4908,7 @@
     var lbAnnotShiftWasOn = false;         // 拖动期间是否按住 Shift（释放时再吸一次）
 
     // 工具按钮 → marker typeName（按工具栏从左到右顺序，横向滚轮/Tab 循环用）
-    var ANNOT_TOOLS = ['LineMarker', 'FrameMarker', 'HighlighterMarker', 'FreehandMarker'];
+    var ANNOT_TOOLS = ['FrameMarker', 'LineMarker', 'HighlighterMarker', 'FreehandMarker'];
 
     // 每个标注工具各自的默认颜色/粗细（Snipaste：不同标注形状分别记忆颜色）。
     // 切到某工具时载入其记忆值；用户调整后按工具分别保存，不再互相串扰。
@@ -5822,12 +5822,12 @@ ${cardsHTML}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
       </button>
       <span class="at-sep"></span>
-      <!-- 直线 / 矩形 / 高亮 / 画笔 -->
-      <button class="at-btn at-tool active" data-tool="LineMarker" title="直线 (L)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="19" x2="20" y2="5"/></svg>
-      </button>
+      <!-- 矩形 / 直线 / 高亮 / 画笔 -->
       <button class="at-btn at-tool" data-tool="FrameMarker" title="矩形 (R)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="1.5"/></svg>
+      </button>
+      <button class="at-btn at-tool active" data-tool="LineMarker" title="直线 (L)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="19" x2="20" y2="5"/></svg>
       </button>
       <button class="at-btn at-tool" data-tool="HighlighterMarker" title="高亮 (H)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20 19 6l-2-2L3 18z"/><path d="M12 8l2 2"/></svg>
