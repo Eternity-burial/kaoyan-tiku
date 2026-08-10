@@ -4804,12 +4804,20 @@
       // 捕获阶段监听：有标注时点击 target 是标注层（mjs-marker-view）而非 <img>，
       // 需从事件路径里找对应的 .solution-img 取 src（与主题目图同理，见 qAnnotWrap）。
       document.getElementById('solutionImgs').addEventListener('click', function (e) {
-        // 从事件路径找 .solution-img（覆盖 命中标注层 / 命中 <img> 两种情况）
+        // 从事件路径找 .solution-img（覆盖 命中标注层 / 命中 <img> 两种情况）。
+        // 有标注时点击命中标注层，.solution-img 是 .annot-overlay 的兄弟节点、不在路径上，
+        // 但 .annot-wrapper 是标注层的祖先、一定在路径上——从它里面取回被覆盖的那张 <img>。
         const path = e.composedPath ? e.composedPath() : (e.path || []);
         let img = null;
         for (let i = 0; i < path.length; i++) {
           const el = path[i];
-          if (el && el.classList && el.classList.contains('solution-img')) { img = el; break; }
+          if (el && el.classList) {
+            if (el.classList.contains('solution-img')) { img = el; break; }
+            if (el.classList.contains('annot-wrapper')) {
+              const im = el.querySelector('.solution-img');
+              if (im) { img = im; break; }
+            }
+          }
         }
         const src = img && img.src;
         if (src && !src.endsWith('/')) openLightbox(src);
