@@ -4440,25 +4440,26 @@
     // ===== 普通浏览标注叠加（切题即见） =====
     var _annotViewers = {}; // key: 归一化 src，value: MarkerView 实例
 
-    // 创建 marker.js 组件时屏蔽其内置在 .canvas-container 上的滚轮平移监听：
-    // 该监听匿名且不可解绑。MarkerArea（编辑）与 MarkerView（只读浏览）构造时都会绑它，
-    // 作用是滚轮拖动画布。但它会（1）与我们 annotate 模式的 onAnnotWheel 缩放叠加 → 撕裂，
-    // （2）在只读浏览时让标注层相对底图平移并 preventDefault → 页面无法滚动 + 撕裂。
-    // 只读浏览时滚轮应保持页面自然滚动，无需任何画布平移。
-    function createMarkerComponent(Ctor) {
+    // 永久屏蔽 marker.js 内置在 .canvas-container 上的滚轮平移监听（根因修复）：
+    // 该监听匿名、不可解绑，且 MarkerView/MarkerArea 都在 **appendChild 时**才绑定到
+    // .canvas-container 上（不是构造时），所以旧的「构造期临时 patch addEventListener」
+    // 根本拦不住它 → 标注图在只读浏览时滚轮一滚，标注层就相对底图平移并 preventDefault，
+    // 造成图片撕裂/重叠 + 页面无法滚动。
+    // 方案：启动即全局 patch Element.prototype.addEventListener，凡是在带
+    // canvas-container 类名的元素上注册 wheel 监听一律丢弃。这样无论 marker.js 何时、
+    // 在哪一步绑定，内置滚轮平移都永远不会生效。
+    // 兼容性验证：MarkerArea（编辑模式）自身的滚轮缩放/切工具走 ma 元素上的
+    // onAnnotWheel（capture 监听），而真实 wheel 事件是 composed 的，能从 shadow 内
+    // .canvas-container 冒泡穿透到宿主 ma 元素上，故全局屏蔽后编辑缩放功能不受影响。
+    (function blockMarkerCanvasWheel() {
       const origAE = Element.prototype.addEventListener;
       Element.prototype.addEventListener = function (type, fn, opts) {
         if (type === 'wheel' && this.classList && this.classList.contains('canvas-container')) {
-          return; // 跳过内置滚轮平移
+          return; // 丢弃 marker.js 内置滚轮平移监听
         }
         return origAE.call(this, type, fn, opts);
       };
-      try {
-        return new Ctor();
-      } finally {
-        Element.prototype.addEventListener = origAE;
-      }
-    }
+    })();
     function clearImageAnnotation(src) {
       const key = normalizeAnnotSrc(src);
       const v = _annotViewers[key];
@@ -4476,7 +4477,7 @@
       if (imgEl.getBoundingClientRect().width === 0 || imgEl.getBoundingClientRect().height === 0) return;
       overlayEl.style.display = '';
       try {
-        const viewer = createMarkerComponent(markerjs3.MarkerView);
+        const viewer = new markerjs3.MarkerView();
         _annotViewers[key] = viewer;
         overlayEl.appendChild(viewer);
         viewer.targetImage = imgEl;
@@ -4956,7 +4957,7 @@
       const img = document.getElementById('lightboxImg');
       lbOverlay.style.display = '';
       const apply = function () {
-        const mview = createMarkerComponent(markerjs3.MarkerView);
+        const mview = new markerjs3.MarkerView();
         lbOverlay.appendChild(mview);
         mview.targetImage = img;
         mview.show(getAnnotation(lbCurrentSrc));
@@ -5067,11 +5068,10 @@
       if (lbOverlay) { lbOverlay.style.display = 'none'; lbOverlay.innerHTML = ''; }
       const hint = overlay.querySelector('.lightbox-hint');
       if (hint) hint.style.display = 'none';
-      // 创建 MarkerArea 时屏蔽其内置的滚轮平移监听（见 createMarkerComponent）：
-      // 避免它和我们的 onAnnotWheel 缩放叠加导致图片撕裂/重叠。
+      // 内置滚轮平移已由全局 blockMarkerCanvasWheel 永久屏蔽，直接构造即可
       let ma;
       try {
-        ma = createMarkerComponent(markerjs3.MarkerArea);
+        ma = new markerjs3.MarkerArea();
       } catch (e) {
         ma = null;
       }
