@@ -3847,12 +3847,13 @@
         showDashboardBackBtn(false); setPanelTitle('');
       }
       if (wrongBookOpen) {
-        wrongBookOpen = false; wrongBookReturn = false; wrongBookWb = null;
+        wrongBookOpen = false; wrongBookReturn = false;
         document.getElementById('wrongBookPanel').style.display = 'none';
         document.getElementById('mainAreaContent').style.display = '';
         document.getElementById('btnWrongBook').innerHTML = '错题本<span class="sol-key">B</span>';
         showWrongBookReturnBtn(false); setPanelTitle('');
       }
+      wrongBookWb = null; // 无条件重置错题本书籍筛选（书籍列表按科目不同，防跨科目残留）
       closeAllTitlePanels(); // 关闭可能残留的标题下拉面板（切换后重建）
       loadStatuses(); loadQBad(); loadSBad(); loadNotes();
       loadSolutionPref(); renderSolDefaultBtn(); updateSolutionUI(); // 解析默认按科目记忆
@@ -5118,7 +5119,7 @@
       window.addEventListener('pointermove', onAnnotPointerMove);
       window.removeEventListener('pointerup', onAnnotPointerUp);
       window.addEventListener('pointerup', onAnnotPointerUp);
-      // 显示工具栏，默认选择直线
+      // 显示工具栏，默认选择矩形（进入即用 FrameMarker）
       const tb = document.getElementById('annotToolbar');
       if (tb) {
         tb.style.display = '';
@@ -5127,9 +5128,7 @@
       }
       buildAnnotPalette(); // 重建预设色板（含高亮当前色）
       lbAnnotMode = true;
-      lbCurrentAnnotTool = 'FrameMarker';
-      lbLastAnnotTool = 'FrameMarker';
-      selectAnnotTool('FrameMarker'); // 进入即用矩形
+      selectAnnotTool('FrameMarker'); // 进入即用矩形（内部已初始化 lbCurrentAnnotTool/lbLastAnnotTool）
       const annotBtn = document.getElementById('lightboxAnnotate');
       if (annotBtn) {
         annotBtn.textContent = '退出标注';
@@ -5273,16 +5272,11 @@
       }
     }
 
-    function selectAnnotToolFromKey(tool) {
-      selectAnnotTool(tool);
-    }
-
-    // Tab 在工具栏工具顺序中循环（直线 → 矩形 → 高亮 → 画笔）
+    // Tab 在工具栏工具顺序中循环（矩形 → 直线 → 高亮 → 画笔，与 ANNOT_TOOLS 一致）
     function cycleAnnotTool() {
       let i = ANNOT_TOOLS.indexOf(lbCurrentAnnotTool);
       if (i < 0) i = 0;
-      const next = ANNOT_TOOLS[(i + 1) % ANNOT_TOOLS.length];
-      selectAnnotToolFromKey(next);
+      selectAnnotTool(ANNOT_TOOLS[(i + 1) % ANNOT_TOOLS.length]);
     }
 
     // 空格显隐工具栏（Snipaste：空格显示/隐藏标注工具条）
@@ -5412,8 +5406,7 @@
       let i = ANNOT_TOOLS.indexOf(lbCurrentAnnotTool);
       if (i < 0) i = ANNOT_TOOLS.indexOf(lbLastAnnotTool);
       if (i < 0) i = 0;
-      const next = ANNOT_TOOLS[(i + dir + ANNOT_TOOLS.length) % ANNOT_TOOLS.length];
-      selectAnnotToolFromKey(next);
+      selectAnnotTool(ANNOT_TOOLS[(i + dir + ANNOT_TOOLS.length) % ANNOT_TOOLS.length]);
     }
 
     function adjustAnnotWidth(d) {
