@@ -1169,15 +1169,19 @@
       pointer-events: none; /* 不拦截图片点击，仅显示标注 */
     }
     .annot-overlay markerjs-viewer,
-    .annot-overlay .markerjs-viewer {
+    .annot-overlay .markerjs-viewer,
+    .annot-overlay mjs-marker-view {
       width: 100% !important;
       height: 100% !important;
+      pointer-events: none; /* 只读标注层不拦截点击，穿透到底图打开灯箱 */
     }
     .annot-overlay markerjs-viewer svg,
-    .annot-overlay .markerjs-viewer svg {
+    .annot-overlay .markerjs-viewer svg,
+    .annot-overlay mjs-marker-view svg {
       width: 100%;
       height: 100%;
       overflow: visible;
+      pointer-events: none;
     }
 
     /* ===== 灯箱（全屏模态） ===== */
@@ -1254,9 +1258,11 @@
       z-index: 9999;
     }
     .lightbox-annot-overlay markerjs-viewer,
-    .lightbox-annot-overlay .markerjs-viewer {
+    .lightbox-annot-overlay .markerjs-viewer,
+    .lightbox-annot-overlay mjs-marker-view {
       width: 100%;
       height: 100%;
+      pointer-events: none; /* 只读查看标注层不拦截点击，背景/缩放点击穿透 */
     }
 
     .lightbox-annotate {
@@ -4783,18 +4789,31 @@
       const overlay = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightboxImg');
 
-      // 题目图片点击打开灯箱
-      document.getElementById('questionImg').addEventListener('click', function () {
-        const src = this.src;
+      // 题目图片点击打开灯箱。
+      // 用捕获阶段监听 .annot-wrapper（图片 + readonly 标注层的父容器）：
+      // 有标注时 readonly 标注层（mjs-marker-view 及其 shadow 内部）会覆盖图片区域，
+      // 点击的 target 是标注层本身而非 <img>，冒泡阶段到不了 questionImg（questionImg
+      // 是兄弟节点，不在事件路径上）。捕获阶段在 wrapper 上先于 target 处理，且能拿到
+      // 图片 src，保证无论是否命中标注层都能开灯箱。
+      document.getElementById('qAnnotWrap').addEventListener('click', function (e) {
+        const img = document.getElementById('questionImg');
+        const src = img && img.src;
         if (src && !src.endsWith('/')) openLightbox(src);
-      });
-      // 解析图片（含分片）也可点击打开灯箱
+      }, true);
+      // 解析图片（含分片）也可点击打开灯箱。
+      // 捕获阶段监听：有标注时点击 target 是标注层（mjs-marker-view）而非 <img>，
+      // 需从事件路径里找对应的 .solution-img 取 src（与主题目图同理，见 qAnnotWrap）。
       document.getElementById('solutionImgs').addEventListener('click', function (e) {
-        if (e.target && e.target.tagName === 'IMG') {
-          const src = e.target.src;
-          if (src && !src.endsWith('/')) openLightbox(src);
+        // 从事件路径找 .solution-img（覆盖 命中标注层 / 命中 <img> 两种情况）
+        const path = e.composedPath ? e.composedPath() : (e.path || []);
+        let img = null;
+        for (let i = 0; i < path.length; i++) {
+          const el = path[i];
+          if (el && el.classList && el.classList.contains('solution-img')) { img = el; break; }
         }
-      });
+        const src = img && img.src;
+        if (src && !src.endsWith('/')) openLightbox(src);
+      }, true);
 
       document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
       overlay.addEventListener('click', function (e) { if (e.target === overlay) closeLightbox(); });
