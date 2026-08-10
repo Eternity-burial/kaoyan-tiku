@@ -4902,8 +4902,8 @@
     var lbAnnotMode = false;     // 是否处于标注模式
     var lbAnnotColor = '#ff0000'; // 当前标注颜色
     var lbAnnotWidth = 4;        // 当前标注粗细
-    var lbLastAnnotTool = 'LineMarker';   // 最近一次绘图工具（Tab/右键/横向滚轮用）
-    var lbCurrentAnnotTool = 'LineMarker'; // 当前激活工具
+    var lbLastAnnotTool = 'FrameMarker';   // 最近一次绘图工具（Tab/右键/横向滚轮用）
+    var lbCurrentAnnotTool = 'FrameMarker'; // 当前激活工具
     var lbCurrentAnnotEditor = null;       // 当前未注册的绘图编辑器（Shift 锁定时覆写坐标）
     var lbAnnotShiftWasOn = false;         // 拖动期间是否按住 Shift（释放时再吸一次）
 
@@ -5100,9 +5100,9 @@
       }
       buildAnnotPalette(); // 重建预设色板（含高亮当前色）
       lbAnnotMode = true;
-      lbCurrentAnnotTool = 'LineMarker';
-      lbLastAnnotTool = 'LineMarker';
-      selectAnnotTool('LineMarker'); // 进入即用直线
+      lbCurrentAnnotTool = 'FrameMarker';
+      lbLastAnnotTool = 'FrameMarker';
+      selectAnnotTool('FrameMarker'); // 进入即用矩形
       const annotBtn = document.getElementById('lightboxAnnotate');
       if (annotBtn) {
         annotBtn.textContent = '退出标注';
@@ -5823,10 +5823,10 @@ ${cardsHTML}
       </button>
       <span class="at-sep"></span>
       <!-- 矩形 / 直线 / 高亮 / 画笔 -->
-      <button class="at-btn at-tool" data-tool="FrameMarker" title="矩形 (R)">
+      <button class="at-btn at-tool active" data-tool="FrameMarker" title="矩形 (R)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="1.5"/></svg>
       </button>
-      <button class="at-btn at-tool active" data-tool="LineMarker" title="直线 (L)">
+      <button class="at-btn at-tool" data-tool="LineMarker" title="直线 (L)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="19" x2="20" y2="5"/></svg>
       </button>
       <button class="at-btn at-tool" data-tool="HighlighterMarker" title="高亮 (H)">
