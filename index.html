@@ -2363,7 +2363,7 @@
             class="filter-key">Shift+X</span></button>
         <button class="filter-btn" data-filter="wrong" aria-pressed="false">需复习 <span class="filter-count"></span><span
             class="filter-key">Shift+C</span></button>
-        <button class="filter-btn" data-filter="unmarked" aria-pressed="false">未标记 <span
+        <button class="filter-btn" data-filter="unmarked" aria-pressed="false">带笔记 <span
             class="filter-count"></span><span class="filter-key">Shift+N</span></button>
       </div>
 
@@ -2921,7 +2921,11 @@
       const all = Array.from({ length: ch.total }, (_, i) => i);
       if (isAllFilterActive()) return all;
       return all.filter(i => {
-        if (!statuses[i]) return currentFilters.has('unmarked');
+        // 带笔记（原「未标记」）：有笔记或题目图/解析图有标注。与状态筛选组合时保持并集语义
+        // （与其它筛选一致：选中任一筛选即通过），不选状态时仅按带笔记判定。
+        if (currentFilters.has('unmarked')) {
+          if (notesData[notesKeyFor(i)] || hasQuestionImagesAnnotated(i)) return true;
+        }
         return currentFilters.has(statuses[i]);
       });
     }
@@ -4710,7 +4714,11 @@
         else if (s === 'vague') vague++;
         else if (s === 'wrong') wrong++;
       });
-      const unmarked = total - proficient - vague - wrong;
+      // 带笔记计数：有笔记或任一图片有标注
+      let withNoteOrAnnot = 0;
+      for (let i = 0; i < total; i++) {
+        if (notesData[notesKeyFor(i)] || hasQuestionImagesAnnotated(i)) withNoteOrAnnot++;
+      }
       const setCount = (filter, val) => {
         const el = document.querySelector('.filter-btn[data-filter="' + filter + '"] .filter-count');
         if (el) el.textContent = val;
@@ -4719,7 +4727,7 @@
       setCount('proficient', proficient);
       setCount('vague', vague);
       setCount('wrong', wrong);
-      setCount('unmarked', unmarked);
+      setCount('unmarked', withNoteOrAnnot);
     }
 
     // ===== 灯箱（图片点击全屏） =====
@@ -5532,7 +5540,7 @@ ${cardsHTML}
     // R = 题目图不达标, T = 解析图不达标
     // V = 全局进度, B = 错题本, G = 切换科目
     // Alt = 进入/退出标注（灯箱打开时）
-    // Shift+A/Z/X/C/N = 筛选 全部/熟练/模糊/需复习/未标记
+    // Shift+A/Z/X/C/N = 筛选 全部/熟练/模糊/需复习/带笔记
     document.addEventListener('keydown', function (e) {
       // 标注模式下吃掉全部按键（Snipaste 式：避免切题/改状态等全局快捷键误触发）。
       // 需在 INPUT 判断之前：标注工具栏含 range 输入（粗细滑块），焦点在其上时 Alt 退出仍须生效。
@@ -5718,7 +5726,7 @@ ${cardsHTML}
         <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>Z</kbd></span><span class="desc">熟练</span></div>
         <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>X</kbd></span><span class="desc">模糊</span></div>
         <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>C</kbd></span><span class="desc">需复习</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>N</kbd></span><span class="desc">未标记</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>N</kbd></span><span class="desc">带笔记（有笔记或有标注）</span></div>
       </div>
       <div class="shortcut-group">
         <div class="shortcut-group-title">面板</div>
