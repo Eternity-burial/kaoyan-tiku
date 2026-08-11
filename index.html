@@ -5785,6 +5785,23 @@ ${cardsHTML}
       });
     }
 
+    // ===== 重置所有 SM-2 复习进度（清除 bug 遗留数据后重新迁移） =====
+    function resetAllSm2() {
+      var keys = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && (k.indexOf('sm2_') === 0 || k.indexOf('kaoyan_sm2_migrated_') === 0)) {
+          keys.push(k);
+        }
+      }
+      keys.forEach(function(k) { localStorage.removeItem(k); });
+      sm2 = {};
+      if (sm2PanelOpen) renderSm2Panel();
+      console.log('SM-2 进度已重置：' + keys.length + ' 条记录已清除。刷新页面将自动迁移已有掌握度标记。');
+      alert('SM-2 复习进度已重置（' + keys.length + ' 条）。\n\n建议刷新页面以重新触发自动迁移。');
+      return keys.length;
+    }
+
     function calcSM2(record, score) {
       if (!record) record = { ef: 2.5, interval: 1, reps: 0, nextReview: 0, lastReview: 0, history: [] };
       var now = Date.now();
