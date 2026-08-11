@@ -336,4 +336,4 @@
           { id: 'm5ch8', number: 8, name: '第8章 计算机控制系统', short: '8 计算机控制', total: 2, cols: 4, wb: '真题分类', subj: '控制工程基础', relPath: '真题分类/ch8', labels: ['24', '25'] }
         ]
       }
-    ];
+    ]

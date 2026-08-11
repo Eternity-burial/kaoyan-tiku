@@ -1,6 +1,5 @@
 
-    // ===== 章节数据（数学 shu1） =====
-// ===== 章节数据已移至 js/chapters.js =====
+    // ===== 章节数据（已移至 js/chapters.js）=====
 
     let curSubjectId = 'shu1';
     let curSubject = SUBJECTS[0];
