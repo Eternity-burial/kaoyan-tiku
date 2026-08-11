@@ -87,7 +87,11 @@ function sendCommand(wsUrl, method, params) {
     console.log('最新快照: latest.json');
 
   } catch (e) {
-    console.error('备份失败: ' + e.message);
+    if (e.code === 'ECONNREFUSED') {
+      console.error('备份失败: Chrome 未在 9223 端口运行。请用 启动.bat 打开题库。');
+    } else {
+      console.error('备份失败: ' + (e.message || e));
+    }
     process.exit(1);
   }
 })();

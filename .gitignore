@@ -9,3 +9,6 @@ desktop.ini
 *计划*.md
 *审查*.md
 data/backup_*.json
+node_modules/
+package-lock.json
+package.json
