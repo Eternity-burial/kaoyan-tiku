@@ -4837,7 +4837,9 @@
       const had = statuses[current];
       // 复习会话中不允许取消标记（同一键重复选 = 正常记录，不 toggle off）
       const togglingOff = reviewSession ? false : (had === status);
-      if (togglingOff) { delete statuses[current]; }
+      // 撤销栈：记录本次修改前的状态
+      if (!togglingOff) pushUndo(current, had);
+      if (togglingOff) { delete statuses[current]; pushUndo(current, had); }
       else { statuses[current] = status; }
       saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
       // SM-2: 普通刷题区改标记 = 重新定基线；复习会话 = 真正复习事件
@@ -4845,13 +4847,24 @@
       if (!togglingOff && scoreMap[status]) {
         sm2Review(current, scoreMap[status], !!reviewSession);
       }
-      // 复习会话中：评分后必然跳题；正常模式：首次打标跳题
-      if (reviewSession) {
-        reviewNext();
-      } else if (!togglingOff && !had) {
-        navNext();
-      }
-      // 更新 SM-2 信息行
+      if (reviewSession) { reviewNext(); }
+      else if (!togglingOff && !had) { navNext(); }
+      renderSm2InfoBar();
+    }
+
+    // ===== 撤销最近一次掌握度标记 =====
+    var undoStack = [];
+    function pushUndo(idx, prevStatus) {
+      undoStack.push({ idx: idx, prevStatus: prevStatus || '' });
+      if (undoStack.length > 50) undoStack.shift();
+    }
+    function undoLastMark() {
+      if (undoStack.length === 0) return;
+      var act = undoStack.pop();
+      switchTo(act.idx);
+      if (act.prevStatus) { statuses[act.idx] = act.prevStatus; }
+      else { delete statuses[act.idx]; }
+      saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
       renderSm2InfoBar();
     }
 
@@ -6136,6 +6149,13 @@ ${cardsHTML}
         return;
       }
 
+      // Ctrl+Z：撤销最近一次掌握度标记
+      if ((e.ctrlKey || e.metaKey) && key === 'z' && !isShift) {
+        e.preventDefault();
+        undoLastMark();
+        return;
+      }
+
       // Shift 筛选快捷键
       if (isShift) {
         switch (key) {
@@ -6164,6 +6184,12 @@ ${cardsHTML}
         // 上一题 / 下一题（题组级 / 子题级，见 navPrev / navNext）
         case 'a': case 'arrowleft': navPrev(); break;
         case 'd': case 'arrowright': navNext(); break;
+        // 数字键 1-5 直接评级（1=不会 5=熟练）
+        case '1': e.preventDefault(); setStatus('wrong'); break;
+        case '2': e.preventDefault(); setStatus('rusty'); break;
+        case '3': e.preventDefault(); setStatus('vague'); break;
+        case '4': e.preventDefault(); setStatus('familiar'); break;
+        case '5': e.preventDefault(); setStatus('proficient'); break;
         // 小题选择模式
         case 'f': toggleSubMode(); break;
         // 上一行 / 下一行（视觉网格行导航）
@@ -6276,11 +6302,12 @@ ${cardsHTML}
       </div>
       <div class="shortcut-group">
         <div class="shortcut-group-title">掌握度（5 级）</div>
-        <div class="shortcut-row"><span class="key"><kbd>Z</kbd></span><span class="desc">熟练（lv5 完美）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Z</kbd>+<kbd>X</kbd></span><span class="desc">较熟练（lv4 正确但犹豫）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>X</kbd></span><span class="desc">模糊（lv3 思路对但卡壳）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>X</kbd>+<kbd>C</kbd></span><span class="desc">困难（lv2 大部分忘记）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>C</kbd></span><span class="desc">不会（lv1 全忘）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>5</kbd> / <kbd>Z</kbd></span><span class="desc">熟练（lv5 完美）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>4</kbd> / <kbd>Z</kbd>+<kbd>X</kbd></span><span class="desc">较熟练（lv4 正确但犹豫）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>3</kbd> / <kbd>X</kbd></span><span class="desc">模糊（lv3 思路对但卡壳）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>2</kbd> / <kbd>X</kbd>+<kbd>C</kbd></span><span class="desc">困难（lv2 大部分忘记）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>1</kbd> / <kbd>C</kbd></span><span class="desc">不会（lv1 全忘）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Ctrl</kbd>+<kbd>Z</kbd></span><span class="desc">撤销最近一次标记</span></div>
       </div>
       <div class="shortcut-group">
         <div class="shortcut-group-title">解析</div>
