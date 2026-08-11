@@ -5819,6 +5819,10 @@ ${cardsHTML}
 
     function sm2Review(idx, score) {
       var old = sm2[idx];
+      // 5 分钟内重复打标 → 视为修正而非新复习，从头计算避免间隔爆炸
+      if (old && old.lastReview && (Date.now() - old.lastReview < 300000)) {
+        old = null;
+      }
       sm2[idx] = calcSM2(old, score);
       saveSm2();
     }
