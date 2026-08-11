@@ -5700,13 +5700,6 @@
       console.log('Backup: ' + Object.keys(dump).length + ' keys exported to ' + a.download);
     }
 
-    function autoBackup() {
-      var today = new Date();
-      var ds = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
-      if (localStorage.getItem('kaoyan_last_backup') === ds) return;
-      backupData();
-    }
-
     // 筛选按钮事件
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function () {
@@ -6317,8 +6310,7 @@ ${cardsHTML}
     renderSolDefaultBtn(); updateSolutionUI();
     // 首次加载（无已选科目）弹出科目选择（等 DOM 就绪，科目弹窗 HTML 在脚本后）
     if (!savedSubject) document.addEventListener('DOMContentLoaded', function () { openSubjectPicker(); });
-    // 每日自动备份（延时 3s 避免阻塞首屏，当天首次打开才触发）
-    setTimeout(autoBackup, 3000);
+    // 备份由 scripts/sync.js 守护进程静默处理（启动.bat 拉起），侧栏「备份数据」按钮可手动导出
   </script>
 
   <div class="shortcut-overlay" id="shortcutOverlay">
