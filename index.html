@@ -6066,7 +6066,7 @@ ${cardsHTML}
           var tmp = queue[i]; queue[i] = queue[j]; queue[j] = tmp;
         }
       }
-      reviewSession = { queue: queue, currentIdx: 0, mode: mode };
+      reviewSession = { queue: queue, currentIdx: 0, mode: mode, originChapter: currentChapterId, originIdx: current };
       closeSm2Panel();
       // 跳转到第一题
       var first = queue[0];
@@ -6081,10 +6081,7 @@ ${cardsHTML}
       reviewSession.currentIdx++;
       if (reviewSession.currentIdx >= reviewSession.queue.length) {
         alert('🎉 本轮复习完成！');
-        reviewSession = null;
-        document.getElementById('sm2InfoBar').style.display = 'none';
-        setPanelTitle('');
-        renderTitle();
+        exitReviewSession();
         return;
       }
       var item = reviewSession.queue[reviewSession.currentIdx];
@@ -6108,10 +6105,18 @@ ${cardsHTML}
 
     function exitReviewSession() {
       if (reviewSession) {
+        var originCh = reviewSession.originChapter;
+        var originIdx = reviewSession.originIdx;
         reviewSession = null;
         document.getElementById('sm2InfoBar').style.display = 'none';
         setPanelTitle('');
-        renderTitle();
+        if (originCh && originCh !== currentChapterId) {
+          switchChapter(originCh);
+          current = originIdx;
+          switchTo(current);
+        } else {
+          renderTitle();
+        }
       }
     }
 
