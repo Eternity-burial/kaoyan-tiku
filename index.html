@@ -3475,7 +3475,7 @@
       var len = ch.ownTotal || ch.total;
       for (var i = 0; i < len; i++) {
         var s = statusObj[i];
-        if (s === 'proficient' || s === 'vague' || s === 'wrong') done++;
+        if (s === 'proficient' || s === 'familiar' || s === 'vague' || s === 'rusty' || s === 'wrong') done++;
       }
       return { progress: len > 0 ? done / len : 0, done: done, total: len };
     }
@@ -5654,7 +5654,7 @@
     document.getElementById('btnDashboard').onclick = toggleDashboard;
     document.getElementById('btnWrongBook').onclick = toggleWrongBook;
     document.getElementById('btnShortcutHelp').onclick = toggleShortcutHelp;
-    ['Proficient', 'Vague', 'Wrong'].forEach(s => {
+    ['Proficient', 'Familiar', 'Vague', 'Rusty', 'Wrong'].forEach(s => {
       document.getElementById('btn' + s).onclick = function () { setStatus(s.toLowerCase()); };
     });
     document.getElementById('btnQBad').onclick = toggleQBad;
@@ -6009,6 +6009,12 @@ ${cardsHTML}
       if (queue.length === 0) { alert('该章节没有到期题目'); return; }
       var mode = document.querySelector('input[name="sm2mode"]:checked');
       mode = mode ? mode.value : 'sequential';
+      // 仅逾期模式：从已收集的队列中再过滤
+      if (mode === 'overdue') {
+        var todayStart = new Date(); todayStart.setHours(0,0,0,0);
+        queue = queue.filter(function(item) { return item.record.nextReview < todayStart.getTime(); });
+        if (queue.length === 0) { alert('该章节没有逾期题目'); return; }
+      }
       startReview(queue, mode);
     }
 
@@ -6026,6 +6032,11 @@ ${cardsHTML}
           var len = ch.ownTotal || ch.total;
           for (var i = 0; i < len; i++) {
             if (obj[i] && obj[i].nextReview && obj[i].nextReview <= Date.now()) {
+              // 仅逾期模式：只取昨天及之前到期的
+              if (mode === 'overdue') {
+                var todayStart = new Date(); todayStart.setHours(0,0,0,0);
+                if (obj[i].nextReview >= todayStart.getTime()) continue;
+              }
               queue.push({ chapterId: ch.id, idx: i, record: obj[i] });
             }
           }
