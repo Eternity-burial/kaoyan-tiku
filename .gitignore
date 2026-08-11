@@ -8,3 +8,7 @@ desktop.ini
 *.bak
 *计划*.md
 *审查*.md
+scripts/
+node_modules/
+package.json
+package-lock.json
