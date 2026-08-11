@@ -1070,7 +1070,7 @@
     }
     .sm2-info-bar span { margin: 0 8px; }
     .sm2-info-bar .sm2-due-tag { color: #007AFF; font-weight: 600; }
-    .sm2-info-bar .sm2-overdue-tag { color: #E53935; font-weight: 600; }
+    .sm2-info-bar .sm2-overdue-tag { color: #D32F2F; font-weight: 600; }
 
     /* ===== SM-2 复习面板 ===== */
     .sm2-panel { padding: 16px; }
@@ -1103,7 +1103,7 @@
     .sm2-ch-name { font-weight: 600; color: var(--text); }
     .sm2-ch-stats { font-size: 11px; color: var(--text-muted); }
     .sm2-ch-due { color: #007AFF; font-weight: 600; }
-    .sm2-ch-overdue { color: #E53935; font-weight: 600; }
+    .sm2-ch-overdue { color: #D32F2F; font-weight: 600; }
     .sm2-ch-btn {
       padding: 4px 14px; border-radius: 8px; border: none; cursor: pointer;
       font-size: 12px; font-weight: 600; transition: all 0.15s;
@@ -1668,7 +1668,7 @@
     }
 
     .gel-btn.btn-sbad-toggle.marked {
-      background: linear-gradient(180deg, var(--uncertain-dark) 0%, #E65100 100%);
+      background: linear-gradient(180deg, var(--uncertain-dark) 0%, #F57F17 100%);
       color: #fff;
       box-shadow: 0 2px 8px rgba(196, 85, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
@@ -1693,22 +1693,22 @@
       --text-muted: #747887;
       --text-light: #b8bcc6;
       --border: rgba(71, 76, 101, 0.14);
-      --mastered: #43A047;
-      --mastered-dark: #2E7D32;
-      --mastered-alpha: rgba(67, 160, 71, 0.2);
-      --uncertain: #FB8C00;
-      --uncertain-dark: #E65100;
-      --uncertain-alpha: rgba(251, 140, 0, 0.2);
-      --unfamiliar: #E53935;
+      --mastered: #389E0D;
+      --mastered-dark: #1B5E20;
+      --mastered-alpha: rgba(56, 158, 13, 0.2);
+      --uncertain: #FBC02D;
+      --uncertain-dark: #F57F17;
+      --uncertain-alpha: rgba(251, 192, 45, 0.2);
+      --unfamiliar: #D32F2F;
       --unfamiliar-dark: #B71C1C;
-      --unfamiliar-alpha: rgba(229, 57, 53, 0.2);
+      --unfamiliar-alpha: rgba(211, 47, 47, 0.2);
       --wrong: #B71C1C;
-      /* 5 级掌握度色板：绿→黄绿→橙→红橙→红 */
-      --lv5: #43A047; --lv5-dark: #2E7D32; --lv5-alpha: rgba(67,160,71,0.2);
-      --lv4: #7CB342; --lv4-dark: #558B2F; --lv4-alpha: rgba(124,179,66,0.2);
-      --lv3: #FB8C00; --lv3-dark: #E65100; --lv3-alpha: rgba(251,140,0,0.2);
-      --lv2: #F4511E; --lv2-dark: #BF360C; --lv2-alpha: rgba(244,81,30,0.2);
-      --lv1: #E53935; --lv1-dark: #B71C1C; --lv1-alpha: rgba(229,57,53,0.2);
+      /* 5 级掌握度色板：绿→黄绿→黄→橙→红 */
+      --lv5: #389E0D; --lv5-dark: #1B5E20; --lv5-alpha: rgba(56,158,13,0.2);
+      --lv4: #7CB305; --lv4-dark: #558B2F; --lv4-alpha: rgba(124,179,5,0.2);
+      --lv3: #FBC02D; --lv3-dark: #F57F17; --lv3-alpha: rgba(251,192,45,0.2);
+      --lv2: #F57C00; --lv2-dark: #BF360C; --lv2-alpha: rgba(245,124,0,0.2);
+      --lv1: #D32F2F; --lv1-dark: #B71C1C; --lv1-alpha: rgba(211,47,47,0.2);
       --gel-top: rgba(255, 255, 255, 0.92);
       --gel-bot: rgba(246, 247, 251, 0.92);
       --gel-hov-top: #ffffff;
@@ -3442,11 +3442,11 @@
           (seg.label ? '<div class="stats-seg-label">' + seg.label + '</div>' : '') +
           '<div class="stats-bar-wrap"><div class="stats-bar-fill" style="width:' + pct + '%"></div></div>' +
           '<div class="stats-counts">' +
-            '<span><span class="sc-dot" style="background:#43A047"></span>熟练 ' + lv5 + '</span>' +
-            '<span><span class="sc-dot" style="background:#7CB342"></span>较熟 ' + lv4 + '</span>' +
-            '<span><span class="sc-dot" style="background:#FB8C00"></span>模糊 ' + lv3 + '</span>' +
-            '<span><span class="sc-dot" style="background:#F4511E"></span>困难 ' + lv2 + '</span>' +
-            '<span><span class="sc-dot" style="background:#E53935"></span>不会 ' + lv1 + '</span>' +
+            '<span><span class="sc-dot" style="background:#389E0D"></span>熟练 ' + lv5 + '</span>' +
+            '<span><span class="sc-dot" style="background:#7CB305"></span>较熟 ' + lv4 + '</span>' +
+            '<span><span class="sc-dot" style="background:#FBC02D"></span>模糊 ' + lv3 + '</span>' +
+            '<span><span class="sc-dot" style="background:#F57C00"></span>困难 ' + lv2 + '</span>' +
+            '<span><span class="sc-dot" style="background:#D32F2F"></span>不会 ' + lv1 + '</span>' +
             '<span><span class="sc-dot" style="background:#bbb"></span>未做 ' + un + '</span>' +
           '</div>' +
         '</div>';
@@ -3697,9 +3697,9 @@
           '<div class="db-chapter-name">' + name + '</div>' +
           '<div class="db-chapter-bar"><div class="db-chapter-fill" style="width:' + stats.pct + '%"></div></div>' +
           '<div class="db-chapter-stats">' +
-            '<span class="db-stat"><span class="db-stat-dot" style="background:#43A047"></span>熟练 ' + stats.proficient + '</span>' +
-            '<span class="db-stat"><span class="db-stat-dot" style="background:#FB8C00"></span>模糊 ' + stats.vague + '</span>' +
-            '<span class="db-stat"><span class="db-stat-dot" style="background:#E53935"></span>不会 ' + stats.wrong + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#389E0D"></span>熟练 ' + stats.proficient + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#FBC02D"></span>模糊 ' + stats.vague + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#D32F2F"></span>不会 ' + stats.wrong + '</span>' +
             '<span class="db-stat"><span class="db-stat-dot" style="background:#ccc"></span>未做 ' + stats.unmarked + '</span>' +
           '</div></div>';
       }
@@ -5704,7 +5704,7 @@
         return;
       }
       const statusLabel = statusFilter === 'vague' ? '模糊' : '不会';
-      const statusColor = statusFilter === 'vague' ? '#FB8C00' : '#B71C1C';
+      const statusColor = statusFilter === 'vague' ? '#FBC02D' : '#B71C1C';
       const cardsHTML = items.map((item, idx) => {
         // 导出窗口是 about:blank，相对路径无法解析；转成绝对路径（file:// 或 http(s)://）
         let abs = item.qImg;
