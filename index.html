@@ -4839,10 +4839,10 @@
       if (togglingOff) { delete statuses[current]; }
       else { statuses[current] = status; }
       saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
-      // SM-2: 评分后更新复习数据
+      // SM-2: 普通刷题区改标记 = 重新定基线；复习会话 = 真正复习事件
       const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
       if (!togglingOff && scoreMap[status]) {
-        sm2Review(current, scoreMap[status]);
+        sm2Review(current, scoreMap[status], !!reviewSession);
       }
       // 复习会话中：评分后必然跳题；正常模式：首次打标跳题
       if (reviewSession) {
@@ -5757,12 +5757,7 @@ ${cardsHTML}
           if (s && !sm2Obj[i]) {
             changed = true;
             var score = scoreMap[s] || 3;
-            var seed;
-            if (score === 5)      seed = { ef: 2.5, interval: 30, reps: 3, history: [] };
-            else if (score === 4) seed = { ef: 2.5, interval: 7,  reps: 2, history: [] };
-            else if (score === 3) seed = { ef: 2.5, interval: 1,  reps: 1, history: [] };
-            else                  seed = { ef: 2.5, interval: 1,  reps: 0, history: [] };
-            sm2Obj[i] = calcSM2(seed, score);
+            sm2Obj[i] = calcSM2(getSm2Seed(score), score);
             migrated++;
           }
         }
@@ -5817,14 +5812,23 @@ ${cardsHTML}
       return h.slice(-3).every(function(e) { return e.score >= 4; }) && record.interval > 90;
     }
 
-    function sm2Review(idx, score) {
-      var old = sm2[idx];
-      // 5 分钟内重复打标 → 视为修正而非新复习，从头计算避免间隔爆炸
-      if (old && old.lastReview && (Date.now() - old.lastReview < 300000)) {
-        old = null;
+    function sm2Review(idx, score, isReviewSession) {
+      if (isReviewSession) {
+        // 复习会话：真正的复习事件，SM-2 正常累进
+        sm2[idx] = calcSM2(sm2[idx], score);
+      } else {
+        // 普通刷题区：改标记只是重新定基线，不累进，从对应掌握度的种子开始
+        sm2[idx] = calcSM2(getSm2Seed(score), score);
       }
-      sm2[idx] = calcSM2(old, score);
       saveSm2();
+    }
+
+    // 根据掌握度等级返回恰当的初始 SM-2 状态（模拟已有几次复习）
+    function getSm2Seed(score) {
+      if (score === 5)      return { ef: 2.5, interval: 30, reps: 3, history: [] };
+      else if (score === 4) return { ef: 2.5, interval: 7,  reps: 2, history: [] };
+      else if (score === 3) return { ef: 2.5, interval: 1,  reps: 1, history: [] };
+      else                  return { ef: 2.5, interval: 1,  reps: 0, history: [] };
     }
 
     function getSm2Label(rec) {
