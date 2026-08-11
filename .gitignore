@@ -8,3 +8,4 @@ desktop.ini
 *.bak
 *计划*.md
 *审查*.md
+data/backup_*.json

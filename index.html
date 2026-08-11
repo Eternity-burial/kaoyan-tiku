@@ -2429,6 +2429,7 @@
       <button id="btnSm2PanelSidebar" class="sol-default-btn" style="margin-top:8px" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
       <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
       <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
+      <button id="btnBackup" class="sol-default-btn" style="margin-top:8px">备份数据</button>
 
     </div>
 
@@ -5678,6 +5679,33 @@
     document.getElementById('btnNoteSave').onclick = saveNote;
     document.getElementById('btnNoteCancel').onclick = cancelNoteEdit;
     document.getElementById('btnNoteDelete').onclick = deleteNote;
+    document.getElementById('btnBackup').onclick = backupData;
+
+    // ===== 数据备份与恢复 =====
+    function backupData() {
+      var dump = {};
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        dump[k] = localStorage.getItem(k);
+      }
+      var blob = new Blob([JSON.stringify(dump, null, 2)], { type: 'application/json' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      var d = new Date();
+      var ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+      a.href = url; a.download = '考研题库备份_' + ds + '.json';
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a); URL.revokeObjectURL(url);
+      localStorage.setItem('kaoyan_last_backup', ds);
+      console.log('Backup: ' + Object.keys(dump).length + ' keys exported to ' + a.download);
+    }
+
+    function autoBackup() {
+      var today = new Date();
+      var ds = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+      if (localStorage.getItem('kaoyan_last_backup') === ds) return;
+      backupData();
+    }
 
     // 筛选按钮事件
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -6289,6 +6317,8 @@ ${cardsHTML}
     renderSolDefaultBtn(); updateSolutionUI();
     // 首次加载（无已选科目）弹出科目选择（等 DOM 就绪，科目弹窗 HTML 在脚本后）
     if (!savedSubject) document.addEventListener('DOMContentLoaded', function () { openSubjectPicker(); });
+    // 每日自动备份（延时 3s 避免阻塞首屏，当天首次打开才触发）
+    setTimeout(autoBackup, 3000);
   </script>
 
   <div class="shortcut-overlay" id="shortcutOverlay">
