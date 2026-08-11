@@ -161,68 +161,38 @@
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
     }
 
-    /* 掌握度按钮 */
-    .gel-btn.btn-status {
-      min-width: 64px;
-    }
+    /* 掌握度按钮（5 级） */
+    .gel-btn.btn-status { min-width: 56px; }
 
-    .gel-btn.btn-status[data-status="proficient"] .func-name {
-      color: var(--mastered);
-    }
+    .gel-btn.btn-status[data-status="proficient"] .func-name { color: var(--lv5); }
+    .gel-btn.btn-status[data-status="familiar"]   .func-name { color: var(--lv4); }
+    .gel-btn.btn-status[data-status="vague"]      .func-name { color: var(--lv3); }
+    .gel-btn.btn-status[data-status="rusty"]      .func-name { color: var(--lv2); }
+    .gel-btn.btn-status[data-status="wrong"]      .func-name { color: var(--lv1); }
 
-    .gel-btn.btn-status[data-status="vague"] .func-name {
-      color: var(--uncertain);
-    }
+    .gel-btn.btn-status .key { color: #b0b0b0; }
 
-    .gel-btn.btn-status[data-status="wrong"] .func-name {
-      color: var(--unfamiliar);
-    }
+    .gel-btn.btn-status.proficient,
+    .gel-btn.btn-status.familiar,
+    .gel-btn.btn-status.vague,
+    .gel-btn.btn-status.rusty,
+    .gel-btn.btn-status.wrong { color: #fff; }
+    .gel-btn.btn-status.proficient .func-name,
+    .gel-btn.btn-status.familiar .func-name,
+    .gel-btn.btn-status.vague .func-name,
+    .gel-btn.btn-status.rusty .func-name,
+    .gel-btn.btn-status.wrong .func-name { color: #fff; }
+    .gel-btn.btn-status.proficient .key,
+    .gel-btn.btn-status.familiar .key,
+    .gel-btn.btn-status.vague .key,
+    .gel-btn.btn-status.rusty .key,
+    .gel-btn.btn-status.wrong .key { color: rgba(255,255,255,0.7); }
 
-    .gel-btn.btn-status .key {
-      color: #b0b0b0;
-    }
-
-    .gel-btn.btn-status.proficient {
-      background: linear-gradient(180deg, var(--mastered) 0%, var(--mastered-dark) 100%);
-      color: #fff;
-      box-shadow: 0 2px 8px var(--mastered-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    }
-
-    .gel-btn.btn-status.proficient .func-name {
-      color: #fff;
-    }
-
-    .gel-btn.btn-status.proficient .key {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .gel-btn.btn-status.vague {
-      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%);
-      color: #fff;
-      box-shadow: 0 2px 8px var(--uncertain-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    }
-
-    .gel-btn.btn-status.vague .func-name {
-      color: #fff;
-    }
-
-    .gel-btn.btn-status.vague .key {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .gel-btn.btn-status.wrong {
-      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
-      color: #fff;
-      box-shadow: 0 2px 8px var(--unfamiliar-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    }
-
-    .gel-btn.btn-status.wrong .func-name {
-      color: #fff;
-    }
-
-    .gel-btn.btn-status.wrong .key {
-      color: rgba(255, 255, 255, 0.7);
-    }
+    .gel-btn.btn-status.proficient { background: linear-gradient(180deg, var(--lv5) 0%, var(--lv5-dark) 100%); box-shadow: 0 2px 8px var(--lv5-alpha), inset 0 1px 0 rgba(255,255,255,0.35); }
+    .gel-btn.btn-status.familiar   { background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%); box-shadow: 0 2px 8px var(--lv4-alpha), inset 0 1px 0 rgba(255,255,255,0.35); }
+    .gel-btn.btn-status.vague      { background: linear-gradient(180deg, var(--lv3) 0%, var(--lv3-dark) 100%); box-shadow: 0 2px 8px var(--lv3-alpha), inset 0 1px 0 rgba(255,255,255,0.35); }
+    .gel-btn.btn-status.rusty      { background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%); box-shadow: 0 2px 8px var(--lv2-alpha), inset 0 1px 0 rgba(255,255,255,0.35); }
+    .gel-btn.btn-status.wrong      { background: linear-gradient(180deg, var(--lv1) 0%, var(--lv1-dark) 100%); box-shadow: 0 2px 8px var(--lv1-alpha), inset 0 1px 0 rgba(255,255,255,0.35); }
 
     .gel-btn.btn-status.active {
       box-shadow: 0 0 0 2px var(--primary-alpha), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.35);
@@ -339,23 +309,31 @@
       color: rgba(255, 255, 255, 0.7);
     }
 
-    /* 各筛选按钮独立颜色（覆盖统一紫色） */
+    /* 各筛选按钮独立颜色（5 级掌握度 + 带笔记灰） */
     .filter-btn[data-filter="proficient"].active {
-      background: linear-gradient(180deg, var(--mastered) 0%, var(--mastered-dark) 100%);
-      border-color: var(--mastered);
-      box-shadow: 0 2px 8px var(--mastered-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, var(--lv5) 0%, var(--lv5-dark) 100%);
+      border-color: var(--lv5);
+      box-shadow: 0 2px 8px var(--lv5-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
-
+    .filter-btn[data-filter="familiar"].active {
+      background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%);
+      border-color: var(--lv4);
+      box-shadow: 0 2px 8px var(--lv4-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
     .filter-btn[data-filter="vague"].active {
-      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%);
-      border-color: var(--uncertain);
-      box-shadow: 0 2px 8px var(--uncertain-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, var(--lv3) 0%, var(--lv3-dark) 100%);
+      border-color: var(--lv3);
+      box-shadow: 0 2px 8px var(--lv3-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
-
+    .filter-btn[data-filter="rusty"].active {
+      background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%);
+      border-color: var(--lv2);
+      box-shadow: 0 2px 8px var(--lv2-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
     .filter-btn[data-filter="wrong"].active {
-      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
-      border-color: var(--unfamiliar);
-      box-shadow: 0 2px 8px var(--unfamiliar-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, var(--lv1) 0%, var(--lv1-dark) 100%);
+      border-color: var(--lv1);
+      box-shadow: 0 2px 8px var(--lv1-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
     .filter-btn[data-filter="unmarked"].active {
@@ -794,6 +772,14 @@
       background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%);
       border-color: var(--uncertain-dark);
     }
+    .ws.w-rusty {
+      background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%);
+      border-color: var(--lv2-dark);
+    }
+    .ws.w-familiar {
+      background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%);
+      border-color: var(--lv4-dark);
+    }
     .wrongbook-q-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr)); /* 每行 5 个 */
@@ -861,7 +847,7 @@
     .stats-bar-fill {
       height: 100%;
       border-radius: 5px;
-      background: linear-gradient(90deg, #248A3D, #34C759);
+      background: linear-gradient(90deg, var(--lv1) 0%, var(--lv2) 20%, var(--lv3) 50%, var(--lv4) 75%, var(--lv5) 100%);
       transition: width 0.4s ease;
     }
 
@@ -947,24 +933,29 @@
     }
 
     .qnav button.proficient {
-      background: linear-gradient(180deg, var(--mastered) 0%, var(--mastered-dark) 100%);
-      color: #fff;
-      border-color: var(--mastered-dark);
-      box-shadow: 0 1px 4px rgba(36, 138, 61, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, var(--lv5) 0%, var(--lv5-dark) 100%);
+      color: #fff; border-color: var(--lv5-dark);
+      box-shadow: 0 1px 4px var(--lv5-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
-
+    .qnav button.familiar {
+      background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%);
+      color: #fff; border-color: var(--lv4-dark);
+      box-shadow: 0 1px 4px var(--lv4-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
     .qnav button.vague {
-      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%);
-      color: #fff;
-      border-color: var(--uncertain-dark);
-      box-shadow: 0 1px 4px rgba(255, 149, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, var(--lv3) 0%, var(--lv3-dark) 100%);
+      color: #fff; border-color: var(--lv3-dark);
+      box-shadow: 0 1px 4px var(--lv3-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
-
+    .qnav button.rusty {
+      background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%);
+      color: #fff; border-color: var(--lv2-dark);
+      box-shadow: 0 1px 4px var(--lv2-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
     .qnav button.wrong {
-      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
-      color: #fff;
-      border-color: var(--unfamiliar-dark);
-      box-shadow: 0 1px 4px rgba(255, 59, 48, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, var(--lv1) 0%, var(--lv1-dark) 100%);
+      color: #fff; border-color: var(--lv1-dark);
+      box-shadow: 0 1px 4px var(--lv1-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
     .qnav button.active {
@@ -975,22 +966,12 @@
       box-shadow: 0 2px 8px rgba(102, 8, 116, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
 
-    /* 带掌握度颜色的题号按钮 hover 时保持状态色，不被后面的主题 hover 白底覆盖 */
-    .qnav button.proficient:hover {
-      background: linear-gradient(180deg, var(--mastered) 0%, var(--mastered-dark) 100%) !important;
-      color: #fff !important;
-      border-color: var(--mastered-dark);
-    }
-    .qnav button.vague:hover {
-      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%) !important;
-      color: #fff !important;
-      border-color: var(--uncertain-dark);
-    }
-    .qnav button.wrong:hover {
-      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%) !important;
-      color: #fff !important;
-      border-color: var(--unfamiliar-dark);
-    }
+    /* 带掌握度颜色的题号按钮 hover 时保持状态色 */
+    .qnav button.proficient:hover { background: linear-gradient(180deg, var(--lv5) 0%, var(--lv5-dark) 100%) !important; color: #fff !important; border-color: var(--lv5-dark); }
+    .qnav button.familiar:hover   { background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%) !important; color: #fff !important; border-color: var(--lv4-dark); }
+    .qnav button.vague:hover      { background: linear-gradient(180deg, var(--lv3) 0%, var(--lv3-dark) 100%) !important; color: #fff !important; border-color: var(--lv3-dark); }
+    .qnav button.rusty:hover      { background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%) !important; color: #fff !important; border-color: var(--lv2-dark); }
+    .qnav button.wrong:hover      { background: linear-gradient(180deg, var(--lv1) 0%, var(--lv1-dark) 100%) !important; color: #fff !important; border-color: var(--lv1-dark); }
 
     /* 分块按钮（有子题的题组） */
     .qnav button.has-subs {
@@ -1005,17 +986,11 @@
       z-index: 1;
     }
 
-    .qnav button .sub-bar.proficient {
-      background: linear-gradient(180deg, var(--mastered) 0%, var(--mastered-dark) 100%);
-    }
-
-    .qnav button .sub-bar.vague {
-      background: linear-gradient(180deg, var(--uncertain) 0%, var(--uncertain-dark) 100%);
-    }
-
-    .qnav button .sub-bar.wrong {
-      background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
-    }
+    .qnav button .sub-bar.proficient { background: linear-gradient(180deg, var(--lv5) 0%, var(--lv5-dark) 100%); }
+    .qnav button .sub-bar.familiar   { background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%); }
+    .qnav button .sub-bar.vague      { background: linear-gradient(180deg, var(--lv3) 0%, var(--lv3-dark) 100%); }
+    .qnav button .sub-bar.rusty      { background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%); }
+    .qnav button .sub-bar.wrong      { background: linear-gradient(180deg, var(--lv1) 0%, var(--lv1-dark) 100%); }
 
     .qnav button.has-subs .btn-text {
       position: relative;
@@ -1058,14 +1033,14 @@
     }
 
     .note-dot {
-      /* 亮黄，区别于主色紫（避免与当前题激活紫撞）、标注青、熟练绿/模糊橙/需复习红 */
+      /* 亮黄，区别于主色紫（避免与当前题激活紫撞）、标注青、熟练绿/模糊橙/不会红 */
       color: #fff200;
       font-weight: bold;
       font-size: 13px;
     }
 
     .annot-dot {
-      /* 用亮蓝（标注色板 #1e90ff）区分于模糊橙/笔记黄/熟练绿/需复习红 */
+      /* 用亮蓝（标注色板 #1e90ff）区分于模糊橙/笔记黄/熟练绿/不会红 */
       color: #1e90ff;
       font-weight: bold;
       font-size: 13px;
@@ -1087,6 +1062,60 @@
       color: #bbb;
       padding: 2px 4px 6px;
     }
+
+    /* ===== SM-2 信息行（mastery-bar 下方） ===== */
+    .sm2-info-bar {
+      font-size: 12px; color: var(--text-muted); text-align: center;
+      padding: 4px 0 2px; letter-spacing: 0.5px;
+    }
+    .sm2-info-bar span { margin: 0 8px; }
+    .sm2-info-bar .sm2-due-tag { color: #007AFF; font-weight: 600; }
+    .sm2-info-bar .sm2-overdue-tag { color: #E53935; font-weight: 600; }
+
+    /* ===== SM-2 复习面板 ===== */
+    .sm2-panel { padding: 16px; }
+    .sm2-stats-row { display: flex; gap: 10px; margin-bottom: 14px; }
+    .sm2-stat-card {
+      flex: 1; background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md); padding: 12px 8px; text-align: center;
+      cursor: default; transition: transform 0.15s;
+    }
+    .sm2-stat-card:hover { transform: translateY(-2px); }
+    .sm2-stat-num { font-size: 28px; font-weight: 700; color: var(--primary); }
+    .sm2-stat-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .sm2-mode-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+      padding: 10px; background: var(--glass-bg); border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+    }
+    .sm2-mode-label { font-size: 13px; color: var(--text-muted); margin-right: 4px; }
+    .sm2-radio { font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 3px; }
+    .sm2-radio input { accent-color: var(--primary); }
+    .sm2-overview .gel-btn { width: 100%; margin-bottom: 14px; font-size: 14px; padding: 8px 0; }
+    .sm2-chapters { display: flex; flex-direction: column; gap: 6px; }
+    .sm2-ch-row {
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm); padding: 10px 12px;
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: default; font-size: 13px;
+    }
+    .sm2-ch-info { display: flex; align-items: center; gap: 10px; }
+    .sm2-ch-name { font-weight: 600; color: var(--text); }
+    .sm2-ch-stats { font-size: 11px; color: var(--text-muted); }
+    .sm2-ch-due { color: #007AFF; font-weight: 600; }
+    .sm2-ch-overdue { color: #E53935; font-weight: 600; }
+    .sm2-ch-btn {
+      padding: 4px 14px; border-radius: 8px; border: none; cursor: pointer;
+      font-size: 12px; font-weight: 600; transition: all 0.15s;
+      background: var(--primary); color: #fff;
+    }
+    .sm2-ch-btn:hover { filter: brightness(1.1); }
+
+    /* ===== 错题本 5 级颜色 ===== */
+    .wrongbook-q-item.wrong { background: linear-gradient(180deg, var(--lv1) 0%, var(--lv1-dark) 100%); }
+    .wrongbook-q-item.rusty { background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%); }
+    .wrongbook-q-item.vague { background: linear-gradient(180deg, var(--lv3) 0%, var(--lv3-dark) 100%); }
+    .wrongbook-q-item.familiar { background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%); }
 
     /* ===== 题目图/解析图不达标提示 ===== */
     .img-bad-warning {
@@ -1639,7 +1668,7 @@
     }
 
     .gel-btn.btn-sbad-toggle.marked {
-      background: linear-gradient(180deg, var(--uncertain-dark) 0%, #C45500 100%);
+      background: linear-gradient(180deg, var(--uncertain-dark) 0%, #E65100 100%);
       color: #fff;
       box-shadow: 0 2px 8px rgba(196, 85, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
@@ -1664,16 +1693,22 @@
       --text-muted: #747887;
       --text-light: #b8bcc6;
       --border: rgba(71, 76, 101, 0.14);
-      --mastered: #34C759;
-      --mastered-dark: #248A3D;
-      --mastered-alpha: rgba(36, 138, 61, 0.2);
-      --uncertain: #FF9500;
-      --uncertain-dark: #C45500;
-      --uncertain-alpha: rgba(255, 149, 0, 0.2);
-      --unfamiliar: #FF3B30;
-      --unfamiliar-dark: #BE160C;
-      --unfamiliar-alpha: rgba(255, 59, 48, 0.2);
-      --wrong: #BE160C;
+      --mastered: #43A047;
+      --mastered-dark: #2E7D32;
+      --mastered-alpha: rgba(67, 160, 71, 0.2);
+      --uncertain: #FB8C00;
+      --uncertain-dark: #E65100;
+      --uncertain-alpha: rgba(251, 140, 0, 0.2);
+      --unfamiliar: #E53935;
+      --unfamiliar-dark: #B71C1C;
+      --unfamiliar-alpha: rgba(229, 57, 53, 0.2);
+      --wrong: #B71C1C;
+      /* 5 级掌握度色板：绿→黄绿→橙→红橙→红 */
+      --lv5: #43A047; --lv5-dark: #2E7D32; --lv5-alpha: rgba(67,160,71,0.2);
+      --lv4: #7CB342; --lv4-dark: #558B2F; --lv4-alpha: rgba(124,179,66,0.2);
+      --lv3: #FB8C00; --lv3-dark: #E65100; --lv3-alpha: rgba(251,140,0,0.2);
+      --lv2: #F4511E; --lv2-dark: #BF360C; --lv2-alpha: rgba(244,81,30,0.2);
+      --lv1: #E53935; --lv1-dark: #B71C1C; --lv1-alpha: rgba(229,57,53,0.2);
       --gel-top: rgba(255, 255, 255, 0.92);
       --gel-bot: rgba(246, 247, 251, 0.92);
       --gel-hov-top: #ffffff;
@@ -1811,19 +1846,27 @@
     }
 
     .filter-btn[data-filter="proficient"].active {
-      color: var(--mastered-dark) !important;
+      color: var(--lv5-dark) !important;
       background: rgba(36, 138, 61, 0.12);
       border-color: rgba(36, 138, 61, 0.42);
     }
-
+    .filter-btn[data-filter="familiar"].active {
+      color: var(--lv4-dark) !important;
+      background: rgba(0, 137, 123, 0.12);
+      border-color: rgba(0, 137, 123, 0.42);
+    }
     .filter-btn[data-filter="vague"].active {
-      color: var(--uncertain-dark) !important;
+      color: var(--lv3-dark) !important;
       background: rgba(255, 149, 0, 0.13);
       border-color: rgba(255, 149, 0, 0.45);
     }
-
+    .filter-btn[data-filter="rusty"].active {
+      color: var(--lv2-dark) !important;
+      background: rgba(255, 107, 53, 0.13);
+      border-color: rgba(255, 107, 53, 0.45);
+    }
     .filter-btn[data-filter="wrong"].active {
-      color: var(--unfamiliar-dark) !important;
+      color: var(--lv1-dark) !important;
       background: rgba(255, 59, 48, 0.12);
       border-color: rgba(255, 59, 48, 0.42);
     }
@@ -2367,7 +2410,7 @@
             class="filter-count"></span><span class="filter-key">Shift+Z</span></button>
         <button class="filter-btn" data-filter="vague" aria-pressed="false">模糊 <span class="filter-count"></span><span
             class="filter-key">Shift+X</span></button>
-        <button class="filter-btn" data-filter="wrong" aria-pressed="false">需复习 <span class="filter-count"></span><span
+        <button class="filter-btn" data-filter="wrong" aria-pressed="false">不会 <span class="filter-count"></span><span
             class="filter-key">Shift+C</span></button>
         <button class="filter-btn" data-filter="unmarked" aria-pressed="false">带笔记 <span
             class="filter-count"></span><span class="filter-key">Shift+N</span></button>
@@ -2376,13 +2419,14 @@
       <div class="export-section">
         <div class="export-label">导出</div>
         <button id="btnExportVague" class="export-btn btn-export-vague">导出模糊</button>
-        <button id="btnExportWrong" class="export-btn btn-export-wrong">导出需复习</button>
+        <button id="btnExportWrong" class="export-btn btn-export-wrong">导出不会</button>
       </div>
 
       <button id="btnSolDefault" class="sol-default-btn">解析默认：显示<span class="sol-key">Shift+Space</span></button>
 
       <button id="btnDashboard" class="sol-default-btn" style="margin-top:8px">全局进度<span class="sol-key">V</span></button>
       <button id="btnWrongBook" class="sol-default-btn" style="margin-top:8px">错题本<span class="sol-key">B</span></button>
+      <button id="btnSm2PanelSidebar" class="sol-default-btn" style="margin-top:8px" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
       <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
       <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
 
@@ -2418,9 +2462,13 @@
           <span class="mastery-label">掌握状态</span>
           <button id="btnProficient" class="gel-btn btn-status" data-status="proficient"><span
               class="func-name">熟练</span><span class="key">Z</span></button>
+          <button id="btnFamiliar" class="gel-btn btn-status" data-status="familiar"><span
+              class="func-name">较熟练</span><span class="key">Z+X</span></button>
           <button id="btnVague" class="gel-btn btn-status" data-status="vague"><span class="func-name">模糊</span><span
               class="key">X</span></button>
-          <button id="btnWrong" class="gel-btn btn-status" data-status="wrong"><span class="func-name">需复习</span><span
+          <button id="btnRusty" class="gel-btn btn-status" data-status="rusty"><span class="func-name">困难</span><span
+              class="key">X+C</span></button>
+          <button id="btnWrong" class="gel-btn btn-status" data-status="wrong"><span class="func-name">不会</span><span
               class="key">C</span></button>
           <span class="nav-sep">|</span>
           <button id="btnQBad" class="gel-btn btn-qbad-toggle"><span class="func-name">题目图不达标</span><span
@@ -2428,6 +2476,7 @@
           <button id="btnSBad" class="gel-btn btn-sbad-toggle"><span class="func-name">解析图不达标</span><span
               class="key">T</span></button>
         </div>
+        <div class="sm2-info-bar" id="sm2InfoBar" style="display:none"></div>
         <div class="img-bad-warning" id="qBadWarning">题目图质量不达标</div>
         <div class="q-label" id="qLabel"></div>
         <div class="sub-select-bar" id="subSelectBar" style="display:none"></div>
@@ -2472,6 +2521,24 @@
         </div>
         <div class="wrongbook-panel" id="wrongBookPanel" style="display:none">
           <div class="db-subject-grid" id="wrongBookGrid"></div>
+        </div>
+        <div class="sm2-panel" id="sm2Panel" style="display:none">
+          <div class="sm2-overview">
+            <div class="sm2-stats-row">
+              <div class="sm2-stat-card" id="sm2CardDue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">今日到期</div></div>
+              <div class="sm2-stat-card" id="sm2CardOverdue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">已逾期</div></div>
+              <div class="sm2-stat-card" id="sm2CardQueue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">队列中</div></div>
+              <div class="sm2-stat-card" id="sm2CardMastered"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">已掌握</div></div>
+            </div>
+            <div class="sm2-mode-row">
+              <span class="sm2-mode-label">刷题模式</span>
+              <label class="sm2-radio"><input type="radio" name="sm2mode" value="sequential" checked> 顺序</label>
+              <label class="sm2-radio"><input type="radio" name="sm2mode" value="random"> 随机</label>
+              <label class="sm2-radio"><input type="radio" name="sm2mode" value="overdue"> 仅逾期</label>
+            </div>
+            <button id="btnSm2StartAll" class="gel-btn btn-status proficient">开始全部复习</button>
+          </div>
+          <div class="sm2-chapters" id="sm2Chapters"></div>
         </div>
       </div>
 
@@ -2771,7 +2838,7 @@
           let prefix, numPart;
           if (label.startsWith('例')) { prefix = 'ex'; numPart = label.substring(1); }
           else { prefix = 'pb'; numPart = label; }
-          return '考研题库/' + ch.relPath + '/' + prefix + '_' + numPart;
+          return '题库/' + ch.relPath + '/' + prefix + '_' + numPart;
         },
         chapters: SHU1_CHAPTERS
       },
@@ -2792,10 +2859,10 @@
         },
         getImgPath: function (ch, label) {
           // 小题300 / 强化240 / 真题分类 单独习题册：图片按 qNNN_question.png 命名（无解析图）
-          if (ch.wb === '小题300' || ch.wb === '强化240' || ch.wb === '真题分类') return '考研题库/' + ch.relPath + '/q' + String(label).padStart(3, '0');
-          if (/^例\d+-\d+$/.test(label)) return '考研题库/' + ch.relPath + '/ex_' + label.replace('例', '');
-          if (/^例题\d+$/.test(label)) return '考研题库/' + ch.relPath + '/ce_' + label.replace('例题', '');
-          return '考研题库/' + ch.relPath + '/pb_' + label.replace(/\s+/g, '_');
+          if (ch.wb === '小题300' || ch.wb === '强化240' || ch.wb === '真题分类') return '题库/' + ch.relPath + '/q' + String(label).padStart(3, '0');
+          if (/^例\d+-\d+$/.test(label)) return '题库/' + ch.relPath + '/ex_' + label.replace('例', '');
+          if (/^例题\d+$/.test(label)) return '题库/' + ch.relPath + '/ce_' + label.replace('例题', '');
+          return '题库/' + ch.relPath + '/pb_' + label.replace(/\s+/g, '_');
         },
         chapters: [
           { id: 'ch1', number: 1, name: '第1章 概论', short: '1 概论', total: 12, cols: 4, wb: '控制工程基础', subj: '控制工程基础', relPath: '822教材/ch1', labels: ['1-1 (1)', '1-1 (2)', '1-1 (3)', '1-1 (4)', '1-2', '1-3', '1-4', '1-5 (a)', '1-5 (b)', '1-6', '例题1', '例题2'] },
@@ -2958,15 +3025,21 @@
 
     function getFilteredIndices() {
       const ch = getChapter();
-      const all = Array.from({ length: ch.total }, (_, i) => i);
+      const all = Array.from({ length: ch.total }, function(_, i) { return i; });
       if (isAllFilterActive()) return all;
-      return all.filter(i => {
-        // 带笔记（原「未标记」）：有笔记或题目图/解析图有标注。与状态筛选组合时保持并集语义
-        // （与其它筛选一致：选中任一筛选即通过），不选状态时仅按带笔记判定。
+      return all.filter(function(i) {
+        // 带笔记
         if (currentFilters.has('unmarked')) {
           if (notesData[notesKeyFor(i)] || hasQuestionImagesAnnotated(i)) return true;
         }
-        return currentFilters.has(statuses[i]);
+        const s = statuses[i] || '';
+        // 合并筛选：熟练 = proficient(lv5) + familiar(lv4)
+        if (currentFilters.has('proficient') && (s === 'proficient' || s === 'familiar')) return true;
+        // 模糊 = vague(lv3) + rusty(lv2)
+        if (currentFilters.has('vague') && (s === 'vague' || s === 'rusty')) return true;
+        // 不会 = wrong(lv1)
+        if (currentFilters.has('wrong') && s === 'wrong') return true;
+        return false;
       });
     }
     function filteredIndex(idx) { return getFilteredIndices().indexOf(idx); }
@@ -3108,7 +3181,9 @@
     function getStatusClass(idx) {
       const s = statuses[idx];
       if (s === 'proficient') return 'proficient';
+      if (s === 'familiar') return 'familiar';
       if (s === 'vague') return 'vague';
+      if (s === 'rusty') return 'rusty';
       if (s === 'wrong') return 'wrong';
       return '';
     }
@@ -3133,7 +3208,7 @@
       current = 0;
       showSolution = defaultShowSolution;
       subMode = false;
-      loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+      loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
       // 每次切章先清除错题本返回状态（错题本跳题会在 switchTo 之后重新置位）
       showWrongBookReturnBtn(false);
       // 全局筛选跨章保持：不重置、不按章恢复，仅加载本章数据后定位到第一条筛中题
@@ -3351,23 +3426,27 @@
            { label: '1000题', start: ch.ownTotal, len: ch.q1000Total }]
         : [{ label: '', start: 0, len: ch.total }];
       const html = segs.map(function (seg) {
-        let prof = 0, vag = 0, wr = 0, un = 0;
+        let lv5 = 0, lv4 = 0, lv3 = 0, lv2 = 0, lv1 = 0, un = 0;
         for (let i = seg.start; i < seg.start + seg.len; i++) {
           const s = statuses[i];
-          if (s === 'proficient') prof++;
-          else if (s === 'vague') vag++;
-          else if (s === 'wrong') wr++;
+          if (s === 'proficient') lv5++;
+          else if (s === 'familiar') lv4++;
+          else if (s === 'vague') lv3++;
+          else if (s === 'rusty') lv2++;
+          else if (s === 'wrong') lv1++;
           else un++;
         }
-        const done = prof + vag + wr;
+        const done = lv5 + lv4 + lv3 + lv2 + lv1;
         const pct = seg.len > 0 ? Math.round(done / seg.len * 100) : 0;
         return '<div class="stats-seg">' +
           (seg.label ? '<div class="stats-seg-label">' + seg.label + '</div>' : '') +
           '<div class="stats-bar-wrap"><div class="stats-bar-fill" style="width:' + pct + '%"></div></div>' +
           '<div class="stats-counts">' +
-            '<span><span class="sc-dot" style="background:#248A3D"></span>熟练 ' + prof + '</span>' +
-            '<span><span class="sc-dot" style="background:#FF9500"></span>模糊 ' + vag + '</span>' +
-            '<span><span class="sc-dot" style="background:#BE160C"></span>需复习 ' + wr + '</span>' +
+            '<span><span class="sc-dot" style="background:#43A047"></span>熟练 ' + lv5 + '</span>' +
+            '<span><span class="sc-dot" style="background:#7CB342"></span>较熟 ' + lv4 + '</span>' +
+            '<span><span class="sc-dot" style="background:#FB8C00"></span>模糊 ' + lv3 + '</span>' +
+            '<span><span class="sc-dot" style="background:#F4511E"></span>困难 ' + lv2 + '</span>' +
+            '<span><span class="sc-dot" style="background:#E53935"></span>不会 ' + lv1 + '</span>' +
             '<span><span class="sc-dot" style="background:#bbb"></span>未做 ' + un + '</span>' +
           '</div>' +
         '</div>';
@@ -3405,17 +3484,20 @@
       var key = chapterStatusKey(ch);
       var statusObj;
       try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
-      var proficient = 0, vague = 0, wrong = 0;
+      var lv5 = 0, lv4 = 0, lv3 = 0, lv2 = 0, lv1 = 0;
       var len = ch.ownTotal || ch.total;
       for (var i = 0; i < len; i++) {
         var s = statusObj[i];
-        if (s === 'proficient') proficient++;
-        else if (s === 'vague') vague++;
-        else if (s === 'wrong') wrong++;
+        if (s === 'proficient') lv5++;
+        else if (s === 'familiar') lv4++;
+        else if (s === 'vague') lv3++;
+        else if (s === 'rusty') lv2++;
+        else if (s === 'wrong') lv1++;
       }
-      var done = proficient + vague + wrong;
+      var done = lv5 + lv4 + lv3 + lv2 + lv1;
       return {
-        proficient: proficient, vague: vague, wrong: wrong,
+        lv5: lv5, lv4: lv4, lv3: lv3, lv2: lv2, lv1: lv1,
+        proficient: lv5 + lv4, vague: lv3 + lv2, wrong: lv1,
         unmarked: len - done, done: done,
         pct: len > 0 ? Math.round(done / len * 100) : 0
       };
@@ -3615,9 +3697,9 @@
           '<div class="db-chapter-name">' + name + '</div>' +
           '<div class="db-chapter-bar"><div class="db-chapter-fill" style="width:' + stats.pct + '%"></div></div>' +
           '<div class="db-chapter-stats">' +
-            '<span class="db-stat"><span class="db-stat-dot" style="background:#34C759"></span>熟练 ' + stats.proficient + '</span>' +
-            '<span class="db-stat"><span class="db-stat-dot" style="background:#FF9500"></span>模糊 ' + stats.vague + '</span>' +
-            '<span class="db-stat"><span class="db-stat-dot" style="background:#FF3B30"></span>需复习 ' + stats.wrong + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#43A047"></span>熟练 ' + stats.proficient + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#FB8C00"></span>模糊 ' + stats.vague + '</span>' +
+            '<span class="db-stat"><span class="db-stat-dot" style="background:#E53935"></span>不会 ' + stats.wrong + '</span>' +
             '<span class="db-stat"><span class="db-stat-dot" style="background:#ccc"></span>未做 ' + stats.unmarked + '</span>' +
           '</div></div>';
       }
@@ -3828,6 +3910,7 @@
       curSubjectId = subjectId;
       curSubject = subj;
       CHAPTERS = subj.chapters;
+      migrateAllSm2();   // 切科目时也触发迁移（每个科目只跑一次）
       var resume = loadResume(subjectId);
       if (resume) {
         currentChapterId = resume.ch;
@@ -3971,37 +4054,43 @@
         if (ch.total === 0) continue;
         if (ch.wb !== wrongBookWb) continue;
         if (ch.wb === '1000题') continue;
-        const wrongIndices = [];
-        const vagueIndices = [];
+        const groups = {}; // { wrong: [], rusty: [], vague: [], familiar: [] }
         // 自身部分
         var key = chapterStatusKey(ch);
         let statusObj;
         try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
         var ownLen = ch.ownTotal || ch.total;
         for (let i = 0; i < ownLen; i++) {
-          if (statusObj[i] === 'wrong') wrongIndices.push(i);
-          else if (statusObj[i] === 'vague') vagueIndices.push(i);
+          var s = statusObj[i];
+          if (s === 'wrong') (groups.wrong = groups.wrong || []).push(i);
+          else if (s === 'rusty') (groups.rusty = groups.rusty || []).push(i);
+          else if (s === 'vague') (groups.vague = groups.vague || []).push(i);
+          else if (s === 'familiar') (groups.familiar = groups.familiar || []).push(i);
         }
-        // 1000题 伴章部分（偏移到合并索引）
+        // 1000题 伴章部分
         if (ch.q1000Id) {
           var qc = chapterById(ch.q1000Id);
           var qkey = chapterStatusKey(qc);
           let qobj;
           try { qobj = JSON.parse(localStorage.getItem(qkey)) || {}; } catch (e) { qobj = {}; }
           for (let q = 0; q < qc.total; q++) {
-            if (qobj[q] === 'wrong') wrongIndices.push(ch.ownTotal + q);
-            else if (qobj[q] === 'vague') vagueIndices.push(ch.ownTotal + q);
+            var qs = qobj[q];
+            if (qs === 'wrong') (groups.wrong = groups.wrong || []).push(ch.ownTotal + q);
+            else if (qs === 'rusty') (groups.rusty = groups.rusty || []).push(ch.ownTotal + q);
+            else if (qs === 'vague') (groups.vague = groups.vague || []).push(ch.ownTotal + q);
+            else if (qs === 'familiar') (groups.familiar = groups.familiar || []).push(ch.ownTotal + q);
           }
         }
-        if (wrongIndices.length + vagueIndices.length === 0) continue;
-        totalWrong += wrongIndices.length + vagueIndices.length;
+        var totalCount = (groups.wrong ? groups.wrong.length : 0) + (groups.rusty ? groups.rusty.length : 0) + (groups.vague ? groups.vague.length : 0) + (groups.familiar ? groups.familiar.length : 0);
+        if (totalCount === 0) continue;
+        totalWrong += totalCount;
         const bs = baseSubject(ch.subj);
-        (colMap[bs] = colMap[bs] || []).push({ ch, wrongIndices, vagueIndices });
+        (colMap[bs] = colMap[bs] || []).push({ ch, groups });
       }
 
       let html = '';
       if (totalWrong === 0) {
-        html = '<div class="wrongbook-empty">暂无标记为「需复习」「模糊」的题目</div>';
+        html = '<div class="wrongbook-empty">暂无标记为「不会」「困难」「模糊」「较熟练」的题目</div>';
       } else {
         // 列顺序：高数 → 线代 → 概率论（其余排后）
         const SUBJECT_ORDER = ['高数', '线代', '概率论'];
@@ -4016,26 +4105,26 @@
             const ch = item.ch;
             const name = ch.short || ch.name;
             const labels = ch.labels || [];
+            var g = item.groups;
             html += '<div class="wrongbook-chapter-card">' +
               '<div class="wrongbook-chapter-name">' + name +
               '<span class="wrongbook-status-count">' +
-              (item.vagueIndices.length ? '<span class="ws w-vague">糊 ' + item.vagueIndices.length + '</span>' : '') +
-              (item.wrongIndices.length ? '<span class="ws w-wrong">错 ' + item.wrongIndices.length + '</span>' : '') +
+              (g.familiar ? '<span class="ws w-familiar">较熟 ' + g.familiar.length + '</span>' : '') +
+              (g.vague ? '<span class="ws w-vague">模糊 ' + g.vague.length + '</span>' : '') +
+              (g.rusty ? '<span class="ws w-rusty">困难 ' + g.rusty.length + '</span>' : '') +
+              (g.wrong ? '<span class="ws w-wrong">不会 ' + g.wrong.length + '</span>' : '') +
               '</span></div>' +
               '<div class="wrongbook-q-grid">';
             function qItem(idx, cls, statTitle) {
               const label = labels[idx] || (idx + 1);
-              // 合并章节：索引落在 1000题 段时加「1000」小标记
               const isQ = ch.q1000Total && idx >= ch.ownTotal;
               const tag = isQ ? '<span class="ws q1000-tag">1000</span>' : '';
               return '<span class="wrongbook-q-item ' + cls + '" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题（' + statTitle + '）">' + label + tag + '</span>';
             }
-            for (const idx of item.vagueIndices) {
-              html += qItem(idx, 'vague', '模糊');
-            }
-            for (const idx of item.wrongIndices) {
-              html += qItem(idx, '', '需复习');
-            }
+            if (g.wrong) for (var wIdx of g.wrong) html += qItem(wIdx, 'wrong', '不会');
+            if (g.rusty) for (var rIdx of g.rusty) html += qItem(rIdx, 'rusty', '困难');
+            if (g.vague) for (var vIdx of g.vague) html += qItem(vIdx, 'vague', '模糊');
+            if (g.familiar) for (var fIdx of g.familiar) html += qItem(fIdx, 'familiar', '较熟练');
             html += '</div></div>';
           });
           html += '</div>';
@@ -4529,6 +4618,7 @@
       renderNotes();
       renderStats();
       renderNav();
+      renderSm2InfoBar();
       saveResume(); // 记住当前停的章节/题目/小题模式，刷新或切科目前保留
       document.getElementById('questionImg').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
@@ -4708,11 +4798,37 @@
     function toggleQBad() { qBad[current] = !qBad[current]; if (!qBad[current]) delete qBad[current]; saveQBad(); updateQBadBtn(); updateImgBadWarnings(); renderNav(); }
     function toggleSBad() { sBad[current] = !sBad[current]; if (!sBad[current]) delete sBad[current]; saveSBad(); updateSBadBtn(); updateImgBadWarnings(); renderNav(); }
 
+    // ===== 组合键检测（Z/X/C 5级打标） =====
+    let comboState = { z: false, x: false, timer: null };
+    function resetCombo() { comboState.z = false; comboState.x = false; if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; } }
+    function handleStatusKey(key) {
+      // 注：调用方已在 keydown 中做了 INPUT/TEXTAREA 过滤
+      if (key === 'z') {
+        comboState.z = true;
+        comboState.timer = setTimeout(function() { setStatus('proficient'); resetCombo(); }, 200);
+        return;
+      }
+      if (key === 'x') {
+        if (comboState.z) { clearTimeout(comboState.timer); setStatus('familiar'); resetCombo(); return; }
+        comboState.x = true;
+        comboState.timer = setTimeout(function() { setStatus('vague'); resetCombo(); }, 200);
+        return;
+      }
+      if (key === 'c') {
+        if (comboState.x) { clearTimeout(comboState.timer); setStatus('rusty'); resetCombo(); return; }
+        setStatus('wrong'); resetCombo();
+        return;
+      }
+      // 非 Z/X/C 键打断组合
+      resetCombo();
+    }
+
     // ===== 掌握度 =====
     function updateStatusBtns() {
       const cur = statuses[current] || '';
-      ['proficient', 'vague', 'wrong'].forEach(s => {
+      ['proficient', 'familiar', 'vague', 'rusty', 'wrong'].forEach(function(s) {
         const btn = document.getElementById('btn' + s.charAt(0).toUpperCase() + s.slice(1));
+        if (!btn) return;
         btn.className = 'gel-btn btn-status' + (s === cur ? ' ' + s + ' active' : '');
       });
     }
@@ -4723,9 +4839,19 @@
       if (togglingOff) { delete statuses[current]; }
       else { statuses[current] = status; }
       saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
-      // 仅当该题原本没有掌握度标记、首次打标时才自动跳下一题；
-      // 改标已有标记（或取消标记）都停在当前题，方便连续调整
-      if (!togglingOff && !had) navNext();
+      // SM-2: 评分后更新复习数据
+      const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
+      if (!togglingOff && scoreMap[status]) {
+        sm2Review(current, scoreMap[status]);
+      }
+      // 复习会话中：评分后必然跳题；正常模式：首次打标跳题
+      if (reviewSession) {
+        reviewNext();
+      } else if (!togglingOff && !had) {
+        navNext();
+      }
+      // 更新 SM-2 信息行
+      renderSm2InfoBar();
     }
 
     function toggleSolution() {
@@ -4755,25 +4881,25 @@
     function updateFilterCounts() {
       const ch = getChapter();
       const total = ch.total;
-      let proficient = 0, vague = 0, wrong = 0;
-      Object.values(statuses).forEach(s => {
-        if (s === 'proficient') proficient++;
-        else if (s === 'vague') vague++;
-        else if (s === 'wrong') wrong++;
+      let prof = 0, vag = 0, wr = 0;
+      Object.values(statuses).forEach(function(s) {
+        if (s === 'proficient' || s === 'familiar') prof++;
+        else if (s === 'vague' || s === 'rusty') vag++;
+        else if (s === 'wrong') wr++;
       });
-      // 带笔记计数：有笔记或任一图片有标注
+      // 带笔记计数
       let withNoteOrAnnot = 0;
       for (let i = 0; i < total; i++) {
         if (notesData[notesKeyFor(i)] || hasQuestionImagesAnnotated(i)) withNoteOrAnnot++;
       }
-      const setCount = (filter, val) => {
+      const setCount = function(filter, val) {
         const el = document.querySelector('.filter-btn[data-filter="' + filter + '"] .filter-count');
         if (el) el.textContent = val;
       };
       setCount('all', total);
-      setCount('proficient', proficient);
-      setCount('vague', vague);
-      setCount('wrong', wrong);
+      setCount('proficient', prof);
+      setCount('vague', vag);
+      setCount('wrong', wr);
       setCount('unmarked', withNoteOrAnnot);
     }
 
@@ -5560,11 +5686,11 @@
         }
       }
       if (items.length === 0) {
-        alert(statusFilter === 'vague' ? '当前章节没有标记为"模糊"的题目' : '当前章节没有标记为"需复习"的题目');
+        alert(statusFilter === 'vague' ? '当前章节没有标记为"模糊"的题目' : '当前章节没有标记为"不会"的题目');
         return;
       }
-      const statusLabel = statusFilter === 'vague' ? '模糊' : '需复习';
-      const statusColor = statusFilter === 'vague' ? '#FF9500' : '#BE160C';
+      const statusLabel = statusFilter === 'vague' ? '模糊' : '不会';
+      const statusColor = statusFilter === 'vague' ? '#FB8C00' : '#B71C1C';
       const cardsHTML = items.map((item, idx) => {
         // 导出窗口是 about:blank，相对路径无法解析；转成绝对路径（file:// 或 http(s)://）
         let abs = item.qImg;
@@ -5591,15 +5717,359 @@ ${cardsHTML}
       w.document.close();
     }
 
-    // ===== 键盘快捷键 =====
-    // A = 上一题, D = 下一题, W = 上一行(上 cols 题), S = 下一行(下 cols 题)
-    // F = 进入/退出小题选择模式（当前题含子题时生效）
-    // Q = 上一章, E = 下一章
-    // Z = 熟练, X = 模糊, C = 需复习, Space = 解析
-    // R = 题目图不达标, T = 解析图不达标
-    // V = 全局进度, B = 错题本, G = 切换科目
-    // Alt = 进入/退出标注（灯箱打开时）
-    // Shift+A/Z/X/C/N = 筛选 全部/熟练/模糊/需复习/带笔记
+    // ===== SM-2 间隔重复复习系统 =====
+    let sm2 = {};          // { idx: { ef, interval, reps, nextReview, lastReview, history } }
+    let reviewSession = null;  // { queue: [{chapterId, idx}], currentIdx, mode }
+    let sm2PanelOpen = false;
+
+    // SM-2 存储键：sm2_<chapterId>
+    function sm2Key(ch) { return 'sm2_' + ch.id; }
+
+    function loadSm2() {
+      const ch = getChapter(); if (!ch) return;
+      sm2 = {};
+      const srcs = statusSources();
+      srcs.forEach(function(src) {
+        let obj;
+        try { obj = JSON.parse(localStorage.getItem(sm2Key(src.ch)) || '{}'); } catch(e) { obj = {}; }
+        var len = src.len;
+        for (var i = 0; i < len; i++) {
+          if (obj[i]) sm2[src.offset + i] = obj[i];
+        }
+      });
+    }
+
+    // ===== 一次性全量迁移：为所有已有掌握度标记但缺 SM-2 记录的题目创建复习排期 =====
+    function migrateAllSm2() {
+      var flagKey = 'kaoyan_sm2_migrated_' + curSubjectId;
+      if (localStorage.getItem(flagKey) === '1') return;
+      var scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
+      var migrated = 0;
+      CHAPTERS.forEach(function(ch) {
+        if (ch.total === 0) return;
+        var sm2Obj;
+        try { sm2Obj = JSON.parse(localStorage.getItem(sm2Key(ch)) || '{}'); } catch(e) { sm2Obj = {}; }
+        var statusObj;
+        try { statusObj = JSON.parse(localStorage.getItem(chapterStatusKey(ch)) || '{}'); } catch(e) { statusObj = {}; }
+        var changed = false;
+        for (var i = 0; i < ch.total; i++) {
+          var s = statusObj[i];
+          if (s && !sm2Obj[i]) {
+            changed = true;
+            var score = scoreMap[s] || 3;
+            var seed;
+            if (score === 5)      seed = { ef: 2.5, interval: 30, reps: 3, history: [] };
+            else if (score === 4) seed = { ef: 2.5, interval: 7,  reps: 2, history: [] };
+            else if (score === 3) seed = { ef: 2.5, interval: 1,  reps: 1, history: [] };
+            else                  seed = { ef: 2.5, interval: 1,  reps: 0, history: [] };
+            sm2Obj[i] = calcSM2(seed, score);
+            migrated++;
+          }
+        }
+        if (changed) {
+          localStorage.setItem(sm2Key(ch), JSON.stringify(sm2Obj));
+        }
+      });
+      localStorage.setItem(flagKey, '1');
+      console.log('SM-2 migration: ' + migrated + ' records created for subject ' + curSubjectId);
+    }
+
+    function saveSm2() {
+      const srcs = statusSources();
+      srcs.forEach(function(src) {
+        var out = {};
+        var len = src.len;
+        for (var i = 0; i < len; i++) {
+          if (sm2[src.offset + i]) out[i] = sm2[src.offset + i];
+        }
+        if (Object.keys(out).length > 0) {
+          localStorage.setItem(sm2Key(src.ch), JSON.stringify(out));
+        } else {
+          localStorage.removeItem(sm2Key(src.ch));
+        }
+      });
+    }
+
+    function calcSM2(record, score) {
+      if (!record) record = { ef: 2.5, interval: 1, reps: 0, nextReview: 0, lastReview: 0, history: [] };
+      var now = Date.now();
+      var ef = record.ef, interval = record.interval, reps = record.reps;
+      var deltaMap = { 5: 0.10, 4: 0.00, 3: -0.14, 2: -0.22, 1: -0.30 };
+      var delta = deltaMap[score] || 0;
+      if (score >= 3) {
+        if (reps === 0) interval = 1;
+        else if (reps === 1) interval = 6;
+        else interval = Math.round(interval * ef);
+        reps++;
+      } else {
+        interval = 1; reps = 0;
+      }
+      ef = Math.max(1.3, ef + delta);
+      var nextReview = now + interval * 86400000;
+      record.history = record.history || [];
+      record.history.push({ date: now, score: score, ef: ef, interval: interval });
+      return { ef: ef, interval: interval, reps: reps, nextReview: nextReview, lastReview: now, history: record.history };
+    }
+
+    function checkMastered(record) {
+      if (!record || !record.history || record.history.length < 3) return false;
+      var h = record.history;
+      return h.slice(-3).every(function(e) { return e.score >= 4; }) && record.interval > 90;
+    }
+
+    function sm2Review(idx, score) {
+      var old = sm2[idx];
+      sm2[idx] = calcSM2(old, score);
+      saveSm2();
+    }
+
+    function getSm2Label(rec) {
+      if (!rec || !rec.nextReview) return '';
+      var now = Date.now();
+      if (checkMastered(rec) || rec.nextReview > now + 90 * 86400000) return 'mastered';
+      if (rec.nextReview < new Date(new Date().setHours(0,0,0,0)).getTime()) return 'overdue';
+      if (rec.nextReview <= now) return 'due';
+      return 'queued';
+    }
+
+    // ---- SM-2 信息行 ----
+    function renderSm2InfoBar() {
+      var bar = document.getElementById('sm2InfoBar');
+      if (!bar) return;
+      var rec = sm2[current];
+      if (!rec || !rec.nextReview) { bar.style.display = 'none'; return; }
+      bar.style.display = '';
+      var dueDate = new Date(rec.nextReview);
+      var dd = dueDate.getFullYear() + '-' + String(dueDate.getMonth()+1).padStart(2,'0') + '-' + String(dueDate.getDate()).padStart(2,'0');
+      var label = getSm2Label(rec);
+      var tag = '';
+      if (label === 'due') tag = '<span class="sm2-due-tag">今日到期</span>';
+      else if (label === 'overdue') tag = '<span class="sm2-overdue-tag">已逾期</span>';
+      else if (label === 'mastered') tag = '<span style="color:#F5A623;font-weight:600">⭐ 已掌握</span>';
+      bar.innerHTML = '<span>EF: ' + rec.ef.toFixed(2) + '</span>' +
+        '<span>间隔: ' + rec.interval + '天</span>' +
+        '<span>复习次数: ' + rec.reps + '</span>' +
+        (rec.lastReview ? '<span>上次: ' + new Date(rec.lastReview).toLocaleDateString('zh-CN') + '</span>' : '') +
+        '<span>下次: ' + dd + '</span>' + tag;
+    }
+
+    // ---- SM-2 复习面板 ----
+    function buildReviewQueue(wbFilter) {
+      var queue = [];
+      var chapters = getBookChapters ? getBookChapters(wbFilter) : [getChapter()];
+      if (!chapters.length) chapters = [getChapter()];
+      chapters.forEach(function(ch) {
+        var key = sm2Key(ch);
+        var obj;
+        try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
+        var len = ch.ownTotal || ch.total;
+        for (var i = 0; i < len; i++) {
+          if (obj[i] && obj[i].nextReview) {
+            queue.push({ chapterId: ch.id, idx: i, record: obj[i] });
+          }
+        }
+      });
+      return queue;
+    }
+
+    function sm2ChapterSummary(ch) {
+      var due = 0, overdue = 0, queued = 0, mastered = 0;
+      var key = sm2Key(ch);
+      var obj;
+      try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
+      var len = ch.ownTotal || ch.total;
+      for (var i = 0; i < len; i++) {
+        if (!obj[i] || !obj[i].nextReview) continue;
+        var label = getSm2Label(obj[i]);
+        if (label === 'due') due++;
+        else if (label === 'overdue') overdue++;
+        else if (label === 'mastered') mastered++;
+        else queued++;
+      }
+      return { due: due, overdue: overdue, queued: queued, mastered: mastered };
+    }
+
+    function toggleSm2Panel() {
+      if (!sm2PanelOpen) {
+        var panel = document.getElementById('sm2Panel');
+        var mainContent = document.getElementById('mainAreaContent');
+        var dashboard = document.getElementById('dashboardPanel');
+        var wrongBook = document.getElementById('wrongBookPanel');
+        if (dashboard) dashboard.style.display = 'none';
+        if (wrongBook) wrongBook.style.display = 'none';
+        dashboardOpen = false;
+        wrongBookOpen = false;
+        document.getElementById('btnDashboard').innerHTML = '全局进度<span class="sol-key">V</span>';
+        document.getElementById('btnWrongBook').innerHTML = '错题本<span class="sol-key">B</span>';
+        panel.style.display = 'block';
+        mainContent.style.display = 'none';
+        setPanelTitle('间隔重复复习');
+        sm2PanelOpen = true;
+        renderSm2Panel();
+      } else {
+        closeSm2Panel();
+      }
+    }
+
+    function closeSm2Panel() {
+      sm2PanelOpen = false;
+      document.getElementById('sm2Panel').style.display = 'none';
+      document.getElementById('mainAreaContent').style.display = '';
+      setPanelTitle('');
+      renderTitle();
+    }
+
+    function renderSm2Panel() {
+      var books = getSortedWbs();
+      var allQueue = [];
+      var allDue = 0, allOverdue = 0, allQueued = 0, allMastered = 0;
+
+      // 按书收集团队所有SM-2数据
+      var bookData = [];
+      books.forEach(function(b) {
+        var chs = getBookChapters(b.wb);
+        var bDue = 0, bOverdue = 0, bQueued = 0, bMastered = 0;
+        var chRows = [];
+        chs.forEach(function(ch) {
+          var s = sm2ChapterSummary(ch);
+          if (s.due + s.overdue + s.queued + s.mastered === 0) return;
+          bDue += s.due; bOverdue += s.overdue; bQueued += s.queued; bMastered += s.mastered;
+          chRows.push({ ch: ch, summary: s });
+        });
+        allDue += bDue; allOverdue += bOverdue; allQueued += bQueued; allMastered += bMastered;
+        if (chRows.length > 0) bookData.push({ label: b.label, wb: b.wb, rows: chRows, due: bDue, overdue: bOverdue });
+      });
+
+      // 更新统计卡片
+      document.querySelector('#sm2CardDue .sm2-stat-num').textContent = allDue;
+      document.querySelector('#sm2CardOverdue .sm2-stat-num').textContent = allOverdue;
+      document.querySelector('#sm2CardQueue .sm2-stat-num').textContent = allQueued;
+      document.querySelector('#sm2CardMastered .sm2-stat-num').textContent = allMastered;
+
+      // 渲染章节列表
+      var chHtml = '';
+      bookData.forEach(function(bd) {
+        chHtml += '<div class="sm2-book-header" style="font-weight:700;color:var(--primary);margin:8px 0 4px;font-size:14px">' + bd.label + '</div>';
+        bd.rows.forEach(function(row) {
+          var s = row.summary;
+          var name = row.ch.short || row.ch.name;
+          var statsStr = '';
+          if (s.due) statsStr += '<span class="sm2-ch-due">到期 ' + s.due + '</span> ';
+          if (s.overdue) statsStr += '<span class="sm2-ch-overdue">逾期 ' + s.overdue + '</span> ';
+          if (s.queued) statsStr += '<span style="font-size:11px;color:#888">队列 ' + s.queued + '</span> ';
+          chHtml += '<div class="sm2-ch-row">' +
+            '<div class="sm2-ch-info"><span class="sm2-ch-name">' + name + '</span><span class="sm2-ch-stats">' + statsStr + '</span></div>' +
+            '<button class="sm2-ch-btn" onclick="startReviewChapter(\'' + row.ch.id + '\')">复习</button>' +
+            '</div>';
+        });
+      });
+      if (!chHtml) chHtml = '<div style="text-align:center;color:var(--text-muted);padding:20px">暂无 SM-2 复习数据。打标后自动生成。</div>';
+      document.getElementById('sm2Chapters').innerHTML = chHtml;
+    }
+
+    function startReviewChapter(chapterId) {
+      var ch = chapterById(chapterId);
+      if (!ch) return;
+      var queue = [];
+      var key = sm2Key(ch);
+      var obj;
+      try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
+      var len = ch.ownTotal || ch.total;
+      for (var i = 0; i < len; i++) {
+        if (obj[i] && obj[i].nextReview && obj[i].nextReview <= Date.now()) {
+          queue.push({ chapterId: chapterId, idx: i, record: obj[i] });
+        }
+      }
+      if (queue.length === 0) { alert('该章节没有到期题目'); return; }
+      var mode = document.querySelector('input[name="sm2mode"]:checked');
+      mode = mode ? mode.value : 'sequential';
+      startReview(queue, mode);
+    }
+
+    var _startAllReview = function() {
+      var mode = document.querySelector('input[name="sm2mode"]:checked');
+      mode = mode ? mode.value : 'sequential';
+      var books = getSortedWbs();
+      var queue = [];
+      books.forEach(function(b) {
+        var chs = getBookChapters(b.wb);
+        chs.forEach(function(ch) {
+          var key = sm2Key(ch);
+          var obj;
+          try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
+          var len = ch.ownTotal || ch.total;
+          for (var i = 0; i < len; i++) {
+            if (obj[i] && obj[i].nextReview && obj[i].nextReview <= Date.now()) {
+              queue.push({ chapterId: ch.id, idx: i, record: obj[i] });
+            }
+          }
+        });
+      });
+      if (queue.length === 0) { alert('没有到期题目'); return; }
+      startReview(queue, mode);
+    };
+
+    function startReview(queue, mode) {
+      if (mode === 'random') {
+        for (var i = queue.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = queue[i]; queue[i] = queue[j]; queue[j] = tmp;
+        }
+      }
+      reviewSession = { queue: queue, currentIdx: 0, mode: mode };
+      closeSm2Panel();
+      // 跳转到第一题
+      var first = queue[0];
+      switchChapter(first.chapterId);
+      switchTo(first.idx);
+      // 在标题栏显示复习进度
+      renderReviewProgress();
+    }
+
+    function reviewNext() {
+      if (!reviewSession) return;
+      reviewSession.currentIdx++;
+      if (reviewSession.currentIdx >= reviewSession.queue.length) {
+        alert('🎉 本轮复习完成！');
+        reviewSession = null;
+        document.getElementById('sm2InfoBar').style.display = 'none';
+        setPanelTitle('');
+        renderTitle();
+        return;
+      }
+      var item = reviewSession.queue[reviewSession.currentIdx];
+      switchChapter(item.chapterId);
+      switchTo(item.idx);
+      renderReviewProgress();
+    }
+
+    function renderReviewProgress() {
+      if (!reviewSession) return;
+      var total = reviewSession.queue.length;
+      var cur = reviewSession.currentIdx + 1;
+      var title = document.getElementById('titleBar');
+      if (title) {
+        var modeLabel = { sequential: '顺序', random: '随机', overdue: '仅逾期' }[reviewSession.mode] || '';
+        document.getElementById('panelTitle').textContent = '📋 复习中 ' + cur + '/' + total + ' ' + modeLabel;
+        document.getElementById('panelTitle').style.display = '';
+        document.getElementById('chapterDropdown').style.display = 'none';
+      }
+    }
+
+    function exitReviewSession() {
+      if (reviewSession) {
+        reviewSession = null;
+        document.getElementById('sm2InfoBar').style.display = 'none';
+        setPanelTitle('');
+        renderTitle();
+      }
+    }
+
+    // 安装全局开始按钮
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('btnSm2StartAll');
+      if (btn) btn.addEventListener('click', function() { _startAllReview(); });
+    });
     document.addEventListener('keydown', function (e) {
       // 标注模式下吃掉全部按键（Snipaste 式：避免切题/改状态等全局快捷键误触发）。
       // 需在 INPUT 判断之前：标注工具栏含 range 输入（粗细滑块），焦点在其上时 Alt 退出仍须生效。
@@ -5612,9 +6082,10 @@ ${cardsHTML}
       if (subjectPickerOpen) {
         // 科目选择弹窗独占：只放行 G（重新打开/切换）与 Esc（关闭），H 等不再叠加其它弹窗
         if (key !== 'g' && key !== 'escape') return;
-      } else if (dashboardOpen || wrongBookOpen || shortcutHelpOpen) {
+      } else if (dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) {
         const panelKeys = ['h', 'escape'];
         if (dashboardOpen || wrongBookOpen) panelKeys.push('v', 'b');
+        if (sm2PanelOpen) panelKeys.push('m');
         if (!panelKeys.includes(key)) return;
       }
 
@@ -5661,10 +6132,8 @@ ${cardsHTML}
         // 上一行 / 下一行（视觉网格行导航）
         case 'w': case 'arrowup': navUp(); break;
         case 's': case 'arrowdown': navDown(); break;
-        // 掌握度
-        case 'z': setStatus('proficient'); break;
-        case 'x': setStatus('vague'); break;
-        case 'c': setStatus('wrong'); break;
+        // 掌握度（组合键）
+        case 'z': case 'x': case 'c': e.preventDefault(); handleStatusKey(key); break;
         // 解析
         case ' ': e.preventDefault(); toggleSolution(); break;
         // 章节切换
@@ -5676,13 +6145,16 @@ ${cardsHTML}
         // 笔记与帮助
         case 'n': e.preventDefault(); focusNotes(); break;
         case 'h': toggleShortcutHelp(); break;
-        // 全局进度 / 错题本
+        // 全局进度 / 错题本 / 间隔重复
         case 'v': toggleDashboard(); break;
         case 'b': toggleWrongBook(); break;
-        // 切换科目（打开科目选择弹窗）
+        case 'm': toggleSm2Panel(); break;
+        // 切换科目
         case 'g': openSubjectPicker(); break;
         // 灯箱快捷键
         case 'escape':
+          if (reviewSession) { exitReviewSession(); return; }
+          if (sm2PanelOpen) { closeSm2Panel(); return; }
           if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
           if (subjectPickerOpen) { closeSubjectPicker(); return; }
           if (shortcutHelpOpen) { toggleShortcutHelp(); return; }
@@ -5706,7 +6178,7 @@ ${cardsHTML}
     document.addEventListener('wheel', function (e) {
       if (lbAnnotMode) return;
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-      if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen) return;
+      if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) return;
       if (document.getElementById('lightbox').classList.contains('show')) return;
       // 横向滚轮：|dx| 明显大于 |dy| 且达到阈值才判定为切题意图（避免纵向滚动/微小平移误触发）
       const dx = e.deltaX || 0, dy = e.deltaY || 0;
@@ -5722,6 +6194,8 @@ ${cardsHTML}
     curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'shu1';
     curSubject = SUBJECTS.find(function (s) { return s.id === curSubjectId; });
     CHAPTERS = curSubject.chapters;
+    // 一次性全量迁移已有掌握度 → SM-2 复习记录（每个科目只跑一次）
+    migrateAllSm2();
     // 恢复上次停的章节/题目/小题模式（无记录时从该科目默认章节第 1 题开始）
     var resume = loadResume(curSubjectId);
     if (resume) {
@@ -5734,7 +6208,7 @@ ${cardsHTML}
     }
 
     loadGlobalFilters(); loadSolutionPref(); // 恢复筛选状态与解析默认（解析默认按科目）
-    loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+    loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
     // 若恢复的筛选状态激活且当前题被筛掉，跳到第一条筛中题，避免落在不可见题上
     if (!isAllFilterActive()) {
       const filtered = getFilteredIndices();
@@ -5764,10 +6238,12 @@ ${cardsHTML}
         <div class="shortcut-row"><span class="key"><kbd>滚轮左右推</kbd></span><span class="desc">上一题/下一题（同 A/D，常规状态）</span></div>
       </div>
       <div class="shortcut-group">
-        <div class="shortcut-group-title">掌握度</div>
-        <div class="shortcut-row"><span class="key"><kbd>Z</kbd></span><span class="desc">熟练</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>X</kbd></span><span class="desc">模糊</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>C</kbd></span><span class="desc">需复习</span></div>
+        <div class="shortcut-group-title">掌握度（5 级）</div>
+        <div class="shortcut-row"><span class="key"><kbd>Z</kbd></span><span class="desc">熟练（lv5 完美）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Z</kbd>+<kbd>X</kbd></span><span class="desc">较熟练（lv4 正确但犹豫）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>X</kbd></span><span class="desc">模糊（lv3 思路对但卡壳）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>X</kbd>+<kbd>C</kbd></span><span class="desc">困难（lv2 大部分忘记）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>C</kbd></span><span class="desc">不会（lv1 全忘）</span></div>
       </div>
       <div class="shortcut-group">
         <div class="shortcut-group-title">解析</div>
@@ -5782,16 +6258,18 @@ ${cardsHTML}
       <div class="shortcut-group">
         <div class="shortcut-group-title">筛选（Shift 组合键）</div>
         <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>A</kbd></span><span class="desc">全部</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>Z</kbd></span><span class="desc">熟练</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>X</kbd></span><span class="desc">模糊</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>C</kbd></span><span class="desc">需复习</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>N</kbd></span><span class="desc">带笔记（有笔记或有标注）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>Z</kbd></span><span class="desc">熟练（lv5+lv4）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>X</kbd></span><span class="desc">模糊（lv3+lv2）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>C</kbd></span><span class="desc">不会（lv1）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>N</kbd></span><span class="desc">带笔记</span></div>
       </div>
       <div class="shortcut-group">
-        <div class="shortcut-group-title">面板</div>
+        <div class="shortcut-group-title">面板 & 复习</div>
         <div class="shortcut-row"><span class="key"><kbd>V</kbd></span><span class="desc">全局进度</span></div>
         <div class="shortcut-row"><span class="key"><kbd>B</kbd></span><span class="desc">错题本</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>M</kbd></span><span class="desc">间隔重复复习面板</span></div>
         <div class="shortcut-row"><span class="key"><kbd>G</kbd></span><span class="desc">切换科目</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Esc</kbd></span><span class="desc">关闭面板 / 退出复习</span></div>
       </div>
       <div class="shortcut-group">
         <div class="shortcut-group-title">标注（灯箱内）</div>
