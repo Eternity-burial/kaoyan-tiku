@@ -89,6 +89,11 @@
               class="key">T</span></button>
         </div>
         <div class="sm2-info-bar" id="sm2InfoBar" style="display:none"></div>
+        <div id="reviewControls" style="display:none">
+          <button id="btnReviewPrev">上一题</button>
+          <button id="btnReviewSkip">跳过</button>
+          <button id="btnReviewNext">下一题</button>
+        </div>
         <div class="img-bad-warning" id="qBadWarning">题目图质量不达标</div>
         <div class="q-label" id="qLabel"></div>
         <div class="sub-select-bar" id="subSelectBar" style="display:none"></div>
@@ -161,6 +166,10 @@
         <div class="chapter-label">进度</div>
         <div class="stats-panel" id="statsPanel"></div>
       </div>
+      <div id="reviewQueuePanel" style="display:none">
+        <div class="review-queue-header" id="reviewQueueHeader">本次复习 0 题</div>
+        <div class="review-queue" id="reviewQueue"></div>
+      </div>
       <div id="qnavContainer" style="background:rgba(255,255,255,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.45);margin-top:12px">
         <div class="qnav-label">题号</div>
         <div class="qnav" id="qnav"></div>
@@ -168,6 +177,149 @@
     </div>
 
   </div><!-- .app-layout -->
+
+  <div class="shortcut-overlay" id="shortcutOverlay">
+    <div class="shortcut-modal" id="shortcutModal">
+      <h2>快捷键帮助</h2>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">导航</div>
+        <div class="shortcut-row"><span class="key"><kbd>A</kbd> / <kbd>&larr;</kbd></span><span class="desc">上一题</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>D</kbd> / <kbd>&rarr;</kbd></span><span class="desc">下一题</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>W</kbd> / <kbd>&uarr;</kbd></span><span class="desc">上一行</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>S</kbd> / <kbd>&darr;</kbd></span><span class="desc">下一行</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Q</kbd></span><span class="desc">上一章 / 复习中：上一复习题</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>E</kbd></span><span class="desc">下一章 / 复习中：下一复习题</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>F</kbd></span><span class="desc">进入/退出小题选择模式</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>滚轮左右推</kbd></span><span class="desc">上一题/下一题（同 A/D，常规状态）</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">掌握度（5 级）</div>
+        <div class="shortcut-row"><span class="key"><kbd>Z</kbd></span><span class="desc">熟练（lv5 完美）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Z</kbd>+<kbd>X</kbd></span><span class="desc">较熟练（lv4 正确但犹豫）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>X</kbd></span><span class="desc">模糊（lv3 思路对但卡壳）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>X</kbd>+<kbd>C</kbd></span><span class="desc">困难（lv2 大部分忘记）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>C</kbd></span><span class="desc">不会（lv1 全忘）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Ctrl</kbd>+<kbd>Z</kbd></span><span class="desc">撤销最近一次标记</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">解析</div>
+        <div class="shortcut-row"><span class="key"><kbd>Space</kbd></span><span class="desc">显示/隐藏解析</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>Space</kbd></span><span class="desc">切换默认解析显示状态</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">图片质量</div>
+        <div class="shortcut-row"><span class="key"><kbd>R</kbd></span><span class="desc">标记/取消题目图不达标</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>T</kbd></span><span class="desc">标记/取消解析图不达标</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">筛选（Shift 组合键）</div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>A</kbd></span><span class="desc">全部</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>Z</kbd></span><span class="desc">熟练（lv5+lv4）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>X</kbd></span><span class="desc">模糊（lv3+lv2）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>C</kbd></span><span class="desc">不会（lv1）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>N</kbd></span><span class="desc">带笔记</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">面板 & 复习</div>
+        <div class="shortcut-row"><span class="key"><kbd>V</kbd></span><span class="desc">全局进度</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>B</kbd></span><span class="desc">错题本</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>M</kbd></span><span class="desc">间隔重复复习面板</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>G</kbd></span><span class="desc">切换科目</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Esc</kbd></span><span class="desc">关闭面板 / 退出复习</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">标注（灯箱内）</div>
+        <div class="shortcut-row"><span class="key"><kbd>Alt</kbd></span><span class="desc">进入/退出标注</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>滚轮</kbd></span><span class="desc">缩放图片（光标处）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>右键</kbd> + <kbd>滚轮</kbd></span><span class="desc">调节画笔粗细</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>滚轮左右推</kbd></span><span class="desc">切换工具</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>拖动</kbd></span><span class="desc">直线锁定水平或竖直</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Space</kbd></span><span class="desc">显示/隐藏标注工具栏</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Tab</kbd></span><span class="desc">切换工具（矩形→直线→高亮→画笔）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>Esc</kbd></span><span class="desc">退出标注 / 关闭灯箱</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>+</kbd>/<kbd>-</kbd>/<kbd>0</kbd></span><span class="desc">灯箱放大/缩小/复位（查看模式）</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>其它</kbd></span><span class="desc">灯箱打开时屏蔽切题/改状态快捷键</span></div>
+      </div>
+      <div class="shortcut-group">
+        <div class="shortcut-group-title">其他</div>
+        <div class="shortcut-row"><span class="key"><kbd>N</kbd></span><span class="desc">编辑笔记</span></div>
+        <div class="shortcut-row"><span class="key"><kbd>H</kbd></span><span class="desc">打开/关闭此帮助</span></div>
+      </div>
+      <div class="shortcut-close-hint">按 Esc 或点击背景关闭</div>
+    </div>
+  </div>
+
+  <!-- 科目选择模态 -->
+  <div class="shortcut-overlay" id="subjectOverlay">
+    <div class="shortcut-modal" style="max-width: 420px">
+      <h2>选择科目</h2>
+      <div class="subject-list">
+        <button class="subject-option" data-subject="shu1">数学<span class="subj-desc">高数 / 线代 / 概率论</span></button>
+        <button class="subject-option" data-subject="822">控制工程基础<span class="subj-desc">822 专业课</span></button>
+      </div>
+      <div class="shortcut-close-hint">点击背景关闭 · Esc 关闭</div>
+    </div>
+  </div>
+
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-annotate" id="lightboxAnnotate">标注</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div class="lightbox-hint">滚轮缩放 / 拖拽移动 / 双击或点击背景关闭</div>
+    <!-- Snipaste 风格标注工具栏（单排底部居中） -->
+    <div class="annot-toolbar" id="annotToolbar" style="display:none">
+      <!-- 撤销 / 重做 -->
+      <button class="at-btn" data-action="undo" title="撤销 (Ctrl+Z)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+      </button>
+      <button class="at-btn" data-action="redo" title="重做 (Ctrl+Y)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      </button>
+      <span class="at-sep"></span>
+      <!-- 矩形 / 直线 / 高亮 / 画笔 -->
+      <button class="at-btn at-tool active" data-tool="FrameMarker" title="矩形 (R)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="1.5"/></svg>
+      </button>
+      <button class="at-btn at-tool" data-tool="LineMarker" title="直线 (L)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="19" x2="20" y2="5"/></svg>
+      </button>
+      <button class="at-btn at-tool" data-tool="HighlighterMarker" title="高亮 (H)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20 19 6l-2-2L3 18z"/><path d="M12 8l2 2"/></svg>
+      </button>
+      <button class="at-btn at-tool" data-tool="FreehandMarker" title="画笔 (B)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.83 2.83 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+      </button>
+      <span class="at-sep"></span>
+      <!-- 颜色（预设色板弹层） -->
+      <button class="at-btn at-color-swatch" id="annotColorSwatch" title="颜色">
+        <span class="at-color-dot" id="annotColorDot"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <!-- 粗细（滚轮 / 滑块 / +/-） -->
+      <div class="at-width-wrap" id="annotWidthWrap" title="粗细（滚轮或拖动调整）">
+        <button class="at-width-step" data-action="width-minus" title="变细">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <input type="range" class="at-width" id="annotWidth" min="1" max="30" value="3">
+        <button class="at-width-step" data-action="width-plus" title="变粗">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg>
+        </button>
+        <span class="at-width-val" id="annotWidthVal">3</span>
+      </div>
+      <span class="at-sep"></span>
+      <!-- 保存 / 退出 -->
+      <button class="at-btn at-save" data-action="save" title="保存标注 (Ctrl+S)">保存</button>
+      <button class="at-btn at-cancel" data-action="cancel" title="退出标注 (Esc)">退出</button>
+    </div>
+    <!-- 预设色板弹层（工具栏上方居中） -->
+    <div class="annot-palette" id="annotPalette" style="display:none">
+      <div class="annot-palette-swatches" id="annotPaletteSwatches"></div>
+      <div class="annot-palette-custom">
+        <input type="color" id="annotColorCustom" value="#ff0000" title="自定义颜色">
+        <span>自定义</span>
+      </div>
+    </div>
+  </div>
 
   <!-- 本地离线库：Markdown（marked）+ LaTeX（KaTeX）+ 消毒（DOMPurify）+ 图片标注（marker.js 3） -->
   <script src="lib/dompurify/purify.min.js"></script>

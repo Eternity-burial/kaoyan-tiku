@@ -1102,6 +1102,53 @@
       background: var(--primary); color: #fff;
     }
     .sm2-ch-btn:hover { filter: brightness(1.1); }
+    .sm2-module-header {
+      display: flex; align-items: center; gap: 10px; padding: 8px 4px;
+      font-weight: 700; color: var(--primary); font-size: 15px; margin-top: 10px;
+    }
+    .sm2-module-header:first-child { margin-top: 0; }
+    .sm2-module-name { flex: 0 0 auto; }
+    .sm2-mod-stats { flex: 1 1 auto; font-size: 12px; font-weight: 400; }
+    .sm2-mod-btn {
+      padding: 4px 12px; border-radius: 8px; border: none; cursor: pointer;
+      font-size: 12px; font-weight: 600; transition: all 0.15s;
+      background: var(--primary); color: #fff;
+    }
+    .sm2-mod-btn:hover { filter: brightness(1.1); }
+
+    /* ===== 复习态侧栏队列 ===== */
+    #reviewQueuePanel {
+      background: rgba(255,255,255,0.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      border-radius: 12px; padding: 12px; border: 1px solid rgba(255,255,255,0.45); margin-top: 12px;
+    }
+    .review-queue-header {
+      font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px;
+    }
+    .review-queue {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); gap: 6px;
+    }
+    .review-q {
+      height: 30px; border-radius: 7px; border: 1px solid var(--glass-border);
+      background: #fff; color: var(--text); font-size: 12px; cursor: pointer;
+      transition: all 0.12s;
+    }
+    .review-q:hover { border-color: var(--primary); }
+    .review-q.current { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 700; }
+    .review-q.graded { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+    .review-q.graded.current { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .review-q.skipped { background: #fff; color: #bbb; border-style: dashed; }
+
+    /* ===== 复习态控件（上一题/跳过/下一题） ===== */
+    #reviewControls {
+      display: flex; gap: 8px; justify-content: center; padding: 6px 0 4px;
+    }
+    #reviewControls button {
+      padding: 5px 16px; border-radius: 8px; border: 1px solid var(--glass-border);
+      background: var(--glass-bg); color: var(--text); font-size: 13px; cursor: pointer;
+      transition: all 0.15s;
+    }
+    #reviewControls button:hover { border-color: var(--primary); color: var(--primary); }
+    #reviewControls #btnReviewSkip { color: var(--text-muted); }
 
     /* ===== 错题本 5 级颜色 ===== */
     .wrongbook-q-item.wrong { background: linear-gradient(180deg, var(--lv1) 0%, var(--lv1-dark) 100%); }

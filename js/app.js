@@ -147,8 +147,8 @@
     // 合并章节（ch 有 q1000Id）：内存态 statuses/qBad/sBad 用合并索引承载，
     // 保存时按 [本章自身段, 1000题伴章段] 拆到两本书各自的存储键，加载时反向合并。
     // 非合并章节与现状完全一致（单一源）。→ 进度天然按书分开。
-    function statusSources() {
-      const ch = getChapter();
+    function statusSources(ch) {
+      ch = ch || getChapter();
       // 合并章节：自身段长度为 ownTotal；非合并章节用 total
       const srcs = [{ ch: ch, offset: 0, len: (ch.q1000Total ? ch.ownTotal : ch.total) }];
       if (ch && ch.q1000Id) {
@@ -478,6 +478,8 @@
           if (!trig || !panel) return;
           trig.addEventListener('click', function(e) {
             e.stopPropagation();
+            // 复习中标题只读：不响应下拉点击（保留文本标签供查看书/模块/章节）
+            if (reviewSession) return;
             var isOpen = panel.classList.contains('open');
             closeAllTitlePanels();
             if (!isOpen) {
@@ -1327,19 +1329,14 @@
           }
         });
 
+        // 该分区无题则跳过（如36讲无习题、某些章节无例题）
+        if (secGroups.length === 0) return;
+
         // 分区标题
         var secTitle = document.createElement('div');
         secTitle.className = 'section-header';
         secTitle.textContent = part.label;
         nav.appendChild(secTitle);
-
-        if (secGroups.length === 0) {
-          var emptyDiv = document.createElement('div');
-          emptyDiv.className = 'section-empty';
-          emptyDiv.textContent = '无';
-          nav.appendChild(emptyDiv);
-          return;
-        }
 
         secGroups.forEach(function(g) {
           var btn = document.createElement('button');
@@ -1897,28 +1894,36 @@
     function toggleSBad() { sBad[current] = !sBad[current]; if (!sBad[current]) delete sBad[current]; saveSBad(); updateSBadBtn(); updateImgBadWarnings(); renderNav(); }
 
     // ===== 组合键检测（Z/X/C 5级打标） =====
-    let comboState = { z: false, x: false, timer: null };
-    function resetCombo() { comboState.z = false; comboState.x = false; if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; } }
+    // 顺序无关：任意顺序按下 Z+X → 较熟练；X+C → 困难；单键 200ms 超时后触发各自等级
+    // 注：C 也需等待 200ms（非立即触发），否则 C+X 无法识别为「困难」。
+    let comboState = { z: false, x: false, c: false, timer: null };
+    function resetCombo() {
+      comboState.z = false; comboState.x = false; comboState.c = false;
+      if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; }
+    }
     function handleStatusKey(key) {
       // 注：调用方已在 keydown 中做了 INPUT/TEXTAREA 过滤
-      if (key === 'z') {
-        comboState.z = true;
-        comboState.timer = setTimeout(function() { setStatus('proficient'); resetCombo(); }, 200);
-        return;
+      var ch = key.toLowerCase();
+      if (ch !== 'z' && ch !== 'x' && ch !== 'c') { resetCombo(); return; }
+      comboState[ch] = true;
+      // 清除之前的超时计时器（每次按键重新计时 200ms）
+      if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; }
+      // 检测组合键（顺序无关）
+      // Z + X → 较熟练 (familiar, lv4)
+      if (comboState.z && comboState.x) {
+        setStatus('familiar'); resetCombo(); return;
       }
-      if (key === 'x') {
-        if (comboState.z) { clearTimeout(comboState.timer); setStatus('familiar'); resetCombo(); return; }
-        comboState.x = true;
-        comboState.timer = setTimeout(function() { setStatus('vague'); resetCombo(); }, 200);
-        return;
+      // X + C → 困难 (rusty, lv2)
+      if (comboState.x && comboState.c) {
+        setStatus('rusty'); resetCombo(); return;
       }
-      if (key === 'c') {
-        if (comboState.x) { clearTimeout(comboState.timer); setStatus('rusty'); resetCombo(); return; }
-        setStatus('wrong'); resetCombo();
-        return;
-      }
-      // 非 Z/X/C 键打断组合
-      resetCombo();
+      // 未形成组合，等待 200ms 后按单键触发
+      comboState.timer = setTimeout(function() {
+        if (comboState.z) { setStatus('proficient'); }
+        else if (comboState.x) { setStatus('vague'); }
+        else if (comboState.c) { setStatus('wrong'); }
+        resetCombo();
+      }, 200);
     }
 
     // ===== 掌握度 =====
@@ -1940,13 +1945,25 @@
       if (togglingOff) { delete statuses[current]; pushUndo(current, had); }
       else { statuses[current] = status; }
       saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
-      // SM-2: 普通刷题区改标记 = 重新定基线；复习会话 = 真正复习事件
       const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
-      if (!togglingOff && scoreMap[status]) {
-        sm2Review(current, scoreMap[status], !!reviewSession);
+      const score = scoreMap[status];
+      if (reviewSession && !togglingOff && score) {
+        // 复习会话评级：延迟提交，不即时改 SM-2
+        const item = reviewCurrentItem();
+        const isReviewTarget = item && currentChapterId === item.chapterId && current === item.idx;
+        if (isReviewTarget) {
+          item.finalScore = score;
+          item.status = 'graded';
+          reviewAdvance(1); // 评级后自动进入下一复习题
+        } else {
+          // A/D/W/S 漂移到相邻题评级：只重定基线，不改复习位置
+          rebaselineSm2(current, score);
+        }
+      } else if (!togglingOff && score) {
+        // 非复习改标：重定基线（不累加），首打标自动跳到下一题
+        rebaselineSm2(current, score);
+        if (!had) navNext();
       }
-      if (reviewSession) { reviewNext(); }
-      else if (!togglingOff && !had) { navNext(); }
       renderSm2InfoBar();
     }
 
@@ -2852,8 +2869,9 @@ ${cardsHTML}
     }
 
     // ===== 一次性全量迁移：为所有已有掌握度标记但缺 SM-2 记录的题目创建复习排期 =====
+    // v2：修正迁移逻辑后升级版本号，确保已误迁移过的数据被清除后重新迁移
     function migrateAllSm2() {
-      var flagKey = 'kaoyan_sm2_migrated_' + curSubjectId;
+      var flagKey = 'kaoyan_sm2_migrated_v2_' + curSubjectId;
       if (localStorage.getItem(flagKey) === '1') return;
       var scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
       var migrated = 0;
@@ -2888,6 +2906,33 @@ ${cardsHTML}
         var len = src.len;
         for (var i = 0; i < len; i++) {
           if (sm2[src.offset + i]) out[i] = sm2[src.offset + i];
+        }
+        if (Object.keys(out).length > 0) {
+          localStorage.setItem(sm2Key(src.ch), JSON.stringify(out));
+        } else {
+          localStorage.removeItem(sm2Key(src.ch));
+        }
+      });
+    }
+
+    // 读取任意章节「合并后」的 SM-2（own 段 + 1000题伴章段），键为合并索引 0..total-1
+    function readMergedSm2(ch) {
+      var out = {};
+      statusSources(ch).forEach(function(src) {
+        var obj;
+        try { obj = JSON.parse(localStorage.getItem(sm2Key(src.ch)) || '{}'); } catch (e) { obj = {}; }
+        for (var i = 0; i < src.len; i++) {
+          if (obj[i]) out[src.offset + i] = obj[i];
+        }
+      });
+      return out;
+    }
+    // 将「合并后」的 SM-2 写回 own/伴章两块存储键
+    function writeMergedSm2(ch, merged) {
+      statusSources(ch).forEach(function(src) {
+        var out = {};
+        for (var i = 0; i < src.len; i++) {
+          if (merged[src.offset + i]) out[i] = merged[src.offset + i];
         }
         if (Object.keys(out).length > 0) {
           localStorage.setItem(sm2Key(src.ch), JSON.stringify(out));
@@ -2941,17 +2986,6 @@ ${cardsHTML}
       return h.slice(-3).every(function(e) { return e.score >= 4; }) && record.interval > 90;
     }
 
-    function sm2Review(idx, score, isReviewSession) {
-      if (isReviewSession) {
-        // 复习会话：真正的复习事件，SM-2 正常累进
-        sm2[idx] = calcSM2(sm2[idx], score);
-      } else {
-        // 普通刷题区：改标记只是重新定基线，不累进，从对应掌握度的种子开始
-        sm2[idx] = calcSM2(getSm2Seed(score), score);
-      }
-      saveSm2();
-    }
-
     // 根据掌握度等级返回恰当的初始 SM-2 状态（模拟已有几次复习）
     function getSm2Seed(score) {
       if (score === 5)      return { ef: 2.5, interval: 30, reps: 3, history: [] };
@@ -2990,34 +3024,47 @@ ${cardsHTML}
         '<span>下次: ' + dd + '</span>' + tag;
     }
 
-    // ---- SM-2 复习面板 ----
-    function buildReviewQueue(wbFilter) {
+    // 模块归一：'基础篇-线代' → '线代'（1000题章节 subj 带篇前缀）
+    function canonicalSubj(subj) { return String(subj || '').replace(/^(基础篇|强化篇)[-—]/, ''); }
+    // 复习用「浏览章」：排除 1000题 数据源章（1000题内容已并入 30讲/36讲 合并章）
+    function reviewChapters() {
+      return CHAPTERS.filter(function(c) { return c.wb !== '1000题' && c.total > 0; });
+    }
+    // 统一收集到期题目队列（含 1000题伴章段，使用合并索引）
+    function collectDueItems(chapters, mode) {
       var queue = [];
-      var chapters = getBookChapters ? getBookChapters(wbFilter) : [getChapter()];
-      if (!chapters.length) chapters = [getChapter()];
       chapters.forEach(function(ch) {
-        var key = sm2Key(ch);
-        var obj;
-        try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
-        var len = ch.ownTotal || ch.total;
-        for (var i = 0; i < len; i++) {
-          if (obj[i] && obj[i].nextReview) {
-            queue.push({ chapterId: ch.id, idx: i, record: obj[i] });
+        var merged = readMergedSm2(ch);
+        for (var i = 0; i < ch.total; i++) {
+          var rec = merged[i];
+          if (!rec || !rec.nextReview || rec.nextReview > Date.now()) continue;
+          if (mode === 'overdue') {
+            var todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
+            if (rec.nextReview >= todayStart.getTime()) continue;
           }
+          queue.push({ chapterId: ch.id, idx: i, record: rec, status: 'pending', finalScore: null });
         }
       });
       return queue;
     }
+    function getSm2Mode() {
+      var mode = document.querySelector('input[name="sm2mode"]:checked');
+      return mode ? mode.value : 'sequential';
+    }
+    // 重定基线（非复习改标 / 复习中漂移到相邻题）：从对应等级种子重新计算，不累加
+    function rebaselineSm2(idx, score) {
+      sm2[idx] = calcSM2(getSm2Seed(score), score);
+      saveSm2();
+    }
 
+    // ---- SM-2 复习面板 ----
     function sm2ChapterSummary(ch) {
       var due = 0, overdue = 0, queued = 0, mastered = 0;
-      var key = sm2Key(ch);
-      var obj;
-      try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
-      var len = ch.ownTotal || ch.total;
-      for (var i = 0; i < len; i++) {
-        if (!obj[i] || !obj[i].nextReview) continue;
-        var label = getSm2Label(obj[i]);
+      var merged = readMergedSm2(ch);
+      for (var i = 0; i < ch.total; i++) {
+        var rec = merged[i];
+        if (!rec || !rec.nextReview) continue;
+        var label = getSm2Label(rec);
         if (label === 'due') due++;
         else if (label === 'overdue') overdue++;
         else if (label === 'mastered') mastered++;
@@ -3056,25 +3103,72 @@ ${cardsHTML}
       renderTitle();
     }
 
+    // 章节行 HTML（模块分组 / 按书分组共用）
+    function sm2ChapterRowHtml(ch, s) {
+      var name = ch.short || ch.name;
+      var statsStr = '';
+      if (s.due) statsStr += '<span class="sm2-ch-due">到期 ' + s.due + '</span> ';
+      if (s.overdue) statsStr += '<span class="sm2-ch-overdue">逾期 ' + s.overdue + '</span> ';
+      if (s.queued) statsStr += '<span style="font-size:11px;color:#888">队列 ' + s.queued + '</span> ';
+      return '<div class="sm2-ch-row">' +
+        '<div class="sm2-ch-info"><span class="sm2-ch-name">' + name + '</span><span class="sm2-ch-stats">' + statsStr + '</span></div>' +
+        '<button class="sm2-ch-btn" onclick="startReviewChapter(\'' + ch.id + '\')">复习</button>' +
+        '</div>';
+    }
+
+    // 复习面板按「模块」（canonicalSubj）分组：数学 高数/线代/概率论，822 单模块退化为按书布局。
+    // 模块内按书（wbOrder 顺序，排除 1000题）分章；1000题内容已在合并章内统计（sm2ChapterSummary 用合并索引）。
     function renderSm2Panel() {
-      var books = getSortedWbs();
-      var allQueue = [];
       var allDue = 0, allOverdue = 0, allQueued = 0, allMastered = 0;
 
-      // 按书收集团队所有SM-2数据
-      var bookData = [];
-      books.forEach(function(b) {
-        var chs = getBookChapters(b.wb);
-        var bDue = 0, bOverdue = 0, bQueued = 0, bMastered = 0;
-        var chRows = [];
-        chs.forEach(function(ch) {
-          var s = sm2ChapterSummary(ch);
-          if (s.due + s.overdue + s.queued + s.mastered === 0) return;
-          bDue += s.due; bOverdue += s.overdue; bQueued += s.queued; bMastered += s.mastered;
-          chRows.push({ ch: ch, summary: s });
+      // 按模块分组
+      var moduleMap = {};
+      var subjOrder = curSubject ? curSubject.subjOrder : [];
+      reviewChapters().forEach(function(ch) {
+        var mod = canonicalSubj(ch.subj);
+        (moduleMap[mod] = moduleMap[mod] || []).push(ch);
+      });
+      var moduleNames = [];
+      subjOrder.forEach(function(s) { if (moduleMap[s]) moduleNames.push(s); });
+      Object.keys(moduleMap).forEach(function(m) { if (moduleNames.indexOf(m) === -1) moduleNames.push(m); });
+
+      var moduleHtmls = []; // 只保留有数据的模块 [{header, rows}]
+      moduleNames.forEach(function(mod) {
+        var modChs = moduleMap[mod];
+        // 模块内按书分组（wbOrder 顺序，排除 1000题 数据源书）
+        var bookMap = {};
+        modChs.forEach(function(ch) { var wb = ch.wb || ''; (bookMap[wb] = bookMap[wb] || []).push(ch); });
+        var bookNames = [];
+        var wbOrder = curSubject ? curSubject.wbOrder : [];
+        wbOrder.forEach(function(e) { if (e.wb !== '1000题' && bookMap[e.wb]) bookNames.push(e.wb); });
+        Object.keys(bookMap).forEach(function(wb) { if (bookNames.indexOf(wb) === -1) bookNames.push(wb); });
+
+        var rowsHtml = '';
+        var modDue = 0, modOverdue = 0;
+        bookNames.forEach(function(wb) {
+          var bRows = [];
+          bookMap[wb].forEach(function(ch) {
+            var s = sm2ChapterSummary(ch);
+            if (s.due + s.overdue + s.queued + s.mastered === 0) return;
+            allDue += s.due; allOverdue += s.overdue; allQueued += s.queued; allMastered += s.mastered;
+            modDue += s.due; modOverdue += s.overdue;
+            bRows.push({ ch: ch, summary: s });
+          });
+          if (bRows.length === 0) return;
+          rowsHtml += '<div class="sm2-book-header" style="font-weight:700;color:var(--primary);margin:8px 0 4px;font-size:14px">' + getWbLabel(wb) + '</div>';
+          bRows.forEach(function(row) { rowsHtml += sm2ChapterRowHtml(row.ch, row.summary); });
         });
-        allDue += bDue; allOverdue += bOverdue; allQueued += bQueued; allMastered += bMastered;
-        if (chRows.length > 0) bookData.push({ label: b.label, wb: b.wb, rows: chRows, due: bDue, overdue: bOverdue });
+        if (!rowsHtml) return; // 该模块无任何 SM-2 数据
+
+        var header = '<div class="sm2-module-header">' +
+          '<span class="sm2-module-name">' + mod + '</span>' +
+          '<span class="sm2-mod-stats">' +
+            (modDue ? '<span class="sm2-ch-due">到期 ' + modDue + '</span> ' : '') +
+            (modOverdue ? '<span class="sm2-ch-overdue">逾期 ' + modOverdue + '</span> ' : '') +
+          '</span>' +
+          '<button class="sm2-mod-btn" onclick="startReviewModule(\'' + mod + '\')">复习此模块</button>' +
+          '</div>';
+        moduleHtmls.push({ header: header, rows: rowsHtml });
       });
 
       // 更新统计卡片
@@ -3083,76 +3177,38 @@ ${cardsHTML}
       document.querySelector('#sm2CardQueue .sm2-stat-num').textContent = allQueued;
       document.querySelector('#sm2CardMastered .sm2-stat-num').textContent = allMastered;
 
-      // 渲染章节列表
+      // 渲染章节列表：科目仅有 1 个模块（822）时不渲染模块头，退化为按书布局
       var chHtml = '';
-      bookData.forEach(function(bd) {
-        chHtml += '<div class="sm2-book-header" style="font-weight:700;color:var(--primary);margin:8px 0 4px;font-size:14px">' + bd.label + '</div>';
-        bd.rows.forEach(function(row) {
-          var s = row.summary;
-          var name = row.ch.short || row.ch.name;
-          var statsStr = '';
-          if (s.due) statsStr += '<span class="sm2-ch-due">到期 ' + s.due + '</span> ';
-          if (s.overdue) statsStr += '<span class="sm2-ch-overdue">逾期 ' + s.overdue + '</span> ';
-          if (s.queued) statsStr += '<span style="font-size:11px;color:#888">队列 ' + s.queued + '</span> ';
-          chHtml += '<div class="sm2-ch-row">' +
-            '<div class="sm2-ch-info"><span class="sm2-ch-name">' + name + '</span><span class="sm2-ch-stats">' + statsStr + '</span></div>' +
-            '<button class="sm2-ch-btn" onclick="startReviewChapter(\'' + row.ch.id + '\')">复习</button>' +
-            '</div>';
-        });
+      var totalModuleCount = moduleNames.length;
+      moduleHtmls.forEach(function(m) {
+        if (totalModuleCount > 1) chHtml += m.header;
+        chHtml += m.rows;
       });
       if (!chHtml) chHtml = '<div style="text-align:center;color:var(--text-muted);padding:20px">暂无 SM-2 复习数据。打标后自动生成。</div>';
       document.getElementById('sm2Chapters').innerHTML = chHtml;
     }
 
+    // 复习某个模块（canonicalSubj）：跨 30讲/36讲/1000题段/李范全书 收集到期题
+    function startReviewModule(module) {
+      var mode = getSm2Mode();
+      var chs = reviewChapters().filter(function(c) { return canonicalSubj(c.subj) === module; });
+      var queue = collectDueItems(chs, mode);
+      if (queue.length === 0) { alert('该模块没有到期题目'); return; }
+      startReview(queue, mode);
+    }
+
     function startReviewChapter(chapterId) {
       var ch = chapterById(chapterId);
       if (!ch) return;
-      var queue = [];
-      var key = sm2Key(ch);
-      var obj;
-      try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
-      var len = ch.ownTotal || ch.total;
-      for (var i = 0; i < len; i++) {
-        if (obj[i] && obj[i].nextReview && obj[i].nextReview <= Date.now()) {
-          queue.push({ chapterId: chapterId, idx: i, record: obj[i] });
-        }
-      }
-      if (queue.length === 0) { alert('该章节没有到期题目'); return; }
-      var mode = document.querySelector('input[name="sm2mode"]:checked');
-      mode = mode ? mode.value : 'sequential';
-      // 仅逾期模式：从已收集的队列中再过滤
-      if (mode === 'overdue') {
-        var todayStart = new Date(); todayStart.setHours(0,0,0,0);
-        queue = queue.filter(function(item) { return item.record.nextReview < todayStart.getTime(); });
-        if (queue.length === 0) { alert('该章节没有逾期题目'); return; }
-      }
+      var mode = getSm2Mode();
+      var queue = collectDueItems([ch], mode);
+      if (queue.length === 0) { alert(mode === 'overdue' ? '该章节没有逾期题目' : '该章节没有到期题目'); return; }
       startReview(queue, mode);
     }
 
     var _startAllReview = function() {
-      var mode = document.querySelector('input[name="sm2mode"]:checked');
-      mode = mode ? mode.value : 'sequential';
-      var books = getSortedWbs();
-      var queue = [];
-      books.forEach(function(b) {
-        var chs = getBookChapters(b.wb);
-        chs.forEach(function(ch) {
-          var key = sm2Key(ch);
-          var obj;
-          try { obj = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { obj = {}; }
-          var len = ch.ownTotal || ch.total;
-          for (var i = 0; i < len; i++) {
-            if (obj[i] && obj[i].nextReview && obj[i].nextReview <= Date.now()) {
-              // 仅逾期模式：只取昨天及之前到期的
-              if (mode === 'overdue') {
-                var todayStart = new Date(); todayStart.setHours(0,0,0,0);
-                if (obj[i].nextReview >= todayStart.getTime()) continue;
-              }
-              queue.push({ chapterId: ch.id, idx: i, record: obj[i] });
-            }
-          }
-        });
-      });
+      var mode = getSm2Mode();
+      var queue = collectDueItems(reviewChapters(), mode);
       if (queue.length === 0) { alert('没有到期题目'); return; }
       startReview(queue, mode);
     };
@@ -3166,62 +3222,193 @@ ${cardsHTML}
       }
       reviewSession = { queue: queue, currentIdx: 0, mode: mode, originChapter: currentChapterId, originIdx: current };
       closeSm2Panel();
+      // 进入复习 UI：隐藏进度块，显示复习队列面板与复习控件
+      document.getElementById('statsBlock').style.display = 'none';
+      document.getElementById('reviewQueuePanel').style.display = '';
+      document.getElementById('reviewControls').style.display = '';
       // 跳转到第一题
       var first = queue[0];
       switchChapter(first.chapterId);
       switchTo(first.idx);
-      // 在标题栏显示复习进度
+      // 渲染侧栏复习列表 + 标题进度
+      renderReviewQueue();
       renderReviewProgress();
     }
 
-    function reviewNext() {
-      if (!reviewSession) return;
-      reviewSession.currentIdx++;
-      if (reviewSession.currentIdx >= reviewSession.queue.length) {
-        alert('🎉 本轮复习完成！');
-        exitReviewSession();
-        return;
-      }
-      var item = reviewSession.queue[reviewSession.currentIdx];
-      switchChapter(item.chapterId);
-      switchTo(item.idx);
-      renderReviewProgress();
+    // 当前复习项（越界返回 null）
+    function reviewCurrentItem() {
+      if (!reviewSession) return null;
+      var q = reviewSession.queue;
+      if (reviewSession.currentIdx < 0 || reviewSession.currentIdx >= q.length) return null;
+      return q[reviewSession.currentIdx];
     }
 
+    // 复习进度标题：正常「📋 复习中 cur/total mode」；done 时「还有 K 题未复习」。
+    // 复习时保留章节标题下拉的文本标签（书·模块·章节只读），仅隐藏下拉箭头，避免误切。
     function renderReviewProgress() {
       if (!reviewSession) return;
       var total = reviewSession.queue.length;
       var cur = reviewSession.currentIdx + 1;
-      var title = document.getElementById('titleBar');
-      if (title) {
+      var panelTitle = document.getElementById('panelTitle');
+      if (panelTitle) {
         var modeLabel = { sequential: '顺序', random: '随机', overdue: '仅逾期' }[reviewSession.mode] || '';
-        document.getElementById('panelTitle').textContent = '📋 复习中 ' + cur + '/' + total + ' ' + modeLabel;
-        document.getElementById('panelTitle').style.display = '';
-        document.getElementById('chapterDropdown').style.display = 'none';
+        if (reviewSession.done) {
+          var ungraded = reviewSession.queue.filter(function(it) { return it.status !== 'graded'; }).length;
+          panelTitle.textContent = '📋 还有 ' + ungraded + ' 题未复习';
+        } else {
+          panelTitle.textContent = '📋 复习中 ' + cur + '/' + total + ' ' + modeLabel;
+        }
+        panelTitle.style.display = '';
+        document.querySelectorAll('#chapterTitleBar .title-dropdown .title-arrow').forEach(function(a) { a.style.display = 'none'; });
       }
     }
 
-    function exitReviewSession() {
-      if (reviewSession) {
-        var originCh = reviewSession.originChapter;
-        var originIdx = reviewSession.originIdx;
-        reviewSession = null;
-        document.getElementById('sm2InfoBar').style.display = 'none';
-        setPanelTitle('');
-        if (originCh && originCh !== currentChapterId) {
-          switchChapter(originCh);
-          current = originIdx;
-          switchTo(current);
+    // 侧栏复习队列：1..N 编号按钮，状态 current/graded/skipped/pending
+    function renderReviewQueue() {
+      var panel = document.getElementById('reviewQueue');
+      if (!panel) return;
+      if (!reviewSession) { panel.innerHTML = ''; return; }
+      var queue = reviewSession.queue;
+      panel.innerHTML = '';
+      queue.forEach(function(item, i) {
+        var btn = document.createElement('button');
+        btn.className = 'review-q';
+        btn.textContent = i + 1;
+        btn.title = '第 ' + (i + 1) + ' 个复习题';
+        if (reviewSession.done) {
+          if (i === reviewSession.currentIdx) btn.classList.add('current');
+        } else if (i === reviewSession.currentIdx) {
+          btn.classList.add('current');
+        }
+        if (item.status === 'graded') btn.classList.add('graded');
+        else if (item.status === 'skipped') btn.classList.add('skipped');
+        btn.addEventListener('click', function() { reviewJump(i); });
+        panel.appendChild(btn);
+      });
+      var header = document.getElementById('reviewQueueHeader');
+      if (header) {
+        if (reviewSession.done) {
+          var ungraded = queue.filter(function(it) { return it.status !== 'graded'; }).length;
+          header.textContent = '还有 ' + ungraded + ' 题未复习';
         } else {
-          renderTitle();
+          header.textContent = '本次复习 ' + queue.length + ' 题';
         }
       }
     }
 
-    // 安装全局开始按钮
+    // 复习导航：delta=-1 后退（清 done），+1 前进（跳过已评级题，落到下一个未评级题）
+    function reviewAdvance(delta) {
+      if (!reviewSession) return;
+      if (delta < 0) {
+        reviewSession.currentIdx = Math.max(0, reviewSession.currentIdx - 1);
+        reviewSession.done = false;
+      } else {
+        var q = reviewSession.queue;
+        // 从当前位置向后找下一个未评级题（跳过已 graded 的题，如点回补评后顺路走到队尾）
+        var idx = reviewSession.currentIdx + 1;
+        while (idx < q.length && q[idx].status === 'graded') idx++;
+        if (idx >= q.length) {
+          var ungraded = q.filter(function(it) { return it.status !== 'graded'; }).length;
+          if (ungraded === 0) { exitReviewSession(); return; }
+          // 仍有未评级题：进入「done」态，停留并提示
+          reviewSession.done = true;
+          reviewSession.currentIdx = q.length;
+          renderReviewQueue();
+          renderReviewProgress();
+          return;
+        }
+        reviewSession.currentIdx = idx;
+      }
+      var item = reviewSession.queue[reviewSession.currentIdx];
+      switchChapter(item.chapterId);
+      switchTo(item.idx);
+      renderReviewQueue();
+      renderReviewProgress();
+    }
+
+    function reviewPrev() { reviewAdvance(-1); }
+    function reviewNext() { reviewAdvance(1); }
+    // 点击侧栏编号跳到指定复习项（清除 done 态）
+    function reviewJump(i) {
+      if (!reviewSession) return;
+      if (i < 0 || i >= reviewSession.queue.length) return;
+      reviewSession.currentIdx = i;
+      reviewSession.done = false;
+      var item = reviewSession.queue[i];
+      switchChapter(item.chapterId);
+      switchTo(item.idx);
+      renderReviewQueue();
+      renderReviewProgress();
+    }
+
+    // 跳过当前项：仅标记不评级，不改 SM-2，进入下一题
+    function reviewSkip() {
+      if (!reviewSession) return;
+      var item = reviewCurrentItem();
+      if (!item) return;
+      item.status = 'skipped';
+      renderReviewQueue();
+      reviewAdvance(1);
+    }
+
+    // 统一提交复习结果：按 chapterId 分组，对每个 finalScore!=null 的项用「复习前记录」渐进一次
+    function commitReviewResults() {
+      if (!reviewSession) return;
+      var groups = {};
+      reviewSession.queue.forEach(function(item) {
+        if (item.finalScore == null) return;
+        (groups[item.chapterId] = groups[item.chapterId] || []).push(item);
+      });
+      Object.keys(groups).forEach(function(cid) {
+        var ch = chapterById(cid);
+        if (!ch) return;
+        var merged = readMergedSm2(ch);
+        groups[cid].forEach(function(item) {
+          merged[item.idx] = calcSM2(merged[item.idx], item.finalScore);
+        });
+        writeMergedSm2(ch, merged);
+      });
+      loadSm2(); // 刷新内存态，反映最新排期
+    }
+
+    function exitReviewSession() {
+      if (!reviewSession) {
+        // 兜底：恢复 UI（如意外状态下被调）
+        document.getElementById('statsBlock').style.display = '';
+        document.getElementById('reviewQueuePanel').style.display = 'none';
+        document.getElementById('reviewControls').style.display = 'none';
+        return;
+      }
+      commitReviewResults();
+      var originCh = reviewSession.originChapter;
+      var originIdx = reviewSession.originIdx;
+      reviewSession = null;
+      // 恢复复习 UI
+      document.getElementById('statsBlock').style.display = '';
+      document.getElementById('reviewQueuePanel').style.display = 'none';
+      document.getElementById('reviewControls').style.display = 'none';
+      document.getElementById('sm2InfoBar').style.display = 'none';
+      setPanelTitle('');
+      document.querySelectorAll('#chapterTitleBar .title-dropdown .title-arrow').forEach(function(a) { a.style.display = ''; });
+      if (originCh && originCh !== currentChapterId) {
+        switchChapter(originCh);
+        current = originIdx;
+        switchTo(current);
+      } else {
+        renderTitle();
+      }
+    }
+
+    // 安装全局开始按钮 + 复习控件
     document.addEventListener('DOMContentLoaded', function() {
       var btn = document.getElementById('btnSm2StartAll');
       if (btn) btn.addEventListener('click', function() { _startAllReview(); });
+      var bPrev = document.getElementById('btnReviewPrev');
+      if (bPrev) bPrev.addEventListener('click', function() { reviewPrev(); });
+      var bSkip = document.getElementById('btnReviewSkip');
+      if (bSkip) bSkip.addEventListener('click', function() { reviewSkip(); });
+      var bNext = document.getElementById('btnReviewNext');
+      if (bNext) bNext.addEventListener('click', function() { reviewNext(); });
     });
     document.addEventListener('keydown', function (e) {
       // 标注模式下吃掉全部按键（Snipaste 式：避免切题/改状态等全局快捷键误触发）。
@@ -3283,16 +3470,13 @@ ${cardsHTML}
       // （Shift 组合已在上方处理；Alt 进入标注已在前面单独处理）
       if (e.ctrlKey || e.metaKey || e.altKey) return;
 
+      // 非 Z/X/C 键按下时，打断待处理的组合超时（避免导航/面板等操作后意外改标记）
+      if (key !== 'z' && key !== 'x' && key !== 'c') resetCombo();
+
       switch (key) {
         // 上一题 / 下一题（题组级 / 子题级，见 navPrev / navNext）
         case 'a': case 'arrowleft': navPrev(); break;
         case 'd': case 'arrowright': navNext(); break;
-        // 数字键 1-5 直接评级（1=不会 5=熟练）
-        case '1': e.preventDefault(); setStatus('wrong'); break;
-        case '2': e.preventDefault(); setStatus('rusty'); break;
-        case '3': e.preventDefault(); setStatus('vague'); break;
-        case '4': e.preventDefault(); setStatus('familiar'); break;
-        case '5': e.preventDefault(); setStatus('proficient'); break;
         // 小题选择模式
         case 'f': toggleSubMode(); break;
         // 上一行 / 下一行（视觉网格行导航）
@@ -3302,9 +3486,9 @@ ${cardsHTML}
         case 'z': case 'x': case 'c': e.preventDefault(); handleStatusKey(key); break;
         // 解析
         case ' ': e.preventDefault(); toggleSolution(); break;
-        // 章节切换
-        case 'q': gotoPrevChapter(); break;
-        case 'e': gotoNextChapter(); break;
+        // 章节切换（复习中 Q/E = 上一/下一复习题）
+        case 'q': if (reviewSession) reviewPrev(); else gotoPrevChapter(); break;
+        case 'e': if (reviewSession) reviewNext(); else gotoNextChapter(); break;
         // 图片质量标记
         case 'r': toggleQBad(); break;
         case 't': toggleSBad(); break;
@@ -3335,22 +3519,56 @@ ${cardsHTML}
     });
 
     // ===== 横向滚轮切题（常规状态，效果同 A/D 键） =====
-    // 触控板/横向滚轮左右推 → navPrev()/navNext()。防护与键盘 handler 对齐：
-    // - 标注模式（lbAnnotMode）不动（灯箱标注里横向滚轮是切工具）
-    // - INPUT/TEXTAREA 焦点不动（避免输入框内横向滚动误切题）
-    // - 面板/弹窗打开不动（与键盘 A/D 被拦截一致）
-    // - 灯箱打开不动（灯箱滚轮是缩放）
-    // - 仅当横向位移明显主导（|dx| 显著大于 |dy|）才切题，防止普通纵向滚动误触发
+    // 方向锁定策略：手势前几个事件确定主导方向（横/纵），之后互斥屏蔽。
+    // — 锁定为横向：累积 dx，超 30 立即切题并用 lock 防连切，小幅度即可触发
+    // — 锁定为纵向：整段手势忽略（触控板上下滑绝不切题）
+    // — 300ms 无新事件 → 手势结束，全部重置
+    // 触控板 vs 鼠标滚轮方向解耦：单次 |dx|≥50 判为鼠标滚轮（右滚→下一题），
+    // 否则判为触控板（右滑→上一题）。两者语义天然相反。
+    let _wDir = null, _wAccum = 0, _wLocked = false, _wTimer = null, _wIsMouse = false;
     document.addEventListener('wheel', function (e) {
       if (lbAnnotMode) return;
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
       if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) return;
       if (document.getElementById('lightbox').classList.contains('show')) return;
-      // 横向滚轮：|dx| 明显大于 |dy| 且达到阈值才判定为切题意图（避免纵向滚动/微小平移误触发）
+
       const dx = e.deltaX || 0, dy = e.deltaY || 0;
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 2) {
-        if (dx > 0) navNext();
-        else navPrev();
+      const absDX = Math.abs(dx), absDY = Math.abs(dy);
+
+      // 重置计时器：每次新事件都推迟 reset
+      if (_wTimer) clearTimeout(_wTimer);
+      _wTimer = setTimeout(function () {
+        _wDir = null; _wAccum = 0; _wLocked = false; _wTimer = null; _wIsMouse = false;
+      }, 300);
+
+      if (_wLocked) return;
+
+      // 方向未确定：哪个方向明显主导即锁定；同时标记设备类型
+      if (_wDir === null) {
+        if (absDX > absDY * 1.5 && absDX > 4) {
+          _wDir = 'h';
+          _wIsMouse = absDX >= 50; // 单次大增量 = 鼠标滚轮
+        }
+        else if (absDY > absDX * 1.5 && absDY > 4) { _wDir = 'v'; }
+        else return; // 方向不明确，继续观察
+      }
+
+      if (_wDir === 'v') return; // 纵向手势，整段忽略
+
+      // 横向手势：累积 dx，达标即切
+      _wAccum += dx;
+      if (Math.abs(_wAccum) > 15) {
+        if (_wIsMouse) {
+          // 鼠标滚轮：右滚→下一题
+          if (_wAccum > 0) navNext();
+          else navPrev();
+        } else {
+          // 触控板：右滑→上一题
+          if (_wAccum > 0) navPrev();
+          else navNext();
+        }
+        _wLocked = true;
+        _wAccum = 0;
       }
     }, { passive: false });
 
