@@ -313,30 +313,29 @@
       // 每次切章先清除错题本返回状态（错题本跳题会在 switchTo 之后重新置位）
       showWrongBookReturnBtn(false);
       // 全局筛选跨章保持：不重置、不按章恢复，仅加载本章数据后定位到第一条筛中题
-      // 定位规则：默认落在本章第一个分区（按科目 partOrder）的起始题；
-      // 若全局筛选激活且该分区无筛中题，则顺延到后续分区第一条筛中题（否则回退到起点）。
       updateFilterButtons();
       updateFilterCounts();
-      const partOrder = getPartOrder();
-      let target = 0;
-      if (partOrder.length > 0) {
-        const firstLabel = classifyLabel(ch.labels[0]);
-        if (firstLabel === partOrder[0]) {
-          // 起点即第一分区起始：直接落在第一条筛中题（无筛选时即 0）
+      // 优先恢复章节级停靠记录（切回某章回到上次停的题），再走定位逻辑
+      const chResume = loadChapterResume(ch.id);
+      if (chResume) {
+        current = chResume.idx;
+        subMode = chResume.sub;
+        // 若全局筛选激活且恢复位置被筛掉，跳到第一条筛中题
+        if (!isAllFilterActive()) {
           const filtered = getFilteredIndices();
-          target = filtered.length > 0 ? filtered[0] : 0;
-        } else {
-          // 起点不在第一分区（如 822 源序 ch2 例题在前、partOrder 习题在前）：
-          // 优先落在第一分区的第一条筛中题；无筛中题时顺延到后续分区的第一条筛中题；再不行回退 0
-          const filtered = getFilteredIndices();
-          const filteredInFirst = filtered.find(i => classifyLabel(ch.labels[i]) === partOrder[0]);
-          if (filteredInFirst !== undefined) { target = filteredInFirst; }
-          else {
-            const other = filtered.find(i => classifyLabel(ch.labels[i]) !== partOrder[0]);
-            if (other !== undefined) { target = other; } else { target = 0; }
-          }
+          if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
         }
+        renderTitle();
+        switchTo(current);
+        return;
       }
+      // 定位逻辑：无章节记忆时落在第一道可见题。
+      // 不再按 partOrder 跳到"第一分区第一个"——否则 822（源序例题在前、partOrder 习题在前）
+      // 会落到习题区而非例题第一题，且从习题区第一题按 A 会跳回上一分区末尾造成"跳到最后"的感知。
+      // partOrder 仅用于侧栏显示排序（renderNav），不影响切章落点。
+      let target = 0;
+      const filtered = getFilteredIndices();
+      target = filtered.length > 0 ? filtered[0] : 0;
       renderTitle();
       // switchTo 内部已调用 renderStats + renderNav，此处不重复渲染
       switchTo(target);
@@ -957,7 +956,26 @@
       map[curSubjectId] = { ch: currentChapterId, idx: current, sub: !!subMode };
       var wb = getChapter() ? getChapter().wb : '';
       if (wb) map[curSubjectId + '::' + wb] = { ch: currentChapterId, idx: current, sub: !!subMode };
+      // 章节级记忆：切回某章时恢复上次停的题（键含 ch id，无 ch 字段）
+      if (currentChapterId) map[curSubjectId + '::ch::' + currentChapterId] = { idx: current, sub: !!subMode };
       try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
+    }
+    // 读取某章的章节级停靠记录（无记录/记录失效返回 null）
+    function loadChapterResume(chId) {
+      var map = {};
+      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
+      var r = map[curSubjectId + '::ch::' + chId];
+      if (!r) return null;
+      var ch = CHAPTERS.find(function (c) { return c.id === chId; });
+      if (!ch || ch.total === 0) return null;
+      var idx = Math.min(Math.max(0, r.idx || 0), ch.total - 1);
+      var subOk = false;
+      if (r.sub) {
+        ensureGroups(ch);
+        var g = ch.groupForIdx[idx];
+        subOk = !!(g && g.isParent && g.count > 1);
+      }
+      return { idx: idx, sub: subOk };
     }
     function loadResume(subjectId) {
       var map = {};
@@ -1010,6 +1028,8 @@
       const subj = SUBJECTS.find(s => s.id === subjectId);
       if (!subj) return;
       autoSaveNotes(); // 切科目前保存未提交的笔记（loadNotes 会重建 notesData）
+      // 切科目时若有进行中的复习：提交已评级结果并清除续接会话（跨科目不保留）
+      if (reviewSession) exitReviewSession();
       saveResume(); // 先记录当前科目停的位置，再切换
       curSubjectId = subjectId;
       curSubject = subj;
@@ -3130,9 +3150,21 @@ ${cardsHTML}
       if (s.due) statsStr += '<span class="sm2-ch-due">到期 ' + s.due + '</span> ';
       if (s.overdue) statsStr += '<span class="sm2-ch-overdue">逾期 ' + s.overdue + '</span> ';
       if (s.queued) statsStr += '<span style="font-size:11px;color:#888">队列 ' + s.queued + '</span> ';
+      if (s.mastered) statsStr += '<span style="font-size:11px;color:#F5A623">已掌握 ' + s.mastered + '</span> ';
+      // 按钮状态：全部已掌握 → 已完成（禁用）；有待复习项 → 继续复习；其余 → 复习
+      var dueCount = s.due + s.overdue;
+      var btnText, btnDisabled = '';
+      if (dueCount === 0 && s.mastered > 0) {
+        btnText = '已完成';
+        btnDisabled = ' disabled style="opacity:0.6;cursor:default"';
+      } else if (dueCount > 0) {
+        btnText = '继续复习';
+      } else {
+        btnText = '复习';
+      }
       return '<div class="sm2-ch-row">' +
         '<div class="sm2-ch-info"><span class="sm2-ch-name">' + name + '</span><span class="sm2-ch-stats">' + statsStr + '</span></div>' +
-        '<button class="sm2-ch-btn" onclick="startReviewChapter(\'' + ch.id + '\')">复习</button>' +
+        '<button class="sm2-ch-btn"' + btnDisabled + ' onclick="' + (btnDisabled ? '' : 'startReviewChapter(\'' + ch.id + '\')') + '">' + btnText + '</button>' +
         '</div>';
     }
 
@@ -3205,7 +3237,29 @@ ${cardsHTML}
         chHtml += m.rows;
       });
       if (!chHtml) chHtml = '<div style="text-align:center;color:var(--text-muted);padding:20px">暂无 SM-2 复习数据。打标后自动生成。</div>';
+      // 顶部续接按钮：存在未完成复习会话时显示
+      var pending = loadReviewSession();
+      if (pending) {
+        var ungraded = pending.queue.filter(function(it) { return it.status !== 'graded'; }).length;
+        chHtml = '<button class="sm2-resume-btn" onclick="resumeReviewSession()">继续上次复习（剩余 ' + ungraded + ' 题）</button>' + chHtml;
+      }
       document.getElementById('sm2Chapters').innerHTML = chHtml;
+    }
+
+    // 面板内联提示（替代 alert）：在 sm2Chapters 顶部显示一条短暂提示
+    var sm2ToastTimer = null;
+    function showSm2Toast(msg) {
+      var box = document.getElementById('sm2Chapters');
+      if (!box) return;
+      // 插入提示条到列表顶部（保留现有章节行）
+      var toast = document.createElement('div');
+      toast.className = 'sm2-toast';
+      toast.textContent = msg;
+      box.insertBefore(toast, box.firstChild);
+      if (sm2ToastTimer) clearTimeout(sm2ToastTimer);
+      sm2ToastTimer = setTimeout(function() {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 2200);
     }
 
     // 复习某个模块（canonicalSubj）：跨 30讲/36讲/1000题段/李范全书 收集到期题
@@ -3213,7 +3267,7 @@ ${cardsHTML}
       var mode = getSm2Mode();
       var chs = reviewChapters().filter(function(c) { return canonicalSubj(c.subj) === module; });
       var queue = collectDueItems(chs, mode);
-      if (queue.length === 0) { alert('该模块没有到期题目'); return; }
+      if (queue.length === 0) { showSm2Toast('该模块没有到期题目'); return; }
       startReview(queue, mode);
     }
 
@@ -3222,16 +3276,46 @@ ${cardsHTML}
       if (!ch) return;
       var mode = getSm2Mode();
       var queue = collectDueItems([ch], mode);
-      if (queue.length === 0) { alert(mode === 'overdue' ? '该章节没有逾期题目' : '该章节没有到期题目'); return; }
+      if (queue.length === 0) { showSm2Toast(mode === 'overdue' ? '该章节没有逾期题目' : '该章节没有到期题目'); return; }
       startReview(queue, mode);
     }
 
     var _startAllReview = function() {
       var mode = getSm2Mode();
       var queue = collectDueItems(reviewChapters(), mode);
-      if (queue.length === 0) { alert('没有到期题目'); return; }
+      if (queue.length === 0) { showSm2Toast('没有到期题目'); return; }
       startReview(queue, mode);
     };
+
+    // ===== 复习会话续接（kaoyan_review_session）=====
+    // 持久化未完成复习会话，刷新/切科目后可继续。queue 项只存轻量字段（record 由 merged 实时读）。
+    function saveReviewSession() {
+      if (!reviewSession) return;
+      var persist = {
+        subjectId: curSubjectId, // 记录所属科目（数学/822 章节 ID 共用 ch1..chN，切科目后需据此判失效）
+        queue: reviewSession.queue.map(function(it) {
+          return { chapterId: it.chapterId, idx: it.idx, status: it.status || 'pending', finalScore: it.finalScore };
+        }),
+        currentIdx: reviewSession.currentIdx,
+        mode: reviewSession.mode,
+        originChapter: reviewSession.originChapter,
+        originIdx: reviewSession.originIdx,
+        done: !!reviewSession.done,
+        savedAt: Date.now()
+      };
+      try { localStorage.setItem('kaoyan_review_session', JSON.stringify(persist)); } catch (e) {}
+    }
+    function loadReviewSession() {
+      var raw = null;
+      try { raw = JSON.parse(localStorage.getItem('kaoyan_review_session')) || null; } catch (e) { raw = null; }
+      if (!raw || !Array.isArray(raw.queue) || raw.queue.length === 0) return null;
+      // 校验科目：会话记录的是上次的科目，切科目后视为失效（数学/822 章节 ID 共用 ch1..chN）
+      if (raw.subjectId && raw.subjectId !== curSubjectId) return null;
+      return raw;
+    }
+    function clearReviewSession() {
+      try { localStorage.removeItem('kaoyan_review_session'); } catch (e) {}
+    }
 
     function startReview(queue, mode) {
       if (mode === 'random') {
@@ -3241,6 +3325,7 @@ ${cardsHTML}
         }
       }
       reviewSession = { queue: queue, currentIdx: 0, mode: mode, originChapter: currentChapterId, originIdx: current };
+      saveReviewSession();
       closeSm2Panel();
       // 进入复习 UI：隐藏进度块，显示复习队列面板与复习控件
       document.getElementById('statsBlock').style.display = 'none';
@@ -3253,6 +3338,50 @@ ${cardsHTML}
       // 渲染侧栏复习列表 + 标题进度
       renderReviewQueue();
       renderReviewProgress();
+    }
+
+    // 续接上次未完成复习：从存储重建会话并进入复习 UI
+    function resumeReviewSession() {
+      var persist = loadReviewSession();
+      if (!persist) { showSm2Toast('没有待续接的复习'); return; }
+      // 校验会话是否属于当前科目（切科目后若会话章节不在当前 CHAPTERS 中则清除，避免续接到错误科目）
+      var anyInCurrent = persist.queue.some(function(it) { return chapterById(it.chapterId); });
+      if (!anyInCurrent) { clearReviewSession(); showSm2Toast('上次复习的科目已切换，无法续接'); return; }
+      // 重建 queue（record 从 merged 实时读，finalScore/status 从存储恢复）
+      var queue = persist.queue.map(function(it) {
+        var ch = chapterById(it.chapterId);
+        var rec = null;
+        if (ch) {
+          var merged = readMergedSm2(ch);
+          rec = merged[it.idx] || null;
+        }
+        return { chapterId: it.chapterId, idx: it.idx, record: rec, status: it.status || 'pending', finalScore: it.finalScore };
+      });
+      reviewSession = {
+        queue: queue,
+        currentIdx: Math.min(Math.max(0, persist.currentIdx || 0), queue.length - 1),
+        mode: persist.mode || 'sequential',
+        originChapter: persist.originChapter,
+        originIdx: persist.originIdx,
+        done: !!persist.done
+      };
+      closeSm2Panel();
+      document.getElementById('statsBlock').style.display = 'none';
+      document.getElementById('reviewQueuePanel').style.display = '';
+      document.getElementById('reviewControls').style.display = '';
+      // 跳到当前复习项（done 态时越界则跳到队尾提示）
+      var item = reviewCurrentItem();
+      if (item) {
+        switchChapter(item.chapterId);
+        switchTo(item.idx);
+      } else {
+        // done 态：队尾
+        switchChapter(persist.queue[persist.queue.length - 1].chapterId);
+        switchTo(persist.queue[persist.queue.length - 1].idx);
+      }
+      renderReviewQueue();
+      renderReviewProgress();
+      saveReviewSession();
     }
 
     // 当前复习项（越界返回 null）
@@ -3335,6 +3464,7 @@ ${cardsHTML}
           reviewSession.currentIdx = q.length;
           renderReviewQueue();
           renderReviewProgress();
+          saveReviewSession();
           return;
         }
         reviewSession.currentIdx = idx;
@@ -3344,6 +3474,7 @@ ${cardsHTML}
       switchTo(item.idx);
       renderReviewQueue();
       renderReviewProgress();
+      saveReviewSession();
     }
 
     function reviewPrev() { reviewAdvance(-1); }
@@ -3359,6 +3490,7 @@ ${cardsHTML}
       switchTo(item.idx);
       renderReviewQueue();
       renderReviewProgress();
+      saveReviewSession();
     }
 
     // 跳过当前项：仅标记不评级，不改 SM-2，进入下一题
@@ -3400,6 +3532,7 @@ ${cardsHTML}
         return;
       }
       commitReviewResults();
+      clearReviewSession(); // 会话已结束，清除续接存储
       var originCh = reviewSession.originChapter;
       var originIdx = reviewSession.originIdx;
       reviewSession = null;
@@ -3415,7 +3548,13 @@ ${cardsHTML}
         current = originIdx;
         switchTo(current);
       } else {
-        renderTitle();
+        // 同章复习：恢复进入复习前的题目（而不是停在最后一道复习题）
+        if (originIdx !== undefined && originIdx !== null && originCh) {
+          current = originIdx;
+          switchTo(current);
+        } else {
+          renderTitle();
+        }
       }
     }
 
