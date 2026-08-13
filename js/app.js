@@ -329,9 +329,8 @@
         switchTo(current);
         return;
       }
-      // 定位逻辑：无章节记忆时落在第一道可见题。
-      // 不再按 partOrder 跳到"第一分区第一个"——否则 822（源序例题在前、partOrder 习题在前）
-      // 会落到习题区而非例题第一题，且从习题区第一题按 A 会跳回上一分区末尾造成"跳到最后"的感知。
+      // 定位逻辑：无章节记忆时落在第一道可见题（源序第一条，如 822 例题第一题）。
+      // 不再按 partOrder 跳到"第一分区第一个"——避免 822 落到习题区导致按 A 跳回上一分区末尾。
       // partOrder 仅用于侧栏显示排序（renderNav），不影响切章落点。
       let target = 0;
       const filtered = getFilteredIndices();

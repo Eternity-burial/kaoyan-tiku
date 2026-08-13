@@ -278,7 +278,8 @@
       },
       {
         id: '822', name: '控制工程基础', storageSuffix: '822', initChapterId: 'ch1', navCols: 5,
-        partOrder: ['习题', '例题', '章末例题'],
+        // 分区显示顺序与 labels 源序一致（例题→章末例题→习题），保证侧栏排序与视觉行导航不错乱
+        partOrder: ['例题', '章末例题', '习题'],
         wbOrder: [
           { wb: '控制工程基础', label: '控制工程基础' },
           { wb: '小题300', label: '小题300' },
