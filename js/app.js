@@ -242,12 +242,14 @@
     // 合并章节的 1000题 段笔记落到 1000题 伴章的存储对象（键 1-1），自身段落到本章对象（键 例1-1）。
     // 复合键含源章节 id，天然避免「30讲例1-1」与「1000题1-1」互相覆盖。
     let notesData = {};
+    let notesDirty = false; // 笔记编辑态是否有未保存改动（用于切题/切章/切科目时自动保存）
     function notesSourceId(idx) {
       const ch = getChapter();
       if (ch.q1000Total && idx >= ch.ownTotal) return chapterById(ch.q1000Id).id;
       return ch.id;
     }
     function loadNotes() {
+      autoSaveNotes(); // 重建前先保存未提交的编辑内容（覆盖 applyResumeBook 等直接调 loadNotes 的路径）
       const ch = getChapter();
       notesData = {};
       const srcIds = [ch.id];
@@ -302,6 +304,7 @@
     function switchChapter(chapterId) {
       const ch = CHAPTERS.find(c => c.id === chapterId);
       if (!ch || ch.total === 0) { alert('该章节尚未导入'); return; }
+      autoSaveNotes(); // 切章前保存未提交的笔记（loadNotes 会重建 notesData）
       currentChapterId = chapterId;
       current = 0;
       showSolution = defaultShowSolution;
@@ -1006,6 +1009,7 @@
     function switchSubject(subjectId) {
       const subj = SUBJECTS.find(s => s.id === subjectId);
       if (!subj) return;
+      autoSaveNotes(); // 切科目前保存未提交的笔记（loadNotes 会重建 notesData）
       saveResume(); // 先记录当前科目停的位置，再切换
       curSubjectId = subjectId;
       curSubject = subj;
@@ -1688,6 +1692,7 @@
     }
 
     function switchTo(idx) {
+      autoSaveNotes(); // 切题前保存未提交的笔记（当前仍是旧题，saveNote 用 current 定位正确）
       current = idx;
       showSolution = defaultShowSolution;
       const ch = getChapter();
@@ -1848,10 +1853,14 @@
       btnCancel.style.display = '';
       btnDelete.style.display = 'none';
       textarea.focus();
+      notesDirty = false; // 进入编辑时重置（初始值即已保存内容）
       updateNotesPreview();
 
-      // 实时预览（防抖）
-      textarea.oninput = updateNotesPreview;
+      // 实时预览（防抖）+ 标记未保存改动
+      textarea.oninput = function() {
+        notesDirty = true;
+        updateNotesPreview();
+      };
       // Enter 保存，Shift+Enter 换行
       textarea.onkeydown = function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
@@ -1871,17 +1880,28 @@
         delete notesData[nk];
       }
       saveNotes();
+      notesDirty = false;
       renderNotes(); // 保存后回到查看模式（渲染结果）
       renderNav();
     }
 
+    // 离开编辑态前的自动保存：若有未提交改动且仍在编辑态，落盘并退出编辑态
+    function autoSaveNotes() {
+      if (!notesDirty) return;
+      const duo = document.getElementById('notesDuo');
+      if (duo && duo.style.display === 'none') { notesDirty = false; return; } // 已退出编辑态，忽略残留标志
+      saveNote(); // 内部写 notesData + saveNotes + renderNotes（退出编辑态）+ 清零 notesDirty
+    }
+
     function cancelNoteEdit() {
+      notesDirty = false; // 用户主动放弃编辑，丢弃未保存内容
       renderNotes(); // 取消后回到查看模式（渲染结果）
     }
 
     function deleteNote() {
       delete notesData[notesKeyFor(current)];
       saveNotes();
+      notesDirty = false;
       renderNotes();
       renderNav();
     }
@@ -3502,14 +3522,15 @@ ${cardsHTML}
         // 切换科目
         case 'g': openSubjectPicker(); break;
         // 灯箱快捷键
+        // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
         case 'escape':
-          if (reviewSession) { exitReviewSession(); return; }
           if (sm2PanelOpen) { closeSm2Panel(); return; }
           if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
           if (subjectPickerOpen) { closeSubjectPicker(); return; }
           if (shortcutHelpOpen) { toggleShortcutHelp(); return; }
           if (dashboardOpen) { toggleDashboard(); return; }
           if (wrongBookOpen) { toggleWrongBook(); return; }
+          if (reviewSession) { exitReviewSession(); return; }
           break;
         case '=':
         case '+': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = Math.min(lbScale * 1.2, 5); lbApplyTransform(); return; } break;
