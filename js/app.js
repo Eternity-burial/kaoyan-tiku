@@ -3267,10 +3267,15 @@ ${cardsHTML}
       if (s.overdue) statsStr += '<span class="sm2-ch-overdue">逾期 ' + s.overdue + '</span> ';
       if (s.queued) statsStr += '<span style="font-size:11px;color:#888">队列 ' + s.queued + '</span> ';
       if (s.mastered) statsStr += '<span style="font-size:11px;color:#F5A623">已掌握 ' + s.mastered + '</span> ';
-      // 按钮状态：全部已掌握 → 已完成（禁用）；有待复习项 → 继续复习；其余 → 复习
+      // 按钮状态：
+      // - 今日无到期/逾期（due+overdue=0）且该章有 SM-2 记录（曾被复习过/有进度）→ 已完成（禁用）
+      //   —— 用户今天已把到期题全部复习完，剩余题排到未来（queued）或已掌握（mastered）
+      // - 有待复习项（due+overdue>0）→ 继续复习
+      // - 无任何到期（如全 queued 但从未评级过）→ 复习
       var dueCount = s.due + s.overdue;
+      var hasAnyRecord = (s.queued + s.mastered) > 0;
       var btnText, btnDisabled = '';
-      if (dueCount === 0 && s.mastered > 0) {
+      if (dueCount === 0 && hasAnyRecord) {
         btnText = '已完成';
         btnDisabled = ' disabled style="opacity:0.6;cursor:default"';
       } else if (dueCount > 0) {
@@ -3312,14 +3317,14 @@ ${cardsHTML}
         Object.keys(bookMap).forEach(function(wb) { if (bookNames.indexOf(wb) === -1) bookNames.push(wb); });
 
         var rowsHtml = '';
-        var modDue = 0, modOverdue = 0;
+        var modDue = 0, modOverdue = 0, modQueued = 0, modMastered = 0;
         bookNames.forEach(function(wb) {
           var bRows = [];
           bookMap[wb].forEach(function(ch) {
             var s = sm2ChapterSummary(ch);
             if (s.due + s.overdue + s.queued + s.mastered === 0) return;
             allDue += s.due; allOverdue += s.overdue; allQueued += s.queued; allMastered += s.mastered;
-            modDue += s.due; modOverdue += s.overdue;
+            modDue += s.due; modOverdue += s.overdue; modQueued += s.queued; modMastered += s.mastered;
             bRows.push({ ch: ch, summary: s });
           });
           if (bRows.length === 0) return;
@@ -3328,13 +3333,21 @@ ${cardsHTML}
         });
         if (!rowsHtml) return; // 该模块无任何 SM-2 数据
 
+        // 模块按钮状态：今日无到期/逾期且模块有记录 → 已完成（禁用）；否则复习此模块
+        var modDueCount = modDue + modOverdue;
+        var modHasRecord = (modQueued + modMastered) > 0;
+        var modBtnDisabled = '', modBtnText = '复习此模块';
+        if (modDueCount === 0 && modHasRecord) {
+          modBtnText = '已完成';
+          modBtnDisabled = ' disabled style="opacity:0.6;cursor:default"';
+        }
         var header = '<div class="sm2-module-header">' +
           '<span class="sm2-module-name">' + mod + '</span>' +
           '<span class="sm2-mod-stats">' +
             (modDue ? '<span class="sm2-ch-due">到期 ' + modDue + '</span> ' : '') +
             (modOverdue ? '<span class="sm2-ch-overdue">逾期 ' + modOverdue + '</span> ' : '') +
           '</span>' +
-          '<button class="sm2-mod-btn" onclick="startReviewModule(\'' + mod + '\')">复习此模块</button>' +
+          '<button class="sm2-mod-btn"' + modBtnDisabled + ' onclick="' + (modBtnDisabled ? '' : 'startReviewModule(\'' + mod + '\')') + '">' + modBtnText + '</button>' +
           '</div>';
         moduleHtmls.push({ header: header, rows: rowsHtml });
       });
@@ -3360,6 +3373,22 @@ ${cardsHTML}
         chHtml = '<button class="sm2-resume-btn" onclick="resumeReviewSession()">继续上次复习（剩余 ' + ungraded + ' 题）</button>' + chHtml;
       }
       document.getElementById('sm2Chapters').innerHTML = chHtml;
+      // 「开始全部复习」按钮状态：今日无到期/逾期且有记录 → 已完成（禁用）
+      var startAllBtn = document.getElementById('btnSm2StartAll');
+      if (startAllBtn) {
+        var allDueCount = allDue + allOverdue;
+        if (allDueCount === 0 && (allQueued + allMastered) > 0) {
+          startAllBtn.textContent = '今日已完成';
+          startAllBtn.disabled = true;
+          startAllBtn.style.opacity = '0.6';
+          startAllBtn.style.cursor = 'default';
+        } else {
+          startAllBtn.textContent = '开始全部复习';
+          startAllBtn.disabled = false;
+          startAllBtn.style.opacity = '';
+          startAllBtn.style.cursor = '';
+        }
+      }
     }
 
     // 面板内联提示（替代 alert）：在 sm2Chapters 顶部显示一条短暂提示
