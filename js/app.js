@@ -308,18 +308,18 @@
       currentChapterId = chapterId;
       current = 0;
       showSolution = defaultShowSolution;
-      subMode = false;
+      // 小题模式（F）是全局开关，切章不重置，跨章保持
       loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
       // 每次切章先清除错题本返回状态（错题本跳题会在 switchTo 之后重新置位）
       showWrongBookReturnBtn(false);
       // 全局筛选跨章保持：不重置、不按章恢复，仅加载本章数据后定位到第一条筛中题
       updateFilterButtons();
       updateFilterCounts();
-      // 优先恢复章节级停靠记录（切回某章回到上次停的题），再走定位逻辑
+      // 优先恢复章节级停靠记录（切回某章回到上次停的题），再走定位逻辑。
+      // 仅恢复位置，不恢复小题模式（全局开关由 F 控制，跨章保持）
       const chResume = loadChapterResume(ch.id);
       if (chResume) {
         current = chResume.idx;
-        subMode = chResume.sub;
         // 若全局筛选激活且恢复位置被筛掉，跳到第一条筛中题
         if (!isAllFilterActive()) {
           const filtered = getFilteredIndices();
@@ -1013,7 +1013,7 @@
       }
       currentChapterId = ch.id;
       current = idx;
-      subMode = subOk;
+      // 小题模式（F）是全局开关，切书不重置、跨书保持
       loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
       // 若全局筛选激活且恢复的位置被筛掉，跳到第一条筛中题，避免落在不可见题上
       if (!isAllFilterActive()) {
@@ -1039,11 +1039,11 @@
       if (resume) {
         currentChapterId = resume.ch;
         current = resume.idx;
-        subMode = resume.sub;
       } else {
         currentChapterId = subj.initChapterId;
-        current = 0; subMode = false;
+        current = 0;
       }
+      // 小题模式（F）是全局开关，切科目不重置、跨科目保持
       localStorage.setItem('kaoyan_subject', subjectId);
       // 关闭可能打开的全局进度/错题本面板，避免旧科目 DOM 残留
       if (dashboardOpen) {
@@ -1408,7 +1408,8 @@
           appendBadges(btn, g.startIdx);
 
           btn.onclick = function() {
-            if (visIdx.length > 0) { subMode = false; switchTo(visIdx[0]); }
+            // 点击侧栏定位到该题组第一个可见题；小题模式（F 全局开关）不重置，跨章/跨题保持
+            if (visIdx.length > 0) { switchTo(visIdx[0]); }
           };
           nav.appendChild(btn);
         });
@@ -1566,10 +1567,10 @@
       if (nv.length > 0) switchTo(nv[0]);
     }
 
-    // F：切换小题选择模式（仅当前题组含子题时生效）
+    // F：切换小题选择模式（全局开关，跨章保持；当前题无子题时仅切换开关，导航仍正常逐题/逐组）
     function toggleSubMode() {
       const g = currentGroup();
-      if (!g || !g.isParent) return;
+      if (!g) return;
       subMode = !subMode;
       renderNav();
       renderSubSelectBar(g);
