@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Among the annoying challenges facing the middle class is one that will probably go unmentioned in the next presidential campaign: What happens when the robots come for their jobs?",
-              "translation": "【考研真题精读标准译文】Among the annoying challenges facing the middle class is one that will probably go unmentioned in the next presidential campaign: What happens when the robots come for their jobs?",
+              "translation": "中产阶级面临的令人烦恼的挑战之一可能在下一届总统竞选中不会被提及：当机器人来接替他们的工作时会发生什么？",
               "vocab": [
                 {
                   "word": "class",
@@ -78,7 +78,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Don't dismiss that possibility entirely.",
-              "translation": "【考研真题精读标准译文】Don't dismiss that possibility entirely.",
+              "translation": "不要完全排除这种可能性。",
               "vocab": [
                 {
                   "word": "dismiss",
@@ -100,7 +100,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "About half of U.S. jobs are at high risk of being automated, according to a University of Oxford study, with the middle class disproportionately squeezed.",
-              "translation": "【考研真题精读标准译文】About half of U.S. jobs are at high risk of being automated, according to a University of Oxford study, with the middle class disproportionately squeezed.",
+              "translation": "牛津大学的一项研究显示，美国约一半的工作面临被自动化的高风险，中产阶级受到不成比例的挤压。",
               "vocab": [
                 {
                   "word": "according to",
@@ -140,7 +140,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Lower-income jobs like gardening or day care don't appeal to robots.",
-              "translation": "【考研真题精读标准译文】Lower-income jobs like gardening or day care don't appeal to robots.",
+              "translation": "园艺或日托等低收入工作对机器人没有吸引力。",
               "vocab": [
                 {
                   "word": "appeal",
@@ -156,7 +156,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "But many middle-class occupations—trucking, financial advice, software engineering—have aroused their interest, or soon will.",
-              "translation": "【考研真题精读标准译文】But many middle-class occupations—trucking, financial advice, software engineering—have aroused their interest, or soon will.",
+              "translation": "但许多中产阶级职业——货运、财务咨询、软件工程——已经引起了他们的兴趣，或者很快就会引起他们的兴趣。",
               "vocab": [
                 {
                   "word": "middle-class",
@@ -196,7 +196,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "The rich own the robots, so they will be fine.",
-              "translation": "【考研真题精读标准译文】The rich own the robots, so they will be fine.",
+              "translation": "富人拥有机器人，所以他们会没事的。",
               "vocab": [
                 {
                   "word": "will",
@@ -218,7 +218,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "This isn't to be alarmist.",
-              "translation": "【考研真题精读标准译文】This isn't to be alarmist.",
+              "translation": "这并非危言耸听。",
               "vocab": [
                 {
                   "word": "alarmist",
@@ -234,7 +234,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "Optimists point out that technological upheaval has benefited workers in the past.",
-              "translation": "【考研真题精读标准译文】Optimists point out that technological upheaval has benefited workers in the past.",
+              "translation": "乐观者指出，技术变革过去曾让工人受益。",
               "vocab": [
                 {
                   "word": "technological",
@@ -263,7 +263,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The Industrial Revolution didn't go so well for Luddites whose jobs were displaced by mechanized looms, but it eventually raised living standards and created more jobs than it destroyed.",
-              "translation": "【考研真题精读标准译文】The Industrial Revolution didn't go so well for Luddites whose jobs were displaced by mechanized looms, but it eventually raised living standards and created more jobs than it destroyed.",
+              "translation": "工业革命对勒德分子来说进展并不顺利，他们的工作被机械化织布机取代，但工业革命最终提高了生活水平，创造的就业机会多于其破坏的就业机会。",
               "vocab": [
                 {
                   "word": "Industrial",
@@ -297,7 +297,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Likewise, automation should eventually boost productivity, stimulate demand by driving down prices, and free workers from hard, boring work.",
-              "translation": "【考研真题精读标准译文】Likewise, automation should eventually boost productivity, stimulate demand by driving down prices, and free workers from hard, boring work.",
+              "translation": "同样，自动化最终应该提高生产率，通过压低价格来刺激需求，并将工人从艰苦、无聊的工作中解放出来。",
               "vocab": [
                 {
                   "word": "Likewise",
@@ -355,7 +355,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "But in the medium term, middle-class workers may need a lot of help adjusting.",
-              "translation": "【考研真题精读标准译文】But in the medium term, middle-class workers may need a lot of help adjusting.",
+              "translation": "但从中期来看，中产阶级工人可能需要大量帮助进行调整。",
               "vocab": [
                 {
                   "word": "medium",
@@ -383,7 +383,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The first step, as Erik Brynjolfsson and Andrew McAfee argue in The Second Machine Age, should be rethinking education and job training.",
-              "translation": "【考研真题精读标准译文】The first step, as Erik Brynjolfsson and Andrew McAfee argue in The Second Machine Age, should be rethinking education and job training.",
+              "translation": "正如埃里克·布林约尔松 (Erik Brynjolfsson) 和安德鲁·麦卡菲 (Andrew McAfee) 在《第二次机器时代》中所说，第一步应该是重新思考教育和职业培训。",
               "vocab": [
                 {
                   "word": "step",
@@ -405,7 +405,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Curriculums—from grammar school to college—should evolve to focus less on memorizing facts and more on creativity and complex communication.",
-              "translation": "【考研真题精读标准译文】Curriculums—from grammar school to college—should evolve to focus less on memorizing facts and more on creativity and complex communication.",
+              "translation": "从文法学校到大学的课程应该不断发展，减少对事实的记忆，而更多地关注创造力和复杂的沟通。",
               "vocab": [
                 {
                   "word": "evolve",
@@ -439,7 +439,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Vocational schools should do a better job of fostering problem-solving skills and helping students work alongside robots.",
-              "translation": "【考研真题精读标准译文】Vocational schools should do a better job of fostering problem-solving skills and helping students work alongside robots.",
+              "translation": "职业学校应该更好地培养学生解决问题的能力，帮助学生与机器人一起工作。",
               "vocab": [
                 {
                   "word": "Vocational",
@@ -473,7 +473,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Online education can supplement the traditional kind.",
-              "translation": "【考研真题精读标准译文】Online education can supplement the traditional kind.",
+              "translation": "在线教育可以补充传统教育。",
               "vocab": [
                 {
                   "word": "Online",
@@ -501,7 +501,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "It could make extra training and instruction affordable.",
-              "translation": "【考研真题精读标准译文】It could make extra training and instruction affordable.",
+              "translation": "它可以使额外的培训和指导变得负担得起。",
               "vocab": [
                 {
                   "word": "extra",
@@ -536,7 +536,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Professionals trying to acquire new skills will be able to do so without going into debt.",
-              "translation": "【考研真题精读标准译文】Professionals trying to acquire new skills will be able to do so without going into debt.",
+              "translation": "试图获得新技能的专业人士将能够在不负债的情况下做到这一点。",
               "vocab": [
                 {
                   "word": "do so",
@@ -576,7 +576,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The challenge of coping with automation underlines the need for the U.S. to revive its fading business dynamism: Starting new companies must be made easier.",
-              "translation": "【考研真题精读标准译文】The challenge of coping with automation underlines the need for the U.S. to revive its fading business dynamism: Starting new companies must be made easier.",
+              "translation": "应对自动化的挑战凸显了美国需要重振日益衰落的商业活力：必须让创办新公司变得更容易。",
               "vocab": [
                 {
                   "word": "challenge",
@@ -622,7 +622,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "In previous eras of drastic technological change, entrepreneurs smoothed the transition by dreaming up ways to combine labor and machines.",
-              "translation": "【考研真题精读标准译文】In previous eras of drastic technological change, entrepreneurs smoothed the transition by dreaming up ways to combine labor and machines.",
+              "translation": "在以前技术发生剧烈变革的时代，企业家通过梦想将劳动力和机器结合起来的方法来平滑过渡。",
               "vocab": [
                 {
                   "word": "previous",
@@ -668,7 +668,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The best uses of 3D printers and virtual reality haven't been invented yet.",
-              "translation": "【考研真题精读标准译文】The best uses of 3D printers and virtual reality haven't been invented yet.",
+              "translation": "3D 打印机和虚拟现实的最佳用途尚未发明。",
               "vocab": [
                 {
                   "word": "virtual",
@@ -696,7 +696,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The U.S. needs the new companies that will invent them.",
-              "translation": "【考研真题精读标准译文】The U.S. needs the new companies that will invent them.",
+              "translation": "美国需要能够发明它们的新公司。",
               "vocab": [
                 {
                   "word": "new",
@@ -724,7 +724,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Finally, because automation threatens to widen the gap between capital income and labor income, taxes and the safety net will have to be rethought.",
-              "translation": "【考研真题精读标准译文】Finally, because automation threatens to widen the gap between capital income and labor income, taxes and the safety net will have to be rethought.",
+              "translation": "最后，由于自动化有可能扩大资本收入和劳动收入之间的差距，因此必须重新考虑税收和安全网。",
               "vocab": [
                 {
                   "word": "safety net",
@@ -776,7 +776,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Taxes on low-wage labor need to be cut, and wage subsidies such as the earned income tax credit should be expanded: This would boost incomes, encourage work, reward companies for job creation, and reduce inequality.",
-              "translation": "【考研真题精读标准译文】Taxes on low-wage labor need to be cut, and wage subsidies such as the earned income tax credit should be expanded: This would boost incomes, encourage work, reward companies for job creation, and reduce inequality.",
+              "translation": "需要削减低工资劳动力的税收，并扩大工资补贴，例如所得税抵免：这将增加收入，鼓励工作，奖励公司创造就业机会，并减少不平等。",
               "vocab": [
                 {
                   "word": "labor",
@@ -846,7 +846,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "Technology will improve society in ways big and small over the next few years, yet this will be little comfort to those who find their lives and careers upended by automation.",
-              "translation": "【考研真题精读标准译文】Technology will improve society in ways big and small over the next few years, yet this will be little comfort to those who find their lives and careers upended by automation.",
+              "translation": "未来几年，技术将以大大小小的方式改善社会，但这对于那些发现自己的生活和职业被自动化颠覆的人来说并没有多少安慰。",
               "vocab": [
                 {
                   "word": "will",
@@ -892,7 +892,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "Destroying the machines that are coming for our jobs would be nuts.",
-              "translation": "【考研真题精读标准译文】Destroying the machines that are coming for our jobs would be nuts.",
+              "translation": "摧毁那些来代替我们工作的机器是疯狂的。",
               "vocab": [
                 {
                   "word": "for",
@@ -914,7 +914,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 10,
               "id": "P3-S10",
               "text": "But policies to help workers adapt will be indispensable.",
-              "translation": "【考研真题精读标准译文】But policies to help workers adapt will be indispensable.",
+              "translation": "但帮助工人适应的政策是必不可少的。",
               "vocab": [
                 {
                   "word": "adapt",
@@ -956,7 +956,7 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -972,9 +972,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "Low-wage laborers.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -994,9 +994,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "D",
               "text": "Middle-class workers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1022,14 +1022,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Worries about automation are in fact groundless.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1049,9 +1049,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "C",
               "text": "Issues arising from automation need to be tackled.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1088,14 +1088,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "creative potential.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1115,9 +1115,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "C",
               "text": "individual needs.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1194,7 +1194,7 @@ window.ENGLISH_DATA['2018'] = {
               "text": "preventing the income gap from widening.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1220,7 +1220,7 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1236,9 +1236,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "possible solutions to it.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1247,9 +1247,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "C",
               "text": "its alarming impacts.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1291,7 +1291,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "A new survey by Harvard University finds more than two-thirds of young Americans disapprove of President Trump's use of Twitter.",
-              "translation": "【考研真题精读标准译文】A new survey by Harvard University finds more than two-thirds of young Americans disapprove of President Trump's use of Twitter.",
+              "translation": "哈佛大学的一项新调查发现，超过三分之二的美国年轻人不赞成特朗普总统使用推特。",
               "vocab": [
                 {
                   "word": "new",
@@ -1325,7 +1325,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The implication is that Millennials prefer news from the White House to be filtered through other sources, not a president's social media platform.",
-              "translation": "【考研真题精读标准译文】The implication is that Millennials prefer news from the White House to be filtered through other sources, not a president's social media platform.",
+              "translation": "这意味着千禧一代更喜欢通过其他来源而不是总统的社交媒体平台来过滤来自白宫的新闻。",
               "vocab": [
                 {
                   "word": "the White House",
@@ -1377,7 +1377,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Most Americans rely on social media to check daily headlines.",
-              "translation": "【考研真题精读标准译文】Most Americans rely on social media to check daily headlines.",
+              "translation": "大多数美国人依靠社交媒体来查看每日头条新闻。",
               "vocab": [
                 {
                   "word": "rely on",
@@ -1417,7 +1417,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Yet as distrust has risen toward all media, people may be starting to beef up their media literacy skills.",
-              "translation": "【考研真题精读标准译文】Yet as distrust has risen toward all media, people may be starting to beef up their media literacy skills.",
+              "translation": "然而，随着对所有媒体的不信任感增加，人们可能开始增强他们的媒体素养技能。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -1457,7 +1457,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Such a trend is badly needed.",
-              "translation": "【考研真题精读标准译文】Such a trend is badly needed.",
+              "translation": "非常需要这样的趋势。",
               "vocab": [
                 {
                   "word": "trend",
@@ -1473,7 +1473,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "During the 2016 presidential campaign, nearly a quarter of web content shared by Twitter users in the politically critical state of Michigan was fake news, according to the University of Oxford.",
-              "translation": "【考研真题精读标准译文】During the 2016 presidential campaign, nearly a quarter of web content shared by Twitter users in the politically critical state of Michigan was fake news, according to the University of Oxford.",
+              "translation": "据牛津大学称，在 2016 年总统竞选期间，在政治上持批评态度的密歇根州，推特用户分享的网络内容近四分之一是假新闻。",
               "vocab": [
                 {
                   "word": "according to",
@@ -1538,7 +1538,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "And a survey conducted for BuzzFeed News found 44 percent of Facebook users rarely or never trust news from the media giant.",
-              "translation": "【考研真题精读标准译文】And a survey conducted for BuzzFeed News found 44 percent of Facebook users rarely or never trust news from the media giant.",
+              "translation": "BuzzFeed News 进行的一项调查发现，44% 的 Facebook 用户很少或从不相信这家媒体巨头的新闻。",
               "vocab": [
                 {
                   "word": "for",
@@ -1578,7 +1578,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Young people who are digital natives are indeed becoming more skillful at separating fact from fiction in cyberspace.",
-              "translation": "【考研真题精读标准译文】Young people who are digital natives are indeed becoming more skillful at separating fact from fiction in cyberspace.",
+              "translation": "作为数字原住民的年轻人确实越来越善于区分网络空间中的事实与虚构。",
               "vocab": [
                 {
                   "word": "digital",
@@ -1624,7 +1624,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "A Knight Foundation focus group survey of young people between ages 14 and 24 found they use \"distributed trust\" to verify stories.",
-              "translation": "【考研真题精读标准译文】A Knight Foundation focus group survey of young people between ages 14 and 24 found they use \"distributed trust\" to verify stories.",
+              "translation": "奈特基金会对 14 岁至 24 岁年轻人进行的焦点小组调查发现，他们使用“分布式信任”来验证故事。",
               "vocab": [
                 {
                   "word": "Knight",
@@ -1676,7 +1676,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "They cross-check sources and prefer news from different perspectives – especially those that are open about any bias.",
-              "translation": "【考研真题精读标准译文】They cross-check sources and prefer news from different perspectives – especially those that are open about any bias.",
+              "translation": "他们会反复核对消息来源，更喜欢来自不同角度的新闻——尤其是那些对任何偏见持开放态度的新闻。",
               "vocab": [
                 {
                   "word": "cross-check",
@@ -1710,7 +1710,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "\"Many young people assume a great deal of personal responsibility for educating themselves and actively seeking out opposing viewpoints,\" the survey concluded.",
-              "translation": "【考研真题精读标准译文】\"Many young people assume a great deal of personal responsibility for educating themselves and actively seeking out opposing viewpoints,\" the survey concluded.",
+              "translation": "调查得出的结论是：“许多年轻人在自我教育和积极寻找反对观点方面承担着很大的个人责任。”",
               "vocab": [
                 {
                   "word": "assume",
@@ -1738,7 +1738,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Such active research can have another effect.",
-              "translation": "【考研真题精读标准译文】Such active research can have another effect.",
+              "translation": "这种积极的研究还可以产生另一种效果。",
               "vocab": [
                 {
                   "word": "active",
@@ -1767,7 +1767,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "A 2014 survey conducted in Australia, Britain, and the United States by the University of Wisconsin-Madison found that young people's reliance on social media led to greater political engagement.",
-              "translation": "【考研真题精读标准译文】A 2014 survey conducted in Australia, Britain, and the United States by the University of Wisconsin-Madison found that young people's reliance on social media led to greater political engagement.",
+              "translation": "威斯康星大学麦迪逊分校 2014 年在澳大利亚、英国和美国进行的一项调查发现，年轻人对社交媒体的依赖导致了更大的政治参与度。",
               "vocab": [
                 {
                   "word": "reliance",
@@ -1807,7 +1807,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Social media allows users to experience news events more intimately and immediately while also permitting them to re-share news as a projection of their values and interests.",
-              "translation": "【考研真题精读标准译文】Social media allows users to experience news events more intimately and immediately while also permitting them to re-share news as a projection of their values and interests.",
+              "translation": "社交媒体使用户能够更亲密、更即时地体验新闻事件，同时也允许他们重新分享新闻，以体现他们的价值观和兴趣。",
               "vocab": [
                 {
                   "word": "Social",
@@ -1853,7 +1853,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "This forces users to be more conscious of their role in passing along information.",
-              "translation": "【考研真题精读标准译文】This forces users to be more conscious of their role in passing along information.",
+              "translation": "这迫使用户更加意识到自己在传递信息中的角色。",
               "vocab": [
                 {
                   "word": "conscious",
@@ -1881,7 +1881,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "A survey by Barna research group found the top reason given by Americans for the fake news phenomenon is \"reader error,\" more so than made-up stories or factual mistakes in reporting.",
-              "translation": "【考研真题精读标准译文】A survey by Barna research group found the top reason given by Americans for the fake news phenomenon is \"reader error,\" more so than made-up stories or factual mistakes in reporting.",
+              "translation": "巴纳研究小组的一项调查发现，美国人对假新闻现象的首要原因是“读者错误”，而不是编造的故事或报道中的事实错误。",
               "vocab": [
                 {
                   "word": "reason",
@@ -1921,7 +1921,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "About a third say the problem of fake news lies in \"misinterpretation or exaggeration of actual news\" via social media.",
-              "translation": "【考研真题精读标准译文】About a third say the problem of fake news lies in \"misinterpretation or exaggeration of actual news\" via social media.",
+              "translation": "大约三分之一的人表示，假新闻的问题在于社交媒体“对实际新闻的误解或夸大”。",
               "vocab": [
                 {
                   "word": "About",
@@ -1985,7 +1985,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "In other words, the choice to share news on social media may be the heart of the issue.",
-              "translation": "【考研真题精读标准译文】In other words, the choice to share news on social media may be the heart of the issue.",
+              "translation": "换句话说，在社交媒体上分享新闻的选择可能是问题的核心。",
               "vocab": [
                 {
                   "word": "share",
@@ -2019,7 +2019,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "\"This indicates there is a real personal responsibility in counteracting this problem,\" says Roxanne Stone, editor in chief at Barna Group.",
-              "translation": "【考研真题精读标准译文】\"This indicates there is a real personal responsibility in counteracting this problem,\" says Roxanne Stone, editor in chief at Barna Group.",
+              "translation": "巴纳集团主编罗克珊·斯通 (Roxanne Stone) 表示：“这表明，解决这个问题确实是个人的责任。”",
               "vocab": [
                 {
                   "word": "responsibility",
@@ -2041,7 +2041,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "So when young people are critical of an over-tweeting president, they reveal a mental discipline in thinking skills – and in their choices on when to share on social media.",
-              "translation": "【考研真题精读标准译文】So when young people are critical of an over-tweeting president, they reveal a mental discipline in thinking skills – and in their choices on when to share on social media.",
+              "translation": "因此，当年轻人批评一位过度发推文的总统时，他们在思维技巧以及何时在社交媒体上分享的选择上表现出了一种精神纪律。",
               "vocab": [
                 {
                   "word": "critical",
@@ -2119,7 +2119,7 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2135,9 +2135,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "people's preference for social media platforms.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2157,9 +2157,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "D",
               "text": "social media as a reliable source of news.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2185,14 +2185,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "sharpen.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2223,9 +2223,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "D",
               "text": "share.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2251,14 +2251,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "tend to voice their opinions in cyberspace.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2267,9 +2267,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "verify news by referring to diverse sources.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2346,7 +2346,7 @@ window.ENGLISH_DATA['2018'] = {
               "text": "readers' misinterpretation.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2390,7 +2390,7 @@ window.ENGLISH_DATA['2018'] = {
               "text": "A Rise in Critical Skills for Sharing News Online.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2454,7 +2454,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Any fair-minded assessment of the dangers of the deal between Britain's National Health Service (NHS) and DeepMind must start by acknowledging that both sides mean well.",
-              "translation": "【考研真题精读标准译文】Any fair-minded assessment of the dangers of the deal between Britain's National Health Service (NHS) and DeepMind must start by acknowledging that both sides mean well.",
+              "translation": "任何对英国国家医疗服务体系 (NHS) 和 DeepMind 之间的交易危险性的公正评估都必须首先承认双方都是善意的。",
               "vocab": [
                 {
                   "word": "fair-minded",
@@ -2488,7 +2488,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "DeepMind is one of the leading artificial intelligence (AI) companies in the world.",
-              "translation": "【考研真题精读标准译文】DeepMind is one of the leading artificial intelligence (AI) companies in the world.",
+              "translation": "DeepMind 是全球领先的人工智能 (AI) 公司之一。",
               "vocab": [
                 {
                   "word": "one",
@@ -2522,7 +2522,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The potential of this work applied to healthcare is very great, but it could also lead to further concentration of power in the tech giants.",
-              "translation": "【考研真题精读标准译文】The potential of this work applied to healthcare is very great, but it could also lead to further concentration of power in the tech giants.",
+              "translation": "这项工作应用于医疗保健的潜力非常巨大，但也可能导致权力进一步集中于科技巨头手中。",
               "vocab": [
                 {
                   "word": "potential",
@@ -2568,7 +2568,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "It is against that background that the information commissioner, Elizabeth Denham, has issued her damning verdict against the Royal Free hospital trust under the NHS, which handed over to DeepMind the records of 1.6 million patients in 2015 on the basis of a vague agreement which took far too little account of the patients' rights and their expectations of privacy.",
-              "translation": "【考研真题精读标准译文】It is against that background that the information commissioner, Elizabeth Denham, has issued her damning verdict against the Royal Free hospital trust under the NHS, which handed over to DeepMind the records of 1.6 million patients in 2015 on the basis of a vague agreement which took far too little account of the patients' rights and their expectations of privacy.",
+              "translation": "正是在这种背景下，信息专员伊丽莎白·德纳姆 (Elizabeth Denham) 对 NHS 旗下的皇家自由医院信托基金做出了严厉的裁决，该信托基金在 2015 年将 160 万患者的记录移交给 DeepMind，其基础是一份含糊的协议，该协议太少考虑患者的权利及其对隐私的期望。",
               "vocab": [
                 {
                   "word": "background",
@@ -2644,7 +2644,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "DeepMind has almost apologized.",
-              "translation": "【考研真题精读标准译文】DeepMind has almost apologized.",
+              "translation": "DeepMind 几乎已经道歉了。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2653,7 +2653,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "The NHS trust has mended its ways.",
-              "translation": "【考研真题精读标准译文】The NHS trust has mended its ways.",
+              "translation": "NHS 信托基金已经改过自新。",
               "vocab": [
                 {
                   "word": "trust",
@@ -2669,7 +2669,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Further arrangements—and there may be many – between the NHS and DeepMind will be carefully scrutinised to ensure that all necessary permissions have been asked of patients and all unnecessary data has been cleaned.",
-              "translation": "【考研真题精读标准译文】Further arrangements—and there may be many – between the NHS and DeepMind will be carefully scrutinised to ensure that all necessary permissions have been asked of patients and all unnecessary data has been cleaned.",
+              "translation": "NHS 和 DeepMind 之间的进一步安排（可能有很多）将受到仔细审查，以确保已向患者征求所有必要的许可，并清除所有不必要的数据。",
               "vocab": [
                 {
                   "word": "Further",
@@ -2722,7 +2722,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "There are lessons about informed patient consent to learn.",
-              "translation": "【考研真题精读标准译文】There are lessons about informed patient consent to learn.",
+              "translation": "有一些关于患者知情同意的经验教训值得学习。",
               "vocab": [
                 {
                   "word": "about",
@@ -2756,7 +2756,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "But privacy is not the only angle in this case and not even the most important. Ms. Denham chose to concentrate the blame on the NHS trust, since under existing law it \"controlled\" the data and DeepMind merely \"processed\" it.",
-              "translation": "【考研真题精读标准译文】But privacy is not the only angle in this case and not even the most important. Ms. Denham chose to concentrate the blame on the NHS trust, since under existing law it \"controlled\" the data and DeepMind merely \"processed\" it.",
+              "translation": "但隐私并不是本案中唯一的角度，甚至不是最重要的。德纳姆女士选择将责任集中在 NHS 信托上，因为根据现行法律，它“控制”了数据，而 DeepMind 只是“处理”了数据。",
               "vocab": [
                 {
                   "word": "angle",
@@ -2820,7 +2820,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "But this distinction misses the point that it is processing and aggregation, not the mere possession of bits, that gives the data value.",
-              "translation": "【考研真题精读标准译文】But this distinction misses the point that it is processing and aggregation, not the mere possession of bits, that gives the data value.",
+              "translation": "但这种区别忽略了一点：赋予数据价值的是处理和聚合，而不是仅仅拥有比特。",
               "vocab": [
                 {
                   "word": "distinction",
@@ -2866,7 +2866,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The great question is who should benefit from the analysis of all the data that our lives now generate.",
-              "translation": "【考研真题精读标准译文】The great question is who should benefit from the analysis of all the data that our lives now generate.",
+              "translation": "最大的问题是谁应该从我们生活现在产生的所有数据的分析中受益。",
               "vocab": [
                 {
                   "word": "question",
@@ -2906,7 +2906,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Privacy law builds on the concept of damage to an individual from identifiable knowledge about them.",
-              "translation": "【考研真题精读标准译文】Privacy law builds on the concept of damage to an individual from identifiable knowledge about them.",
+              "translation": "隐私法建立在有关个人的可识别知识对个人造成损害的概念之上。",
               "vocab": [
                 {
                   "word": "concept",
@@ -2946,7 +2946,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "That misses the way the surveillance economy works.",
-              "translation": "【考研真题精读标准译文】That misses the way the surveillance economy works.",
+              "translation": "这忽视了监控经济的运作方式。",
               "vocab": [
                 {
                   "word": "surveillance",
@@ -2962,7 +2962,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "The data of an individual there gains its value only when it is compared with the data of countless millions more.",
-              "translation": "【考研真题精读标准译文】The data of an individual there gains its value only when it is compared with the data of countless millions more.",
+              "translation": "只有当与无数其他人的数据进行比较时，个人的数据才具有价值。",
               "vocab": [
                 {
                   "word": "data",
@@ -3003,7 +3003,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The use of privacy law to curb the tech giants in this instance feels slightly maladapted.",
-              "translation": "【考研真题精读标准译文】The use of privacy law to curb the tech giants in this instance feels slightly maladapted.",
+              "translation": "在这种情况下使用隐私法来遏制科技巨头感觉有点不适应。",
               "vocab": [
                 {
                   "word": "use",
@@ -3043,7 +3043,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "This practice does not address the real worry.",
-              "translation": "【考研真题精读标准译文】This practice does not address the real worry.",
+              "translation": "这种做法并不能解决真正的担忧。",
               "vocab": [
                 {
                   "word": "practice",
@@ -3065,7 +3065,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "It is not enough to say that the algorithms DeepMind develops will benefit patients and save lives.",
-              "translation": "【考研真题精读标准译文】It is not enough to say that the algorithms DeepMind develops will benefit patients and save lives.",
+              "translation": "仅说 DeepMind 开发的算法将造福患者并拯救生命是不够的。",
               "vocab": [
                 {
                   "word": "will",
@@ -3099,7 +3099,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "What matters is that they will belong to a private monopoly which developed them using public resources.",
-              "translation": "【考研真题精读标准译文】What matters is that they will belong to a private monopoly which developed them using public resources.",
+              "translation": "重要的是它们将属于利用公共资源开发它们的私人垄断企业。",
               "vocab": [
                 {
                   "word": "will",
@@ -3133,7 +3133,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "If software promises to save lives on the scale that drugs now can, big data may be expected to behave as a big pharma has done.",
-              "translation": "【考研真题精读标准译文】If software promises to save lives on the scale that drugs now can, big data may be expected to behave as a big pharma has done.",
+              "translation": "如果软件有望像药物一样拯救生命，那么大数据可能会像大型制药公司那样发挥作用。",
               "vocab": [
                 {
                   "word": "software",
@@ -3191,7 +3191,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "We are still at the beginning of this revolution and small choices now may turn out to have gigantic consequences later.",
-              "translation": "【考研真题精读标准译文】We are still at the beginning of this revolution and small choices now may turn out to have gigantic consequences later.",
+              "translation": "我们仍处于这场革命的开端，现在的小选择可能会在以后产生巨大的后果。",
               "vocab": [
                 {
                   "word": "still",
@@ -3219,7 +3219,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "A long struggle will be needed to avoid a future of digital feudalism. Ms. Denham's report is a welcome start.",
-              "translation": "【考研真题精读标准译文】A long struggle will be needed to avoid a future of digital feudalism. Ms. Denham's report is a welcome start.",
+              "translation": "为了避免数字封建主义的未来，需要进行长期的斗争。德纳姆女士的报告是一个可喜的开始。",
               "vocab": [
                 {
                   "word": "struggle",
@@ -3273,7 +3273,7 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3289,9 +3289,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "It failed to pay due attention to patients' rights.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3311,9 +3311,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "D",
               "text": "It put both sides into a dangerous situation.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3339,7 +3339,7 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3355,9 +3355,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "tough resistance.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3366,9 +3366,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "C",
               "text": "necessary adjustments.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3405,14 +3405,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "privacy protection must be secured at all costs.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3443,9 +3443,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "D",
               "text": "the value of data comes from the processing of it.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3471,7 +3471,7 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -3498,9 +3498,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "C",
               "text": "the uncontrolled use of new software.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3509,9 +3509,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "D",
               "text": "the monopoly of big data by tech giants.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3555,7 +3555,7 @@ window.ENGLISH_DATA['2018'] = {
               "text": "cautious.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3608,7 +3608,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The U.S. Postal Service (USPS) continues to bleed red ink.",
-              "translation": "【考研真题精读标准译文】The U.S. Postal Service (USPS) continues to bleed red ink.",
+              "translation": "美国邮政服务 (USPS) 继续亏损。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -3617,7 +3617,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "It reported a net loss of $5.6 billion for fiscal 2016, the 10th straight year its expenses have exceeded revenue.",
-              "translation": "【考研真题精读标准译文】It reported a net loss of $5.6 billion for fiscal 2016, the 10th straight year its expenses have exceeded revenue.",
+              "translation": "该公司公布 2016 财年净亏损 56 亿美元，这是其支出连续第十年超过收入。",
               "vocab": [
                 {
                   "word": "net",
@@ -3657,7 +3657,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Meanwhile, it has more than $120 billion in unfunded liabilities, mostly for employee health and retirement costs.",
-              "translation": "【考研真题精读标准译文】Meanwhile, it has more than $120 billion in unfunded liabilities, mostly for employee health and retirement costs.",
+              "translation": "与此同时，它还有超过 1200 亿美元的无准备金负债，主要用于员工健康和退休费用。",
               "vocab": [
                 {
                   "word": "Meanwhile",
@@ -3685,7 +3685,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "There are many reasons this formerly stable federal institution finds itself at the brink of bankruptcy.",
-              "translation": "【考研真题精读标准译文】There are many reasons this formerly stable federal institution finds itself at the brink of bankruptcy.",
+              "translation": "这个原本稳定的联邦机构发现自己处于破产边缘的原因有很多。",
               "vocab": [
                 {
                   "word": "formerly",
@@ -3731,7 +3731,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Fundamentally, the USPS is in a historic squeeze between technological change that has permanently decreased demand for its bread-and-butter product, first-class mail, and a regulatory structure that denies management the flexibility to adjust its operations to the new reality.",
-              "translation": "【考研真题精读标准译文】Fundamentally, the USPS is in a historic squeeze between technological change that has permanently decreased demand for its bread-and-butter product, first-class mail, and a regulatory structure that denies management the flexibility to adjust its operations to the new reality.",
+              "translation": "从根本上说，美国邮政局正处于历史性的挤压之中，技术变革永久减少了对其主要产品、一流邮件的需求，而监管结构则剥夺了管理层根据新现实调整运营的灵活性。",
               "vocab": [
                 {
                   "word": "Fundamentally",
@@ -3825,7 +3825,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "And interest groups ranging from postal unions to greeting-card makers exert self-interested pressure on the USPS's ultimate overseer—Congress—insisting that whatever else happens to the Postal Service, aspects of the status quo they depend on get protected.",
-              "translation": "【考研真题精读标准译文】And interest groups ranging from postal unions to greeting-card makers exert self-interested pressure on the USPS's ultimate overseer—Congress—insisting that whatever else happens to the Postal Service, aspects of the status quo they depend on get protected.",
+              "translation": "从邮政工会到贺卡制造商等利益团体都对美国邮政总局的最终监督者国会施加自私的压力，坚持认为无论邮政服务发生什么其他事情，他们所依赖的现状的各个方面都会受到保护。",
               "vocab": [
                 {
                   "word": "depend on",
@@ -3896,7 +3896,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "This is why repeated attempts at reform legislation have failed in recent years, leaving the Postal Service unable to pay its bills except by deferring vital modernization.",
-              "translation": "【考研真题精读标准译文】This is why repeated attempts at reform legislation have failed in recent years, leaving the Postal Service unable to pay its bills except by deferring vital modernization.",
+              "translation": "这就是为什么近年来多次尝试改革立法都失败了，导致邮政服务无法支付账单，除非推迟重要的现代化建设。",
               "vocab": [
                 {
                   "word": "reform",
@@ -3948,7 +3948,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Now comes word that everyone involved—Democrats, Republicans, the Postal Service, the unions and the system's heaviest users—has finally agreed on a plan to fix the system.",
-              "translation": "【考研真题精读标准译文】Now comes word that everyone involved—Democrats, Republicans, the Postal Service, the unions and the system's heaviest users—has finally agreed on a plan to fix the system.",
+              "translation": "现在有消息称，所有参与者——民主党、共和党、邮政局、工会和该系统的最大用户——最终就修复该系统的计划达成了一致。",
               "vocab": [
                 {
                   "word": "involved",
@@ -3970,7 +3970,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Legislation is moving through the House that would save USPS an estimated $28.6 billion over five years, which could help pay for new vehicles, among other survival measures.",
-              "translation": "【考研真题精读标准译文】Legislation is moving through the House that would save USPS an estimated $28.6 billion over five years, which could help pay for new vehicles, among other survival measures.",
+              "translation": "众议院正在审议一项立法，该法案预计将在五年内为 USPS 节省 286 亿美元，这可能有助于支付新车费用以及其他生存措施。",
               "vocab": [
                 {
                   "word": "among other",
@@ -4022,7 +4022,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Most of the money would come from a penny-per-letter permanent rate increase and from shifting postal retirees into Medicare.",
-              "translation": "【考研真题精读标准译文】Most of the money would come from a penny-per-letter permanent rate increase and from shifting postal retirees into Medicare.",
+              "translation": "大部分资金将来自每封信的永久费率上涨以及将邮政退休人员纳入医疗保险。",
               "vocab": [
                 {
                   "word": "money",
@@ -4062,7 +4062,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "The latter step would largely offset the financial burden of annually pre-funding retiree health care, thus addressing a long-standing complaint by the USPS and its unions.",
-              "translation": "【考研真题精读标准译文】The latter step would largely offset the financial burden of annually pre-funding retiree health care, thus addressing a long-standing complaint by the USPS and its unions.",
+              "translation": "后一步将在很大程度上抵消每年为退休人员医疗保健提供预资助的财务负担，从而解决美国邮政总局及其工会长期以来的抱怨。",
               "vocab": [
                 {
                   "word": "latter",
@@ -4132,7 +4132,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "If it clears the House, this measure would still have to get through the Senate—where someone is bound to point out that it amounts to the bare, bare minimum necessary to keep the Postal Service afloat, not comprehensive reform.",
-              "translation": "【考研真题精读标准译文】If it clears the House, this measure would still have to get through the Senate—where someone is bound to point out that it amounts to the bare, bare minimum necessary to keep the Postal Service afloat, not comprehensive reform.",
+              "translation": "如果众议院获得通过，这项措施仍需在参议院获得通过——参议院肯定有人会指出，这只是维持邮政服务运转所需的最低限度，而不是全面的改革。",
               "vocab": [
                 {
                   "word": "measure",
@@ -4203,7 +4203,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "There's no change to collective bargaining at the USPS, a major omission considering that personnel accounts for 80 percent of the agency's costs.",
-              "translation": "【考研真题精读标准译文】There's no change to collective bargaining at the USPS, a major omission considering that personnel accounts for 80 percent of the agency's costs.",
+              "translation": "USPS 的集体谈判没有变化，考虑到人员成本占该机构成本的 80%，这是一个重大遗漏。",
               "vocab": [
                 {
                   "word": "change",
@@ -4255,7 +4255,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Also missing is any discussion of eliminating Saturday letter delivery.",
-              "translation": "【考研真题精读标准译文】Also missing is any discussion of eliminating Saturday letter delivery.",
+              "translation": "还缺少关于取消周六信件递送的任何讨论。",
               "vocab": [
                 {
                   "word": "letter",
@@ -4271,7 +4271,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "That common-sense change enjoys wide public support and would save the USPS $2 billion per year.",
-              "translation": "【考研真题精读标准译文】That common-sense change enjoys wide public support and would save the USPS $2 billion per year.",
+              "translation": "这一常识性的改变得到了公众的广泛支持，每年将为 USPS 节省 20 亿美元。",
               "vocab": [
                 {
                   "word": "common-sense",
@@ -4311,7 +4311,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "But postal special-interest groups seem to have killed it, at least in the House.",
-              "translation": "【考研真题精读标准译文】But postal special-interest groups seem to have killed it, at least in the House.",
+              "translation": "但邮政特殊利益集团似乎已经扼杀了它，至少在众议院是这样。",
               "vocab": [
                 {
                   "word": "at least",
@@ -4327,7 +4327,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The emerging consensus around the bill is a sign that legislators are getting frightened about a politically embarrassing short-term collapse at the USPS.",
-              "translation": "【考研真题精读标准译文】The emerging consensus around the bill is a sign that legislators are getting frightened about a politically embarrassing short-term collapse at the USPS.",
+              "translation": "围绕该法案正在形成的共识表明，立法者对美国邮政局在政治上令人尴尬的短期崩溃感到恐惧。",
               "vocab": [
                 {
                   "word": "consensus",
@@ -4379,7 +4379,7 @@ window.ENGLISH_DATA['2018'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "It is not, however, a sign that they're getting serious about transforming the postal system for the 21st century.",
-              "translation": "【考研真题精读标准译文】It is not, however, a sign that they're getting serious about transforming the postal system for the 21st century.",
+              "translation": "然而，这并不表明他们正在认真考虑改造 21 世纪的邮政系统。",
               "vocab": [
                 {
                   "word": "however",
@@ -4433,7 +4433,7 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4449,9 +4449,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "its rigid management.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4460,9 +4460,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "C",
               "text": "the cost for technical upgrading.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4499,14 +4499,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "the interference from interest groups.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4515,9 +4515,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "B",
               "text": "the inadequate funding from Congress.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4565,14 +4565,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "removing its burden of retiree health care.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4603,9 +4603,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "D",
               "text": "attracting more first-class mail users.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4631,14 +4631,14 @@ window.ENGLISH_DATA['2018'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "respect.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4658,9 +4658,9 @@ window.ENGLISH_DATA['2018'] = {
             {
               "key": "C",
               "text": "discontent.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4737,7 +4737,7 @@ window.ENGLISH_DATA['2018'] = {
               "text": "The Postal Service Needs More Than a Band-Aid.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The grammar school boy from Stratford-upon-Avon has landed a scholarly punch after ground-breaking research showed that Shakespeare does benefit children's literacy and emotional development.",
-              "translation": "【考研真题精读标准译文】The grammar school boy from Stratford-upon-Avon has landed a scholarly punch after ground-breaking research showed that Shakespeare does benefit children's literacy and emotional development.",
+              "translation": "这位来自埃文河畔斯特拉特福的文法学校男孩在开创性的研究表明莎士比亚确实有益于儿童的识字和情感发展后，获得了学术上的一击。",
               "vocab": [
                 {
                   "word": "scholarly",
@@ -66,7 +66,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But only if you act him out.",
-              "translation": "【考研真题精读标准译文】But only if you act him out.",
+              "translation": "但前提是你把他表演出来。",
               "vocab": [
                 {
                   "word": "act",
@@ -82,7 +82,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "A study found that a \"rehearsal room\" approach to teaching Shakespeare broadened children's vocabulary and the complexity of their writing as well as their emotional literacy.",
-              "translation": "【考研真题精读标准译文】A study found that a \"rehearsal room\" approach to teaching Shakespeare broadened children's vocabulary and the complexity of their writing as well as their emotional literacy.",
+              "translation": "一项研究发现，“排练室”教学莎士比亚的方法扩大了孩子们的词汇量、写作的复杂性以及情感素养。",
               "vocab": [
                 {
                   "word": "rehearsal",
@@ -134,7 +134,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "\"The research shows that the way actors work makes a big difference to the way children use language and also how they think about themselves,\" Jacqui O'Hanlon of the Royal Shakespeare Company (RSC), which commissioned the study, said.",
-              "translation": "【考研真题精读标准译文】\"The research shows that the way actors work makes a big difference to the way children use language and also how they think about themselves,\" Jacqui O'Hanlon of the Royal Shakespeare Company (RSC), which commissioned the study, said.",
+              "translation": "委托进行这项研究的皇家莎士比亚剧团 (RSC) 的雅基·奥汉隆 (Jacqui O'Hanlon) 表示：“研究表明，演员的工作方式对孩子们使用语言的方式以及他们对自己的看法有很大影响。”",
               "vocab": [
                 {
                   "word": "work",
@@ -180,7 +180,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The randomised control trial involved hundreds of year 5 pupils—aged nine and ten—at 45 state primary schools that had not been \"previously exposed to RSC pedagogy\".",
-              "translation": "【考研真题精读标准译文】The randomised control trial involved hundreds of year 5 pupils—aged nine and ten—at 45 state primary schools that had not been \"previously exposed to RSC pedagogy\".",
+              "translation": "这项随机对照试验涉及 45 所州立小学的数百名 5 年级学生（年龄分别为 9 岁和 10 岁），这些小学“之前从未接触过 RSC 教学法”。",
               "vocab": [
                 {
                   "word": "randomised",
@@ -239,7 +239,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "They were split into target and control groups and asked to write, for example, a message in a bottle as Ferdinand after the shipwreck in The Tempest.",
-              "translation": "【考研真题精读标准译文】They were split into target and control groups and asked to write, for example, a message in a bottle as Ferdinand after the shipwreck in The Tempest.",
+              "translation": "他们被分成目标组和对照组，并被要求在《暴风雨》中以费迪南德的身份在瓶子里写一条信息。",
               "vocab": [
                 {
                   "word": "split",
@@ -279,7 +279,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The target group was given a 30-minute drama-based activity to accompany the passage.",
-              "translation": "【考研真题精读标准译文】The target group was given a 30-minute drama-based activity to accompany the passage.",
+              "translation": "为配合该段落，目标群体进行了 30 分钟的戏剧活动。",
               "vocab": [
                 {
                   "word": "drama-based",
@@ -307,7 +307,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The peer-reviewed results showed that the target group of pupils drew on a wider vocabulary, used words \"classed as more sophisticated or rarer\", and wrote at greater length.",
-              "translation": "【考研真题精读标准译文】The peer-reviewed results showed that the target group of pupils drew on a wider vocabulary, used words \"classed as more sophisticated or rarer\", and wrote at greater length.",
+              "translation": "同行评审的结果显示，目标学生群体使用了更广泛的词汇，使用了“更复杂或更罕见”的单词，并且写得更长。",
               "vocab": [
                 {
                   "word": "peer-reviewed",
@@ -341,7 +341,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "They also \"appear to be more comfortable writing in role...while [control] group imagine how they themselves would react to being shipwrecked, [target] group put themselves in the shoes of a literary character and express that character's emotion\".",
-              "translation": "【考研真题精读标准译文】They also \"appear to be more comfortable writing in role...while [control] group imagine how they themselves would react to being shipwrecked, [target] group put themselves in the shoes of a literary character and express that character's emotion\".",
+              "translation": "他们还“似乎更愿意在角色中写作......而[控制]组想象他们自己对遭遇海难会如何反应，[目标]组将自己置于文学人物的立场并表达该角色的情感”。",
               "vocab": [
                 {
                   "word": "appear to be",
@@ -381,7 +381,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "The Time to Act study also found that while control pupils relied on \"desert island clichés\" such as palm trees, target pupils were \"more expansive [giving] a broader picture of the sky, the sea and the atmospheric conditions\".",
-              "translation": "【考研真题精读标准译文】The Time to Act study also found that while control pupils relied on \"desert island clichés\" such as palm trees, target pupils were \"more expansive [giving] a broader picture of the sky, the sea and the atmospheric conditions\".",
+              "translation": "“采取行动的时间”研究还发现，虽然控制学生依赖于棕榈树等“荒岛陈词滥调”，但目标学生“更加广阔，[给出]更广阔的天空、海洋和大气条件”。",
               "vocab": [
                 {
                   "word": "Act",
@@ -434,7 +434,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "O'Hanlon said she had been most surprised by the \"emotional literacy that was evident in the [target] children's writing\" and that they were \"more resilient in their writing, more hopeful\".",
-              "translation": "【考研真题精读标准译文】O'Hanlon said she had been most surprised by the \"emotional literacy that was evident in the [target] children's writing\" and that they were \"more resilient in their writing, more hopeful\".",
+              "translation": "奥汉隆说，她最惊讶的是“目标儿童写作中明显的情感素养”，而且他们“写作更有弹性，更有希望”。",
               "vocab": [
                 {
                   "word": "emotional",
@@ -468,7 +468,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "She added: \"The emotional understanding was very evident and it is probably related to the [rehearsal room process] where you are used to trying to imagine your way through.",
-              "translation": "【考研真题精读标准译文】She added: \"The emotional understanding was very evident and it is probably related to the [rehearsal room process] where you are used to trying to imagine your way through.",
+              "translation": "她补充道：“情感上的理解非常明显，这可能与[排练室过程]有关，在排练室过程中，你习惯于尝试想象自己的方式。",
               "vocab": [
                 {
                   "word": "emotional",
@@ -526,7 +526,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "They were comfortable in describing different emotional states and part of what you do in drama is put yourself in different shoes.\" The study showed the importance of embedding the arts in education, she said.",
-              "translation": "【考研真题精读标准译文】They were comfortable in describing different emotional states and part of what you do in drama is put yourself in different shoes.\" The study showed the importance of embedding the arts in education, she said.",
+              "translation": "他们能够轻松地描述不同的情绪状态，而你在戏剧中所做的一部分就是把自己放在不同的位置上。”她说，这项研究表明了将艺术融入教育的重要性。",
               "vocab": [
                 {
                   "word": "emotional",
@@ -542,7 +542,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "But could the results be replicated with any old dramatist?",
-              "translation": "【考研真题精读标准译文】But could the results be replicated with any old dramatist?",
+              "translation": "但这个结果可以用任何一位老剧作家来复制吗？",
               "vocab": [
                 {
                   "word": "dramatist",
@@ -558,7 +558,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "O'Hanlon said more research would be needed but suggested that Shakespeare's use of 20,000 words, compared with the everyday 2,000 words, gave a \"massive expansion of language into children's lives\", which was combined with children \"using their whole bodies to bring words to life\".",
-              "translation": "【考研真题精读标准译文】O'Hanlon said more research would be needed but suggested that Shakespeare's use of 20,000 words, compared with the everyday 2,000 words, gave a \"massive expansion of language into children's lives\", which was combined with children \"using their whole bodies to bring words to life\".",
+              "translation": "奥汉隆表示，还需要进行更多的研究，但他认为，与日常使用的 2000 个单词相比，莎士比亚使用的 20,000 个单词“将语言大规模扩展到儿童的生活中”，同时孩子们“用他们的整个身体将单词带入生活”。",
               "vocab": [
                 {
                   "word": "use",
@@ -612,7 +612,7 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -639,9 +639,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "play the roles in Shakespeare",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -650,9 +650,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "D",
               "text": "study drama under RSC artists",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -678,14 +678,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "the change in instruction enhances learning outcomes",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -694,9 +694,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "B",
               "text": "expanding vocabulary helps develop reading fluency",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -751,7 +751,7 @@ window.ENGLISH_DATA['2025'] = {
               "text": "weakness in description",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -810,7 +810,7 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -826,9 +826,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "B",
               "text": "Identifying with literary characters.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -837,9 +837,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "Drawing inspiration from nature.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -876,14 +876,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "the new teaching method may work best with Shakespeare",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -892,9 +892,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "B",
               "text": "the language of Shakespeare may be formidable for pupils",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -947,7 +947,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "I was shocked to learn recently that some scientists want to scale back their research in an effort to decrease carbon emissions.",
-              "translation": "【考研真题精读标准译文】I was shocked to learn recently that some scientists want to scale back their research in an effort to decrease carbon emissions.",
+              "translation": "最近我很震惊地得知一些科学家想要缩减他们的研究以减少碳排放。",
               "vocab": [
                 {
                   "word": "scale",
@@ -969,7 +969,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The crisis is here, they said, and we need to cut back on our energy-intensive modelling.",
-              "translation": "【考研真题精读标准译文】The crisis is here, they said, and we need to cut back on our energy-intensive modelling.",
+              "translation": "他们说，危机已经来临，我们需要减少能源密集型建模。",
               "vocab": [
                 {
                   "word": "crisis",
@@ -991,7 +991,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "At the very least, we need to make our energy use far more sustainable.",
-              "translation": "【考研真题精读标准译文】At the very least, we need to make our energy use far more sustainable.",
+              "translation": "至少，我们需要使能源使用更加可持续。",
               "vocab": [
                 {
                   "word": "very",
@@ -1025,7 +1025,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "It is unarguable that our laboratories, scientific instruments, rockets and satellites—the tools we scientists need to measure the planet's pulse—demand significant amounts of energy both in their construction and operation.",
-              "translation": "【考研真题精读标准译文】It is unarguable that our laboratories, scientific instruments, rockets and satellites—the tools we scientists need to measure the planet's pulse—demand significant amounts of energy both in their construction and operation.",
+              "translation": "毫无疑问，我们的实验室、科学仪器、火箭和卫星——科学家测量地球脉搏所需的工具——在建造和运行过程中都需要大量的能源。",
               "vocab": [
                 {
                   "word": "unarguable",
@@ -1077,7 +1077,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "And it is equally true that science's unrelenting appetite for information has caused a mushrooming of energy-intensive data centres around the world.",
-              "translation": "【考研真题精读标准译文】And it is equally true that science's unrelenting appetite for information has caused a mushrooming of energy-intensive data centres around the world.",
+              "translation": "同样真实的是，科学对信息的不懈追求导致世界各地能源密集型数据中心如雨后春笋般涌现。",
               "vocab": [
                 {
                   "word": "equally",
@@ -1135,7 +1135,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "According to the International Energy Agency, these buildings now consume about 1 per cent of the world's electricity.",
-              "translation": "【考研真题精读标准译文】According to the International Energy Agency, these buildings now consume about 1 per cent of the world's electricity.",
+              "translation": "据国际能源署称，这些建筑目前消耗的电力约占世界电力的 1%。",
               "vocab": [
                 {
                   "word": "according to",
@@ -1194,7 +1194,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "However, this is a price we must pay for understanding the world.",
-              "translation": "【考研真题精读标准译文】However, this is a price we must pay for understanding the world.",
+              "translation": "然而，这是我们认识世界必须付出的代价。",
               "vocab": [
                 {
                   "word": "However",
@@ -1222,7 +1222,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "How can we inform decision makers about the best ways to bring down carbon emissions if we can't track the amount of carbon dioxide in the atmosphere, where it's coming from and who's producing it?",
-              "translation": "【考研真题精读标准译文】How can we inform decision makers about the best ways to bring down carbon emissions if we can't track the amount of carbon dioxide in the atmosphere, where it's coming from and who's producing it?",
+              "translation": "如果我们无法追踪大气中二氧化碳的含量、二氧化碳的来源和产生者，我们如何才能告知决策者减少碳排放的最佳方法呢？",
               "vocab": [
                 {
                   "word": "inform",
@@ -1280,7 +1280,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The carbon emissions from technological research are well spent: ultimately this research will safeguard the future of our planet.",
-              "translation": "【考研真题精读标准译文】The carbon emissions from technological research are well spent: ultimately this research will safeguard the future of our planet.",
+              "translation": "技术研究产生的碳排放物有所值：最终，这项研究将保护我们星球的未来。",
               "vocab": [
                 {
                   "word": "technological",
@@ -1314,7 +1314,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "It can be hard for scientists to make the case because our work is complex, often takes place behind closed doors and does not always lend itself to easy interpretation or explanation.",
-              "translation": "【考研真题精读标准译文】It can be hard for scientists to make the case because our work is complex, often takes place behind closed doors and does not always lend itself to easy interpretation or explanation.",
+              "translation": "对于科学家来说，要证明这一点可能很困难，因为我们的工作很复杂，通常是闭门进行的，而且并不总是容易解释或解释。",
               "vocab": [
                 {
                   "word": "for",
@@ -1366,7 +1366,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "But demonstrating the efficacy of science will be crucial if we are to solve humanity's greatest challenges.",
-              "translation": "【考研真题精读标准译文】But demonstrating the efficacy of science will be crucial if we are to solve humanity's greatest challenges.",
+              "translation": "但如果我们要解决人类面临的最大挑战，证明科学的功效至关重要。",
               "vocab": [
                 {
                   "word": "will",
@@ -1394,7 +1394,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Recognising the hope that science and engineering can bring was the impetus behind the creation of the Millennium Technology Prize, which is now entering its 20th year as a celebration of human ingenuity.",
-              "translation": "【考研真题精读标准译文】Recognising the hope that science and engineering can bring was the impetus behind the creation of the Millennium Technology Prize, which is now entering its 20th year as a celebration of human ingenuity.",
+              "translation": "认识到科学和工程可以带来的希望是千禧年技术奖创立的动力，该奖旨在庆祝人类的聪明才智，现已进入第 20 个年头。",
               "vocab": [
                 {
                   "word": "impetus",
@@ -1435,7 +1435,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "One of the past winners, Professor Martin Green from the University of New South Wales, Australia, is the inventor of the Passivated Emitter and Rear Cell technology which is now found in most of the world's solar panels.",
-              "translation": "【考研真题精读标准译文】One of the past winners, Professor Martin Green from the University of New South Wales, Australia, is the inventor of the Passivated Emitter and Rear Cell technology which is now found in most of the world's solar panels.",
+              "translation": "过去的获奖者之一是来自澳大利亚新南威尔士大学的 Martin Green 教授，他是钝化发射极和后电池技术的发明者，该技术现已应用于世界上大多数太阳能电池板中。",
               "vocab": [
                 {
                   "word": "One",
@@ -1493,7 +1493,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Thanks to his invention, we have a real chance to decrease the world's carbon emissions.",
-              "translation": "【考研真题精读标准译文】Thanks to his invention, we have a real chance to decrease the world's carbon emissions.",
+              "translation": "感谢他的发明，我们真正有机会减少世界的碳排放。",
               "vocab": [
                 {
                   "word": "invention",
@@ -1515,7 +1515,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Every day, scientists, technologists and engineers are discovering new ways to exploit renewable energy sources and develop techniques not just to use power more intelligently but to power our intelligence.",
-              "translation": "【考研真题精读标准译文】Every day, scientists, technologists and engineers are discovering new ways to exploit renewable energy sources and develop techniques not just to use power more intelligently but to power our intelligence.",
+              "translation": "每天，科学家、技术人员和工程师都在发现利用可再生能源的新方法，并开发技术，不仅可以更智能地使用电力，而且可以增强我们的智慧。",
               "vocab": [
                 {
                   "word": "new",
@@ -1573,7 +1573,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "A great example of this is Europe's largest supercomputer, LUMI in Finland, which is astonishingly carbon negative.",
-              "translation": "【考研真题精读标准译文】A great example of this is Europe's largest supercomputer, LUMI in Finland, which is astonishingly carbon negative.",
+              "translation": "欧洲最大的超级计算机芬兰的 LUMI 就是一个很好的例子，它的碳排放量惊人。",
               "vocab": [
                 {
                   "word": "astonishingly",
@@ -1595,7 +1595,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Established in an old paper mill, it is powered by a nearby river and its remote heat warms the people who live in the surrounding town of Kajaani.",
-              "translation": "【考研真题精读标准译文】Established in an old paper mill, it is powered by a nearby river and its remote heat warms the people who live in the surrounding town of Kajaani.",
+              "translation": "它建于一家古老的造纸厂，由附近的一条河流提供动力，其偏远的热量为居住在周围卡亚尼镇的人们带来温暖。",
               "vocab": [
                 {
                   "word": "Established",
@@ -1629,7 +1629,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "If the world is to meet its net-zero ambitions, we must think hard about how we can deliver sustainable computing and deliver more LUMISs.",
-              "translation": "【考研真题精读标准译文】If the world is to meet its net-zero ambitions, we must think hard about how we can deliver sustainable computing and deliver more LUMISs.",
+              "translation": "如果世界要实现净零排放的雄心，我们必须认真思考如何提供可持续计算并提供更多的 LUMIS。",
               "vocab": [
                 {
                   "word": "net-zero",
@@ -1677,7 +1677,7 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1693,9 +1693,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "B",
               "text": "intention to reduce their research",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1704,9 +1704,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "suspicions about sustainable energy",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1743,14 +1743,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "have caused grave consequences",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1781,9 +1781,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "D",
               "text": "are justifiable in the long run",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1809,7 +1809,7 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1836,9 +1836,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "the rewards of scientific endeavours",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1847,9 +1847,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "D",
               "text": "the value of fostering human ingenuity",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1875,14 +1875,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "is a model of sustainability efforts",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1891,9 +1891,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "B",
               "text": "is a triumph against energy shortage",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1941,14 +1941,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Emission-free modelling demands extra funding.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1968,9 +1968,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "Energy-intensive research work is inevitable.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2012,7 +2012,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Ever since taking on Netflix Inc. at its own game, old Hollywood has struggled to turn a profit in streaming, with the likes of Disney+, Peacock and Paramount+ losing billions of dollars each year, sparking concerns on Wall Street that the services will never be as profitable as cable once was.",
-              "translation": "【考研真题精读标准译文】Ever since taking on Netflix Inc. at its own game, old Hollywood has struggled to turn a profit in streaming, with the likes of Disney+, Peacock and Paramount+ losing billions of dollars each year, sparking concerns on Wall Street that the services will never be as profitable as cable once was.",
+              "translation": "自从在自己的游戏中与Netflix公司较量后，老牌好莱坞就一直难以在流媒体领域实现盈利，迪士尼+、孔雀和派拉蒙+等公司每年损失数十亿美元，这引发了华尔街的担忧，即这些服务永远不会像有线电视那样有利可图。",
               "vocab": [
                 {
                   "word": "since",
@@ -2058,7 +2058,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But the age of streaming has been a boon for some unintended winners: pirates that use software to rip a film or television show in seconds from legitimate online video platforms and host the titles on their own illegitimate services, which rake in about $2 billion annually from ads and subscriptions.",
-              "translation": "【考研真题精读标准译文】But the age of streaming has been a boon for some unintended winners: pirates that use software to rip a film or television show in seconds from legitimate online video platforms and host the titles on their own illegitimate services, which rake in about $2 billion annually from ads and subscriptions.",
+              "translation": "但流媒体时代却为一些意想不到的赢家带来了福音：盗版者使用软件在几秒钟内从合法的在线视频平台上盗取电影或电视节目，并将这些内容托管在自己的非法服务上，这些服务每年从广告和订阅中赚取约 20 亿美元。",
               "vocab": [
                 {
                   "word": "streaming",
@@ -2146,7 +2146,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "With no video production costs, illegal streaming sites have achieved profit margins approaching 90%, according to the Motion Picture Association (MPA), a trade group representing Hollywood studios that's working to crack down on the thousands of illegal platforms that have cropped up in recent years.",
-              "translation": "【考研真题精读标准译文】With no video production costs, illegal streaming sites have achieved profit margins approaching 90%, according to the Motion Picture Association (MPA), a trade group representing Hollywood studios that's working to crack down on the thousands of illegal platforms that have cropped up in recent years.",
+              "translation": "电影协会 (MPA) 表示，在没有视频制作成本的情况下，非法流媒体网站的利润率接近 90%。电影协会是代表好莱坞电影公司的行业组织，致力于打击近年来出现的数千个非法平台。",
               "vocab": [
                 {
                   "word": "according to",
@@ -2222,7 +2222,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Initially the rise of legitimate online businesses such as Netflix actually helped curb digital piracy, which had largely been based on file uploads.",
-              "translation": "【考研真题精读标准译文】Initially the rise of legitimate online businesses such as Netflix actually helped curb digital piracy, which had largely been based on file uploads.",
+              "translation": "最初，Netflix 等合法在线企业的崛起实际上有助于遏制主要基于文件上传的数字盗版。",
               "vocab": [
                 {
                   "word": "Initially",
@@ -2275,7 +2275,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "But now piracy involving illegal streaming services as well as file-sharing costs the US economy about $30 billion in lost revenue a year and some 250,000 jobs, estimates the US Chamber of Commerce's Global Innovation Policy Center.",
-              "translation": "【考研真题精读标准译文】But now piracy involving illegal streaming services as well as file-sharing costs the US economy about $30 billion in lost revenue a year and some 250,000 jobs, estimates the US Chamber of Commerce's Global Innovation Policy Center.",
+              "translation": "但据美国商会全球创新政策中心估计，目前涉及非法流媒体服务和文件共享的盗版行为每年给美国经济造成约 300 亿美元的收入损失和约 25 万个工作岗位。",
               "vocab": [
                 {
                   "word": "piracy",
@@ -2345,7 +2345,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The global impact is about $71 billion annually.",
-              "translation": "【考研真题精读标准译文】The global impact is about $71 billion annually.",
+              "translation": "每年对全球的影响约为 710 亿美元。",
               "vocab": [
                 {
                   "word": "impact",
@@ -2373,7 +2373,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "\"The people who are stealing our movies and our television shows and operating piracy sites are not mom and pop operations,\" says Charlie Rivkin, chief executive officer of the MPA.",
-              "translation": "【考研真题精读标准译文】\"The people who are stealing our movies and our television shows and operating piracy sites are not mom and pop operations,\" says Charlie Rivkin, chief executive officer of the MPA.",
+              "translation": "MPA 首席执行官查理·里夫金 (Charlie Rivkin) 表示：“盗取我们的电影和电视节目以及运营盗版网站的人并不是夫妻店。”",
               "vocab": [
                 {
                   "word": "television",
@@ -2407,7 +2407,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "\"This is organized crime.\" Rivkin joined the MPA in 2017 after the organization failed five years earlier to build consensus between Hollywood and Silicon Valley to win passage of legislation in Congress aimed at stopping online piracy.",
-              "translation": "【考研真题精读标准译文】\"This is organized crime.\" Rivkin joined the MPA in 2017 after the organization failed five years earlier to build consensus between Hollywood and Silicon Valley to win passage of legislation in Congress aimed at stopping online piracy.",
+              "translation": "“这是有组织的犯罪。”里夫金于 2017 年加入 MPA，此前该组织五年前未能在好莱坞和硅谷之间达成共识，未能在国会通过旨在制止网络盗版的立法。",
               "vocab": [
                 {
                   "word": "organized",
@@ -2478,7 +2478,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "In 2017 the association formed the Alliance for Creativity and Entertainment (ACE), an enforcement task force of about 100 detectives circling the globe to help local authorities arrest streaming pirates.",
-              "translation": "【考研真题精读标准译文】In 2017 the association formed the Alliance for Creativity and Entertainment (ACE), an enforcement task force of about 100 detectives circling the globe to help local authorities arrest streaming pirates.",
+              "translation": "2017 年，该协会成立了创意与娱乐联盟 (ACE)，这是一个由约 100 名侦探组成的执法工作组，遍布全球，帮助地方当局逮捕流媒体盗版者。",
               "vocab": [
                 {
                   "word": "association",
@@ -2536,7 +2536,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "ACE says it's helped shrink the number of illegal streaming services in North America to 126, from more than 1,400 in 2018, aided in part by the MPA's support for a 2020 federal law that made large-scale streaming of copyrighted material a serious crime.",
-              "translation": "【考研真题精读标准译文】ACE says it's helped shrink the number of illegal streaming services in North America to 126, from more than 1,400 in 2018, aided in part by the MPA's support for a 2020 federal law that made large-scale streaming of copyrighted material a serious crime.",
+              "translation": "ACE 表示，它帮助将北美非法流媒体服务的数量从 2018 年的 1,400 多个减少到 126 个，部分原因是 MPA 支持 2020 年联邦法律，该法律将大规模流媒体版权材料定为严重犯罪。",
               "vocab": [
                 {
                   "word": "in part",
@@ -2612,7 +2612,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Consulting firm Parks Associates predicts that legitimate US streaming services' cumulative loss from piracy since 2022 will reach $113 billion in the next two years.",
-              "translation": "【考研真题精读标准译文】Consulting firm Parks Associates predicts that legitimate US streaming services' cumulative loss from piracy since 2022 will reach $113 billion in the next two years.",
+              "translation": "咨询公司 Parks Associates 预测，自 2022 年以来，美国合法流媒体服务因盗版造成的累计损失将在未来两年内达到 1130 亿美元。",
               "vocab": [
                 {
                   "word": "legitimate",
@@ -2658,7 +2658,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "\"While there is some optimism that emerging countermeasures and best practices may see piracy begin to plateau by 2027, there is no consensus among stakeholders as to when it may begin to decline,\" says analyst Steve Hawley.",
-              "translation": "【考研真题精读标准译文】\"While there is some optimism that emerging countermeasures and best practices may see piracy begin to plateau by 2027, there is no consensus among stakeholders as to when it may begin to decline,\" says analyst Steve Hawley.",
+              "translation": "分析师史蒂夫·霍利 (Steve Hawley) 表示：“虽然人们乐观地认为，新兴的对策和最佳实践可能会让盗版行为到 2027 年开始趋于稳定，但利益相关者之间对于盗版行为何时开始下降尚未达成共识。”",
               "vocab": [
                 {
                   "word": "optimism",
@@ -2718,7 +2718,7 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2734,9 +2734,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "B",
               "text": "have surpassed cable in revenue",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2756,9 +2756,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "D",
               "text": "are confronted with a real threat",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2784,14 +2784,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "played a part in the fight against illegal file-sharing",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2822,9 +2822,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "D",
               "text": "used to collaborate with file-uploading platforms",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2850,14 +2850,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "was denied cooperation by Silicon Valley",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2877,9 +2877,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "was urged to form an enforcement task force",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2916,14 +2916,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "cannot be checked in spite of new legislation",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2943,9 +2943,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "is unlikely to diminish in the near future",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3022,7 +3022,7 @@ window.ENGLISH_DATA['2025'] = {
               "text": "The economic harm from illegal streaming.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3053,7 +3053,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Visit any antiques store and you'll encounter artifacts from the past: photographs, letters, a brochure detailing the Sinclair dinosaur exhibit from the 1964-1965 World's Fair, the ephemera of history.",
-              "translation": "【考研真题精读标准译文】Visit any antiques store and you'll encounter artifacts from the past: photographs, letters, a brochure detailing the Sinclair dinosaur exhibit from the 1964-1965 World's Fair, the ephemera of history.",
+              "translation": "参观任何一家古董店，您都会遇到过去的文物：照片、信件、一本详细介绍 1964 年至 1965 年世界博览会辛克莱恐龙展览的小册子，这是历史的转瞬即逝。",
               "vocab": [
                 {
                   "word": "encounter",
@@ -3093,7 +3093,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Yet these objects aren't truly ephemeral, because they are still here, decades, even centuries later.",
-              "translation": "【考研真题精读标准译文】Yet these objects aren't truly ephemeral, because they are still here, decades, even centuries later.",
+              "translation": "然而，这些物体并不是真正短暂的，因为几十年甚至几个世纪后它们仍然存在。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -3121,7 +3121,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Why?",
-              "translation": "【考研真题精读标准译文】Why?",
+              "translation": "为什么？",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -3130,7 +3130,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Because they're tangible.",
-              "translation": "【考研真题精读标准译文】Because they're tangible.",
+              "translation": "因为它们是有形的。",
               "vocab": [
                 {
                   "word": "tangible",
@@ -3146,7 +3146,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Have you pondered the life cycle of intangible formats, digital information, given that those who produce these artifacts seldom make provision for their long-term preservation?",
-              "translation": "【考研真题精读标准译文】Have you pondered the life cycle of intangible formats, digital information, given that those who produce these artifacts seldom make provision for their long-term preservation?",
+              "translation": "鉴于生产这些文物的人很少为其长期保存做好准备，您是否思考过无形格式、数字信息的生命周期？",
               "vocab": [
                 {
                   "word": "intangible",
@@ -3204,7 +3204,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "For millennia, we've known what we've known due to artifacts that have survived, often despite their original creators' neglect.",
-              "translation": "【考研真题精读标准译文】For millennia, we've known what we've known due to artifacts that have survived, often despite their original creators' neglect.",
+              "translation": "几千年来，我们通过幸存下来的文物来了解我们所知道的东西，尽管它们的原始创造者常常被忽视。",
               "vocab": [
                 {
                   "word": "For",
@@ -3250,7 +3250,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "The thing itself is the medium that delivers the information.",
-              "translation": "【考研真题精读标准译文】The thing itself is the medium that delivers the information.",
+              "translation": "事物本身是传递信息的媒介。",
               "vocab": [
                 {
                   "word": "medium",
@@ -3272,7 +3272,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "At the time of creation, no attempts were made at intentional preservation, yet analog materials have a chance of surviving and serving as the historical record that biographers, historians, and novelists rely on.",
-              "translation": "【考研真题精读标准译文】At the time of creation, no attempts were made at intentional preservation, yet analog materials have a chance of surviving and serving as the historical record that biographers, historians, and novelists rely on.",
+              "translation": "在创作时，并没有进行刻意保存的尝试，但模拟材料有机会幸存下来，并成为传记作家、历史学家和小说家所依赖的历史记录。",
               "vocab": [
                 {
                   "word": "rely on",
@@ -3325,7 +3325,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Libraries and archives have traditionally shouldered the responsibility of organization, preservation, and access to information.",
-              "translation": "【考研真题精读标准译文】Libraries and archives have traditionally shouldered the responsibility of organization, preservation, and access to information.",
+              "translation": "图书馆和档案馆历来承担着组织、保存和获取信息的责任。",
               "vocab": [
                 {
                   "word": "responsibility",
@@ -3359,7 +3359,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "One of S.R.",
-              "translation": "【考研真题精读标准译文】One of S.R.",
+              "translation": "S.R.之一",
               "vocab": [
                 {
                   "word": "One",
@@ -3375,7 +3375,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Ranganathan's foundational Laws of Library Science is \"Save the time of the reader.\" Thus, librarians digitize the tangible so that researchers the world over can quickly search and access their holdings.",
-              "translation": "【考研真题精读标准译文】Ranganathan's foundational Laws of Library Science is \"Save the time of the reader.\" Thus, librarians digitize the tangible so that researchers the world over can quickly search and access their holdings.",
+              "translation": "兰加纳坦的图书馆学基本定律是“节省读者的时间”。因此，图书馆员将有形物品数字化，以便世界各地的研究人员可以快速搜索和访问他们的馆藏。",
               "vocab": [
                 {
                   "word": "Library",
@@ -3427,7 +3427,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The result is an embarrassment of historical riches, which brings its own needle-and-haystack problems.",
-              "translation": "【考研真题精读标准译文】The result is an embarrassment of historical riches, which brings its own needle-and-haystack problems.",
+              "translation": "结果是历史财富的尴尬，这也带来了大海捞针的问题。",
               "vocab": [
                 {
                   "word": "embarrassment",
@@ -3449,7 +3449,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Librarians' selfless devotion can act against us when users point to universality of access by holding up a cellphone and saying, \"it's all in here\" as evidence that libraries are less vital for researchers today.",
-              "translation": "【考研真题精读标准译文】Librarians' selfless devotion can act against us when users point to universality of access by holding up a cellphone and saying, \"it's all in here\" as evidence that libraries are less vital for researchers today.",
+              "translation": "当用户举起手机来指出访问的普遍性并说“一切都在这里”时，图书馆员的无私奉献可能会对我们产生不利影响，这证明图书馆对于当今的研究人员来说不再那么重要。",
               "vocab": [
                 {
                   "word": "selfless",
@@ -3507,7 +3507,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Yet how was that universality of access made possible and, perhaps more importantly, how is it maintained?",
-              "translation": "【考研真题精读标准译文】Yet how was that universality of access made possible and, perhaps more importantly, how is it maintained?",
+              "translation": "然而，这种获取的普遍性是如何成为可能的，也许更重要的是，它是如何维持的呢？",
               "vocab": [
                 {
                   "word": "Yet",
@@ -3535,7 +3535,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Who curates what is preserved?",
-              "translation": "【考研真题精读标准译文】Who curates what is preserved?",
+              "translation": "谁负责管理所保存的内容？",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -3544,7 +3544,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "When it comes to born-digital information, the terrifying answer can be: if not librarians and archivists, then no one.",
-              "translation": "【考研真题精读标准译文】When it comes to born-digital information, the terrifying answer can be: if not librarians and archivists, then no one.",
+              "translation": "当谈到天生的数字信息时，可怕的答案可能是：如果没有图书馆员和档案管理员，那就没有人了。",
               "vocab": [
                 {
                   "word": "information",
@@ -3579,7 +3579,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Digital information requires a great deal more care than analog.",
-              "translation": "【考研真题精读标准译文】Digital information requires a great deal more care than analog.",
+              "translation": "数字信息比模拟信息需要更多的关注。",
               "vocab": [
                 {
                   "word": "Digital",
@@ -3607,7 +3607,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Even when a digital object is preserved, it may only be the carrier that's saved, not the information itself.",
-              "translation": "【考研真题精读标准译文】Even when a digital object is preserved, it may only be the carrier that's saved, not the information itself.",
+              "translation": "即使数字对象被保存，保存的也可能只是载体，而不是信息本身。",
               "vocab": [
                 {
                   "word": "digital",
@@ -3641,7 +3641,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "As technology advances and a format becomes obsolete, the object is useless.",
-              "translation": "【考研真题精读标准译文】As technology advances and a format becomes obsolete, the object is useless.",
+              "translation": "随着技术的进步和格式的过时，对象变得毫无用处。",
               "vocab": [
                 {
                   "word": "format",
@@ -3675,7 +3675,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Have you ever stared helplessly at a ZIP disk, thinking: how do I get the files off this?",
-              "translation": "【考研真题精读标准译文】Have you ever stared helplessly at a ZIP disk, thinking: how do I get the files off this?",
+              "translation": "您是否曾经无助地盯着 ZIP 磁盘，思考：如何从中取出文件？",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -3684,7 +3684,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Without constant migration of digital assets, a nightmare about the foreseeable future is what keeps historians up at night: a historical record that abruptly stops when digital replaces analog.",
-              "translation": "【考研真题精读标准译文】Without constant migration of digital assets, a nightmare about the foreseeable future is what keeps historians up at night: a historical record that abruptly stops when digital replaces analog.",
+              "translation": "如果没有数字资产的不断迁移，可预见的未来的噩梦就会让历史学家彻夜难眠：当数字取代模拟时，历史记录会突然停止。",
               "vocab": [
                 {
                   "word": "constant",
@@ -3742,7 +3742,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "As a librarian whose day job revolves around special collections and digital assets, I share the night terrors of historians, and I'd be lying if I said a comprehensive preservation solution currently exists.",
-              "translation": "【考研真题精读标准译文】As a librarian whose day job revolves around special collections and digital assets, I share the night terrors of historians, and I'd be lying if I said a comprehensive preservation solution currently exists.",
+              "translation": "作为一名日常工作围绕特殊馆藏和数字资产的图书馆员，我和历史学家一样感到夜惊，如果我说目前存在全面的保存解决方案，那我就是在撒谎。",
               "vocab": [
                 {
                   "word": "librarian",
@@ -3806,7 +3806,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Yet researchers can take some comfort in the fact that there are a multitude of librarians devoted to discovering, organizing, and preserving digital information for researchers current and future.",
-              "translation": "【考研真题精读标准译文】Yet researchers can take some comfort in the fact that there are a multitude of librarians devoted to discovering, organizing, and preserving digital information for researchers current and future.",
+              "translation": "然而，让研究人员感到欣慰的是，有众多图书馆员致力于为当前和未来的研究人员发现、组织和保存数字信息。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -3858,7 +3858,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "Librarians are uniquely positioned to understand how end users seek and use information.",
-              "translation": "【考研真题精读标准译文】Librarians are uniquely positioned to understand how end users seek and use information.",
+              "translation": "图书馆员具有独特的优势，能够了解最终用户如何寻找和使用信息。",
               "vocab": [
                 {
                   "word": "understand",
@@ -3892,7 +3892,7 @@ window.ENGLISH_DATA['2025'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "Thus we play an integral role in identifying, preserving, and providing accessibility to digital artifacts so that, while future researchers may find the digital realm a challenging place to ply their trade, they won't find it an impossible one.",
-              "translation": "【考研真题精读标准译文】Thus we play an integral role in identifying, preserving, and providing accessibility to digital artifacts so that, while future researchers may find the digital realm a challenging place to ply their trade, they won't find it an impossible one.",
+              "translation": "因此，我们在识别、保存和提供数字文物的可访问性方面发挥着不可或缺的作用，这样，虽然未来的研究人员可能会发现数字领域是一个具有挑战性的领域，但他们不会发现这是一个不可能的领域。",
               "vocab": [
                 {
                   "word": "Thus",
@@ -4017,7 +4017,7 @@ window.ENGLISH_DATA['2025'] = {
               "text": "bring up the issue of preservation",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4054,14 +4054,14 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "are less subject to their creators' neglect",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4070,9 +4070,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "B",
               "text": "convey information in a more direct way",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4138,7 +4138,7 @@ window.ENGLISH_DATA['2025'] = {
               "text": "undervaluation of libraries",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4186,7 +4186,7 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -4213,9 +4213,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "the possibility of losing information in obsolete formats",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4224,9 +4224,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "D",
               "text": "the inconvenience of storing information on analog devices",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4252,7 +4252,7 @@ window.ENGLISH_DATA['2025'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4279,9 +4279,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "C",
               "text": "Accessing databases is essential to researchers.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4290,9 +4290,9 @@ window.ENGLISH_DATA['2025'] = {
             {
               "key": "D",
               "text": "Keeping digital historical records is a challenge.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

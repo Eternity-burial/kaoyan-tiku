@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "First two hours, now three hours—this is how far in advance authorities are recommending people show up to catch a domestic flight, at least at some major U.S. airports with increasingly massive security lines.",
-              "translation": "【考研真题精读标准译文】First two hours, now three hours—this is how far in advance authorities are recommending people show up to catch a domestic flight, at least at some major U.S. airports with increasingly massive security lines.",
+              "translation": "最初是两个小时，现在是三个小时——这是当局建议人们提前多长时间到达机场搭乘国内航班的时间，至少在美国一些安检线越来越密集的主要机场是这样。",
               "vocab": [
                 {
                   "word": "at least",
@@ -72,7 +72,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Americans are willing to tolerate time-consuming security procedures in return for increased safety.",
-              "translation": "【考研真题精读标准译文】Americans are willing to tolerate time-consuming security procedures in return for increased safety.",
+              "translation": "美国人愿意容忍耗时的安全程序，以换取更高的安全性。",
               "vocab": [
                 {
                   "word": "willing",
@@ -112,7 +112,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The crash of EgyptAir Flight 804, which terrorists may have downed over the Mediterranean Sea, provides another tragic reminder of why.",
-              "translation": "【考研真题精读标准译文】The crash of EgyptAir Flight 804, which terrorists may have downed over the Mediterranean Sea, provides another tragic reminder of why.",
+              "translation": "恐怖分子可能在地中海上空击落的埃及航空 804 号航班的坠机事件再次悲剧性地提醒人们原因。",
               "vocab": [
                 {
                   "word": "crash",
@@ -140,7 +140,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "But demanding too much of air travelers or providing too little security in return undermines public support for the process.",
-              "translation": "【考研真题精读标准译文】But demanding too much of air travelers or providing too little security in return undermines public support for the process.",
+              "translation": "但对航空旅客要求过高或提供的安全保障太少会削弱公众对这一过程的支持。",
               "vocab": [
                 {
                   "word": "air",
@@ -192,7 +192,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "And it should: Wasted time is a drag on Americans' economic and private lives, not to mention infuriating.",
-              "translation": "【考研真题精读标准译文】And it should: Wasted time is a drag on Americans' economic and private lives, not to mention infuriating.",
+              "translation": "它应该是：浪费时间会拖累美国人的经济和私人生活，更不用说令人愤怒了。",
               "vocab": [
                 {
                   "word": "drag",
@@ -238,7 +238,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Last year, the Transportation Security Administration (TSA) found in a secret check that undercover investigators were able to sneak weapons—both fake and real—past airport security nearly every time they tried.",
-              "translation": "【考研真题精读标准译文】Last year, the Transportation Security Administration (TSA) found in a secret check that undercover investigators were able to sneak weapons—both fake and real—past airport security nearly every time they tried.",
+              "translation": "去年，美国运输安全管理局 (TSA) 在一次秘密检查中发现，卧底调查人员几乎每次尝试都能偷偷携带武器（无论是假的还是真品）通过机场安检。",
               "vocab": [
                 {
                   "word": "Security",
@@ -290,7 +290,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Enhanced security measures since then, combined with a rise in airline travel due to the improving economy and low oil prices, have resulted in long waits at major airports such as Chicago's O'Hare International. It is not yet clear how much more effective airline security has become—but the lines are obvious.",
-              "translation": "【考研真题精读标准译文】Enhanced security measures since then, combined with a rise in airline travel due to the improving economy and low oil prices, have resulted in long waits at major airports such as Chicago's O'Hare International. It is not yet clear how much more effective airline security has become—but the lines are obvious.",
+              "translation": "此后加强了安全措施，加上经济好转和低油价导致航空旅行增加，导致芝加哥奥黑尔国际机场等主要机场出现长时间等待。目前尚不清楚航空公司的安全措施变得更加有效，但界限是显而易见的。",
               "vocab": [
                 {
                   "word": "security",
@@ -367,7 +367,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Part of the issue is that the government did not anticipate the steep increase in airline travel, so the TSA is now rushing to get new screeners on the line.",
-              "translation": "【考研真题精读标准译文】Part of the issue is that the government did not anticipate the steep increase in airline travel, so the TSA is now rushing to get new screeners on the line.",
+              "translation": "部分问题在于，政府没有预见到航空旅行的急剧增加，因此运输安全管理局现在正急于在线路上安装新的安检员。",
               "vocab": [
                 {
                   "word": "issue",
@@ -419,7 +419,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Part of the issue is that airports have only so much room for screening lanes.",
-              "translation": "【考研真题精读标准译文】Part of the issue is that airports have only so much room for screening lanes.",
+              "translation": "部分问题在于，机场用于安检通道的空间有限。",
               "vocab": [
                 {
                   "word": "issue",
@@ -447,7 +447,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Another factor may be that more people are trying to overpack their carry-on bags to avoid checked-baggage fees, though the airlines strongly dispute this.",
-              "translation": "【考研真题精读标准译文】Another factor may be that more people are trying to overpack their carry-on bags to avoid checked-baggage fees, though the airlines strongly dispute this.",
+              "translation": "另一个因素可能是越来越多的人试图过度包装随身行李以避免托运行李费，尽管航空公司强烈反对这一点。",
               "vocab": [
                 {
                   "word": "overpack",
@@ -475,7 +475,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "There is one step the TSA could take that would not require remodeling airports or rushing to hire: Enroll more people in the PreCheck program.",
-              "translation": "【考研真题精读标准译文】There is one step the TSA could take that would not require remodeling airports or rushing to hire: Enroll more people in the PreCheck program.",
+              "translation": "TSA 可以采取一项不需要改造机场或急于招聘的步骤：让更多人参加 PreCheck 计划。",
               "vocab": [
                 {
                   "word": "one",
@@ -521,7 +521,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "PreCheck is supposed to be a win-win for travelers and the TSA.",
-              "translation": "【考研真题精读标准译文】PreCheck is supposed to be a win-win for travelers and the TSA.",
+              "translation": "PreCheck 对于旅客和 TSA 来说应该是双赢的。",
               "vocab": [
                 {
                   "word": "supposed",
@@ -549,7 +549,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Passengers who pass a background check are eligible to use expedited screening lanes.",
-              "translation": "【考研真题精读标准译文】Passengers who pass a background check are eligible to use expedited screening lanes.",
+              "translation": "通过背景调查的乘客有资格使用快速安检通道。",
               "vocab": [
                 {
                   "word": "background",
@@ -589,7 +589,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "This allows the TSA to focus on travelers who are higher risk, saving time for everyone involved.",
-              "translation": "【考研真题精读标准译文】This allows the TSA to focus on travelers who are higher risk, saving time for everyone involved.",
+              "translation": "这使得 TSA 能够专注于风险较高的旅客，为每个相关人员节省时间。",
               "vocab": [
                 {
                   "word": "focus",
@@ -630,7 +630,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The TSA wants to enroll 25 million people in PreCheck.",
-              "translation": "【考研真题精读标准译文】The TSA wants to enroll 25 million people in PreCheck.",
+              "translation": "TSA 希望让 2500 万人参加 PreCheck。",
               "vocab": [
                 {
                   "word": "enroll",
@@ -646,7 +646,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "It has not gotten anywhere close to that, and one big reason is sticker shock: Passengers must pay $85 every five years to process their background checks.",
-              "translation": "【考研真题精读标准译文】It has not gotten anywhere close to that, and one big reason is sticker shock: Passengers must pay $85 every five years to process their background checks.",
+              "translation": "但实际情况还远未达到这一目标，其中一个重要原因是价格令人震惊：乘客必须每五年支付 85 美元来处理他们的背景调查。",
               "vocab": [
                 {
                   "word": "one",
@@ -692,7 +692,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Since the beginning, this price tag has been PreCheck's fatal flaw.",
-              "translation": "【考研真题精读标准译文】Since the beginning, this price tag has been PreCheck's fatal flaw.",
+              "translation": "从一开始，这个价格标签就是PreCheck的致命缺陷。",
               "vocab": [
                 {
                   "word": "Since",
@@ -720,7 +720,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Upcoming reforms might bring the price to a more reasonable level.",
-              "translation": "【考研真题精读标准译文】Upcoming reforms might bring the price to a more reasonable level.",
+              "translation": "即将到来的改革可能会使价格达到更合理的水平。",
               "vocab": [
                 {
                   "word": "reasonable",
@@ -736,7 +736,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "But Congress should look into doing so directly, by helping to finance PreCheck enrollment or to cut costs in other ways.",
-              "translation": "【考研真题精读标准译文】But Congress should look into doing so directly, by helping to finance PreCheck enrollment or to cut costs in other ways.",
+              "translation": "但国会应该考虑直接这样做，通过帮助资助 PreCheck 注册或以其他方式削减成本。",
               "vocab": [
                 {
                   "word": "Congress",
@@ -770,7 +770,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The TSA cannot continue diverting resources into underused PreCheck lanes while most of the traveling public suffers in unnecessary lines.",
-              "translation": "【考研真题精读标准译文】The TSA cannot continue diverting resources into underused PreCheck lanes while most of the traveling public suffers in unnecessary lines.",
+              "translation": "TSA 不能继续将资源转移到未充分利用的预检车道上，而大多数出行公众却在不必要的线路中苦苦挣扎。",
               "vocab": [
                 {
                   "word": "continue",
@@ -804,7 +804,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "It is long past time to make the program work.",
-              "translation": "【考研真题精读标准译文】It is long past time to make the program work.",
+              "translation": "早就该让这个计划发挥作用了。",
               "vocab": [
                 {
                   "word": "program",
@@ -840,14 +840,14 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "explain American's tolerance of current security checks.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -878,9 +878,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "emphasize the importance of privacy protection.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -906,7 +906,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -922,9 +922,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "The declining efficiency of the TSA.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -933,9 +933,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "C",
               "text": "An increase in the number of travelers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -972,7 +972,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -999,9 +999,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "C",
               "text": "wider.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1010,9 +1010,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "faster.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1038,14 +1038,14 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "a dramatic reduction of its scale.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1076,9 +1076,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "an unreasonable price for enrollment.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1104,7 +1104,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -1120,9 +1120,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "PreCheck—a Belated Solution",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1131,9 +1131,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "C",
               "text": "Getting Stuck in Security Lines",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1175,7 +1175,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "\"The ancient Hawaiians were astronomers,\" wrote Queen Liliuokalani, Hawaii's last reigning monarch, in 1897.",
-              "translation": "【考研真题精读标准译文】\"The ancient Hawaiians were astronomers,\" wrote Queen Liliuokalani, Hawaii's last reigning monarch, in 1897.",
+              "translation": "“古代夏威夷人都是天文学家，”夏威夷最后一位在位君主莉留卡拉尼女王 (Queen Liliuokalani) 于 1897 年写道。",
               "vocab": [
                 {
                   "word": "ancient",
@@ -1203,7 +1203,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Star watchers were among the most esteemed members of Hawaiian society.",
-              "translation": "【考研真题精读标准译文】Star watchers were among the most esteemed members of Hawaiian society.",
+              "translation": "观星者是夏威夷社会最受尊敬的成员之一。",
               "vocab": [
                 {
                   "word": "esteemed",
@@ -1225,7 +1225,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Sadly, all is not well with astronomy in Hawaii today.",
-              "translation": "【考研真题精读标准译文】Sadly, all is not well with astronomy in Hawaii today.",
+              "translation": "可悲的是，今天夏威夷的天文学一切都不太顺利。",
               "vocab": [
                 {
                   "word": "astronomy",
@@ -1241,7 +1241,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Protests have erupted over construction of the Thirty Meter Telescope (TMT), a giant observatory that promises to revolutionize humanity's view of the cosmos.",
-              "translation": "【考研真题精读标准译文】Protests have erupted over construction of the Thirty Meter Telescope (TMT), a giant observatory that promises to revolutionize humanity's view of the cosmos.",
+              "translation": "三十米望远镜（TMT）的建造引发了抗议活动，这是一个有望彻底改变人类宇宙观的巨型天文台。",
               "vocab": [
                 {
                   "word": "construction",
@@ -1299,7 +1299,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "At issue is the TMT's planned location on Mauna Kea, a dormant volcano worshiped by some Hawaiians as the piko, that connects the Hawaiian Islands to the heavens.",
-              "translation": "【考研真题精读标准译文】At issue is the TMT's planned location on Mauna Kea, a dormant volcano worshiped by some Hawaiians as the piko, that connects the Hawaiian Islands to the heavens.",
+              "translation": "争议焦点在于 TMT 计划选址莫纳克亚火山，这座休眠火山被一些夏威夷人崇拜为“piko”，连接着夏威夷群岛和天堂。",
               "vocab": [
                 {
                   "word": "issue",
@@ -1327,7 +1327,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "But Mauna Kea is also home to some of the world's most powerful telescopes.",
-              "translation": "【考研真题精读标准译文】But Mauna Kea is also home to some of the world's most powerful telescopes.",
+              "translation": "但莫纳克亚山还拥有一些世界上最强大的望远镜。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1336,7 +1336,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Rested in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity.",
-              "translation": "【考研真题精读标准译文】Rested in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity.",
+              "translation": "莫纳克亚山坐落在太平洋上，其山峰高出地球大部分稠密大气层，这里的条件允许望远镜获得无与伦比的清晰度图像。",
               "vocab": [
                 {
                   "word": "peak",
@@ -1401,7 +1401,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Opposition to telescopes on Mauna Kea is nothing new.",
-              "translation": "【考研真题精读标准译文】Opposition to telescopes on Mauna Kea is nothing new.",
+              "translation": "反对在莫纳克亚山安装望远镜并不是什么新鲜事。",
               "vocab": [
                 {
                   "word": "Opposition",
@@ -1423,7 +1423,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "A small but vocal group of Hawaiians and environmentalists have long viewed their presence as disrespect for sacred land and a painful reminder of the occupation of what was once a sovereign nation.",
-              "translation": "【考研真题精读标准译文】A small but vocal group of Hawaiians and environmentalists have long viewed their presence as disrespect for sacred land and a painful reminder of the occupation of what was once a sovereign nation.",
+              "translation": "一小群夏威夷人和环保主义者长期以来一直认为他们的存在是对神圣土地的不尊重，也是对曾经的主权国家被占领的痛苦提醒。",
               "vocab": [
                 {
                   "word": "vocal",
@@ -1475,7 +1475,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Some blame for the current controversy belongs to astronomers.",
-              "translation": "【考研真题精读标准译文】Some blame for the current controversy belongs to astronomers.",
+              "translation": "当前争议的部分责任应归咎于天文学家。",
               "vocab": [
                 {
                   "word": "blame",
@@ -1503,7 +1503,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "In their eagerness to build bigger telescopes, they forgot that science is not the only way of understanding the world.",
-              "translation": "【考研真题精读标准译文】In their eagerness to build bigger telescopes, they forgot that science is not the only way of understanding the world.",
+              "translation": "在渴望建造更大的望远镜的过程中，他们忘记了科学并不是理解世界的唯一方式。",
               "vocab": [
                 {
                   "word": "eagerness",
@@ -1519,7 +1519,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "They did not always prioritize the protection of Mauna Kea's fragile ecosystems or its holiness to the island's inhabitants.",
-              "translation": "【考研真题精读标准译文】They did not always prioritize the protection of Mauna Kea's fragile ecosystems or its holiness to the island's inhabitants.",
+              "translation": "他们并不总是优先考虑保护莫纳克亚脆弱的生态系统或其对岛上居民的神圣性。",
               "vocab": [
                 {
                   "word": "prioritize",
@@ -1547,7 +1547,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Hawaiian culture is not a relic of the past; it is a living culture undergoing a renaissance today.",
-              "translation": "【考研真题精读标准译文】Hawaiian culture is not a relic of the past; it is a living culture undergoing a renaissance today.",
+              "translation": "夏威夷文化并不是过去的遗物，而是过去的产物。这是一种活生生的文化，如今正在复兴。",
               "vocab": [
                 {
                   "word": "relic",
@@ -1569,7 +1569,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Yet science has a cultural history, too, with roots going back to the dawn of civilization.",
-              "translation": "【考研真题精读标准译文】Yet science has a cultural history, too, with roots going back to the dawn of civilization.",
+              "translation": "然而，科学也有其文化历史，其根源可以追溯到文明之初。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -1604,7 +1604,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The same curiosity to find what lies beyond the horizon that first brought early Polynesians to Hawaii's shores inspires astronomers today to explore the heavens.",
-              "translation": "【考研真题精读标准译文】The same curiosity to find what lies beyond the horizon that first brought early Polynesians to Hawaii's shores inspires astronomers today to explore the heavens.",
+              "translation": "早期波利尼西亚人最初来到夏威夷海岸时，出于对地平线之外的事物的好奇心，今天的天文学家也开始探索天空。",
               "vocab": [
                 {
                   "word": "curiosity",
@@ -1638,7 +1638,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Calls to disassemble all telescopes on Mauna Kea or to ban future development there ignore the reality that astronomy and Hawaiian culture both seek to answer big questions about who we are, where we come from and where we are going.",
-              "translation": "【考研真题精读标准译文】Calls to disassemble all telescopes on Mauna Kea or to ban future development there ignore the reality that astronomy and Hawaiian culture both seek to answer big questions about who we are, where we come from and where we are going.",
+              "translation": "拆除莫纳克亚山上所有望远镜或禁止那里未来开发的呼吁忽视了这样一个现实：天文学和夏威夷文化都试图回答关于我们是谁、我们从哪里来以及我们要去哪里的重大问题。",
               "vocab": [
                 {
                   "word": "disassemble",
@@ -1690,7 +1690,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Perhaps that is why we explore the starry skies, as if answering a primal calling to know ourselves and our true ancestral homes.",
-              "translation": "【考研真题精读标准译文】Perhaps that is why we explore the starry skies, as if answering a primal calling to know ourselves and our true ancestral homes.",
+              "translation": "也许这就是我们探索星空的原因，仿佛回应了了解我们自己和我们真正的祖先家园的原始召唤。",
               "vocab": [
                 {
                   "word": "explore",
@@ -1724,7 +1724,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The astronomy community is making compromises to change its use of Mauna Kea.",
-              "translation": "【考研真题精读标准译文】The astronomy community is making compromises to change its use of Mauna Kea.",
+              "translation": "天文学界正在做出妥协，以改变对莫纳克亚山的使用。",
               "vocab": [
                 {
                   "word": "astronomy",
@@ -1758,7 +1758,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The TMT site was chosen to minimize the telescope's visibility around the island and to avoid archaeological and environmental impact.",
-              "translation": "【考研真题精读标准译文】The TMT site was chosen to minimize the telescope's visibility around the island and to avoid archaeological and environmental impact.",
+              "translation": "选择 TMT 地点是为了最大限度地减少望远镜在岛屿周围的能见度，并避免对考古和环境造成影响。",
               "vocab": [
                 {
                   "word": "minimize",
@@ -1804,7 +1804,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "To limit the number of telescopes on Mauna Kea, old ones will be removed at the end of their lifetimes and their sites returned to a natural state.",
-              "translation": "【考研真题精读标准译文】To limit the number of telescopes on Mauna Kea, old ones will be removed at the end of their lifetimes and their sites returned to a natural state.",
+              "translation": "为了限制莫纳克亚山上的望远镜数量，旧望远镜将在其使用寿命结束时被拆除，并将其位置恢复到自然状态。",
               "vocab": [
                 {
                   "word": "ones",
@@ -1838,7 +1838,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "There is no reason why everyone cannot be welcomed on Mauna Kea to embrace their cultural heritage and to study the stars.",
-              "translation": "【考研真题精读标准译文】There is no reason why everyone cannot be welcomed on Mauna Kea to embrace their cultural heritage and to study the stars.",
+              "translation": "没有理由不欢迎每个人来到莫纳克亚山拥抱他们的文化遗产并研究星星。",
               "vocab": [
                 {
                   "word": "reason",
@@ -1880,7 +1880,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1896,9 +1896,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "the importance of astronomy in ancient Hawaiian society.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1907,9 +1907,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "C",
               "text": "the regrettable decline of astronomy in ancient times.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1953,7 +1953,7 @@ window.ENGLISH_DATA['2017'] = {
               "text": "its geographical features.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2012,7 +2012,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -2028,9 +2028,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "it reminds them of a humiliating history.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2050,9 +2050,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "they fear losing control of Mauna Kea.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2078,14 +2078,14 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "is fulfilling the dreams of ancient Hawaiians.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2094,9 +2094,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "helps spread Hawaiian culture across the world.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2144,14 +2144,14 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "severe criticism.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2182,9 +2182,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "full approval.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2215,7 +2215,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Robert F.",
-              "translation": "【考研真题精读标准译文】Robert F.",
+              "translation": "罗伯特·F.",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -2224,7 +2224,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Kennedy once said that a country's GDP measures \"everything except that which makes life worthwhile.\" With Britain voting to leave the European Union, and GDP already predicted to slow as a result, it is now a timely moment to assess what he was referring to.",
-              "translation": "【考研真题精读标准译文】Kennedy once said that a country's GDP measures \"everything except that which makes life worthwhile.\" With Britain voting to leave the European Union, and GDP already predicted to slow as a result, it is now a timely moment to assess what he was referring to.",
+              "translation": "肯尼迪曾经说过，一个国家的国内生产总值衡量的是“除了那些让生活有价值的东西之外的一切”。随着英国公投脱欧，国内生产总值预计将因此放缓，现在是评估他所指内容的时候了。",
               "vocab": [
                 {
                   "word": "as a result",
@@ -2270,7 +2270,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The question of GDP and its usefulness has annoyed policymakers for over half a century.",
-              "translation": "【考研真题精读标准译文】The question of GDP and its usefulness has annoyed policymakers for over half a century.",
+              "translation": "半个多世纪以来，GDP 及其有用性问题一直困扰着政策制定者。",
               "vocab": [
                 {
                   "word": "question",
@@ -2298,7 +2298,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Many argue that it is a flawed concept.",
-              "translation": "【考研真题精读标准译文】Many argue that it is a flawed concept.",
+              "translation": "许多人认为这是一个有缺陷的概念。",
               "vocab": [
                 {
                   "word": "flawed",
@@ -2320,7 +2320,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "It measures things that do not matter and misses things that do.",
-              "translation": "【考研真题精读标准译文】It measures things that do not matter and misses things that do.",
+              "translation": "它衡量不重要的事情并错过重要的事情。",
               "vocab": [
                 {
                   "word": "matter",
@@ -2336,7 +2336,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "By most recent measures, the UK's GDP has been the envy of the Western world, with record low unemployment and high growth figures.",
-              "translation": "【考研真题精读标准译文】By most recent measures, the UK's GDP has been the envy of the Western world, with record low unemployment and high growth figures.",
+              "translation": "根据最近的衡量标准，英国的国内生产总值一直令西方世界羡慕不已，失业率创历史新低，增长数据却很高。",
               "vocab": [
                 {
                   "word": "record",
@@ -2365,7 +2365,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "If everything was going so well, then why did over 17 million people vote for Brexit, despite the warnings about what it could do to their country's economic prospects?",
-              "translation": "【考研真题精读标准译文】If everything was going so well, then why did over 17 million people vote for Brexit, despite the warnings about what it could do to their country's economic prospects?",
+              "translation": "如果一切进展顺利，那么为什么超过 1700 万人投票支持英国脱欧，尽管有人警告英国脱欧可能对其国家的经济前景产生影响？",
               "vocab": [
                 {
                   "word": "for",
@@ -2405,7 +2405,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "A recent annual study of countries and their ability to convert growth into well-being sheds some light on that question.",
-              "translation": "【考研真题精读标准译文】A recent annual study of countries and their ability to convert growth into well-being sheds some light on that question.",
+              "translation": "最近一项针对各国及其将增长转化为福祉的能力的年度研究为这个问题提供了一些线索。",
               "vocab": [
                 {
                   "word": "annual",
@@ -2445,7 +2445,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Across the 163 countries measured, the UK is one of the poorest performers in ensuring that economic growth is translated into meaningful improvements for its citizens.",
-              "translation": "【考研真题精读标准译文】Across the 163 countries measured, the UK is one of the poorest performers in ensuring that economic growth is translated into meaningful improvements for its citizens.",
+              "translation": "在所调查的 163 个国家中，英国是在确保经济增长转化为对其公民有意义的改善方面表现最差的国家之一。",
               "vocab": [
                 {
                   "word": "economic growth",
@@ -2485,7 +2485,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Rather than just focusing on GDP, over 40 different sets of criteria from health, education and civil society engagement have been measured to get a more rounded assessment of how countries are performing.",
-              "translation": "【考研真题精读标准译文】Rather than just focusing on GDP, over 40 different sets of criteria from health, education and civil society engagement have been measured to get a more rounded assessment of how countries are performing.",
+              "translation": "我们不仅仅关注 GDP，还衡量了 40 多套不同的健康、教育和民间社会参与标准，以便更全面地评估各国的表现。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -2543,7 +2543,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "While all of these countries face their own challenges, there are a number of consistent themes.",
-              "translation": "【考研真题精读标准译文】While all of these countries face their own challenges, there are a number of consistent themes.",
+              "translation": "尽管所有这些国家都面临着各自的挑战，但也有一些一致的主题。",
               "vocab": [
                 {
                   "word": "consistent",
@@ -2559,7 +2559,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Yes, there has been a budding economic recovery since the 2008 global crash, but in key indicators in areas such as health and education, major economies have continued to decline.",
-              "translation": "【考研真题精读标准译文】Yes, there has been a budding economic recovery since the 2008 global crash, but in key indicators in areas such as health and education, major economies have continued to decline.",
+              "translation": "是的，自 2008 年全球金融危机以来，经济复苏已初露端倪，但在健康和教育等领域的关键指标中，主要经济体仍在持续下滑。",
               "vocab": [
                 {
                   "word": "budding",
@@ -2618,7 +2618,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Yet this isn't the case with all countries.",
-              "translation": "【考研真题精读标准译文】Yet this isn't the case with all countries.",
+              "translation": "但并非所有国家都是如此。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -2640,7 +2640,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Some relatively poor European countries have seen huge improvements across measures including civil society, income equality and the environment.",
-              "translation": "【考研真题精读标准译文】Some relatively poor European countries have seen huge improvements across measures including civil society, income equality and the environment.",
+              "translation": "一些相对贫穷的欧洲国家在公民社会、收入平等和环境等方面取得了巨大进步。",
               "vocab": [
                 {
                   "word": "relatively",
@@ -2686,7 +2686,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "This is a lesson that rich countries can learn: When GDP is no longer regarded as the sole measure of a country's success, the world looks very different.",
-              "translation": "【考研真题精读标准译文】This is a lesson that rich countries can learn: When GDP is no longer regarded as the sole measure of a country's success, the world looks very different.",
+              "translation": "这是富裕国家可以吸取的一个教训：当GDP不再被视为衡量一个国家成功的唯一标准时，世界看起来就大不一样了。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -2720,7 +2720,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "So, what Kennedy was referring to was that while GDP has been the most common method for measuring the economic activity of nations, as a measure, it is no longer enough.",
-              "translation": "【考研真题精读标准译文】So, what Kennedy was referring to was that while GDP has been the most common method for measuring the economic activity of nations, as a measure, it is no longer enough.",
+              "translation": "因此，肯尼迪所指的是，虽然GDP一直是衡量国家经济活动的最常用方法，但作为一种衡量标准，它已经不够了。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -2766,7 +2766,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "It does not include important factors such as environmental quality or education outcomes—all things that contribute to a person's sense of well-being.",
-              "translation": "【考研真题精读标准译文】It does not include important factors such as environmental quality or education outcomes—all things that contribute to a person's sense of well-being.",
+              "translation": "它不包括环境质量或教育成果等所有有助于人们幸福感的重要因素。",
               "vocab": [
                 {
                   "word": "include",
@@ -2806,7 +2806,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The sharp hit to growth predicted around the world and in the UK could lead to a decline in the everyday services we depend on for our well-being and for growth.",
-              "translation": "【考研真题精读标准译文】The sharp hit to growth predicted around the world and in the UK could lead to a decline in the everyday services we depend on for our well-being and for growth.",
+              "translation": "预计世界各地和英国的增长将受到严重打击，这可能会导致我们赖以福祉和增长的日常服务减少。",
               "vocab": [
                 {
                   "word": "depend on",
@@ -2858,7 +2858,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "But policymakers who refocus efforts on improving well-being rather than simply worrying about GDP figures could avoid the forecasted doom and may even see progress.",
-              "translation": "【考研真题精读标准译文】But policymakers who refocus efforts on improving well-being rather than simply worrying about GDP figures could avoid the forecasted doom and may even see progress.",
+              "translation": "但政策制定者若能重新将工作重点放在改善福祉上，而不是仅仅担心 GDP 数据，就可以避免预期的厄运，甚至可能看到进展。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -2924,7 +2924,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -2951,9 +2951,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "C",
               "text": "misinterpreted the role of GDP.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2962,9 +2962,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "had a low opinion of GDP.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2990,7 +2990,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3006,9 +3006,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "GDP as the measure of success is widely defined in the UK.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3028,9 +3028,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "policymakers in the UK are paying less attention to GDP.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3056,7 +3056,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3072,9 +3072,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "It excludes GDP as an indicator.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3094,9 +3094,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "Its results are enlightening.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3151,7 +3151,7 @@ window.ENGLISH_DATA['2017'] = {
               "text": "it is essential to consider factors beyond GDP.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3195,7 +3195,7 @@ window.ENGLISH_DATA['2017'] = {
               "text": "High GDP But Inadequate Well-being, a UK Lesson",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3259,7 +3259,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "In a rare unanimous ruling, the US Supreme Court has overturned the corruption conviction of a former Virginia governor, Robert McDonnell.",
-              "translation": "【考研真题精读标准译文】In a rare unanimous ruling, the US Supreme Court has overturned the corruption conviction of a former Virginia governor, Robert McDonnell.",
+              "translation": "美国最高法院罕见地一致裁决，推翻了对前弗吉尼亚州州长罗伯特·麦克唐纳的腐败定罪。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -3323,7 +3323,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But it did so while holding its nose at the ethics of his conduct, which included accepting gifts such as a Rolex watch and a Ferrari automobile from a company seeking access to government.",
-              "translation": "【考研真题精读标准译文】But it did so while holding its nose at the ethics of his conduct, which included accepting gifts such as a Rolex watch and a Ferrari automobile from a company seeking access to government.",
+              "translation": "但它在这样做的同时，对他的行为道德嗤之以鼻，其中包括接受一家寻求与政府接触的公司赠送的劳力士手表和法拉利汽车等礼物。",
               "vocab": [
                 {
                   "word": "ethics",
@@ -3369,7 +3369,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The high court's decision said the judge in Mr. McDonnell's trial failed to tell a jury that it must look only at his \"official acts,\" or the former governor's decisions on \"specific\" and \"unsettled\" issues related to his duties.",
-              "translation": "【考研真题精读标准译文】The high court's decision said the judge in Mr. McDonnell's trial failed to tell a jury that it must look only at his \"official acts,\" or the former governor's decisions on \"specific\" and \"unsettled\" issues related to his duties.",
+              "translation": "高等法院的裁决称，审判麦克唐纳先生的法官未能告诉陪审团，陪审团必须只考虑他的“官方行为”，或者前州长对与其职责相关的“具体”和“未解决”问题的决定。",
               "vocab": [
                 {
                   "word": "court",
@@ -3433,7 +3433,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Merely helping a gift-giver gain access to other officials, unless done with clear intent to pressure those officials, is not corruption, the justices found.",
-              "translation": "【考研真题精读标准译文】Merely helping a gift-giver gain access to other officials, unless done with clear intent to pressure those officials, is not corruption, the justices found.",
+              "translation": "法官们发现，仅仅帮助送礼者接触其他官员，除非明显是为了向这些官员施压，否则并不构成腐败。",
               "vocab": [
                 {
                   "word": "Merely",
@@ -3479,7 +3479,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The court did suggest that accepting favors in return for opening doors is \"distasteful\" and \"nasty.\" But under anti-bribery laws, proof must be made of concrete benefits, such as approval of a contract or regulation.",
-              "translation": "【考研真题精读标准译文】The court did suggest that accepting favors in return for opening doors is \"distasteful\" and \"nasty.\" But under anti-bribery laws, proof must be made of concrete benefits, such as approval of a contract or regulation.",
+              "translation": "法院确实表示，接受好处以换取开门是“令人厌恶的”和“令人讨厌的”。但根据反贿赂法，必须证明具体利益，例如合同或法规的批准。",
               "vocab": [
                 {
                   "word": "court",
@@ -3562,7 +3562,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Simply arranging a meeting, making a phone call, or hosting an event is not an \"official act\".",
-              "translation": "【考研真题精读标准译文】Simply arranging a meeting, making a phone call, or hosting an event is not an \"official act\".",
+              "translation": "简单地安排会议、打电话或举办活动并不是“官方行为”。",
               "vocab": [
                 {
                   "word": "event",
@@ -3590,7 +3590,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The court's ruling is legally sound in defining a kind of favoritism that is not criminal. Elected leaders must be allowed to help supporters deal with bureaucratic problems without fear of prosecution for bribery.",
-              "translation": "【考研真题精读标准译文】The court's ruling is legally sound in defining a kind of favoritism that is not criminal. Elected leaders must be allowed to help supporters deal with bureaucratic problems without fear of prosecution for bribery.",
+              "translation": "法院的裁决在定义一种不构成犯罪的偏袒方面是合法合理的。必须允许当选领导人帮助支持者处理官僚问题，而不必担心因贿赂而被起诉。",
               "vocab": [
                 {
                   "word": "deal with",
@@ -3660,7 +3660,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "\"The basic compact underlying representative government,\" wrote Chief Justice John Roberts for the court, \"assumes that public officials will hear from their constituents and act on their concerns.\" But the ruling reinforces the need for citizens and their elected representatives, not the courts, to ensure equality of access to government.",
-              "translation": "【考研真题精读标准译文】\"The basic compact underlying representative government,\" wrote Chief Justice John Roberts for the court, \"assumes that public officials will hear from their constituents and act on their concerns.\" But the ruling reinforces the need for citizens and their elected representatives, not the courts, to ensure equality of access to government.",
+              "translation": "首席大法官约翰·罗伯茨为法院写道：“代议制政府的基本契约假定公职人员将听取选民的意见并根据他们的关切采取行动。”但这一裁决强调了公民及其选出的代表（而不是法院）确保平等参与政府事务的必要性。",
               "vocab": [
                 {
                   "word": "Chief Justice",
@@ -3766,7 +3766,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Officials must not be allowed to play favorites in providing information or in arranging meetings simply because an individual or group provides a campaign donation or a personal gift.",
-              "translation": "【考研真题精读标准译文】Officials must not be allowed to play favorites in providing information or in arranging meetings simply because an individual or group provides a campaign donation or a personal gift.",
+              "translation": "不得仅仅因为个人或团体提供竞选捐款或个人礼物而在提供信息或安排会议时偏袒官员。",
               "vocab": [
                 {
                   "word": "information",
@@ -3800,7 +3800,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "This type of integrity requires well-enforced laws in government transparency, such as records of official meetings, rules on lobbying, and information about each elected leader's source of wealth.",
-              "translation": "【考研真题精读标准译文】This type of integrity requires well-enforced laws in government transparency, such as records of official meetings, rules on lobbying, and information about each elected leader's source of wealth.",
+              "translation": "这种诚信需要在政府透明度方面执行良好的法律，例如正式会议记录、游说规则以及有关每位当选领导人财富来源的信息。",
               "vocab": [
                 {
                   "word": "integrity",
@@ -3865,7 +3865,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Favoritism in official access can fan public perceptions of corruption.",
-              "translation": "【考研真题精读标准译文】Favoritism in official access can fan public perceptions of corruption.",
+              "translation": "官方准入中的偏袒可能会加深公众对腐败的看法。",
               "vocab": [
                 {
                   "word": "Favoritism",
@@ -3911,7 +3911,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "But it is not always corruption.",
-              "translation": "【考研真题精读标准译文】But it is not always corruption.",
+              "translation": "但这并不总是腐败。",
               "vocab": [
                 {
                   "word": "corruption",
@@ -3927,7 +3927,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Rather officials must avoid double standards, or different types of access for average people and the wealthy.",
-              "translation": "【考研真题精读标准译文】Rather officials must avoid double standards, or different types of access for average people and the wealthy.",
+              "translation": "相反，官员们必须避免双重标准，或者为普通民众和富人提供不同类型的准入机会。",
               "vocab": [
                 {
                   "word": "Rather",
@@ -3967,7 +3967,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "If connections can be bought, a basic premise of democratic society—that all are equal in treatment by government – is undermined.",
-              "translation": "【考研真题精读标准译文】If connections can be bought, a basic premise of democratic society—that all are equal in treatment by government – is undermined.",
+              "translation": "如果可以收买人脉，民主社会的基本前提——政府对待所有人一律平等——就会遭到破坏。",
               "vocab": [
                 {
                   "word": "basic",
@@ -4019,7 +4019,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Good governance rests on an understanding of the inherent worth of each individual. The court's ruling is a step forward in the struggle against both corruption and official favoritism.",
-              "translation": "【考研真题精读标准译文】Good governance rests on an understanding of the inherent worth of each individual. The court's ruling is a step forward in the struggle against both corruption and official favoritism.",
+              "translation": "良好的治理取决于对每个人的内在价值的理解。法院的裁决是反对腐败和官员偏袒的斗争中向前迈出的一步。",
               "vocab": [
                 {
                   "word": "governance",
@@ -4138,7 +4138,7 @@ window.ENGLISH_DATA['2017'] = {
               "text": "was contemptuous of McDonnell's conduct.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4175,7 +4175,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -4191,9 +4191,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "sizable gains in the form of gifts.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4202,9 +4202,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "C",
               "text": "concrete returns for gift-givers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4241,14 +4241,14 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "justified in addressing the needs of their constituents.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4279,9 +4279,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "exempt from conviction on the charge of favoritism.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4307,7 +4307,7 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4323,9 +4323,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "B",
               "text": "guarantee fair play in official access.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4334,9 +4334,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "C",
               "text": "allow for certain kinds of lobbying.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4373,14 +4373,14 @@ window.ENGLISH_DATA['2017'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "sarcastic.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4411,9 +4411,9 @@ window.ENGLISH_DATA['2017'] = {
             {
               "key": "D",
               "text": "supportive.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

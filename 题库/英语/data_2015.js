@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "King Juan Carlos of Spain once insisted \"kings don't abdicate, they die in their sleep.\" But embarrassing scandals and the popularity of the republican left in the recent Euro-elections have forced him to eat his words and stand down.",
-              "translation": "【考研真题精读标准译文】King Juan Carlos of Spain once insisted \"kings don't abdicate, they die in their sleep.\" But embarrassing scandals and the popularity of the republican left in the recent Euro-elections have forced him to eat his words and stand down.",
+              "translation": "西班牙国王胡安·卡洛斯曾坚称“国王不会退位，他们会在睡梦中死去”。但令人尴尬的丑闻和最近欧洲选举中共和党左翼的受欢迎程度迫使他食言并下台。",
               "vocab": [
                 {
                   "word": "abdicate",
@@ -72,7 +72,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "So, does the Spanish crisis suggest that monarchy is seeing its last days?",
-              "translation": "【考研真题精读标准译文】So, does the Spanish crisis suggest that monarchy is seeing its last days?",
+              "translation": "那么，西班牙危机是否表明君主制已经走到了最后的日子呢？",
               "vocab": [
                 {
                   "word": "crisis",
@@ -100,7 +100,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Does that mean the writing is on the wall for all European royals, with their magnificent uniforms and majestic lifestyles?",
-              "translation": "【考研真题精读标准译文】Does that mean the writing is on the wall for all European royals, with their magnificent uniforms and majestic lifestyles?",
+              "translation": "这是否意味着所有欧洲皇室成员都将面临着不祥之兆，他们拥有华丽的制服和奢华的生活方式？",
               "vocab": [
                 {
                   "word": "mean",
@@ -134,7 +134,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The Spanish case provides arguments both for and against monarchy.",
-              "translation": "【考研真题精读标准译文】The Spanish case provides arguments both for and against monarchy.",
+              "translation": "西班牙的案例提供了支持和反对君主制的论据。",
               "vocab": [
                 {
                   "word": "case",
@@ -162,7 +162,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "When public opinion is particularly polarised, as it was following the end of the Franco regime, monarchs can rise above \"mere\" politics and \"embody\" a spirit of national unity.",
-              "translation": "【考研真题精读标准译文】When public opinion is particularly polarised, as it was following the end of the Franco regime, monarchs can rise above \"mere\" politics and \"embody\" a spirit of national unity.",
+              "translation": "当公众舆论特别两极分化时，就像佛朗哥政权结束后那样，君主可以超越“纯粹”的政治，“体现”民族团结的精神。",
               "vocab": [
                 {
                   "word": "public",
@@ -238,7 +238,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "It is this apparent transcendence of politics that explains monarchs' continuing popularity as heads of state.",
-              "translation": "【考研真题精读标准译文】It is this apparent transcendence of politics that explains monarchs' continuing popularity as heads of state.",
+              "translation": "正是这种明显的政治超越性解释了君主作为国家元首为何持续受到欢迎。",
               "vocab": [
                 {
                   "word": "apparent",
@@ -279,7 +279,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "And so, the Middle East excepted, Europe is the most monarch-infested region in the world, with 10 kingdoms (not counting Vatican city and Andorra).",
-              "translation": "【考研真题精读标准译文】And so, the Middle East excepted, Europe is the most monarch-infested region in the world, with 10 kingdoms (not counting Vatican city and Andorra).",
+              "translation": "因此，除了中东之外，欧洲是世界上君主出没最多的地区，有 10 个王国（不包括梵蒂冈城和安道尔）。",
               "vocab": [
                 {
                   "word": "region",
@@ -295,7 +295,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "But unlike their absolutist counterparts in the Gulf and Asia, most royal families have survived because they allow voters to avoid the difficult search for a non-controversial but respected public figure.",
-              "translation": "【考研真题精读标准译文】But unlike their absolutist counterparts in the Gulf and Asia, most royal families have survived because they allow voters to avoid the difficult search for a non-controversial but respected public figure.",
+              "translation": "但与海湾和亚洲的专制主义同行不同，大多数王室得以幸存，因为他们让选民避免了寻找无争议但受人尊敬的公众人物的艰难过程。",
               "vocab": [
                 {
                   "word": "unlike",
@@ -371,7 +371,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Even so, kings and queens undoubtedly have a downside.",
-              "translation": "【考研真题精读标准译文】Even so, kings and queens undoubtedly have a downside.",
+              "translation": "即便如此，国王和王后无疑也有缺点。",
               "vocab": [
                 {
                   "word": "undoubtedly",
@@ -393,7 +393,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Symbolic of national unity as they claim to be, their very history—and sometimes the way they behave today—embodies outdated and indefensible privileges and inequalities.",
-              "translation": "【考研真题精读标准译文】Symbolic of national unity as they claim to be, their very history—and sometimes the way they behave today—embodies outdated and indefensible privileges and inequalities.",
+              "translation": "尽管他们自称是民族团结的象征，但他们的历史——有时甚至是他们今天的行为方式——体现了过时的、站不住脚的特权和不平等。",
               "vocab": [
                 {
                   "word": "Symbolic",
@@ -451,7 +451,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "At a time when Thomas Piketty and other economists are warning of rising inequality and the increasing power of inherited wealth, it is bizarre that wealthy aristocratic families should still be the symbolic heart of modern democratic states.",
-              "translation": "【考研真题精读标准译文】At a time when Thomas Piketty and other economists are warning of rising inequality and the increasing power of inherited wealth, it is bizarre that wealthy aristocratic families should still be the symbolic heart of modern democratic states.",
+              "translation": "当托马斯·皮凯蒂（Thomas Piketty）和其他经济学家警告不平等加剧和继承财富的力量日益增强之际，富裕的贵族家庭仍然是现代民主国家的象征性核心，这很奇怪。",
               "vocab": [
                 {
                   "word": "warning",
@@ -533,7 +533,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The most successful monarchies strive to abandon or hide their old aristocratic ways.",
-              "translation": "【考研真题精读标准译文】The most successful monarchies strive to abandon or hide their old aristocratic ways.",
+              "translation": "最成功的君主政体都努力放弃或隐藏其古老的贵族方式。",
               "vocab": [
                 {
                   "word": "successful",
@@ -574,7 +574,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Princes and princesses have day-jobs and ride bicycles, not horses (or helicopters).",
-              "translation": "【考研真题精读标准译文】Princes and princesses have day-jobs and ride bicycles, not horses (or helicopters).",
+              "translation": "王子和公主有日常工作，骑自行车，而不是马（或直升机）。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -583,7 +583,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Even so, these are wealthy families who party with the international 1%, and media intrusiveness makes it increasingly difficult to maintain the right image.",
-              "translation": "【考研真题精读标准译文】Even so, these are wealthy families who party with the international 1%, and media intrusiveness makes it increasingly difficult to maintain the right image.",
+              "translation": "即便如此，这些都是富裕家庭，他们与国际上 1% 的人一起聚会，而媒体的侵入使得维持正确的形象变得越来越困难。",
               "vocab": [
                 {
                   "word": "wealthy",
@@ -635,7 +635,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "While Europe's monarchies will no doubt be smart enough to survive for some time to come, it is the British royals who have most to fear from the Spanish example.",
-              "translation": "【考研真题精读标准译文】While Europe's monarchies will no doubt be smart enough to survive for some time to come, it is the British royals who have most to fear from the Spanish example.",
+              "translation": "尽管欧洲的君主国无疑会足够聪明，能够在未来一段时间内生存下来，但英国王室最担心西班牙的例子。",
               "vocab": [
                 {
                   "word": "for some time",
@@ -669,7 +669,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "It is only the Queen who has preserved the monarchy's reputation with her rather ordinary (if well-heeled) granny style.",
-              "translation": "【考研真题精读标准译文】It is only the Queen who has preserved the monarchy's reputation with her rather ordinary (if well-heeled) granny style.",
+              "translation": "只有女王以她相当普通（如果富有）的奶奶风格维护了君主制的声誉。",
               "vocab": [
                 {
                   "word": "monarchy",
@@ -703,7 +703,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The danger will come with Charles, who has both an expensive taste of lifestyle and a pretty hierarchical view of the world.",
-              "translation": "【考研真题精读标准译文】The danger will come with Charles, who has both an expensive taste of lifestyle and a pretty hierarchical view of the world.",
+              "translation": "危险将降临在查尔斯身上，他的生活方式品味昂贵，世界观也相当等级森严。",
               "vocab": [
                 {
                   "word": "danger",
@@ -743,7 +743,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "He has failed to understand that monarchies have largely survived because they provide a service—as non-controversial and non-political heads of state.",
-              "translation": "【考研真题精读标准译文】He has failed to understand that monarchies have largely survived because they provide a service—as non-controversial and non-political heads of state.",
+              "translation": "他不明白，君主制之所以得以幸存，很大程度上是因为它们提供了一种服务——作为无争议、非政治性的国家元首。",
               "vocab": [
                 {
                   "word": "understand",
@@ -771,7 +771,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Charles ought to know that as English history shows, it is kings, not republicans, who are the monarchy's worst enemies.",
-              "translation": "【考研真题精读标准译文】Charles ought to know that as English history shows, it is kings, not republicans, who are the monarchy's worst enemies.",
+              "translation": "查尔斯应该知道，正如英国历史所表明的那样，君主制最大的敌人是国王，而不是共和主义者。",
               "vocab": [
                 {
                   "word": "monarchy",
@@ -801,7 +801,7 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -817,9 +817,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "B",
               "text": "used to enjoy high public support.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -839,9 +839,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "ended his reign in embarrassment.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -867,14 +867,14 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "to give voters more public figures to look up to.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -894,9 +894,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "C",
               "text": "owing to their undoubted and respectable status.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -933,7 +933,7 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -949,9 +949,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "B",
               "text": "The role of the nobility in modern democracies.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -971,9 +971,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "The nobility's adherence to their privileges.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1006,7 +1006,7 @@ window.ENGLISH_DATA['2015'] = {
               "text": "fails to adapt himself to his future role.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1094,7 +1094,7 @@ window.ENGLISH_DATA['2015'] = {
               "text": "Carlos, a Lesson for All European Monarchs",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1136,7 +1136,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Just how much does the Constitution protect your digital data?",
-              "translation": "【考研真题精读标准译文】Just how much does the Constitution protect your digital data?",
+              "translation": "宪法到底在多大程度上保护您的数字数据？",
               "vocab": [
                 {
                   "word": "Constitution",
@@ -1170,7 +1170,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The Supreme Court will now consider whether police can search the contents of a mobile phone without a warrant if the phone is on or around a person during an arrest.",
-              "translation": "【考研真题精读标准译文】The Supreme Court will now consider whether police can search the contents of a mobile phone without a warrant if the phone is on or around a person during an arrest.",
+              "translation": "最高法院现在将考虑，如果逮捕期间手机在某人身上或周围，警方是否可以在没有搜查令的情况下搜查手机的内容。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -1240,7 +1240,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "California has asked the justices to refrain from a sweeping ruling, particularly one that upsets the old assumption that authorities may search through the possessions of suspects at the time of their arrest.",
-              "translation": "【考研真题精读标准译文】California has asked the justices to refrain from a sweeping ruling, particularly one that upsets the old assumption that authorities may search through the possessions of suspects at the time of their arrest.",
+              "translation": "加州要求法官不要做出全面的裁决，尤其是一项推翻了当局可能在逮捕嫌疑人时搜查嫌疑人财物的旧假设的裁决。",
               "vocab": [
                 {
                   "word": "refrain",
@@ -1298,7 +1298,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "It is hard, the state argues, for judges to assess the implications of new and rapidly changing technologies.",
-              "translation": "【考研真题精读标准译文】It is hard, the state argues, for judges to assess the implications of new and rapidly changing technologies.",
+              "translation": "该州认为，法官很难评估快速变化的新技术的影响。",
               "vocab": [
                 {
                   "word": "state",
@@ -1344,7 +1344,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The court would be recklessly modest if it followed California's advice.",
-              "translation": "【考研真题精读标准译文】The court would be recklessly modest if it followed California's advice.",
+              "translation": "如果法院听从加州的建议，那就太谦虚了。",
               "vocab": [
                 {
                   "word": "court",
@@ -1372,7 +1372,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Enough of the implications are discernable, even obvious, so that the justices can and should provide updated guidelines to police, lawyers and defendants.",
-              "translation": "【考研真题精读标准译文】Enough of the implications are discernable, even obvious, so that the justices can and should provide updated guidelines to police, lawyers and defendants.",
+              "translation": "足够多的影响是可以辨别的，甚至是显而易见的，因此法官可以而且应该向警察、律师和被告提供最新的指导方针。",
               "vocab": [
                 {
                   "word": "implications",
@@ -1406,7 +1406,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "They should start by discarding California's lame argument that exploring the contents of a smartphone – a vast storehouse of digital information—is similar to, say, going through a suspect's purse.",
-              "translation": "【考研真题精读标准译文】They should start by discarding California's lame argument that exploring the contents of a smartphone – a vast storehouse of digital information—is similar to, say, going through a suspect's purse.",
+              "translation": "他们应该首先放弃加州的蹩脚论点，即探索智能手机（一个巨大的数字信息仓库）的内容类似于搜查嫌疑人的钱包。",
               "vocab": [
                 {
                   "word": "lame",
@@ -1477,7 +1477,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The court has ruled that police don't violate the Fourth Amendment when they go through the wallet or pocketbook of an arrestee without a warrant.",
-              "translation": "【考研真题精读标准译文】The court has ruled that police don't violate the Fourth Amendment when they go through the wallet or pocketbook of an arrestee without a warrant.",
+              "translation": "法院裁定，警察在没有搜查令的情况下搜查被捕者的钱包或皮夹时，不违反第四修正案。",
               "vocab": [
                 {
                   "word": "court",
@@ -1529,7 +1529,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "But exploring one's smartphone is more like entering his or her home.",
-              "translation": "【考研真题精读标准译文】But exploring one's smartphone is more like entering his or her home.",
+              "translation": "但探索一个人的智能手机更像是进入他或她的家。",
               "vocab": [
                 {
                   "word": "one",
@@ -1545,7 +1545,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "A smartphone may contain an arrestee's reading history, financial history, medical history and comprehensive records of recent correspondence.",
-              "translation": "【考研真题精读标准译文】A smartphone may contain an arrestee's reading history, financial history, medical history and comprehensive records of recent correspondence.",
+              "translation": "智能手机可能包含被捕者的阅读历史、财务历史、病史和近期通信的综合记录。",
               "vocab": [
                 {
                   "word": "contain",
@@ -1591,7 +1591,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The development of \"cloud computing\", meanwhile, has made that exploration so much easier.",
-              "translation": "【考研真题精读标准译文】The development of \"cloud computing\", meanwhile, has made that exploration so much easier.",
+              "translation": "与此同时，“云计算”的发展使这种探索变得更加容易。",
               "vocab": [
                 {
                   "word": "cloud",
@@ -1619,7 +1619,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Americans should take steps to protect their digital privacy.",
-              "translation": "【考研真题精读标准译文】Americans should take steps to protect their digital privacy.",
+              "translation": "美国人应该采取措施保护他们的数字隐私。",
               "vocab": [
                 {
                   "word": "take",
@@ -1647,7 +1647,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "But keeping sensitive information on these devices is increasingly a requirement of normal life.",
-              "translation": "【考研真题精读标准译文】But keeping sensitive information on these devices is increasingly a requirement of normal life.",
+              "translation": "但在这些设备上保存敏感信息越来越成为正常生活的要求。",
               "vocab": [
                 {
                   "word": "sensitive",
@@ -1681,7 +1681,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Citizens still have a right to expect private documents to remain private and protected by the Constitution's prohibition on unreasonable searches.",
-              "translation": "【考研真题精读标准译文】Citizens still have a right to expect private documents to remain private and protected by the Constitution's prohibition on unreasonable searches.",
+              "translation": "公民仍然有权期望私人文件保持私密性并受到宪法禁止无理搜查的保护。",
               "vocab": [
                 {
                   "word": "still",
@@ -1734,7 +1734,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "As so often is the case, stating that principle doesn't ease the challenge of line-drawing.",
-              "translation": "【考研真题精读标准译文】As so often is the case, stating that principle doesn't ease the challenge of line-drawing.",
+              "translation": "正如经常发生的情况一样，陈述这一原则并不能减轻画线的挑战。",
               "vocab": [
                 {
                   "word": "case",
@@ -1762,7 +1762,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "In many cases, it would not be overly burdensome for authorities to obtain a warrant to search through phone contents.",
-              "translation": "【考研真题精读标准译文】In many cases, it would not be overly burdensome for authorities to obtain a warrant to search through phone contents.",
+              "translation": "在许多情况下，当局获得搜查电话内容的搜查令并不会造成太大负担。",
               "vocab": [
                 {
                   "word": "overly",
@@ -1808,7 +1808,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "They could still invalidate Fourth Amendment protections when facing severe, urgent circumstances, and they could take reasonable measures to ensure that phone data are not erased or altered while waiting for a warrant.",
-              "translation": "【考研真题精读标准译文】They could still invalidate Fourth Amendment protections when facing severe, urgent circumstances, and they could take reasonable measures to ensure that phone data are not erased or altered while waiting for a warrant.",
+              "translation": "在面临严重、紧急情况时，他们仍然可以使第四修正案的保护失效，并且他们可以采取合理措施确保手机数据在等待搜查令期间不被删除或更改。",
               "vocab": [
                 {
                   "word": "still",
@@ -1884,7 +1884,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The court, though, may want to allow room for police to cite situations where they are entitled to more freedom.",
-              "translation": "【考研真题精读标准译文】The court, though, may want to allow room for police to cite situations where they are entitled to more freedom.",
+              "translation": "不过，法院可能希望给警察提供空间，让他们可以列举他们有权获得更多自由的情况。",
               "vocab": [
                 {
                   "word": "court",
@@ -1924,7 +1924,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "But the justices should not swallow California's argument whole.",
-              "translation": "【考研真题精读标准译文】But the justices should not swallow California's argument whole.",
+              "translation": "但法官们不应完全接受加州的论点。",
               "vocab": [
                 {
                   "word": "swallow",
@@ -1946,7 +1946,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "New, disruptive technology sometimes demands novel applications of the Constitution's protections.",
-              "translation": "【考研真题精读标准译文】New, disruptive technology sometimes demands novel applications of the Constitution's protections.",
+              "translation": "新的、颠覆性的技术有时需要宪法保护的新颖应用。",
               "vocab": [
                 {
                   "word": "New",
@@ -1986,7 +1986,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Orin Kerr, a law professor, compares the explosion and accessibility of digital information in the 21st century with the establishment of automobile use as a virtual necessity of life in the 20th: The justices had to specify novel rules for the new personal domain of the passenger car then; they must sort out how the Fourth Amendment applies to digital information now.",
-              "translation": "【考研真题精读标准译文】Orin Kerr, a law professor, compares the explosion and accessibility of digital information in the 21st century with the establishment of automobile use as a virtual necessity of life in the 20th: The justices had to specify novel rules for the new personal domain of the passenger car then; they must sort out how the Fourth Amendment applies to digital information now.",
+              "translation": "法学教授奥林·克尔 (Orin Kerr) 将 21 世纪数字信息的爆炸性增长和可访问性与 20 世纪汽车使用作为生活的虚拟必需品进行了比较：当时，法官必须为乘用车这一新的个人领域制定新的规则；他们现在必须弄清楚第四修正案如何适用于数字信息。",
               "vocab": [
                 {
                   "word": "sort out",
@@ -2153,7 +2153,7 @@ window.ENGLISH_DATA['2015'] = {
               "text": "check suspects' phone contents without being authorized.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2190,14 +2190,14 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "disapproval.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2228,9 +2228,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "cautiousness.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2256,7 +2256,7 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2272,9 +2272,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "B",
               "text": "handling one's historical records.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2294,9 +2294,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "getting into one's residence.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2322,7 +2322,7 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -2349,9 +2349,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "C",
               "text": "phones are used to store sensitive information.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2360,9 +2360,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "citizens' privacy is not effectively protected.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2388,14 +2388,14 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "the Constitution should be implemented flexibly.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2426,9 +2426,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "new technology requires reinterpretation of the Constitution.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2459,7 +2459,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The journal Science is adding an extra round of statistical checks to its peer-review process, editor-in-chief Marcia McNutt announced today.",
-              "translation": "【考研真题精读标准译文】The journal Science is adding an extra round of statistical checks to its peer-review process, editor-in-chief Marcia McNutt announced today.",
+              "translation": "主编玛西娅·麦克纳特 (Marcia McNutt) 今天宣布，《科学》杂志将在其同行评审过程中增加一轮额外的统计检查。",
               "vocab": [
                 {
                   "word": "peer-review process",
@@ -2505,7 +2505,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The policy follows similar efforts from other journals, after widespread concern that basic mistakes in data analysis are contributing to the irreproducibility of many published research findings.",
-              "translation": "【考研真题精读标准译文】The policy follows similar efforts from other journals, after widespread concern that basic mistakes in data analysis are contributing to the irreproducibility of many published research findings.",
+              "translation": "在人们普遍担心数据分析中的基本错误导致许多已发表的研究结果不可重复之后，其他期刊也采取了类似的措施，采取了这一政策。",
               "vocab": [
                 {
                   "word": "policy",
@@ -2563,7 +2563,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "\"Readers must have confidence in the conclusions published in our journal,\" writes McNutt in an editorial. Working with the American Statistical Association, the journal has appointed seven experts to a statistics board of reviewing editors (SBoRE).",
-              "translation": "【考研真题精读标准译文】\"Readers must have confidence in the conclusions published in our journal,\" writes McNutt in an editorial. Working with the American Statistical Association, the journal has appointed seven experts to a statistics board of reviewing editors (SBoRE).",
+              "translation": "“读者必须对我们期刊上发表的结论充满信心，”麦克纳特在社论中写道。该杂志与美国统计协会合作，任命了七名专家加入统计审查编辑委员会 (SBoRE)。",
               "vocab": [
                 {
                   "word": "journal",
@@ -2615,7 +2615,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Manuscripts will be flagged up for additional scrutiny by the journal's internal editors, or by its existing Board of Reviewing Editors or by outside peer reviewers.",
-              "translation": "【考研真题精读标准译文】Manuscripts will be flagged up for additional scrutiny by the journal's internal editors, or by its existing Board of Reviewing Editors or by outside peer reviewers.",
+              "translation": "手稿将被标记为由期刊的内部编辑、现有的审查编辑委员会或外部同行评审员进行额外的审查。",
               "vocab": [
                 {
                   "word": "peer review",
@@ -2686,7 +2686,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The SBoRE panel will then find external statisticians to review these manuscripts.",
-              "translation": "【考研真题精读标准译文】The SBoRE panel will then find external statisticians to review these manuscripts.",
+              "translation": "然后，SBoRE 小组将寻找外部统计学家来审查这些手稿。",
               "vocab": [
                 {
                   "word": "panel",
@@ -2726,7 +2726,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Asked whether any particular papers had impelled the change, McNutt said, \"The creation of the 'statistics board' was motivated by concerns broadly with the application of statistics and data analysis in scientific research and is part of Science's overall drive to increase reproducibility in the research we publish.\" Giovanni Parmigiani, a biostatistician at the Harvard School of Public Health, a member of the SBoRE group, says he expects the board to \"play primarily an advisory role.\" He agreed to join because he \"found the foresight behind the establishment of the SBoRE to be novel, unique and likely to have a lasting impact.",
-              "translation": "【考研真题精读标准译文】Asked whether any particular papers had impelled the change, McNutt said, \"The creation of the 'statistics board' was motivated by concerns broadly with the application of statistics and data analysis in scientific research and is part of Science's overall drive to increase reproducibility in the research we publish.\" Giovanni Parmigiani, a biostatistician at the Harvard School of Public Health, a member of the SBoRE group, says he expects the board to \"play primarily an advisory role.\" He agreed to join because he \"found the foresight behind the establishment of the SBoRE to be novel, unique and likely to have a lasting impact.",
+              "translation": "当被问及是否有任何特定论文推动了这一变化时，麦克纳特说：“‘统计委员会’的创建是出于对科学研究中统计和数据分析应用的广泛关注，也是《科学》杂志提高我们发表的研究的可重复性的整体动力的一部分。”哈佛大学公共卫生学院生物统计学家、SBoRE 小组成员乔瓦尼·帕玛强尼 (Giovanni Parmigiani) 表示，他希望董事会“主要发挥咨询作用”。他同意加入，因为他“发现 SBoRE 成立背后的远见是新颖、独特的，并且可能会产生持久的影响。",
               "vocab": [
                 {
                   "word": "particular",
@@ -2868,7 +2868,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "This impact will not only be through the publications in Science itself, but hopefully through a larger group of publishing places that may want to model their approach after Science.\" John Ioannidis, a physician who studies research methodology, says that the policy is \"a most welcome step forward\" and \"long overdue\".",
-              "translation": "【考研真题精读标准译文】This impact will not only be through the publications in Science itself, but hopefully through a larger group of publishing places that may want to model their approach after Science.\" John Ioannidis, a physician who studies research methodology, says that the policy is \"a most welcome step forward\" and \"long overdue\".",
+              "translation": "这种影响不仅会通过《科学》杂志本身的出版物产生，而且有望通过更多的出版机构产生，这些出版机构可能希望效仿《科学》杂志的方法。”研究研究方法的医生约翰·约安尼迪斯 (John Ioannidis) 表示，这项政策是“最受欢迎的一步”，也是“早就应该的”。",
               "vocab": [
                 {
                   "word": "impact",
@@ -2944,7 +2944,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "\"Most journals are weak in statistical review, and this damages the quality of what they publish.",
-              "translation": "【考研真题精读标准译文】\"Most journals are weak in statistical review, and this damages the quality of what they publish.",
+              "translation": "“大多数期刊在统计审查方面都很薄弱，这损害了他们发表的内容的质量。",
               "vocab": [
                 {
                   "word": "statistical",
@@ -2985,7 +2985,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "I think that, for the majority of scientific papers nowadays, statistical review is more essential than expert review,\" he says, but he noted that biomedical journals such as Annals of Internal Medicine, the Journal of the American Medical Association and The Lancet pay strong attention to statistical review.",
-              "translation": "【考研真题精读标准译文】I think that, for the majority of scientific papers nowadays, statistical review is more essential than expert review,\" he says, but he noted that biomedical journals such as Annals of Internal Medicine, the Journal of the American Medical Association and The Lancet pay strong attention to statistical review.",
+              "translation": "我认为，对于现在的大多数科学论文来说，统计审查比专家审查更重要。”他说，但他指出，《内科医学年鉴》、《美国医学会杂志》和《柳叶刀》等生物医学期刊非常重视统计审查。",
               "vocab": [
                 {
                   "word": "the majority",
@@ -3097,7 +3097,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Professional scientists are expected to know how to analyse data, but statistical errors are alarmingly common in published research, according to David Vaux, a cell biologist.",
-              "translation": "【考研真题精读标准译文】Professional scientists are expected to know how to analyse data, but statistical errors are alarmingly common in published research, according to David Vaux, a cell biologist.",
+              "translation": "细胞生物学家戴维·沃克斯 (David Vaux) 表示，专业科学家应该知道如何分析数据，但在已发表的研究中，统计错误却非常常见。",
               "vocab": [
                 {
                   "word": "according to",
@@ -3155,7 +3155,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Researchers should improve their standards, he wrote in 2012, but journals should also take a tougher line, \"engaging reviewers who are statistically literate and editors who can verify the process\".",
-              "translation": "【考研真题精读标准译文】Researchers should improve their standards, he wrote in 2012, but journals should also take a tougher line, \"engaging reviewers who are statistically literate and editors who can verify the process\".",
+              "translation": "他在 2012 年写道，研究人员应该提高他们的标准，但期刊也应该采取更强硬的态度，“让具有统计学知识的审稿人和能够验证流程的编辑参与进来”。",
               "vocab": [
                 {
                   "word": "take",
@@ -3189,7 +3189,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Vaux says that Science's idea to pass some papers to statisticians \"has some merit, but a weakness is that it relies on the board of reviewing editors to identify 'the papers that need scrutiny' in the first place\".",
-              "translation": "【考研真题精读标准译文】Vaux says that Science's idea to pass some papers to statisticians \"has some merit, but a weakness is that it relies on the board of reviewing editors to identify 'the papers that need scrutiny' in the first place\".",
+              "translation": "沃克斯表示，《科学》杂志将一些论文交给统计学家的想法“有一定的优点，但缺点是它首先依赖于审查编辑委员会来确定‘需要审查的论文’”。",
               "vocab": [
                 {
                   "word": "merit",
@@ -3249,7 +3249,7 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3265,9 +3265,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "B",
               "text": "journals are strengthening their statistical checks.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3287,9 +3287,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "lack of data analysis is common in research projects.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3315,7 +3315,7 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3331,9 +3331,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "B",
               "text": "revised.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3342,9 +3342,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "C",
               "text": "marked.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3381,14 +3381,14 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "pose a threat to all its peers.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3419,9 +3419,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "set an example for other journals.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3447,7 +3447,7 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3474,9 +3474,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "C",
               "text": "has room for further improvement.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3485,9 +3485,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "is to fail in the foreseeable future.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3513,14 +3513,14 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "Science Joins Push to Screen Statistics in Papers",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3540,9 +3540,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "C",
               "text": "Data Analysis Finds Its Way onto Editors' Desks",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3584,7 +3584,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Two years ago, Rupert Murdoch's daughter, Elisabeth, spoke of the \"unsettling dearth of integrity across so many of our institutions\".",
-              "translation": "【考研真题精读标准译文】Two years ago, Rupert Murdoch's daughter, Elisabeth, spoke of the \"unsettling dearth of integrity across so many of our institutions\".",
+              "translation": "两年前，鲁珀特·默多克的女儿伊丽莎白谈到“我们许多机构都缺乏诚信，令人不安”。",
               "vocab": [
                 {
                   "word": "unsettling",
@@ -3612,7 +3612,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Integrity had collapsed, she argued, because of a collective acceptance that the only \"sorting mechanism\" in society should be profit and the market.",
-              "translation": "【考研真题精读标准译文】Integrity had collapsed, she argued, because of a collective acceptance that the only \"sorting mechanism\" in society should be profit and the market.",
+              "translation": "她认为，由于人们普遍认为社会上唯一的“分类机制”应该是利润和市场，诚信已经崩溃。",
               "vocab": [
                 {
                   "word": "Integrity",
@@ -3658,7 +3658,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "But \"it's us, human beings, we the people who create the society we want, not profit.\" Driving her point home, she continued: \"It's increasingly apparent that the absence of purpose, of a moral language within government, media or business could become one of the most dangerous goals for capitalism and freedom.\" This same absence of moral purpose was wounding companies such as News International, she thought, making it more likely that it would lose its way as it had with widespread illegal telephone hacking.",
-              "translation": "【考研真题精读标准译文】But \"it's us, human beings, we the people who create the society we want, not profit.\" Driving her point home, she continued: \"It's increasingly apparent that the absence of purpose, of a moral language within government, media or business could become one of the most dangerous goals for capitalism and freedom.\" This same absence of moral purpose was wounding companies such as News International, she thought, making it more likely that it would lose its way as it had with widespread illegal telephone hacking.",
+              "translation": "但“是我们人类，我们这些人创造了我们想要的社会，而不是利润。”她继续强调自己的观点：“越来越明显的是，政府、媒体或企业内部缺乏目的和道德语言可能成为资本主义和自由最危险的目标之一。”她认为，同样缺乏道德目的也伤害了新闻国际等公司，使其更有可能迷失方向，就像广泛的非法电话窃听一样。",
               "vocab": [
                 {
                   "word": "society",
@@ -3770,7 +3770,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "As the hacking trial concludes—finding guilty one ex-editor of the News of the World, Andy Coulson, for conspiring to hack phones, and finding his predecessor, Rebekah Brooks, innocent of the same charge—the wider issue of dearth of integrity still stands.",
-              "translation": "【考研真题精读标准译文】As the hacking trial concludes—finding guilty one ex-editor of the News of the World, Andy Coulson, for conspiring to hack phones, and finding his predecessor, Rebekah Brooks, innocent of the same charge—the wider issue of dearth of integrity still stands.",
+              "translation": "随着黑客审判的结束——《世界新闻报》前编辑安迪·科尔森因密谋窃听电话而被判有罪，而他的前任丽贝卡·布鲁克斯也被判无罪——缺乏诚信这一更广泛的问题仍然存在。",
               "vocab": [
                 {
                   "word": "hacking",
@@ -3858,7 +3858,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Journalists are known to have hacked the phones of up to 5,500 people.",
-              "translation": "【考研真题精读标准译文】Journalists are known to have hacked the phones of up to 5,500 people.",
+              "translation": "据了解，记者已窃听了多达 5,500 人的电话。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -3867,7 +3867,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "This is hacking on an industrial scale, as was acknowledged by Glenn Mulcaire, the man hired by the News of the World in 2001 to be the point person for phone hacking.",
-              "translation": "【考研真题精读标准译文】This is hacking on an industrial scale, as was acknowledged by Glenn Mulcaire, the man hired by the News of the World in 2001 to be the point person for phone hacking.",
+              "translation": "正如格伦·马尔凯尔 (Glenn Mulcaire) 所承认的那样，这是一种工业规模的黑客攻击，他是《世界新闻报》2001 年聘请的电话窃听关键人物。",
               "vocab": [
                 {
                   "word": "hacking",
@@ -3908,7 +3908,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Others await trial. This long story still unfolds.",
-              "translation": "【考研真题精读标准译文】Others await trial. This long story still unfolds.",
+              "translation": "其他人正在等待审判。这个漫长的故事仍在展开。",
               "vocab": [
                 {
                   "word": "await",
@@ -3936,7 +3936,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "In many respects, the dearth of moral purpose frames not only the fact of such widespread phone hacking but the terms on which the trial took place.",
-              "translation": "【考研真题精读标准译文】In many respects, the dearth of moral purpose frames not only the fact of such widespread phone hacking but the terms on which the trial took place.",
+              "translation": "在许多方面，道德目的的缺乏不仅导致了电话窃听如此普遍的事实，而且导致了审判的条款。",
               "vocab": [
                 {
                   "word": "dearth",
@@ -3994,7 +3994,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "One of the astonishing revelations was how little Rebekah Brooks knew of what went on in her newsroom, how little she thought to ask and the fact that she never inquired how the stories arrived.",
-              "translation": "【考研真题精读标准译文】One of the astonishing revelations was how little Rebekah Brooks knew of what went on in her newsroom, how little she thought to ask and the fact that she never inquired how the stories arrived.",
+              "translation": "其中一个令人惊讶的发现是，丽贝卡·布鲁克斯对她的新闻编辑室里发生的事情知之甚少，她几乎没有想到要问，而且她从来没有询问过这些故事是如何到达的。",
               "vocab": [
                 {
                   "word": "One",
@@ -4022,7 +4022,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The core of her successful defence was that she knew nothing.",
-              "translation": "【考研真题精读标准译文】The core of her successful defence was that she knew nothing.",
+              "translation": "她成功辩护的核心是她一无所知。",
               "vocab": [
                 {
                   "word": "core",
@@ -4050,7 +4050,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "In today's world, it has become normal that well-paid executives should not be accountable for what happens in the organisations that they run.",
-              "translation": "【考研真题精读标准译文】In today's world, it has become normal that well-paid executives should not be accountable for what happens in the organisations that they run.",
+              "translation": "在当今世界，高薪高管不应对他们所管理的组织中发生的事情负责已经成为常态。",
               "vocab": [
                 {
                   "word": "normal",
@@ -4084,7 +4084,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Perhaps we should not be so surprised.",
-              "translation": "【考研真题精读标准译文】Perhaps we should not be so surprised.",
+              "translation": "也许我们不应该如此惊讶。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -4100,7 +4100,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "For a generation, the collective doctrine has been that the sorting mechanism of society should be profit.",
-              "translation": "【考研真题精读标准译文】For a generation, the collective doctrine has been that the sorting mechanism of society should be profit.",
+              "translation": "对于一代人来说，集体主义一直是社会的分类机制应该是利润。",
               "vocab": [
                 {
                   "word": "For",
@@ -4152,7 +4152,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The words that have mattered are efficiency, flexibility, shareholder value, business-friendly, wealth generation, sales, impact and, in newspapers, circulation.",
-              "translation": "【考研真题精读标准译文】The words that have mattered are efficiency, flexibility, shareholder value, business-friendly, wealth generation, sales, impact and, in newspapers, circulation.",
+              "translation": "重要的词语是效率、灵活性、股东价值、商业友好、财富创造、销售、影响力以及报纸上的发行量。",
               "vocab": [
                 {
                   "word": "efficiency",
@@ -4210,7 +4210,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Words degraded to the margin have been justice, fairness, tolerance, proportionality and accountability.",
-              "translation": "【考研真题精读标准译文】Words degraded to the margin have been justice, fairness, tolerance, proportionality and accountability.",
+              "translation": "正义、公平、宽容、相称性和问责制这些词被贬低到了边缘。",
               "vocab": [
                 {
                   "word": "margin",
@@ -4256,7 +4256,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The purpose of editing the News of the World was not to promote reader understanding, to be fair in what was written or to betray any common humanity.",
-              "translation": "【考研真题精读标准译文】The purpose of editing the News of the World was not to promote reader understanding, to be fair in what was written or to betray any common humanity.",
+              "translation": "编辑《世界新闻报》的目的不是为了促进读者的理解、公平地撰写内容或背叛任何共同的人性。",
               "vocab": [
                 {
                   "word": "purpose",
@@ -4302,7 +4302,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "It was to ruin lives in the quest for circulation and impact.",
-              "translation": "【考研真题精读标准译文】It was to ruin lives in the quest for circulation and impact.",
+              "translation": "为了追求流通和影响力，它毁掉了人们的生活。",
               "vocab": [
                 {
                   "word": "lives",
@@ -4342,7 +4342,7 @@ window.ENGLISH_DATA['2015'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Ms Brooks may or may not have had suspicions about how her journalists got their stories, but she asked no questions, gave no instructions—nor received traceable, recorded answers.",
-              "translation": "【考研真题精读标准译文】Ms Brooks may or may not have had suspicions about how her journalists got their stories, but she asked no questions, gave no instructions—nor received traceable, recorded answers.",
+              "translation": "布鲁克斯女士可能怀疑也可能没有怀疑她的记者如何获得他们的故事，但她没有提出任何问题，没有给出任何指示，也没有收到可追踪的、有记录的答案。",
               "vocab": [
                 {
                   "word": "about",
@@ -4385,7 +4385,7 @@ window.ENGLISH_DATA['2015'] = {
               "text": "the consequences of the current sorting mechanism.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4462,7 +4462,7 @@ window.ENGLISH_DATA['2015'] = {
               "text": "more journalists may be found guilty of phone hacking.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4510,14 +4510,14 @@ window.ENGLISH_DATA['2015'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "was hardly convincing.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4548,9 +4548,9 @@ window.ENGLISH_DATA['2015'] = {
             {
               "key": "D",
               "text": "was part of a conspiracy.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4605,7 +4605,7 @@ window.ENGLISH_DATA['2015'] = {
               "text": "generally distorted values.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4660,7 +4660,7 @@ window.ENGLISH_DATA['2015'] = {
               "text": "Moral awareness matters in editing a newspaper.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

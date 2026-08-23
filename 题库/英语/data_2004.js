@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Hunting for a job late last year, lawyer Gant Redmon stumbled across CareerBuilder, a job database on the Internet.",
-              "translation": "【考研真题精读标准译文】Hunting for a job late last year, lawyer Gant Redmon stumbled across CareerBuilder, a job database on the Internet.",
+              "translation": "去年年底，Gant Redmon 律师在寻找工作时偶然发现了 CareerBuilder，这是互联网上的一个工作数据库。",
               "vocab": [
                 {
                   "word": "for",
@@ -48,7 +48,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "He searched it with no success but was attracted by the site's \"personal search agent\".",
-              "translation": "【考研真题精读标准译文】He searched it with no success but was attracted by the site's \"personal search agent\".",
+              "translation": "他搜索没有成功，但被该网站的“个人搜索代理”所吸引。",
               "vocab": [
                 {
                   "word": "search",
@@ -70,7 +70,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "It's an interactive feature that lets visitors key in job criteria such as location, title, and salary, then E-mails them when a matching position is posted in the database.",
-              "translation": "【考研真题精读标准译文】It's an interactive feature that lets visitors key in job criteria such as location, title, and salary, then E-mails them when a matching position is posted in the database.",
+              "translation": "它是一种交互式功能，允许访问者输入工作条件，例如地点、职位和薪水，然后在数据库中发布匹配的职位时向他们发送电子邮件。",
               "vocab": [
                 {
                   "word": "feature",
@@ -110,7 +110,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Redmon chose the keywords legal, intellectual property and Washington, D.C.",
-              "translation": "【考研真题精读标准译文】Redmon chose the keywords legal, intellectual property and Washington, D.C.",
+              "translation": "雷德蒙选择了关键词“法律”、“知识产权”和“华盛顿特区”。",
               "vocab": [
                 {
                   "word": "intellectual property",
@@ -144,7 +144,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Three weeks later, he got his first notification of an opening.",
-              "translation": "【考研真题精读标准译文】Three weeks later, he got his first notification of an opening.",
+              "translation": "三周后，他收到了第一份空缺通知。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -153,7 +153,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "\"I struck gold,\" says Redmon, who E-mailed his resume to the employer and won a position as in-house counsel for a company.",
-              "translation": "【考研真题精读标准译文】\"I struck gold,\" says Redmon, who E-mailed his resume to the employer and won a position as in-house counsel for a company.",
+              "translation": "“我找到了金子，”雷德蒙说，他通过电子邮件将简历发送给雇主，并赢得了一家公司内部法律顾问的职位。",
               "vocab": [
                 {
                   "word": "resume",
@@ -187,7 +187,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "With thousands of career-related sites on the Internet, finding promising openings can be time-consuming and inefficient.",
-              "translation": "【考研真题精读标准译文】With thousands of career-related sites on the Internet, finding promising openings can be time-consuming and inefficient.",
+              "translation": "互联网上有数以千计的职业相关网站，寻找有前途的空缺职位可能既耗时又低效。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -203,7 +203,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Search agents reduce the need for repeated visits to the databases.",
-              "translation": "【考研真题精读标准译文】Search agents reduce the need for repeated visits to the databases.",
+              "translation": "搜索代理减少了重复访问数据库的需要。",
               "vocab": [
                 {
                   "word": "Search",
@@ -225,7 +225,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "But although a search agent worked for Redmon, career experts see drawbacks.",
-              "translation": "【考研真题精读标准译文】But although a search agent worked for Redmon, career experts see drawbacks.",
+              "translation": "不过，尽管雷德蒙公司有一名猎头代理，但职业专家却看到了它的缺点。",
               "vocab": [
                 {
                   "word": "search",
@@ -259,7 +259,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Narrowing your criteria, for example, may work against you: \"Every time you answer a question you eliminate a possibility,\" says one expert.",
-              "translation": "【考研真题精读标准译文】Narrowing your criteria, for example, may work against you: \"Every time you answer a question you eliminate a possibility,\" says one expert.",
+              "translation": "例如，缩小你的标准可能会对你不利：“每次你回答一个问题，你就消除了一种可能性，”一位专家说。",
               "vocab": [
                 {
                   "word": "Narrowing",
@@ -323,7 +323,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "For any job search, you should start with a narrow concept—what you think you want to do—then broaden it.",
-              "translation": "【考研真题精读标准译文】For any job search, you should start with a narrow concept—what you think you want to do—then broaden it.",
+              "translation": "对于任何求职，你都应该从一个狭隘的概念开始——你认为你想做的事情——然后扩大它。",
               "vocab": [
                 {
                   "word": "For",
@@ -363,7 +363,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "\"None of these programs do that,\" says another expert.",
-              "translation": "【考研真题精读标准译文】\"None of these programs do that,\" says another expert.",
+              "translation": "另一位专家表示：“这些程序都没有做到这一点。”",
               "vocab": [
                 {
                   "word": "expert",
@@ -379,7 +379,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "\"There's no career counseling implicit in all of this.\" Instead, the best strategy is to use the agent as a kind of tip service to keep abreast of jobs in a particular database; when you get E-mail, consider it a reminder to check the database again.",
-              "translation": "【考研真题精读标准译文】\"There's no career counseling implicit in all of this.\" Instead, the best strategy is to use the agent as a kind of tip service to keep abreast of jobs in a particular database; when you get E-mail, consider it a reminder to check the database again.",
+              "translation": "“这一切并不隐含职业咨询。”相反，最好的策略是使用代理作为一种小费服务，以随时了解特定数据库中的工作情况；当您收到电子邮件时，请将其视为再次检查数据库的提醒。",
               "vocab": [
                 {
                   "word": "career",
@@ -461,7 +461,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "\"I would not rely on agents for finding everything that is added to a database that might interest me,\" says the author of a job-searching guide.",
-              "translation": "【考研真题精读标准译文】\"I would not rely on agents for finding everything that is added to a database that might interest me,\" says the author of a job-searching guide.",
+              "translation": "“我不会依靠代理来查找数据库中添加的我可能感兴趣的所有内容，”求职指南的作者说。",
               "vocab": [
                 {
                   "word": "rely on",
@@ -508,7 +508,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Some sites design their agents to tempt job hunters to return.",
-              "translation": "【考研真题精读标准译文】Some sites design their agents to tempt job hunters to return.",
+              "translation": "一些网站设计其代理来吸引求职者回国。",
               "vocab": [
                 {
                   "word": "design",
@@ -536,7 +536,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "When CareerSite's agent sends out messages to those who have signed up for its service, for example, it includes only three potential jobs—those it considers the best matches.",
-              "translation": "【考研真题精读标准译文】When CareerSite's agent sends out messages to those who have signed up for its service, for example, it includes only three potential jobs—those it considers the best matches.",
+              "translation": "例如，当 CareerSite 的代理向那些注册其服务的人发送消息时，它只包含三个潜在的工作——它认为最匹配的工作。",
               "vocab": [
                 {
                   "word": "agent",
@@ -564,7 +564,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "There may be more matches in the database; job hunters will have to visit the site again to find them—and they do.",
-              "translation": "【考研真题精读标准译文】There may be more matches in the database; job hunters will have to visit the site again to find them—and they do.",
+              "translation": "数据库中可能还有更多匹配项；求职者将不得不再次访问该网站才能找到他们——他们确实做到了。",
               "vocab": [
                 {
                   "word": "database",
@@ -592,7 +592,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "\"On the day after we send our messages, we see a sharp increase in our traffic,\" says Seth Peets, vice president of marketing for CareerSite.",
-              "translation": "【考研真题精读标准译文】\"On the day after we send our messages, we see a sharp increase in our traffic,\" says Seth Peets, vice president of marketing for CareerSite.",
+              "translation": "CareerSite 营销副总裁 Seth Peets 表示：“发送消息后的第二天，我们发现流量急剧增加。”",
               "vocab": [
                 {
                   "word": "sharp",
@@ -638,7 +638,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Even those who aren't hunting for jobs may find search agents worthwhile.",
-              "translation": "【考研真题精读标准译文】Even those who aren't hunting for jobs may find search agents worthwhile.",
+              "translation": "即使那些不寻找工作的人也可能会发现搜索代理是值得的。",
               "vocab": [
                 {
                   "word": "for",
@@ -672,7 +672,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Some use them to keep a close watch on the demand for their line of work or gather information on compensation to arm themselves when negotiating for a raise.",
-              "translation": "【考研真题精读标准译文】Some use them to keep a close watch on the demand for their line of work or gather information on compensation to arm themselves when negotiating for a raise.",
+              "translation": "有些人用它们来密切关注自己工作的需求，或者收集薪酬信息，以便在谈判加薪时武装自己。",
               "vocab": [
                 {
                   "word": "use",
@@ -730,7 +730,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Although happily employed, Redmon maintains his agent at CareerBuilder.",
-              "translation": "【考研真题精读标准译文】Although happily employed, Redmon maintains his agent at CareerBuilder.",
+              "translation": "尽管雷德蒙的工作很愉快，但他的经纪人仍留在 CareerBuilder。",
               "vocab": [
                 {
                   "word": "agent",
@@ -746,7 +746,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "\"You always keep your eyes open,\" he says.",
-              "translation": "【考研真题精读标准译文】\"You always keep your eyes open,\" he says.",
+              "translation": "“你总是睁大眼睛，”他说。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -755,7 +755,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "Working with a personal search agent means having another set of eyes looking out for you.",
-              "translation": "【考研真题精读标准译文】Working with a personal search agent means having another set of eyes looking out for you.",
+              "translation": "与个人搜索代理合作意味着有另一双眼睛在注视着您。",
               "vocab": [
                 {
                   "word": "search",
@@ -825,7 +825,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "By using a special service of a database.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -902,7 +902,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "Fewer successful matches.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -935,7 +935,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "advisory.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1034,7 +1034,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "To increase the rate of success.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1089,7 +1089,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "Personal search agents are also helpful to those already employed.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1131,7 +1131,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Over the past century, all kinds of unfairness and discrimination have been condemned or made illegal. But one insidious form continues to thrive: alphabetism.",
-              "translation": "【考研真题精读标准译文】Over the past century, all kinds of unfairness and discrimination have been condemned or made illegal. But one insidious form continues to thrive: alphabetism.",
+              "translation": "一个世纪以来，各种不公平和歧视行为都受到谴责或被定为非法。但一种阴险的形式继续盛行：字母顺序。",
               "vocab": [
                 {
                   "word": "discrimination",
@@ -1171,7 +1171,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "This, for those as yet unaware of such a disadvantage, refers to discrimination against those whose surnames begin with a letter in the lower half of the alphabet.",
-              "translation": "【考研真题精读标准译文】This, for those as yet unaware of such a disadvantage, refers to discrimination against those whose surnames begin with a letter in the lower half of the alphabet.",
+              "translation": "对于那些尚未意识到这种劣势的人来说，这是指对姓氏以字母表下半部分字母开头的人的歧视。",
               "vocab": [
                 {
                   "word": "for",
@@ -1217,7 +1217,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "It has long been known that a taxi firm called AAAA cars has a big advantage over Zodiac cars when customers thumb through their phone directories.",
-              "translation": "【考研真题精读标准译文】It has long been known that a taxi firm called AAAA cars has a big advantage over Zodiac cars when customers thumb through their phone directories.",
+              "translation": "人们早就知道，当顾客翻阅电话簿时，一家名为 AAAA cars 的出租车公司比 Zodiac cars 有很大的优势。",
               "vocab": [
                 {
                   "word": "advantage",
@@ -1233,7 +1233,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Less well known is the advantage that Adam Abbott has in life over Zoë Zysman.",
-              "translation": "【考研真题精读标准译文】Less well known is the advantage that Adam Abbott has in life over Zoë Zysman.",
+              "translation": "不太为人所知的是亚当·阿博特 (Adam Abbott) 在生活中相对于佐伊·齐斯曼 (Zoë Zysman) 的优势。",
               "vocab": [
                 {
                   "word": "advantage",
@@ -1249,7 +1249,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "English names are fairly evenly spread between the halves of the alphabet.",
-              "translation": "【考研真题精读标准译文】English names are fairly evenly spread between the halves of the alphabet.",
+              "translation": "英文名字相当均匀地分布在字母表的两半部分。",
               "vocab": [
                 {
                   "word": "fairly",
@@ -1277,7 +1277,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Yet a suspiciously large number of top people have surnames beginning with letters between A and K.",
-              "translation": "【考研真题精读标准译文】Yet a suspiciously large number of top people have surnames beginning with letters between A and K.",
+              "translation": "然而，令人怀疑的是，大量高层人士的姓氏以 A 和 K 之间的字母开头。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -1300,7 +1300,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Thus the American president and vice-president have surnames starting with B and C respectively; and 26 of George Bush's predecessors (including his father) had surnames in the first half of the alphabet against just 16 in the second half.",
-              "translation": "【考研真题精读标准译文】Thus the American president and vice-president have surnames starting with B and C respectively; and 26 of George Bush's predecessors (including his father) had surnames in the first half of the alphabet against just 16 in the second half.",
+              "translation": "因此，美国总统和副总统的姓氏分别以B和C开头；乔治·布什的前任中有 26 位（包括他的父亲）的姓氏是字母表的前半部分，而后半部分的姓氏只有 16 个。",
               "vocab": [
                 {
                   "word": "Thus",
@@ -1340,7 +1340,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Even more striking, six of the seven heads of government of the G7 rich countries are alphabetically advantaged (Berlusconi, Blair, Bush, Chirac, Chrétien and Koizumi).",
-              "translation": "【考研真题精读标准译文】Even more striking, six of the seven heads of government of the G7 rich countries are alphabetically advantaged (Berlusconi, Blair, Bush, Chirac, Chrétien and Koizumi).",
+              "translation": "更引人注目的是，七国集团富裕国家的七位政府首脑中有六位按字母顺序排列占优势（贝卢斯科尼、布莱尔、布什、希拉克、克雷蒂安和小泉）。",
               "vocab": [
                 {
                   "word": "government",
@@ -1356,7 +1356,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The world's three top central bankers (Greenspan, Duisenberg and Hayami) are all close to the top of the alphabet, even if one of them really uses Japanese characters.",
-              "translation": "【考研真题精读标准译文】The world's three top central bankers (Greenspan, Duisenberg and Hayami) are all close to the top of the alphabet, even if one of them really uses Japanese characters.",
+              "translation": "世界三大央行行长（格林斯潘、杜伊森贝格和速水）都接近字母表的顶端，即使其中一位真的使用日语字符。",
               "vocab": [
                 {
                   "word": "even if",
@@ -1390,7 +1390,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "As are the world's five richest men (Gates, Buffett, Allen, Ellison and Albrecht).",
-              "translation": "【考研真题精读标准译文】As are the world's five richest men (Gates, Buffett, Allen, Ellison and Albrecht).",
+              "translation": "世界上最富有的五位人士（盖茨、巴菲特、艾伦、埃里森和阿尔布雷希特）也是如此。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1399,7 +1399,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Can this merely be coincidence?",
-              "translation": "【考研真题精读标准译文】Can this merely be coincidence?",
+              "translation": "这难道只是巧合吗？",
               "vocab": [
                 {
                   "word": "merely",
@@ -1421,7 +1421,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "One theory, dreamt up in all the spare time enjoyed by the alphabetically disadvantaged, is that the rot sets in early.",
-              "translation": "【考研真题精读标准译文】One theory, dreamt up in all the spare time enjoyed by the alphabetically disadvantaged, is that the rot sets in early.",
+              "translation": "一种理论是，按字母顺序处于劣势的人在所有空闲时间里都梦想着，这种腐烂很早就开始了。",
               "vocab": [
                 {
                   "word": "One",
@@ -1462,7 +1462,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "At the start of the first year in infant school, teachers seat pupils alphabetically from the front, to make it easier to remember their names.",
-              "translation": "【考研真题精读标准译文】At the start of the first year in infant school, teachers seat pupils alphabetically from the front, to make it easier to remember their names.",
+              "translation": "在婴儿学校第一学年开始时，老师会按照字母顺序从前面安排学生就座，以便更容易记住他们的名字。",
               "vocab": [
                 {
                   "word": "infant",
@@ -1478,7 +1478,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "So short-sighted Zysman junior gets stuck in the back row, and is rarely asked the improving questions posed by those insensitive teachers.",
-              "translation": "【考研真题精读标准译文】So short-sighted Zysman junior gets stuck in the back row, and is rarely asked the improving questions posed by those insensitive teachers.",
+              "translation": "因此，目光短浅的齐斯曼小学生被困在后排，很少被那些麻木不仁的老师提出改进的问题。",
               "vocab": [
                 {
                   "word": "row",
@@ -1500,7 +1500,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "At the time the alphabetically disadvantaged may think they have had a lucky escape.",
-              "translation": "【考研真题精读标准译文】At the time the alphabetically disadvantaged may think they have had a lucky escape.",
+              "translation": "当时，按字母顺序处于劣势的人可能认为他们幸运地逃脱了。",
               "vocab": [
                 {
                   "word": "escape",
@@ -1516,7 +1516,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Yet the result may be worse qualifications, because they get less individual attention, as well as less confidence in speaking publicly.",
-              "translation": "【考研真题精读标准译文】Yet the result may be worse qualifications, because they get less individual attention, as well as less confidence in speaking publicly.",
+              "translation": "然而，结果可能是资质较差，因为他们受到的个人关注较少，公开演讲的信心也较低。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -1550,7 +1550,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The humiliation continues.",
-              "translation": "【考研真题精读标准译文】The humiliation continues.",
+              "translation": "羞辱还在继续。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1559,7 +1559,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "At university graduation ceremonies, the ABCs proudly get their awards first; by the time they reach the Zysmans most people are literally having a ZZZ.",
-              "translation": "【考研真题精读标准译文】At university graduation ceremonies, the ABCs proudly get their awards first; by the time they reach the Zysmans most people are literally having a ZZZ.",
+              "translation": "在大学毕业典礼上，ABC 们自豪地第一个获得奖项；当他们到达 Zysmans 时，大多数人都已经感到 ZZZ 了。",
               "vocab": [
                 {
                   "word": "graduation",
@@ -1575,7 +1575,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Shortlists for job interviews, election ballot papers, lists of conference speakers and attendees: all tend to be drawn up alphabetically, and their recipients lose interest as they plough through them.",
-              "translation": "【考研真题精读标准译文】Shortlists for job interviews, election ballot papers, lists of conference speakers and attendees: all tend to be drawn up alphabetically, and their recipients lose interest as they plough through them.",
+              "translation": "工作面试的入围名单、选举选票、会议发言人和与会者名单：所有这些都往往是按字母顺序列出的，收件人在仔细阅读这些内容时就会失去兴趣。",
               "vocab": [
                 {
                   "word": "tend to be",
@@ -1659,7 +1659,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "A type of conspicuous bias.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1736,7 +1736,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "Customers often pay a lot of attention to companies’ names.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1812,7 +1812,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "students should be seated according to their eyesight",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1845,7 +1845,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "They are getting impatient.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1933,7 +1933,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "The campaign to eliminate alphabetism still has a long way to go.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1975,7 +1975,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "When it comes to the slowing economy, Ellen Spero isn't biting her nails just yet.",
-              "translation": "【考研真题精读标准译文】When it comes to the slowing economy, Ellen Spero isn't biting her nails just yet.",
+              "translation": "谈到经济放缓，艾伦·斯佩罗 (Ellen Spero) 还没有咬指甲。",
               "vocab": [
                 {
                   "word": "yet",
@@ -1991,7 +1991,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But the 47-year-old manicurist isn't cutting, filing or polishing as many nails as she'd like to, either.",
-              "translation": "【考研真题精读标准译文】But the 47-year-old manicurist isn't cutting, filing or polishing as many nails as she'd like to, either.",
+              "translation": "但这位 47 岁的美甲师也没有按照自己的意愿剪、锉或抛光指甲。",
               "vocab": [
                 {
                   "word": "filing",
@@ -2007,7 +2007,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Most of her clients spend $12 to $50 weekly, but last month two longtime customers suddenly stopped showing up.",
-              "translation": "【考研真题精读标准译文】Most of her clients spend $12 to $50 weekly, but last month two longtime customers suddenly stopped showing up.",
+              "translation": "她的大多数客户每周花费 12 至 50 美元，但上个月，两位长期客户突然不再出现。",
               "vocab": [
                 {
                   "word": "suddenly",
@@ -2023,7 +2023,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Spero blames the softening economy.",
-              "translation": "【考研真题精读标准译文】Spero blames the softening economy.",
+              "translation": "斯佩罗将此归咎于经济疲软。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2032,7 +2032,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "\"I'm a good economic indicator,\" she says.",
-              "translation": "【考研真题精读标准译文】\"I'm a good economic indicator,\" she says.",
+              "translation": "“我是一个很好的经济指标，”她说。",
               "vocab": [
                 {
                   "word": "economic",
@@ -2054,7 +2054,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "\"I provide a service that people can do without when they're concerned about saving some dollars.\" So Spero is downscaling, shopping at middle-brow Dillard's department store near her suburban Cleveland home, instead of Neiman Marcus.",
-              "translation": "【考研真题精读标准译文】\"I provide a service that people can do without when they're concerned about saving some dollars.\" So Spero is downscaling, shopping at middle-brow Dillard's department store near her suburban Cleveland home, instead of Neiman Marcus.",
+              "translation": "“当人们担心节省一些钱时，我提供的服务是可以不需要的。”因此，斯佩罗正在缩小规模，在她位于克利夫兰郊区的家附近的中产阶级迪拉德百货公司购物，而不是在尼曼·马库斯 (Neiman Marcus)。",
               "vocab": [
                 {
                   "word": "provide",
@@ -2088,7 +2088,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "\"I don't know if other clients are going to abandon me, too,\" she says.",
-              "translation": "【考研真题精读标准译文】\"I don't know if other clients are going to abandon me, too,\" she says.",
+              "translation": "“我不知道其他客户是否也会抛弃我，”她说。",
               "vocab": [
                 {
                   "word": "abandon",
@@ -2104,7 +2104,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "Even before Alan Greenspan's admission that America's red-hot economy is cooling, lots of working folks had already seen signs of the slowdown themselves.",
-              "translation": "【考研真题精读标准译文】Even before Alan Greenspan's admission that America's red-hot economy is cooling, lots of working folks had already seen signs of the slowdown themselves.",
+              "translation": "甚至在艾伦·格林斯潘承认美国炙手可热的经济正在降温之前，许多工薪阶层就已经看到了经济放缓的迹象。",
               "vocab": [
                 {
                   "word": "admission",
@@ -2120,7 +2120,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 9,
               "id": "P1-S9",
               "text": "From car dealerships to Gap outlets, sales have been lagging for months as shoppers temper their spending.",
-              "translation": "【考研真题精读标准译文】From car dealerships to Gap outlets, sales have been lagging for months as shoppers temper their spending.",
+              "translation": "从汽车经销店到 Gap 专卖店，由于购物者减少支出，销售已经滞后数月。",
               "vocab": [
                 {
                   "word": "for",
@@ -2149,7 +2149,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "For retailers, who last year took in 24 percent of their revenue between Thanksgiving and Christmas, the cautious approach is coming at a crucial time.",
-              "translation": "【考研真题精读标准译文】For retailers, who last year took in 24 percent of their revenue between Thanksgiving and Christmas, the cautious approach is coming at a crucial time.",
+              "translation": "对于去年感恩节和圣诞节之间收入占总收入 24% 的零售商来说，他们在关键时刻采取了谨慎的态度。",
               "vocab": [
                 {
                   "word": "For",
@@ -2189,7 +2189,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Already, experts say, holiday sales are off 7 percent from last year's pace.",
-              "translation": "【考研真题精读标准译文】Already, experts say, holiday sales are off 7 percent from last year's pace.",
+              "translation": "专家表示，假日销售已经比去年下降了 7%。",
               "vocab": [
                 {
                   "word": "pace",
@@ -2205,7 +2205,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "But don't sound any alarms just yet.",
-              "translation": "【考研真题精读标准译文】But don't sound any alarms just yet.",
+              "translation": "但暂时不要拉响任何警报。",
               "vocab": [
                 {
                   "word": "sound",
@@ -2227,7 +2227,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Consumers seem only mildly concerned, not panicked, and many say they remain optimistic about the economy's long-term prospects even as they do some modest belt-tightening.",
-              "translation": "【考研真题精读标准译文】Consumers seem only mildly concerned, not panicked, and many say they remain optimistic about the economy's long-term prospects even as they do some modest belt-tightening.",
+              "translation": "消费者似乎只是轻度担忧，并不惊慌，许多人表示，尽管他们适度勒紧裤腰带，但他们对经济的长期前景仍然持乐观态度。",
               "vocab": [
                 {
                   "word": "do so",
@@ -2267,7 +2267,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Consumers say they're not in despair because, despite the dreadful headlines, their own fortunes still feel pretty good.",
-              "translation": "【考研真题精读标准译文】Consumers say they're not in despair because, despite the dreadful headlines, their own fortunes still feel pretty good.",
+              "translation": "消费者表示，他们并不绝望，因为尽管有可怕的头条新闻，但他们自己的命运仍然不错。",
               "vocab": [
                 {
                   "word": "despite",
@@ -2301,7 +2301,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Home prices are holding steady in most regions.",
-              "translation": "【考研真题精读标准译文】Home prices are holding steady in most regions.",
+              "translation": "大多数地区的房价保持稳定。",
               "vocab": [
                 {
                   "word": "steady",
@@ -2323,7 +2323,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "In Manhattan, \"there's a new gold rush happening in the $4 million to $10 million range, predominantly fed by Wall Street bonuses,\" says broker Barbara Corcoran.",
-              "translation": "【考研真题精读标准译文】In Manhattan, \"there's a new gold rush happening in the $4 million to $10 million range, predominantly fed by Wall Street bonuses,\" says broker Barbara Corcoran.",
+              "translation": "经纪人芭芭拉·科克伦 (Barbara Corcoran) 表示，在曼哈顿，“新一轮淘金热正在兴起，价值 400 万至 1000 万美元，主要由华尔街奖金推动”。",
               "vocab": [
                 {
                   "word": "new",
@@ -2357,7 +2357,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "In San Francisco, prices are still rising even as frenzied overbidding quiets.",
-              "translation": "【考研真题精读标准译文】In San Francisco, prices are still rising even as frenzied overbidding quiets.",
+              "translation": "在旧金山，尽管疯狂的竞价平静下来，但价格仍在上涨。",
               "vocab": [
                 {
                   "word": "still",
@@ -2373,7 +2373,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 9,
               "id": "P2-S9",
               "text": "\"Instead of 20 to 30 offers, now maybe you only get two or three,\" says John Tealdi, a Bay Area real-estate broker.",
-              "translation": "【考研真题精读标准译文】\"Instead of 20 to 30 offers, now maybe you only get two or three,\" says John Tealdi, a Bay Area real-estate broker.",
+              "translation": "湾区房地产经纪人约翰·蒂尔迪 (John Tealdi) 表示：“现在你可能只会收到两到三个报价，而不是 20 到 30 个。”",
               "vocab": [
                 {
                   "word": "Instead",
@@ -2396,7 +2396,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "And most folks still feel pretty comfortable about their ability to find and keep a job.",
-              "translation": "【考研真题精读标准译文】And most folks still feel pretty comfortable about their ability to find and keep a job.",
+              "translation": "大多数人仍然对自己找到并保住工作的能力感到非常满意。",
               "vocab": [
                 {
                   "word": "still",
@@ -2436,7 +2436,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Many folks see silver linings to this slowdown.",
-              "translation": "【考研真题精读标准译文】Many folks see silver linings to this slowdown.",
+              "translation": "许多人看到了经济放缓的一线希望。",
               "vocab": [
                 {
                   "word": "silver",
@@ -2452,7 +2452,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Potential home buyers would cheer for lower interest rates.",
-              "translation": "【考研真题精读标准译文】Potential home buyers would cheer for lower interest rates.",
+              "translation": "潜在的购房者将为较低的利率欢呼。",
               "vocab": [
                 {
                   "word": "interest rates",
@@ -2486,7 +2486,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Employers wouldn't mind a little fewer bubbles in the job market.",
-              "translation": "【考研真题精读标准译文】Employers wouldn't mind a little fewer bubbles in the job market.",
+              "translation": "雇主不会介意就业市场的泡沫少一点。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2495,7 +2495,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Many consumers seem to have been influenced by stock-market swings, which investors now view as a necessary ingredient to a sustained boom.",
-              "translation": "【考研真题精读标准译文】Many consumers seem to have been influenced by stock-market swings, which investors now view as a necessary ingredient to a sustained boom.",
+              "translation": "许多消费者似乎受到股市波动的影响，投资者现在认为股市波动是持续繁荣的必要因素。",
               "vocab": [
                 {
                   "word": "view",
@@ -2529,7 +2529,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Diners might see an upside, too.",
-              "translation": "【考研真题精读标准译文】Diners might see an upside, too.",
+              "translation": "食客也可能会看到好处。",
               "vocab": [
                 {
                   "word": "upside",
@@ -2545,7 +2545,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Getting a table at Manhattan's hot new Alain Ducasse restaurant used to be impossible.",
-              "translation": "【考研真题精读标准译文】Getting a table at Manhattan's hot new Alain Ducasse restaurant used to be impossible.",
+              "translation": "过去，在曼哈顿新开的热门阿兰·杜卡斯餐厅 (Alain Ducasse) 订到一张桌子是不可能的。",
               "vocab": [
                 {
                   "word": "new",
@@ -2573,7 +2573,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "Not anymore.",
-              "translation": "【考研真题精读标准译文】Not anymore.",
+              "translation": "不再。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2582,7 +2582,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "For that, Greenspan & Co. may still be worth toasting.",
-              "translation": "【考研真题精读标准译文】For that, Greenspan & Co. may still be worth toasting.",
+              "translation": "就这一点而言，格林斯潘公司可能仍然值得庆贺。",
               "vocab": [
                 {
                   "word": "For",
@@ -2658,7 +2658,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "Spero is not in a desperate situation.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2702,7 +2702,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "Confused.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2790,7 +2790,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "venture investment.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2845,7 +2845,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "Such a slowdown usually precedes a boom.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2900,7 +2900,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "Tighten the belt, the single remedy.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2953,7 +2953,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Americans today don't place a very high value on intellect.",
-              "translation": "【考研真题精读标准译文】Americans today don't place a very high value on intellect.",
+              "translation": "今天的美国人并不十分看重智力。",
               "vocab": [
                 {
                   "word": "place",
@@ -2987,7 +2987,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Our heroes are athletes, entertainers, and entrepreneurs, not scholars.",
-              "translation": "【考研真题精读标准译文】Our heroes are athletes, entertainers, and entrepreneurs, not scholars.",
+              "translation": "我们的英雄是运动员、演艺人员和企业家，而不是学者。",
               "vocab": [
                 {
                   "word": "scholars",
@@ -3003,7 +3003,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Even our schools are where we send our children to get a practical education—not to pursue knowledge for the sake of knowledge.",
-              "translation": "【考研真题精读标准译文】Even our schools are where we send our children to get a practical education—not to pursue knowledge for the sake of knowledge.",
+              "translation": "甚至我们的学校也是我们送孩子接受实践教育的地方，而不是为了知识而追求知识。",
               "vocab": [
                 {
                   "word": "practical",
@@ -3031,7 +3031,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Symptoms of pervasive anti-intellectualism in our schools aren't difficult to find.",
-              "translation": "【考研真题精读标准译文】Symptoms of pervasive anti-intellectualism in our schools aren't difficult to find.",
+              "translation": "我们学校中普遍存在的反智主义症状并不难发现。",
               "vocab": [
                 {
                   "word": "pervasive",
@@ -3059,7 +3059,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "\"Schools have always been in a society where practical is more important than intellectual,\" says education writer Diane Ravitch.",
-              "translation": "【考研真题精读标准译文】\"Schools have always been in a society where practical is more important than intellectual,\" says education writer Diane Ravitch.",
+              "translation": "“学校一直处于一个实践比知识更重要的社会，”教育作家黛安·拉维奇说。",
               "vocab": [
                 {
                   "word": "society",
@@ -3087,7 +3087,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "\"Schools could be a counterbalance.\" Ravitch's latest book.",
-              "translation": "【考研真题精读标准译文】\"Schools could be a counterbalance.\" Ravitch's latest book.",
+              "translation": "“学校可以起到平衡作用。”拉维奇的最新书。",
               "vocab": [
                 {
                   "word": "book",
@@ -3103,7 +3103,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Left Back: A Century of Failed School Reforms, traces the roots of anti-intellectualism in our schools, concluding they are anything but a counterbalance to the American distaste for intellectual pursuits.",
-              "translation": "【考研真题精读标准译文】Left Back: A Century of Failed School Reforms, traces the roots of anti-intellectualism in our schools, concluding they are anything but a counterbalance to the American distaste for intellectual pursuits.",
+              "translation": "《左后：一个世纪失败的学校改革》追溯了我们学校中反智主义的根源，得出的结论是它们根本无法平衡美国人对知识追求的厌恶。",
               "vocab": [
                 {
                   "word": "Left",
@@ -3150,7 +3150,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "But they could and should be.",
-              "translation": "【考研真题精读标准译文】But they could and should be.",
+              "translation": "但他们可以而且应该这样做。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -3159,7 +3159,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Encouraging kids to reject the life of the mind leaves them vulnerable to exploitation and control.",
-              "translation": "【考研真题精读标准译文】Encouraging kids to reject the life of the mind leaves them vulnerable to exploitation and control.",
+              "translation": "鼓励孩子拒绝精神生活会让他们容易受到剥削和控制。",
               "vocab": [
                 {
                   "word": "vulnerable to",
@@ -3193,7 +3193,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Without the ability to think critically, to defend their ideas and understand the ideas of others, they cannot fully participate in our democracy.",
-              "translation": "【考研真题精读标准译文】Without the ability to think critically, to defend their ideas and understand the ideas of others, they cannot fully participate in our democracy.",
+              "translation": "如果没有批判性思考、捍卫自己的想法和理解他人的想法的能力，他们就无法充分参与我们的民主。",
               "vocab": [
                 {
                   "word": "ability",
@@ -3227,7 +3227,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Continuing along this path, says writer Earl Shorris, \"We will become a second-rate country.",
-              "translation": "【考研真题精读标准译文】Continuing along this path, says writer Earl Shorris, \"We will become a second-rate country.",
+              "translation": "作家厄尔·肖里斯说，继续沿着这条路走下去，“我们将成为二流国家。",
               "vocab": [
                 {
                   "word": "path",
@@ -3249,7 +3249,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "We will have a less civil society.\" \"Intellect is resented as a form of power or privilege,\" writes historian and professor Richard Hofstadter in Anti-intellectualism in American Life, a Pulitzer-Prize winning book on the roots of anti-intellectualism in US politics, religion, and education.",
-              "translation": "【考研真题精读标准译文】We will have a less civil society.\" \"Intellect is resented as a form of power or privilege,\" writes historian and professor Richard Hofstadter in Anti-intellectualism in American Life, a Pulitzer-Prize winning book on the roots of anti-intellectualism in US politics, religion, and education.",
+              "translation": "我们将拥有一个更少的公民社会。”历史学家兼教授理查德·霍夫施塔特（Richard Hofstadter）在《美国生活中的反智主义》一书中写道，“智力作为一种权力或特权形式而受到憎恨。”这本普利策奖得主著作探讨了美国政治、宗教和教育中反智主义的根源。",
               "vocab": [
                 {
                   "word": "will",
@@ -3337,7 +3337,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "From the beginning of our history, says Hofstadter, our democratic and populist urges have driven us to reject anything that smells of elitism.",
-              "translation": "【考研真题精读标准译文】From the beginning of our history, says Hofstadter, our democratic and populist urges have driven us to reject anything that smells of elitism.",
+              "translation": "霍夫施塔特说，从我们的历史开始，我们的民主和民粹主义冲动就驱使我们拒绝任何带有精英主义味道的东西。",
               "vocab": [
                 {
                   "word": "democratic",
@@ -3365,7 +3365,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Practicality, common sense, and native intelligence have been considered more noble qualities than anything you could learn from a book.",
-              "translation": "【考研真题精读标准译文】Practicality, common sense, and native intelligence have been considered more noble qualities than anything you could learn from a book.",
+              "translation": "实用性、常识和天生的智慧被认为比从书本上学到的任何东西都更高尚。",
               "vocab": [
                 {
                   "word": "common",
@@ -3418,7 +3418,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Ralph Waldo Emerson and other Transcendentalist philosophers thought schooling and rigorous book learning put unnatural restraints on children: \"We are shut up in schools and college recitation rooms for 10 or 15 years and come out at last with a bellyful of words and do not know a thing.\" Mark Twain's Huckleberry Finn exemplified American anti-intellectualism.",
-              "translation": "【考研真题精读标准译文】Ralph Waldo Emerson and other Transcendentalist philosophers thought schooling and rigorous book learning put unnatural restraints on children: \"We are shut up in schools and college recitation rooms for 10 or 15 years and come out at last with a bellyful of words and do not know a thing.\" Mark Twain's Huckleberry Finn exemplified American anti-intellectualism.",
+              "translation": "拉尔夫·沃尔多·爱默生和其他超验主义哲学家认为学校教育和严格的书本学习对孩子们施加了不自然的限制：“我们被关在学校和大学的背诵室里10年或15年，最后出来时却满腹言语，一无所知。”马克·吐温的《哈克贝利·费恩历险记》是美国反智主义的典范。",
               "vocab": [
                 {
                   "word": "thought",
@@ -3464,7 +3464,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Its hero avoids being civilized—going to school and learning to read—so he can preserve his innate goodness.",
-              "translation": "【考研真题精读标准译文】Its hero avoids being civilized—going to school and learning to read—so he can preserve his innate goodness.",
+              "translation": "它的英雄避免文明——上学和学习阅读——这样他就可以保留他与生俱来的善良。",
               "vocab": [
                 {
                   "word": "being",
@@ -3498,7 +3498,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Intellect, according to Hofstadter, is different from native intelligence, a quality we reluctantly admire.",
-              "translation": "【考研真题精读标准译文】Intellect, according to Hofstadter, is different from native intelligence, a quality we reluctantly admire.",
+              "translation": "霍夫施塔特认为，智力不同于与生俱来的智力，后者是我们不情愿地钦佩的品质。",
               "vocab": [
                 {
                   "word": "according to",
@@ -3544,7 +3544,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Intellect is the critical, creative, and contemplative side of the mind.",
-              "translation": "【考研真题精读标准译文】Intellect is the critical, creative, and contemplative side of the mind.",
+              "translation": "智力是心灵的批判性、创造性和沉思性的一面。",
               "vocab": [
                 {
                   "word": "Intellect",
@@ -3566,7 +3566,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Intelligence seeks to grasp, manipulate, re-order, and adjust, while intellect examines, ponders, wonders, theorizes, criticizes, and imagines.",
-              "translation": "【考研真题精读标准译文】Intelligence seeks to grasp, manipulate, re-order, and adjust, while intellect examines, ponders, wonders, theorizes, criticizes, and imagines.",
+              "translation": "智力寻求把握、操纵、重新排序和调整，而智力则检查、思考、思考、理论、批评和想象。",
               "vocab": [
                 {
                   "word": "Intelligence",
@@ -3606,7 +3606,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "School remains a place where intellect is mistrusted.",
-              "translation": "【考研真题精读标准译文】School remains a place where intellect is mistrusted.",
+              "translation": "学校仍然是一个智力不被信任的地方。",
               "vocab": [
                 {
                   "word": "place",
@@ -3628,7 +3628,7 @@ window.ENGLISH_DATA['2004'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Hofstadter says our country's educational system is in the grips of people who \"joyfully and militantly proclaim their hostility to intellect and their eagerness to identify with children who show the least intellectual promise.\"",
-              "translation": "【考研真题精读标准译文】Hofstadter says our country's educational system is in the grips of people who \"joyfully and militantly proclaim their hostility to intellect and their eagerness to identify with children who show the least intellectual promise.\"",
+              "translation": "霍夫施塔特说，我们国家的教育体系掌握在那些“快乐而激进地宣称对智力怀有敌意并渴望认同最没有智力潜力的孩子”的人手中。",
               "vocab": [
                 {
                   "word": "system",
@@ -3713,7 +3713,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "The habit of thinking independently.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3812,7 +3812,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "suppressing native intelligence.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3856,7 +3856,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "similar.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3933,7 +3933,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "a scholar in favor of intellect.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4010,7 +4010,7 @@ window.ENGLISH_DATA['2004'] = {
               "text": "It underlies power",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

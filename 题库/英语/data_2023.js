@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The weather in Texas may have cooled since the recent extreme heat, but the temperature will be high at the State Board of Education meeting in Austin this month as officials debate how climate change is taught in Texas schools.",
-              "translation": "【考研真题精读标准译文】The weather in Texas may have cooled since the recent extreme heat, but the temperature will be high at the State Board of Education meeting in Austin this month as officials debate how climate change is taught in Texas schools.",
+              "translation": "自最近的极端高温以来，德克萨斯州的天气可能已经变冷，但本月在奥斯汀举行的州教育委员会会议上的气温将会很高，因为官员们正在讨论德克萨斯州学校如何教授气候变化。",
               "vocab": [
                 {
                   "word": "weather",
@@ -90,7 +90,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Pat Hardy, who sympathises with the views of the energy sector, is resisting proposed changes to science standards for pre-teen pupils.",
-              "translation": "【考研真题精读标准译文】Pat Hardy, who sympathises with the views of the energy sector, is resisting proposed changes to science standards for pre-teen pupils.",
+              "translation": "帕特·哈迪（Pat Hardy）同情能源部门的观点，他反对对青春期前学生的科学标准进行修改的提议。",
               "vocab": [
                 {
                   "word": "energy",
@@ -130,7 +130,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "\"There are as many scientists working against all the panic of global climate change as there are those who are pushing it,\" she claims, \"Texas is an energy state and we need to recognise that.",
-              "translation": "【考研真题精读标准译文】\"There are as many scientists working against all the panic of global climate change as there are those who are pushing it,\" she claims, \"Texas is an energy state and we need to recognise that.",
+              "translation": "她声称：“致力于应对全球气候变化恐慌的科学家和推动全球气候变化的科学家一样多，德克萨斯州是一个能源州，我们需要认识到这一点。",
               "vocab": [
                 {
                   "word": "change",
@@ -164,7 +164,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "You need to remember where your bread is buttered\" Most scientists and experts sharply dispute Hardy's views.",
-              "translation": "【考研真题精读标准译文】You need to remember where your bread is buttered\" Most scientists and experts sharply dispute Hardy's views.",
+              "translation": "你需要记住你的面包是在哪里涂黄油的” 大多数科学家和专家对哈代的观点提出了尖锐的质疑。",
               "vocab": [
                 {
                   "word": "sharply",
@@ -193,7 +193,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Board members like her \"casually dismiss the career work of scholars and scientists as just another misguided opinion,\" says Dan Quinn, senior communications strategist at the Texas Freedom Network, a non-profit group that monitors public education.",
-              "translation": "【考研真题精读标准译文】Board members like her \"casually dismiss the career work of scholars and scientists as just another misguided opinion,\" says Dan Quinn, senior communications strategist at the Texas Freedom Network, a non-profit group that monitors public education.",
+              "translation": "像她这样的董事会成员“随意地认为学者和科学家的职业工作只是另一种误导性的观点”，德克萨斯自由网络的高级传播策略师丹·奎因说，该网络是一个监督公共教育的非营利组织。",
               "vocab": [
                 {
                   "word": "Board",
@@ -257,7 +257,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Such debates reflect fierce discussions across the US, as researchers, policymakers, teachers and students step up demands for a greater focus on teaching about the facts of climate change in schools.",
-              "translation": "【考研真题精读标准译文】Such debates reflect fierce discussions across the US, as researchers, policymakers, teachers and students step up demands for a greater focus on teaching about the facts of climate change in schools.",
+              "translation": "这些辩论反映了美国各地的激烈讨论，研究人员、政策制定者、教师和学生纷纷要求学校更加注重气候变化事实的教学。",
               "vocab": [
                 {
                   "word": "reflect",
@@ -315,7 +315,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "A study last year by the National Center for Science Education, a non-profit group of scientists and teachers, looking at how state public schools across the country address climate change in science classes, gave barely half of US states a grade B+ or higher.",
-              "translation": "【考研真题精读标准译文】A study last year by the National Center for Science Education, a non-profit group of scientists and teachers, looking at how state public schools across the country address climate change in science classes, gave barely half of US states a grade B+ or higher.",
+              "translation": "国家科学教育中心（一个由科学家和教师组成的非营利组织）去年进行的一项研究调查了全国公立学校如何在科学课程中应对气候变化，结果显示美国只有一半的州获得了 B+ 或更高的成绩。",
               "vocab": [
                 {
                   "word": "National",
@@ -367,7 +367,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Among the 10 worst performers were some of the most populous states, including Texas, which was given the lowest grade (F) and has a disproportionate influence because its textbooks are widely sold elsewhere.",
-              "translation": "【考研真题精读标准译文】Among the 10 worst performers were some of the most populous states, including Texas, which was given the lowest grade (F) and has a disproportionate influence because its textbooks are widely sold elsewhere.",
+              "translation": "表现最差的 10 个州是一些人口最多的州，其中包括得克萨斯州，该州的评分最低（F），并且由于其教科书在其他地方广泛销售而具有不成比例的影响力。",
               "vocab": [
                 {
                   "word": "populous",
@@ -402,7 +402,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Glenn Branch, the centre's deputy director, cautions that setting state-level science standards is only one limited benchmark in a country that decentralises decisions to local school boards.",
-              "translation": "【考研真题精读标准译文】Glenn Branch, the centre's deputy director, cautions that setting state-level science standards is only one limited benchmark in a country that decentralises decisions to local school boards.",
+              "translation": "该中心副主任格伦·布兰奇（Glenn Branch）警告说，在一个将决策权力下放给地方学校董事会的国家，制定州级科学标准只是一个有限的基准。",
               "vocab": [
                 {
                   "word": "Branch",
@@ -448,7 +448,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Even if a state is considered a high performer in its science standards, \"that does not mean it will be taught\", he says.",
-              "translation": "【考研真题精读标准译文】Even if a state is considered a high performer in its science standards, \"that does not mean it will be taught\", he says.",
+              "translation": "他说，即使一个州被认为在科学标准方面表现出色，“这并不意味着它会被教授”。",
               "vocab": [
                 {
                   "word": "even if",
@@ -494,7 +494,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Another issue is that while climate change is well integrated into some subjects and at some ages—such as earth and space sciences in high schools—it is not as well represented in curricula for younger children and in subjects that are more widely taught, such as biology and chemistry.",
-              "translation": "【考研真题精读标准译文】Another issue is that while climate change is well integrated into some subjects and at some ages—such as earth and space sciences in high schools—it is not as well represented in curricula for younger children and in subjects that are more widely taught, such as biology and chemistry.",
+              "translation": "另一个问题是，虽然气候变化在某些年龄段的某些科目中得到了很好的体现，例如高中的地球和空间科学，但它在低龄儿童的课程和更广泛教授的科目（例如生物学和化学）中却没有得到很好的体现。",
               "vocab": [
                 {
                   "word": "issue",
@@ -540,7 +540,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "It is also less prominent in many social studies courses.",
-              "translation": "【考研真题精读标准译文】It is also less prominent in many social studies courses.",
+              "translation": "它在许多社会研究课程中也不那么突出。",
               "vocab": [
                 {
                   "word": "prominent",
@@ -562,7 +562,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Branch points out that, even if a growing number of official guidelines and textbooks reflect scientific consensus on climate change, unofficial educational materials that convey more slanted perspectives are being distributed to teachers.",
-              "translation": "【考研真题精读标准译文】Branch points out that, even if a growing number of official guidelines and textbooks reflect scientific consensus on climate change, unofficial educational materials that convey more slanted perspectives are being distributed to teachers.",
+              "translation": "布兰奇指出，尽管越来越多的官方指南和教科书反映了有关气候变化的科学共识，但传达更多倾斜观点的非官方教育材料正在分发给教师。",
               "vocab": [
                 {
                   "word": "even if",
@@ -632,7 +632,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "They include materials sponsored by energy industry associations.",
-              "translation": "【考研真题精读标准译文】They include materials sponsored by energy industry associations.",
+              "translation": "其中包括能源行业协会赞助的材料。",
               "vocab": [
                 {
                   "word": "include",
@@ -674,7 +674,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -690,9 +690,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "B",
               "text": "stress the consequences of climate change.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -701,9 +701,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "indicate the atmosphere at the board meeting.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -740,7 +740,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -756,9 +756,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "B",
               "text": "She denies the value of scientific work.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -767,9 +767,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "She shows no concern for pre-teens.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -813,7 +813,7 @@ window.ENGLISH_DATA['2023'] = {
               "text": "climate education is insufficient at state public schools.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -872,7 +872,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -899,9 +899,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "have limited influence.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -910,9 +910,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "D",
               "text": "cater to local needs.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -938,7 +938,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -965,9 +965,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "may misrepresent the energy sector.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -976,9 +976,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "D",
               "text": "can be swayed by external forces.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1009,7 +1009,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Communities throughout New England have been attempting to regulate short-term rentals since sites like Airbnb took off in the 2010s.",
-              "translation": "【考研真题精读标准译文】Communities throughout New England have been attempting to regulate short-term rentals since sites like Airbnb took off in the 2010s.",
+              "translation": "自 Airbnb 等网站在 2010 年代兴起以来，新英格兰各地的社区一直在尝试规范短期租赁。",
               "vocab": [
                 {
                   "word": "throughout",
@@ -1043,7 +1043,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Now, with record-high home prices and historically low inventory, there's an increased urgency in such regulation, particularly among those who worry that developers will come in and buy up swaths of housing to flip for a fortune on the short-term rental market.",
-              "translation": "【考研真题精读标准译文】Now, with record-high home prices and historically low inventory, there's an increased urgency in such regulation, particularly among those who worry that developers will come in and buy up swaths of housing to flip for a fortune on the short-term rental market.",
+              "translation": "现在，随着房价创历史新高，库存也创历史新低，此类监管的紧迫性越来越大，尤其是那些担心开发商会介入并购买大量住房并在短期租赁市场上转手大赚的人。",
               "vocab": [
                 {
                   "word": "inventory",
@@ -1113,7 +1113,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "In New Hampshire, where the rental vacancy rate has dropped below 1 percent, housing advocates fear unchecked short-term rentals will put further pressure on an already strained market.",
-              "translation": "【考研真题精读标准译文】In New Hampshire, where the rental vacancy rate has dropped below 1 percent, housing advocates fear unchecked short-term rentals will put further pressure on an already strained market.",
+              "translation": "在新罕布什尔州，租赁空置率已降至 1% 以下，住房倡导者担心不受控制的短期租金会给本已紧张的市场带来进一步压力。",
               "vocab": [
                 {
                   "word": "New",
@@ -1183,7 +1183,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The state Legislature recently voted against a bill that would've made it illegal for towns to create legislation restricting short-term rentals.",
-              "translation": "【考研真题精读标准译文】The state Legislature recently voted against a bill that would've made it illegal for towns to create legislation restricting short-term rentals.",
+              "translation": "州立法机关最近投票反对一项法案，该法案将使城镇制定限制短期租赁的立法成为非法。",
               "vocab": [
                 {
                   "word": "state",
@@ -1229,7 +1229,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "\"We are at a crisis level on the supply of rental housing,\" said Nick Taylor, executive director of the Workforce Housing Coalition of the Greater Seacoast.",
-              "translation": "【考研真题精读标准译文】\"We are at a crisis level on the supply of rental housing,\" said Nick Taylor, executive director of the Workforce Housing Coalition of the Greater Seacoast.",
+              "translation": "大海岸劳动力住房联盟执行董事尼克·泰勒表示：“我们正处于出租住房供应危机。”",
               "vocab": [
                 {
                   "word": "crisis",
@@ -1288,7 +1288,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Without enough affordable housing in southern New Hampshire towns, \"employers are having a hard time attracting employees, and workers are having a hard time finding a place to live,\" Taylor said.",
-              "translation": "【考研真题精读标准译文】Without enough affordable housing in southern New Hampshire towns, \"employers are having a hard time attracting employees, and workers are having a hard time finding a place to live,\" Taylor said.",
+              "translation": "泰勒说，新罕布什尔州南部城镇没有足够的经济适用房，“雇主很难吸引雇员，工人也很难找到住处”。",
               "vocab": [
                 {
                   "word": "affordable",
@@ -1322,7 +1322,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "However, short-term rentals also provide housing for tourists, pointed out Ryan Castle, CEO of a local association of realtors.",
-              "translation": "【考研真题精读标准译文】However, short-term rentals also provide housing for tourists, pointed out Ryan Castle, CEO of a local association of realtors.",
+              "translation": "然而，当地房地产经纪人协会首席执行官瑞安·卡斯尔指出，短期租赁也为游客提供了住房。",
               "vocab": [
                 {
                   "word": "However",
@@ -1368,7 +1368,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "\"A lot of workers are servicing the tourist industry, and the tourism industry is serviced by those people coming in short term,\" Castle said, \"and so it's a cyclical effect.\" Short-term rentals themselves are not the crux of the issue, said Keren Horn, an expert on affordable housing policy.",
-              "translation": "【考研真题精读标准译文】\"A lot of workers are servicing the tourist industry, and the tourism industry is serviced by those people coming in short term,\" Castle said, \"and so it's a cyclical effect.\" Short-term rentals themselves are not the crux of the issue, said Keren Horn, an expert on affordable housing policy.",
+              "translation": "卡斯尔说：“许多工人正在为旅游业提供服务，而旅游业是由那些短期到来的人提供服务的，因此这是一种周期性效应。”经济适用房政策专家克伦·霍恩表示，短期租金本身并不是问题的关键。",
               "vocab": [
                 {
                   "word": "industry",
@@ -1444,7 +1444,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "\"I think individuals being able to rent out their second home is a good thing.",
-              "translation": "【考研真题精读标准译文】\"I think individuals being able to rent out their second home is a good thing.",
+              "translation": "“我认为个人能够出租第二套住房是一件好事。",
               "vocab": [
                 {
                   "word": "being",
@@ -1466,7 +1466,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "If it's their vacation home anyway, and it's just empty, why can't you make money off it?\" Horn said.",
-              "translation": "【考研真题精读标准译文】If it's their vacation home anyway, and it's just empty, why can't you make money off it?\" Horn said.",
+              "translation": "如果无论如何这是他们的度假屋，而且只是空着，为什么你不能从中赚钱呢？”霍恩说。",
               "vocab": [
                 {
                   "word": "money",
@@ -1489,7 +1489,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Issues arise, however, when developers attempt to create large-scale short-term rental facilities—de facto hotels—to bypass taxes and regulations.",
-              "translation": "【考研真题精读标准译文】Issues arise, however, when developers attempt to create large-scale short-term rental facilities—de facto hotels—to bypass taxes and regulations.",
+              "translation": "然而，当开发商试图建立大规模的短期租赁设施（事实上的酒店）来绕过税收和法规时，问题就出现了。",
               "vocab": [
                 {
                   "word": "however",
@@ -1529,7 +1529,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "\" I think the question is, shouldn't a developer who's really building a hotel, but disguising it as not a hotel, be treated and taxed and regulated like a hotel?\" Horn said.",
-              "translation": "【考研真题精读标准译文】\" I think the question is, shouldn't a developer who's really building a hotel, but disguising it as not a hotel, be treated and taxed and regulated like a hotel?\" Horn said.",
+              "translation": "“我认为问题是，一个真正建造酒店但又伪装成非酒店的开发商，难道不应该像酒店一样受到对待、征税和监管吗？”霍恩说道。",
               "vocab": [
                 {
                   "word": "question",
@@ -1551,7 +1551,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "At the end of 2018, Governor Charlie Baker of Massachusetts signed a bill to rein in those potential investor-buyers.",
-              "translation": "【考研真题精读标准译文】At the end of 2018, Governor Charlie Baker of Massachusetts signed a bill to rein in those potential investor-buyers.",
+              "translation": "2018年底，马萨诸塞州州长查理·贝克签署了一项法案，以控制这些潜在的投资者买家。",
               "vocab": [
                 {
                   "word": "end",
@@ -1585,7 +1585,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The bill requires every rental host to register with the state, mandates they carry insurance, and opens the potential for local taxes on top of a new state levy.",
-              "translation": "【考研真题精读标准译文】The bill requires every rental host to register with the state, mandates they carry insurance, and opens the potential for local taxes on top of a new state levy.",
+              "translation": "该法案要求每个租赁房东向州政府注册，强制他们购买保险，并在新的州征税基础上开辟了征收地方税的可能性。",
               "vocab": [
                 {
                   "word": "bill",
@@ -1655,7 +1655,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Boston took things even further, requiring renters to register with the city's Inspectional Services Department.",
-              "translation": "【考研真题精读标准译文】Boston took things even further, requiring renters to register with the city's Inspectional Services Department.",
+              "translation": "波士顿的做法更进一步，要求租房者向该市的检查服务部门登记。",
               "vocab": [
                 {
                   "word": "further",
@@ -1683,7 +1683,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Horn said similar registration requirements could benefit struggling cities and towns, but \"if we want to make a change in the housing market, the main one is we have to build a lot more.\"",
-              "translation": "【考研真题精读标准译文】Horn said similar registration requirements could benefit struggling cities and towns, but \"if we want to make a change in the housing market, the main one is we have to build a lot more.\"",
+              "translation": "霍恩表示，类似的登记要求可能会让陷入困境的城镇受益，但“如果我们想改变房地产市场，最主要的是我们必须建造更多。”",
               "vocab": [
                 {
                   "word": "similar",
@@ -1756,7 +1756,7 @@ window.ENGLISH_DATA['2023'] = {
               "text": "Its housing supply is at a very low level.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1815,7 +1815,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -1831,9 +1831,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "B",
               "text": "ensure the supply of cheap housing.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1853,9 +1853,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "D",
               "text": "allow a free short-term rental market.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1881,7 +1881,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1897,9 +1897,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "B",
               "text": "an increase in affordable housing.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1919,9 +1919,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "D",
               "text": "a favorable policy for short-term workers.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1976,7 +1976,7 @@ window.ENGLISH_DATA['2023'] = {
               "text": "The necessity to stop developers from evading taxes.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2013,14 +2013,14 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "an irrational decision.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2051,9 +2051,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "D",
               "text": "an inadequate solution.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2084,7 +2084,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "If you're heading for your nearest branch of Waterstones, the biggest book retailer in the UK, in search of the Duchess of Sussex's new children's book The Bench, you might have to be prepared to hunt around a bit; the same may be true of The President's Daughter, the new thriller by Bill Clinton and James Patterson.",
-              "translation": "【考研真题精读标准译文】If you're heading for your nearest branch of Waterstones, the biggest book retailer in the UK, in search of the Duchess of Sussex's new children's book The Bench, you might have to be prepared to hunt around a bit; the same may be true of The President's Daughter, the new thriller by Bill Clinton and James Patterson.",
+              "translation": "如果您正前往英国最大的图书零售商 Waterstones 的最近分店寻找苏塞克斯公爵夫人的新儿童读物《长凳》，您可能需要做好四处寻找的准备；比尔·克林顿和詹姆斯·帕特森的新惊悚片《总统的女儿》也是如此。",
               "vocab": [
                 {
                   "word": "in search of",
@@ -2160,7 +2160,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Both of these books are published next week by Penguin Random House (PRH), a company currently involved in a stand-off with Waterstones.",
-              "translation": "【考研真题精读标准译文】Both of these books are published next week by Penguin Random House (PRH), a company currently involved in a stand-off with Waterstones.",
+              "translation": "这两本书将于下周由企鹅兰登书屋（PRH）出版，该公司目前正与 Waterstones 陷入僵局。",
               "vocab": [
                 {
                   "word": "Random",
@@ -2200,7 +2200,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The problem began late last year, when PRH confirmed that it had introduced a credit limit with Waterstones \"at a very significant level\".",
-              "translation": "【考研真题精读标准译文】The problem began late last year, when PRH confirmed that it had introduced a credit limit with Waterstones \"at a very significant level\".",
+              "translation": "这个问题始于去年年底，当时 PRH 证实它已经对 Waterstones 实行了“非常高的水平”的信贷限额。",
               "vocab": [
                 {
                   "word": "credit",
@@ -2228,7 +2228,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The trade magazine The Bookseller reported that Waterstones branch managers were being told to remove PRH books from prominent areas such as tables, display spaces and windows, and were \"quietly retiring them to their relevant sections\".",
-              "translation": "【考研真题精读标准译文】The trade magazine The Bookseller reported that Waterstones branch managers were being told to remove PRH books from prominent areas such as tables, display spaces and windows, and were \"quietly retiring them to their relevant sections\".",
+              "translation": "行业杂志《书商》报道称，水石书店的分店经理被告知将公屋书籍从桌子、展示空间和窗户等显着区域移走，并“悄悄地将它们退回到相关区域”。",
               "vocab": [
                 {
                   "word": "trade",
@@ -2299,7 +2299,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "PRH declined to comment on the issue, but a spokesperson for Waterstones told me: \"Waterstones are currently operating with reduced credit terms from PRH, the only publisher in the UK to place any limitations on our ability to trade.",
-              "translation": "【考研真题精读标准译文】PRH declined to comment on the issue, but a spokesperson for Waterstones told me: \"Waterstones are currently operating with reduced credit terms from PRH, the only publisher in the UK to place any limitations on our ability to trade.",
+              "translation": "PRH 拒绝就此事发表评论，但 Waterstones 的一位发言人告诉我：“Waterstones 目前正在以 PRH 降低的信用条件运营，PRH 是英国唯一一家对我们的交易能力施加任何限制的出版商。",
               "vocab": [
                 {
                   "word": "comment",
@@ -2369,7 +2369,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "We are not boycotting PRH titles but we are doing our utmost to ensure that availability for customers remains good despite the lower overall levels of stock.",
-              "translation": "【考研真题精读标准译文】We are not boycotting PRH titles but we are doing our utmost to ensure that availability for customers remains good despite the lower overall levels of stock.",
+              "translation": "我们并不是抵制公屋产权，但我们正在尽最大努力确保尽管总体库存水平较低，但客户的可用性仍然良好。",
               "vocab": [
                 {
                   "word": "utmost",
@@ -2421,7 +2421,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "We are hopeful with our shops now open again that normality will return and that we will be allowed to buy appropriately.",
-              "translation": "【考研真题精读标准译文】We are hopeful with our shops now open again that normality will return and that we will be allowed to buy appropriately.",
+              "translation": "我们希望我们的商店现在重新开业，一切都会恢复正常，我们将被允许适当购买。",
               "vocab": [
                 {
                   "word": "in that",
@@ -2455,7 +2455,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Certainly, our shops are exceptionally busy.",
-              "translation": "【考研真题精读标准译文】Certainly, our shops are exceptionally busy.",
+              "translation": "当然，我们的商店非常繁忙。",
               "vocab": [
                 {
                   "word": "exceptionally",
@@ -2478,7 +2478,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The sales for our May Books of the Month surpassed any month since 2018.\" In the meantime, PRH authors have been the losers.",
-              "translation": "【考研真题精读标准译文】The sales for our May Books of the Month surpassed any month since 2018.\" In the meantime, PRH authors have been the losers.",
+              "translation": "我们 5 月本月图书的销量超过了 2018 年以来的任何一个月。”与此同时，PRH 作者一直是输家。",
               "vocab": [
                 {
                   "word": "for",
@@ -2506,7 +2506,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Big-name PRH authors may suffer a bit, but it's those mid-list authors, who normally rely on Waterstones staff's passion for promoting books by lesser-known writers, who will be praying for an end to the dispute.",
-              "translation": "【考研真题精读标准译文】Big-name PRH authors may suffer a bit, but it's those mid-list authors, who normally rely on Waterstones staff's passion for promoting books by lesser-known writers, who will be praying for an end to the dispute.",
+              "translation": "知名公关作家可能会受到一些影响，但那些通常依靠 Waterstones 工作人员推销不太知名作家的书籍的中等作家将祈祷争端结束。",
               "vocab": [
                 {
                   "word": "rely on",
@@ -2570,7 +2570,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "It comes at a time when authors are already worried about the consequences of the proposed merger between PRH and another big publisher, Simon & Schuster- the reduction in the number of unaligned UK publishers is likely to lead to fewer bidding wars, lower advances, and more conformity in terms of what is published.",
-              "translation": "【考研真题精读标准译文】It comes at a time when authors are already worried about the consequences of the proposed merger between PRH and another big publisher, Simon & Schuster- the reduction in the number of unaligned UK publishers is likely to lead to fewer bidding wars, lower advances, and more conformity in terms of what is published.",
+              "translation": "与此同时，作者们已经开始担心 PRH 与另一家大型出版商西蒙与舒斯特 (Simon & Schuster) 拟议合并的后果——不结盟的英国出版商数量的减少可能会导致竞购战减少、预付款降低以及出版内容更加一致。",
               "vocab": [
                 {
                   "word": "about",
@@ -2628,7 +2628,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "\"This is all part of a wider change towards concentration of power,\" says literary agent Andrew Lownie.",
-              "translation": "【考研真题精读标准译文】\"This is all part of a wider change towards concentration of power,\" says literary agent Andrew Lownie.",
+              "translation": "“这都是权力集中化更广泛变化的一部分，”文学经纪人安德鲁·洛尼说。",
               "vocab": [
                 {
                   "word": "change",
@@ -2668,7 +2668,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "\"The publishing industry talks about diversity in terms of authors and staff but it also needs a plurality of ways of delivering intellectual contact, choice and different voices.",
-              "translation": "【考研真题精读标准译文】\"The publishing industry talks about diversity in terms of authors and staff but it also needs a plurality of ways of delivering intellectual contact, choice and different voices.",
+              "translation": "“出版业谈论作者和员工的多样性，但它也需要多种方式来提供知识接触、选择和不同的声音。",
               "vocab": [
                 {
                   "word": "industry",
@@ -2714,7 +2714,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "After all, many of the most interesting books in recent years have come from small publishers.\" We shall see whether that plurality is a casualty of the current need among publishers to be big enough to take on all comers.",
-              "translation": "【考研真题精读标准译文】After all, many of the most interesting books in recent years have come from small publishers.\" We shall see whether that plurality is a casualty of the current need among publishers to be big enough to take on all comers.",
+              "translation": "毕竟，近年来许多最有趣的书籍都来自小型出版商。”我们将看看这种多元化是否是出版商当前需要足够大以容纳所有竞争者的需求的牺牲品。",
               "vocab": [
                 {
                   "word": "After all",
@@ -2762,14 +2762,14 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "an ongoing conflict.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2789,9 +2789,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "a prevailing sentiment.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2828,7 +2828,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -2855,9 +2855,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "To respond to PRH's business move.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2866,9 +2866,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "D",
               "text": "To arrange them in a systematic way.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2912,7 +2912,7 @@ window.ENGLISH_DATA['2023'] = {
               "text": "The credit limit will be removed.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2967,7 +2967,7 @@ window.ENGLISH_DATA['2023'] = {
               "text": "Sales of books by mid-list PRH writers fell off considerably.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3066,7 +3066,7 @@ window.ENGLISH_DATA['2023'] = {
               "text": "The merger of publishers is a worrying trend.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3097,7 +3097,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Scientific papers are the recordkeepers of progress in research.",
-              "translation": "【考研真题精读标准译文】Scientific papers are the recordkeepers of progress in research.",
+              "translation": "科学论文是研究进展的记录者。",
               "vocab": [
                 {
                   "word": "progress",
@@ -3113,7 +3113,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Each year researchers publish millions of papers in more than 30,000 journals.",
-              "translation": "【考研真题精读标准译文】Each year researchers publish millions of papers in more than 30,000 journals.",
+              "translation": "研究人员每年在 30,000 多种期刊上发表数百万篇论文。",
               "vocab": [
                 {
                   "word": "publish",
@@ -3129,7 +3129,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The scientific community measures the quality of those papers in a number of ways, including the perceived quality of the journal (as reflected by the title's impact factor) and the number of citations a specific paper accumulates.",
-              "translation": "【考研真题精读标准译文】The scientific community measures the quality of those papers in a number of ways, including the perceived quality of the journal (as reflected by the title's impact factor) and the number of citations a specific paper accumulates.",
+              "translation": "科学界通过多种方式衡量这些论文的质量，包括期刊的感知质量（如标题的影响因子所反映）和特定论文累积的引用次数。",
               "vocab": [
                 {
                   "word": "community",
@@ -3181,7 +3181,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The careers of scientists and the reputation of their institutions depend on the number and prestige of the papers they produce, but even more so on the citations attracted by these papers.",
-              "translation": "【考研真题精读标准译文】The careers of scientists and the reputation of their institutions depend on the number and prestige of the papers they produce, but even more so on the citations attracted by these papers.",
+              "translation": "科学家的职业生涯及其机构的声誉取决于他们发表的论文的数量和声望，但更取决于这些论文所吸引的引用。",
               "vocab": [
                 {
                   "word": "depend on",
@@ -3215,7 +3215,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Citation cartels, where journals, authors, and institutions conspire to inflate citation numbers, have existed for a long time.",
-              "translation": "【考研真题精读标准译文】Citation cartels, where journals, authors, and institutions conspire to inflate citation numbers, have existed for a long time.",
+              "translation": "期刊、作者和机构合谋夸大引用数量的引用卡特尔已经存在很长时间了。",
               "vocab": [
                 {
                   "word": "Citation",
@@ -3249,7 +3249,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "In 2016, researchers developed an algorithm to recognize suspicious citation patterns, including groups of authors that disproportionately cite one another and groups of journals that cite each other frequently to increase the impact factors of their publications.",
-              "translation": "【考研真题精读标准译文】In 2016, researchers developed an algorithm to recognize suspicious citation patterns, including groups of authors that disproportionately cite one another and groups of journals that cite each other frequently to increase the impact factors of their publications.",
+              "translation": "2016 年，研究人员开发了一种算法来识别可疑的引用模式，包括不成比例地相互引用的作者群体和频繁相互引用以提高其出版物的影响因子的期刊群体。",
               "vocab": [
                 {
                   "word": "algorithm",
@@ -3314,7 +3314,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Recently, another expression of this predatory behavior has emerged: so-called support service consultancies that provide language and other editorial support to individual authors and to journals sometimes advise contributors to add a number of citations to their articles.",
-              "translation": "【考研真题精读标准译文】Recently, another expression of this predatory behavior has emerged: so-called support service consultancies that provide language and other editorial support to individual authors and to journals sometimes advise contributors to add a number of citations to their articles.",
+              "translation": "最近，这种掠夺行为的另一种表现形式出现了：所谓的支持服务咨询公司为个人作者和期刊提供语言和其他编辑支持，有时会建议撰稿人在他们的文章中添加大量引用。",
               "vocab": [
                 {
                   "word": "expression",
@@ -3378,7 +3378,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The advent of electronic publishing and authors' need to find outlets for their papers resulted in thousands of new journals.",
-              "translation": "【考研真题精读标准译文】The advent of electronic publishing and authors' need to find outlets for their papers resulted in thousands of new journals.",
+              "translation": "电子出版的出现和作者需要为其论文寻找出路，催生了数以千计的新期刊。",
               "vocab": [
                 {
                   "word": "advent",
@@ -3418,7 +3418,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The birth of predatory journals wasn't far behind.",
-              "translation": "【考研真题精读标准译文】The birth of predatory journals wasn't far behind.",
+              "translation": "掠夺性期刊的诞生也紧随其后。",
               "vocab": [
                 {
                   "word": "predatory",
@@ -3434,7 +3434,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "These journals can act as milk cows where every single article in an issue may cite a specific paper or a series of papers.",
-              "translation": "【考研真题精读标准译文】These journals can act as milk cows where every single article in an issue may cite a specific paper or a series of papers.",
+              "translation": "这些期刊可以充当奶牛，其中一期中的每一篇文章都可能引用一篇特定论文或一系列论文。",
               "vocab": [
                 {
                   "word": "a series of",
@@ -3480,7 +3480,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "In some instances, there is absolutely no relationship between the content of the article and the citations.",
-              "translation": "【考研真题精读标准译文】In some instances, there is absolutely no relationship between the content of the article and the citations.",
+              "translation": "在某些情况下，文章内容和引用之间完全没有关系。",
               "vocab": [
                 {
                   "word": "relationship",
@@ -3508,7 +3508,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The peculiar part is that the journal that the editor is supposedly working for is not profiting at all—it is just providing citations to other journals.",
-              "translation": "【考研真题精读标准译文】The peculiar part is that the journal that the editor is supposedly working for is not profiting at all—it is just providing citations to other journals.",
+              "translation": "奇怪的是，这位编辑所工作的期刊根本没有盈利——它只是提供对其他期刊的引用。",
               "vocab": [
                 {
                   "word": "peculiar",
@@ -3555,7 +3555,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Such practices can lead an article to accrue more than 150 citations in the same year that it was published.",
-              "translation": "【考研真题精读标准译文】Such practices can lead an article to accrue more than 150 citations in the same year that it was published.",
+              "translation": "这种做法可能会导致一篇文章在发表当年就获得超过 150 次引用。",
               "vocab": [
                 {
                   "word": "article",
@@ -3577,7 +3577,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "How insidious is this type of citation manipulation?",
-              "translation": "【考研真题精读标准译文】How insidious is this type of citation manipulation?",
+              "translation": "这种类型的引用操纵有多阴险？",
               "vocab": [
                 {
                   "word": "insidious",
@@ -3605,7 +3605,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "In one example, an individual—acting as author, editor, and consultant—was able to use at least 15 journals as citation providers to articles published by five scientists at three universities.",
-              "translation": "【考研真题精读标准译文】In one example, an individual—acting as author, editor, and consultant—was able to use at least 15 journals as citation providers to articles published by five scientists at three universities.",
+              "translation": "在一个例子中，一个人（作为作者、编辑和顾问）能够使用至少 15 种期刊作为三所大学的五位科学家发表的文章的引用提供者。",
               "vocab": [
                 {
                   "word": "at least",
@@ -3657,7 +3657,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The problem is rampant in Scopus, a citation database, which includes a high number of the new \"international\" journals.",
-              "translation": "【考研真题精读标准译文】The problem is rampant in Scopus, a citation database, which includes a high number of the new \"international\" journals.",
+              "translation": "这个问题在 Scopus 中很严重，这是一个引文数据库，其中包含大量新的“国际”期刊。",
               "vocab": [
                 {
                   "word": "rampant",
@@ -3697,7 +3697,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "In fact, a listing in Scopus seems to be a criterion to be targeted in this type of citation manipulation.",
-              "translation": "【考研真题精读标准译文】In fact, a listing in Scopus seems to be a criterion to be targeted in this type of citation manipulation.",
+              "translation": "事实上，Scopus 中的列表似乎是此类引文操纵的目标标准。",
               "vocab": [
                 {
                   "word": "criterion",
@@ -3725,7 +3725,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Scopus itself has all the data necessary to detect this malpractice.",
-              "translation": "【考研真题精读标准译文】Scopus itself has all the data necessary to detect this malpractice.",
+              "translation": "Scopus 本身拥有检测这种不当行为所需的所有数据。",
               "vocab": [
                 {
                   "word": "data",
@@ -3759,7 +3759,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Red flags include a large number of citations to an article within the first year.",
-              "translation": "【考研真题精读标准译文】Red flags include a large number of citations to an article within the first year.",
+              "translation": "危险信号包括第一年内对某篇文章的大量引用。",
               "vocab": [
                 {
                   "word": "include",
@@ -3781,7 +3781,7 @@ window.ENGLISH_DATA['2023'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "And for authors who wish to steer clear of citation cartel activities: when an editor, a reviewer, or a support service asks you to add inappropriate references, do not oblige and do report the request to the journal.",
-              "translation": "【考研真题精读标准译文】And for authors who wish to steer clear of citation cartel activities: when an editor, a reviewer, or a support service asks you to add inappropriate references, do not oblige and do report the request to the journal.",
+              "translation": "对于希望避免引用卡特尔活动的作者：当编辑、审稿人或支持服务要求您添加不适当的参考文献时，不要答应并向期刊报告该请求。",
               "vocab": [
                 {
                   "word": "for",
@@ -3895,7 +3895,7 @@ window.ENGLISH_DATA['2023'] = {
               "text": "how many times their papers are cited.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3943,14 +3943,14 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "recommend journals to their clients.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3970,9 +3970,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "ask authors to include extra citations.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4009,14 +4009,14 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "boost citation counts for certain authors.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4036,9 +4036,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "C",
               "text": "instruct first-time contributors in citation.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4075,7 +4075,7 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -4091,9 +4091,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "B",
               "text": "It has the capability to identify suspicious citations.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4113,9 +4113,9 @@ window.ENGLISH_DATA['2023'] = {
             {
               "key": "D",
               "text": "It is established to prevent citation manipulation.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4141,11 +4141,11 @@ window.ENGLISH_DATA['2023'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "Option A content",
+              "text": "Option A analysis",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
@@ -4156,10 +4156,10 @@ window.ENGLISH_DATA['2023'] = {
             },
             {
               "key": "B",
-              "text": "Option B content",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "text": "Option B analysis",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4167,7 +4167,7 @@ window.ENGLISH_DATA['2023'] = {
             },
             {
               "key": "C",
-              "text": "Option C content",
+              "text": "Option C analysis",
               "isCorrect": false,
               "distractorType": "绝对化词汇",
               "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
@@ -4178,10 +4178,10 @@ window.ENGLISH_DATA['2023'] = {
             },
             {
               "key": "D",
-              "text": "Option D content",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "text": "Option D analysis",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

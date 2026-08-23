@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Specialisation can be seen as a response to the problem of an increasing accumulation of scientific knowledge.",
-              "translation": "【考研真题精读标准译文】Specialisation can be seen as a response to the problem of an increasing accumulation of scientific knowledge.",
+              "translation": "专业化可以被视为对科学知识不断积累问题的回应。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -35,7 +35,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "By splitting up the subject matter into smaller units, one man could continue to handle the information and use it as the basis for further research.",
-              "translation": "【考研真题精读标准译文】By splitting up the subject matter into smaller units, one man could continue to handle the information and use it as the basis for further research.",
+              "translation": "通过将主题分解为更小的单元，一个人可以继续处理信息并将其用作进一步研究的基础。",
               "vocab": [
                 {
                   "word": "subject",
@@ -99,7 +99,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "But specialisation was only one of a series of related developments in science affecting the process of communication.",
-              "translation": "【考研真题精读标准译文】But specialisation was only one of a series of related developments in science affecting the process of communication.",
+              "translation": "但专业化只是影响传播过程的一系列科学相关发展之一。",
               "vocab": [
                 {
                   "word": "a series of",
@@ -139,7 +139,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Another was the growing professionalisation of scientific activity.",
-              "translation": "【考研真题精读标准译文】Another was the growing professionalisation of scientific activity.",
+              "translation": "另一个是科学活动日益专业化。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -148,7 +148,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "No clear-cut distinction can be drawn between professionals and amateurs in science: exceptions can be found to any rule.",
-              "translation": "【考研真题精读标准译文】No clear-cut distinction can be drawn between professionals and amateurs in science: exceptions can be found to any rule.",
+              "translation": "科学领域的专业人士和业余爱好者之间没有明确的区别：任何规则都可以找到例外。",
               "vocab": [
                 {
                   "word": "clear-cut",
@@ -183,7 +183,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Nevertheless, the word \"amateur\" does carry a connotation that the person concerned is not fully integrated into the scientific community and, in particular, may not fully share its values.",
-              "translation": "【考研真题精读标准译文】Nevertheless, the word \"amateur\" does carry a connotation that the person concerned is not fully integrated into the scientific community and, in particular, may not fully share its values.",
+              "translation": "然而，“业余爱好者”一词确实含有这样的含义：有关人员没有完全融入科学界，特别是可能不完全认同科学界的价值观。",
               "vocab": [
                 {
                   "word": "in part",
@@ -235,7 +235,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The growth of specialisation in the nineteenth century, with its consequent requirement of a longer, more complex training, implied greater problems for amateur participation in science.",
-              "translation": "【考研真题精读标准译文】The growth of specialisation in the nineteenth century, with its consequent requirement of a longer, more complex training, implied greater problems for amateur participation in science.",
+              "translation": "十九世纪专业化的发展，随之而来的是对更长、更复杂的训练的要求，这给业余参与科学带来了更大的问题。",
               "vocab": [
                 {
                   "word": "requirement",
@@ -275,7 +275,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The trend was naturally most obvious in those areas of science based especially on mathematical or laboratory training, and can be illustrated in terms of the development of geology in the United Kingdom.",
-              "translation": "【考研真题精读标准译文】The trend was naturally most obvious in those areas of science based especially on mathematical or laboratory training, and can be illustrated in terms of the development of geology in the United Kingdom.",
+              "translation": "这种趋势自然在那些基于数学或实验室培训的科学领域最为明显，并且可以用英国地质学的发展来说明。",
               "vocab": [
                 {
                   "word": "trend",
@@ -309,7 +309,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "A comparison of British geological publications over the last century and a half reveals not simply an increasing emphasis on the primacy of research, but also a changing definition of what constitutes an acceptable research paper.",
-              "translation": "【考研真题精读标准译文】A comparison of British geological publications over the last century and a half reveals not simply an increasing emphasis on the primacy of research, but also a changing definition of what constitutes an acceptable research paper.",
+              "translation": "对过去一个半世纪英国地质出版物的比较表明，不仅越来越强调研究的首要地位，而且对可接受的研究论文的定义也发生了变化。",
               "vocab": [
                 {
                   "word": "emphasis",
@@ -349,7 +349,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Thus, in the nineteenth century, local geological studies represented worthwhile research in their own right, but, in the twentieth century, local studies have increasingly become acceptable to professionals only if they incorporate, and reflect on, the wider geological picture.",
-              "translation": "【考研真题精读标准译文】Thus, in the nineteenth century, local geological studies represented worthwhile research in their own right, but, in the twentieth century, local studies have increasingly become acceptable to professionals only if they incorporate, and reflect on, the wider geological picture.",
+              "translation": "因此，在十九世纪，地方地质研究本身就代表了有价值的研究，但在二十世纪，只有当地方研究纳入并反映更广泛的地质图景时，地方研究才越来越被专业人士所接受。",
               "vocab": [
                 {
                   "word": "Thus",
@@ -402,7 +402,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Amateurs, on the other hand, have continued to pursue local studies in the old way.",
-              "translation": "【考研真题精读标准译文】Amateurs, on the other hand, have continued to pursue local studies in the old way.",
+              "translation": "而业余爱好者则继续以旧方式进行地方研究。",
               "vocab": [
                 {
                   "word": "pursue",
@@ -418,7 +418,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The overall result has been to make entrance to professional geological journals harder for amateurs, a result that has been reinforced by the widespread introduction of refereeing, first by national journals in the nineteenth century and then by several local geological journals in the twentieth century.",
-              "translation": "【考研真题精读标准译文】The overall result has been to make entrance to professional geological journals harder for amateurs, a result that has been reinforced by the widespread introduction of refereeing, first by national journals in the nineteenth century and then by several local geological journals in the twentieth century.",
+              "translation": "总体结果是，业余爱好者进入专业地质期刊变得更加困难，这一结果由于审稿制度的广泛引入而得到加强，首先是十九世纪的国家期刊，然后是二十世纪的一些地方地质期刊。",
               "vocab": [
                 {
                   "word": "overall",
@@ -470,7 +470,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "As a logical consequence of this development, separate journals have now appeared aimed mainly towards either professional or amateur readership.",
-              "translation": "【考研真题精读标准译文】As a logical consequence of this development, separate journals have now appeared aimed mainly towards either professional or amateur readership.",
+              "translation": "作为这种发展的必然结果，现在出现了主要针对专业或业余读者的独立期刊。",
               "vocab": [
                 {
                   "word": "logical",
@@ -504,7 +504,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "A rather similar process of differentiation has led to professional geologists coming together nationally within one or two specific societies, whereas the amateurs have tended either to remain in local societies or to come together nationally in a different way.",
-              "translation": "【考研真题精读标准译文】A rather similar process of differentiation has led to professional geologists coming together nationally within one or two specific societies, whereas the amateurs have tended either to remain in local societies or to come together nationally in a different way.",
+              "translation": "一个相当相似的分化过程导致专业地质学家在全国范围内聚集在一两个特定的社团中，而业余爱好者则倾向于留在当地社团或以不同的方式在全国范围内聚集在一起。",
               "vocab": [
                 {
                   "word": "rather",
@@ -556,7 +556,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Although the process of professionalisation and specialisation was already well under way in British geology during the nineteenth century, its full consequences were thus delayed until the twentieth century.",
-              "translation": "【考研真题精读标准译文】Although the process of professionalisation and specialisation was already well under way in British geology during the nineteenth century, its full consequences were thus delayed until the twentieth century.",
+              "translation": "尽管十九世纪英国地质学的专业化和专业化进程已经顺利进行，但其全面后果却被推迟到了二十世纪。",
               "vocab": [
                 {
                   "word": "process",
@@ -584,7 +584,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "In science generally, however, the nineteenth century must be reckoned as the crucial period for this change in the structure of science.",
-              "translation": "【考研真题精读标准译文】In science generally, however, the nineteenth century must be reckoned as the crucial period for this change in the structure of science.",
+              "translation": "然而，从一般科学的角度来看，十九世纪必须被视为科学结构发生这种变化的关键时期。",
               "vocab": [
                 {
                   "word": "generally",
@@ -684,7 +684,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "physics and chemistry",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -717,7 +717,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "there is little distinction between specialisation and professionalisation",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -816,7 +816,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "the discrimination of professionals against amateurs",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -860,7 +860,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "the growth of professionalisation",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -913,7 +913,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "A great deal of attention is being paid today to the so-called digital divide—the division of the world into the info (information) rich and the info poor.",
-              "translation": "【考研真题精读标准译文】A great deal of attention is being paid today to the so-called digital divide—the division of the world into the info (information) rich and the info poor.",
+              "translation": "如今，人们对所谓的数字鸿沟给予了极大的关注——将世界划分为信息富国和信息贫国。",
               "vocab": [
                 {
                   "word": "attention",
@@ -959,7 +959,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "And that divide does exist today.",
-              "translation": "【考研真题精读标准译文】And that divide does exist today.",
+              "translation": "这种鸿沟今天确实存在。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": true
@@ -968,7 +968,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "My wife and I lectured about this looming danger twenty years ago.",
-              "translation": "【考研真题精读标准译文】My wife and I lectured about this looming danger twenty years ago.",
+              "translation": "二十年前，我和妻子就曾就这种迫在眉睫的危险进行过演讲。",
               "vocab": [
                 {
                   "word": "about",
@@ -996,7 +996,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "What was less visible then, however, were the new, positive forces that work against the digital divide.",
-              "translation": "【考研真题精读标准译文】What was less visible then, however, were the new, positive forces that work against the digital divide.",
+              "translation": "然而，当时不太明显的是消除数字鸿沟的新的积极力量。",
               "vocab": [
                 {
                   "word": "visible",
@@ -1042,7 +1042,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "There are reasons to be optimistic.",
-              "translation": "【考研真题精读标准译文】There are reasons to be optimistic.",
+              "translation": "我们有理由保持乐观。",
               "vocab": [
                 {
                   "word": "optimistic",
@@ -1058,7 +1058,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "There are technological reasons to hope the digital divide will narrow.",
-              "translation": "【考研真题精读标准译文】There are technological reasons to hope the digital divide will narrow.",
+              "translation": "有技术原因希望数字鸿沟能够缩小。",
               "vocab": [
                 {
                   "word": "technological",
@@ -1092,7 +1092,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "As the Internet becomes more and more commercialized, it is in the interest of business to universalize access—after all, the more people online, the more potential customers there are.",
-              "translation": "【考研真题精读标准译文】As the Internet becomes more and more commercialized, it is in the interest of business to universalize access—after all, the more people online, the more potential customers there are.",
+              "translation": "随着互联网变得越来越商业化，普及接入符合企业的利益——毕竟，上网的人越多，潜在客户就越多。",
               "vocab": [
                 {
                   "word": "After all",
@@ -1132,7 +1132,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "More and more governments, afraid their countries will be left behind, want to spread Internet access.",
-              "translation": "【考研真题精读标准译文】More and more governments, afraid their countries will be left behind, want to spread Internet access.",
+              "translation": "越来越多的政府担心自己的国家会落后，希望普及互联网接入。",
               "vocab": [
                 {
                   "word": "will",
@@ -1173,7 +1173,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Within the next decade or two, one to two billion people on the planet will be netted together.",
-              "translation": "【考研真题精读标准译文】Within the next decade or two, one to two billion people on the planet will be netted together.",
+              "translation": "在未来的一两年内，地球上的一到二十亿人将被聚集在一起。",
               "vocab": [
                 {
                   "word": "decade",
@@ -1201,7 +1201,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "As a result, I now believe the digital divide will narrow rather than widen in the years ahead.",
-              "translation": "【考研真题精读标准译文】As a result, I now believe the digital divide will narrow rather than widen in the years ahead.",
+              "translation": "因此，我现在相信数字鸿沟在未来几年将会缩小而不是扩大。",
               "vocab": [
                 {
                   "word": "as a result",
@@ -1247,7 +1247,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "And that is very good news because the Internet may well be the most powerful tool for combating world poverty that we've ever had.",
-              "translation": "【考研真题精读标准译文】And that is very good news because the Internet may well be the most powerful tool for combating world poverty that we've ever had.",
+              "translation": "这是一个非常好的消息，因为互联网很可能是我们有史以来消除世界贫困的最有力工具。",
               "vocab": [
                 {
                   "word": "very",
@@ -1275,7 +1275,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Of course, the use of the Internet isn't the only way to defeat poverty.",
-              "translation": "【考研真题精读标准译文】Of course, the use of the Internet isn't the only way to defeat poverty.",
+              "translation": "当然，使用互联网并不是消除贫困的唯一方法。",
               "vocab": [
                 {
                   "word": "course",
@@ -1309,7 +1309,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "And the Internet is not the only tool we have.",
-              "translation": "【考研真题精读标准译文】And the Internet is not the only tool we have.",
+              "translation": "互联网并不是我们拥有的唯一工具。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1318,7 +1318,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "But it has enormous potential. To take advantage of this tool, some impoverished countries will have to get over their outdated anti-colonial prejudices with respect to foreign investment.",
-              "translation": "【考研真题精读标准译文】But it has enormous potential. To take advantage of this tool, some impoverished countries will have to get over their outdated anti-colonial prejudices with respect to foreign investment.",
+              "translation": "但它具有巨大的潜力。为了利用这一工具，一些贫困国家必须克服对外国投资过时的反殖民偏见。",
               "vocab": [
                 {
                   "word": "potential",
@@ -1370,7 +1370,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Countries that still think foreign investment is an invasion of their sovereignty might well study the history of infrastructure (the basic structural foundations of a society) in the United States.",
-              "translation": "【考研真题精读标准译文】Countries that still think foreign investment is an invasion of their sovereignty might well study the history of infrastructure (the basic structural foundations of a society) in the United States.",
+              "translation": "仍然认为外国投资是对其主权的侵犯的国家不妨研究一下美国基础设施（社会的基本结构基础）的历史。",
               "vocab": [
                 {
                   "word": "still",
@@ -1416,7 +1416,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "When the United States built its industrial infrastructure, it didn't have the capital to do so.",
-              "translation": "【考研真题精读标准译文】When the United States built its industrial infrastructure, it didn't have the capital to do so.",
+              "translation": "当美国建设工业基础设施时，它没有资金这样做。",
               "vocab": [
                 {
                   "word": "do so",
@@ -1457,7 +1457,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "And that is why America's Second Wave infrastructure—including roads, harbors, highways, ports and so on—were built with foreign investment.",
-              "translation": "【考研真题精读标准译文】And that is why America's Second Wave infrastructure—including roads, harbors, highways, ports and so on—were built with foreign investment.",
+              "translation": "这就是为什么美国的第二波基础设施——包括道路、港口、高速公路、港口等——都是由外国投资建造的。",
               "vocab": [
                 {
                   "word": "infrastructure",
@@ -1479,7 +1479,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The English, the Germans, the Dutch and the French were investing in Britain's former colony.",
-              "translation": "【考研真题精读标准译文】The English, the Germans, the Dutch and the French were investing in Britain's former colony.",
+              "translation": "英国人、德国人、荷兰人和法国人都在英国的前殖民地投资。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": true
@@ -1488,7 +1488,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "They financed them.",
-              "translation": "【考研真题精读标准译文】They financed them.",
+              "translation": "他们资助了他们。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1497,7 +1497,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Immigrant Americans built them.",
-              "translation": "【考研真题精读标准译文】Immigrant Americans built them.",
+              "translation": "美国移民建造了它们。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1506,7 +1506,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Guess who owns them now?",
-              "translation": "【考研真题精读标准译文】Guess who owns them now?",
+              "translation": "猜猜现在谁拥有它们？",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1515,7 +1515,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The Americans.",
-              "translation": "【考研真题精读标准译文】The Americans.",
+              "translation": "美国人。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1524,7 +1524,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "I believe the same thing would be true in places like Brazil or anywhere else for that matter.",
-              "translation": "【考研真题精读标准译文】I believe the same thing would be true in places like Brazil or anywhere else for that matter.",
+              "translation": "我相信在巴西或其他任何地方也会发生同样的情况。",
               "vocab": [
                 {
                   "word": "for",
@@ -1546,7 +1546,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "The more foreign capital you have helping you build your Third Wave infrastructure, which today is an electronic infrastructure, the better off you're going to be.",
-              "translation": "【考研真题精读标准译文】The more foreign capital you have helping you build your Third Wave infrastructure, which today is an electronic infrastructure, the better off you're going to be.",
+              "translation": "你拥有越多的外国资本来帮助你建设你的第三次浪潮基础设施（今天是电子基础设施），你的生活就会越好。",
               "vocab": [
                 {
                   "word": "capital",
@@ -1580,7 +1580,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "That doesn't mean lying down and becoming fooled, or letting foreign corporations run uncontrolled.",
-              "translation": "【考研真题精读标准译文】That doesn't mean lying down and becoming fooled, or letting foreign corporations run uncontrolled.",
+              "translation": "这并不意味着袖手旁观、被愚弄，或者让外国公司不受控制地运营。",
               "vocab": [
                 {
                   "word": "mean",
@@ -1614,7 +1614,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 10,
               "id": "P3-S10",
               "text": "But it does mean recognizing how important they can be in building the energy and telecom infrastructures needed to take full advantage of the Internet.",
-              "translation": "【考研真题精读标准译文】But it does mean recognizing how important they can be in building the energy and telecom infrastructures needed to take full advantage of the Internet.",
+              "translation": "但这确实意味着认识到它们在建设充分利用互联网所需的能源和电信基础设施方面的重要性。",
               "vocab": [
                 {
                   "word": "mean",
@@ -1691,7 +1691,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "the world must guard against",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1768,7 +1768,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "connects people all over the world",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1812,7 +1812,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "preventing foreign capital's control",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1878,7 +1878,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "whether it is prejudiced against immigrants",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1931,7 +1931,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Why do so many Americans distrust what they read in their newspapers?",
-              "translation": "【考研真题精读标准译文】Why do so many Americans distrust what they read in their newspapers?",
+              "translation": "为什么这么多美国人不相信他们在报纸上读到的内容？",
               "vocab": [
                 {
                   "word": "do so",
@@ -1953,7 +1953,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The American Society of Newspaper Editors is trying to answer this painful question.",
-              "translation": "【考研真题精读标准译文】The American Society of Newspaper Editors is trying to answer this painful question.",
+              "translation": "美国报纸编辑协会正在试图回答这个令人痛苦的问题。",
               "vocab": [
                 {
                   "word": "American",
@@ -1993,7 +1993,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The organization is deep into a long self-analysis known as the journalism credibility project.",
-              "translation": "【考研真题精读标准译文】The organization is deep into a long self-analysis known as the journalism credibility project.",
+              "translation": "该组织正在进行一项名为“新闻可信度项目”的长期自我分析。",
               "vocab": [
                 {
                   "word": "journalism",
@@ -2021,7 +2021,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Sad to say, this project has turned out to be mostly low-level findings about factual errors and spelling and grammar mistakes, combined with lots of headscratching puzzlement about what in the world those readers really want.",
-              "translation": "【考研真题精读标准译文】Sad to say, this project has turned out to be mostly low-level findings about factual errors and spelling and grammar mistakes, combined with lots of headscratching puzzlement about what in the world those readers really want.",
+              "translation": "遗憾的是，这个项目主要是关于事实错误、拼写和语法错误的低级发现，再加上对读者真正想要的东西的许多令人头疼的困惑。",
               "vocab": [
                 {
                   "word": "project",
@@ -2049,7 +2049,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "But the sources of distrust go way deeper.",
-              "translation": "【考研真题精读标准译文】But the sources of distrust go way deeper.",
+              "translation": "但不信任的根源更为深刻。",
               "vocab": [
                 {
                   "word": "distrust",
@@ -2065,7 +2065,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Most journalists learn to see the world through a set of standard templates (patterns) into which they plug each day's events.",
-              "translation": "【考研真题精读标准译文】Most journalists learn to see the world through a set of standard templates (patterns) into which they plug each day's events.",
+              "translation": "大多数记者学习通过一组标准模板（模式）来观察世界，并将每天发生的事件插入其中。",
               "vocab": [
                 {
                   "word": "standard",
@@ -2088,7 +2088,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "In other words, there is a conventional story line in the newsroom culture that provides a backbone and a ready-made narrative structure for otherwise confusing news.",
-              "translation": "【考研真题精读标准译文】In other words, there is a conventional story line in the newsroom culture that provides a backbone and a ready-made narrative structure for otherwise confusing news.",
+              "translation": "换句话说，新闻编辑室文化中有一个传统的故事情节，为原本令人困惑的新闻提供了支柱和现成的叙事结构。",
               "vocab": [
                 {
                   "word": "conventional",
@@ -2134,7 +2134,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "There exists a social and cultural disconnect between journalists and their readers which helps explain why the \"standard templates\"of the newsroom seem alien to many readers.",
-              "translation": "【考研真题精读标准译文】There exists a social and cultural disconnect between journalists and their readers which helps explain why the \"standard templates\"of the newsroom seem alien to many readers.",
+              "translation": "记者和读者之间存在社会和文化脱节，这有助于解释为什么新闻编辑室的“标准模板”对许多读者来说似乎很陌生。",
               "vocab": [
                 {
                   "word": "social",
@@ -2156,7 +2156,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "In a recent survey, questionnaires were sent to reporters in five middle size cities around the country, plus one large metropolitan area.",
-              "translation": "【考研真题精读标准译文】In a recent survey, questionnaires were sent to reporters in five middle size cities around the country, plus one large metropolitan area.",
+              "translation": "在最近的一项调查中，向全国五个中等城市以及一个大城市地区的记者发送了调查问卷。",
               "vocab": [
                 {
                   "word": "around",
@@ -2184,7 +2184,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Then residents in these communities were phoned at random and asked the same questions.",
-              "translation": "【考研真题精读标准译文】Then residents in these communities were phoned at random and asked the same questions.",
+              "translation": "然后随机给这些社区的居民打电话，问了同样的问题。",
               "vocab": [
                 {
                   "word": "random",
@@ -2200,7 +2200,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Replies show that compared with other Americans, journalists are more likely to live in upscale neighborhoods, have maids, own Mercedeses, and trade stocks, and they're less likely to go to church, do volunteer work, or put down roots in community.",
-              "translation": "【考研真题精读标准译文】Replies show that compared with other Americans, journalists are more likely to live in upscale neighborhoods, have maids, own Mercedeses, and trade stocks, and they're less likely to go to church, do volunteer work, or put down roots in community.",
+              "translation": "答复显示，与其他美国人相比，记者更有可能住在高档社区、有女佣、拥有奔驰、交易股票，而且他们不太可能去教堂、做志愿者工作或扎根社区。",
               "vocab": [
                 {
                   "word": "trade",
@@ -2246,7 +2246,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Reporters tend to be part of a broadly defined social and cultural elite, so their work tends to reflect the conventional values of this elite.",
-              "translation": "【考研真题精读标准译文】Reporters tend to be part of a broadly defined social and cultural elite, so their work tends to reflect the conventional values of this elite.",
+              "translation": "记者往往是广泛定义的社会和文化精英的一部分，因此他们的工作往往反映该精英的传统价值观。",
               "vocab": [
                 {
                   "word": "tend to be",
@@ -2311,7 +2311,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The astonishing distrust of the news media isn't rooted in inaccuracy or poor reportorial skills but in the daily clash of world views between reporters and their readers.",
-              "translation": "【考研真题精读标准译文】The astonishing distrust of the news media isn't rooted in inaccuracy or poor reportorial skills but in the daily clash of world views between reporters and their readers.",
+              "translation": "对新闻媒体的惊人不信任并非源于不准确或报道技巧不佳，而是源于记者与读者之间每天的世界观冲突。",
               "vocab": [
                 {
                   "word": "astonishing",
@@ -2357,7 +2357,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "This is an explosive situation for any industry, particularly a declining one.",
-              "translation": "【考研真题精读标准译文】This is an explosive situation for any industry, particularly a declining one.",
+              "translation": "对于任何行业，尤其​​是正在衰退的行业来说，这都是一种爆炸​​性的局面。",
               "vocab": [
                 {
                   "word": "situation",
@@ -2397,7 +2397,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Here is a troubled business that keeps hiring employees whose attitudes vastly annoy the customers.",
-              "translation": "【考研真题精读标准译文】Here is a troubled business that keeps hiring employees whose attitudes vastly annoy the customers.",
+              "translation": "这是一家陷入困境的企业，不断雇用态度极大地惹恼顾客的员工。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2406,7 +2406,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Then it sponsors lots of symposiums and a credibility project dedicated to wondering why customers are annoyed and fleeing in large numbers.",
-              "translation": "【考研真题精读标准译文】Then it sponsors lots of symposiums and a credibility project dedicated to wondering why customers are annoyed and fleeing in large numbers.",
+              "translation": "然后，它赞助了许多研讨会和一个可信度项目，致力于了解为什么顾客会感到恼火并大量逃离。",
               "vocab": [
                 {
                   "word": "credibility",
@@ -2434,7 +2434,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "But it never seems to get around to noticing the cultural and class biases that so many former buyers are complaining about.",
-              "translation": "【考研真题精读标准译文】But it never seems to get around to noticing the cultural and class biases that so many former buyers are complaining about.",
+              "translation": "但它似乎从来没有注意到许多前买家所抱怨的文化和阶级偏见。",
               "vocab": [
                 {
                   "word": "around",
@@ -2462,7 +2462,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "If it did, it would open up its diversity program, now focused narrowly on race and gender, and look for reporters who differ broadly by outlook, values, education, and class.",
-              "translation": "【考研真题精读标准译文】If it did, it would open up its diversity program, now focused narrowly on race and gender, and look for reporters who differ broadly by outlook, values, education, and class.",
+              "translation": "如果确实如此，它将开放其多元化计划，目前主要关注种族和性别，并寻找在观点、价值观、教育和阶级方面存在广泛差异的记者。",
               "vocab": [
                 {
                   "word": "diversity",
@@ -2558,7 +2558,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "causes of the public disappointment about newspapers.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2635,7 +2635,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "very illuminating",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2690,7 +2690,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "conventional lifestyle",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2778,7 +2778,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "prejudice in matters of race and gender",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2809,7 +2809,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The world is going through the biggest wave of mergers and acquisitions ever witnessed.",
-              "translation": "【考研真题精读标准译文】The world is going through the biggest wave of mergers and acquisitions ever witnessed.",
+              "translation": "世界正在经历有史以来最大规模的并购浪潮。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -2818,7 +2818,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The process sweeps from hyperactive America to Europe and reaches the emerging countries with unsurpassed might.",
-              "translation": "【考研真题精读标准译文】The process sweeps from hyperactive America to Europe and reaches the emerging countries with unsurpassed might.",
+              "translation": "这一进程从极度活跃的美国席卷到欧洲，并以无与伦比的力量影响到新兴国家。",
               "vocab": [
                 {
                   "word": "process",
@@ -2846,7 +2846,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Many in these countries are looking at this process and worrying: \"Won't the wave of business concentration turn into an uncontrollable anti-competitive force?\" There's no question that the big are getting bigger and more powerful.",
-              "translation": "【考研真题精读标准译文】Many in these countries are looking at this process and worrying: \"Won't the wave of business concentration turn into an uncontrollable anti-competitive force?\" There's no question that the big are getting bigger and more powerful.",
+              "translation": "这些国家的许多人都在关注这一过程并担心：“企业集中化浪潮会不会变成一股无法控制的反竞争力量？”毫无疑问，大公司正在变得越来越大、越来越强大。",
               "vocab": [
                 {
                   "word": "process",
@@ -2874,7 +2874,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Multinational corporations accounted for less than 20% of international trade in 1982.",
-              "translation": "【考研真题精读标准译文】Multinational corporations accounted for less than 20% of international trade in 1982.",
+              "translation": "1982年，跨国公司占国际贸易的比例还不到20%。",
               "vocab": [
                 {
                   "word": "Multinational",
@@ -2908,7 +2908,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Today the figure is more than 25% and growing rapidly.",
-              "translation": "【考研真题精读标准译文】Today the figure is more than 25% and growing rapidly.",
+              "translation": "如今，这一数字已超过 25%，并且还在快速增长。",
               "vocab": [
                 {
                   "word": "figure",
@@ -2924,7 +2924,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "International affiliates account for a fast-growing segment of production in economies that open up and welcome foreign investment.",
-              "translation": "【考研真题精读标准译文】International affiliates account for a fast-growing segment of production in economies that open up and welcome foreign investment.",
+              "translation": "在开放和欢迎外国投资的经济体中，国际子公司在生产中占据快速增长的部分。",
               "vocab": [
                 {
                   "word": "account for",
@@ -2982,7 +2982,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "In Argentina, for instance, after the reforms of the early 1990s, multinationals went from 43% to almost 70% of the industrial production of the 200 largest firms.",
-              "translation": "【考研真题精读标准译文】In Argentina, for instance, after the reforms of the early 1990s, multinationals went from 43% to almost 70% of the industrial production of the 200 largest firms.",
+              "translation": "例如，在阿根廷，经过 20 世纪 90 年代初的改革，跨国公司占 200 家最大企业工业生产的比例从 43% 增加到近 70%。",
               "vocab": [
                 {
                   "word": "for",
@@ -3023,7 +3023,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "This phenomenon has created serious concerns over the role of smaller economic firms, of national businessmen and over the ultimate stability of the world economy.",
-              "translation": "【考研真题精读标准译文】This phenomenon has created serious concerns over the role of smaller economic firms, of national businessmen and over the ultimate stability of the world economy.",
+              "translation": "这种现象引起了人们对小型经济公司、民族商人的作用以及世界经济最终稳定的严重担忧。",
               "vocab": [
                 {
                   "word": "phenomenon",
@@ -3063,7 +3063,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "I believe that the most important forces behind the massive M&A wave are the same that underlie the globalization process: falling transportation and communication costs, lower trade and investment barriers and enlarged markets that require enlarged operations capable of meeting customers' demands.",
-              "translation": "【考研真题精读标准译文】I believe that the most important forces behind the massive M&A wave are the same that underlie the globalization process: falling transportation and communication costs, lower trade and investment barriers and enlarged markets that require enlarged operations capable of meeting customers' demands.",
+              "translation": "我相信，大规模并购浪潮背后最重要的推动力与全球化进程的推动力是一样的：运输和通讯成本的下降、贸易和投资壁垒的降低以及市场的扩大，需要扩大经营规模来满足客户的需求。",
               "vocab": [
                 {
                   "word": "capable of",
@@ -3133,7 +3133,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "All these are beneficial, not detrimental, to consumers.",
-              "translation": "【考研真题精读标准译文】All these are beneficial, not detrimental, to consumers.",
+              "translation": "所有这些对于消费者来说都是有益的，而不是有害的。",
               "vocab": [
                 {
                   "word": "beneficial",
@@ -3149,7 +3149,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "As productivity grows, the world's wealth increases.",
-              "translation": "【考研真题精读标准译文】As productivity grows, the world's wealth increases.",
+              "translation": "随着生产力的提高，世界财富也随之增加。",
               "vocab": [
                 {
                   "word": "productivity",
@@ -3171,7 +3171,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Examples of benefits or costs of the current concentration wave are scanty.",
-              "translation": "【考研真题精读标准译文】Examples of benefits or costs of the current concentration wave are scanty.",
+              "translation": "当前集中浪潮的好处或成本的例子很少。",
               "vocab": [
                 {
                   "word": "concentration",
@@ -3187,7 +3187,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Yet it is hard to imagine that the merger of a few oil firms today could re-create the same threats to competition that were feared nearly a century ago in the U.S., when the Standard Oil trust was broken up.",
-              "translation": "【考研真题精读标准译文】Yet it is hard to imagine that the merger of a few oil firms today could re-create the same threats to competition that were feared nearly a century ago in the U.S., when the Standard Oil trust was broken up.",
+              "translation": "然而，很难想象今天几家石油公司的合并可能会重新造成近一个世纪前美国标准石油托拉斯解散时所担心的同样的竞争威胁。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -3227,7 +3227,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "The mergers of telecom companies, such as WorldCom, hardly seem to bring higher prices for consumers or a reduction in the pace of technical progress.",
-              "translation": "【考研真题精读标准译文】The mergers of telecom companies, such as WorldCom, hardly seem to bring higher prices for consumers or a reduction in the pace of technical progress.",
+              "translation": "世通等电信公司的合并似乎几乎没有给消费者带来更高的价格或减缓技术进步的步伐。",
               "vocab": [
                 {
                   "word": "for",
@@ -3268,7 +3268,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "On the contrary, the price of communications is coming down fast.",
-              "translation": "【考研真题精读标准译文】On the contrary, the price of communications is coming down fast.",
+              "translation": "相反，通信价格正在快速下降。",
               "vocab": [
                 {
                   "word": "On the contrary",
@@ -3296,7 +3296,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "In cars, too, concentration is increasing-witness Daimler and Chrysler, Renault and Nissan—but it does not appear that consumers are being hurt.",
-              "translation": "【考研真题精读标准译文】In cars, too, concentration is increasing-witness Daimler and Chrysler, Renault and Nissan—but it does not appear that consumers are being hurt.",
+              "translation": "在汽车领域，集中度也在不断提高——戴姆勒和克莱斯勒、雷诺和日产就是例证——但消费者似乎并未受到伤害。",
               "vocab": [
                 {
                   "word": "concentration",
@@ -3318,7 +3318,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Yet the fact remains that the merger movement must be watched.",
-              "translation": "【考研真题精读标准译文】Yet the fact remains that the merger movement must be watched.",
+              "translation": "但事实仍然是，合并动向必须受到关注。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -3346,7 +3346,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "A few weeks ago, Alan Greenspan warned against the megamergers in the banking industry.",
-              "translation": "【考研真题精读标准译文】A few weeks ago, Alan Greenspan warned against the megamergers in the banking industry.",
+              "translation": "几周前，艾伦·格林斯潘对银行业的大型合并发出警告。",
               "vocab": [
                 {
                   "word": "industry",
@@ -3362,7 +3362,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Who is going to supervise, regulate and operate as a lender of last resort with the gigantic banks that are being created?",
-              "translation": "【考研真题精读标准译文】Who is going to supervise, regulate and operate as a lender of last resort with the gigantic banks that are being created?",
+              "translation": "谁将作为最后贷款人对正在创建的大型银行进行监督、监管和运营？",
               "vocab": [
                 {
                   "word": "supervise",
@@ -3408,7 +3408,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Won't multinationals shift production from one place to another when a nation gets too strict about infringements to fair competition?",
-              "translation": "【考研真题精读标准译文】Won't multinationals shift production from one place to another when a nation gets too strict about infringements to fair competition?",
+              "translation": "当一个国家对公平竞争的侵权行为过于严格时，跨国公司是否会将生产从一个地方转移到另一个地方？",
               "vocab": [
                 {
                   "word": "shift",
@@ -3460,7 +3460,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "And should one country take upon itself the role of \"defending competition\" on issues that affect many other nations, as in the U.S. vs. Microsoft case ?",
-              "translation": "【考研真题精读标准译文】And should one country take upon itself the role of \"defending competition\" on issues that affect many other nations, as in the U.S. vs. Microsoft case ?",
+              "translation": "一个国家是否应该在影响许多其他国家的问题上承担起“捍卫竞争”的角色，就像美国诉微软案一样？",
               "vocab": [
                 {
                   "word": "one",
@@ -3543,7 +3543,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "to combine and become bigger.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3620,7 +3620,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "the increase of the world's wealth.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3653,7 +3653,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "the increasing concentration is certain to hurt consumers",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3719,7 +3719,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "optimistic",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3783,7 +3783,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "When I decided to quit my full time employment it never occurred to me that I might become a part of a new international trend.",
-              "translation": "【考研真题精读标准译文】When I decided to quit my full time employment it never occurred to me that I might become a part of a new international trend.",
+              "translation": "当我决定辞去全职工作时，我从未想到我可能会成为新国际趋势的一部分。",
               "vocab": [
                 {
                   "word": "employment",
@@ -3817,7 +3817,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "A lateral move that hurt my pride and blocked my professional progress prompted me to abandon my relatively high profile career although, in the manner of a disgraced government minister, I covered my exit by claiming, \"I wanted to spend more time with my family\".",
-              "translation": "【考研真题精读标准译文】A lateral move that hurt my pride and blocked my professional progress prompted me to abandon my relatively high profile career although, in the manner of a disgraced government minister, I covered my exit by claiming, \"I wanted to spend more time with my family\".",
+              "translation": "一次横向调动伤害了我的自尊心并阻碍了我的职业进步，促使我放弃了我相对较高调的职业生涯，尽管我以一个丢脸的政府部长的方式掩盖了我的退出，声称“我想花更多的时间和我的家人在一起”。",
               "vocab": [
                 {
                   "word": "move",
@@ -3881,7 +3881,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Curiously, some two-and-a-half years and two novels later, my experiment in what the Americans term \"downshifting\" has turned my tired excuse into an absolute reality.",
-              "translation": "【考研真题精读标准译文】Curiously, some two-and-a-half years and two novels later, my experiment in what the Americans term \"downshifting\" has turned my tired excuse into an absolute reality.",
+              "translation": "奇怪的是，大约两年半和两本小说之后，我对美国人所说的“降档”的实验将我疲惫的借口变成了绝对的现实。",
               "vocab": [
                 {
                   "word": "experiment",
@@ -3928,7 +3928,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "I have been transformed from a passionate advocate of the philosophy of \"having it all\", preached by Linda Kelsey for the past seven years in the pages of She magazine, into a woman who is happy to settle for a bit of everything.",
-              "translation": "【考研真题精读标准译文】I have been transformed from a passionate advocate of the philosophy of \"having it all\", preached by Linda Kelsey for the past seven years in the pages of She magazine, into a woman who is happy to settle for a bit of everything.",
+              "translation": "我已经从琳达·凯尔西过去七年在《She》杂志上宣扬的“拥有一切”哲学的热情倡导者，变成了一个乐于满足于一切的女人。",
               "vocab": [
                 {
                   "word": "passionate",
@@ -3968,7 +3968,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "I have discovered, as perhaps Kelsey will after her much-publicized resignation from the editorship of She after a build-up of stress, that abandoning the doctrine of \"juggling your life\", and making the alternative move into \"downshifting\" brings with it far greater rewards than financial success and social status.",
-              "translation": "【考研真题精读标准译文】I have discovered, as perhaps Kelsey will after her much-publicized resignation from the editorship of She after a build-up of stress, that abandoning the doctrine of \"juggling your life\", and making the alternative move into \"downshifting\" brings with it far greater rewards than financial success and social status.",
+              "translation": "我发现，正如凯尔西因压力增大而广为人知地辞去《她》编辑一职后所发现的那样，放弃“兼顾生活”的信条，转而“放慢节奏”，会带来比经济成功和社会地位更大的回报。",
               "vocab": [
                 {
                   "word": "will",
@@ -4026,7 +4026,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Nothing could persuade me to return to the kind of life Kelsey used to advocate and I once enjoyed: 12-hour working days, pressured deadlines, the fearful strain of office politics and the limitations of being a parent on \"quality time\".",
-              "translation": "【考研真题精读标准译文】Nothing could persuade me to return to the kind of life Kelsey used to advocate and I once enjoyed: 12-hour working days, pressured deadlines, the fearful strain of office politics and the limitations of being a parent on \"quality time\".",
+              "translation": "没有什么能说服我回到凯尔西曾经提倡的、我曾经享受过的那种生活：12小时的工作日、紧迫的最后期限、办公室政治的可怕压力以及作为父母在“优质时间”上的限制。",
               "vocab": [
                 {
                   "word": "persuade",
@@ -4085,7 +4085,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "In America, the move away from juggling to a simpler, less materialistic lifestyle is a well-established trend.",
-              "translation": "【考研真题精读标准译文】In America, the move away from juggling to a simpler, less materialistic lifestyle is a well-established trend.",
+              "translation": "在美国，从杂耍转向更简单、更少物质主义的生活方式是一种既定的趋势。",
               "vocab": [
                 {
                   "word": "move",
@@ -4107,7 +4107,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Downshifting, also known in America as \"voluntary simplicity\" has, ironically, even bred a new area of what might be termed anticonsumerism.",
-              "translation": "【考研真题精读标准译文】Downshifting, also known in America as \"voluntary simplicity\" has, ironically, even bred a new area of what might be termed anticonsumerism.",
+              "translation": "具有讽刺意味的是，降档在美国也被称为“自愿简单”，甚至催生了一个可能被称为反消费主义的新领域。",
               "vocab": [
                 {
                   "word": "voluntary",
@@ -4135,7 +4135,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "There are a number of bestselling downshifting self-help books for people who want to simplify their lives; there are newsletters, such as The Tightwad Gazette, that give hundreds of thousands of Americans useful tips on anything from recycling their cling-film to making their own soap; there are even support groups for those who want to achieve the mid- '90s equivalent of dropping out.",
-              "translation": "【考研真题精读标准译文】There are a number of bestselling downshifting self-help books for people who want to simplify their lives; there are newsletters, such as The Tightwad Gazette, that give hundreds of thousands of Americans useful tips on anything from recycling their cling-film to making their own soap; there are even support groups for those who want to achieve the mid- '90s equivalent of dropping out.",
+              "translation": "有许多畅销的降档自助书籍适合那些想要简化生活的人。有一些时事通讯，例如《吝啬鬼公报》，为成千上万的美国人提供了各种有用的建议，从回收保鲜膜到制作自己的肥皂；甚至还有一些支持团体，为那些想要实现 90 年代中期退学的目标的人提供帮助。",
               "vocab": [
                 {
                   "word": "for",
@@ -4175,7 +4175,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "While in America the trend started as a reaction to the economic decline—after the mass redundancies caused by downsizing in the late '80s—and is still linked to the politics of thrift, in Britain, at least among the middle-class downshifters of my acquaintance, we have different reasons for seeking to simplify our lives.",
-              "translation": "【考研真题精读标准译文】While in America the trend started as a reaction to the economic decline—after the mass redundancies caused by downsizing in the late '80s—and is still linked to the politics of thrift, in Britain, at least among the middle-class downshifters of my acquaintance, we have different reasons for seeking to simplify our lives.",
+              "translation": "在美国，这种趋势始于对经济衰退的反应——在八十年代末因裁员而导致大规模裁员之后——并且仍然与节俭政治有关，而在英国，至少在我认识的中产阶级中，我们有不同的理由寻求简化我们的生活。",
               "vocab": [
                 {
                   "word": "at least",
@@ -4257,7 +4257,7 @@ window.ENGLISH_DATA['2001'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "For the women of my generation who were urged to keep juggling through the '80s, downshifting in the mid-'90s is not so much a search for the mythical good life—growing your own organic vegetables, and risking turning into one—as a personal recognition of your limitations.",
-              "translation": "【考研真题精读标准译文】For the women of my generation who were urged to keep juggling through the '80s, downshifting in the mid-'90s is not so much a search for the mythical good life—growing your own organic vegetables, and risking turning into one—as a personal recognition of your limitations.",
+              "translation": "对于我们这一代被敦促在 80 年代不断兼顾的女性来说，90 年代中期的放慢生活与其说是对神话般的美好生活的追求——自己种植有机蔬菜，并冒着变成有机蔬菜的风险——不如说是对自己局限性的个人认识。",
               "vocab": [
                 {
                   "word": "For",
@@ -4363,7 +4363,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "The writer was only too eager to spend more time with her family.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4396,7 +4396,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "enables her to realize her dream",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4484,7 +4484,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "extreme stress",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4550,7 +4550,7 @@ window.ENGLISH_DATA['2001'] = {
               "text": "man's search for mythical experiences",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

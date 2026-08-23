@@ -25,64 +25,14 @@ window.ENGLISH_DATA['2022'] = {
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "Reading Comprehension ##### Part A ##### Directions: Read the following four texts.",
-              "translation": "【考研真题精读标准译文】Reading Comprehension ##### Part A ##### Directions: Read the following four texts.",
-              "vocab": [
-                {
-                  "word": "Comprehension",
-                  "ipa": "ˌkɑː mprɪˈhenʃn",
-                  "meaning": "n. 理",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Answer the questions after each text by choosing A, B, C or D.",
-              "translation": "【考研真题精读标准译文】Answer the questions after each text by choosing A, B, C or D.",
-              "vocab": [
-                {
-                  "word": "Answer",
-                  "ipa": "",
-                  "meaning": "v.答复；n. 回答",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Mark your answers on the ANSWER SHEET. (40 points) People often complain that plastics are too durable.",
-              "translation": "【考研真题精读标准译文】Mark your answers on the ANSWER SHEET. (40 points) People often complain that plastics are too durable.",
+              "text": "People often complain that plastics are too durable.",
+              "translation": "人们经常抱怨塑料太耐用。",
               "vocab": [
                 {
                   "word": "in that",
                   "ipa": "/ɪn ðæt/",
                   "meaning": "因为；在于（常用释义：由于；原因是）",
                   "level": "purple"
-                },
-                {
-                  "word": "Mark",
-                  "ipa": "mɑːk",
-                  "meaning": "v. 做记号，",
-                  "level": "green"
-                },
-                {
-                  "word": "ANSWER",
-                  "ipa": "",
-                  "meaning": "v.答复；n. 回答",
-                  "level": "green"
-                },
-                {
-                  "word": "SHEET",
-                  "ipa": "ʃiːt",
-                  "meaning": "n. 成幅的薄片，薄板",
-                  "level": "green"
                 },
                 {
                   "word": "complain",
@@ -97,14 +47,14 @@ window.ENGLISH_DATA['2022'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P1-S4",
+              "sIndex": 2,
+              "id": "P1-S2",
               "text": "Water bottles, shopping bags, and other trash litter the planet, from Mount Everest to the Mariana Trench, because plastics are everywhere and don't break down easily.",
-              "translation": "【考研真题精读标准译文】Water bottles, shopping bags, and other trash litter the planet, from Mount Everest to the Mariana Trench, because plastics are everywhere and don't break down easily.",
+              "translation": "从珠穆朗玛峰到马里亚纳海沟，水瓶、购物袋和其他垃圾遍布地球，因为塑料无处不在且不易分解。",
               "vocab": [
                 {
                   "word": "litter",
@@ -120,13 +70,13 @@ window.ENGLISH_DATA['2022'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 5,
-              "id": "P1-S5",
+              "sIndex": 3,
+              "id": "P1-S3",
               "text": "But some plastic materials change over time.",
-              "translation": "【考研真题精读标准译文】But some plastic materials change over time.",
+              "translation": "但有些塑料材料会随着时间的推移而发生变化。",
               "vocab": [
                 {
                   "word": "plastic",
@@ -145,10 +95,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P1-S6",
+              "sIndex": 4,
+              "id": "P1-S4",
               "text": "They crack and frizzle.",
-              "translation": "【考研真题精读标准译文】They crack and frizzle.",
+              "translation": "它们会破裂并卷曲。",
               "vocab": [
                 {
                   "word": "frizzle",
@@ -161,10 +111,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 7,
-              "id": "P1-S7",
+              "sIndex": 5,
+              "id": "P1-S5",
               "text": "They \"weep\" out additives.",
-              "translation": "【考研真题精读标准译文】They \"weep\" out additives.",
+              "translation": "它们“渗出”添加剂。",
               "vocab": [
                 {
                   "word": "weep",
@@ -177,10 +127,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 8,
-              "id": "P1-S8",
+              "sIndex": 6,
+              "id": "P1-S6",
               "text": "They melt into sludge.",
-              "translation": "【考研真题精读标准译文】They melt into sludge.",
+              "translation": "它们融化成污泥。",
               "vocab": [
                 {
                   "word": "sludge",
@@ -193,10 +143,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 9,
-              "id": "P1-S9",
+              "sIndex": 7,
+              "id": "P1-S7",
               "text": "All of which creates huge headaches for institutions, such as museums, trying to preserve culturally important objects.",
-              "translation": "【考研真题精读标准译文】All of which creates huge headaches for institutions, such as museums, trying to preserve culturally important objects.",
+              "translation": "所有这些都给博物馆等试图保护重要文化物品的机构带来了巨大的麻烦。",
               "vocab": [
                 {
                   "word": "for",
@@ -213,19 +163,12 @@ window.ENGLISH_DATA['2022'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
-          "sentences": [
+            },
             {
-              "sIndex": 1,
-              "id": "P2-S1",
+              "sIndex": 8,
+              "id": "P1-S8",
               "text": "The variety of plastic objects at risk is dizzying: early radios, avant-garde sculptures, celluloid animation stills from Disney films, the first artificial heart.",
-              "translation": "【考研真题精读标准译文】The variety of plastic objects at risk is dizzying: early radios, avant-garde sculptures, celluloid animation stills from Disney films, the first artificial heart.",
+              "translation": "面临风险的塑料制品种类繁多，令人眼花缭乱：早期收音机、前卫雕塑、迪士尼电影中的赛璐珞动画剧照、第一颗人造心脏。",
               "vocab": [
                 {
                   "word": "variety",
@@ -264,14 +207,14 @@ window.ENGLISH_DATA['2022'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true,
+              "isTopicSentence": false,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P2-S2",
+              "sIndex": 9,
+              "id": "P1-S9",
               "text": "Certain artifacts are especially vulnerable because some pioneers in plastic art didn't always know how to mix ingredients properly, says Thea Van Oosten, a polymer chemist who, until retiring a few years ago, worked for decades at the Cultural Heritage Agency of the Netherlands.",
-              "translation": "【考研真题精读标准译文】Certain artifacts are especially vulnerable because some pioneers in plastic art didn't always know how to mix ingredients properly, says Thea Van Oosten, a polymer chemist who, until retiring a few years ago, worked for decades at the Cultural Heritage Agency of the Netherlands.",
+              "translation": "聚合物化学家西娅·范·奥斯滕 (Thea Van Oosten) 在荷兰文化遗产机构工作了几十年，直到几年前退休，他说，某些文物特别容易受到伤害，因为一些造型艺术先驱并不总是知道如何正确混合成分。",
               "vocab": [
                 {
                   "word": "vulnerable",
@@ -317,13 +260,20 @@ window.ENGLISH_DATA['2022'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 3,
-              "id": "P2-S3",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "\"It's like baking a cake: If you don't have exact amounts, it goes wrong,\" she says.",
-              "translation": "【考研真题精读标准译文】\"It's like baking a cake: If you don't have exact amounts, it goes wrong,\" she says.",
+              "translation": "“这就像烤蛋糕：如果没有准确的数量，就会出错，”她说。",
               "vocab": [
                 {
                   "word": "exact",
@@ -332,14 +282,14 @@ window.ENGLISH_DATA['2022'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P2-S4",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "\"The object you make is already a time bomb.\" And sometimes, it's not the artist's fault.",
-              "translation": "【考研真题精读标准译文】\"The object you make is already a time bomb.\" And sometimes, it's not the artist's fault.",
+              "translation": "“你制造的东西已经是一颗定时炸弹了。”有时，这不是艺术家的错。",
               "vocab": [
                 {
                   "word": "object",
@@ -355,13 +305,13 @@ window.ENGLISH_DATA['2022'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 5,
-              "id": "P2-S5",
+              "sIndex": 3,
+              "id": "P2-S3",
               "text": "In the 1960s, the Italian artist Piero Gilardi began to create hundreds of bright, colorful foam pieces.",
-              "translation": "【考研真题精读标准译文】In the 1960s, the Italian artist Piero Gilardi began to create hundreds of bright, colorful foam pieces.",
+              "translation": "20 世纪 60 年代，意大利艺术家 Piero Gilardi 开始创作数百件色彩鲜艳的泡沫作品。",
               "vocab": [
                 {
                   "word": "artist",
@@ -386,10 +336,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P2-S6",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "Those pieces included small beds of roses and other items as well as a few dozen \"nature carpets\"一 large rectangles decorated with foam pumpkins, cabbages, and watermelons.",
-              "translation": "【考研真题精读标准译文】Those pieces included small beds of roses and other items as well as a few dozen \"nature carpets\"一 large rectangles decorated with foam pumpkins, cabbages, and watermelons.",
+              "translation": "这些作品包括小玫瑰花坛和其他物品，以及几十张“自然地毯”——装饰着泡沫南瓜、卷心菜和西瓜的大矩形。",
               "vocab": [
                 {
                   "word": "dozen",
@@ -414,10 +364,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 7,
-              "id": "P2-S7",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "He wanted viewers to walk around on the carpets which meant they had to be durable.",
-              "translation": "【考研真题精读标准译文】He wanted viewers to walk around on the carpets which meant they had to be durable.",
+              "translation": "他希望观众在地毯上走动，这意味着地毯必须耐用。",
               "vocab": [
                 {
                   "word": "around",
@@ -436,10 +386,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 8,
-              "id": "P2-S8",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "Unfortunately, the polyurethane foam he used is inherently unstable.",
-              "translation": "【考研真题精读标准译文】Unfortunately, the polyurethane foam he used is inherently unstable.",
+              "translation": "不幸的是，他使用的聚氨酯泡沫本质上不稳定。",
               "vocab": [
                 {
                   "word": "Unfortunately",
@@ -464,10 +414,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 9,
-              "id": "P2-S9",
+              "sIndex": 7,
+              "id": "P2-S7",
               "text": "It's especially vulnerable to light damage, and by the mid-1990s, Gilardi's pumpkins, roses, and other figures were splitting and crumbling.",
-              "translation": "【考研真题精读标准译文】It's especially vulnerable to light damage, and by the mid-1990s, Gilardi's pumpkins, roses, and other figures were splitting and crumbling.",
+              "translation": "它特别容易受到轻微的损坏，到了 20 世纪 90 年代中期，吉拉迪的南瓜、玫瑰和其他雕像都裂开了、摇摇欲坠。",
               "vocab": [
                 {
                   "word": "vulnerable to",
@@ -496,6 +446,31 @@ window.ENGLISH_DATA['2022'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
+            },
+            {
+              "sIndex": 8,
+              "id": "P2-S8",
+              "text": "Museums locked some of them away in the dark.",
+              "translation": "博物馆将其中一些藏品锁在黑暗中。",
+              "vocab": [],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 9,
+              "id": "P2-S9",
+              "text": "So Van Oosten and her colleagues worked to preserve Gilardi's sculptures.",
+              "translation": "因此，范·奥斯滕和她的同事致力于保护吉拉迪的雕塑。",
+              "vocab": [
+                {
+                  "word": "preserve",
+                  "ipa": "prɪˈzɜːv",
+                  "meaning": "v.保护,维持;保存,保藏",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
@@ -507,33 +482,8 @@ window.ENGLISH_DATA['2022'] = {
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "Museums locked some of them away in the dark.",
-              "translation": "【考研真题精读标准译文】Museums locked some of them away in the dark.",
-              "vocab": [],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "So Van Oosten and her colleagues worked to preserve Gilardi's sculptures.",
-              "translation": "【考研真题精读标准译文】So Van Oosten and her colleagues worked to preserve Gilardi's sculptures.",
-              "vocab": [
-                {
-                  "word": "preserve",
-                  "ipa": "prɪˈzɜːv",
-                  "meaning": "v.保护,维持;保存,保藏",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
               "text": "They infused some with stabilizing and consolidating chemicals.",
-              "translation": "【考研真题精读标准译文】They infused some with stabilizing and consolidating chemicals.",
+              "translation": "他们向其中一些注入了稳定和巩固的化学物质。",
               "vocab": [
                 {
                   "word": "stabilizing",
@@ -548,14 +498,14 @@ window.ENGLISH_DATA['2022'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P3-S4",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Van Oosten calls those chemicals \"sunscreens\" because their goal was to prevent further light damage and rebuild worn polymer fibers.",
-              "translation": "【考研真题精读标准译文】Van Oosten calls those chemicals \"sunscreens\" because their goal was to prevent further light damage and rebuild worn polymer fibers.",
+              "translation": "范·奥斯滕将这些化学物质称为“防晒霜”，因为它们的目标是防止进一步的光损伤并重建磨损的聚合物纤维。",
               "vocab": [
                 {
                   "word": "prevent",
@@ -583,13 +533,13 @@ window.ENGLISH_DATA['2022'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 5,
-              "id": "P3-S5",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "She is proud that several sculptures have even gone on display again, albeit sometimes beneath protective cases.",
-              "translation": "【考研真题精读标准译文】She is proud that several sculptures have even gone on display again, albeit sometimes beneath protective cases.",
+              "translation": "她感到自豪的是，一些雕塑甚至再次展出，尽管有时是在保护壳下。",
               "vocab": [
                 {
                   "word": "several",
@@ -620,10 +570,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P3-S6",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "Despite success stories like Van Oosten's, preservation of plastics will likely get harder.",
-              "translation": "【考研真题精读标准译文】Despite success stories like Van Oosten's, preservation of plastics will likely get harder.",
+              "translation": "尽管有范·奥斯滕这样的成功故事，但塑料的保存可能会变得更加困难。",
               "vocab": [
                 {
                   "word": "Despite",
@@ -648,10 +598,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 7,
-              "id": "P3-S7",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "Old objects continue to deteriorate.",
-              "translation": "【考研真题精读标准译文】Old objects continue to deteriorate.",
+              "translation": "旧物品继续恶化。",
               "vocab": [
                 {
                   "word": "continue",
@@ -670,10 +620,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 8,
-              "id": "P3-S8",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "Worse, biodegradable plastics, designed to disintegrate, are increasingly common.",
-              "translation": "【考研真题精读标准译文】Worse, biodegradable plastics, designed to disintegrate, are increasingly common.",
+              "translation": "更糟糕的是，旨在分解的可生物降解塑料越来越普遍。",
               "vocab": [
                 {
                   "word": "increasingly common",
@@ -704,10 +654,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 9,
-              "id": "P3-S9",
+              "sIndex": 7,
+              "id": "P3-S7",
               "text": "And more is at stake here than individual objects.",
-              "translation": "【考研真题精读标准译文】And more is at stake here than individual objects.",
+              "translation": "这里所涉及的不仅仅是单个物体。",
               "vocab": [
                 {
                   "word": "stake",
@@ -726,10 +676,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 10,
-              "id": "P3-S10",
+              "sIndex": 8,
+              "id": "P3-S8",
               "text": "Joana Lia Ferreira, an assistant professor of conservation and restoration at the NOVA School of Science and Technology, notes that archaeologists first defined the great material ages of human history—Stone Age, Iron Age, and so on—after examining artifacts in museums.",
-              "translation": "【考研真题精读标准译文】Joana Lia Ferreira, an assistant professor of conservation and restoration at the NOVA School of Science and Technology, notes that archaeologists first defined the great material ages of human history—Stone Age, Iron Age, and so on—after examining artifacts in museums.",
+              "translation": "NOVA 科学技术学院保护与修复助理教授乔安娜·利亚·费雷拉 (Joana Lia Ferreira) 指出，考古学家在检查了博物馆中的文物后，首先定义了人类历史上伟大的物质时代——石器时代、铁器时代等。",
               "vocab": [
                 {
                   "word": "assistant",
@@ -772,10 +722,10 @@ window.ENGLISH_DATA['2022'] = {
               "isKeyEvidence": false
             },
             {
-              "sIndex": 11,
-              "id": "P3-S11",
+              "sIndex": 9,
+              "id": "P3-S9",
               "text": "We now live in an age of plastic, she says, \"and what we decide to collect today, what we decide to preserve...will have a strong impact on how in the future we'll be seen.\"",
-              "translation": "【考研真题精读标准译文】We now live in an age of plastic, she says, \"and what we decide to collect today, what we decide to preserve...will have a strong impact on how in the future we'll be seen.\"",
+              "translation": "她说，我们现在生活在一个塑料时代，“我们今天决定收集什么，我们决定保存什么……将对我们未来的形象产生重大影响。”",
               "vocab": [
                 {
                   "word": "plastic",
@@ -823,14 +773,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "maintaining their plastic items.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -839,9 +789,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "obtaining durable plastic artifacts.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -889,14 +839,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "immune to decay.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -916,9 +866,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "C",
               "text": "inherently flawed.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -955,7 +905,7 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -982,9 +932,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "C",
               "text": "have their ingredients analyzed.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -993,9 +943,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "D",
               "text": "prevent them from further damage.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1061,7 +1011,7 @@ window.ENGLISH_DATA['2022'] = {
               "text": "challenging.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1087,14 +1037,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "will inspire future scientific research.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1103,9 +1053,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "has profound historical significance.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1158,7 +1108,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "As the latest crop of students pen their undergraduate application form and weigh up their options, it may be worth considering just how the point, purpose and value of a degree has changed and what Generation Z need to consider as they start the third stage of their educational journey.",
-              "translation": "【考研真题精读标准译文】As the latest crop of students pen their undergraduate application form and weigh up their options, it may be worth considering just how the point, purpose and value of a degree has changed and what Generation Z need to consider as they start the third stage of their educational journey.",
+              "translation": "随着最新一批学生填写本科申请表并权衡自己的选择，也许值得考虑一下学位的意义、目的和价值发生了怎样的变化，以及 Z 世代在开始教育旅程的第三阶段时需要考虑什么。",
               "vocab": [
                 {
                   "word": "crop",
@@ -1246,7 +1196,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Millennials were told that if you did well in school, got a decent degree, you would be set up for life.",
-              "translation": "【考研真题精读标准译文】Millennials were told that if you did well in school, got a decent degree, you would be set up for life.",
+              "translation": "千禧一代被告知，如果你在学校表现出色，获得像样的学位，你就会为生活做好准备。",
               "vocab": [
                 {
                   "word": "decent",
@@ -1268,7 +1218,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "But that promise has been found wanting.",
-              "translation": "【考研真题精读标准译文】But that promise has been found wanting.",
+              "translation": "但人们发现这一承诺并不理想。",
               "vocab": [
                 {
                   "word": "promise",
@@ -1290,7 +1240,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "As degrees became universal, they became devalued.",
-              "translation": "【考研真题精读标准译文】As degrees became universal, they became devalued.",
+              "translation": "随着学位变得普遍，它们变得贬值了。",
               "vocab": [
                 {
                   "word": "universal",
@@ -1312,7 +1262,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Education was no longer a secure route of social mobility.",
-              "translation": "【考研真题精读标准译文】Education was no longer a secure route of social mobility.",
+              "translation": "教育不再是社会流动的安全途径。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -1352,7 +1302,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Today, 28 percent of graduates in the UK are in non-graduate roles, a percentage which is double the average among the OECD countries.",
-              "translation": "【考研真题精读标准译文】Today, 28 percent of graduates in the UK are in non-graduate roles, a percentage which is double the average among the OECD countries.",
+              "translation": "如今，英国 28% 的毕业生担任非毕业生职位，这一比例是经合组织国家平均水平的两倍。",
               "vocab": [
                 {
                   "word": "percentage",
@@ -1381,7 +1331,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "This is not to say that there is no point in getting a degree, but rather stress that a degree is not for everyone, that the switch from classroom to lecture hall is not an inevitable one and that other options are available.",
-              "translation": "【考研真题精读标准译文】This is not to say that there is no point in getting a degree, but rather stress that a degree is not for everyone, that the switch from classroom to lecture hall is not an inevitable one and that other options are available.",
+              "translation": "这并不是说获得学位没有意义，而是强调学位并不适合所有人，从课堂到报告厅的转变并不是不可避免的，而且还有其他选择。",
               "vocab": [
                 {
                   "word": "but rather",
@@ -1451,7 +1401,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Thankfully, there are signs that this is already happening, with Generation Z seeking to learn from their millennial predecessors, even if parents and teachers tend to be still set in the degree mindset.",
-              "translation": "【考研真题精读标准译文】Thankfully, there are signs that this is already happening, with Generation Z seeking to learn from their millennial predecessors, even if parents and teachers tend to be still set in the degree mindset.",
+              "translation": "值得庆幸的是，有迹象表明这种情况已经发生，Z 一代寻求向千禧一代的前辈学习，即使家长和老师往往仍固守着学位心态。",
               "vocab": [
                 {
                   "word": "tend to be",
@@ -1503,7 +1453,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Employers have long seen the advantages of hiring school leavers who often prove themselves to be more committed and loyal employees than graduates.",
-              "translation": "【考研真题精读标准译文】Employers have long seen the advantages of hiring school leavers who often prove themselves to be more committed and loyal employees than graduates.",
+              "translation": "雇主们早就看到了雇用离校生的优势，他们往往证明自己是比毕业生更忠诚的员工。",
               "vocab": [
                 {
                   "word": "prove",
@@ -1531,7 +1481,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Many too are seeing the advantages of scrapping a degree requirement for certain roles.",
-              "translation": "【考研真题精读标准译文】Many too are seeing the advantages of scrapping a degree requirement for certain roles.",
+              "translation": "许多人也看到了取消某些职位的学位要求的好处。",
               "vocab": [
                 {
                   "word": "requirement",
@@ -1553,7 +1503,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "For those for whom a degree is the desired route, consider that this may well be the first of many.",
-              "translation": "【考研真题精读标准译文】For those for whom a degree is the desired route, consider that this may well be the first of many.",
+              "translation": "对于那些希望获得学位的人来说，这很可能是众多途径中的第一个。",
               "vocab": [
                 {
                   "word": "For",
@@ -1581,7 +1531,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "In this age of generalists, it pays to have specific knowledge or skills.",
-              "translation": "【考研真题精读标准译文】In this age of generalists, it pays to have specific knowledge or skills.",
+              "translation": "在这个多面手的时代，拥有特定的知识或技能是值得的。",
               "vocab": [
                 {
                   "word": "specific",
@@ -1610,7 +1560,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Postgraduates now earn 40 percent more than graduates.",
-              "translation": "【考研真题精读标准译文】Postgraduates now earn 40 percent more than graduates.",
+              "translation": "现在，研究生的收入比应届毕业生高出 40%。",
               "vocab": [
                 {
                   "word": "earn",
@@ -1626,7 +1576,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "When more and more of us have a degree, it makes sense to have two.",
-              "translation": "【考研真题精读标准译文】When more and more of us have a degree, it makes sense to have two.",
+              "translation": "当我们中越来越多的人拥有学位时，拥有两个学位就有意义了。",
               "vocab": [
                 {
                   "word": "sense",
@@ -1642,7 +1592,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "It is unlikely that Generation Z will be done with education at 18 or 21; they will need to be constantly up-skilling throughout their career to stay employable.",
-              "translation": "【考研真题精读标准译文】It is unlikely that Generation Z will be done with education at 18 or 21; they will need to be constantly up-skilling throughout their career to stay employable.",
+              "translation": "Z世代不太可能在18岁或21岁就完成教育；他们需要在整个职业生涯中不断提高技能才能保持就业能力。",
               "vocab": [
                 {
                   "word": "unlikely",
@@ -1694,7 +1644,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "It has been estimated that this generation, due to the pressures of technology, the wish for personal fulfilment and desire for diversity, will work for 17 different employers over the course of their working life and have five different careers.",
-              "translation": "【考研真题精读标准译文】It has been estimated that this generation, due to the pressures of technology, the wish for personal fulfilment and desire for diversity, will work for 17 different employers over the course of their working life and have five different careers.",
+              "translation": "据估计，由于技术的压力、对个人成就的渴望以及对多样性的渴望，这一代人在其职业生涯中将为17个不同的雇主工作，并从事五种不同的职业。",
               "vocab": [
                 {
                   "word": "generation",
@@ -1758,7 +1708,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Education, and not just knowledge gained on campus, will be a core part of Generation Z's career trajectory.",
-              "translation": "【考研真题精读标准译文】Education, and not just knowledge gained on campus, will be a core part of Generation Z's career trajectory.",
+              "translation": "教育，而不仅仅是在校园中获得的知识，将成为 Z 世代职业轨迹的核心部分。",
               "vocab": [
                 {
                   "word": "will",
@@ -1798,7 +1748,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Older generations often talk about their degree in the present and personal tense: \"I am a geographer\" or \"I am a classicist\".",
-              "translation": "【考研真题精读标准译文】Older generations often talk about their degree in the present and personal tense: \"I am a geographer\" or \"I am a classicist\".",
+              "translation": "老一辈人经常用现在时和个人时态谈论他们的学位：“我是一名地理学家”或“我是一名古典学家”。",
               "vocab": [
                 {
                   "word": "about",
@@ -1826,7 +1776,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Their sons or daughters would never say such a thing; it's as if they already know that their degree won't define them in the same way.",
-              "translation": "【考研真题精读标准译文】Their sons or daughters would never say such a thing; it's as if they already know that their degree won't define them in the same way.",
+              "translation": "他们的儿子或女儿绝不会说出这样的话；就好像他们已经知道他们的学位不会以同样的方式定义他们一样。",
               "vocab": [
                 {
                   "word": "define",
@@ -1856,7 +1806,7 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -1872,9 +1822,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "be diligent at each educational stage.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1883,9 +1833,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "C",
               "text": "reassess the necessity of college education.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1922,7 +1872,7 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1938,9 +1888,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "the shrinking value of a degree.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1960,9 +1910,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "D",
               "text": "the desired route of social mobility.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2017,7 +1967,7 @@ window.ENGLISH_DATA['2022'] = {
               "text": "employers are taking a realistic attitude to degrees.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2054,14 +2004,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "make an early decision on their career.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2092,9 +2042,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "D",
               "text": "further their studies in a specific field.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2120,14 +2070,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "Lifelong learning will define them.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2136,9 +2086,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "They will make qualified educators.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2191,7 +2141,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Enlightening, challenging, stimulating, fun.",
-              "translation": "【考研真题精读标准译文】Enlightening, challenging, stimulating, fun.",
+              "translation": "启发性、挑战性、刺激性、乐趣。",
               "vocab": [
                 {
                   "word": "Enlightening",
@@ -2219,7 +2169,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "These were some of the words that Nature readers used to describe their experiences of art-science collaborations in a series of articles on partnerships between artists and researchers.",
-              "translation": "【考研真题精读标准译文】These were some of the words that Nature readers used to describe their experiences of art-science collaborations in a series of articles on partnerships between artists and researchers.",
+              "translation": "这些是《自然》读者在一系列关于艺术家和研究人员之间合作关系的文章中用来描述他们的艺术与科学合作经历的一些词语。",
               "vocab": [
                 {
                   "word": "a series of",
@@ -2247,7 +2197,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Nearly 40% of the roughly 350 people who responded to an accompanying poll said they had collaborated with artists, and almost all said they would consider doing so in the future.",
-              "translation": "【考研真题精读标准译文】Nearly 40% of the roughly 350 people who responded to an accompanying poll said they had collaborated with artists, and almost all said they would consider doing so in the future.",
+              "translation": "在一项附带民意调查中，大约 350 名受访者中有近 40% 的人表示他们曾与艺术家合作过，而且几乎所有人都表示他们将来会考虑这样做。",
               "vocab": [
                 {
                   "word": "roughly",
@@ -2275,7 +2225,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Such an encouraging result is not surprising.",
-              "translation": "【考研真题精读标准译文】Such an encouraging result is not surprising.",
+              "translation": "如此令人鼓舞的结果并不令人意外。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2284,7 +2234,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Scientists are increasingly seeking out visual artists to help them communicate their work to new audiences.",
-              "translation": "【考研真题精读标准译文】Scientists are increasingly seeking out visual artists to help them communicate their work to new audiences.",
+              "translation": "科学家们越来越多地寻找视觉艺术家来帮助他们向新观众传达他们的作品。",
               "vocab": [
                 {
                   "word": "visual",
@@ -2318,7 +2268,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "\"Artists help scientists reach a broader audience and make emotional connections that enhance learning,\" one respondent said.",
-              "translation": "【考研真题精读标准译文】\"Artists help scientists reach a broader audience and make emotional connections that enhance learning,\" one respondent said.",
+              "translation": "一位受访者表示：“艺术家帮助科学家接触到更广泛的受众，建立情感联系，从而增强学习能力。”",
               "vocab": [
                 {
                   "word": "audience",
@@ -2358,7 +2308,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "One example of how artists and scientists have together rocked the senses came last month when the Sydney Symphony Orchestra performed a reworked version of Antonio Vivaldi's The Four Seasons.",
-              "translation": "【考研真题精读标准译文】One example of how artists and scientists have together rocked the senses came last month when the Sydney Symphony Orchestra performed a reworked version of Antonio Vivaldi's The Four Seasons.",
+              "translation": "上个月，悉尼交响乐团演奏了安东尼奥·维瓦尔第的《四季》的改编版，这是艺术家和科学家如何共同震撼感官的一个例子。",
               "vocab": [
                 {
                   "word": "One",
@@ -2399,7 +2349,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "They reimagined the 300-year-old score by injecting the latest climate prediction data for each season—provided by Monash University's Climate Change Communication Research Hub.",
-              "translation": "【考研真题精读标准译文】They reimagined the 300-year-old score by injecting the latest climate prediction data for each season—provided by Monash University's Climate Change Communication Research Hub.",
+              "translation": "他们通过注入由莫纳什大学气候变化传播研究中心提供的每个季节的最新气候预测数据，重新构想了 300 年前的分数。",
               "vocab": [
                 {
                   "word": "score",
@@ -2451,7 +2401,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The performance was a creative call to action ahead of November's United Nations Climate Change Conference in Glasgow, UK.",
-              "translation": "【考研真题精读标准译文】The performance was a creative call to action ahead of November's United Nations Climate Change Conference in Glasgow, UK.",
+              "translation": "这场表演是 11 月在英国格拉斯哥举行的联合国气候变化会议之前的一次富有创意的行动呼吁。",
               "vocab": [
                 {
                   "word": "performance",
@@ -2485,7 +2435,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "But a genuine partnership must be a two-way street.",
-              "translation": "【考研真题精读标准译文】But a genuine partnership must be a two-way street.",
+              "translation": "但真正的伙伴关系必须是双向的。",
               "vocab": [
                 {
                   "word": "genuine",
@@ -2513,7 +2463,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Fewer artists than scientists responded to the Nature poll; however, several respondents noted that artists do not simply assist scientists with their communication requirements.",
-              "translation": "【考研真题精读标准译文】Fewer artists than scientists responded to the Nature poll; however, several respondents noted that artists do not simply assist scientists with their communication requirements.",
+              "translation": "对《自然》杂志的民意调查做出回应的艺术家比科学家还少；然而，一些受访者指出，艺术家不仅仅是协助科学家满足他们的沟通要求。",
               "vocab": [
                 {
                   "word": "Nature",
@@ -2559,7 +2509,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Nor should their work be considered only as an object of study.",
-              "translation": "【考研真题精读标准译文】Nor should their work be considered only as an object of study.",
+              "translation": "他们的工作也不应该仅仅被视为研究对象。",
               "vocab": [
                 {
                   "word": "work",
@@ -2587,7 +2537,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The alliances are most valuable when scientists and artists have a shared stake in a project, are able to jointly design it and can critique each other's work.",
-              "translation": "【考研真题精读标准译文】The alliances are most valuable when scientists and artists have a shared stake in a project, are able to jointly design it and can critique each other's work.",
+              "translation": "当科学家和艺术家在一个项目中拥有共同利益、能够共同设计该项目并能够批评彼此的工作时，这种联盟是最有价值的。",
               "vocab": [
                 {
                   "word": "valuable",
@@ -2639,7 +2589,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Such an approach can both prompt new research as well as result in powerful art.",
-              "translation": "【考研真题精读标准译文】Such an approach can both prompt new research as well as result in powerful art.",
+              "translation": "这种方法既可以促进新的研究，也可以产生强大的艺术。",
               "vocab": [
                 {
                   "word": "approach",
@@ -2674,7 +2624,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "More than half a century ago, the Massachusetts Institute of Technology opened its Center for Advanced Visual Studies (CAVS) to explore the role of technology in culture.",
-              "translation": "【考研真题精读标准译文】More than half a century ago, the Massachusetts Institute of Technology opened its Center for Advanced Visual Studies (CAVS) to explore the role of technology in culture.",
+              "translation": "半个多世纪前，麻省理工学院开设了高级视觉研究中心（CAVS），以探索技术在文化中的作用。",
               "vocab": [
                 {
                   "word": "Institute",
@@ -2708,7 +2658,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The founders deliberately focused their projects around light—hence the \"visual studies' in the name.",
-              "translation": "【考研真题精读标准译文】The founders deliberately focused their projects around light—hence the \"visual studies' in the name.",
+              "translation": "创始人刻意将他们的项目集中在光上——因此名称中就有“视觉研究”。",
               "vocab": [
                 {
                   "word": "deliberately",
@@ -2736,7 +2686,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Light was something that both artists and scientists had an interest in, and therefore could form the basis of collaboration.",
-              "translation": "【考研真题精读标准译文】Light was something that both artists and scientists had an interest in, and therefore could form the basis of collaboration.",
+              "translation": "光是艺术家和科学家都感兴趣的东西，因此可以构成合作的基础。",
               "vocab": [
                 {
                   "word": "interest",
@@ -2770,7 +2720,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "As science and technology progressed, and divided into more sub-disciplines, the centre was simultaneously looking to a time when leading researchers could also be artists, writers and poets, and vice versa.",
-              "translation": "【考研真题精读标准译文】As science and technology progressed, and divided into more sub-disciplines, the centre was simultaneously looking to a time when leading researchers could also be artists, writers and poets, and vice versa.",
+              "translation": "随着科学技术的进步，并划分出更多的子学科，该中心同时希望有一天，领先的研究人员也可以是艺术家、作家和诗人，反之亦然。",
               "vocab": [
                 {
                   "word": "divided",
@@ -2810,7 +2760,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Nature's poll findings suggest that this trend is as strong as ever, but, to make a collaboration work, both sides need to invest time, and embrace surprise and challenge.",
-              "translation": "【考研真题精读标准译文】Nature's poll findings suggest that this trend is as strong as ever, but, to make a collaboration work, both sides need to invest time, and embrace surprise and challenge.",
+              "translation": "《自然》杂志的民意调查结果表明，这种趋势一如既往地强劲，但是，为了使合作发挥作用，双方都需要投入时间，并接受惊喜和挑战。",
               "vocab": [
                 {
                   "word": "Nature",
@@ -2874,7 +2824,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The reach of art-science tie-ups needs to go beyond the necessary purpose of research communication, and participants must not fall into the trap of stereotyping each other.",
-              "translation": "【考研真题精读标准译文】The reach of art-science tie-ups needs to go beyond the necessary purpose of research communication, and participants must not fall into the trap of stereotyping each other.",
+              "translation": "艺术与科学合作的范围需要超越研究交流的必要目的，参与者绝不能陷入彼此成见的陷阱。",
               "vocab": [
                 {
                   "word": "beyond",
@@ -2914,7 +2864,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Artists and scientists alike are immersed in discovery and invention, and challenge and critique are core to both, too.",
-              "translation": "【考研真题精读标准译文】Artists and scientists alike are immersed in discovery and invention, and challenge and critique are core to both, too.",
+              "translation": "艺术家和科学家都沉浸在发现和发明中，挑战和批评也是两者的核心。",
               "vocab": [
                 {
                   "word": "alike",
@@ -2968,14 +2918,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "caught the attention of critics.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2984,9 +2934,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "received favourable responses.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3034,14 +2984,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "art can offer audiences easy access to science.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3061,9 +3011,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "C",
               "text": "public participation in science has a promising future.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3100,14 +3050,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "their role may be underestimated.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3138,9 +3088,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "D",
               "text": "their work may be misguided.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3184,7 +3134,7 @@ window.ENGLISH_DATA['2022'] = {
               "text": "It exemplified valuable art-science alliances.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3232,14 +3182,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "are likely to go beyond public expectations.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3259,9 +3209,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "C",
               "text": "should do more than communicating science.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3303,7 +3253,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The personal grievance provisions of New Zealand's Employment Relations Act 2000 (ERA) prevent an employer from firing an employee without good cause.",
-              "translation": "【考研真题精读标准译文】The personal grievance provisions of New Zealand's Employment Relations Act 2000 (ERA) prevent an employer from firing an employee without good cause.",
+              "translation": "新西兰《2000 年雇佣关系法》(ERA) 中的个人申诉条款禁止雇主无正当理由解雇雇员。",
               "vocab": [
                 {
                   "word": "grievance",
@@ -3361,7 +3311,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Instead, dismissals must be justified.",
-              "translation": "【考研真题精读标准译文】Instead, dismissals must be justified.",
+              "translation": "相反，解雇必须有正当理由。",
               "vocab": [
                 {
                   "word": "Instead",
@@ -3383,7 +3333,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Employers must both show cause and act in a procedurally fair way.",
-              "translation": "【考研真题精读标准译文】Employers must both show cause and act in a procedurally fair way.",
+              "translation": "雇主必须提出理由并以程序公平的方式行事。",
               "vocab": [
                 {
                   "word": "cause",
@@ -3417,7 +3367,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "\"Personal grievance procedures were designed to guard the jobs of ordinary workers from 4 unjustified dismissals\".",
-              "translation": "【考研真题精读标准译文】\"Personal grievance procedures were designed to guard the jobs of ordinary workers from 4 unjustified dismissals\".",
+              "translation": "“个人申诉程序旨在保护普通工人的工作免受四次无理解雇”。",
               "vocab": [
                 {
                   "word": "grievance",
@@ -3445,7 +3395,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The premise was that the common law of contract lacked sufficient safeguards for workers against arbitrary conduct by management.",
-              "translation": "【考研真题精读标准译文】The premise was that the common law of contract lacked sufficient safeguards for workers against arbitrary conduct by management.",
+              "translation": "前提是普通合同法缺乏足够的保障措施来保护工人免受管理层的任意行为。",
               "vocab": [
                 {
                   "word": "premise",
@@ -3503,7 +3453,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Long gone are the days when a boss could simply give an employee contractual notice.",
-              "translation": "【考研真题精读标准译文】Long gone are the days when a boss could simply give an employee contractual notice.",
+              "translation": "老板可以简单地向员工发出合同通知的日子已经一去不复返了。",
               "vocab": [
                 {
                   "word": "contractual",
@@ -3525,7 +3475,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "But these provisions create difficulties for businesses when applied to highly paid managers and executives.",
-              "translation": "【考研真题精读标准译文】But these provisions create difficulties for businesses when applied to highly paid managers and executives.",
+              "translation": "但这些规定适用于高薪经理和高管时会给企业带来困难。",
               "vocab": [
                 {
                   "word": "for",
@@ -3548,7 +3498,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "As countless boards and business owners will attest, constraining firms from firing poorly performing, high-earning managers is a handbrake on boosting productivity and overall performance.",
-              "translation": "【考研真题精读标准译文】As countless boards and business owners will attest, constraining firms from firing poorly performing, high-earning managers is a handbrake on boosting productivity and overall performance.",
+              "translation": "正如无数董事会和企业主所证明的那样，限制公司解雇业绩不佳但收入丰厚的经理是提高生产力和整体绩效的阻碍。",
               "vocab": [
                 {
                   "word": "countless",
@@ -3600,7 +3550,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The difference between C-grade and A-grade managers may very well be the difference between business success or failure.",
-              "translation": "【考研真题精读标准译文】The difference between C-grade and A-grade managers may very well be the difference between business success or failure.",
+              "translation": "C级经理和A级经理之间的区别很可能就是企业成功或失败的区别。",
               "vocab": [
                 {
                   "word": "very",
@@ -3616,7 +3566,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Between preserving the jobs of ordinary workers or losing them.",
-              "translation": "【考研真题精读标准译文】Between preserving the jobs of ordinary workers or losing them.",
+              "translation": "在保留普通工人的工作或失去他们之间。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -3625,7 +3575,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Yet mediocrity is no longer enough to justify a dismissal. Consequently and paradoxically laws introduced to protect the jobs of ordinary workers may be placing those jobs at risk.",
-              "translation": "【考研真题精读标准译文】Yet mediocrity is no longer enough to justify a dismissal. Consequently and paradoxically laws introduced to protect the jobs of ordinary workers may be placing those jobs at risk.",
+              "translation": "然而，平庸已不足以成为解雇的理由。因此，矛盾的是，为保护普通工人的工作而出台的法律可能会使这些工作面临风险。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -3677,7 +3627,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "If not placing jobs at risk, to the extent employment protection laws constrain business owners from dismissing underperforming managers, those laws act as a constraint on firm productivity and therefore on workers' wages.",
-              "translation": "【考研真题精读标准译文】If not placing jobs at risk, to the extent employment protection laws constrain business owners from dismissing underperforming managers, those laws act as a constraint on firm productivity and therefore on workers' wages.",
+              "translation": "如果就业保护法不让工作面临风险，那么在一定程度上，就业保护法会限制企业主解雇表现不佳的经理，这些法律也会限制企业的生产力，从而限制工人的工资。",
               "vocab": [
                 {
                   "word": "extent",
@@ -3723,7 +3673,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Indeed, in \"An International Perspective on New Zealand's Productivity Paradox\" (2014), the Productivity Commission singled out the low quality of managerial capabilities as a cause of the country's poor productivity growth record.",
-              "translation": "【考研真题精读标准译文】Indeed, in \"An International Perspective on New Zealand's Productivity Paradox\" (2014), the Productivity Commission singled out the low quality of managerial capabilities as a cause of the country's poor productivity growth record.",
+              "translation": "事实上，生产力委员会在《新西兰生产力悖论的国际视角》（2014）中指出，管理能力质量低下是该国生产力增长记录不佳的一个原因。",
               "vocab": [
                 {
                   "word": "Indeed",
@@ -3799,7 +3749,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Nor are highly paid managers themselves immune from the harm caused by the ERA'S unjustified dismissal procedures.",
-              "translation": "【考研真题精读标准译文】Nor are highly paid managers themselves immune from the harm caused by the ERA'S unjustified dismissal procedures.",
+              "translation": "高薪经理本身也不能免受 ERA 不合理解雇程序造成的伤害。",
               "vocab": [
                 {
                   "word": "immune",
@@ -3840,7 +3790,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Because employment protection laws make it costlier to fire an employee, employers are more cautious about hiring new staff.",
-              "translation": "【考研真题精读标准译文】Because employment protection laws make it costlier to fire an employee, employers are more cautious about hiring new staff.",
+              "translation": "由于就业保护法使得解雇员工的成本更高，因此雇主在雇用新员工时更加谨慎。",
               "vocab": [
                 {
                   "word": "employment",
@@ -3880,7 +3830,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "This makes it harder for the marginal manager to gain employment.",
-              "translation": "【考研真题精读标准译文】This makes it harder for the marginal manager to gain employment.",
+              "translation": "这使得边缘经理更难找到工作。",
               "vocab": [
                 {
                   "word": "for",
@@ -3914,7 +3864,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "And firms pay staff less because firms carry the burden of the employment arrangement going wrong.",
-              "translation": "【考研真题精读标准译文】And firms pay staff less because firms carry the burden of the employment arrangement going wrong.",
+              "translation": "企业支付给员工的工资也较低，因为企业要承担雇佣安排出错的负担。",
               "vocab": [
                 {
                   "word": "pay",
@@ -3960,7 +3910,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Society also suffers from excessive employment protections.",
-              "translation": "【考研真题精读标准译文】Society also suffers from excessive employment protections.",
+              "translation": "社会还遭受过度的就业保护。",
               "vocab": [
                 {
                   "word": "Society",
@@ -3988,7 +3938,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Stringent job dismissal regulations adversely affect productivity growth and hamper both prosperity and overall well-being.",
-              "translation": "【考研真题精读标准译文】Stringent job dismissal regulations adversely affect productivity growth and hamper both prosperity and overall well-being.",
+              "translation": "严格的解雇规定会对生产率增长产生不利影响，并阻碍繁荣和整体福祉。",
               "vocab": [
                 {
                   "word": "Stringent",
@@ -4052,7 +4002,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Across the Tasman Sea, Australia deals with the unjustified dismissal paradox by excluding employees earning above a specified \"high-income threshold\" from the protection of its unfair dismissal laws.",
-              "translation": "【考研真题精读标准译文】Across the Tasman Sea, Australia deals with the unjustified dismissal paradox by excluding employees earning above a specified \"high-income threshold\" from the protection of its unfair dismissal laws.",
+              "translation": "塔斯曼海的另一边，澳大利亚通过将收入超过特定“高收入门槛”的员工排除在不公平解雇法的保护之外来解决不合理解雇悖论。",
               "vocab": [
                 {
                   "word": "unjustified",
@@ -4098,7 +4048,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "In New Zealand, a 2016 private members' Bill tried to permit firms and high-income employees to contract out of the unjustified dismissal regime.",
-              "translation": "【考研真题精读标准译文】In New Zealand, a 2016 private members' Bill tried to permit firms and high-income employees to contract out of the unjustified dismissal regime.",
+              "translation": "在新西兰，2016 年的一项私人议员法案试图允许公司和高收入雇员通过合同摆脱不合理解雇制度。",
               "vocab": [
                 {
                   "word": "New",
@@ -4156,7 +4106,7 @@ window.ENGLISH_DATA['2022'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "However, the mechanisms proposed were unwieldy and the Bill was voted down following the change in government later that year.",
-              "translation": "【考研真题精读标准译文】However, the mechanisms proposed were unwieldy and the Bill was voted down following the change in government later that year.",
+              "translation": "然而，提议的机制并不实用，该法案在当年晚些时候政府更迭后被否决。",
               "vocab": [
                 {
                   "word": "However",
@@ -4222,7 +4172,7 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4249,9 +4199,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "C",
               "text": "exempt employers from certain duties.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4260,9 +4210,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "D",
               "text": "protect the rights of ordinary workers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4288,14 +4238,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "hinder business development.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4304,9 +4254,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "undermine managers' authority.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4394,7 +4344,7 @@ window.ENGLISH_DATA['2022'] = {
               "text": "Dismissing poorly performing managers.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4420,14 +4370,14 @@ window.ENGLISH_DATA['2022'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Highly paid managers lose their jobs.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4436,9 +4386,9 @@ window.ENGLISH_DATA['2022'] = {
             {
               "key": "B",
               "text": "Employees suffer from salary cuts.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4515,7 +4465,7 @@ window.ENGLISH_DATA['2022'] = {
               "text": "is beneficial to business owners.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

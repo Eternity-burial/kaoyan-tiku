@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "France, which prides itself as the global innovator of fashion, has decided its fashion industry has lost an absolute right to define physical beauty for women.",
-              "translation": "【考研真题精读标准译文】France, which prides itself as the global innovator of fashion, has decided its fashion industry has lost an absolute right to define physical beauty for women.",
+              "translation": "法国自诩为全球时尚创新者，但它的时尚业已经失去了定义女性外表美的绝对权利。",
               "vocab": [
                 {
                   "word": "innovator",
@@ -78,7 +78,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Its lawmakers gave preliminary approval last week to a law that would make it a crime to employ ultra-thin models on runways.",
-              "translation": "【考研真题精读标准译文】Its lawmakers gave preliminary approval last week to a law that would make it a crime to employ ultra-thin models on runways.",
+              "translation": "上周，立法者初步批准了一项法律，该法律将在跑道上使用超薄模特定为犯罪行为。",
               "vocab": [
                 {
                   "word": "preliminary",
@@ -106,7 +106,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The parliament also agreed to ban websites that \"incite excessive thinness\" by promoting extreme dieting.",
-              "translation": "【考研真题精读标准译文】The parliament also agreed to ban websites that \"incite excessive thinness\" by promoting extreme dieting.",
+              "translation": "议会还同意禁止通过宣传极端节食“煽动过度瘦身”的网站。",
               "vocab": [
                 {
                   "word": "parliament",
@@ -146,7 +146,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Such measures have a couple of uplifting motives.",
-              "translation": "【考研真题精读标准译文】Such measures have a couple of uplifting motives.",
+              "translation": "这些措施有几个令人振奋的动机。",
               "vocab": [
                 {
                   "word": "uplifting",
@@ -162,7 +162,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "They suggest beauty should not be defined by looks that end up impinging on health.",
-              "translation": "【考研真题精读标准译文】They suggest beauty should not be defined by looks that end up impinging on health.",
+              "translation": "他们建议美丽不应该由最终影响健康的外表来定义。",
               "vocab": [
                 {
                   "word": "suggest",
@@ -184,7 +184,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "That's a start.",
-              "translation": "【考研真题精读标准译文】That's a start.",
+              "translation": "这是一个开始。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -200,7 +200,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "And the ban on ultra-thin models seems to go beyond protecting models from starving themselves to death—as some have done.",
-              "translation": "【考研真题精读标准译文】And the ban on ultra-thin models seems to go beyond protecting models from starving themselves to death—as some have done.",
+              "translation": "对超薄模特的禁令似乎不仅仅是为了保护模特免于饿死——正如一些人所做的那样。",
               "vocab": [
                 {
                   "word": "ban",
@@ -222,7 +222,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "It tells the fashion industry that it must take responsibility for the signal it sends women, especially teenage girls, about the social tape-measure they must use to determine their individual worth.",
-              "translation": "【考研真题精读标准译文】It tells the fashion industry that it must take responsibility for the signal it sends women, especially teenage girls, about the social tape-measure they must use to determine their individual worth.",
+              "translation": "它告诉时尚界，它必须对它向女性，尤其是十几岁的女孩发出的关于她们必须使用社会卷尺来确定个人价值的信号负责。",
               "vocab": [
                 {
                   "word": "fashion",
@@ -298,7 +298,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The bans, if fully enforced, would suggest to women (and many men) that they should not let others be arbiters of their beauty.",
-              "translation": "【考研真题精读标准译文】The bans, if fully enforced, would suggest to women (and many men) that they should not let others be arbiters of their beauty.",
+              "translation": "这些禁令如果得到全面执行，将向女性（以及许多男性）表明，她们不应该让别人成为她们美丽的仲裁者。",
               "vocab": [
                 {
                   "word": "enforced",
@@ -320,7 +320,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "And perhaps faintly, they hint that people should look to intangible qualities like character and intellect rather than dieting their way to size zero or wasp-waist physiques.",
-              "translation": "【考研真题精读标准译文】And perhaps faintly, they hint that people should look to intangible qualities like character and intellect rather than dieting their way to size zero or wasp-waist physiques.",
+              "translation": "也许他们隐隐约约地暗示，人们应该关注品格和智力等无形品质，而不是通过节食来获得零号或黄蜂腰的体格。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -372,7 +372,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "The French measures, however, rely too much on severe punishment to change a culture that still regards beauty as skin-deep—and bone-showing.",
-              "translation": "【考研真题精读标准译文】The French measures, however, rely too much on severe punishment to change a culture that still regards beauty as skin-deep—and bone-showing.",
+              "translation": "然而，法国的措施过于依赖严厉的惩罚来改变仍然认为美丽肤浅、骨子里的文化。",
               "vocab": [
                 {
                   "word": "however",
@@ -418,7 +418,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Under the law, using a fashion model that does not meet a government-defined index of body mass could result in a $85,000 fine and six months in prison.",
-              "translation": "【考研真题精读标准译文】Under the law, using a fashion model that does not meet a government-defined index of body mass could result in a $85,000 fine and six months in prison.",
+              "translation": "根据法律，使用不符合政府规定的体重指数的时装模特可能会被处以 85,000 美元的罚款和六个月的监禁。",
               "vocab": [
                 {
                   "word": "fashion",
@@ -465,7 +465,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The fashion industry knows it has an inherent problem in focusing on material adornment and idealized body types.",
-              "translation": "【考研真题精读标准译文】The fashion industry knows it has an inherent problem in focusing on material adornment and idealized body types.",
+              "translation": "时尚界知道它在关注物质装饰和理想化体型方面存在固有的问题。",
               "vocab": [
                 {
                   "word": "fashion",
@@ -517,7 +517,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "In Denmark, the United States, and a few other countries, it is trying to set voluntary standards for models and fashion images that rely more on peer pressure for enforcement.",
-              "translation": "【考研真题精读标准译文】In Denmark, the United States, and a few other countries, it is trying to set voluntary standards for models and fashion images that rely more on peer pressure for enforcement.",
+              "translation": "在丹麦、美国和其他一些国家，它正在尝试为模特和时尚形象制定自愿标准，这些标准更多地依赖同侪压力来执行。",
               "vocab": [
                 {
                   "word": "voluntary",
@@ -563,7 +563,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "In contrast to France's actions, Denmark's fashion industry agreed last month on rules and sanctions regarding the age, health, and other characteristics of models.",
-              "translation": "【考研真题精读标准译文】In contrast to France's actions, Denmark's fashion industry agreed last month on rules and sanctions regarding the age, health, and other characteristics of models.",
+              "translation": "与法国的行动相反，丹麦时尚界上个月就模特年龄、健康状况和其他特征的规则和制裁达成一致。",
               "vocab": [
                 {
                   "word": "contrast",
@@ -591,7 +591,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The newly revised Danish Fashion Ethical Charter clearly states: \"We are aware of and take responsibility for the impact the fashion industry has on body ideals, especially on young people.\" The charter's main tool of enforcement is to deny access for designers and modeling agencies to Copenhagen Fashion Week (CFW), which is run by the Danish Fashion Institute.",
-              "translation": "【考研真题精读标准译文】The newly revised Danish Fashion Ethical Charter clearly states: \"We are aware of and take responsibility for the impact the fashion industry has on body ideals, especially on young people.\" The charter's main tool of enforcement is to deny access for designers and modeling agencies to Copenhagen Fashion Week (CFW), which is run by the Danish Fashion Institute.",
+              "translation": "新修订的丹麦时尚道德宪章明确指出：“我们意识到时尚行业对理想身材的影响，尤其是对年轻人的影响，并对此承担责任。”该宪章的主要执行工具是拒绝设计师和模特经纪公司参加由丹麦时装学院主办的哥本哈根时装周（CFW）。",
               "vocab": [
                 {
                   "word": "Fashion",
@@ -691,7 +691,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "But in general it relies on a name-and-shame method of compliance.",
-              "translation": "【考研真题精读标准译文】But in general it relies on a name-and-shame method of compliance.",
+              "translation": "但总的来说，它依赖于一种点名羞辱的合规方法。",
               "vocab": [
                 {
                   "word": "general",
@@ -719,7 +719,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Relying on ethical persuasion rather than law to address the misuse of body ideals may be the best step.",
-              "translation": "【考研真题精读标准译文】Relying on ethical persuasion rather than law to address the misuse of body ideals may be the best step.",
+              "translation": "依靠道德说服而不是法律来解决对身体理想的滥用可能是最好的一步。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -777,7 +777,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Even better would be to help elevate notions of beauty beyond the material standards of a particular industry.",
-              "translation": "【考研真题精读标准译文】Even better would be to help elevate notions of beauty beyond the material standards of a particular industry.",
+              "translation": "更好的是帮助将美的概念提升到特定行业的物质标准之外。",
               "vocab": [
                 {
                   "word": "elevate",
@@ -831,14 +831,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "Physical beauty would be redefined.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -847,9 +847,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "B",
               "text": "New runways would be constructed.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -897,7 +897,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -924,9 +924,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "losing faith in.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -935,9 +935,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "doing harm to.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -963,14 +963,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "The French measures have already failed.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1001,9 +1001,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "New standards are being set in Denmark.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1029,7 +1029,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1056,9 +1056,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "showing little concern for health factors.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1067,9 +1067,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "setting a high age threshold for models.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1095,14 +1095,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "The Great Threats to the Fashion Industry",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1133,9 +1133,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "A Challenge to the Fashion Industry's Body Ideals",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1166,7 +1166,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "For the first time in history more people live in towns than in the country.",
-              "translation": "【考研真题精读标准译文】For the first time in history more people live in towns than in the country.",
+              "translation": "历史上第一次，居住在城镇的人口多于居住在乡村的人口。",
               "vocab": [
                 {
                   "word": "For",
@@ -1182,7 +1182,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "In Britain this has had a curious result.",
-              "translation": "【考研真题精读标准译文】In Britain this has had a curious result.",
+              "translation": "在英国，这产生了一个奇怪的结果。",
               "vocab": [
                 {
                   "word": "curious",
@@ -1198,7 +1198,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "While polls show Britons rate \"the countryside\" alongside the royal family, Shakespeare and the National Health Service (NHS) as what makes them proudest of their country, this has limited political support.",
-              "translation": "【考研真题精读标准译文】While polls show Britons rate \"the countryside\" alongside the royal family, Shakespeare and the National Health Service (NHS) as what makes them proudest of their country, this has limited political support.",
+              "translation": "尽管民意调查显示，英国人将“乡村”与王室、莎士比亚和国家医疗服务体系 (NHS) 并列视为让他们为国家感到最自豪的因素，但这的政治支持有限。",
               "vocab": [
                 {
                   "word": "rate",
@@ -1250,7 +1250,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "A century ago Octavia Hill launched the National Trust not to rescue stylish houses but to save \"the beauty of natural places for everyone forever.\" It was specifically to provide city dwellers with spaces for leisure where they could experience \"a refreshing air.\" Hill's pressure later led to the creation of national parks and green belts.",
-              "translation": "【考研真题精读标准译文】A century ago Octavia Hill launched the National Trust not to rescue stylish houses but to save \"the beauty of natural places for everyone forever.\" It was specifically to provide city dwellers with spaces for leisure where they could experience \"a refreshing air.\" Hill's pressure later led to the creation of national parks and green belts.",
+              "translation": "一个世纪前，奥克塔维亚·希尔 (Octavia Hill) 成立了国民信托基金，其目的不是拯救时尚的房屋，而是为了“永远为每个人保留自然美景”。它专门为城市居民提供休闲空间，让他们体验“清新的空气”。希尔的压力后来导致了国家公园和绿化带的建立。",
               "vocab": [
                 {
                   "word": "National",
@@ -1320,7 +1320,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "They don't make countryside any more, and every year concrete consumes more of it.",
-              "translation": "【考研真题精读标准译文】They don't make countryside any more, and every year concrete consumes more of it.",
+              "translation": "他们不再建造乡村，混凝土每年消耗更多的乡村。",
               "vocab": [
                 {
                   "word": "countryside",
@@ -1342,7 +1342,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "It needs constant guardianship.",
-              "translation": "【考研真题精读标准译文】It needs constant guardianship.",
+              "translation": "它需要不断的守护。",
               "vocab": [
                 {
                   "word": "constant",
@@ -1364,7 +1364,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "At the next election none of the big parties seem likely to endorse this sentiment.",
-              "translation": "【考研真题精读标准译文】At the next election none of the big parties seem likely to endorse this sentiment.",
+              "translation": "在下一次选举中，似乎没有一个大党会支持这种观点。",
               "vocab": [
                 {
                   "word": "election",
@@ -1392,7 +1392,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "The Conservatives' planning reform explicitly gives rural development priority over conservation, even authorising \"off-plan\" building where local people might object.",
-              "translation": "【考研真题精读标准译文】The Conservatives' planning reform explicitly gives rural development priority over conservation, even authorising \"off-plan\" building where local people might object.",
+              "translation": "保守党的规划改革明确将农村发展置于保护之上，甚至在当地人可能反对的情况下授权“计划外”建设。",
               "vocab": [
                 {
                   "word": "reform",
@@ -1438,7 +1438,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 9,
               "id": "P1-S9",
               "text": "The concept of sustainable development has been defined as profitable.",
-              "translation": "【考研真题精读标准译文】The concept of sustainable development has been defined as profitable.",
+              "translation": "可持续发展的概念被定义为盈利。",
               "vocab": [
                 {
                   "word": "concept",
@@ -1473,7 +1473,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Labour likewise wants to discontinue local planning where councils oppose development.",
-              "translation": "【考研真题精读标准译文】Labour likewise wants to discontinue local planning where councils oppose development.",
+              "translation": "工党同样希望在议会反对开发的地方停止规划。",
               "vocab": [
                 {
                   "word": "likewise",
@@ -1501,7 +1501,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The Liberal Democrats are silent.",
-              "translation": "【考研真题精读标准译文】The Liberal Democrats are silent.",
+              "translation": "自由民主党保持沉默。",
               "vocab": [
                 {
                   "word": "Liberal",
@@ -1517,7 +1517,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Only Ukip, sensing its chance, has sided with those pleading for a more considered approach to using green land.",
-              "translation": "【考研真题精读标准译文】Only Ukip, sensing its chance, has sided with those pleading for a more considered approach to using green land.",
+              "translation": "只有英国独立党意识到了机遇，站在了那些呼吁采取更加深思熟虑的绿地利用方式的人一边。",
               "vocab": [
                 {
                   "word": "for",
@@ -1545,7 +1545,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Its Campaign to Protect Rural England struck terror into many local Conservative parties.",
-              "translation": "【考研真题精读标准译文】Its Campaign to Protect Rural England struck terror into many local Conservative parties.",
+              "translation": "它的“保护英格兰乡村运动”让许多当地保守党感到恐惧。",
               "vocab": [
                 {
                   "word": "Campaign",
@@ -1585,7 +1585,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "The sensible place to build new houses, factories and offices is where people are, in cities and towns where infrastructure is in place.",
-              "translation": "【考研真题精读标准译文】The sensible place to build new houses, factories and offices is where people are, in cities and towns where infrastructure is in place.",
+              "translation": "建造新房屋、工厂和办公室的明智地点是有人居住的地方、基础设施完善的城镇。",
               "vocab": [
                 {
                   "word": "sensible",
@@ -1619,7 +1619,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The London agents Stirling Ackroyd recently identified enough sites for half a million houses in the London area alone, with no intrusion on green belt.",
-              "translation": "【考研真题精读标准译文】The London agents Stirling Ackroyd recently identified enough sites for half a million houses in the London area alone, with no intrusion on green belt.",
+              "translation": "伦敦代理商斯特林·艾克罗伊德 (Stirling Ackroyd) 最近仅在伦敦地区就确定了足够的地点，可容纳 50 万栋房屋，且不会侵占绿化带。",
               "vocab": [
                 {
                   "word": "London",
@@ -1653,7 +1653,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "What is true of London is even truer of the provinces.",
-              "translation": "【考研真题精读标准译文】What is true of London is even truer of the provinces.",
+              "translation": "伦敦的情况对于其他省份来说更是如此。",
               "vocab": [
                 {
                   "word": "London",
@@ -1669,7 +1669,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "The idea that \"housing crisis\" equals \"concreted meadows\" is pure lobby talk.",
-              "translation": "【考研真题精读标准译文】The idea that \"housing crisis\" equals \"concreted meadows\" is pure lobby talk.",
+              "translation": "“住房危机”等于“混凝土草地”的想法纯粹是游说言论。",
               "vocab": [
                 {
                   "word": "housing",
@@ -1703,7 +1703,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 9,
               "id": "P2-S9",
               "text": "The issue is not the need for more houses but, as always, where to put them.",
-              "translation": "【考研真题精读标准译文】The issue is not the need for more houses but, as always, where to put them.",
+              "translation": "问题不在于需要更多的房子，而在于一如既往地把它们放在哪里。",
               "vocab": [
                 {
                   "word": "issue",
@@ -1732,7 +1732,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Under lobby pressure, George Osborne favours rural new-build against urban renovation and renewal. He favours out-of-town shopping sites against high streets.",
-              "translation": "【考研真题精读标准译文】Under lobby pressure, George Osborne favours rural new-build against urban renovation and renewal. He favours out-of-town shopping sites against high streets.",
+              "translation": "在游说压力下，乔治·奥斯本支持乡村新建，反对城市改造和更新。他更喜欢城外的购物场所而不是商业街。",
               "vocab": [
                 {
                   "word": "lobby",
@@ -1790,7 +1790,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "This is not a free market but a biased one.",
-              "translation": "【考研真题精读标准译文】This is not a free market but a biased one.",
+              "translation": "这不是一个自由市场，而是一个有偏见的市场。",
               "vocab": [
                 {
                   "word": "free",
@@ -1818,7 +1818,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Rural towns and villages have grown and will always grow.",
-              "translation": "【考研真题精读标准译文】Rural towns and villages have grown and will always grow.",
+              "translation": "农村城镇和村庄已经发展并将永远发展。",
               "vocab": [
                 {
                   "word": "Rural",
@@ -1846,7 +1846,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "They do so best where building sticks to their edges and respects their character.",
-              "translation": "【考研真题精读标准译文】They do so best where building sticks to their edges and respects their character.",
+              "translation": "他们在建筑坚持自己的立场并尊重他们的性格时做得最好。",
               "vocab": [
                 {
                   "word": "do so",
@@ -1868,7 +1868,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "We do not ruin urban conservation areas.",
-              "translation": "【考研真题精读标准译文】We do not ruin urban conservation areas.",
+              "translation": "我们不会破坏城市保护区。",
               "vocab": [
                 {
                   "word": "urban",
@@ -1890,7 +1890,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Why ruin rural ones?",
-              "translation": "【考研真题精读标准译文】Why ruin rural ones?",
+              "translation": "为什么要毁掉农村呢？",
               "vocab": [
                 {
                   "word": "rural",
@@ -1912,7 +1912,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Development should be planned, not let rip.",
-              "translation": "【考研真题精读标准译文】Development should be planned, not let rip.",
+              "translation": "发展应该有计划，而不是随波逐流。",
               "vocab": [
                 {
                   "word": "rip",
@@ -1928,7 +1928,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "After the Netherlands, Britain is Europe's most crowded country.",
-              "translation": "【考研真题精读标准译文】After the Netherlands, Britain is Europe's most crowded country.",
+              "translation": "英国是继荷兰之后欧洲最拥挤的国家。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1937,7 +1937,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "Half a century of town and country planning has enabled it to retain an enviable rural coherence, while still permitting low-density urban living.",
-              "translation": "【考研真题精读标准译文】Half a century of town and country planning has enabled it to retain an enviable rural coherence, while still permitting low-density urban living.",
+              "translation": "半个世纪的城镇和乡村规划使其能够保持令人羡慕的乡村一致性，同时仍然允许低密度的城市生活。",
               "vocab": [
                 {
                   "word": "retain",
@@ -1983,7 +1983,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 10,
               "id": "P3-S10",
               "text": "There is no doubt of the alternative—the corrupted landscapes of southern Portugal, Spain or Ireland.",
-              "translation": "【考研真题精读标准译文】There is no doubt of the alternative—the corrupted landscapes of southern Portugal, Spain or Ireland.",
+              "translation": "毫无疑问还有另一种选择——葡萄牙南部、西班牙或爱尔兰的腐败景观。",
               "vocab": [
                 {
                   "word": "alternative",
@@ -2005,7 +2005,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 11,
               "id": "P3-S11",
               "text": "Avoiding this rather than promoting it should unite the left and right of the political spectrum.",
-              "translation": "【考研真题精读标准译文】Avoiding this rather than promoting it should unite the left and right of the political spectrum.",
+              "translation": "避免这种情况而不是促进它应该团结政治领域的左翼和右翼。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -2065,14 +2065,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "is not well reflected in politics.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2092,9 +2092,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "didn't start till the Shakespearean age.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2131,14 +2131,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "largely overshadowed.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2169,9 +2169,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "gradually destroyed.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2197,7 +2197,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2213,9 +2213,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "B",
               "text": "The Conservatives may abandon \"off-plan\" building.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2224,9 +2224,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "Ukip may gain from its support for rural conservation.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2263,14 +2263,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "shows his disregard for the character of rural areas.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2290,9 +2290,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "highlights his firm stand against lobby pressure.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2329,7 +2329,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -2356,9 +2356,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "the town-and-country planning in Britain.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2367,9 +2367,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "the political life in today's Britain.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2400,7 +2400,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "\"There is one and only one social responsibility of business,\" wrote Milton Friedman, a Nobel prize-winning economist, \"That is, to use its resources and engage in activities designed to increase its profits.\" But even if you accept Friedman's premise and regard corporate social responsibility (CSR) policies as a waste of shareholders' money, things may not be absolutely clear-cut.",
-              "translation": "【考研真题精读标准译文】\"There is one and only one social responsibility of business,\" wrote Milton Friedman, a Nobel prize-winning economist, \"That is, to use its resources and engage in activities designed to increase its profits.\" But even if you accept Friedman's premise and regard corporate social responsibility (CSR) policies as a waste of shareholders' money, things may not be absolutely clear-cut.",
+              "translation": "诺贝尔经济学奖获得者米尔顿·弗里德曼写道：“企业有一个且只有一个社会责任，那就是利用其资源并从事旨在增加利润的活动。”但即使你接受弗里德曼的前提，并将企业社会责任（CSR）政策视为浪费股东的钱，事情也可能不是绝对明确的。",
               "vocab": [
                 {
                   "word": "even if",
@@ -2494,7 +2494,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "New research suggests that CSR may create monetary value for companies—at least when they are prosecuted for corruption.",
-              "translation": "【考研真题精读标准译文】New research suggests that CSR may create monetary value for companies—at least when they are prosecuted for corruption.",
+              "translation": "新的研究表明，企业社会责任可以为公司创造货币价值——至少当它们因腐败而被起诉时。",
               "vocab": [
                 {
                   "word": "at least",
@@ -2546,7 +2546,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The largest firms in America and Britain together spend more than $15 billion a year on CSR, according to an estimate by EPG, a consulting firm.",
-              "translation": "【考研真题精读标准译文】The largest firms in America and Britain together spend more than $15 billion a year on CSR, according to an estimate by EPG, a consulting firm.",
+              "translation": "据咨询公司 EPG 估计，美国和英国最大的公司每年在企业社会责任上的支出合计超过 150 亿美元。",
               "vocab": [
                 {
                   "word": "according to",
@@ -2568,7 +2568,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "This could add value to their businesses in three ways.",
-              "translation": "【考研真题精读标准译文】This could add value to their businesses in three ways.",
+              "translation": "这可以通过三种方式为其业务增加价值。",
               "vocab": [
                 {
                   "word": "value",
@@ -2584,7 +2584,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "First, consumers may take CSR spending as a \"signal\" that a company's products are of high quality.",
-              "translation": "【考研真题精读标准译文】First, consumers may take CSR spending as a \"signal\" that a company's products are of high quality.",
+              "translation": "首先，消费者可能将企业社会责任支出视为公司产品高品质的“信号”。",
               "vocab": [
                 {
                   "word": "take",
@@ -2625,7 +2625,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Second, customers may be willing to buy a company's products as an indirect way to donate to the good causes it helps.",
-              "translation": "【考研真题精读标准译文】Second, customers may be willing to buy a company's products as an indirect way to donate to the good causes it helps.",
+              "translation": "其次，客户可能愿意购买公司的产品，作为间接为其所帮助的公益事业捐款的方式。",
               "vocab": [
                 {
                   "word": "willing",
@@ -2653,7 +2653,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "And third, through a more diffuse \"halo effect,\" whereby its good deeds earn it greater consideration from consumers and others.",
-              "translation": "【考研真题精读标准译文】And third, through a more diffuse \"halo effect,\" whereby its good deeds earn it greater consideration from consumers and others.",
+              "translation": "第三，通过更广泛的“光环效应”，其善行可以赢得消费者和其他人的更多关注。",
               "vocab": [
                 {
                   "word": "third",
@@ -2705,7 +2705,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Previous studies on CSR have had trouble differentiating these effects because consumers can be affected by all three.",
-              "translation": "【考研真题精读标准译文】Previous studies on CSR have had trouble differentiating these effects because consumers can be affected by all three.",
+              "translation": "之前关于企业社会责任的研究很难区分这些影响，因为消费者可能会受到这三种影响。",
               "vocab": [
                 {
                   "word": "Previous",
@@ -2721,7 +2721,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "A recent study attempts to separate them by looking at bribery prosecutions under America's Foreign Corrupt Practices Act (FCPA).",
-              "translation": "【考研真题精读标准译文】A recent study attempts to separate them by looking at bribery prosecutions under America's Foreign Corrupt Practices Act (FCPA).",
+              "translation": "最近的一项研究试图通过考察美国《反海外腐败法》(FCPA) 下的贿赂起诉来区分它们。",
               "vocab": [
                 {
                   "word": "separate",
@@ -2755,7 +2755,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "It argues that since prosecutors do not consume a company's products as part of their investigations, they could be influenced only by the halo effect.",
-              "translation": "【考研真题精读标准译文】It argues that since prosecutors do not consume a company's products as part of their investigations, they could be influenced only by the halo effect.",
+              "translation": "它认为，由于检察官在调查过程中不会消费公司的产品，因此他们可能只会受到光环效应的影响。",
               "vocab": [
                 {
                   "word": "since",
@@ -2802,7 +2802,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The study found that, among prosecuted firms, those with the most comprehensive CSR programmes tended to get more lenient penalties.",
-              "translation": "【考研真题精读标准译文】The study found that, among prosecuted firms, those with the most comprehensive CSR programmes tended to get more lenient penalties.",
+              "translation": "研究发现，在被起诉的公司中，那些拥有最全面的企业社会责任计划的公司往往会受到更宽松的处罚。",
               "vocab": [
                 {
                   "word": "comprehensive",
@@ -2824,7 +2824,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Their analysis ruled out the possibility that it was firms' political influence, rather than their CSR stand, that accounted for the leniency: Companies that contributed more to political campaigns did not receive lower fines.",
-              "translation": "【考研真题精读标准译文】Their analysis ruled out the possibility that it was firms' political influence, rather than their CSR stand, that accounted for the leniency: Companies that contributed more to political campaigns did not receive lower fines.",
+              "translation": "他们的分析排除了一种可能性，即企业的政治影响力，而不是企业社会责任立场，导致了宽大处理：为政治运动做出更多贡献的公司并没有收到较低的罚款。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -2888,7 +2888,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "In all, the study concludes that whereas prosecutors should only evaluate a case based on its merits, they do seem to be influenced by a company's record in CSR.",
-              "translation": "【考研真题精读标准译文】In all, the study concludes that whereas prosecutors should only evaluate a case based on its merits, they do seem to be influenced by a company's record in CSR.",
+              "translation": "总而言之，该研究的结论是，虽然检察官应该只根据案情来评估案件，但他们似乎确实受到公司企业社会责任记录的影响。",
               "vocab": [
                 {
                   "word": "whereas",
@@ -2928,7 +2928,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "\"We estimate that either eliminating a substantial labour-rights concern, such as child labour, or increasing corporate giving by about 20% results in fines that generally are 40% lower than the typical punishment for bribing foreign officials,\" says one researcher.",
-              "translation": "【考研真题精读标准译文】\"We estimate that either eliminating a substantial labour-rights concern, such as child labour, or increasing corporate giving by about 20% results in fines that generally are 40% lower than the typical punishment for bribing foreign officials,\" says one researcher.",
+              "translation": "一位研究人员表示：“我们估计，要么消除童工等重大劳工权利问题，要么将企业捐赠增加约 20%，所产生的罚款通常比贿赂外国官员的典型处罚低 40%。”",
               "vocab": [
                 {
                   "word": "estimate",
@@ -2998,7 +2998,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Researchers admit that their study does not answer the question of how much businesses ought to spend on CSR.",
-              "translation": "【考研真题精读标准译文】Researchers admit that their study does not answer the question of how much businesses ought to spend on CSR.",
+              "translation": "研究人员承认，他们的研究并没有回答企业应该在企业社会责任上花费多少的问题。",
               "vocab": [
                 {
                   "word": "admit",
@@ -3026,7 +3026,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Nor does it reveal how much companies are banking on the halo effect, rather than the other possible benefits, when they decide their do-gooding policies.",
-              "translation": "【考研真题精读标准译文】Nor does it reveal how much companies are banking on the halo effect, rather than the other possible benefits, when they decide their do-gooding policies.",
+              "translation": "它也没有揭示有多少公司在决定行善政策时是指望光环效应，而不是其他可能的好处。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -3066,7 +3066,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "But at least they have demonstrated that when companies get into trouble with the law, evidence of good character can win them a less costly punishment.",
-              "translation": "【考研真题精读标准译文】But at least they have demonstrated that when companies get into trouble with the law, evidence of good character can win them a less costly punishment.",
+              "translation": "但至少他们已经证明，当公司触犯法律时，良好品格的证据可以为他们赢得成本较低的惩罚。",
               "vocab": [
                 {
                   "word": "at least",
@@ -3138,7 +3138,7 @@ window.ENGLISH_DATA['2016'] = {
               "text": "skepticism.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3186,7 +3186,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3213,9 +3213,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "winning trust from consumers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3224,9 +3224,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "raising the quality of its products.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3252,7 +3252,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -3279,9 +3279,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "more lasting.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3290,9 +3290,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "less severe.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3325,7 +3325,7 @@ window.ENGLISH_DATA['2016'] = {
               "text": "has an impact on their decision.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3384,7 +3384,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -3400,9 +3400,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "B",
               "text": "The necessary amount of companies' spending on it is unknown.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3411,9 +3411,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "Companies' financial capacity for it has been overestimated.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3455,7 +3455,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "There will eventually come a day when The New York Times ceases to publish stories on newsprint.",
-              "translation": "【考研真题精读标准译文】There will eventually come a day when The New York Times ceases to publish stories on newsprint.",
+              "translation": "最终有一天，《纽约时报》将停止在新闻纸上发表报道。",
               "vocab": [
                 {
                   "word": "will",
@@ -3489,7 +3489,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Exactly when that day will be is a matter of debate.",
-              "translation": "【考研真题精读标准译文】Exactly when that day will be is a matter of debate.",
+              "translation": "那一天具体何时到来仍存在争议。",
               "vocab": [
                 {
                   "word": "Exactly",
@@ -3523,7 +3523,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "\"Sometime in the future,\" the paper's publisher said back in 2010.",
-              "translation": "【考研真题精读标准译文】\"Sometime in the future,\" the paper's publisher said back in 2010.",
+              "translation": "“在未来的某个时候，”该报的出版商早在 2010 年就曾表示。",
               "vocab": [
                 {
                   "word": "publisher",
@@ -3539,7 +3539,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Nostalgia for ink on paper and the rustle of pages aside, there's plenty of incentive to ditch print.",
-              "translation": "【考研真题精读标准译文】Nostalgia for ink on paper and the rustle of pages aside, there's plenty of incentive to ditch print.",
+              "translation": "除了对纸上墨水和书页沙沙作响的怀念之外，还有很多理由放弃印刷。",
               "vocab": [
                 {
                   "word": "Nostalgia",
@@ -3585,7 +3585,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The infrastructure required to make a physical newspaper—printing presses, delivery trucks—isn't just expensive; it's excessive at a time when online-only competitors don't have the same set of financial constraints.",
-              "translation": "【考研真题精读标准译文】The infrastructure required to make a physical newspaper—printing presses, delivery trucks—isn't just expensive; it's excessive at a time when online-only competitors don't have the same set of financial constraints.",
+              "translation": "制作实体报纸所需的基础设施——印刷机、送货卡车——不仅价格昂贵，而且还非常昂贵。当纯在线竞争对手没有同样的财务限制时，这是过度的。",
               "vocab": [
                 {
                   "word": "infrastructure",
@@ -3631,7 +3631,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Readers are migrating away from print anyway.",
-              "translation": "【考研真题精读标准译文】Readers are migrating away from print anyway.",
+              "translation": "无论如何，读者正在远离印刷品。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -3640,7 +3640,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "And though print ad sales still dwarf their online and mobile counterparts, revenue from print is still declining.",
-              "translation": "【考研真题精读标准译文】And though print ad sales still dwarf their online and mobile counterparts, revenue from print is still declining.",
+              "translation": "尽管平面广告销售额仍然使在线和移动广告相形见绌，但平面广告收入仍在下降。",
               "vocab": [
                 {
                   "word": "still",
@@ -3687,7 +3687,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Overhead may be high and circulation lower, but rushing to eliminate its print edition would be a mistake, says BuzzFeed CEO Jonah Peretti.",
-              "translation": "【考研真题精读标准译文】Overhead may be high and circulation lower, but rushing to eliminate its print edition would be a mistake, says BuzzFeed CEO Jonah Peretti.",
+              "translation": "BuzzFeed 首席执行官乔纳·佩雷蒂 (Jonah Peretti) 表示，管理费用可能较高，发行量较低，但急于取消印刷版将是一个错误。",
               "vocab": [
                 {
                   "word": "Overhead",
@@ -3721,7 +3721,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Peretti says the Times shouldn't waste time getting out of the print business, but only if they go about doing it the right way.",
-              "translation": "【考研真题精读标准译文】Peretti says the Times shouldn't waste time getting out of the print business, but only if they go about doing it the right way.",
+              "translation": "佩雷蒂表示，《纽约时报》不应该浪费时间退出印刷业，但前提是他们要以正确的方式去做。",
               "vocab": [
                 {
                   "word": "about",
@@ -3737,7 +3737,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "\"Figuring out a way to accelerate that transition would make sense for them,\" he said, \"but if you discontinue it, you're going to have your most loyal customers really upset with you.\" Sometimes that's worth making a change anyway.",
-              "translation": "【考研真题精读标准译文】\"Figuring out a way to accelerate that transition would make sense for them,\" he said, \"but if you discontinue it, you're going to have your most loyal customers really upset with you.\" Sometimes that's worth making a change anyway.",
+              "translation": "“找到一种加速这种转变的方法对他们来说是有意义的，”他说，“但如果你停止这样做，你最忠实的客户就会对你感到非常不满。”有时无论如何，这都是值得做出改变的。",
               "vocab": [
                 {
                   "word": "accelerate",
@@ -3795,7 +3795,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Peretti gives the example of Netflix discontinuing its DVD-mailing service to focus on streaming.",
-              "translation": "【考研真题精读标准译文】Peretti gives the example of Netflix discontinuing its DVD-mailing service to focus on streaming.",
+              "translation": "佩雷蒂举了 Netflix 停止 DVD 邮寄服务、专注于流媒体的例子。",
               "vocab": [
                 {
                   "word": "focus",
@@ -3817,7 +3817,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "\"It was seen as a blunder,\" he said.",
-              "translation": "【考研真题精读标准译文】\"It was seen as a blunder,\" he said.",
+              "translation": "“这被视为一个错误，”他说。",
               "vocab": [
                 {
                   "word": "blunder",
@@ -3833,7 +3833,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The move turned out to be foresighted.",
-              "translation": "【考研真题精读标准译文】The move turned out to be foresighted.",
+              "translation": "事实证明，此举是有先见之明的。",
               "vocab": [
                 {
                   "word": "move",
@@ -3855,7 +3855,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "And if Peretti were in charge at the Times?",
-              "translation": "【考研真题精读标准译文】And if Peretti were in charge at the Times?",
+              "translation": "如果佩雷蒂负责《泰晤士报》呢？",
               "vocab": [
                 {
                   "word": "charge",
@@ -3878,7 +3878,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "\"I wouldn't pick a year to end print,\" he said.",
-              "translation": "【考研真题精读标准译文】\"I wouldn't pick a year to end print,\" he said.",
+              "translation": "“我不会选择哪一年结束印刷，”他说。",
               "vocab": [
                 {
                   "word": "pick",
@@ -3900,7 +3900,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "\"I would raise prices and make it into more of a legacy product.\" The most loyal customers would still get the product they favor, the idea goes, and they'd feel like they were helping sustain the quality of something they believe in.",
-              "translation": "【考研真题精读标准译文】\"I would raise prices and make it into more of a legacy product.\" The most loyal customers would still get the product they favor, the idea goes, and they'd feel like they were helping sustain the quality of something they believe in.",
+              "translation": "“我会提高价格，使其成为更多的传统产品。”这个想法是，最忠诚的客户仍然会得到他们喜欢的产品，而且他们会觉得自己正在帮助维持他们所相信的东西的质量。",
               "vocab": [
                 {
                   "word": "raise",
@@ -3958,7 +3958,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "\"So if you're overpaying for print, you could feel like you were helping,\" Peretti said.",
-              "translation": "【考研真题精读标准译文】\"So if you're overpaying for print, you could feel like you were helping,\" Peretti said.",
+              "translation": "“因此，如果你为印刷品支付过高的费用，你可能会觉得自己在提供帮助，”佩雷蒂说。",
               "vocab": [
                 {
                   "word": "for",
@@ -3974,7 +3974,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "\"Then increase it at a higher rate each year and essentially try to generate additional revenue.\" In other words, if you're going to make a print product, make it for the people who are already obsessed with it.",
-              "translation": "【考研真题精读标准译文】\"Then increase it at a higher rate each year and essentially try to generate additional revenue.\" In other words, if you're going to make a print product, make it for the people who are already obsessed with it.",
+              "translation": "“然后每年以更高的速度增加，并基本上尝试产生额外的收入。”换句话说，如果你要制作印刷产品，那就为那些已经痴迷于它的人制作它。",
               "vocab": [
                 {
                   "word": "increase",
@@ -4020,7 +4020,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Which may be what the Times is doing already.",
-              "translation": "【考研真题精读标准译文】Which may be what the Times is doing already.",
+              "translation": "这可能就是《纽约时报》已经在做的事情。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -4029,7 +4029,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Getting the print edition seven days a week costs nearly $500 a year—more than twice as much as a digital-only subscription.",
-              "translation": "【考研真题精读标准译文】Getting the print edition seven days a week costs nearly $500 a year—more than twice as much as a digital-only subscription.",
+              "translation": "每周 7 天购买印刷版的费用每年近 500 美元，是纯数字订阅的两倍多。",
               "vocab": [
                 {
                   "word": "edition",
@@ -4051,7 +4051,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "\"It's a really hard thing to do and it's a tremendous luxury that BuzzFeed doesn't have a legacy business,\" Peretti remarked.",
-              "translation": "【考研真题精读标准译文】\"It's a really hard thing to do and it's a tremendous luxury that BuzzFeed doesn't have a legacy business,\" Peretti remarked.",
+              "translation": "“这确实是一件很难做到的事情，但 BuzzFeed 没有遗留业务真是太奢侈了，”佩雷蒂说道。",
               "vocab": [
                 {
                   "word": "tremendous",
@@ -4079,7 +4079,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "\"But we're going to have questions like that where we have things we're doing that don't make sense when the market changes and the world changes.",
-              "translation": "【考研真题精读标准译文】\"But we're going to have questions like that where we have things we're doing that don't make sense when the market changes and the world changes.",
+              "translation": "“但我们会遇到这样的问题，当市场发生变化和世界发生变化时，我们正在做的事情就没有意义了。",
               "vocab": [
                 {
                   "word": "sense",
@@ -4095,7 +4095,7 @@ window.ENGLISH_DATA['2016'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "In those situations, it's better to be more aggressive than less aggressive.\"",
-              "translation": "【考研真题精读标准译文】In those situations, it's better to be more aggressive than less aggressive.\"",
+              "translation": "在这种情况下，更具侵略性比不那么激进更好。”",
               "vocab": [
                 {
                   "word": "aggressive",
@@ -4125,14 +4125,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "the high cost of operation.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4141,9 +4141,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "B",
               "text": "the increasing online ad sales.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4191,7 +4191,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4207,9 +4207,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "B",
               "text": "make strategic adjustments.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4218,9 +4218,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "seek new sources of readership.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4257,14 +4257,14 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "helps restore the glory of former times.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4273,9 +4273,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "B",
               "text": "is meant for the most loyal customers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4323,7 +4323,7 @@ window.ENGLISH_DATA['2016'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -4350,9 +4350,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "C",
               "text": "aggressiveness better meets challenges.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4361,9 +4361,9 @@ window.ENGLISH_DATA['2016'] = {
             {
               "key": "D",
               "text": "legacy businesses are becoming outdated.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4407,7 +4407,7 @@ window.ENGLISH_DATA['2016'] = {
               "text": "Make Your Print Newspaper a Luxury Good",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

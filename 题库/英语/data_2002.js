@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "If you intend using humor in your talk to make people smile, you must know how to identify shared experiences and problems.",
-              "translation": "【考研真题精读标准译文】If you intend using humor in your talk to make people smile, you must know how to identify shared experiences and problems.",
+              "translation": "如果你想在演讲中使用幽默让人们微笑，你必须知道如何识别共同的经历和问题。",
               "vocab": [
                 {
                   "word": "intend",
@@ -54,7 +54,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Your humor must be relevant to the audience and should help to show them that you are one of them or that you understand their situation and are in sympathy with their point of view.",
-              "translation": "【考研真题精读标准译文】Your humor must be relevant to the audience and should help to show them that you are one of them or that you understand their situation and are in sympathy with their point of view.",
+              "translation": "你的幽默必须与观众相关，并应有助于向他们表明你是他们中的一员，或者你了解他们的处境并同情他们的观点。",
               "vocab": [
                 {
                   "word": "humor",
@@ -112,7 +112,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Depending on whom you are addressing, the problems will be different.",
-              "translation": "【考研真题精读标准译文】Depending on whom you are addressing, the problems will be different.",
+              "translation": "根据您要解决的对象不同，问题也会有所不同。",
               "vocab": [
                 {
                   "word": "will",
@@ -128,7 +128,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "If you are talking to a group of managers, you may refer to the disorganized methods of their secretaries; alternatively if you are addressing secretaries, you may want to comment on their disorganized bosses.",
-              "translation": "【考研真题精读标准译文】If you are talking to a group of managers, you may refer to the disorganized methods of their secretaries; alternatively if you are addressing secretaries, you may want to comment on their disorganized bosses.",
+              "translation": "如果你正在和一群经理交谈，你可以参考他们秘书的杂乱无章的方法；或者，如果你向秘书讲话，你可能想评论他们杂乱无章的老板。",
               "vocab": [
                 {
                   "word": "refer",
@@ -156,7 +156,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Here is an example, which I heard at a nurses' convention, of a story which works well because the audience all shared the same view of doctors.",
-              "translation": "【考研真题精读标准译文】Here is an example, which I heard at a nurses' convention, of a story which works well because the audience all shared the same view of doctors.",
+              "translation": "这是我在护士大会上听到的一个例子，这个故事很有效，因为观众都对医生有相同的看法。",
               "vocab": [
                 {
                   "word": "convention",
@@ -184,7 +184,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "A man arrives in heaven and is being shown around by St.",
-              "translation": "【考研真题精读标准译文】A man arrives in heaven and is being shown around by St.",
+              "translation": "一个人到达天堂，并在圣约翰的带领下四处参观。",
               "vocab": [
                 {
                   "word": "being",
@@ -206,7 +206,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Peter.",
-              "translation": "【考研真题精读标准译文】Peter.",
+              "translation": "彼得.",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -222,7 +222,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "He sees wonderful accommodations, beautiful gardens, sunny weather, and so on.",
-              "translation": "【考研真题精读标准译文】He sees wonderful accommodations, beautiful gardens, sunny weather, and so on.",
+              "translation": "他看到了美妙的住宿、美丽的花园、阳光明媚的天气等等。",
               "vocab": [
                 {
                   "word": "weather",
@@ -238,7 +238,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Everyone is very peaceful, polite and friendly until, waiting in a line for lunch, the new arrival is suddenly pushed aside by a man in a white coat, who rushes to the head of the line, grabs his food and stomps over to a table by himself.",
-              "translation": "【考研真题精读标准译文】Everyone is very peaceful, polite and friendly until, waiting in a line for lunch, the new arrival is suddenly pushed aside by a man in a white coat, who rushes to the head of the line, grabs his food and stomps over to a table by himself.",
+              "translation": "每个人都非常平静、礼貌和友好，直到在排队等候午餐时，新来的人突然被一个穿白大褂的男人推到一边，他冲到队伍的最前面，抓起食物，自己跺脚走到一张桌子旁。",
               "vocab": [
                 {
                   "word": "very",
@@ -284,7 +284,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "\"Who is that?\" the new arrival asked St.",
-              "translation": "【考研真题精读标准译文】\"Who is that?\" the new arrival asked St.",
+              "translation": "“那是谁？”新来的人问圣。",
               "vocab": [
                 {
                   "word": "new",
@@ -306,7 +306,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Peter.",
-              "translation": "【考研真题精读标准译文】Peter.",
+              "translation": "彼得.",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -315,7 +315,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "\"Oh, that's God,\" came the reply, \"but sometimes he thinks he's a doctor.\" If you are part of the group which you are addressing, you will be in a position to know the experiences and problems which are common to all of you and it'll be appropriate for you to make a passing remark about the inedible canteen food or the chairman's notorious bad taste in ties.",
-              "translation": "【考研真题精读标准译文】\"Oh, that's God,\" came the reply, \"but sometimes he thinks he's a doctor.\" If you are part of the group which you are addressing, you will be in a position to know the experiences and problems which are common to all of you and it'll be appropriate for you to make a passing remark about the inedible canteen food or the chairman's notorious bad taste in ties.",
+              "translation": "“哦，那是上帝，”回答说，“但有时他认为自己是一名医生。”如果你是你正在讲话的群体中的一员，你将能够了解你们所有人共同的经历和问题，并且你可以顺便评论一下食堂的食物难吃或主席在领带方面臭名昭著的糟糕品味。",
               "vocab": [
                 {
                   "word": "reply",
@@ -379,7 +379,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "With other audiences you mustn't attempt to cut in with humor as they will resent an outsider making disparaging remarks about their canteen or their chairman.",
-              "translation": "【考研真题精读标准译文】With other audiences you mustn't attempt to cut in with humor as they will resent an outsider making disparaging remarks about their canteen or their chairman.",
+              "translation": "对于其他观众，你不能试图以幽默的方式插话，因为他们会讨厌外人对他们的食堂或主席发表贬低性的言论。",
               "vocab": [
                 {
                   "word": "humor",
@@ -419,7 +419,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "You will be on safer ground if you stick to scapegoats like the Post Office or the telephone system.",
-              "translation": "【考研真题精读标准译文】You will be on safer ground if you stick to scapegoats like the Post Office or the telephone system.",
+              "translation": "如果您坚持使用邮局或电话系统等替罪羊，您将处于更安全的境地。",
               "vocab": [
                 {
                   "word": "will",
@@ -454,7 +454,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "If you feel awkward being humorous, you must practice so that it becomes more natural. Include a few casual and apparently off-the-cuff remarks which you can deliver in a relaxed and unforced manner.",
-              "translation": "【考研真题精读标准译文】If you feel awkward being humorous, you must practice so that it becomes more natural. Include a few casual and apparently off-the-cuff remarks which you can deliver in a relaxed and unforced manner.",
+              "translation": "如果你觉得幽默很尴尬，你必须练习，让它变得更自然。包括一些随意且明显即兴的言论，您可以以轻松且不强迫的方式发表这些言论。",
               "vocab": [
                 {
                   "word": "awkward",
@@ -506,7 +506,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Often it's the delivery which causes the audience to smile, so speak slowly and remember that a raised eyebrow or an unbelieving look may help to show that you are making a light-hearted remark.",
-              "translation": "【考研真题精读标准译文】Often it's the delivery which causes the audience to smile, so speak slowly and remember that a raised eyebrow or an unbelieving look may help to show that you are making a light-hearted remark.",
+              "translation": "通常，演讲会让听众微笑，所以要慢慢地说，并记住扬起眉毛或难以置信的表情可能有助于表明你正在发表轻松的言论。",
               "vocab": [
                 {
                   "word": "audience",
@@ -528,7 +528,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Look for the humor.",
-              "translation": "【考研真题精读标准译文】Look for the humor.",
+              "translation": "寻找幽默感。",
               "vocab": [
                 {
                   "word": "for",
@@ -550,7 +550,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "It often comes from the unexpected.",
-              "translation": "【考研真题精读标准译文】It often comes from the unexpected.",
+              "translation": "它常常来自于意想不到的事情。",
               "vocab": [
                 {
                   "word": "unexpected",
@@ -566,7 +566,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "A twist on a familiar quote \"If at first you don't succeed, give up\" or a play on words or on a situation.",
-              "translation": "【考研真题精读标准译文】A twist on a familiar quote \"If at first you don't succeed, give up\" or a play on words or on a situation.",
+              "translation": "这是对一句熟悉的名言“如果一开始没有成功，就放弃”的扭曲，或者是文字游戏或情境游戏。",
               "vocab": [
                 {
                   "word": "twist",
@@ -594,7 +594,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Search for exaggeration and understatement.",
-              "translation": "【考研真题精读标准译文】Search for exaggeration and understatement.",
+              "translation": "寻找夸张和轻描淡写的内容。",
               "vocab": [
                 {
                   "word": "Search",
@@ -622,7 +622,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Look at your talk and pick out a few words or sentences which you can turn about and inject with humor.",
-              "translation": "【考研真题精读标准译文】Look at your talk and pick out a few words or sentences which you can turn about and inject with humor.",
+              "translation": "看看你的演讲，挑出一些你可以翻转并注入幽默的单词或句子。",
               "vocab": [
                 {
                   "word": "pick",
@@ -677,7 +677,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "take advantage of different kinds of audience",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -765,7 +765,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "entitled to some privileges",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -831,7 +831,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "are an inappropriate subject for humor",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -875,7 +875,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "in well-worded language",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -963,7 +963,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "Add Humor to Speech",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1005,7 +1005,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Since the dawn of human ingenuity, people have devised ever more cunning tools to cope with work that is dangerous, boring, burdensome, or just plain nasty.",
-              "translation": "【考研真题精读标准译文】Since the dawn of human ingenuity, people have devised ever more cunning tools to cope with work that is dangerous, boring, burdensome, or just plain nasty.",
+              "translation": "自从人类的聪明才智诞生以来，人们发明了越来越狡猾的工具来应对危险、无聊、繁重或纯粹令人讨厌的工作。",
               "vocab": [
                 {
                   "word": "cope with",
@@ -1063,7 +1063,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "That compulsion has resulted in robotics—the science of conferring various human capabilities on machines.",
-              "translation": "【考研真题精读标准译文】That compulsion has resulted in robotics—the science of conferring various human capabilities on machines.",
+              "translation": "这种冲动催生了机器人技术——将人类的各种能力赋予机器的科学。",
               "vocab": [
                 {
                   "word": "various",
@@ -1079,7 +1079,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "And if scientists have yet to create the mechanical version of science fiction, they have begun to come close.",
-              "translation": "【考研真题精读标准译文】And if scientists have yet to create the mechanical version of science fiction, they have begun to come close.",
+              "translation": "如果科学家们还没有创造出科幻小说的机械版本，那么他们已经开始接近了。",
               "vocab": [
                 {
                   "word": "yet",
@@ -1113,7 +1113,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "As a result, the modern world is increasingly populated by intelligent gizmos whose presence we barely notice but whose universal existence has removed much human labor.",
-              "translation": "【考研真题精读标准译文】As a result, the modern world is increasingly populated by intelligent gizmos whose presence we barely notice but whose universal existence has removed much human labor.",
+              "translation": "结果，现代世界中越来越多的智能小玩意儿出现，我们几乎没有注意到它们的存在，但它们的普遍存在却消除了许多人类劳动。",
               "vocab": [
                 {
                   "word": "as a result",
@@ -1171,7 +1171,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Our factories hum to the rhythm of robot assembly arms.",
-              "translation": "【考研真题精读标准译文】Our factories hum to the rhythm of robot assembly arms.",
+              "translation": "我们的工厂随着机器人装配臂的节奏而嗡嗡作响。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1187,7 +1187,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Our banking is done at automated teller terminals that thank us with mechanical politeness for the transaction.",
-              "translation": "【考研真题精读标准译文】Our banking is done at automated teller terminals that thank us with mechanical politeness for the transaction.",
+              "translation": "我们的银行业务是在自动柜员机上完成的，自动柜员机会以机械礼貌的方式感谢我们的交易。",
               "vocab": [
                 {
                   "word": "mechanical",
@@ -1215,7 +1215,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Our subway trains are controlled by tireless robot-drivers.",
-              "translation": "【考研真题精读标准译文】Our subway trains are controlled by tireless robot-drivers.",
+              "translation": "我们的地铁列车由不知疲倦的机器人司机控制。",
               "vocab": [
                 {
                   "word": "subway",
@@ -1231,7 +1231,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "And thanks to the continual miniaturization of electronics and micro-mechanics, there are already robot systems that can perform some kinds of brain and bone surgery with submillimeter accuracy—far greater precision than highly skilled physicians can achieve with their hands alone.",
-              "translation": "【考研真题精读标准译文】And thanks to the continual miniaturization of electronics and micro-mechanics, there are already robot systems that can perform some kinds of brain and bone surgery with submillimeter accuracy—far greater precision than highly skilled physicians can achieve with their hands alone.",
+              "translation": "由于电子和微机械的不断小型化，已经有机器人系统可以以亚毫米精度执行某些类型的大脑和骨骼手术，其精度远远高于技术精湛的医生仅靠双手所能达到的精度。",
               "vocab": [
                 {
                   "word": "continual",
@@ -1277,7 +1277,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "But if robots are to reach the next stage of laborsaving utility, they will have to operate with less human supervision and be able to make at least a few decisions for themselves—goals that pose a real challenge.",
-              "translation": "【考研真题精读标准译文】But if robots are to reach the next stage of laborsaving utility, they will have to operate with less human supervision and be able to make at least a few decisions for themselves—goals that pose a real challenge.",
+              "translation": "但如果机器人要达到节省劳动力的下一阶段，它们将必须在更少的人类监督下运行，并且能够至少自己做出一些决定——这些目标构成了真正的挑战。",
               "vocab": [
                 {
                   "word": "at least",
@@ -1329,7 +1329,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "\"While we know how to tell a robot to handle a specific error,\" says Dave Lavery, manager of a robotics program at NASA, \"we can't yet give a robot enough 'common sense' to reliably interact with a dynamic world.\" Indeed the quest for true artificial intelligence has produced very mixed results.",
-              "translation": "【考研真题精读标准译文】\"While we know how to tell a robot to handle a specific error,\" says Dave Lavery, manager of a robotics program at NASA, \"we can't yet give a robot enough 'common sense' to reliably interact with a dynamic world.\" Indeed the quest for true artificial intelligence has produced very mixed results.",
+              "translation": "NASA 机器人项目经理 Dave Lavery 表示：“虽然我们知道如何告诉机器人处理特定错误，但我们还无法赋予机器人足够的‘常识’来与动态世界可靠地交互。”事实上，对真正人工智能的追求已经产生了非常复杂的结果。",
               "vocab": [
                 {
                   "word": "specific",
@@ -1430,7 +1430,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Despite a spell of initial optimism in the 1960s and 1970s when it appeared that transistor circuits and microprocessors might be able to copy the action of the human brain by the year 2010, researchers lately have begun to extend that forecast by decades if not centuries.",
-              "translation": "【考研真题精读标准译文】Despite a spell of initial optimism in the 1960s and 1970s when it appeared that transistor circuits and microprocessors might be able to copy the action of the human brain by the year 2010, researchers lately have begun to extend that forecast by decades if not centuries.",
+              "translation": "尽管在 20 世纪 60 年代和 1970 年代，晶体管电路和微处理器可能能够在 2010 年复制人脑的行为，人们对此抱有最初的乐观态度，但研究人员最近开始将这一预测延长了数十年甚至数百年。",
               "vocab": [
                 {
                   "word": "Despite",
@@ -1482,7 +1482,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "What they found, in attempting to model thought, is that the human brain's roughly one hundred billion nerve cells are much more talented—and human perception far more complicated—than previously imagined.",
-              "translation": "【考研真题精读标准译文】What they found, in attempting to model thought, is that the human brain's roughly one hundred billion nerve cells are much more talented—and human perception far more complicated—than previously imagined.",
+              "translation": "他们在尝试建立思维模型时发现，人类大脑的大约 1000 亿个神经细胞比以前想象的要聪明得多，人类的感知也复杂得多。",
               "vocab": [
                 {
                   "word": "model",
@@ -1534,7 +1534,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "They have built robots that can recognize the error of a machine panel by a fraction of a millimeter in a controlled factory environment.",
-              "translation": "【考研真题精读标准译文】They have built robots that can recognize the error of a machine panel by a fraction of a millimeter in a controlled factory environment.",
+              "translation": "他们制造的机器人可以在受控的工厂环境中识别机器面板的零点几毫米的误差。",
               "vocab": [
                 {
                   "word": "machine",
@@ -1568,7 +1568,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "But the human mind can glimpse a rapidly changing scene and immediately disregard the 98 percent that is irrelevant, instantaneously focusing on the monkey at the side of a winding forest road or the single suspicious face in a big crowd.",
-              "translation": "【考研真题精读标准译文】But the human mind can glimpse a rapidly changing scene and immediately disregard the 98 percent that is irrelevant, instantaneously focusing on the monkey at the side of a winding forest road or the single suspicious face in a big crowd.",
+              "translation": "但人类的大脑可以瞥见快速变化的场景，并立即忽略98％的无关紧要的内容，立即将注意力集中在蜿蜒的林道旁的猴子或人群中的一张可疑的面孔上。",
               "vocab": [
                 {
                   "word": "glimpse",
@@ -1620,7 +1620,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The most advanced computer systems on Earth can't approach that kind of ability, and neuroscientists still don't know quite how we do it.",
-              "translation": "【考研真题精读标准译文】The most advanced computer systems on Earth can't approach that kind of ability, and neuroscientists still don't know quite how we do it.",
+              "translation": "地球上最先进的计算机系统无法达到这种能力，神经科学家仍然不知道我们是如何做到这一点的。",
               "vocab": [
                 {
                   "word": "approach",
@@ -1686,7 +1686,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "the wide use of machines in the manufacturing industry.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1763,7 +1763,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "devices",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1840,7 +1840,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "respond independently to a changing world.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1884,7 +1884,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "deal with some errors with human intervention.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1972,7 +1972,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "best used in a controlled environment.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2003,7 +2003,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Could the bad old days of economic decline be about to return?",
-              "translation": "【考研真题精读标准译文】Could the bad old days of economic decline be about to return?",
+              "translation": "经济衰退的糟糕日子会再次出现吗？",
               "vocab": [
                 {
                   "word": "economic",
@@ -2037,7 +2037,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Since OPEC agreed to supply-cuts in March, the price of crude oil has jumped to almost $26 a barrel, up from less than $10 last December.",
-              "translation": "【考研真题精读标准译文】Since OPEC agreed to supply-cuts in March, the price of crude oil has jumped to almost $26 a barrel, up from less than $10 last December.",
+              "translation": "自 3 月份 OPEC 同意减产以来，原油价格已从去年 12 月的每桶不到 10 美元跃升至近 26 美元。",
               "vocab": [
                 {
                   "word": "Since",
@@ -2059,7 +2059,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "This near-tripling of oil prices calls up scary memories of the 1973 oil shock, when prices quadrupled, and 1979-1980, when they also almost tripled.",
-              "translation": "【考研真题精读标准译文】This near-tripling of oil prices calls up scary memories of the 1973 oil shock, when prices quadrupled, and 1979-1980, when they also almost tripled.",
+              "translation": "石油价格几乎翻了三倍，让人想起 1973 年石油危机，当时价格翻了两番，而 1979 年至 1980 年，石油价格也几乎翻了三倍。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2068,7 +2068,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Both previous shocks resulted in double-digit inflation and global economic decline.",
-              "translation": "【考研真题精读标准译文】Both previous shocks resulted in double-digit inflation and global economic decline.",
+              "translation": "之前的两次冲击都导致了两位数的通货膨胀和全球经济衰退。",
               "vocab": [
                 {
                   "word": "previous",
@@ -2102,7 +2102,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "So where are the headlines warning of gloom and doom this time?",
-              "translation": "【考研真题精读标准译文】So where are the headlines warning of gloom and doom this time?",
+              "translation": "那么，这次警告悲观和厄运的头条新闻在哪里呢？",
               "vocab": [
                 {
                   "word": "warning",
@@ -2124,7 +2124,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "The oil price was given another push up this week when Iraq suspended oil exports.",
-              "translation": "【考研真题精读标准译文】The oil price was given another push up this week when Iraq suspended oil exports.",
+              "translation": "本周伊拉克暂停石油出口，油价再次上涨。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2133,7 +2133,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Strengthening economic growth, at the same time as winter grips the northern hemisphere, could push the price higher still in the short term.",
-              "translation": "【考研真题精读标准译文】Strengthening economic growth, at the same time as winter grips the northern hemisphere, could push the price higher still in the short term.",
+              "translation": "在北半球冬季来临的同时，经济增长的加强可能会在短期内推高价格。",
               "vocab": [
                 {
                   "word": "economic growth",
@@ -2180,7 +2180,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Yet there are good reasons to expect the economic consequences now to be less severe than in the 1970s.",
-              "translation": "【考研真题精读标准译文】Yet there are good reasons to expect the economic consequences now to be less severe than in the 1970s.",
+              "translation": "然而，我们有充分的理由预计现在的经济后果不会比 20 世纪 70 年代那么严重。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -2208,7 +2208,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "In most countries the cost of crude oil now accounts for a smaller share of the price of petrol than it did in the 1970s.",
-              "translation": "【考研真题精读标准译文】In most countries the cost of crude oil now accounts for a smaller share of the price of petrol than it did in the 1970s.",
+              "translation": "在大多数国家，原油成本目前在汽油价格中所占的比例比 20 世纪 70 年代要小。",
               "vocab": [
                 {
                   "word": "crude",
@@ -2236,7 +2236,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "In Europe, taxes account for up to four-fifths of the retail price, so even quite big changes in the price of crude have a more muted effect on pump prices than in the past.",
-              "translation": "【考研真题精读标准译文】In Europe, taxes account for up to four-fifths of the retail price, so even quite big changes in the price of crude have a more muted effect on pump prices than in the past.",
+              "translation": "在欧洲，税收占零售价格的五分之四，因此即使原油价格发生相当大的变化，对汽油价格的影响也比过去小。",
               "vocab": [
                 {
                   "word": "account for",
@@ -2294,7 +2294,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Rich economies are also less dependent on oil than they were, and so less sensitive to swings in the oil price.",
-              "translation": "【考研真题精读标准译文】Rich economies are also less dependent on oil than they were, and so less sensitive to swings in the oil price.",
+              "translation": "富裕经济体对石油的依赖也比以前减少了，因此对石油价格波动的敏感度也降低了。",
               "vocab": [
                 {
                   "word": "dependent",
@@ -2316,7 +2316,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Energy conservation, a shift to other fuels and a decline in the importance of heavy, energy-intensive industries have reduced oil consumption.",
-              "translation": "【考研真题精读标准译文】Energy conservation, a shift to other fuels and a decline in the importance of heavy, energy-intensive industries have reduced oil consumption.",
+              "translation": "节约能源、转向其他燃料以及重工业、能源密集型工业重要性的下降减少了石油消耗。",
               "vocab": [
                 {
                   "word": "Energy",
@@ -2356,7 +2356,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Software, consultancy and mobile telephones use far less oil than steel or car production.",
-              "translation": "【考研真题精读标准译文】Software, consultancy and mobile telephones use far less oil than steel or car production.",
+              "translation": "软件、咨询和移动电话使用的石油远少于钢铁或汽车生产。",
               "vocab": [
                 {
                   "word": "Software",
@@ -2396,7 +2396,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "For each dollar of GDP (in constant prices) rich economies now use nearly 50% less oil than in 1973.",
-              "translation": "【考研真题精读标准译文】For each dollar of GDP (in constant prices) rich economies now use nearly 50% less oil than in 1973.",
+              "translation": "富裕经济体现在每增加一美元 GDP（按不变价格计算）的石油用量比 1973 年减少了近 50%。",
               "vocab": [
                 {
                   "word": "For",
@@ -2431,7 +2431,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The OECD estimates in its latest Economic Outlook that, if oil prices averaged $22 a barrel for a full year, compared with $13 in 1998, this would increase the oil import bill in rich economies by only 0.25-0.5% of GDP.",
-              "translation": "【考研真题精读标准译文】The OECD estimates in its latest Economic Outlook that, if oil prices averaged $22 a barrel for a full year, compared with $13 in 1998, this would increase the oil import bill in rich economies by only 0.25-0.5% of GDP.",
+              "translation": "经合组织在其最新的《经济展望》中估计，如果全年油价平均为每桶 22 美元，而 1998 年为每桶 13 美元，那么富裕经济体的石油进口费用仅会增加 GDP 的 0.25-0.5%。",
               "vocab": [
                 {
                   "word": "Economic",
@@ -2477,7 +2477,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "That is less than one-quarter of the income loss in 1974 or 1980.",
-              "translation": "【考研真题精读标准译文】That is less than one-quarter of the income loss in 1974 or 1980.",
+              "translation": "这还不到 1974 年或 1980 年收入损失的四分之一。",
               "vocab": [
                 {
                   "word": "income",
@@ -2493,7 +2493,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "On the other hand, oil-importing emerging economies—to which heavy industry has shifted—have become more energy-intensive, and so could be more seriously squeezed.",
-              "translation": "【考研真题精读标准译文】On the other hand, oil-importing emerging economies—to which heavy industry has shifted—have become more energy-intensive, and so could be more seriously squeezed.",
+              "translation": "另一方面，重工业已转移到石油进口的新兴经济体已成为能源密集型国家，因此可能受到更严重的挤压。",
               "vocab": [
                 {
                   "word": "industry",
@@ -2509,7 +2509,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "One more reason not to lose sleep over the rise in oil prices is that, unlike the rises in the 1970s, it has not occurred against the background of general commodity-price inflation and global excess demand.",
-              "translation": "【考研真题精读标准译文】One more reason not to lose sleep over the rise in oil prices is that, unlike the rises in the 1970s, it has not occurred against the background of general commodity-price inflation and global excess demand.",
+              "translation": "不要因油价上涨而失眠的另一个原因是，与 20 世纪 70 年代的上涨不同，这次上涨并不是在大宗商品价格普遍上涨和全球需求过剩的背景下发生的。",
               "vocab": [
                 {
                   "word": "One",
@@ -2561,7 +2561,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "A sizable portion of the world is only just emerging from economic decline.",
-              "translation": "【考研真题精读标准译文】A sizable portion of the world is only just emerging from economic decline.",
+              "translation": "世界上相当大一部分地区刚刚摆脱经济衰退。",
               "vocab": [
                 {
                   "word": "portion",
@@ -2589,7 +2589,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The Economist's commodity price index is broadly unchanging from a year ago.",
-              "translation": "【考研真题精读标准译文】The Economist's commodity price index is broadly unchanging from a year ago.",
+              "translation": "《经济学人》的商品价格指数与一年前相比基本没有变化。",
               "vocab": [
                 {
                   "word": "Economist",
@@ -2623,7 +2623,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "In 1973 commodity prices jumped by 70%, and in 1979 by almost 30%.",
-              "translation": "【考研真题精读标准译文】In 1973 commodity prices jumped by 70%, and in 1979 by almost 30%.",
+              "translation": "1973 年，商品价格上涨了 70%，1979 年则上涨了近 30%。",
               "vocab": [
                 {
                   "word": "commodity",
@@ -2693,7 +2693,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "Iraq's suspension of exports.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2748,7 +2748,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "consumption rises.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2825,7 +2825,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "oil price changes have no significant impact on GDP.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2869,7 +2869,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "inflation seems irrelevant to oil-price shocks.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2924,7 +2924,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "optimistic.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2988,7 +2988,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The Supreme Court's decisions on physician-assisted suicide carry important implications for how medicine seeks to relieve dying patients of pain and suffering.",
-              "translation": "【考研真题精读标准译文】The Supreme Court's decisions on physician-assisted suicide carry important implications for how medicine seeks to relieve dying patients of pain and suffering.",
+              "translation": "最高法院关于医生协助自杀的裁决对于医学如何寻求减轻垂死患者的痛苦和痛苦具有重要意义。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -3058,7 +3058,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Although it ruled that there is no constitutional right to physician-assisted suicide, the Court in effect supported the medical principle of \"double effect\", a centuries-old moral principle holding that an action having two effects—a good one that is intended and a harmful one that is foreseen—is permissible if the actor intends only the good effect.",
-              "translation": "【考研真题精读标准译文】Although it ruled that there is no constitutional right to physician-assisted suicide, the Court in effect supported the medical principle of \"double effect\", a centuries-old moral principle holding that an action having two effects—a good one that is intended and a harmful one that is foreseen—is permissible if the actor intends only the good effect.",
+              "translation": "尽管法院裁定医生协助自杀不存在宪法权利，但法院实际上支持“双重效果”的医学原则，这是一项具有数百年历史的道德原则，认为具有两种效果的行为（一种是有意的好的效果，一种是可预见的有害的效果）是允许的，如果行为者只想获得好的效果。",
               "vocab": [
                 {
                   "word": "in effect",
@@ -3134,7 +3134,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Doctors have used that principle in recent years to justify using high doses of morphine to control terminally ill patients' pain, even though increasing dosages will eventually kill the patient.",
-              "translation": "【考研真题精读标准译文】Doctors have used that principle in recent years to justify using high doses of morphine to control terminally ill patients' pain, even though increasing dosages will eventually kill the patient.",
+              "translation": "近年来，医生们利用这一原则来证明使用高剂量吗啡来控制绝症患者的疼痛是合理的，尽管增加剂量最终会杀死患者。",
               "vocab": [
                 {
                   "word": "even though",
@@ -3198,7 +3198,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Nancy Dubler, director of Montefiore Medical Center, contends that the principle will shield doctors who \"until now have very, very strongly insisted that they could not give patients sufficient medication to control their pain if that might hasten death\".",
-              "translation": "【考研真题精读标准译文】Nancy Dubler, director of Montefiore Medical Center, contends that the principle will shield doctors who \"until now have very, very strongly insisted that they could not give patients sufficient medication to control their pain if that might hasten death\".",
+              "translation": "蒙蒂菲奥里医疗中心主任南希·杜布勒 (Nancy Dubler) 认为，这一原则将保护那些“到目前为止，他们非常非常强烈地坚持认为，他们不能给患者提供足够的药物来控制疼痛，如果这可能会加速死亡”的医生。",
               "vocab": [
                 {
                   "word": "until now",
@@ -3263,7 +3263,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "George Annas, chair of the health law department at Boston University, maintains that, as long as a doctor prescribes a drug for a legitimate medical purpose, the doctor has done nothing illegal even if the patient uses the drug to hasten death.",
-              "translation": "【考研真题精读标准译文】George Annas, chair of the health law department at Boston University, maintains that, as long as a doctor prescribes a drug for a legitimate medical purpose, the doctor has done nothing illegal even if the patient uses the drug to hasten death.",
+              "translation": "波士顿大学卫生法系主任乔治·安纳斯认为，只要医生开出的药物是出于合法的医疗目的，即使患者使用药物加速死亡，医生也没有做任何违法的事情。",
               "vocab": [
                 {
                   "word": "even if",
@@ -3315,7 +3315,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "\"It's like surgery,\" he says.",
-              "translation": "【考研真题精读标准译文】\"It's like surgery,\" he says.",
+              "translation": "“这就像手术，”他说。",
               "vocab": [
                 {
                   "word": "surgery",
@@ -3331,7 +3331,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "\"We don't call those deaths homicides because the doctors didn't intend to kill their patients, although they risked their death.",
-              "translation": "【考研真题精读标准译文】\"We don't call those deaths homicides because the doctors didn't intend to kill their patients, although they risked their death.",
+              "translation": "“我们不将这些死亡称为他杀，因为医生并没有打算杀死他们的病人，尽管他们冒着死亡的危险。",
               "vocab": [
                 {
                   "word": "intend",
@@ -3347,7 +3347,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "If you're a physician, you can risk your patient's suicide as long as you don't intend their suicide.\" On another level, many in the medical community acknowledge that the assisted-suicide debate has been fueled in part by the despair of patients for whom modern medicine has prolonged the physical agony of dying.",
-              "translation": "【考研真题精读标准译文】If you're a physician, you can risk your patient's suicide as long as you don't intend their suicide.\" On another level, many in the medical community acknowledge that the assisted-suicide debate has been fueled in part by the despair of patients for whom modern medicine has prolonged the physical agony of dying.",
+              "translation": "如果你是一名医生，只要你不打算让病人自杀，你就可以冒自杀的风险。”在另一个层面上，医学界的许多人承认，辅助自杀的争论在一定程度上是由于病人的绝望而加剧的，现代医学延长了病人临终时的身体痛苦。",
               "vocab": [
                 {
                   "word": "in part",
@@ -3448,7 +3448,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Just three weeks before the Court's ruling on physician-assisted suicide, the National Academy of Science (NAS) released a two-volume report, Approaching Death: Improving Care at the End of Life.",
-              "translation": "【考研真题精读标准译文】Just three weeks before the Court's ruling on physician-assisted suicide, the National Academy of Science (NAS) released a two-volume report, Approaching Death: Improving Care at the End of Life.",
+              "translation": "就在法院对医生协助自杀做出裁决的三周前，美国国家科学院 (NAS) 发布了一份两卷本的报告，《临近死亡：改善临终护理》。",
               "vocab": [
                 {
                   "word": "Court",
@@ -3494,7 +3494,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "It identifies the undertreatment of pain and the aggressive use of \"ineffectual and forced medical procedures that may prolong and even dishonor the period of dying\" as the twin problems of end-of-life care.",
-              "translation": "【考研真题精读标准译文】It identifies the undertreatment of pain and the aggressive use of \"ineffectual and forced medical procedures that may prolong and even dishonor the period of dying\" as the twin problems of end-of-life care.",
+              "translation": "它将疼痛治疗不足和过度使用“可能延长甚至羞辱临终时间的无效和强制医疗程序”视为临终关怀的双重问题。",
               "vocab": [
                 {
                   "word": "aggressive",
@@ -3528,7 +3528,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "The profession is taking steps to require young doctors to train in hospices, to test knowledge of aggressive pain management therapies, to develop a Medicare billing code for hospital-based care, and to develop new standards for assessing and treating pain at the end of life.",
-              "translation": "【考研真题精读标准译文】The profession is taking steps to require young doctors to train in hospices, to test knowledge of aggressive pain management therapies, to develop a Medicare billing code for hospital-based care, and to develop new standards for assessing and treating pain at the end of life.",
+              "translation": "该行业正在采取措施，要求年轻医生在临终关怀中心接受培训，测试积极的疼痛管理疗法的知识，为医院护理制定医疗保险计费代码，并制定评估和治疗临终疼痛的新标准。",
               "vocab": [
                 {
                   "word": "profession",
@@ -3592,7 +3592,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Annas says lawyers can play a key role in insisting that these well-meaning medical initiatives translate into better care.",
-              "translation": "【考研真题精读标准译文】Annas says lawyers can play a key role in insisting that these well-meaning medical initiatives translate into better care.",
+              "translation": "安纳斯表示，律师可以发挥关键作用，坚持将这些善意的医疗举措转化为更好的护理。",
               "vocab": [
                 {
                   "word": "play a key role in",
@@ -3620,7 +3620,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "\"Large numbers of physicians seem unconcerned with the pain their patients are needlessly and predictably suffering\", to the extent that it constitutes \"systematic patient abuse\".",
-              "translation": "【考研真题精读标准译文】\"Large numbers of physicians seem unconcerned with the pain their patients are needlessly and predictably suffering\", to the extent that it constitutes \"systematic patient abuse\".",
+              "translation": "“大量医生似乎并不关心患者不必要且可预见地遭受的痛苦”，以至于构成“系统性的患者虐待”。",
               "vocab": [
                 {
                   "word": "suffering",
@@ -3660,7 +3660,7 @@ window.ENGLISH_DATA['2002'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "He says medical licensing boards \"must make it clear...that painful deaths are presumptively ones that are incompetently managed and should result in license suspension\".",
-              "translation": "【考研真题精读标准译文】He says medical licensing boards \"must make it clear...that painful deaths are presumptively ones that are incompetently managed and should result in license suspension\".",
+              "translation": "他说，医疗许可委员会“必须明确……痛苦的死亡可能是管理不善造成的，应该导致执照被吊销”。",
               "vocab": [
                 {
                   "word": "medical",
@@ -3755,7 +3755,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "the Supreme Court strongly opposes physician-assisted suicide",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3810,7 +3810,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "Modern medicine has assisted terminally ill patients in painless recovery.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3898,7 +3898,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "insufficient hospital care",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3931,7 +3931,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "Bold.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4008,7 +4008,7 @@ window.ENGLISH_DATA['2002'] = {
               "text": "give patients more medicine than needed",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

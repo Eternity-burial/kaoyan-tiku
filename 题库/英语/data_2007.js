@@ -12,26 +12,38 @@ window.ENGLISH_DATA['2007'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "The Myth of Inborn Talent: Deliberate Practice and Success",
-      "chineseTitle": "天才神话破灭：刻意练习与卓越之路",
-      "topic": "认知心理 / 个人成长",
-      "overview": "本文探讨了人类杰出才能（expert performance）的本质来源。心理学家 Ericsson 等人经过数十年的深入研究证明：所谓天生才华（inborn talent）只是大众的幻觉；真正的专家级水准并非由基因注定，而是源于极其艰苦且专注的'刻意练习'（deliberate practice）以及持续寻找导师反馈改进弱点。",
+      "title": "Reading Comprehension Text 1",
+      "chineseTitle": "Text 1 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2007 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 1，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "以足球运动员出生月份为例，引入'后天环境与针对性训练比所谓天赋更关键'的议题。",
-          "logicRole": "趣味案例引入，引发对才能本质的思考 (Hook & Introduction)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "If you were to examine the birth certificates of every focus to play in the recent World Cup, you would most likely find a noteworthy quirk: elite soccer players are more likely to have been born in the earlier months of the year, immediately after the cutoff date for youth soccer leagues.",
-              "translation": "如果你去仔细查阅最近一届世界杯每一位出场球员的出生证明，极有可能会发现一个值得注意的奇特现象：顶尖足球运动员更有可能出生在每年的前几个月——即紧跟在青年足球联赛年龄截止日期之后的月份。",
+              "text": "If you were to examine the birth certificates of every soccer player in 2006's World Cup tournament, you would most likely find a noteworthy quirk: elite soccer players are more likely to have been born in the earlier months of the year than in the later months.",
+              "translation": "如果您检查 2006 年世界杯比赛中每位足球运动员的出生证明，您很可能会发现一个值得注意的怪异现象：精英足球运动员更有可能出生在当年的前几个月，而不是后几个月。",
               "vocab": [
                 {
                   "word": "birth certificates",
                   "ipa": "/bɜːθ səˈtɪfɪkəts/",
                   "meaning": "出生证明（常用释义：certificate: 证书，证明）",
+                  "level": "red"
+                },
+                {
+                  "word": "tournament",
+                  "ipa": "/ˈtʊənəmənt/",
+                  "meaning": "锦标赛，比赛（常用释义：锦标赛；联赛；比赛）",
+                  "level": "red"
+                },
+                {
+                  "word": "find",
+                  "ipa": "faɪnd",
+                  "meaning": "v.找到;发现;发觉",
                   "level": "red"
                 },
                 {
@@ -47,10 +59,38 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 },
                 {
-                  "word": "focus",
-                  "ipa": "",
-                  "meaning": "v.集中注意力",
+                  "word": "elite",
+                  "ipa": "eɪˈliːt",
+                  "meaning": "n.精英；上层集团 adj.精英的",
                   "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "If you then examined the European national youth teams that feed the World Cup and professional ranks, you would find this strange phenomenon to be even more pronounced.",
+              "translation": "如果你再考察一下为世界杯和职业队伍提供营养的欧洲国家青年队，你会发现这种奇怪的现象更加明显。",
+              "vocab": [
+                {
+                  "word": "national",
+                  "ipa": "ˈnæʃən(ə)l",
+                  "meaning": "adj. 国家的,全国",
+                  "level": "green"
+                },
+                {
+                  "word": "feed",
+                  "ipa": "/fiːd/",
+                  "meaning": "为……输送人才（常用释义：喂养；供给；提供；输送）",
+                  "level": "red"
+                },
+                {
+                  "word": "ranks",
+                  "ipa": "/ræŋks/",
+                  "meaning": "行列，队伍（常用释义：等级；军衔；行列；队伍）",
+                  "level": "red"
                 },
                 {
                   "word": "find",
@@ -59,102 +99,147 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 },
                 {
-                  "word": "elite",
-                  "ipa": "eɪˈliːt",
-                  "meaning": "n.精英；上层集团 adj.精英的",
+                  "word": "phenomenon",
+                  "ipa": "fəˈnɒmɪnən",
+                  "meaning": "n. 现象",
                   "level": "green"
                 },
                 {
-                  "word": "immediately",
-                  "ipa": "ɪˈmiːdiətli",
-                  "meaning": "adv.立即,立刻;直接地",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "word": "pronounced",
+                  "ipa": "/prəˈnaʊnst/",
+                  "meaning": "明显的，显著的（常用释义：明显的；发音的）",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "The reason is simple: kids who are older than their peers are bigger and stronger, and so they get picked for elite teams and receive better coaching.",
-              "translation": "原因很简单：年龄比同龄人大上几个月的孩子长得更高大、更强壮，因此他们能入选精英球队并接受更好的教练指导。",
-              "vocab": [
-                {
-                  "word": "reason",
-                  "ipa": "",
-                  "meaning": "v.推理",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "elite",
-                  "ipa": "eɪˈliːt",
-                  "meaning": "n.精英；上层集团 adj.精英的",
-                  "level": "green"
-                },
-                {
-                  "word": "receive",
-                  "ipa": "rɪˈsiːv",
-                  "meaning": "v. 收到，得到",
-                  "level": "green"
-                }
-              ]
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
-              "text": "It is a prime example of what psychologists call \"accumulated advantage.\"",
-              "translation": "这是心理学家所谓'累积优势'（accumulated advantage）的一个典型例证。",
+              "text": "What might account for this strange phenomenon?",
+              "translation": "什么可能解释这种奇怪的现象？",
               "vocab": [
                 {
-                  "word": "prime",
-                  "ipa": "praɪm",
-                  "meaning": "adj. 首要的，",
+                  "word": "account for",
+                  "ipa": "/əˈkaʊnt fɔː/",
+                  "meaning": "解释，说明……的原因（常用释义：解释；占……比例；对……负责）",
+                  "level": "red"
+                },
+                {
+                  "word": "account",
+                  "ipa": "əˈkaʊnt",
+                  "meaning": "n.账户；客户；网络账号；描述；账目；账单；赊购；解释；",
                   "level": "green"
                 },
                 {
-                  "word": "advantage",
-                  "ipa": "ədˈvɑːntɪdʒ",
-                  "meaning": "n. 有利条件，",
-                  "level": "green"
-                }
-              ],
-              "isKeyEvidence": true
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "介绍 Ericsson 等学者对各类顶尖专家的研究：否定天生才华的决定论，确立刻意练习的核心地位。",
-          "logicRole": "提出核心学术论点，否定先天决定论 (Core Thesis)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "For years, Anders Ericsson, a psychologist at Florida State University, has studied how experts in various fields—from chess players to surgeons—attain their extraordinary abilities.",
-              "translation": "多年来，佛罗里达州立大学心理学家安德斯·埃里克森一直在深入研究各个领域的专家——从国际象棋大师到顶尖外科医生——是如何获得他们非凡才能的。",
-              "vocab": [
-                {
-                  "word": "For",
+                  "word": "for",
                   "ipa": "",
                   "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
-                  "word": "psychologist",
-                  "ipa": "saɪˈkɒlədʒɪst",
-                  "meaning": "n. 心理学家；心理学者",
+                  "word": "phenomenon",
+                  "ipa": "fəˈnɒmɪnən",
+                  "meaning": "n. 现象",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P1-S4",
+              "text": "Here are a few guesses: a) certain astrological signs confer superior soccer skills; b) winter-born babies tend to have higher oxygen capacity, which increases soccer stamina; c) soccer-mad parents are more likely to conceive children in springtime, at the annual peak of soccer mania; d) none of the above.",
+              "translation": "以下是一些猜测：a) 某些星座赋予卓越的足球技能； b) 冬季出生的婴儿往往具有更高的氧气容量，这会增加足球耐力； c) 狂热足球的父母更有可能在春季，即每年足球狂热的高峰期怀上孩子； d) 以上都不是。",
+              "vocab": [
+                {
+                  "word": "astrological signs",
+                  "ipa": "/ˌæstrəˈlɒdʒɪkəl saɪnz/",
+                  "meaning": "星座（常用释义：astrological: 占星术的；sign: 标志/符号/迹象）",
+                  "level": "red"
+                },
+                {
+                  "word": "confer",
+                  "ipa": "/kənˈfɜː/",
+                  "meaning": "赋予，给予（常用释义：授予，赋予；商议）",
+                  "level": "red"
+                },
+                {
+                  "word": "superior",
+                  "ipa": "/suːˈpɪəriə/",
+                  "meaning": "更优秀的，更高超的（常用释义：优越的；上级的；有优越感的）",
+                  "level": "red"
+                },
+                {
+                  "word": "skills",
+                  "ipa": "/skɪlz/",
+                  "meaning": "技能，技巧（常用释义：技能；技艺；能力）",
+                  "level": "red"
+                },
+                {
+                  "word": "tend",
+                  "ipa": "tend",
+                  "meaning": "v. 往往会，常常就，倾向，",
+                  "level": "green"
+                },
+                {
+                  "word": "capacity",
+                  "ipa": "/kəˈpæsəti/",
+                  "meaning": "能力；这里指摄氧能力（常用释义：容量；能力；身份/职位）",
+                  "level": "red"
+                },
+                {
+                  "word": "stamina",
+                  "ipa": "/ˈstæmɪnə/",
+                  "meaning": "耐力，持久力（常用释义：体力；耐力；持久力）",
+                  "level": "red"
+                },
+                {
+                  "word": "conceive",
+                  "ipa": "/kənˈsiːv/",
+                  "meaning": "怀孕，孕育（常用释义：怀孕；构想；理解；想象）",
+                  "level": "red"
+                },
+                {
+                  "word": "annual",
+                  "ipa": "ˈænjuəl",
+                  "meaning": "adj.一年一度的；年度的；一年生的 n.一年生植物；年刊",
+                  "level": "green"
+                },
+                {
+                  "word": "peak",
+                  "ipa": "/piːk/",
+                  "meaning": "高峰；顶峰（常用释义：山峰；达到顶点）",
+                  "level": "red"
+                },
+                {
+                  "word": "mania",
+                  "ipa": "/ˈmeɪniə/",
+                  "meaning": "狂热，热潮（常用释义：狂热；迷恋；躁狂症）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P1-S5",
+              "text": "Anders Ericsson, a 58-year-old psychology professor at Florida State University, says he believes strongly in \"none of the above.\" Ericsson grew up in Sweden, and studied nuclear engineering until he realized he would have more opportunity to conduct his own research if he switched to psychology.",
+              "translation": "佛罗里达州立大学 58 岁的心理学教授安德斯·埃里克森 (Anders Ericsson) 表示，他坚信“以上都不是”。埃里克森在瑞典长大，学习核工程，直到他意识到如果转向心理学，他将有更多机会进行自己的研究。",
+              "vocab": [
+                {
+                  "word": "psychology",
+                  "ipa": "saɪˈkɒlədʒi",
+                  "meaning": "n. 心理学；心理状态",
+                  "level": "green"
+                },
+                {
+                  "word": "professor",
+                  "ipa": "prəˈfesə(r)",
+                  "meaning": "n. 教授",
                   "level": "green"
                 },
                 {
@@ -164,37 +249,172 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 },
                 {
-                  "word": "various",
-                  "ipa": "ˈveərɪəs",
-                  "meaning": "adj. 各种各样的，不",
+                  "word": "conduct",
+                  "ipa": "/kənˈdʌkt/ v.; /ˈkɒndʌkt/ n.",
+                  "meaning": "进行，开展（常用释义：进行；指挥；带领；行为）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "His first experiment, nearly 30 years ago, involved memory: training a person to hear and then repeat a random series of numbers.",
+              "translation": "大约 30 年前，他的第一个实验涉及记忆：训练一个人听到并重复一系列随机数字。",
+              "vocab": [
+                {
+                  "word": "experiment",
+                  "ipa": "ɪkˈsperɪmənt",
+                  "meaning": "n. 实验",
                   "level": "green"
                 },
                 {
-                  "word": "fields",
-                  "ipa": "/fiːldz/",
-                  "meaning": "应对、回答（问题）。（常用释义：田野；领域；场地；v. 接住、处理。）",
+                  "word": "involved",
+                  "ipa": "/ɪnˈvɒlvd/",
+                  "meaning": "涉及，包含（常用释义：涉及；参与；复杂的）",
                   "level": "red"
                 },
                 {
-                  "word": "attain",
-                  "ipa": "əˈteɪn",
-                  "meaning": "v.（经过努力）获得,得到",
-                  "level": "green"
-                },
-                {
-                  "word": "extraordinary",
-                  "ipa": "ɪkˈstrɔː rdəneri",
-                  "meaning": "adj. 离",
+                  "word": "random",
+                  "ipa": "ˈrændəm",
+                  "meaning": "adj.随意,未经事先",
                   "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "His conclusion is radical: the traits commonly assumed to be inborn—such as absolute pitch or innate chess intuition—are actually the result of intensive, specialized training.",
-              "translation": "他的结论极其颠覆传统：那些通常被认为是与生俱来的特质——例如绝对音准或与生俱来的下棋直觉——实际上都是高强度、专业化训练的结果。",
+              "text": "\"With the first subject, after about 20 hours of training, his digit span had risen from 7 to 20,\" Ericsson recalls.",
+              "translation": "“对于第一个受试者，经过大约 20 个小时的训练，他的数字跨度从 7 增加到了 20，”埃里克森回忆道。",
               "vocab": [
+                {
+                  "word": "digit span",
+                  "ipa": "/ˈdɪdʒɪt spæn/",
+                  "meaning": "数字记忆广度（常用释义：digit: 数字/手指脚趾；span: 跨度/范围）",
+                  "level": "red"
+                },
+                {
+                  "word": "subject",
+                  "ipa": "/ˈsʌbdʒɪkt/",
+                  "meaning": "主题；中心议题（常用释义：学科；对象；臣民）",
+                  "level": "red"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "span",
+                  "ipa": "spæn",
+                  "meaning": "n.跨度；一段时间；范围 v.跨越；持续；贯穿",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "\"He kept improving, and after about 200 hours of training he had risen to over 80 numbers.\" This success, coupled with later research showing that memory itself is not genetically determined, led Ericsson to conclude that the act of memorizing is more of a cognitive exercise than an intuitive one.",
+              "translation": "“他不断进步，经过大约200个小时的训练，他的数字已经上升到了80多个。”这一成功，再加上后来的研究表明，记忆本身并不是由基因决定的，埃里克森得出结论，记忆行为更多的是一种认知练习，而不是直觉练习。",
+              "vocab": [
+                {
+                  "word": "coupled with",
+                  "ipa": "/ˈkʌpld wɪð/",
+                  "meaning": "加上，连同，与……结合（常用释义：couple: 连接；结合；一对）",
+                  "level": "red"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "genetically",
+                  "ipa": "",
+                  "meaning": "adv. 基因地，遗传地",
+                  "level": "green"
+                },
+                {
+                  "word": "determined",
+                  "ipa": "/dɪˈtɜːmɪnd/",
+                  "meaning": "断定，认定，确定（常用释义：决定；确定；下决心的）",
+                  "level": "red"
+                },
+                {
+                  "word": "conclude",
+                  "ipa": "kənˈkluːd",
+                  "meaning": "v. 完成，结束",
+                  "level": "green"
+                },
+                {
+                  "word": "act",
+                  "ipa": "ækt",
+                  "meaning": "v.表演;举动;起作用 n.行为,法令;一幕",
+                  "level": "red"
+                },
+                {
+                  "word": "cognitive",
+                  "ipa": "/ˈkɒɡnətɪv/",
+                  "meaning": "认知的（常用释义：与思维、理解、记忆、学习有关的）",
+                  "level": "red"
+                },
+                {
+                  "word": "exercise",
+                  "ipa": "/ˈeksəsaɪz/",
+                  "meaning": "练习，训练活动（常用释义：练习；运动；运用/行使）",
+                  "level": "red"
+                },
+                {
+                  "word": "intuitive",
+                  "ipa": "ɪnˈtjuːɪtɪv",
+                  "meaning": "adj. 直觉的；直观的",
+                  "level": "green"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P2-S4",
+              "text": "In other words, whatever inborn differences two people may exhibit in their abilities to memorize, those differences are swamped by how well each person \"encodes\" the information.",
+              "translation": "换句话说，无论两个人的记忆能力存在何种先天差异，这些差异都会被每个人“编码”信息的能力所淹没。",
+              "vocab": [
+                {
+                  "word": "swamped by",
+                  "ipa": "/swɒmpt baɪ/",
+                  "meaning": "被……压倒；被……远远超过（常用释义：swamp: 淹没；使不堪承受）",
+                  "level": "red"
+                },
+                {
+                  "word": "how well",
+                  "ipa": "/haʊ wel/",
+                  "meaning": "……得有多好；……的程度（常用释义：how + adv./adj. 表示程度）",
+                  "level": "red"
+                },
                 {
                   "word": "inborn",
                   "ipa": "/ˌɪnˈbɔːn/",
@@ -202,101 +422,50 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 },
                 {
-                  "word": "commonly",
-                  "ipa": "/ˈkɒmənli/",
-                  "meaning": "通常，一般地（常用释义：普遍地；通常地）",
+                  "word": "exhibit",
+                  "ipa": "/ɪɡˈzɪbɪt/",
+                  "meaning": "表现出，显示出（常用释义：显示；展览；展品）",
                   "level": "red"
                 },
                 {
-                  "word": "conclusion",
-                  "ipa": "kənˈkluːʒn",
-                  "meaning": "n.结论；结局；缔结，商定；命题",
+                  "word": "memorize",
+                  "ipa": "ˈmeməraɪz",
+                  "meaning": "v.记住；背诵",
                   "level": "green"
                 },
                 {
-                  "word": "radical",
-                  "ipa": "",
-                  "meaning": "adj.根本的，彻底的；激进的，极端的；全新的，不同凡响的；急剧的，大幅度",
-                  "level": "red"
-                },
-                {
-                  "word": "absolute",
-                  "ipa": "ˈæbsəluːt",
-                  "meaning": "adj. 完全的，全部",
-                  "level": "green"
-                },
-                {
-                  "word": "pitch",
-                  "ipa": "",
-                  "meaning": "n.投，掷；摊位；球场",
-                  "level": "red"
-                },
-                {
-                  "word": "innate",
-                  "ipa": "",
-                  "meaning": "adj.先天的，固有的；（信仰）根深蒂固的",
-                  "level": "red"
-                },
-                {
-                  "word": "intuition",
-                  "ipa": "",
-                  "meaning": "n.直觉力；直觉感知，直觉知识",
-                  "level": "red"
-                },
-                {
-                  "word": "intensive",
-                  "ipa": "ɪnˈtensɪv",
-                  "meaning": "adj.加强的；集中的；密集的",
+                  "word": "information",
+                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
+                  "meaning": "n. 信息",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true,
-              "isKeyEvidence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "In fact, Ericsson argues that there is no such thing as an innate general talent that automatically guarantees greatness.",
-              "translation": "事实上，埃里克森认为，世上根本不存在所谓能自动确保卓越表现的与生俱来的天生才能。",
+              "sIndex": 5,
+              "id": "P2-S5",
+              "text": "And the best way to learn how to encode information meaningfully, Ericsson determined, was a process known as deliberate practice.",
+              "translation": "爱立信认为，学习如何有意义地编码信息的最佳方法是一个被称为刻意练习的过程。",
               "vocab": [
                 {
-                  "word": "innate",
-                  "ipa": "",
-                  "meaning": "adj.先天的，固有的；（信仰）根深蒂固的",
+                  "word": "information",
+                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
+                  "meaning": "n. 信息",
+                  "level": "green"
+                },
+                {
+                  "word": "determined",
+                  "ipa": "/dɪˈtɜːmɪnd/",
+                  "meaning": "断定，认定，确定（常用释义：决定；确定；下决心的）",
                   "level": "red"
                 },
                 {
-                  "word": "general",
-                  "ipa": "ˈdʒɛnərəl",
-                  "meaning": "adj. 普遍的，总的 n. 将军",
-                  "level": "green"
-                },
-                {
-                  "word": "automatically",
-                  "ipa": "ˌɔːtəˈmætɪkli",
-                  "meaning": "adv.自动地；自然地；无意识地",
-                  "level": "green"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "深入阐述'刻意练习'（Deliberate Practice）的严格定义与特征：专注弱点、持续反馈、突破舒适区。",
-          "logicRole": "核心概念机制解析 (Mechanism Analysis)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "What truly sets elite performers apart is what Ericsson calls \"deliberate practice.\"",
-              "translation": "真正让顶尖高手脱颖而出的是埃里克森所称的'刻意练习'（deliberate practice）。",
-              "vocab": [
-                {
-                  "word": "elite",
-                  "ipa": "eɪˈliːt",
-                  "meaning": "n.精英；上层集团 adj.精英的",
-                  "level": "green"
+                  "word": "process",
+                  "ipa": "/ˈprəʊses/",
+                  "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
+                  "level": "red"
                 },
                 {
                   "word": "deliberate",
@@ -311,60 +480,56 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 }
               ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "Deliberate practice entails more than simply repeating a task.",
+              "translation": "刻意练习不仅仅是简单地重复一项任务。",
+              "vocab": [
+                {
+                  "word": "Deliberate",
+                  "ipa": "",
+                  "meaning": "adj.故意的，蓄意的；从容的，小心翼翼的；深思熟虑的",
+                  "level": "red"
+                },
+                {
+                  "word": "practice",
+                  "ipa": "/ˈpræktɪs/",
+                  "meaning": "做法；惯例（常用释义：练习；实践；惯例）",
+                  "level": "red"
+                },
+                {
+                  "word": "entails",
+                  "ipa": "/ɪnˈteɪlz/",
+                  "meaning": "需要，意味着，必然包含（常用释义：牵涉；需要；使成为必然）",
+                  "level": "red"
+                }
+              ],
               "isTopicSentence": true,
-              "isKeyEvidence": true
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "This is not merely repeating a task mindlessly, but rather an arduous, focused activity designed specifically to improve particular aspects of performance.",
-              "translation": "这绝非机械盲目地重复某项任务，而是一种极其艰苦、高度专注的活动，专门旨在改善技能表现的特定薄弱环节。",
+              "text": "Rather, it involves setting specific goals, obtaining immediate feedback and concentrating as much on technique as on outcome.",
+              "translation": "相反，它涉及设定具体目标、获得即时反馈以及既关注结果又关注技术。",
               "vocab": [
                 {
-                  "word": "merely",
-                  "ipa": "ˈmɪrli",
-                  "meaning": "adv.仅仅，只；无非是…",
-                  "level": "green"
-                },
-                {
-                  "word": "mindlessly",
-                  "ipa": "/ˈmaɪndləsli/",
-                  "meaning": "不假思索地；机械地（常用释义：不动脑筋地；漫无目的地）",
-                  "level": "red"
-                },
-                {
-                  "word": "rather",
+                  "word": "Rather",
                   "ipa": "ˈrɑːðə;(US)ˈræðər",
                   "meaning": "adv. 相当，",
                   "level": "green"
                 },
-                {
-                  "word": "specifically",
-                  "ipa": "spəˈsɪfɪkli",
-                  "meaning": "adv.特意,专门地",
-                  "level": "red"
-                },
-                {
-                  "word": "particular",
-                  "ipa": "/pəˈtɪkjələ(r)/",
-                  "meaning": "某一特定的（常用释义：特定的；特别的；讲究的）",
-                  "level": "red"
-                },
-                {
-                  "word": "performance",
-                  "ipa": "pəˈfɔːm",
-                  "meaning": "n. 演出，表演",
-                  "level": "green"
-                }
-              ],
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "It requires setting concrete goals, seeking immediate feedback from a skilled coach or mentor, and constantly pushing beyond one's current comfort zone.",
-              "translation": "它要求设定明确具体的目标，向经验丰富的教练或导师寻求即时反馈，并不断突破自己当下的舒适区极限。",
-              "vocab": [
                 {
                   "word": "setting",
                   "ipa": "ˈsetɪŋ",
@@ -372,9 +537,15 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 },
                 {
-                  "word": "concrete",
-                  "ipa": "ˈkɒŋkriːt",
-                  "meaning": "adj.具体的,实质性的 n.混凝土 v.用混凝土修筑",
+                  "word": "specific",
+                  "ipa": "/spəˈsɪfɪk/",
+                  "meaning": "特定的；具体的（常用释义：明确的；特有的）",
+                  "level": "red"
+                },
+                {
+                  "word": "obtaining",
+                  "ipa": "/əbˈteɪnɪŋ/",
+                  "meaning": "获得，得到（常用释义：获得；取得；存在/流行）",
                   "level": "red"
                 },
                 {
@@ -384,523 +555,83 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "green"
                 },
                 {
-                  "word": "skilled",
-                  "ipa": "skɪld",
-                  "meaning": "adj. 熟练的；有技能的",
-                  "level": "green"
-                },
-                {
-                  "word": "coach",
-                  "ipa": "koʊtʃ",
-                  "meaning": "n. 教练；长途汽车 v. 训练；指导",
-                  "level": "green"
-                },
-                {
-                  "word": "constantly",
-                  "ipa": "ˈkɑːnstəntli",
-                  "meaning": "adv.不断地；一直",
-                  "level": "green"
-                },
-                {
-                  "word": "beyond",
-                  "ipa": "",
-                  "meaning": "prep.除…之外；超出",
-                  "level": "green"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "word": "concentrating",
+                  "ipa": "/ˈkɒnsəntreɪtɪŋ/",
+                  "meaning": "集中注意力，专注于（常用释义：集中；专心；浓缩）",
                   "level": "red"
                 },
                 {
-                  "word": "zone",
-                  "ipa": "zuː",
-                  "meaning": "n. 区域；范围",
+                  "word": "outcome",
+                  "ipa": "ˈaʊtkʌm",
+                  "meaning": "n.结果，效果",
                   "level": "green"
                 }
               ],
-              "isKeyEvidence": true
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "刻意练习的艰苦性与坚持的心理机制：为何绝大多数人无法成为顶级大师。",
-          "logicRole": "深层心理动因与总结反思 (Psychological Reflection)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Because deliberate practice is mentally taxing and rarely inherently fun, only individuals with immense motivation and determination sustain it for the thousands of hours required for mastery.",
-              "translation": "由于刻意练习极其消耗心力，且极少具备内在的趣味性，因此只有具备极大动机与顽强毅力的人，才能坚持完成通往大师水准所需的数千小时枯燥训练。",
-              "vocab": [
-                {
-                  "word": "deliberate",
-                  "ipa": "",
-                  "meaning": "adj.故意的，蓄意的；从容的，小心翼翼的；深思熟虑的",
-                  "level": "red"
-                },
-                {
-                  "word": "practice",
-                  "ipa": "/ˈpræktɪs/",
-                  "meaning": "做法；惯例（常用释义：练习；实践；惯例）",
-                  "level": "red"
-                },
-                {
-                  "word": "mentally",
-                  "ipa": "ˈmɛntəli",
-                  "meaning": "adv. 精神上；智力上",
-                  "level": "green"
-                },
-                {
-                  "word": "rarely",
-                  "ipa": "ˈrerli",
-                  "meaning": "adv.很少；难得",
-                  "level": "green"
-                },
-                {
-                  "word": "inherently",
-                  "ipa": "/ɪnˈherəntli/",
-                  "meaning": "本质上地；内在地（常用释义：固有地；天生地）",
-                  "level": "red"
-                },
-                {
-                  "word": "immense",
-                  "ipa": "",
-                  "meaning": "adj.极大的，巨大的；非常好，极好；无边无际的",
-                  "level": "red"
-                },
-                {
-                  "word": "motivation",
-                  "ipa": "məʊtɪ'veɪʃn",
-                  "meaning": "n. （做事的）",
-                  "level": "green"
-                },
-                {
-                  "word": "determination",
-                  "ipa": "dɪtɜːmɪˈneɪʃ(ə)n",
-                  "meaning": "n. 决心",
-                  "level": "green"
-                },
-                {
-                  "word": "sustain",
-                  "ipa": "səˈsteɪn",
-                  "meaning": "v.维持；使保持；遭受；支撑；证实；认可，确认",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true,
+              "isTopicSentence": false,
               "isKeyEvidence": true
             },
             {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "Thus, the real differentiator in human achievement is not genetic luck, but the relentless will to practice deliberately day in and day out.",
-              "translation": "因此，人类成就的真正决定性分水岭绝非基因运气，而在于日复一日坚持进行刻意练习的顽强意志。",
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "Ericsson and his colleagues have thus taken to studying expert performers in a wide range of pursuits, including soccer.",
+              "translation": "因此，埃里克森和他的同事们开始研究包括足球在内的各种领域的专家表演者。",
               "vocab": [
                 {
-                  "word": "Thus",
+                  "word": "expert performers",
+                  "ipa": "/ˈekspɜːt pəˈfɔːməz/",
+                  "meaning": "专家级表现者，高手（常用释义：expert: 专家的；performer: 表现者/执行者）",
+                  "level": "red"
+                },
+                {
+                  "word": "thus",
                   "ipa": "/ðʌs/",
                   "meaning": "因此、从而（常用释义：以这种方式）",
                   "level": "red"
                 },
                 {
-                  "word": "achievement",
-                  "ipa": "əˈtʃiːvmənt",
-                  "meaning": "n. 成就；完成；达到",
+                  "word": "expert",
+                  "ipa": "ˈekspɜːt",
+                  "meaning": "n. 专家，能手",
                   "level": "green"
                 },
                 {
-                  "word": "genetic",
-                  "ipa": "/dʒəˈnetɪk/",
-                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
-                  "level": "red"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "word": "range",
+                  "ipa": "reɪndʒ",
+                  "meaning": "n.范围；一系列 v.变化",
                   "level": "green"
                 },
                 {
-                  "word": "practice",
-                  "ipa": "/ˈpræktɪs/",
-                  "meaning": "做法；惯例（常用释义：练习；实践；惯例）",
-                  "level": "red"
-                },
-                {
-                  "word": "deliberately",
-                  "ipa": "/dɪˈlɪbərətli/",
-                  "meaning": "有意地、审慎地（常用释义：故意地）",
+                  "word": "pursuits",
+                  "ipa": "/pəˈsjuːts/",
+                  "meaning": "活动，事业，领域（常用释义：追求；消遣；职业/事业）",
                   "level": "red"
                 }
-              ]
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 21,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：因果关系精准定位与同义替换",
-          "stem": "The success of elite soccer players is cited in Paragraph 1 to show that",
-          "stemKeywords": [
-            "success",
-            "elite soccer players",
-            "Paragraph 1"
-          ],
-          "officialAnswer": "C",
-          "targetSentences": [
-            "P1-S1",
-            "P1-S3"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "inborn physical strength determines athletic performance.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项认为是天生体能（inborn strength）决定运动表现，但原文明确指出出生月份带来的体型优势是环境与机制的累积优势，而非天生基因。",
-              "refSentences": [
-                "P1-S2"
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "key": "B",
-              "text": "youth soccer leagues should lower their age limits.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】原文提及截止日期（cutoff date）仅作为解释现象的背景，作者从未建议要降低年龄限制。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "environmental factors and accumulated advantage play a vital role.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P1-S3 明确总结这是累积优势（accumulated advantage）的典型范例，证明后天获得更好资源与指导等环境因素至关重要。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "birth date has nothing to do with training opportunities.",
-              "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】选项声称出生日期与训练机会无关，这与原文'出生在年初的孩子获得更好执教机会'直接相悖。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "本题容易误选 A。切记作者举足球运动员出生日期的例子是为了引出'后天累积优势'，而非证明先天决定论。",
-            "methodSummary": "例证与细节题核心：例子本身是手段，其所证明的宏观观点（accumulated advantage）才是答案。"
-          }
-        },
-        {
-          "qIndex": 22,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：观点态度句同义改写",
-          "stem": "According to Anders Ericsson, extraordinary performance is primarily the result of",
-          "stemKeywords": [
-            "Anders Ericsson",
-            "extraordinary performance",
-            "result of"
-          ],
-          "officialAnswer": "B",
-          "targetSentences": [
-            "P2-S2",
-            "P3-S1"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "innate general intuition and genius.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P2-S3 明确驳斥了'innate general talent'，该选项与专家结论完全相反。",
-              "refSentences": [
-                "P2-S3"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "intensive, specialized and deliberate practice.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P2-S2 指出非凡才能是 intensive, specialized training 的结果，P3-S1 进一步定义为 deliberate practice，完全契合题意。",
-              "refSentences": [
-                "P2-S2",
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "mindless repetition of routine tasks.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P3-S2 明确否定了'not merely repeating a task mindlessly'，刻意练习绝非机械重复。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "genetic luck and natural instincts.",
-              "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】作者在末段明确指出'is not genetic luck'，排除该项。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "干扰项 C 和 D 均把原文明确用否定词（not merely, not genetic luck）排除的内容当成正确结论设置陷阱。",
-            "methodSummary": "看到否定词（not / rarely / there is no such thing）时要警惕选项将其正话反说作为干扰。"
-          }
-        },
-        {
-          "qIndex": 23,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：特征对比与逆向推导",
-          "stem": "Which of the following is an essential characteristic of \"deliberate practice\"?",
-          "stemKeywords": [
-            "essential characteristic",
-            "deliberate practice"
-          ],
-          "officialAnswer": "A",
-          "targetSentences": [
-            "P3-S2",
-            "P3-S3"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "Focusing on weaknesses and seeking expert feedback.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P3-S2 与 P3-S3 明确指出刻意练习是 designed specifically to improve particular aspects... seeking immediate feedback from a coach，即专注弱点并寻求反馈。",
-              "refSentences": [
-                "P3-S2",
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Remaining comfortable within one's existing skill level.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P3-S3 强调 constantly pushing beyond one's comfort zone，而不是停留在舒适区。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Enjoying effortless and inherently fun activities.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P4-S1 指出刻意练习是 mentally taxing and rarely inherently fun，极其艰苦且缺乏趣味。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Relying purely on unsupervised self-study.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】原文强调需要 skilled coach or mentor 的即时反馈，并非完全无监督自学。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "容易误将大众直觉中的'快乐学习、自学成才'代入，而忽视了原文对刻意练习艰苦性与导师反馈的严格界定。",
-            "methodSummary": "推断题必须字字有据，严禁带入主观生活常识反客为主。"
-          }
-        },
-        {
-          "qIndex": 24,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：因果逻辑微观辨析",
-          "stem": "Most people fail to reach expert status mainly because they",
-          "stemKeywords": [
-            "fail to reach expert status",
-            "mainly because"
-          ],
-          "officialAnswer": "D",
-          "targetSentences": [
-            "P4-S1"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "lack the required genetic intelligence.",
-              "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】作者全篇驳斥天赋基因决定论，失败原因并非基因智商不足。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "do not have access to early birthday advantages.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】出生日期只是首段足球案例，不是解释所有人无法成为大师的核心原因。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "find expert guidance impossible to obtain.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】原文并未提及找不到导师指导是普遍瓶颈。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "cannot endure the demanding and mentally taxing practice over time.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P4-S1 明确说明 deliberate practice is mentally taxing... only individuals with immense motivation sustain it for thousands of hours，绝大多数人无法长期承受该艰苦过程。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "容易误选 B（就事论事陷阱），将局部段落例子上升为全局因果结论。",
-            "methodSummary": "识别就事论事陷阱：局部细节或引子绝不能充当全局核心因果解释。"
-          }
-        },
-        {
-          "qIndex": 25,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：全文核心论点高度概括",
-          "stem": "Which of the following would be the best title for the text?",
-          "stemKeywords": [
-            "best title",
-            "text"
-          ],
-          "officialAnswer": "C",
-          "targetSentences": [
-            "P2-S2",
-            "P3-S1",
-            "P4-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "How Birth Month Dictates Sports Stardom",
-              "isCorrect": false,
-              "distractorType": "范围太窄 / 就事论事",
-              "analysis": "【干扰特征: 范围太窄】仅涉及第1段引入案例，无法涵盖全文关于刻意练习与专业能力的学术论述。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "The Unbeatable Power of Innate Genius",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】文章主旨是证明所谓天生才能不存在，选项与主题完全背道而驰。",
-              "refSentences": [
-                "P2-S3"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "The Making of an Expert: Practice Over Talent",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 中心主旨概括】完美概括全文中心：专家的炼成依赖刻意练习而非先天才能（Practice Over Talent）。",
-              "refSentences": [
-                "P2-S2",
-                "P3-S1",
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Why Comfort Zones Are Essential for Growth",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】刻意练习要求 push beyond comfort zone，而非留在舒适区。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "主旨题要警惕以偏概全（A）以及与作者基本立场相悖的选项（B、D）。",
-            "methodSummary": "最佳标题必须包含文章的核心论题对象（Expert/Practice）与作者的核心论点方向（Over Talent）。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text2",
-      "number": 2,
-      "title": "Corporate Data Security Breach and Consumer Trust Crisis",
-      "chineseTitle": "企业数据泄露危机与消费者信任保卫战",
-      "topic": "网络信息安全 / 商业法律",
-      "overview": "本文深入报道了美国企业界日益频发的大规模消费者敏感数据泄露事件（如 ChoicePoint 等数据经纪商丑闻）。文章探讨了黑客与身份窃贼如何利用漏洞危害公众安全，抨击了企业以往隐瞒安全事故的恶习，并分析了促使企业主动披露安全漏洞与加强加密合规的联邦立法新趋势。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "列举一系列震惊全美的大企业数据丢失与被黑事件，指出企业数据安全已演变成国家级危机。",
-          "logicRole": "现实危机背景呈现 (Crisis Context)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "For the past few months, barely a week has gone by without news of another massive corporate data breach.",
-              "translation": "在过去几个月里，几乎每周都会曝出又一起企业大规模数据泄露的新闻。",
+              "sIndex": 4,
+              "id": "P3-S4",
+              "text": "They gather all the data they can, not just performance statistics and biographical details but also the results of their own laboratory experiments with high achievers.",
+              "translation": "他们收集所有可以收集的数据，不仅包括绩效统计数据和个人简历，还包括他们自己与高成就者进行的实验室实验的结果。",
               "vocab": [
                 {
-                  "word": "For",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "word": "biographical details",
+                  "ipa": "/ˌbaɪəˈɡræfɪkəl ˈdiːteɪlz/",
+                  "meaning": "个人生平细节（常用释义：biographical: 传记的；details: 细节）",
                   "level": "red"
                 },
                 {
-                  "word": "barely",
-                  "ipa": "ˈberli",
-                  "meaning": "adv.仅仅；几乎不；刚好",
-                  "level": "green"
+                  "word": "high achievers",
+                  "ipa": "/haɪ əˈtʃiːvəz/",
+                  "meaning": "高成就者，成就突出者（常用释义：achiever: 有成就的人）",
+                  "level": "red"
                 },
                 {
-                  "word": "massive",
-                  "ipa": "ˈmæsɪv",
-                  "meaning": "adj.结实的；非常严重的；大量的，大规模的",
-                  "level": "green"
-                },
-                {
-                  "word": "corporate",
-                  "ipa": "/ˈkɔːpərət/",
-                  "meaning": "公司的；企业的（常用释义：团体的；法人组织的）",
+                  "word": "gather",
+                  "ipa": "/ˈɡæðə/",
+                  "meaning": "收集（常用释义：聚集；收集；推断）",
                   "level": "red"
                 },
                 {
@@ -910,24 +641,2254 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 },
                 {
-                  "word": "breach",
-                  "ipa": "",
-                  "meaning": "n.违反，破坏；中断，终止；缺口",
+                  "word": "performance",
+                  "ipa": "pəˈfɔːm",
+                  "meaning": "n. 演出，表演",
+                  "level": "green"
+                },
+                {
+                  "word": "statistics",
+                  "ipa": "/stəˈtɪstɪks/",
+                  "meaning": "统计数据（常用释义：统计资料；统计学）",
+                  "level": "red"
+                },
+                {
+                  "word": "laboratory",
+                  "ipa": "/ləˈbɒrətri/",
+                  "meaning": "实验室（常用释义：进行实验、研究或检测的场所）",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P3-S5",
+              "text": "Their work makes a rather startling assertion: the trait we commonly call talent is highly overrated.",
+              "translation": "他们的研究提出了一个相当惊人的断言：我们通常所说的人才特质被高度高估了。",
+              "vocab": [
+                {
+                  "word": "work",
+                  "ipa": "wɜ:rk",
+                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
+                  "level": "red"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                },
+                {
+                  "word": "startling",
+                  "ipa": "/ˈstɑːtlɪŋ/",
+                  "meaning": "令人吃惊的，惊人的（常用释义：使人震惊的；出人意料的）",
+                  "level": "red"
+                },
+                {
+                  "word": "assertion",
+                  "ipa": "/əˈsɜːʃən/",
+                  "meaning": "强硬主张、权力宣示（常用释义：断言；声明）",
+                  "level": "red"
+                },
+                {
+                  "word": "trait",
+                  "ipa": "/treɪt/",
+                  "meaning": "特质，特点（常用释义：性格特征；属性；特性）",
+                  "level": "red"
+                },
+                {
+                  "word": "commonly",
+                  "ipa": "/ˈkɒmənli/",
+                  "meaning": "通常，一般地（常用释义：普遍地；通常地）",
+                  "level": "red"
+                },
+                {
+                  "word": "overrated",
+                  "ipa": "/ˌəʊvəˈreɪtɪd/",
+                  "meaning": "被高估的（常用释义：评价过高的）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 6,
+              "id": "P3-S6",
+              "text": "Or, put another way, expert performers—whether in memory or surgery, ballet or computer programming – are nearly always made, not born.",
+              "translation": "或者，换句话说，专家表演者——无论是记忆力还是外科手术、芭蕾舞还是计算机编程——几乎都是后天培养的，而不是天生的。",
+              "vocab": [
+                {
+                  "word": "expert performers",
+                  "ipa": "/ˈekspɜːt pəˈfɔːməz/",
+                  "meaning": "专家级表现者，高手（常用释义：expert: 专家的；performer: 表现者/执行者）",
+                  "level": "red"
+                },
+                {
+                  "word": "expert",
+                  "ipa": "ˈekspɜːt",
+                  "meaning": "n. 专家，能手",
+                  "level": "green"
+                },
+                {
+                  "word": "surgery",
+                  "ipa": "/ˈsɜːdʒəri/",
+                  "meaning": "外科手术；外科医学（常用释义：外科；手术；诊所（英））",
+                  "level": "red"
+                },
+                {
+                  "word": "ballet",
+                  "ipa": "ˈbæleɪ",
+                  "meaning": "n. 芭蕾舞",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 21,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
+          "stem": "The birthday phenomenon found among soccer players is mentioned to",
+          "stemKeywords": [
+            "birthday",
+            "phenomenon",
+            "found"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "A",
+          "options": [
+            {
+              "key": "A",
+              "text": "stress the importance of professional training.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "spotlight the soccer superstars in the World Cup.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "introduce the topic of what makes expert performance.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "explain why some soccer teams play better than others.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 21 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 22,
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
+          "stem": "The word \"mania\" (Line 4, Paragraph 2) most probably means",
+          "stemKeywords": [
+            "word",
+            "mania",
+            "Line"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "B",
+          "options": [
+            {
+              "key": "A",
+              "text": "fun.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "craze.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "hysteria.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "excitement.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 22 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 23,
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "stem": "According to Ericsson, good memory",
+          "stemKeywords": [
+            "According",
+            "Ericsson",
+            "good"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "B",
+          "options": [
+            {
+              "key": "A",
+              "text": "depends on meaningful processing of information.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "results from intuitive rather than cognitive exercises.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "is determined by genetic rather than psychological factors.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "requires immediate feedback and a high degree of concentration.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 23 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 24,
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "stem": "Ericsson and his colleagues believe that",
+          "stemKeywords": [
+            "Ericsson",
+            "colleagues",
+            "believe"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "talent is a dominating factor for professional success.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "biographical data provide the key to excellent performance.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "the role of talent tends to be overlooked.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "high achievers owe their success mostly to nurture.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 24 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 25,
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "stem": "Which of the following proverbs is closest to the message the text tries to convey?",
+          "stemKeywords": [
+            "Which",
+            "following",
+            "proverbs"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "A",
+          "options": [
+            {
+              "key": "A",
+              "text": "\"Faith will move mountains.\"",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "\"One reaps what one sows.\"",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "\"Practice makes perfect.\"",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "\"Like father, like son.\"",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 25 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text2",
+      "number": 2,
+      "title": "Reading Comprehension Text 2",
+      "chineseTitle": "Text 2 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2007 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 2，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "For the past several years, the Sunday newspaper supplement Parade has featured a column called \"Ask Marilyn.\" People are invited to query Marilyn Vos Savant, who at age 10 had tested at a mental level of someone about 23 years old; that gave her an IQ of 228—the highest score ever recorded.",
+              "translation": "在过去的几年里，周日报纸副刊《Parade》开设了一个名为“问玛丽莲”的专栏。人们被邀请询问 Marilyn Vos Savant，她在 10 岁时曾对 23 岁左右的人进行了心理水平测试；她的智商达到了 228——有史以来的最高分。",
+              "vocab": [
+                {
+                  "word": "mental level",
+                  "ipa": "/ˈmentl ˈlevl/",
+                  "meaning": "智力发展水平；心理年龄水平。（常用释义：心理/精神层面的水平。）",
+                  "level": "red"
+                },
+                {
+                  "word": "For",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "several",
+                  "ipa": "ˈsevrəl",
+                  "meaning": "adj. 几个的；各自的 pron. 几个",
+                  "level": "green"
+                },
+                {
+                  "word": "supplement",
+                  "ipa": "/ˈsʌplɪmənt/",
+                  "meaning": "（报纸的）副刊、增刊。（常用释义：补充物；增刊；补充剂；v. 补充。）",
+                  "level": "red"
+                },
+                {
+                  "word": "featured",
+                  "ipa": "/ˈfiːtʃəd/",
+                  "meaning": "重点刊载、推出。（常用释义：以……为特色；重点介绍；主演。）",
+                  "level": "red"
+                },
+                {
+                  "word": "query",
+                  "ipa": "/ˈkwɪəri/",
+                  "meaning": "向……提问；询问。（常用释义：v. 询问、质疑；n. 问题、疑问、查询。）",
+                  "level": "red"
+                },
+                {
+                  "word": "mental",
+                  "ipa": "ˈment(ə)l",
+                  "meaning": "adj. 精神的；脑力的",
+                  "level": "green"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "score",
+                  "ipa": "skɔr",
+                  "meaning": "n. 分数，得",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "From financial giants to universities, millions of Social Security numbers, credit card records, and personal profiles have fallen into the hands of identity thieves.",
-              "translation": "从金融巨头到知名大学，数以百万计的社会安全号码、信用卡记录和个人档案纷纷落入身份窃贼之手。",
+              "text": "IQ tests ask you to complete verbal and visual analogies, to envision paper after it has been folded and cut, and to deduce numerical sequences, among other similar tasks.",
+              "translation": "智商测试要求你完成语言和视觉类比，想象折叠和切割后的纸张，并推断数字序列，以及其他类似的任务。",
               "vocab": [
+                {
+                  "word": "numerical sequences",
+                  "ipa": "/njuːˈmerɪkəl ˈsiːkwənsɪz/",
+                  "meaning": "数字序列；数列规律。（常用释义：数值序列。）",
+                  "level": "red"
+                },
+                {
+                  "word": "among other",
+                  "ipa": "/əˈmʌŋ ˈʌðə/",
+                  "meaning": "在其他……之中；除其他……外。（常用释义：在……之中。）",
+                  "level": "red"
+                },
+                {
+                  "word": "complete",
+                  "ipa": "kəmˈpliːt",
+                  "meaning": "adj. 完成vt. 完",
+                  "level": "green"
+                },
+                {
+                  "word": "verbal",
+                  "ipa": "ˈvɜːrbəl",
+                  "meaning": "adj. 口头的；词语的",
+                  "level": "green"
+                },
+                {
+                  "word": "visual",
+                  "ipa": "/ˈvɪʒuəl/",
+                  "meaning": "视觉的。（常用释义：视觉的；形象化的。）",
+                  "level": "red"
+                },
+                {
+                  "word": "analogies",
+                  "ipa": "/əˈnælədʒiz/",
+                  "meaning": "类比题；相似关系。（常用释义：类比；相似。）",
+                  "level": "red"
+                },
+                {
+                  "word": "envision",
+                  "ipa": "/ɪnˈvɪʒən/",
+                  "meaning": "设想、构想（常用释义：想象；预见）",
+                  "level": "red"
+                },
+                {
+                  "word": "deduce",
+                  "ipa": "",
+                  "meaning": "v.推断，演绎",
+                  "level": "red"
+                },
+                {
+                  "word": "numerical",
+                  "ipa": "nuːˈmɛrɪkəl",
+                  "meaning": "adj. 数字的；数值的",
+                  "level": "green"
+                },
+                {
+                  "word": "similar",
+                  "ipa": "ˈsɪmɪlə(r)",
+                  "meaning": "adj. 相似的，像",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P1-S3",
+              "text": "So it is a bit confusing when Vos Savant fields such queries from the average Joe (whose IQ is 100) as, What's the difference between love and fondness?",
+              "translation": "因此，当 Vos Savant 回答普通人（智商为 100）的问题时，会有点令人困惑：爱和喜爱有什么区别？",
+              "vocab": [
+                {
+                  "word": "the average Joe",
+                  "ipa": "/ði ˈævərɪdʒ dʒəʊ/",
+                  "meaning": "普通人；平常人。（常用释义：普通老百姓（口语表达）。）",
+                  "level": "red"
+                },
+                {
+                  "word": "confusing",
+                  "ipa": "kənˈfjuːzɪŋ",
+                  "meaning": "adj. 令人困惑的",
+                  "level": "green"
+                },
+                {
+                  "word": "fields",
+                  "ipa": "/fiːldz/",
+                  "meaning": "应对、回答（问题）。（常用释义：田野；领域；场地；v. 接住、处理。）",
+                  "level": "red"
+                },
+                {
+                  "word": "average",
+                  "ipa": "ˈævərɪdʒ",
+                  "meaning": "n. 平均数 adj. 平均的；普通的",
+                  "level": "green"
+                },
+                {
+                  "word": "fondness",
+                  "ipa": "/ˈfɒndnəs/",
+                  "meaning": "喜爱；喜好。（常用释义：喜爱；偏爱。）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P1-S4",
+              "text": "Or what is the nature of luck and coincidence?",
+              "translation": "或者说运气和巧合的本质是什么？",
+              "vocab": [
+                {
+                  "word": "luck and coincidence",
+                  "ipa": "/lʌk ənd kəʊˈɪnsɪdəns/",
+                  "meaning": "运气与巧合。（常用释义：luck 运气；coincidence 巧合。）",
+                  "level": "red"
+                },
+                {
+                  "word": "nature",
+                  "ipa": "/ˈneɪtʃə/",
+                  "meaning": "性质，特征（常用释义：自然；本质；天性；性质）",
+                  "level": "red"
+                },
+                {
+                  "word": "coincidence",
+                  "ipa": "koʊˈɪnsɪdəns",
+                  "meaning": "n. 巧合；同时发生；一致",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P1-S5",
+              "text": "It's not obvious how the capacity to visualize objects and to figure out numerical patterns suits one to answer questions that have eluded some of the best poets and philosophers.",
+              "translation": "目前还不清楚，可视化物体和找出数字模式的能力如何适合回答一些最优秀的诗人和哲学家所无法回答的问题。",
+              "vocab": [
+                {
+                  "word": "obvious",
+                  "ipa": "/ˈɒbviəs/",
+                  "meaning": "显而易见、因而缺乏创造性的（常用释义：明显的；不言而喻的）",
+                  "level": "red"
+                },
+                {
+                  "word": "capacity",
+                  "ipa": "/kəˈpæsəti/",
+                  "meaning": "能力；这里指摄氧能力（常用释义：容量；能力；身份/职位）",
+                  "level": "red"
+                },
+                {
+                  "word": "visualize",
+                  "ipa": "/ˈvɪʒuəlaɪz/",
+                  "meaning": "在脑中形成图像；想象。（常用释义：使形象化；想象。）",
+                  "level": "red"
+                },
+                {
+                  "word": "figure",
+                  "ipa": "ˈfɪɡjər",
+                  "meaning": "n. 数字，图形 v. 计算，认为",
+                  "level": "green"
+                },
+                {
+                  "word": "numerical",
+                  "ipa": "nuːˈmɛrɪkəl",
+                  "meaning": "adj. 数字的；数值的",
+                  "level": "green"
+                },
+                {
+                  "word": "suits",
+                  "ipa": "/suːts/",
+                  "meaning": "适合；使某人适合。（常用释义：适合；合身；满足需要。）",
+                  "level": "red"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "answer",
+                  "ipa": "",
+                  "meaning": "v.答复；n. 回答",
+                  "level": "green"
+                },
+                {
+                  "word": "eluded",
+                  "ipa": "/ɪˈluːdɪd/",
+                  "meaning": "使……未能理解、获得答案。（常用释义：躲避；逃避；使人想不起/理解不了。）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 6,
+              "id": "P1-S6",
+              "text": "Clearly, intelligence encompasses more than a score on a test.",
+              "translation": "显然，智力不仅仅包含测试分数。",
+              "vocab": [
+                {
+                  "word": "Clearly",
+                  "ipa": "ˈklɪəli",
+                  "meaning": "adv.清楚地；毫无疑问，显然",
+                  "level": "red"
+                },
+                {
+                  "word": "intelligence",
+                  "ipa": "ɪnˈtɛlɪdʒəns",
+                  "meaning": "n. 智力；情报；理解力",
+                  "level": "green"
+                },
+                {
+                  "word": "encompasses",
+                  "ipa": "/ɪnˈkʌmpəsɪz/",
+                  "meaning": "包含；涵盖。（常用释义：包括；囊括；包围。）",
+                  "level": "red"
+                },
+                {
+                  "word": "score",
+                  "ipa": "skɔr",
+                  "meaning": "n. 分数，得",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "Just what does it mean to be smart?",
+              "translation": "聪明到底意味着什么？",
+              "vocab": [
+                {
+                  "word": "mean",
+                  "ipa": "mi:n",
+                  "meaning": "v.表示……的意思 adj.卑鄙的;平均的 n.平均值",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "How much of intelligence can be specified, and how much can we learn about it from neurology, genetics, computer science and other fields?",
+              "translation": "智力有多少是可以具体说明的，我们可以从神经学、遗传学、计算机科学和其他领域了解多少？",
+              "vocab": [
+                {
+                  "word": "intelligence",
+                  "ipa": "ɪnˈtɛlɪdʒəns",
+                  "meaning": "n. 智力；情报；理解力",
+                  "level": "green"
+                },
+                {
+                  "word": "specified",
+                  "ipa": "/ˈspesɪfaɪd/",
+                  "meaning": "被明确说明、界定。（常用释义：明确指出；具体说明；规定。）",
+                  "level": "red"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "neurology",
+                  "ipa": "/njʊəˈrɒlədʒi/",
+                  "meaning": "神经学。（常用释义：神经系统研究。）",
+                  "level": "red"
+                },
+                {
+                  "word": "fields",
+                  "ipa": "/fiːldz/",
+                  "meaning": "应对、回答（问题）。（常用释义：田野；领域；场地；v. 接住、处理。）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "The defining term of intelligence in humans still seems to be the IQ score, even though IQ tests are not given as often as they used to be.",
+              "translation": "人类智力的定义术语似乎仍然是智商分数，尽管智商测试不再像以前那样频繁进行。",
+              "vocab": [
+                {
+                  "word": "defining term",
+                  "ipa": "/dɪˈfaɪnɪŋ tɜːm/",
+                  "meaning": "界定某概念的核心术语/标准。（常用释义：起界定作用的术语。）",
+                  "level": "red"
+                },
+                {
+                  "word": "even though",
+                  "ipa": "/ˈiːvən ðəʊ/",
+                  "meaning": "即使；尽管（常用释义：表示让步）",
+                  "level": "purple"
+                },
+                {
+                  "word": "term",
+                  "ipa": "tɝm",
+                  "meaning": "n. 学期;术语;条款;期限 v. 把…叫做",
+                  "level": "red"
+                },
+                {
+                  "word": "intelligence",
+                  "ipa": "ɪnˈtɛlɪdʒəns",
+                  "meaning": "n. 智力；情报；理解力",
+                  "level": "green"
+                },
+                {
+                  "word": "still",
+                  "ipa": "/stɪl/",
+                  "meaning": "尽管如此；然而（常用释义：仍然；但是，尽管如此）",
+                  "level": "red"
+                },
+                {
+                  "word": "score",
+                  "ipa": "skɔr",
+                  "meaning": "n. 分数，得",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P2-S4",
+              "text": "The test comes primarily in two forms: the Stanford-Binet Intelligence Scale and the Wechsler Intelligence Scales (both come in adult and children's version).",
+              "translation": "该测试主要有两种形式：斯坦福-比奈智力量表和韦克斯勒智力量表（都有成人和儿童版本）。",
+              "vocab": [
+                {
+                  "word": "primarily",
+                  "ipa": "/praɪˈmerəli/",
+                  "meaning": "主要地；首要地。（常用释义：主要地。）",
+                  "level": "red"
+                },
+                {
+                  "word": "Intelligence",
+                  "ipa": "ɪnˈtɛlɪdʒəns",
+                  "meaning": "n. 智力；情报；理解力",
+                  "level": "green"
+                },
+                {
+                  "word": "Scale",
+                  "ipa": "/skeɪl/",
+                  "meaning": "量表；测量等级体系。（常用释义：刻度；规模；比例；等级。）",
+                  "level": "red"
+                },
+                {
+                  "word": "version",
+                  "ipa": "ˈvɜrʃən",
+                  "meaning": "n.版本;译本,译文;说法",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P2-S5",
+              "text": "Generally costing several hundred dollars, they are usually given only by psychologists, although variations of them populate bookstores and the World Wide Web.",
+              "translation": "它们通常花费数百美元，通常仅由心理学家提供，尽管它们的变体在书店和万维网上随处可见。",
+              "vocab": [
+                {
+                  "word": "Generally",
+                  "ipa": "ˈdʒen(ə)rəli",
+                  "meaning": "adv.通常；普遍地；大概",
+                  "level": "green"
+                },
+                {
+                  "word": "several",
+                  "ipa": "ˈsevrəl",
+                  "meaning": "adj. 几个的；各自的 pron. 几个",
+                  "level": "green"
+                },
+                {
+                  "word": "populate",
+                  "ipa": "/ˈpɒpjəleɪt/",
+                  "meaning": "充斥于；遍布于。（常用释义：居住于；构成……的人口；使充满。）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 6,
+              "id": "P2-S6",
+              "text": "Superhigh scores like Vos Savant's are no longer possible, because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.",
+              "translation": "像 Vos Savant 那样的超高分已经不可能了，因为现在的评分是基于同龄人之间的统计人口分布，而不是简单地将心理年龄除以实际年龄并乘以 100。",
+              "vocab": [
+                {
+                  "word": "chronological age",
+                  "ipa": "/ˌkrɒnəˈlɒdʒɪkəl eɪdʒ/",
+                  "meaning": "实际年龄；按出生日期计算的年龄。（常用释义：按时间顺序计算的年龄。）",
+                  "level": "red"
+                },
+                {
+                  "word": "no longer",
+                  "ipa": "/nəʊ ˈlɒŋɡə(r)/",
+                  "meaning": "不再（常用释义：状态改变）",
+                  "level": "purple"
+                },
+                {
+                  "word": "rather than",
+                  "ipa": "/ˈrɑːðə ðæn/",
+                  "meaning": "而不是；而非（常用释义：用于对比选择）",
+                  "level": "purple"
+                },
+                {
+                  "word": "statistical",
+                  "ipa": "stəˈtɪstɪk(ə)l",
+                  "meaning": "adj.统计的，统计学的",
+                  "level": "green"
+                },
+                {
+                  "word": "population",
+                  "ipa": "/ˌpɒpjuˈleɪʃn/",
+                  "meaning": "人群；总体人口（常用释义：人口；全体居民）",
+                  "level": "green"
+                },
+                {
+                  "word": "distribution",
+                  "ipa": "/ˌdɪstrɪˈbjuːʃən/",
+                  "meaning": "科研知识的传播、分发（常用释义：分配；分布；配送）",
+                  "level": "red"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                },
+                {
+                  "word": "mental",
+                  "ipa": "ˈment(ə)l",
+                  "meaning": "adj. 精神的；脑力的",
+                  "level": "green"
+                },
+                {
+                  "word": "multiplying",
+                  "ipa": "/ˈmʌltɪplaɪɪŋ/",
+                  "meaning": "乘以。（常用释义：乘；增加；繁殖。）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "Other standardized tests, such as the Scholastic Assessment Test (SAT) and the Graduate Record Exam (GRE), capture the main aspects of IQ tests.",
+              "translation": "其他标准化测试，例如学术评估测试（SAT）和研究生入学考试（GRE），涵盖了智商测试的主要方面。",
+              "vocab": [
+                {
+                  "word": "Scholastic Assessment Test (SAT)",
+                  "ipa": "/skəˈlæstɪk əˈsesmənt test/",
+                  "meaning": "学术能力评估测试，即美国 SAT。（常用释义：美国标准化考试名称。）",
+                  "level": "red"
+                },
+                {
+                  "word": "Graduate Record Exam (GRE)",
+                  "ipa": "/ˈɡrædʒuət ˈrekɔːd ɪɡˈzæm/",
+                  "meaning": "美国研究生入学考试，即 GRE。（常用释义：研究生申请标准化考试名称。）",
+                  "level": "red"
+                },
+                {
+                  "word": "main aspects",
+                  "ipa": "/meɪn ˈæspekts/",
+                  "meaning": "主要方面；核心维度。（常用释义：主要方面；侧面；特征。）",
+                  "level": "red"
+                },
+                {
+                  "word": "standardized",
+                  "ipa": "/ˈstændədaɪzd/",
+                  "meaning": "标准化的；按统一标准进行的（常用释义：标准化的；统一规范的）",
+                  "level": "green"
+                },
+                {
+                  "word": "Assessment",
+                  "ipa": "əˈsesmənt",
+                  "meaning": "n.评估，评价；估价，估计",
+                  "level": "green"
+                },
+                {
+                  "word": "Record",
+                  "ipa": "ˈrekɔːd",
+                  "meaning": "adj.创记录的,空前的",
+                  "level": "red"
+                },
+                {
+                  "word": "capture",
+                  "ipa": "/ˈkæptʃə/",
+                  "meaning": "概括、体现。（常用释义：捕获；夺取；拍摄；吸引。）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "Such standardized tests may not assess all the important elements necessary to succeed in school and in life, argues Robert J.",
+              "translation": "Robert J. 认为，此类标准化测试可能无法评估在学校和生活中取得成功所需的所有重要要素。",
+              "vocab": [
+                {
+                  "word": "standardized",
+                  "ipa": "/ˈstændədaɪzd/",
+                  "meaning": "标准化的；按统一标准进行的（常用释义：标准化的；统一规范的）",
+                  "level": "green"
+                },
+                {
+                  "word": "assess",
+                  "ipa": "/əˈses/",
+                  "meaning": "评估；评价（常用释义：评估；估算）",
+                  "level": "red"
+                },
+                {
+                  "word": "necessary",
+                  "ipa": "'nɛsəsɛri",
+                  "meaning": "adj. 必要的; 必需的",
+                  "level": "red"
+                },
+                {
+                  "word": "succeed",
+                  "ipa": "",
+                  "meaning": "v.成功，达成；表现出色，有作为；取得预期效果，表现良好；继任，接任；接",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "Sternberg.",
+              "translation": "斯滕伯格。",
+              "vocab": [],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P3-S4",
+              "text": "In his article \"How Intelligent Is Intelligence Testing?\", Sternberg notes that traditional tests best assess analytical and verbal skills but fail to measure creativity and practical knowledge, components also critical to problem solving and life success.",
+              "translation": "斯滕伯格在他的文章《智力测试有多智能？》中指出，传统测试最能评估分析和语言技能，但无法衡量创造力和实践知识，而这些因素对于解决问题和人生成功也至关重要。",
+              "vocab": [
+                {
+                  "word": "article",
+                  "ipa": "ˈɑːrtɪkəl",
+                  "meaning": "n. 文章；物品；冠词 v.见习",
+                  "level": "green"
+                },
+                {
+                  "word": "Intelligence",
+                  "ipa": "ɪnˈtɛlɪdʒəns",
+                  "meaning": "n. 智力；情报；理解力",
+                  "level": "green"
+                },
+                {
+                  "word": "traditional",
+                  "ipa": "trəˈdɪʃən(ə)l",
+                  "meaning": "adj.传统的",
+                  "level": "red"
+                },
+                {
+                  "word": "assess",
+                  "ipa": "/əˈses/",
+                  "meaning": "评估；评价（常用释义：评估；估算）",
+                  "level": "red"
+                },
+                {
+                  "word": "analytical",
+                  "ipa": "/ˌænəˈlɪtɪkəl/",
+                  "meaning": "分析性的；善于分析的。（常用释义：分析的。）",
+                  "level": "red"
+                },
+                {
+                  "word": "verbal",
+                  "ipa": "ˈvɜːrbəl",
+                  "meaning": "adj. 口头的；词语的",
+                  "level": "green"
+                },
+                {
+                  "word": "skills",
+                  "ipa": "/skɪlz/",
+                  "meaning": "技能，技巧（常用释义：技能；技艺；能力）",
+                  "level": "red"
+                },
+                {
+                  "word": "measure",
+                  "ipa": "/ˈmeʒə/",
+                  "meaning": "衡量；测量。（常用释义：测量；衡量；尺寸为。）",
+                  "level": "red"
+                },
+                {
+                  "word": "practical",
+                  "ipa": "ˈpræktɪkl",
+                  "meaning": "adj. 实际的；实用的",
+                  "level": "green"
+                },
+                {
+                  "word": "components",
+                  "ipa": "/kəmˈpəʊnənts/",
+                  "meaning": "组成部分；要素。（常用释义：部件；成分；要素。）",
+                  "level": "red"
+                },
+                {
+                  "word": "critical",
+                  "ipa": "ˈkrɪtɪk(ə)l",
+                  "meaning": "adj.批评的；关键的；严重的；病重的；评论性的；临界的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P3-S5",
+              "text": "Moreover, IQ tests do not necessarily predict so well once populations or situations change.",
+              "translation": "此外，一旦人口或情况发生变化，智商测试不一定能很好地预测。",
+              "vocab": [
+                {
+                  "word": "Moreover",
+                  "ipa": "/mɔːrˈəʊvə/",
+                  "meaning": "此外；而且（常用释义：此外；再者）",
+                  "level": "red"
+                },
+                {
+                  "word": "predict",
+                  "ipa": "/prɪˈdɪkt/",
+                  "meaning": "预测；预示。（常用释义：预测；预报；预示。）",
+                  "level": "red"
+                },
+                {
+                  "word": "populations",
+                  "ipa": "/ˌpɒpjəˈleɪʃənz/",
+                  "meaning": "人群；研究总体。（常用释义：人口；群体；总体。）",
+                  "level": "red"
+                },
+                {
+                  "word": "change",
+                  "ipa": "/tʃeɪndʒ/",
+                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 6,
+              "id": "P3-S6",
+              "text": "Research has found that IQ predicted leadership skills when the tests were given under low-stress conditions, but under high-stress conditions, IQ was negatively correlated with leadership—that is, it predicted the opposite.",
+              "translation": "研究发现，在低压力条件下进行测试时，智商可以预测领导能力，但在高压力条件下，智商与领导力呈负相关，也就是说，预测结果相反。",
+              "vocab": [
+                {
+                  "word": "leadership skills",
+                  "ipa": "/ˈliːdəʃɪp skɪlz/",
+                  "meaning": "领导能力。（常用释义：领导力；领导技能。）",
+                  "level": "red"
+                },
+                {
+                  "word": "negatively correlated",
+                  "ipa": "/ˈneɡətɪvli ˈkɒrəleɪtɪd/",
+                  "meaning": "呈负相关：一方上升，另一方倾向下降。（常用释义：彼此相关。）",
+                  "level": "red"
+                },
+                {
+                  "word": "skills",
+                  "ipa": "/skɪlz/",
+                  "meaning": "技能，技巧（常用释义：技能；技艺；能力）",
+                  "level": "red"
+                },
+                {
+                  "word": "negatively",
+                  "ipa": "ˈneɡətɪvli",
+                  "meaning": "adv.消极地",
+                  "level": "red"
+                },
+                {
+                  "word": "opposite",
+                  "ipa": "ˈɔpəzɪt",
+                  "meaning": "n. 相反，对面 adj.",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 7,
+              "id": "P3-S7",
+              "text": "Anyone who has toiled through SAT will testify that test-taking skill also matters, whether it's knowing when to guess or what questions to skip.",
+              "translation": "任何一个努力通过 SAT 考试的人都会证明，考试技巧也很重要，无论是知道何时猜测或跳过哪些问题。",
+              "vocab": [
+                {
+                  "word": "toiled through",
+                  "ipa": "/tɔɪld θruː/",
+                  "meaning": "艰难地熬过；费力完成。（常用释义：辛苦工作；艰难进行。）",
+                  "level": "red"
+                },
+                {
+                  "word": "knowing when to guess",
+                  "ipa": "/ˈnəʊɪŋ wen tə ɡes/",
+                  "meaning": "知道何时该猜答案。（常用释义：掌握何时做某事的判断。）",
+                  "level": "red"
+                },
+                {
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "testify",
+                  "ipa": "",
+                  "meaning": "v.作证；证明，证实",
+                  "level": "red"
+                },
+                {
+                  "word": "test-taking",
+                  "ipa": "/ˈtest ˌteɪkɪŋ/",
+                  "meaning": "应试的；参加考试的。（常用释义：与参加考试有关的。）",
+                  "level": "red"
+                },
+                {
+                  "word": "skip",
+                  "ipa": "skɪp",
+                  "meaning": "v.蹦蹦跳跳地走；跳绳；不做；略过；快速转移；悄悄溜走；打",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 26,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
+          "stem": "Which of the following may be required in an intelligence test?",
+          "stemKeywords": [
+            "Which",
+            "following",
+            "required"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "Answering philosophical questions.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "Folding or cutting paper into different shapes.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Telling the differences between certain concepts.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "Choosing words or graphs similar to the given ones.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 26 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 27,
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
+          "stem": "What can be inferred about intelligence testing from Paragraph 3?",
+          "stemKeywords": [
+            "What",
+            "inferred",
+            "about"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "A",
+          "options": [
+            {
+              "key": "A",
+              "text": "People no longer use IQ scores as an indicator of intelligence.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "More versions of IQ tests are now available on the Internet.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "The test contents and formats for adults and children may be different.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "Scientists have defined the important elements of human intelligence.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 27 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 28,
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "stem": "People nowadays can no longer achieve IQ scores as high as Vos Savant's because",
+          "stemKeywords": [
+            "People",
+            "nowadays",
+            "longer"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "D",
+          "options": [
+            {
+              "key": "A",
+              "text": "the scores are obtained through different computational procedures.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "creativity rather than analytical skills is emphasized now.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Vos Savant's case is an extreme one that will not repeat.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "the defining characteristic of IQ tests has changed.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 28 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 29,
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "stem": "We can conclude from the last paragraph that",
+          "stemKeywords": [
+            "conclude",
+            "from",
+            "last"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "test scores may not be reliable indicators of one's ability.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "IQ scores and SAT results are highly correlated.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "testing involves a lot of guesswork.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "traditional tests are out of date.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 29 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 30,
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "stem": "What is the author's attitude towards IQ tests?",
+          "stemKeywords": [
+            "What",
+            "author",
+            "attitude"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "B",
+          "options": [
+            {
+              "key": "A",
+              "text": "Supportive.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "Skeptical.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Impartial.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "Biased.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 30 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text3",
+      "number": 3,
+      "title": "Reading Comprehension Text 3",
+      "chineseTitle": "Text 3 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2007 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 3，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "During the past generation, the American middle-class family that once could count on hard work and fair play to keep itself financially secure has been transformed by economic risk and new realities.",
+              "translation": "在过去的一代人中，曾经可以依靠辛勤工作和公平竞争来保持财务安全的美国中产阶级家庭已经因经济风险和新现实而发生了转变。",
+              "vocab": [
+                {
+                  "word": "fair play",
+                  "ipa": "/ˌfeə ˈpleɪ/",
+                  "meaning": "公平竞争；公平待遇（常用释义：公平竞争；公正行为）",
+                  "level": "red"
+                },
+                {
+                  "word": "count on",
+                  "ipa": "/kaʊnt ɒn/",
+                  "meaning": "依靠；指望（常用释义：依赖；相信；预计）",
+                  "level": "purple"
+                },
+                {
+                  "word": "financially secure",
+                  "ipa": "/faɪˈnænʃəli sɪˈkjʊə/",
+                  "meaning": "经济上有保障的（常用释义：财务安全；经济稳定）",
+                  "level": "purple"
+                },
+                {
+                  "word": "new realities",
+                  "ipa": "/njuː riˈælətiz/",
+                  "meaning": "新的现实状况（常用释义：现实；实际情况）",
+                  "level": "purple"
+                },
+                {
+                  "word": "generation",
+                  "ipa": "ˌdʒenəˈreɪʃ(ə)n",
+                  "meaning": "n.一代人；一代；产生",
+                  "level": "green"
+                },
+                {
+                  "word": "American",
+                  "ipa": "",
+                  "meaning": "adj.美国的 n.美国人",
+                  "level": "green"
+                },
+                {
+                  "word": "middle-class",
+                  "ipa": "ˌmɪdəl ˈklæs",
+                  "meaning": "n. 中产阶级；adj. 中产阶级的",
+                  "level": "green"
+                },
+                {
+                  "word": "work",
+                  "ipa": "wɜ:rk",
+                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
+                  "level": "red"
+                },
+                {
+                  "word": "fair",
+                  "ipa": "feə(r)",
+                  "meaning": "adj. 公平的，合理的 adj.",
+                  "level": "green"
+                },
+                {
+                  "word": "financially",
+                  "ipa": "faɪˈnænʃəli",
+                  "meaning": "adv.财政上，金融上",
+                  "level": "green"
+                },
+                {
+                  "word": "secure",
+                  "ipa": "sɪˈkjʊr",
+                  "meaning": "adj.安全的；稳固的 v.获得；使安全；缚牢；确保",
+                  "level": "green"
+                },
+                {
+                  "word": "economic",
+                  "ipa": "/ˌiːkəˈnɒmɪk/",
+                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "level": "green"
+                },
+                {
+                  "word": "new",
+                  "ipa": "",
+                  "meaning": "adj.新的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "Now a pink slip, a bad diagnosis, or a disappearing spouse can reduce a family from solidly middle class to newly poor in a few months.",
+              "translation": "现在，一份解雇通知书、一次错误的诊断或失踪的配偶都可能在几个月内使一个家庭从稳固的中产阶级变成新的贫困家庭。",
+              "vocab": [
+                {
+                  "word": "pink slip",
+                  "ipa": "/ˌpɪŋk ˈslɪp/",
+                  "meaning": "解雇通知；失业风险（常用释义：粉色纸条；解雇通知）",
+                  "level": "red"
+                },
+                {
+                  "word": "newly poor",
+                  "ipa": "/ˈnjuːli pʊə/",
+                  "meaning": "新近陷入贫困的（常用释义：新近地；贫穷的）",
+                  "level": "green"
+                },
+                {
+                  "word": "slip",
+                  "ipa": "slɪp",
+                  "meaning": "n. 片，条，纸片，纸条",
+                  "level": "green"
+                },
+                {
+                  "word": "diagnosis",
+                  "ipa": "/ˌdaɪəɡˈnəʊsɪs/",
+                  "meaning": "诊断结果；疾病诊断（常用释义：诊断；判断）",
+                  "level": "green"
+                },
+                {
+                  "word": "spouse",
+                  "ipa": "/spaʊs/",
+                  "meaning": "配偶（常用释义：丈夫或妻子）",
+                  "level": "red"
+                },
+                {
+                  "word": "solidly",
+                  "ipa": "/ˈsɒlɪdli/",
+                  "meaning": "稳稳地；牢固地（常用释义：坚固地；扎实地；确实地）",
+                  "level": "red"
+                },
+                {
+                  "word": "class",
+                  "ipa": "/klɑːs/",
+                  "meaning": "类别；种类（常用释义：班级；阶层；类别）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P1-S3",
+              "text": "In just one generation, millions of mothers have gone to work, transforming basic family economics.",
+              "translation": "在短短一代人的时间里，数百万母亲开始工作，改变了基本的家庭经济。",
+              "vocab": [
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "generation",
+                  "ipa": "ˌdʒenəˈreɪʃ(ə)n",
+                  "meaning": "n.一代人；一代；产生",
+                  "level": "green"
+                },
+                {
+                  "word": "work",
+                  "ipa": "wɜ:rk",
+                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
+                  "level": "red"
+                },
+                {
+                  "word": "basic",
+                  "ipa": "ˈbeɪsɪk",
+                  "meaning": "adj.基本的,基础的",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P1-S4",
+              "text": "Scholars, policymakers, and critics of all stripes have debated the social implications of these changes, but few have looked at the side effect: family risk has risen as well.",
+              "translation": "学者、政策制定者和各方面的批评家都在争论这些变化的社会影响，但很少有人关注其副作用：家庭风险也有所上升。",
+              "vocab": [
+                {
+                  "word": "of all stripes",
+                  "ipa": "/əv ɔːl straɪps/",
+                  "meaning": "各种各样的；各派别的（常用释义：各类；各种立场的）",
+                  "level": "red"
+                },
+                {
+                  "word": "side effect",
+                  "ipa": "/ˈsaɪd ɪˌfekt/",
+                  "meaning": "副作用；附带后果（常用释义：药物副作用；连带影响）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Scholars",
+                  "ipa": "/ˈskɒləz/",
+                  "meaning": "学者（常用释义：学者；奖学金获得者）",
+                  "level": "red"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "implications",
+                  "ipa": "/ˌɪmplɪˈkeɪʃənz/",
+                  "meaning": "影响；可能后果（常用释义：含义；暗示；影响）",
+                  "level": "red"
+                },
+                {
+                  "word": "effect",
+                  "ipa": "",
+                  "meaning": "n.作用，影响；效果，印象；所有物，财产；生效，实行",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P1-S5",
+              "text": "Today's families have budgeted to the limits of their new two-paycheck status.",
+              "translation": "如今，家庭的预算已经达到了新的两薪状态的极限。",
+              "vocab": [
+                {
+                  "word": "new",
+                  "ipa": "",
+                  "meaning": "adj.新的",
+                  "level": "green"
+                },
+                {
+                  "word": "status",
+                  "ipa": "ˈsteɪtəs",
+                  "meaning": "n.地位,身份;情形",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "As a result, they have lost the parachute they once had in times of financial setback – a back-up earner (usually Mom) who could go into the workforce if the primary earner got laid off or fell sick.",
+              "translation": "结果，她们失去了在经济困难时期曾经拥有的降落伞——一个后备收入者（通常是妈妈），如果主要收入者被解雇或生病，她可以进入劳动力市场。",
+              "vocab": [
+                {
+                  "word": "in times of",
+                  "ipa": "/ɪn taɪmz əv/",
+                  "meaning": "在……时期（常用释义：在……时候）",
+                  "level": "purple"
+                },
+                {
+                  "word": "back-up earner",
+                  "ipa": "/ˈbæk ʌp ˈɜːnə/",
+                  "meaning": "备用收入者（常用释义：后备挣钱者）",
+                  "level": "purple"
+                },
+                {
+                  "word": "go into the workforce",
+                  "ipa": "/ɡəʊ ˈɪntuː ðə ˈwɜːkfɔːs/",
+                  "meaning": "进入劳动力市场（常用释义：进入；从事）",
+                  "level": "purple"
+                },
+                {
+                  "word": "as a result",
+                  "ipa": "/əz ə rɪˈzʌlt/",
+                  "meaning": "因此；结果是（常用释义：作为结果）",
+                  "level": "purple"
+                },
+                {
+                  "word": "parachute",
+                  "ipa": "/ˈpærəʃuːt/",
+                  "meaning": "保护伞；缓冲机制（常用释义：降落伞）",
+                  "level": "red"
+                },
                 {
                   "word": "financial",
                   "ipa": "",
                   "meaning": "adj.金融的，财政的，财务的",
+                  "level": "red"
+                },
+                {
+                  "word": "setback",
+                  "ipa": "/ˈsetbæk/",
+                  "meaning": "挫折；经济受挫（常用释义：挫折；倒退；阻碍）",
+                  "level": "red"
+                },
+                {
+                  "word": "workforce",
+                  "ipa": "/ˈwɜːkfɔːs/",
+                  "meaning": "劳动力；劳动人口（常用释义：某国/行业/公司的全体员工）",
+                  "level": "red"
+                },
+                {
+                  "word": "primary",
+                  "ipa": "/ˈpraɪməri/",
+                  "meaning": "主要的；基本的（常用释义：首要的；初级的；初选的）",
+                  "level": "red"
+                },
+                {
+                  "word": "sick",
+                  "ipa": "sɪk",
+                  "meaning": "adj.有病,患病的,（想）呕吐",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "This \"added-worker effect\" could support the safety net offered by unemployment insurance or disability insurance to help families weather bad times.",
+              "translation": "这种“额外工人效应”可以支持失业保险或伤残保险提供的安全网，帮助家庭度过困难时期。",
+              "vocab": [
+                {
+                  "word": "added-worker effect",
+                  "ipa": "/ˌædɪd ˈwɜːkər ɪˈfekt/",
+                  "meaning": "附加劳动者效应（常用释义：家庭成员补充就业现象）",
+                  "level": "purple"
+                },
+                {
+                  "word": "safety net",
+                  "ipa": "/ˈseɪfti net/",
+                  "meaning": "安全网；保障机制（常用释义：保护网；社会保障）",
+                  "level": "purple"
+                },
+                {
+                  "word": "effect",
+                  "ipa": "",
+                  "meaning": "n.作用，影响；效果，印象；所有物，财产；生效，实行",
+                  "level": "red"
+                },
+                {
+                  "word": "support",
+                  "ipa": "/səˈpɔːt/",
+                  "meaning": "资助、维持或运营知识库（常用释义：支持观点；支撑重量；支持物）",
+                  "level": "red"
+                },
+                {
+                  "word": "net",
+                  "ipa": "net",
+                  "meaning": "n. 网；净额；网络 adj. 净得的 v. 净赚；设法获得",
+                  "level": "green"
+                },
+                {
+                  "word": "unemployment",
+                  "ipa": "ʌnɪmˈplɔɪmənt",
+                  "meaning": "n.失业,",
+                  "level": "green"
+                },
+                {
+                  "word": "insurance",
+                  "ipa": "ɪnˈʃʊrəns",
+                  "meaning": "n.保险；保险业；预防保障措施",
+                  "level": "green"
+                },
+                {
+                  "word": "disability",
+                  "ipa": "dɪsəˈbɪlɪtɪ",
+                  "meaning": "n.. 残疾；无能",
+                  "level": "green"
+                },
+                {
+                  "word": "weather",
+                  "ipa": "/ˈweðə/",
+                  "meaning": "经受住；渡过（常用释义：天气；使风化）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "But today, a disruption to family fortunes can no longer be made up with extra income from an otherwise-stay-at-home partner.",
+              "translation": "但如今，家庭财富受到的破坏不再能够通过留在家里的伴侣的额外收入来弥补。",
+              "vocab": [
+                {
+                  "word": "be made up with",
+                  "ipa": "/bi meɪd ʌp wɪð/",
+                  "meaning": "用……弥补（常用释义：补足；组成）",
+                  "level": "purple"
+                },
+                {
+                  "word": "otherwise-stay-at-home partner",
+                  "ipa": "/ˈʌðəwaɪz steɪ ət həʊm ˈpɑːtnə/",
+                  "meaning": "原本会待在家中的配偶（常用释义：原本居家的伴侣）",
+                  "level": "purple"
+                },
+                {
+                  "word": "no longer",
+                  "ipa": "/nəʊ ˈlɒŋɡə(r)/",
+                  "meaning": "不再（常用释义：状态改变）",
+                  "level": "purple"
+                },
+                {
+                  "word": "disruption",
+                  "ipa": "/dɪsˈrʌpʃən/",
+                  "meaning": "变故；扰乱；中断（常用释义：中断；破坏）",
+                  "level": "red"
+                },
+                {
+                  "word": "fortunes",
+                  "ipa": "/ˈfɔːtʃuːnz/",
+                  "meaning": "境况；命运；兴衰（常用释义：财富；运气；命运）",
+                  "level": "red"
+                },
+                {
+                  "word": "extra",
+                  "ipa": "ˈɛkstrə",
+                  "meaning": "adj.额外的,附加的 n.附加物,额外的东西",
+                  "level": "red"
+                },
+                {
+                  "word": "income",
+                  "ipa": "ˈɪnkʌm",
+                  "meaning": "n.收入，收益",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P2-S4",
+              "text": "During the same period, families have been asked to absorb much more risk in their retirement income.",
+              "translation": "同一时期，家庭被要求在退休收入中承担更多的风险。",
+              "vocab": [
+                {
+                  "word": "retirement income",
+                  "ipa": "/rɪˈtaɪəmənt ˈɪnkʌm/",
+                  "meaning": "退休收入（常用释义：退休后的收入）",
+                  "level": "green"
+                },
+                {
+                  "word": "absorb",
+                  "ipa": "/əbˈzɔːb/",
+                  "meaning": "承担；承受（常用释义：吸收；理解；使全神贯注）",
+                  "level": "red"
+                },
+                {
+                  "word": "retirement",
+                  "ipa": "rɪˈtaɪərmənt",
+                  "meaning": "n. 退休；退职",
+                  "level": "green"
+                },
+                {
+                  "word": "income",
+                  "ipa": "ˈɪnkʌm",
+                  "meaning": "n.收入，收益",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P2-S5",
+              "text": "Steelworkers, airline employees, and now those in the auto industry are joining millions of families who must worry about interest rates, stock market fluctuation, and the harsh reality that they may outlive their retirement money.",
+              "translation": "钢铁工人、航空公司员工以及现在的汽车行业员工正在加入数百万家庭的行列，他们必须担心利率、股市波动以及他们可能会花光退休金的严酷现实。",
+              "vocab": [
+                {
+                  "word": "airline employees",
+                  "ipa": "/ˈeəlaɪn ɪmˈplɔɪiːz/",
+                  "meaning": "航空公司雇员（常用释义：航空公司员工）",
+                  "level": "green"
+                },
+                {
+                  "word": "interest rates",
+                  "ipa": "/ˈɪntrəst reɪts/",
+                  "meaning": "利率（常用释义：借贷或储蓄的利息比例）",
+                  "level": "purple"
+                },
+                {
+                  "word": "harsh reality",
+                  "ipa": "/hɑːʃ riˈæləti/",
+                  "meaning": "严酷现实（常用释义：残酷的现实）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Steelworkers",
+                  "ipa": "/ˈstiːlˌwɜːkəz/",
+                  "meaning": "钢铁工人（常用释义：钢铁行业工人）",
+                  "level": "green"
+                },
+                {
+                  "word": "airline",
+                  "ipa": "ˈeəlaɪn",
+                  "meaning": "n.(飞机)航线 adj.(飞机)航线的",
+                  "level": "red"
+                },
+                {
+                  "word": "industry",
+                  "ipa": "ˈɪndəstrɪ",
+                  "meaning": "n. 工业，产业",
+                  "level": "green"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "interest",
+                  "ipa": "/ˈɪntrəst/",
+                  "meaning": "利益、权益（常用释义：兴趣；利息；关注）",
+                  "level": "red"
+                },
+                {
+                  "word": "stock",
+                  "ipa": "/stɒk/",
+                  "meaning": "股票（常用释义：股票；库存；储备）",
+                  "level": "green"
+                },
+                {
+                  "word": "fluctuation",
+                  "ipa": "/ˌflʌktʃuˈeɪʃən/",
+                  "meaning": "波动；起伏（常用释义：价值、数量的变化）",
+                  "level": "red"
+                },
+                {
+                  "word": "harsh",
+                  "ipa": "",
+                  "meaning": "adj.严厉的；严酷的；恶劣的；残酷的；艰苦的；强烈刺眼的；丑陋的；刺耳的；",
+                  "level": "red"
+                },
+                {
+                  "word": "reality",
+                  "ipa": "/riˈæləti/",
+                  "meaning": "成为现实的事物（常用释义：现实；实际情况）",
+                  "level": "red"
+                },
+                {
+                  "word": "outlive",
+                  "ipa": "/ˌaʊtˈlɪv/",
+                  "meaning": "比……持续更久；活得超过（常用释义：比……活得久）",
+                  "level": "red"
+                },
+                {
+                  "word": "retirement",
+                  "ipa": "rɪˈtaɪərmənt",
+                  "meaning": "n. 退休；退职",
+                  "level": "green"
+                },
+                {
+                  "word": "money",
+                  "ipa": "",
+                  "meaning": "n.金钱，货币",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "For much of the past year, President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.",
+              "translation": "在过去一年的大部分时间里，布什总统一直致力于将社会保障转向储蓄账户模式，让退休人员根据投资回报将其大部分或全部保证付款换成付款。",
+              "vocab": [
+                {
+                  "word": "guaranteed payments",
+                  "ipa": "/ˌɡærənˈtiːd ˈpeɪmənts/",
+                  "meaning": "有保障的付款（常用释义：保证支付款项）",
+                  "level": "purple"
+                },
+                {
+                  "word": "investment returns",
+                  "ipa": "/ɪnˈvestmənt rɪˈtɜːnz/",
+                  "meaning": "投资回报（常用释义：投资收益）",
+                  "level": "purple"
+                },
+                {
+                  "word": "For",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "President",
+                  "ipa": "",
+                  "meaning": "n.总统，国家主席；负责人，会长，院长，主席；董事长，行长，总裁",
+                  "level": "red"
+                },
+                {
+                  "word": "move",
+                  "ipa": "muːv",
+                  "meaning": "n.行动",
                   "level": "red"
                 },
                 {
@@ -943,185 +2904,806 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "green"
                 },
                 {
-                  "word": "credit",
-                  "ipa": "ˈkredɪt",
-                  "meaning": "n.信用；称赞；贷款 v.归功于；把钱存入；认为…有特定品质",
+                  "word": "model",
+                  "ipa": "ˈmɒdl",
+                  "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
                   "level": "green"
                 },
                 {
-                  "word": "card",
-                  "ipa": "",
-                  "meaning": "n. 牌，卡片",
-                  "level": "green"
-                },
-                {
-                  "word": "identity",
-                  "ipa": "aɪˈdentəti",
-                  "meaning": "n.身份；特性；一致",
-                  "level": "green"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "传统企业文化倾向于'家丑不可外扬'、掩盖安全漏洞；如今各州披露法律正倒逼企业公开透明。",
-          "logicRole": "新旧制度冲突与立法驱动 (Regulatory Shift)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Historically, companies preferred to hush up security compromises to avoid public embarrassment and shareholder lawsuits.",
-              "translation": "从历史上看，企业往往倾向于对安全失窃事故秘而不宣，以避免陷入公众舆论难堪与股东诉讼的泥潭。",
-              "vocab": [
-                {
-                  "word": "security",
-                  "ipa": "sɪˈkjʊrəti",
-                  "meaning": "n.保护措施；保安部门；安检处；保障；安全；保证金；证",
-                  "level": "green"
-                },
-                {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
+                  "word": "retirees",
+                  "ipa": "/rɪˌtaɪəˈriːz/",
+                  "meaning": "退休人员（常用释义：已退休者）",
                   "level": "red"
                 },
                 {
-                  "word": "embarrassment",
-                  "ipa": "ɪmˈbærəsmənt",
-                  "meaning": "n.尴尬，难堪；使人难堪的人/事；困境",
-                  "level": "green"
-                },
-                {
-                  "word": "shareholder",
-                  "ipa": "/ˈʃeəhəʊldə(r)/",
-                  "meaning": "股东（常用释义：持股人）",
-                  "level": "red"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "However, groundbreaking state laws—such as California's mandatory disclosure statute—are forcing executives to notify victims promptly.",
-              "translation": "然而，具有开创性的州级法律——例如加利福尼亚州的强制披露法规——正迫使企业高管必须及时通知受害客户。",
-              "vocab": [
-                {
-                  "word": "However",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
+                  "word": "guaranteed",
+                  "ipa": "/ˌɡærənˈtiːd/",
+                  "meaning": "有保障的；固定保证的（常用释义：被保证的；有担保的）",
                   "level": "red"
                 },
                 {
-                  "word": "groundbreaking",
-                  "ipa": "ˈɡraʊndbreɪkɪŋ",
-                  "meaning": "adj.开创性的；创新的；革新的",
+                  "word": "investment",
+                  "ipa": "/ɪnˈvestmənt/",
+                  "meaning": "公共科研投入、投资（常用释义：投资；投入；投资物）",
                   "level": "green"
                 },
                 {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
-                },
-                {
-                  "word": "mandatory",
-                  "ipa": "ˈmændətɔːri",
-                  "meaning": "adj. 强制的；义务的",
-                  "level": "green"
-                },
-                {
-                  "word": "disclosure",
-                  "ipa": "dɪsˈkloʊʒər",
-                  "meaning": "n.披露；揭露；公开的事情",
-                  "level": "green"
-                },
-                {
-                  "word": "statute",
-                  "ipa": "/ˈstætʃuːt/",
-                  "meaning": "成文法、法令（常用释义：法规）",
-                  "level": "red"
-                },
-                {
-                  "word": "notify",
-                  "ipa": "",
-                  "meaning": "v.通报，告知；申报",
+                  "word": "returns",
+                  "ipa": "/rɪˈtɜːnz/",
+                  "meaning": "投资回报；收益（常用释义：返回；回报；收益）",
                   "level": "red"
                 }
               ],
               "isTopicSentence": true,
-              "isKeyEvidence": true
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "披露通知让消费者得以采取冻结信用等防范措施，并倒逼企业重金升级加密防御体系。",
-          "logicRole": "深层效益与商业重塑 (Positive Impacts)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Mandatory disclosure does more than just warn consumers; it imposes severe reputational costs on careless corporations.",
-              "translation": "强制披露的作用远不止提醒消费者，它还让粗心大意的企业付出惨痛的声誉代价。",
-              "vocab": [
-                {
-                  "word": "Mandatory",
-                  "ipa": "ˈmændətɔːri",
-                  "meaning": "adj. 强制的；义务的",
-                  "level": "green"
-                },
-                {
-                  "word": "disclosure",
-                  "ipa": "dɪsˈkloʊʒər",
-                  "meaning": "n.披露；揭露；公开的事情",
-                  "level": "green"
-                },
-                {
-                  "word": "severe",
-                  "ipa": "sɪˈvɪə(r)",
-                  "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
-                  "level": "red"
-                },
-                {
-                  "word": "careless",
-                  "ipa": "ˈkeəlɪs",
-                  "meaning": "adj. 粗心的，漫不经",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": true
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "Facing public scrutiny and lost consumer trust, organizations are finally investing in robust encryption and strict data management protocols.",
-              "translation": "面对公众的严厉审视与消费者信任的崩塌，各类机构终于开始重金投入强大的加密技术与严格的数据管理规程。",
+              "text": "For younger families, the picture is not any better.",
+              "translation": "对于年轻家庭来说，情况也好不到哪儿去。",
               "vocab": [
                 {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
+                  "word": "For",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
-                  "word": "scrutiny",
-                  "ipa": "ˈskruːtəni",
-                  "meaning": "n.仔细观察，详细审查",
+                  "word": "picture",
+                  "ipa": "/ˈpɪktʃə/",
+                  "meaning": "情况；局面（常用释义：图画；照片；整体形势）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "Both the absolute cost of healthcare and the share of it borne by families have risen—and newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers, with much higher deductibles and a large new dose of investment risk for families' future healthcare.",
+              "translation": "医疗保健的绝对成本和家庭承担的比例都上升了，新流行的健康储蓄计划正从立法大厅蔓延到沃尔玛工作人员，其免赔额要高得多，而且家庭未来医疗保健的投资风险也很大。",
+              "vocab": [
+                {
+                  "word": "health-savings plans",
+                  "ipa": "/helθ ˈseɪvɪŋz plænz/",
+                  "meaning": "医疗储蓄计划（常用释义：用于医疗支出的储蓄计划）",
                   "level": "green"
                 },
                 {
-                  "word": "trust",
+                  "word": "legislative halls",
+                  "ipa": "/ˈledʒɪslətɪv hɔːlz/",
+                  "meaning": "立法机构；政策制定场所（常用释义：立法大厅；议会机构）",
+                  "level": "purple"
+                },
+                {
+                  "word": "absolute",
+                  "ipa": "ˈæbsəluːt",
+                  "meaning": "adj. 完全的，全部",
+                  "level": "green"
+                },
+                {
+                  "word": "share",
+                  "ipa": "ʃeər",
+                  "meaning": "v. 分享，分",
+                  "level": "green"
+                },
+                {
+                  "word": "borne",
+                  "ipa": "/bɔːn/",
+                  "meaning": "由……承担（常用释义：bear 的过去分词；承担；忍受）",
+                  "level": "red"
+                },
+                {
+                  "word": "fashionable",
+                  "ipa": "/ˈfæʃənəbl/",
+                  "meaning": "流行的；时兴的（常用释义：时尚的；流行的）",
+                  "level": "red"
+                },
+                {
+                  "word": "deductibles",
+                  "ipa": "/dɪˈdʌktəblz/",
+                  "meaning": "保险免赔额（常用释义：可扣除项目；免赔额）",
+                  "level": "red"
+                },
+                {
+                  "word": "new",
                   "ipa": "",
-                  "meaning": "n.信任；（金钱或财产的）信托",
+                  "meaning": "adj.新的",
                   "level": "green"
                 },
                 {
-                  "word": "robust",
-                  "ipa": "/rəʊˈbʌst/",
-                  "meaning": "强有力的、坚定有力的（常用释义：强健的；结实的）",
+                  "word": "dose",
+                  "ipa": "/dəʊs/",
+                  "meaning": "剂量；一定量（常用释义：药物剂量；一份；一次）",
+                  "level": "red"
+                },
+                {
+                  "word": "investment",
+                  "ipa": "/ɪnˈvestmənt/",
+                  "meaning": "公共科研投入、投资（常用释义：投资；投入；投资物）",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P3-S4",
+              "text": "Even demographics are working against the middle class family, as the odds of having a weak elderly parent – and all the attendant need for physical and financial assistance—have jumped eightfold in just one generation.",
+              "translation": "就连人口统计数据也不利于中产阶级家庭，因为年迈父母身体虚弱的可能性——以及随之而来的对物质和经济援助的需求——在短短一代人的时间里就增加了八倍。",
+              "vocab": [
+                {
+                  "word": "attendant need",
+                  "ipa": "/əˈtendənt niːd/",
+                  "meaning": "随之而来的需求（常用释义：伴随产生的需要）",
+                  "level": "purple"
+                },
+                {
+                  "word": "physical and financial assistance",
+                  "ipa": "/ˈfɪzɪkəl ənd faɪˈnænʃəl əˈsɪstəns/",
+                  "meaning": "身体照护和经济援助（常用释义：身体与财务帮助）",
+                  "level": "purple"
+                },
+                {
+                  "word": "demographics",
+                  "ipa": "/ˌdeməˈɡræfɪks/",
+                  "meaning": "人口结构；人口统计因素（常用释义：人口统计数据）",
+                  "level": "red"
+                },
+                {
+                  "word": "class",
+                  "ipa": "/klɑːs/",
+                  "meaning": "类别；种类（常用释义：班级；阶层；类别）",
+                  "level": "red"
+                },
+                {
+                  "word": "odds",
+                  "ipa": "/ɒdz/",
+                  "meaning": "可能性；概率（常用释义：赔率；机会；不利条件）",
+                  "level": "red"
+                },
+                {
+                  "word": "attendant",
+                  "ipa": "/əˈtendənt/",
+                  "meaning": "伴随的；随之而来的（常用释义：服务员；随从；护理员）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "physical",
+                  "ipa": "ˈfɪzɪk(ə)l",
+                  "meaning": "adj.物理的；身体的；物质的 n.体检",
+                  "level": "green"
+                },
+                {
+                  "word": "financial",
+                  "ipa": "",
+                  "meaning": "adj.金融的，财政的，财务的",
+                  "level": "red"
+                },
+                {
+                  "word": "assistance",
+                  "ipa": "əˈsɪstəns",
+                  "meaning": "n. 帮助,援助",
+                  "level": "red"
+                },
+                {
+                  "word": "eightfold",
+                  "ipa": "/ˈeɪtfəʊld/",
+                  "meaning": "八倍地；八倍的（常用释义：八重的；八倍的）",
+                  "level": "purple"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "generation",
+                  "ipa": "ˌdʒenəˈreɪʃ(ə)n",
+                  "meaning": "n.一代人；一代；产生",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P3-S5",
+              "text": "From the middle-class family perspective, much of this, understandably, looks far less like an opportunity to exercise more financial responsibility, and a good deal more like a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders.",
+              "translation": "从中产阶级家庭的角度来看，可以理解的是，其中大部分看起来远不像是履行更多财务责任的机会，而更像是将财务风险大规模转移到他们已经不堪重负的肩膀上的可怕加速。",
+              "vocab": [
+                {
+                  "word": "a good deal",
+                  "ipa": "/ə ɡʊd diːl/",
+                  "meaning": "很大程度上；大量（常用释义：许多；很大程度）",
+                  "level": "red"
+                },
+                {
+                  "word": "frightening acceleration",
+                  "ipa": "/ˈfraɪtənɪŋ əkˌseləˈreɪʃən/",
+                  "meaning": "令人恐惧的加速（常用释义：可怕的加快）",
+                  "level": "purple"
+                },
+                {
+                  "word": "overburdened shoulders",
+                  "ipa": "/ˌəʊvəˈbɜːdənd ˈʃəʊldəz/",
+                  "meaning": "已经不堪重负的肩膀（常用释义：负担过重的肩膀）",
+                  "level": "purple"
+                },
+                {
+                  "word": "middle-class",
+                  "ipa": "ˌmɪdəl ˈklæs",
+                  "meaning": "n. 中产阶级；adj. 中产阶级的",
+                  "level": "green"
+                },
+                {
+                  "word": "perspective",
+                  "ipa": "/pəˈspektɪv/",
+                  "meaning": "角度；视角（常用释义：观点；透视法；全局观）",
+                  "level": "red"
+                },
+                {
+                  "word": "understandably",
+                  "ipa": "/ˌʌndəˈstændəbli/",
+                  "meaning": "可以理解地（常用释义：情有可原地）",
+                  "level": "green"
+                },
+                {
+                  "word": "exercise",
+                  "ipa": "/ˈeksəsaɪz/",
+                  "meaning": "练习，训练活动（常用释义：练习；运动；运用/行使）",
+                  "level": "red"
+                },
+                {
+                  "word": "financial",
+                  "ipa": "",
+                  "meaning": "adj.金融的，财政的，财务的",
+                  "level": "red"
+                },
+                {
+                  "word": "responsibility",
+                  "ipa": "riˌspɑnsəˈbɪləti",
+                  "meaning": "n.责任,责任心;职责,任务",
+                  "level": "red"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "əkˌsɛləˈreɪʃn",
+                  "meaning": "n. 加速，促进",
+                  "level": "green"
+                },
+                {
+                  "word": "wholesale",
+                  "ipa": "/ˈhəʊlseɪl/",
+                  "meaning": "大规模的；彻底的（常用释义：批发的；大规模的）",
+                  "level": "red"
+                },
+                {
+                  "word": "shift",
+                  "ipa": "",
+                  "meaning": "v.（使）移动，（使）转移；（使）转换到；改变意见/信仰；移位",
+                  "level": "red"
+                },
+                {
+                  "word": "overburdened",
+                  "ipa": "",
+                  "meaning": "adj.不堪重负的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 6,
+              "id": "P3-S6",
+              "text": "The financial fallout has begun, and the political fallout may not be far behind.",
+              "translation": "金融影响已经开始，政治影响可能也不远了。",
+              "vocab": [
+                {
+                  "word": "political fallout",
+                  "ipa": "/pəˈlɪtɪkəl ˈfɔːlaʊt/",
+                  "meaning": "政治后果；政治反弹（常用释义：政治余波）",
+                  "level": "purple"
+                },
+                {
+                  "word": "financial",
+                  "ipa": "",
+                  "meaning": "adj.金融的，财政的，财务的",
+                  "level": "red"
+                },
+                {
+                  "word": "fallout",
+                  "ipa": "/ˈfɔːlaʊt/",
+                  "meaning": "后果；余波；恶果（常用释义：核尘埃；不良后果）",
+                  "level": "red"
+                },
+                {
+                  "word": "political",
+                  "ipa": "pəˈlɪtɪk(ə)l",
+                  "meaning": "adj. 政治的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 31,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
+          "stem": "Today's double-income families are at greater financial risk in that",
+          "stemKeywords": [
+            "Today",
+            "double",
+            "income"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "A",
+          "options": [
+            {
+              "key": "A",
+              "text": "the safety net they used to enjoy has disappeared.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "their chances of being laid off have greatly increased.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "they are more vulnerable to changes in family economics.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "they are deprived of unemployment or disability insurance.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 31 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 32,
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
+          "stem": "As a result of President Bush's reform, retired people may have",
+          "stemKeywords": [
+            "result",
+            "President",
+            "Bush"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "a higher sense of security.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "less secured payments.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "less chance to invest.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "a guaranteed future.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 32 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 33,
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "stem": "According to the author, health-savings plans will",
+          "stemKeywords": [
+            "According",
+            "author",
+            "health"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "D",
+          "options": [
+            {
+              "key": "A",
+              "text": "help reduce the cost of healthcare.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "popularize among the middle class.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "compensate for the reduced pensions.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "increase the families' investment risk.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 33 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 34,
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "stem": "It can be inferred from the last paragraph that",
+          "stemKeywords": [
+            "inferred",
+            "from",
+            "last"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "B",
+          "options": [
+            {
+              "key": "A",
+              "text": "financial risks tend to outweigh political risks.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "the middle class may face greater political challenges.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "financial problems may bring about political problems.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "financial responsibility is an indicator of political status.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 34 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        },
+        {
+          "qIndex": 35,
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "stem": "Which of the following is the best title for this text?",
+          "stemKeywords": [
+            "Which",
+            "following",
+            "best"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Middle Class on the Alert",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "The Middle Class on the Cliff",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "The Middle Class in Conflict",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "The Middle Class in Ruins",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第 35 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text4",
+      "number": 4,
+      "title": "Reading Comprehension Text 4",
+      "chineseTitle": "Text 4 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2007 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 4，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "It never rains but it pours.",
+              "translation": "从来不下雨，但倾盆大雨。",
+              "vocab": [
+                {
+                  "word": "It never rains but it pours.",
+                  "ipa": "/ɪt ˈnevə reɪnz bət ɪt pɔːz/",
+                  "meaning": "祸不单行（常用释义：麻烦接连发生）",
+                  "level": "purple"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "Just as bosses and boards have finally sorted out their worst accounting and compliance troubles, and improved their feeble corporation governance, a new problem threatens to earn them – especially in America—the sort of nasty headlines that inevitably lead to heads rolling in the executive suite: data insecurity.",
+              "translation": "正当老板和董事会最终解决了他们最严重的会计和合规问题，并改善了他们薄弱的公司治理时，一个新问题可能会给他们带来——尤其是在美国——那种令人讨厌的头条新闻，不可避免地会导致高管们头疼：数据不安全。",
+              "vocab": [
+                {
+                  "word": "accounting and compliance troubles",
+                  "ipa": "/əˈkaʊntɪŋ ənd kəmˈplaɪəns ˈtrʌblz/",
+                  "meaning": "会计与合规方面的麻烦（常用释义：财务核算和守法合规问题）",
+                  "level": "purple"
+                },
+                {
+                  "word": "corporation governance",
+                  "ipa": "/ˌkɔːpəˈreɪʃn ˈɡʌvənəns/",
+                  "meaning": "公司治理（常用释义：公司管理和监督机制）",
+                  "level": "purple"
+                },
+                {
+                  "word": "the sort of",
+                  "ipa": "/ðə sɔːt əv/",
+                  "meaning": "那种……；那类……（常用释义：某种类型的）",
+                  "level": "purple"
+                },
+                {
+                  "word": "lead to heads rolling",
+                  "ipa": "/liːd tə hedz ˈrəʊlɪŋ/",
+                  "meaning": "导致有人被撤职/问责（常用释义：导致人头落地式问责）",
+                  "level": "purple"
+                },
+                {
+                  "word": "compliance",
+                  "ipa": "/kəmˈplaɪəns/",
+                  "meaning": "合规；遵守法规（常用释义：服从；顺从）",
+                  "level": "red"
+                },
+                {
+                  "word": "feeble",
+                  "ipa": "/ˈfiːbl/",
+                  "meaning": "薄弱的；无力的（常用释义：虚弱的；无效的）",
+                  "level": "red"
+                },
+                {
+                  "word": "corporation",
+                  "ipa": "ˌkɔːrpəˈreɪʃ(ə)n",
+                  "meaning": "n.公司；法人；市政当局",
+                  "level": "green"
+                },
+                {
+                  "word": "governance",
+                  "ipa": "ˈɡʌvərnəns",
+                  "meaning": "n. 治理；统治方式",
+                  "level": "green"
+                },
+                {
+                  "word": "new",
+                  "ipa": "",
+                  "meaning": "adj.新的",
+                  "level": "green"
+                },
+                {
+                  "word": "earn",
+                  "ipa": "/ɜːn/",
+                  "meaning": "招致；使获得（常用释义：挣钱；赢得）",
+                  "level": "red"
+                },
+                {
+                  "word": "sort",
+                  "ipa": "/sɔːt/",
+                  "meaning": "整理；处理；解决（常用释义：分类；种类）",
+                  "level": "red"
+                },
+                {
+                  "word": "nasty",
+                  "ipa": "/ˈnɑːsti/",
+                  "meaning": "糟糕的；令人不快的（常用释义：恶劣的；难处理的）",
+                  "level": "red"
+                },
+                {
+                  "word": "inevitably",
+                  "ipa": "/ɪnˈevɪtəbli/",
+                  "meaning": "不可避免地（常用释义：必然地）",
+                  "level": "red"
+                },
+                {
+                  "word": "executive",
+                  "ipa": "/ɪɡˈzekjətɪv/",
+                  "meaning": "行政的、行政部门的（常用释义：高级管理人员（n.））",
+                  "level": "red"
+                },
+                {
+                  "word": "suite",
+                  "ipa": "/swiːt/",
+                  "meaning": "高管层；一套房间（常用释义：套房；一套软件）",
                   "level": "red"
                 },
                 {
@@ -1131,354 +3713,138 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "red"
                 },
                 {
-                  "word": "management",
-                  "ipa": "ˈmænəʤmənt",
-                  "meaning": "n.经营,管理;处理,操纵;管理部门",
-                  "level": "red"
+                  "word": "insecurity",
+                  "ipa": "ˌɪnsɪˈkjʊərəti",
+                  "meaning": "n.不安全，无把握",
+                  "level": "green"
                 }
-              ]
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 26,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：历史态度与动因分析",
-          "stem": "In the past, companies were reluctant to disclose data breaches mainly because they",
-          "stemKeywords": [
-            "in the past",
-            "reluctant to disclose",
-            "data breaches"
-          ],
-          "officialAnswer": "D",
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "could not accurately identify the stolen information.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】原文从未说企业是因为无法确认丢失信息才不披露。",
-              "refSentences": [
-                "P2-S1"
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "key": "B",
-              "text": "were not required by technical standards to do so.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】问题讨论的是企业的利益动机（怕丢面子和打官司），而非技术标准缺乏。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "believed consumers would not care about minor leaks.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】原文完全没有提到企业认为消费者不在意。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "feared damage to their public image and legal liabilities.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P2-S1 明确说明是为了 avoid public embarrassment and shareholder lawsuits（避免公众难堪与股东诉讼），完美对应 public image and legal liabilities。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "注意定位句中的 embarrassment 对应 public image，lawsuits 对应 legal liabilities 的高水平同义词替换。",
-            "methodSummary": "细节题寻找词义对仗：embarrassment -> public image damage; lawsuits -> legal liabilities。"
-          }
-        },
-        {
-          "qIndex": 27,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：因果机制定位",
-          "stem": "The mandatory notification laws pioneered by California have",
-          "stemKeywords": [
-            "mandatory notification laws",
-            "California"
-          ],
-          "officialAnswer": "C",
-          "targetSentences": [
-            "P2-S2",
-            "P3-S1"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "eliminated the occurrence of identity theft.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化用词】eliminated（彻底消灭）过于绝对，法律无法根除盗窃。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "reduced the cost of data management for businesses.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】强制披露增加了企业的声誉损失与加密合规成本，而非降低成本。",
-              "refSentences": [
-                "P3-S1",
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "pressured companies into strengthening their security measures.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P3-S1 与 P3-S2 说明强制披露给企业施加声誉成本，促使 organizations are finally investing in robust encryption and security。",
-              "refSentences": [
-                "P3-S1",
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "exempted financial institutions from shareholder scrutiny.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】法律加大了审视（scrutiny），而非免除（exempted）。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "绝对化选项（eliminated）通常是错误干扰；同义转述项（pressured companies into strengthening）往往是正确答案。",
-            "methodSummary": "做题法则：警惕 absolute 极端词，优先关注温和客观的宏观概括选项。"
-          }
-        },
-        {
-          "qIndex": 28,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：深层逻辑与作者态度推导",
-          "stem": "We can learn from Paragraph 3 that disclosure of data breaches",
-          "stemKeywords": [
-            "Paragraph 3",
-            "disclosure of data breaches"
-          ],
-          "officialAnswer": "A",
-          "targetSentences": [
-            "P3-S1",
-            "P3-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "serves as an effective incentive for better corporate governance.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 宏观推断】P3 阐述披露不仅提醒消费者，还通过声誉代价倒逼企业治理与安全技术升级（incentive for better governance）。",
-              "refSentences": [
-                "P3-S1",
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "is strongly resisted by ordinary consumers.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】普通消费者支持知情权，而非抵制。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "has little impact on a company's market reputation.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P3-S1 强调 imposes severe reputational costs，对企业声誉影响极大。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "is regarded as an unnecessary burden by cybersecurity experts.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】专家支持这一制度，并未视其为不必要的负担。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "注意把握作者对 mandatory disclosure 的正面肯定态度，直接排除 B、C、D 等负面扭曲选项。",
-            "methodSummary": "态度定乾坤：作者对一项制度持支持态度时，推断题的正选项必然体现积极建设性价值（effective incentive）。"
-          }
-        },
-        {
-          "qIndex": 29,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：语境反义与正向指代",
-          "stem": "The phrase \"hush up\" (Line 1, Paragraph 2) is closest in meaning to",
-          "stemKeywords": [
-            "hush up",
-            "Line 1, Paragraph 2"
-          ],
-          "officialAnswer": "A",
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "conceal.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】hush up 意为掩盖、秘而不宣，对应 conceal（隐藏，隐瞒）。与下文 However 引导的 mandatory disclosure 形成鲜明反义对比。",
-              "refSentences": [
-                "P2-S1",
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "publicize.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】publicize（宣传，公布）是其反义词。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "investigate.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】investigate（调查）不能表达'为了避免难堪而隐瞒'的含义。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "exaggerate.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】exaggerate（夸大）与语境无关。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "词义题抓上下文逻辑转折词 However。下文讲强制公开（disclosure），上文必是掩盖隐瞒（conceal）。",
-            "methodSummary": "词义题解题大法：寻找句际转折或对比词，确定正反逻辑关系。"
-          }
-        },
-        {
-          "qIndex": 30,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：核心话题与趋势提炼",
-          "stem": "The author's primary purpose in writing this text is to",
-          "stemKeywords": [
-            "primary purpose",
-            "writing this text"
-          ],
-          "officialAnswer": "B",
-          "targetSentences": [
-            "P1-S1",
-            "P2-S2",
-            "P3-S1"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "advise consumers to stop using credit cards.",
-              "isCorrect": false,
-              "distractorType": "范围太窄 / 过度推断",
-              "analysis": "【干扰特征: 过度推断】文章并未建议消费者放弃信用卡。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "discuss the data breach crisis and the impact of disclosure laws.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 中心主旨概括】文章开篇介绍数据泄露危机，随后重点探讨强制披露法律对企业透明度与安全防御的深远推动作用。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S2",
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "criticize the incompetence of state lawmakers.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】作者赞扬了加州等州立法机构的开创性举措，而非批评其无能。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "reveal the technical algorithms used by identity thieves.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】文章未涉及黑客算法的技术细节。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "主旨题要紧扣文章的核心关键词对（data breach + disclosure laws）。",
-            "methodSummary": "主旨题核心：抓首尾段论述焦点与全局高频词群组合。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text3",
-      "number": 3,
-      "title": "Erosion of Middle-Class Economic Security in America",
-      "chineseTitle": "美国中产阶级经济安全感的瓦解与焦虑",
-      "topic": "宏观经济 / 社会阶层",
-      "overview": "本文深刻剖析了当代美国中产阶级家庭面临的前所未有的经济脆弱性。虽然宏观经济数字亮眼，但由于企业将养老金与医疗保险风险全面转嫁给个人、房价与育儿成本飙升以及双职工家庭抗风险冗余丧失，中产家庭正面临'一旦失业或生病即陷入破产'的严峻生存现实。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "宏观统计数据的繁荣掩盖了中产家庭微观层面的严重焦虑与脆弱性。",
-          "logicRole": "宏观表象与微观现实的矛盾对比 (Paradoxical Contrast)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "During the past generation, the American economy has experienced significant growth, yet the economic risks faced by average middle-class families have risen dramatically.",
-              "translation": "在过去的一代人时间里，美国经济经历了显著增长，然而普通中产阶级家庭所面临的经济风险却急剧上升。",
+              "sIndex": 3,
+              "id": "P1-S3",
+              "text": "Left, until now, to odd, low-level IT staff to put right, and seen as a concern only of data-rich industries such as banking, telecoms and air travel, information protection is now high on the boss's agenda in businesses of every variety.",
+              "translation": "到目前为止，信息保护一直是由奇怪的低级别 IT 员工来解决，并且被视为只有银行、电信和航空旅行等数据丰富的行业才关心的问题，而现在，信息保护已成为各种企业老板议程上的重要议题。",
               "vocab": [
                 {
-                  "word": "generation",
-                  "ipa": "ˌdʒenəˈreɪʃ(ə)n",
-                  "meaning": "n.一代人；一代；产生",
+                  "word": "data-rich industries",
+                  "ipa": "/ˈdeɪtə rɪtʃ ˈɪndəstriz/",
+                  "meaning": "数据密集型行业（常用释义：富含数据的行业）",
                   "level": "green"
+                },
+                {
+                  "word": "put right",
+                  "ipa": "/pʊt raɪt/",
+                  "meaning": "纠正；解决；使恢复正常（常用释义：改正）",
+                  "level": "purple"
+                },
+                {
+                  "word": "businesses of every variety",
+                  "ipa": "/ˈbɪznəsɪz əv ˈevri vəˈraɪəti/",
+                  "meaning": "各种各样的企业（常用释义：各类企业）",
+                  "level": "purple"
+                },
+                {
+                  "word": "until now",
+                  "ipa": "/ənˈtɪl naʊ/",
+                  "meaning": "直到现在、迄今为止（常用释义：说明过去持续到现在）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Left",
+                  "ipa": "left",
+                  "meaning": "adj. 左边的；",
+                  "level": "green"
+                },
+                {
+                  "word": "odd",
+                  "ipa": "/ɒd/",
+                  "meaning": "零散的；个别的；低级杂务的（常用释义：奇怪的；单数的）",
+                  "level": "red"
+                },
+                {
+                  "word": "staff",
+                  "ipa": "",
+                  "meaning": "n.工作人员；全体职工；管理人员，行政人员；全体参谋人员；拐杖",
+                  "level": "red"
+                },
+                {
+                  "word": "concern",
+                  "ipa": "kənˈsɜːn",
+                  "meaning": "v./n. 涉及，关心",
+                  "level": "green"
+                },
+                {
+                  "word": "telecoms",
+                  "ipa": "/ˈtelikɒmz/",
+                  "meaning": "电信行业；电信公司（常用释义：telecommunications 的缩写）",
+                  "level": "green"
+                },
+                {
+                  "word": "air",
+                  "ipa": "eə",
+                  "meaning": "n.感觉;印象;神态",
+                  "level": "red"
+                },
+                {
+                  "word": "information",
+                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
+                  "meaning": "n. 信息",
+                  "level": "green"
+                },
+                {
+                  "word": "agenda",
+                  "ipa": "əˈdʒendə",
+                  "meaning": "n. 议程；日常工作事项",
+                  "level": "green"
+                },
+                {
+                  "word": "variety",
+                  "ipa": "vəˈraɪətɪ",
+                  "meaning": "n. 种种，种类",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P1-S4",
+              "text": "Several massive leakages of customer and employee data this year—from organizations as diverse as Time Warner, the American defense contractor Science Applications International Corp and even the University of California, Berkeley—have left managers hurriedly peering into their intricate IT systems and business processes in search of potential vulnerabilities.",
+              "translation": "今年发生的几起大规模客户和员工数据泄露事件——来自时代华纳、美国国防承包商科学应用国际公司，甚至加州大学伯克利分校等不同组织——让管理人员急忙审视其复杂的 IT 系统和业务流程，以寻找潜在的漏洞。",
+              "vocab": [
+                {
+                  "word": "in search of",
+                  "ipa": "/ɪn sɜːtʃ əv/",
+                  "meaning": "寻找……（常用释义：为了寻找）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Several",
+                  "ipa": "ˈsevrəl",
+                  "meaning": "adj. 几个的；各自的 pron. 几个",
+                  "level": "green"
+                },
+                {
+                  "word": "massive",
+                  "ipa": "ˈmæsɪv",
+                  "meaning": "adj.结实的；非常严重的；大量的，大规模的",
+                  "level": "green"
+                },
+                {
+                  "word": "data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
+                  "level": "red"
+                },
+                {
+                  "word": "diverse",
+                  "ipa": "/daɪˈvɜːs/",
+                  "meaning": "不同类型的；多样的（常用释义：多种多样的）",
+                  "level": "red"
                 },
                 {
                   "word": "American",
@@ -1487,61 +3853,218 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "green"
                 },
                 {
-                  "word": "experienced",
-                  "ipa": "/ɪkˈspɪəriənst/",
-                  "meaning": "有经验的；经历过的（常用释义：有经验的；经历，遭受）",
+                  "word": "contractor",
+                  "ipa": "/kənˈtræktə(r)/",
+                  "meaning": "承包商（常用释义：订约人；承包人）",
                   "level": "red"
                 },
                 {
-                  "word": "significant",
-                  "ipa": "sɪɡˈnɪfɪkənt",
-                  "meaning": "adj.重要的；显著的；意味深长的",
+                  "word": "International",
+                  "ipa": "ɪntəˈnæʃən(ə)l",
+                  "meaning": "adj. 国际",
                   "level": "green"
                 },
                 {
-                  "word": "yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "word": "left",
+                  "ipa": "left",
+                  "meaning": "adj. 左边的；",
+                  "level": "green"
+                },
+                {
+                  "word": "intricate",
+                  "ipa": "/ˈɪntrɪkət/",
+                  "meaning": "错综复杂的；精细复杂的（常用释义：复杂的；精巧的）",
                   "level": "red"
                 },
                 {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "word": "search",
+                  "ipa": "sɜːtʃ",
+                  "meaning": "n./v. 搜寻，搜查",
                   "level": "green"
                 },
                 {
-                  "word": "average",
-                  "ipa": "ˈævərɪdʒ",
-                  "meaning": "n. 平均数 adj. 平均的；普通的",
+                  "word": "potential",
+                  "ipa": "/pəˈtenʃəl/",
+                  "meaning": "可能性；潜力（常用释义：潜力；潜在的）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "\"Data is becoming an asset which needs to be guarded as much as any other asset,\" says Haim Mendelson of Stanford University's business school.",
+              "translation": "斯坦福大学商学院的海姆·门德尔森 (Haim Mendelson) 表示：“数据正在成为一种与其他资产一样需要保护的资产。”",
+              "vocab": [
+                {
+                  "word": "Data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
+                  "level": "red"
+                },
+                {
+                  "word": "becoming",
+                  "ipa": "bɪˈkʌmɪŋ",
+                  "meaning": "adj.合适的；适当的；得体的 v.成为（become 的现在分词）",
                   "level": "green"
                 },
                 {
-                  "word": "middle-class",
-                  "ipa": "ˌmɪdəl ˈklæs",
-                  "meaning": "n. 中产阶级；adj. 中产阶级的",
-                  "level": "green"
-                },
-                {
-                  "word": "dramatically",
-                  "ipa": "/drəˈmætɪkli/",
-                  "meaning": "显著地；大幅度地（常用释义：戏剧性地；显著地）",
+                  "word": "asset",
+                  "ipa": "/ˈæset/",
+                  "meaning": "资产；有价值的资源（常用释义：资产；优点）",
                   "level": "red"
                 }
               ],
               "isTopicSentence": true,
-              "isKeyEvidence": true
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
-              "id": "P1-S2",
-              "text": "The traditional security net that once protected working households is rapidly dissolving.",
-              "translation": "曾经保护劳动者家庭的传统安全网正在迅速瓦解。",
+              "id": "P2-S2",
+              "text": "\"The ability to guard customer data is the key to market value, which the board is responsible for on behalf of shareholders\".",
+              "translation": "“保护客户数据的能力是市场价值的关键，这是董事会代表股东负责的”。",
               "vocab": [
                 {
-                  "word": "traditional",
-                  "ipa": "trəˈdɪʃən(ə)l",
-                  "meaning": "adj.传统的",
+                  "word": "ability",
+                  "ipa": "əˈbɪlɪtɪ",
+                  "meaning": "n. 能力；才能",
+                  "level": "green"
+                },
+                {
+                  "word": "guard",
+                  "ipa": "ɡɑːd",
+                  "meaning": "n. 防护装置，警戒",
+                  "level": "green"
+                },
+                {
+                  "word": "data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
+                  "level": "red"
+                },
+                {
+                  "word": "value",
+                  "ipa": "ˈvælju",
+                  "meaning": "n.价格;价值;实用性 v.评价,估价;尊重",
+                  "level": "red"
+                },
+                {
+                  "word": "board",
+                  "ipa": "/bɔːd/",
+                  "meaning": "董事会（常用释义：木板；登机；伙食）",
+                  "level": "red"
+                },
+                {
+                  "word": "responsible",
+                  "ipa": "rɪˈspɒnsəb(ə)l",
+                  "meaning": "adj.负责的；应承担责任的；责任重大的；可靠的",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "Indeed, just as there is the concept of Generally Accepted Accounting Principles (GAAP), perhaps it is time for GASP, Generally Accepted Security Practices, suggested Eli Noam of New York's Columbia Business School.",
+              "translation": "纽约哥伦比亚商学院的伊莱·诺姆 (Eli Noam) 表示，事实上，正如公认会计原则 (GAAP) 的概念一样，也许现在是时候采用 GASP（公认的安全实践）了。",
+              "vocab": [
+                {
+                  "word": "Generally Accepted Security Practices",
+                  "ipa": "/ˈdʒenrəli əkˈseptɪd sɪˈkjʊərəti ˈpræktɪsɪz/",
+                  "meaning": "公认安全实践（常用释义：通用安全准则）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Indeed",
+                  "ipa": "ɪnˈdiːd",
+                  "meaning": "adj. 确实；实在",
+                  "level": "green"
+                },
+                {
+                  "word": "concept",
+                  "ipa": "/ˈkɒnsept/",
+                  "meaning": "概念；理念（常用释义：观念；构想）",
+                  "level": "red"
+                },
+                {
+                  "word": "Generally",
+                  "ipa": "ˈdʒen(ə)rəli",
+                  "meaning": "adv.通常；普遍地；大概",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "Security",
+                  "ipa": "sɪˈkjʊrəti",
+                  "meaning": "n.保护措施；保安部门；安检处；保障；安全；保证金；证",
+                  "level": "green"
+                },
+                {
+                  "word": "New",
+                  "ipa": "",
+                  "meaning": "adj.新的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P2-S4",
+              "text": "\"Setting the proper investment level for security, redundancy, and recovery is a management issue, not a technical one,\" he says.",
+              "translation": "“为安全、冗余和恢复设定适当的投资水平是一个管理问题，而不是技术问题，”他说。",
+              "vocab": [
+                {
+                  "word": "a management issue, not a technical one",
+                  "ipa": "/ə ˈmænɪdʒmənt ˈɪʃuː nɒt ə ˈteknɪkl wʌn/",
+                  "meaning": "是管理问题，而不是技术问题（常用释义：界定问题性质）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Setting",
+                  "ipa": "ˈsetɪŋ",
+                  "meaning": "n.设置",
+                  "level": "red"
+                },
+                {
+                  "word": "proper",
+                  "ipa": "ˈprɔpə(r)",
+                  "meaning": "adj. 恰当的，合适的",
+                  "level": "green"
+                },
+                {
+                  "word": "investment",
+                  "ipa": "/ɪnˈvestmənt/",
+                  "meaning": "公共科研投入、投资（常用释义：投资；投入；投资物）",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
@@ -1551,701 +4074,380 @@ window.ENGLISH_DATA['2007'] = {
                   "level": "green"
                 },
                 {
-                  "word": "net",
-                  "ipa": "net",
-                  "meaning": "n. 网；净额；网络 adj. 净得的 v. 净赚；设法获得",
+                  "word": "redundancy",
+                  "ipa": "/rɪˈdʌndənsi/",
+                  "meaning": "冗余配置；备份机制（常用释义：过剩；裁员）",
+                  "level": "red"
+                },
+                {
+                  "word": "recovery",
+                  "ipa": "/rɪˈkʌvəri/",
+                  "meaning": "恢复；灾后恢复（常用释义：恢复；复原）",
                   "level": "green"
                 },
                 {
-                  "word": "households",
-                  "ipa": "/ˈhaʊshəʊldz/",
-                  "meaning": "家庭；住户（常用释义：一家人；家庭单位）",
-                  "level": "red"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "企业与政府将健康保险与退休养老风险大规模转移给员工个人承担。",
-          "logicRole": "制度性风险转移剖析 (Risk Shift Analysis)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Major corporations have steadily shifted the burden of healthcare and retirement costs onto employees.",
-              "translation": "大企业一直在稳步将医疗保健和退休金成本的重担转嫁给雇员个人。",
-              "vocab": [
-                {
-                  "word": "Major",
-                  "ipa": "/ˈmeɪdʒə/",
-                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
+                  "word": "management",
+                  "ipa": "ˈmænəʤmənt",
+                  "meaning": "n.经营,管理;处理,操纵;管理部门",
                   "level": "red"
                 },
                 {
-                  "word": "steadily",
-                  "ipa": "ˈstedɪli",
-                  "meaning": "adv.稳定地；逐渐地；冷静地；固定地",
-                  "level": "green"
-                },
-                {
-                  "word": "burden",
-                  "ipa": "ˈbɜːrdn",
-                  "meaning": "n.负担；重担 v.烦扰，使负重担",
-                  "level": "green"
-                },
-                {
-                  "word": "retirement",
-                  "ipa": "rɪˈtaɪərmənt",
-                  "meaning": "n. 退休；退职",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Defined-benefit pensions have been replaced by volatile 401(k) plans, leaving workers exposed to financial market swings.",
-              "translation": "固定收益型养老金已被波动剧烈的 401(k) 计划所取代，使普通劳动者完全暴露在金融市场的风浪波动之中。",
-              "vocab": [
-                {
-                  "word": "pensions",
-                  "ipa": "/ˈpenʃənz/",
-                  "meaning": "养老金；退休金（常用释义：退休金；抚恤金）",
+                  "word": "issue",
+                  "ipa": "/ˈɪʃuː/",
+                  "meaning": "问题、议题（常用释义：发行；期号；结果）",
                   "level": "red"
                 },
-                {
-                  "word": "financial",
-                  "ipa": "",
-                  "meaning": "adj.金融的，财政的，财务的",
-                  "level": "red"
-                }
-              ],
-              "isKeyEvidence": true
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "双职工家庭结构成为维持生计的必须，但也彻底耗尽了应对突发危机的后备缓冲。",
-          "logicRole": "家庭结构变迁与抗风险能力透支 (Family Vulnerability)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Today's families require two incomes just to afford basic housing, healthcare, and education.",
-              "translation": "当今的家庭仅为了负担基本住房、医疗和子女教育，就必须依靠夫妻双方的双份收入。",
-              "vocab": [
-                {
-                  "word": "require",
-                  "ipa": "",
-                  "meaning": "v.需要；要求做（某事），规定",
-                  "level": "red"
-                },
-                {
-                  "word": "afford",
-                  "ipa": "/əˈfɔːd/",
-                  "meaning": "负担得起；有条件做（常用释义：买得起；承受得起）",
-                  "level": "red"
-                },
-                {
-                  "word": "basic",
-                  "ipa": "ˈbeɪsɪk",
-                  "meaning": "adj.基本的,基础的",
-                  "level": "red"
-                },
-                {
-                  "word": "housing",
-                  "ipa": "ˈhaʊzɪŋ",
-                  "meaning": "n.房屋；住房供给 v.覆盖",
-                  "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "As a result, if one earner loses a job or suffers a serious illness, the entire household finances collapse into bankruptcy.",
-              "translation": "其结果是，一旦其中一位赚钱养家者失业或罹患重病，整个家庭的财务状况便会瞬间崩塌并陷入破产。",
-              "vocab": [
                 {
                   "word": "one",
                   "ipa": "/wʌn/",
                   "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
                   "level": "red"
-                },
-                {
-                  "word": "entire",
-                  "ipa": "/ɪnˈtaɪə(r)/",
-                  "meaning": "整个的；全部的（常用释义：完整的；全部的）",
-                  "level": "red"
-                },
-                {
-                  "word": "household",
-                  "ipa": "/ˈhaʊshəʊld/",
-                  "meaning": "家庭的；一家人（常用释义：家庭；家庭单位）",
-                  "level": "red"
-                },
-                {
-                  "word": "collapse",
-                  "ipa": "kəˈlæps",
-                  "meaning": "v./n.倒塌;崩溃;(价格)暴跌;倒闭,破产",
-                  "level": "red"
-                },
-                {
-                  "word": "bankruptcy",
-                  "ipa": "ˈbæŋkrʌptsi",
-                  "meaning": "n.破产；道德的沦丧",
-                  "level": "green"
                 }
               ],
-              "isTopicSentence": true,
-              "isKeyEvidence": true
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 31,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：转折对比主旨句定位",
-          "stem": "According to Paragraph 1, the economic situation of American middle-class families is characterized by",
-          "stemKeywords": [
-            "economic situation",
-            "middle-class",
-            "Paragraph 1"
-          ],
-          "officialAnswer": "C",
-          "targetSentences": [
-            "P1-S1",
-            "P1-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "a steady decrease in overall living costs.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】生活成本与风险在上升，而非下降（decrease）。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "improved protection from federal social welfare.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P1-S2 明确说 traditional security net is rapidly dissolving（安全网瓦解），福利保护没有改善。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "sharply increased financial insecurity despite national growth.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P1-S1 明确阐述 economy experienced significant growth, yet economic risks have risen dramatically，完美对应 increased financial insecurity despite growth。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "complete immunity from stock market volatility.",
-              "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】工人完全暴露在市场波动中，绝非完全免疫（complete immunity）。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "首段首句是典型的'让步转折结构'（growth, yet risks risen），答案直接对转折后的核心句进行同义替换。",
-            "methodSummary": "转折之后出考点：抓 yet / but / however 后的核心信息作为解题抓手。"
-          }
-        },
-        {
-          "qIndex": 32,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：因果事实提取",
-          "stem": "Defined-benefit pensions have been replaced by 401(k) plans, which means that",
-          "stemKeywords": [
-            "Defined-benefit pensions",
-            "401(k) plans"
-          ],
-          "officialAnswer": "B",
-          "targetSentences": [
-            "P2-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "corporations bear all investment risks for their employees.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】企业将风险转嫁给员工，而非自己承担全部风险。",
-              "refSentences": [
-                "P2-S1",
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "workers must shoulder the uncertainties of the financial market.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P2-S2 明确指出 leaving workers exposed to financial market swings，即工人必须独自承担金融市场的不确定性与波动风险。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "retirees enjoy guaranteed monthly income regardless of market performance.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】固定收益金（defined-benefit）才保证月收入，但它已被取代，401(k) 并无保证收益。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "government subsidies have significantly expanded.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】文中未提到政府补贴扩大。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "容易混淆 defined-benefit（传统雇主全包制）与 401(k)（员工自负盈亏制）的区别。",
-            "methodSummary": "抓住代词与动词短语含义：leaving workers exposed to... -> shoulder uncertainties。"
-          }
-        },
-        {
-          "qIndex": 33,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：深层脆弱性机制推导",
-          "stem": "Dual-earner families have become more financially vulnerable because",
-          "stemKeywords": [
-            "Dual-earner families",
-            "financially vulnerable"
-          ],
-          "officialAnswer": "D",
-          "targetSentences": [
-            "P3-S1",
-            "P3-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "they spend excessively on luxury consumer goods.",
-              "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】P3-S1 说明两份收入是为了 afford basic housing, healthcare，属于基本生存刚需，非奢侈消费。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "neither partner is willing to work full-time.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】文中没有讨论工作意愿问题。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "their children demand higher educational subsidies.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】没有提到子女要求更高补贴。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "they have exhausted their safety buffer against unforeseen emergencies.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 宏观深度概括】P3 说明双职工全职工作才勉强维持基本开销，一旦有人失业或生病即破产，意味着应对意外风险的安全缓冲已被彻底耗尽（exhausted safety buffer）。",
-              "refSentences": [
-                "P3-S1",
-                "P3-S2"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "容易落入常识性道德指责陷阱（选 A 认为现代人花钱大手大脚），而忽视了原文关于刚性成本上升的论述。",
-            "methodSummary": "推断题严禁代入偏见，以原文论据（basic necessities exhausted cushion）为准绳。"
-          }
-        },
-        {
-          "qIndex": 34,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：风险转移宏观对应",
-          "stem": "The main reason for the growing instability of middle-class households is",
-          "stemKeywords": [
-            "main reason",
-            "growing instability"
-          ],
-          "officialAnswer": "C",
-          "targetSentences": [
-            "P2-S1",
-            "P1-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "a sudden slump in overall national economic output.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P1-S1 明确说明国家经济经历显著增长，并非经济衰退。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "a dramatic decline in the average workforce education level.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】劳动力受教育程度并未下降。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "the systematic shift of economic risks from institutions to individuals.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 中心主旨同义替换】P2-S1 与全篇论述指出 corporations shifted burden onto employees，即体制与企业将经济风险系统性转嫁给个人。",
-              "refSentences": [
-                "P2-S1",
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "the total collapse of the private housing market.",
-              "isCorrect": false,
-              "distractorType": "夸大事实",
-              "analysis": "【干扰特征: 夸大事实】住房成本高昂但并非市场完全崩盘。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "全文的核心论眼就是 the great risk shift（风险大转移）。把握住这个核心论点，因果题迎刃而解。",
-            "methodSummary": "抓住全篇题眼：只要选项体现了'风险由企业转嫁给个人'（shift of risk to individuals），即为正确答案。"
-          }
-        },
-        {
-          "qIndex": 35,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：全篇论述对象与论点精炼",
-          "stem": "Which of the following is the best title for the text?",
-          "stemKeywords": [
-            "best title",
-            "text"
-          ],
-          "officialAnswer": "B",
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1",
-            "P3-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "The Golden Age of American Economic Expansion",
-              "isCorrect": false,
-              "distractorType": "以偏概全 / 正反混淆",
-              "analysis": "【干扰特征: 正反混淆】文章重点是揭露光鲜增长背后的中产阶级脆弱性，而非赞美黄金时代。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "The Great Risk Shift: Middle-Class Insecurity in America",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 中心主旨概括】完美概括全篇论题：美国中产阶级面临的风险大转嫁与经济安全感瓦解危机。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1",
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "How 401(k) Plans Revolutionized Wall Street",
-              "isCorrect": false,
-              "distractorType": "范围太窄",
-              "analysis": "【干扰特征: 范围太窄】401(k) 仅为第2段局部论据，不能代表全篇中产阶级生存困境。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "The Rise and Fall of Dual-Earner Marriages",
-              "isCorrect": false,
-              "distractorType": "范围太窄 / 偏离主题",
-              "analysis": "【干扰特征: 范围太窄】文章探讨的是经济安全机制，而非婚姻制度本身的兴衰。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "避免选择片面提及养老金或婚姻细节的窄化选项（C、D）。",
-            "methodSummary": "主旨题标题选择原则：具备最大包容度（涵盖全篇）且符合作者核心批判立场。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text4",
-      "number": 4,
-      "title": "Questioning Parental Anxiety: The Reality of Modern Childhood",
-      "chineseTitle": "当代父母的焦虑陷阱与育儿真相",
-      "topic": "社会心理 / 家庭教育",
-      "overview": "本文探讨了当代美国家庭普遍弥漫的过度育儿焦虑与'父母恐慌症'。作者通过详实的历史对比与统计数据指出，当代儿童在身体健康、物质生活与受教育机会上其实远超以往任何时代，过度焦虑主要源于媒体对小概率极端事件的轰炸报道与完美育儿文化的绑架，呼吁家长保持理性与从容。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "当代父母普遍陷入前所未有的焦虑，时刻担心孩子在危机四伏的世界中受到伤害。",
-          "logicRole": "普遍社会心理现象切入 (Phenomenon Introduction)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "It is easy to see why modern parents are chronically anxious.",
-              "translation": "现代父母为何长期处于焦虑状态，其原因并不难理解。",
-              "vocab": [
-                {
-                  "word": "modern",
-                  "ipa": "ˈmɒdn",
-                  "meaning": "adj.现代的,近代的",
-                  "level": "red"
-                },
-                {
-                  "word": "anxious",
-                  "ipa": "ˈæŋkʃəs",
-                  "meaning": "adj. 忧虑的，焦急的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Every news broadcast seems to report another rare danger, creating the pervasive sensation that childhood has become perilously fragile.",
-              "translation": "每一档新闻广播似乎都在报道某种罕见的潜在危险，从而制造出一种无所不在的感觉——仿佛童年已变得危险而脆弱不堪。",
-              "vocab": [
-                {
-                  "word": "broadcast",
-                  "ipa": "ˈbrɔːdkæst",
-                  "meaning": "v./n.广播(节目)",
-                  "level": "red"
-                },
-                {
-                  "word": "rare",
-                  "ipa": "rɛr",
-                  "meaning": "adj.稀有的,难得的,珍奇的;稀薄的,稀疏的",
-                  "level": "red"
-                },
-                {
-                  "word": "danger",
-                  "ipa": "",
-                  "meaning": "n.危险",
-                  "level": "green"
-                },
-                {
-                  "word": "pervasive",
-                  "ipa": "",
-                  "meaning": "adj.弥漫的，遍布的",
-                  "level": "red"
-                },
-                {
-                  "word": "sensation",
-                  "ipa": "",
-                  "meaning": "n.感觉，知觉；感觉能力，知觉能力；整体感觉，总体印象；轰动，引起轰动的",
-                  "level": "red"
-                },
-                {
-                  "word": "fragile",
-                  "ipa": "/ˈfrædʒaɪl/",
-                  "meaning": "脆弱的，不稳固的（常用释义：易碎的；虚弱的；不稳定的）",
-                  "level": "red"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "客观数据与历史现实对比：事实上现代儿童拥有历史上最安全健康的成长环境。",
-          "logicRole": "客观数据事实与主观焦虑的强烈对比 (Objective Reality vs Anxiety)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Yet by almost every objective measure, children today are safer, healthier, and better educated than at any point in human history.",
-              "translation": "然而，几乎按照所有客观衡量标准来看，当今的孩子都比人类历史上任何时期的孩子更安全、更健康、受教育程度更高。",
-              "vocab": [
-                {
-                  "word": "Yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
-                  "level": "red"
-                },
-                {
-                  "word": "measure",
-                  "ipa": "/ˈmeʒə/",
-                  "meaning": "衡量；测量。（常用释义：测量；衡量；尺寸为。）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Childhood mortality has plummeted, diseases that once claimed thousands of young lives have been eradicated, and educational resources are more abundant than ever.",
-              "translation": "儿童死亡率已大幅暴跌，曾经夺走数千幼小生命的致命疾病已被彻底根除，教育资源也比以往任何时候都更加充沛丰富。",
-              "vocab": [
-                {
-                  "word": "mortality",
-                  "ipa": "mɔːˈtæləti",
-                  "meaning": "n.死亡率；必死性，终有一死；死亡",
-                  "level": "green"
-                },
-                {
-                  "word": "lives",
-                  "ipa": "/laɪvz/",
-                  "meaning": "生活，人生经历（常用释义：life 的复数；生命；生活；一生）",
-                  "level": "red"
-                },
-                {
-                  "word": "abundant",
-                  "ipa": "əˈbʌndənt",
-                  "meaning": "adj.大量的,丰盛",
-                  "level": "green"
-                }
-              ]
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "媒体对极端孤立事件的放大是推高焦虑的罪魁祸首；父母应学会分辨真实统计概率。",
-          "logicRole": "成因剖析与理性倡导 (Media Distortion & Rational Solution)",
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "The disconnect between perception and reality is largely driven by media sensationalism.",
-              "translation": "大众主观认知与客观现实之间的严重脱节，在很大程度上是由媒体的耸人听闻式炒作所驱动的。",
-              "vocab": [
-                {
-                  "word": "perception",
-                  "ipa": "pərˈsɛpʃn",
-                  "meaning": "n. 感知；观念",
-                  "level": "green"
-                },
-                {
-                  "word": "reality",
-                  "ipa": "/riˈæləti/",
-                  "meaning": "成为现实的事物（常用释义：现实；实际情况）",
-                  "level": "red"
-                },
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                }
-              ],
+              "text": "The mystery is that this should come as a surprise to any boss.",
+              "translation": "神秘的是，这对任何老板来说都应该感到惊讶。",
+              "vocab": [],
               "isTopicSentence": true,
-              "isKeyEvidence": true
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "By understanding actual statistical probabilities rather than emotional headlines, parents can free themselves from baseless panic and raise resilient children.",
-              "translation": "通过理解真实的统计概率而非被情绪化的耸动标题牵着鼻子走，父母们就能将自己从毫无根据的恐慌中解脱出来，培养出坚韧从容的孩子。",
+              "text": "Surely it should be obvious to the dimmest executive that trust, that most valuable of economic assets, is easily destroyed and hugely expensive to restore – and that few things are more likely to destroy trust than a company letting sensitive personal data get into the wrong hands.",
+              "translation": "当然，对于最愚蠢的高管来说，信任是最有价值的经济资产，很容易被破坏，而且恢复起来成本高昂，而且没有什么比公司让敏感的个人数据落入坏人之手更容易破坏信任的了。",
               "vocab": [
                 {
-                  "word": "actual",
-                  "ipa": "ˈæktʃʊəl",
-                  "meaning": "adj. 实际的； 现实的",
+                  "word": "that most valuable of economic assets",
+                  "ipa": "/ðæt məʊst ˈvæljuəbl əv ˌiːkəˈnɒmɪk ˈæsets/",
+                  "meaning": "那种最有价值的经济资产（常用释义：同位语强调结构）",
+                  "level": "purple"
+                },
+                {
+                  "word": "get into the wrong hands",
+                  "ipa": "/ɡet ˈɪntuː ðə rɒŋ hændz/",
+                  "meaning": "落入不该得到的人手中（常用释义：落入坏人手中）",
+                  "level": "purple"
+                },
+                {
+                  "word": "obvious",
+                  "ipa": "/ˈɒbviəs/",
+                  "meaning": "显而易见、因而缺乏创造性的（常用释义：明显的；不言而喻的）",
+                  "level": "red"
+                },
+                {
+                  "word": "executive",
+                  "ipa": "/ɪɡˈzekjətɪv/",
+                  "meaning": "行政的、行政部门的（常用释义：高级管理人员（n.））",
+                  "level": "red"
+                },
+                {
+                  "word": "trust",
+                  "ipa": "",
+                  "meaning": "n.信任；（金钱或财产的）信托",
                   "level": "green"
                 },
                 {
-                  "word": "statistical",
-                  "ipa": "stəˈtɪstɪk(ə)l",
-                  "meaning": "adj.统计的，统计学的",
+                  "word": "valuable",
+                  "ipa": "ˈvæljʊəb(ə)l",
+                  "meaning": "adj. 值钱的，贵",
                   "level": "green"
                 },
                 {
-                  "word": "rather",
-                  "ipa": "ˈrɑːðə;(US)ˈræðər",
-                  "meaning": "adv. 相当，",
+                  "word": "economic",
+                  "ipa": "/ˌiːkəˈnɒmɪk/",
+                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
                   "level": "green"
                 },
                 {
-                  "word": "emotional",
-                  "ipa": "ɪˈmoʊʃən(ə)l",
-                  "meaning": "adj.情感的；情绪的；激动人心的；情绪激动的",
+                  "word": "restore",
+                  "ipa": "/rɪˈstɔː(r)/",
+                  "meaning": "恢复；修复（常用释义：使复原；归还）",
                   "level": "green"
                 },
                 {
-                  "word": "free",
-                  "ipa": "fri",
-                  "meaning": "adj.自由的，免",
+                  "word": "destroy",
+                  "ipa": "",
+                  "meaning": "v.破坏，毁灭；杀死，人道毁灭（受伤、生病或危险的动物）；彻底打败，击溃；",
+                  "level": "red"
+                },
+                {
+                  "word": "company",
+                  "ipa": "ˈkəmpəˌni",
+                  "meaning": "n. 公司 n. 剧团，表演",
                   "level": "green"
                 },
                 {
-                  "word": "baseless",
-                  "ipa": "ˈbeɪsləs",
-                  "meaning": "adj.无根据的；无基础的",
+                  "word": "sensitive",
+                  "ipa": "/ˈsensətɪv/",
+                  "meaning": "敏感的；需保密的（常用释义：敏感的；体贴的）",
+                  "level": "red"
+                },
+                {
+                  "word": "data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "The current state of affairs may have been encouraged—though not justified—by the lack of legal penalty (in America, but not Europe) for data leakage.",
+              "translation": "由于数据泄露缺乏法律惩罚（在美国，但不是欧洲），目前的事态可能受到了鼓励，但并不合理。",
+              "vocab": [
+                {
+                  "word": "the current state of affairs",
+                  "ipa": "/ðə ˈkʌrənt steɪt əv əˈfeəz/",
+                  "meaning": "当前状况；当前局面（常用释义：当前事务状态）",
+                  "level": "purple"
+                },
+                {
+                  "word": "the lack of legal penalty",
+                  "ipa": "/ðə læk əv ˈliːɡl ˈpenəlti/",
+                  "meaning": "缺乏法律处罚（常用释义：法律惩罚不足）",
+                  "level": "purple"
+                },
+                {
+                  "word": "state",
+                  "ipa": "/steɪt/",
+                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
+                  "level": "red"
+                },
+                {
+                  "word": "justified",
+                  "ipa": "ˈdʒʌstɪfaɪd",
+                  "meaning": "adj.有正当理由的,有合理解释的 v.证明……正当",
+                  "level": "red"
+                },
+                {
+                  "word": "legal",
+                  "ipa": "",
+                  "meaning": "adj.合法的",
                   "level": "green"
                 },
                 {
-                  "word": "raise",
-                  "ipa": "reɪz",
-                  "meaning": "v. 举起，提",
+                  "word": "penalty",
+                  "ipa": "/ˈpenəlti/",
+                  "meaning": "处罚；惩罚（常用释义：罚款；刑罚；点球）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
+                  "level": "red"
+                },
+                {
+                  "word": "leakage",
+                  "ipa": "/ˈliːkɪdʒ/",
+                  "meaning": "泄露；外泄（常用释义：漏出；渗漏）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 4,
+              "id": "P3-S4",
+              "text": "Until California recently passed a law, American firms did not have to tell anyone, even the victim, when data went astray.",
+              "translation": "直到加州最近通过一项法律，当数据出错时，美国公司不必告诉任何人，甚至是受害者。",
+              "vocab": [
+                {
+                  "word": "American",
+                  "ipa": "",
+                  "meaning": "adj.美国的 n.美国人",
                   "level": "green"
                 },
                 {
-                  "word": "resilient",
-                  "ipa": "rɪˈzɪliənt",
-                  "meaning": "adj.有复原力的；有弹性的，有回弹力的",
+                  "word": "victim",
+                  "ipa": "ˈvɪktɪm",
+                  "meaning": "n.牺牲品,受害者",
+                  "level": "red"
+                },
+                {
+                  "word": "data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 5,
+              "id": "P3-S5",
+              "text": "That may change fast: lots of proposed data-security legislation is now doing the rounds in Washington, D.C.",
+              "translation": "这种情况可能会很快发生变化：许多拟议的数据安全立法现在正在华盛顿特区流传。",
+              "vocab": [
+                {
+                  "word": "proposed data-security legislation",
+                  "ipa": "/prəˈpəʊzd ˈdeɪtə sɪˈkjʊərəti ˌledʒɪsˈleɪʃn/",
+                  "meaning": "被提出的数据安全立法（常用释义：拟议的数据安全法律）",
+                  "level": "purple"
+                },
+                {
+                  "word": "security legislation",
+                  "ipa": "/sɪˈkjʊərəti ˌledʒɪsˈleɪʃn/",
+                  "meaning": "安全立法（常用释义：安全相关法律）",
+                  "level": "purple"
+                },
+                {
+                  "word": "change",
+                  "ipa": "/tʃeɪndʒ/",
+                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
+                  "level": "red"
+                },
+                {
+                  "word": "proposed",
+                  "ipa": "prəˈpoʊzd",
+                  "meaning": "adj. 被提议的 v.提议",
+                  "level": "green"
+                },
+                {
+                  "word": "legislation",
+                  "ipa": "ˌledʒɪsˈleɪʃ(ə)n",
+                  "meaning": "n.立法；法规",
+                  "level": "green"
+                },
+                {
+                  "word": "Washington",
+                  "ipa": "/ˈwɒʃɪŋtən/",
+                  "meaning": "美国联邦政府（常用释义：华盛顿（城市））",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 6,
+              "id": "P3-S6",
+              "text": "Meanwhile, the theft of information about some 40 million credit-card accounts in America, disclosed on June 17th, overshadowed a hugely important decision a day earlier by America's Federal Trade Commission (FTC) that puts corporate America on notice that regulators will act if firms fail to provide adequate data security.",
+              "translation": "与此同时，6 月 17 日披露的美国约 4000 万个信用卡账户信息被盗事件掩盖了美国联邦贸易委员会 (FTC) 一天前做出的一项极其重要的决定，该决定让美国企业界注意到，如果企业未能提供足够的数据安全，监管机构将采取行动。",
+              "vocab": [
+                {
+                  "word": "Meanwhile",
+                  "ipa": "/ˈmiːnwaɪl/",
+                  "meaning": "与此同时；另一方面（常用释义：在此期间）",
+                  "level": "red"
+                },
+                {
+                  "word": "theft",
+                  "ipa": "θeft",
+                  "meaning": "n. 盗窃案",
+                  "level": "green"
+                },
+                {
+                  "word": "information",
+                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
+                  "meaning": "n. 信息",
+                  "level": "green"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "decision",
+                  "ipa": "/dɪˈsɪʒən/",
+                  "meaning": "法院裁决、判决（常用释义：决定；决心）",
+                  "level": "red"
+                },
+                {
+                  "word": "Federal",
+                  "ipa": "ˈfɛdərəl",
+                  "meaning": "adj. 联邦的，联盟的",
+                  "level": "green"
+                },
+                {
+                  "word": "Trade",
+                  "ipa": "/treɪd/",
+                  "meaning": "交换；用……换……（常用释义：贸易；交易；交换）",
+                  "level": "red"
+                },
+                {
+                  "word": "Commission",
+                  "ipa": "kəˈmɪʃ(ə)n",
+                  "meaning": "n.委员会；佣金；委托 v.委托；委任",
+                  "level": "green"
+                },
+                {
+                  "word": "corporate",
+                  "ipa": "/ˈkɔːpərət/",
+                  "meaning": "公司的；企业的（常用释义：团体的；法人组织的）",
+                  "level": "red"
+                },
+                {
+                  "word": "notice",
+                  "ipa": "ˈnəʊtɪs",
+                  "meaning": "n. 布告，通告；注意 vt.",
+                  "level": "green"
+                },
+                {
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "act",
+                  "ipa": "ækt",
+                  "meaning": "v.表演;举动;起作用 n.行为,法令;一幕",
+                  "level": "red"
+                },
+                {
+                  "word": "provide",
+                  "ipa": "",
+                  "meaning": "v.提供，供给；配备，准备好；规定；供养，提",
+                  "level": "red"
+                },
+                {
+                  "word": "adequate",
+                  "ipa": "/ˈædɪkwət/",
+                  "meaning": "足够的；充分的（常用释义：合格的；尚可的）",
+                  "level": "red"
+                },
+                {
+                  "word": "data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
+                  "level": "red"
+                },
+                {
+                  "word": "security",
+                  "ipa": "sɪˈkjʊrəti",
+                  "meaning": "n.保护措施；保安部门；安检处；保障；安全；保证金；证",
                   "level": "green"
                 }
               ],
-              "isKeyEvidence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -2253,313 +4455,328 @@ window.ENGLISH_DATA['2007'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：转折句事实提取",
-          "stem": "According to Paragraph 2, the actual condition of children today is that they",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
+          "stem": "The statement \"It never rains but it pours\" is used to introduce",
           "stemKeywords": [
-            "Paragraph 2",
-            "actual condition",
-            "children today"
+            "statement",
+            "never",
+            "rains"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
-          "targetSentences": [
-            "P2-S1",
-            "P2-S2"
-          ],
           "options": [
             {
               "key": "A",
-              "text": "face unprecedented physical dangers from new diseases.",
+              "text": "the fierce business competition.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P2-S2 说明疾病已被根除且死亡率暴跌，并非面临前所未有的身体危险。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "suffer from an acute lack of educational resources.",
+              "text": "the feeble boss-board relations.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】P2-S2 强调教育资源 more abundant than ever（比以往更丰富），非匮乏。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
-              "text": "are increasingly resistant to parental guidance.",
+              "text": "the threat from news reports.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】文中未讨论孩子对父母指导的叛逆或抗拒。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "enjoy greater safety and health than previous generations.",
+              "text": "the severity of data leakage.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P2-S1 明确阐述 children today are safer, healthier... than at any point in human history，完美对应 greater safety and health than previous generations。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "容易受第1段父母的主观焦虑带偏。题干问的是 actual condition（实际客观状况），必须定位在第2段客观数据处。",
-            "methodSummary": "审题至关重要：区分 perception（主观感觉）与 actual condition（客观事实）。"
+            "trapAnalysis": "第 36 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 37,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：核心因果定位",
-          "stem": "The main factor causing the gap between parental perception and reality is",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
+          "stem": "According to Paragraph 2, some organizations check their systems to find out",
           "stemKeywords": [
-            "main factor",
-            "gap between perception and reality"
+            "According",
+            "Paragraph",
+            "some"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
-          "targetSentences": [
-            "P3-S1"
-          ],
           "options": [
             {
               "key": "A",
-              "text": "sensational media coverage of rare negative events.",
+              "text": "whether there is any weak point.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P3-S1 明确说明 disconnect between perception and reality is largely driven by media sensationalism，媒体对耸人听闻孤立事件的报道是罪魁祸首。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "the rapid deterioration of public healthcare systems.",
+              "text": "what sort of data has been stolen.",
               "isCorrect": false,
               "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】公共卫生与医疗条件是在进步的，非恶化。",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
-              "text": "a genuine surge in modern childhood crime rates.",
+              "text": "who is responsible for the leakage.",
               "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】犯罪与危险是在降低的，所谓'激增'是媒体制造的主观假象。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S1",
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "parents' refusal to consult statistical experts.",
+              "text": "how the potential spies can be located.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】没有提到父母拒绝咨询专家。",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "选项 C 将媒体渲染的假象等同于客观现实（genuine surge），属于典型的偷换概念。",
-            "methodSummary": "因果题直接抓 driven by / caused by 后的中心宾语（media sensationalism）。"
+            "trapAnalysis": "第 37 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 38,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：建议与解决路径推导",
-          "stem": "The author suggests that in order to overcome parenting panic, parents should",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "stem": "In bringing up the concept of GASP the author is making the point that",
           "stemKeywords": [
-            "suggests",
-            "overcome parenting panic"
+            "bringing",
+            "concept",
+            "GASP"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
-          "targetSentences": [
-            "P3-S2"
-          ],
           "options": [
             {
               "key": "A",
-              "text": "isolate their children completely from the outside world.",
+              "text": "shareholders' interests should be properly attended to.",
               "isCorrect": false,
-              "distractorType": "绝对化 / 过度反应",
-              "analysis": "【干扰特征: 绝对化用词】完全隔离孩子是过度保护的错误做法，与作者提倡的培养 resilient children 相违背。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "rely on objective statistical probabilities rather than emotional news.",
+              "text": "information protection should be given due attention.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P3-S2 明确建议 by understanding actual statistical probabilities rather than emotional headlines, parents can free themselves from panic。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
-              "text": "demand stricter censorship of all media broadcasts.",
+              "text": "businesses should enhance their level of accounting security.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】作者未建议对媒体实施全面审查管制。",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "ignore all medical advice regarding child safety.",
+              "text": "the market value of customer data should be emphasized.",
               "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】作者未主张忽略医疗建议。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "末段结论句通常是解决问题的方法，选项直接对应 rather than 前后的对比结构。",
-            "methodSummary": "抓结论句：understanding actual statistical probabilities rather than emotional headlines -> rely on objective probabilities。"
+            "trapAnalysis": "第 38 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 39,
-          "type": "态度题",
-          "tangchiModel": "唐迟态度题模型：作者对社会现象的理性审视",
-          "stem": "The author's attitude toward the widespread parental anxiety is best described as",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "stem": "According to Paragraph 4, what puzzles the author is that some bosses fail to",
           "stemKeywords": [
-            "author's attitude",
-            "parental anxiety"
+            "According",
+            "Paragraph",
+            "what"
           ],
-          "officialAnswer": "A",
           "targetSentences": [
             "P1-S1",
-            "P2-S1",
-            "P3-S1",
-            "P3-S2"
+            "P2-S1"
           ],
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
-              "text": "critical and rational.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 态度精准提炼】作者一方面理性指出父母焦虑是基于媒体炒作的无稽之谈（critical of baseless panic），另一方面用详实数据呼吁理性面对（rational understanding of probabilities）。",
+              "text": "see the link between trust and data protection.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S1",
-                "P3-S1",
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "indifferent.",
+              "text": "perceive the sensitivity of personal data.",
               "isCorrect": false,
-              "distractorType": "常考错误态度词",
-              "analysis": "【干扰特征: 漠不关心】indifferent（漠不关心）是考研态度题永不选的错误选项。",
-              "refSentences": []
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
+              ]
             },
             {
               "key": "C",
-              "text": "approving.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】作者反对过度焦虑，并未赞同（approving）。",
+              "text": "realize the high cost of data restoration.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "desperate.",
+              "text": "appreciate the economic value of trust.",
               "isCorrect": false,
-              "distractorType": "极端情感词",
-              "analysis": "【干扰特征: 极端情绪】desperate（绝望的）过于极端，作者给出了积极理性的解决方案。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "排除考研态度题三大雷区词：indifferent（冷漠）、biased（偏见）、desperate（绝望）。",
-            "methodSummary": "唐迟态度题黄金法则：学术政论文章作者态度大多为 objective（客观）、critical（审慎批判）或 rational（理性）。"
+            "trapAnalysis": "第 39 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 40,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：核心矛盾与论题归纳",
-          "stem": "The main message the author intends to convey is that",
-          "stemKeywords": [
-            "main message",
-            "convey"
-          ],
-          "officialAnswer": "D",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "stem": "It can be ...（内容已截断，共 28175 字符） ---",
+          "stemKeywords": [],
           "targetSentences": [
-            "P1-S2",
-            "P2-S1",
-            "P3-S2"
+            "P1-S1",
+            "P2-S1"
           ],
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "media sensationalism has made the world far more dangerous than before.",
-              "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "【干扰特征: 曲解文意】媒体炒作让世界'看起来'危险，但世界客观上是更安全的。",
+              "text": "Option A analysis",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
-                "P2-S1",
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "childhood mortality rates will inevitably rise in the future.",
+              "text": "Option B analysis",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】儿童死亡率在大幅下降，不会必然上升。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
-              "text": "modern education has completely failed to prepare children for risks.",
+              "text": "Option C analysis",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】作者未批评教育体系失败。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "excessive parental panic is unwarranted given the actual safety of modern childhood.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 中心主旨概括】全面概括文章主旨：鉴于现代儿童前所未有的实际安全与健康水平，父母过度的恐慌焦虑是完全毫无根据且没有必要的（unwarranted panic）。",
+              "text": "Option D analysis",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1",
-                "P3-S2"
+                "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "主旨选项既要包含 parental panic 又要包含 actual safety of modern childhood 这一组核心反差。",
-            "methodSummary": "主旨题找全要素：现象（parental panic）+ 评价（unwarranted）+ 事实依据（actual safety）。"
+            "trapAnalysis": "第 40 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]

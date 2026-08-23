@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "A history of long and effortless success can be a dreadful handicap, but, if properly handled, it may become a driving force.",
-              "translation": "【考研真题精读标准译文】A history of long and effortless success can be a dreadful handicap, but, if properly handled, it may become a driving force.",
+              "translation": "长期不费吹灰之力取得成功的历史可能是一个可怕的障碍，但如果处理得当，它可能会成为一种推动力。",
               "vocab": [
                 {
                   "word": "handicap",
@@ -48,7 +48,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "When the United States entered just such a glowing period after the end of the Second World War, it had a market eight times larger than any competitor, giving its industries unparalleled economies of scale.",
-              "translation": "【考研真题精读标准译文】When the United States entered just such a glowing period after the end of the Second World War, it had a market eight times larger than any competitor, giving its industries unparalleled economies of scale.",
+              "translation": "当美国在第二次世界大战结束后进入如此辉煌​​的时期时，它的市场规模是任何竞争对手的八倍，使其产业具有无与伦比的规模经济。",
               "vocab": [
                 {
                   "word": "glowing",
@@ -82,7 +82,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Its scientists were the world's best; its workers the most skilled.",
-              "translation": "【考研真题精读标准译文】Its scientists were the world's best; its workers the most skilled.",
+              "translation": "它的科学家是世界上最优秀的；它的工人是最熟练的。",
               "vocab": [
                 {
                   "word": "skilled",
@@ -98,7 +98,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "America and Americans were prosperous beyond the dreams of the Europeans and Asians whose economies the war had destroyed.",
-              "translation": "【考研真题精读标准译文】America and Americans were prosperous beyond the dreams of the Europeans and Asians whose economies the war had destroyed.",
+              "translation": "美国和美国人的繁荣超出了欧洲人和亚洲人的梦想，他们的经济被战争摧毁了。",
               "vocab": [
                 {
                   "word": "prosperous",
@@ -120,7 +120,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "It was inevitable that this primacy should have narrowed as other countries grew richer.",
-              "translation": "【考研真题精读标准译文】It was inevitable that this primacy should have narrowed as other countries grew richer.",
+              "translation": "随着其他国家变得更加富裕，这种主导地位不可避免地会缩小。",
               "vocab": [
                 {
                   "word": "inevitable",
@@ -142,7 +142,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Just as inevitably, the retreat from predominance proved painful.",
-              "translation": "【考研真题精读标准译文】Just as inevitably, the retreat from predominance proved painful.",
+              "translation": "同样不可避免的是，从主导地位的退却也被证明是痛苦的。",
               "vocab": [
                 {
                   "word": "inevitably",
@@ -176,7 +176,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "By the mid-1980s Americans had found themselves at a loss over their fading industrial competitiveness.",
-              "translation": "【考研真题精读标准译文】By the mid-1980s Americans had found themselves at a loss over their fading industrial competitiveness.",
+              "translation": "到 20 世纪 80 年代中期，美国人发现自己因工业竞争力下降而不知所措。",
               "vocab": [
                 {
                   "word": "industrial",
@@ -199,7 +199,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Some huge American industries, such as consumer electronics, had shrunk or vanished in the face of foreign competition.",
-              "translation": "【考研真题精读标准译文】Some huge American industries, such as consumer electronics, had shrunk or vanished in the face of foreign competition.",
+              "translation": "美国一些大型产业，例如消费电子产品，在外国竞争面前已经萎缩或消失。",
               "vocab": [
                 {
                   "word": "American",
@@ -227,7 +227,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "By 1987 there was only one American television maker left, Zenith. (Now there is none: Zenith was bought by South Korea's LG Electronics in July.) Foreign-made cars and textiles were sweeping into the domestic market.",
-              "translation": "【考研真题精读标准译文】By 1987 there was only one American television maker left, Zenith. (Now there is none: Zenith was bought by South Korea's LG Electronics in July.) Foreign-made cars and textiles were sweeping into the domestic market.",
+              "translation": "到 1987 年，美国只剩下一家电视制造商：Zenith。 （现在已经没有了：Zenith 于 7 月份被韩国 LG 电子收购。） 外国制造的汽车和纺织品正在席卷国内市场。",
               "vocab": [
                 {
                   "word": "one",
@@ -273,7 +273,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "America's machine-tool industry was on the ropes.",
-              "translation": "【考研真题精读标准译文】America's machine-tool industry was on the ropes.",
+              "translation": "美国的机床工业陷入困境。",
               "vocab": [
                 {
                   "word": "industry",
@@ -289,7 +289,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "For a while it looked as though the making of semiconductors, which America had invented and which sat at the heart of the new computer age, was going to be the next casualty.",
-              "translation": "【考研真题精读标准译文】For a while it looked as though the making of semiconductors, which America had invented and which sat at the heart of the new computer age, was going to be the next casualty.",
+              "translation": "有一段时间，美国发明并处于新计算机时代核心地位的半导体制造似乎将成为下一个受害者。",
               "vocab": [
                 {
                   "word": "For",
@@ -317,7 +317,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "All of this caused a crisis of confidence.",
-              "translation": "【考研真题精读标准译文】All of this caused a crisis of confidence.",
+              "translation": "所有这些都引发了信任危机。",
               "vocab": [
                 {
                   "word": "crisis",
@@ -333,7 +333,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Americans stopped taking prosperity for granted.",
-              "translation": "【考研真题精读标准译文】Americans stopped taking prosperity for granted.",
+              "translation": "美国人不再认为繁荣是理所当然的。",
               "vocab": [
                 {
                   "word": "prosperity",
@@ -355,7 +355,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "They began to believe that their way of doing business was failing, and that their incomes would therefore shortly begin to fall as well.",
-              "translation": "【考研真题精读标准译文】They began to believe that their way of doing business was failing, and that their incomes would therefore shortly begin to fall as well.",
+              "translation": "他们开始相信他们的经营方式正在失败，因此他们的收入很快也会开始下降。",
               "vocab": [
                 {
                   "word": "shortly",
@@ -378,7 +378,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The mid-1980s brought one inquiry after another into the causes of America's industrial decline.",
-              "translation": "【考研真题精读标准译文】The mid-1980s brought one inquiry after another into the causes of America's industrial decline.",
+              "translation": "20 世纪 80 年代中期，人们对美国工业衰退的原因进行了一次又一次的调查。",
               "vocab": [
                 {
                   "word": "one",
@@ -412,7 +412,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Their sometimes sensational findings were filled with warnings about the growing competition from overseas.",
-              "translation": "【考研真题精读标准译文】Their sometimes sensational findings were filled with warnings about the growing competition from overseas.",
+              "translation": "他们有时令人震惊的发现充满了对来自海外日益激烈的竞争的警告。",
               "vocab": [
                 {
                   "word": "about",
@@ -440,7 +440,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "How things have changed!",
-              "translation": "【考研真题精读标准译文】How things have changed!",
+              "translation": "事情发生了多么大的变化啊！",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -449,7 +449,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "In 1995 the United States can look back on five years of solid growth while Japan has been struggling.",
-              "translation": "【考研真题精读标准译文】In 1995 the United States can look back on five years of solid growth while Japan has been struggling.",
+              "translation": "1995年，美国可以实现五年的稳健增长，而日本却一直在苦苦挣扎。",
               "vocab": [
                 {
                   "word": "solid",
@@ -471,7 +471,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Few Americans attribute this solely to such obvious causes as a devalued dollar or the turning of the business cycle.",
-              "translation": "【考研真题精读标准译文】Few Americans attribute this solely to such obvious causes as a devalued dollar or the turning of the business cycle.",
+              "translation": "很少有美国人将这仅仅归因于美元贬值或商业周期转变等明显原因。",
               "vocab": [
                 {
                   "word": "attribute",
@@ -511,7 +511,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Self-doubt has yielded to blind pride.",
-              "translation": "【考研真题精读标准译文】Self-doubt has yielded to blind pride.",
+              "translation": "自我怀疑已经屈服于盲目的骄傲。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -520,7 +520,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "\"American industry has changed its structure, has gone on a diet, and has learnt to be more quick-witted,\" according to Richard Cavanaugh, executive dean of Harvard's Kennedy School of Government.",
-              "translation": "【考研真题精读标准译文】\"American industry has changed its structure, has gone on a diet, and has learnt to be more quick-witted,\" according to Richard Cavanaugh, executive dean of Harvard's Kennedy School of Government.",
+              "translation": "哈佛大学肯尼迪政府学院执行院长理查德·卡瓦诺表示：“美国工业已经改变了结构，开始节食，并学会了变得更加机智。”",
               "vocab": [
                 {
                   "word": "according to",
@@ -578,7 +578,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "\"It makes me proud to be an American just to see how our businesses are improving their productivity,\" says Stephen Moore of the Cato Institute, a think-tank in Washington, DC.",
-              "translation": "【考研真题精读标准译文】\"It makes me proud to be an American just to see how our businesses are improving their productivity,\" says Stephen Moore of the Cato Institute, a think-tank in Washington, DC.",
+              "translation": "华盛顿特区智库卡托研究所的史蒂芬·摩尔表示：“作为一名美国人，看到我们的企业如何提高生产力，我就感到很自豪。”",
               "vocab": [
                 {
                   "word": "American",
@@ -612,7 +612,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "And William Sahlman of the Harvard Business School believes that people will look back on this period as \"a golden age of business management in the United States.\"",
-              "translation": "【考研真题精读标准译文】And William Sahlman of the Harvard Business School believes that people will look back on this period as \"a golden age of business management in the United States.\"",
+              "translation": "而哈佛商学院的威廉·萨尔曼则认为，人们回顾这一时期将是“美国企业管理的黄金时代”。",
               "vocab": [
                 {
                   "word": "will",
@@ -677,7 +677,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "the war had destroyed the economies of most potential competitors",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -754,7 +754,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "auto industry had lost part of its domestic market",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -798,7 +798,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "Intense competition may contribute to economic progress.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -853,7 +853,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "turning of the business cycle",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -917,7 +917,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Being a man has always been dangerous.",
-              "translation": "【考研真题精读标准译文】Being a man has always been dangerous.",
+              "translation": "作为一个男人一直都是危险的。",
               "vocab": [
                 {
                   "word": "Being",
@@ -933,7 +933,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "There are about 105 males born for every 100 females, but this ratio drops to near balance at the age of maturity, and among 70-year-olds there are twice as many women as men.",
-              "translation": "【考研真题精读标准译文】There are about 105 males born for every 100 females, but this ratio drops to near balance at the age of maturity, and among 70-year-olds there are twice as many women as men.",
+              "translation": "大约每 100 名女性出生就有 105 名男性，但这一比例在成熟时下降到接近平衡，并且在 70 岁的老年人中，女性数量是男性的两倍。",
               "vocab": [
                 {
                   "word": "about",
@@ -967,7 +967,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "But the great universal of male mortality is being changed.",
-              "translation": "【考研真题精读标准译文】But the great universal of male mortality is being changed.",
+              "translation": "但男性死亡率的普遍现象正在发生改变。",
               "vocab": [
                 {
                   "word": "universal",
@@ -995,7 +995,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Now, boy babies survive almost as well as girls do.",
-              "translation": "【考研真题精读标准译文】Now, boy babies survive almost as well as girls do.",
+              "translation": "现在，男婴的生存率几乎和女婴一样好。",
               "vocab": [
                 {
                   "word": "survive",
@@ -1011,7 +1011,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "This means that, for the first time, there will be an excess of boys in those crucial years when they are searching for a mate.",
-              "translation": "【考研真题精读标准译文】This means that, for the first time, there will be an excess of boys in those crucial years when they are searching for a mate.",
+              "translation": "这意味着，在寻找伴侣的关键年份，男孩数量将首次出现过剩。",
               "vocab": [
                 {
                   "word": "for",
@@ -1045,7 +1045,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "More importantly, another chance for natural selection has been removed.",
-              "translation": "【考研真题精读标准译文】More importantly, another chance for natural selection has been removed.",
+              "translation": "更重要的是，自然选择的另一个机会被消除了。",
               "vocab": [
                 {
                   "word": "for",
@@ -1061,7 +1061,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Fifty years ago, the chance of a baby (particularly a boy baby) surviving depended on its weight.",
-              "translation": "【考研真题精读标准译文】Fifty years ago, the chance of a baby (particularly a boy baby) surviving depended on its weight.",
+              "translation": "五十年前，婴儿（尤其是男婴）的生存机会取决于其体重。",
               "vocab": [
                 {
                   "word": "particularly",
@@ -1083,7 +1083,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "A kilogram too light or too heavy meant almost certain death.",
-              "translation": "【考研真题精读标准译文】A kilogram too light or too heavy meant almost certain death.",
+              "translation": "太轻或太重一公斤几乎都意味着死亡。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1099,7 +1099,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Today it makes almost no difference.",
-              "translation": "【考研真题精读标准译文】Today it makes almost no difference.",
+              "translation": "今天，这几乎没有什么区别。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -1108,7 +1108,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Since much of the variation is due to genes, one more agent of evolution has gone.",
-              "translation": "【考研真题精读标准译文】Since much of the variation is due to genes, one more agent of evolution has gone.",
+              "translation": "由于大部分变异是由基因造成的，因此又一个进化的推动者消失了。",
               "vocab": [
                 {
                   "word": "Since",
@@ -1148,7 +1148,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "There is another way to commit evolutionary suicide: stay alive, but have fewer children.",
-              "translation": "【考研真题精读标准译文】There is another way to commit evolutionary suicide: stay alive, but have fewer children.",
+              "translation": "进化自杀还有另一种方式：保持活力，但少生孩子。",
               "vocab": [
                 {
                   "word": "commit",
@@ -1176,7 +1176,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Few people are as fertile as in the past.",
-              "translation": "【考研真题精读标准译文】Few people are as fertile as in the past.",
+              "translation": "很少有人像过去一样生育能力强。",
               "vocab": [
                 {
                   "word": "fertile",
@@ -1192,7 +1192,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Except in some religious communities, very few women have 15 children.",
-              "translation": "【考研真题精读标准译文】Except in some religious communities, very few women have 15 children.",
+              "translation": "除了一些宗教团体外，很少有女性拥有 15 个孩子。",
               "vocab": [
                 {
                   "word": "Except",
@@ -1220,7 +1220,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Nowadays the number of births, like the age of death, has become average.",
-              "translation": "【考研真题精读标准译文】Nowadays the number of births, like the age of death, has become average.",
+              "translation": "如今，出生人数和死亡年龄一样，已趋于平均。",
               "vocab": [
                 {
                   "word": "average",
@@ -1236,7 +1236,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Most of us have roughly the same number of offspring.",
-              "translation": "【考研真题精读标准译文】Most of us have roughly the same number of offspring.",
+              "translation": "我们大多数人的后代数量大致相同。",
               "vocab": [
                 {
                   "word": "roughly",
@@ -1258,7 +1258,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "Again, differences between people and the opportunity for natural selection to take advantage of it have diminished.",
-              "translation": "【考研真题精读标准译文】Again, differences between people and the opportunity for natural selection to take advantage of it have diminished.",
+              "translation": "人与人之间的差异以及自然选择利用这种差异的机会再次减少。",
               "vocab": [
                 {
                   "word": "for",
@@ -1293,7 +1293,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "India shows what is happening.",
-              "translation": "【考研真题精读标准译文】India shows what is happening.",
+              "translation": "印度展示了正在发生的事情。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -1302,7 +1302,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The country offers wealth for a few in the great cities and poverty for the remaining tribal peoples.",
-              "translation": "【考研真题精读标准译文】The country offers wealth for a few in the great cities and poverty for the remaining tribal peoples.",
+              "translation": "这个国家为大城市中的少数人提供了财富，却为剩下的部落人民提供了贫困。",
               "vocab": [
                 {
                   "word": "wealth",
@@ -1330,7 +1330,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "The grand mediocrity of today—everyone being the same in survival and number of offspring—means that natural selection has lost 80% of its power in upper-middle-class India compared to the tribes.",
-              "translation": "【考研真题精读标准译文】The grand mediocrity of today—everyone being the same in survival and number of offspring—means that natural selection has lost 80% of its power in upper-middle-class India compared to the tribes.",
+              "translation": "今天的巨大平庸——每个人的生存和后代数量都一样——意味着与部落相比，自然选择在印度中上层阶级中失去了 80% 的力量。",
               "vocab": [
                 {
                   "word": "mediocrity",
@@ -1376,7 +1376,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "For us, this means that evolution is over; the biological Utopia has arrived.",
-              "translation": "【考研真题精读标准译文】For us, this means that evolution is over; the biological Utopia has arrived.",
+              "translation": "对我们来说，这意味着进化已经结束；生物乌托邦已经到来。",
               "vocab": [
                 {
                   "word": "For",
@@ -1404,7 +1404,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Strangely, it has involved little physical change.",
-              "translation": "【考研真题精读标准译文】Strangely, it has involved little physical change.",
+              "translation": "奇怪的是，它几乎没有带来任何物理变化。",
               "vocab": [
                 {
                   "word": "involved",
@@ -1432,7 +1432,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "No other species fills so many places in nature.",
-              "translation": "【考研真题精读标准译文】No other species fills so many places in nature.",
+              "translation": "没有其他物种占据了自然界如此多的地方。",
               "vocab": [
                 {
                   "word": "species",
@@ -1454,7 +1454,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "But in the past 100,000 years—even the past 100 years—our lives have been transformed but our bodies have not.",
-              "translation": "【考研真题精读标准译文】But in the past 100,000 years—even the past 100 years—our lives have been transformed but our bodies have not.",
+              "translation": "但在过去的十万年里，甚至在过去的一百年里，我们的生活已经发生了改变，但我们的身体却没有。",
               "vocab": [
                 {
                   "word": "lives",
@@ -1470,7 +1470,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "We did not evolve, because machines and society did it for us.",
-              "translation": "【考研真题精读标准译文】We did not evolve, because machines and society did it for us.",
+              "translation": "我们没有进化，因为机器和社会为我们进化了。",
               "vocab": [
                 {
                   "word": "evolve",
@@ -1498,7 +1498,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "Darwin had a phrase to describe those ignorant of evolution: they \"look at an organic being as a savage looks at a ship, as at something wholly beyond his comprehension.\" No doubt we will remember a 20th century way of life beyond comprehension for its ugliness.",
-              "translation": "【考研真题精读标准译文】Darwin had a phrase to describe those ignorant of evolution: they \"look at an organic being as a savage looks at a ship, as at something wholly beyond his comprehension.\" No doubt we will remember a 20th century way of life beyond comprehension for its ugliness.",
+              "translation": "达尔文曾用一句话来描述那些对进化论一无所知的人：他们“看待有机生物就像野蛮人看待一艘船，就像看待完全超出他理解范围的事物”。毫无疑问，我们会记住20世纪的生活方式，因为它的丑陋是无法理解的。",
               "vocab": [
                 {
                   "word": "phrase",
@@ -1586,7 +1586,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 10,
               "id": "P3-S10",
               "text": "But however amazed our descendants may be at how far from Utopia we were, they will look just like us.",
-              "translation": "【考研真题精读标准译文】But however amazed our descendants may be at how far from Utopia we were, they will look just like us.",
+              "translation": "但是，无论我们的后代对我们离乌托邦有多远感到惊讶，他们看起来都会像我们一样。",
               "vocab": [
                 {
                   "word": "however",
@@ -1657,7 +1657,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "A lower survival rate.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1712,7 +1712,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "Natural selection hardly works among the rich and the poor.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1767,7 +1767,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "life has been improved by technological advance",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1866,7 +1866,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "Human Evolution Going Nowhere.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1897,7 +1897,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "When a new movement in art attains a certain fashion, it is advisable to find out what its advocates are aiming at, for, however farfetched and unreasonable their principles may seem today, it is possible that in years to come they may be regarded as normal. With regard to Futurist poetry, however, the case is rather difficult, for whatever Futurist poetry may be—even admitting that the theory on which it is based may be right—it can hardly be classed as Literature.",
-              "translation": "【考研真题精读标准译文】When a new movement in art attains a certain fashion, it is advisable to find out what its advocates are aiming at, for, however farfetched and unreasonable their principles may seem today, it is possible that in years to come they may be regarded as normal. With regard to Futurist poetry, however, the case is rather difficult, for whatever Futurist poetry may be—even admitting that the theory on which it is based may be right—it can hardly be classed as Literature.",
+              "translation": "当一场新的艺术运动达到某种时尚时，最好找出它的倡导者的目标是什么，因为无论他们的原则在今天看起来多么牵强和不合理，在未来的岁月里它们可能会被认为是正常的。然而，就未来主义诗歌而言，情况就相当困难了，因为无论未来主义诗歌是什么——即使承认它所依据的理论可能是正确的——它也很难被归类为文学。",
               "vocab": [
                 {
                   "word": "new",
@@ -1991,7 +1991,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "This, in brief, is what the Futurist says: for a century, past conditions of life have been conditionally speeding up, till now we live in a world of noise and violence and speed.",
-              "translation": "【考研真题精读标准译文】This, in brief, is what the Futurist says: for a century, past conditions of life have been conditionally speeding up, till now we live in a world of noise and violence and speed.",
+              "translation": "简而言之，这就是未来主义者所说的：一个世纪以来，过去的生活条件一直在有条件地加速，直到现在我们生活在一个充满噪音、暴力和速度的世界中。",
               "vocab": [
                 {
                   "word": "brief",
@@ -2025,7 +2025,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Consequently, our feelings, thoughts and emotions have undergone a corresponding change.",
-              "translation": "【考研真题精读标准译文】Consequently, our feelings, thoughts and emotions have undergone a corresponding change.",
+              "translation": "因此，我们的感觉、思想和情绪也发生了相应的变化。",
               "vocab": [
                 {
                   "word": "change",
@@ -2041,7 +2041,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "This speeding up of life, says the Futurist, requires a new form of expression.",
-              "translation": "【考研真题精读标准译文】This speeding up of life, says the Futurist, requires a new form of expression.",
+              "translation": "未来主义者说，生活的加速需要一种新的表达形式。",
               "vocab": [
                 {
                   "word": "new",
@@ -2076,7 +2076,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "We must speed up our literature too, if we want to interpret modern stress.",
-              "translation": "【考研真题精读标准译文】We must speed up our literature too, if we want to interpret modern stress.",
+              "translation": "如果我们想解释现代压力，我们也必须加快我们的文学步伐。",
               "vocab": [
                 {
                   "word": "speed",
@@ -2116,7 +2116,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "We must pour out a large stream of essential words, unhampered by stops, or qualifying adjectives, or finite verbs.",
-              "translation": "【考研真题精读标准译文】We must pour out a large stream of essential words, unhampered by stops, or qualifying adjectives, or finite verbs.",
+              "translation": "我们必须倾注大量基本词汇，不受停顿、限定形容词或限定动词的阻碍。",
               "vocab": [
                 {
                   "word": "stream",
@@ -2144,7 +2144,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Instead of describing sounds we must make up words that imitate them; we must use many sizes of type and different colored inks on the same page, and shorten or lengthen words at will.",
-              "translation": "【考研真题精读标准译文】Instead of describing sounds we must make up words that imitate them; we must use many sizes of type and different colored inks on the same page, and shorten or lengthen words at will.",
+              "translation": "我们必须创造模仿声音的词语，而不是描述声音。我们必须在同一页上使用多种尺寸的字体和不同颜色的墨水，并随意缩短或加长单词。",
               "vocab": [
                 {
                   "word": "make up",
@@ -2184,7 +2184,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Certainly their descriptions of battles are confusing.",
-              "translation": "【考研真题精读标准译文】Certainly their descriptions of battles are confusing.",
+              "translation": "当然，他们对战斗的描述令人困惑。",
               "vocab": [
                 {
                   "word": "confusing",
@@ -2207,7 +2207,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "But it is a little upsetting to read in the explanatory notes that a certain line describes a fight between a Turkish and a Bulgarian officer on a bridge off which they both fall into the river—and then to find that the line consists of the noise of their falling and the weights of the officers: \"Pluff!",
-              "translation": "【考研真题精读标准译文】But it is a little upsetting to read in the explanatory notes that a certain line describes a fight between a Turkish and a Bulgarian officer on a bridge off which they both fall into the river—and then to find that the line consists of the noise of their falling and the weights of the officers: \"Pluff!",
+              "translation": "但读到注释中的某句台词，描述了一名土耳其军官和一名保加利亚军官在一座桥上打斗，两人双双坠入河中，然后发现这句台词由他们坠落的噪音和军官的重量组成，这有点令人不安：“噗！",
               "vocab": [
                 {
                   "word": "officer",
@@ -2229,7 +2229,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Pluff!",
-              "translation": "【考研真题精读标准译文】Pluff!",
+              "translation": "噗！",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": true
@@ -2238,7 +2238,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "A hundred and eighty-five kilograms.\" This, though it fulfills the laws and requirements of Futurist poetry, can hardly be classed as Literature.",
-              "translation": "【考研真题精读标准译文】A hundred and eighty-five kilograms.\" This, though it fulfills the laws and requirements of Futurist poetry, can hardly be classed as Literature.",
+              "translation": "一百八十五公斤。”这虽然符合未来主义诗歌的规律和要求，但很难被归类为文学。",
               "vocab": [
                 {
                   "word": "Literature",
@@ -2254,7 +2254,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "All the same, no thinking man can refuse to accept their first proposition: that a great change in our emotional life calls for a change of expression.",
-              "translation": "【考研真题精读标准译文】All the same, no thinking man can refuse to accept their first proposition: that a great change in our emotional life calls for a change of expression.",
+              "translation": "尽管如此，没有一个有思想的人不能拒绝接受他们的第一个命题：我们情感生活的巨大变化需要改变表达方式。",
               "vocab": [
                 {
                   "word": "accept",
@@ -2294,7 +2294,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The whole question is really this: have we essentially changed?",
-              "translation": "【考研真题精读标准译文】The whole question is really this: have we essentially changed?",
+              "translation": "整个问题实际上是这样的：我们本质上改变了吗？",
               "vocab": [
                 {
                   "word": "question",
@@ -2348,7 +2348,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "a review of Futurist poetry",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2403,7 +2403,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "determine its purposes",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2491,7 +2491,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "develop new modes of expression",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2568,7 +2568,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "more of a transient phenomenon than literature",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2599,7 +2599,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Aimlessness has hardly been typical of postwar Japan whose productivity and social harmony are the envy of the United States and Europe.",
-              "translation": "【考研真题精读标准译文】Aimlessness has hardly been typical of postwar Japan whose productivity and social harmony are the envy of the United States and Europe.",
+              "translation": "漫无目的并不是战后日本的典型特征，日本的生产力和社会和谐令美国和欧洲羡慕不已。",
               "vocab": [
                 {
                   "word": "typical",
@@ -2639,7 +2639,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But increasingly the Japanese are seeing a decline of the traditional work-moral values.",
-              "translation": "【考研真题精读标准译文】But increasingly the Japanese are seeing a decline of the traditional work-moral values.",
+              "translation": "但日本人越来越看到传统工作道德价值观的衰落。",
               "vocab": [
                 {
                   "word": "decline",
@@ -2661,7 +2661,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Ten years ago young people were hardworking and saw their jobs as their primary reason for being, but now Japan has largely fulfilled its economic needs, and young people don't know where they should go next.",
-              "translation": "【考研真题精读标准译文】Ten years ago young people were hardworking and saw their jobs as their primary reason for being, but now Japan has largely fulfilled its economic needs, and young people don't know where they should go next.",
+              "translation": "十年前，年轻人努力工作，把工作视为生存的首要原因，但现在日本已经基本满足了经济需求，年轻人不知道下一步该去哪里。",
               "vocab": [
                 {
                   "word": "primary",
@@ -2701,7 +2701,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The coming of age of the postwar baby boom and an entry of women into the male-dominated job market have limited the opportunities of teenagers who are already questioning the heavy personal sacrifices involved in climbing Japan's rigid social ladder to good schools and jobs.",
-              "translation": "【考研真题精读标准译文】The coming of age of the postwar baby boom and an entry of women into the male-dominated job market have limited the opportunities of teenagers who are already questioning the heavy personal sacrifices involved in climbing Japan's rigid social ladder to good schools and jobs.",
+              "translation": "战后婴儿潮的到来以及女性进入男性主导的就业市场限制了青少年的机会，他们已经开始质疑攀登日本严格的社会阶梯以获得好学校和工作所需的巨大个人牺牲。",
               "vocab": [
                 {
                   "word": "postwar",
@@ -2754,7 +2754,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "In a recent survey, it was found that only 24.5 percent of Japanese students were fully satisfied with school life, compared with 67.2 percent of students in the United States.",
-              "translation": "【考研真题精读标准译文】In a recent survey, it was found that only 24.5 percent of Japanese students were fully satisfied with school life, compared with 67.2 percent of students in the United States.",
+              "translation": "最近的一项调查发现，只有 24.5% 的日本学生对学校生活完全满意，而美国学生的这一比例为 67.2%。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -2763,7 +2763,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "In addition, far more Japanese workers expressed dissatisfaction with their jobs than did their counterparts in the 10 other countries surveyed.",
-              "translation": "【考研真题精读标准译文】In addition, far more Japanese workers expressed dissatisfaction with their jobs than did their counterparts in the 10 other countries surveyed.",
+              "translation": "此外，对工作表示不满的日本工人比其他 10 个接受调查的国家的工人要多得多。",
               "vocab": [
                 {
                   "word": "In addition",
@@ -2797,7 +2797,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "While often praised by foreigners for its emphasis on the basics, Japanese education tends to stress test taking and mechanical learning over creativity and self-expression.",
-              "translation": "【考研真题精读标准译文】While often praised by foreigners for its emphasis on the basics, Japanese education tends to stress test taking and mechanical learning over creativity and self-expression.",
+              "translation": "虽然日本教育因其对基础知识的重视而经常受到外国人的称赞，但日本教育往往强调应试和机械学习，而不是创造力和自我表达。",
               "vocab": [
                 {
                   "word": "for",
@@ -2831,7 +2831,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "\"Those things that do not show up in the test scores—personality, ability, courage or humanity—are completely ignored,\" says Toshiki Kaifu, chairman of the ruling Liberal Democratic Party's education committee.",
-              "translation": "【考研真题精读标准译文】\"Those things that do not show up in the test scores—personality, ability, courage or humanity—are completely ignored,\" says Toshiki Kaifu, chairman of the ruling Liberal Democratic Party's education committee.",
+              "translation": "执政的自民党教育委员会主席海部俊树表示，“那些没有在考试成绩中体现出来的东西——个性、能力、勇气或人性——都被完全忽视了。”",
               "vocab": [
                 {
                   "word": "ability",
@@ -2890,7 +2890,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "\"Frustration against this kind of thing leads kids to drop out and run wild.\" Last year Japan experienced 2,125 incidents of school violence, including 929 assaults on teachers.",
-              "translation": "【考研真题精读标准译文】\"Frustration against this kind of thing leads kids to drop out and run wild.\" Last year Japan experienced 2,125 incidents of school violence, including 929 assaults on teachers.",
+              "translation": "“对这种事情的沮丧会导致孩子们辍学并疯狂。”去年日本发生了2125起校园暴力事件，其中袭击教师事件929起。",
               "vocab": [
                 {
                   "word": "Frustration",
@@ -2930,7 +2930,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Amid the outcry, many conservative leaders are seeking a return to the pre-war emphasis on moral education.",
-              "translation": "【考研真题精读标准译文】Amid the outcry, many conservative leaders are seeking a return to the pre-war emphasis on moral education.",
+              "translation": "在强烈抗议中，许多保守派领导人正在寻求回归战前对道德教育的重视。",
               "vocab": [
                 {
                   "word": "conservative",
@@ -2964,7 +2964,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Last year Mitsuo Setoyama, who was then education minister, raised eyebrows when he argued that liberal reforms introduced by the American occupation authorities after World War II had weakened the \"Japanese morality of respect for parents.\" But that may have more to do with Japanese life-styles.",
-              "translation": "【考研真题精读标准译文】Last year Mitsuo Setoyama, who was then education minister, raised eyebrows when he argued that liberal reforms introduced by the American occupation authorities after World War II had weakened the \"Japanese morality of respect for parents.\" But that may have more to do with Japanese life-styles.",
+              "translation": "去年，时任文部科学省大臣的濑户山光雄辩称，二战后美国占领当局推行的自由主义改革削弱了“日本尊重父母的道德”，这引起了人们的关注。但这可能与日本的生活方式有更多关系。",
               "vocab": [
                 {
                   "word": "minister",
@@ -3010,7 +3010,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "\"In Japan,\" says educator Yoko Muro, \"it's never a question of whether you enjoy your job and your life, but only how much you can endure.\" With economic growth has come centralization; fully 76 percent of Japan's 119 million citizens live in cities where community and the extended family have been abandoned in favor of isolated, two-generation households.",
-              "translation": "【考研真题精读标准译文】\"In Japan,\" says educator Yoko Muro, \"it's never a question of whether you enjoy your job and your life, but only how much you can endure.\" With economic growth has come centralization; fully 76 percent of Japan's 119 million citizens live in cities where community and the extended family have been abandoned in favor of isolated, two-generation households.",
+              "translation": "“在日本，”教育家室罗洋子说，“问题从来不在于你是否喜欢你的工作和生活，而在于你能忍受多少。”随着经济的增长，集中化也随之而来。日本 1.19 亿公民中有 76% 生活在城市，社区和大家庭被抛弃，取而代之的是孤立的两代家庭。",
               "vocab": [
                 {
                   "word": "economic growth",
@@ -3074,7 +3074,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Urban Japanese have long endured lengthy commutes (travels to and from work) and crowded living conditions, but as the old group and family values weaken, the discomfort is beginning to tell.",
-              "translation": "【考研真题精读标准译文】Urban Japanese have long endured lengthy commutes (travels to and from work) and crowded living conditions, but as the old group and family values weaken, the discomfort is beginning to tell.",
+              "translation": "日本城市居民长期以来一直忍受着漫长的通勤（上下班）和拥挤的生活条件，但随着旧群体和家庭价值观的削弱，这种不适开始显现。",
               "vocab": [
                 {
                   "word": "Urban",
@@ -3102,7 +3102,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "In the past decade, the Japanese divorce rate, while still well below that of the United States, has increased by more than 50 percent, and suicides have increased by nearly one-quarter.",
-              "translation": "【考研真题精读标准译文】In the past decade, the Japanese divorce rate, while still well below that of the United States, has increased by more than 50 percent, and suicides have increased by nearly one-quarter.",
+              "translation": "过去十年，日本离婚率虽然仍远低于美国，但已增加了 50% 以上，自杀率增加了近四分之一。",
               "vocab": [
                 {
                   "word": "decade",
@@ -3168,7 +3168,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "a positive example",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3256,7 +3256,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "The life-style has been influenced by Western values.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3311,7 +3311,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "More stress should be placed on the cultivation of creativity.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3355,7 +3355,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "the young are less tolerant of discomforts in life",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3419,7 +3419,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "If ambition is to be well regarded, the rewards of ambition—wealth, distinction, control over one's destiny—must be deemed worthy of the sacrifices made on ambition's behalf.",
-              "translation": "【考研真题精读标准译文】If ambition is to be well regarded, the rewards of ambition—wealth, distinction, control over one's destiny—must be deemed worthy of the sacrifices made on ambition's behalf.",
+              "translation": "如果要充分尊重野心，那么野心的回报——财富、声望、对自己命运的控制——就必须被认为值得为野心而做出的牺牲。",
               "vocab": [
                 {
                   "word": "ambition",
@@ -3459,7 +3459,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "If the tradition of ambition is to have vitality, it must be widely shared; and it especially must be highly regarded by people who are themselves admired, the educated not least among them.",
-              "translation": "【考研真题精读标准译文】If the tradition of ambition is to have vitality, it must be widely shared; and it especially must be highly regarded by people who are themselves admired, the educated not least among them.",
+              "translation": "志向传统要具有生命力，就必须广泛传播；尤其是那些本身就受到钦佩的人，尤其是受过教育的人，必须高度重视它。",
               "vocab": [
                 {
                   "word": "ambition",
@@ -3475,7 +3475,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "In an odd way, however, it is the educated who have claimed to have given up on ambition as an ideal. What is odd is that they have perhaps most benefited from ambition—if not always their own then that of their parents and grandparents.",
-              "translation": "【考研真题精读标准译文】In an odd way, however, it is the educated who have claimed to have given up on ambition as an ideal. What is odd is that they have perhaps most benefited from ambition—if not always their own then that of their parents and grandparents.",
+              "translation": "然而，奇怪的是，正是那些受过教育的人声称已经放弃了将野心作为理想的目标。奇怪的是，他们或许从野心中获益最多——如果不是他们自己的野心，那么也是他们父母和祖父母的野心。",
               "vocab": [
                 {
                   "word": "odd",
@@ -3509,7 +3509,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "There is a heavy note of hypocrisy in this, a case of closing the barn door after the horses have escaped—with the educated themselves riding on them.",
-              "translation": "【考研真题精读标准译文】There is a heavy note of hypocrisy in this, a case of closing the barn door after the horses have escaped—with the educated themselves riding on them.",
+              "translation": "这其中有浓浓的虚伪色彩，就像是在马匹逃走后关上谷仓门——受过教育的人自己骑在马匹上。",
               "vocab": [
                 {
                   "word": "note",
@@ -3544,7 +3544,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Certainly people do not seem less interested in success and its signs now than formerly.",
-              "translation": "【考研真题精读标准译文】Certainly people do not seem less interested in success and its signs now than formerly.",
+              "translation": "当然，现在人们对成功及其标志的兴趣似乎并不比以前减弱。",
               "vocab": [
                 {
                   "word": "formerly",
@@ -3560,7 +3560,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Summer homes, European travel, BMWs—the locations, place names and name brands may change, but such items do not seem less in demand today than a decade or two years ago.",
-              "translation": "【考研真题精读标准译文】Summer homes, European travel, BMWs—the locations, place names and name brands may change, but such items do not seem less in demand today than a decade or two years ago.",
+              "translation": "避暑别墅、欧洲旅行、宝马——地点、地名和品牌可能会改变，但今天对这些物品的需求似乎并不比十年前或两年前少。",
               "vocab": [
                 {
                   "word": "place",
@@ -3588,7 +3588,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "What has happened is that people cannot confess fully to their dreams, as easily and openly as once they could, lest they be thought pushing, acquisitive and vulgar.",
-              "translation": "【考研真题精读标准译文】What has happened is that people cannot confess fully to their dreams, as easily and openly as once they could, lest they be thought pushing, acquisitive and vulgar.",
+              "translation": "所发生的情况是，人们无法像以前那样轻松、公开地完全承认自己的梦想，以免被认为是咄咄逼人、贪婪且粗俗。",
               "vocab": [
                 {
                   "word": "lest",
@@ -3616,7 +3616,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Instead, we are treated to fine hypocritical spectacles, which now more than ever seem in ample supply: the critic of American materialism with a Southampton summer home; the publisher of radical books who takes his meals in three-star restaurants; the journalist advocating participatory democracy in all phases of life, whose own children are enrolled in private schools.",
-              "translation": "【考研真题精读标准译文】Instead, we are treated to fine hypocritical spectacles, which now more than ever seem in ample supply: the critic of American materialism with a Southampton summer home; the publisher of radical books who takes his meals in three-star restaurants; the journalist advocating participatory democracy in all phases of life, whose own children are enrolled in private schools.",
+              "translation": "相反，我们看到的是精美的虚伪奇观，这些奇观现在似乎比以往任何时候都更加充足：对美国唯物主义的批评者拥有南安普敦的避暑别墅；在三星级餐厅用餐的激进书籍出版商；这位记者提倡人生各个阶段的参与式民主，他自己的孩子就读于私立学校。",
               "vocab": [
                 {
                   "word": "Instead",
@@ -3693,7 +3693,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "For such people and many more perhaps not so exceptional, the proper formulation is, \"Succeed at all costs but avoid appearing ambitious.\" The attacks on ambition are many and come from various angles; its public defenders are few and unimpressive, where they are not extremely unattractive.",
-              "translation": "【考研真题精读标准译文】For such people and many more perhaps not so exceptional, the proper formulation is, \"Succeed at all costs but avoid appearing ambitious.\" The attacks on ambition are many and come from various angles; its public defenders are few and unimpressive, where they are not extremely unattractive.",
+              "translation": "对于这样的人以及更多可能不那么特殊的人来说，正确的表述是“不惜一切代价取得成功，但避免显得雄心勃勃”。对野心的攻击是多方面的，而且来自不同的角度。其公设辩护人数量很少且不起眼，但他们也并非毫无吸引力。",
               "vocab": [
                 {
                   "word": "For",
@@ -3751,7 +3751,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "As a result, the support for ambition as a healthy impulse, a quality to be admired and fixed in the mind of the young, is probably lower than it has ever been in the United States.",
-              "translation": "【考研真题精读标准译文】As a result, the support for ambition as a healthy impulse, a quality to be admired and fixed in the mind of the young, is probably lower than it has ever been in the United States.",
+              "translation": "因此，在年轻人心目中，对雄心作为一种健康的冲动、一种值得钦佩和固定的品质的支持可能比以往任何时候都低。",
               "vocab": [
                 {
                   "word": "as a result",
@@ -3803,7 +3803,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "This does not mean that ambition is at an end, that people no longer feel its stirrings and promptings, but only that, no longer openly honored, it is less openly professed.",
-              "translation": "【考研真题精读标准译文】This does not mean that ambition is at an end, that people no longer feel its stirrings and promptings, but only that, no longer openly honored, it is less openly professed.",
+              "translation": "这并不意味着野心已经结束，人们不再感受到它的激动和推动，而只是意味着它不再被公开尊重，也不再那么公开宣称。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -3837,7 +3837,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Consequences follow from this, of course, some of which are that ambition is driven underground, or made sly.",
-              "translation": "【考研真题精读标准译文】Consequences follow from this, of course, some of which are that ambition is driven underground, or made sly.",
+              "translation": "当然，随之而来的后果是，野心被驱入地下，或者变得狡猾。",
               "vocab": [
                 {
                   "word": "follow",
@@ -3871,7 +3871,7 @@ window.ENGLISH_DATA['2000'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Such, then, is the way things stand: on the left angry critics, on the right stupid supporters, and in the middle, as usual, the majority of earnest people trying to get on in life.",
-              "translation": "【考研真题精读标准译文】Such, then, is the way things stand: on the left angry critics, on the right stupid supporters, and in the middle, as usual, the majority of earnest people trying to get on in life.",
+              "translation": "那么，事情的现状就是这样：左边是愤怒的批评者，右边是愚蠢的支持者，而中间的是，像往常一样，大多数认真的人试图在生活中继续前进。",
               "vocab": [
                 {
                   "word": "the majority",
@@ -3932,7 +3932,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "its returns well compensate for the sacrifices",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4020,7 +4020,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "dishonest to deny ambition after the fulfillment of the goal",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4097,7 +4097,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "they do not want to appear greedy and contemptible",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4141,7 +4141,7 @@ window.ENGLISH_DATA['2000'] = {
               "text": "openly and enthusiastically",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

@@ -26,7 +26,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Few creations of big technology capture the imagination like giant dams.",
-              "translation": "【考研真题精读标准译文】Few creations of big technology capture the imagination like giant dams.",
+              "translation": "很少有大型科技作品能像巨型水坝那样激发人们的想象力。",
               "vocab": [
                 {
                   "word": "capture",
@@ -54,7 +54,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Perhaps it is humankind's long suffering at the mercy of flood and drought that makes the idea of forcing the waters to do our bidding so fascinating.",
-              "translation": "【考研真题精读标准译文】Perhaps it is humankind's long suffering at the mercy of flood and drought that makes the idea of forcing the waters to do our bidding so fascinating.",
+              "translation": "也许正是人类长期遭受洪水和干旱的折磨，才使得强迫水域听从我们的命令的想法如此令人着迷。",
               "vocab": [
                 {
                   "word": "suffering",
@@ -88,7 +88,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "But to be fascinated is also, sometimes, to be blind.",
-              "translation": "【考研真题精读标准译文】But to be fascinated is also, sometimes, to be blind.",
+              "translation": "但有时候，着迷也意味着盲目。",
               "vocab": [
                 {
                   "word": "fascinated",
@@ -104,7 +104,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Several giant dam projects threaten to do more harm than good.",
-              "translation": "【考研真题精读标准译文】Several giant dam projects threaten to do more harm than good.",
+              "translation": "几个巨型水坝项目可能弊大于利。",
               "vocab": [
                 {
                   "word": "Several",
@@ -132,7 +132,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The lesson from dams is that big is not always beautiful.",
-              "translation": "【考研真题精读标准译文】The lesson from dams is that big is not always beautiful.",
+              "translation": "大坝的教训是，大并不总是美丽的。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -141,7 +141,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "It doesn't help that building a big, powerful dam has become a symbol of achievement for nations and people striving to assert themselves.",
-              "translation": "【考研真题精读标准译文】It doesn't help that building a big, powerful dam has become a symbol of achievement for nations and people striving to assert themselves.",
+              "translation": "建造一座强大的大坝已成为努力维护自己的国家和人民成就的象征，这无济于事。",
               "vocab": [
                 {
                   "word": "symbol",
@@ -175,7 +175,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Egypt's leadership in the Arab world was cemented by the Aswan High Dam.",
-              "translation": "【考研真题精读标准译文】Egypt's leadership in the Arab world was cemented by the Aswan High Dam.",
+              "translation": "阿斯旺大坝巩固了埃及在阿拉伯世界的领导地位。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -191,7 +191,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Turkey's bid for First World status includes the giant Ataturk Dam.",
-              "translation": "【考研真题精读标准译文】Turkey's bid for First World status includes the giant Ataturk Dam.",
+              "translation": "土耳其对第一世界地位的争夺包括巨型阿塔图尔克大坝。",
               "vocab": [
                 {
                   "word": "bid",
@@ -225,7 +225,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "But big dams tend not to work as intended.",
-              "translation": "【考研真题精读标准译文】But big dams tend not to work as intended.",
+              "translation": "但大坝往往无法按预期发挥作用。",
               "vocab": [
                 {
                   "word": "tend",
@@ -247,7 +247,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The Aswan Dam, for example, stopped the Nile flooding but deprived Egypt of the fertile silt that floods left—all in return for a giant reservoir of disease which is now so full of silt that it barely generates electricity.",
-              "translation": "【考研真题精读标准译文】The Aswan Dam, for example, stopped the Nile flooding but deprived Egypt of the fertile silt that floods left—all in return for a giant reservoir of disease which is now so full of silt that it barely generates electricity.",
+              "translation": "例如，阿斯旺大坝阻止了尼罗河的洪水，但剥夺了埃及洪水留下的肥沃淤泥——所有这些都换来了一个巨大的疾病库，现在这个库已经充满了淤泥，几乎无法发电。",
               "vocab": [
                 {
                   "word": "for",
@@ -299,7 +299,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "And yet, the myth of controlling the waters persists.",
-              "translation": "【考研真题精读标准译文】And yet, the myth of controlling the waters persists.",
+              "translation": "然而，控制水域的神话依然存在。",
               "vocab": [
                 {
                   "word": "yet",
@@ -321,7 +321,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "This week, in the heart of civilized Europe, Slovaks and Hungarians stopped just short of sending in the troops in their contention over a dam on the Danube.",
-              "translation": "【考研真题精读标准译文】This week, in the heart of civilized Europe, Slovaks and Hungarians stopped just short of sending in the troops in their contention over a dam on the Danube.",
+              "translation": "本周，在文明欧洲的中心，斯洛伐克人和匈牙利人差点就派出军队来争夺多瑙河上的一座大坝。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -330,7 +330,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The huge complex will probably have all the usual problems of big dams.",
-              "translation": "【考研真题精读标准译文】The huge complex will probably have all the usual problems of big dams.",
+              "translation": "这个巨大的综合体可能会遇到大型水坝的所有常见问题。",
               "vocab": [
                 {
                   "word": "complex",
@@ -358,7 +358,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "But Slovakia is bidding for independence from the Czechs, and now needs a dam to prove itself.",
-              "translation": "【考研真题精读标准译文】But Slovakia is bidding for independence from the Czechs, and now needs a dam to prove itself.",
+              "translation": "但斯洛伐克正在争取从捷克独立，现在需要一座大坝来证明自己。",
               "vocab": [
                 {
                   "word": "bidding",
@@ -399,7 +399,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Meanwhile, in India, the World Bank has given the go-ahead to the even more wrong-headed Narmada Dam.",
-              "translation": "【考研真题精读标准译文】Meanwhile, in India, the World Bank has given the go-ahead to the even more wrong-headed Narmada Dam.",
+              "translation": "与此同时，在印度，世界银行批准了更加错误的讷尔默达大坝建设。",
               "vocab": [
                 {
                   "word": "Meanwhile",
@@ -415,7 +415,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "And the bank has done this even though its advisors say the dam will cause hardship for the powerless and environmental destruction.",
-              "translation": "【考研真题精读标准译文】And the bank has done this even though its advisors say the dam will cause hardship for the powerless and environmental destruction.",
+              "translation": "尽管该银行的顾问表示，大坝会给弱势群体带来困难，而且还会造成环境破坏，但该银行还是这么做了。",
               "vocab": [
                 {
                   "word": "even though",
@@ -455,7 +455,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "The benefits are for the powerful, but they are far from guaranteed.",
-              "translation": "【考研真题精读标准译文】The benefits are for the powerful, but they are far from guaranteed.",
+              "translation": "强者会得到好处，但远不能保证。",
               "vocab": [
                 {
                   "word": "for",
@@ -477,7 +477,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Proper, scientific study of the impacts of dams and of the cost and benefits of controlling water can help to resolve these conflicts.",
-              "translation": "【考研真题精读标准译文】Proper, scientific study of the impacts of dams and of the cost and benefits of controlling water can help to resolve these conflicts.",
+              "translation": "对水坝的影响以及控制水的成本和效益进行适当的科学研究有助于解决这些冲突。",
               "vocab": [
                 {
                   "word": "Proper",
@@ -493,7 +493,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Hydroelectric power and flood control and irrigation are possible without building monster dams.",
-              "translation": "【考研真题精读标准译文】Hydroelectric power and flood control and irrigation are possible without building monster dams.",
+              "translation": "无需建造巨型水坝即可实现水力发电、防洪和灌溉。",
               "vocab": [
                 {
                   "word": "power",
@@ -527,7 +527,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "But when you are dealing with myths, it is hard to be either proper or scientific.",
-              "translation": "【考研真题精读标准译文】But when you are dealing with myths, it is hard to be either proper or scientific.",
+              "translation": "但当你处理神话时，很难做到正确或科学。",
               "vocab": [
                 {
                   "word": "proper",
@@ -543,7 +543,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "It is time that the world learned the lessons of Aswan.",
-              "translation": "【考研真题精读标准译文】It is time that the world learned the lessons of Aswan.",
+              "translation": "现在是世界吸取阿斯旺教训的时候了。",
               "vocab": [
                 {
                   "word": "learned",
@@ -559,7 +559,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "You don't need a dam to be saved.",
-              "translation": "【考研真题精读标准译文】You don't need a dam to be saved.",
+              "translation": "你不需要大坝来拯救。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -611,7 +611,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "over-excited people tend to neglect vital things",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -688,7 +688,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "common people in the Narmada Dam area",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -754,7 +754,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "They have universal control of the waters.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -809,7 +809,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "\"Look before you leap\"",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -851,7 +851,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Well, no gain without pain, they say.",
-              "translation": "【考研真题精读标准译文】Well, no gain without pain, they say.",
+              "translation": "他们说，没有痛苦就没有收获。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -860,7 +860,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But what about pain without gain?",
-              "translation": "【考研真题精读标准译文】But what about pain without gain?",
+              "translation": "但如果没有收获又如何呢？",
               "vocab": [
                 {
                   "word": "about",
@@ -876,7 +876,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Everywhere you go in America, you hear tales of corporate revival. What is harder to establish is whether the productivity revolution that businessmen assume they are presiding over is for real. The official statistics are mildly discouraging.",
-              "translation": "【考研真题精读标准译文】Everywhere you go in America, you hear tales of corporate revival. What is harder to establish is whether the productivity revolution that businessmen assume they are presiding over is for real. The official statistics are mildly discouraging.",
+              "translation": "无论你走到美国的哪个地方，你都会听到企业复兴的故事。更难确定的是，商界人士认为他们正在主导的生产力革命是否是真实的。官方统计数据有些令人沮丧。",
               "vocab": [
                 {
                   "word": "corporate",
@@ -940,7 +940,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "They show that, if you lump manufacturing and services together, productivity has grown on average by 1.2% since 1987.",
-              "translation": "【考研真题精读标准译文】They show that, if you lump manufacturing and services together, productivity has grown on average by 1.2% since 1987.",
+              "translation": "他们表明，如果将制造业和服务业放在一起，自 1987 年以来，生产率平均增长了 1.2%。",
               "vocab": [
                 {
                   "word": "on average",
@@ -974,7 +974,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "That is somewhat faster than the average during the previous decade.",
-              "translation": "【考研真题精读标准译文】That is somewhat faster than the average during the previous decade.",
+              "translation": "这比过去十年的平均水平要快一些。",
               "vocab": [
                 {
                   "word": "average",
@@ -1002,7 +1002,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "And since 1991, productivity has increased by about 2% a year, which is more than twice the 1978-87 average.",
-              "translation": "【考研真题精读标准译文】And since 1991, productivity has increased by about 2% a year, which is more than twice the 1978-87 average.",
+              "translation": "自 1991 年以来，生产率每年增长约 2%，是 1978-87 年平均水平的两倍多。",
               "vocab": [
                 {
                   "word": "since",
@@ -1043,7 +1043,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The trouble is that part of the recent acceleration is due to the usual rebound that occurs at this point in a business cycle, and so is not conclusive evidence of a revival in the underlying trend.",
-              "translation": "【考研真题精读标准译文】The trouble is that part of the recent acceleration is due to the usual rebound that occurs at this point in a business cycle, and so is not conclusive evidence of a revival in the underlying trend.",
+              "translation": "问题在于，最近的加速部分是由于商业周期中此时出现的通常反弹，因此并不是基本趋势复苏的决定性证据。",
               "vocab": [
                 {
                   "word": "acceleration",
@@ -1095,7 +1095,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "There is, as Robert Rubin, the treasury secretary, says, a \"disjunction\" between the mass of business anecdotes that points to a leap in productivity and the picture reflected by the statistics.",
-              "translation": "【考研真题精读标准译文】There is, as Robert Rubin, the treasury secretary, says, a \"disjunction\" between the mass of business anecdotes that points to a leap in productivity and the picture reflected by the statistics.",
+              "translation": "正如财政部长罗伯特·鲁宾所说，大量指向生产力飞跃的商业轶事与统计数据反映的情况之间存在“脱节”。",
               "vocab": [
                 {
                   "word": "secretary",
@@ -1129,7 +1129,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Some of this can be easily explained.",
-              "translation": "【考研真题精读标准译文】Some of this can be easily explained.",
+              "translation": "其中一些很容易解释。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1138,7 +1138,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "New ways of organizing the workplace—all that re-engineering and downsizing—are only one contribution to the overall productivity of an economy, which is driven by many other factors such as joint investment in equipment and machinery, new technology, and investment in education and training.",
-              "translation": "【考研真题精读标准译文】New ways of organizing the workplace—all that re-engineering and downsizing—are only one contribution to the overall productivity of an economy, which is driven by many other factors such as joint investment in equipment and machinery, new technology, and investment in education and training.",
+              "translation": "组织工作场所的新方式——所有的重新设计和裁员——只是对经济整体生产力的贡献之一，而整体生产力的推动因素包括对设备和机械的联合投资、新技术以及对教育和培训的投资等许多其他因素。",
               "vocab": [
                 {
                   "word": "New",
@@ -1196,7 +1196,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Moreover, most of the changes that companies make are intended to keep them profitable, and this need not always mean increasing productivity: switching to new markets or improving quality can matter just as much.",
-              "translation": "【考研真题精读标准译文】Moreover, most of the changes that companies make are intended to keep them profitable, and this need not always mean increasing productivity: switching to new markets or improving quality can matter just as much.",
+              "translation": "此外，公司做出的大多数改变都是为了保持盈利，这并不总是意味着提高生产力：转向新市场或提高质量同样重要。",
               "vocab": [
                 {
                   "word": "Moreover",
@@ -1248,7 +1248,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Two other explanations are more speculative.",
-              "translation": "【考研真题精读标准译文】Two other explanations are more speculative.",
+              "translation": "另外两种解释更具推测性。",
               "vocab": [
                 {
                   "word": "speculative",
@@ -1271,7 +1271,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "First, some of the business restructuring of recent years may have been ineptly done.",
-              "translation": "【考研真题精读标准译文】First, some of the business restructuring of recent years may have been ineptly done.",
+              "translation": "首先，近年来的一些业务重组可能做得不够好。",
               "vocab": [],
               "isTopicSentence": true,
               "isKeyEvidence": false
@@ -1280,7 +1280,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Second, even if it was well done, it may have spread much less widely than people suppose.",
-              "translation": "【考研真题精读标准译文】Second, even if it was well done, it may have spread much less widely than people suppose.",
+              "translation": "其次，即使做得很好，它的传播范围也可能远没有人们想象的那么广。",
               "vocab": [
                 {
                   "word": "even if",
@@ -1308,7 +1308,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Leonard Schlesinger, a Harvard academic and former chief executive of Au Bong Pain, a rapidly growing chain of bakery cafes, says that much \"re-engineering\" has been crude.",
-              "translation": "【考研真题精读标准译文】Leonard Schlesinger, a Harvard academic and former chief executive of Au Bong Pain, a rapidly growing chain of bakery cafes, says that much \"re-engineering\" has been crude.",
+              "translation": "哈佛大学学者、快速发展的面包咖啡馆连锁店 Au Bong Pain 的前首席执行官伦纳德·施莱辛格 (Leonard Schlesinger) 表示，很多“重新设计”都很粗糙。",
               "vocab": [
                 {
                   "word": "academic",
@@ -1348,7 +1348,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "In many cases, he believes, the loss of revenue has been greater than the reductions in cost.",
-              "translation": "【考研真题精读标准译文】In many cases, he believes, the loss of revenue has been greater than the reductions in cost.",
+              "translation": "他认为，在许多情况下，收入损失大于成本降低。",
               "vocab": [
                 {
                   "word": "revenue",
@@ -1364,7 +1364,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "His colleague, Michael Beer, says that far too many companies have applied re-engineering in a mechanistic fashion, chopping out costs without giving sufficient thought to long-term profitability.",
-              "translation": "【考研真题精读标准译文】His colleague, Michael Beer, says that far too many companies have applied re-engineering in a mechanistic fashion, chopping out costs without giving sufficient thought to long-term profitability.",
+              "translation": "他的同事迈克尔·比尔（Michael Beer）表示，太多公司以机械的方式进行再设计，削减成本，而没有充分考虑长期盈利能力。",
               "vocab": [
                 {
                   "word": "colleague",
@@ -1398,7 +1398,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "BBDO's Al Rosenshine is blunter.",
-              "translation": "【考研真题精读标准译文】BBDO's Al Rosenshine is blunter.",
+              "translation": "BBDO 的 Al Rosenshine 就比较直率了。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1407,7 +1407,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "He dismisses a lot of the work of re-engineering consultants as mere rubbish—\"the worst sort of ambulance chasing.\"",
-              "translation": "【考研真题精读标准译文】He dismisses a lot of the work of re-engineering consultants as mere rubbish—\"the worst sort of ambulance chasing.\"",
+              "translation": "他认为重建顾问的许多工作只是垃圾——“最糟糕的救护车追逐”。",
               "vocab": [
                 {
                   "word": "work",
@@ -1462,7 +1462,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "not as good as it seems",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1539,7 +1539,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "fall short of businessmen's anticipation",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1605,7 +1605,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "he does not think the productivity revolution works",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1660,7 +1660,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "Radical reforms are essential for the increase of productivity.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1724,7 +1724,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Science has long had an uneasy relationship with other aspects of culture.",
-              "translation": "【考研真题精读标准译文】Science has long had an uneasy relationship with other aspects of culture.",
+              "translation": "长期以来，科学与文化的其他方面都存在着不稳定的关系。",
               "vocab": [
                 {
                   "word": "uneasy",
@@ -1746,7 +1746,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Think of Galileo's 17th-century trial for his rebelling belief before the Catholic Church or poet William Blake's harsh remarks against the mechanistic worldview of Isaac Newton.",
-              "translation": "【考研真题精读标准译文】Think of Galileo's 17th-century trial for his rebelling belief before the Catholic Church or poet William Blake's harsh remarks against the mechanistic worldview of Isaac Newton.",
+              "translation": "想想 17 世纪伽利略因其反叛信仰而在天主教会面前接受的审判，或者诗人威廉·布莱克对艾萨克·牛顿机械论世界观的严厉言论。",
               "vocab": [
                 {
                   "word": "trial",
@@ -1798,7 +1798,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The schism between science and the humanities has, if anything, deepened in this century.",
-              "translation": "【考研真题精读标准译文】The schism between science and the humanities has, if anything, deepened in this century.",
+              "translation": "如果说科学与人文之间的分歧有什么不同的话，那就是本世纪加深了。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1807,7 +1807,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Until recently, the scientific community was so powerful that it could afford to ignore its critics—but no longer.",
-              "translation": "【考研真题精读标准译文】Until recently, the scientific community was so powerful that it could afford to ignore its critics—but no longer.",
+              "translation": "直到最近，科学界还非常强大，以至于可以忽视批评者——但现在不能了。",
               "vocab": [
                 {
                   "word": "No longer.",
@@ -1847,7 +1847,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "As funding for science has declined, scientists have attacked \"anti-science\" in several books, notably Higher Superstition, by Paul R.",
-              "translation": "【考研真题精读标准译文】As funding for science has declined, scientists have attacked \"anti-science\" in several books, notably Higher Superstition, by Paul R.",
+              "translation": "随着科学经费的减少，科学家们在几本书中攻击了“反科学”，特别是保罗·R·肯尼迪（Paul R.",
               "vocab": [
                 {
                   "word": "funding",
@@ -1887,7 +1887,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Gross, a biologist at the University of Virginia, and Norman Levitt, a mathematician at Rutgers University; and The Demon-Haunted World, by Carl Sagan of Cornell University.",
-              "translation": "【考研真题精读标准译文】Gross, a biologist at the University of Virginia, and Norman Levitt, a mathematician at Rutgers University; and The Demon-Haunted World, by Carl Sagan of Cornell University.",
+              "translation": "弗吉尼亚大学生物学家格罗斯和罗格斯大学数学家诺曼·莱维特；以及康奈尔大学卡尔·萨根的《恶魔出没的世界》。",
               "vocab": [
                 {
                   "word": "Gross",
@@ -1916,7 +1916,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Defenders of science have also voiced their concerns at meetings such as \"The Flight from Science and Reason,\" held in New York City in 1995, and \"Science in the Age of (Mis) information,\" which assembled last June near Buffalo.",
-              "translation": "【考研真题精读标准译文】Defenders of science have also voiced their concerns at meetings such as \"The Flight from Science and Reason,\" held in New York City in 1995, and \"Science in the Age of (Mis) information,\" which assembled last June near Buffalo.",
+              "translation": "科学捍卫者也在 1995 年于纽约市举行的“逃离科学与理性”会议和去年 6 月在布法罗附近举行的“信息时代的科学”会议上表达了他们的担忧。",
               "vocab": [
                 {
                   "word": "Reason",
@@ -1944,7 +1944,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Anti-science clearly means different things to different people.",
-              "translation": "【考研真题精读标准译文】Anti-science clearly means different things to different people.",
+              "translation": "反科学显然对不同的人意味着不同的事情。",
               "vocab": [
                 {
                   "word": "clearly",
@@ -1960,7 +1960,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Gross and Levitt find fault primarily with sociologists, philosophers and other academics who have questioned science's objectivity.",
-              "translation": "【考研真题精读标准译文】Gross and Levitt find fault primarily with sociologists, philosophers and other academics who have questioned science's objectivity.",
+              "translation": "格罗斯和莱维特主要批评社会学家、哲学家和其他质疑科学客观性的学者。",
               "vocab": [
                 {
                   "word": "Gross",
@@ -1988,7 +1988,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Sagan is more concerned with those who believe in ghosts, creationism and other phenomena that contradict the scientific worldview.",
-              "translation": "【考研真题精读标准译文】Sagan is more concerned with those who believe in ghosts, creationism and other phenomena that contradict the scientific worldview.",
+              "translation": "萨根更关心那些相信鬼魂、神创论和其他与科学世界观相矛盾的现象的人。",
               "vocab": [
                 {
                   "word": "contradict",
@@ -2004,7 +2004,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "A survey of news stories in 1996 reveals that the anti-science tag has been attached to many other groups as well, from authorities who advocated the elimination of the last remaining stocks of smallpox virus to Republicans who advocated decreased funding for basic research.",
-              "translation": "【考研真题精读标准译文】A survey of news stories in 1996 reveals that the anti-science tag has been attached to many other groups as well, from authorities who advocated the elimination of the last remaining stocks of smallpox virus to Republicans who advocated decreased funding for basic research.",
+              "translation": "对 1996 年新闻报道的调查显示，许多其他群体也被贴上了反科学的标签，从主张消灭最后剩余天花病毒的当局到主张减少基础研究经费的共和党人。",
               "vocab": [
                 {
                   "word": "virus",
@@ -2038,7 +2038,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Few would dispute that the term applies to the Unabomber, whose manifesto, published in 1995, scorns science and longs for return to a pre-technological utopia.",
-              "translation": "【考研真题精读标准译文】Few would dispute that the term applies to the Unabomber, whose manifesto, published in 1995, scorns science and longs for return to a pre-technological utopia.",
+              "translation": "很少有人会质疑这个词适用于“大学轰炸机”，该组织于 1995 年发表的宣言蔑视科学，渴望回到前技术时代的乌托邦。",
               "vocab": [
                 {
                   "word": "dispute",
@@ -2085,7 +2085,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "But surely that does not mean environmentalists concerned about uncontrolled industrial growth are anti-science, as an essay in US News & World Report last May seemed to suggest.",
-              "translation": "【考研真题精读标准译文】But surely that does not mean environmentalists concerned about uncontrolled industrial growth are anti-science, as an essay in US News & World Report last May seemed to suggest.",
+              "translation": "但这当然并不意味着担心不受控制的工业增长的环保主义者是反科学的，正如去年五月《美国新闻与世界报道》上的一篇文章所暗示的那样。",
               "vocab": [
                 {
                   "word": "mean",
@@ -2125,7 +2125,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The environmentalists, inevitably, respond to such critics.",
-              "translation": "【考研真题精读标准译文】The environmentalists, inevitably, respond to such critics.",
+              "translation": "环保主义者不可避免地会对这些批评做出回应。",
               "vocab": [
                 {
                   "word": "inevitably",
@@ -2147,7 +2147,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "The true enemies of science, argues Paul Ehrlich of Stanford University, a pioneer of environmental studies, are those who question the evidence supporting global warming, the depletion of the ozone layer and other consequences of industrial growth.",
-              "translation": "【考研真题精读标准译文】The true enemies of science, argues Paul Ehrlich of Stanford University, a pioneer of environmental studies, are those who question the evidence supporting global warming, the depletion of the ozone layer and other consequences of industrial growth.",
+              "translation": "环境研究先驱、斯坦福大学的保罗·埃利希认为，科学的真正敌人是那些质疑支持全球变暖、臭氧层消耗和工业增长的其他后果的证据的人。",
               "vocab": [
                 {
                   "word": "pioneer",
@@ -2181,7 +2181,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Indeed, some observers fear that the anti-science epithet is in danger of becoming meaningless.",
-              "translation": "【考研真题精读标准译文】Indeed, some observers fear that the anti-science epithet is in danger of becoming meaningless.",
+              "translation": "事实上，一些观察家担心反科学的绰号有变得毫无意义的危险。",
               "vocab": [
                 {
                   "word": "Indeed",
@@ -2215,7 +2215,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "\"The term 'anti-science' can lump together too many, quite different things,\" notes Harvard University philosopher Gerald Holton in his 1993 work Science and Anti-Science.",
-              "translation": "【考研真题精读标准译文】\"The term 'anti-science' can lump together too many, quite different things,\" notes Harvard University philosopher Gerald Holton in his 1993 work Science and Anti-Science.",
+              "translation": "哈佛大学哲学家杰拉尔德·霍尔顿 (Gerald Holton) 在其 1993 年的著作《科学与反科学》中指出：“‘反科学’这个词可以将太多、完全不同的事物混为一谈。”",
               "vocab": [
                 {
                   "word": "lump together",
@@ -2249,7 +2249,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "\"They have in common only one thing that they tend to annoy or threaten those who regard themselves as more enlightened.\"",
-              "translation": "【考研真题精读标准译文】\"They have in common only one thing that they tend to annoy or threaten those who regard themselves as more enlightened.\"",
+              "translation": "“他们的共同点只有一件事，那就是他们倾向于惹恼或威胁那些自认为更开明的人。”",
               "vocab": [
                 {
                   "word": "common",
@@ -2332,7 +2332,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "separation",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2408,7 +2408,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "exemplify the division of science and the humanities",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2441,7 +2441,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "Environmentalists were blamed for anti-science in an essay.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2507,7 +2507,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "impartial",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2571,7 +2571,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Emerging from the 1980 census is the picture of a nation developing more and more regional competition, as population growth in the Northeast and Midwest reaches a near standstill.",
-              "translation": "【考研真题精读标准译文】Emerging from the 1980 census is the picture of a nation developing more and more regional competition, as population growth in the Northeast and Midwest reaches a near standstill.",
+              "translation": "1980 年的人口普查显示，随着东北部和中西部的人口增长几近停滞，国家的区域竞争日益激烈。",
               "vocab": [
                 {
                   "word": "census",
@@ -2611,7 +2611,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "This development—and its strong implications for US politics and economy in years ahead—has enthroned the South as America's most densely populated region for the first time in the history of the nation's head counting.",
-              "translation": "【考研真题精读标准译文】This development—and its strong implications for US politics and economy in years ahead—has enthroned the South as America's most densely populated region for the first time in the history of the nation's head counting.",
+              "translation": "这一发展及其对未来几年美国政治和经济的强烈影响使南方在美国人口统计史上首次成为美国人口最稠密的地区。",
               "vocab": [
                 {
                   "word": "implications",
@@ -2645,7 +2645,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Altogether, the US population rose in the 1970s by 23.2 million people—numerically the third-largest growth ever recorded in a single decade.",
-              "translation": "【考研真题精读标准译文】Altogether, the US population rose in the 1970s by 23.2 million people—numerically the third-largest growth ever recorded in a single decade.",
+              "translation": "20 世纪 70 年代，美国人口总共增加了 2320 万人，这是有记录以来十年内第三大增长。",
               "vocab": [
                 {
                   "word": "Altogether",
@@ -2673,7 +2673,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Even so, that gain adds up to only 11.4 percent, lowest in American annual records except for the Depression years.",
-              "translation": "【考研真题精读标准译文】Even so, that gain adds up to only 11.4 percent, lowest in American annual records except for the Depression years.",
+              "translation": "即便如此，这一增幅加起来也只有 11.4%，是除大萧条时期之外美国年度记录中最低的。",
               "vocab": [
                 {
                   "word": "American",
@@ -2713,7 +2713,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Americans have been migrating south and west in larger numbers since World War II, and the pattern still prevails.",
-              "translation": "【考研真题精读标准译文】Americans have been migrating south and west in larger numbers since World War II, and the pattern still prevails.",
+              "translation": "自第二次世界大战以来，大量美国人向南部和西部移民，而且这种模式仍然盛行。",
               "vocab": [
                 {
                   "word": "since",
@@ -2741,7 +2741,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Three sun-belt states—Florida, Texas and California—together had nearly 10 million more people in 1980 than a decade earlier.",
-              "translation": "【考研真题精读标准译文】Three sun-belt states—Florida, Texas and California—together had nearly 10 million more people in 1980 than a decade earlier.",
+              "translation": "佛罗里达州、德克萨斯州和加利福尼亚州这三个阳光地带州 1980 年的人口比十年前增加了近 1000 万。",
               "vocab": [
                 {
                   "word": "decade",
@@ -2764,7 +2764,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Among large cities, San Diego moved from 14th to 8th and San Antonio from 15th to 10th -- with Cleveland and Washington.",
-              "translation": "【考研真题精读标准译文】Among large cities, San Diego moved from 14th to 8th and San Antonio from 15th to 10th -- with Cleveland and Washington.",
+              "translation": "在大城市中，圣地亚哥从第 14 位上升到第 8 位，圣安东尼奥从第 15 位上升到第 10 位——与克利夫兰和华盛顿一起。",
               "vocab": [
                 {
                   "word": "Washington",
@@ -2780,7 +2780,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "C., dropping out of the top 10.",
-              "translation": "【考研真题精读标准译文】C., dropping out of the top 10.",
+              "translation": "C.跌出前10名。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": true
@@ -2789,7 +2789,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Not all that shift can be attributed to the movement out of the snow belt, census officials say.",
-              "translation": "【考研真题精读标准译文】Not all that shift can be attributed to the movement out of the snow belt, census officials say.",
+              "translation": "人口普查官员表示，并非所有的变化都可以归因于雪带的迁移。",
               "vocab": [
                 {
                   "word": "shift",
@@ -2823,7 +2823,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Nonstop waves of immigrants played a role, too—and so did bigger crops of babies as yesterday's \"baby boom\" generation reached its child bearing years.",
-              "translation": "【考研真题精读标准译文】Nonstop waves of immigrants played a role, too—and so did bigger crops of babies as yesterday's \"baby boom\" generation reached its child bearing years.",
+              "translation": "源源不断的移民浪潮也发挥了作用，随着昨天的“婴儿潮”一代到达生育年龄，婴儿数量的增加也发挥了作用。",
               "vocab": [
                 {
                   "word": "boom",
@@ -2845,7 +2845,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Moreover, demographers see the continuing shift south and west as joined by a related but newer phenomenon: More and more, Americans apparently are looking not just for places with more jobs but with fewer people, too.",
-              "translation": "【考研真题精读标准译文】Moreover, demographers see the continuing shift south and west as joined by a related but newer phenomenon: More and more, Americans apparently are looking not just for places with more jobs but with fewer people, too.",
+              "translation": "此外，人口统计学家认为，向南和向西的持续转移伴随着一个相关但更新的现象：越来越多的美国人显然不仅在寻找就业机会更多的地方，而且还在寻找人口更少的地方。",
               "vocab": [
                 {
                   "word": "Moreover",
@@ -2891,7 +2891,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Some instances: ■ Regionally, the Rocky Mountain states reported the most rapid growth rate—37.1 percent since 1970 in a vast area with only 5 percent of the US population. ■ Among states, Nevada and Arizona grew fastest of all: 63.5 and 53.1 percent respectively.",
-              "translation": "【考研真题精读标准译文】Some instances: ■ Regionally, the Rocky Mountain states reported the most rapid growth rate—37.1 percent since 1970 in a vast area with only 5 percent of the US population. ■ Among states, Nevada and Arizona grew fastest of all: 63.5 and 53.1 percent respectively.",
+              "translation": "一些实例： ■ 从地区来看，落基山脉各州的增长率最高，自 1970 年以来增长率为 37.1%，而该地区幅员辽阔，人口仅占美国人口的 5%。 ■ 在各州中，内华达州和亚利桑那州增长最快：分别为 63.5% 和 53.1%。",
               "vocab": [
                 {
                   "word": "rapid",
@@ -2944,7 +2944,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Except for Florida and Texas, the top 10 in rate of growth is composed of Western states with 7.5 million people—about 9 per square mile.",
-              "translation": "【考研真题精读标准译文】Except for Florida and Texas, the top 10 in rate of growth is composed of Western states with 7.5 million people—about 9 per square mile.",
+              "translation": "除佛罗里达州和得克萨斯州外，增长率排名前 10 位的都是拥有 750 万人口的西部州，即每平方英里约 9 人。",
               "vocab": [
                 {
                   "word": "Except",
@@ -2984,7 +2984,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The flight from overcrowdedness affects the migration from snow belt to more bearable climates.",
-              "translation": "【考研真题精读标准译文】The flight from overcrowdedness affects the migration from snow belt to more bearable climates.",
+              "translation": "逃离过度拥挤会影响从雪带向气候更适宜的迁移。",
               "vocab": [
                 {
                   "word": "migration",
@@ -3006,7 +3006,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Nowhere do 1980 census statistics dramatize more the American search for spacious living than in the Far West.",
-              "translation": "【考研真题精读标准译文】Nowhere do 1980 census statistics dramatize more the American search for spacious living than in the Far West.",
+              "translation": "1980 年的人口普查统计数据最能体现美国人对宽敞生活的追求，而远西部地区则最为突出。",
               "vocab": [
                 {
                   "word": "Nowhere",
@@ -3052,7 +3052,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "There, California added 3.7 million to its population in the 1970s, more than any other state.",
-              "translation": "【考研真题精读标准译文】There, California added 3.7 million to its population in the 1970s, more than any other state.",
+              "translation": "20 世纪 70 年代，加利福尼亚州的人口增加了 370 万，比任何其他州都多。",
               "vocab": [
                 {
                   "word": "population",
@@ -3074,7 +3074,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "In that decade, however, large numbers also migrated from California, mostly to other parts of the West.",
-              "translation": "【考研真题精读标准译文】In that decade, however, large numbers also migrated from California, mostly to other parts of the West.",
+              "translation": "然而，在那十年里，也有大量人口从加利福尼亚州迁徙到西部其他地区。",
               "vocab": [
                 {
                   "word": "in that",
@@ -3102,7 +3102,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Often they chose—and still are choosing—somewhat colder climates such as Oregon, Idaho and Alaska in order to escape smog, crime and other plagues of urbanization in the Golden State.",
-              "translation": "【考研真题精读标准译文】Often they chose—and still are choosing—somewhat colder climates such as Oregon, Idaho and Alaska in order to escape smog, crime and other plagues of urbanization in the Golden State.",
+              "translation": "他们经常选择——并且仍然选择——气候稍冷的俄勒冈州、爱达荷州和阿拉斯加，以逃避金州的雾霾、犯罪和其他城市化瘟疫。",
               "vocab": [
                 {
                   "word": "still",
@@ -3148,7 +3148,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "As a result, California's growth rate dropped during the 1970s, to 18.5 percent—little more than two thirds the 1960s' growth figure and considerably below that of other Western states.",
-              "translation": "【考研真题精读标准译文】As a result, California's growth rate dropped during the 1970s, to 18.5 percent—little more than two thirds the 1960s' growth figure and considerably below that of other Western states.",
+              "translation": "结果，加利福尼亚州的增长率在 20 世纪 70 年代下降至 18.5%，仅略高于 1960 年代增长率的三分之二，并且大大低于其他西部州。",
               "vocab": [
                 {
                   "word": "as a result",
@@ -3214,7 +3214,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "witnessed a southwestern shift of population",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3291,7 +3291,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "it reveals the Americans' new pursuit of spacious living",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3368,7 +3368,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "Arizona ranked second of all states in its growth rate of population",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3423,7 +3423,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "scientists engaged in the study of population",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3465,7 +3465,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Scattered around the globe are more than 100 small regions of isolated volcanic activity known to geologists as hot spots.",
-              "translation": "【考研真题精读标准译文】Scattered around the globe are more than 100 small regions of isolated volcanic activity known to geologists as hot spots.",
+              "translation": "全球分布着 100 多个孤立的火山活动小区域，被地质学家称为热点。",
               "vocab": [
                 {
                   "word": "Scattered",
@@ -3493,7 +3493,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Unlike most of the world's volcanoes, they are not always found at the boundaries of the great drifting plates that make up the earth's surface; on the contrary, many of them lie deep in the interior of a plate.",
-              "translation": "【考研真题精读标准译文】Unlike most of the world's volcanoes, they are not always found at the boundaries of the great drifting plates that make up the earth's surface; on the contrary, many of them lie deep in the interior of a plate.",
+              "translation": "与世界上大多数火山不同，它们并不总是位于构成地球表面的巨大漂移板块的边界处；相反，它们中的许多都位于盘子的内部深处。",
               "vocab": [
                 {
                   "word": "make up",
@@ -3545,7 +3545,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Most of the hot spots move only slowly, and in some cases the movement of the plates past them has left trails of dead volcanoes.",
-              "translation": "【考研真题精读标准译文】Most of the hot spots move only slowly, and in some cases the movement of the plates past them has left trails of dead volcanoes.",
+              "translation": "大多数热点移动缓慢，在某些情况下，经过它们的板块运动会留下死火山的痕迹。",
               "vocab": [
                 {
                   "word": "move",
@@ -3573,7 +3573,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The hot spots and their volcanic trails are milestones that mark the passage of the plates.",
-              "translation": "【考研真题精读标准译文】The hot spots and their volcanic trails are milestones that mark the passage of the plates.",
+              "translation": "热点及其火山轨迹是标志着板块移动的里程碑。",
               "vocab": [
                 {
                   "word": "mark",
@@ -3595,7 +3595,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "That the plates are moving is now beyond dispute.",
-              "translation": "【考研真题精读标准译文】That the plates are moving is now beyond dispute.",
+              "translation": "板块正在移动，这一点现在已无可争议。",
               "vocab": [
                 {
                   "word": "beyond",
@@ -3624,7 +3624,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Africa and South America, for example, are moving away from each other as new material is injected into the sea floor between them.",
-              "translation": "【考研真题精读标准译文】Africa and South America, for example, are moving away from each other as new material is injected into the sea floor between them.",
+              "translation": "例如，随着新物质被注入非洲和南美洲之间的海底，非洲和南美洲正在彼此远离。",
               "vocab": [
                 {
                   "word": "for",
@@ -3652,7 +3652,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The complementary coastlines and certain geological features that seem to span the ocean are reminders of where the two continents were once joined.",
-              "translation": "【考研真题精读标准译文】The complementary coastlines and certain geological features that seem to span the ocean are reminders of where the two continents were once joined.",
+              "translation": "互补的海岸线和某些似乎跨越海洋的地质特征提醒人们，这两个大陆曾经是连接在一起的。",
               "vocab": [
                 {
                   "word": "span",
@@ -3668,7 +3668,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The relative motion of the plates carrying these continents has been constructed in detail, but the motion of one plate with respect to another cannot readily be translated into motion with respect to the earth's interior.",
-              "translation": "【考研真题精读标准译文】The relative motion of the plates carrying these continents has been constructed in detail, but the motion of one plate with respect to another cannot readily be translated into motion with respect to the earth's interior.",
+              "translation": "承载这些大陆的板块的相对运动已经被详细构建，但是一个板块相对于另一个板块的运动不能轻易地转化为相对于地球内部的运动。",
               "vocab": [
                 {
                   "word": "relative",
@@ -3714,7 +3714,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "It is not possible to determine whether both continents are moving in opposite directions or whether one continent is stationary and the other is drifting away from it.",
-              "translation": "【考研真题精读标准译文】It is not possible to determine whether both continents are moving in opposite directions or whether one continent is stationary and the other is drifting away from it.",
+              "translation": "无法确定两个大陆是否朝相反方向移动，或者一个大陆是否静止而另一个大陆正在远离它。",
               "vocab": [
                 {
                   "word": "opposite",
@@ -3748,7 +3748,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Hot spots, anchored in the deeper layers of the earth, provide the measuring instruments needed to resolve the question.",
-              "translation": "【考研真题精读标准译文】Hot spots, anchored in the deeper layers of the earth, provide the measuring instruments needed to resolve the question.",
+              "translation": "位于地球深层的热点提供了解决该问题所需的测量仪器。",
               "vocab": [
                 {
                   "word": "provide",
@@ -3777,7 +3777,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "From an analysis of the hot-spot population it appears that the African plate is stationary and that it has not moved during the past 30 million years.",
-              "translation": "【考研真题精读标准译文】From an analysis of the hot-spot population it appears that the African plate is stationary and that it has not moved during the past 30 million years.",
+              "translation": "从对热点人口的分析来看，非洲板块似乎是静止的，并且在过去 3000 万年里没有移动。",
               "vocab": [
                 {
                   "word": "analysis",
@@ -3811,7 +3811,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The significance of hot spots is not confined to their role as a frame of reference.",
-              "translation": "【考研真题精读标准译文】The significance of hot spots is not confined to their role as a frame of reference.",
+              "translation": "热点的重要性不仅限于其作为参考框架的作用。",
               "vocab": [
                 {
                   "word": "significance",
@@ -3839,7 +3839,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "It now appears that they also have an important influence on the geophysical processes that propel the plates across the globe.",
-              "translation": "【考研真题精读标准译文】It now appears that they also have an important influence on the geophysical processes that propel the plates across the globe.",
+              "translation": "现在看来，它们对推动板块穿越全球的地球物理过程也有重要影响。",
               "vocab": [
                 {
                   "word": "influence",
@@ -3861,7 +3861,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "When a continental plate comes to rest over a hot spot, the material rising from deeper layers creates a broad dome.",
-              "translation": "【考研真题精读标准译文】When a continental plate comes to rest over a hot spot, the material rising from deeper layers creates a broad dome.",
+              "translation": "当大陆板块停在热点上方时，从深层升起的物质会形成一个宽阔的圆顶。",
               "vocab": [
                 {
                   "word": "plate",
@@ -3895,7 +3895,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "As the dome grows, it develops deep fissures (cracks); in at least a few cases the continent may break entirely along some of these fissures, so that the hot spot initiates the formation of a new ocean.",
-              "translation": "【考研真题精读标准译文】As the dome grows, it develops deep fissures (cracks); in at least a few cases the continent may break entirely along some of these fissures, so that the hot spot initiates the formation of a new ocean.",
+              "translation": "随着圆顶的生长，它会出现很深的裂缝（裂缝）；至少在某些情况下，大陆可能会沿着其中一些裂缝完全破裂，从而使热点开始形成新的海洋。",
               "vocab": [
                 {
                   "word": "at least",
@@ -3941,7 +3941,7 @@ window.ENGLISH_DATA['1998'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Thus, just as earlier theories have explained the mobility of the continents, so hot spots may explain their mutability (inconstancy).",
-              "translation": "【考研真题精读标准译文】Thus, just as earlier theories have explained the mobility of the continents, so hot spots may explain their mutability (inconstancy).",
+              "translation": "因此，正如早期的理论解释了大陆的流动性一样，热点也可以解释它们的可变性（不稳定）。",
               "vocab": [
                 {
                   "word": "Thus",
@@ -3995,7 +3995,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "the geological theory about drifting plates has been proved to be true",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4061,7 +4061,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "they have been found to share certain geological features",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4149,7 +4149,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "the formation of new oceans",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4204,7 +4204,7 @@ window.ENGLISH_DATA['1998'] = {
               "text": "the significance of hot spots in geophysical studies",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

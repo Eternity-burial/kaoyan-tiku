@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "In the 2006 film version of The Devil Wears Prada, Miranda Priestly, played by Meryl Streep, scolds her unattractive assistant for imagining that high fashion doesn't affect her.",
-              "translation": "【考研真题精读标准译文】In the 2006 film version of The Devil Wears Prada, Miranda Priestly, played by Meryl Streep, scolds her unattractive assistant for imagining that high fashion doesn't affect her.",
+              "translation": "在 2006 年电影《穿普拉达的女魔头》中，梅丽尔·斯特里普 (Meryl Streep) 饰演的米兰达·普里斯特利 (Miranda Priestly) 斥责她的助手没有吸引力，因为她认为高级时尚对她没有影响。",
               "vocab": [
                 {
                   "word": "version",
@@ -66,7 +66,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Priestly explains how the deep blue color of the assistant's sweater descended over the years from fashion shows to department stores and to the bargain bin in which the poor girl doubtless found her garment.",
-              "translation": "【考研真题精读标准译文】Priestly explains how the deep blue color of the assistant's sweater descended over the years from fashion shows to department stores and to the bargain bin in which the poor girl doubtless found her garment.",
+              "translation": "普里斯特利解释了助理的深蓝色毛衣多年来如何从时装秀到百货商店，再到廉价货箱，可怜的女孩无疑在其中找到了她的衣服。",
               "vocab": [
                 {
                   "word": "over the years",
@@ -112,7 +112,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "This top-down conception of the fashion business couldn't be more out of date or at odds with the feverish world described in Overdressed, Elizabeth Cline's three-year indictment of \"fast fashion\".",
-              "translation": "【考研真题精读标准译文】This top-down conception of the fashion business couldn't be more out of date or at odds with the feverish world described in Overdressed, Elizabeth Cline's three-year indictment of \"fast fashion\".",
+              "translation": "这种自上而下的时尚业概念已经过时了，也与伊丽莎白·克莱恩 (Elizabeth Cline) 在《过度打扮》(Overdressed) 中对“快时尚”长达三年的控诉中所描述的狂热世界格格不入。",
               "vocab": [
                 {
                   "word": "conception",
@@ -152,7 +152,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "In the last decade or so, advances in technology have allowed mass-market labels such as Zara, H&M, and Uniqlo to react to trends more quickly and anticipate demand more precisely.",
-              "translation": "【考研真题精读标准译文】In the last decade or so, advances in technology have allowed mass-market labels such as Zara, H&M, and Uniqlo to react to trends more quickly and anticipate demand more precisely.",
+              "translation": "在过去十年左右的时间里，技术的进步使得 Zara、H&M 和 Uniqlo 等大众市场品牌能够更快地对趋势做出反应并更准确地预测需求。",
               "vocab": [
                 {
                   "word": "decade",
@@ -180,7 +180,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Quicker turnarounds mean less wasted inventory, more frequent releases, and more profit.",
-              "translation": "【考研真题精读标准译文】Quicker turnarounds mean less wasted inventory, more frequent releases, and more profit.",
+              "translation": "更快的周转意味着更少的库存浪费、更频繁的发布和更多的利润。",
               "vocab": [
                 {
                   "word": "mean",
@@ -221,7 +221,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "These labels encourage style-conscious consumers to see clothes as disposable—meant to last only a wash or two, although they don't advertise that—and to renew their wardrobe every few weeks.",
-              "translation": "【考研真题精读标准译文】These labels encourage style-conscious consumers to see clothes as disposable—meant to last only a wash or two, although they don't advertise that—and to renew their wardrobe every few weeks.",
+              "translation": "这些标签鼓励注重时尚的消费者将衣服视为一次性的——意味着只能洗一两次，尽管他们没有宣传这一点——并鼓励他们每隔几周更新一次衣柜。",
               "vocab": [
                 {
                   "word": "encourage",
@@ -255,7 +255,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "By offering on-trend items at dirt-cheap prices, Cline argues, these brands have hijacked fashion cycles, shaking an industry long accustomed to a seasonal pace.",
-              "translation": "【考研真题精读标准译文】By offering on-trend items at dirt-cheap prices, Cline argues, these brands have hijacked fashion cycles, shaking an industry long accustomed to a seasonal pace.",
+              "translation": "克莱恩认为，通过以极其便宜的价格提供流行商品，这些品牌劫持了时尚周期，动摇了长期习惯于季节性节奏的行业。",
               "vocab": [
                 {
                   "word": "dirt-cheap",
@@ -295,7 +295,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The victims of this revolution, of course, are not limited to designers.",
-              "translation": "【考研真题精读标准译文】The victims of this revolution, of course, are not limited to designers.",
+              "translation": "当然，这场革命的受害者不仅限于设计师。",
               "vocab": [
                 {
                   "word": "revolution",
@@ -317,7 +317,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "For H&M to offer a $5.95 knit miniskirt in all its 2,300-plus stores around the world, it must rely on low-wage overseas labor, order in volumes that strain natural resources, and use massive amounts of harmful chemicals.",
-              "translation": "【考研真题精读标准译文】For H&M to offer a $5.95 knit miniskirt in all its 2,300-plus stores around the world, it must rely on low-wage overseas labor, order in volumes that strain natural resources, and use massive amounts of harmful chemicals.",
+              "translation": "H&M 要想在其全球 2,300 多家门店中销售 5.95 美元的针织迷你裙，就必须依赖低工资的海外劳动力、大量订单，从而导致自然资源紧张，并使用大量有害化学物质。",
               "vocab": [
                 {
                   "word": "rely on",
@@ -393,7 +393,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Overdressed is the fashion world's answer to consumer-activist bestsellers like Michael Pollan's The Omnivore's Dilemma.",
-              "translation": "【考研真题精读标准译文】Overdressed is the fashion world's answer to consumer-activist bestsellers like Michael Pollan's The Omnivore's Dilemma.",
+              "translation": "《穿得太多》是时尚界对迈克尔·波伦的《杂食者的困境》等消费者维权畅销书的回答。",
               "vocab": [
                 {
                   "word": "fashion",
@@ -428,7 +428,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "\"Mass-produced clothing, like fast food, fills a hunger and need, yet is non-durable and wasteful,\" Cline argues.",
-              "translation": "【考研真题精读标准译文】\"Mass-produced clothing, like fast food, fills a hunger and need, yet is non-durable and wasteful,\" Cline argues.",
+              "translation": "克莱恩认为：“大量生产的服装就像快餐一样，可以满足饥饿和需求，但不耐用且浪费。”",
               "vocab": [
                 {
                   "word": "yet",
@@ -450,7 +450,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Americans, she finds, buy roughly 20 billion garments a year—about 64 items per person—and no matter how much they give away, this excess leads to waste.",
-              "translation": "【考研真题精读标准译文】Americans, she finds, buy roughly 20 billion garments a year—about 64 items per person—and no matter how much they give away, this excess leads to waste.",
+              "translation": "她发现，美国人每年购买大约 200 亿件衣服——每人大约 64 件——无论他们扔掉多少，过量都会导致浪费。",
               "vocab": [
                 {
                   "word": "roughly",
@@ -484,7 +484,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Towards the end of Overdressed, Cline introduced her ideal, a Brooklyn woman named Sarah Kate Beaumont, who since 2008 has made all of her own clothes—and beautifully.",
-              "translation": "【考研真题精读标准译文】Towards the end of Overdressed, Cline introduced her ideal, a Brooklyn woman named Sarah Kate Beaumont, who since 2008 has made all of her own clothes—and beautifully.",
+              "translation": "在《Overdressed》快结束时，克莱恩介绍了她的理想，一位名叫莎拉·凯特·博蒙特 (Sarah Kate Beaumont) 的布鲁克林女性，自 2008 年以来，她所有的衣服都是自己制作的，而且很漂亮。",
               "vocab": [
                 {
                   "word": "end",
@@ -512,7 +512,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "But as Cline is the first to note, it took Beaumont decades to perfect her craft; her example can't be knocked off.",
-              "translation": "【考研真题精读标准译文】But as Cline is the first to note, it took Beaumont decades to perfect her craft; her example can't be knocked off.",
+              "translation": "但正如克莱恩第一个指出的那样，博蒙特花了几十年的时间才完善了她的手艺。她的榜样是不可磨灭的。",
               "vocab": [
                 {
                   "word": "note",
@@ -540,7 +540,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Though several fast-fashion companies have made efforts to curb their impact on labor and the environment – including H&M, with its green Conscious Collection line—Cline believes lasting change can only be effected by the customer.",
-              "translation": "【考研真题精读标准译文】Though several fast-fashion companies have made efforts to curb their impact on labor and the environment – including H&M, with its green Conscious Collection line—Cline believes lasting change can only be effected by the customer.",
+              "translation": "尽管一些快时尚公司已经努力遏制对劳动力和环境的影响——包括 H&M 的绿色 Conscious Collection 系列——但 Cline 认为，持久的改变只能由客户来实现。",
               "vocab": [
                 {
                   "word": "several",
@@ -598,7 +598,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "She exhibits the idealism common to many advocates of sustainability, be it in food or in energy.",
-              "translation": "【考研真题精读标准译文】She exhibits the idealism common to many advocates of sustainability, be it in food or in energy.",
+              "translation": "她展现了许多可持续发展倡导者所共有的理想主义，无论是在食品还是能源方面。",
               "vocab": [
                 {
                   "word": "idealism",
@@ -632,7 +632,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Vanity is a constant; people will only start shopping more sustainably when they can't afford not to.",
-              "translation": "【考研真题精读标准译文】Vanity is a constant; people will only start shopping more sustainably when they can't afford not to.",
+              "translation": "虚荣是常态；人们只有在无法承受不这样做的情况下才会开始更可持续地购物。",
               "vocab": [
                 {
                   "word": "Vanity",
@@ -687,7 +687,7 @@ window.ENGLISH_DATA['2013'] = {
               "text": "insensitivity to fashion.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -746,7 +746,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -762,9 +762,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "shop for their garments more frequently.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -773,9 +773,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "resist the influence of advertisements.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -812,7 +812,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -828,9 +828,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "indifference.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -850,9 +850,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "accusation.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -878,7 +878,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -894,9 +894,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "The fast-fashion industry ignores sustainability.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -905,9 +905,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "Pricing is vital to environment-friendly purchasing.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -944,7 +944,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -971,9 +971,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "Criticism of the fast-fashion industry.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -982,9 +982,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "Exposure of a mass-market secret.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1015,7 +1015,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "An old saying has it that half of all advertising budgets are wasted—the trouble is, no one knows which half.",
-              "translation": "【考研真题精读标准译文】An old saying has it that half of all advertising budgets are wasted—the trouble is, no one knows which half.",
+              "translation": "有句老话说，一半的广告预算都被浪费了——问题是，没有人知道是哪一半。",
               "vocab": [
                 {
                   "word": "one",
@@ -1031,7 +1031,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "In the internet age, at least in theory, this fraction can be much reduced.",
-              "translation": "【考研真题精读标准译文】In the internet age, at least in theory, this fraction can be much reduced.",
+              "translation": "在互联网时代，至少在理论上，这个比例可以大大减少。",
               "vocab": [
                 {
                   "word": "at least",
@@ -1059,7 +1059,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "By watching what people search for, click on and say online, companies can aim \"behavioural\" ads at those most likely to buy.",
-              "translation": "【考研真题精读标准译文】By watching what people search for, click on and say online, companies can aim \"behavioural\" ads at those most likely to buy.",
+              "translation": "通过观察人们在网上搜索、点击和说出的内容，公司可以针对最有可能购买的人投放“行为”广告。",
               "vocab": [
                 {
                   "word": "search",
@@ -1093,7 +1093,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "In the past couple of weeks a quarrel has illustrated the value to advertisers of such fine-grained information: Should advertisers assume that people are happy to be tracked and sent behavioural ads?",
-              "translation": "【考研真题精读标准译文】In the past couple of weeks a quarrel has illustrated the value to advertisers of such fine-grained information: Should advertisers assume that people are happy to be tracked and sent behavioural ads?",
+              "translation": "在过去的几周里，一场争论说明了这种细粒度信息对广告商的价值：广告商是否应该假设人们乐于被跟踪和发送行为广告？",
               "vocab": [
                 {
                   "word": "value",
@@ -1133,7 +1133,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Or should they have explicit permission?",
-              "translation": "【考研真题精读标准译文】Or should they have explicit permission?",
+              "translation": "或者他们应该得到明确的许可吗？",
               "vocab": [
                 {
                   "word": "explicit",
@@ -1155,7 +1155,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "In December 2010 America's Federal Trade Commission (FTC) proposed adding a \"do not track\" (DNT) option to internet browsers, so that users could tell advertisers that they did not want to be followed.",
-              "translation": "【考研真题精读标准译文】In December 2010 America's Federal Trade Commission (FTC) proposed adding a \"do not track\" (DNT) option to internet browsers, so that users could tell advertisers that they did not want to be followed.",
+              "translation": "2010 年 12 月，美国联邦贸易委员会 (FTC) 提议在互联网浏览器中添加“不跟踪”(DNT) 选项，以便用户可以告诉广告商他们不想被跟踪。",
               "vocab": [
                 {
                   "word": "Federal",
@@ -1201,7 +1201,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Microsoft's Internet Explorer and Apple's Safari both offer DNT; Google's Chrome is due to do so this year.",
-              "translation": "【考研真题精读标准译文】Microsoft's Internet Explorer and Apple's Safari both offer DNT; Google's Chrome is due to do so this year.",
+              "translation": "微软的 Internet Explorer 和苹果的 Safari 都提供 DNT；谷歌的 Chrome 浏览器将于今年推出。",
               "vocab": [
                 {
                   "word": "do so",
@@ -1242,7 +1242,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "In February the FTC and the Digital Advertising Alliance (DAA) agreed that the industry would get cracking on responding to DNT requests.",
-              "translation": "【考研真题精读标准译文】In February the FTC and the Digital Advertising Alliance (DAA) agreed that the industry would get cracking on responding to DNT requests.",
+              "translation": "今年 2 月，联邦贸易委员会和数字广告联盟 (DAA) 一致认为，该行业将积极响应 DNT 请求。",
               "vocab": [
                 {
                   "word": "Digital",
@@ -1270,7 +1270,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "On May 31st Microsoft set off the row.",
-              "translation": "【考研真题精读标准译文】On May 31st Microsoft set off the row.",
+              "translation": "5月31日，微软引发了这场争吵。",
               "vocab": [
                 {
                   "word": "row",
@@ -1286,7 +1286,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "It said that Internet Explorer 10, the version due to appear with Windows 8, would have DNT as a default.",
-              "translation": "【考研真题精读标准译文】It said that Internet Explorer 10, the version due to appear with Windows 8, would have DNT as a default.",
+              "translation": "据称，Internet Explorer 10（该版本将与 Windows 8 一起出现）将默认使用 DNT。",
               "vocab": [
                 {
                   "word": "Explorer",
@@ -1320,7 +1320,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Advertisers are horrified.",
-              "translation": "【考研真题精读标准译文】Advertisers are horrified.",
+              "translation": "广告商都被吓坏了。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1329,7 +1329,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Human nature being what it is, most people stick with default settings.",
-              "translation": "【考研真题精读标准译文】Human nature being what it is, most people stick with default settings.",
+              "translation": "人性就是如此，大多数人都会坚持默认设置。",
               "vocab": [
                 {
                   "word": "nature",
@@ -1357,7 +1357,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Few switch DNT on now, but if tracking is off it will stay off.",
-              "translation": "【考研真题精读标准译文】Few switch DNT on now, but if tracking is off it will stay off.",
+              "translation": "现在很少有人打开 DNT，但如果跟踪关闭，它就会保持关闭状态。",
               "vocab": [
                 {
                   "word": "switch",
@@ -1379,7 +1379,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Bob Liodice, the chief executive of the Association of National Advertisers, says consumers will be worse off if the industry cannot collect information about their preferences.",
-              "translation": "【考研真题精读标准译文】Bob Liodice, the chief executive of the Association of National Advertisers, says consumers will be worse off if the industry cannot collect information about their preferences.",
+              "translation": "全国广告商协会首席执行官鲍勃·利迪斯（Bob Liodice）表示，如果该行业无法收集有关消费者偏好的信息，消费者的处境将会更糟。",
               "vocab": [
                 {
                   "word": "executive",
@@ -1438,7 +1438,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "People will not get fewer ads, he says.",
-              "translation": "【考研真题精读标准译文】People will not get fewer ads, he says.",
+              "translation": "他说，人们收到的广告不会减少。",
               "vocab": [
                 {
                   "word": "will",
@@ -1454,7 +1454,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "\"They'll get less meaningful, less targeted ads.\" It is not yet clear how advertisers will respond.",
-              "translation": "【考研真题精读标准译文】\"They'll get less meaningful, less targeted ads.\" It is not yet clear how advertisers will respond.",
+              "translation": "“他们收到的广告将变得意义不大、针对性较差。”目前尚不清楚广告商将如何回应。",
               "vocab": [
                 {
                   "word": "meaningful",
@@ -1494,7 +1494,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Getting a DNT signal does not oblige anyone to stop tracking, although some companies have promised to do so.",
-              "translation": "【考研真题精读标准译文】Getting a DNT signal does not oblige anyone to stop tracking, although some companies have promised to do so.",
+              "translation": "获得 DNT 信号并不意味着任何人都必须停止跟踪，尽管一些公司已承诺这样做。",
               "vocab": [
                 {
                   "word": "do so",
@@ -1522,7 +1522,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Unable to tell whether someone really objects to behavioural ads or whether they are sticking with Microsoft's default, some may ignore a DNT signal and press on anyway.",
-              "translation": "【考研真题精读标准译文】Unable to tell whether someone really objects to behavioural ads or whether they are sticking with Microsoft's default, some may ignore a DNT signal and press on anyway.",
+              "translation": "由于无法判断某人是否真的反对行为广告，或者他们是否坚持微软的默认设置，有些人可能会忽略 DNT 信号并继续前进。",
               "vocab": [
                 {
                   "word": "Unable",
@@ -1568,7 +1568,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Also unclear is why Microsoft has gone it alone.",
-              "translation": "【考研真题精读标准译文】Also unclear is why Microsoft has gone it alone.",
+              "translation": "同样不清楚的是，微软为何单打独斗。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1577,7 +1577,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "After all, it has an ad business too, which it says will comply with DNT requests, though it is still working out how.",
-              "translation": "【考研真题精读标准译文】After all, it has an ad business too, which it says will comply with DNT requests, though it is still working out how.",
+              "translation": "毕竟，它也有广告业务，它表示将遵守 DNT 要求，尽管它仍在研究如何遵守。",
               "vocab": [
                 {
                   "word": "comply with",
@@ -1617,7 +1617,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "If it is trying to upset Google, which relies almost wholly on advertising, it has chosen an indirect method: there is no guarantee that DNT by default will become the norm.",
-              "translation": "【考研真题精读标准译文】If it is trying to upset Google, which relies almost wholly on advertising, it has chosen an indirect method: there is no guarantee that DNT by default will become the norm.",
+              "translation": "如果它试图扰乱几乎完全依赖广告的谷歌，它选择了一种间接的方法：不能保证 DNT 默认会成为常态。",
               "vocab": [
                 {
                   "word": "upset",
@@ -1675,7 +1675,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "DNT does not seem an obviously huge selling point for Windows 8—though the firm has compared some of its other products favourably with Google's on that count before.",
-              "translation": "【考研真题精读标准译文】DNT does not seem an obviously huge selling point for Windows 8—though the firm has compared some of its other products favourably with Google's on that count before.",
+              "translation": "DNT 似乎并不是 Windows 8 的一个明显的巨大卖点——尽管该公司之前曾在这方面将其一些其他产品与谷歌的产品进行过比较。",
               "vocab": [
                 {
                   "word": "for",
@@ -1697,7 +1697,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "Brendon Lynch, Microsoft's chief privacy officer, blogged, \"We believe consumers should have more control.\" Could it really be that simple?",
-              "translation": "【考研真题精读标准译文】Brendon Lynch, Microsoft's chief privacy officer, blogged, \"We believe consumers should have more control.\" Could it really be that simple?",
+              "translation": "微软首席隐私官布伦登·林奇(Brendon Lynch)在博客中表示，“我们相信消费者应该拥有更多的控制权。”事情真的有这么简单吗？",
               "vocab": [
                 {
                   "word": "officer",
@@ -1727,14 +1727,14 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "provide better online services.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1765,9 +1765,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "lower their operational costs.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1793,14 +1793,14 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "internet browser developers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1820,9 +1820,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "e-commerce conductors.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1859,7 +1859,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1886,9 +1886,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "will not benefit consumers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1897,9 +1897,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "goes against human nature.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1925,7 +1925,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1941,9 +1941,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "DNT may not serve its intended purpose.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1952,9 +1952,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "DNT is losing its popularity among consumers.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1991,7 +1991,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2007,9 +2007,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "understanding.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2029,9 +2029,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "skepticism.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2062,7 +2062,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Up until a few decades ago, our visions of the future were largely—though by no means uniformly—glowingly positive.",
-              "translation": "【考研真题精读标准译文】Up until a few decades ago, our visions of the future were largely—though by no means uniformly—glowingly positive.",
+              "translation": "直到几十年前，我们对未来的愿景在很大程度上——尽管绝不是一致——非常积极。",
               "vocab": [
                 {
                   "word": "uniformly",
@@ -2090,7 +2090,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Science and technology would cure all the ills of humanity, leading to lives of fulfilment and opportunity for all.",
-              "translation": "【考研真题精读标准译文】Science and technology would cure all the ills of humanity, leading to lives of fulfilment and opportunity for all.",
+              "translation": "科学和技术将治愈人类的所有弊病，为所有人带来充实的生活和机会。",
               "vocab": [
                 {
                   "word": "cure",
@@ -2136,7 +2136,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Now utopia has grown unfashionable, as we have gained a deeper appreciation of the range of threats facing us, from asteroid strike to epidemic flu and to climate change.",
-              "translation": "【考研真题精读标准译文】Now utopia has grown unfashionable, as we have gained a deeper appreciation of the range of threats facing us, from asteroid strike to epidemic flu and to climate change.",
+              "translation": "现在，乌托邦已经不再流行，因为我们对我们面临的一系列威胁有了更深入的认识，从小行星撞击到流行性流感和气候变化。",
               "vocab": [
                 {
                   "word": "utopia",
@@ -2194,7 +2194,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "You might even be tempted to assume that humanity has little future to look forward to.",
-              "translation": "【考研真题精读标准译文】You might even be tempted to assume that humanity has little future to look forward to.",
+              "translation": "你甚至可能会认为人类没有什么可期待的未来。",
               "vocab": [
                 {
                   "word": "assume",
@@ -2222,7 +2222,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "But such gloominess is misplaced.",
-              "translation": "【考研真题精读标准译文】But such gloominess is misplaced.",
+              "translation": "但这种悲观情绪是错误的。",
               "vocab": [
                 {
                   "word": "gloominess",
@@ -2238,7 +2238,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "The fossil record shows that many species have endured for millions of years – so why shouldn't we?",
-              "translation": "【考研真题精读标准译文】The fossil record shows that many species have endured for millions of years – so why shouldn't we?",
+              "translation": "化石记录表明，许多物种已经生存了数百万年——那么我们为什么不应该呢？",
               "vocab": [
                 {
                   "word": "fossil",
@@ -2279,7 +2279,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Take a broader look at our species' place in the universe, and it becomes clear that we have an excellent chance of surviving for tens, if not hundreds, of thousands of years.",
-              "translation": "【考研真题精读标准译文】Take a broader look at our species' place in the universe, and it becomes clear that we have an excellent chance of surviving for tens, if not hundreds, of thousands of years.",
+              "translation": "更广泛地审视我们物种在宇宙中的位置，很明显，我们有很好的机会生存数十万年，甚至数百万年。",
               "vocab": [
                 {
                   "word": "Take",
@@ -2331,7 +2331,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Look up Homo sapiens in the \"Red List\" of threatened species of the International Union for the Conservation of Nature (IUCN) and you will read: \"Listed as Least Concern as the species is very widely distributed, adaptable, currently increasing, and there are no major threats resulting in an overall population decline.\" So what does our deep future hold?",
-              "translation": "【考研真题精读标准译文】Look up Homo sapiens in the \"Red List\" of threatened species of the International Union for the Conservation of Nature (IUCN) and you will read: \"Listed as Least Concern as the species is very widely distributed, adaptable, currently increasing, and there are no major threats resulting in an overall population decline.\" So what does our deep future hold?",
+              "translation": "在国际自然保护联盟（IUCN）的受威胁物种“红色名录”中查找智人，您会看到：“被列为最不受关注的物种，因为该物种分布非常广泛，适应性强，目前正在增加，并且不存在导致总体种群数量下降的重大威胁。”那么我们的未来会怎样呢？",
               "vocab": [
                 {
                   "word": "threatened",
@@ -2443,7 +2443,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "A growing number of researchers and organisations are now thinking seriously about that question.",
-              "translation": "【考研真题精读标准译文】A growing number of researchers and organisations are now thinking seriously about that question.",
+              "translation": "越来越多的研究人员和组织正在认真思考这个问题。",
               "vocab": [
                 {
                   "word": "about",
@@ -2465,7 +2465,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "For example, the Long Now Foundation has as its flagship project a mechanical clock that is designed to still be marking time thousands of years hence.",
-              "translation": "【考研真题精读标准译文】For example, the Long Now Foundation has as its flagship project a mechanical clock that is designed to still be marking time thousands of years hence.",
+              "translation": "例如，Long Now 基金会的旗舰项目是一款机械钟，其设计目的是在数千年后仍然可以计时。",
               "vocab": [
                 {
                   "word": "For",
@@ -2517,7 +2517,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Perhaps willfully, it may be easier to think about such lengthy timescales than about the more immediate future.",
-              "translation": "【考研真题精读标准译文】Perhaps willfully, it may be easier to think about such lengthy timescales than about the more immediate future.",
+              "translation": "也许是故意的，考虑如此漫长的时间尺度可能比考虑更近期的未来更容易。",
               "vocab": [
                 {
                   "word": "willfully",
@@ -2551,7 +2551,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The potential evolution of today's technology, and its social consequences, is dazzlingly complicated, and it's perhaps best left to science fiction writers and futurologists to explore the many possibilities we can envisage.",
-              "translation": "【考研真题精读标准译文】The potential evolution of today's technology, and its social consequences, is dazzlingly complicated, and it's perhaps best left to science fiction writers and futurologists to explore the many possibilities we can envisage.",
+              "translation": "当今技术的潜在演变及其社会后果极其复杂，也许最好让科幻小说作家和未来学家来探索我们可以设想的多种可能性。",
               "vocab": [
                 {
                   "word": "potential",
@@ -2622,7 +2622,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "That's one reason why we have launched Arc, a new publication dedicated to the near future.",
-              "translation": "【考研真题精读标准译文】That's one reason why we have launched Arc, a new publication dedicated to the near future.",
+              "translation": "这就是我们推出 Arc 的原因之一，这是一本致力于不久的将来的新出版物。",
               "vocab": [
                 {
                   "word": "one",
@@ -2662,7 +2662,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "But take a longer view and there is a surprising amount that we can say with considerable assurance.",
-              "translation": "【考研真题精读标准译文】But take a longer view and there is a surprising amount that we can say with considerable assurance.",
+              "translation": "但从更长远的角度来看，我们可以相当有把握地说出令人惊讶的数量。",
               "vocab": [
                 {
                   "word": "take",
@@ -2702,7 +2702,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "As so often, the past holds the key to the future: we have now identified enough of the long-term patterns shaping the history of the planet, and our species, to make evidence-based forecasts about the situations in which our descendants will find themselves.",
-              "translation": "【考研真题精读标准译文】As so often, the past holds the key to the future: we have now identified enough of the long-term patterns shaping the history of the planet, and our species, to make evidence-based forecasts about the situations in which our descendants will find themselves.",
+              "translation": "通常，过去是未来的关键：我们现在已经确定了足够多的塑造地球和我们物种历史的长期模式，可以对我们的后代将面临的情况做出基于证据的预测。",
               "vocab": [
                 {
                   "word": "species",
@@ -2742,7 +2742,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "This long perspective makes the pessimistic view of our prospects seem more likely to be a passing fad.",
-              "translation": "【考研真题精读标准译文】This long perspective makes the pessimistic view of our prospects seem more likely to be a passing fad.",
+              "translation": "这种长远的眼光使得对前景的悲观看法似乎更有可能成为一种昙花一现的时尚。",
               "vocab": [
                 {
                   "word": "perspective",
@@ -2782,7 +2782,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "To be sure, the future is not all rosy.",
-              "translation": "【考研真题精读标准译文】To be sure, the future is not all rosy.",
+              "translation": "可以肯定的是，未来并不都是美好的。",
               "vocab": [
                 {
                   "word": "rosy",
@@ -2798,7 +2798,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "But we are now knowledgeable enough to reduce many of the risks that threatened the existence of earlier humans, and to improve the lot of those to come.",
-              "translation": "【考研真题精读标准译文】But we are now knowledgeable enough to reduce many of the risks that threatened the existence of earlier humans, and to improve the lot of those to come.",
+              "translation": "但我们现在有足够的知识来减少威胁早期人类生存的许多风险，并改善未来人类的命运。",
               "vocab": [
                 {
                   "word": "knowledgeable",
@@ -2840,14 +2840,14 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "our desire for lives of fulfillment.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2856,9 +2856,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "our faith in science and technology.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2906,14 +2906,14 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "a sustained species.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2944,9 +2944,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "a misplaced race.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2972,7 +2972,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2988,9 +2988,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "Arc helps limit the scope of futurological studies.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3010,9 +3010,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "Our immediate future is hard to conceive.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3038,7 +3038,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -3054,9 +3054,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "draw on our experience from the past.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3065,9 +3065,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "explore our planet's abundant resources.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3104,14 +3104,14 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "The Ever-bright Prospects of Mankind.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3142,9 +3142,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "Uncertainty about Our Future.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3175,7 +3175,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "On a five to three vote, the Supreme Court knocked out much of Arizona's immigration law Monday—a modest policy victory for the Obama Administration.",
-              "translation": "【考研真题精读标准译文】On a five to three vote, the Supreme Court knocked out much of Arizona's immigration law Monday—a modest policy victory for the Obama Administration.",
+              "translation": "周一，最高法院以五比三的投票结果废除了亚利桑那州移民法的大部分内容——这对奥巴马政府来说是一次小小的政策胜利。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -3251,7 +3251,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But on the more important matter of the Constitution, the decision was an 8-0 defeat for the Administration's effort to upset the balance of power between the federal government and the states.",
-              "translation": "【考研真题精读标准译文】But on the more important matter of the Constitution, the decision was an 8-0 defeat for the Administration's effort to upset the balance of power between the federal government and the states.",
+              "translation": "但在更重要的宪法问题上，这一决定以 8 比 0 击败了政府试图打破联邦政府和各州之间权力平衡的努力。",
               "vocab": [
                 {
                   "word": "federal government",
@@ -3333,7 +3333,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "In Arizona v.",
-              "translation": "【考研真题精读标准译文】In Arizona v.",
+              "translation": "在亚利桑那州诉。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -3342,7 +3342,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "United States, the majority overturned three of the four contested provisions of Arizona's controversial plan to have state and local police enforce federal immigration law.",
-              "translation": "【考研真题精读标准译文】United States, the majority overturned three of the four contested provisions of Arizona's controversial plan to have state and local police enforce federal immigration law.",
+              "translation": "在美国，亚利桑那州有争议的计划让州和地方警察执行联邦移民法，多数票推翻了四项有争议的条款中的三项。",
               "vocab": [
                 {
                   "word": "the majority",
@@ -3406,7 +3406,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The Constitutional principles that Washington alone has the power to \"establish a uniform Rule of Naturalization\" and that federal laws precede state laws are noncontroversial. Arizona had attempted to fashion state policies that ran parallel to the existing federal ones.",
-              "translation": "【考研真题精读标准译文】The Constitutional principles that Washington alone has the power to \"establish a uniform Rule of Naturalization\" and that federal laws precede state laws are noncontroversial. Arizona had attempted to fashion state policies that ran parallel to the existing federal ones.",
+              "translation": "华盛顿独自有权“建立统一的入籍规则”以及联邦法律优先于州法律的宪法原则是没有争议的。亚利桑那州曾试图制定与现有联邦政策并行的州政策。",
               "vocab": [
                 {
                   "word": "Constitutional principles",
@@ -3518,7 +3518,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Justice Anthony Kennedy, joined by Chief Justice John Roberts and the Court's liberals, ruled that the state flew too close to the federal sun.",
-              "translation": "【考研真题精读标准译文】Justice Anthony Kennedy, joined by Chief Justice John Roberts and the Court's liberals, ruled that the state flew too close to the federal sun.",
+              "translation": "安东尼·肯尼迪大法官与首席大法官约翰·罗伯茨和最高法院的自由派人士一起裁定，该州距离联邦太阳太近了。",
               "vocab": [
                 {
                   "word": "Chief Justice",
@@ -3565,7 +3565,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "On the overturned provisions the majority held Congress had deliberately \"occupied the field\" and Arizona had thus intruded on the federal's privileged powers.",
-              "translation": "【考研真题精读标准译文】On the overturned provisions the majority held Congress had deliberately \"occupied the field\" and Arizona had thus intruded on the federal's privileged powers.",
+              "translation": "对于被推翻的条款，多数人认为国会故意“占领该领域”，亚利桑那州因此侵犯了联邦的特权。",
               "vocab": [
                 {
                   "word": "the majority",
@@ -3635,7 +3635,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "However, the Justices said that Arizona police would be allowed to verify the legal status of people who come in contact with law enforcement.",
-              "translation": "【考研真题精读标准译文】However, the Justices said that Arizona police would be allowed to verify the legal status of people who come in contact with law enforcement.",
+              "translation": "然而，法官们表示，亚利桑那州警方将被允许核实与执法部门接触的人的法律地位。",
               "vocab": [
                 {
                   "word": "legal status",
@@ -3687,7 +3687,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "That's because Congress has always envisioned joint federal-state immigration enforcement and explicitly encourages state officers to share information and cooperate with federal colleagues.",
-              "translation": "【考研真题精读标准译文】That's because Congress has always envisioned joint federal-state immigration enforcement and explicitly encourages state officers to share information and cooperate with federal colleagues.",
+              "translation": "这是因为国会一直设想联邦与州联合实施移民执法，并明确鼓励州官员与联邦同事共享信息并合作。",
               "vocab": [
                 {
                   "word": "share information",
@@ -3763,7 +3763,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Two of the three objecting Justices—Samuel Alito and Clarence Thomas—agreed with this Constitutional logic but disagreed about which Arizona rules conflicted with the federal statute.",
-              "translation": "【考研真题精读标准译文】Two of the three objecting Justices—Samuel Alito and Clarence Thomas—agreed with this Constitutional logic but disagreed about which Arizona rules conflicted with the federal statute.",
+              "translation": "三名反对的法官中的两名——塞缪尔·阿利托和克拉伦斯·托马斯——同意这一宪法逻辑，但不同意亚利桑那州的哪些规则与联邦法规相冲突。",
               "vocab": [
                 {
                   "word": "objecting",
@@ -3809,7 +3809,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "The only major objection came from Justice Antonin Scalia, who offered an even more robust defense of state privileges going back to the Alien and Sedition Acts.",
-              "translation": "【考研真题精读标准译文】The only major objection came from Justice Antonin Scalia, who offered an even more robust defense of state privileges going back to the Alien and Sedition Acts.",
+              "translation": "唯一的主要反对意见来自大法官安东宁·斯卡利亚（Antonin Scalia），他对国家特权提出了更强有力的辩护，这可以追溯到《外国人法》和《煽动叛乱法》。",
               "vocab": [
                 {
                   "word": "major",
@@ -3849,7 +3849,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The 8-0 objection to President Obama turns on what Justice Samuel Alito describes in his objection as \"a shocking assertion of federal executive power\".",
-              "translation": "【考研真题精读标准译文】The 8-0 objection to President Obama turns on what Justice Samuel Alito describes in his objection as \"a shocking assertion of federal executive power\".",
+              "translation": "对奥巴马总统的 8 比 0 反对，引发了法官塞缪尔·阿利托 (Samuel Alito) 在他的反对中所描述的“对联邦行政权力的令人震惊的主张”。",
               "vocab": [
                 {
                   "word": "objection",
@@ -3908,7 +3908,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The White House argued that Arizona's laws conflicted with its enforcement priorities, even if state laws complied with federal statutes to the letter.",
-              "translation": "【考研真题精读标准译文】The White House argued that Arizona's laws conflicted with its enforcement priorities, even if state laws complied with federal statutes to the letter.",
+              "translation": "白宫辩称，即使亚利桑那州的法律严格遵守联邦法规，但亚利桑那州的法律与其执法优先事项相冲突。",
               "vocab": [
                 {
                   "word": "the White House",
@@ -3966,7 +3966,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "In effect, the White House claimed that it could invalidate any otherwise legitimate state law that it disagrees with.",
-              "translation": "【考研真题精读标准译文】In effect, the White House claimed that it could invalidate any otherwise legitimate state law that it disagrees with.",
+              "translation": "实际上，白宫声称它可以使任何它不同意的合法州法律无效。",
               "vocab": [
                 {
                   "word": "the White House",
@@ -4018,7 +4018,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Some powers do belong exclusively to the federal government, and control of citizenship and the borders is among them.",
-              "translation": "【考研真题精读标准译文】Some powers do belong exclusively to the federal government, and control of citizenship and the borders is among them.",
+              "translation": "有些权力确实专属于联邦政府，其中包括对公民身份和边境的控制。",
               "vocab": [
                 {
                   "word": "federal government",
@@ -4058,7 +4058,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "But if Congress wanted to prevent states from using their own resources to check immigration status, it could.",
-              "translation": "【考研真题精读标准译文】But if Congress wanted to prevent states from using their own resources to check immigration status, it could.",
+              "translation": "但如果国会想阻止各州使用自己的资源来检查移民身份，它是可以的。",
               "vocab": [
                 {
                   "word": "Congress",
@@ -4098,7 +4098,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "It never did so.",
-              "translation": "【考研真题精读标准译文】It never did so.",
+              "translation": "它从来没有这样做过。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -4107,7 +4107,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The Administration was in essence asserting that because it didn't want to carry out Congress's immigration wishes, no state should be allowed to do so either.",
-              "translation": "【考研真题精读标准译文】The Administration was in essence asserting that because it didn't want to carry out Congress's immigration wishes, no state should be allowed to do so either.",
+              "translation": "政府实质上是在断言，因为它不想实现国会的移民愿望，所以也不应该允许任何州这样做。",
               "vocab": [
                 {
                   "word": "do so",
@@ -4171,7 +4171,7 @@ window.ENGLISH_DATA['2013'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Every Justice rightly rejected this remarkable claim.",
-              "translation": "【考研真题精读标准译文】Every Justice rightly rejected this remarkable claim.",
+              "translation": "每位法官都正确地驳回了这一非凡的主张。",
               "vocab": [
                 {
                   "word": "Justice",
@@ -4219,7 +4219,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4235,9 +4235,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "overstepped the authority of federal immigration law.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4246,9 +4246,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "deprived the federal police of Constitutional powers.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4285,14 +4285,14 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Congress's intervention in immigration enforcement.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4312,9 +4312,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "States' legitimate role in immigration enforcement.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4351,14 +4351,14 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "stood in favor of the states.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4389,9 +4389,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "violated the Constitution.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4417,7 +4417,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -4433,9 +4433,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "B",
               "text": "is established by federal statutes.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4444,9 +4444,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "outweighs that held by the states.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4483,7 +4483,7 @@ window.ENGLISH_DATA['2013'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4510,9 +4510,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "C",
               "text": "Justices wanted to strengthen its coordination with Congress.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4521,9 +4521,9 @@ window.ENGLISH_DATA['2013'] = {
             {
               "key": "D",
               "text": "Justices intended to check the power of the Administration.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Financial regulators in Britain have imposed a rather unusual rule on the bosses of big banks.",
-              "translation": "【考研真题精读标准译文】Financial regulators in Britain have imposed a rather unusual rule on the bosses of big banks.",
+              "translation": "英国的金融监管机构对大银行的老板实行了一项相当不寻常的规定。",
               "vocab": [
                 {
                   "word": "Financial",
@@ -60,7 +60,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Starting next year, any guaranteed bonus of top executives could be delayed 10 years if their banks are under investigation for wrongdoing.",
-              "translation": "【考研真题精读标准译文】Starting next year, any guaranteed bonus of top executives could be delayed 10 years if their banks are under investigation for wrongdoing.",
+              "translation": "从明年开始，如果高层管理人员的银行因不当行为而接受调查，那么他们的保证奖金可能会推迟 10 年。",
               "vocab": [
                 {
                   "word": "guaranteed",
@@ -100,7 +100,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The main purpose of this \"clawback\" rule is to hold bankers accountable for harmful risk-taking and to restore public trust in financial institutions.",
-              "translation": "【考研真题精读标准译文】The main purpose of this \"clawback\" rule is to hold bankers accountable for harmful risk-taking and to restore public trust in financial institutions.",
+              "translation": "这一“追回”规则的主要目的是让银行家对有害的风险承担承担责任，并恢复公众对金融机构的信任。",
               "vocab": [
                 {
                   "word": "purpose",
@@ -170,7 +170,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Yet officials also hope for a much larger benefit: more long-term decisionmaking, not only by banks but by all corporations, to build a stronger economy for future generations.",
-              "translation": "【考研真题精读标准译文】Yet officials also hope for a much larger benefit: more long-term decisionmaking, not only by banks but by all corporations, to build a stronger economy for future generations.",
+              "translation": "然而，官员们还希望获得更大的利益：不仅由银行而且由所有企业做出更长期的决策，为子孙后代建立更强大的经济。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -198,7 +198,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "\"Short-termism\" or the desire for quick profits, has worsened in publicly traded companies, says the Bank of England's top economist, Andrew Haldane.",
-              "translation": "【考研真题精读标准译文】\"Short-termism\" or the desire for quick profits, has worsened in publicly traded companies, says the Bank of England's top economist, Andrew Haldane.",
+              "translation": "英国央行首席经济学家安德鲁·霍尔丹表示，上市公司的“短期主义”或对快速利润的渴望已经恶化。",
               "vocab": [
                 {
                   "word": "Short-termism",
@@ -245,7 +245,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "He quotes a giant of classical economics, Alfred Marshall, in describing this financial impatience as acting like \"children who pick the plums out of their pudding to eat them at once\" rather than putting them aside to be eaten last.",
-              "translation": "【考研真题精读标准译文】He quotes a giant of classical economics, Alfred Marshall, in describing this financial impatience as acting like \"children who pick the plums out of their pudding to eat them at once\" rather than putting them aside to be eaten last.",
+              "translation": "他引用古典经济学巨匠阿尔弗雷德·马歇尔的话说，这种金融不耐烦的行为就像“孩子们从布丁中取出李子立即吃掉”，而不是把它们放在一边直到最后吃。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -303,7 +303,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The average time for holding a stock in both the United States and Britain, he notes, has dropped from seven years to seven months in recent decades.",
-              "translation": "【考研真题精读标准译文】The average time for holding a stock in both the United States and Britain, he notes, has dropped from seven years to seven months in recent decades.",
+              "translation": "他指出，近几十年来，美国和英国持有股票的平均时间已从七年缩短至七个月。",
               "vocab": [
                 {
                   "word": "average",
@@ -331,7 +331,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Transient investors, who demand high quarterly profits from companies, can hinder a firm's efforts to invest in long-term research or to build up customer loyalty.",
-              "translation": "【考研真题精读标准译文】Transient investors, who demand high quarterly profits from companies, can hinder a firm's efforts to invest in long-term research or to build up customer loyalty.",
+              "translation": "短期投资者要求公司获得高额季度利润，这可能会阻碍公司投资长期研究或建立客户忠诚度的努力。",
               "vocab": [
                 {
                   "word": "Transient",
@@ -371,7 +371,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "This has been dubbed \"quarterly capitalism.\" In addition, new digital technologies have allowed more rapid trading of equities, quicker use of information, and thus shorter attention spans in financial markets.",
-              "translation": "【考研真题精读标准译文】This has been dubbed \"quarterly capitalism.\" In addition, new digital technologies have allowed more rapid trading of equities, quicker use of information, and thus shorter attention spans in financial markets.",
+              "translation": "这被称为“季度资本主义”。此外，新的数字技术使得股票交易更加快速，信息使用更加快捷，从而缩短了金融市场的注意力范围。",
               "vocab": [
                 {
                   "word": "In addition",
@@ -453,7 +453,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "\"There seems to be a predominance of short-term thinking at the expense of long-term investing,\" said Commissioner Daniel Gallagher of the US Securities and Exchange Commission in a speech this week.",
-              "translation": "【考研真题精读标准译文】\"There seems to be a predominance of short-term thinking at the expense of long-term investing,\" said Commissioner Daniel Gallagher of the US Securities and Exchange Commission in a speech this week.",
+              "translation": "美国证券交易委员会委员丹尼尔·加拉格尔在本周的一次演讲中表示：“短期思维似乎占主导地位，而牺牲了长期投资。”",
               "vocab": [
                 {
                   "word": "predominance",
@@ -500,7 +500,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "In the US, the Sarbanes-Oxley Act of 2002 has pushed most public companies to defer performance bonuses for senior executives by about a year, slightly helping reduce \"short-termism.\" In its latest survey of CEO pay, The Wall Street Journal finds that \"a substantial part\" of executive pay is now tied to performance.",
-              "translation": "【考研真题精读标准译文】In the US, the Sarbanes-Oxley Act of 2002 has pushed most public companies to defer performance bonuses for senior executives by about a year, slightly helping reduce \"short-termism.\" In its latest survey of CEO pay, The Wall Street Journal finds that \"a substantial part\" of executive pay is now tied to performance.",
+              "translation": "在美国，2002年的《萨班斯-奥克斯利法案》迫使大多数上市公司将高级管理人员的绩效奖金推迟大约一年，这对减少“短期主义”略有帮助。 《华尔街日报》在最新的首席执行官薪酬调查中发现，高管薪酬的“很大一部分”现在与绩效挂钩。",
               "vocab": [
                 {
                   "word": "Act",
@@ -588,7 +588,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Much more could be done to encourage \"long-termism,\" such as changes in the tax code and quicker disclosure of stock acquisitions.",
-              "translation": "【考研真题精读标准译文】Much more could be done to encourage \"long-termism,\" such as changes in the tax code and quicker disclosure of stock acquisitions.",
+              "translation": "可以采取更多措施来鼓励“长期主义”，例如改变税法和更快地披露股票收购情况。",
               "vocab": [
                 {
                   "word": "encourage",
@@ -622,7 +622,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "In France, shareholders who hold onto a company investment for at least two years can sometimes earn more voting rights in a company.",
-              "translation": "【考研真题精读标准译文】In France, shareholders who hold onto a company investment for at least two years can sometimes earn more voting rights in a company.",
+              "translation": "在法国，持有公司投资至少两年的股东有时可以获得更多的公司投票权。",
               "vocab": [
                 {
                   "word": "at least",
@@ -674,7 +674,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Within companies, the right compensation design can provide incentives for executives to think beyond their own time at the company and on behalf of all stakeholders.",
-              "translation": "【考研真题精读标准译文】Within companies, the right compensation design can provide incentives for executives to think beyond their own time at the company and on behalf of all stakeholders.",
+              "translation": "在公司内部，正确的薪酬设计可以激励高管超越自己在公司的时间并代表所有利益相关者进行思考。",
               "vocab": [
                 {
                   "word": "compensation",
@@ -720,7 +720,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Britain's new rule is a reminder to bankers that society has an interest in their performance, not just for the short term but for the long term.",
-              "translation": "【考研真题精读标准译文】Britain's new rule is a reminder to bankers that society has an interest in their performance, not just for the short term but for the long term.",
+              "translation": "英国的新规则提醒银行家，社会对他们的表现感兴趣，不仅是短期的，而且是长期的。",
               "vocab": [
                 {
                   "word": "new",
@@ -799,7 +799,7 @@ window.ENGLISH_DATA['2019'] = {
               "text": "enhance bankers' sense of responsibility.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -858,7 +858,7 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -885,9 +885,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "C",
               "text": "the solid structure of publicly traded companies.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -896,9 +896,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "D",
               "text": "\"short-termism\" in economic activities.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -924,7 +924,7 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -940,9 +940,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "adverse.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -962,9 +962,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "D",
               "text": "temporary.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -990,7 +990,7 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -1006,9 +1006,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "the significance of long-term thinking.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1017,9 +1017,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "C",
               "text": "the approaches to promoting \"long-termism\".",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1056,7 +1056,7 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1072,9 +1072,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "Patience as a Corporate Virtue",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1083,9 +1083,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "C",
               "text": "Decisiveness Required of Top Executives",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1127,7 +1127,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Grade inflation—the gradual increase in average GPAs (grade-point averages) over the past few decades—is often considered a product of a consumer era in higher education, in which students are treated like customers to be pleased.",
-              "translation": "【考研真题精读标准译文】Grade inflation—the gradual increase in average GPAs (grade-point averages) over the past few decades—is often considered a product of a consumer era in higher education, in which students are treated like customers to be pleased.",
+              "translation": "成绩膨胀——过去几十年里平均 GPA（平均绩点）的逐渐提高——通常被认为是高等教育消费时代的产物，在这个时代，学生被当作顾客来对待。",
               "vocab": [
                 {
                   "word": "inflation",
@@ -1173,7 +1173,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But another, related force—a policy often buried deep in course catalogs called \"grade forgiveness\"—is helping raise GPAs.",
-              "translation": "【考研真题精读标准译文】But another, related force—a policy often buried deep in course catalogs called \"grade forgiveness\"—is helping raise GPAs.",
+              "translation": "但另一个相关的力量——一项经常深藏在课程目录中的政策，称为“成绩宽恕”——正在帮助提高 GPA。",
               "vocab": [
                 {
                   "word": "related",
@@ -1213,7 +1213,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Grade forgiveness allows students to retake a course in which they received a low grade, and the most recent grade or the highest grade is the only one that counts in calculating a student's overall GPA.",
-              "translation": "【考研真题精读标准译文】Grade forgiveness allows students to retake a course in which they received a low grade, and the most recent grade or the highest grade is the only one that counts in calculating a student's overall GPA.",
+              "translation": "成绩宽恕允许学生重新修读成绩较低的课程，并且最近的成绩或最高成绩是计算学生总体 GPA 时唯一重要的成绩。",
               "vocab": [
                 {
                   "word": "forgiveness",
@@ -1253,7 +1253,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The use of this little-known practice has accelerated in recent years, as colleges continue to do their utmost to keep students in school (and paying tuition) and improve their graduation rates.",
-              "translation": "【考研真题精读标准译文】The use of this little-known practice has accelerated in recent years, as colleges continue to do their utmost to keep students in school (and paying tuition) and improve their graduation rates.",
+              "translation": "近年来，随着大学继续尽最大努力让学生留在学校（并支付学费）并提高毕业率，这种鲜为人知的做法的使用加速了。",
               "vocab": [
                 {
                   "word": "use",
@@ -1312,7 +1312,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "When this practice first started decades ago, it was usually limited to freshmen, to give them a second chance to take a class in their first year if they struggled in their transition to college-level courses.",
-              "translation": "【考研真题精读标准译文】When this practice first started decades ago, it was usually limited to freshmen, to give them a second chance to take a class in their first year if they struggled in their transition to college-level courses.",
+              "translation": "当这种做法几十年前首次开始时，通常仅限于新生，如果他们在过渡到大学水平课程时遇到困难，可以给他们在第一年上课的第二次机会。",
               "vocab": [
                 {
                   "word": "practice",
@@ -1352,7 +1352,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "But now most colleges, save for many selective campuses, allow all undergraduates, and even graduate students, to get their low grades forgiven.",
-              "translation": "【考研真题精读标准译文】But now most colleges, save for many selective campuses, allow all undergraduates, and even graduate students, to get their low grades forgiven.",
+              "translation": "但现在，除了许多选择性校园外，大多数大学都允许所有本科生甚至研究生的低分得到原谅。",
               "vocab": [
                 {
                   "word": "save",
@@ -1386,7 +1386,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "College officials tend to emphasize that the goal of grade forgiveness is less about the grade itself and more about encouraging students to retake courses critical to their degree program and graduation without incurring a big penalty.",
-              "translation": "【考研真题精读标准译文】College officials tend to emphasize that the goal of grade forgiveness is less about the grade itself and more about encouraging students to retake courses critical to their degree program and graduation without incurring a big penalty.",
+              "translation": "大学官员倾向于强调，成绩宽恕的目标不是成绩本身，而是鼓励学生重修对其学位课程和毕业至关重要的课程，而不会遭受重大处罚。",
               "vocab": [
                 {
                   "word": "tend",
@@ -1450,7 +1450,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "\"Ultimately,\" said Jack Miner, Ohio State University's registrar, \"we see students achieve more success because they retake a course and do better in subsequent courses or master the content that allows them to graduate on time.\" That said, there is a way in which grade forgiveness satisfies colleges' own needs as well.",
-              "translation": "【考研真题精读标准译文】\"Ultimately,\" said Jack Miner, Ohio State University's registrar, \"we see students achieve more success because they retake a course and do better in subsequent courses or master the content that allows them to graduate on time.\" That said, there is a way in which grade forgiveness satisfies colleges' own needs as well.",
+              "translation": "俄亥俄州立大学注册员杰克·迈纳 (Jack Miner) 表示：“最终，我们看到学生取得了更大的成功，因为他们重修了一门课程，并在后续课程中取得了更好的成绩，或者掌握了使他们能够按时毕业的内容。”也就是说，成绩宽恕也可以通过某种方式满足大学自身的需求。",
               "vocab": [
                 {
                   "word": "Ultimately",
@@ -1515,7 +1515,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "For public institutions, state funds are sometimes tied partly to their success on metrics such as graduation rates and student retention—so better grades can, by boosting figures like those, mean more money.",
-              "translation": "【考研真题精读标准译文】For public institutions, state funds are sometimes tied partly to their success on metrics such as graduation rates and student retention—so better grades can, by boosting figures like those, mean more money.",
+              "translation": "对于公共机构来说，国家资金有时与毕业率和学生保留率等指标的成功程度挂钩，因此，通过提高这些数据，更好的成绩意味着更多的钱。",
               "vocab": [
                 {
                   "word": "For",
@@ -1573,7 +1573,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "And anything that raises GPAs will likely make students—who, at the end of the day, are paying the bill—feel they've gotten a better value for their tuition dollars, which is another big concern for colleges.",
-              "translation": "【考研真题精读标准译文】And anything that raises GPAs will likely make students—who, at the end of the day, are paying the bill—feel they've gotten a better value for their tuition dollars, which is another big concern for colleges.",
+              "translation": "任何能够提高 GPA 的事情都可能会让那些最终要付学费的学生觉得自己的学费更有价值，这是大学关心的另一个大问题。",
               "vocab": [
                 {
                   "word": "will",
@@ -1625,7 +1625,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Indeed, grade forgiveness is just another way that universities are responding to consumers' expectations for higher education.",
-              "translation": "【考研真题精读标准译文】Indeed, grade forgiveness is just another way that universities are responding to consumers' expectations for higher education.",
+              "translation": "事实上，成绩宽恕只是大学回应消费者对高等教育期望的另一种方式。",
               "vocab": [
                 {
                   "word": "Indeed",
@@ -1653,7 +1653,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Since students and parents expect a college degree to lead to a job, it is in the best interest of a school to turn out graduates who are as qualified as possible—or at least appear to be.",
-              "translation": "【考研真题精读标准译文】Since students and parents expect a college degree to lead to a job, it is in the best interest of a school to turn out graduates who are as qualified as possible—or at least appear to be.",
+              "translation": "由于学生和家长期望大学学位能找到工作，因此学校培养出尽可能合格（或至少看起来合格）的毕业生才符合学校的最大利益。",
               "vocab": [
                 {
                   "word": "appear to be",
@@ -1699,7 +1699,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "On this, students' and colleges' incentives seem to be aligned.",
-              "translation": "【考研真题精读标准译文】On this, students' and colleges' incentives seem to be aligned.",
+              "translation": "在这一点上，学生和大学的动机似乎是一致的。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1762,7 +1762,7 @@ window.ENGLISH_DATA['2019'] = {
               "text": "The influence of consumer culture.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1788,14 +1788,14 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "To help freshmen adapt to college learning.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1804,9 +1804,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "To maintain colleges' graduation rates.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1861,7 +1861,7 @@ window.ENGLISH_DATA['2019'] = {
               "text": "obtain more financial support.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1920,7 +1920,7 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1947,9 +1947,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "C",
               "text": "To be identical with each other.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1958,9 +1958,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "D",
               "text": "To be contradictory to each other.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1986,14 +1986,14 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "assessing its feasibility.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2002,9 +2002,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "analyzing the causes behind it.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2057,7 +2057,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "This year marks exactly two centuries since the publication of \"Frankenstein; or, The Modern Prometheus,\" by Mary Shelley.",
-              "translation": "【考研真题精读标准译文】This year marks exactly two centuries since the publication of \"Frankenstein; or, The Modern Prometheus,\" by Mary Shelley.",
+              "translation": "今年是玛丽·雪莱的《科学怪人》或《现代普罗米修斯》出版整整两个世纪。",
               "vocab": [
                 {
                   "word": "exactly",
@@ -2097,7 +2097,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Even before the invention of the electric light bulb, the author produced a remarkable work of speculative fiction that would foreshadow many ethical questions to be raised by technologies yet to come.",
-              "translation": "【考研真题精读标准译文】Even before the invention of the electric light bulb, the author produced a remarkable work of speculative fiction that would foreshadow many ethical questions to be raised by technologies yet to come.",
+              "translation": "甚至在电灯泡发明之前，作者就创作了一部出色的推理小说作品，它预示了未来技术将提出的许多伦理问题。",
               "vocab": [
                 {
                   "word": "invention",
@@ -2167,7 +2167,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Today the rapid growth of artificial intelligence (AI) raises fundamental questions: \"What is intelligence, identity, or consciousness?",
-              "translation": "【考研真题精读标准译文】Today the rapid growth of artificial intelligence (AI) raises fundamental questions: \"What is intelligence, identity, or consciousness?",
+              "translation": "如今，人工智能 (AI) 的快速发展引发了一些基本问题：“什么是智能、身份或意识？",
               "vocab": [
                 {
                   "word": "rapid",
@@ -2213,7 +2213,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "What makes humans humans?",
-              "translation": "【考研真题精读标准译文】What makes humans humans?",
+              "translation": "是什么让人类成为人类？",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2222,7 +2222,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "\" What is being called artificial general intelligence, machines that would imitate the way humans think, continues to evade scientists.",
-              "translation": "【考研真题精读标准译文】\" What is being called artificial general intelligence, machines that would imitate the way humans think, continues to evade scientists.",
+              "translation": "“所谓的通用人工智能，即模仿人类思维方式的机器，仍然困扰着科学家们。",
               "vocab": [
                 {
                   "word": "being",
@@ -2268,7 +2268,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Yet humans remain fascinated by the idea of robots that would look, move, and respond like humans, similar to those recently depicted on popular sci-fi TV series such as \"Westworld\" and \"Humans.\" Just how people think is still far too complex to be understood, let alone reproduced, says David Eagleman, a Stanford University neuroscientist.",
-              "translation": "【考研真题精读标准译文】Yet humans remain fascinated by the idea of robots that would look, move, and respond like humans, similar to those recently depicted on popular sci-fi TV series such as \"Westworld\" and \"Humans.\" Just how people think is still far too complex to be understood, let alone reproduced, says David Eagleman, a Stanford University neuroscientist.",
+              "translation": "然而，人类仍然对机器人的想法很着迷，机器人的外观、动作和反应都像人类一样，类似于最近流行的科幻电视连续剧《西部世界》和《人类》中所描绘的机器人。斯坦福大学神经科学家戴维·伊格曼 (David Eagleman) 表示，人们的思维方式仍然过于复杂，难以理解，更不用说复制了。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -2350,7 +2350,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "\"We are just in a situation where there are no good theories explaining what consciousness actually is and how you could ever build a machine to get there.\" But that doesn't mean crucial ethical issues involving AI aren't at hand.",
-              "translation": "【考研真题精读标准译文】\"We are just in a situation where there are no good theories explaining what consciousness actually is and how you could ever build a machine to get there.\" But that doesn't mean crucial ethical issues involving AI aren't at hand.",
+              "translation": "“我们现在的处境是，没有好的理论可以解释意识到底是什么，以及如何建造一台机器来实现意识。”但这并不意味着涉及人工智能的关键道德问题不存在。",
               "vocab": [
                 {
                   "word": "situation",
@@ -2403,7 +2403,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The coming use of autonomous vehicles, for example, poses thorny ethical questions.",
-              "translation": "【考研真题精读标准译文】The coming use of autonomous vehicles, for example, poses thorny ethical questions.",
+              "translation": "例如，即将到来的自动驾驶汽车的使用带来了棘手的道德问题。",
               "vocab": [
                 {
                   "word": "use",
@@ -2443,7 +2443,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Human drivers sometimes must make split-second decisions.",
-              "translation": "【考研真题精读标准译文】Human drivers sometimes must make split-second decisions.",
+              "translation": "人类驾驶员有时必须做出瞬间决定。",
               "vocab": [
                 {
                   "word": "split-second",
@@ -2459,7 +2459,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Their reactions may be a complex combination of instant reflexes, input from past driving experiences, and what their eyes and ears tell them in that moment.",
-              "translation": "【考研真题精读标准译文】Their reactions may be a complex combination of instant reflexes, input from past driving experiences, and what their eyes and ears tell them in that moment.",
+              "translation": "他们的反应可能是即时反应、过去驾驶经验的输入以及眼睛和耳朵当时告诉他们的信息的复杂组合。",
               "vocab": [
                 {
                   "word": "in that",
@@ -2499,7 +2499,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "AI \"vision\" today is not nearly as sophisticated as that of humans.",
-              "translation": "【考研真题精读标准译文】AI \"vision\" today is not nearly as sophisticated as that of humans.",
+              "translation": "今天的人工智能“视觉”远不如人类的复杂。",
               "vocab": [
                 {
                   "word": "vision",
@@ -2521,7 +2521,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "And to anticipate every imaginable driving situation is a difficult programming problem.",
-              "translation": "【考研真题精读标准译文】And to anticipate every imaginable driving situation is a difficult programming problem.",
+              "translation": "预测每一种可以想象的驾驶情况是一个困难的编程问题。",
               "vocab": [
                 {
                   "word": "anticipate",
@@ -2555,7 +2555,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Whenever decisions are based on masses of data, \"you quickly get into a lot of ethical questions,\" notes Tan Kiat How, chief executive of a Singapore-based agency that is helping the government develop a voluntary code for the ethical use of AI.",
-              "translation": "【考研真题精读标准译文】Whenever decisions are based on masses of data, \"you quickly get into a lot of ethical questions,\" notes Tan Kiat How, chief executive of a Singapore-based agency that is helping the government develop a voluntary code for the ethical use of AI.",
+              "translation": "新加坡一家机构的首席执行官 Tan Kiat How 指出，每当决策基于大量数据时，“您很快就会遇到很多道德问题”，该机构正在帮助政府制定人工智能道德使用的自愿准则。",
               "vocab": [
                 {
                   "word": "data",
@@ -2619,7 +2619,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Along with Singapore, other governments and mega-corporations are beginning to establish their own guidelines.",
-              "translation": "【考研真题精读标准译文】Along with Singapore, other governments and mega-corporations are beginning to establish their own guidelines.",
+              "translation": "与新加坡一样，其他政府和大型企业也开始制定自己的指导方针。",
               "vocab": [
                 {
                   "word": "establish",
@@ -2642,7 +2642,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Britain is setting up a data ethics center.",
-              "translation": "【考研真题精读标准译文】Britain is setting up a data ethics center.",
+              "translation": "英国正在建立一个数据伦理中心。",
               "vocab": [
                 {
                   "word": "setting",
@@ -2670,7 +2670,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "India released its AI ethics strategy this spring.",
-              "translation": "【考研真题精读标准译文】India released its AI ethics strategy this spring.",
+              "translation": "印度今年春天发布了人工智能伦理战略。",
               "vocab": [
                 {
                   "word": "ethics",
@@ -2698,7 +2698,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "On June 7 Google pledged not to \"design or deploy AI\" that would cause \"overall harm,\" or to develop AI-directed weapons or use AI for surveillance that would violate international norms.",
-              "translation": "【考研真题精读标准译文】On June 7 Google pledged not to \"design or deploy AI\" that would cause \"overall harm,\" or to develop AI-directed weapons or use AI for surveillance that would violate international norms.",
+              "translation": "6 月 7 日，谷歌承诺不会“设计或部署会造成“整体伤害”的人工智能，也不会开发人工智能制导武器或使用人工智能进行违反国际规范的监视。",
               "vocab": [
                 {
                   "word": "design",
@@ -2762,7 +2762,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "It also pledged not to deploy AI whose use would violate international laws or human rights.",
-              "translation": "【考研真题精读标准译文】It also pledged not to deploy AI whose use would violate international laws or human rights.",
+              "translation": "它还承诺不部署会违反国际法或人权的人工智能。",
               "vocab": [
                 {
                   "word": "deploy",
@@ -2796,7 +2796,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "While the statement is vague, it represents one starting point.",
-              "translation": "【考研真题精读标准译文】While the statement is vague, it represents one starting point.",
+              "translation": "虽然这一说法含糊不清，但它代表了一个起点。",
               "vocab": [
                 {
                   "word": "statement",
@@ -2824,7 +2824,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "So does the idea that decisions made by AI systems should be explainable, transparent, and fair.",
-              "translation": "【考研真题精读标准译文】So does the idea that decisions made by AI systems should be explainable, transparent, and fair.",
+              "translation": "人工智能系统做出的决策应该可解释、透明和公平的想法也是如此。",
               "vocab": [
                 {
                   "word": "transparent",
@@ -2846,7 +2846,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "To put it another way: How can we make sure that the thinking of intelligent machines reflects humanity's highest values?",
-              "translation": "【考研真题精读标准译文】To put it another way: How can we make sure that the thinking of intelligent machines reflects humanity's highest values?",
+              "translation": "换句话说：我们如何才能确保智能机器的思维反映人类的最高价值观？",
               "vocab": [
                 {
                   "word": "humanity",
@@ -2862,7 +2862,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "Only then will they be useful servants and not Frankenstein's out-of-control monster.",
-              "translation": "【考研真题精读标准译文】Only then will they be useful servants and not Frankenstein's out-of-control monster.",
+              "translation": "只有这样，他们才会成为有用的仆人，而不是弗兰肯斯坦失控的怪物。",
               "vocab": [
                 {
                   "word": "will",
@@ -2933,7 +2933,7 @@ window.ENGLISH_DATA['2019'] = {
               "text": "involves some concerns raised by AI today.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2970,7 +2970,7 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2986,9 +2986,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "can be misleading to robot making.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3008,9 +3008,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "D",
               "text": "is too limited for us to reproduce it.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3036,14 +3036,14 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "can hardly ever be found.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3052,9 +3052,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "is still beyond our capacity.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3102,14 +3102,14 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "affirmation.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3140,9 +3140,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "D",
               "text": "respect.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3197,7 +3197,7 @@ window.ENGLISH_DATA['2019'] = {
               "text": "The Conscience of AI: Complex But Inevitable",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3239,7 +3239,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "States will be able to force more people to pay sales tax when they make online purchases under a Supreme Court decision Thursday that will leave shoppers with lighter wallets but is a big financial win for states.",
-              "translation": "【考研真题精读标准译文】States will be able to force more people to pay sales tax when they make online purchases under a Supreme Court decision Thursday that will leave shoppers with lighter wallets but is a big financial win for states.",
+              "translation": "根据最高法院周四的一项裁决，各州将能够迫使更多人在网上购物时缴纳销售税，这将使购物者的钱包变得更轻，但对各州来说是一个巨大的经济胜利。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -3303,7 +3303,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The Supreme Court's opinion Thursday overruled a pair of decades-old decisions that states said cost them billions of dollars in lost revenue annually.",
-              "translation": "【考研真题精读标准译文】The Supreme Court's opinion Thursday overruled a pair of decades-old decisions that states said cost them billions of dollars in lost revenue annually.",
+              "translation": "最高法院周四的意见推翻了两项已有数十年历史的裁决，各州称这些裁决每年给它们造成数十亿美元的收入损失。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -3349,7 +3349,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "The decisions made it more difficult for states to collect sales tax on certain online purchases.",
-              "translation": "【考研真题精读标准译文】The decisions made it more difficult for states to collect sales tax on certain online purchases.",
+              "translation": "这些决定使得各州对某些网上购物征收销售税变得更加困难。",
               "vocab": [
                 {
                   "word": "difficult",
@@ -3377,7 +3377,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The cases the court overturned said that if a business was shipping a customer's purchase to a state where the business didn't have a physical presence such as a warehouse or office, the business didn't have to collect sales tax for the state.",
-              "translation": "【考研真题精读标准译文】The cases the court overturned said that if a business was shipping a customer's purchase to a state where the business didn't have a physical presence such as a warehouse or office, the business didn't have to collect sales tax for the state.",
+              "translation": "法院推翻的案件称，如果一家企业将客户购买的商品运送到该企业没有仓库或办公室等实体存在的州，则该企业不必为该州征收销售税。",
               "vocab": [
                 {
                   "word": "court",
@@ -3435,7 +3435,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Customers were generally responsible for paying the sales tax to the state themselves if they weren't charged it, but most didn't realize they owed it and few paid.",
-              "translation": "【考研真题精读标准译文】Customers were generally responsible for paying the sales tax to the state themselves if they weren't charged it, but most didn't realize they owed it and few paid.",
+              "translation": "如果客户没有被收取销售税，通常有责任自行向州缴纳销售税，但大多数人没有意识到自己欠税，而且很少有人缴纳。",
               "vocab": [
                 {
                   "word": "generally",
@@ -3469,7 +3469,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Justice Anthony Kennedy wrote that the previous decisions were flawed.",
-              "translation": "【考研真题精读标准译文】Justice Anthony Kennedy wrote that the previous decisions were flawed.",
+              "translation": "安东尼·肯尼迪大法官写道，之前的判决是有缺陷的。",
               "vocab": [
                 {
                   "word": "Justice",
@@ -3504,7 +3504,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "\"Each year the physical presence rule becomes further removed from economic reality and results in significant revenue losses to the States,\" he wrote in an opinion joined by four other justices.",
-              "translation": "【考研真题精读标准译文】\"Each year the physical presence rule becomes further removed from economic reality and results in significant revenue losses to the States,\" he wrote in an opinion joined by four other justices.",
+              "translation": "“每年，实际存在规则都进一步脱离经济现实，并导致各州遭受重大收入损失，”他在其他四名法官的意见中写道。",
               "vocab": [
                 {
                   "word": "physical",
@@ -3562,7 +3562,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Kennedy wrote that the rule \"limited states' ability to seek long-term prosperity and has prevented market participants from competing on an even playing field.\" The ruling is a victory for big chains with a presence in many states, since they usually collect sales tax on online purchases already.",
-              "translation": "【考研真题精读标准译文】Kennedy wrote that the rule \"limited states' ability to seek long-term prosperity and has prevented market participants from competing on an even playing field.\" The ruling is a victory for big chains with a presence in many states, since they usually collect sales tax on online purchases already.",
+              "translation": "肯尼迪写道，该规则“限制了国家寻求长期繁荣的能力，并阻止了市场参与者在公平的竞争环境中竞争。”这项裁决对于在许多州开展业务的大型连锁店来说是一次胜利，因为它们通常已经对网上购物征收销售税。",
               "vocab": [
                 {
                   "word": "rule",
@@ -3632,7 +3632,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Now, rivals will be charging sales tax where they hadn't before.",
-              "translation": "【考研真题精读标准译文】Now, rivals will be charging sales tax where they hadn't before.",
+              "translation": "现在，竞争对手将收取以前没有的销售税。",
               "vocab": [
                 {
                   "word": "will",
@@ -3648,7 +3648,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Big chains have been collecting sales tax nationwide because they typically have physical stores in whatever state a purchase is being shipped to.",
-              "translation": "【考研真题精读标准译文】Big chains have been collecting sales tax nationwide because they typically have physical stores in whatever state a purchase is being shipped to.",
+              "translation": "大型连锁店一直在全国范围内征收销售税，因为它们通常在商品运送到的任何州都设有实体店。",
               "vocab": [
                 {
                   "word": "nationwide",
@@ -3694,7 +3694,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Amazon.com, with its network of warehouses, also collects sales tax in every state that charges it, though third-party sellers who use the site don't have to.",
-              "translation": "【考研真题精读标准译文】Amazon.com, with its network of warehouses, also collects sales tax in every state that charges it, though third-party sellers who use the site don't have to.",
+              "translation": "拥有仓库网络的亚马逊还在每个征收销售税的州征收销售税，但使用该网站的第三方卖家则不必这样做。",
               "vocab": [
                 {
                   "word": "state",
@@ -3722,7 +3722,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Until now, many sellers that have a physical presence in only a single state or a few states have been able to avoid charging sales taxes when they ship to addresses outside those states.",
-              "translation": "【考研真题精读标准译文】Until now, many sellers that have a physical presence in only a single state or a few states have been able to avoid charging sales taxes when they ship to addresses outside those states.",
+              "translation": "到目前为止，许多仅在一个州或几个州有实体店的卖家在运送到这些州以外的地址时能够避免收取销售税。",
               "vocab": [
                 {
                   "word": "until now",
@@ -3769,7 +3769,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Sellers that use eBay and Etsy, which provide platforms for smaller sellers, also haven't been collecting sales tax nationwide.",
-              "translation": "【考研真题精读标准译文】Sellers that use eBay and Etsy, which provide platforms for smaller sellers, also haven't been collecting sales tax nationwide.",
+              "translation": "使用 eBay 和 Etsy（为小型卖家提供平台）的卖家也没有在全国范围内征收销售税。",
               "vocab": [
                 {
                   "word": "use",
@@ -3803,7 +3803,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Under the ruling Thursday, states can pass laws requiring out-of-state sellers to collect the state's sales tax from customers and send it to the state.",
-              "translation": "【考研真题精读标准译文】Under the ruling Thursday, states can pass laws requiring out-of-state sellers to collect the state's sales tax from customers and send it to the state.",
+              "translation": "根据周四的裁决，各州可以通过法律，要求州外卖家向顾客收取本州销售税并将其上交本州。",
               "vocab": [
                 {
                   "word": "ruling",
@@ -3825,7 +3825,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Retail trade groups praised the ruling, saying it levels the playing field for local and online businesses.",
-              "translation": "【考研真题精读标准译文】Retail trade groups praised the ruling, saying it levels the playing field for local and online businesses.",
+              "translation": "零售贸易组织对这一裁决表示赞赏，称其为本地和在线企业提供了公平的竞争环境。",
               "vocab": [
                 {
                   "word": "Retail",
@@ -3871,7 +3871,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "The losers, said retail analyst Neil Saunders, are online-only retailers, especially smaller ones.",
-              "translation": "【考研真题精读标准译文】The losers, said retail analyst Neil Saunders, are online-only retailers, especially smaller ones.",
+              "translation": "零售分析师尼尔·桑德斯表示，输家是纯在线零售商，尤其是规模较小的零售商。",
               "vocab": [
                 {
                   "word": "retail",
@@ -3899,7 +3899,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Those retailers may face headaches complying with various state sales tax laws.",
-              "translation": "【考研真题精读标准译文】Those retailers may face headaches complying with various state sales tax laws.",
+              "translation": "这些零售商可能会面临遵守各州销售税法的难题。",
               "vocab": [
                 {
                   "word": "various",
@@ -3921,7 +3921,7 @@ window.ENGLISH_DATA['2019'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The Small Business & Entrepreneurship Council advocacy group said in a statement, \"Small businesses and internet entrepreneurs are not well served at all by this decision.\"",
-              "translation": "【考研真题精读标准译文】The Small Business & Entrepreneurship Council advocacy group said in a statement, \"Small businesses and internet entrepreneurs are not well served at all by this decision.\"",
+              "translation": "小企业与创业委员会倡导小组在一份声明中表示，“这一决定根本没有给小企业和互联网企业家带来好处。”",
               "vocab": [
                 {
                   "word": "Entrepreneurship",
@@ -3975,7 +3975,7 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3991,9 +3991,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "put most online businesses in a dilemma.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4002,9 +4002,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "C",
               "text": "make more online shoppers pay sales tax.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4081,7 +4081,7 @@ window.ENGLISH_DATA['2019'] = {
               "text": "were considered unfavorable by states.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4136,7 +4136,7 @@ window.ENGLISH_DATA['2019'] = {
               "text": "harmed fair market competition.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4173,14 +4173,14 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Internet entrepreneurs.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4189,9 +4189,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "Big-chain owners.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4239,14 +4239,14 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "gives a factual account of it and discusses its consequences.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4255,9 +4255,9 @@ window.ENGLISH_DATA['2019'] = {
             {
               "key": "B",
               "text": "describes the long and complicated process of its making.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

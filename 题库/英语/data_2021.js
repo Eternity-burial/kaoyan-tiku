@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "How can the train operators possibly justify yet another increase to rail passenger fares?",
-              "translation": "【考研真题精读标准译文】How can the train operators possibly justify yet another increase to rail passenger fares?",
+              "translation": "火车运营商如何证明再次提高铁路客运票价的合理性？",
               "vocab": [
                 {
                   "word": "train",
@@ -78,7 +78,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "It has become a grimly reliable annual ritual: every January the cost of travelling by train rises, imposing a significant extra burden on those who have no option but to use the rail network to get to work or otherwise.",
-              "translation": "【考研真题精读标准译文】It has become a grimly reliable annual ritual: every January the cost of travelling by train rises, imposing a significant extra burden on those who have no option but to use the rail network to get to work or otherwise.",
+              "translation": "它已成为一种极其可靠的年度仪式：每年一月，乘火车旅行的成本都会上涨，给那些别无选择只能使用铁路网络上班或其他方式的人带来巨大的额外负担。",
               "vocab": [
                 {
                   "word": "grimly",
@@ -166,7 +166,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "This year's rise, an average of 2.7 per cent, may be a fraction lower than last year's, but it is still well above the official Consumer Price Index (CPI) measure of inflation.",
-              "translation": "【考研真题精读标准译文】This year's rise, an average of 2.7 per cent, may be a fraction lower than last year's, but it is still well above the official Consumer Price Index (CPI) measure of inflation.",
+              "translation": "今年的平均涨幅为 2.7%，可能比去年低一些，但仍远高于官方的消费者价格指数 (CPI) 通胀指标。",
               "vocab": [
                 {
                   "word": "average",
@@ -218,7 +218,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Successive governments have permitted such increases on the grounds that the cost of investing in and running the rail network should be borne by those who use it, rather than the general taxpayer.",
-              "translation": "【考研真题精读标准译文】Successive governments have permitted such increases on the grounds that the cost of investing in and running the rail network should be borne by those who use it, rather than the general taxpayer.",
+              "translation": "历届政府都允许这种增长，理由是铁路网络的投资和运营成本应由铁路网络的使用者而不是一般纳税人承担。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -283,7 +283,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Why, the argument goes, should a car-driving pensioner from Lincolnshire have to subsidise the daily commute of a stockbroker from Surrey?",
-              "translation": "【考研真题精读标准译文】Why, the argument goes, should a car-driving pensioner from Lincolnshire have to subsidise the daily commute of a stockbroker from Surrey?",
+              "translation": "有人争论说，为什么来自林肯郡的开车养老金领取者必须补贴来自萨里郡的股票经纪人的日常通勤？",
               "vocab": [
                 {
                   "word": "argument",
@@ -329,7 +329,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Equally, there is a sense that the travails of commuters in the South East, many of whom will face among the biggest rises, have received too much attention compared to those who must endure the relatively poor infrastructure of the Midlands and the North.",
-              "translation": "【考研真题精读标准译文】Equally, there is a sense that the travails of commuters in the South East, many of whom will face among the biggest rises, have received too much attention compared to those who must endure the relatively poor infrastructure of the Midlands and the North.",
+              "translation": "同样，人们认为，与那些必须忍受中部和北部相对落后的基础设施的人相比，东南部通勤者的痛苦受到了太多关注，其中许多人将面临涨幅最大的情况。",
               "vocab": [
                 {
                   "word": "Equally",
@@ -381,7 +381,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "However, over the past 12 months, those commuters have also experienced some of the worst rail strikes in years.",
-              "translation": "【考研真题精读标准译文】However, over the past 12 months, those commuters have also experienced some of the worst rail strikes in years.",
+              "translation": "然而，在过去 12 个月里，这些通勤者也经历了多年来最严重的铁路罢工。",
               "vocab": [
                 {
                   "word": "However",
@@ -409,7 +409,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "It is all very well train operators trumpeting the improvements they are making to the network, but passengers should be able to expect a basic level of service for the substantial sums they are now paying to travel.",
-              "translation": "【考研真题精读标准译文】It is all very well train operators trumpeting the improvements they are making to the network, but passengers should be able to expect a basic level of service for the substantial sums they are now paying to travel.",
+              "translation": "火车运营商大肆宣扬他们正在对网络进行改进，这一切都很好，但乘客应该能够期待他们现在支付的大量旅行费用能够获得基本水平的服务。",
               "vocab": [
                 {
                   "word": "very",
@@ -462,7 +462,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The responsibility for the latest wave of strikes rests on the unions.",
-              "translation": "【考研真题精读标准译文】The responsibility for the latest wave of strikes rests on the unions.",
+              "translation": "最新一波罢工的责任在于工会。",
               "vocab": [
                 {
                   "word": "responsibility",
@@ -484,7 +484,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "However, there is a strong case that those who have been worst affected by industrial action should receive compensation for the disruption they have suffered.",
-              "translation": "【考研真题精读标准译文】However, there is a strong case that those who have been worst affected by industrial action should receive compensation for the disruption they have suffered.",
+              "translation": "然而，有充分的理由表明，那些受罢工影响最严重的人应该为其​​所遭受的破坏获得赔偿。",
               "vocab": [
                 {
                   "word": "However",
@@ -542,7 +542,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "The Government has pledged to change the law to introduce a minimum service requirement so that, even when strikes occur, services can continue to operate.",
-              "translation": "【考研真题精读标准译文】The Government has pledged to change the law to introduce a minimum service requirement so that, even when strikes occur, services can continue to operate.",
+              "translation": "政府已承诺修改法律，引入最低服务要求，以便即使发生罢工，服务也可以继续运行。",
               "vocab": [
                 {
                   "word": "Government",
@@ -594,7 +594,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "This should form part of a wider package of measures to address the long-running problems on Britain's railways.",
-              "translation": "【考研真题精读标准译文】This should form part of a wider package of measures to address the long-running problems on Britain's railways.",
+              "translation": "这应该成为解决英国铁路长期存在问题的更广泛一揽子措施的一部分。",
               "vocab": [
                 {
                   "word": "form",
@@ -622,7 +622,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Yes, more investment is needed, but passengers will not be willing to pay more indefinitely if they must also endure cramped, unreliable services, punctuated by regular chaos when timetables are changed, or planned maintenance is managed incompetently.",
-              "translation": "【考研真题精读标准译文】Yes, more investment is needed, but passengers will not be willing to pay more indefinitely if they must also endure cramped, unreliable services, punctuated by regular chaos when timetables are changed, or planned maintenance is managed incompetently.",
+              "translation": "是的，需要更多的投资，但如果乘客还必须忍受拥挤、不可靠的服务，并在时刻表改变时经常出现混乱，或者计划维护管理不善，他们就不会愿意无限期地支付更多费用。",
               "vocab": [
                 {
                   "word": "investment",
@@ -698,7 +698,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The threat of nationalisation may have been seen off for now, but it will return with a vengeance if the justified anger of passengers is not addressed in short order.",
-              "translation": "【考研真题精读标准译文】The threat of nationalisation may have been seen off for now, but it will return with a vengeance if the justified anger of passengers is not addressed in short order.",
+              "translation": "国有化的威胁可能暂时已经消失，但如果不能在短时间内解决乘客合理的愤怒，国有化的威胁将会卷土重来。",
               "vocab": [
                 {
                   "word": "threat",
@@ -770,14 +770,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "has kept pace with inflation.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -797,9 +797,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "remains an unreasonable measure.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -836,7 +836,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -852,9 +852,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "rail travelers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -863,9 +863,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "local investors.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -902,7 +902,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -918,9 +918,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "are trying to repair relations with the unions.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -929,9 +929,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "have failed to provide an adequate service.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1008,7 +1008,7 @@ window.ENGLISH_DATA['2021'] = {
               "text": "a change of ownership.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1034,7 +1034,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1061,9 +1061,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "Can Nationalisation Bring Hope?",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1072,9 +1072,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "D",
               "text": "Ever-rising Fares Aren't Sustainable",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1105,7 +1105,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Last year marked the third year in a row when Indonesia's bleak rate of deforestation has slowed in pace.",
-              "translation": "【考研真题精读标准译文】Last year marked the third year in a row when Indonesia's bleak rate of deforestation has slowed in pace.",
+              "translation": "去年是印度尼西亚惨淡的森林砍伐速度连续第三年放缓。",
               "vocab": [
                 {
                   "word": "third",
@@ -1151,7 +1151,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "One reason for the turnaround may be the country's antipoverty program.",
-              "translation": "【考研真题精读标准译文】One reason for the turnaround may be the country's antipoverty program.",
+              "translation": "这一转变的原因之一可能是该国的反贫困计划。",
               "vocab": [
                 {
                   "word": "One",
@@ -1197,7 +1197,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "In 2007, Indonesia started phasing in a program that gives money to its poorest residents under certain conditions, such as requiring people to keep kids in school or get regular medical care.",
-              "translation": "【考研真题精读标准译文】In 2007, Indonesia started phasing in a program that gives money to its poorest residents under certain conditions, such as requiring people to keep kids in school or get regular medical care.",
+              "translation": "2007年，印度尼西亚开始分阶段实施一项计划，在某些条件下向最贫困的居民提供资金，例如要求人们让孩子上学或定期接受医疗护理。",
               "vocab": [
                 {
                   "word": "program",
@@ -1225,7 +1225,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Called conditional cash transfers or CCTs, these social assistance programs are designed to reduce inequality and break the cycle of poverty.",
-              "translation": "【考研真题精读标准译文】Called conditional cash transfers or CCTs, these social assistance programs are designed to reduce inequality and break the cycle of poverty.",
+              "translation": "这些社会援助计划被称为有条件现金转移或 CCT，旨在减少不平等并打破贫困循环。",
               "vocab": [
                 {
                   "word": "conditional",
@@ -1265,7 +1265,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "They're already used in dozens of countries worldwide.",
-              "translation": "【考研真题精读标准译文】They're already used in dozens of countries worldwide.",
+              "translation": "它们已在全球数十个国家/地区使用。",
               "vocab": [
                 {
                   "word": "worldwide",
@@ -1281,7 +1281,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "In Indonesia, the program has provided enough food and medicine to substantially reduce severe growth problems among children.",
-              "translation": "【考研真题精读标准译文】In Indonesia, the program has provided enough food and medicine to substantially reduce severe growth problems among children.",
+              "translation": "在印度尼西亚，该计划提供了足够的食品和药品，以大幅减少儿童严重的生长问题。",
               "vocab": [
                 {
                   "word": "program",
@@ -1315,7 +1315,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "But CCT programs don't generally consider effects on the environment.",
-              "translation": "【考研真题精读标准译文】But CCT programs don't generally consider effects on the environment.",
+              "translation": "但 CCT 计划通常不考虑对环境的影响。",
               "vocab": [
                 {
                   "word": "generally",
@@ -1350,7 +1350,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "In fact, poverty alleviation and environmental protection are often viewed as conflicting goals, says Paul Ferraro, an economist at Johns Hopkins University.",
-              "translation": "【考研真题精读标准译文】In fact, poverty alleviation and environmental protection are often viewed as conflicting goals, says Paul Ferraro, an economist at Johns Hopkins University.",
+              "translation": "事实上，约翰·霍普金斯大学经济学家保罗·费拉罗表示，扶贫和环境保护常常被视为相互冲突的目标。",
               "vocab": [
                 {
                   "word": "poverty",
@@ -1384,7 +1384,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "That's because economic growth can be correlated with environmental degradation, while protecting the environment is sometimes correlated with greater poverty.",
-              "translation": "【考研真题精读标准译文】That's because economic growth can be correlated with environmental degradation, while protecting the environment is sometimes correlated with greater poverty.",
+              "translation": "这是因为经济增长可能与环境退化相关，而保护环境有时与更大的贫困相关。",
               "vocab": [
                 {
                   "word": "economic growth",
@@ -1424,7 +1424,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "However, those correlations don't prove cause and effect.",
-              "translation": "【考研真题精读标准译文】However, those correlations don't prove cause and effect.",
+              "translation": "然而，这些相关性并不能证明因果关系。",
               "vocab": [
                 {
                   "word": "However",
@@ -1458,7 +1458,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The only previous study analyzing causality, based on an area in Mexico that had instituted CCTs, supported the traditional view.",
-              "translation": "【考研真题精读标准译文】The only previous study analyzing causality, based on an area in Mexico that had instituted CCTs, supported the traditional view.",
+              "translation": "之前唯一一项分析因果关系的研究是基于墨西哥一个已实行有条件现金转移的地区，该研究支持了传统观点。",
               "vocab": [
                 {
                   "word": "previous",
@@ -1492,7 +1492,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "There, as people got more money, some of them may have more cleared land for cattle to raise for meat, Ferraro says.",
-              "translation": "【考研真题精读标准译文】There, as people got more money, some of them may have more cleared land for cattle to raise for meat, Ferraro says.",
+              "translation": "费拉罗说，在那里，随着人们获得更多的钱，他们中的一些人可能会拥有更多的清理土地来饲养牲畜以获取肉类。",
               "vocab": [
                 {
                   "word": "money",
@@ -1526,7 +1526,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "Such programs do not have to negatively affect the environment, though.",
-              "translation": "【考研真题精读标准译文】Such programs do not have to negatively affect the environment, though.",
+              "translation": "不过，此类计划不一定会对环境产生负面影响。",
               "vocab": [
                 {
                   "word": "negatively",
@@ -1554,7 +1554,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Ferraro wanted to see if Indonesia's poverty-alleviation program was affecting deforestation.",
-              "translation": "【考研真题精读标准译文】Ferraro wanted to see if Indonesia's poverty-alleviation program was affecting deforestation.",
+              "translation": "费拉罗想了解印度尼西亚的扶贫计划是否正在影响森林砍伐。",
               "vocab": [
                 {
                   "word": "program",
@@ -1583,7 +1583,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Indonesia has the third-largest area of tropical forest in the world and one of the highest deforestation rates.",
-              "translation": "【考研真题精读标准译文】Indonesia has the third-largest area of tropical forest in the world and one of the highest deforestation rates.",
+              "translation": "印度尼西亚拥有世界第三大热带森林面积，也是森林砍伐率最高的国家之一。",
               "vocab": [
                 {
                   "word": "tropical",
@@ -1617,7 +1617,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Ferraro analyzed satellite data showing annual forest loss from 2008 to 2012— including during Indonesia's phase-in of the antipoverty program—in 7,468 forested villages across 15 provinces.",
-              "translation": "【考研真题精读标准译文】Ferraro analyzed satellite data showing annual forest loss from 2008 to 2012— including during Indonesia's phase-in of the antipoverty program—in 7,468 forested villages across 15 provinces.",
+              "translation": "费拉罗分析了卫星数据，显示 2008 年至 2012 年（包括印度尼西亚逐步实施反贫困计划期间）15 个省份 7,468 个森林村庄的年度森林损失。",
               "vocab": [
                 {
                   "word": "satellite",
@@ -1663,7 +1663,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "\"We see that the program is associated with a 30 percent reduction in deforestation,\" Ferraro says.",
-              "translation": "【考研真题精读标准译文】\"We see that the program is associated with a 30 percent reduction in deforestation,\" Ferraro says.",
+              "translation": "“我们发现该计划与减少 30% 的森林砍伐有关，”费拉罗说。",
               "vocab": [
                 {
                   "word": "program",
@@ -1691,7 +1691,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "That's likely because the rural poor are using the money as makeshift insurance policies against inclement weather, Ferraro says.",
-              "translation": "【考研真题精读标准译文】That's likely because the rural poor are using the money as makeshift insurance policies against inclement weather, Ferraro says.",
+              "translation": "费拉罗说，这可能是因为农村贫困人口将这笔钱用作应对恶劣天气的临时保险。",
               "vocab": [
                 {
                   "word": "rural",
@@ -1737,7 +1737,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Typically, if rains are delayed, people may clear land to plant more rice to supplement their harvests.",
-              "translation": "【考研真题精读标准译文】Typically, if rains are delayed, people may clear land to plant more rice to supplement their harvests.",
+              "translation": "通常，如果降雨推迟，人们可能会清理土地种植更多水稻以补充收成。",
               "vocab": [
                 {
                   "word": "Typically",
@@ -1771,7 +1771,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Whether this research translates elsewhere is anybody's guess.",
-              "translation": "【考研真题精读标准译文】Whether this research translates elsewhere is anybody's guess.",
+              "translation": "这项研究是否能推广到其他地方，谁也说不准。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1780,7 +1780,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Ferraro suggests the results may transfer to other parts of Asia, due to commonalities such as the importance of growing rice and market access.",
-              "translation": "【考研真题精读标准译文】Ferraro suggests the results may transfer to other parts of Asia, due to commonalities such as the importance of growing rice and market access.",
+              "translation": "费拉罗表示，由于种植水稻和市场准入的重要性等共同点，这些结果可能会转移到亚洲其他地区。",
               "vocab": [
                 {
                   "word": "suggests",
@@ -1814,7 +1814,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "And regardless of transferability, the study shows that what's good for people may also be good for the environment.",
-              "translation": "【考研真题精读标准译文】And regardless of transferability, the study shows that what's good for people may also be good for the environment.",
+              "translation": "不管可转移性如何，研究表明对人类有利的事情也可能对环境有利。",
               "vocab": [
                 {
                   "word": "regardless",
@@ -1848,7 +1848,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "Even if this program didn't reduce poverty, Ferraro says, \"the value of the avoided deforestation just for carbon dioxide emissions alone is more than the program costs.\"",
-              "translation": "【考研真题精读标准译文】Even if this program didn't reduce poverty, Ferraro says, \"the value of the avoided deforestation just for carbon dioxide emissions alone is more than the program costs.\"",
+              "translation": "费拉罗说，即使该计划没有减少贫困，“仅就二氧化碳排放而言，避免森林砍伐的价值就超过了该计划的成本。”",
               "vocab": [
                 {
                   "word": "even if",
@@ -1914,14 +1914,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "facilitate healthcare reform.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1930,9 +1930,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "help poor families get better off.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2020,7 +2020,7 @@ window.ENGLISH_DATA['2021'] = {
               "text": "economic growth tends to cause environmental degradation.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2046,7 +2046,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2062,9 +2062,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "its annual rate of poverty alleviation.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2073,9 +2073,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "the relation of CCTs to its forest loss.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2141,7 +2141,7 @@ window.ENGLISH_DATA['2021'] = {
               "text": "it can protect the environment.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2178,14 +2178,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "The effects of a program.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2216,9 +2216,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "D",
               "text": "The transferability of a study.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2249,7 +2249,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "As a historian who's always searching for the text or the image that makes us re-evaluate the past, I've become preoccupied with looking for photographs that show our Victorian ancestors smiling (what better way to shatter the image of 19th-century prudery?).",
-              "translation": "【考研真题精读标准译文】As a historian who's always searching for the text or the image that makes us re-evaluate the past, I've become preoccupied with looking for photographs that show our Victorian ancestors smiling (what better way to shatter the image of 19th-century prudery?).",
+              "translation": "作为一名一直在寻找让我们重新评价过去的文本或图像的历史学家，我开始全神贯注于寻找显示我们维多利亚时代祖先微笑的照片（还有什么更好的方式来打破 19 世纪拘谨的形象呢？）。",
               "vocab": [
                 {
                   "word": "historian",
@@ -2295,7 +2295,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "I've found quite a few, and—since I started posting them on Twitter—they have been causing quite a stir.",
-              "translation": "【考研真题精读标准译文】I've found quite a few, and—since I started posting them on Twitter—they have been causing quite a stir.",
+              "translation": "我发现了很多，并且自从我开始在 Twitter 上发布它们以来，它们引起了不小的轰动。",
               "vocab": [
                 {
                   "word": "quite",
@@ -2323,7 +2323,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "People have been surprised to see evidence that Victorians had fun and could, and did, laugh.",
-              "translation": "【考研真题精读标准译文】People have been surprised to see evidence that Victorians had fun and could, and did, laugh.",
+              "translation": "人们惊讶地发现，有证据表明维多利亚时代的人很开心，可以而且确实笑过。",
               "vocab": [
                 {
                   "word": "evidence",
@@ -2339,7 +2339,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "They are noting that the Victorians suddenly seem to become more human as the hundred-or-so years that separate us fade away through our common experience of laughter.",
-              "translation": "【考研真题精读标准译文】They are noting that the Victorians suddenly seem to become more human as the hundred-or-so years that separate us fade away through our common experience of laughter.",
+              "translation": "他们注意到，维多利亚时代的人们似乎突然变得更加人性化，因为我们之间的数百年分离随着我们共同的笑声而消失。",
               "vocab": [
                 {
                   "word": "suddenly",
@@ -2379,7 +2379,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Of course, I need to concede that my collection of 'Smiling Victorians' makes up only a tiny percentage of the vast catalogue of photographic portraiture created between 1840 and 1900, the majority of which show sitters posing miserably and stiffly in front of painted backdrops, or staring absently into the middle distance.",
-              "translation": "【考研真题精读标准译文】Of course, I need to concede that my collection of 'Smiling Victorians' makes up only a tiny percentage of the vast catalogue of photographic portraiture created between 1840 and 1900, the majority of which show sitters posing miserably and stiffly in front of painted backdrops, or staring absently into the middle distance.",
+              "translation": "当然，我需要承认，我收藏的《微笑的维多利亚时代》只占 1840 年至 1900 年间创作的庞大肖像摄影目录的一小部分，其中大多数都展示了坐在彩绘背景前的可怜而僵硬的姿势，或者心不在焉地凝视着中距离。",
               "vocab": [
                 {
                   "word": "the majority",
@@ -2486,7 +2486,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "How do we explain this trend?",
-              "translation": "【考研真题精读标准译文】How do we explain this trend?",
+              "translation": "我们如何解释这一趋势？",
               "vocab": [
                 {
                   "word": "trend",
@@ -2502,7 +2502,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "During the 1840s and 1850s, in the early days of photography, exposure times were notoriously long: the daguerreotype photographic method (producing an image on a silvered copper plate) could take several minutes to complete, resulting in blurred images as sitters shifted position or adjusted their limbs.",
-              "translation": "【考研真题精读标准译文】During the 1840s and 1850s, in the early days of photography, exposure times were notoriously long: the daguerreotype photographic method (producing an image on a silvered copper plate) could take several minutes to complete, resulting in blurred images as sitters shifted position or adjusted their limbs.",
+              "translation": "在 1840 年代和 1850 年代，摄影术的早期阶段，曝光时间非常长：银版摄影方法（在镀银铜板上生成图像）可能需要几分钟才能完成，当拍摄者移动位置或调整四肢时，会导致图像模糊。",
               "vocab": [
                 {
                   "word": "exposure",
@@ -2590,7 +2590,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The thought of holding a fixed grin as the camera performed its magical duties was too much to contemplate, and so a non-committal blank stare became the norm.",
-              "translation": "【考研真题精读标准译文】The thought of holding a fixed grin as the camera performed its magical duties was too much to contemplate, and so a non-committal blank stare became the norm.",
+              "translation": "当相机履行其神奇职责时，一想到要保持固定的笑容就难以想象，因此不置可否的茫然凝视成了常态。",
               "vocab": [
                 {
                   "word": "thought",
@@ -2654,7 +2654,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "But exposure times were much quicker by the 1880s, and the introduction of the Box Brownie and other portable cameras meant that, though slow by today's digital standards, the exposure was almost instantaneous.",
-              "translation": "【考研真题精读标准译文】But exposure times were much quicker by the 1880s, and the introduction of the Box Brownie and other portable cameras meant that, though slow by today's digital standards, the exposure was almost instantaneous.",
+              "translation": "但到了 1880 年代，曝光时间要快得多，而 Box Brownie 和其他便携式相机的推出意味着，尽管以当今的数字标准来看速度较慢，但​​曝光几乎是瞬时的。",
               "vocab": [
                 {
                   "word": "exposure",
@@ -2694,7 +2694,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Spontaneous smiles were relatively easy to capture by the 1890s, so we must look elsewhere for an explanation of why Victorians still hesitated to smile.",
-              "translation": "【考研真题精读标准译文】Spontaneous smiles were relatively easy to capture by the 1890s, so we must look elsewhere for an explanation of why Victorians still hesitated to smile.",
+              "translation": "到了 1890 年代，自发的微笑相对容易捕捉到，因此我们必须从其他地方寻找解释，解释为什么维多利亚时代的人仍然不愿微笑。",
               "vocab": [
                 {
                   "word": "Spontaneous",
@@ -2747,7 +2747,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "One explanation might be the loss of dignity displayed through a cheesy grin.",
-              "translation": "【考研真题精读标准译文】One explanation might be the loss of dignity displayed through a cheesy grin.",
+              "translation": "一种解释可能是通过俗气的笑容表现出尊严的丧失。",
               "vocab": [
                 {
                   "word": "One",
@@ -2787,7 +2787,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "\"Nature gave us lips to conceal our teeth,\" ran one popular Victorian maxim, alluding to the fact that before the birth of proper dentistry, mouths were often in a shocking state of hygiene.",
-              "translation": "【考研真题精读标准译文】\"Nature gave us lips to conceal our teeth,\" ran one popular Victorian maxim, alluding to the fact that before the birth of proper dentistry, mouths were often in a shocking state of hygiene.",
+              "translation": "“大自然给了我们嘴唇来隐藏我们的牙齿，”维多利亚时代的一句流行格言说，暗指在正确的牙科诞生之前，口腔常常处于令人震惊的卫生状态。",
               "vocab": [
                 {
                   "word": "Nature",
@@ -2851,7 +2851,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "A flashing set of healthy and clean, regular 'pearly whites' was a rare sight in Victorian society, the preserve of the super-rich (and even then, dental hygiene was not guaranteed).",
-              "translation": "【考研真题精读标准译文】A flashing set of healthy and clean, regular 'pearly whites' was a rare sight in Victorian society, the preserve of the super-rich (and even then, dental hygiene was not guaranteed).",
+              "translation": "在维多利亚时代的社会中，拥有一副健康、干净、整齐的“珍珠白”是罕见的景象，这是超级富豪的专利（即使在那时，牙齿卫生也得不到保证）。",
               "vocab": [
                 {
                   "word": "pearly",
@@ -2909,7 +2909,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "A toothy grin (especially when there were gaps or blackened gnashers) lacked class: drunks, tramps, and music hall performers might turn and grin with a smile as wide as Lewis Carroll's gum-exposing Cheshire Cat, but it was not a becoming look for properly bred persons.",
-              "translation": "【考研真题精读标准译文】A toothy grin (especially when there were gaps or blackened gnashers) lacked class: drunks, tramps, and music hall performers might turn and grin with a smile as wide as Lewis Carroll's gum-exposing Cheshire Cat, but it was not a becoming look for properly bred persons.",
+              "translation": "露出牙齿的笑容（特别是当有间隙或变黑的咬牙时）缺乏优雅：酒鬼、流浪汉和音乐厅表演者可能会转过身来，笑得像刘易斯·卡罗尔（Lewis Carroll）那只露出牙龈的柴郡猫一样，但对于有教养的人来说，这种表情并不合适。",
               "vocab": [
                 {
                   "word": "toothy",
@@ -2967,7 +2967,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Even Mark Twain, a man who enjoyed a hearty laugh, said that when it came to photographic portraits there could be \"nothing more damning than a silly, foolish smile fixed forever\".",
-              "translation": "【考研真题精读标准译文】Even Mark Twain, a man who enjoyed a hearty laugh, said that when it came to photographic portraits there could be \"nothing more damning than a silly, foolish smile fixed forever\".",
+              "translation": "就连喜欢开怀大笑的马克·吐温也表示，对于肖像摄影而言，“没有什么比永远固定的愚蠢的微笑更可恶的了”。",
               "vocab": [
                 {
                   "word": "Mark",
@@ -3015,14 +3015,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "changed people's impression of the Victorians.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3042,9 +3042,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "re-evaluated the Victorian's notion of public image.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3081,14 +3081,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "They are in popular use among historians.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3097,9 +3097,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "They are rare among photographs of that age.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3147,7 +3147,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3163,9 +3163,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "Their tension before the camera.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3185,9 +3185,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "D",
               "text": "Their unhealthy dental condition.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3220,7 +3220,7 @@ window.ENGLISH_DATA['2021'] = {
               "text": "a deep-root belief.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3279,14 +3279,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "Why did most Victorians look stern in photographs?",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3317,9 +3317,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "D",
               "text": "How did smiling in photographs become a post-Victorian norm?",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3350,7 +3350,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "From the early days of broadband, advocates for consumers and web-based companies worried that the cable and phone companies selling broadband connections had the power and incentive to favor affiliated websites over their rivals'.",
-              "translation": "【考研真题精读标准译文】From the early days of broadband, advocates for consumers and web-based companies worried that the cable and phone companies selling broadband connections had the power and incentive to favor affiliated websites over their rivals'.",
+              "translation": "从宽带发展的早期开始，消费者和网络公司的拥护者就担心销售宽带连接的有线电视和电话公司有能力和动机偏爱附属网站而不是竞争对手的网站。",
               "vocab": [
                 {
                   "word": "broadband",
@@ -3402,7 +3402,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "That's why there has been such a strong demand for rules that would prevent broadband providers from picking winners and losers online, preserving the freedom and innovation that have been the lifeblood of the Internet.",
-              "translation": "【考研真题精读标准译文】That's why there has been such a strong demand for rules that would prevent broadband providers from picking winners and losers online, preserving the freedom and innovation that have been the lifeblood of the Internet.",
+              "translation": "这就是为什么人们强烈要求制定规则，阻止宽带提供商在网上挑选赢家和输家，从而保留作为互联网命脉的自由和创新。",
               "vocab": [
                 {
                   "word": "for",
@@ -3448,7 +3448,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Yet that demand has been almost impossible to fill—in part because of pushback from broadband providers, anti-regulatory conservatives and the courts.",
-              "translation": "【考研真题精读标准译文】Yet that demand has been almost impossible to fill—in part because of pushback from broadband providers, anti-regulatory conservatives and the courts.",
+              "translation": "然而，这种需求几乎无法满足——部分原因是宽带提供商、反监管保守派和法院的抵制。",
               "vocab": [
                 {
                   "word": "in part",
@@ -3488,7 +3488,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "A federal appeals court weighed in again Tuesday, but instead of providing a badly needed resolution, it only prolonged the fight.",
-              "translation": "【考研真题精读标准译文】A federal appeals court weighed in again Tuesday, but instead of providing a badly needed resolution, it only prolonged the fight.",
+              "translation": "周二，联邦上诉法院再次介入，但它不但没有提供急需的解决方案，反而延长了这场斗争。",
               "vocab": [
                 {
                   "word": "federal",
@@ -3523,7 +3523,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "An issue before the U.S. Court of Appeals for the District of Columbia Circuit was the latest take of the Federal Communications Commission (FCC) on net neutrality, adopted on a party-line vote in 2017.",
-              "translation": "【考研真题精读标准译文】An issue before the U.S. Court of Appeals for the District of Columbia Circuit was the latest take of the Federal Communications Commission (FCC) on net neutrality, adopted on a party-line vote in 2017.",
+              "translation": "美国哥伦比亚特区巡回上诉法院面临的一个问题是联邦通信委员会 (FCC) 在 2017 年的一次党派路线投票中通过的关于网络中立性的最新看法。",
               "vocab": [
                 {
                   "word": "issue",
@@ -3599,7 +3599,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The Republican-penned order not only eliminated the strict net neutrality rules the FCC had adopted when it had a Democratic majority in 2015, but rejected the commission's authority to require broadband providers to do much of anything.",
-              "translation": "【考研真题精读标准译文】The Republican-penned order not only eliminated the strict net neutrality rules the FCC had adopted when it had a Democratic majority in 2015, but rejected the commission's authority to require broadband providers to do much of anything.",
+              "translation": "共和党起草的命令不仅取消了 FCC 在 2015 年民主党占多数时所采用的严格网络中立规则，而且拒绝了该委员会要求宽带提供商做任何事情的权力。",
               "vocab": [
                 {
                   "word": "order",
@@ -3669,7 +3669,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The order also declared that state and local governments couldn't regulate broadband providers either.",
-              "translation": "【考研真题精读标准译文】The order also declared that state and local governments couldn't regulate broadband providers either.",
+              "translation": "该命令还宣布州和地方政府也不能监管宽带提供商。",
               "vocab": [
                 {
                   "word": "order",
@@ -3703,7 +3703,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The commission argued that other agencies would protect against anti-competitive behavior, such as a broadband-providing conglomerate like AT&T favoring its own video-streaming service at the expense of Netflix and Apple TV.",
-              "translation": "【考研真题精读标准译文】The commission argued that other agencies would protect against anti-competitive behavior, such as a broadband-providing conglomerate like AT&T favoring its own video-streaming service at the expense of Netflix and Apple TV.",
+              "translation": "该委员会认为，其他机构将防止反竞争行为，例如像 AT&T 这样的宽带提供企业集团会牺牲 Netflix 和 Apple TV 的利益来支持自己的视频流服务。",
               "vocab": [
                 {
                   "word": "commission",
@@ -3744,7 +3744,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Yet the FCC also ended the investigations of broadband providers that imposed data caps on their rivals' streaming services but not their own.",
-              "translation": "【考研真题精读标准译文】Yet the FCC also ended the investigations of broadband providers that imposed data caps on their rivals' streaming services but not their own.",
+              "translation": "然而，联邦通信委员会还结束了对宽带提供商的调查，这些提供商对其竞争对手的流媒体服务施加了数据上限，但对自己的流媒体服务却没有施加数据上限。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -3778,7 +3778,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "On Tuesday, the appeals court unanimously upheld the 2017 order deregulating broadband providers, citing a Supreme Court ruling from 2005 that upheld a similarly deregulatory move.",
-              "translation": "【考研真题精读标准译文】On Tuesday, the appeals court unanimously upheld the 2017 order deregulating broadband providers, citing a Supreme Court ruling from 2005 that upheld a similarly deregulatory move.",
+              "translation": "周二，上诉法院一致维持 2017 年解除宽带提供商管制的命令，并援引最高法院 2005 年的一项裁决，该裁决维持了类似的解除管制举措。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -3842,7 +3842,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "But Judge Patricia Millett rightly argued in a concurring opinion that \"the result is unhinged from the realities of modern broadband service,\" and said Congress or the Supreme Court could intervene to \"avoid trapping Internet regulation in technological anachronism.\" In the meantime, the court threw out the FCC's attempt to block all state rules on net neutrality, while preserving the commission's power to preempt individual state laws that undermine its order.",
-              "translation": "【考研真题精读标准译文】But Judge Patricia Millett rightly argued in a concurring opinion that \"the result is unhinged from the realities of modern broadband service,\" and said Congress or the Supreme Court could intervene to \"avoid trapping Internet regulation in technological anachronism.\" In the meantime, the court threw out the FCC's attempt to block all state rules on net neutrality, while preserving the commission's power to preempt individual state laws that undermine its order.",
+              "translation": "但帕特里夏·米利特法官在一致意见中正确地指出，“结果与现代宽带服务的现实脱节”，并表示国会或最高法院可以进行干预，以“避免使互联网监管陷入技术过时的困境”。与此同时，法院驳回了联邦通信委员会阻止所有州有关网络中立性规则的企图，同时保留了该委员会优先于破坏其秩序的各州法律的权力。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -4002,7 +4002,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "That means more battles like the one now going on between the Justice Department and California, which enacted a tough net neutrality law in the wake of the FCC's abdication.",
-              "translation": "【考研真题精读标准译文】That means more battles like the one now going on between the Justice Department and California, which enacted a tough net neutrality law in the wake of the FCC's abdication.",
+              "translation": "这意味着司法部和加利福尼亚州之间将会发生更多类似的争斗，加利福尼亚州在联邦通信委员会放弃权力后颁布了一项严格的网络中立法。",
               "vocab": [
                 {
                   "word": "one",
@@ -4048,7 +4048,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The endless legal battles and back-and-forth at the FCC cry out for Congress to act.",
-              "translation": "【考研真题精读标准译文】The endless legal battles and back-and-forth at the FCC cry out for Congress to act.",
+              "translation": "联邦通信委员会无休止的法律斗争和反复争论迫切要求国会采取行动。",
               "vocab": [
                 {
                   "word": "endless",
@@ -4094,7 +4094,7 @@ window.ENGLISH_DATA['2021'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "It needs to give the commission explicit authority once and for all to bar broadband providers from meddling in the traffic on their network and to create clear rules protecting openness and innovation online.",
-              "translation": "【考研真题精读标准译文】It needs to give the commission explicit authority once and for all to bar broadband providers from meddling in the traffic on their network and to create clear rules protecting openness and innovation online.",
+              "translation": "它需要一劳永逸地赋予该委员会明确的权力，禁止宽带提供商干预其网络流量，并制定保护在线开放和创新的明确规则。",
               "vocab": [
                 {
                   "word": "commission",
@@ -4178,7 +4178,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -4194,9 +4194,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "slow down the traffic on their network.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4205,9 +4205,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "show partiality in treating clients.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4244,7 +4244,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -4260,9 +4260,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "takes an anti-regulatory stance.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4282,9 +4282,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "D",
               "text": "has allowed the states to intervene.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4310,14 +4310,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "It protects against unfair competition.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4326,9 +4326,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "B",
               "text": "It engages in anti-competitive practices.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4376,7 +4376,7 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4403,9 +4403,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "is at odds with its earlier rulings.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4414,9 +4414,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "D",
               "text": "is out of touch with reality.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4442,14 +4442,14 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "Congress needs to take action to ensure net neutrality.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4469,9 +4469,9 @@ window.ENGLISH_DATA['2021'] = {
             {
               "key": "C",
               "text": "Rules need to be set to diversify online services.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "A group of Labour MPs, among them Yvette Cooper, are bringing in the new year with a call to institute a UK \"town of culture\" award.",
-              "translation": "【考研真题精读标准译文】A group of Labour MPs, among them Yvette Cooper, are bringing in the new year with a call to institute a UK \"town of culture\" award.",
+              "translation": "伊薇特·库珀 (Yvette Cooper) 等一批工党议员在新年伊始呼吁设立英国“文化之城”奖。",
               "vocab": [
                 {
                   "word": "new",
@@ -48,7 +48,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The proposal is that it should sit alongside the existing city of culture title, which was held by Hull in 2017, and has been awarded to Coventry for 2021.",
-              "translation": "【考研真题精读标准译文】The proposal is that it should sit alongside the existing city of culture title, which was held by Hull in 2017, and has been awarded to Coventry for 2021.",
+              "translation": "建议将其与现有的文化之城称号并列，该称号由赫尔于 2017 年授予，并于 2021 年授予考文垂。",
               "vocab": [
                 {
                   "word": "proposal",
@@ -88,7 +88,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Cooper and her colleagues argue that the success of the crown for Hull, where it brought in £220m of investment and an avalanche of arts, ought not to be confined to cities.",
-              "translation": "【考研真题精读标准译文】Cooper and her colleagues argue that the success of the crown for Hull, where it brought in £220m of investment and an avalanche of arts, ought not to be confined to cities.",
+              "translation": "库珀和她的同事认为，赫尔皇冠的成功不仅为赫尔带来了 2.2 亿英镑的投资和大量的艺术作品，而且不应局限于城市。",
               "vocab": [
                 {
                   "word": "crown",
@@ -122,7 +122,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Britain's towns, it is true, are not prevented from applying, but they generally lack the resources to put together a bid to beat their bigger competitors.",
-              "translation": "【考研真题精读标准译文】Britain's towns, it is true, are not prevented from applying, but they generally lack the resources to put together a bid to beat their bigger competitors.",
+              "translation": "确实，英国的城镇并没有被禁止申请，但它们普遍缺乏资源来共同努力击败更大的竞争对手。",
               "vocab": [
                 {
                   "word": "generally",
@@ -144,7 +144,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "A town of culture award could, it is argued, become an annual event, attracting funding and creating jobs.",
-              "translation": "【考研真题精读标准译文】A town of culture award could, it is argued, become an annual event, attracting funding and creating jobs.",
+              "translation": "有人认为，文化之镇奖可以成为一项年度活动，吸引资金并创造就业机会。",
               "vocab": [
                 {
                   "word": "annual",
@@ -179,7 +179,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Some might see the proposal as a booby prize for the fact that Britain is no longer able to apply for the much more prestigious title of European capital of culture, a sought-after award bagged by Glasgow in 1990 and Liverpool in 2008.",
-              "translation": "【考研真题精读标准译文】Some might see the proposal as a booby prize for the fact that Britain is no longer able to apply for the much more prestigious title of European capital of culture, a sought-after award bagged by Glasgow in 1990 and Liverpool in 2008.",
+              "translation": "有些人可能会认为该提案是一个诱杀奖，因为英国不再能够申请欧洲文化之都这个更负盛名的称号，这一称号由格拉斯哥于 1990 年和利物浦于 2008 年获得。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -243,7 +243,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "A cynic might speculate that the UK is on the verge of disappearing into an endless fever of self-celebration in its desperation to reinvent itself for the post-Brexit world: after town of culture, who knows what will follow—village of culture?",
-              "translation": "【考研真题精读标准译文】A cynic might speculate that the UK is on the verge of disappearing into an endless fever of self-celebration in its desperation to reinvent itself for the post-Brexit world: after town of culture, who knows what will follow—village of culture?",
+              "translation": "愤世嫉俗者可能会推测，英国正处于消失在无休止的自我庆祝狂热之中的边缘，它绝望地为脱欧后的世界重塑自己：在文化之城之后，谁知道接下来会发生什么——文化村？",
               "vocab": [
                 {
                   "word": "cynic",
@@ -313,7 +313,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Suburb of culture?",
-              "translation": "【考研真题精读标准译文】Suburb of culture?",
+              "translation": "文化郊区？",
               "vocab": [
                 {
                   "word": "Suburb",
@@ -329,7 +329,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Hamlet of culture?",
-              "translation": "【考研真题精读标准译文】Hamlet of culture?",
+              "translation": "文化的哈姆雷特？",
               "vocab": [
                 {
                   "word": "Hamlet",
@@ -345,7 +345,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "It is also wise to recall that such titles are not a cure-all.",
-              "translation": "【考研真题精读标准译文】It is also wise to recall that such titles are not a cure-all.",
+              "translation": "同样明智的是要记住，此类标题并不是包治百病的灵丹妙药。",
               "vocab": [
                 {
                   "word": "recall",
@@ -374,7 +374,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "A badly run \"year of culture\" washes in and washes out of a place like the tide, bringing prominence for a spell but leaving no lasting benefits to the community.",
-              "translation": "【考研真题精读标准译文】A badly run \"year of culture\" washes in and washes out of a place like the tide, bringing prominence for a spell but leaving no lasting benefits to the community.",
+              "translation": "运行不善的“文化年”就像潮水一样，在某个地方冲来冲去，虽然在一段时间内声名显赫，但却没有给社区留下持久的利益。",
               "vocab": [
                 {
                   "word": "run",
@@ -426,7 +426,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The really successful holders of such titles are those that do a great deal more than fill hotel bedrooms and bring in high-profile arts events and good press for a year.",
-              "translation": "【考研真题精读标准译文】The really successful holders of such titles are those that do a great deal more than fill hotel bedrooms and bring in high-profile arts events and good press for a year.",
+              "translation": "真正成功的此类头衔的持有者不仅仅只是填满酒店的卧室，还带来了一年内备受瞩目的艺术活动和良好的媒体报道。",
               "vocab": [
                 {
                   "word": "successful",
@@ -460,7 +460,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "They transform the aspirations of the people who live there; they nudge the self-image of the city into a bolder and more optimistic light.",
-              "translation": "【考研真题精读标准译文】They transform the aspirations of the people who live there; they nudge the self-image of the city into a bolder and more optimistic light.",
+              "translation": "它们改变了居住在那里的人们的愿望；他们将城市的自我形象推向更大胆、更乐观的轨道。",
               "vocab": [
                 {
                   "word": "transform",
@@ -494,7 +494,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "It is hard to get right, and requires a remarkable degree of vision, as well as cooperation between city authorities, the private sector, community groups and cultural organisations.",
-              "translation": "【考研真题精读标准译文】It is hard to get right, and requires a remarkable degree of vision, as well as cooperation between city authorities, the private sector, community groups and cultural organisations.",
+              "translation": "这很难做到正确，需要非凡的远见，以及城市当局、私营部门、社区团体和文化组织之间的合作。",
               "vocab": [
                 {
                   "word": "remarkable",
@@ -540,7 +540,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "But it can be done: Glasgow's year as European capital of culture can certainly be seen as one of a complex series of factors that have turned the city into the powerhouse of art, music and theatre that it remains today.",
-              "translation": "【考研真题精读标准译文】But it can be done: Glasgow's year as European capital of culture can certainly be seen as one of a complex series of factors that have turned the city into the powerhouse of art, music and theatre that it remains today.",
+              "translation": "但这是可以做到的：格拉斯哥作为欧洲文化之都的一年当然可以被视为一系列复杂因素之一，这些因素使这座城市成为今天仍然存在的艺术、音乐和戏剧的重镇。",
               "vocab": [
                 {
                   "word": "capital",
@@ -574,7 +574,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "A \"town of culture\" could be not just about the arts but about honouring a town's peculiarities—helping sustain its high street, supporting local facilities and above all celebrating its people.",
-              "translation": "【考研真题精读标准译文】A \"town of culture\" could be not just about the arts but about honouring a town's peculiarities—helping sustain its high street, supporting local facilities and above all celebrating its people.",
+              "translation": "“文化之城”不仅涉及艺术，还涉及尊重小镇的特色——帮助维持其商业街，支持当地设施，最重要的是庆祝其人民。",
               "vocab": [
                 {
                   "word": "about",
@@ -596,7 +596,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Jeremy Wright, the culture secretary, should welcome this positive, hope-filled proposal, and turn it into action.",
-              "translation": "【考研真题精读标准译文】Jeremy Wright, the culture secretary, should welcome this positive, hope-filled proposal, and turn it into action.",
+              "translation": "文化大臣杰里米·赖特应该欢迎这一积极、充满希望的提议，并将其付诸行动。",
               "vocab": [
                 {
                   "word": "secretary",
@@ -679,7 +679,7 @@ window.ENGLISH_DATA['2020'] = {
               "text": "increase the economic strength of Britain's towns.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -734,7 +734,7 @@ window.ENGLISH_DATA['2020'] = {
               "text": "a self-deceiving attempt.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -782,14 +782,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "endeavours to maintain its image.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -820,9 +820,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "commits to its long-term growth.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -848,7 +848,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -864,9 +864,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "B",
               "text": "a supporting example.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -886,9 +886,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "a related topic.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -914,14 +914,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Skeptical.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -941,9 +941,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "Favourable.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -985,7 +985,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Scientific publishing has long been a licence to print money.",
-              "translation": "【考研真题精读标准译文】Scientific publishing has long been a licence to print money.",
+              "translation": "长期以来，科学出版一直是印钞的许可证。",
               "vocab": [
                 {
                   "word": "licence",
@@ -1007,7 +1007,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Scientists need journals in which to publish their research, so they will supply the articles without monetary reward.",
-              "translation": "【考研真题精读标准译文】Scientists need journals in which to publish their research, so they will supply the articles without monetary reward.",
+              "translation": "科学家需要期刊来发表他们的研究成果，因此他们会在没有金钱奖励的情况下提供文章。",
               "vocab": [
                 {
                   "word": "publish",
@@ -1041,7 +1041,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Other scientists perform the specialised work of peer review also for free, because it is a central element in the acquisition of status and the production of scientific knowledge.",
-              "translation": "【考研真题精读标准译文】Other scientists perform the specialised work of peer review also for free, because it is a central element in the acquisition of status and the production of scientific knowledge.",
+              "translation": "其他科学家也免费从事同行评审的专门工作，因为它是获得地位和生产科学知识的核心要素。",
               "vocab": [
                 {
                   "word": "peer review",
@@ -1129,7 +1129,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "With the content of papers secured for free, the publisher needs only find a market for its journal. Until this century, university libraries were not very price sensitive.",
-              "translation": "【考研真题精读标准译文】With the content of papers secured for free, the publisher needs only find a market for its journal. Until this century, university libraries were not very price sensitive.",
+              "translation": "由于论文内容是免费的，出版商只需为其期刊找到市场即可。直到本世纪，大学图书馆对价格还不太敏感。",
               "vocab": [
                 {
                   "word": "content",
@@ -1187,7 +1187,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "Scientific publishers routinely report profit margins approaching 40% on their operations at a time when the rest of the publishing industry is in an existential crisis.",
-              "translation": "【考研真题精读标准译文】Scientific publishers routinely report profit margins approaching 40% on their operations at a time when the rest of the publishing industry is in an existential crisis.",
+              "translation": "当其他出版业陷入生存危机时，科学出版商经常报告其运营利润率接近 40%。",
               "vocab": [
                 {
                   "word": "routinely",
@@ -1240,7 +1240,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The Dutch giant Elsevier, which claims to publish 25% of the scientific papers produced in the world, made profits of more than £900m last year, while UK universities alone spent more than £210m in 2016 to enable researchers to access their own publicly funded research; both figures seem to rise unstoppably despite increasingly desperate efforts to change them.",
-              "translation": "【考研真题精读标准译文】The Dutch giant Elsevier, which claims to publish 25% of the scientific papers produced in the world, made profits of more than £900m last year, while UK universities alone spent more than £210m in 2016 to enable researchers to access their own publicly funded research; both figures seem to rise unstoppably despite increasingly desperate efforts to change them.",
+              "translation": "荷兰巨头爱思唯尔 (Elsevier) 声称发表了全球 25% 的科学论文，去年利润超过 9 亿英镑，而仅英国大学在 2016 年就花费了超过 2.1 亿英镑，让研究人员能够获得自己的公共资助研究成果；尽管人们越来越不顾一切地努力改变这两个数字，但它们似乎仍在不断上升。",
               "vocab": [
                 {
                   "word": "giant",
@@ -1298,7 +1298,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The most drastic, and thoroughly illegal, reaction has been the emergence of Sci-Hub, a kind of global photocopier for scientific papers, set up in 2012, which now claims to offer access to every paywalled article published since 2015.",
-              "translation": "【考研真题精读标准译文】The most drastic, and thoroughly illegal, reaction has been the emergence of Sci-Hub, a kind of global photocopier for scientific papers, set up in 2012, which now claims to offer access to every paywalled article published since 2015.",
+              "translation": "最激烈、彻底非法的反应是 Sci-Hub 的出现，这是一种全球科学论文复印机，成立于 2012 年，现在声称可以访问自 2015 年以来发表的所有付费文章。",
               "vocab": [
                 {
                   "word": "drastic",
@@ -1368,7 +1368,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "The success of Sci-Hub, which relies on researchers passing on copies they have themselves legally accessed, shows the legal ecosystem has lost legitimacy among its users and must be transformed so that it works for all participants.",
-              "translation": "【考研真题精读标准译文】The success of Sci-Hub, which relies on researchers passing on copies they have themselves legally accessed, shows the legal ecosystem has lost legitimacy among its users and must be transformed so that it works for all participants.",
+              "translation": "Sci-Hub 的成功依赖于研究人员传递他们自己合法访问的副本，这表明法律生态系统在其用户中已经失去了合法性，必须进行转型，以便它适用于所有参与者。",
               "vocab": [
                 {
                   "word": "passing",
@@ -1408,7 +1408,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "In Britain the move towards open access publishing has been driven by funding bodies.",
-              "translation": "【考研真题精读标准译文】In Britain the move towards open access publishing has been driven by funding bodies.",
+              "translation": "在英国，开放获取出版的发展是由资助机构推动的。",
               "vocab": [
                 {
                   "word": "move",
@@ -1436,7 +1436,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "In some ways it has been very successful.",
-              "translation": "【考研真题精读标准译文】In some ways it has been very successful.",
+              "translation": "从某些方面来说，它非常成功。",
               "vocab": [
                 {
                   "word": "very",
@@ -1465,7 +1465,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "More than half of all British scientific research is now published under open access terms: either freely available from the moment of publication, or paywalled for a year or more so that the publishers can make a profit before being placed on general release.",
-              "translation": "【考研真题精读标准译文】More than half of all British scientific research is now published under open access terms: either freely available from the moment of publication, or paywalled for a year or more so that the publishers can make a profit before being placed on general release.",
+              "translation": "英国一半以上的科学研究现在都是按照开放获取条款出版的：要么从出版之日起免费提供，要么付费一年或更长时间，以便出版商可以在公开发布之前获利。",
               "vocab": [
                 {
                   "word": "access",
@@ -1529,7 +1529,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Yet the new system has not yet worked out any cheaper for the universities.",
-              "translation": "【考研真题精读标准译文】Yet the new system has not yet worked out any cheaper for the universities.",
+              "translation": "然而，新系统尚未给大学带来任何便宜。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -1563,7 +1563,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Publishers have responded to the demand that they make their product free to readers by charging their writers fees to cover the costs of preparing an article.",
-              "translation": "【考研真题精读标准译文】Publishers have responded to the demand that they make their product free to readers by charging their writers fees to cover the costs of preparing an article.",
+              "translation": "为了满足向读者免费提供产品的要求，出版商向作者收取费用以支付准备文章的费用。",
               "vocab": [
                 {
                   "word": "product",
@@ -1597,7 +1597,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "These range from around £500 to $5,000, and apparently the work gets more expensive the more that publishers do it.",
-              "translation": "【考研真题精读标准译文】These range from around £500 to $5,000, and apparently the work gets more expensive the more that publishers do it.",
+              "translation": "价格从 500 英镑到 5,000 美元不等，显然出版商做得越多，作品就越贵。",
               "vocab": [
                 {
                   "word": "range",
@@ -1631,7 +1631,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "A report last year pointed out that the costs both of subscriptions and of these \"article preparation costs\" had been steadily rising at a rate above inflation.",
-              "translation": "【考研真题精读标准译文】A report last year pointed out that the costs both of subscriptions and of these \"article preparation costs\" had been steadily rising at a rate above inflation.",
+              "translation": "去年的一份报告指出，订阅成本和这些“文章准备成本”一直在以高于通货膨胀的速度稳步上升。",
               "vocab": [
                 {
                   "word": "pointed",
@@ -1671,7 +1671,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "In some ways the scientific publishing model resembles the economy of the social internet: labour is provided free in exchange for the hope of status, while huge profits are made by a few big firms who run the market places.",
-              "translation": "【考研真题精读标准译文】In some ways the scientific publishing model resembles the economy of the social internet: labour is provided free in exchange for the hope of status, while huge profits are made by a few big firms who run the market places.",
+              "translation": "在某些方面，科学出版模式类似于社交互联网的经济：免费提供劳动力以换取地位的希望，而巨额利润则由少数经营市场的大公司赚取。",
               "vocab": [
                 {
                   "word": "model",
@@ -1723,7 +1723,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "In both cases, we need a rebalancing of power.",
-              "translation": "【考研真题精读标准译文】In both cases, we need a rebalancing of power.",
+              "translation": "在这两种情况下，我们都需要重新平衡权力。",
               "vocab": [
                 {
                   "word": "power",
@@ -1753,7 +1753,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1780,9 +1780,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "its payment for peer review is reduced.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1791,9 +1791,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "its content acquisition costs nothing.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1819,14 +1819,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "thrived mainly on university libraries.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1857,9 +1857,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "financed researchers generously.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1885,14 +1885,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Relieved.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1912,9 +1912,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "Concerned.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1951,14 +1951,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "allow publishers some room to make money.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1967,9 +1967,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "B",
               "text": "render publishing much easier for scientists.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2017,7 +2017,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2033,9 +2033,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "B",
               "text": "Labour triumphs over status.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2055,9 +2055,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "The few feed on the many.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2088,7 +2088,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Progressives often support diversity mandates as a path to equality and a way to level the playing field.",
-              "translation": "【考研真题精读标准译文】Progressives often support diversity mandates as a path to equality and a way to level the playing field.",
+              "translation": "进步人士通常支持多元化的要求，将其视为实现平等的途径和公平竞争环境的一种方式。",
               "vocab": [
                 {
                   "word": "support",
@@ -2128,7 +2128,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But all too often such policies are an insincere form of virtue-signaling that benefits only the most privileged and does little to help average people.",
-              "translation": "【考研真题精读标准译文】But all too often such policies are an insincere form of virtue-signaling that benefits only the most privileged and does little to help average people.",
+              "translation": "但此类政策往往是一种不真诚的美德信号，只让最有特权的人受益，而对普通民众几乎没有帮助。",
               "vocab": [
                 {
                   "word": "insincere",
@@ -2162,7 +2162,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "A pair of bills sponsored by Massachusetts state Senator Jason Lewis and House Speaker Pro Tempore Patricia Haddad, to ensure \"gender parity\" on boards and commissions, provide a case in point.",
-              "translation": "【考研真题精读标准译文】A pair of bills sponsored by Massachusetts state Senator Jason Lewis and House Speaker Pro Tempore Patricia Haddad, to ensure \"gender parity\" on boards and commissions, provide a case in point.",
+              "translation": "马萨诸塞州参议员贾森·刘易斯和众议院临时议长帕特里夏·哈达德提出的两项旨在确保董事会和委员会中“性别平等”的法案就是一个很好的例子。",
               "vocab": [
                 {
                   "word": "state",
@@ -2214,7 +2214,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Haddad and Lewis are concerned that more than half the state-government boards are less than 40 percent female.",
-              "translation": "【考研真题精读标准译文】Haddad and Lewis are concerned that more than half the state-government boards are less than 40 percent female.",
+              "translation": "哈达德和刘易斯担心超过一半的州政府董事会中女性比例不足 40%。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2223,7 +2223,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "In order to ensure that elite women have more such opportunities, they have proposed imposing government quotas.",
-              "translation": "【考研真题精读标准译文】In order to ensure that elite women have more such opportunities, they have proposed imposing government quotas.",
+              "translation": "为了确保精英女性有更多这样的机会，他们建议实行政府配额。",
               "vocab": [
                 {
                   "word": "order",
@@ -2270,7 +2270,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "If the bills become law, state boards and commissions will be required to set aside 50 percent of board seats for women by 2022.",
-              "translation": "【考研真题精读标准译文】If the bills become law, state boards and commissions will be required to set aside 50 percent of board seats for women by 2022.",
+              "translation": "如果该法案成为法律，到 2022 年，州议会和委员会将被要求为女性留出 50% 的董事会席位。",
               "vocab": [
                 {
                   "word": "state",
@@ -2310,7 +2310,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The bills are similar to a measure recently adopted in California, which last year became the first state to require gender quotas for private companies.",
-              "translation": "【考研真题精读标准译文】The bills are similar to a measure recently adopted in California, which last year became the first state to require gender quotas for private companies.",
+              "translation": "这些法案与加利福尼亚州最近采取的一项措施类似，加利福尼亚州去年成为第一个要求私营公司实行性别配额的州。",
               "vocab": [
                 {
                   "word": "similar",
@@ -2368,7 +2368,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "In signing the measure, California Governor Jerry Brown admitted that the law, which expressly classifies people on the basis of sex, is probably unconstitutional. The US Supreme Court frowns on sex-based classifications unless they are designed to address an \"important\" policy interest, Because the California law applies to all boards, even where there is no history of prior discrimination, courts are likely to rule that the law violates the constitutional guarantee of \"equal protection\".",
-              "translation": "【考研真题精读标准译文】In signing the measure, California Governor Jerry Brown admitted that the law, which expressly classifies people on the basis of sex, is probably unconstitutional. The US Supreme Court frowns on sex-based classifications unless they are designed to address an \"important\" policy interest, Because the California law applies to all boards, even where there is no history of prior discrimination, courts are likely to rule that the law violates the constitutional guarantee of \"equal protection\".",
+              "translation": "加州州长杰里·布朗在签署这项措施时承认，这项明确根据性别对人进行分类的法律可能是违宪的。美国最高法院不赞成基于性别的分类，除非它们旨在解决“重要”的政策利益。因为加州法律适用于所有委员会，即使之前没有歧视历史，法院也可能裁定该法律违反了“平等保护”的宪法保障。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -2480,7 +2480,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "But are such government mandates even necessary?",
-              "translation": "【考研真题精读标准译文】But are such government mandates even necessary?",
+              "translation": "但这样的政府命令有必要吗？",
               "vocab": [
                 {
                   "word": "government",
@@ -2502,7 +2502,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Female participation on corporate boards may not currently mirror the percentage of women in the general population, but so what?",
-              "translation": "【考研真题精读标准译文】Female participation on corporate boards may not currently mirror the percentage of women in the general population, but so what?",
+              "translation": "目前，女性在公司董事会的参与程度可能无法反映女性在总人口中的比例，但那又怎样呢？",
               "vocab": [
                 {
                   "word": "participation",
@@ -2561,7 +2561,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The number of women on corporate boards has been steadily increasing without government interference.",
-              "translation": "【考研真题精读标准译文】The number of women on corporate boards has been steadily increasing without government interference.",
+              "translation": "在没有政府干预的情况下，公司董事会中的女性人数一直在稳步增加。",
               "vocab": [
                 {
                   "word": "corporate",
@@ -2595,7 +2595,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "According to a study by Catalyst, between 2010 and 2015 the share of women on the boards of global corporations increased by 54 percent.",
-              "translation": "【考研真题精读标准译文】According to a study by Catalyst, between 2010 and 2015 the share of women on the boards of global corporations increased by 54 percent.",
+              "translation": "Catalyst 的一项研究显示，2010 年至 2015 年间，全球企业董事会中的女性比例增加了 54%。",
               "vocab": [
                 {
                   "word": "according to",
@@ -2617,7 +2617,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Requiring companies to make gender the primary qualification for board membership will inevitably lead to less experienced private sector boards.",
-              "translation": "【考研真题精读标准译文】Requiring companies to make gender the primary qualification for board membership will inevitably lead to less experienced private sector boards.",
+              "translation": "要求公司将性别作为董事会成员的主要资格将不可避免地导致私营部门董事会经验不足。",
               "vocab": [
                 {
                   "word": "gender",
@@ -2687,7 +2687,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "That is exactly what happened when Norway adopted a nationwide corporate gender quota.",
-              "translation": "【考研真题精读标准译文】That is exactly what happened when Norway adopted a nationwide corporate gender quota.",
+              "translation": "这正是挪威采用全国性企业性别配额时所发生的情况。",
               "vocab": [
                 {
                   "word": "exactly",
@@ -2733,7 +2733,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Writing in The New Republic, Alice Lee notes that increasing the number of opportunities for board membership without increasing the pool of qualified women to serve on such boards has led to a \"golden skirt\" phenomenon, where the same elite women scoop up multiple seats on a variety of boards.",
-              "translation": "【考研真题精读标准译文】Writing in The New Republic, Alice Lee notes that increasing the number of opportunities for board membership without increasing the pool of qualified women to serve on such boards has led to a \"golden skirt\" phenomenon, where the same elite women scoop up multiple seats on a variety of boards.",
+              "translation": "艾丽丝·李（Alice Lee）在《新共和》中撰文指出，增加董事会成员的机会，而不增加担任此类董事会的合格女性人数，会导致“金裙子”现象，即同样的精英女性在各种董事会中占据多个席位。",
               "vocab": [
                 {
                   "word": "New",
@@ -2815,7 +2815,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Next time somebody pushes corporate quotas as a way to promote gender equity, remember that such policies are largely self-serving measures that make their sponsors feel good but do little to help average women.",
-              "translation": "【考研真题精读标准译文】Next time somebody pushes corporate quotas as a way to promote gender equity, remember that such policies are largely self-serving measures that make their sponsors feel good but do little to help average women.",
+              "translation": "下次当有人推动企业配额作为促进性别平等的一种方式时，请记住，此类政策很大程度上是自私的措施，会让赞助商感觉良好，但对普通女性几乎没有帮助。",
               "vocab": [
                 {
                   "word": "corporate",
@@ -2875,14 +2875,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "help little to reduce gender bias.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2902,9 +2902,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "raise women's position in politics.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2941,7 +2941,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2957,9 +2957,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "B",
               "text": "It is welcomed by the Supreme Court.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2968,9 +2968,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "It may go against the Constitution.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3007,14 +3007,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "the harm from arbitrary board decision.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3045,9 +3045,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "the needlessness of government interventions.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3073,7 +3073,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3100,9 +3100,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "the entry of unqualified candidates into the board.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3111,9 +3111,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "the growing tension between labor and management.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3139,7 +3139,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3155,9 +3155,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "B",
               "text": "Feasibility should be a prime concern in policymaking.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3177,9 +3177,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "Major social issues should be the focus of legislation.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3210,7 +3210,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Last Thursday, the French Senate passed a digital services tax, which would impose an entirely new tax on large multinationals that provide digital services to consumers or users in France.",
-              "translation": "【考研真题精读标准译文】Last Thursday, the French Senate passed a digital services tax, which would impose an entirely new tax on large multinationals that provide digital services to consumers or users in France.",
+              "translation": "上周四，法国参议院通过了数字服务税，将对向法国消费者或用户提供数字服务的大型跨国公司征收全新的税。",
               "vocab": [
                 {
                   "word": "Senate",
@@ -3256,7 +3256,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Digital services include everything from providing a platform for selling goods and services online to targeting advertising based on user data, and the tax applies to gross revenue from such services.",
-              "translation": "【考研真题精读标准译文】Digital services include everything from providing a platform for selling goods and services online to targeting advertising based on user data, and the tax applies to gross revenue from such services.",
+              "translation": "数字服务包括从提供在线销售商品和服务的平台到基于用户数据的定向广告等一切内容，税收适用于此类服务的总收入。",
               "vocab": [
                 {
                   "word": "Digital",
@@ -3314,7 +3314,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Many French politicians and media outlets have referred to this as a \"GAFA tax,\" meaning that it is designed to apply primarily to companies such as Google, Apple, Facebook and Amazon—in other words, multinational tech companies based in the United States.",
-              "translation": "【考研真题精读标准译文】Many French politicians and media outlets have referred to this as a \"GAFA tax,\" meaning that it is designed to apply primarily to companies such as Google, Apple, Facebook and Amazon—in other words, multinational tech companies based in the United States.",
+              "translation": "许多法国政界人士和媒体将其称为“GAFA 税”，这意味着该税主要适用于谷歌、苹果、Facebook 和亚马逊等公司，换句话说，即总部位于美国的跨国科技公司。",
               "vocab": [
                 {
                   "word": "media",
@@ -3348,7 +3348,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The digital services tax now awaits the signature of President Emmanuel Macron, who has expressed support for the measure, and it could go into effect within the next few weeks.",
-              "translation": "【考研真题精读标准译文】The digital services tax now awaits the signature of President Emmanuel Macron, who has expressed support for the measure, and it could go into effect within the next few weeks.",
+              "translation": "数字服务税现在正在等待总统埃马纽埃尔·马克龙的签署，他已表示支持该措施，并可能在未来几周内生效。",
               "vocab": [
                 {
                   "word": "digital",
@@ -3407,7 +3407,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "But it has already sparked significant controversy, with the United States trade representative opening an investigation into whether the tax discriminates against American companies, which in turn could lead to trade sanctions against France.",
-              "translation": "【考研真题精读标准译文】But it has already sparked significant controversy, with the United States trade representative opening an investigation into whether the tax discriminates against American companies, which in turn could lead to trade sanctions against France.",
+              "translation": "但这已经引发了重大争议，美国贸易代表开始调查该税收是否歧视美国公司，进而可能导致对法国的贸易制裁。",
               "vocab": [
                 {
                   "word": "in turn",
@@ -3459,7 +3459,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "The French tax is not just a unilateral move by one country in need of revenue.",
-              "translation": "【考研真题精读标准译文】The French tax is not just a unilateral move by one country in need of revenue.",
+              "translation": "法国的税收不仅仅是一个需要收入的国家的单方面举措。",
               "vocab": [
                 {
                   "word": "unilateral",
@@ -3493,7 +3493,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Instead, the digital services tax is part of a much larger trend, with countries over the past few years proposing or putting in place an alphabet soup of new international tax provisions.",
-              "translation": "【考研真题精读标准译文】Instead, the digital services tax is part of a much larger trend, with countries over the past few years proposing or putting in place an alphabet soup of new international tax provisions.",
+              "translation": "相反，数字服务税是一个更大趋势的一部分，过去几年各国提出或实施了一系列新的国际税收规定。",
               "vocab": [
                 {
                   "word": "Instead",
@@ -3545,7 +3545,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "They have included Britain's DPT. (diverted profits tax), Australia's MAAL (multinational anti-avoidance law), and India's SEP (significant economic presence) test, to name but a few.",
-              "translation": "【考研真题精读标准译文】They have included Britain's DPT. (diverted profits tax), Australia's MAAL (multinational anti-avoidance law), and India's SEP (significant economic presence) test, to name but a few.",
+              "translation": "其中包括英国的 DPT。 （转移利润税）、澳大利亚的 MAAL（跨国反避税法）和印度的 SEP（重大经济存在）测试等等。",
               "vocab": [
                 {
                   "word": "multinational",
@@ -3586,7 +3586,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "At the same time, the European Union, Spain, Britain and several other countries have all seriously contemplated digital services taxes.",
-              "translation": "【考研真题精读标准译文】At the same time, the European Union, Spain, Britain and several other countries have all seriously contemplated digital services taxes.",
+              "translation": "与此同时，欧盟、西班牙、英国和其他几个国家都在认真考虑征收数字服务税。",
               "vocab": [
                 {
                   "word": "several",
@@ -3608,7 +3608,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "These unilateral developments differ in their specifics, but they are all designed to tax multinationals on income and revenue that countries believe they should have a right to tax, even if international tax rules do not grant them that right.",
-              "translation": "【考研真题精读标准译文】These unilateral developments differ in their specifics, but they are all designed to tax multinationals on income and revenue that countries believe they should have a right to tax, even if international tax rules do not grant them that right.",
+              "translation": "这些单边发展的具体情况各不相同，但它们的目的都是对跨国公司的收入和收益征税，而各国认为它们应该有权征税，即使国际税收规则没有赋予它们这一权利。",
               "vocab": [
                 {
                   "word": "even if",
@@ -3666,7 +3666,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "In other words, they all share a view that the international tax system has failed to keep up with the current economy.",
-              "translation": "【考研真题精读标准译文】In other words, they all share a view that the international tax system has failed to keep up with the current economy.",
+              "translation": "换句话说，他们都认为国际税收体系未能跟上当前经济的发展。",
               "vocab": [
                 {
                   "word": "share",
@@ -3700,7 +3700,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "In response to these many unilateral measures, the Organization for Economic Cooperation and Development (OECD) is currently working with 131 countries to reach a consensus by the end of 2020 on an international solution.",
-              "translation": "【考研真题精读标准译文】In response to these many unilateral measures, the Organization for Economic Cooperation and Development (OECD) is currently working with 131 countries to reach a consensus by the end of 2020 on an international solution.",
+              "translation": "针对这些单边措施，经济合作与发展组织（OECD）目前正在与131个国家合作，争取在2020年底前就国际解决方案达成共识。",
               "vocab": [
                 {
                   "word": "in response to",
@@ -3770,7 +3770,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "Both France and the United States are involved in the organization's work, but France's digital services tax and the American response raise questions about what the future holds for the international tax system.",
-              "translation": "【考研真题精读标准译文】Both France and the United States are involved in the organization's work, but France's digital services tax and the American response raise questions about what the future holds for the international tax system.",
+              "translation": "法国和美国都参与了该组织的工作，但法国的数字服务税和美国的反应引发了人们对国际税收体系未来的疑问。",
               "vocab": [
                 {
                   "word": "involved",
@@ -3834,7 +3834,7 @@ window.ENGLISH_DATA['2020'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "France's planned tax is a clear warning: Unless a broad consensus can be reached on reforming the international tax system, other nations are likely to follow suit, and American companies will face a cascade of different taxes from dozens of nations that will prove burdensome and costly.",
-              "translation": "【考研真题精读标准译文】France's planned tax is a clear warning: Unless a broad consensus can be reached on reforming the international tax system, other nations are likely to follow suit, and American companies will face a cascade of different taxes from dozens of nations that will prove burdensome and costly.",
+              "translation": "法国的税收计划是一个明确的警告：除非就国际税收制度改革达成广泛共识，否则其他国家可能会效仿，而美国公司将面临来自数十个国家的一系列不同税收，这些税收将证明是负担沉重且成本高昂的。",
               "vocab": [
                 {
                   "word": "clear",
@@ -3936,14 +3936,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "regulate digital services platforms.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3963,9 +3963,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "impose a levy on tech multinationals.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4002,14 +4002,14 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "may trigger countermeasures against France.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4029,9 +4029,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "aims to ease international trade tensions.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4086,7 +4086,7 @@ window.ENGLISH_DATA['2020'] = {
               "text": "the current international tax system needs upgrading.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4134,7 +4134,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -4161,9 +4161,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "is faced with uncertain prospects.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4172,9 +4172,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "D",
               "text": "needs to involve more countries.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4200,7 +4200,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4216,9 +4216,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "B",
               "text": "France leads the charge on Digital Tax",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4227,9 +4227,9 @@ window.ENGLISH_DATA['2020'] = {
             {
               "key": "C",
               "text": "France Says \"NO\" to Tech Multinationals",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"

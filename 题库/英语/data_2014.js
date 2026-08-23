@@ -26,7 +26,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "In order to \"change lives for the better\" and reduce \"dependency\", George Osborne, Chancellor of the Exchequer, introduced the \"upfront work search\" scheme.",
-              "translation": "【考研真题精读标准译文】In order to \"change lives for the better\" and reduce \"dependency\", George Osborne, Chancellor of the Exchequer, introduced the \"upfront work search\" scheme.",
+              "translation": "为了“让生活变得更好”并减少“依赖”，英国财政大臣乔治·奥斯本推出了“前期工作搜索”计划。",
               "vocab": [
                 {
                   "word": "order",
@@ -96,7 +96,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Only if the jobless arrive at the job centre with a CV, register for online job search, and start looking for work will they be eligible for benefit—and then they should report weekly rather than fortnightly.",
-              "translation": "【考研真题精读标准译文】Only if the jobless arrive at the job centre with a CV, register for online job search, and start looking for work will they be eligible for benefit—and then they should report weekly rather than fortnightly.",
+              "translation": "只有当失业者带着简历到达就业中心，注册在线求职并开始寻找工作时，他们才有资格领取福利——然后他们应该每周而不是每两周报告一次。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -172,7 +172,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "What could be more reasonable?",
-              "translation": "【考研真题精读标准译文】What could be more reasonable?",
+              "translation": "还有什么更合理的呢？",
               "vocab": [
                 {
                   "word": "reasonable",
@@ -188,7 +188,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "More apparent reasonableness followed.",
-              "translation": "【考研真题精读标准译文】More apparent reasonableness followed.",
+              "translation": "接下来是更明显的合理性。",
               "vocab": [
                 {
                   "word": "apparent",
@@ -210,7 +210,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "There will now be a seven-day wait for the jobseeker's allowance.",
-              "translation": "【考研真题精读标准译文】There will now be a seven-day wait for the jobseeker's allowance.",
+              "translation": "现在，求职者的津贴需要等待 7 天。",
               "vocab": [
                 {
                   "word": "will",
@@ -244,7 +244,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "\"Those first few days should be spent looking for work, not looking to sign on,\" he claimed.",
-              "translation": "【考研真题精读标准译文】\"Those first few days should be spent looking for work, not looking to sign on,\" he claimed.",
+              "translation": "“最初的几天应该用来找工作，而不是寻找签约，”他声称。",
               "vocab": [
                 {
                   "word": "for",
@@ -279,7 +279,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "\"We're doing these things because we know they help people stay off benefits and help those on benefits get into work faster.\" Help?",
-              "translation": "【考研真题精读标准译文】\"We're doing these things because we know they help people stay off benefits and help those on benefits get into work faster.\" Help?",
+              "translation": "“我们正在做这些事情，因为我们知道它们可以帮助人们远离福利，并帮助那些领取福利的人更快地找到工作。”帮助？",
               "vocab": [
                 {
                   "word": "work",
@@ -295,7 +295,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Really?",
-              "translation": "【考研真题精读标准译文】Really?",
+              "translation": "真的吗？",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": true
@@ -304,7 +304,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "On first hearing, this was the socially concerned chancellor, trying to change lives for the better, complete with \"reforms\" to an obviously indulgent system that demands too little effort from the newly unemployed to find work, and subsidises laziness.",
-              "translation": "【考研真题精读标准译文】On first hearing, this was the socially concerned chancellor, trying to change lives for the better, complete with \"reforms\" to an obviously indulgent system that demands too little effort from the newly unemployed to find work, and subsidises laziness.",
+              "translation": "第一次听证会时，这位关心社会的总理试图让人们的生活变得更好，对一个明显放纵的制度进行“改革”，该制度要求新失业者找工作的努力太少，并补贴懒惰。",
               "vocab": [
                 {
                   "word": "chancellor",
@@ -386,7 +386,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "What motivated him, we were to understand, was his zeal for \"fundamental fairness\"—protecting the taxpayer, controlling spending and ensuring that only the most deserving claimants received their benefits.",
-              "translation": "【考研真题精读标准译文】What motivated him, we were to understand, was his zeal for \"fundamental fairness\"—protecting the taxpayer, controlling spending and ensuring that only the most deserving claimants received their benefits.",
+              "translation": "我们了解到，激励他的是他对“基本公平”的热情——保护纳税人、控制支出并确保只有最值得的索赔人才能获得福利。",
               "vocab": [
                 {
                   "word": "understand",
@@ -432,7 +432,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Losing a job is hurting: you don't skip down to the job centre with a song in your heart, delighted at the prospect of doubling your income from the generous state.",
-              "translation": "【考研真题精读标准译文】Losing a job is hurting: you don't skip down to the job centre with a song in your heart, delighted at the prospect of doubling your income from the generous state.",
+              "translation": "失去工作是令人痛苦的：你不会满怀欣喜地跳到就业中心，因为慷慨的国家会让你的收入翻倍。",
               "vocab": [
                 {
                   "word": "skip",
@@ -484,7 +484,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "It is financially terrifying, psychologically embarrassing and you know that support is minimal and extraordinarily hard to get.",
-              "translation": "【考研真题精读标准译文】It is financially terrifying, psychologically embarrassing and you know that support is minimal and extraordinarily hard to get.",
+              "translation": "这在经济上令人恐惧，在心理上令人尴尬，而且你知道支持很少而且非常难以获得。",
               "vocab": [
                 {
                   "word": "financially",
@@ -537,7 +537,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "You are now not wanted; you are now excluded from the work environment that offers purpose and structure in your life.",
-              "translation": "【考研真题精读标准译文】You are now not wanted; you are now excluded from the work environment that offers purpose and structure in your life.",
+              "translation": "现在你不再被需要；您现在被排除在为您的生活提供目的和结构的工作环境之外。",
               "vocab": [
                 {
                   "word": "work",
@@ -571,7 +571,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "Worse, the crucial income to feed yourself and your family and pay the bills has disappeared.",
-              "translation": "【考研真题精读标准译文】Worse, the crucial income to feed yourself and your family and pay the bills has disappeared.",
+              "translation": "更糟糕的是，养活自己和家人以及支付账单的重要收入已经消失。",
               "vocab": [
                 {
                   "word": "crucial",
@@ -605,7 +605,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Ask anyone newly unemployed what they want and the answer is always: a job.",
-              "translation": "【考研真题精读标准译文】Ask anyone newly unemployed what they want and the answer is always: a job.",
+              "translation": "问任何新失业的人他们想要什么，答案总是：一份工作。",
               "vocab": [
                 {
                   "word": "unemployed",
@@ -627,7 +627,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "But in Osborneland, your first instinct is to fall into dependency—permanent dependency if you can get it – supported by a state only too ready to indulge your falsehood.",
-              "translation": "【考研真题精读标准译文】But in Osborneland, your first instinct is to fall into dependency—permanent dependency if you can get it – supported by a state only too ready to indulge your falsehood.",
+              "translation": "但在奥斯本兰，你的第一本能是陷入依赖——如果可以的话，永久依赖——得到一个随时准备放纵你的谎言的国家的支持。",
               "vocab": [
                 {
                   "word": "instinct",
@@ -679,7 +679,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "It is as though 20 years of ever-tougher reforms of the job search and benefit administration system never happened.",
-              "translation": "【考研真题精读标准译文】It is as though 20 years of ever-tougher reforms of the job search and benefit administration system never happened.",
+              "translation": "就好像20年来更加严厉的求职和福利管理制度改革从未发生过一样。",
               "vocab": [
                 {
                   "word": "search",
@@ -713,7 +713,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "The principle of British welfare is no longer that you can insure yourself against the risk of unemployment and receive unconditional payments if the disaster happens.",
-              "translation": "【考研真题精读标准译文】The principle of British welfare is no longer that you can insure yourself against the risk of unemployment and receive unconditional payments if the disaster happens.",
+              "translation": "英国福利的原则不再是你可以为自己投保，免受失业风险，并在灾难发生时获得无条件付款。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -759,7 +759,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Even the very phrase \"jobseeker's allowance\" is about redefining the unemployed as a \"jobseeker\" who had no fundamental right to a benefit he or she has earned through making national insurance contributions.",
-              "translation": "【考研真题精读标准译文】Even the very phrase \"jobseeker's allowance\" is about redefining the unemployed as a \"jobseeker\" who had no fundamental right to a benefit he or she has earned through making national insurance contributions.",
+              "translation": "甚至“求职者津贴”这个词本身就是将失业者重新定义为“求职者”，他们没有基本权利享受通过缴纳国民保险缴款而获得的福利。",
               "vocab": [
                 {
                   "word": "very",
@@ -823,7 +823,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "Instead, the claimant receives a time-limited \"allowance,\" conditional on actively seeking a job; no entitlement and no insurance, at £71.70 a week, one of the least generous in the EU.",
-              "translation": "【考研真题精读标准译文】Instead, the claimant receives a time-limited \"allowance,\" conditional on actively seeking a job; no entitlement and no insurance, at £71.70 a week, one of the least generous in the EU.",
+              "translation": "相反，申请人会收到有时间限制的“津贴”，条件是积极寻找工作；没有福利，没有保险，每周 71.70 英镑，是欧盟最不慷慨的之一。",
               "vocab": [
                 {
                   "word": "Instead",
@@ -895,14 +895,14 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "encourage jobseekers' active engagement in job seeking.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -911,9 +911,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "B",
               "text": "provide the unemployed with easier access to benefits.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -961,7 +961,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -988,9 +988,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "to register for an allowance from the government.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -999,9 +999,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "to attend a governmental job-training program.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1027,14 +1027,14 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "A desire to secure a better life for all.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1065,9 +1065,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "A passion to ensure fairness for taxpayers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1093,14 +1093,14 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "uneasy.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1120,9 +1120,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "enraged.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1166,7 +1166,7 @@ window.ENGLISH_DATA['2014'] = {
               "text": "Unemployment benefits should not be made conditional.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1230,7 +1230,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "All around the world, lawyers generate more hostility than the members of any other profession—with the possible exception of journalism.",
-              "translation": "【考研真题精读标准译文】All around the world, lawyers generate more hostility than the members of any other profession—with the possible exception of journalism.",
+              "translation": "在世界各地，律师比任何其他职业的成员产生更多的敌意——新闻业可能是个例外。",
               "vocab": [
                 {
                   "word": "around",
@@ -1270,7 +1270,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But there are few places where clients have more grounds for complaint than America.",
-              "translation": "【考研真题精读标准译文】But there are few places where clients have more grounds for complaint than America.",
+              "translation": "但很少有地方比美国更能引起客户的抱怨。",
               "vocab": [
                 {
                   "word": "for",
@@ -1292,7 +1292,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "During the decade before the economic crisis, spending on legal services in America grew twice as fast as inflation.",
-              "translation": "【考研真题精读标准译文】During the decade before the economic crisis, spending on legal services in America grew twice as fast as inflation.",
+              "translation": "在经济危机前的十年里，美国法律服务支出的增长速度是通货膨胀的两倍。",
               "vocab": [
                 {
                   "word": "decade",
@@ -1332,7 +1332,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The best lawyers made skyscrapers—full of money, tempting ever more students to pile into law schools.",
-              "translation": "【考研真题精读标准译文】The best lawyers made skyscrapers—full of money, tempting ever more students to pile into law schools.",
+              "translation": "最优秀的律师建造了充满金钱的摩天大楼，吸引着越来越多的学生涌入法学院。",
               "vocab": [
                 {
                   "word": "money",
@@ -1354,7 +1354,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "But most law graduates never get a big-firm job.",
-              "translation": "【考研真题精读标准译文】But most law graduates never get a big-firm job.",
+              "translation": "但大多数法律毕业生从未找到大公司的工作。",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -1363,7 +1363,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "Many of them instead become the kind of nuisance-lawsuit filer that makes the tort system a costly nightmare.",
-              "translation": "【考研真题精读标准译文】Many of them instead become the kind of nuisance-lawsuit filer that makes the tort system a costly nightmare.",
+              "translation": "他们中的许多人反而成为了那种滋扰诉讼的提起者，使侵权制度成为一场代价高昂的噩梦。",
               "vocab": [
                 {
                   "word": "instead",
@@ -1409,7 +1409,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "There are many reasons for this.",
-              "translation": "【考研真题精读标准译文】There are many reasons for this.",
+              "translation": "造成这种情况的原因有很多。",
               "vocab": [
                 {
                   "word": "for",
@@ -1425,7 +1425,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "One is the excessive costs of a legal education.",
-              "translation": "【考研真题精读标准译文】One is the excessive costs of a legal education.",
+              "translation": "一是法学教育的成本过高。",
               "vocab": [
                 {
                   "word": "One",
@@ -1460,7 +1460,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "There is just one path for a lawyer in most American states: a four-year undergraduate degree in some unrelated subject, then a three-year law degree at one of 200 law schools authorized by the American Bar Association and an expensive preparation for the bar exam.",
-              "translation": "【考研真题精读标准译文】There is just one path for a lawyer in most American states: a four-year undergraduate degree in some unrelated subject, then a three-year law degree at one of 200 law schools authorized by the American Bar Association and an expensive preparation for the bar exam.",
+              "translation": "在美国大多数州，律师只有一条出路：获得一些不相关学科的四年制本科学位，然后在美国律师协会授权的 200 所法学院之一获得三年制法律学位，并为律师考试做昂贵的准备。",
               "vocab": [
                 {
                   "word": "one",
@@ -1512,7 +1512,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "This leaves today's average law-school graduate with $100,000 of debt on top of undergraduate debts.",
-              "translation": "【考研真题精读标准译文】This leaves today's average law-school graduate with $100,000 of debt on top of undergraduate debts.",
+              "translation": "这使得当今的法学院毕业生在本科生债务之外平均还背负着 10 万美元的债务。",
               "vocab": [
                 {
                   "word": "average",
@@ -1534,7 +1534,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "Law-school debt means that they have to work fearsomely hard.",
-              "translation": "【考研真题精读标准译文】Law-school debt means that they have to work fearsomely hard.",
+              "translation": "法学院的债务意味着他们必须非常努力地工作。",
               "vocab": [
                 {
                   "word": "work",
@@ -1556,7 +1556,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "Reforming the system would help both lawyers and their customers.",
-              "translation": "【考研真题精读标准译文】Reforming the system would help both lawyers and their customers.",
+              "translation": "改革这一制度对律师和他们的客户都有帮助。",
               "vocab": [
                 {
                   "word": "system",
@@ -1572,7 +1572,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "Sensible ideas have been around for a long time, but the state-level bodies that govern the profession have been too conservative to implement them.",
-              "translation": "【考研真题精读标准译文】Sensible ideas have been around for a long time, but the state-level bodies that govern the profession have been too conservative to implement them.",
+              "translation": "明智的想法已经存在很长时间了，但管理该行业的国家级机构过于保守，无法实施这些想法。",
               "vocab": [
                 {
                   "word": "Sensible",
@@ -1624,7 +1624,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "One idea is to allow people to study law as an undergraduate degree.",
-              "translation": "【考研真题精读标准译文】One idea is to allow people to study law as an undergraduate degree.",
+              "translation": "一个想法是允许人们学习法律作为本科学位。",
               "vocab": [
                 {
                   "word": "One",
@@ -1652,7 +1652,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Another is to let students sit for the bar after only two years of law school.",
-              "translation": "【考研真题精读标准译文】Another is to let students sit for the bar after only two years of law school.",
+              "translation": "另一种方法是让学生在法学院学习两年后就可以参加律师资格考试。",
               "vocab": [
                 {
                   "word": "for",
@@ -1668,7 +1668,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "If the bar exam is truly a stern enough test for a would-be lawyer, those who can sit it earlier should be allowed to do so.",
-              "translation": "【考研真题精读标准译文】If the bar exam is truly a stern enough test for a would-be lawyer, those who can sit it earlier should be allowed to do so.",
+              "translation": "如果律师资格考试对于想成为律师的人来说确实是一项足够严格的考验，那么那些能够提前参加考试的人应该被允许这样做。",
               "vocab": [
                 {
                   "word": "do so",
@@ -1703,7 +1703,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Students who do not need the extra training could cut their debt mountain by a third.",
-              "translation": "【考研真题精读标准译文】Students who do not need the extra training could cut their debt mountain by a third.",
+              "translation": "不需要额外培训的学生可以将债务负担减少三分之一。",
               "vocab": [
                 {
                   "word": "extra",
@@ -1725,7 +1725,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The other reason why costs are so high is the restrictive guild-like ownership structure of the business.",
-              "translation": "【考研真题精读标准译文】The other reason why costs are so high is the restrictive guild-like ownership structure of the business.",
+              "translation": "成本如此之高的另一个原因是企业的限制性行会式所有权结构。",
               "vocab": [
                 {
                   "word": "reason",
@@ -1759,7 +1759,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Except in the District of Columbia, non-lawyers may not own any share of a law firm.",
-              "translation": "【考研真题精读标准译文】Except in the District of Columbia, non-lawyers may not own any share of a law firm.",
+              "translation": "除哥伦比亚特区外，非律师不得拥有律师事务所的任何股份。",
               "vocab": [
                 {
                   "word": "Except",
@@ -1787,7 +1787,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "This keeps fees high and innovation slow.",
-              "translation": "【考研真题精读标准译文】This keeps fees high and innovation slow.",
+              "translation": "这使得费用居高不下，创新缓慢。",
               "vocab": [
                 {
                   "word": "innovation",
@@ -1803,7 +1803,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "There is pressure for change from within the profession, but opponents of change among the regulators insist that keeping outsiders out of a law firm isolates lawyers from the pressure to make money rather than serve clients ethically.",
-              "translation": "【考研真题精读标准译文】There is pressure for change from within the profession, but opponents of change among the regulators insist that keeping outsiders out of a law firm isolates lawyers from the pressure to make money rather than serve clients ethically.",
+              "translation": "行业内部存在着变革的压力，但监管机构中反对变革的人坚持认为，将外部人士排除在律师事务所之外会使律师免受赚钱的压力，而不是道德地为客户服务。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -1873,7 +1873,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "In fact, allowing non-lawyers to own shares in law firms would reduce costs and improve services to customers, by encouraging law firms to use technology and to employ professional managers to focus on improving firms' efficiency.",
-              "translation": "【考研真题精读标准译文】In fact, allowing non-lawyers to own shares in law firms would reduce costs and improve services to customers, by encouraging law firms to use technology and to employ professional managers to focus on improving firms' efficiency.",
+              "translation": "事实上，允许非律师持有律师事务所股份可以鼓励律师事务所使用技术并聘请职业经理人专注于提高事务所效率，从而降低成本并改善对客户的服务。",
               "vocab": [
                 {
                   "word": "use",
@@ -1901,7 +1901,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "After all, other countries, such as Australia and Britain, have started liberalizing their legal professions.",
-              "translation": "【考研真题精读标准译文】After all, other countries, such as Australia and Britain, have started liberalizing their legal professions.",
+              "translation": "毕竟，其他国家，例如澳大利亚和英国，已经开始开放其法律职业。",
               "vocab": [
                 {
                   "word": "After all",
@@ -1923,7 +1923,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "America should follow.",
-              "translation": "【考研真题精读标准译文】America should follow.",
+              "translation": "美国应该效仿。",
               "vocab": [
                 {
                   "word": "follow",
@@ -1953,7 +1953,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -1980,9 +1980,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "the prospect of working in big firms.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -1991,9 +1991,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "the attraction of financial rewards.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2019,14 +2019,14 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "Higher tuition fees for undergraduate studies.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2057,9 +2057,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "Pursuing a bachelor's degree in another major.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2085,14 +2085,14 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "the rigid bodies governing the profession.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2123,9 +2123,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "non-professionals' sharp criticism.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2169,7 +2169,7 @@ window.ENGLISH_DATA['2014'] = {
               "text": "bans outsiders' involvement in the profession.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2217,7 +2217,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -2233,9 +2233,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "B",
               "text": "a problem in America's legal profession and solutions to it.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2244,9 +2244,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "the role of undergraduate studies in America's legal education.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -2288,7 +2288,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The US$3-million Fundamental Physics Prize is indeed an interesting experiment, as Alexander Polyakov said when he accepted this year's award in March.",
-              "translation": "【考研真题精读标准译文】The US$3-million Fundamental Physics Prize is indeed an interesting experiment, as Alexander Polyakov said when he accepted this year's award in March.",
+              "translation": "正如亚历山大·波利亚科夫（Alexander Polyakov）在三月份接受今年的奖项时所说，300万美元的基础物理奖确实是一个有趣的实验。",
               "vocab": [
                 {
                   "word": "Fundamental",
@@ -2322,7 +2322,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "And it is far from the only one of its type.",
-              "translation": "【考研真题精读标准译文】And it is far from the only one of its type.",
+              "translation": "而且它远不是同类产品中唯一的一款。",
               "vocab": [
                 {
                   "word": "one",
@@ -2338,7 +2338,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "As a News Feature article in Nature discusses, a string of lucrative awards for researchers have joined the Nobel Prizes in recent years.",
-              "translation": "【考研真题精读标准译文】As a News Feature article in Nature discusses, a string of lucrative awards for researchers have joined the Nobel Prizes in recent years.",
+              "translation": "正如《自然》杂志的一篇新闻专题文章所讨论的那样，近年来，诺贝尔奖中加入了一系列为研究人员提供的丰厚奖励。",
               "vocab": [
                 {
                   "word": "Feature",
@@ -2384,7 +2384,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Many, like the Fundamental Physics Prize, are funded from the telephone-number-sized bank accounts of Internet entrepreneurs.",
-              "translation": "【考研真题精读标准译文】Many, like the Fundamental Physics Prize, are funded from the telephone-number-sized bank accounts of Internet entrepreneurs.",
+              "translation": "许多奖项，比如基础物理奖，都是由互联网企业家的电话号码大小的银行账户资助的。",
               "vocab": [
                 {
                   "word": "Fundamental",
@@ -2406,7 +2406,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "These benefactors have succeeded in their chosen fields, they say, and they want to use their wealth to draw attention to those who have succeeded in science.",
-              "translation": "【考研真题精读标准译文】These benefactors have succeeded in their chosen fields, they say, and they want to use their wealth to draw attention to those who have succeeded in science.",
+              "translation": "他们说，这些捐助者在他们选择的领域取得了成功，他们希望利用自己的财富来吸引人们对那些在科学领域取得成功的人的关注。",
               "vocab": [
                 {
                   "word": "fields",
@@ -2440,7 +2440,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "What's not to like?",
-              "translation": "【考研真题精读标准译文】What's not to like?",
+              "translation": "有什么不喜欢的？",
               "vocab": [],
               "isTopicSentence": false,
               "isKeyEvidence": false
@@ -2449,7 +2449,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "Quite a lot, according to a handful of scientists quoted in the News Feature.",
-              "translation": "【考研真题精读标准译文】Quite a lot, according to a handful of scientists quoted in the News Feature.",
+              "translation": "据新闻专题报道中引用的一些科学家的说法，相当多。",
               "vocab": [
                 {
                   "word": "according to",
@@ -2483,7 +2483,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "You cannot buy class, as the old saying goes, and these upstart entrepreneurs cannot buy their prizes the prestige of the Nobels.",
-              "translation": "【考研真题精读标准译文】You cannot buy class, as the old saying goes, and these upstart entrepreneurs cannot buy their prizes the prestige of the Nobels.",
+              "translation": "正如一句老话所说，你买不到阶级，而这些暴发户企业家也买不到诺贝尔奖的声望。",
               "vocab": [
                 {
                   "word": "class",
@@ -2518,7 +2518,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The new awards are an exercise in self-promotion for those behind them, say scientists.",
-              "translation": "【考研真题精读标准译文】The new awards are an exercise in self-promotion for those behind them, say scientists.",
+              "translation": "科学家们表示，新奖项是其背后人士的一种自我推销活动。",
               "vocab": [
                 {
                   "word": "new",
@@ -2552,7 +2552,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "They could distort the achievement-based system of peer-review-led research.",
-              "translation": "【考研真题精读标准译文】They could distort the achievement-based system of peer-review-led research.",
+              "translation": "它们可能会扭曲同行评审主导的基于成果的研究体系。",
               "vocab": [
                 {
                   "word": "distort",
@@ -2574,7 +2574,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "They could cement the status quo of peer-reviewed research.",
-              "translation": "【考研真题精读标准译文】They could cement the status quo of peer-reviewed research.",
+              "translation": "它们可以巩固同行评审研究的现状。",
               "vocab": [
                 {
                   "word": "cement",
@@ -2602,7 +2602,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "They do not fund peer-reviewed research.",
-              "translation": "【考研真题精读标准译文】They do not fund peer-reviewed research.",
+              "translation": "他们不资助同行评审的研究。",
               "vocab": [
                 {
                   "word": "fund",
@@ -2624,7 +2624,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P2-S5",
               "text": "They perpetuate the myth of the lone genius.",
-              "translation": "【考研真题精读标准译文】They perpetuate the myth of the lone genius.",
+              "translation": "他们延续了孤独天才的神话。",
               "vocab": [
                 {
                   "word": "perpetuate",
@@ -2652,7 +2652,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P2-S6",
               "text": "The goals of the prize-givers seem as scattered as the criticism.",
-              "translation": "【考研真题精读标准译文】The goals of the prize-givers seem as scattered as the criticism.",
+              "translation": "颁奖者的目标似乎和批评一样分散。",
               "vocab": [
                 {
                   "word": "scattered",
@@ -2668,7 +2668,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 7,
               "id": "P2-S7",
               "text": "Some want to shock, others to draw people into science, or to better reward those who have made their careers in research.",
-              "translation": "【考研真题精读标准译文】Some want to shock, others to draw people into science, or to better reward those who have made their careers in research.",
+              "translation": "有些人想要震惊，有些人想要吸引人们进入科学，或者更好地奖励那些在研究领域取得事业的人。",
               "vocab": [
                 {
                   "word": "reward",
@@ -2684,7 +2684,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 8,
               "id": "P2-S8",
               "text": "As Nature has pointed out before, there are some legitimate concerns about how science prizes—both new and old – are distributed.",
-              "translation": "【考研真题精读标准译文】As Nature has pointed out before, there are some legitimate concerns about how science prizes—both new and old – are distributed.",
+              "translation": "正如《自然》杂志之前指出的那样，对于新旧科学奖项的分配方式存在一些合理的担忧。",
               "vocab": [
                 {
                   "word": "Nature",
@@ -2737,7 +2737,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "The Breakthrough Prize in Life Sciences, launched this year, takes an unrepresentative view of what the life sciences include.",
-              "translation": "【考研真题精读标准译文】The Breakthrough Prize in Life Sciences, launched this year, takes an unrepresentative view of what the life sciences include.",
+              "translation": "今年设立的生命科学突破奖对生命科学的内容没有代表性。",
               "vocab": [
                 {
                   "word": "Breakthrough",
@@ -2771,7 +2771,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "But the Nobel Foundation's limit of three recipients per prize, each of whom must still be living, has long been outgrown by the collaborative nature of modern research—as will be demonstrated by the inevitable row over who is ignored when it comes to acknowledging the discovery of the Higgs boson.",
-              "translation": "【考研真题精读标准译文】But the Nobel Foundation's limit of three recipients per prize, each of whom must still be living, has long been outgrown by the collaborative nature of modern research—as will be demonstrated by the inevitable row over who is ignored when it comes to acknowledging the discovery of the Higgs boson.",
+              "translation": "但诺贝尔基金会对每个奖项只能有三名获奖者的限制（每人必须仍然活着）早已被现代研究的协作性质所超越——正如在承认希格斯玻色子的发现时不可避免的谁被忽视的争论所证明的那样。",
               "vocab": [
                 {
                   "word": "Foundation",
@@ -2841,7 +2841,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "The Nobels were, of course, themselves set up by a very rich individual who had decided what he wanted to do with his own money.",
-              "translation": "【考研真题精读标准译文】The Nobels were, of course, themselves set up by a very rich individual who had decided what he wanted to do with his own money.",
+              "translation": "当然，诺贝尔奖本身是由一位非常富有的人设立的，他决定用自己的钱做什么。",
               "vocab": [
                 {
                   "word": "course",
@@ -2875,7 +2875,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Time, rather than intention, has given them legitimacy.",
-              "translation": "【考研真题精读标准译文】Time, rather than intention, has given them legitimacy.",
+              "translation": "赋予它们合法性的是时间，而不是意图。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -2909,7 +2909,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "As much as some scientists may complain about the new awards, two things seem clear.",
-              "translation": "【考研真题精读标准译文】As much as some scientists may complain about the new awards, two things seem clear.",
+              "translation": "尽管一些科学家可能会抱怨新奖项，但有两件事似乎很清楚。",
               "vocab": [
                 {
                   "word": "complain",
@@ -2943,7 +2943,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "First, most researchers would accept such a prize if they were offered one.",
-              "translation": "【考研真题精读标准译文】First, most researchers would accept such a prize if they were offered one.",
+              "translation": "首先，如果向大多数研究人员提供这样的奖项，他们都会接受。",
               "vocab": [
                 {
                   "word": "accept",
@@ -2965,7 +2965,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 7,
               "id": "P3-S7",
               "text": "Second, it is surely a good thing that the money and attention come to science rather than go elsewhere.",
-              "translation": "【考研真题精读标准译文】Second, it is surely a good thing that the money and attention come to science rather than go elsewhere.",
+              "translation": "其次，资金和注意力流向科学而不是流向其他地方，这无疑是一件好事。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -2999,7 +2999,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 8,
               "id": "P3-S8",
               "text": "It is fair to criticize and question the mechanism—that is the culture of research, after all—but it is the prize-givers' money to do with as they please.",
-              "translation": "【考研真题精读标准译文】It is fair to criticize and question the mechanism—that is the culture of research, after all—but it is the prize-givers' money to do with as they please.",
+              "translation": "批评和质疑这一机制是公平的——毕竟，这就是研究文化——但颁奖者的钱可以随心所欲地使用。",
               "vocab": [
                 {
                   "word": "After all",
@@ -3051,7 +3051,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 9,
               "id": "P3-S9",
               "text": "It is wise to take such gifts with gratitude and grace.",
-              "translation": "【考研真题精读标准译文】It is wise to take such gifts with gratitude and grace.",
+              "translation": "怀着感激和优雅的心情接受这样的礼物是明智的。",
               "vocab": [
                 {
                   "word": "take",
@@ -3093,14 +3093,14 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "a symbol of the entrepreneurs' wealth.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3109,9 +3109,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "B",
               "text": "a handsome reward for researchers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3159,7 +3159,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -3186,9 +3186,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "the founders of the new awards.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3197,9 +3197,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "peer-review-led research.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3225,7 +3225,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3241,9 +3241,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "B",
               "text": "controversies over the recipients' status.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3252,9 +3252,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "the joint effort of modern researchers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3291,7 +3291,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -3307,9 +3307,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "B",
               "text": "Their endurance has done justice to them.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3318,9 +3318,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "They are the most representative honor.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3397,7 +3397,7 @@ window.ENGLISH_DATA['2014'] = {
               "text": "acceptable despite the criticism.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -3428,7 +3428,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "\"The Heart of the Matter,\" the just-released report by the American Academy of Arts and Sciences (AAAS), deserves praise for affirming the importance of the humanities and social sciences to the prosperity and security of liberal democracy in America.",
-              "translation": "【考研真题精读标准译文】\"The Heart of the Matter,\" the just-released report by the American Academy of Arts and Sciences (AAAS), deserves praise for affirming the importance of the humanities and social sciences to the prosperity and security of liberal democracy in America.",
+              "translation": "美国艺术与科学学院（AAAS）刚刚发布的报告《问题的核心》值得赞扬，它肯定了人文社会科学对美国自由民主的繁荣和安全的重要性。",
               "vocab": [
                 {
                   "word": "Matter",
@@ -3498,7 +3498,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Regrettably, however, the report's failure to address the true nature of the crisis facing liberal education may cause more harm than good.",
-              "translation": "【考研真题精读标准译文】Regrettably, however, the report's failure to address the true nature of the crisis facing liberal education may cause more harm than good.",
+              "translation": "然而遗憾的是，该报告未能解决自由教育面临的危机的真正本质，可能弊大于利。",
               "vocab": [
                 {
                   "word": "Regrettably",
@@ -3550,7 +3550,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "In 2010, leading congressional Democrats and Republicans sent letters to the AAAS asking that it identify actions that could be taken by \"federal, state and local governments, universities, foundations, educators, individual benefactors and others\" to \"maintain national excellence in humanities and social scientific scholarship and education.\" In response, the American Academy formed the Commission on the Humanities and Social Sciences.",
-              "translation": "【考研真题精读标准译文】In 2010, leading congressional Democrats and Republicans sent letters to the AAAS asking that it identify actions that could be taken by \"federal, state and local governments, universities, foundations, educators, individual benefactors and others\" to \"maintain national excellence in humanities and social scientific scholarship and education.\" In response, the American Academy formed the Commission on the Humanities and Social Sciences.",
+              "translation": "2010年，国会民主党和共和党的主要人士致函美国科学促进会，要求其确定“联邦、州和地方政府、大学、基金会、教育工作者、个人捐助者和其他人”可以采取的行动，以“保持国家在人文和社会科学学术和教育方面的卓越表现”。作为回应，美国科学院成立了人文与社会科学委员会。",
               "vocab": [
                 {
                   "word": "leading",
@@ -3644,7 +3644,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Among the commission's 51 members are top-tier-university presidents, scholars, lawyers, judges, and business executives, as well as prominent figures from diplomacy, filmmaking, music and journalism.",
-              "translation": "【考研真题精读标准译文】Among the commission's 51 members are top-tier-university presidents, scholars, lawyers, judges, and business executives, as well as prominent figures from diplomacy, filmmaking, music and journalism.",
+              "translation": "该委员会的 51 名成员包括顶级大学校长、学者、律师、法官和企业高管，以及外交、电影制作、音乐和新闻界的杰出人物。",
               "vocab": [
                 {
                   "word": "commission",
@@ -3691,7 +3691,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The goals identified in the report are generally admirable.",
-              "translation": "【考研真题精读标准译文】The goals identified in the report are generally admirable.",
+              "translation": "报告中确定的目标总体上令人钦佩。",
               "vocab": [
                 {
                   "word": "generally",
@@ -3713,7 +3713,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Because representative government presupposes an informed citizenry, the report supports full literacy; stresses the study of history and government, particularly American history and American government; and encourages the use of new digital technologies.",
-              "translation": "【考研真题精读标准译文】Because representative government presupposes an informed citizenry, the report supports full literacy; stresses the study of history and government, particularly American history and American government; and encourages the use of new digital technologies.",
+              "translation": "由于代议制政府的前提是公民知情，因此报告支持全面扫盲；强调历史和政府的研究，特别是美国历史和美国政府；并鼓励使用新的数字技术。",
               "vocab": [
                 {
                   "word": "representative",
@@ -3783,7 +3783,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "To encourage innovation and competition, the report calls for increased investment in research, the crafting of coherent curricula that improve students' ability to solve problems and communicate effectively in the 21st century, increased funding for teachers and the encouragement of scholars to bring their learning to bear on the great challenges of the day.",
-              "translation": "【考研真题精读标准译文】To encourage innovation and competition, the report calls for increased investment in research, the crafting of coherent curricula that improve students' ability to solve problems and communicate effectively in the 21st century, increased funding for teachers and the encouragement of scholars to bring their learning to bear on the great challenges of the day.",
+              "translation": "为了鼓励创新和竞争，报告呼吁增加对研究的投资，制定连贯的课程以提高学生在21世纪解决问题和有效沟通的能力，增加对教师的资助，并鼓励学者利用他们的学习来应对当今的巨大挑战。",
               "vocab": [
                 {
                   "word": "encourage",
@@ -3871,7 +3871,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P2-S4",
               "text": "The report also advocates greater study of foreign languages, international affairs and the expansion of study abroad programs.",
-              "translation": "【考研真题精读标准译文】The report also advocates greater study of foreign languages, international affairs and the expansion of study abroad programs.",
+              "translation": "报告还主张加强外语、国际事务的学习和扩大留学项目。",
               "vocab": [
                 {
                   "word": "international",
@@ -3906,7 +3906,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Unfortunately, despite 21/2 years in the making, \"The Heart of the Matter\" never gets to the heart of the matter: the illiberal nature of liberal education at our leading colleges and universities.",
-              "translation": "【考研真题精读标准译文】Unfortunately, despite 21/2 years in the making, \"The Heart of the Matter\" never gets to the heart of the matter: the illiberal nature of liberal education at our leading colleges and universities.",
+              "translation": "不幸的是，尽管制作了 21/2 年，“问题的核心”从未触及问题的核心：我们领先的学院和大学的自由教育的非自由本质。",
               "vocab": [
                 {
                   "word": "Unfortunately",
@@ -3958,7 +3958,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "The commission ignores that for several decades America's colleges and universities have produced graduates who don't know the content and character of liberal education and are thus deprived of its benefits.",
-              "translation": "【考研真题精读标准译文】The commission ignores that for several decades America's colleges and universities have produced graduates who don't know the content and character of liberal education and are thus deprived of its benefits.",
+              "translation": "该委员会忽视了这样一个事实：几十年来，美国的学院和大学培养的毕业生不了解自由教育的内容和特征，从而被剥夺了自由教育的好处。",
               "vocab": [
                 {
                   "word": "commission",
@@ -4010,7 +4010,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Sadly, the spirit of inquiry once at home on campus has been replaced by the use of the humanities and social sciences as vehicles for publicizing \"progressive,\" or left-liberal propaganda.",
-              "translation": "【考研真题精读标准译文】Sadly, the spirit of inquiry once at home on campus has been replaced by the use of the humanities and social sciences as vehicles for publicizing \"progressive,\" or left-liberal propaganda.",
+              "translation": "可悲的是，曾经在校园里的探究精神已经被人文和社会科学作为宣传“进步”或左翼自由主义宣传的工具所取代。",
               "vocab": [
                 {
                   "word": "spirit",
@@ -4062,7 +4062,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 4,
               "id": "P3-S4",
               "text": "Today, professors routinely treat the progressive interpretation of history and progressive public policy as the proper subject of study while portraying conservative or classical liberal ideas—such as free markets and self-reliance—as falling outside the boundaries of routine, and sometimes legitimate, intellectual investigation.",
-              "translation": "【考研真题精读标准译文】Today, professors routinely treat the progressive interpretation of history and progressive public policy as the proper subject of study while portraying conservative or classical liberal ideas—such as free markets and self-reliance—as falling outside the boundaries of routine, and sometimes legitimate, intellectual investigation.",
+              "translation": "如今，教授们通常将对历史的进步解释和进步的公共政策视为适当的研究主题，同时将自由市场和自力更生等保守或古典自由主义思想描述为超出了常规（有时是合法的）知识研究的范围。",
               "vocab": [
                 {
                   "word": "routinely",
@@ -4168,7 +4168,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 5,
               "id": "P3-S5",
               "text": "The AAAS displays great enthusiasm for liberal education.",
-              "translation": "【考研真题精读标准译文】The AAAS displays great enthusiasm for liberal education.",
+              "translation": "美国科学促进会对通识教育表现出极大的热情。",
               "vocab": [
                 {
                   "word": "for",
@@ -4190,7 +4190,7 @@ window.ENGLISH_DATA['2014'] = {
               "sIndex": 6,
               "id": "P3-S6",
               "text": "Yet its report may well set back reform by obscuring the depth and breadth of the challenge that Congress asked it to illuminate.",
-              "translation": "【考研真题精读标准译文】Yet its report may well set back reform by obscuring the depth and breadth of the challenge that Congress asked it to illuminate.",
+              "translation": "然而，其报告很可能会因为模糊了国会要求其阐明的挑战的深度和广度而阻碍改革。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -4263,7 +4263,7 @@ window.ENGLISH_DATA['2014'] = {
               "text": "Critical.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4322,7 +4322,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -4349,9 +4349,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "retain people's interest in liberal education.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4360,9 +4360,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "keep a leading position in liberal education.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4388,7 +4388,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -4404,9 +4404,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "B",
               "text": "a greater emphasis on theoretical subjects.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4415,9 +4415,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "the application of emerging technologies.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4454,7 +4454,7 @@ window.ENGLISH_DATA['2014'] = {
             "P1-S1",
             "P2-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -4481,9 +4481,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "C",
               "text": "biased against classical liberal ideas.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4492,9 +4492,9 @@ window.ENGLISH_DATA['2014'] = {
             {
               "key": "D",
               "text": "cautious about intellectual investigation.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -4538,7 +4538,7 @@ window.ENGLISH_DATA['2014'] = {
               "text": "Illiberal Education and \"The Heart of the Matter\"",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
