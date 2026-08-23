@@ -198,8 +198,108 @@
   }
 
 
+  // 渲染年份标题下拉面板（与数学题库 title-dropdown 风格一致）
+  function renderYearSelector() {
+    if (!dom.txtYear || !dom.panelYear) return;
+    dom.txtYear.textContent = `${state.currentYear} 年真题`;
 
-  // 更新容器模式 class
+    const years = getAvailableYears();
+    dom.panelYear.innerHTML = '';
+    years.forEach(y => {
+      const btn = document.createElement('button');
+      btn.className = `title-option ${y === state.currentYear ? 'active' : ''}`;
+      btn.textContent = `${y} 年真题`;
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        closeYearDropdown();
+        switchYear(y);
+      };
+      dom.panelYear.appendChild(btn);
+    });
+  }
+
+  function toggleYearDropdown() {
+    if (!dom.trigYear || !dom.panelYear) return;
+    const isOpen = dom.trigYear.classList.contains('open');
+    if (isOpen) {
+      closeYearDropdown();
+    } else {
+      openYearDropdown();
+    }
+  }
+
+  function openYearDropdown() {
+    if (dom.trigYear) dom.trigYear.classList.add('open');
+    if (dom.panelYear) dom.panelYear.classList.add('open');
+  }
+
+  function closeYearDropdown() {
+    if (dom.trigYear) dom.trigYear.classList.remove('open');
+    if (dom.panelYear) dom.panelYear.classList.remove('open');
+  }
+
+  // 切换年份
+  function switchYear(year) {
+    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) return;
+    state.currentYear = year;
+    loadYearStorage();
+
+    const dataset = getCurrentDataset();
+    if (dataset.texts && dataset.texts.length > 0) {
+      state.currentTextId = dataset.texts[0].id;
+      state.currentQIndex = dataset.texts[0].questions[0].qIndex;
+    }
+    state.showSolution = state.defaultShowSolution;
+
+    saveResume();
+    renderYearSelector();
+    renderTextTabs();
+    renderTypeFilter();
+    renderPassage();
+    renderQuestionPills();
+    updateSolutionUI();
+  }
+
+  // 初始化应用
+  function init() {
+    initDom();
+    if (!dom.passagePane) return;
+    if (state.initialized) return;
+    state.initialized = true;
+
+    loadResume();
+    loadSolutionPref();
+    loadYearStorage();
+
+    renderYearSelector();
+    renderTextTabs();
+    renderTypeFilter();
+    renderPassage();
+    renderQuestionPills();
+    updateSolutionUI();
+
+    setupEventListeners();
+    setupKeyboardShortcuts();
+    updateModeClass();
+  }
+
+  function activate() {
+    initDom();
+    if (!state.initialized) {
+      init();
+    } else {
+      loadResume();
+      loadSolutionPref();
+      loadYearStorage();
+      renderYearSelector();
+      renderTextTabs();
+      renderTypeFilter();
+      renderPassage();
+      renderQuestionPills();
+      updateSolutionUI();
+      updateModeClass();
+    }
+  }
   function updateModeClass() {
     if (!dom.layout) return;
     if (state.mode === 'practice') {
