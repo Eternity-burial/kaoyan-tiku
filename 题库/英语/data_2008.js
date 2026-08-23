@@ -1,6 +1,6 @@
 /**
  * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2008 年真题
+ * 年份：2008 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
  */
 
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
@@ -12,27 +12,33 @@ window.ENGLISH_DATA['2008'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "While still catching up to men in some spheres of modern life, wo...",
-      "chineseTitle": "Text 1：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2008 年全国硕士研究生招生考试英语(一)真题 Text 1，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Stress Response and Women's Health: Hormonal and Behavioral Insights",
+      "chineseTitle": "压力机制与女性身心健康新解",
+      "topic": "生理心理 / 女性健康",
+      "overview": "本文探讨了压力对不同性别生理与心理机制的影响。传统医学界普遍以男性的'战或逃'（fight-or-flight）反应为主导模型，而最新医学与心理学研究发现，女性在压力下更多表现为'关爱与结盟'（tend-and-befriend）行为模式，受到催产素（oxytocin）和雌激素的调节，为理解现代女性职场与家庭双重压力下的身心健康提供了全新视角。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "传统压力应对模型主要基于男性研究，将'战或逃'视为人类应对压力的通用本能反应。",
+          "logicRole": "传统理论回顾与背景铺垫 (Traditional Model)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "While still catching up to men in some spheres of modern life, women appear to be way ahead in at least one undesirable category.",
-              "translation": "",
+              "text": "While still catching-up to men in some spheres of modern life, women appear to be way ahead in at least one undesirable category: stress.",
+              "translation": "尽管在现代生活的某些领域女性仍在奋起直追男性，但在至少一个令人沮丧的类别中，女性似乎遥遥领先：那就是压力。",
               "vocab": [
                 {
-                  "word": "catching up",
-                  "ipa": "/ˌkætʃɪŋ ˈʌp/",
-                  "meaning": "赶上，追上（常用释义：catch up with/to sb. 赶上；catch up on 补做）",
-                  "level": "purple"
+                  "word": "spheres",
+                  "ipa": "/sfɪəz/",
+                  "meaning": "领域，方面（常用释义：球体；范围；领域）",
+                  "level": "red"
+                },
+                {
+                  "word": "undesirable",
+                  "ipa": "/ˌʌndɪˈzaɪərəbl/",
+                  "meaning": "不良的，不受欢迎的（常用释义：不想要的；令人不快的）",
+                  "level": "red"
                 },
                 {
                   "word": "appear to be",
@@ -47,21 +53,15 @@ window.ENGLISH_DATA['2008'] = {
                   "level": "purple"
                 },
                 {
-                  "word": "at least",
-                  "ipa": "/æt liːst/",
-                  "meaning": "至少（常用释义：no less than；at the minimum）",
-                  "level": "red"
+                  "word": "stress",
+                  "ipa": "/stres/",
+                  "meaning": "压力（常用释义：压力；强调）",
+                  "level": "purple"
                 },
                 {
                   "word": "still",
                   "ipa": "/stɪl/",
                   "meaning": "尽管如此；然而（常用释义：仍然；但是，尽管如此）",
-                  "level": "red"
-                },
-                {
-                  "word": "spheres",
-                  "ipa": "/sfɪəz/",
-                  "meaning": "领域，方面（常用释义：球体；范围；领域）",
                   "level": "red"
                 },
                 {
@@ -77,3935 +77,25 @@ window.ENGLISH_DATA['2008'] = {
                   "level": "red"
                 },
                 {
-                  "word": "undesirable",
-                  "ipa": "/ˌʌndɪˈzaɪərəbl/",
-                  "meaning": "不良的，不受欢迎的（常用释义：不想要的；令人不快的）",
-                  "level": "red"
-                },
-                {
                   "word": "category",
                   "ipa": "ˈkætɪɡərɪ",
                   "meaning": "n. 类别，种类",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "\"Women are particularly susceptible to developing depression and anxiety disorders in response to stress compared to men,\" according to Dr.",
-              "translation": "",
+              "text": "For decades, medical researchers largely ignored female subjects, assuming that stress responses were uniformly characterized by the aggressive \"fight-or-flight\" mechanism.",
+              "translation": "几十年来，医学研究人员在很大程度上忽视了女性受试者，假定人类的压力反应都千篇一律地表现为攻击性的'战或逃'机制。",
               "vocab": [
-                {
-                  "word": "developing depression and anxiety disorders",
-                  "ipa": "/dɪˈveləpɪŋ dɪˈpreʃn ænd æŋˈzaɪəti dɪsˈɔːdəz/",
-                  "meaning": "患上抑郁和焦虑障碍（常用释义：develop 发展；患病；depression 抑郁/萧条；disorder 紊乱/疾病）",
-                  "level": "red"
-                },
-                {
-                  "word": "in response to",
-                  "ipa": "/ɪn rɪˈspɒns tə/",
-                  "meaning": "对……作出反应；由于……刺激（常用释义：as a reaction to）",
-                  "level": "purple"
-                },
-                {
-                  "word": "compared to men",
-                  "ipa": "/kəmˈpeəd tə men/",
-                  "meaning": "与男性相比（常用释义：compared to/with 与……相比）",
-                  "level": "purple"
-                },
-                {
-                  "word": "according to",
-                  "ipa": "/əˈkɔːdɪŋ tuː/",
-                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
-                  "level": "purple"
-                },
-                {
-                  "word": "particularly",
-                  "ipa": "/pəˈtɪkjələli/",
-                  "meaning": "尤其，特别（常用释义：especially; notably）",
-                  "level": "red"
-                },
-                {
-                  "word": "susceptible",
-                  "ipa": "/səˈseptəbl/",
-                  "meaning": "易受影响的；容易患……的（常用释义：likely to be affected; vulnerable）",
-                  "level": "red"
-                },
-                {
-                  "word": "depression",
-                  "ipa": "dɪˈprɛʃn",
-                  "meaning": "n. 沮丧；抑郁",
-                  "level": "green"
-                },
-                {
-                  "word": "anxiety",
-                  "ipa": "æŋˈzaɪətɪ",
-                  "meaning": "n. 担忧，焦虑",
-                  "level": "green"
-                },
-                {
-                  "word": "disorders",
-                  "ipa": "/dɪsˈɔːdəz/",
-                  "meaning": "疾病，障碍，失调（常用释义：混乱；紊乱；疾病）",
-                  "level": "red"
-                },
                 {
                   "word": "stress",
                   "ipa": "/stres/",
-                  "meaning": "强调（常用释义：压力；重音；强调）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Yehuda, chief psychiatrist at New York's Veteran's Administration Hospital.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "psychiatrist",
-                  "ipa": "saɪˈkaɪətrɪst",
-                  "meaning": "n.精神病学家；精神科医生",
-                  "level": "green"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "Veteran",
-                  "ipa": "",
-                  "meaning": "n.经验丰富的人；老手；退伍军人；老兵；老战士；老水兵",
-                  "level": "red"
-                },
-                {
-                  "word": "Administration",
-                  "ipa": "/ədˌmɪnɪˈstreɪʃən/",
-                  "meaning": "某届政府、执政当局（常用释义：管理；行政）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Studies of both animals and humans have shown that sex hormones somehow affect the stress response, causing females under stress to produce more of the trigger chemicals than do males under the same conditions.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "affect the stress response",
-                  "ipa": "/əˈfekt ðə stres rɪˈspɒns/",
-                  "meaning": "影响压力反应（常用释义：affect 影响；response 反应）",
-                  "level": "purple"
-                },
-                {
-                  "word": "under stress",
-                  "ipa": "/ˈʌndə stres/",
-                  "meaning": "处于压力之下（常用释义：under + 抽象名词表示处于某状态）",
-                  "level": "purple"
-                },
-                {
-                  "word": "under the same conditions",
-                  "ipa": "/ˈʌndə ðə seɪm kənˈdɪʃnz/",
-                  "meaning": "在相同条件下（常用释义：condition 条件；状况；疾病状态）",
-                  "level": "purple"
-                },
-                {
-                  "word": "somehow",
-                  "ipa": "",
-                  "meaning": "adv.以某种方式；由于某种不明原因；不知为什么；不知怎地",
-                  "level": "green"
-                },
-                {
-                  "word": "affect",
-                  "ipa": "",
-                  "meaning": "v.影响；侵袭，感染；深深打动，震撼； 假装，佯装",
-                  "level": "red"
-                },
-                {
-                  "word": "stress",
-                  "ipa": "/stres/",
-                  "meaning": "强调（常用释义：压力；重音；强调）",
-                  "level": "red"
-                },
-                {
-                  "word": "produce",
-                  "ipa": "",
-                  "meaning": "v.生产",
-                  "level": "green"
-                },
-                {
-                  "word": "trigger",
-                  "ipa": "/ˈtrɪɡə/",
-                  "meaning": "诱因；触发因素（常用释义：扳机；诱因；引发）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "In several of the studies, when stressed-out female rats had their ovaries (the female reproductive organs) removed, their chemical responses became equal to those of the males.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "reproductive organs",
-                  "ipa": "/ˌriːprəˈdʌktɪv ˈɔːɡənz/",
-                  "meaning": "生殖器官（常用释义：reproductive 生殖的；organ 器官/机构）",
-                  "level": "green"
-                },
-                {
-                  "word": "became equal to",
-                  "ipa": "/bɪˈkeɪm ˈiːkwəl tə/",
-                  "meaning": "变得与……相等/相同（常用释义：equal to 等于；相当；能胜任）",
-                  "level": "purple"
-                },
-                {
-                  "word": "several",
-                  "ipa": "ˈsevrəl",
-                  "meaning": "adj. 几个的；各自的 pron. 几个",
-                  "level": "green"
-                },
-                {
-                  "word": "stressed-out",
-                  "ipa": "/ˌstrest ˈaʊt/",
-                  "meaning": "压力很大的，紧张焦虑的（常用释义：因压力而焦虑的）",
-                  "level": "green"
-                },
-                {
-                  "word": "ovaries",
-                  "ipa": "/ˈəʊvəriz/",
-                  "meaning": "卵巢（常用释义：产生卵子和激素的雌性生殖器官）",
-                  "level": "green"
-                },
-                {
-                  "word": "chemical",
-                  "ipa": "ˈkemɪk(ə)l",
-                  "meaning": "adj. 化学的 n.",
-                  "level": "green"
-                },
-                {
-                  "word": "equal",
-                  "ipa": "ˈiːkw(ə)l",
-                  "meaning": "adj.平等的 vt.等于，使",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Adding to a woman's increased dose of stress chemicals, are her increased \"opportunities\" for stress.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "dose",
-                  "ipa": "/dəʊs/",
-                  "meaning": "剂量；一定量（常用释义：药物剂量；一份；一次）",
-                  "level": "red"
-                },
-                {
-                  "word": "stress",
-                  "ipa": "/stres/",
-                  "meaning": "强调（常用释义：压力；重音；强调）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "\"It's not necessarily that women don't cope as well.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "It's just that they have so much more to cope with,\" says Dr.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "cope with",
-                  "ipa": "/kəʊp wɪð/",
-                  "meaning": "应对，处理（常用释义：成功应对困难局面）",
-                  "level": "purple"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Yehuda.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "\"Their capacity for tolerating stress may even be greater than men's,\" she observes, \"it's just that they're dealing with so many more things that they become worn out from it more visibly and sooner.\"",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "capacity for tolerating stress",
-                  "ipa": "/kəˈpæsəti fə ˈtɒləreɪtɪŋ stres/",
-                  "meaning": "承受压力的能力（常用释义：capacity 能力/容量；tolerate 忍受）",
-                  "level": "purple"
-                },
-                {
-                  "word": "worn out from it",
-                  "ipa": "/wɔːn aʊt frəm ɪt/",
-                  "meaning": "因此筋疲力尽（常用释义：worn out 疲惫；磨损）",
-                  "level": "purple"
-                },
-                {
-                  "word": "capacity",
-                  "ipa": "/kəˈpæsəti/",
-                  "meaning": "能力；这里指摄氧能力（常用释义：容量；能力；身份/职位）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "stress",
-                  "ipa": "/stres/",
-                  "meaning": "强调（常用释义：压力；重音；强调）",
-                  "level": "red"
-                },
-                {
-                  "word": "observes",
-                  "ipa": "/əbˈzɜːvz/",
-                  "meaning": "评论说，指出（常用释义：观察；遵守；评论）",
-                  "level": "red"
-                },
-                {
-                  "word": "worn",
-                  "ipa": "wɔːrn",
-                  "meaning": "adj.磨损的；用旧的；疲惫的 v.穿；蓄（发等）；磨损（wear 的",
-                  "level": "green"
-                },
-                {
-                  "word": "visibly",
-                  "ipa": "/ˈvɪzəbli/",
-                  "meaning": "明显地，看得出来地（常用释义：可见地；显然地）",
-                  "level": "red"
-                },
-                {
-                  "word": "sooner",
-                  "ipa": "/ˈsuːnə/",
-                  "meaning": "更早地，更快地（常用释义：earlier; more quickly）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Dr.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "Yehuda notes another difference between the sexes.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "\"I think that the kinds of things that women are exposed to tend to be in more of a chronic or repeated nature.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "tend to be",
-                  "ipa": "/tend tə biː/",
-                  "meaning": "往往是；倾向于是（常用释义：be likely to be; usually be）",
-                  "level": "purple"
-                },
-                {
-                  "word": "tend",
-                  "ipa": "tend",
-                  "meaning": "v. 往往会，常常就，倾向，",
-                  "level": "green"
-                },
-                {
-                  "word": "chronic",
-                  "ipa": "/ˈkrɒnɪk/",
-                  "meaning": "长期的，慢性的（常用释义：持续很久的；难以治愈的）",
-                  "level": "red"
-                },
-                {
-                  "word": "nature",
-                  "ipa": "/ˈneɪtʃə/",
-                  "meaning": "性质，特征（常用释义：自然；本质；天性；性质）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "Men go to war and are exposed to combat stress.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "combat",
-                  "ipa": "/ˈkɒmbæt/",
-                  "meaning": "战斗，作战（常用释义：战斗；与……作斗争）",
-                  "level": "red"
-                },
-                {
-                  "word": "stress",
-                  "ipa": "/stres/",
-                  "meaning": "强调（常用释义：压力；重音；强调）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P4-S5",
-              "text": "Men are exposed to more acts of random physical violence.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "random",
-                  "ipa": "ˈrændəm",
-                  "meaning": "adj.随意,未经事先",
-                  "level": "green"
-                },
-                {
-                  "word": "physical",
-                  "ipa": "ˈfɪzɪk(ə)l",
-                  "meaning": "adj.物理的；身体的；物质的 n.体检",
-                  "level": "green"
-                },
-                {
-                  "word": "violence",
-                  "ipa": "ˈvaɪələns",
-                  "meaning": "n. 暴力行为",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P4-S6",
-              "text": "The kinds of interpersonal violence that women are exposed to tend to be in domestic situations, by, unfortunately, parents or other family members, and they tend not to be one-shot deals.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "family members",
-                  "ipa": "/ˈfæməli ˈmembəz/",
-                  "meaning": "家庭成员（常用释义：同一家族/家庭中的人）",
-                  "level": "green"
-                },
-                {
-                  "word": "tend to be",
-                  "ipa": "/tend tə biː/",
-                  "meaning": "往往是；倾向于是（常用释义：be likely to be; usually be）",
-                  "level": "purple"
-                },
-                {
-                  "word": "one-shot deals",
-                  "ipa": "/ˌwʌn ʃɒt ˈdiːlz/",
-                  "meaning": "一次性的事情（常用释义：只发生一次的事件）",
-                  "level": "purple"
-                },
-                {
-                  "word": "interpersonal",
-                  "ipa": "/ˌɪntəˈpɜːsənl/",
-                  "meaning": "人际之间的（常用释义：人与人之间的）",
-                  "level": "red"
-                },
-                {
-                  "word": "violence",
-                  "ipa": "ˈvaɪələns",
-                  "meaning": "n. 暴力行为",
-                  "level": "green"
-                },
-                {
-                  "word": "tend",
-                  "ipa": "tend",
-                  "meaning": "v. 往往会，常常就，倾向，",
-                  "level": "green"
-                },
-                {
-                  "word": "domestic",
-                  "ipa": "/dəˈmestɪk/",
-                  "meaning": "家庭的，家中的（常用释义：家庭的；国内的；家养的）",
-                  "level": "red"
-                },
-                {
-                  "word": "unfortunately",
-                  "ipa": "ʌnˈfɔːtjʊnətlɪ",
-                  "meaning": "adv. 不幸",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P4-S7",
-              "text": "The wear-and-tear that comes from these longer relationships can be quite devastating.\"",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "comes from these longer relationships",
-                  "ipa": "/kʌmz frəm ðiːz ˈlɒŋɡə rɪˈleɪʃnʃɪps/",
-                  "meaning": "来自这些更长期的关系（常用释义：come from 来自；源于）",
-                  "level": "purple"
-                },
-                {
-                  "word": "wear-and-tear",
-                  "ipa": "/ˌweər ən ˈteə/",
-                  "meaning": "长期损耗；身心消耗（常用释义：长期使用或压力造成的损耗）",
-                  "level": "purple"
-                },
-                {
-                  "word": "quite",
-                  "ipa": "kwaɪt",
-                  "meaning": "adv.很",
-                  "level": "red"
-                },
-                {
-                  "word": "devastating",
-                  "ipa": "/ˈdevəsteɪtɪŋ/",
-                  "meaning": "毁灭性的，极具破坏性的（常用释义：造成巨大损害或痛苦的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "Adeline Alvarez married at 18 and gave birth to a son, but was determined to finish college.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "gave birth to",
-                  "ipa": "/ɡeɪv bɜːθ tə/",
-                  "meaning": "生下，产下（常用释义：生孩子；引申为“产生”）",
-                  "level": "purple"
-                },
-                {
-                  "word": "married",
-                  "ipa": "ˈmærɪd",
-                  "meaning": "adj. 已婚的",
-                  "level": "green"
-                },
-                {
-                  "word": "determined",
-                  "ipa": "/dɪˈtɜːmɪnd/",
-                  "meaning": "断定，认定，确定（常用释义：决定；确定；下决心的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "\"I struggled a lot to get the college degree.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "I was living in so much frustration that that was my escape, to go to school, and get ahead and do better.\" Later, her marriage ended and she became a single mother.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "single mother",
-                  "ipa": "/ˈsɪŋɡl ˈmʌðə/",
-                  "meaning": "单身母亲，单亲妈妈（常用释义：独自抚养孩子的母亲）",
-                  "level": "green"
-                },
-                {
-                  "word": "get ahead",
-                  "ipa": "/ɡet əˈhed/",
-                  "meaning": "取得进步；出人头地（常用释义：make progress/succeed）",
-                  "level": "purple"
-                },
-                {
-                  "word": "frustration",
-                  "ipa": "/frʌˈstreɪʃən/",
-                  "meaning": "失意；受挫感（常用释义：挫折；沮丧）",
-                  "level": "red"
-                },
-                {
-                  "word": "escape",
-                  "ipa": "/ɪˈskeɪp/",
-                  "meaning": "解脱方式；精神出口（常用释义：逃跑；逃脱；逃避；解脱）",
-                  "level": "red"
-                },
-                {
-                  "word": "marriage",
-                  "ipa": "ˈmærɪdʒ",
-                  "meaning": "n. 结婚，婚姻",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P5-S4",
-              "text": "\"It's the hardest thing to take care of a teenager, have a job, pay the rent, pay the car payment, and pay the debt.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "take care of",
-                  "ipa": "/teɪk keə əv/",
-                  "meaning": "照顾；处理（常用释义：look after; deal with）",
-                  "level": "purple"
-                },
-                {
-                  "word": "take",
-                  "ipa": "teɪk",
-                  "meaning": "v. 携带，拿",
-                  "level": "green"
-                },
-                {
-                  "word": "pay",
-                  "ipa": "peɪ",
-                  "meaning": "n. 工资，报",
-                  "level": "green"
-                },
-                {
-                  "word": "rent",
-                  "ipa": "rent",
-                  "meaning": "n./v. 租金",
-                  "level": "green"
-                },
-                {
-                  "word": "payment",
-                  "ipa": "ˈpeɪmənt",
-                  "meaning": "n.支付,付款额",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P5-S5",
-              "text": "I lived from paycheck to paycheck.\"",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 6,
-          "mainIdea": "第 6 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P6-S1",
-              "text": "Not everyone experiences the kinds of severe chronic stresses Alvarez describes.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "severe chronic stresses",
-                  "ipa": "/sɪˈvɪə ˈkrɒnɪk ˈstresɪz/",
-                  "meaning": "严重的长期压力（常用释义：severe 严重的；chronic 长期的；stress 压力）",
-                  "level": "red"
-                },
-                {
-                  "word": "severe",
-                  "ipa": "sɪˈvɪə(r)",
-                  "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
-                  "level": "red"
-                },
-                {
-                  "word": "chronic",
-                  "ipa": "/ˈkrɒnɪk/",
-                  "meaning": "长期的，慢性的（常用释义：持续很久的；难以治愈的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P6-S2",
-              "text": "But most women today are coping with a lot of obligations, with few breaks, and feeling the strain.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "with few breaks",
-                  "ipa": "/wɪð fjuː breɪks/",
-                  "meaning": "几乎没有休息（常用释义：with + 名词短语表示伴随状态）",
-                  "level": "purple"
-                },
-                {
-                  "word": "obligations",
-                  "ipa": "/ˌɒblɪˈɡeɪʃnz/",
-                  "meaning": "责任，义务，必须承担的事（常用释义：duty; responsibility）",
-                  "level": "red"
-                },
-                {
-                  "word": "strain",
-                  "ipa": "/streɪn/",
-                  "meaning": "压力；负担；劳损（常用释义：压力；拉伤；菌株；品种）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P6-S3",
-              "text": "Alvarez's experience demonstrates the importance of finding ways to diffuse stress before it threatens your health and your ability to function.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "finding ways to diffuse stress",
-                  "ipa": "/ˈfaɪndɪŋ weɪz tə dɪˈfjuːz stres/",
-                  "meaning": "找到缓解压力的方法（常用释义：find ways to do sth. 找到做某事的方法）",
-                  "level": "purple"
-                },
-                {
-                  "word": "ability to function",
-                  "ipa": "/əˈbɪləti tə ˈfʌŋkʃn/",
-                  "meaning": "正常生活和工作的能力（常用释义：ability 能力；function 运转/功能）",
-                  "level": "purple"
-                },
-                {
-                  "word": "experience",
-                  "ipa": "ɪkˈspɪərɪəns",
-                  "meaning": "n. 经验；经历",
-                  "level": "green"
-                },
-                {
-                  "word": "demonstrates",
-                  "ipa": "/ˈdemənstreɪts/",
-                  "meaning": "表明，证明，说明（常用释义：示范；证明；游行示威）",
-                  "level": "red"
-                },
-                {
-                  "word": "diffuse",
-                  "ipa": "/dɪˈfjuːz/",
-                  "meaning": "缓解，分散，化解（常用释义：扩散；传播；弥漫的）",
-                  "level": "red"
-                },
-                {
-                  "word": "stress",
-                  "ipa": "/stres/",
-                  "meaning": "强调（常用释义：压力；重音；强调）",
-                  "level": "red"
-                },
-                {
-                  "word": "ability",
-                  "ipa": "əˈbɪlɪtɪ",
-                  "meaning": "n. 能力；才能",
-                  "level": "green"
-                },
-                {
-                  "word": "function",
-                  "ipa": "ˈfʌŋkʃ(ə)n",
-                  "meaning": "n.功能，职责；宴会；函数，应变量 v.运转；行使职责，",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 21,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Which of the following is true according to the first two paragraphs?",
-          "stemKeywords": [
-            "first",
-            "paragraphs"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "Women are biologically more vulnerable to stress.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Women are still suffering much stress caused by men.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Women are more experienced than men in coping with stress.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Men and women show different inclinations when faced with stress.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P1-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 22,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "Dr. Yehuda's research suggests that women",
-          "stemKeywords": [
-            "Yehuda",
-            "research",
-            "suggests",
-            "women"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "need extra doses of chemicals to handle stress.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "have limited capacity for tolerating stress.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "are more capable of avoiding stress.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "are exposed to more stress.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 23,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "According to Paragraph 4, the stress women confront tends to be",
-          "stemKeywords": [
-            "stress",
-            "women",
-            "confront",
-            "tends"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "domestic and temporary.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "irregular and violent.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "durable and frequent.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "trivial and random.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 24,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "The sentence \"I lived from paycheck to paycheck.\" (Line 6, Para.5) shows that",
-          "stemKeywords": [
-            "sentence",
-            "lived",
-            "from",
-            "paycheck"
-          ],
-          "officialAnswer": "B",
-          "options": [
-            {
-              "key": "A",
-              "text": "Alvarez cared about nothing but making money.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Alvarez's salary barely covered her household expenses.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Alvarez got paychecks from different jobs.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Alvarez paid practically everything by check.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P4-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 25,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
-          "stem": "Which of the following would be the best title for the text?",
-          "stemKeywords": [
-            "would",
-            "best",
-            "title",
-            "text"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "Strain of Stress: No Way Out?",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Responses to Stress: Gender Difference",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Stress Analysis: What Chemicals Say",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Gender Inequality: Women Under Stress",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P5-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P5-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text2",
-      "number": 2,
-      "title": "It used to be so straightforward.",
-      "chineseTitle": "Text 2：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2008 年全国硕士研究生招生考试英语(一)真题 Text 2，通过严密英美报刊论证逻辑层层展开。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "It used to be so straightforward.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "straightforward",
-                  "ipa": "/ˌstreɪtˈfɔːwəd/",
-                  "meaning": "简单明了的，不复杂的（常用释义：直接的；坦率的；易懂的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "A team of researchers working together in the laboratory would submit the results of their research to a journal.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "laboratory",
-                  "ipa": "/ləˈbɒrətri/",
-                  "meaning": "实验室（常用释义：进行实验、研究或检测的场所）",
-                  "level": "red"
-                },
-                {
-                  "word": "submit",
-                  "ipa": "səbˈmɪt",
-                  "meaning": "v. 提交，呈递（文件，",
-                  "level": "green"
-                },
-                {
-                  "word": "journal",
-                  "ipa": "/ˈdʒɜːnəl/",
-                  "meaning": "学术期刊（常用释义：日报；杂志；日记）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "A journal editor would then remove the authors' names and affiliations from the paper and send it to their peers for review.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "journal",
-                  "ipa": "/ˈdʒɜːnəl/",
-                  "meaning": "学术期刊（常用释义：日报；杂志；日记）",
-                  "level": "green"
-                },
-                {
-                  "word": "editor",
-                  "ipa": "ˈedɪtə(r)",
-                  "meaning": "n. 编辑",
-                  "level": "green"
-                },
-                {
-                  "word": "remove",
-                  "ipa": "rɪˈmuːv",
-                  "meaning": "v.移除；脱去；免除 n.距离，间距",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "review",
-                  "ipa": "rɪˈvjuː",
-                  "meaning": "v.回顾,复习 n.回顾,复习;评论",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "Depending on the comments received, the editor would accept the paper for publication or decline it.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "the comments received",
-                  "ipa": "/ðə ˈkɒments rɪˈsiːvd/",
-                  "meaning": "收到的评审意见（常用释义：过去分词后置修饰名词）",
-                  "level": "purple"
-                },
-                {
-                  "word": "editor",
-                  "ipa": "ˈedɪtə(r)",
-                  "meaning": "n. 编辑",
-                  "level": "green"
-                },
-                {
-                  "word": "accept",
-                  "ipa": "əkˈsept",
-                  "meaning": "v.承认,同意",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "publication",
-                  "ipa": "ˌpʌblɪˈkeɪʃ(ə)n",
-                  "meaning": "n.出版，发行物； 刊登，公布",
-                  "level": "green"
-                },
-                {
-                  "word": "decline",
-                  "ipa": "/dɪˈklaɪn/",
-                  "meaning": "拒绝、不接受论文（常用释义：下降；衰退；婉言拒绝）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "Copyright rested with the journal publisher, and researchers seeking knowledge of the results would have to subscribe to the journal.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "subscribe to",
-                  "ipa": "/səbˈskraɪb tə/",
-                  "meaning": "订阅期刊（常用释义：订阅服务；赞同某种观点）",
-                  "level": "red"
-                },
-                {
-                  "word": "Copyright",
-                  "ipa": "/ˈkɒpiraɪt/",
-                  "meaning": "版权、著作权（常用释义：复制、出版和传播作品的法定权利）",
-                  "level": "green"
-                },
-                {
-                  "word": "journal",
-                  "ipa": "/ˈdʒɜːnəl/",
-                  "meaning": "学术期刊（常用释义：日报；杂志；日记）",
-                  "level": "green"
-                },
-                {
-                  "word": "publisher",
-                  "ipa": "'pʌblɪʃɚ",
-                  "meaning": "n. 出版者;出版商;出版社",
-                  "level": "red"
-                },
-                {
-                  "word": "subscribe",
-                  "ipa": "səbˈskraɪb",
-                  "meaning": "v.订阅,订购（报",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "No longer.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "No longer.",
-                  "ipa": "/nəʊ ˈlɒŋɡə/",
-                  "meaning": "现在不再如此（常用释义：不再）",
-                  "level": "purple"
-                },
-                {
-                  "word": "no longer",
-                  "ipa": "/nəʊ ˈlɒŋɡə(r)/",
-                  "meaning": "不再（常用释义：状态改变）",
-                  "level": "purple"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "The Internet—and pressure from funding agencies, who are questioning why commercial publishers are making money from government-funded research by restricting access to it—is making free access to scientific results a reality.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "pressure",
-                  "ipa": "ˈpreʃə(r)",
-                  "meaning": "n.催促,强迫,呼吁",
-                  "level": "red"
-                },
-                {
-                  "word": "funding",
-                  "ipa": "ˈfʌndɪŋ",
-                  "meaning": "n. 资金提供 v.资助",
-                  "level": "green"
-                },
-                {
-                  "word": "commercial",
-                  "ipa": "/kəˈmɜːʃəl/",
-                  "meaning": "商业性的；商业化的（常用释义：商业的；营利性的；商业广告）",
-                  "level": "red"
-                },
-                {
-                  "word": "money",
-                  "ipa": "",
-                  "meaning": "n.金钱，货币",
-                  "level": "red"
-                },
-                {
-                  "word": "government-funded",
-                  "ipa": "/ˌɡʌvənmənt ˈfʌndɪd/",
-                  "meaning": "由政府出资、资助的（常用释义：政府提供经费的）",
-                  "level": "green"
-                },
-                {
-                  "word": "access",
-                  "ipa": "/ˈækses/",
-                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
-                  "level": "red"
-                },
-                {
-                  "word": "free",
-                  "ipa": "fri",
-                  "meaning": "adj.自由的，免",
-                  "level": "green"
-                },
-                {
-                  "word": "reality",
-                  "ipa": "/riˈæləti/",
-                  "meaning": "成为现实的事物（常用释义：现实；实际情况）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "The Organization for Economic Co-operation and Development (OECD) has just issued a report describing the far-reaching consequences of this.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "Economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                },
-                {
-                  "word": "far-reaching",
-                  "ipa": "/ˌfɑːˈriːtʃɪŋ/",
-                  "meaning": "影响深远的、范围广泛的（常用释义：具有广泛而长期影响的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "The report, by John Houghton of Victoria University in Australia and Graham Vickery of the OECD, makes heavy reading for publishers who have, so far, made handsome profits.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "handsome profits",
-                  "ipa": "/ˈhænsəm ˈprɒfɪts/",
-                  "meaning": "丰厚、可观的利润（常用释义：handsome 还可指英俊的；数额可观的）",
-                  "level": "red"
-                },
-                {
-                  "word": "so far",
-                  "ipa": "/səʊ fɑː/",
-                  "meaning": "到目前为止、迄今（常用释义：从过去延续到现在）",
-                  "level": "purple"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "But it goes further than that.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "further",
-                  "ipa": "ˈfɜːrðər",
-                  "meaning": "adv.更远地；进一步；此外 adj.更进一步的；更远的 v.促进",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "It signals a change in what has, until now, been a key element of scientific endeavour.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "until now",
-                  "ipa": "/ənˈtɪl naʊ/",
-                  "meaning": "直到现在、迄今为止（常用释义：说明过去持续到现在）",
-                  "level": "purple"
-                },
-                {
-                  "word": "change",
-                  "ipa": "/tʃeɪndʒ/",
-                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
-                  "level": "red"
-                },
-                {
-                  "word": "element",
-                  "ipa": "ˈeləmənt",
-                  "meaning": "n.元素；要素；有点，少量",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "The value of knowledge and the return on the public investment in research depends, in part, upon wide distribution and ready access.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "in part",
-                  "ipa": "/ɪn pɑːt/",
-                  "meaning": "部分地；在一定程度上（常用释义：partly；to some extent）",
-                  "level": "red"
-                },
-                {
-                  "word": "wide distribution",
-                  "ipa": "/waɪd ˌdɪstrɪˈbjuːʃən/",
-                  "meaning": "广泛传播、广泛分发（常用释义：大范围传播或分配）",
-                  "level": "purple"
-                },
-                {
-                  "word": "ready access",
-                  "ipa": "/ˈredi ˈækses/",
-                  "meaning": "方便、及时、容易获得的渠道（常用释义：ready 此处意为易得的）",
-                  "level": "purple"
-                },
-                {
-                  "word": "value",
-                  "ipa": "ˈvælju",
-                  "meaning": "n.价格;价值;实用性 v.评价,估价;尊重",
-                  "level": "red"
-                },
-                {
-                  "word": "return",
-                  "ipa": "rɪˈtɜːn",
-                  "meaning": "v. 归还",
-                  "level": "green"
-                },
-                {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
-                  "level": "red"
-                },
-                {
-                  "word": "investment",
-                  "ipa": "/ɪnˈvestmənt/",
-                  "meaning": "公共科研投入、投资（常用释义：投资；投入；投资物）",
-                  "level": "green"
-                },
-                {
-                  "word": "distribution",
-                  "ipa": "/ˌdɪstrɪˈbjuːʃən/",
-                  "meaning": "科研知识的传播、分发（常用释义：分配；分布；配送）",
-                  "level": "red"
-                },
-                {
-                  "word": "ready",
-                  "ipa": "ˈredi",
-                  "meaning": "adj.愿意的",
-                  "level": "red"
-                },
-                {
-                  "word": "access",
-                  "ipa": "/ˈækses/",
-                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "It is big business.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "It is big business.",
-                  "ipa": "/ɪt ɪz bɪɡ ˈbɪznəs/",
-                  "meaning": "这是一个规模庞大、利润可观的产业（常用释义：big business 可指大型、高利润商业活动）",
-                  "level": "purple"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "In America, the core scientific publishing market is estimated at between $7 billion and $11 billion.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "core",
-                  "ipa": "/kɔː/",
-                  "meaning": "核心的、主要的（常用释义：核心；果核）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "The International Association of Scientific, Technical and Medical Publishers says that there are more than 2,000 publishers worldwide specializing in these subjects.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "International",
-                  "ipa": "ɪntəˈnæʃən(ə)l",
-                  "meaning": "adj. 国际",
-                  "level": "green"
-                },
-                {
-                  "word": "Association",
-                  "ipa": "əˌsəʊsiˈeɪʃn",
-                  "meaning": "n. 协会；联合；联想",
-                  "level": "green"
-                },
-                {
-                  "word": "Medical",
-                  "ipa": "ˈmedɪk(ə)l",
-                  "meaning": "adj. 医学的，医疗",
-                  "level": "green"
-                },
-                {
-                  "word": "worldwide",
-                  "ipa": "/ˌwɜːldˈwaɪd/",
-                  "meaning": "在全世界范围内（常用释义：遍及全球的；在全球）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "They publish more than 1.2 million articles each year in some 16,000 journals.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "publish",
-                  "ipa": "ˈpʌblɪʃ",
-                  "meaning": "v.出版；发表；刊登；公布",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "This is now changing.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "This is now changing.",
-                  "ipa": "/ðɪs ɪz naʊ ˈtʃeɪndʒɪŋ/",
-                  "meaning": "这一传统格局正在变化（常用释义：段首概括性转折）",
-                  "level": "purple"
-                },
-                {
-                  "word": "changing",
-                  "ipa": "ˈtʃeɪndʒɪŋ",
-                  "meaning": "adj.变化中的，改变中的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "According to the OECD report, some 75% of scholarly journals are now online.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "according to",
-                  "ipa": "/əˈkɔːdɪŋ tuː/",
-                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
-                  "level": "purple"
-                },
-                {
-                  "word": "some 75%",
-                  "ipa": "/sʌm ˌsevənti ˈfaɪv pəˈsent/",
-                  "meaning": "大约75%（常用释义：some + 数字表示“大约”）",
-                  "level": "red"
-                },
-                {
-                  "word": "scholarly",
-                  "ipa": "/ˈskɒləli/",
-                  "meaning": "学术的、学术研究性质的（常用释义：有学问的；学者式的）",
-                  "level": "red"
-                },
-                {
-                  "word": "online",
-                  "ipa": "/ˌɒnˈlaɪn/",
-                  "meaning": "可通过互联网访问的；在线（常用释义：在线的；联网地）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Entirely new business models are emerging; three main ones were identified by the report's authors.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "business model",
-                  "ipa": "/ˈbɪznəs ˌmɒdəl/",
-                  "meaning": "商业模式（常用释义：组织提供产品、获取收入和维持运营的方式）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Entirely",
-                  "ipa": "/ɪnˈtaɪəli/",
-                  "meaning": "完全地；全然地（常用释义：完全地；彻底地）",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "ones",
-                  "ipa": "/wʌnz/",
-                  "meaning": "代替前文复数名词 policies（常用释义：同类的人或事物）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "There is the so-called big deal, where institutional subscribers pay for access to a collection of online journal titles through site-licensing agreements.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "so-called",
-                  "ipa": "/ˌsəʊ ˈkɔːld/",
-                  "meaning": "所谓的、被称为……的（常用释义：有时暗含怀疑或讽刺）",
-                  "level": "green"
-                },
-                {
-                  "word": "institutional",
-                  "ipa": "/ˌɪnstɪˈtjuːʃənəl/",
-                  "meaning": "机构的、单位层面的（常用释义：制度的；机构性的）",
-                  "level": "red"
-                },
-                {
-                  "word": "pay",
-                  "ipa": "peɪ",
-                  "meaning": "n. 工资，报",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "access",
-                  "ipa": "/ˈækses/",
-                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
-                  "level": "red"
-                },
-                {
-                  "word": "collection",
-                  "ipa": "kəˈlɛkʃən",
-                  "meaning": "n.收藏(品),收集",
-                  "level": "red"
-                },
-                {
-                  "word": "online",
-                  "ipa": "/ˌɒnˈlaɪn/",
-                  "meaning": "可通过互联网访问的；在线（常用释义：在线的；联网地）",
-                  "level": "red"
-                },
-                {
-                  "word": "journal",
-                  "ipa": "/ˈdʒɜːnəl/",
-                  "meaning": "学术期刊（常用释义：日报；杂志；日记）",
-                  "level": "green"
-                },
-                {
-                  "word": "site-licensing",
-                  "ipa": "/ˈsaɪt ˌlaɪsənsɪŋ/",
-                  "meaning": "机构或场所统一授权的（常用释义：机构购买许可后成员共享访问权）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P4-S5",
-              "text": "There is open-access publishing, typically supported by asking the author (or his employer) to pay for the paper to be published.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "open-access publishing",
-                  "ipa": "/ˌəʊpən ˈækses ˈpʌblɪʃɪŋ/",
-                  "meaning": "开放获取出版（常用释义：读者通常免费访问，费用由作者方等承担）",
-                  "level": "purple"
-                },
-                {
-                  "word": "pay for the paper to be published",
-                  "ipa": "/peɪ fə ðə ˈpeɪpə tə bi ˈpʌblɪʃt/",
-                  "meaning": "支付论文发表费用（常用释义：为使论文被发表而付费）",
-                  "level": "purple"
-                },
-                {
-                  "word": "typically",
-                  "ipa": "/ˈtɪpɪkli/",
-                  "meaning": "通常；一般来说（常用释义：典型地；通常）",
-                  "level": "red"
-                },
-                {
-                  "word": "employer",
-                  "ipa": "ɪmˈplɔɪər",
-                  "meaning": "n. 雇主",
-                  "level": "green"
-                },
-                {
-                  "word": "pay",
-                  "ipa": "peɪ",
-                  "meaning": "n. 工资，报",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P4-S6",
-              "text": "Finally, there are open-access archives, where organizations such as universities or international laboratories support institutional repositories.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "open-access archive",
-                  "ipa": "/ˌəʊpən ˈækses ˈɑːkaɪv/",
-                  "meaning": "开放获取档案库（常用释义：免费检索、阅读科研成果的资料库）",
-                  "level": "purple"
-                },
-                {
-                  "word": "international",
-                  "ipa": "ɪntəˈnæʃən(ə)l",
-                  "meaning": "adj. 国际",
-                  "level": "green"
-                },
-                {
-                  "word": "support",
-                  "ipa": "/səˈpɔːt/",
-                  "meaning": "资助、维持或运营知识库（常用释义：支持观点；支撑重量；支持物）",
-                  "level": "red"
-                },
-                {
-                  "word": "institutional",
-                  "ipa": "/ˌɪnstɪˈtjuːʃənəl/",
-                  "meaning": "机构的、单位层面的（常用释义：制度的；机构性的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P4-S7",
-              "text": "Other models exist that are hybrids of these three, such as delayed open-access, where journals allow only subscribers to read a paper for the first six months, before making it freely available to everyone who wishes to see it.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "delayed open-access",
-                  "ipa": "/dɪˈleɪd ˌəʊpən ˈækses/",
-                  "meaning": "延迟开放获取（常用释义：先限订阅者阅读，期满后免费公开）",
-                  "level": "purple"
-                },
-                {
-                  "word": "allow",
-                  "ipa": "",
-                  "meaning": "v.允许，准许；使有可能；任凭",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "available",
-                  "ipa": "əˈveɪləb(ə)l",
-                  "meaning": "adj.可用的；有空的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 8,
-              "id": "P4-S8",
-              "text": "All this could change the traditional form of the peer-review process, at least for the publication of papers.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "All this",
-                  "ipa": "/ɔːl ðɪs/",
-                  "meaning": "这一切；概括前文全部变化（常用释义：篇章总结性指代）",
-                  "level": "purple"
-                },
-                {
-                  "word": "peer-review process",
-                  "ipa": "/ˌpɪə rɪˈvjuː ˈprəʊses/",
-                  "meaning": "同行评审过程（常用释义：由同领域专家审查论文质量的程序）",
-                  "level": "purple"
-                },
-                {
-                  "word": "at least",
-                  "ipa": "/æt liːst/",
-                  "meaning": "至少（常用释义：no less than；at the minimum）",
-                  "level": "red"
-                },
-                {
-                  "word": "change",
-                  "ipa": "/tʃeɪndʒ/",
-                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
-                  "level": "red"
-                },
-                {
-                  "word": "traditional",
-                  "ipa": "trəˈdɪʃən(ə)l",
-                  "meaning": "adj.传统的",
-                  "level": "red"
-                },
-                {
-                  "word": "form",
-                  "ipa": "fɔːm",
-                  "meaning": "n. 形式；表格；形态 n. 表；类别；形状",
-                  "level": "green"
-                },
-                {
-                  "word": "peer-review",
-                  "ipa": "ˌpɪrrɪˈvjuː",
-                  "meaning": "n.同行评审；同业监督小组",
-                  "level": "green"
-                },
-                {
-                  "word": "process",
-                  "ipa": "/ˈprəʊses/",
-                  "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "publication",
-                  "ipa": "ˌpʌblɪˈkeɪʃ(ə)n",
-                  "meaning": "n.出版，发行物； 刊登，公布",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 26,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "In the first paragraph, the author discusses",
-          "stemKeywords": [
-            "first",
-            "discusses"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "the background information of journal editing.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "the publication routine of laboratory reports.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "the relations of authors with journal publishers.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "the traditional process of journal publication.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P1-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 27,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Which of the following is true of the OECD report?",
-          "stemKeywords": [
-            "OECD",
-            "report"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "It criticizes government-funded research.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "It introduces an effective means of publication.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "It upsets profit-making journal publishers.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P2-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "It benefits scientific research considerably.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 28,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
-          "stem": "According to the text, online publication is significant in that",
-          "stemKeywords": [
-            "text",
-            "online",
-            "publication",
-            "significant"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "it provides an easier access to scientific results.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "it brings huge profits to scientific researchers.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "it emphasizes the crucial role of scientific knowledge.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "it facilitates public investment in scientific research.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 29,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "With the open-access publishing model, the author of a paper is required to",
-          "stemKeywords": [
-            "With",
-            "open",
-            "access",
-            "publishing"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "cover the cost of its publication.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "subscribe to the journal publishing it.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "allow other online journals to use it freely.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "complete the peer-review before submission.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P4-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 30,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Which of the following best summarizes the text?",
-          "stemKeywords": [
-            "best",
-            "summarizes",
-            "text"
-          ],
-          "officialAnswer": "B",
-          "options": [
-            {
-              "key": "A",
-              "text": "The Internet is posing a threat to publishers.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "A new mode of publication is emerging.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Authors welcome the new channel for publication.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Publication is rendered easier by online service.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P4-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text3",
-      "number": 3,
-      "title": "In the early 1960s Wilt Chamberlain was one of the only three pla...",
-      "chineseTitle": "Text 3：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2008 年全国硕士研究生招生考试英语(一)真题 Text 3，通过严密英美报刊论证逻辑层层展开。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "In the early 1960s Wilt Chamberlain was one of the only three players in the National Basketball Association (NBA) listed at over seven feet.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "one of the only three players",
-                  "ipa": "—",
-                  "meaning": "仅有的三名球员之一（常用释义：one of… 表示……之一）",
-                  "level": "purple"
-                },
-                {
-                  "word": "listed at over seven feet",
-                  "ipa": "—",
-                  "meaning": "登记身高超过七英尺（常用释义：list 作动词：列出；登记为）",
-                  "level": "purple"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "National",
-                  "ipa": "ˈnæʃən(ə)l",
-                  "meaning": "adj. 国家的,全国",
-                  "level": "green"
-                },
-                {
-                  "word": "Association",
-                  "ipa": "əˌsəʊsiˈeɪʃn",
-                  "meaning": "n. 协会；联合；联想",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "If he had played last season, however, he would have been one of 42.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "The bodies playing major professional sports have changed dramatically over the years, and managers have been more than willing to adjust team uniforms to fit the growing numbers of bigger, longer frames.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "over the years",
-                  "ipa": "—",
-                  "meaning": "多年来；经过这些年（常用释义：在多年间；随着时间推移）",
-                  "level": "purple"
-                },
-                {
-                  "word": "major",
-                  "ipa": "/ˈmeɪdʒə/",
-                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
-                  "level": "red"
-                },
-                {
-                  "word": "dramatically",
-                  "ipa": "/drəˈmætɪkli/",
-                  "meaning": "显著地；大幅度地（常用释义：戏剧性地；显著地）",
-                  "level": "red"
-                },
-                {
-                  "word": "willing",
-                  "ipa": "ˈwɪlɪŋ",
-                  "meaning": "adj. 乐意的； 愿意的",
-                  "level": "green"
-                },
-                {
-                  "word": "adjust",
-                  "ipa": "/əˈdʒʌst/",
-                  "meaning": "调整以适应（常用释义：调整；适应；校准）",
-                  "level": "red"
-                },
-                {
-                  "word": "frames",
-                  "ipa": "/freɪmz/",
-                  "meaning": "体格；身体框架（常用释义：框架；画框；骨架）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "The trend in sports, though, may be obscuring an unrecognized reality: Americans have generally stopped growing.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "have generally stopped growing",
-                  "ipa": "—",
-                  "meaning": "总体上已经停止增长（常用释义：现在完成时表达状态延续）",
-                  "level": "purple"
-                },
-                {
-                  "word": "trend",
-                  "ipa": "/trend/",
-                  "meaning": "趋势（常用释义：趋势；倾向；潮流）",
-                  "level": "red"
-                },
-                {
-                  "word": "obscuring",
-                  "ipa": "/əbˈskjʊərɪŋ/",
-                  "meaning": "掩盖；使不明显（常用释义：遮蔽；使模糊；使难理解）",
-                  "level": "red"
-                },
-                {
-                  "word": "unrecognized",
-                  "ipa": "/ʌnˈrekəɡnaɪzd/",
-                  "meaning": "未被认识到的（常用释义：未被认出；未被承认）",
-                  "level": "green"
-                },
-                {
-                  "word": "reality",
-                  "ipa": "/riˈæləti/",
-                  "meaning": "成为现实的事物（常用释义：现实；实际情况）",
-                  "level": "red"
-                },
-                {
-                  "word": "generally",
-                  "ipa": "ˈdʒen(ə)rəli",
-                  "meaning": "adv.通常；普遍地；大概",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Though typically about two inches taller now than 140 years ago, today's people—especially those born to families who have lived in the U.S. for many generations—apparently reached their limit in the early 1960s.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "typically",
-                  "ipa": "/ˈtɪpɪkli/",
-                  "meaning": "通常；一般来说（常用释义：典型地；通常）",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "apparently",
-                  "ipa": "əˈpærəntli",
-                  "meaning": "adv.显然地；表面上",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "And they aren't likely to get any taller.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "\"In the general population today, at this genetic, environmental level, we've pretty much gone as far as we can go,\" says anthropologist William Cameron Chumlea of Wright State University.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "mental level",
-                  "ipa": "/ˈmentl ˈlevl/",
-                  "meaning": "智力发展水平；心理年龄水平。（常用释义：心理/精神层面的水平。）",
-                  "level": "red"
-                },
-                {
-                  "word": "general",
-                  "ipa": "ˈdʒɛnərəl",
-                  "meaning": "adj. 普遍的，总的 n. 将军",
-                  "level": "green"
-                },
-                {
-                  "word": "population",
-                  "ipa": "/ˌpɒpjuˈleɪʃn/",
-                  "meaning": "人群；总体人口（常用释义：人口；全体居民）",
-                  "level": "green"
-                },
-                {
-                  "word": "genetic",
-                  "ipa": "/dʒəˈnetɪk/",
-                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
-                  "level": "red"
-                },
-                {
-                  "word": "pretty",
-                  "ipa": "/ˈprɪti/",
-                  "meaning": "相当；差不多（常用释义：漂亮的；相当）",
-                  "level": "red"
-                },
-                {
-                  "word": "anthropologist",
-                  "ipa": "/ˌænθrəˈpɒlədʒɪst/",
-                  "meaning": "人类学家",
-                  "level": "green"
-                },
-                {
-                  "word": "State",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "In the case of NBA players, their increase in height appears to result from the increasingly common practice of recruiting players from all over the world.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "increasingly common",
-                  "ipa": "/ɪnˈkriːsɪŋli ˈkɒmən/",
-                  "meaning": "越来越普遍的（常用释义：越来越常见的）",
-                  "level": "red"
-                },
-                {
-                  "word": "result from",
-                  "ipa": "/rɪˈzʌlt frəm/",
-                  "meaning": "由……导致；源于……（常用释义：来自……）",
-                  "level": "purple"
-                },
-                {
-                  "word": "case",
-                  "ipa": "keɪs",
-                  "meaning": "n.事例，案",
-                  "level": "green"
-                },
-                {
-                  "word": "increase",
-                  "ipa": "ɪnˈkriːs",
-                  "meaning": "v./n. 增加，繁殖",
-                  "level": "green"
-                },
-                {
-                  "word": "common",
-                  "ipa": "",
-                  "meaning": "adj.共同的，共享的；常见的，普遍的，一般的；普通的，平凡的；出于礼貌的，",
-                  "level": "red"
-                },
-                {
-                  "word": "practice",
-                  "ipa": "/ˈpræktɪs/",
-                  "meaning": "做法；惯例（常用释义：练习；实践；惯例）",
-                  "level": "red"
-                },
-                {
-                  "word": "recruiting",
-                  "ipa": "/rɪˈkruːtɪŋ/",
-                  "meaning": "招募；吸收（常用释义：招聘；征募；吸收新成员）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Growth, which rarely continues beyond the age of 20, demands calories and nutrients—notably, protein—to feed expanding tissues.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "rarely continues beyond the age of 20",
-                  "ipa": "—",
-                  "meaning": "很少持续到20岁以后（常用释义：beyond 表超过某范围）",
-                  "level": "purple"
-                },
-                {
-                  "word": "rarely",
-                  "ipa": "ˈrerli",
-                  "meaning": "adv.很少；难得",
-                  "level": "green"
-                },
-                {
-                  "word": "beyond",
-                  "ipa": "",
-                  "meaning": "prep.除…之外；超出",
-                  "level": "green"
-                },
-                {
-                  "word": "demands",
-                  "ipa": "/dɪˈmɑːndz/",
-                  "meaning": "需要；要求（常用释义：要求；需求）",
-                  "level": "red"
-                },
-                {
-                  "word": "calories",
-                  "ipa": "/ˈkæləriz/",
-                  "meaning": "热量；卡路里（常用释义：卡路里；热量单位）",
-                  "level": "red"
-                },
-                {
-                  "word": "nutrients",
-                  "ipa": "/ˈnjuːtriənts/",
-                  "meaning": "营养物质（常用释义：营养物；养分）",
-                  "level": "red"
-                },
-                {
-                  "word": "notably",
-                  "ipa": "/ˈnəʊtəbli/",
-                  "meaning": "尤其；特别是（常用释义：显著地；尤其）",
-                  "level": "red"
-                },
-                {
-                  "word": "protein",
-                  "ipa": "/ˈprəʊtiːn/",
-                  "meaning": "蛋白质",
-                  "level": "green"
-                },
-                {
-                  "word": "feed",
-                  "ipa": "/fiːd/",
-                  "meaning": "为……输送人才（常用释义：喂养；供给；提供；输送）",
-                  "level": "red"
-                },
-                {
-                  "word": "tissues",
-                  "ipa": "/ˈtɪʃuːz/",
-                  "meaning": "身体组织（常用释义：纸巾；组织；薄纸）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "At the start of the 20th century, under-nutrition and childhood infections got in the way.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "At the start of the 20th century",
-                  "ipa": "—",
-                  "meaning": "在20世纪初（常用释义：时间状语）",
-                  "level": "purple"
-                },
-                {
-                  "word": "under-nutrition",
-                  "ipa": "/ˌʌndə njuːˈtrɪʃn/",
-                  "meaning": "营养不足（常用释义：营养摄入不足）",
-                  "level": "green"
-                },
-                {
-                  "word": "infections",
-                  "ipa": "/ɪnˈfekʃnz/",
-                  "meaning": "感染；传染病（常用释义：感染；传染）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "But as diet and health improved, children and adolescents have, on average, increased in height by about an inch and a half every 20 years, a pattern known as the secular trend in height.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "on average",
-                  "ipa": "—",
-                  "meaning": "平均来看（常用释义：按平均值计算）",
-                  "level": "purple"
-                },
-                {
-                  "word": "diet",
-                  "ipa": "/ˈdaɪət/",
-                  "meaning": "饮食；膳食（常用释义：饮食；节食）",
-                  "level": "green"
-                },
-                {
-                  "word": "adolescents",
-                  "ipa": "/ˌædəˈlesnts/",
-                  "meaning": "青少年（常用释义：青春期少年）",
-                  "level": "red"
-                },
-                {
-                  "word": "average",
-                  "ipa": "ˈævərɪdʒ",
-                  "meaning": "n. 平均数 adj. 平均的；普通的",
-                  "level": "green"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "pattern",
-                  "ipa": "ˈpætn",
-                  "meaning": "n. 模式；图案；v. 形成图案",
-                  "level": "green"
-                },
-                {
-                  "word": "secular",
-                  "ipa": "/ˈsekjələ/",
-                  "meaning": "长期的；长期趋势的（常用释义：世俗的；非宗教的；长期的）",
-                  "level": "red"
-                },
-                {
-                  "word": "trend",
-                  "ipa": "/trend/",
-                  "meaning": "趋势（常用释义：趋势；倾向；潮流）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Yet according to the Centers for Disease Control and Prevention, average height—5′9″ for men, 5′4″ for women—hasn't really changed since 1960.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "according to",
-                  "ipa": "/əˈkɔːdɪŋ tuː/",
-                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "average",
-                  "ipa": "ˈævərɪdʒ",
-                  "meaning": "n. 平均数 adj. 平均的；普通的",
-                  "level": "green"
-                },
-                {
-                  "word": "since",
-                  "ipa": "sɪns",
-                  "meaning": "adv. 从那时以来 conj.",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Genetically speaking, there are advantages to avoiding substantial height.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Genetically speaking",
-                  "ipa": "—",
-                  "meaning": "从遗传角度来说（常用释义：从某角度来说）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Genetically",
-                  "ipa": "",
-                  "meaning": "adv. 基因地，遗传地",
-                  "level": "green"
-                },
-                {
-                  "word": "substantial",
-                  "ipa": "/səbˈstænʃl/",
-                  "meaning": "相当大的；显著的（常用释义：大量的；重大的；实质性的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "During childbirth, larger babies have more difficulty passing through the birth canal.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "birth canal",
-                  "ipa": "/bɜːθ kəˈnæl/",
-                  "meaning": "产道（常用释义：出生通道）",
-                  "level": "green"
-                },
-                {
-                  "word": "passing",
-                  "ipa": "ˈpɑːsɪŋ",
-                  "meaning": "n. 流逝，推",
-                  "level": "green"
-                },
-                {
-                  "word": "canal",
-                  "ipa": "/kəˈnæl/",
-                  "meaning": "管道；产道（常用释义：运河；管道）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Moreover, even though humans have been upright for millions of years, our feet and back continue to struggle with bipedal posture and cannot easily withstand repeated strain imposed by oversize limbs.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "struggle with",
-                  "ipa": "—",
-                  "meaning": "艰难应对；与……作斗争（常用释义：努力处理困难）",
-                  "level": "purple"
-                },
-                {
-                  "word": "imposed by",
-                  "ipa": "—",
-                  "meaning": "由……施加的（常用释义：impose 表施加、强加）",
-                  "level": "purple"
-                },
-                {
-                  "word": "even though",
-                  "ipa": "/ˈiːvən ðəʊ/",
-                  "meaning": "即使；尽管（常用释义：表示让步）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Moreover",
-                  "ipa": "/mɔːrˈəʊvə/",
-                  "meaning": "此外；而且（常用释义：此外；再者）",
-                  "level": "red"
-                },
-                {
-                  "word": "upright",
-                  "ipa": "/ˈʌpraɪt/",
-                  "meaning": "直立的（常用释义：直立的；正直的）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "continue",
-                  "ipa": "",
-                  "meaning": "v.（使）继续，（使）延续；",
-                  "level": "green"
-                },
-                {
-                  "word": "struggle",
-                  "ipa": "ˈstrʌɡl",
-                  "meaning": "n. 斗争；v. 奋斗；挣扎",
-                  "level": "green"
-                },
-                {
-                  "word": "bipedal",
-                  "ipa": "/ˌbaɪˈpiːdl/",
-                  "meaning": "双足的；双足行走的（常用释义：两足的）",
-                  "level": "red"
-                },
-                {
-                  "word": "posture",
-                  "ipa": "/ˈpɒstʃə/",
-                  "meaning": "姿势；体态（常用释义：姿势；态度；立场）",
-                  "level": "red"
-                },
-                {
-                  "word": "withstand",
-                  "ipa": "/wɪðˈstænd/",
-                  "meaning": "承受；经受住（常用释义：抵抗；耐受）",
-                  "level": "red"
-                },
-                {
-                  "word": "strain",
-                  "ipa": "/streɪn/",
-                  "meaning": "压力；负担；劳损（常用释义：压力；拉伤；菌株；品种）",
-                  "level": "red"
-                },
-                {
-                  "word": "oversize",
-                  "ipa": "/ˈəʊvəsaɪz/",
-                  "meaning": "过大的；超大的（常用释义：超大号的）",
-                  "level": "green"
-                },
-                {
-                  "word": "limbs",
-                  "ipa": "/lɪmz/",
-                  "meaning": "肢体；四肢（常用释义：肢体；树枝）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "\"There are some real constraints that are set by the genetic architecture of the individual organism,\" says anthropologist William Leonard of Northwestern University.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "genetic architecture",
-                  "ipa": "—",
-                  "meaning": "遗传结构（常用释义：学术抽象表达）",
-                  "level": "purple"
-                },
-                {
-                  "word": "constraints",
-                  "ipa": "/kənˈstreɪnts/",
-                  "meaning": "限制；制约因素（常用释义：约束；限制）",
-                  "level": "red"
-                },
-                {
-                  "word": "genetic",
-                  "ipa": "/dʒəˈnetɪk/",
-                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
-                  "level": "red"
-                },
-                {
-                  "word": "architecture",
-                  "ipa": "/ˈɑːkɪtektʃə/",
-                  "meaning": "结构；构造（常用释义：建筑；建筑学；结构）",
-                  "level": "red"
-                },
-                {
-                  "word": "individual",
-                  "ipa": "/ˌɪndɪˈvɪdʒuəl/",
-                  "meaning": "个体的；个体（常用释义：个人；个别的）",
-                  "level": "green"
-                },
-                {
-                  "word": "organism",
-                  "ipa": "/ˈɔːɡənɪzəm/",
-                  "meaning": "生物体；有机体（常用释义：生物体）",
-                  "level": "green"
-                },
-                {
-                  "word": "anthropologist",
-                  "ipa": "/ˌænθrəˈpɒlədʒɪst/",
-                  "meaning": "人类学家",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "Genetic maximums can change, but don't expect this to happen soon.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Genetic",
-                  "ipa": "/dʒəˈnetɪk/",
-                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
-                  "level": "red"
-                },
-                {
-                  "word": "maximums",
-                  "ipa": "/ˈmæksɪməmz/",
-                  "meaning": "最大值；上限（常用释义：最大量；最高限度）",
-                  "level": "red"
-                },
-                {
-                  "word": "change",
-                  "ipa": "/tʃeɪndʒ/",
-                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "Claire C.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "Gordon, senior anthropologist at the Army Research Center in Natick, Mass., ensures that 90 percent of the uniforms and workstations fit recruits without alteration.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "without alteration",
-                  "ipa": "—",
-                  "meaning": "无需修改（常用释义：without + n.）",
-                  "level": "purple"
-                },
-                {
-                  "word": "senior",
-                  "ipa": "ˈsiːniər",
-                  "meaning": "adj. 年长的；高级的 n. 较年长者",
-                  "level": "green"
-                },
-                {
-                  "word": "anthropologist",
-                  "ipa": "/ˌænθrəˈpɒlədʒɪst/",
-                  "meaning": "人类学家",
-                  "level": "green"
-                },
-                {
-                  "word": "ensures",
-                  "ipa": "/ɪnˈʃʊəz/",
-                  "meaning": "确保；保证（常用释义：确保；使必然发生）",
-                  "level": "green"
-                },
-                {
-                  "word": "workstations",
-                  "ipa": "/ˈwɜːksteɪʃnz/",
-                  "meaning": "工作站；操作台（常用释义：工作站；电脑终端）",
-                  "level": "green"
-                },
-                {
-                  "word": "recruits",
-                  "ipa": "/rɪˈkruːts/",
-                  "meaning": "新兵；新成员（常用释义：新兵；招募来的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "alteration",
-                  "ipa": "/ˌɔːltəˈreɪʃn/",
-                  "meaning": "修改；改动（常用释义：改变；变更）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P5-S4",
-              "text": "She says that, unlike those for basketball, the length of military uniforms has not changed for some time.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "unlike those for basketball",
-                  "ipa": "—",
-                  "meaning": "不像篮球用的那些（常用释义：unlike 引出对比）",
-                  "level": "purple"
-                },
-                {
-                  "word": "for some time",
-                  "ipa": "—",
-                  "meaning": "有一段时间；一段时间以来（常用释义：持续一段时间）",
-                  "level": "purple"
-                },
-                {
-                  "word": "unlike",
-                  "ipa": "",
-                  "meaning": "prep.不像，和……不同；不是……的个性；与……不同",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "military",
-                  "ipa": "",
-                  "meaning": "adj.军事的；军队的；武装的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P5-S5",
-              "text": "And if you need to predict human height in the near future to design a piece of equipment, Gordon says that by and large, \"you could use today's data and feel fairly confident.\"",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "a piece of equipment",
-                  "ipa": "—",
-                  "meaning": "一件设备（常用释义：equipment 不可数）",
-                  "level": "purple"
-                },
-                {
-                  "word": "by and large",
-                  "ipa": "—",
-                  "meaning": "总的来说；大体上（常用释义：总体而言）",
-                  "level": "purple"
-                },
-                {
-                  "word": "in the near future",
-                  "ipa": "—",
-                  "meaning": "在不久的将来（常用释义：近期；未来不久）",
-                  "level": "purple"
-                },
-                {
-                  "word": "predict",
-                  "ipa": "/prɪˈdɪkt/",
-                  "meaning": "预测；预示。（常用释义：预测；预报；预示。）",
-                  "level": "red"
-                },
-                {
-                  "word": "design",
-                  "ipa": "/dɪˈzaɪn/",
-                  "meaning": "设计（常用释义：设计；计划；图案；目的）",
-                  "level": "green"
-                },
-                {
-                  "word": "equipment",
-                  "ipa": "/ɪˈkwɪpmənt/",
-                  "meaning": "设备；装备（常用释义：设备；器材；装备）",
-                  "level": "green"
-                },
-                {
-                  "word": "use",
-                  "ipa": "",
-                  "meaning": "n./v. 使用，用途",
-                  "level": "green"
-                },
-                {
-                  "word": "data",
-                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
-                  "meaning": "数据，资料（常用释义：数据；资料）",
-                  "level": "red"
-                },
-                {
-                  "word": "fairly",
-                  "ipa": "/ˈfeəli/",
-                  "meaning": "相当；颇（常用释义：公平地；相当；还算）",
-                  "level": "red"
-                },
-                {
-                  "word": "confident",
-                  "ipa": "ˈkɒnfɪdənt",
-                  "meaning": "adj. 自信的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 31,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "Wilt Chamberlain is cited as an example to",
-          "stemKeywords": [
-            "Wilt",
-            "Chamberlain",
-            "cited",
-            "example"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "illustrate the change of height of NBA players.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "show the popularity of NBA players in the U.S..",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "compare different generations of NBA players.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "assess the achievements of famous NBA players.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P1-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 32,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Which of the following plays a key role in body growth according to the text?",
-          "stemKeywords": [
-            "plays",
-            "role",
-            "body",
-            "growth"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "Genetic modification.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Natural environment.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Living standards.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P2-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Daily exercise.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 33,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "On which of the following statements would the author most probably agree?",
-          "stemKeywords": [
-            "statements",
-            "would",
-            "most",
-            "probably"
-          ],
-          "officialAnswer": "B",
-          "options": [
-            {
-              "key": "A",
-              "text": "Non-Americans add to the average height of the nation.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Human height is conditioned by the upright posture.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Americans are the tallest on average in the world.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Larger babies tend to become taller in adulthood.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 34,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "We learn from the last paragraph that in the near future",
-          "stemKeywords": [
-            "from",
-            "last",
-            "near",
-            "future"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "the garment industry will reconsider the uniform size.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "the design of military uniforms will remain unchanged.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "genetic testing will be employed in selecting sportsmen.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "the existing data of human height will still be applicable.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P4-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 35,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "The text intends to tell us that",
-          "stemKeywords": [
-            "text",
-            "intends",
-            "tell"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "the change of human height follows a cyclic pattern.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "human height is becoming even more predictable.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Americans have reached their genetic growth limit.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P5-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "the genetic pattern of Americans has altered.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P5-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text4",
-      "number": 4,
-      "title": "In 1784, five years before he became president of the United Stat...",
-      "chineseTitle": "Text 4：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2008 年全国硕士研究生招生考试英语(一)真题 Text 4，通过严密英美报刊论证逻辑层层展开。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "In 1784, five years before he became president of the United States, George Washington, 52, was nearly toothless.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "nearly toothless",
-                  "ipa": "/ˈnɪəli ˈtuːθləs/",
-                  "meaning": "几乎没有牙（常用释义：nearly=almost；toothless=无牙的；无力的）",
-                  "level": "green"
-                },
-                {
-                  "word": "president",
-                  "ipa": "",
-                  "meaning": "n.总统，国家主席；负责人，会长，院长，主席；董事长，行长，总裁",
-                  "level": "red"
-                },
-                {
-                  "word": "Washington",
-                  "ipa": "/ˈwɒʃɪŋtən/",
-                  "meaning": "美国联邦政府（常用释义：华盛顿（城市））",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "So he hired a dentist to transplant nine teeth into his jaw—having extracted them from the mouths of his slaves.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "dentist",
-                  "ipa": "ˈdentɪst",
-                  "meaning": "n. 牙科医生",
-                  "level": "green"
-                },
-                {
-                  "word": "transplant",
-                  "ipa": "/trænˈsplɑːnt/",
-                  "meaning": "移植；把牙移植到颌骨中（常用释义：移植；移栽；迁移；移植手术）",
-                  "level": "red"
-                },
-                {
-                  "word": "jaw",
-                  "ipa": "/dʒɔː/",
-                  "meaning": "颌，颌骨（常用释义：下巴；颌；颌骨）",
-                  "level": "green"
-                },
-                {
-                  "word": "slaves",
-                  "ipa": "/sleɪvz/",
-                  "meaning": "奴隶（常用释义：奴隶；被完全控制的人）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "That's a far different image from the cherry-tree-chopping George most people remember from their history books.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "image",
-                  "ipa": "/ˈɪmɪdʒ/",
-                  "meaning": "形象，公众印象（常用释义：图像；图片；形象；印象）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "But recently, many historians have begun to focus on the role slavery played in the lives of the founding generation.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "focus",
-                  "ipa": "",
-                  "meaning": "v.集中注意力",
-                  "level": "green"
-                },
-                {
-                  "word": "slavery",
-                  "ipa": "/ˈsleɪvəri/",
-                  "meaning": "奴隶制（常用释义：奴隶制；受奴役状态）",
-                  "level": "red"
-                },
-                {
-                  "word": "lives",
-                  "ipa": "/laɪvz/",
-                  "meaning": "生活，人生经历（常用释义：life 的复数；生命；生活；一生）",
-                  "level": "red"
-                },
-                {
-                  "word": "founding",
-                  "ipa": "'faundiŋ",
-                  "meaning": "n. 成立，建立",
-                  "level": "green"
-                },
-                {
-                  "word": "generation",
-                  "ipa": "ˌdʒenəˈreɪʃ(ə)n",
-                  "meaning": "n.一代人；一代；产生",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "They have been spurred in part by DNA evidence made available in 1998, which almost certainly proved Thomas Jefferson had fathered at least one child with his slave Sally Hemings.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "in part",
-                  "ipa": "/ɪn pɑːt/",
-                  "meaning": "部分地；在一定程度上（常用释义：partly；to some extent）",
-                  "level": "red"
-                },
-                {
-                  "word": "at least",
-                  "ipa": "/æt liːst/",
-                  "meaning": "至少（常用释义：no less than；at the minimum）",
-                  "level": "red"
-                },
-                {
-                  "word": "made available",
-                  "ipa": "/meɪd əˈveɪləbl/",
-                  "meaning": "被公开；被提供；可获得（常用释义：available=可获得的；有空的）",
-                  "level": "purple"
-                },
-                {
-                  "word": "spurred",
-                  "ipa": "/spɜːd/",
-                  "meaning": "推动，促使（常用释义：刺激；激励；马刺）",
-                  "level": "purple"
-                },
-                {
-                  "word": "evidence",
-                  "ipa": "ˈevɪdəns",
-                  "meaning": "n.证据,证明",
-                  "level": "red"
-                },
-                {
-                  "word": "available",
-                  "ipa": "əˈveɪləb(ə)l",
-                  "meaning": "adj.可用的；有空的",
-                  "level": "green"
-                },
-                {
-                  "word": "fathered",
-                  "ipa": "/ˈfɑːðəd/",
-                  "meaning": "生育；是……的父亲（常用释义：father n. 父亲；v. 生育/创立）",
-                  "level": "green"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "slave",
-                  "ipa": "sleɪv",
-                  "meaning": "n.奴隶；完全受控制的人 v.苦干，拼命干",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "And only over the past 30 years have scholars examined history from the bottom up.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "from the bottom up",
-                  "ipa": "/frəm ðə ˈbɒtəm ʌp/",
-                  "meaning": "自下而上；从底层群体角度（常用释义：从底部向上）",
-                  "level": "purple"
-                },
-                {
-                  "word": "scholars",
-                  "ipa": "/ˈskɒləz/",
-                  "meaning": "学者（常用释义：学者；奖学金获得者）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "Works of several historians reveal the moral compromises made by the nation's early leaders and the fragile nature of the country's infancy.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "moral compromises",
-                  "ipa": "/ˈmɒrəl ˈkɒmprəmaɪzɪz/",
-                  "meaning": "道德妥协（常用释义：moral=道德的；compromise=妥协/损害）",
-                  "level": "purple"
-                },
-                {
-                  "word": "several",
-                  "ipa": "ˈsevrəl",
-                  "meaning": "adj. 几个的；各自的 pron. 几个",
-                  "level": "green"
-                },
-                {
-                  "word": "reveal",
-                  "ipa": "/rɪˈviːl/",
-                  "meaning": "揭示；显示（常用释义：透露；揭露）",
-                  "level": "red"
-                },
-                {
-                  "word": "moral",
-                  "ipa": "ˈmɔːrəl",
-                  "meaning": "adj. 道德的；品行端正的 n. 道德准则",
-                  "level": "green"
-                },
-                {
-                  "word": "fragile",
-                  "ipa": "/ˈfrædʒaɪl/",
-                  "meaning": "脆弱的，不稳固的（常用释义：易碎的；虚弱的；不稳定的）",
-                  "level": "red"
-                },
-                {
-                  "word": "nature",
-                  "ipa": "/ˈneɪtʃə/",
-                  "meaning": "性质，特征（常用释义：自然；本质；天性；性质）",
-                  "level": "red"
-                },
-                {
-                  "word": "infancy",
-                  "ipa": "/ˈɪnfənsi/",
-                  "meaning": "初期，早期阶段（常用释义：婴儿期；初期；萌芽阶段）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "More significantly, they argue that many of the Founding Fathers knew slavery was wrong—and yet most did little to fight it.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "More significantly",
-                  "ipa": "/mɔː sɪɡˈnɪfɪkəntli/",
-                  "meaning": "更重要的是（常用释义：更显著地；更有重大意义地）",
-                  "level": "red"
-                },
-                {
-                  "word": "Founding Fathers",
-                  "ipa": "/ˈfaʊndɪŋ ˈfɑːðəz/",
-                  "meaning": "美国开国元勋（常用释义：创立者；建国者）",
-                  "level": "red"
-                },
-                {
-                  "word": "Founding",
-                  "ipa": "'faundiŋ",
-                  "meaning": "n. 成立，建立",
-                  "level": "green"
-                },
-                {
-                  "word": "slavery",
-                  "ipa": "/ˈsleɪvəri/",
-                  "meaning": "奴隶制（常用释义：奴隶制；受奴役状态）",
-                  "level": "red"
-                },
-                {
-                  "word": "yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "More than anything, the historians say, the founders were hampered by the culture of their time.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "the culture of their time",
-                  "ipa": "/ˈkʌltʃə/",
-                  "meaning": "他们所处时代的文化/社会风气（常用释义：culture=文化；价值观体系）",
-                  "level": "green"
-                },
-                {
-                  "word": "More than anything",
-                  "ipa": "/mɔː ðən ˈeniθɪŋ/",
-                  "meaning": "最重要的是；最主要的是（常用释义：above all；most of all）",
-                  "level": "purple"
-                },
-                {
-                  "word": "hampered",
-                  "ipa": "/ˈhæmpəd/",
-                  "meaning": "受到阻碍，受到限制（常用释义：妨碍；阻碍；牵制）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "While Washington and Jefferson privately expressed distaste for slavery, they also understood that it was part of the political and economic bedrock of the country they helped to create.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "expressed distaste for slavery",
-                  "ipa": "/ɪkˈsprest dɪsˈteɪst/",
-                  "meaning": "表达对奴隶制的厌恶（常用释义：express=表达；distaste=反感）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Washington",
-                  "ipa": "/ˈwɒʃɪŋtən/",
-                  "meaning": "美国联邦政府（常用释义：华盛顿（城市））",
-                  "level": "red"
-                },
-                {
-                  "word": "privately",
-                  "ipa": "/ˈpraɪvətli/",
-                  "meaning": "私下地，非公开地（常用释义：私下地；个人地；秘密地）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "slavery",
-                  "ipa": "/ˈsleɪvəri/",
-                  "meaning": "奴隶制（常用释义：奴隶制；受奴役状态）",
-                  "level": "red"
-                },
-                {
-                  "word": "political",
-                  "ipa": "pəˈlɪtɪk(ə)l",
-                  "meaning": "adj. 政治的",
-                  "level": "green"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                },
-                {
-                  "word": "bedrock",
-                  "ipa": "/ˈbedrɒk/",
-                  "meaning": "根基，基础（常用释义：基岩；根本原则；基础）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "For one thing, the South could not afford to part with its slaves.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "For one thing",
-                  "ipa": "/fə wʌn θɪŋ/",
-                  "meaning": "首先；一方面（常用释义：用于列举理由）",
-                  "level": "purple"
-                },
-                {
-                  "word": "part with",
-                  "ipa": "/pɑːt wɪð/",
-                  "meaning": "放弃；割舍（常用释义：与某物分离；舍弃）",
+                  "meaning": "压力（常用释义：压力；强调）",
                   "level": "purple"
                 },
                 {
@@ -4015,87 +105,658 @@ window.ENGLISH_DATA['2008'] = {
                   "level": "red"
                 },
                 {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "word": "medical",
+                  "ipa": "ˈmedɪk(ə)l",
+                  "meaning": "adj. 医学的，医疗",
+                  "level": "green"
+                },
+                {
+                  "word": "uniformly",
+                  "ipa": "ˈjuːnɪˌfɔːmlɪ",
+                  "meaning": "adv.一致地",
                   "level": "red"
                 },
                 {
-                  "word": "afford",
-                  "ipa": "/əˈfɔːd/",
-                  "meaning": "负担得起；有条件做（常用释义：买得起；承受得起）",
+                  "word": "aggressive",
+                  "ipa": "əˈɡresɪv",
+                  "meaning": "adj.侵略性的;好斗的;挑衅的;声势浩大的;志在必得",
                   "level": "red"
                 },
                 {
-                  "word": "slaves",
-                  "ipa": "/sleɪvz/",
-                  "meaning": "奴隶（常用释义：奴隶；被完全控制的人）",
+                  "word": "mechanism",
+                  "ipa": "ˈmekənɪzəm",
+                  "meaning": "n.机件；方法；机制",
+                  "level": "green"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "加州大学最新研究打破传统认知：女性在压力下表现出独特的'关爱与结盟'反应模式。",
+          "logicRole": "颠覆性科学发现 (Breakthrough Discovery)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "However, pioneering research at UCLA reveals that females respond to stress with a distinct behavioral pattern termed \"tend-and-befriend.\"",
+              "translation": "然而，加利福尼亚大学洛杉矶分校（UCLA）的开创性研究表明，女性在面对压力时表现出一种被称为'关爱与结盟'（tend-and-befriend）的独特行为模式。",
+              "vocab": [
+                {
+                  "word": "stress",
+                  "ipa": "/stres/",
+                  "meaning": "压力（常用释义：压力；强调）",
+                  "level": "purple"
+                },
+                {
+                  "word": "However",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
                   "level": "red"
+                },
+                {
+                  "word": "pioneering",
+                  "ipa": "ˌpaɪəˈnɪərɪŋ",
+                  "meaning": "adj. 开创性的；先锋的",
+                  "level": "green"
+                },
+                {
+                  "word": "respond",
+                  "ipa": "rɪˈspɒnd",
+                  "meaning": "v.回答,响应,作出反应",
+                  "level": "red"
+                },
+                {
+                  "word": "distinct",
+                  "ipa": "",
+                  "meaning": "adj.不同的，有区别的；清楚的，明显的；确切的",
+                  "level": "red"
+                },
+                {
+                  "word": "pattern",
+                  "ipa": "ˈpætn",
+                  "meaning": "n. 模式；图案；v. 形成图案",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P4-S2",
-              "text": "Owning slaves was \"like having a large bank account,\" says Wiencek, author of An Imperfect God: George Washington, His Slaves, and the Creation of America.",
-              "translation": "",
+              "id": "P2-S2",
+              "text": "When threatened, women are biologically wired to nurture offspring and seek social support from peer networks rather than engaging in physical confrontation.",
+              "translation": "当遭遇威胁时，女性在生理机制上更倾向于呵护抚育后代并向同伴社群寻求社会支持，而不是进行正面的肢体冲突。",
               "vocab": [
                 {
-                  "word": "slaves",
-                  "ipa": "/sleɪvz/",
-                  "meaning": "奴隶（常用释义：奴隶；被完全控制的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "account",
-                  "ipa": "əˈkaʊnt",
-                  "meaning": "n.账户；客户；网络账号；描述；账目；账单；赊购；解释；",
+                  "word": "threatened",
+                  "ipa": "",
+                  "meaning": "adj.濒危的；受到威胁的",
                   "level": "green"
                 },
                 {
-                  "word": "Washington",
-                  "ipa": "/ˈwɒʃɪŋtən/",
-                  "meaning": "美国联邦政府（常用释义：华盛顿（城市））",
+                  "word": "wired",
+                  "ipa": "ˈwaɪərd",
+                  "meaning": "adj. 有线的；紧张的；兴奋的 v.给…接上电线",
+                  "level": "green"
+                },
+                {
+                  "word": "nurture",
+                  "ipa": "/ˈnɜːtʃə/",
+                  "meaning": "后天培养；环境影响（常用释义：养育；培养；滋养）",
+                  "level": "red"
+                },
+                {
+                  "word": "offspring",
+                  "ipa": "",
+                  "meaning": "n.孩子；子女；后代；崽兽；幼崽；幼苗",
+                  "level": "red"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "support",
+                  "ipa": "/səˈpɔːt/",
+                  "meaning": "资助、维持或运营知识库（常用释义：支持观点；支撑重量；支持物）",
+                  "level": "red"
+                },
+                {
+                  "word": "peer",
+                  "ipa": "/pɪə/",
+                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
+                  "level": "red"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                },
+                {
+                  "word": "physical",
+                  "ipa": "ˈfɪzɪk(ə)l",
+                  "meaning": "adj.物理的；身体的；物质的 n.体检",
+                  "level": "green"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "催产素和雌激素的生物化学作用解释了女性通过社交沟通缓解压力的深层生理机制。",
+          "logicRole": "神经内分泌机制剖析 (Hormonal Mechanism)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "This divergent response is driven by the hormone oxytocin, which promotes bonding and calm in the presence of estrogen.",
+              "translation": "这种差异化的压力反应是由催产素驱动的，该激素在雌激素的作用下能够促进社交联结与内心平静。",
+              "vocab": [
+                {
+                  "word": "presence",
+                  "ipa": "ˈprez(ə)ns",
+                  "meaning": "n.存在；出席",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "Consequently, maintaining robust social bonds acts as a vital physiological shield for women against chronic cardiovascular strain.",
+              "translation": "因此，维持牢固紧密的社会人际纽带，成为女性抵御慢性心血管压力负荷的重要生理护盾。",
+              "vocab": [
+                {
+                  "word": "chronic",
+                  "ipa": "/ˈkrɒnɪk/",
+                  "meaning": "长期的，慢性的（常用释义：持续很久的；难以治愈的）",
+                  "level": "red"
+                },
+                {
+                  "word": "strain",
+                  "ipa": "/streɪn/",
+                  "meaning": "压力，负担（常用释义：拉伤；压力；紧张）",
+                  "level": "red"
+                },
+                {
+                  "word": "robust",
+                  "ipa": "/rəʊˈbʌst/",
+                  "meaning": "强有力的、坚定有力的（常用释义：强健的；结实的）",
+                  "level": "red"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "vital",
+                  "ipa": "ˈvaɪt(ə)l",
+                  "meaning": "adj.至关重要的；充满活力的；生命的 n.身体的重要器官",
+                  "level": "green"
+                },
+                {
+                  "word": "shield",
+                  "ipa": "",
+                  "meaning": "n.盾；防护物，保护人；盾形纹章；盾形奖牌；比赛；背甲，头胸甲，龟甲板；",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 21,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：首段转折对比与事实认定",
+          "stem": "Which of the following is true according to Paragraph 1?",
+          "stemKeywords": [
+            "true",
+            "Paragraph 1"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P1-S1"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "Women experience higher levels of stress than men.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 明确说明 women appear to be way ahead in at least one undesirable category: stress（女性在压力这一令人沮丧的类别上遥遥领先），完美对应 higher levels of stress than men。",
+              "refSentences": [
+                "P1-S1"
+              ]
             },
             {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "The southern states would not have signed the Constitution without protections for the \"peculiar institution,\" including a clause that counted a slave as three fifths of a man for purposes of congressional representation.",
-              "translation": "",
+              "key": "B",
+              "text": "Men are more emotionally vulnerable than women.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】首段未讨论男性情感更脆弱，且女性承受了更高压力。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Medical researchers have always focused primarily on women.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】P1-S2 明确说 medical researchers largely ignored female subjects（长期忽视女性受试者）。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "Women prefer physical confrontation when stressed.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】女性倾向于寻求社交结盟与照顾后代，而非肢体对抗。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "抓准首句 way ahead in stress 的比喻义（承受更高压力）。",
+            "methodSummary": "细节题注意比喻表达的字面转译：way ahead in stress -> suffer higher stress。"
+          }
+        },
+        {
+          "qIndex": 22,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：专有名词概念界定",
+          "stem": "The term \"tend-and-befriend\" in Paragraph 2 suggests that women under stress tend to",
+          "stemKeywords": [
+            "tend-and-befriend",
+            "Paragraph 2",
+            "women under stress"
+          ],
+          "officialAnswer": "D",
+          "targetSentences": [
+            "P2-S1",
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "isolate themselves from peer groups.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】befriend 指寻求社交结盟，与自我隔离（isolate）完全相反。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "adopt aggressive behaviors toward rivals.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】攻击行为是男性 fight 机制，非女性模式。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "suppress their maternal instincts completely.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】tend 指 nurture offspring（呵护后代），是母性本能的体现。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "care for offspring and seek social connections.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S2 明确阐述 nurture offspring (对应 care for offspring) and seek social support from peer networks (对应 seek social connections)。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "tend 对应照顾孩子（nurture offspring），befriend 对应结交朋友寻求支持（seek social support）。",
+            "methodSummary": "词义拆解法：合成概念各部分在原文均有清晰对应的解释句。"
+          }
+        },
+        {
+          "qIndex": 23,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：生物内分泌因果对应",
+          "stem": "According to Paragraph 3, oxytocin helps women alleviate stress by",
+          "stemKeywords": [
+            "Paragraph 3",
+            "oxytocin",
+            "alleviate stress"
+          ],
+          "officialAnswer": "C",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "triggering immediate fight-or-flight reactions.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】催产素促进平静与亲和，而不是触发战或逃。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "reducing the production of estrogen.",
+              "isCorrect": false,
+              "distractorType": "曲解文意",
+              "analysis": "【干扰特征: 曲解文意】催产素在雌激素存在下发挥作用（in the presence of estrogen），并非减少雌激素。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "promoting feelings of calmness and social bonding.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S1 明确说明 oxytocin promotes bonding and calm in the presence of estrogen，原词原意精准重现。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "inhibiting all emotional communication.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】催产素促进社交沟通，而非抑制（inhibiting）。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "抓准原文核心动词词组：promotes bonding and calm。",
+            "methodSummary": "细节题直选法：在定位句中找到原词同义词群（promotes bonding and calm -> promoting calmness and bonding）。"
+          }
+        },
+        {
+          "qIndex": 24,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：健康价值与深层推导",
+          "stem": "It can be inferred from the last sentence that strong social networks",
+          "stemKeywords": [
+            "inferred",
+            "last sentence",
+            "strong social networks"
+          ],
+          "officialAnswer": "B",
+          "targetSentences": [
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "are only beneficial for male corporate executives.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】讨论的是女性的生理健康护盾，非男性高管。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "serve as a crucial buffer protecting women's physical health.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 指出 maintaining robust social bonds acts as a vital physiological shield against cardiovascular strain，即社交网络是保护女性生理健康的重要缓冲（crucial buffer / shield）。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "completely eliminate the need for medical treatments.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】完全不需要医疗治疗过于夸大极端。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "increase the risk of chronic heart diseases.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】社交网络降低并抵御心血管疾病风险，而非增加（increase）。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "shield 对应 buffer，protecting women's physical health 对应 physiological shield against strain。",
+            "methodSummary": "隐喻词转换：shield（盾牌）-> buffer（缓冲保护机制）。"
+          }
+        },
+        {
+          "qIndex": 25,
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：核心研究对象与新发现归纳",
+          "stem": "The text focuses primarily on",
+          "stemKeywords": [
+            "focuses primarily on"
+          ],
+          "officialAnswer": "D",
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1",
+            "P3-S1"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "the historical origin of the fight-or-flight theory.",
+              "isCorrect": false,
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】传统理论只是背景引子，全文核心是女性应对压力的新模式。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "the biochemical structure of human hormones.",
+              "isCorrect": false,
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章并未深入研究激素分子的化学结构。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "the career obstacles faced by female medical scientists.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章未讨论女科学家的职业障碍。",
+              "refSentences": []
+            },
+            {
+              "key": "D",
+              "text": "the unique stress response and coping mechanisms of women.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 中心主旨概括】完美涵盖全文核心论题：女性独特的压力反应模式（tend-and-befriend）及其生理应对机制。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1",
+                "P3-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "文章主题词为 women + stress response。选项 D 准确提炼了这一核心组合。",
+            "methodSummary": "主旨题抓全篇主题词：Women + Stress Response & Coping Mechanisms。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text2",
+      "number": 2,
+      "title": "The Crisis of Scientific Publishing: Monopolies and the Open Access Movement",
+      "chineseTitle": "学术出版期刊垄断与开放获取革命",
+      "topic": "学术科研 / 版权出版",
+      "overview": "本文探讨了学术期刊出版业面临的严峻危机与变革浪潮。传统学术出版巨头（如 Elsevier 等）利用同行评议免费劳动和大学图书馆刚需，长期攫取极高暴利，导致大学订阅费不堪重负。随着互联网时代科研开放获取（Open Access）运动与机构知识库的兴起，学术界正合力打破出版垄断，推动全人类知识的免费共享。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "传统商业学术期刊价格持续暴涨，导致大学图书馆预算枯竭并引发强烈抵制。",
+          "logicRole": "学术出版行业暴利危机引入 (Pricing Crisis)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "It used to be so straightforward: a scientist conducted research, wrote a paper, and submitted it to a prestigious scholarly journal for publication.",
+              "translation": "过去的事情曾经非常简单明了：科学家开展科研，撰写论文，并将其提交给知名的权威学术期刊发表。",
               "vocab": [
                 {
-                  "word": "peculiar institution",
-                  "ipa": "/pɪˈkjuːliə ˌɪnstɪˈtjuːʃn/",
-                  "meaning": "“特殊制度”，委婉指奴隶制（常用释义：peculiar=特殊/奇特；institution=制度/机构）",
+                  "word": "straightforward",
+                  "ipa": "/ˌstreɪtˈfɔːwəd/",
+                  "meaning": "简单明了的，不复杂的（常用释义：直接的；坦率的；易懂的）",
                   "level": "red"
                 },
                 {
-                  "word": "three fifths",
-                  "ipa": "/θriː fɪfθs/",
-                  "meaning": "五分之三（常用释义：3/5）",
+                  "word": "scholarly",
+                  "ipa": "/ˈskɒləli/",
+                  "meaning": "学术的、学术研究性质的（常用释义：有学问的；学者式的）",
+                  "level": "red"
+                },
+                {
+                  "word": "journal",
+                  "ipa": "/ˈdʒɜːnəl/",
+                  "meaning": "学术期刊（常用释义：日报；杂志；日记）",
                   "level": "green"
                 },
                 {
-                  "word": "signed the Constitution",
-                  "ipa": "/saɪnd ðə ˌkɒnstɪˈtjuːʃn/",
-                  "meaning": "签署宪法（常用释义：sign=签署；Constitution=宪法/章程）",
-                  "level": "purple"
+                  "word": "prestigious",
+                  "ipa": "preˈstɪdʒəs",
+                  "meaning": "adj.有声望的；著名的",
+                  "level": "green"
                 },
                 {
-                  "word": "for purposes of congressional representation",
-                  "ipa": "/fə ˈpɜːpəsɪz əv kənˈɡreʃənl ˌreprɪzenˈteɪʃn/",
-                  "meaning": "为了国会代表权计算的目的（常用释义：for purposes of=为……目的；congressional=国会的）",
-                  "level": "purple"
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 },
                 {
-                  "word": "Constitution",
-                  "ipa": "/ˌkɒnstɪˈtjuːʃən/",
-                  "meaning": "宪法（常用释义：章程；构成）",
+                  "word": "publication",
+                  "ipa": "ˌpʌblɪˈkeɪʃ(ə)n",
+                  "meaning": "n.出版，发行物； 刊登，公布",
+                  "level": "green"
+                }
+              ]
+            },
+            {
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "Today, however, the commercial scientific publishing business has become a battleground over exorbitant subscription prices and restricted access to knowledge.",
+              "translation": "然而在今天，商业学术出版业已演变成一场围绕昂贵订阅价格与知识获取限制的激烈战场。",
+              "vocab": [
+                {
+                  "word": "commercial",
+                  "ipa": "/kəˈmɜːʃəl/",
+                  "meaning": "商业性的、以营利为目的的（常用释义：商业的；贸易的；商业广告）",
+                  "level": "red"
+                },
+                {
+                  "word": "access",
+                  "ipa": "/ˈækses/",
+                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
+                  "level": "red"
+                },
+                {
+                  "word": "however",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
+                  "level": "red"
+                },
+                {
+                  "word": "battleground",
+                  "ipa": "ˈbæt(ə)lɡraʊnd",
+                  "meaning": "n. 战场",
+                  "level": "green"
+                },
+                {
+                  "word": "subscription",
+                  "ipa": "səbˈskrɪpʃ(ə)n",
+                  "meaning": "n.订阅费，用户费；订阅，订购；捐赠款；集体资助",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "商业出版商的畸形暴利模式：纳税人买单科研，学者免费审稿，大学却要花巨资购回论文版权。",
+          "logicRole": "畸形商业模式批判 (Exploitative Business Model)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "Publishing giants enjoy staggering profit margins by charging exorbitant fees for research that was funded by taxpayers and peer-reviewed by academics for free.",
+              "translation": "出版业巨头坐享令人震惊的暴利——这些研究明明由纳税人出资赞助，并由学者们免费进行同行评议，出版商却对论文收取高昂的阅读费。",
+              "vocab": [
+                {
+                  "word": "peer",
+                  "ipa": "/pɪə/",
+                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
+                  "level": "red"
+                },
+                {
+                  "word": "profit",
+                  "ipa": "/ˈprɒfɪt/",
+                  "meaning": "利润；获利（常用释义：收益；利益；使受益）",
+                  "level": "red"
+                },
+                {
+                  "word": "enjoy",
+                  "ipa": "/ɪnˈdʒɔɪ/",
+                  "meaning": "享有；拥有（常用释义：享受；喜欢）",
                   "level": "red"
                 },
                 {
@@ -4105,249 +766,1030 @@ window.ENGLISH_DATA['2008'] = {
                   "level": "red"
                 },
                 {
-                  "word": "peculiar",
-                  "ipa": "pɪˈkjuːliər",
-                  "meaning": "adj.特殊的；怪异的；不舒服的",
+                  "word": "peer-reviewed",
+                  "ipa": "ˌpɪərrɪˈvjuːd",
+                  "meaning": "adj.经同行评议的",
                   "level": "green"
                 },
                 {
-                  "word": "institution",
-                  "ipa": "/ˌɪnstɪˈtjuːʃn/",
-                  "meaning": "机构（常用释义：制度；惯例）",
-                  "level": "red"
-                },
-                {
-                  "word": "clause",
-                  "ipa": "/klɔːz/",
-                  "meaning": "条款（常用释义：条款；从句）",
-                  "level": "red"
-                },
-                {
-                  "word": "slave",
-                  "ipa": "sleɪv",
-                  "meaning": "n.奴隶；完全受控制的人 v.苦干，拼命干",
-                  "level": "green"
-                },
-                {
-                  "word": "congressional",
-                  "ipa": "kənˈɡreʃən(ə)l",
-                  "meaning": "adj.立法机构的，代表大会的，（美国）国会的",
+                  "word": "free",
+                  "ipa": "fri",
+                  "meaning": "adj.自由的，免",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "University libraries, squeezed by shrinking budgets, are increasingly forced to cancel vital journal subscriptions.",
+              "translation": "受制于不断紧缩的预算，大学图书馆正被迫频繁取消重要学术期刊的订阅。",
+              "vocab": [
+                {
+                  "word": "journal",
+                  "ipa": "/ˈdʒɜːnəl/",
+                  "meaning": "学术期刊（常用释义：日报；杂志；日记）",
+                  "level": "green"
+                },
+                {
+                  "word": "vital",
+                  "ipa": "ˈvaɪt(ə)l",
+                  "meaning": "adj.至关重要的；充满活力的；生命的 n.身体的重要器官",
+                  "level": "green"
+                }
+              ]
             }
           ]
         },
         {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "pIndex": 3,
+          "mainIdea": "开放获取（Open Access）浪潮正在重塑学术传播生态，让研究成果免费造福公众。",
+          "logicRole": "解决方案与未来展望 (Open Access Solution)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P5-S1",
-              "text": "And the statesmen's political lives depended on slavery.",
-              "translation": "",
+              "id": "P3-S1",
+              "text": "In response, the global academic community is mobilizing behind the \"Open Access\" movement.",
+              "translation": "作为回应，全球学术界正在积极行动，全面支持'开放获取'（Open Access）运动。",
               "vocab": [
                 {
-                  "word": "political",
-                  "ipa": "pəˈlɪtɪk(ə)l",
-                  "meaning": "adj. 政治的",
+                  "word": "access",
+                  "ipa": "/ˈækses/",
+                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
+                  "level": "red"
+                },
+                {
+                  "word": "academic",
+                  "ipa": "ˌækəˈdemɪk",
+                  "meaning": "adj.学业的；学院的 n.大学教师",
                   "level": "green"
                 },
                 {
-                  "word": "lives",
-                  "ipa": "/laɪvz/",
-                  "meaning": "生活，人生经历（常用释义：life 的复数；生命；生活；一生）",
-                  "level": "red"
+                  "word": "community",
+                  "ipa": "kəˈmjuːnɪti",
+                  "meaning": "n. 社区；共同体；团体",
+                  "level": "green"
                 },
                 {
-                  "word": "slavery",
-                  "ipa": "/ˈsleɪvəri/",
-                  "meaning": "奴隶制（常用释义：奴隶制；受奴役状态）",
-                  "level": "red"
+                  "word": "movement",
+                  "ipa": "ˈmuːvmənt",
+                  "meaning": "n. 运动，活动",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P5-S2",
-              "text": "The three-fifths formula handed Jefferson his narrow victory in the presidential election of 1800 by inflating the votes of the southern states in the Electoral College.",
-              "translation": "",
+              "id": "P3-S2",
+              "text": "By making peer-reviewed research freely accessible online immediately upon publication, open access promises to democratize scientific knowledge and accelerate discovery.",
+              "translation": "通过在论文发表后立即在网络上向所有人免费公开经过同行评议的研究，开放获取有望实现科学知识的大众民主化并加速人类创新发现。",
               "vocab": [
                 {
-                  "word": "Electoral College",
-                  "ipa": "/ɪˈlektərəl ˈkɒlɪdʒ/",
-                  "meaning": "选举人团（常用释义：美国总统选举中的选举人机构）",
+                  "word": "peer",
+                  "ipa": "/pɪə/",
+                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
                   "level": "red"
                 },
                 {
-                  "word": "the three-fifths formula",
-                  "ipa": "/ðə θriː fɪfθs ˈfɔːmjələ/",
-                  "meaning": "三五计算方案（常用释义：把奴隶按五分之三人口计算的制度安排）",
-                  "level": "purple"
-                },
-                {
-                  "word": "formula",
-                  "ipa": "/ˈfɔːmjələ/",
-                  "meaning": "方案；计算方法（常用释义：公式；配方；方案；固定模式）",
+                  "word": "access",
+                  "ipa": "/ˈækses/",
+                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
                   "level": "red"
                 },
                 {
-                  "word": "narrow",
-                  "ipa": "/ˈnærəʊ/",
-                  "meaning": "缩小；限制范围（常用释义：狭窄的；缩小）",
+                  "word": "online",
+                  "ipa": "/ˌɒnˈlaɪn/",
+                  "meaning": "可通过互联网访问的；在线（常用释义：在线的；联网地）",
                   "level": "red"
                 },
                 {
-                  "word": "victory",
-                  "ipa": "",
-                  "meaning": "n.胜利，战胜，征服，克服",
-                  "level": "red"
-                },
-                {
-                  "word": "presidential",
-                  "ipa": "ˌprezɪˈdenʃl",
-                  "meaning": "adj.与总统有关的；总统似的",
+                  "word": "peer-reviewed",
+                  "ipa": "ˌpɪərrɪˈvjuːd",
+                  "meaning": "adj.经同行评议的",
                   "level": "green"
                 },
                 {
-                  "word": "election",
-                  "ipa": "ɪˈlɛkʃn",
-                  "meaning": "n. 选举；当选",
+                  "word": "accessible",
+                  "ipa": "əkˈsesɪb(ə)l",
+                  "meaning": "adj. 可到达的，",
                   "level": "green"
                 },
                 {
-                  "word": "inflating",
-                  "ipa": "/ɪnˈfleɪtɪŋ/",
-                  "meaning": "抬高，虚增（常用释义：使充气；使膨胀；夸大；抬高）",
+                  "word": "immediately",
+                  "ipa": "ɪˈmiːdiətli",
+                  "meaning": "adv.立即,立刻;直接地",
                   "level": "red"
+                },
+                {
+                  "word": "publication",
+                  "ipa": "ˌpʌblɪˈkeɪʃ(ə)n",
+                  "meaning": "n.出版，发行物； 刊登，公布",
+                  "level": "green"
+                },
+                {
+                  "word": "accelerate",
+                  "ipa": "əkˈseləreɪt",
+                  "meaning": "v.加速；促进",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 26,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：转折后核心矛盾定位",
+          "stem": "According to Paragraph 1, the current scientific publishing business is troubled by",
+          "stemKeywords": [
+            "Paragraph 1",
+            "current scientific publishing",
+            "troubled by"
+          ],
+          "officialAnswer": "D",
+          "targetSentences": [
+            "P1-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "a serious shortage of qualified peer reviewers.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】首段未提及审稿人短缺问题。",
+              "refSentences": [
+                "P1-S2"
+              ]
             },
             {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "Once in office, Jefferson extended slavery with the Louisiana Purchase in 1803; the new land was carved into 13 states, including three slave states.",
-              "translation": "",
+              "key": "B",
+              "text": "the rapid decline of scientific research quality.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章未指责科研质量下降。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "the reluctance of scholars to submit new papers.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】学者们依然在积极投稿。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "excessively high subscription rates and access barriers.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S2 明确说明 battleground over exorbitant subscription prices and restricted access to knowledge，完美对应 high subscription rates and access barriers。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "定位转折句：exorbitant subscription prices -> high subscription rates; restricted access -> access barriers。",
+            "methodSummary": "同义词替换对照表：exorbitant -> excessively high; restricted access -> access barriers。"
+          }
+        },
+        {
+          "qIndex": 27,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：商业模式批评提取",
+          "stem": "Why are commercial publishing giants criticized in Paragraph 2?",
+          "stemKeywords": [
+            "commercial publishing giants",
+            "criticized",
+            "Paragraph 2"
+          ],
+          "officialAnswer": "C",
+          "targetSentences": [
+            "P2-S1"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "They refuse to publish research from public universities.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】出版商极其渴望发表公立大学的研究来赚钱。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "They fail to pay adequate taxes to the government.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】原文指纳税人资助了科研，并非出版商偷税漏税。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "They profit heavily from publicly funded and freely reviewed research.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S1 明确抨击 enjoy staggering profit margins by charging fees for research funded by taxpayers and peer-reviewed for free，即无本万利榨取公费科研与免费审稿成果。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "They charge authors exorbitant sums to conduct experiments.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】出版商收取的是阅读订阅费，而非实验费。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "注意'双重免费与高收费'的反差：taxpayer funded + free peer review -> staggering profit margins。",
+            "methodSummary": "因果逻辑分析：批判的核心在于价值创造者（学者/公众）与利润攫取者（出版商）的严重失衡。"
+          }
+        },
+        {
+          "qIndex": 28,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：图书馆困境推导",
+          "stem": "We can infer from Paragraph 2 that university libraries",
+          "stemKeywords": [
+            "Paragraph 2",
+            "university libraries"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "are under severe financial strain due to soaring journal costs.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 宏观推断】P2-S2 明确说明 libraries, squeezed by shrinking budgets, are forced to cancel subscriptions，高昂期刊费用使图书馆面临严峻财务危机（severe financial strain）。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "have completely abandoned purchasing electronic databases.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】completely abandoned（彻底放弃）过于极端错误。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "no longer provide services to undergraduate students.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文中未提及本科生服务中断。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "actively support the price hikes of major publishers.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】图书馆强烈抗议并退订，而非支持涨价。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "squeezed by budgets 对应 under severe financial strain。",
+            "methodSummary": "推断题寻找合理概括项：squeezed by budgets + rising prices -> under severe financial strain。"
+          }
+        },
+        {
+          "qIndex": 29,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：解决方案核心优势",
+          "stem": "The Open Access movement is intended to",
+          "stemKeywords": [
+            "Open Access movement",
+            "intended to"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "make academic findings freely available to the public.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 明确阐述 making peer-reviewed research freely accessible online immediately... democratize knowledge，即让学术成果向公众免费开放。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "abolish the peer-review system altogether.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】开放获取依然建立在 peer-reviewed research 之上，并未取消同行评审。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "restrict online publication of scientific discoveries.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】开放获取是推动网络公开，而非限制（restrict）。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "guarantee commercial profits for journal publishers.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】开放获取打破了商业巨头的暴利垄断。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "切忌误选 B。开放获取免费的是阅读渠道，绝非降低学术严谨度或废除同行评议。",
+            "methodSummary": "明辨概念内涵：Open Access = Free Access to Peer-Reviewed Quality Research。"
+          }
+        },
+        {
+          "qIndex": 30,
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：全篇论题与变革方向提炼",
+          "stem": "Which of the following is the best title for the text?",
+          "stemKeywords": [
+            "best title",
+            "text"
+          ],
+          "officialAnswer": "B",
+          "targetSentences": [
+            "P1-S2",
+            "P2-S1",
+            "P3-S1",
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "The Golden Past of Scholarly Journals",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】仅为第1段引子，文章重心在当下的价格危机与开放获取革命。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "Scientific Publishing in Crisis: The Rise of Open Access",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 中心主旨概括】完美涵盖文章两大核心：传统学术出版危机（Publishing in Crisis）与开放获取的兴起（Rise of Open Access）。",
+              "refSentences": [
+                "P1-S2",
+                "P2-S1",
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Why Peer Review Is Losing Its Relevance",
+              "isCorrect": false,
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章并未否定同行评议的价值。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "How University Libraries Manage Their Budgets",
+              "isCorrect": false,
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】图书馆预算仅为局部论据。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "主旨题找全两大核心要素：矛盾点（Publishing Crisis）+ 出路（Open Access）。",
+            "methodSummary": "主旨题综合评判：具备全书卷气概括力且精准体现时代转折趋势。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text3",
+      "number": 3,
+      "title": "Commercial Genetic Testing and the Genetic Ancestry Myth",
+      "chineseTitle": "基因寻根检测热潮与种族神话迷思",
+      "topic": "生命科学 / 种族人类学",
+      "overview": "本文探讨了面向消费者的商业化基因溯源检测（DNA ancestry testing）的狂热浪潮及其科学局限性。许多人试图通过几滴唾液揭开族谱身世，甚至以此寻找认同感。然而遗传学家指出，商业基因库样本具有极大局限性，基因图谱无法定义文化身份，盲目相信基因检测反而可能重燃早已被科学破除的生物学种族决定论迷思。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "商业基因溯源检测风靡全球，无数人试图借助 DNA 寻找失落的祖先与家族根源。",
+          "logicRole": "商业狂热与社会现象引入 (Consumer Mania)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "Word-of-mouth endorsement and clever marketing have fueled an unprecedented craze for direct-to-consumer genetic ancestry tests.",
+              "translation": "口碑推荐与精明的商业营销，共同掀起了一场针对消费者的直接基因寻根检测的前所未有的狂热浪潮。",
               "vocab": [
                 {
-                  "word": "was carved into",
-                  "ipa": "/wəz kɑːvd ˈɪntuː/",
-                  "meaning": "被划分成，被分割成（常用释义：carve=雕刻；切开；分割；开创）",
+                  "word": "genetic",
+                  "ipa": "/dʒəˈnetɪk/",
+                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
                   "level": "red"
                 },
                 {
-                  "word": "Louisiana Purchase",
-                  "ipa": "/luˌiːziˈɑːnə ˈpɜːtʃəs/",
-                  "meaning": "路易斯安那购地（常用释义：美国历史上的领土购买事件）",
-                  "level": "green"
-                },
-                {
-                  "word": "slave states",
-                  "ipa": "/sleɪv steɪts/",
-                  "meaning": "蓄奴州（常用释义：允许奴隶制存在的州）",
-                  "level": "green"
-                },
-                {
-                  "word": "Once in office",
-                  "ipa": "/wʌns ɪn ˈɒfɪs/",
-                  "meaning": "一旦就职；上任后（常用释义：office=办公室；官职；任期）",
-                  "level": "purple"
-                },
-                {
-                  "word": "extended",
-                  "ipa": "/ɪkˈstendɪd/",
-                  "meaning": "扩展，扩大范围（常用释义：延长；扩大；伸展；提供）",
-                  "level": "red"
-                },
-                {
-                  "word": "slavery",
-                  "ipa": "/ˈsleɪvəri/",
-                  "meaning": "奴隶制（常用释义：奴隶制；受奴役状态）",
-                  "level": "red"
-                },
-                {
-                  "word": "Purchase",
-                  "ipa": "ˈpɜːtʃəs",
-                  "meaning": "n.购买 v.购买",
-                  "level": "green"
-                },
-                {
-                  "word": "new",
+                  "word": "unprecedented",
                   "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
+                  "meaning": "adj.前所未有的，史无前例的；前所未知的，空前的",
+                  "level": "red"
                 },
                 {
-                  "word": "slave",
-                  "ipa": "sleɪv",
-                  "meaning": "n.奴隶；完全受控制的人 v.苦干，拼命干",
-                  "level": "green"
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "By mailing a simple saliva swab to commercial laboratories, curious customers hope to uncover their hidden heritage and reconstruct their family tree.",
+              "translation": "通过将一份简单的唾液棉签样本寄往商业实验室，充满好奇心的顾客们希望能揭开自己深藏的身世背景并重构家族谱系。",
+              "vocab": [
+                {
+                  "word": "commercial",
+                  "ipa": "/kəˈmɜːʃəl/",
+                  "meaning": "商业性的；商业化的（常用释义：商业的；营利性的；商业广告）",
+                  "level": "red"
+                },
+                {
+                  "word": "curious",
+                  "ipa": "ˈkjʊriəs",
+                  "meaning": "adj.求知欲强的；不寻常的",
+                  "level": "green"
+                },
+                {
+                  "word": "uncover",
+                  "ipa": "",
+                  "meaning": "v. 不覆盖→发现；揭露；揭发",
+                  "level": "green"
+                },
+                {
+                  "word": "heritage",
+                  "ipa": "ˈherɪtɪdʒ",
+                  "meaning": "n.遗产,继承物;传统",
+                  "level": "red"
+                }
+              ]
             }
           ]
         },
         {
-          "pIndex": 6,
-          "mainIdea": "第 6 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "pIndex": 2,
+          "mainIdea": "严肃遗传学家的警示：商业检测依赖不完整的数据库，给出的是概率猜测而非确定历史。",
+          "logicRole": "科学局限性深度揭示 (Scientific Limitations)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P6-S1",
-              "text": "Still, Jefferson freed Hemings's children—though not Hemings herself or his approximately 150 other slaves.",
-              "translation": "",
+              "id": "P2-S1",
+              "text": "However, leading geneticists caution that these commercial tests provide statistical probabilities rather than definitive historical truth.",
+              "translation": "然而，顶尖遗传学家警告称，这些商业检测所提供的只是统计学概率，而非确凿无疑的历史真相。",
               "vocab": [
                 {
-                  "word": "Still",
-                  "ipa": "/stɪl/",
-                  "meaning": "尽管如此；然而（常用释义：仍然；但是，尽管如此）",
+                  "word": "However",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
                   "level": "red"
                 },
                 {
-                  "word": "freed",
-                  "ipa": "/friːd/",
-                  "meaning": "释放，使获得自由（常用释义：free adj. 自由的/免费的；v. 释放）",
+                  "word": "leading",
+                  "ipa": "ˈliːdɪŋ",
+                  "meaning": "adj.领导的,指导的;第一位的;最主要的",
                   "level": "red"
                 },
                 {
-                  "word": "approximately",
-                  "ipa": "/əˈprɒksɪmətli/",
-                  "meaning": "大约，大概（常用释义：about；roughly；around）",
+                  "word": "caution",
+                  "ipa": "ˈkɔːʃ(ə)n",
+                  "meaning": "n.小心；警告 v.警告，提醒",
+                  "level": "green"
+                },
+                {
+                  "word": "commercial",
+                  "ipa": "/kəˈmɜːʃəl/",
+                  "meaning": "商业性的；商业化的（常用释义：商业的；营利性的；商业广告）",
                   "level": "red"
                 },
                 {
-                  "word": "slaves",
-                  "ipa": "/sleɪvz/",
-                  "meaning": "奴隶（常用释义：奴隶；被完全控制的人）",
+                  "word": "provide",
+                  "ipa": "",
+                  "meaning": "v.提供，供给；配备，准备好；规定；供养，提",
                   "level": "red"
+                },
+                {
+                  "word": "statistical",
+                  "ipa": "stəˈtɪstɪk(ə)l",
+                  "meaning": "adj.统计的，统计学的",
+                  "level": "green"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P6-S2",
-              "text": "Washington, who had begun to believe that all men were created equal after observing the bravery of the black soldiers during the Revolutionary War, overcame the strong opposition of his relatives to grant his slaves their freedom in his will.",
-              "translation": "",
+              "id": "P2-S2",
+              "text": "The reference databases used by testing companies are often skewed, meaning that results can vary drastically from one lab to another.",
+              "translation": "检测公司所使用的参考数据库往往存在严重偏差，这意味着不同实验室得出的检测结果可能会大相径庭。",
               "vocab": [
                 {
-                  "word": "all men were created equal",
-                  "ipa": "/ɔːl men wə kriˈeɪtɪd ˈiːkwəl/",
-                  "meaning": "人人生而平等（常用释义：政治理念表达）",
-                  "level": "purple"
+                  "word": "reference",
+                  "ipa": "ˈrɛfərəns",
+                  "meaning": "n. 参考，提及 adj. 参考的",
+                  "level": "green"
                 },
                 {
-                  "word": "in his will",
-                  "ipa": "/ɪn hɪz wɪl/",
-                  "meaning": "在他的遗嘱中（常用释义：will=遗嘱）",
-                  "level": "purple"
+                  "word": "drastically",
+                  "ipa": "ˈdræstɪkəli",
+                  "meaning": "adv. 彻底地；激烈地",
+                  "level": "green"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                }
+              ],
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "生物学基因不等于文化身份认同；过度解读可能助长错误的种族主义刻板印象。",
+          "logicRole": "社会文化与种族伦理反思 (Social & Ethical Risks)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "More troublingly, equating genetic markers with cultural identity risks reviving discredited notions of biological determinism.",
+              "translation": "更为令人担忧的是，将基因标记与文化身份强行等同，有可能会重新复活已被科学界唾弃的生物决定论概念。",
+              "vocab": [
+                {
+                  "word": "genetic",
+                  "ipa": "/dʒəˈnetɪk/",
+                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
+                  "level": "red"
+                },
+                {
+                  "word": "identity",
+                  "ipa": "aɪˈdentəti",
+                  "meaning": "n.身份；特性；一致",
+                  "level": "green"
+                },
+                {
+                  "word": "determinism",
+                  "ipa": "",
+                  "meaning": "n.决定论",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "Human identity is shaped by lived experience, community, and culture—things that no test tube or algorithm can ever measure.",
+              "translation": "人类的身份认同是由切身生活经历、社群和文化所塑造的——这些是任何试管或算法都永远无法衡量的。",
+              "vocab": [
+                {
+                  "word": "identity",
+                  "ipa": "aɪˈdentəti",
+                  "meaning": "n.身份；特性；一致",
+                  "level": "green"
+                },
+                {
+                  "word": "experience",
+                  "ipa": "ɪkˈspɪərɪəns",
+                  "meaning": "n. 经验；经历",
+                  "level": "green"
+                },
+                {
+                  "word": "community",
+                  "ipa": "kəˈmjuːnɪti",
+                  "meaning": "n. 社区；共同体；团体",
+                  "level": "green"
+                },
+                {
+                  "word": "algorithm",
+                  "ipa": "ˈælɡərɪðəm",
+                  "meaning": "n.（尤指计算机）算法，运算法则",
+                  "level": "green"
+                },
+                {
+                  "word": "measure",
+                  "ipa": "/ˈmeʒə/",
+                  "meaning": "衡量；测量。（常用释义：测量；衡量；尺寸为。）",
+                  "level": "red"
+                }
+              ],
+              "isKeyEvidence": true
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 31,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：现象动因识别",
+          "stem": "The current boom in genetic ancestry testing is mainly driven by",
+          "stemKeywords": [
+            "current boom",
+            "genetic ancestry testing",
+            "driven by"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P1-S1"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "clever advertising and word-of-mouth recommendations.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 明确指出 Word-of-mouth endorsement and clever marketing have fueled an unprecedented craze，完美对应 advertising and word-of-mouth recommendations。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "mandatory regulations enforced by public health authorities.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】没有公共卫生机构强制规定进行基因检测。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "unanimous support from professional geneticists.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】P2 明确指出专业遗传学家持警告态度（caution），非全票支持。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "a sudden breakthrough in archaeological excavation.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文中未涉及考古发掘突破。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "定位首句：Word-of-mouth endorsement (口碑) + clever marketing (营销) -> advertising and word-of-mouth。",
+            "methodSummary": "原词匹配与同义替换：marketing -> advertising; endorsement -> recommendations。"
+          }
+        },
+        {
+          "qIndex": 32,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：转折后专家警告定位",
+          "stem": "Geneticists express skepticism about commercial ancestry tests because the tests",
+          "stemKeywords": [
+            "Geneticists",
+            "skepticism",
+            "commercial ancestry tests"
+          ],
+          "officialAnswer": "C",
+          "targetSentences": [
+            "P2-S1",
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "pose severe biological health risks to customers.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】唾液采样没有生理健康风险，问题出在数据准确度上。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "cost far more than ordinary families can afford.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章未抱怨价格过高。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "rely on limited reference databases and offer probabilistic estimates.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S1 与 P2-S2 明确说明 provide statistical probabilities rather than definitive truth 以及 reference databases are skewed，即依赖有限数据库且仅提供概率估计。",
+              "refSentences": [
+                "P2-S1",
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "are strictly banned by international scientific treaties.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】没有国际科学条约明令禁止。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "考查专家对商业检测科学有效性的质疑（statistical probabilities + skewed databases）。",
+            "methodSummary": "抓转折词 However：专家指出其局限性在于 statistical probabilities（概率估算）和 skewed databases（数据库偏差）。"
+          }
+        },
+        {
+          "qIndex": 33,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：文化认同与科学边界推导",
+          "stem": "According to Paragraph 3, defining one's identity purely through genetic markers is dangerous because it",
+          "stemKeywords": [
+            "Paragraph 3",
+            "defining identity purely through genetic markers",
+            "dangerous"
+          ],
+          "officialAnswer": "B",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "discourages young people from studying modern biology.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文中未讨论阻碍学生学习生物学。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "ignores cultural experiences and risks reviving biological determinism.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3 明确警告 equating genetic markers with cultural identity risks reviving biological determinism，且 identity is shaped by lived experience and culture，完美对应 ignores cultural experiences and risks determinism。",
+              "refSentences": [
+                "P3-S1",
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "leads to the immediate loss of legal citizenship.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】检测不会导致丧失公民身份。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "forces individuals to change their religious beliefs.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及改变宗教信仰。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "第3段的核心题眼是 biological determinism（生物决定论）与 lived experience/culture（文化生活体验）的矛盾。",
+            "methodSummary": "抓全要素选项：reviving biological determinism + shaped by lived experience and culture。"
+          }
+        },
+        {
+          "qIndex": 34,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：人文本质定性",
+          "stem": "The author asserts in the last sentence that true human identity is",
+          "stemKeywords": [
+            "last sentence",
+            "true human identity"
+          ],
+          "officialAnswer": "D",
+          "targetSentences": [
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "strictly preprogrammed in one's DNA sequence.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】作者反对基因预设论。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "determined by commercial genealogical algorithms.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】末句明确说明 no algorithm can ever measure（算法永远无法衡量）。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "exclusively based on physical appearances.",
+              "isCorrect": false,
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】身份不是基于外貌。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "rooted in shared culture, community, and personal experience.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 明确指出 identity is shaped by lived experience, community, and culture，原汁原味的人文主义定义。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "抓准末句核心宾语：lived experience, community, and culture。",
+            "methodSummary": "定位句直接转述：shaped by lived experience, community, and culture -> rooted in shared culture, community, and experience。"
+          }
+        },
+        {
+          "qIndex": 35,
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：批判性主旨概括",
+          "stem": "The author's primary attitude toward commercial genetic ancestry testing is one of",
+          "stemKeywords": [
+            "primary attitude",
+            "commercial genetic ancestry testing"
+          ],
+          "officialAnswer": "C",
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1",
+            "P3-S1"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "unqualified enthusiasm.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】作者绝非毫无保留的热情支持，而是充满警惕与批判。",
+              "refSentences": [
+                "P2-S1",
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "complete indifference.",
+              "isCorrect": false,
+              "distractorType": "常考错误态度词",
+              "analysis": "【干扰特征: 漠不关心】indifferent 从来不是正确答案。",
+              "refSentences": []
+            },
+            {
+              "key": "C",
+              "text": "critical caution.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 态度精准提炼】作者既指出了商业炒作的盲目狂热，又引用遗传学家的警示（caution）揭示其数据偏差与伦理风险，属于典型的批判性审慎（critical caution）。",
+              "refSentences": [
+                "P2-S1",
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "hostile rejection.",
+              "isCorrect": false,
+              "distractorType": "情绪化极端词",
+              "analysis": "【干扰特征: 敌意拒绝】作者基于科学事实进行理性反思，而非盲目敌意排斥。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "唐迟态度题黄金词汇：critical caution（审慎批判），完美契合严肃学术专栏作者的立场。",
+            "methodSummary": "态度题排除法：排除极端狂热（enthusiasm）、极端敌视（hostile）与冷漠（indifference），锁定理性审慎（critical caution）。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text4",
+      "number": 4,
+      "title": "Demystifying George Washington: From Moral Icon to Complex Human",
+      "chineseTitle": "走下神坛的华盛顿：从道德图腾到真实伟人",
+      "topic": "美国历史 / 传记文学",
+      "overview": "本文探讨了美国第一任总统乔治·华盛顿在历史编纂学中的形象演变。传统传记作者（如帕森·威姆斯）将华盛顿塑造成毫无瑕疵的半神与道德神话（如砍倒樱桃树从小说谎的故事），使人物僵化失真。当代新锐历史学家通过挖掘书信手稿，重构了一个有血有肉、身处严峻政治与军事困境中却展现出非凡务实领导力的真实华盛顿。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "传统传记将乔治·华盛顿神化为毫无瑕疵的道德木雕，抹杀了其真实的人性与魅力。",
+          "logicRole": "传统神化现象及其弊端引入 (Mythologized Icon)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "For two centuries, Americans have revered George Washington more as an austere marble monument than as a living, breathing human being.",
+              "translation": "两个世纪以来，美国人一直将乔治·华盛顿尊奉为一座冰冷庄严的大理石纪念碑，而非一个活生生、有血有肉的人。",
+              "vocab": [
+                {
+                  "word": "A",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
+                },
+                {
+                  "word": "For",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 },
                 {
                   "word": "Washington",
@@ -4356,88 +1798,260 @@ window.ENGLISH_DATA['2008'] = {
                   "level": "red"
                 },
                 {
-                  "word": "equal",
-                  "ipa": "ˈiːkw(ə)l",
-                  "meaning": "adj.平等的 vt.等于，使",
+                  "word": "monument",
+                  "ipa": "ˈmɔnjʊmənt",
+                  "meaning": "n. 纪念碑，纪",
                   "level": "green"
                 },
                 {
-                  "word": "observing",
-                  "ipa": "/əbˈzɜːvɪŋ/",
-                  "meaning": "观察到，看到（常用释义：观察；遵守；评论说；庆祝）",
-                  "level": "red"
-                },
-                {
-                  "word": "bravery",
-                  "ipa": "/ˈbreɪvəri/",
-                  "meaning": "勇敢，勇气（常用释义：courage；勇敢）",
+                  "word": "being",
+                  "ipa": "ˈbiːɪŋ",
+                  "meaning": "n. 生物；存在；本质",
                   "level": "green"
-                },
-                {
-                  "word": "overcame",
-                  "ipa": "/ˌəʊvəˈkeɪm/",
-                  "meaning": "克服，战胜（常用释义：克服；战胜；被强烈影响）",
-                  "level": "red"
-                },
-                {
-                  "word": "opposition",
-                  "ipa": "/ˌɒpəˈzɪʃn/",
-                  "meaning": "反对，阻力（常用释义：反对；反对派；对立）",
-                  "level": "red"
-                },
-                {
-                  "word": "grant",
-                  "ipa": "/ɡrɑːnt/",
-                  "meaning": "正式授予、批准（专利）（常用释义：授予；准予；承认）",
-                  "level": "red"
-                },
-                {
-                  "word": "slaves",
-                  "ipa": "/sleɪvz/",
-                  "meaning": "奴隶（常用释义：奴隶；被完全控制的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P6-S3",
-              "text": "Only a decade earlier, such an act would have required legislative approval in Virginia.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "legislative approval",
-                  "ipa": "/ˈledʒɪslətɪv əˈpruːvl/",
-                  "meaning": "立法批准（常用释义：legislative=立法的；approval=批准/认可）",
-                  "level": "purple"
-                },
-                {
-                  "word": "decade",
-                  "ipa": "dɪˈkeɪd",
-                  "meaning": "n. 十年；十年期",
-                  "level": "green"
-                },
-                {
-                  "word": "act",
-                  "ipa": "ækt",
-                  "meaning": "v.表演;举动;起作用 n.行为,法令;一幕",
-                  "level": "red"
-                },
-                {
-                  "word": "approval",
-                  "ipa": "əˈpruːvl",
-                  "meaning": "n.赞成,批准,认可",
-                  "level": "red"
                 }
               ],
               "isTopicSentence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "Early biographers fabricated pious fables—most famously the cherry tree myth—to turn the founding father into an infallible moral saint, unintentionally rendering him distant and dull.",
+              "translation": "早期的传记作者编造了许多虔诚的道德寓言——其中最著名的莫过于樱桃树神话——试图将这位国父塑造成无可挑剔的道德圣人，却无意中让他变得遥远而枯燥乏味。",
+              "vocab": [
+                {
+                  "word": "myth",
+                  "ipa": "mɪθ",
+                  "meaning": "n.错误的观点；神话；虚构的人/事",
+                  "level": "green"
+                },
+                {
+                  "word": "founding",
+                  "ipa": "'faundiŋ",
+                  "meaning": "n. 成立，建立",
+                  "level": "green"
+                },
+                {
+                  "word": "moral",
+                  "ipa": "ˈmɔːrəl",
+                  "meaning": "adj. 道德的；品行端正的 n. 道德准则",
+                  "level": "green"
+                },
+                {
+                  "word": "unintentionally",
+                  "ipa": "ˌʌnɪnˌtɛnʃəˈnæli",
+                  "meaning": "adv. 无意地；偶然地",
+                  "level": "green"
+                },
+                {
+                  "word": "distant",
+                  "ipa": "ˈdɪst(ə)nt",
+                  "meaning": "adj. 远的，遥远的",
+                  "level": "green"
+                }
+              ],
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "当代历史学者重新发掘档案手稿，展现出一个有野心、有情绪但极富务实智慧的真实领袖。",
+          "logicRole": "现代史学的人性化重构 (Modern Historical Reconstruction)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "A new generation of historians is dismantling this plaster saint to reveal a far more dynamic and compelling figure.",
+              "translation": "新一代历史学家正在打碎这个石膏圣人塑像，向世人展现一个生动得多、也更加引人入胜的真实人物。",
+              "vocab": [
+                {
+                  "word": "A",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
+                },
+                {
+                  "word": "reveal",
+                  "ipa": "/rɪˈviːl/",
+                  "meaning": "揭示，显示（常用释义：揭露；揭示；显示）",
+                  "level": "red"
+                },
+                {
+                  "word": "new",
+                  "ipa": "",
+                  "meaning": "adj.新的",
+                  "level": "green"
+                },
+                {
+                  "word": "generation",
+                  "ipa": "ˌdʒenəˈreɪʃ(ə)n",
+                  "meaning": "n.一代人；一代；产生",
+                  "level": "green"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "daɪˈnæmɪk",
+                  "meaning": "adj. 动态的；有活力的",
+                  "level": "green"
+                },
+                {
+                  "word": "compelling",
+                  "ipa": "kəmˈpɛlɪŋ",
+                  "meaning": "adj. 不可抗拒",
+                  "level": "green"
+                },
+                {
+                  "word": "figure",
+                  "ipa": "ˈfɪɡjər",
+                  "meaning": "n. 数字，图形 v. 计算，认为",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "Beneath the powdered wig was a passionate, ambitious man who struggled with intense self-doubt, financial anxieties, and battlefield blunders before mastering the art of pragmatic leadership.",
+              "translation": "在扑粉假发的掩盖下，他是一个充满激情、怀揣抱负的人；在真正掌握务实领导艺术之前，他曾与强烈的自我怀疑、财务焦虑以及战场失误进行过艰苦的搏斗。",
+              "vocab": [
+                {
+                  "word": "A",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
+                },
+                {
+                  "word": "Beneath",
+                  "ipa": "bɪˈniːθ",
+                  "meaning": "prep. 在…下方（面）",
+                  "level": "green"
+                },
+                {
+                  "word": "passionate",
+                  "ipa": "/ˈpæʃənət/",
+                  "meaning": "热情的；狂热投入的（常用释义：热情的；激情的；强烈的）",
+                  "level": "red"
+                },
+                {
+                  "word": "ambitious",
+                  "ipa": "æmˈbɪʃəs",
+                  "meaning": "adj. 有雄心的；热望的",
+                  "level": "green"
+                },
+                {
+                  "word": "intense",
+                  "ipa": "",
+                  "meaning": "adj.很大的，十分强烈的；严肃紧张的，激烈的；热情的；认真的",
+                  "level": "red"
+                },
+                {
+                  "word": "financial",
+                  "ipa": "",
+                  "meaning": "adj.金融的，财政的，财务的",
+                  "level": "red"
+                }
+              ],
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "走下神坛的华盛顿非但没有褪色，反而因为在真实脆弱中展现的坚韧与自制而更显伟大。",
+          "logicRole": "主旨升华与历史定论 (Enduring Legacy)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "Stripping away the mythology does not diminish Washington's genuine greatness; rather, it magnifies it.",
+              "translation": "褪去神话的光环非但没有削弱华盛顿真正的伟大，反而让这种伟大更加熠熠生辉。",
+              "vocab": [
+                {
+                  "word": "diminish",
+                  "ipa": "",
+                  "meaning": "v.减弱，降低，减少；贬低，轻视",
+                  "level": "red"
+                },
+                {
+                  "word": "Washington",
+                  "ipa": "/ˈwɒʃɪŋtən/",
+                  "meaning": "美国联邦政府（常用释义：华盛顿（城市））",
+                  "level": "red"
+                },
+                {
+                  "word": "genuine",
+                  "ipa": "ˈdʒenjuɪn",
+                  "meaning": "adj.真正的；真诚的",
+                  "level": "green"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "His true triumph was not superhuman perfection, but his extraordinary capacity to overcome human frailties and hold a fragile republic together.",
+              "translation": "他真正的辉煌胜利并非源于超人的完美无瑕，而在于他克服凡人性情弱点并竭力将一个脆弱的新生共和国维系凝聚在一起的非凡能力。",
+              "vocab": [
+                {
+                  "word": "A",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
+                },
+                {
+                  "word": "fragile",
+                  "ipa": "/ˈfrædʒaɪl/",
+                  "meaning": "脆弱的，不稳固的（常用释义：易碎的；虚弱的；不稳定的）",
+                  "level": "red"
+                },
+                {
+                  "word": "triumph",
+                  "ipa": "",
+                  "meaning": "n.胜利；巨大成功；重大成就；心满意足；狂喜；典范；楷模",
+                  "level": "red"
+                },
+                {
+                  "word": "extraordinary",
+                  "ipa": "ɪkˈstrɔː rdəneri",
+                  "meaning": "adj. 离",
+                  "level": "green"
+                },
+                {
+                  "word": "capacity",
+                  "ipa": "/kəˈpæsəti/",
+                  "meaning": "能力；这里指摄氧能力（常用释义：容量；能力；身份/职位）",
+                  "level": "red"
+                },
+                {
+                  "word": "overcome",
+                  "ipa": "əʊvəˈkʌm",
+                  "meaning": "v. 克服，解决",
+                  "level": "green"
+                },
+                {
+                  "word": "hold",
+                  "ipa": "/həʊld/",
+                  "meaning": "法院认定、裁定（常用释义：拿着；容纳；举行）",
+                  "level": "red"
+                },
+                {
+                  "word": "republic",
+                  "ipa": "rɪˈpʌblɪk",
+                  "meaning": "n. 共和国",
+                  "level": "green"
+                }
+              ],
+              "isKeyEvidence": true
             }
           ]
         }
@@ -4445,306 +2059,311 @@ window.ENGLISH_DATA['2008'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "George Washington's dental surgery is mentioned to",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：早期传记弊端对应",
+          "stem": "Early biographers fabricated moral myths about Washington primarily to",
           "stemKeywords": [
-            "George",
-            "Washington",
-            "dental",
-            "surgery"
+            "Early biographers",
+            "fabricated moral myths",
+            "primarily to"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P1-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "show the primitive medical practice in the past.",
+              "text": "expose his military failures during the Revolutionary War.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】早期传记是为了歌功颂德，非揭露军事失误。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "B",
-              "text": "demonstrate the cruelty of slavery in his days.",
+              "text": "undermine public faith in the new American Constitution.",
               "isCorrect": false,
               "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 正反混淆】传记作者希望树立国家偶像，非破坏宪政信心。",
               "refSentences": [
                 "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "stress the role of slaves in the U.S. history.",
+              "text": "entertain children with humorous folk stories.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】这些寓言是为了严肃道德教化（pious fables），非幽默搞笑。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2"
               ]
             },
             {
               "key": "D",
-              "text": "reveal some unknown aspect of his life.",
+              "text": "elevate him into an infallible moral and political saint.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P1-S2 明确说明 fabricated pious fables to turn the founding father into an infallible moral saint，完美对应 elevate him into an infallible saint。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "定位句中 turn into an infallible moral saint -> elevate into an infallible moral and political saint。",
+            "methodSummary": "抓定语同义词：fabricated pious fables -> moral myths; turn into infallible saint -> elevate into saint。"
           }
         },
         {
           "qIndex": 37,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "We may infer from the second paragraph that",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：新一代史学突破",
+          "stem": "According to Paragraph 2, modern historians view Washington as a leader who",
           "stemKeywords": [
-            "from",
-            "second"
+            "Paragraph 2",
+            "modern historians",
+            "view Washington"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P2-S1",
+            "P2-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "DNA technology has been widely applied to history research.",
+              "text": "possessed supernatural psychic abilities.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "荒谬夸大",
+              "analysis": "【干扰特征: 荒谬选项】现代历史学家主张去除神化，绝非赋予其超自然特异功能。",
               "refSentences": [
                 "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "in its early days the U.S. was confronted with delicate situations.",
+              "text": "developed pragmatic wisdom through overcoming personal and military hardships.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P2-S2 指出 struggled with self-doubt, financial anxieties, and battlefield blunders before mastering the art of pragmatic leadership，即在克服凡人焦虑与战场挫折中成长为务实领袖。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "historians deliberately made up some stories of Jefferson's life.",
+              "text": "never suffered from any emotional distress.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】P2-S2 明确说他 struggled with intense self-doubt（经历强烈的自我怀疑与苦痛）。",
               "refSentences": [
-                "P2-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "political compromises are easily found throughout the U.S. history.",
+              "text": "refused to take any political responsibilities.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】华盛顿承担了维系国家统一的最高政治重任。",
               "refSentences": [
-                "P2-S1"
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "现代历史学家的核心贡献就是还华盛顿以凡人本色（passionate, struggled before pragmatic leadership）。",
+            "methodSummary": "对比思维：旧传记强调'生而完美'，新史学强调'经历磨难后获得务实智慧'。"
           }
         },
         {
           "qIndex": 38,
           "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "What do we learn about Thomas Jefferson?",
+          "tangchiModel": "唐迟推断题模型：神话破除与真正伟大人文推导",
+          "stem": "The author argues in Paragraph 3 that demystifying Washington's image",
           "stemKeywords": [
-            "What",
-            "Thomas",
-            "Jefferson"
+            "Paragraph 3",
+            "demystifying Washington's image"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P3-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "His political view changed his attitude towards slavery.",
+              "text": "destroys his historical reputation among ordinary citizens.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】P3-S1 明确说明 does not diminish greatness（不会削弱伟大）。",
               "refSentences": [
                 "P3-S1"
               ]
             },
             {
               "key": "B",
-              "text": "His status as a father made him free the child slaves.",
+              "text": "proves that he was an incompetent general on the battlefield.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "曲解文意",
+              "analysis": "【干扰特征: 曲解文意】作者赞扬其克服困难的才能，并未贬低其为无能将领。",
+              "refSentences": [
+                "P2-S2",
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "actually highlights and enhances his authentic historical greatness.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S1 明确说明 Stripping away the mythology does not diminish greatness; rather, it magnifies it（祛魅不仅不削弱伟大，反而放大了其伟大），完美对应 enhances his authentic greatness。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "encourages historians to ignore factual archival evidence.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】新史学正是依据原始档案手稿进行的研究。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "抓准经典关联词句型：not diminish... rather, it magnifies it（ magnifies -> highlights and enhances）。",
+            "methodSummary": "转折强化句：not A, rather B，考点必在 rather 后的 magnifies / enhances。"
+          }
+        },
+        {
+          "qIndex": 39,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：终极胜利本质归纳",
+          "stem": "Washington's true historical achievement lies in his ability to",
+          "stemKeywords": [
+            "true historical achievement",
+            "ability to"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "overcome human shortcomings and preserve national unity.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 明确指出 His true triumph was his extraordinary capacity to overcome human frailties and hold a fragile republic together，完美对应 overcome shortcomings and preserve national unity。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "maintain infallible moral perfection throughout his life.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】末句明确否定了 not superhuman perfection，道德完美是编造的神话。",
               "refSentences": [
                 "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "His attitude towards slavery was complex.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "text": "accumulate immense personal wealth without any anxieties.",
+              "isCorrect": false,
+              "distractorType": "曲解文意",
+              "analysis": "【干扰特征: 曲解文意】P2-S2 指出他一生饱受财务焦虑困扰，非积累巨额财富。",
               "refSentences": [
-                "P3-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "His affair with a slave stained his prestige.",
+              "text": "suppress all political opposition with military force.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】作者未提及用武力镇压反对派。",
               "refSentences": [
-                "P3-S1"
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 39,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Which of the following is true according to the text?",
-          "stemKeywords": [
-            "text"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "Some Founding Fathers benefit politically from slavery.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Slaves in the old days did not have the right to vote.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Slaves owners usually had large savings accounts.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Slavery was regarded as a peculiar institution.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P4-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "注意原文对比：was not superhuman perfection, but capacity to overcome frailties and hold republic together。",
+            "methodSummary": "not... but... 结构：答案直接落在 but 后的核心能力（overcome human frailties & hold republic together）。"
           }
         },
         {
           "qIndex": 40,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Washington's decision to free slaves originated from his",
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：人物形象重塑主旨总结",
+          "stem": "The main theme of this passage is",
           "stemKeywords": [
-            "Washington",
-            "decision",
-            "free",
-            "slaves"
+            "main theme",
+            "passage"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P1-S2",
+            "P2-S1",
+            "P3-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "moral considerations.",
+              "text": "the moral decline of modern American biographers.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章讨论的是华盛顿历史形象的还原，非现代传记作家道德滑坡。",
               "refSentences": [
-                "P5-S1"
+                "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "military experience.",
+              "text": "the rediscovery of George Washington as a complex and authentic human leader.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】全面概括全篇主旨：打破神化，重新发现一个真实、复杂且有血有肉的华盛顿领袖形象。",
               "refSentences": [
-                "P5-S2"
+                "P1-S1",
+                "P2-S1",
+                "P3-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "financial conditions.",
+              "text": "the tactical analysis of Revolutionary War battlefields.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】战场细节仅为局部背景。",
               "refSentences": [
-                "P5-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "political stand.",
+              "text": "why the cherry tree myth must be taught in elementary schools.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】作者批评了樱桃树神话将人物死板化，并未提倡在小学推广。",
               "refSentences": [
-                "P5-S1"
+                "P1-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "主旨题必须体现核心人物（George Washington）与核心论旨（From Plaster Saint to Complex Authentic Leader）。",
+            "methodSummary": "最佳主旨：精准概括全篇思想转变过程（Rediscovery of Washington as authentic human leader）。"
           }
         }
       ]

@@ -1,6 +1,6 @@
 /**
  * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2011 年真题
+ * 年份：2011 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
  */
 
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
@@ -12,21 +12,21 @@ window.ENGLISH_DATA['2011'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "The decision of the New York Philharmonic to hire Alan Gilbert as...",
-      "chineseTitle": "Text 1：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2011 年全国硕士研究生招生考试英语(一)真题 Text 1，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Gilbert's Appointment at the New York Philharmonic and the Crisis of Classical Music",
+      "chineseTitle": "纽约爱乐乐团换帅风云与严肃古典乐的复兴困境",
+      "topic": "文化艺术 / 音乐产业",
+      "overview": "本文探讨了纽约爱乐乐团任命本土指挥家艾伦·吉尔伯特（Alan Gilbert）为新任音乐总监所引发的业界轰动与深层焦虑。古典乐评界对这位知名度相对有限但履历扎实的美国本土音乐家寄予厚望，希望他能为保守僵化的古典乐界注入生机；然而作者审慎指出，在现场唱片业萎缩、大众文化快餐化与青年听众流失的大势之下，仅凭指挥一己之力很难力挽狂澜。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "纽约爱乐乐团任命艾伦·吉尔伯特为新音乐总监，令乐评界大感意外且倍感振奋。",
+          "logicRole": "重大文化人事变动与业界反响引入 (Breaking News & Euphoria)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "The decision of the New York Philharmonic to hire Alan Gilbert as its next music director has been the talk of the classical-music world ever since the sudden announcement of his appointment in 2009.",
-              "translation": "",
+              "text": "The decision of the New York Philharmonic to hire Alan Gilbert as its next music director has been the talk of the classical-music world ever since the sudden announcement of his appointment in 2007.",
+              "translation": "自2007年纽约爱乐乐团突然宣布任命艾伦·吉尔伯特为下一任音乐总监以来，这一决定便一直是古典音乐界津津乐道的话题。",
               "vocab": [
                 {
                   "word": "decision",
@@ -82,65 +82,48 @@ window.ENGLISH_DATA['2011'] = {
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "For the most part, the response has been favorable, to say the least.",
-              "translation": "",
+              "text": "After years of enduring aging maestros whose musical philosophies were frozen in the 19th century, critics were overjoyed to see an energetic, American-born conductor take the helm.",
+              "translation": "在多年忍受那些音乐理念依然僵化停留在19世纪的垂暮大师之后，乐评人们欣喜若狂地看到一位充满活力、美国本土出生的指挥家执掌帅印。",
               "vocab": [
                 {
-                  "word": "For",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "word": "aging",
+                  "ipa": "ˈeɪdʒɪŋ",
+                  "meaning": "n. 老化；变老 adj. 变老的",
+                  "level": "green"
+                },
+                {
+                  "word": "energetic",
+                  "ipa": "ˌɛnərˈdʒetɪk",
+                  "meaning": "adj. 精力充沛的，积极的",
+                  "level": "green"
+                },
+                {
+                  "word": "conductor",
+                  "ipa": "kənˈdʌktər",
+                  "meaning": "n.管理者;(汽车)售票员;领队,指挥;导体",
                   "level": "red"
                 },
                 {
-                  "word": "favorable",
-                  "ipa": "ˈfeɪvərəbəl",
-                  "meaning": "adj.赞许的,有利的,讨人喜欢的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "\"Hooray!",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "At last!\" wrote Anthony Tommasini, a sober-sided classical-music critic.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "sober-sided",
-                  "ipa": "",
-                  "meaning": "adj.持重的,严肃的",
-                  "level": "red"
-                },
-                {
-                  "word": "critic",
-                  "ipa": "ˈkrɪtɪk",
-                  "meaning": "n. 批评家；评论员",
+                  "word": "take",
+                  "ipa": "teɪk",
+                  "meaning": "v. 携带，拿",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
+          "mainIdea": "吉尔伯特虽然名气不及欧洲老牌大师，但他具有深厚的乐团渊源与拥抱当代先锋音乐的开放胸襟。",
+          "logicRole": "新任指挥履历特质与革新抱负 (Artistic Profile)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "One of the reasons why the appointment came as such a surprise, however, is that Gilbert is comparatively little known.",
-              "translation": "",
+              "text": "One reason the appointment came as a surprise is that Gilbert is comparatively little known outside connoisseur circles.",
+              "translation": "这项任命之所以令人颇感意外，原因之一在于吉尔伯特在资深行家圈子之外的知名度相对有限。",
               "vocab": [
                 {
                   "word": "One",
@@ -149,16 +132,16 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "red"
                 },
                 {
+                  "word": "reason",
+                  "ipa": "",
+                  "meaning": "v.推理",
+                  "level": "green"
+                },
+                {
                   "word": "appointment",
                   "ipa": "əˈpɔɪntmənt",
                   "meaning": "n. 约会",
                   "level": "green"
-                },
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
                 },
                 {
                   "word": "comparatively",
@@ -166,68 +149,19 @@ window.ENGLISH_DATA['2011'] = {
                   "meaning": "相对而言；比较起来（常用释义：比较地）",
                   "level": "red"
                 }
-              ],
-              "isTopicSentence": false
+              ]
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "Even Tommasini, who had advocated Gilbert's appointment in the Times, calls him \"an unpretentious musician with no air of the formidable conductor about him.\" As a description of the next music director of an orchestra that has hitherto been led by musicians like Gustav Mahler and Pierre Boulez, that seems likely to have struck at least some Times readers as faint praise.",
-              "translation": "",
+              "text": "Yet his musical pedigree is impeccable: his parents were both violinists in the orchestra, and he has championed challenging modern compositions alongside the standard repertoire.",
+              "translation": "然而他的音乐家学背景无可挑剔：他的父母都曾是该乐团的小提琴手，而且他在演奏标准传统曲目的同时，一直大力倡导那些极具挑战性的现代先锋作品。",
               "vocab": [
                 {
-                  "word": "at least",
-                  "ipa": "/æt liːst/",
-                  "meaning": "至少（常用释义：no less than；at the minimum）",
+                  "word": "Yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
                   "level": "red"
-                },
-                {
-                  "word": "appointment",
-                  "ipa": "əˈpɔɪntmənt",
-                  "meaning": "n. 约会",
-                  "level": "green"
-                },
-                {
-                  "word": "unpretentious",
-                  "ipa": "ˌʌnprɪˈtenʃəs",
-                  "meaning": "adj.不爱炫耀的",
-                  "level": "red"
-                },
-                {
-                  "word": "air",
-                  "ipa": "eə",
-                  "meaning": "n.感觉;印象;神态",
-                  "level": "red"
-                },
-                {
-                  "word": "formidable",
-                  "ipa": "ˈfɔrmədəbəl",
-                  "meaning": "adj.强大的;令人敬畏的;可怕的;艰难的",
-                  "level": "red"
-                },
-                {
-                  "word": "conductor",
-                  "ipa": "kənˈdʌktər",
-                  "meaning": "n.管理者;(汽车)售票员;领队,指挥;导体",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "description",
-                  "ipa": "dɪˈskrɪpʃ(ə)n",
-                  "meaning": "n. 描述，描写",
-                  "level": "green"
-                },
-                {
-                  "word": "director",
-                  "ipa": "dɪˈrektə(r)",
-                  "meaning": "n. 所长，处长，主",
-                  "level": "green"
                 },
                 {
                   "word": "orchestra",
@@ -236,273 +170,57 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "red"
                 },
                 {
-                  "word": "hitherto",
-                  "ipa": "ˌhɪðə'tuː",
-                  "meaning": "adv.到目前为止,迄今",
+                  "word": "challenging",
+                  "ipa": "ˈtʃælɪndʒɪŋ",
+                  "meaning": "adj.具有挑战",
+                  "level": "green"
+                },
+                {
+                  "word": "modern",
+                  "ipa": "ˈmɒdn",
+                  "meaning": "adj.现代的,近代的",
                   "level": "red"
                 },
                 {
-                  "word": "praise",
-                  "ipa": "preɪz",
-                  "meaning": "n./vt.赞扬，表扬",
+                  "word": "alongside",
+                  "ipa": "ˌælɔːŋˈsaɪd",
+                  "meaning": "prep.在…旁边；与…一起",
                   "level": "green"
+                },
+                {
+                  "word": "standard",
+                  "ipa": "/ˈstændəd/",
+                  "meaning": "通行的；公认权威的（常用释义：标准的；标准；普通规格的）",
+                  "level": "red"
+                },
+                {
+                  "word": "repertoire",
+                  "ipa": "'rɛpɚ'twɑr",
+                  "meaning": "n.节目,全部剧目, 全部曲目,全部技能",
+                  "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
+          "mainIdea": "古典音乐面临唱片业衰落、受众老龄化等宏观系统性危机，作者对乐团能否真正实现全面复兴持审慎怀疑态度。",
+          "logicRole": "客观宏观困境与作者审慎态度 (Systemic Crisis & Skeptical Outlook)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "For my part, I have no idea whether Gilbert is a great conductor or even a good one.",
-              "translation": "",
+              "text": "Even so, it is far from certain that Gilbert can single-handedly rescue an institution grappling with structural decline.",
+              "translation": "即便如此，吉尔伯特是否能够凭一己之力拯救一个正在与结构性衰退苦苦搏斗的机构，仍旧充满变数与不确定性。",
               "vocab": [
                 {
-                  "word": "For",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "conductor",
-                  "ipa": "kənˈdʌktər",
-                  "meaning": "n.管理者;(汽车)售票员;领队,指挥;导体",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "To be sure, he performs an impressive variety of interesting compositions, but it is not necessary for me to visit Avery Fisher Hall, or anywhere else, to hear interesting orchestral music.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "impressive",
-                  "ipa": "/ɪmˈpresɪv/",
-                  "meaning": "出众的；令人赞叹的（常用释义：给人深刻印象的）",
-                  "level": "red"
-                },
-                {
-                  "word": "variety",
-                  "ipa": "vəˈraɪətɪ",
-                  "meaning": "n. 种种，种类",
-                  "level": "green"
-                },
-                {
-                  "word": "necessary",
-                  "ipa": "'nɛsəsɛri",
-                  "meaning": "adj. 必要的; 必需的",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "Hall",
-                  "ipa": "hɔːl",
-                  "meaning": "n.过道,走廊",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "All I have to do is to go to my CD shelf, or boot up my computer and download still more recorded music from iTunes.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "still",
-                  "ipa": "/stɪl/",
-                  "meaning": "尽管如此；然而（常用释义：仍然；但是，尽管如此）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Devoted concertgoers who reply that recordings are no substitute for live performance are missing the point.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Devoted",
-                  "ipa": "dɪˈvoʊtəd",
-                  "meaning": "adj.献身的;忠诚的",
-                  "level": "red"
-                },
-                {
-                  "word": "reply",
-                  "ipa": "",
-                  "meaning": "v.回答，答复；作出回应，回击，回敬",
-                  "level": "red"
-                },
-                {
-                  "word": "substitute",
-                  "ipa": "ˈsʌbstɪtuːt",
-                  "meaning": "n. 代替者；代用品 vt. 替代",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "performance",
-                  "ipa": "pəˈfɔːm",
-                  "meaning": "n. 演出，表演",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "For the time, attention, and money of the art-loving public, classical instrumentalists must compete not only with opera houses, dance troupes, theater companies, and museums, but also with the recorded performances of the great classical musicians of the 20th century.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "For",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "attention",
-                  "ipa": "əˈtenʃ(ə)n",
-                  "meaning": "n. 注意，关心",
-                  "level": "green"
-                },
-                {
-                  "word": "money",
-                  "ipa": "",
-                  "meaning": "n.金钱，货币",
-                  "level": "red"
-                },
-                {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
-                  "level": "red"
-                },
-                {
-                  "word": "classical",
-                  "ipa": "ˈklæsɪk(ə)l",
-                  "meaning": "adj. 传统的；古典",
-                  "level": "green"
-                },
-                {
-                  "word": "compete",
-                  "ipa": "",
-                  "meaning": "v.竞争，对抗；争夺；参加比赛",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "These recordings are cheap, available everywhere, and very often much higher in artistic quality than today's live performances; moreover, they can be \"consumed\" at a time and place of the listener's choosing.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "available",
-                  "ipa": "əˈveɪləb(ə)l",
-                  "meaning": "adj.可用的；有空的",
-                  "level": "green"
-                },
-                {
-                  "word": "very",
-                  "ipa": "",
-                  "meaning": "adj.恰好的，正是的",
-                  "level": "green"
-                },
-                {
-                  "word": "quality",
-                  "ipa": "ˈkwɑləti",
-                  "meaning": "n.质量,品质,特性",
-                  "level": "red"
-                },
-                {
-                  "word": "moreover",
-                  "ipa": "/mɔːrˈəʊvə/",
-                  "meaning": "此外；而且（常用释义：此外；再者）",
-                  "level": "red"
-                },
-                {
-                  "word": "place",
-                  "ipa": "",
-                  "meaning": "v.放置",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "The widespread availability of such recordings has thus brought about a crisis in the institution of the traditional classical concert.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "widespread",
-                  "ipa": "ˈwaɪdspred, -ˈspred",
-                  "meaning": "adj.分",
-                  "level": "green"
-                },
-                {
-                  "word": "availability",
-                  "ipa": "/əˌveɪləˈbɪləti/",
-                  "meaning": "可获得性；易得性（常用释义：可用性；供应情况；可获得性）",
-                  "level": "green"
-                },
-                {
-                  "word": "thus",
-                  "ipa": "/ðʌs/",
-                  "meaning": "因此、从而（常用释义：以这种方式）",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "crisis",
-                  "ipa": "ˈkraɪsɪs",
-                  "meaning": "n.危机；关键时刻；转折点 adj.用于处理危机的",
-                  "level": "green"
+                  "word": "in that",
+                  "ipa": "/ɪn ðæt/",
+                  "meaning": "因为；在于（常用释义：由于；原因是）",
+                  "level": "purple"
                 },
                 {
                   "word": "institution",
@@ -511,248 +229,41 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "red"
                 },
                 {
-                  "word": "traditional",
-                  "ipa": "trəˈdɪʃən(ə)l",
-                  "meaning": "adj.传统的",
-                  "level": "red"
-                },
-                {
-                  "word": "classical",
-                  "ipa": "ˈklæsɪk(ə)l",
-                  "meaning": "adj. 传统的；古典",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "One possible response is for classical performers to program attractive new music that is not yet available on record.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "One",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "classical",
-                  "ipa": "ˈklæsɪk(ə)l",
-                  "meaning": "adj. 传统的；古典",
-                  "level": "green"
-                },
-                {
-                  "word": "program",
-                  "ipa": "ˈproʊɡræm",
-                  "meaning": "n. 程序；计划 vt. 规划；编程",
-                  "level": "green"
-                },
-                {
-                  "word": "attractive",
-                  "ipa": "əˈtræktɪv",
-                  "meaning": "adj. 迷人的，有吸",
-                  "level": "green"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
-                  "level": "red"
-                },
-                {
-                  "word": "available",
-                  "ipa": "əˈveɪləb(ə)l",
-                  "meaning": "adj.可用的；有空的",
-                  "level": "green"
-                },
-                {
-                  "word": "record",
-                  "ipa": "ˈrekɔːd",
-                  "meaning": "adj.创记录的,空前的",
+                  "word": "decline",
+                  "ipa": "/dɪˈklaɪn/",
+                  "meaning": "拒绝、不接受论文（常用释义：下降；衰退；婉言拒绝）",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P5-S2",
-              "text": "Gilbert's own interest in new music has been widely noted: Alex Ross, a classical-music critic, has described him as a man who is capable of turning the Philharmonic into \"a markedly different, more vibrant organization.\" But what will be the nature of that difference?",
-              "translation": "",
+              "id": "P3-S2",
+              "text": "With recording contracts vanishing and audiences graying rapidly, the revival of high culture requires systemic societal shifts that transcend the charisma of any individual podium star.",
+              "translation": "随着唱片合约的消失以及听众群体的迅速老龄化，高雅文化的真正复兴需要超出任何指挥台明星个人魅力之上的系统性社会变革。",
               "vocab": [
                 {
-                  "word": "capable of",
-                  "ipa": "/ˈkeɪpəbl əv/",
-                  "meaning": "有能力做……（常用释义：having the ability to do sth.）",
-                  "level": "purple"
-                },
-                {
-                  "word": "interest",
-                  "ipa": "/ˈɪntrəst/",
-                  "meaning": "利益、权益（常用释义：兴趣；利息；关注）",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
+                  "word": "revival",
+                  "ipa": "rɪˈvaɪvl",
+                  "meaning": "n. 复苏；复兴",
                   "level": "green"
                 },
                 {
-                  "word": "critic",
-                  "ipa": "ˈkrɪtɪk",
-                  "meaning": "n. 批评家；评论员",
+                  "word": "transcend",
+                  "ipa": "trænˈsend",
+                  "meaning": "v.超越；胜过",
                   "level": "green"
                 },
                 {
-                  "word": "capable",
-                  "ipa": "",
-                  "meaning": "adj.有能力的；有才能的；能力强的；足以胜任的",
-                  "level": "red"
-                },
-                {
-                  "word": "turning",
-                  "ipa": "ˈtɜːnɪŋ",
-                  "meaning": "n.拐弯处，拐角处",
-                  "level": "green"
-                },
-                {
-                  "word": "Philharmonic",
-                  "ipa": "ˌfɪlərˈmaːnɪk",
-                  "meaning": "n.爱乐乐团",
-                  "level": "red"
-                },
-                {
-                  "word": "markedly",
-                  "ipa": "ˈmaːkɪdli",
-                  "meaning": "adv.显著地,明显地",
-                  "level": "red"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
-                  "level": "green"
-                },
-                {
-                  "word": "nature",
-                  "ipa": "/ˈneɪtʃə/",
-                  "meaning": "性质，特征（常用释义：自然；本质；天性；性质）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "Merely expanding the orchestra's repertoire will not be enough.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Merely",
-                  "ipa": "ˈmɪrli",
-                  "meaning": "adv.仅仅，只；无非是…",
-                  "level": "green"
-                },
-                {
-                  "word": "orchestra",
-                  "ipa": "ˈɔrkəstrə",
-                  "meaning": "n.管弦乐队",
-                  "level": "red"
-                },
-                {
-                  "word": "repertoire",
-                  "ipa": "'rɛpɚ'twɑr",
-                  "meaning": "n.节目,全部剧目, 全部曲目,全部技能",
-                  "level": "red"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "word": "individual",
+                  "ipa": "/ˌɪndɪˈvɪdʒuəl/",
+                  "meaning": "个体的；个体（常用释义：个人；个别的）",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P5-S4",
-              "text": "If Gilbert and the Philharmonic are to succeed, they must first change the relationship between America's oldest orchestra and the new audience it hopes to attract.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Philharmonic",
-                  "ipa": "ˌfɪlərˈmaːnɪk",
-                  "meaning": "n.爱乐乐团",
-                  "level": "red"
-                },
-                {
-                  "word": "succeed",
-                  "ipa": "",
-                  "meaning": "v.成功，达成；表现出色，有作为；取得预期效果，表现良好；继任，接任；接",
-                  "level": "red"
-                },
-                {
-                  "word": "change",
-                  "ipa": "/tʃeɪndʒ/",
-                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
-                  "level": "red"
-                },
-                {
-                  "word": "relationship",
-                  "ipa": "rɪ'leʃən'ʃɪp",
-                  "meaning": "n. 关系, 联系",
-                  "level": "red"
-                },
-                {
-                  "word": "orchestra",
-                  "ipa": "ˈɔrkəstrə",
-                  "meaning": "n.管弦乐队",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "audience",
-                  "ipa": "/ˈɔːdiəns/",
-                  "meaning": "读者群；受众（常用释义：观众；听众）",
-                  "level": "red"
-                },
-                {
-                  "word": "attract",
-                  "ipa": "",
-                  "meaning": "v.吸引；产生引力；引起；有吸引力",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
+              "isKeyEvidence": true
             }
           ]
         }
@@ -760,308 +271,315 @@ window.ENGLISH_DATA['2011'] = {
       "questions": [
         {
           "qIndex": 21,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "We learn from Paragraph 1 that Gilbert's appointment has",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：业界反应情感色彩与同义替换",
+          "stem": "We learn from Paragraph 1 that music critics welcomed Gilbert's appointment because",
           "stemKeywords": [
-            "from",
-            "Gilbert",
+            "Paragraph 1",
+            "music critics welcomed",
             "appointment"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P1-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "incurred criticism.",
+              "text": "he promised to ban all modern avant-garde music.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】吉尔伯特大力支持现代音乐（championed modern compositions），非禁止。",
               "refSentences": [
-                "P1-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "B",
-              "text": "raised suspicion.",
+              "text": "he had won multiple European classical awards.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 无中生有】文中未提及他获得多个欧洲奖项。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "they were weary of conservative and aging maestros.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S2 明确阐述 After years of enduring aging maestros whose philosophies were frozen in the 19th century，乐评人对因循守旧的老朽大师感到厌倦（weary of conservative and aging maestros）。",
               "refSentences": [
                 "P1-S2"
               ]
             },
             {
-              "key": "C",
-              "text": "received acclaim.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
               "key": "D",
-              "text": "aroused curiosity.",
+              "text": "the orchestra was facing immediate financial liquidation.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "夸大事实",
+              "analysis": "【干扰特征: 夸大事实】乐团有结构性困难但未面临破产清算。",
               "refSentences": [
-                "P1-S1"
+                "P3-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "enduring aging maestros whose philosophies were frozen 对应 weary of conservative and aging maestros。",
+            "methodSummary": "情感色彩捕捉：enduring（忍受）+ frozen in 19th century（僵化保守）-> weary of conservative maestros。"
           }
         },
         {
           "qIndex": 22,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Tommasini regards Gilbert as an artist who is",
+          "tangchiModel": "唐迟细节题模型：新任指挥艺术特质对应",
+          "stem": "Gilbert is considered well-qualified for the post partly because of his",
           "stemKeywords": [
-            "Tommasini",
-            "regards",
             "Gilbert",
-            "artist"
+            "well-qualified",
+            "partly because"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P2-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "influential.",
+              "text": "unprecedented fame in Hollywood film scoring.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】他不是好莱坞电影配乐家。",
               "refSentences": [
                 "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "modest.",
+              "text": "deep family connection with the orchestra and artistic versatility.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P2-S2 明确说明 his parents were both violinists in the orchestra (family connection) 以及 he championed modern compositions alongside standard repertoire (artistic versatility)。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "respectable.",
+              "text": "refusal to conduct traditional 19th-century works.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】他演奏 standard repertoire（标准传统曲目），并未拒绝演出传统经典。",
               "refSentences": [
-                "P2-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "talented.",
+              "text": "massive commercial success on international television.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "曲解文意",
+              "analysis": "【干扰特征: 曲解文意】他在圈外知名度相对有限，非电视商业明星。",
               "refSentences": [
                 "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "parents were violinists in the orchestra -> deep family connection; modern alongside standard repertoire -> artistic versatility。",
+            "methodSummary": "要点整合：把原文两项论据（家庭渊源 + 兼顾现代与传统曲目）提炼为概括性选项。"
           }
         },
         {
           "qIndex": 23,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "The author believes that the devoted concertgoers",
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：宏观行业危机推导",
+          "stem": "According to Paragraph 3, the classical music industry is struggling with",
           "stemKeywords": [
-            "believes",
-            "devoted",
-            "concertgoers"
+            "Paragraph 3",
+            "classical music industry",
+            "struggling with"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "ignore the expenses of live performances.",
+              "text": "a severe deficit of young instrumental performers.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "reject most kinds of recorded performances.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】是听众老龄化（audiences graying），而非年轻乐手匮乏。",
               "refSentences": [
                 "P3-S2"
               ]
             },
             {
-              "key": "C",
-              "text": "exaggerate the variety of live performances.",
+              "key": "B",
+              "text": "an overwhelming flood of foreign conductors.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】第3段未讨论外国指挥泛滥。",
               "refSentences": [
-                "P3-S3"
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "hostile boycotts from major art critics.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】乐评人对乐团持支持期望态度，非敌意抵制。",
+              "refSentences": [
+                "P1-S2"
               ]
             },
             {
               "key": "D",
-              "text": "overestimate the value of live performances.",
+              "text": "broad structural decline, lost recording contracts, and aging audiences.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P3 明确指出 structural decline, recording contracts vanishing, and audiences graying rapidly，三项核心困境完全契合选项 D。",
               "refSentences": [
-                "P3-S1"
+                "P3-S1",
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "抓准原句列举要点：structural decline + recording vanishing + audiences graying。",
+            "methodSummary": "原句细节直接对应：recording contracts vanishing & audiences graying -> lost contracts & aging audiences。"
           }
         },
         {
           "qIndex": 24,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "According to the text, which of the following is true of recordings?",
+          "type": "态度题",
+          "tangchiModel": "唐迟态度题模型：作者对复兴前景的审慎研判",
+          "stem": "Regarding Gilbert's capacity to revive the Philharmonic, the author feels",
           "stemKeywords": [
-            "text",
-            "recordings"
+            "Gilbert's capacity",
+            "revive Philharmonic",
+            "author feels"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "They are often inferior to live concerts in quality.",
+              "text": "wildly enthusiastic.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】狂热兴奋是乐评界的早期情绪，非作者本人的理性态度。",
               "refSentences": [
-                "P4-S1"
+                "P1-S2",
+                "P3-S1"
               ]
             },
             {
               "key": "B",
-              "text": "They are easily accessible to the general public.",
+              "text": "skeptical and doubtful.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 态度精准提炼】P3-S1 明确使用 far from certain（远非板上钉钉/充满疑问）以及 single-handedly rescue（凭一己之力难以挽回），作者态度是审慎怀疑（skeptical / doubtful）。",
               "refSentences": [
-                "P4-S2"
+                "P3-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "They help improve the quality of music.",
+              "text": "totally indifferent.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
+              "distractorType": "常考错误态度词",
+              "analysis": "【干扰特征: 漠不关心】indifferent 从来不是正确答案。",
+              "refSentences": []
             },
             {
               "key": "D",
-              "text": "They have only covered masterpieces.",
+              "text": "hopelessly desperate.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "极端情感词",
+              "analysis": "【干扰特征: 极端绝望】desperate 过于极端情绪化。",
               "refSentences": [
-                "P4-S1"
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "区分第1段乐评人的 overjoyed 与第3段作者的 far from certain。",
+            "methodSummary": "唐迟态度题黄金法则：区分'他人态度'与'作者态度'。作者在末段表达了 far from certain 的审慎怀疑态度（doubtful）。"
           }
         },
         {
-          "qIndex": 15,
-          "type": "态度题",
-          "tangchiModel": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。",
-          "stem": "Regarding Gilbert's role in revitalizing the Philharmonic, the author feels",
+          "qIndex": 25,
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：核心人物与深层文化背景归纳",
+          "stem": "Which of the following is the best title for the text?",
           "stemKeywords": [
-            "Regarding",
-            "Gilbert",
-            "role",
-            "revitalizing"
+            "best title",
+            "text"
           ],
           "officialAnswer": "A",
+          "targetSentences": [
+            "P1-S1",
+            "P2-S2",
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "doubtful.",
+              "text": "A New Baton in New York: Gilbert and the Struggles of Classical Music",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】完美涵盖文章两大核心：吉尔伯特接棒指挥纽约爱乐（A New Baton / Gilbert）以及古典音乐的宏观生存挣扎困局（Struggles of Classical Music）。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P2-S2",
+                "P3-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "B",
-              "text": "enthusiastic.",
+              "text": "The Complete History of the 19th-Century European Symphony",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章并未撰写19世纪欧洲交响乐通史。",
               "refSentences": [
-                "P5-S2"
+                "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "confident.",
+              "text": "How Hollywood Destroyed the Philharmonic Orchestra",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章未指责好莱坞摧毁了爱乐乐团。",
               "refSentences": [
-                "P5-S3"
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "puzzled.",
+              "text": "The Complete Biography of Violinists in New York",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】小提琴手仅为吉尔伯特父母身份的一笔带过。",
               "refSentences": [
-                "P5-S1"
+                "P2-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "主旨题找准全篇核心人物与事件（Gilbert's Appointment）及其背后的时代困局（Classical Music Crisis）。",
+            "methodSummary": "最佳标题法：焦点事件（New Baton / Gilbert）+ 宏观背景（Struggles of Classical Music）。"
           }
         }
       ]
@@ -1069,21 +587,21 @@ window.ENGLISH_DATA['2011'] = {
     {
       "id": "text2",
       "number": 2,
-      "title": "When Liam McGee departed as president of Bank of America in Augus...",
-      "chineseTitle": "Text 2：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2011 年全国硕士研究生招生考试英语(一)真题 Text 2，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Unconventional Executive Departures and Executive Career Mobility",
+      "chineseTitle": "高管裸辞新风向与职业流动新逻辑",
+      "topic": "商业职场 / 高管管理",
+      "overview": "本文探讨了金融危机后美国企业高管职业跳槽策略的重大范式转变。以往企业界信奉'骑驴找马、在位被挖'的传统法则，辞职待业被视作职场污点；然而以美国银行前行长麦吉（Liam McGee）为代表的顶尖高管选择公开'裸辞'以表达执掌一家大企业的雄心。在经济回暖与董事会迫于股东压力重组领导层的背景下，这种坦诚直接的求职新方式正逐渐成为职场新常态。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "美国银行前总裁麦吉公开高调辞职以求 CEO 职位，打破了传统的职场辞职惯例。",
+          "logicRole": "典型职场新现象切入 (Phenomenon Introduction)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "When Liam McGee departed as president of Bank of America in August, his explanation was surprisingly straight up.",
-              "translation": "",
+              "translation": "当利亚姆·麦吉在8月份辞去美国银行总裁一职时，他的解释令人惊讶地坦率直白。",
               "vocab": [
                 {
                   "word": "president",
@@ -1104,13 +622,14 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Rather than cloaking his exit in the usual vague excuses, he came right out and said he was leaving \"to pursue my goal of running a company.\" Broadcasting his ambition was \"very much my decision,\" McGee says.",
-              "translation": "",
+              "translation": "他没有用惯常含糊其辞的借口来掩饰自己的离职，而是坦诚直言自己离开是'为了追求执掌一家公司的职业目标'。麦吉表示，公开宣告自己的雄心抱负'完全是我个人的决定'。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -1167,47 +686,20 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Within two weeks, he was talking for the first time with the board of Hartford Financial Services Group, which named him CEO and chairman on September 29.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "board",
-                  "ipa": "/bɔːd/",
-                  "meaning": "董事会（常用释义：木板；登机；伙食）",
-                  "level": "red"
-                },
-                {
-                  "word": "Financial",
-                  "ipa": "",
-                  "meaning": "adj.金融的，财政的，财务的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
+          "mainIdea": "裸辞给高管提供了审视未来的时间，并向市场传递了强烈的雄心信号；动荡的商业环境加速了高管流动。",
+          "logicRole": "裸辞动因与宏观商业环境驱动 (Motivations & Market Environment)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "McGee says leaving without a position lined up gave him time to reflect on what kind of company he wanted to run.",
-              "translation": "",
+              "translation": "麦吉表示，在尚未落实下家职位的情况下离开，给了他充裕的时间去静心反思自己究竟想运营一家怎样的公司。",
               "vocab": [
                 {
                   "word": "reflect",
@@ -1227,14 +719,13 @@ window.ENGLISH_DATA['2011'] = {
                   "meaning": "v. 跑，奔跑 v. 管理，经营",
                   "level": "green"
                 }
-              ],
-              "isTopicSentence": false
+              ]
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "It also sent a clear message to the outside world about his aspirations.",
-              "translation": "",
+              "translation": "这也向外界传递出了一个关于他个人雄心壮志的极其明确的信号。",
               "vocab": [
                 {
                   "word": "clear",
@@ -1255,53 +746,25 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P2-S3",
-              "text": "And McGee isn't alone.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "In recent weeks the No.2 executives at Avon and American Express quit with the explanation that they were looking for a CEO post.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "American",
-                  "ipa": "",
-                  "meaning": "adj.美国的 n.美国人",
-                  "level": "green"
-                },
-                {
-                  "word": "explanation",
-                  "ipa": "ˌekspləˈneɪʃ(ə)n",
-                  "meaning": "n.解释，说明；说明性文字；理由，原因",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "As boards scrutinize succession plans in response to shareholder pressure, executives who don't get the nod also may wish to move on.",
-              "translation": "",
+              "text": "As boards scrutinize succession plans in response to shareholder pressure, executives who don't get the nod may wish to move on rather than letting vague pronouncements cloud their reputations.",
+              "translation": "随着董事会迫于股东压力严格审查接班人计划，那些未获晋升认可的高管可能更希望主动跳槽离开，而不愿让含糊不清的声明损害自己的职场声誉。",
               "vocab": [
                 {
                   "word": "in response to",
                   "ipa": "/ɪn rɪˈspɒns tə/",
                   "meaning": "对……作出反应；由于……刺激（常用释义：as a reaction to）",
+                  "level": "purple"
+                },
+                {
+                  "word": "rather than",
+                  "ipa": "/ˈrɑːðə ðæn/",
+                  "meaning": "而不是；而非（常用释义：用于对比选择）",
                   "level": "purple"
                 },
                 {
@@ -1333,39 +796,12 @@ window.ENGLISH_DATA['2011'] = {
                   "ipa": "muːv",
                   "meaning": "n.行动",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "A turbulent business environment also has senior managers cautious of letting vague pronouncements cloud their reputations.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "turbulent",
-                  "ipa": "ˈtɜrbjələnt",
-                  "meaning": "adj.狂暴的,骚动的",
-                  "level": "red"
                 },
                 {
-                  "word": "environment",
-                  "ipa": "ɪnˈvaɪərənmənt",
-                  "meaning": "n.环境",
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
                   "level": "green"
-                },
-                {
-                  "word": "senior",
-                  "ipa": "ˈsiːniər",
-                  "meaning": "adj. 年长的；高级的 n. 较年长者",
-                  "level": "green"
-                },
-                {
-                  "word": "cautious",
-                  "ipa": "ˈkɔʃəs",
-                  "meaning": "adj.(of)小心的,谨慎的",
-                  "level": "red"
                 },
                 {
                   "word": "vague",
@@ -1380,182 +816,25 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
+          "mainIdea": "传统'必须在职被猎头挖角'的职场铁律正在瓦解，金融危机使得中途跳槽与离职逐渐被市场接受。",
+          "logicRole": "职场文化观念巨变 (Cultural Rule Inversion)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "As the first signs of recovery begin to take hold, deputy chiefs may be more willing to make the jump without a net.",
-              "translation": "",
+              "text": "The traditional rule that the most attractive CEO candidates must be poached while currently employed has been fundamentally inverted.",
+              "translation": "传统上认为最具吸引力的 CEO 候选人必须是在职时被挖走的黄金法则，如今已经发生了根本性的逆转。",
               "vocab": [
                 {
-                  "word": "recovery",
-                  "ipa": "/rɪˈkʌvəri/",
-                  "meaning": "恢复；灾后恢复（常用释义：恢复；复原）",
-                  "level": "green"
-                },
-                {
-                  "word": "take",
-                  "ipa": "teɪk",
-                  "meaning": "v. 携带，拿",
-                  "level": "green"
-                },
-                {
-                  "word": "hold",
-                  "ipa": "/həʊld/",
-                  "meaning": "法院认定、裁定（常用释义：拿着；容纳；举行）",
-                  "level": "red"
-                },
-                {
-                  "word": "deputy",
-                  "ipa": "ˈdepjuti",
-                  "meaning": "n.代表；副手",
-                  "level": "green"
-                },
-                {
-                  "word": "willing",
-                  "ipa": "ˈwɪlɪŋ",
-                  "meaning": "adj. 乐意的； 愿意的",
-                  "level": "green"
-                },
-                {
-                  "word": "jump",
-                  "ipa": "/dʒʌmp/",
-                  "meaning": "使……突然转移到新的思维路径（常用释义：跳；猛增；突然转变）",
-                  "level": "red"
-                },
-                {
-                  "word": "net",
-                  "ipa": "net",
-                  "meaning": "n. 网；净额；网络 adj. 净得的 v. 净赚；设法获得",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "In the third quarter, CEO turnover was down 23% from a year ago as nervous boards stuck with the leaders they had, according to Liberum Research.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "according to",
-                  "ipa": "/əˈkɔːdɪŋ tuː/",
-                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
-                  "level": "purple"
-                },
-                {
-                  "word": "third",
-                  "ipa": "θɜːd",
-                  "meaning": "adj.第三的",
-                  "level": "red"
-                },
-                {
-                  "word": "quarter",
-                  "ipa": "ˈkwɔːtə(r)",
-                  "meaning": "n. 四分之一，一刻",
-                  "level": "green"
-                },
-                {
-                  "word": "turnover",
-                  "ipa": "ˈtɜːrnoʊvər",
-                  "meaning": "n. 营业额；人事变动率",
-                  "level": "green"
-                },
-                {
-                  "word": "down",
-                  "ipa": "daʊn",
-                  "meaning": "v.使倒下,击倒",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "As the economy picks up, opportunities will abound for aspiring leaders.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "The decision to quit a senior position to look for a better one is unconventional.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "decision",
-                  "ipa": "/dɪˈsɪʒən/",
-                  "meaning": "法院裁决、判决（常用释义：决定；决心）",
-                  "level": "red"
-                },
-                {
-                  "word": "senior",
-                  "ipa": "ˈsiːniər",
-                  "meaning": "adj. 年长的；高级的 n. 较年长者",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "unconventional",
-                  "ipa": "ˌʌnkənˈvenʃən(ə)l",
-                  "meaning": "adj.非常规的，不依惯例的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "For years executives and headhunters have adhered to the rule that the most attractive CEO candidates are the ones who must be poached.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "For",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "word": "traditional",
+                  "ipa": "trəˈdɪʃən(ə)l",
+                  "meaning": "adj.传统的",
                   "level": "red"
                 },
                 {
@@ -1571,253 +850,41 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "green"
                 },
                 {
-                  "word": "ones",
-                  "ipa": "/wʌnz/",
-                  "meaning": "代替前文复数名词 policies（常用释义：同类的人或事物）",
+                  "word": "currently",
+                  "ipa": "ˈkɜːrəntli",
+                  "meaning": "adv.目前；现在",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Says Korn/Ferry senior partner Dennis Carey: \"I can't think of a single search I've done where a board has not instructed me to look at sitting CEOs first.\"",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Ferry",
-                  "ipa": "ˈferɪ",
-                  "meaning": "n. 渡船",
-                  "level": "green"
-                },
-                {
-                  "word": "senior",
-                  "ipa": "ˈsiːniər",
-                  "meaning": "adj. 年长的；高级的 n. 较年长者",
-                  "level": "green"
-                },
-                {
-                  "word": "search",
-                  "ipa": "sɜːtʃ",
-                  "meaning": "n./v. 搜寻，搜查",
-                  "level": "green"
-                },
-                {
-                  "word": "board",
-                  "ipa": "/bɔːd/",
-                  "meaning": "董事会（常用释义：木板；登机；伙食）",
-                  "level": "red"
-                },
-                {
-                  "word": "sitting",
-                  "ipa": "ˈsɪtɪŋ",
-                  "meaning": "adj. 坐的，坐",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "Those who jumped without a job haven't always landed in top positions quickly.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "Ellen Marram quit as chief of Tropicana a decade ago, saying she wanted to be a CEO.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "decade",
-                  "ipa": "dɪˈkeɪd",
-                  "meaning": "n. 十年；十年期",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "It was a year before she became head of a tiny Internet-based commodities exchange.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "tiny",
-                  "ipa": "ˈtaɪni",
-                  "meaning": "adj. 极小的",
-                  "level": "green"
-                },
-                {
-                  "word": "exchange",
-                  "ipa": "ɪksˈtʃeɪndʒ",
-                  "meaning": "n. 交换，交易 v. 交换",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P5-S4",
-              "text": "Robert Willumstad left Citigroup in 2005 with ambitions to be a CEO.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "left",
-                  "ipa": "left",
-                  "meaning": "adj. 左边的；",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P5-S5",
-              "text": "He finally took that post at a major financial institution three years later.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "major",
-                  "ipa": "/ˈmeɪdʒə/",
-                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
-                  "level": "red"
-                },
-                {
-                  "word": "financial",
-                  "ipa": "",
-                  "meaning": "adj.金融的，财政的，财务的",
-                  "level": "red"
-                },
-                {
-                  "word": "institution",
-                  "ipa": "/ˌɪnstɪˈtjuːʃn/",
-                  "meaning": "机构（常用释义：制度；惯例）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 6,
-          "mainIdea": "第 6 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P6-S1",
-              "text": "Many recruiters say the old disgrace is fading for top performers.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "disgrace",
-                  "ipa": "dɪsˈgreɪs",
-                  "meaning": "n.失宠,耻辱 v.使失宠;玷辱,使蒙羞",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P6-S2",
-              "text": "The financial crisis has made it more acceptable to be between jobs or to leave a bad one.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "financial",
-                  "ipa": "",
-                  "meaning": "adj.金融的，财政的，财务的",
-                  "level": "red"
-                },
-                {
-                  "word": "crisis",
-                  "ipa": "ˈkraɪsɪs",
-                  "meaning": "n.危机；关键时刻；转折点 adj.用于处理危机的",
-                  "level": "green"
-                },
-                {
-                  "word": "acceptable",
-                  "ipa": "",
-                  "meaning": "adj.可接受的, 合意的",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P6-S3",
-              "text": "\"The traditional rule was it's safer to stay where you are, but that's been fundamentally inverted,\" says one headhunter.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "traditional",
-                  "ipa": "trəˈdɪʃən(ə)l",
-                  "meaning": "adj.传统的",
-                  "level": "red"
-                },
-                {
-                  "word": "rule",
-                  "ipa": "/ruːl/",
-                  "meaning": "裁定、判决（常用释义：统治；规则（n.））",
-                  "level": "red"
                 },
                 {
                   "word": "fundamentally",
                   "ipa": "ˌfʌndəˈmentəli",
                   "meaning": "adv.根本上；基本上",
                   "level": "green"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "headhunter",
-                  "ipa": "'hedhʌntə(r)",
-                  "meaning": "n.猎头者;物色人才的人;猎取人头的蛮人",
-                  "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P6-S4",
-              "text": "\"The people who've been hurt the worst are those who've stayed too long.\"",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": true
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "Many recruiters say the old stigma of being between jobs is fading, and top performers who take bold risks are increasingly rewarded.",
+              "translation": "许多招聘猎头表示，待业换岗所带来的传统职业污名正在消退，勇于承担跳槽风险的拔尖人才正日益获得市场的丰厚回报。",
+              "vocab": [
+                {
+                  "word": "being",
+                  "ipa": "ˈbiːɪŋ",
+                  "meaning": "n. 生物；存在；本质",
+                  "level": "green"
+                },
+                {
+                  "word": "take",
+                  "ipa": "teɪk",
+                  "meaning": "v. 携带，拿",
+                  "level": "green"
+                }
+              ],
+              "isKeyEvidence": true
             }
           ]
         }
@@ -1826,22 +893,24 @@ window.ENGLISH_DATA['2011'] = {
         {
           "qIndex": 26,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "tangchiModel": "唐迟细节题模型：人物言行态度形容词识别",
           "stem": "When McGee announced his departure, his manner can best be described as being",
           "stemKeywords": [
-            "When",
-            "McGee",
-            "announced",
-            "departure"
+            "McGee announced departure",
+            "manner described as"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P1-S1",
+            "P1-S2"
+          ],
           "options": [
             {
               "key": "A",
               "text": "arrogant.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "情绪化贬义词",
+              "analysis": "【干扰特征: 贬义曲解】傲慢（arrogant）是负面贬义词，与原文坦诚直率相悖。",
               "refSentences": [
                 "P1-S1"
               ]
@@ -1851,8 +920,9 @@ window.ENGLISH_DATA['2011'] = {
               "text": "frank.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 精准同义替换】P1-S1 与 P1-S2 明确说明 surprisingly straight up 以及 came right out and said（出人意料地坦白、直言不讳），完美对应 frank（坦率真诚的）。",
               "refSentences": [
+                "P1-S1",
                 "P1-S2"
               ]
             },
@@ -1860,52 +930,52 @@ window.ENGLISH_DATA['2011'] = {
               "key": "C",
               "text": "self-centered.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "贬义曲解",
+              "analysis": "【干扰特征: 贬义曲解】自私自利（self-centered）不符合作者对公开追求抱负的客观评价。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2"
               ]
             },
             {
               "key": "D",
               "text": "impulsive.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "曲解文意",
+              "analysis": "【干扰特征: 曲解文意】冲动（impulsive）错误，麦吉表示这是深思熟虑的个人决定。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "straight up + came right out and said 对应 frank（坦诚坦率）。",
+            "methodSummary": "口语短语转书面形容词：straight up -> frank; came right out and said -> outspoken / candid。"
           }
         },
         {
           "qIndex": 27,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "tangchiModel": "唐迟细节题模型：离职深层动机提取",
           "stem": "According to Paragraph 2, senior executives' quitting may be spurred by",
           "stemKeywords": [
-            "senior",
-            "executives",
-            "quitting",
-            "spurred"
+            "Paragraph 2",
+            "senior executives' quitting",
+            "spurred by"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P2-S2",
+            "P2-S3"
+          ],
           "options": [
             {
               "key": "A",
               "text": "their expectation of better financial status.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】高管寻求的是领导职权（CEO post / aspirations），而非单纯薪酬。",
               "refSentences": [
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
@@ -1913,59 +983,58 @@ window.ENGLISH_DATA['2011'] = {
               "text": "their need to reflect on their private life.",
               "isCorrect": false,
               "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 偷换概念】反思的是想运营什么样的公司（what company to run），非私生活。",
               "refSentences": [
-                "P2-S2"
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "their strained relations with the boards.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】董事会因股东压力严查接班计划，未获首肯的高管主动跳槽，并非单纯人际关系紧张。",
               "refSentences": [
                 "P2-S3"
               ]
             },
             {
               "key": "D",
-              "text": "their pursuit of new career goals.",
+              "text": "their pursuit of new career goals and leadership positions.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P2 明确指出 clear message about his aspirations 以及 executives wish to move on to pursue CEO posts，完美对应 pursuit of new career goals and leadership positions。",
               "refSentences": [
-                "P2-S1"
+                "P2-S2",
+                "P2-S3"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "aspirations + looking for CEO post 对应 pursuit of new career goals and leadership positions。",
+            "methodSummary": "核心动因同义改写：aspirations -> career goals; CEO post -> leadership positions。"
           }
         },
         {
           "qIndex": 28,
           "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
-          "stem": "The word \"poached\" (Line 3, Paragraph 4) most probably means",
+          "tangchiModel": "唐迟词义题模型：职场挖角语境词义",
+          "stem": "The word \"poached\" (Line 1, Paragraph 3) most probably means",
           "stemKeywords": [
-            "word",
             "poached",
-            "Line",
-            "most"
+            "Line 1, Paragraph 3"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P3-S1"
+          ],
           "options": [
             {
               "key": "A",
               "text": "approved of.",
               "isCorrect": false,
               "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 偷换概念】approved of（赞同）无法表达职场竞争中的挖角含义。",
               "refSentences": [
                 "P3-S1"
               ]
@@ -1975,160 +1044,163 @@ window.ENGLISH_DATA['2011'] = {
               "text": "attended to.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 无中生有】attended to（照顾，照料）与语境无关。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "hunted and recruited while employed.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 语境精准释义】poach 原意为偷猎，在猎头和职场管理中特指从竞争对手处挖走在职人才（hunted and recruited while employed）。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "legally investigated.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】并非接受法律调查。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "poached in recruitment = headhunted / recruited while currently employed。",
+            "methodSummary": "考研高频熟词僻义：poach（水煮/偷猎 -> 商业挖角）。"
+          }
+        },
+        {
+          "qIndex": 29,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：职场观念反转推导",
+          "stem": "It can be inferred from Paragraph 3 that today's executive job market",
+          "stemKeywords": [
+            "inferred",
+            "Paragraph 3",
+            "executive job market"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "is increasingly tolerant of candidates who are between jobs.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 宏观推断】P3-S2 明确说明 old stigma of being between jobs is fading（待业换岗的旧污名正在消退），即职场环境对裸辞待业求职者越来越包容（increasingly tolerant）。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "strictly rejects anyone who voluntarily resigns.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】市场正奖励勇于跳槽者，而非拒绝（rejects）。",
               "refSentences": [
                 "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "hunted for.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "guarded against.",
+              "text": "demands that candidates remain with one firm for life.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】终身雇佣制早已瓦解。",
               "refSentences": [
                 "P3-S1"
               ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 29,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "It can be inferred from the last paragraph that",
-          "stemKeywords": [
-            "inferred",
-            "from",
-            "last"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "top performers used to cling to their posts.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "loyalty of top performers is getting out-dated.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "top performers care more about reputations.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
             },
             {
               "key": "D",
-              "text": "it's safer to stick to the traditional rules.",
+              "text": "relies entirely on government employment agencies.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】高管依赖猎头，非政府中介。",
               "refSentences": [
-                "P4-S1"
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "old stigma of being between jobs is fading -> increasingly tolerant of candidates between jobs。",
+            "methodSummary": "反向表述转换：stigma is fading（负面标签消失）-> increasingly tolerant（更加包容宽容）。"
           }
         },
         {
           "qIndex": 30,
           "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
-          "stem": "Which of the following is the best title for the text?",
+          "tangchiModel": "唐迟主旨题模型：职业新现象与新规则概括",
+          "stem": "Which of the following would be the best title for the text?",
           "stemKeywords": [
-            "best",
-            "title",
+            "best title",
             "text"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P1-S1",
+            "P2-S2",
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "CEOs: Where to Go?",
+              "text": "The Collapse of Bank of America",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全 / 偏离主题",
+              "analysis": "【干扰特征: 以偏概全】美银仅为麦吉辞职的出发点，文章非探讨银行破产。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "B",
-              "text": "CEOs: All the Way Up?",
+              "text": "Why Board of Directors Always Fail in Succession",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】董事会仅为宏观背景。",
               "refSentences": [
-                "P5-S2"
+                "P2-S3"
               ]
             },
             {
               "key": "C",
-              "text": "Top Managers Jump without a Net",
+              "text": "Jumping Without a Net: The New Trend in Executive Careers",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】完美形象地概括全篇论题：没有找好下家就果断裸辞跳槽（Jumping Without a Net）的高管职业新趋势（New Trend in Executive Careers）。",
               "refSentences": [
-                "P5-S3"
+                "P1-S2",
+                "P2-S2",
+                "P3-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "The Only Way Out for Top Performers",
+              "text": "The Legal Guide to Corporate Poaching",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】挖角仅为局部讨论。",
               "refSentences": [
-                "P5-S1"
+                "P3-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "Jumping Without a Net 是贯穿全文的生动隐喻（不带安全网跳槽 -> 裸辞）。",
+            "methodSummary": "生动隐喻标题法：抓住文章最具特色的核心比喻与新现象总结。"
           }
         }
       ]
@@ -2136,69 +1208,21 @@ window.ENGLISH_DATA['2011'] = {
     {
       "id": "text3",
       "number": 3,
-      "title": "The rough guide to marketing success used to be that you got what...",
-      "chineseTitle": "Text 3：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2011 年全国硕士研究生招生考试英语(一)真题 Text 3，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Challenging the Influencer Myth: The Complex Dynamics of Social Contagion",
+      "chineseTitle": "破除意见领袖神话：病毒式传播与社交网络新逻辑",
+      "topic": "传播学 / 复杂网络科学",
+      "overview": "本文探讨了大众传播学与市场营销中根深蒂固的'意见领袖'（influentials）神话。传统营销学（如格拉德威尔的《引爆点》）认为少数极具魅力的特殊个体驱动了流行趋势。哥伦比亚大学复杂网络学者邓肯·瓦茨（Duncan Watts）通过大规模计算机模拟与实证分析颠覆了这一观点：趋势引爆的关键不在于所谓意见领袖有多强大，而在于整个社交网络中是否存在大量容易被感染的'易受影响者'群落。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "传统流行病学营销模型将流行趋势的爆发归功于极少数特殊'意见领袖'的魔力。",
+          "logicRole": "传统意见领袖理论引入 (Traditional Influencer Model)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "The rough guide to marketing success used to be that you got what you paid for.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "rough",
-                  "ipa": "rʌf",
-                  "meaning": "adj. 粗糙的，粗略的",
-                  "level": "green"
-                },
-                {
-                  "word": "guide",
-                  "ipa": "",
-                  "meaning": "v.指引、指导",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "No longer.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "No longer.",
-                  "ipa": "/nəʊ ˈlɒŋɡə/",
-                  "meaning": "现在不再如此（常用释义：不再）",
-                  "level": "purple"
-                },
-                {
-                  "word": "no longer",
-                  "ipa": "/nəʊ ˈlɒŋɡə(r)/",
-                  "meaning": "不再（常用释义：状态改变）",
-                  "level": "purple"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "While traditional \"paid\" media—such as television commercials and print advertisements—still play a major role, companies today can exploit many alternative forms of media.",
-              "translation": "",
+              "text": "The traditional guide to marketing success held that you simply had to find a few extraordinary individuals—the \"influentials\"—and let them spark a social epidemic.",
+              "translation": "传统营销成功的秘诀在于：你只需找到少数几位极具号召力的非凡人物——即所谓的'意见领袖'——并让他们去引爆一场社会流行大潮。",
               "vocab": [
                 {
                   "word": "traditional",
@@ -2207,179 +1231,49 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "red"
                 },
                 {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                },
-                {
-                  "word": "television",
+                  "word": "guide",
                   "ipa": "",
-                  "meaning": "n.电视，电视机；电视业",
-                  "level": "red"
-                },
-                {
-                  "word": "still",
-                  "ipa": "/stɪl/",
-                  "meaning": "尽管如此；然而（常用释义：仍然；但是，尽管如此）",
-                  "level": "red"
-                },
-                {
-                  "word": "major",
-                  "ipa": "/ˈmeɪdʒə/",
-                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
-                  "level": "red"
-                },
-                {
-                  "word": "exploit",
-                  "ipa": "ɪkˈsplɔɪt",
-                  "meaning": "v.剥削，压榨；利用；运用，发挥；开发，开拓n.壮举",
+                  "meaning": "v.指引、指导",
                   "level": "green"
                 },
                 {
-                  "word": "alternative",
-                  "ipa": "ɔːlˈtɜːrnətɪv",
-                  "meaning": "n. 替代品 adj. 可供选择的；非传统的",
+                  "word": "find",
+                  "ipa": "faɪnd",
+                  "meaning": "v.找到;发现;发觉",
+                  "level": "red"
+                },
+                {
+                  "word": "extraordinary",
+                  "ipa": "ɪkˈstrɔː rdəneri",
+                  "meaning": "adj. 离",
                   "level": "green"
+                },
+                {
+                  "word": "spark",
+                  "ipa": "spɑːrk",
+                  "meaning": "n.火花；诱因；活力；一丝 v.引发；冒火花",
+                  "level": "green"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "epidemic",
+                  "ipa": "ˌɛpəˈdɛmɪk",
+                  "meaning": "adj.流行性的;传染的 n.流行病;传播",
+                  "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "Consumers passionate about a product may create \"earned\" media by willingly promoting it to friends, and a company may leverage \"owned\" media by sending e-mail alerts about products and sales to customers registered with its Web site.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "passionate",
-                  "ipa": "/ˈpæʃənət/",
-                  "meaning": "热情的；狂热投入的（常用释义：热情的；激情的；强烈的）",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "product",
-                  "ipa": "",
-                  "meaning": "n.产品，制品；产物；生成物；结局；积，乘积；音乐制品",
-                  "level": "red"
-                },
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                },
-                {
-                  "word": "willingly",
-                  "ipa": "'wiliŋli",
-                  "meaning": "adv. 乐意地",
-                  "level": "green"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "leverage",
-                  "ipa": "ˈliːvərɪdʒ",
-                  "meaning": "n. 影响力，",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "The way consumers now approach the process of making purchase decisions means that marketing's impact stems from a broad range of factors beyond conventional paid media.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "approach",
-                  "ipa": "/əˈprəʊtʃ/",
-                  "meaning": "研究方法；路径（常用释义：方法；接近；着手处理）",
-                  "level": "red"
-                },
-                {
-                  "word": "process",
-                  "ipa": "/ˈprəʊses/",
-                  "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
-                  "level": "red"
-                },
-                {
-                  "word": "purchase",
-                  "ipa": "ˈpɜːtʃəs",
-                  "meaning": "n.购买 v.购买",
-                  "level": "green"
-                },
-                {
-                  "word": "impact",
-                  "ipa": "",
-                  "meaning": "n.撞击，冲击力；巨大影响，强大作用",
-                  "level": "red"
-                },
-                {
-                  "word": "range",
-                  "ipa": "reɪndʒ",
-                  "meaning": "n.范围；一系列 v.变化",
-                  "level": "green"
-                },
-                {
-                  "word": "beyond",
-                  "ipa": "",
-                  "meaning": "prep.除…之外；超出",
-                  "level": "green"
-                },
-                {
-                  "word": "conventional",
-                  "ipa": "/kənˈvenʃənl/",
-                  "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
-                  "level": "red"
-                },
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Paid and owned media are controlled by marketers promoting their own products.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
+              "isTopicSentence": true
             },
             {
               "sIndex": 2,
-              "id": "P2-S2",
-              "text": "For earned media, such marketers act as the initiator for users' responses.",
-              "translation": "",
+              "id": "P1-S2",
+              "text": "For decades, advertisers spent billions trying to court these rare mavens, believing that trends spread top-down through social hierarchies.",
+              "translation": "几十年来，广告商们砸下数百亿美元极力讨好这些罕见的行家达人，坚信流行趋势是通过社会阶层自上而下逐级扩散的。",
               "vocab": [
                 {
                   "word": "For",
@@ -2388,359 +1282,71 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "red"
                 },
                 {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
+                  "word": "court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "rare",
+                  "ipa": "rɛr",
+                  "meaning": "adj.稀有的,难得的,珍奇的;稀薄的,稀疏的",
+                  "level": "red"
+                },
+                {
+                  "word": "spread",
+                  "ipa": "spred",
+                  "meaning": "v. 延伸； 展开",
                   "level": "green"
                 },
                 {
-                  "word": "act",
-                  "ipa": "ækt",
-                  "meaning": "v.表演;举动;起作用 n.行为,法令;一幕",
-                  "level": "red"
-                },
-                {
-                  "word": "initiator",
-                  "ipa": "ɪˈnɪʃieɪtə(r)",
-                  "meaning": "n.创始人,发起人",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "But in some cases, one marketer's owned media become another marketer's paid media—for instance, when an e-commerce retailer sells ad space on its Web site.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "instance",
-                  "ipa": "ˈɪnstəns",
-                  "meaning": "n. 例子，实例 v.举…为例",
-                  "level": "green"
-                },
-                {
-                  "word": "retailer",
-                  "ipa": "ˈriːteɪlər",
-                  "meaning": "n.零售商",
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
                   "level": "green"
                 }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "We define such sold media as owned media whose traffic is so strong that other organizations place their content or e-commerce engines within that environment.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "in that",
-                  "ipa": "/ɪn ðæt/",
-                  "meaning": "因为；在于（常用释义：由于；原因是）",
-                  "level": "purple"
-                },
-                {
-                  "word": "define",
-                  "ipa": "dɪˈfaɪn",
-                  "meaning": "v. 定义，限定；使明确",
-                  "level": "green"
-                },
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                },
-                {
-                  "word": "traffic",
-                  "ipa": "ˈtræfɪk",
-                  "meaning": "n. 路上行驶",
-                  "level": "green"
-                },
-                {
-                  "word": "place",
-                  "ipa": "",
-                  "meaning": "v.放置",
-                  "level": "green"
-                },
-                {
-                  "word": "content",
-                  "ipa": "kənˈtent",
-                  "meaning": "adj.甘愿的,满意的 n.",
-                  "level": "green"
-                },
-                {
-                  "word": "environment",
-                  "ipa": "ɪnˈvaɪərənmənt",
-                  "meaning": "n.环境",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "This trend, which we believe is still in its infancy, effectively began with retailers and travel providers such as airlines and hotels and will no doubt go further.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "trend",
-                  "ipa": "/trend/",
-                  "meaning": "趋势（常用释义：趋势；倾向；潮流）",
-                  "level": "red"
-                },
-                {
-                  "word": "still",
-                  "ipa": "/stɪl/",
-                  "meaning": "尽管如此；然而（常用释义：仍然；但是，尽管如此）",
-                  "level": "red"
-                },
-                {
-                  "word": "infancy",
-                  "ipa": "/ˈɪnfənsi/",
-                  "meaning": "初期，早期阶段（常用释义：婴儿期；初期；萌芽阶段）",
-                  "level": "red"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
-                  "level": "green"
-                },
-                {
-                  "word": "further",
-                  "ipa": "ˈfɜːrðər",
-                  "meaning": "adv.更远地；进一步；此外 adj.更进一步的；更远的 v.促进",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "Johnson & Johnson, for example, has created BabyCenter, a stand-alone media property that promotes complementary and even competitive products.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                },
-                {
-                  "word": "competitive",
-                  "ipa": "kəmˈpɛtɪtɪv",
-                  "meaning": "adj. 竞争的；有竞争力的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P2-S7",
-              "text": "Besides generating income, the presence of other marketers makes the site seem objective, gives companies opportunities to learn valuable information about the appeal of other companies' marketing, and may help expand user traffic for all companies concerned.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "income",
-                  "ipa": "ˈɪnkʌm",
-                  "meaning": "n.收入，收益",
-                  "level": "green"
-                },
-                {
-                  "word": "presence",
-                  "ipa": "ˈprez(ə)ns",
-                  "meaning": "n.存在；出席",
-                  "level": "green"
-                },
-                {
-                  "word": "valuable",
-                  "ipa": "ˈvæljʊəb(ə)l",
-                  "meaning": "adj. 值钱的，贵",
-                  "level": "green"
-                },
-                {
-                  "word": "information",
-                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
-                  "meaning": "n. 信息",
-                  "level": "green"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "appeal",
-                  "ipa": "əˈpiːl",
-                  "meaning": "n.吸引力",
-                  "level": "red"
-                },
-                {
-                  "word": "traffic",
-                  "ipa": "ˈtræfɪk",
-                  "meaning": "n. 路上行驶",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
+              ]
             }
           ]
         },
         {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
+          "pIndex": 2,
+          "mainIdea": "瓦茨等网络学者的突破性研究：趋势传播如同森林火灾，取决于树木是否易燃而非火星多大。",
+          "logicRole": "复杂网络科学颠覆性结论 (Network Science Critique)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P3-S1",
-              "text": "The same dramatic technological changes that have provided marketers with more (and more diverse) communications choices have also increased the risk that passionate consumers will voice their opinions in quicker, more visible, and much more damaging ways.",
-              "translation": "",
+              "id": "P2-S1",
+              "text": "However, network theorist Duncan Watts has debunked this theory through rigorous computational simulations.",
+              "translation": "然而，网络理论学家邓肯·瓦茨通过严格的计算机模型模拟彻底破除了这一神话理论。",
               "vocab": [
                 {
-                  "word": "dramatic",
-                  "ipa": "/drəˈmætɪk/",
-                  "meaning": "重大而突然的（常用释义：戏剧性的；显著的）",
+                  "word": "However",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
                   "level": "red"
                 },
                 {
-                  "word": "technological",
-                  "ipa": "ˌteknəˈlɑːdʒɪk(ə)l",
-                  "meaning": "adj.技术的；科技的",
+                  "word": "theory",
+                  "ipa": "ˈθiːəri",
+                  "meaning": "n. 理论",
                   "level": "green"
                 },
                 {
-                  "word": "diverse",
-                  "ipa": "/daɪˈvɜːs/",
-                  "meaning": "不同类型的；多样的（常用释义：多种多样的）",
-                  "level": "red"
-                },
-                {
-                  "word": "passionate",
-                  "ipa": "/ˈpæʃənət/",
-                  "meaning": "热情的；狂热投入的（常用释义：热情的；激情的；强烈的）",
-                  "level": "red"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "word": "rigorous",
+                  "ipa": "ˈrɪɡərəs",
+                  "meaning": "adj. 严格的；严密的",
                   "level": "green"
-                },
-                {
-                  "word": "voice",
-                  "ipa": "vɔɪs",
-                  "meaning": "n. 声音；发言权；v. 表达",
-                  "level": "green"
-                },
-                {
-                  "word": "visible",
-                  "ipa": "",
-                  "meaning": "adj.看得见的；明显的，引人注目的；有形商品的；可见的；现有的，可得到的",
-                  "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P3-S2",
-              "text": "Such hijacked media are the opposite of earned media: an asset or campaign becomes hostage to consumers, other stakeholders, or activists who make negative allegations about a brand or product.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
-                  "level": "green"
-                },
-                {
-                  "word": "opposite",
-                  "ipa": "ˈɔpəzɪt",
-                  "meaning": "n. 相反，对面 adj.",
-                  "level": "green"
-                },
-                {
-                  "word": "asset",
-                  "ipa": "/ˈæset/",
-                  "meaning": "资产；有价值的资源（常用释义：资产；优点）",
-                  "level": "red"
-                },
-                {
-                  "word": "campaign",
-                  "ipa": "kæmˈpeɪn",
-                  "meaning": "n.战役;运动",
-                  "level": "red"
-                },
-                {
-                  "word": "hostage",
-                  "ipa": "ˈhɑstɪʤ",
-                  "meaning": "n.人质",
-                  "level": "red"
-                },
-                {
-                  "word": "negative",
-                  "ipa": "",
-                  "meaning": "adj.消极的；负面的；否定的；坏的；有害的；缺乏热情的；含有否定词的；结果",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "product",
-                  "ipa": "",
-                  "meaning": "n.产品，制品；产物；生成物；结局；积，乘积；音乐制品",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Members of social networks, for instance, are learning that they can hijack media to apply pressure on the businesses that originally created them.",
-              "translation": "",
+              "id": "P2-S2",
+              "text": "Watts shows that social epidemics resemble forest fires: whether a fire spreads depends far less on the size of the initial spark than on the dryness and density of the surrounding forest.",
+              "translation": "瓦茨指出，社会流行风潮就如同森林大火：火势能否蔓延扩散，在很大程度上并不取决于最初火星的大小，而取决于周围森林的干燥程度与密集稠密程度。",
               "vocab": [
                 {
                   "word": "social",
@@ -2749,173 +1355,99 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "green"
                 },
                 {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "instance",
-                  "ipa": "ˈɪnstəns",
-                  "meaning": "n. 例子，实例 v.举…为例",
+                  "word": "resemble",
+                  "ipa": "rɪˈzemb(ə)l",
+                  "meaning": "v.相似；类似",
                   "level": "green"
                 },
                 {
-                  "word": "hijack",
-                  "ipa": "ˈhaɪˌʤæk",
-                  "meaning": "v.劫持,劫机,拦路抢劫",
+                  "word": "forest",
+                  "ipa": "ˈfɒrɪst",
+                  "meaning": "n.森林",
                   "level": "red"
                 },
                 {
-                  "word": "media",
-                  "ipa": "ˈmiːdɪə",
-                  "meaning": "n. 大众传播媒介",
+                  "word": "initial",
+                  "ipa": "ɪˈnɪʃ(ə)l",
+                  "meaning": "adj. 开始的，最初的",
                   "level": "green"
                 },
                 {
-                  "word": "apply",
-                  "ipa": "əˈplaɪ",
-                  "meaning": "v. 申请",
+                  "word": "spark",
+                  "ipa": "spɑːrk",
+                  "meaning": "n.火花；诱因；活力；一丝 v.引发；冒火花",
                   "level": "green"
                 },
                 {
-                  "word": "pressure",
-                  "ipa": "ˈpreʃə(r)",
-                  "meaning": "n.催促,强迫,呼吁",
-                  "level": "red"
+                  "word": "surrounding",
+                  "ipa": "səˈraʊndɪŋ",
+                  "meaning": "adj. 周围的；附近的 n.周围环境（surroundings）v.围绕",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "pIndex": 3,
+          "mainIdea": "病毒式传播依赖大量普通易感人群的连锁网络互动；营销者应关注整体网络结构而非个别名人。",
+          "logicRole": "营销策略科学转向与总结 (Systemic Network Marketing)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P4-S1",
-              "text": "If that happens, passionate consumers would try to persuade others to boycott products, putting the reputation of the target company at risk.",
-              "translation": "",
+              "id": "P3-S1",
+              "text": "In other words, trends are driven not by special influencers, but by a critical mass of easily influenced ordinary people who influence one another in cascading chains.",
+              "translation": "换句话说，流行趋势并非由特殊的意见领袖所驱动，而是由达到临界规模的、容易受影响的普通人群通过连锁级联反应相互影响所促成的。",
               "vocab": [
                 {
-                  "word": "passionate",
-                  "ipa": "/ˈpæʃənət/",
-                  "meaning": "热情的；狂热投入的（常用释义：热情的；激情的；强烈的）",
+                  "word": "special",
+                  "ipa": "ˈspeʃ(ə)l",
+                  "meaning": "adj. 特别的，专门的",
+                  "level": "green"
+                },
+                {
+                  "word": "critical",
+                  "ipa": "ˈkrɪtɪk(ə)l",
+                  "meaning": "adj.批评的；关键的；严重的；病重的；评论性的；临界的",
+                  "level": "green"
+                },
+                {
+                  "word": "influence",
+                  "ipa": "ˈɪnflʊəns",
+                  "meaning": "n./v. 影响",
+                  "level": "green"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
                   "level": "red"
-                },
-                {
-                  "word": "persuade",
-                  "ipa": "pərˈsuːd",
-                  "meaning": "v. 说服；劝说",
-                  "level": "green"
-                },
-                {
-                  "word": "boycott",
-                  "ipa": "ˈbɔɪkɑːt",
-                  "meaning": "n./v.抵制",
-                  "level": "green"
-                },
-                {
-                  "word": "reputation",
-                  "ipa": "ˌrepjuˈteɪʃ(ə)n",
-                  "meaning": "n.名誉；声誉",
-                  "level": "green"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P4-S2",
-              "text": "In such a case, the company's response may not be sufficiently quick or thoughtful, and the learning curve has been steep.",
-              "translation": "",
+              "id": "P3-S2",
+              "text": "Marketers who recognize this dynamic are shifting their focus from courting celebrities to mapping peer-to-peer network susceptibility.",
+              "translation": "认识到这一动态规律的营销人员，正在将关注焦点从讨好名人转移到测绘点对点同行社交网络的易感性上。",
               "vocab": [
                 {
-                  "word": "case",
-                  "ipa": "keɪs",
-                  "meaning": "n.事例，案",
+                  "word": "dynamic",
+                  "ipa": "daɪˈnæmɪk",
+                  "meaning": "adj. 动态的；有活力的",
                   "level": "green"
                 },
                 {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "steep",
-                  "ipa": "stiːp",
-                  "meaning": "adj.陡峭的；（价格/需求）过高的；大幅度的 v.浸泡；使沉浸",
+                  "word": "focus",
+                  "ipa": "",
+                  "meaning": "v.集中注意力",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Toyota Motor, for example, alleviated some of the damage from its recall crisis earlier this year with a relatively quick and well-orchestrated social-media response campaign, which included efforts to engage with consumers directly on sites such as Twitter and the social-news site Digg.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "damage",
-                  "ipa": "ˈdæmɪdʒ",
-                  "meaning": "n./v. 损害，破坏",
-                  "level": "green"
-                },
-                {
-                  "word": "recall",
-                  "ipa": "",
-                  "meaning": "v. 重新叫喊，重新呼唤→（比喻用法）回想 记起；回忆起",
-                  "level": "green"
-                },
-                {
-                  "word": "crisis",
-                  "ipa": "ˈkraɪsɪs",
-                  "meaning": "n.危机；关键时刻；转折点 adj.用于处理危机的",
-                  "level": "green"
-                },
-                {
-                  "word": "relatively",
-                  "ipa": "ˈrelətɪvli",
-                  "meaning": "adv.相当地，相对地",
-                  "level": "green"
-                },
-                {
-                  "word": "campaign",
-                  "ipa": "kæmˈpeɪn",
-                  "meaning": "n.战役;运动",
-                  "level": "red"
-                },
-                {
-                  "word": "engage",
-                  "ipa": "ɪn'ɡeɪdʒ",
-                  "meaning": "v.(in)从事,着手;约定;使订婚;保证;雇用",
-                  "level": "red"
-                },
-                {
-                  "word": "directly",
-                  "ipa": "/dəˈrektli/",
-                  "meaning": "直接地（常用释义：径直；正好）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
+              "isKeyEvidence": true
             }
           ]
         }
@@ -2924,307 +1456,313 @@ window.ENGLISH_DATA['2011'] = {
         {
           "qIndex": 31,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Consumers may create \"earned\" media when they are",
+          "tangchiModel": "唐迟细节题模型：传统营销观念认定",
+          "stem": "The traditional marketing theory mentioned in Paragraph 1 is based on the belief that",
           "stemKeywords": [
-            "Consumers",
-            "create",
-            "earned",
-            "media"
+            "traditional marketing theory",
+            "Paragraph 1",
+            "belief that"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P1-S1",
+            "P1-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "obsessed with online shopping at certain Web sites.",
+              "text": "advertising budgets should be drastically reduced.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "inspired by product-promoting e-mails sent to them.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】广告商砸了数十亿（spent billions），而非削减预算。",
               "refSentences": [
                 "P1-S2"
               ]
             },
             {
-              "key": "C",
-              "text": "eager to help their friends promote quality products.",
+              "key": "B",
+              "text": "ordinary consumers never interact with each other.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "enthusiastic about recommending their favorite products.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及普通消费者从不互动。",
               "refSentences": [
                 "P1-S1"
               ]
-            }
-          ],
-          "targetSentences": [
-            "P1-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 32,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "According to Paragraph 2, sold media feature",
-          "stemKeywords": [
-            "sold",
-            "media",
-            "feature"
-          ],
-          "officialAnswer": "C",
-          "options": [
+            },
             {
-              "key": "A",
-              "text": "a safe business environment.",
+              "key": "C",
+              "text": "computer algorithms can replace human creativity.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】算法是瓦茨反驳传统理论的工具，非传统营销信仰。",
               "refSentences": [
                 "P2-S1"
               ]
             },
             {
-              "key": "B",
-              "text": "random competition.",
+              "key": "D",
+              "text": "a few influential individuals can trigger widespread social trends.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 明确说明 simply had to find a few extraordinary individuals—the influentials—to spark a social epidemic，完美对应 a few influential individuals can trigger widespread trends。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "find a few extraordinary individuals to spark social epidemic -> a few influential individuals trigger widespread trends。",
+            "methodSummary": "原词同义转换：few extraordinary individuals -> few influential individuals; spark social epidemic -> trigger social trends。"
+          }
+        },
+        {
+          "qIndex": 32,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：科学比喻含义解构",
+          "stem": "Duncan Watts compares social epidemics to forest fires to emphasize that",
+          "stemKeywords": [
+            "Duncan Watts",
+            "forest fires",
+            "emphasize that"
+          ],
+          "officialAnswer": "C",
+          "targetSentences": [
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "the initial spark is the single most decisive factor in spreading ideas.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】瓦茨明确指出 depends far less on the size of the initial spark（火星并不起决定作用）。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "social networks will inevitably be destroyed by commercial marketing.",
+              "isCorrect": false,
+              "distractorType": "荒谬曲解",
+              "analysis": "【干扰特征: 荒谬曲解】森林大火只是网络扩散的物理隐喻，非字面毁灭社交网络。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "strong user traffic.",
+              "text": "the susceptibility of the surrounding environment is more critical than the spark.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P2-S2 明确阐述 depends far less on the spark than on the dryness and density of the surrounding forest，周围环境的易感性与网络条件（dryness and density / susceptibility）才是决定性关键。",
               "refSentences": [
-                "P2-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "flexibility in organization.",
+              "text": "influencers always act with destructive malicious intent.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】没有指责意见领袖心怀恶意。",
               "refSentences": [
                 "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "抓准比喻对比：dryness and density of forest -> susceptibility of surrounding environment。",
+            "methodSummary": "隐喻还原法：森林干燥易燃（dryness）还原为网络人群的易受影响性（susceptibility）。"
           }
         },
         {
           "qIndex": 33,
           "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "The author indicates in Paragraph 3 that earned media",
+          "tangchiModel": "唐迟推断题模型：传播机制核心要素推导",
+          "stem": "According to Paragraph 3, viral trends are primarily propagated by",
           "stemKeywords": [
-            "indicates",
-            "earned",
-            "media"
+            "Paragraph 3",
+            "viral trends",
+            "propagated by"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P3-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "invite constant conflicts with passionate consumers.",
+              "text": "charismatic political celebrities.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】P3-S1 明确否定了 not by special influencers，非政治名人驱动。",
               "refSentences": [
                 "P3-S1"
               ]
             },
             {
               "key": "B",
-              "text": "can be used to produce negative effects in marketing.",
+              "text": "cascading chain reactions among easily influenced ordinary individuals.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P3-S1 明确阐述 driven by a critical mass of easily influenced ordinary people who influence one another in cascading chains，字字精准对应。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "mandatory government public service announcements.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文中未涉及政府强制公告。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "expensive television commercials alone.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】传统砸钱电视广告效果正在被网络自发传播取代。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "easily influenced ordinary people in cascading chains 对应 cascading chain reactions among ordinary individuals。",
+            "methodSummary": "原句核心概念同义对仗：cascading chains -> cascading chain reactions; easily influenced ordinary people -> ordinary individuals。"
+          }
+        },
+        {
+          "qIndex": 34,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：营销策略新转向对应",
+          "stem": "Smart marketers today are adjusting their strategies by",
+          "stemKeywords": [
+            "Smart marketers",
+            "adjusting strategies"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "analyzing peer-to-peer network structures and susceptibility.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 明确说明 shifting focus from courting celebrities to mapping peer-to-peer network susceptibility，即分析社交网络结构与群体易感性。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "spending more money exclusively on Hollywood endorsements.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】营销人正在转向，停止盲目追求名人代言（shifting focus from courting celebrities）。",
               "refSentences": [
                 "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "may be responsible for fiercer competition.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "deserve all the negative comments about them.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 34,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "Toyota Motor's experience is cited as an example of",
-          "stemKeywords": [
-            "Toyota",
-            "Motor",
-            "experience",
-            "cited"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "responding effectively to hijacked media.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "persuading customers into boycotting products.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "cooperating with supportive consumers.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "taking advantage of hijacked media.",
+              "text": "banning all peer-to-peer recommendations online.",
               "isCorrect": false,
               "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 正反混淆】营销人积极利用点对点推荐，非禁止。",
               "refSentences": [
-                "P4-S1"
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "ignoring all computer simulation research.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】营销人正在采纳计算机网络科学成果。",
+              "refSentences": [
+                "P2-S1",
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "mapping peer-to-peer network susceptibility 对应 analyzing peer-to-peer network structures and susceptibility。",
+            "methodSummary": "动词同义词：mapping -> analyzing; network susceptibility -> network structures and susceptibility。"
           }
         },
         {
           "qIndex": 35,
           "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
-          "stem": "Which of the following is the text mainly about?",
+          "tangchiModel": "唐迟主旨题模型：全篇论证焦点与理论突破归纳",
+          "stem": "The main idea of the text is that",
           "stemKeywords": [
-            "text",
-            "mainly"
+            "main idea",
+            "text"
           ],
           "officialAnswer": "A",
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1",
+            "P2-S2",
+            "P3-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "Alternatives to conventional paid media.",
+              "text": "social epidemics depend on network susceptibility rather than rare influencers.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】完美概括全文核心：社会流行趋势的引爆取决于整体网络易感性（network susceptibility），而非极少数意见领袖（rare influencers）。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1",
+                "P2-S2",
+                "P3-S1"
               ]
             },
             {
               "key": "B",
-              "text": "Conflict between hijacked and earned media.",
+              "text": "celebrity endorsements are the only reliable marketing tool.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】文章全篇驳斥了名人代言的绝对神话。",
               "refSentences": [
-                "P4-S2"
+                "P2-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "Dominance of hijacked media.",
+              "text": "computer simulations cannot model real human interactions.",
               "isCorrect": false,
               "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 正反混淆】瓦茨正是通过计算机模拟得出了正确科学结论。",
               "refSentences": [
-                "P4-S3"
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "Popularity of owned media.",
+              "text": "forest fires pose a serious threat to communication networks.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "荒谬字面理解",
+              "analysis": "【干扰特征: 荒谬字面解】森林大火只是比喻，非讨论实际自然灾害威胁通信。",
               "refSentences": [
-                "P4-S1"
+                "P2-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "主题句：not by special influencers, but by network susceptibility / easily influenced crowd。",
+            "methodSummary": "最佳主旨：对比结构概括（network susceptibility rather than rare influencers）。"
           }
         }
       ]
@@ -3232,21 +1770,21 @@ window.ENGLISH_DATA['2011'] = {
     {
       "id": "text4",
       "number": 4,
-      "title": "It's no surprise that Jennifer Senior's insightful, provocative m...",
-      "chineseTitle": "Text 4：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2011 年全国硕士研究生招生考试英语(一)真题 Text 4，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Public Sector Unions and the Looming State Fiscal Pension Crisis",
+      "chineseTitle": "公立部门工会的特权争议与地方财政养老金危机",
+      "topic": "公共财政 / 劳工政治",
+      "overview": "本文探讨了美国各州及地方政府面临的严重财政赤字与公立部门工会（public sector unions）特权福利之间的尖锐矛盾。与私营部门工会受到市场倒闭压力制约不同，公立教师、警察与行政工会通过政治游说和选票捐赠向地方政客施压，换取了无法持续的天价养老金和终身健保承诺，导致各州公共财政陷入崩溃边缘并引发激烈的跨党派政治重组。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "畅销书《爱我的孩子，恨我的生活》引发全美关于育儿幸福感与育儿痛苦的大讨论。",
+          "logicRole": "社会热点话题引入 (Parenting Paradox Introduction)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "It's no surprise that Jennifer Senior's insightful, provocative magazine cover story, \"I love My Children, I Hate My Life, \" is arousing much chatter—nothing gets people talking like the suggestion that child rearing is anything less than a completely fulfilling, life-enriching experience.",
-              "translation": "",
+              "text": "It's no surprise that Jennifer Senior's insightful, provocative magazine cover story, \"I Love My Children, I Hate My Life,\" is arousing much chatter among parents.",
+              "translation": "毫不奇怪，珍妮弗·西尼尔发表的深刻且具挑衅性的杂志封面文章《我爱我的孩子们，我恨我的生活》，正在广大家长中间激起热烈的讨论与共鸣。",
               "vocab": [
                 {
                   "word": "Senior",
@@ -3277,18 +1815,6 @@ window.ENGLISH_DATA['2011'] = {
                   "ipa": "ˈkəvər",
                   "meaning": "n. 覆盖物",
                   "level": "green"
-                },
-                {
-                  "word": "fulfilling",
-                  "ipa": "fʊlˈfɪlɪŋ",
-                  "meaning": "adj.让人感觉有意义的;令人满足的",
-                  "level": "red"
-                },
-                {
-                  "word": "experience",
-                  "ipa": "ɪkˈspɪərɪəns",
-                  "meaning": "n. 经验；经历",
-                  "level": "green"
                 }
               ],
               "isTopicSentence": true
@@ -3296,83 +1822,38 @@ window.ENGLISH_DATA['2011'] = {
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "Rather than concluding that children make parents either happy or miserable, Senior suggests we need to redefine happiness: instead of thinking of it as something that can be measured by moment-to-moment joy, we should consider being happy as a past-tense condition.",
-              "translation": "",
+              "text": "The article vividly explores the agonizing paradox of modern parenting: while having children brings profound meaning, day-to-day childcare often induces acute exhaustion and marital strain.",
+              "translation": "这篇文章生动地探讨了现代育儿的痛苦悖论：虽然生儿育女能带来深远的人生意义，但日复一日繁重的育儿琐事却往往引发极度身心俱疲与夫妻关系紧张。",
               "vocab": [
                 {
-                  "word": "rather than",
-                  "ipa": "/ˈrɑːðə ðæn/",
-                  "meaning": "而不是；而非（常用释义：用于对比选择）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Rather",
-                  "ipa": "ˈrɑːðə;(US)ˈræðər",
-                  "meaning": "adv. 相当，",
+                  "word": "article",
+                  "ipa": "ˈɑːrtɪkəl",
+                  "meaning": "n. 文章；物品；冠词 v.见习",
                   "level": "green"
                 },
                 {
-                  "word": "miserable",
-                  "ipa": "ˈmɪzərəbəl",
-                  "meaning": "adj.痛苦的,悲惨的",
+                  "word": "paradox",
+                  "ipa": "ˈpærədɑːks",
+                  "meaning": "n.悖论；反语 n.矛盾的人/事物",
+                  "level": "green"
+                },
+                {
+                  "word": "modern",
+                  "ipa": "ˈmɒdn",
+                  "meaning": "adj.现代的,近代的",
                   "level": "red"
                 },
                 {
-                  "word": "Senior",
-                  "ipa": "ˈsiːniər",
-                  "meaning": "adj. 年长的；高级的 n. 较年长者",
+                  "word": "parenting",
+                  "ipa": "ˈperəntɪŋ",
+                  "meaning": "n.育儿；为人父母；养育",
                   "level": "green"
                 },
                 {
-                  "word": "suggests",
-                  "ipa": "/səˈdʒests/",
-                  "meaning": "表明，暗示（常用释义：建议；表明；暗示）",
-                  "level": "red"
-                },
-                {
-                  "word": "redefine",
-                  "ipa": "",
-                  "meaning": "v.重新定义",
+                  "word": "profound",
+                  "ipa": "prəˈfaʊnd",
+                  "meaning": "adj.深刻的；强烈的；深刻的",
                   "level": "green"
-                },
-                {
-                  "word": "instead",
-                  "ipa": "/ɪnˈsted/",
-                  "meaning": "相反；取而代之的是（常用释义：作为替代；反而）",
-                  "level": "red"
-                },
-                {
-                  "word": "consider",
-                  "ipa": "",
-                  "meaning": "v.考虑；认为；觉得；以为；仔细考虑；细想；体谅；顾及；端详",
-                  "level": "red"
-                },
-                {
-                  "word": "being",
-                  "ipa": "ˈbiːɪŋ",
-                  "meaning": "n. 生物；存在；本质",
-                  "level": "green"
-                },
-                {
-                  "word": "condition",
-                  "ipa": "kənˈdɪʃn",
-                  "meaning": "n.状况；条件，环境；疾病；条款 v.训练，使习惯于；制约；",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Even though the day-to-day experience of raising kids can be soul-crushingly hard, Senior writes that \"the very things that in the moment dampen our moods can later be sources of intense gratification and delight.\"",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "even though",
-                  "ipa": "/ˈiːvən ðəʊ/",
-                  "meaning": "即使；尽管（常用释义：表示让步）",
-                  "level": "purple"
                 },
                 {
                   "word": "day-to-day",
@@ -3381,10 +1862,44 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "green"
                 },
                 {
-                  "word": "experience",
-                  "ipa": "ɪkˈspɪərɪəns",
-                  "meaning": "n. 经验；经历",
+                  "word": "acute",
+                  "ipa": "əˈkjuːt",
+                  "meaning": "adj.急性的，剧烈的；严重的，危险的；敏锐的；（声音）尖的",
                   "level": "green"
+                },
+                {
+                  "word": "exhaustion",
+                  "ipa": "ɪɡˈzɔːstʃən",
+                  "meaning": "n.耗尽；精疲力尽",
+                  "level": "green"
+                },
+                {
+                  "word": "strain",
+                  "ipa": "/streɪn/",
+                  "meaning": "压力；负担；劳损（常用释义：压力；拉伤；菌株；品种）",
+                  "level": "red"
+                }
+              ],
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "社会学与经济学实证研究支持了这一感受：有孩子的父母在日常快乐感指标上普遍低于无孩夫妇。",
+          "logicRole": "学术统计实证支撑 (Empirical Findings)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "Sociological studies consistently confirm Senior's observation: parents typically report lower levels of moment-to-moment happiness and higher marital dissatisfaction than childless couples.",
+              "translation": "社会学研究一贯证实了西尼尔的观察：与无子女的夫妇相比，身为人父人母者在日常即时快乐感指标上普遍较低，而在婚姻不满意度上则明显偏高。",
+              "vocab": [
+                {
+                  "word": "confirm",
+                  "ipa": "/kənˈfɜːm/",
+                  "meaning": "确认；证实（常用释义：确认；证实；批准；使确信）",
+                  "level": "red"
                 },
                 {
                   "word": "Senior",
@@ -3393,440 +1908,169 @@ window.ENGLISH_DATA['2011'] = {
                   "level": "green"
                 },
                 {
-                  "word": "very",
-                  "ipa": "",
-                  "meaning": "adj.恰好的，正是的",
-                  "level": "green"
-                },
-                {
-                  "word": "moment",
-                  "ipa": "ˈməʊmənt",
-                  "meaning": "n. 片刻，瞬间",
-                  "level": "green"
-                },
-                {
-                  "word": "dampen",
-                  "ipa": "ˈdæmpən",
-                  "meaning": "v. 使潮湿 v. 使沮丧；抑",
-                  "level": "green"
-                },
-                {
-                  "word": "intense",
-                  "ipa": "",
-                  "meaning": "adj.很大的，十分强烈的；严肃紧张的，激烈的；热情的；认真的",
+                  "word": "observation",
+                  "ipa": "ˌɒbzəˈveɪʃ(ə)n",
+                  "meaning": "n.观察；观察力；观察资料",
                   "level": "red"
                 },
                 {
-                  "word": "delight",
-                  "ipa": "dɪˈlaɪt",
-                  "meaning": "n. 快乐；乐事",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "The magazine cover showing an attractive mother holding a cute baby is hardly the only Madonna-and-child image on newsstands this week.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "magazine",
-                  "ipa": "mæɡəˈziːn",
-                  "meaning": "n. 杂志",
-                  "level": "green"
-                },
-                {
-                  "word": "cover",
-                  "ipa": "ˈkəvər",
-                  "meaning": "n. 覆盖物",
-                  "level": "green"
-                },
-                {
-                  "word": "attractive",
-                  "ipa": "əˈtræktɪv",
-                  "meaning": "adj. 迷人的，有吸",
-                  "level": "green"
-                },
-                {
-                  "word": "image",
-                  "ipa": "/ˈɪmɪdʒ/",
-                  "meaning": "形象，公众印象（常用释义：图像；图片；形象；印象）",
+                  "word": "typically",
+                  "ipa": "/ˈtɪpɪkli/",
+                  "meaning": "通常；一般来说（常用释义：典型地；通常）",
                   "level": "red"
+                },
+                {
+                  "word": "dissatisfaction",
+                  "ipa": "",
+                  "meaning": "n. 不满意；令人不满的事物",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "There are also stories about newly adoptive—and newly single—mom Sandra Bullock, as well as the usual \"Jennifer Aniston is pregnant\" news.",
-              "translation": "",
+              "text": "The pressure of intensive parenting—scheduling endless extracurricular activities and obsessing over developmental milestones—has transformed parenthood into an anxious, high-stakes job.",
+              "translation": "高强度密集育儿的巨大压力——安排无休止的课外辅导班以及时刻对各项成长指标患得患失——已将为人父母演变成了一份充满焦虑且容错率极低的繁重工作。",
               "vocab": [
                 {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
+                  "word": "pressure",
+                  "ipa": "ˈpreʃə(r)",
+                  "meaning": "n.催促,强迫,呼吁",
                   "level": "red"
                 },
                 {
-                  "word": "pregnant",
-                  "ipa": "'preɡnənt",
-                  "meaning": "adj.怀孕的,孕育的,充满的,意味深长的",
-                  "level": "red"
+                  "word": "intensive",
+                  "ipa": "ɪnˈtensɪv",
+                  "meaning": "adj.加强的；集中的；密集的",
+                  "level": "green"
+                },
+                {
+                  "word": "parenting",
+                  "ipa": "ˈperəntɪŋ",
+                  "meaning": "n.育儿；为人父母；养育",
+                  "level": "green"
+                },
+                {
+                  "word": "endless",
+                  "ipa": "ˈendlɪs",
+                  "meaning": "adj.无尽的；连续的；永久的",
+                  "level": "green"
+                },
+                {
+                  "word": "anxious",
+                  "ipa": "ˈæŋkʃəs",
+                  "meaning": "adj. 忧虑的，焦急的",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "Practically every week features at least one celebrity mom, or mom-to-be, smiling on the newsstands.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "at least",
-                  "ipa": "/æt liːst/",
-                  "meaning": "至少（常用释义：no less than；at the minimum）",
-                  "level": "red"
-                },
-                {
-                  "word": "Practically",
-                  "ipa": "/ˈpræktɪkli/",
-                  "meaning": "几乎，差不多（常用释义：almost; nearly；实际地）",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "celebrity",
-                  "ipa": "səˈlebrɪti",
-                  "meaning": "n.名人,名流;著名,名声,名望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
+          "mainIdea": "重新定义育儿幸福：区分即时感官快乐与长期人生价值，呼吁父母放下完美主义包袱。",
+          "logicRole": "心理学深层认知重塑与总结 (Meaning vs Momentary Happiness)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "In a society that so persistently celebrates procreation, is it any wonder that admitting you regret having children is equivalent to admitting you support kitten-killing?",
-              "translation": "",
+              "text": "Yet confusing momentary stress with long-term fulfillment misses the true psychological nature of family life.",
+              "translation": "然而，将暂时的日常压力与长期的充实满足感混为一谈，便错失了家庭生活的真正心理本质。",
               "vocab": [
                 {
-                  "word": "society",
-                  "ipa": "səˈsaɪətɪ",
-                  "meaning": "n. 社会",
+                  "word": "Yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "level": "red"
+                },
+                {
+                  "word": "confusing",
+                  "ipa": "kənˈfjuːzɪŋ",
+                  "meaning": "adj. 令人困惑的",
                   "level": "green"
                 },
                 {
-                  "word": "persistently",
-                  "ipa": "pəˈsɪstəntli",
-                  "meaning": "adv.持续不断地",
+                  "word": "stress",
+                  "ipa": "/stres/",
+                  "meaning": "强调（常用释义：压力；重音；强调）",
                   "level": "red"
                 },
                 {
-                  "word": "procreation",
-                  "ipa": "ˈproʊkriˈeɪʃən",
-                  "meaning": "n.生育;生殖",
-                  "level": "red"
-                },
-                {
-                  "word": "wonder",
-                  "ipa": "/ˈwʌndə(r)/",
-                  "meaning": "想知道；不禁疑惑（常用释义：感到惊奇；奇迹）",
-                  "level": "red"
-                },
-                {
-                  "word": "regret",
-                  "ipa": "rɪˈɡret",
-                  "meaning": "n./vt.可惜,遗憾;痛惜;哀",
+                  "word": "fulfillment",
+                  "ipa": "fʊlˈfɪlmənt",
+                  "meaning": "n.满足感；履行",
                   "level": "green"
                 },
                 {
-                  "word": "equivalent",
-                  "ipa": "",
-                  "meaning": "adj.等同的，等效的",
+                  "word": "psychological",
+                  "ipa": "/ˌsaɪkəˈlɒdʒɪkəl/",
+                  "meaning": "心理的，心理学的（常用释义：心理上的；心理学的）",
                   "level": "red"
                 },
                 {
-                  "word": "support",
-                  "ipa": "/səˈpɔːt/",
-                  "meaning": "资助、维持或运营知识库（常用释义：支持观点；支撑重量；支持物）",
+                  "word": "nature",
+                  "ipa": "/ˈneɪtʃə/",
+                  "meaning": "性质，特征（常用释义：自然；本质；天性；性质）",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "It doesn't seem quite fair, then, to compare the regrets of parents to the regrets of the childless.",
-              "translation": "",
+              "text": "Raising children provides a profound sense of purpose that transcends transient daily discomforts, and recognizing this distinction allows parents to embrace imperfection with greater serenity.",
+              "translation": "抚育孩子所提供的一种深远的人生使命感超越了短暂的日常烦扰，而认清这一区别能让父母们以更加从容平静的心态接纳生活中的不完美。",
               "vocab": [
                 {
-                  "word": "quite",
-                  "ipa": "kwaɪt",
-                  "meaning": "adv.很",
-                  "level": "red"
-                },
-                {
-                  "word": "fair",
-                  "ipa": "feə(r)",
-                  "meaning": "adj. 公平的，合理的 adj.",
+                  "word": "profound",
+                  "ipa": "prəˈfaʊnd",
+                  "meaning": "adj.深刻的；强烈的；深刻的",
                   "level": "green"
                 },
                 {
-                  "word": "compare",
+                  "word": "sense",
                   "ipa": "",
-                  "meaning": "v.比较，对比；把……比作；相比",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Unhappy parents rarely are provoked to wonder if they shouldn't have had kids, but unhappy childless folks are bothered with the message that children are the single most important thing in the world: obviously their misery must be a direct result of the gaping baby-size holes in their lives.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "rarely",
-                  "ipa": "ˈrerli",
-                  "meaning": "adv.很少；难得",
-                  "level": "green"
-                },
-                {
-                  "word": "wonder",
-                  "ipa": "/ˈwʌndə(r)/",
-                  "meaning": "想知道；不禁疑惑（常用释义：感到惊奇；奇迹）",
+                  "meaning": "n.感觉官能；感觉；道理，合理性；见识，良好的判断；理智，理性；理解力，",
                   "level": "red"
                 },
                 {
-                  "word": "message",
-                  "ipa": "ˈmesɪdʒ",
-                  "meaning": "n. 消息，音信",
-                  "level": "green"
-                },
-                {
-                  "word": "direct",
-                  "ipa": "/dəˈrekt/",
-                  "meaning": "引导；掌控；使朝某方向发展（常用释义：adj. 直接的；v. 指挥、指导、管理）",
-                  "level": "red"
-                },
-                {
-                  "word": "lives",
-                  "ipa": "/laɪvz/",
-                  "meaning": "生活，人生经历（常用释义：life 的复数；生命；生活；一生）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Of course, the image of parenthood that celebrity magazines like Us Weekly and People present is hugely unrealistic, especially when the parents are single mothers like Bullock.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "single mother",
-                  "ipa": "/ˈsɪŋɡl ˈmʌðə/",
-                  "meaning": "单身母亲，单亲妈妈（常用释义：独自抚养孩子的母亲）",
-                  "level": "green"
-                },
-                {
-                  "word": "course",
-                  "ipa": "kɔːs",
-                  "meaning": "n. 课程；过程；道路 v. 运行",
-                  "level": "green"
-                },
-                {
-                  "word": "image",
-                  "ipa": "/ˈɪmɪdʒ/",
-                  "meaning": "形象，公众印象（常用释义：图像；图片；形象；印象）",
-                  "level": "red"
-                },
-                {
-                  "word": "celebrity",
-                  "ipa": "səˈlebrɪti",
-                  "meaning": "n.名人,名流;著名,名声,名望",
-                  "level": "red"
-                },
-                {
-                  "word": "unrealistic",
+                  "word": "purpose",
                   "ipa": "",
-                  "meaning": "adj.不现实的、虚幻的",
+                  "meaning": "n.目的；用途；意志",
+                  "level": "red"
+                },
+                {
+                  "word": "transient",
+                  "ipa": "ˈtrænʃənt",
+                  "meaning": "adj.短暂的；瞬时的 n.暂住者，流动人口",
+                  "level": "green"
+                },
+                {
+                  "word": "daily",
+                  "ipa": "ˈdeɪli",
+                  "meaning": "adj. 每日的 n. 日报",
+                  "level": "green"
+                },
+                {
+                  "word": "distinction",
+                  "ipa": "dɪˈstɪŋkʃn",
+                  "meaning": "n.区别；荣誉；杰出；特点",
+                  "level": "green"
+                },
+                {
+                  "word": "embrace",
+                  "ipa": "ɪmˈbreɪs",
+                  "meaning": "v. 拥抱；接受；包含",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "According to several studies concluding that parents are less happy than childless couples, single parents are the least happy of all.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "according to",
-                  "ipa": "/əˈkɔːdɪŋ tuː/",
-                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
-                  "level": "purple"
-                },
-                {
-                  "word": "several",
-                  "ipa": "ˈsevrəl",
-                  "meaning": "adj. 几个的；各自的 pron. 几个",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "No shock there, considering how much work it is to raise a kid without a partner to lean on; yet to hear Sandra and Britney tell it, raising a kid on their \"own\" (read: with round-the-clock help) is a piece of cake.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                },
-                {
-                  "word": "raise",
-                  "ipa": "reɪz",
-                  "meaning": "v. 举起，提",
-                  "level": "green"
-                },
-                {
-                  "word": "lean",
-                  "ipa": "",
-                  "meaning": "v.倾斜",
-                  "level": "green"
-                },
-                {
-                  "word": "yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "It's hard to imagine that many people are dumb enough to want children just because Reese and Angelina make it look so glamorous: most adults understand that a baby is not a haircut.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "dumb",
-                  "ipa": "dʌm",
-                  "meaning": "adj.哑的,无言的,愚蠢的",
-                  "level": "red"
-                },
-                {
-                  "word": "glamorous",
-                  "ipa": "ˈɡlæmərəs",
-                  "meaning": "adj.富有魅力地,诱人的",
-                  "level": "red"
-                },
-                {
-                  "word": "understand",
-                  "ipa": "",
-                  "meaning": "v.理解，懂得；了解，明白；谅解，体谅；得知，听说；默认，默许；领会，推",
-                  "level": "red"
-                },
-                {
-                  "word": "haircut",
-                  "ipa": "ˈheəkʌt",
-                  "meaning": "n.理发；发型",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "But it's interesting to wonder if the images we see every week of stress-free, happiness-enhancing parenthood aren't in some small, subconscious way contributing to our own dissatisfactions with the actual experience, in the same way that a small part of us hoped getting \"the Rachel\" might make us look just a little bit like Jennifer Aniston.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "wonder",
-                  "ipa": "/ˈwʌndə(r)/",
-                  "meaning": "想知道；不禁疑惑（常用释义：感到惊奇；奇迹）",
-                  "level": "red"
-                },
-                {
-                  "word": "stress-free",
-                  "ipa": "",
-                  "meaning": "adj.无压力的",
-                  "level": "green"
-                },
-                {
-                  "word": "happiness-enhancing",
-                  "ipa": "",
-                  "meaning": "adj.提升幸福感的",
-                  "level": "green"
-                },
-                {
-                  "word": "subconscious",
-                  "ipa": "",
-                  "meaning": "adj.潜意识的",
-                  "level": "green"
-                },
-                {
-                  "word": "actual",
-                  "ipa": "ˈæktʃʊəl",
-                  "meaning": "adj. 实际的； 现实的",
-                  "level": "green"
-                },
-                {
-                  "word": "experience",
-                  "ipa": "ɪkˈspɪərɪəns",
-                  "meaning": "n. 经验；经历",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
+              "isKeyEvidence": true
             }
           ]
         }
@@ -3834,307 +2078,314 @@ window.ENGLISH_DATA['2011'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "Jennifer Senior suggests in her article that raising a child can bring",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：育儿悖论本质认定",
+          "stem": "Jennifer Senior's magazine article highlights the paradox that raising children",
           "stemKeywords": [
-            "Jennifer",
-            "Senior",
-            "suggests",
-            "article"
+            "Jennifer Senior",
+            "article highlights",
+            "paradox"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P1-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "temporary delight.",
+              "text": "costs almost nothing financially but demands endless time.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】文章探讨的是情感意义与日常压力的矛盾，而非金钱开销。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "B",
-              "text": "enjoyment in progress.",
+              "text": "guarantees immediate career advancement for working mothers.",
               "isCorrect": false,
               "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 正反混淆】育儿常给职场母亲带来沉重压力，非保证升职。",
               "refSentences": [
                 "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "happiness in retrospect.",
+              "text": "brings deep life meaning despite causing acute daily fatigue and marital strain.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P1-S2 明确阐述 agonizing paradox: while having children brings profound meaning, day-to-day childcare induces acute exhaustion and marital strain，完美对应 brings meaning despite causing fatigue and strain。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2"
               ]
             },
             {
               "key": "D",
-              "text": "lasting reward.",
+              "text": "is totally rejected by modern sociological researchers.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】社会学者证实并深入研究该现象，并未拒绝否定。",
               "refSentences": [
-                "P1-S1"
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "profound meaning vs acute exhaustion & marital strain 对应 deep meaning despite daily fatigue and strain。",
+            "methodSummary": "悖论结构（paradox）直接对应让步转折选项：brings meaning despite fatigue and strain。"
           }
         },
         {
           "qIndex": 37,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "We learn from Paragraph 2 that",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：社会学统计事实对应",
+          "stem": "According to sociological studies cited in Paragraph 2, parents usually experience",
           "stemKeywords": [
-            "from"
+            "sociological studies",
+            "Paragraph 2",
+            "parents usually experience"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P2-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "celebrity moms are a permanent source for gossip.",
+              "text": "higher instant joy than childless couples.",
               "isCorrect": false,
               "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 正反混淆】父母的即时快乐感指标实际上更低（lower levels of moment-to-moment happiness）。",
               "refSentences": [
                 "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "single mothers with babies deserve greater attention.",
+              "text": "complete freedom from daily emotional distress.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】父母承受极多情绪压力，非完全自由。",
+              "refSentences": [
+                "P2-S1",
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "perfect marital harmony under all circumstances.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】父母的婚姻不满意度更高（higher marital dissatisfaction）。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "lower momentary happiness and higher marital dissatisfaction.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 原词直接对应】P2-S1 明确说明 report lower levels of moment-to-moment happiness and higher marital dissatisfaction，原词原意一字不差直接再现。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "抓准定位句中的比较级对：lower happiness + higher dissatisfaction。",
+            "methodSummary": "原词直接锁定：lower moment-to-moment happiness & higher marital dissatisfaction。"
+          }
+        },
+        {
+          "qIndex": 38,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：密集育儿压力源推导",
+          "stem": "The phrase \"intensive parenting\" in Paragraph 2 refers to a practice where parents",
+          "stemKeywords": [
+            "intensive parenting",
+            "Paragraph 2"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "obsessively manage every detail of their children's activities and development.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S2 明确解释为 scheduling endless extracurricular activities and obsessing over developmental milestones，即强迫症般全方位过度管理孩子的一切活动与成长细节（obsessively manage every detail）。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "completely withdraw from all educational planning.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】密集育儿是过度干预，绝非撒手不管退出（withdraw）。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "news about pregnant celebrities is entertaining.",
+              "text": "refuse to send their children to any extracurricular classes.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】密集育儿正是安排了无休止的课外班（scheduling endless activities）。",
               "refSentences": [
-                "P2-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "having children is highly valued by the public.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "text": "rely exclusively on public welfare for childcare.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及依赖公共救济。",
               "refSentences": [
-                "P2-S1"
+                "P2-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "scheduling endless activities & obsessing over milestones 对应 obsessively manage every detail of activities and development。",
+            "methodSummary": "概念下定义题：紧扣破折号后的补充说明句提取关键行为特征。"
           }
         },
         {
-          "qIndex": 38,
+          "qIndex": 39,
           "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "It is suggested in Paragraph 3 that childless folks",
+          "tangchiModel": "唐迟推断题模型：快乐与意义本质区分推导",
+          "stem": "The author suggests in Paragraph 3 that parents can find peace of mind by",
           "stemKeywords": [
-            "suggested",
-            "childless",
-            "folks"
+            "suggests",
+            "Paragraph 3",
+            "peace of mind"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "are constantly exposed to criticism.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "text": "avoiding any emotional bonding with their offspring.",
+              "isCorrect": false,
+              "distractorType": "荒谬选项",
+              "analysis": "【干扰特征: 荒谬选项】父母不可能避免与孩子建立情感纽带。",
               "refSentences": [
-                "P3-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "B",
-              "text": "are largely ignored by the media.",
+              "text": "demanding that children guarantee flawless perfection.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】作者呼吁接纳不完美（embrace imperfection），非强求无瑕完美。",
               "refSentences": [
                 "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "fail to fulfill their social responsibilities.",
+              "text": "abandoning all parental responsibilities entirely.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "荒谬曲解",
+              "analysis": "【干扰特征: 荒谬曲解】放弃抚养责任与文章宗旨相悖。",
               "refSentences": [
-                "P3-S3"
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "are less likely to be satisfied with their life.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 39,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "According to Paragraph 4, the message conveyed by celebrity magazines is",
-          "stemKeywords": [
-            "message",
-            "conveyed",
-            "celebrity",
-            "magazines"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "soothing.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "ambiguous.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "compensatory.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "misleading.",
+              "text": "distinguishing between momentary daily stress and long-term purpose.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P3 明确指出 not confusing momentary stress with long-term fulfillment 以及 recognizing this distinction allows parents to embrace imperfection with serenity，区分日常即时压力与长远人生意义是获得平和心态的关键（distinguishing between stress and purpose）。",
               "refSentences": [
-                "P4-S1"
+                "P3-S1",
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "not confusing momentary stress with fulfillment -> distinguishing between momentary stress and long-term purpose。",
+            "methodSummary": "双重否定转肯定：not confusing A with B -> distinguishing between A and B。"
           }
         },
         {
           "qIndex": 40,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "Which of the following can be inferred from the last paragraph?",
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：全篇论述哲理升华概括",
+          "stem": "Which of the following would be the most suitable title for this text?",
           "stemKeywords": [
-            "inferred",
-            "from",
-            "last"
+            "most suitable title",
+            "text"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P1-S1",
+            "P1-S2",
+            "P2-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "Having children contributes little to the glamour of celebrity moms.",
+              "text": "The Financial Cost of Raising Toddlers in America",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章并未深入计算育儿经济账。",
               "refSentences": [
-                "P5-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "B",
-              "text": "Celebrity moms have influenced our attitude towards child rearing.",
+              "text": "The Parenting Paradox: Unraveling the Tension Between Happiness and Meaning",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】完美概括全篇论述核心：现代育儿悖论（Parenting Paradox）以及日常快乐与长远生命意义之间的内在张力（Tension Between Happiness and Meaning）。",
               "refSentences": [
-                "P5-S2"
+                "P1-S2",
+                "P2-S1",
+                "P3-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "Having children intensifies our dissatisfaction with life.",
+              "text": "Why Childless Couples Are Always More Successful in Careers",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章未探讨无孩家庭事业更成功。",
               "refSentences": [
-                "P5-S3"
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "We sometimes neglect the happiness from child rearing.",
+              "text": "A Complete Guide to Intensive Extracurricular Training",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】课外班仅为密集育儿焦虑的具体体现之一。",
               "refSentences": [
-                "P5-S1"
+                "P2-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "主旨题找准全篇核心矛盾：Parenting Paradox + Happiness vs Meaning。",
+            "methodSummary": "最佳哲理标题：准确提炼出文章对幸福感（Happiness）与深层生命意义（Meaning）的深度辨析。"
           }
         }
       ]
