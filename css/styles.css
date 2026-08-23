@@ -806,8 +806,9 @@
       border-color: var(--uncertain-dark);
       box-shadow: 0 1px 4px rgba(255, 149, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
-    /* 错题本里 1000题 题目的角标 */
-    .wrongbook-q-item .q1000-tag {
+    /* 错题本里 1000题 / 习题 题目的角标 */
+    .wrongbook-q-item .q1000-tag,
+    .wrongbook-q-item .lf-tag {
       font-size: 0.72em;
       font-weight: 600;
       color: #fff;
@@ -950,6 +951,23 @@
       box-shadow: 0 1px 4px var(--lv1-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
+    .qnav button.is-knowledge {
+      border: 1.5px solid #d48806;
+      background: linear-gradient(180deg, #fffbe6 0%, #fff1b8 100%);
+      color: #ad6800;
+      font-weight: 600;
+    }
+    .qnav button.is-knowledge:hover {
+      border-color: #faad14;
+      background: linear-gradient(180deg, #fff1b8 0%, #ffe58f 100%);
+      color: #874d00;
+    }
+    .qnav button.is-knowledge.active {
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+      color: #fff !important;
+      border-color: var(--primary) !important;
+    }
+
     .qnav button.active {
       background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
       color: #fff !important;
@@ -1053,6 +1071,25 @@
       font-size: 12px;
       color: #bbb;
       padding: 2px 4px 6px;
+    }
+    .subsection-header {
+      grid-column: 1 / -1;
+      font-size: 11px;
+      color: var(--text-muted, #888);
+      font-weight: 600;
+      margin-top: 6px;
+      margin-bottom: 2px;
+      padding: 2px 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+    .subsection-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--glass-border, rgba(0, 0, 0, 0.08));
     }
 
     /* ===== SM-2 信息行（mastery-bar 下方） ===== */

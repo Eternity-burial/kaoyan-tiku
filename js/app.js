@@ -2,6 +2,7 @@
     // ===== 章节数据（已移至 js/chapters.js）=====
 
     let curSubjectId = 'shu1';
+    window.curSubjectId = curSubjectId;
     let curSubject = SUBJECTS[0];
     let CHAPTERS = curSubject.chapters;   // 当前科目章节数组（原 const 改 let，切换科目时重赋值）
     function getCurrentSubject() { return curSubject; }
@@ -24,11 +25,14 @@
     function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId); }
     function chapterById(id) { return CHAPTERS.find(c => c.id === id); }
 
-    // ===== 合并章节（1000题并入30讲/36讲）辅助 =====
-    // 当前索引所属分区：idx 落在合并章节的 1000题 段 → '1000题'；否则按标签分类
+    // ===== 合并章节（1000题/李范习题并入）辅助 =====
+    // 当前索引所属分区：idx 落在合并章节的伴章段 → 30讲/36讲为 '1000题'，李范全书为 '习题'；否则按标签分类
     function partOfIdx(idx) {
       const ch = getChapter();
-      if (ch && ch.q1000Total && idx >= ch.ownTotal) return '1000题';
+      if (ch && ch.q1000Total && idx >= ch.ownTotal) {
+        if (ch.wb === '李范全书') return '习题';
+        return '1000题';
+      }
       return classifyLabel(ch ? ch.labels[idx] : '');
     }
     // 笔记命名空间键：避免「30讲例1-1」与「1000题1-1」笔记键冲突。
@@ -392,9 +396,9 @@
     }
 
     // 填充书籍面板
-    // 1000题已并入 30讲/36讲：标题栏书籍下拉不再单独列 1000题（进度统计仍按书分开）。
+    // 1000题/李范习题已分别并入 30讲/36讲/李范全书：标题栏书籍下拉不再单独列伴章（进度统计仍按书分开）。
     function fillWbPanel(activeWb) {
-      var entries = getSortedWbs().filter(function(e) { return e.wb !== '1000题'; });
+      var entries = getSortedWbs().filter(function(e) { return e.wb !== '1000题' && e.wb !== '李范习题'; });
       fillPanel('panelWb', entries, 'wb', 'label', activeWb, function(entry) {
         document.getElementById('txtWb').textContent = entry.label;
         // 切书先尝试恢复该书的停靠位置；无记录才落到第一学科第一章节
@@ -505,9 +509,10 @@
     })();
 
     // ===== 自动分区：从 label 推断所属类别（按当前科目） =====
-    // 合并章节（1000题并入）分区顺序为 例题 → 习题 → 1000题；其余章节用科目 partOrder
+    // 合并章节：李范全书为 例题 → 习题；30讲/36讲为 例题 → 习题 → 1000题；其余章节用科目 partOrder
     function getPartOrder() {
       const ch = getChapter();
+      if (ch && ch.wb === '李范全书') return ['例题', '习题'];
       if (ch && ch.q1000Total) return ['例题', '习题', '1000题'];
       return curSubject ? curSubject.partOrder : ['例题', '习题'];
     }
@@ -517,15 +522,22 @@
     }
 
     // ===== 渲染章节统计面板 =====
-    // 合并章节（1000题并入）按书分两块统计：第1块=自身部分，第2块=1000题部分；
+    // 合并章节（1000题/李范习题并入）按书分两块统计：第1块=自身部分，第2块=伴章部分；
     // 进度分别累计，实现「进度按书分开」。非合并章节单块渲染（与现状一致）。
     function renderStats() {
       const ch = getChapter();
       const hasMerge = ch && ch.q1000Total;
-      const segs = hasMerge
-        ? [{ label: getWbLabel(ch.wb), start: 0, len: ch.ownTotal },
-           { label: '1000题', start: ch.ownTotal, len: ch.q1000Total }]
-        : [{ label: '', start: 0, len: ch.total }];
+      let segs;
+      if (hasMerge) {
+        const compCh = chapterById(ch.q1000Id);
+        const compWb = compCh ? compCh.wb : '伴章';
+        segs = [
+          { label: getWbLabel(ch.wb), start: 0, len: ch.ownTotal },
+          { label: getWbLabel(compWb), start: ch.ownTotal, len: ch.q1000Total }
+        ];
+      } else {
+        segs = [{ label: '', start: 0, len: ch.total }];
+      }
       const html = segs.map(function (seg) {
         let lv5 = 0, lv4 = 0, lv3 = 0, lv2 = 0, lv1 = 0, un = 0;
         for (let i = seg.start; i < seg.start + seg.len; i++) {
@@ -847,6 +859,15 @@
       document.getElementById('btnDashboard').innerHTML = '全局进度<span class="sol-key">V</span>';
       setPanelTitle('');
       renderTitle();
+      // If clicking a companion chapter (1000题 or 李范习题), jump to base chapter and target companion offset
+      const baseCh = CHAPTERS.find(function(c) { return c.q1000Id === chapterId; });
+      if (baseCh) {
+        switchChapter(baseCh.id);
+        if (baseCh.ownTotal) {
+          switchTo(baseCh.ownTotal);
+        }
+        return;
+      }
       // Switch to the chapter
       switchChapter(chapterId);
     }
@@ -1026,11 +1047,15 @@
     function switchSubject(subjectId) {
       const subj = SUBJECTS.find(s => s.id === subjectId);
       if (!subj) return;
+      if (engLayout) engLayout.style.display = 'none';
+      if (mathLayout) mathLayout.style.display = 'flex';
+
       autoSaveNotes(); // 切科目前保存未提交的笔记（loadNotes 会重建 notesData）
       // 切科目时若有进行中的复习：提交已评级结果并清除续接会话（跨科目不保留）
       if (reviewSession) exitReviewSession();
       saveResume(); // 先记录当前科目停的位置，再切换
       curSubjectId = subjectId;
+      window.curSubjectId = subjectId;
       curSubject = subj;
       CHAPTERS = subj.chapters;
       migrate822LabelReorder(); // 822 labels 重排迁移，必须先于 migrateAllSm2（避免用旧索引建 SM-2）
@@ -1078,6 +1103,9 @@
       if (s) switchSubject(id);
       closeSubjectPicker();
     }
+    window.switchSubject = switchSubject;
+    window.openSubjectPicker = openSubjectPicker;
+    window.closeSubjectPicker = closeSubjectPicker;
     document.addEventListener('DOMContentLoaded', function () {
       const btnSwitch = document.getElementById('btnSwitchSubject');
       if (btnSwitch) btnSwitch.onclick = openSubjectPicker;
@@ -1122,12 +1150,12 @@
     }
 
     function fillWrongBookWbPanel() {
-      // 收集有错/糊题的书籍（1000题已并入 30讲/36讲：不再单列 1000题 书，
+      // 收集有错/糊题的书籍（1000题/李范习题已并入 30讲/36讲/李范全书：不再单列伴章，
       // 其错题归入对应 base 书卡；第0讲 wb 已改 '基础30讲' 也并入）。
       var wbSet = new Set();
       for (const ch of CHAPTERS) {
         if (ch.total === 0) continue;
-        if (ch.wb === '1000题') continue; // 数据源章节：错题由其 base 伴章汇总
+        if (ch.wb === '1000题' || ch.wb === '李范习题') continue; // 数据源章节：错题由其 base 伴章汇总
         var key = chapterStatusKey(ch);
         var statusObj;
         try { statusObj = JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { statusObj = {}; }
@@ -1135,7 +1163,7 @@
         for (var i = 0; i < ownLen; i++) {
           if (statusObj[i] === 'wrong' || statusObj[i] === 'vague') { wbSet.add(ch.wb); break; }
         }
-        // 1000题 伴章部分也归入 base 书
+        // 伴章（1000题/李范习题）部分也归入 base 书
         if (ch.q1000Id && !wbSet.has(ch.wb)) {
           var qc = chapterById(ch.q1000Id);
           var qkey = chapterStatusKey(qc);
@@ -1171,13 +1199,13 @@
       const grid = document.getElementById('wrongBookGrid');
 
       // 按书籍筛选 + 按学科分组收集。
-      // 合并章节（有 q1000Id）：自身部分(ownTotal) + 伴章 1000题 部分(偏移 ownTotal) 一起进 base 书卡。
+      // 合并章节（有 q1000Id）：自身部分(ownTotal) + 伴章部分(偏移 ownTotal) 一起进 base 书卡。
       const colMap = {};
       let totalWrong = 0;
       for (const ch of CHAPTERS) {
         if (ch.total === 0) continue;
         if (ch.wb !== wrongBookWb) continue;
-        if (ch.wb === '1000题') continue;
+        if (ch.wb === '1000题' || ch.wb === '李范习题') continue;
         const groups = {}; // { wrong: [], rusty: [], vague: [], familiar: [] }
         // 自身部分
         var key = chapterStatusKey(ch);
@@ -1191,7 +1219,7 @@
           else if (s === 'vague') (groups.vague = groups.vague || []).push(i);
           else if (s === 'familiar') (groups.familiar = groups.familiar || []).push(i);
         }
-        // 1000题 伴章部分
+        // 伴章（1000题/李范习题）部分
         if (ch.q1000Id) {
           var qc = chapterById(ch.q1000Id);
           var qkey = chapterStatusKey(qc);
@@ -1242,8 +1270,17 @@
             function qItem(idx, cls, statTitle) {
               const label = labels[idx] || (idx + 1);
               const isQ = ch.q1000Total && idx >= ch.ownTotal;
-              const tag = isQ ? '<span class="ws q1000-tag">1000</span>' : '';
-              return '<span class="wrongbook-q-item ' + cls + '" data-chapter="' + ch.id + '" data-index="' + idx + '" title="第' + label + '题（' + statTitle + '）">' + label + tag + '</span>';
+              const qc = isQ ? chapterById(ch.q1000Id) : null;
+              let tag = '';
+              const dispLabel = (ch.displayLabels && ch.displayLabels[idx]) ? ch.displayLabels[idx] : label;
+              let titleText = '第' + label + '题（' + statTitle + '）';
+              if (isQ && qc) {
+                const secInfo = ch.sections ? ch.sections.find(function(s) { return idx >= s.start && idx < s.start + s.count; }) : null;
+                const typeName = secInfo ? secInfo.type : '习题';
+                tag = qc.wb === '1000题' ? '<span class="ws q1000-tag">1000</span>' : '<span class="ws lf-tag">' + typeName + '</span>';
+                titleText = (secInfo ? secInfo.type + ' ' : '') + '第' + dispLabel + '题 (' + label + ')（' + statTitle + '）';
+              }
+              return '<span class="wrongbook-q-item ' + cls + '" data-chapter="' + ch.id + '" data-index="' + idx + '" title="' + titleText + '">' + dispLabel + tag + '</span>';
             }
             if (g.wrong) for (var wIdx of g.wrong) html += qItem(wIdx, 'wrong', '不会');
             if (g.rusty) for (var rIdx of g.rusty) html += qItem(rIdx, 'rusty', '困难');
@@ -1363,13 +1400,36 @@
         nav.appendChild(secTitle);
 
         secGroups.forEach(function(g) {
+          // 插入题型二级子标题（如 选择题 / 填空题 / 证明题）
+          if (ch.sections) {
+            var matchingSec = ch.sections.find(function(s) { return s.start === g.startIdx; });
+            if (matchingSec) {
+              var subTitle = document.createElement('div');
+              subTitle.className = 'subsection-header';
+              subTitle.textContent = matchingSec.type;
+              nav.appendChild(subTitle);
+            }
+          }
+
+          var dispLabel = (ch.displayLabels && ch.displayLabels[g.startIdx]) ? ch.displayLabels[g.startIdx] : g.parentLabel;
+          var secInfo = ch.sections ? ch.sections.find(function(s) { return g.startIdx >= s.start && g.startIdx < s.start + s.count; }) : null;
+          var isK = ch.isKnowledge && ch.isKnowledge[g.startIdx];
+          var desc = ch.itemDescs && ch.itemDescs[g.startIdx];
+
           var btn = document.createElement('button');
           btn.setAttribute('data-group-start', g.startIdx);
-          btn.title = g.parentLabel;
+          if (desc) {
+            btn.title = (secInfo ? secInfo.type + ' · ' : '') + desc;
+          } else if (secInfo) {
+            btn.title = secInfo.type + (isK ? ' · ' : ' 第') + dispLabel + (isK ? '' : '题') + ' (' + g.parentLabel + ')';
+          } else {
+            btn.title = g.parentLabel;
+          }
           var inCurGroup = (curGroup === g);
           var cls = '';
+          if (isK) cls += ' is-knowledge';
 
-          if (inCurGroup && (!g.isParent || !subMode)) { cls = 'active'; }
+          if (inCurGroup && (!g.isParent || !subMode)) { cls += ' active'; }
 
           var visIdx = groupVisibleIndices(g, filteredSet);
           var groupHasVisible = isAllFilterActive() || visIdx.length > 0;
@@ -1396,12 +1456,12 @@
 
             var textSpan = document.createElement('span');
             textSpan.className = 'btn-text';
-            textSpan.textContent = g.parentLabel;
+            textSpan.textContent = dispLabel;
             btn.appendChild(textSpan);
           } else {
             cls += ' ' + getStatusClass(g.startIdx);
             btn.className = cls.trim();
-            btn.textContent = g.parentLabel;
+            btn.textContent = dispLabel;
           }
 
           if (!groupHasVisible) { btn.style.visibility = 'hidden'; }
@@ -1727,7 +1787,14 @@
       const g = ch.groupForIdx[current];
       const labels = ch.labels;
       let qLabelText;
-      if (subMode) {
+      const secInfo = ch.sections ? ch.sections.find(function(s) { return current >= s.start && current < s.start + s.count; }) : null;
+      const isK = ch.isKnowledge && ch.isKnowledge[current];
+      const desc = ch.itemDescs && ch.itemDescs[current];
+      if (desc) {
+        qLabelText = (secInfo ? secInfo.type + ' · ' : '') + desc;
+      } else if (secInfo && ch.displayLabels) {
+        qLabelText = secInfo.type + (isK ? ' · ' : ' 第') + ch.displayLabels[current] + (isK ? '' : '题');
+      } else if (subMode) {
         qLabelText = labels[current];
       } else if (g && g.isParent) {
         qLabelText = g.parentLabel;
@@ -3722,152 +3789,8 @@ ${cardsHTML}
       const key = e.key.toLowerCase();
       const isShift = e.shiftKey;
 
-      // 面板（全局进度/错题本/快捷键帮助/科目选择）打开时，仅允许面板相关按键，避免误操作隐藏的章节
-      if (subjectPickerOpen) {
-        // 科目选择弹窗独占：只放行 G（重新打开/切换）与 Esc（关闭），H 等不再叠加其它弹窗
-        if (key !== 'g' && key !== 'escape') return;
-      } else if (dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) {
-        const panelKeys = ['h', 'escape'];
-        if (dashboardOpen || wrongBookOpen) panelKeys.push('v', 'b');
-        if (sm2PanelOpen) panelKeys.push('m');
-        if (!panelKeys.includes(key)) return;
-      }
-
-      // Alt：进入标注（进入/退出标注的快捷键；仅灯箱打开时生效）
-      if (e.key === 'Alt' && !e.ctrlKey && !e.metaKey) {
-        const lbEl = document.getElementById('lightbox');
-        if (lbEl && lbEl.classList.contains('show')) {
-          e.preventDefault();
-          openAnnotator();
-        }
-        return;
-      }
-
-      // Ctrl+Z：撤销最近一次掌握度标记
-      if ((e.ctrlKey || e.metaKey) && key === 'z' && !isShift) {
-        e.preventDefault();
-        undoLastMark();
-        return;
-      }
-
-      // Shift 筛选快捷键
-      if (isShift) {
-        switch (key) {
-          case 'a': e.preventDefault(); applyFilter('all'); return;
-          case 'z': e.preventDefault(); applyFilter('proficient'); return;
-          case 'x': e.preventDefault(); applyFilter('vague'); return;
-          case 'c': e.preventDefault(); applyFilter('wrong'); return;
-          case 'n': e.preventDefault(); applyFilter('unmarked'); return;
-          case ' ': e.preventDefault(); toggleDefaultSolution(); return;
-        }
-      }
-
-      // 灯箱打开（未处于标注模式）时：只放行灯箱自己的快捷键（Esc 关闭、+/=/0 缩放），
-      // 屏蔽切题/改状态等全局快捷键，避免在放大查看图片时背后静默切换题目。
-      if (document.getElementById('lightbox').classList.contains('show')) {
-        if (key === 'escape') { closeLightbox(); return; }
-        // +、=、-、0 在下方 switch 中按灯箱缩放处理
-        if (key !== '+' && key !== '=' && key !== '-' && key !== '0') return;
-      }
-
-      // 带修饰键（Ctrl / Alt / Cmd）的普通键不放行：避免 Ctrl+A、Ctrl+W、Alt+A 等误触发放大/切题/改状态
-      // （Shift 组合已在上方处理；Alt 进入标注已在前面单独处理）
-      if (e.ctrlKey || e.metaKey || e.altKey) return;
-
-      // 非 Z/X/C 键按下时，打断待处理的组合超时（避免导航/面板等操作后意外改标记）
-      if (key !== 'z' && key !== 'x' && key !== 'c') resetCombo();
-
-      switch (key) {
-        // 上一题 / 下一题（题组级 / 子题级，见 navPrev / navNext）
-        case 'a': case 'arrowleft': navPrev(); break;
-        case 'd': case 'arrowright': navNext(); break;
-        // 小题选择模式
-        case 'f': toggleSubMode(); break;
-        // 上一行 / 下一行（视觉网格行导航）
-        case 'w': case 'arrowup': navUp(); break;
-        case 's': case 'arrowdown': navDown(); break;
-        // 掌握度（组合键）
-        case 'z': case 'x': case 'c': e.preventDefault(); handleStatusKey(key); break;
-        // 解析
-        case ' ': e.preventDefault(); toggleSolution(); break;
-        // 章节切换（复习中 Q/E = 上一/下一复习题）
-        case 'q': if (reviewSession) reviewPrev(); else gotoPrevChapter(); break;
-        case 'e': if (reviewSession) reviewNext(); else gotoNextChapter(); break;
-        // 图片质量标记
-        case 'r': toggleQBad(); break;
-        case 't': toggleSBad(); break;
-        // 笔记与帮助
-        case 'n': e.preventDefault(); focusNotes(); break;
-        case 'h': toggleShortcutHelp(); break;
-        // 全局进度 / 错题本 / 间隔重复
-        case 'v': toggleDashboard(); break;
-        case 'b': toggleWrongBook(); break;
-        case 'm': toggleSm2Panel(); break;
-        // 切换科目
-        case 'g': openSubjectPicker(); break;
-        // 灯箱快捷键
-        // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
-        case 'escape':
-          if (sm2PanelOpen) { closeSm2Panel(); return; }
-          if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
-          if (subjectPickerOpen) { closeSubjectPicker(); return; }
-          if (shortcutHelpOpen) { toggleShortcutHelp(); return; }
-          if (dashboardOpen) { toggleDashboard(); return; }
-          if (wrongBookOpen) { toggleWrongBook(); return; }
-          if (reviewSession) { exitReviewSession(); return; }
-          break;
-        case '=':
-        case '+': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = Math.min(lbScale * 1.2, 5); lbApplyTransform(); return; } break;
-        case '-': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = Math.max(lbScale / 1.2, 0.5); lbApplyTransform(); return; } break;
-        case '0': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = 1; lbTranslateX = 0; lbTranslateY = 0; lbApplyTransform(); return; } break;
-      }
-    });
-
-    // ===== 横向滚轮切题（常规状态，效果同 A/D 键） =====
-    // 方向锁定策略：手势前几个事件确定主导方向（横/纵），之后互斥屏蔽。
-    // — 锁定为横向：累积 dx，超 30 立即切题并用 lock 防连切，小幅度即可触发
-    // — 锁定为纵向：整段手势忽略（触控板上下滑绝不切题）
-    // — 300ms 无新事件 → 手势结束，全部重置
-    // 触控板 vs 鼠标滚轮方向解耦：单次 |dx|≥50 判为鼠标滚轮（右滚→下一题），
-    // 否则判为触控板（右滑→上一题）。两者语义天然相反。
-    let _wDir = null, _wAccum = 0, _wLocked = false, _wTimer = null, _wIsMouse = false;
-    document.addEventListener('wheel', function (e) {
-      if (lbAnnotMode) return;
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-      if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) return;
-      if (document.getElementById('lightbox').classList.contains('show')) return;
-
-      const dx = e.deltaX || 0, dy = e.deltaY || 0;
-      const absDX = Math.abs(dx), absDY = Math.abs(dy);
-
-      // 重置计时器：每次新事件都推迟 reset
-      if (_wTimer) clearTimeout(_wTimer);
-      _wTimer = setTimeout(function () {
-        _wDir = null; _wAccum = 0; _wLocked = false; _wTimer = null; _wIsMouse = false;
-      }, 300);
-
-      if (_wLocked) return;
-
-      // 方向未确定：哪个方向明显主导即锁定；同时标记设备类型
-      if (_wDir === null) {
-        if (absDX > absDY * 1.5 && absDX > 4) {
-          _wDir = 'h';
-          _wIsMouse = absDX >= 50; // 单次大增量 = 鼠标滚轮
-        }
-        else if (absDY > absDX * 1.5 && absDY > 4) { _wDir = 'v'; }
-        else return; // 方向不明确，继续观察
-      }
-
-      if (_wDir === 'v') return; // 纵向手势，整段忽略
-
-      // 横向手势：累积 dx，达标即切
-      _wAccum += dx;
-      if (Math.abs(_wAccum) > 15) {
-        if (_wIsMouse) {
-          // 鼠标滚轮：右滚→下一题
-          if (_wAccum > 0) navNext();
-          else navPrev();
-        } else {
+      // 英语科目处于激活态时，由 english_app.js 接管做题按键，仅放行 G（科目选择）与 Esc
+      
           // 触控板：右滑→上一题
           if (_wAccum > 0) navPrev();
           else navNext();
@@ -3878,37 +3801,49 @@ ${cardsHTML}
     }, { passive: false });
 
     // ===== 初始化 =====
-    // 读取上次选择的科目（默认数学），加载其章节数组
-    var savedSubject = localStorage.getItem('kaoyan_subject');
+    // 读取 URL 参数或上次选择的科目（默认数学），加载其章节数组
+    var urlParams = new URLSearchParams(window.location.search);
+    var urlSubj = urlParams.get('subj');
+    var savedSubject = (urlSubj && SUBJECTS.some(function (s) { return s.id === urlSubj; })) ? urlSubj : localStorage.getItem('kaoyan_subject');
     curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'shu1';
-    curSubject = SUBJECTS.find(function (s) { return s.id === curSubjectId; });
-    CHAPTERS = curSubject.chapters;
-    migrate822LabelReorder(); // 822 labels 重排迁移，必须先于 migrateAllSm2（避免用旧索引建 SM-2）
-    // 一次性全量迁移已有掌握度 → SM-2 复习记录（每个科目只跑一次）
-    migrateAllSm2();
-    // 恢复上次停的章节/题目/小题模式（无记录时从该科目默认章节第 1 题开始）
-    var resume = loadResume(curSubjectId);
-    if (resume) {
-      currentChapterId = resume.ch;
-      current = resume.idx;
-      subMode = resume.sub;
+    window.curSubjectId = curSubjectId;
+    
+    if (curSubjectId === 'english') {
+      curSubject = SUBJECTS.find(function (s) { return s.id === 'english'; });
+      CHAPTERS = [];
+      document.addEventListener('DOMContentLoaded', function () {
+        switchSubject('english');
+      });
     } else {
-      currentChapterId = curSubject.initChapterId;
-      current = 0; subMode = false;
-    }
+      curSubject = SUBJECTS.find(function (s) { return s.id === curSubjectId; });
+      CHAPTERS = curSubject.chapters;
+      migrate822LabelReorder(); // 822 labels 重排迁移，必须先于 migrateAllSm2（避免用旧索引建 SM-2）
+      // 一次性全量迁移已有掌握度 → SM-2 复习记录（每个科目只跑一次）
+      migrateAllSm2();
+      // 恢复上次停的章节/题目/小题模式（无记录时从该科目默认章节第 1 题开始）
+      var resume = loadResume(curSubjectId);
+      if (resume) {
+        currentChapterId = resume.ch;
+        current = resume.idx;
+        subMode = resume.sub;
+      } else {
+        currentChapterId = curSubject.initChapterId;
+        current = 0; subMode = false;
+      }
 
-    loadGlobalFilters(); loadSolutionPref(); // 恢复筛选状态与解析默认（解析默认按科目）
-    loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
-    // 若恢复的筛选状态激活且当前题被筛掉，跳到第一条筛中题，避免落在不可见题上
-    if (!isAllFilterActive()) {
-      const filtered = getFilteredIndices();
-      if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
+      loadGlobalFilters(); loadSolutionPref(); // 恢复筛选状态与解析默认（解析默认按科目）
+      loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
+      // 若恢复的筛选状态激活且当前题被筛掉，跳到第一条筛中题，避免落在不可见题上
+      if (!isAllFilterActive()) {
+        const filtered = getFilteredIndices();
+        if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
+      }
+      renderTitle();
+      renderStats();
+      renderNav(); switchTo(current); updateFilterCounts();
+      updateFilterButtons(); // 恢复筛选按钮高亮（需在 renderNav 之后，按钮已重建）
+      renderSolDefaultBtn(); updateSolutionUI();
     }
-    renderTitle();
-    renderStats();
-    renderNav(); switchTo(current); updateFilterCounts();
-    updateFilterButtons(); // 恢复筛选按钮高亮（需在 renderNav 之后，按钮已重建）
-    renderSolDefaultBtn(); updateSolutionUI();
     // 首次加载（无已选科目）弹出科目选择（等 DOM 就绪，科目弹窗 HTML 在脚本后）
     if (!savedSubject) document.addEventListener('DOMContentLoaded', function () { openSubjectPicker(); });
   
