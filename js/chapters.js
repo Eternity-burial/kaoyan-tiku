@@ -558,7 +558,7 @@
         ]
       },
       {
-        id: 'english', name: '英语一', storageSuffix: 'eng', type: 'english',
+        id: 'english', name: '英语', storageSuffix: 'eng', type: 'english',
         wbOrder: [{ wb: '2010真题', label: '2010真题' }],
         subjOrder: ['阅读精读'],
         chapters: []
