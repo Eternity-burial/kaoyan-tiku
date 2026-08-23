@@ -57,7 +57,7 @@
   function getAvailableYears() {
     if (!window.ENGLISH_DATA) return ['2010'];
     const years = Object.keys(window.ENGLISH_DATA);
-    return years.length > 0 ? years.sort() : ['2010'];
+    return years.length > 0 ? years.sort((a, b) => parseInt(a) - parseInt(b)) : ['2010'];
   }
 
   // 获取当前选定年份的数据集
