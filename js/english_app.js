@@ -27,7 +27,10 @@
   function initDom() {
     dom = {
       layout: document.getElementById('englishAppLayout'),
-      yearSelect: document.getElementById('engYearSelect'),
+      ddYear: document.getElementById('engDdYear'),
+      trigYear: document.getElementById('engTrigYear'),
+      txtYear: document.getElementById('engTxtYear'),
+      panelYear: document.getElementById('engPanelYear'),
       passagePane: document.getElementById('engPassagePane'),
       analysisPane: document.getElementById('engAnalysisPane'),
       textTabs: document.getElementById('engTextTabs'),
@@ -42,8 +45,7 @@
       vocabPopover: document.getElementById('engVocabPopover'),
       modalHelp: document.getElementById('engModalHelp'),
       btnHelp: document.getElementById('engBtnHelp'),
-      btnCloseHelp: document.getElementById('engBtnCloseHelp'),
-      btnSwitchSubjectHeader: document.getElementById('engBtnSwitchSubjectHeader')
+      btnCloseHelp: document.getElementById('engBtnCloseHelp')
     };
   }
 
@@ -92,19 +94,44 @@
     }
   }
 
-  // 渲染年份下拉选择器
+  // 渲染年份标题下拉面板（与数学题库 title-dropdown 风格一致）
   function renderYearSelector() {
-    if (!dom.yearSelect) return;
+    if (!dom.txtYear || !dom.panelYear) return;
+    dom.txtYear.textContent = `${state.currentYear} 年真题`;
+
     const years = getAvailableYears();
-    dom.yearSelect.innerHTML = '';
+    dom.panelYear.innerHTML = '';
     years.forEach(y => {
-      const opt = document.createElement('option');
-      opt.value = y;
-      opt.textContent = `${y} 年真题`;
-      opt.selected = (y === state.currentYear);
-      dom.yearSelect.appendChild(opt);
+      const btn = document.createElement('button');
+      btn.className = `title-option ${y === state.currentYear ? 'active' : ''}`;
+      btn.textContent = `${y} 年真题`;
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        closeYearDropdown();
+        switchYear(y);
+      };
+      dom.panelYear.appendChild(btn);
     });
-    dom.yearSelect.onchange = (e) => switchYear(e.target.value);
+  }
+
+  function toggleYearDropdown() {
+    if (!dom.trigYear || !dom.panelYear) return;
+    const isOpen = dom.trigYear.classList.contains('open');
+    if (isOpen) {
+      closeYearDropdown();
+    } else {
+      openYearDropdown();
+    }
+  }
+
+  function openYearDropdown() {
+    if (dom.trigYear) dom.trigYear.classList.add('open');
+    if (dom.panelYear) dom.panelYear.classList.add('open');
+  }
+
+  function closeYearDropdown() {
+    if (dom.trigYear) dom.trigYear.classList.remove('open');
+    if (dom.panelYear) dom.panelYear.classList.remove('open');
   }
 
   // 切换年份
@@ -696,13 +723,18 @@
 
   // 设置事件监听
   function setupEventListeners() {
-    if (dom.btnSwitchSubjectHeader) {
-      dom.btnSwitchSubjectHeader.onclick = () => {
-        if (typeof window.openSubjectPicker === 'function') {
-          window.openSubjectPicker();
-        }
+    if (dom.trigYear) {
+      dom.trigYear.onclick = (e) => {
+        e.stopPropagation();
+        toggleYearDropdown();
       };
     }
+
+    document.addEventListener('click', (e) => {
+      if (dom.ddYear && !dom.ddYear.contains(e.target)) {
+        closeYearDropdown();
+      }
+    });
 
     if (dom.btnToggleTrans) {
       dom.btnToggleTrans.onclick = () => {
@@ -776,6 +808,7 @@
         }
       }
       else if (e.key === 'Escape') {
+        closeYearDropdown();
         if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
         if (dom.modalHelp) dom.modalHelp.classList.remove('active');
       }

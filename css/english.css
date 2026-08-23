@@ -1078,3 +1078,9 @@
   background: #ffffff;
   box-shadow: 0 0 0 2px var(--primary-alpha);
 }
+/* 英语顶部真题年份下拉面板适配 */
+#engDdYear .title-panel {
+  min-width: 140px;
+  max-width: 220px;
+  z-index: 120;
+}
