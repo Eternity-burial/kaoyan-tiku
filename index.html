@@ -6,10 +6,11 @@
   <title>考研题库</title>
   <link rel="stylesheet" href="lib/katex/katex.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/english.css">
 </head>
 <body>
 
-  <div class="app-layout">
+  <div class="app-layout" id="mathAppLayout">
 
     <div class="sidebar-left">
 
@@ -41,6 +42,7 @@
       <button id="btnSm2PanelSidebar" class="sol-default-btn" style="margin-top:8px" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
       <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
       <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
+      <a href="javascript:switchSubject('english')" class="sol-default-btn" style="margin-top:8px; display:flex; align-items:center; justify-content:space-between; text-decoration:none; background:rgba(102, 8, 116, 0.08); color:var(--primary); border:1px solid rgba(102, 8, 116, 0.2); font-weight:600;">英语一真题精读<span class="sol-key" style="background:var(--primary); color:#fff;">NEW</span></a>
 
     </div>
 
@@ -249,6 +251,88 @@
     </div>
   </div>
 
+  <!-- 英语一 · 智能精读与题型分析 SPA 模块 (默认隐藏，切换至英语时显示) -->
+  <div class="english-app-layout" id="englishAppLayout" style="display:none;">
+    <!-- 顶部导航条 -->
+    <header class="english-header">
+      <div class="header-left">
+        <button class="btn-back-home" id="engBtnSwitchSubjectHeader" title="快捷键: G">
+          <span>🔄 切换科目</span>
+          <span class="shortcut-badge">G</span>
+        </button>
+        <div class="app-title-group">
+          <h1>考研英语一 · 真题精读与题型分析</h1>
+          <span class="year-badge">2010 年真题 Demo</span>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <div class="text-tabs" id="engTextTabs"></div>
+      </div>
+
+      <div class="header-right">
+        <button class="toggle-btn" id="engBtnToggleTrans" title="快捷键: T">
+          <span>🇨🇳 全文译文</span>
+          <span class="shortcut-badge">T</span>
+        </button>
+        <button class="toggle-btn" id="engBtnHelp" title="快捷键: H">
+          <span>⌨️ 快捷键</span>
+          <span class="shortcut-badge">H</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 主工作台：左右双栏 -->
+    <main class="english-workbench">
+      <!-- 左栏：文章精读与生词分析 -->
+      <section class="passage-pane" id="engPassagePane"></section>
+
+      <!-- 右栏：题目分析与复盘工作台 -->
+      <section class="analysis-pane" id="engAnalysisPane">
+        <div class="question-toolbar">
+          <div class="filter-row" id="engTypeFilterBar"></div>
+          <div class="question-pills" id="engQuestionPills"></div>
+        </div>
+
+        <div class="mode-bar">
+          <span style="font-size:12px;font-weight:600;color:#64748b;">当前模式:</span>
+          <div class="mode-switches">
+            <button class="mode-btn active" id="engBtnAnalysisMode">🔍 精读与题型剖析</button>
+            <button class="mode-btn" id="engBtnPracticeMode">📝 考场模考模式</button>
+          </div>
+        </div>
+
+        <div class="stem-card" id="engStemCard"></div>
+        <div class="options-list" id="engOptionsList"></div>
+        <div class="reflection-card" id="engReflectionCard"></div>
+      </section>
+    </main>
+
+    <!-- 词汇详情悬停浮窗 -->
+    <div class="vocab-popover" id="engVocabPopover"></div>
+
+    <!-- 英语快捷键帮助弹窗 -->
+    <div class="modal-overlay" id="engModalHelp">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>⌨️ 考研英语一快捷键指南</h3>
+          <button class="btn-close-modal" id="engBtnCloseHelp">&times;</button>
+        </div>
+        <div class="shortcut-grid">
+          <div class="shortcut-row"><span>选择选项 A / B / C / D</span><span class="shortcut-badge">1 / 2 / 3 / 4</span></div>
+          <div class="shortcut-row"><span>上一题 / 下一题</span><span class="shortcut-badge">Q / E 或 ← / →</span></div>
+          <div class="shortcut-row"><span>切换科目</span><span class="shortcut-badge">G</span></div>
+          <div class="shortcut-row"><span>熟练 / 掌握</span><span class="shortcut-badge">Z</span></div>
+          <div class="shortcut-row"><span>模糊 / 需复习</span><span class="shortcut-badge">X</span></div>
+          <div class="shortcut-row"><span>不会 / 错题</span><span class="shortcut-badge">C</span></div>
+          <div class="shortcut-row"><span>中英译文显隐</span><span class="shortcut-badge">T</span></div>
+          <div class="shortcut-row"><span>切换精读/模考模式</span><span class="shortcut-badge">M</span></div>
+          <div class="shortcut-row"><span>模考模式提交答案</span><span class="shortcut-badge">Enter</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 科目选择模态 -->
   <div class="shortcut-overlay" id="subjectOverlay">
     <div class="shortcut-modal" style="max-width: 420px">
@@ -256,6 +340,7 @@
       <div class="subject-list">
         <button class="subject-option" data-subject="shu1">数学<span class="subj-desc">高数 / 线代 / 概率论</span></button>
         <button class="subject-option" data-subject="822">控制工程基础<span class="subj-desc">822 专业课</span></button>
+        <button class="subject-option" data-subject="english">英语一<span class="subj-desc">真题精读与题型分析</span></button>
       </div>
       <div class="shortcut-close-hint">点击背景关闭 · Esc 关闭</div>
     </div>
@@ -328,6 +413,8 @@
   <script src="lib/katex/contrib/auto-render.min.js"></script>
   <script src="lib/markerjs3/markerjs3.umd.js"></script>
   <script src="js/chapters.js"></script>
+  <script src="js/english_2010_data.js"></script>
+  <script src="js/english_app.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

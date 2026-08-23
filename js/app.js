@@ -1047,6 +1047,25 @@
     function switchSubject(subjectId) {
       const subj = SUBJECTS.find(s => s.id === subjectId);
       if (!subj) return;
+
+      const mathLayout = document.getElementById('mathAppLayout') || document.querySelector('.app-layout');
+      const engLayout = document.getElementById('englishAppLayout');
+
+      if (subjectId === 'english') {
+        autoSaveNotes();
+        if (reviewSession) exitReviewSession();
+        saveResume();
+        curSubjectId = 'english';
+        window.curSubjectId = 'english';
+        curSubject = subj;
+        localStorage.setItem('kaoyan_subject', 'english');
+        if (mathLayout) mathLayout.style.display = 'none';
+        if (engLayout) engLayout.style.display = 'flex';
+        if (window.kyApp && window.kyApp.activate) window.kyApp.activate();
+        closeSubjectPicker();
+        return;
+      }
+
       if (engLayout) engLayout.style.display = 'none';
       if (mathLayout) mathLayout.style.display = 'flex';
 
@@ -3790,7 +3809,162 @@ ${cardsHTML}
       const isShift = e.shiftKey;
 
       // 英语科目处于激活态时，由 english_app.js 接管做题按键，仅放行 G（科目选择）与 Esc
-      
+      if (curSubjectId === 'english') {
+        if (key === 'g') {
+          if (subjectPickerOpen) closeSubjectPicker();
+          else openSubjectPicker();
+        } else if (key === 'escape' && subjectPickerOpen) {
+          closeSubjectPicker();
+        }
+        return;
+      }
+
+      // 面板（全局进度/错题本/快捷键帮助/科目选择）打开时，仅允许面板相关按键，避免误操作隐藏的章节
+      if (subjectPickerOpen) {
+        // 科目选择弹窗独占：只放行 G（重新打开/切换）与 Esc（关闭），H 等不再叠加其它弹窗
+        if (key !== 'g' && key !== 'escape') return;
+      } else if (dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) {
+        const panelKeys = ['h', 'escape'];
+        if (dashboardOpen || wrongBookOpen) panelKeys.push('v', 'b');
+        if (sm2PanelOpen) panelKeys.push('m');
+        if (!panelKeys.includes(key)) return;
+      }
+
+      // Alt：进入标注（进入/退出标注的快捷键；仅灯箱打开时生效）
+      if (e.key === 'Alt' && !e.ctrlKey && !e.metaKey) {
+        const lbEl = document.getElementById('lightbox');
+        if (lbEl && lbEl.classList.contains('show')) {
+          e.preventDefault();
+          openAnnotator();
+        }
+        return;
+      }
+
+      // Ctrl+Z：撤销最近一次掌握度标记
+      if ((e.ctrlKey || e.metaKey) && key === 'z' && !isShift) {
+        e.preventDefault();
+        undoLastMark();
+        return;
+      }
+
+      // Shift 筛选快捷键
+      if (isShift) {
+        switch (key) {
+          case 'a': e.preventDefault(); applyFilter('all'); return;
+          case 'z': e.preventDefault(); applyFilter('proficient'); return;
+          case 'x': e.preventDefault(); applyFilter('vague'); return;
+          case 'c': e.preventDefault(); applyFilter('wrong'); return;
+          case 'n': e.preventDefault(); applyFilter('unmarked'); return;
+          case ' ': e.preventDefault(); toggleDefaultSolution(); return;
+        }
+      }
+
+      // 灯箱打开（未处于标注模式）时：只放行灯箱自己的快捷键（Esc 关闭、+/=/0 缩放），
+      // 屏蔽切题/改状态等全局快捷键，避免在放大查看图片时背后静默切换题目。
+      if (document.getElementById('lightbox').classList.contains('show')) {
+        if (key === 'escape') { closeLightbox(); return; }
+        // +、=、-、0 在下方 switch 中按灯箱缩放处理
+        if (key !== '+' && key !== '=' && key !== '-' && key !== '0') return;
+      }
+
+      // 带修饰键（Ctrl / Alt / Cmd）的普通键不放行：避免 Ctrl+A、Ctrl+W、Alt+A 等误触发放大/切题/改状态
+      // （Shift 组合已在上方处理；Alt 进入标注已在前面单独处理）
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      // 非 Z/X/C 键按下时，打断待处理的组合超时（避免导航/面板等操作后意外改标记）
+      if (key !== 'z' && key !== 'x' && key !== 'c') resetCombo();
+
+      switch (key) {
+        // 上一题 / 下一题（题组级 / 子题级，见 navPrev / navNext）
+        case 'a': case 'arrowleft': navPrev(); break;
+        case 'd': case 'arrowright': navNext(); break;
+        // 小题选择模式
+        case 'f': toggleSubMode(); break;
+        // 上一行 / 下一行（视觉网格行导航）
+        case 'w': case 'arrowup': navUp(); break;
+        case 's': case 'arrowdown': navDown(); break;
+        // 掌握度（组合键）
+        case 'z': case 'x': case 'c': e.preventDefault(); handleStatusKey(key); break;
+        // 解析
+        case ' ': e.preventDefault(); toggleSolution(); break;
+        // 章节切换（复习中 Q/E = 上一/下一复习题）
+        case 'q': if (reviewSession) reviewPrev(); else gotoPrevChapter(); break;
+        case 'e': if (reviewSession) reviewNext(); else gotoNextChapter(); break;
+        // 图片质量标记
+        case 'r': toggleQBad(); break;
+        case 't': toggleSBad(); break;
+        // 笔记与帮助
+        case 'n': e.preventDefault(); focusNotes(); break;
+        case 'h': toggleShortcutHelp(); break;
+        // 全局进度 / 错题本 / 间隔重复
+        case 'v': toggleDashboard(); break;
+        case 'b': toggleWrongBook(); break;
+        case 'm': toggleSm2Panel(); break;
+        // 切换科目
+        case 'g': openSubjectPicker(); break;
+        // 灯箱快捷键
+        // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
+        case 'escape':
+          if (sm2PanelOpen) { closeSm2Panel(); return; }
+          if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
+          if (subjectPickerOpen) { closeSubjectPicker(); return; }
+          if (shortcutHelpOpen) { toggleShortcutHelp(); return; }
+          if (dashboardOpen) { toggleDashboard(); return; }
+          if (wrongBookOpen) { toggleWrongBook(); return; }
+          if (reviewSession) { exitReviewSession(); return; }
+          break;
+        case '=':
+        case '+': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = Math.min(lbScale * 1.2, 5); lbApplyTransform(); return; } break;
+        case '-': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = Math.max(lbScale / 1.2, 0.5); lbApplyTransform(); return; } break;
+        case '0': if (document.getElementById('lightbox').classList.contains('show')) { lbScale = 1; lbTranslateX = 0; lbTranslateY = 0; lbApplyTransform(); return; } break;
+      }
+    });
+
+    // ===== 横向滚轮切题（常规状态，效果同 A/D 键） =====
+    // 方向锁定策略：手势前几个事件确定主导方向（横/纵），之后互斥屏蔽。
+    // — 锁定为横向：累积 dx，超 30 立即切题并用 lock 防连切，小幅度即可触发
+    // — 锁定为纵向：整段手势忽略（触控板上下滑绝不切题）
+    // — 300ms 无新事件 → 手势结束，全部重置
+    // 触控板 vs 鼠标滚轮方向解耦：单次 |dx|≥50 判为鼠标滚轮（右滚→下一题），
+    // 否则判为触控板（右滑→上一题）。两者语义天然相反。
+    let _wDir = null, _wAccum = 0, _wLocked = false, _wTimer = null, _wIsMouse = false;
+    document.addEventListener('wheel', function (e) {
+      if (lbAnnotMode) return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) return;
+      if (document.getElementById('lightbox').classList.contains('show')) return;
+
+      const dx = e.deltaX || 0, dy = e.deltaY || 0;
+      const absDX = Math.abs(dx), absDY = Math.abs(dy);
+
+      // 重置计时器：每次新事件都推迟 reset
+      if (_wTimer) clearTimeout(_wTimer);
+      _wTimer = setTimeout(function () {
+        _wDir = null; _wAccum = 0; _wLocked = false; _wTimer = null; _wIsMouse = false;
+      }, 300);
+
+      if (_wLocked) return;
+
+      // 方向未确定：哪个方向明显主导即锁定；同时标记设备类型
+      if (_wDir === null) {
+        if (absDX > absDY * 1.5 && absDX > 4) {
+          _wDir = 'h';
+          _wIsMouse = absDX >= 50; // 单次大增量 = 鼠标滚轮
+        }
+        else if (absDY > absDX * 1.5 && absDY > 4) { _wDir = 'v'; }
+        else return; // 方向不明确，继续观察
+      }
+
+      if (_wDir === 'v') return; // 纵向手势，整段忽略
+
+      // 横向手势：累积 dx，达标即切
+      _wAccum += dx;
+      if (Math.abs(_wAccum) > 15) {
+        if (_wIsMouse) {
+          // 鼠标滚轮：右滚→下一题
+          if (_wAccum > 0) navNext();
+          else navPrev();
+        } else {
           // 触控板：右滑→上一题
           if (_wAccum > 0) navPrev();
           else navNext();

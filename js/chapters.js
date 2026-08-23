@@ -556,5 +556,11 @@
           { id: 'm5ch7', number: 7, name: '第7章 控制系统的综合与校正', short: '7 综合与校正', total: 6, cols: 4, wb: '真题分类', subj: '控制工程基础', relPath: '真题分类/ch7', labels: ['18', '19', '20', '21', '22', '23'] },
           { id: 'm5ch8', number: 8, name: '第8章 计算机控制系统', short: '8 计算机控制', total: 2, cols: 4, wb: '真题分类', subj: '控制工程基础', relPath: '真题分类/ch8', labels: ['24', '25'] }
         ]
+      },
+      {
+        id: 'english', name: '英语一', storageSuffix: 'eng', type: 'english',
+        wbOrder: [{ wb: '2010真题', label: '2010真题' }],
+        subjOrder: ['阅读精读'],
+        chapters: []
       }
     ]
