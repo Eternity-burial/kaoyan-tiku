@@ -270,6 +270,10 @@
       </div>
 
       <div class="header-right">
+        <div class="mode-switches" id="engModeSwitches">
+          <button class="mode-btn active" id="engBtnAnalysisMode" title="快捷键: M">精读模式</button>
+          <button class="mode-btn" id="engBtnPracticeMode" title="快捷键: M">做题模式</button>
+        </div>
         <button class="toggle-btn" id="engBtnToggleSol" title="快捷键: Space (单题) / Shift+Space (默认)">
           <span id="engTxtToggleSol">💡 解析</span>
           <span class="shortcut-badge">Space</span>
@@ -295,14 +299,6 @@
         <div class="question-toolbar">
           <div class="filter-row" id="engTypeFilterBar"></div>
           <div class="question-pills" id="engQuestionPills"></div>
-        </div>
-
-        <div class="mode-bar">
-          <span style="font-size:12px;font-weight:600;color:#64748b;">当前模式:</span>
-          <div class="mode-switches">
-            <button class="mode-btn active" id="engBtnAnalysisMode">🔍 精读与题型剖析</button>
-            <button class="mode-btn" id="engBtnPracticeMode">📝 考场模考模式</button>
-          </div>
         </div>
 
         <div class="stem-card" id="engStemCard"></div>
@@ -331,7 +327,7 @@
           <div class="shortcut-row"><span>模糊 / 需复习</span><span class="shortcut-badge">X</span></div>
           <div class="shortcut-row"><span>不会 / 错题</span><span class="shortcut-badge">C</span></div>
           <div class="shortcut-row"><span>中英译文显隐</span><span class="shortcut-badge">T</span></div>
-          <div class="shortcut-row"><span>切换精读/模考模式</span><span class="shortcut-badge">M</span></div>
+          <div class="shortcut-row"><span>切换精读/做题模式</span><span class="shortcut-badge">M</span></div>
           <div class="shortcut-row"><span>模考模式提交答案</span><span class="shortcut-badge">Enter</span></div>
         </div>
       </div>

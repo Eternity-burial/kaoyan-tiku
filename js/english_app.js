@@ -87,20 +87,22 @@
     return text.questions.find(q => q.qIndex === state.currentQIndex) || text.questions[0];
   }
 
-  // 状态记忆与恢复 (年份 + 章节 + 题目 + 筛选 + 译文显示)
+  // 状态记忆与恢复 (年份 + 章节 + 题目 + 模式 + 筛选 + 译文显示)
   function saveResume() {
     const data = {
       year: state.currentYear,
       textId: state.currentTextId,
       qIndex: state.currentQIndex,
+      mode: state.mode,
       typeFilter: state.typeFilter,
       showAllTranslation: !!state.showAllTranslation
     };
     try {
       localStorage.setItem('kaoyan_resume_english', JSON.stringify(data));
+      localStorage.setItem('ky_english_mode', state.mode);
       let map = {};
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      map['english'] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear };
+      map['english'] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear, mode: state.mode };
       localStorage.setItem('kaoyan_resume', JSON.stringify(map));
     } catch (e) {}
   }
@@ -124,8 +126,16 @@
             }
           }
         }
+        if (saved.mode && (saved.mode === 'analysis' || saved.mode === 'practice')) {
+          state.mode = saved.mode;
+        }
         if (saved.typeFilter) state.typeFilter = saved.typeFilter;
         if (typeof saved.showAllTranslation === 'boolean') state.showAllTranslation = saved.showAllTranslation;
+      } else {
+        const savedMode = localStorage.getItem('ky_english_mode');
+        if (savedMode && (savedMode === 'analysis' || savedMode === 'practice')) {
+          state.mode = savedMode;
+        }
       }
     } catch (e) {}
   }
@@ -307,11 +317,13 @@
       if (dom.btnPracticeMode) dom.btnPracticeMode.classList.add('active');
       if (dom.btnAnalysisMode) dom.btnAnalysisMode.classList.remove('active');
       if (dom.btnToggleTrans) dom.btnToggleTrans.style.display = 'none';
+      if (dom.btnToggleSol) dom.btnToggleSol.style.display = 'none';
     } else {
       dom.layout.classList.remove('mode-practice-active');
       if (dom.btnAnalysisMode) dom.btnAnalysisMode.classList.add('active');
       if (dom.btnPracticeMode) dom.btnPracticeMode.classList.remove('active');
       if (dom.btnToggleTrans) dom.btnToggleTrans.style.display = 'inline-flex';
+      if (dom.btnToggleSol) dom.btnToggleSol.style.display = 'inline-flex';
     }
   }
 
@@ -876,6 +888,7 @@
     if (dom.btnPracticeMode) {
       dom.btnPracticeMode.onclick = () => {
         state.mode = 'practice';
+        saveResume();
         updateModeClass();
         renderPassage();
         renderQuestionPills();
@@ -886,6 +899,7 @@
     if (dom.btnAnalysisMode) {
       dom.btnAnalysisMode.onclick = () => {
         state.mode = 'analysis';
+        saveResume();
         updateModeClass();
         renderPassage();
         renderQuestionPills();

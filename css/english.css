@@ -600,40 +600,39 @@
 .q-pill.status-vague .q-state-dot { background: var(--color-warning); }
 .q-pill.status-wrong .q-state-dot { background: var(--color-danger); }
 
-/* 模式切换栏 */
-.mode-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f8fafc;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-}
-
+/* 模式切换分段胶囊（置于顶部导航栏） */
 .mode-switches {
-  display: flex;
-  background: #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  border: 1px solid var(--border-color);
   padding: 2px;
-  border-radius: 6px;
+  border-radius: 8px;
+  gap: 2px;
 }
 
 .mode-btn {
-  padding: 5px 12px;
-  font-size: 12px;
-  font-weight: 700;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
   border: none;
   background: transparent;
   color: var(--text-secondary);
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.mode-btn:hover {
+  color: var(--primary);
 }
 
 .mode-btn.active {
   background: var(--primary);
   color: #ffffff;
-  box-shadow: 0 1px 3px rgba(102, 8, 116, 0.25);
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(102, 8, 116, 0.25);
 }
 
 /* 题干卡片 */
