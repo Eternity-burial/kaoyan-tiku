@@ -37,7 +37,7 @@
   --vocab-blue: #0284c7;
   --vocab-blue-bg: #e0f2fe;
 
-  --font-serif: "Cambria", "Times New Roman", "Charter", "Georgia", serif;
+  --font-serif: "Times New Roman", Times, "Cambria", "Charter", "Georgia", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
