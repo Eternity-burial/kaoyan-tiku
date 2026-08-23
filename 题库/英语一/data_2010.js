@@ -1,4 +1,10 @@
-const ENGLISH_2010_DATA = {
+/**
+ * 考研英语一 · 历年真题精读与题型分析数据库
+ * 年份：2010 年真题
+ */
+
+window.ENGLISH_DATA = window.ENGLISH_DATA || {};
+window.ENGLISH_DATA['2010'] = {
   "year": 2010,
   "subject": "英语一",
   "title": "2010年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析",
@@ -2953,3 +2959,7 @@ const ENGLISH_2010_DATA = {
     }
   ]
 };
+
+
+// 向下兼容别名
+window.ENGLISH_2010_DATA = window.ENGLISH_DATA['2010'];

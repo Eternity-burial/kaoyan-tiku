@@ -1,5 +1,6 @@
 /**
- * 考研英语一 · 智能精读与题型分析系统 核心应用逻辑 (SPA 内置模块)
+ * 考研英语一 · 智能精读与题型分析系统 核心应用逻辑 (SPA 多年份可扩展模块)
+ * 数据存储于：题库/英语一/data_YYYY.js (注册至 window.ENGLISH_DATA['YYYY'])
  * 配色体系：清华紫品牌主色 (#660874) + 纯净模考与沉浸精读双轨引擎
  */
 
@@ -8,14 +9,15 @@
 
   // 全局状态
   const state = {
+    currentYear: localStorage.getItem('ky_english_current_year') || '2010',
     currentTextId: 'text1',
     currentQIndex: 21,
     mode: 'analysis', // 'analysis' (精读解析) | 'practice' (模考做题)
     typeFilter: 'all',
     showAllTranslation: false,
     practiceAnswers: {}, // { qIndex: { selected: 'A', submitted: true } }
-    mastery: JSON.parse(localStorage.getItem('ky_english_mastery_2010') || '{}'),
-    notes: JSON.parse(localStorage.getItem('ky_english_notes_2010') || '{}'),
+    mastery: {},
+    notes: {},
     initialized: false
   };
 
@@ -25,6 +27,7 @@
   function initDom() {
     dom = {
       layout: document.getElementById('englishAppLayout'),
+      yearSelect: document.getElementById('engYearSelect'),
       passagePane: document.getElementById('engPassagePane'),
       analysisPane: document.getElementById('engAnalysisPane'),
       textTabs: document.getElementById('engTextTabs'),
@@ -44,16 +47,85 @@
     };
   }
 
+  // 获取所有已加载的真题年份
+  function getAvailableYears() {
+    if (!window.ENGLISH_DATA) return ['2010'];
+    const years = Object.keys(window.ENGLISH_DATA);
+    return years.length > 0 ? years.sort() : ['2010'];
+  }
+
+  // 获取当前选定年份的数据集
+  function getCurrentDataset() {
+    if (!window.ENGLISH_DATA) return { texts: [] };
+    if (window.ENGLISH_DATA[state.currentYear]) {
+      return window.ENGLISH_DATA[state.currentYear];
+    }
+    const years = Object.keys(window.ENGLISH_DATA);
+    if (years.length > 0) {
+      state.currentYear = years[0];
+      return window.ENGLISH_DATA[years[0]];
+    }
+    return { texts: [] };
+  }
+
   // 获取当前 Text 与 Question 数据
   function getCurrentText() {
-    if (!window.ENGLISH_2010_DATA || !window.ENGLISH_2010_DATA.texts) return null;
-    return ENGLISH_2010_DATA.texts.find(t => t.id === state.currentTextId) || ENGLISH_2010_DATA.texts[0];
+    const dataset = getCurrentDataset();
+    if (!dataset.texts || dataset.texts.length === 0) return null;
+    return dataset.texts.find(t => t.id === state.currentTextId) || dataset.texts[0];
   }
 
   function getCurrentQuestion() {
     const text = getCurrentText();
-    if (!text || !text.questions) return null;
+    if (!text || !text.questions || text.questions.length === 0) return null;
     return text.questions.find(q => q.qIndex === state.currentQIndex) || text.questions[0];
+  }
+
+  // 加载当前年份的掌握度与笔记
+  function loadYearStorage() {
+    try {
+      state.mastery = JSON.parse(localStorage.getItem(`ky_english_mastery_${state.currentYear}`) || '{}');
+      state.notes = JSON.parse(localStorage.getItem(`ky_english_notes_${state.currentYear}`) || '{}');
+    } catch (e) {
+      state.mastery = {};
+      state.notes = {};
+    }
+  }
+
+  // 渲染年份下拉选择器
+  function renderYearSelector() {
+    if (!dom.yearSelect) return;
+    const years = getAvailableYears();
+    dom.yearSelect.innerHTML = '';
+    years.forEach(y => {
+      const opt = document.createElement('option');
+      opt.value = y;
+      opt.textContent = `${y} 年真题`;
+      opt.selected = (y === state.currentYear);
+      dom.yearSelect.appendChild(opt);
+    });
+    dom.yearSelect.onchange = (e) => switchYear(e.target.value);
+  }
+
+  // 切换年份
+  function switchYear(year) {
+    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) return;
+    state.currentYear = year;
+    localStorage.setItem('ky_english_current_year', year);
+    loadYearStorage();
+
+    const dataset = getCurrentDataset();
+    if (dataset.texts && dataset.texts.length > 0) {
+      state.currentTextId = dataset.texts[0].id;
+      state.currentQIndex = dataset.texts[0].questions[0].qIndex;
+    }
+
+    renderYearSelector();
+    renderTextTabs();
+    renderTypeFilter();
+    renderPassage();
+    renderQuestionPills();
+    renderQuestion();
   }
 
   // 初始化应用
@@ -63,9 +135,16 @@
     if (state.initialized) return;
     state.initialized = true;
 
+    loadYearStorage();
+    renderYearSelector();
     renderTextTabs();
     renderTypeFilter();
-    switchText('text1', 21);
+    
+    const dataset = getCurrentDataset();
+    if (dataset.texts && dataset.texts.length > 0) {
+      switchText(dataset.texts[0].id, dataset.texts[0].questions[0].qIndex);
+    }
+
     setupEventListeners();
     setupKeyboardShortcuts();
     updateModeClass();
@@ -76,6 +155,8 @@
     if (!state.initialized) {
       init();
     } else {
+      loadYearStorage();
+      renderYearSelector();
       renderTextTabs();
       renderTypeFilter();
       renderPassage();
@@ -92,7 +173,7 @@
       dom.layout.classList.add('mode-practice-active');
       if (dom.btnPracticeMode) dom.btnPracticeMode.classList.add('active');
       if (dom.btnAnalysisMode) dom.btnAnalysisMode.classList.remove('active');
-      if (dom.btnToggleTrans) dom.btnToggleTrans.style.display = 'none'; // 模考模式下隐藏译文按钮
+      if (dom.btnToggleTrans) dom.btnToggleTrans.style.display = 'none';
     } else {
       dom.layout.classList.remove('mode-practice-active');
       if (dom.btnAnalysisMode) dom.btnAnalysisMode.classList.add('active');
@@ -103,9 +184,12 @@
 
   // 渲染 Text 切换标签
   function renderTextTabs() {
-    if (!dom.textTabs || !window.ENGLISH_2010_DATA) return;
+    if (!dom.textTabs) return;
+    const dataset = getCurrentDataset();
+    if (!dataset.texts) return;
+
     dom.textTabs.innerHTML = '';
-    ENGLISH_2010_DATA.texts.forEach(t => {
+    dataset.texts.forEach(t => {
       const btn = document.createElement('button');
       btn.className = `text-tab ${t.id === state.currentTextId ? 'active' : ''}`;
       btn.textContent = `Text ${t.number}`;
@@ -139,17 +223,16 @@
     const text = getCurrentText();
     if (!text) return;
     
-    // 更新 tab 样式
-    if (dom.textTabs) {
+    const dataset = getCurrentDataset();
+    if (dom.textTabs && dataset.texts) {
       dom.textTabs.querySelectorAll('.text-tab').forEach((tab, i) => {
-        tab.classList.toggle('active', ENGLISH_2010_DATA.texts[i].id === textId);
+        tab.classList.toggle('active', dataset.texts[i] && dataset.texts[i].id === textId);
       });
     }
 
-    // 默认切到该 Text 的第一题
     if (targetQIndex && text.questions.some(q => q.qIndex === targetQIndex)) {
       state.currentQIndex = targetQIndex;
-    } else {
+    } else if (text.questions && text.questions.length > 0) {
       state.currentQIndex = text.questions[0].qIndex;
     }
 
@@ -162,7 +245,10 @@
   function renderPassage() {
     if (!dom.passagePane) return;
     const text = getCurrentText();
-    if (!text) return;
+    if (!text) {
+      dom.passagePane.innerHTML = '<div style="padding:20px;color:#94a3b8;text-align:center;">暂无文章数据</div>';
+      return;
+    }
 
     let html = `
       <div class="passage-header-box">
@@ -175,7 +261,7 @@
       </div>
     `;
 
-    text.paragraphs.forEach(p => {
+    (text.paragraphs || []).forEach(p => {
       html += `
         <div class="paragraph-block" id="para-${p.pIndex}">
           <div class="paragraph-meta">
@@ -188,10 +274,9 @@
           <div class="sentence-list">
       `;
 
-      p.sentences.forEach(s => {
+      (p.sentences || []).forEach(s => {
         let sentenceText = escapeHtml(s.text);
 
-        // 高亮词汇
         if (s.vocab && s.vocab.length > 0) {
           s.vocab.forEach(v => {
             const regex = new RegExp(`\\b(${escapeRegExp(v.word)})\\b`, 'gi');
@@ -219,7 +304,6 @@
 
     dom.passagePane.innerHTML = html;
 
-    // 绑定词汇悬停与句子点击
     attachPassageEvents();
     if (state.mode === 'analysis') {
       highlightCurrentQuestionGrounding();
@@ -230,11 +314,10 @@
   function renderQuestionPills() {
     if (!dom.questionPills) return;
     const text = getCurrentText();
-    if (!text) return;
+    if (!text || !text.questions) return;
     dom.questionPills.innerHTML = '';
 
     text.questions.forEach(q => {
-      // 题型过滤 (仅在精读模式下生效，模考模式全显示)
       if (state.mode === 'analysis' && state.typeFilter !== 'all' && q.type !== state.typeFilter) {
         return;
       }
@@ -252,12 +335,15 @@
     });
   }
 
-  // 切换题目
+  // 切换题目 (跨篇章自动同步)
   function switchQuestion(qIndex) {
-    const parentText = ENGLISH_2010_DATA.texts.find(t => t.questions.some(q => q.qIndex === qIndex));
-    if (parentText && parentText.id !== state.currentTextId) {
-      switchText(parentText.id, qIndex);
-      return;
+    const dataset = getCurrentDataset();
+    if (dataset.texts) {
+      const parentText = dataset.texts.find(t => t.questions.some(q => q.qIndex === qIndex));
+      if (parentText && parentText.id !== state.currentTextId) {
+        switchText(parentText.id, qIndex);
+        return;
+      }
     }
     state.currentQIndex = qIndex;
     renderQuestionPills();
@@ -269,15 +355,16 @@
 
   function navPrev() {
     const text = getCurrentText();
-    if (!text) return;
+    const dataset = getCurrentDataset();
+    if (!text || !dataset.texts) return;
+
     const curIdx = text.questions.findIndex(x => x.qIndex === state.currentQIndex);
     if (curIdx > 0) {
       switchQuestion(text.questions[curIdx - 1].qIndex);
     } else {
-      // 切到上一个 Text 的最后一题
-      const textIdx = ENGLISH_2010_DATA.texts.findIndex(t => t.id === state.currentTextId);
+      const textIdx = dataset.texts.findIndex(t => t.id === state.currentTextId);
       if (textIdx > 0) {
-        const prevText = ENGLISH_2010_DATA.texts[textIdx - 1];
+        const prevText = dataset.texts[textIdx - 1];
         switchText(prevText.id, prevText.questions[prevText.questions.length - 1].qIndex);
       }
     }
@@ -285,15 +372,16 @@
 
   function navNext() {
     const text = getCurrentText();
-    if (!text) return;
+    const dataset = getCurrentDataset();
+    if (!text || !dataset.texts) return;
+
     const curIdx = text.questions.findIndex(x => x.qIndex === state.currentQIndex);
     if (curIdx < text.questions.length - 1) {
       switchQuestion(text.questions[curIdx + 1].qIndex);
     } else {
-      // 切到下一个 Text 的第一题
-      const textIdx = ENGLISH_2010_DATA.texts.findIndex(t => t.id === state.currentTextId);
-      if (textIdx < ENGLISH_2010_DATA.texts.length - 1) {
-        const nextText = ENGLISH_2010_DATA.texts[textIdx + 1];
+      const textIdx = dataset.texts.findIndex(t => t.id === state.currentTextId);
+      if (textIdx < dataset.texts.length - 1) {
+        const nextText = dataset.texts[textIdx + 1];
         switchText(nextText.id, nextText.questions[0].qIndex);
       }
     }
@@ -308,14 +396,11 @@
     const pAns = state.practiceAnswers[q.qIndex] || {};
     const isSubmitted = !isPractice || pAns.submitted;
 
-    // 1. 渲染题干卡片
     if (isPractice && !pAns.submitted) {
-      // 纯净模考：不剧透题型与模型，不剧透关键词
       dom.stemCard.innerHTML = `
         <div class="stem-text" style="font-size:16px;margin-bottom:0;">${q.qIndex}. ${escapeHtml(q.stem)}</div>
       `;
     } else {
-      // 精读模式 / 已提交：显示完整题型、唐迟模型与关键词
       dom.stemCard.innerHTML = `
         <div class="stem-header">
           <span class="q-type-badge">${escapeHtml(q.type)}</span>
@@ -329,10 +414,8 @@
       `;
     }
 
-    // 2. 渲染选项
     renderOptions(q);
 
-    // 3. 渲染复盘手记 (仅在精读或已提交状态下展示)
     if (dom.reflectionCard) {
       if (isSubmitted) {
         dom.reflectionCard.style.display = 'block';
@@ -351,7 +434,7 @@
     const pAns = state.practiceAnswers[q.qIndex] || {};
     const isSubmitted = !isPractice || pAns.submitted;
 
-    q.options.forEach(opt => {
+    (q.options || []).forEach(opt => {
       const card = document.createElement('div');
       const isSelected = pAns.selected === opt.key;
 
@@ -399,7 +482,6 @@
       dom.optionsList.appendChild(card);
     });
 
-    // 模考模式下的提交按钮
     if (isPractice && !pAns.submitted) {
       const submitBox = document.createElement('div');
       submitBox.style.marginTop = '12px';
@@ -426,7 +508,6 @@
       state.practiceAnswers[q.qIndex].selected = key;
       renderOptions(q);
     } else {
-      // 精读模式下：点击选项直接定位高亮该选项的对应句
       const opt = q.options.find(o => o.key === key);
       if (opt && opt.refSentences && opt.refSentences.length > 0) {
         locateSentence(opt.refSentences[0], opt.isCorrect ? 'target' : 'distractor');
@@ -447,7 +528,6 @@
     }
     pAns.submitted = true;
     
-    // 自动判定熟练度
     const isCorrect = pAns.selected === q.officialAnswer;
     setMastery(q.qIndex, isCorrect ? 'proficient' : 'wrong');
 
@@ -466,7 +546,7 @@
     dom.reflectionCard.innerHTML = `
       <div class="reflection-title">
         <span>✍️ 我的做题思考与错因复盘</span>
-        <span style="font-size:11px;color:#94a3b8;">自动同步存储</span>
+        <span style="font-size:11px;color:#94a3b8;">自动按年份同步存储</span>
       </div>
 
       <div class="mastery-buttons">
@@ -497,14 +577,14 @@
     `;
   }
 
-  // 记录掌握状态
+  // 记录掌握状态 (按当前年份存储)
   function setMastery(qIndex, status) {
     if (state.mastery[qIndex] === status) {
       delete state.mastery[qIndex];
     } else {
       state.mastery[qIndex] = status;
     }
-    localStorage.setItem('ky_english_mastery_2010', JSON.stringify(state.mastery));
+    localStorage.setItem(`ky_english_mastery_${state.currentYear}`, JSON.stringify(state.mastery));
     renderQuestionPills();
     renderReflection(getCurrentQuestion());
   }
@@ -517,7 +597,7 @@
     } else {
       state.notes[qIndex].mistakeTag = reason;
     }
-    localStorage.setItem('ky_english_notes_2010', JSON.stringify(state.notes));
+    localStorage.setItem(`ky_english_notes_${state.currentYear}`, JSON.stringify(state.notes));
     renderReflection(getCurrentQuestion());
   }
 
@@ -528,29 +608,24 @@
     noteDebounceTimer = setTimeout(() => {
       if (!state.notes[qIndex]) state.notes[qIndex] = { mistakeTag: '', text: '' };
       state.notes[qIndex].text = val;
-      localStorage.setItem('ky_english_notes_2010', JSON.stringify(state.notes));
+      localStorage.setItem(`ky_english_notes_${state.currentYear}`, JSON.stringify(state.notes));
     }, 300);
   }
 
   // 双向定位与高亮句子
   function locateSentence(sentenceId, highlightType = 'target') {
-    if (state.mode === 'practice') return; // 模考模式下禁止定位提示
+    if (state.mode === 'practice') return;
 
     const el = document.getElementById(`sentence-${sentenceId}`);
     if (!el) return;
 
-    // 清理之前的临时高亮
     document.querySelectorAll('.sentence-item').forEach(s => {
       s.classList.remove('highlight-target', 'highlight-distractor', 'pulse-target');
     });
 
     const cls = highlightType === 'target' ? 'highlight-target' : 'highlight-distractor';
     el.classList.add(cls, 'pulse-target');
-
-    // 展开该句翻译
     el.classList.add('show-trans');
-
-    // 平滑滚动
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
@@ -576,7 +651,6 @@
   // 文章区域事件绑定
   function attachPassageEvents() {
     if (!dom.passagePane) return;
-    // 词汇悬停/点击 Popover (仅在非模考模式下触发)
     dom.passagePane.querySelectorAll('.vocab-word').forEach(vEl => {
       vEl.addEventListener('mouseenter', (e) => {
         if (state.mode === 'practice') return;
@@ -590,7 +664,6 @@
       });
     });
 
-    // 句子点击展开译文
     dom.passagePane.querySelectorAll('.sentence-item').forEach(sEl => {
       sEl.addEventListener('click', () => {
         if (state.mode === 'practice') return;
@@ -623,7 +696,6 @@
 
   // 设置事件监听
   function setupEventListeners() {
-    // 切换科目按钮 (复用全局 openSubjectPicker)
     if (dom.btnSwitchSubjectHeader) {
       dom.btnSwitchSubjectHeader.onclick = () => {
         if (typeof window.openSubjectPicker === 'function') {
@@ -632,7 +704,6 @@
       };
     }
 
-    // 译文全局切换
     if (dom.btnToggleTrans) {
       dom.btnToggleTrans.onclick = () => {
         if (state.mode === 'practice') return;
@@ -642,7 +713,6 @@
       };
     }
 
-    // 模式切换
     if (dom.btnPracticeMode) {
       dom.btnPracticeMode.onclick = () => {
         state.mode = 'practice';
@@ -663,7 +733,6 @@
       };
     }
 
-    // 帮助模态
     if (dom.btnHelp) {
       dom.btnHelp.onclick = () => {
         if (dom.modalHelp) dom.modalHelp.classList.add('active');
@@ -681,10 +750,9 @@
     }
   }
 
-  // 键盘快捷键支持 (仅当英语模块处于激活状态时响应)
+  // 键盘快捷键支持
   function setupKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
-      // 若当前不在英语科目或在输入框中则不响应
       const isEnglish = (window.curSubjectId === 'english') || (dom.layout && dom.layout.style.display !== 'none');
       if (!isEnglish) return;
       if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
@@ -726,7 +794,6 @@
     });
   }
 
-  // 辅助函数
   function escapeHtml(str) {
     if (!str) return '';
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -736,10 +803,10 @@
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
-  // 暴露全局 API
   window.kyApp = {
     init,
     activate,
+    switchYear,
     locateSentence,
     setMastery,
     setMistakeReason,
