@@ -37,7 +37,7 @@
   --vocab-blue: #0284c7;
   --vocab-blue-bg: #e0f2fe;
 
-  --font-serif: "Charter", "Georgia", "Cambria", "Times New Roman", serif;
+  --font-serif: "Cambria", "Times New Roman", "Charter", "Georgia", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
@@ -60,6 +60,8 @@
     #eef2f7;
   background-attachment: fixed;
   font-family: var(--font-sans);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "lnum" 1, "pnum" 1;
   color: var(--text-main);
 }
 
