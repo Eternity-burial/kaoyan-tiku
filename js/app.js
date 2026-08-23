@@ -1066,6 +1066,9 @@
         return;
       }
 
+      if (curSubjectId === 'english' && window.kyApp && window.kyApp.saveResume) {
+        window.kyApp.saveResume();
+      }
       if (engLayout) engLayout.style.display = 'none';
       if (mathLayout) mathLayout.style.display = 'flex';
 

@@ -9,12 +9,14 @@
 
   // 全局状态
   const state = {
-    currentYear: localStorage.getItem('ky_english_current_year') || '2010',
+    currentYear: '2010',
     currentTextId: 'text1',
     currentQIndex: 21,
     mode: 'analysis', // 'analysis' (精读解析) | 'practice' (模考做题)
     typeFilter: 'all',
     showAllTranslation: false,
+    showSolution: true,
+    defaultShowSolution: true,
     practiceAnswers: {}, // { qIndex: { selected: 'A', submitted: true } }
     mastery: {},
     notes: {},
@@ -39,6 +41,8 @@
       stemCard: document.getElementById('engStemCard'),
       optionsList: document.getElementById('engOptionsList'),
       reflectionCard: document.getElementById('engReflectionCard'),
+      btnToggleSol: document.getElementById('engBtnToggleSol'),
+      txtToggleSol: document.getElementById('engTxtToggleSol'),
       btnToggleTrans: document.getElementById('engBtnToggleTrans'),
       btnPracticeMode: document.getElementById('engBtnPracticeMode'),
       btnAnalysisMode: document.getElementById('engBtnAnalysisMode'),
@@ -83,6 +87,105 @@
     return text.questions.find(q => q.qIndex === state.currentQIndex) || text.questions[0];
   }
 
+  // 状态记忆与恢复 (年份 + 章节 + 题目 + 筛选 + 译文显示)
+  function saveResume() {
+    const data = {
+      year: state.currentYear,
+      textId: state.currentTextId,
+      qIndex: state.currentQIndex,
+      typeFilter: state.typeFilter,
+      showAllTranslation: !!state.showAllTranslation
+    };
+    try {
+      localStorage.setItem('kaoyan_resume_english', JSON.stringify(data));
+      let map = {};
+      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
+      map['english'] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear };
+      localStorage.setItem('kaoyan_resume', JSON.stringify(map));
+    } catch (e) {}
+  }
+
+  function loadResume() {
+    try {
+      const saved = JSON.parse(localStorage.getItem('kaoyan_resume_english'));
+      if (saved) {
+        if (saved.year && window.ENGLISH_DATA && window.ENGLISH_DATA[saved.year]) {
+          state.currentYear = saved.year;
+        }
+        const dataset = getCurrentDataset();
+        if (dataset.texts && dataset.texts.length > 0) {
+          const text = dataset.texts.find(t => t.id === saved.textId);
+          if (text) {
+            state.currentTextId = text.id;
+            if (text.questions && text.questions.some(q => q.qIndex === saved.qIndex)) {
+              state.currentQIndex = saved.qIndex;
+            } else if (text.questions && text.questions.length > 0) {
+              state.currentQIndex = text.questions[0].qIndex;
+            }
+          }
+        }
+        if (saved.typeFilter) state.typeFilter = saved.typeFilter;
+        if (typeof saved.showAllTranslation === 'boolean') state.showAllTranslation = saved.showAllTranslation;
+      }
+    } catch (e) {}
+  }
+
+  // 解析显示偏好存储与读取 (按科目独立记忆)
+  function loadSolutionPref() {
+    try {
+      const v = JSON.parse(localStorage.getItem('english_ui_solution'));
+      if (v && typeof v.def === 'boolean') state.defaultShowSolution = v.def;
+      else state.defaultShowSolution = true;
+      if (v && typeof v.show === 'boolean') state.showSolution = v.show;
+      else state.showSolution = state.defaultShowSolution;
+    } catch (e) {
+      state.defaultShowSolution = true;
+      state.showSolution = true;
+    }
+  }
+
+  function saveSolutionPref() {
+    try {
+      localStorage.setItem('english_ui_solution', JSON.stringify({
+        show: !!state.showSolution,
+        def: !!state.defaultShowSolution
+      }));
+    } catch (e) {}
+  }
+
+  function toggleSolution() {
+    state.showSolution = !state.showSolution;
+    saveSolutionPref();
+    updateSolutionUI();
+  }
+
+  function toggleDefaultSolution() {
+    state.defaultShowSolution = !state.defaultShowSolution;
+    state.showSolution = state.defaultShowSolution;
+    saveSolutionPref();
+    updateSolutionUI();
+  }
+
+  function updateSolutionUI() {
+    if (dom.txtToggleSol) {
+      dom.txtToggleSol.textContent = state.showSolution ? '💡 解析: 显示' : '💡 解析: 隐藏';
+    }
+    if (dom.btnToggleSol) {
+      dom.btnToggleSol.classList.toggle('active', state.showSolution);
+      dom.btnToggleSol.title = `快捷键: Space (单题) / Shift+Space (默认: ${state.defaultShowSolution ? '显示' : '隐藏'})`;
+    }
+    renderQuestion();
+    if (state.mode === 'analysis') {
+      if (state.showSolution) {
+        highlightCurrentQuestionGrounding();
+      } else {
+        document.querySelectorAll('.sentence-item').forEach(s => {
+          s.classList.remove('highlight-target', 'highlight-distractor', 'highlight-topic', 'pulse-target');
+        });
+      }
+    }
+  }
+
   // 加载当前年份的掌握度与笔记
   function loadYearStorage() {
     try {
@@ -94,104 +197,7 @@
     }
   }
 
-  // 渲染年份标题下拉面板（与数学题库 title-dropdown 风格一致）
-  function renderYearSelector() {
-    if (!dom.txtYear || !dom.panelYear) return;
-    dom.txtYear.textContent = `${state.currentYear} 年真题`;
 
-    const years = getAvailableYears();
-    dom.panelYear.innerHTML = '';
-    years.forEach(y => {
-      const btn = document.createElement('button');
-      btn.className = `title-option ${y === state.currentYear ? 'active' : ''}`;
-      btn.textContent = `${y} 年真题`;
-      btn.onclick = (e) => {
-        e.stopPropagation();
-        closeYearDropdown();
-        switchYear(y);
-      };
-      dom.panelYear.appendChild(btn);
-    });
-  }
-
-  function toggleYearDropdown() {
-    if (!dom.trigYear || !dom.panelYear) return;
-    const isOpen = dom.trigYear.classList.contains('open');
-    if (isOpen) {
-      closeYearDropdown();
-    } else {
-      openYearDropdown();
-    }
-  }
-
-  function openYearDropdown() {
-    if (dom.trigYear) dom.trigYear.classList.add('open');
-    if (dom.panelYear) dom.panelYear.classList.add('open');
-  }
-
-  function closeYearDropdown() {
-    if (dom.trigYear) dom.trigYear.classList.remove('open');
-    if (dom.panelYear) dom.panelYear.classList.remove('open');
-  }
-
-  // 切换年份
-  function switchYear(year) {
-    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) return;
-    state.currentYear = year;
-    localStorage.setItem('ky_english_current_year', year);
-    loadYearStorage();
-
-    const dataset = getCurrentDataset();
-    if (dataset.texts && dataset.texts.length > 0) {
-      state.currentTextId = dataset.texts[0].id;
-      state.currentQIndex = dataset.texts[0].questions[0].qIndex;
-    }
-
-    renderYearSelector();
-    renderTextTabs();
-    renderTypeFilter();
-    renderPassage();
-    renderQuestionPills();
-    renderQuestion();
-  }
-
-  // 初始化应用
-  function init() {
-    initDom();
-    if (!dom.passagePane) return;
-    if (state.initialized) return;
-    state.initialized = true;
-
-    loadYearStorage();
-    renderYearSelector();
-    renderTextTabs();
-    renderTypeFilter();
-    
-    const dataset = getCurrentDataset();
-    if (dataset.texts && dataset.texts.length > 0) {
-      switchText(dataset.texts[0].id, dataset.texts[0].questions[0].qIndex);
-    }
-
-    setupEventListeners();
-    setupKeyboardShortcuts();
-    updateModeClass();
-  }
-
-  function activate() {
-    initDom();
-    if (!state.initialized) {
-      init();
-    } else {
-      loadYearStorage();
-      renderYearSelector();
-      renderTextTabs();
-      renderTypeFilter();
-      renderPassage();
-      renderQuestionPills();
-      renderQuestion();
-      updateModeClass();
-    }
-  }
 
   // 更新容器模式 class
   function updateModeClass() {
@@ -362,7 +368,7 @@
     });
   }
 
-  // 切换题目 (跨篇章自动同步)
+  // 切换题目 (跨篇章自动同步与位置保存)
   function switchQuestion(qIndex) {
     const dataset = getCurrentDataset();
     if (dataset.texts) {
@@ -373,11 +379,11 @@
       }
     }
     state.currentQIndex = qIndex;
+    state.showSolution = state.defaultShowSolution;
+    saveResume();
+
     renderQuestionPills();
-    renderQuestion();
-    if (state.mode === 'analysis') {
-      highlightCurrentQuestionGrounding();
-    }
+    updateSolutionUI();
   }
 
   function navPrev() {
@@ -422,31 +428,39 @@
     const isPractice = state.mode === 'practice';
     const pAns = state.practiceAnswers[q.qIndex] || {};
     const isSubmitted = !isPractice || pAns.submitted;
+    const shouldShowSol = !isPractice ? state.showSolution : pAns.submitted;
 
     if (isPractice && !pAns.submitted) {
       dom.stemCard.innerHTML = `
         <div class="stem-text" style="font-size:16px;margin-bottom:0;">${q.qIndex}. ${escapeHtml(q.stem)}</div>
       `;
     } else {
+      let keywordsHtml = '';
+      if (shouldShowSol && q.stemKeywords && q.stemKeywords.length > 0) {
+        keywordsHtml = `
+          <div class="stem-keywords">
+            <span style="font-size:11px;color:#94a3b8;font-weight:600;">定位关键词:</span>
+            ${q.stemKeywords.map(k => `<span class="keyword-tag">#${escapeHtml(k)}</span>`).join('')}
+          </div>
+        `;
+      }
+
       dom.stemCard.innerHTML = `
         <div class="stem-header">
           <span class="q-type-badge">${escapeHtml(q.type)}</span>
           <span class="tangchi-badge">${escapeHtml(q.tangchiModel || '唐迟解题模型')}</span>
         </div>
         <div class="stem-text">${q.qIndex}. ${escapeHtml(q.stem)}</div>
-        <div class="stem-keywords">
-          <span style="font-size:11px;color:#94a3b8;font-weight:600;">定位关键词:</span>
-          ${(q.stemKeywords || []).map(k => `<span class="keyword-tag">#${escapeHtml(k)}</span>`).join('')}
-        </div>
+        ${keywordsHtml}
       `;
     }
 
-    renderOptions(q);
+    renderOptions(q, shouldShowSol);
 
     if (dom.reflectionCard) {
       if (isSubmitted) {
         dom.reflectionCard.style.display = 'block';
-        renderReflection(q);
+        renderReflection(q, shouldShowSol);
       } else {
         dom.reflectionCard.style.display = 'none';
       }
@@ -454,7 +468,7 @@
   }
 
   // 渲染选项列表
-  function renderOptions(q) {
+  function renderOptions(q, shouldShowSol) {
     if (!dom.optionsList) return;
     dom.optionsList.innerHTML = '';
     const isPractice = state.mode === 'practice';
@@ -467,7 +481,7 @@
 
       let cardClass = 'option-card';
       if (isSelected) cardClass += ' selected';
-      if (isSubmitted) {
+      if (shouldShowSol) {
         if (opt.isCorrect) cardClass += ' is-correct';
         else if (isSelected && !opt.isCorrect) cardClass += ' is-distractor';
       }
@@ -475,7 +489,7 @@
       card.className = cardClass;
 
       let analysisHtml = '';
-      if (isSubmitted) {
+      if (shouldShowSol) {
         const tagType = opt.isCorrect ? 'tag-correct' : 'tag-trap';
         const tagText = opt.isCorrect ? '【正确项 · 同义替换】' : `【干扰特征: ${opt.distractorType || '干扰项'}】`;
         
@@ -533,7 +547,7 @@
         state.practiceAnswers[q.qIndex] = {};
       }
       state.practiceAnswers[q.qIndex].selected = key;
-      renderOptions(q);
+      renderOptions(q, false);
     } else {
       const opt = q.options.find(o => o.key === key);
       if (opt && opt.refSentences && opt.refSentences.length > 0) {
@@ -563,12 +577,28 @@
   }
 
   // 渲染复盘手记
-  function renderReflection(q) {
+  function renderReflection(q, shouldShowSol) {
     if (!dom.reflectionCard) return;
     const noteData = state.notes[q.qIndex] || { mistakeTag: '', text: '' };
     const curMastery = state.mastery[q.qIndex] || 'unmarked';
 
     const reasons = ['定位偏差', '生词卡壳', '逻辑倒置', '过度推理', '偷换概念', '粗心看漏'];
+
+    let guideHtml = '';
+    if (shouldShowSol) {
+      guideHtml = `
+        <div class="guide-accordion">
+          <div class="guide-summary" onclick="document.getElementById('guideBody').style.display = document.getElementById('guideBody').style.display === 'none' ? 'block' : 'none'">
+            <span>💡 考研命题人避坑指南与名师复盘</span>
+            <span style="font-size:10px;">▾</span>
+          </div>
+          <div class="guide-body" id="guideBody" style="display:none;">
+            <p style="margin-bottom:6px;"><strong>【陷阱特征剖析】</strong> ${escapeHtml((q.presetReflection && q.presetReflection.trapAnalysis) || '关注选项中的同义替换与绝对化词汇。')}</p>
+            <p><strong>【唐迟方法总结】</strong> ${escapeHtml((q.presetReflection && q.presetReflection.methodSummary) || '细节服从主旨，注意逻辑转折处。')}</p>
+          </div>
+        </div>
+      `;
+    }
 
     dom.reflectionCard.innerHTML = `
       <div class="reflection-title">
@@ -591,16 +621,7 @@
 
       <textarea class="reflection-textarea" id="txtReflection" placeholder="写下你当时为什么选错？被哪个词/逻辑误导了？正确的定位思维路径是什么？" oninput="window.kyApp.onNoteInput(${q.qIndex}, this.value)">${escapeHtml(noteData.text || '')}</textarea>
       
-      <div class="guide-accordion">
-        <div class="guide-summary" onclick="document.getElementById('guideBody').style.display = document.getElementById('guideBody').style.display === 'none' ? 'block' : 'none'">
-          <span>💡 考研命题人避坑指南与名师复盘</span>
-          <span style="font-size:10px;">▾</span>
-        </div>
-        <div class="guide-body" id="guideBody" style="display:none;">
-          <p style="margin-bottom:6px;"><strong>【陷阱特征剖析】</strong> ${escapeHtml((q.presetReflection && q.presetReflection.trapAnalysis) || '关注选项中的同义替换与绝对化词汇。')}</p>
-          <p><strong>【唐迟方法总结】</strong> ${escapeHtml((q.presetReflection && q.presetReflection.methodSummary) || '细节服从主旨，注意逻辑转折处。')}</p>
-        </div>
-      </div>
+      ${guideHtml}
     `;
   }
 
@@ -736,10 +757,17 @@
       }
     });
 
+    if (dom.btnToggleSol) {
+      dom.btnToggleSol.onclick = () => {
+        toggleSolution();
+      };
+    }
+
     if (dom.btnToggleTrans) {
       dom.btnToggleTrans.onclick = () => {
         if (state.mode === 'practice') return;
         state.showAllTranslation = !state.showAllTranslation;
+        saveResume();
         if (dom.passagePane) dom.passagePane.classList.toggle('show-all-trans', state.showAllTranslation);
         dom.btnToggleTrans.classList.toggle('active', state.showAllTranslation);
       };
@@ -792,6 +820,20 @@
       const q = getCurrentQuestion();
       if (!q) return;
 
+      // Shift + Space: 切换默认解析偏好
+      if (e.shiftKey && (e.key === ' ' || e.code === 'Space')) {
+        e.preventDefault();
+        toggleDefaultSolution();
+        return;
+      }
+
+      // Space: 切换当前题解析显示
+      if (!e.shiftKey && (e.key === ' ' || e.code === 'Space')) {
+        e.preventDefault();
+        toggleSolution();
+        return;
+      }
+
       if (e.key === '1' || e.key === 'a' || e.key === 'A') { onOptionClick('A'); }
       else if (e.key === '2' || e.key === 'b' || e.key === 'B') { onOptionClick('B'); }
       else if (e.key === '3' || e.key === 'c' || e.key === 'C') { onOptionClick('C'); }
@@ -839,12 +881,16 @@
   window.kyApp = {
     init,
     activate,
+    saveResume,
+    loadResume,
     switchYear,
     locateSentence,
     setMastery,
     setMistakeReason,
     onNoteInput,
-    submitPracticeAnswer
+    submitPracticeAnswer,
+    toggleSolution,
+    toggleDefaultSolution
   };
 
   document.addEventListener('DOMContentLoaded', init);
