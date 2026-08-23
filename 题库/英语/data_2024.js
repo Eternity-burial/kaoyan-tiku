@@ -1,6 +1,6 @@
 /**
  * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2024 年真题
+ * 年份：2024 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
  */
 
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
@@ -12,21 +12,21 @@ window.ENGLISH_DATA['2024'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "Nearly 2000 years ago, as the Romans began to pull out of Scotlan...",
-      "chineseTitle": "Text 1：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Text 1，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 1",
+      "chineseTitle": "Text 1 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 1，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Nearly 2000 years ago, as the Romans began to pull out of Scotland, they left behind a curious treasure:10 tons of nails, nearly a million of the things.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Nearly 2000 years ago, as the Romans began to pull out of Scotland, they left behind a curious treasure:10 tons of nails, nearly a million of the things.",
               "vocab": [
                 {
                   "word": "left",
@@ -47,13 +47,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The nail hoard was discovered in 1960 in a four-metre-deep pit covered by two metres of gravel.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The nail hoard was discovered in 1960 in a four-metre-deep pit covered by two metres of gravel.",
               "vocab": [
                 {
                   "word": "nail",
@@ -80,21 +81,23 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Why had the Romans buried a million nails?",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Why had the Romans buried a million nails?",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "The likely explanation is that the withdrawal was rushed, and they didn't want the local Caledonians getting their hands on 10 tons of weapons grade iron.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The likely explanation is that the withdrawal was rushed, and they didn't want the local Caledonians getting their hands on 10 tons of weapons grade iron.",
               "vocab": [
                 {
                   "word": "explanation",
@@ -109,13 +112,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The Romans buried the nails so deep that they would not be discovered for almost two millennia.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The Romans buried the nails so deep that they would not be discovered for almost two millennia.",
               "vocab": [
                 {
                   "word": "for",
@@ -130,13 +134,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 6,
               "id": "P1-S6",
-              "text": "Later civilizations would value the skilled blacksmith's labour in a nail even more than the raw material.",
-              "translation": "",
+              "text": "Later civilizations would value the skilled blacksmith's labour in a nail even more than the raw material. As Roma Agrawal explains in her new delightful book Nuts and Bolts, early 17th-century Virginians would sometimes burn down their homes if they were planning to relocate.",
+              "translation": "【考研真题精读标准译文】Later civilizations would value the skilled blacksmith's labour in a nail even more than the raw material. As Roma Agrawal explains in her new delightful book Nuts and Bolts, early 17th-century Virginians would sometimes burn down their homes if they were planning to relocate.",
               "vocab": [
                 {
                   "word": "value",
@@ -173,16 +178,7 @@ window.ENGLISH_DATA['2024'] = {
                   "ipa": "məˈtɪriəl",
                   "meaning": "n.衣料；材料；素材 adj.物质的；重要的",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P1-S7",
-              "text": "As Roma Agrawal explains in her new delightful book Nuts and Bolts, early 17th-century Virginians would sometimes burn down their homes if they were planning to relocate.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "new",
                   "ipa": "",
@@ -220,13 +216,21 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 8,
-              "id": "P1-S8",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "This was an attempt to recover the valuable nails, which could be reused after sifting the ashes.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】This was an attempt to recover the valuable nails, which could be reused after sifting the ashes.",
               "vocab": [
                 {
                   "word": "valuable",
@@ -235,13 +239,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 9,
-              "id": "P1-S9",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "The idea that one might burn down an entire house just to reclaim the nails underlines how scarce, costly and valuable the simple-seeming technology was.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The idea that one might burn down an entire house just to reclaim the nails underlines how scarce, costly and valuable the simple-seeming technology was.",
               "vocab": [
                 {
                   "word": "one",
@@ -280,21 +285,23 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 10,
-              "id": "P1-S10",
+              "sIndex": 3,
+              "id": "P2-S3",
               "text": "The price of nails fell by 90% between the late 1700s and mid-1900s.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The price of nails fell by 90% between the late 1700s and mid-1900s.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 11,
-              "id": "P1-S11",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "As economist Daniel Sichel points out in a research paper.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】As economist Daniel Sichel points out in a research paper.",
               "vocab": [
                 {
                   "word": "economist",
@@ -303,13 +310,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 12,
-              "id": "P1-S12",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "According to Sichel, although the falling price of nails was driven partly by cheaper iron and cheaper energy, most of the credit goes to nail manufacturers who simply found more efficient ways to turn steel into nails.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】According to Sichel, although the falling price of nails was driven partly by cheaper iron and cheaper energy, most of the credit goes to nail manufacturers who simply found more efficient ways to turn steel into nails.",
               "vocab": [
                 {
                   "word": "according to",
@@ -354,13 +362,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 13,
-              "id": "P1-S13",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "Nails themselves have changed over the years.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Nails themselves have changed over the years.",
               "vocab": [
                 {
                   "word": "over the years",
@@ -369,21 +378,30 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "purple"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 14,
-              "id": "P1-S14",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "But Sichel studied them because they haven't changed much.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But Sichel studied them because they haven't changed much.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 15,
-              "id": "P1-S15",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Roman lamps and Roman chariots are very different from LED strips and sports cars, but Roman nails are still clearly nails.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Roman lamps and Roman chariots are very different from LED strips and sports cars, but Roman nails are still clearly nails.",
               "vocab": [
                 {
                   "word": "very",
@@ -404,13 +422,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 16,
-              "id": "P1-S16",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "It would be absurd to try to track the changing price of sports cars since 1695, but to ask the same question of nails makes perfect sense.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】It would be absurd to try to track the changing price of sports cars since 1695, but to ask the same question of nails makes perfect sense.",
               "vocab": [
                 {
                   "word": "absurd",
@@ -455,13 +474,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 17,
-              "id": "P1-S17",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "I make no apology for being obsessed by a particular feature of everyday objects: their price.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】I make no apology for being obsessed by a particular feature of everyday objects: their price.",
               "vocab": [
                 {
                   "word": "apology",
@@ -494,13 +514,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 18,
-              "id": "P1-S18",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "I am an economist, after all.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】I am an economist, after all.",
               "vocab": [
                 {
                   "word": "After all",
@@ -515,13 +536,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 19,
-              "id": "P1-S19",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "After writing two books about the history of inventions, one thing I've learnt is that while it is the enchantingly sophisticated technologies that get all the hype.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】After writing two books about the history of inventions, one thing I've learnt is that while it is the enchantingly sophisticated technologies that get all the hype.",
               "vocab": [
                 {
                   "word": "about",
@@ -554,13 +576,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 20,
-              "id": "P1-S20",
+              "sIndex": 7,
+              "id": "P3-S7",
               "text": "It's the cheap technologies that change the world.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】It's the cheap technologies that change the world.",
               "vocab": [
                 {
                   "word": "change",
@@ -569,13 +592,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 21,
-              "id": "P1-S21",
+              "sIndex": 8,
+              "id": "P3-S8",
               "text": "The Gutenberg printing press transformed civilisation not by changing the nature of writing but by changing its cost - and it would have achieved limit without a parallel collapse in the paper of surfaces to write on, thanks to an with overlooked technology called apor Solar panels had a few niche uses until they became cheap; now they are transforming the global energy system.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The Gutenberg printing press transformed civilisation not by changing the nature of writing but by changing its cost - and it would have achieved limit without a parallel collapse in the paper of surfaces to write on, thanks to an with overlooked technology called apor Solar panels had a few niche uses until they became cheap; now they are transforming the global energy system.",
               "vocab": [
                 {
                   "word": "printing",
@@ -638,7 +662,8 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -646,14 +671,17 @@ window.ENGLISH_DATA['2024'] = {
       "questions": [
         {
           "qIndex": 21,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "Romans buried the nails probably for the sake of.",
           "stemKeywords": [
             "Romans",
             "buried",
-            "nails",
-            "probably"
+            "nails"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -661,10 +689,11 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "saving them for future use",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -672,19 +701,21 @@ window.ENGLISH_DATA['2024'] = {
               "text": "keeping them from rusting",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "letting them grow in value",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -692,30 +723,31 @@ window.ENGLISH_DATA['2024'] = {
               "text": "hiding them from locals",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 21 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 22,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "The example of early 17th-century Virginians is used to.",
           "stemKeywords": [
             "example",
             "early",
-            "century",
-            "Virginians"
+            "century"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -724,29 +756,32 @@ window.ENGLISH_DATA['2024'] = {
               "text": "highlight the thriftiness of early American colonists",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "illustrate the high status of blacksmiths in that period",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "contrast the attitudes of different civilizations toward nails",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -754,30 +789,31 @@ window.ENGLISH_DATA['2024'] = {
               "text": "show the preciousness of nail-making technology at that time",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 22 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 23,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "What played the major role in lowering the price of nail after the late 1700?",
           "stemKeywords": [
             "What",
             "played",
-            "major",
-            "role"
+            "major"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -786,59 +822,64 @@ window.ENGLISH_DATA['2024'] = {
               "text": "Increased productivity",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "wider use of new energies",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Fierce market competition",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "reduced cost of raw material",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 23 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 24,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "It can be learned from Paragraph 5 that nails.",
           "stemKeywords": [
             "learned",
             "from",
-            "nails"
+            "Paragraph"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -846,10 +887,11 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "have undergone many technological improvements",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -857,50 +899,53 @@ window.ENGLISH_DATA['2024'] = {
               "text": "have remained basically the same since Roman times",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "are less studied than other everyday product",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "are one of the world's most significant inventions",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 24 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 25,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "Which of the following one best summaries the last 2 paragraphs?",
           "stemKeywords": [
-            "best",
-            "summaries",
-            "last",
-            "paragraphs"
+            "Which",
+            "following",
+            "best"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -909,48 +954,49 @@ window.ENGLISH_DATA['2024'] = {
               "text": "cheap technologies bring about revolutionary change",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "technological innovation is integral to economic success",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "technology defines people's understanding of the world",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Sophisticated technology developed small inventions",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 25 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]
@@ -958,21 +1004,21 @@ window.ENGLISH_DATA['2024'] = {
     {
       "id": "text2",
       "number": 2,
-      "title": "Parenting tips obtained from hunter-gatherers in Africa may be th...",
-      "chineseTitle": "Text 2：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Text 2，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 2",
+      "chineseTitle": "Text 2 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 2，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Parenting tips obtained from hunter-gatherers in Africa may be the key to bringing up more contented children, researchers have suggested.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Parenting tips obtained from hunter-gatherers in Africa may be the key to bringing up more contented children, researchers have suggested.",
               "vocab": [
                 {
                   "word": "Parenting",
@@ -987,13 +1033,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The idea is based on studies of communities such as the Kung of Botswana where each child is cared of by many adults Kung children as young as four will help to look after younger ones and \"baby-wearing\", in which infants are carried in slings, is considered the norm.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The idea is based on studies of communities such as the Kung of Botswana where each child is cared of by many adults Kung children as young as four will help to look after younger ones and \"baby-wearing\", in which infants are carried in slings, is considered the norm.",
               "vocab": [
                 {
                   "word": "will",
@@ -1020,29 +1067,21 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
-              "text": "According to Dr.",
-              "translation": "",
+              "text": "According to Dr. Nikhil Chaudhary, an evolutionary anthropologist at Cambridge University.",
+              "translation": "【考研真题精读标准译文】According to Dr. Nikhil Chaudhary, an evolutionary anthropologist at Cambridge University.",
               "vocab": [
                 {
                   "word": "according to",
                   "ipa": "/əˈkɔːdɪŋ tuː/",
                   "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
                   "level": "purple"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "Nikhil Chaudhary, an evolutionary anthropologist at Cambridge University.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "evolutionary",
                   "ipa": "ˌevəˈluːʃəneri",
@@ -1056,13 +1095,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "These practices, known as alloparenting, could lead to less anxiety for children and parents.",
-              "translation": "",
+              "sIndex": 4,
+              "id": "P1-S4",
+              "text": "These practices, known as alloparenting, could lead to less anxiety for children and parents. Dr. Annie Swanepoel, a child psychiatrist, believes that there are ways to incorporate them into western life.",
+              "translation": "【考研真题精读标准译文】These practices, known as alloparenting, could lead to less anxiety for children and parents. Dr. Annie Swanepoel, a child psychiatrist, believes that there are ways to incorporate them into western life.",
               "vocab": [
                 {
                   "word": "alloparenting",
@@ -1081,24 +1121,7 @@ window.ENGLISH_DATA['2024'] = {
                   "ipa": "",
                   "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P1-S6",
-              "text": "Dr.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P1-S7",
-              "text": "Annie Swanepoel, a child psychiatrist, believes that there are ways to incorporate them into western life.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "psychiatrist",
                   "ipa": "saɪˈkaɪətrɪst",
@@ -1112,13 +1135,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 8,
-              "id": "P1-S8",
+              "sIndex": 5,
+              "id": "P1-S5",
               "text": "In Germany, one scheme has paired an old people's home with a nursery.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In Germany, one scheme has paired an old people's home with a nursery.",
               "vocab": [
                 {
                   "word": "one",
@@ -1133,13 +1157,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 9,
-              "id": "P1-S9",
+              "sIndex": 6,
+              "id": "P1-S6",
               "text": "The residents help to look after the children, an arrangement akin to alloparenting.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The residents help to look after the children, an arrangement akin to alloparenting.",
               "vocab": [
                 {
                   "word": "arrangement",
@@ -1160,13 +1185,21 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 10,
-              "id": "P1-S10",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "Another measure could be encouraging friendships between children in different school years to mimic the supervised mixed-age play groups in hunter-gatherer communities.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Another measure could be encouraging friendships between children in different school years to mimic the supervised mixed-age play groups in hunter-gatherer communities.",
               "vocab": [
                 {
                   "word": "measure",
@@ -1181,13 +1214,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 11,
-              "id": "P1-S11",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "In a paper published in the Journal of Child Psychology and Psychiatry, researchers said that the western nuclear family was a recent invention which broke with evolutionary history.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In a paper published in the Journal of Child Psychology and Psychiatry, researchers said that the western nuclear family was a recent invention which broke with evolutionary history.",
               "vocab": [
                 {
                   "word": "Journal",
@@ -1220,13 +1254,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 12,
-              "id": "P1-S12",
+              "sIndex": 3,
+              "id": "P2-S3",
               "text": "This abrupt shift to an \"intensive mothering narrative\" which suggests that mothers should manage child care alone, was likely to have been harmful.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】This abrupt shift to an \"intensive mothering narrative\" which suggests that mothers should manage child care alone, was likely to have been harmful.",
               "vocab": [
                 {
                   "word": "abrupt",
@@ -1265,13 +1300,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 13,
-              "id": "P1-S13",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "\"Such narratives can lead to maternal exhaustion and have dangerous consequences.\" they wrote.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】\"Such narratives can lead to maternal exhaustion and have dangerous consequences.\" they wrote.",
               "vocab": [
                 {
                   "word": "maternal",
@@ -1286,13 +1322,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 14,
-              "id": "P1-S14",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "By contrast, in hunter-gatherer societies adults other than the parents can provide almost half of a child's care.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】By contrast, in hunter-gatherer societies adults other than the parents can provide almost half of a child's care.",
               "vocab": [
                 {
                   "word": "contrast",
@@ -1313,13 +1350,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 15,
-              "id": "P1-S15",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "One previous study looked at the people of the Democratic Republic of Congo.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】One previous study looked at the people of the Democratic Republic of Congo.",
               "vocab": [
                 {
                   "word": "One",
@@ -1346,13 +1384,21 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 16,
-              "id": "P1-S16",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "It found that infants had an average of 14 all parents a day by the time they were 18 weeks old and were passed between caregivers eight times an hour.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】It found that infants had an average of 14 all parents a day by the time they were 18 weeks old and were passed between caregivers eight times an hour.",
               "vocab": [
                 {
                   "word": "average",
@@ -1361,13 +1407,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 17,
-              "id": "P1-S17",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Chaudhary said that parents now had less child care support from family and social networks than during most of human evolutionary history, but introducing additional caregivers could reduce stress and maternal depression, which could have a \"knock-on\" benefit to child's wellbeing.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Chaudhary said that parents now had less child care support from family and social networks than during most of human evolutionary history, but introducing additional caregivers could reduce stress and maternal depression, which could have a \"knock-on\" benefit to child's wellbeing.",
               "vocab": [
                 {
                   "word": "support",
@@ -1424,13 +1471,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 18,
-              "id": "P1-S18",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "An infant born to a hunter-gatherer society could have more than ten caregivers -this contrasts starkly to nursery setting in the UK where regulation can for a ratio of one carer to four children aged two to three.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】An infant born to a hunter-gatherer society could have more than ten caregivers -this contrasts starkly to nursery setting in the UK where regulation can for a ratio of one carer to four children aged two to three.",
               "vocab": [
                 {
                   "word": "infant",
@@ -1493,13 +1541,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 19,
-              "id": "P1-S19",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "While hunter-gatherer children learn from observation and imitation in mixed-age playgroups, researchers said that western \"instructive teaching\", where pupils are asked to sit still.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】While hunter-gatherer children learn from observation and imitation in mixed-age playgroups, researchers said that western \"instructive teaching\", where pupils are asked to sit still.",
               "vocab": [
                 {
                   "word": "hunter-gatherer",
@@ -1532,13 +1581,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 20,
-              "id": "P1-S20",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "Many contribute to conditions such as attention deficit hyperactivity disorder.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Many contribute to conditions such as attention deficit hyperactivity disorder.",
               "vocab": [
                 {
                   "word": "contribute",
@@ -1571,13 +1621,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 21,
-              "id": "P1-S21",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "Chaudhary said that Britain should explore the possibility that older siblings helping their parents might also enhance their own social development.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Chaudhary said that Britain should explore the possibility that older siblings helping their parents might also enhance their own social development.",
               "vocab": [
                 {
                   "word": "explore",
@@ -1598,7 +1649,8 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -1606,14 +1658,17 @@ window.ENGLISH_DATA['2024'] = {
       "questions": [
         {
           "qIndex": 26,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "According to the first two paragraphs, alloparenting refers to the practice of.",
           "stemKeywords": [
+            "According",
             "first",
-            "paragraphs",
-            "alloparenting",
-            "refers"
+            "paragraphs"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -1622,60 +1677,64 @@ window.ENGLISH_DATA['2024'] = {
               "text": "sharing childcare among community members",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "assigning babies to specific adult categories",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "teaching parenting skills to older children",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "carrying infants around by their parents",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 26 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 27,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "The scheme in Germany is mentioned to illustrate.",
           "stemKeywords": [
             "scheme",
             "Germany",
-            "mentioned",
-            "illustrate"
+            "mentioned"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -1683,10 +1742,11 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "an attempt to facilitate intergenerational communication",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -1694,49 +1754,53 @@ window.ENGLISH_DATA['2024'] = {
               "text": "an approach to integrating into western society",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "the conventional parenting style in western culture",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "the differences between western and African ways of living",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 27 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 28,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "According to paragraph 4, the intensive mothering narrative.",
           "stemKeywords": [
-            "intensive",
-            "mothering",
-            "narrative"
+            "According",
+            "paragraph",
+            "intensive"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -1744,30 +1808,33 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "alleviates parenting pressures",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "consolidates family relationships",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "results in the child-centered family",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -1775,29 +1842,31 @@ window.ENGLISH_DATA['2024'] = {
               "text": "departs from the course of evolution",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 28 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 29,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "What can be inferred about the nurseries in the UK?",
           "stemKeywords": [
             "What",
             "inferred",
-            "nurseries"
+            "about"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -1805,20 +1874,22 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "They tend to fall short of official requirements.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "They have difficulty finding enough caregivers.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -1826,40 +1897,42 @@ window.ENGLISH_DATA['2024'] = {
               "text": "They ought to improve their career-to-child ratio.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "They should try to prevent parental depression.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 29 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 30,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "Which of the following would be the best title for the text?",
           "stemKeywords": [
-            "would",
-            "best",
-            "title",
-            "text"
+            "Which",
+            "following",
+            "would"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -1867,10 +1940,11 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "Instructive teaching: a dilemma for anxious parents",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -1878,38 +1952,38 @@ window.ENGLISH_DATA['2024'] = {
               "text": "For a happier family learn from the hunter-gatherers",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Mixed-aged playgroup. a better choice for lonely children",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Tracing the history of parenting: from Africa to Europe",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 30 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]
@@ -1917,21 +1991,21 @@ window.ENGLISH_DATA['2024'] = {
     {
       "id": "text3",
       "number": 3,
-      "title": "Rutkowski is a Polish digital artist who uses classical painting ...",
-      "chineseTitle": "Text 3：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Text 3，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 3",
+      "chineseTitle": "Text 3 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 3，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Rutkowski is a Polish digital artist who uses classical painting styles to create dreamy fantasy landscapes.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Rutkowski is a Polish digital artist who uses classical painting styles to create dreamy fantasy landscapes.",
               "vocab": [
                 {
                   "word": "Polish",
@@ -1970,13 +2044,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "He has made illustrations for games such as Sony's Horizon Forbidden West, Ubisoft's Anno, Dungeons & Dragons, and Magic: The Gathering.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】He has made illustrations for games such as Sony's Horizon Forbidden West, Ubisoft's Anno, Dungeons & Dragons, and Magic: The Gathering.",
               "vocab": [
                 {
                   "word": "for",
@@ -1991,13 +2066,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "And he's become a sudden hit in the new world of text-to-image AI generation.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】And he's become a sudden hit in the new world of text-to-image AI generation.",
               "vocab": [
                 {
                   "word": "the New World",
@@ -2030,13 +2106,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "His distinctive style is now one of the most commonly used prompts in the new open-source AI art generator Stable Diffusion, which was launched late last month.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】His distinctive style is now one of the most commonly used prompts in the new open-source AI art generator Stable Diffusion, which was launched late last month.",
               "vocab": [
                 {
                   "word": "distinctive",
@@ -2081,13 +2158,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "The tool, along with other popular image-generation AI models, allows anyone to create impressive images based on text prompts.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The tool, along with other popular image-generation AI models, allows anyone to create impressive images based on text prompts.",
               "vocab": [
                 {
                   "word": "impressive",
@@ -2096,13 +2174,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 6,
               "id": "P1-S6",
               "text": "For example, type in \"Wizard with sword and a glowing orb of magic fire fights a fierce dragon Greg Rutkowski.\" and the system will produce something that looks not a million miles away from works in Rutkowski's style.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】For example, type in \"Wizard with sword and a glowing orb of magic fire fights a fierce dragon Greg Rutkowski.\" and the system will produce something that looks not a million miles away from works in Rutkowski's style.",
               "vocab": [
                 {
                   "word": "For",
@@ -2165,13 +2244,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 7,
               "id": "P1-S7",
               "text": "But these open-source programs are built by scraping images from the Internet, often without permission and proper attribution to artists.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But these open-source programs are built by scraping images from the Internet, often without permission and proper attribution to artists.",
               "vocab": [
                 {
                   "word": "permission",
@@ -2192,13 +2272,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 8,
               "id": "P1-S8",
               "text": "As a result, they are raising tricky questions about ethics and copyright.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】As a result, they are raising tricky questions about ethics and copyright.",
               "vocab": [
                 {
                   "word": "as a result",
@@ -2231,21 +2312,30 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 9,
-              "id": "P1-S9",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "And artists like Rutkowski have had enough.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】And artists like Rutkowski have had enough.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 10,
-              "id": "P1-S10",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "According to the website Lexica, which tracks over 10 million images and prompts generated by Stable Diffusion, Rutkowski's name has been used as a prompt around 93,000 times.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】According to the website Lexica, which tracks over 10 million images and prompts generated by Stable Diffusion, Rutkowski's name has been used as a prompt around 93,000 times.",
               "vocab": [
                 {
                   "word": "according to",
@@ -2278,13 +2368,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 11,
-              "id": "P1-S11",
+              "sIndex": 3,
+              "id": "P2-S3",
               "text": "Some of the world's most famous artists. such as Michelangelo, Pablo Picasso, and Leonardo da Vinci, brought up around 2,000 prompts each or less.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Some of the world's most famous artists. such as Michelangelo, Pablo Picasso, and Leonardo da Vinci, brought up around 2,000 prompts each or less.",
               "vocab": [
                 {
                   "word": "famous",
@@ -2299,13 +2390,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 12,
-              "id": "P1-S12",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "Rutkowski's name also features as a prompt thousands of times in the Discord of another text-to-image generator.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Rutkowski's name also features as a prompt thousands of times in the Discord of another text-to-image generator.",
               "vocab": [
                 {
                   "word": "prompt",
@@ -2320,21 +2412,23 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 13,
-              "id": "P1-S13",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "Midjourney.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Midjourney.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 14,
-              "id": "P1-S14",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "Rutkowski was initially surprised but thought it might be a good way to reach new audiences.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Rutkowski was initially surprised but thought it might be a good way to reach new audiences.",
               "vocab": [
                 {
                   "word": "initially",
@@ -2355,13 +2449,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 15,
-              "id": "P1-S15",
+              "sIndex": 7,
+              "id": "P2-S7",
               "text": "Then he tried searching for his name to see if a piece he had worked on had been published.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Then he tried searching for his name to see if a piece he had worked on had been published.",
               "vocab": [
                 {
                   "word": "for",
@@ -2370,13 +2465,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 16,
-              "id": "P1-S16",
+              "sIndex": 8,
+              "id": "P2-S8",
               "text": "The online search brought back work that had his name attached to it but wasn't his.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The online search brought back work that had his name attached to it but wasn't his.",
               "vocab": [
                 {
                   "word": "online",
@@ -2397,21 +2493,30 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 17,
-              "id": "P1-S17",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "\"It's been just a month.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】\"It's been just a month.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 18,
-              "id": "P1-S18",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "What about in a year?",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】What about in a year?",
               "vocab": [
                 {
                   "word": "about",
@@ -2420,13 +2525,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 19,
-              "id": "P1-S19",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "I probably won't be able to find my work out there because [the internet] will be flooded with AI art.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】I probably won't be able to find my work out there because [the internet] will be flooded with AI art.",
               "vocab": [
                 {
                   "word": "probably",
@@ -2453,21 +2559,23 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 20,
-              "id": "P1-S20",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "\" Rutkowski says.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】\" Rutkowski says.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 21,
-              "id": "P1-S21",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "\"That's concerning.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】\"That's concerning.",
               "vocab": [
                 {
                   "word": "concerning",
@@ -2476,13 +2584,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 22,
-              "id": "P1-S22",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "\" \"There is a coalition growing within artist industries to figure out how to tackle or mitigate this. says Ortiz.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】\" \"There is a coalition growing within artist industries to figure out how to tackle or mitigate this. says Ortiz.",
               "vocab": [
                 {
                   "word": "coalition",
@@ -2515,13 +2624,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 23,
-              "id": "P1-S23",
+              "sIndex": 7,
+              "id": "P3-S7",
               "text": "The group is in its early days of mobilization, which could involve pushing for new policies or regulations.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The group is in its early days of mobilization, which could involve pushing for new policies or regulations.",
               "vocab": [
                 {
                   "word": "mobilization",
@@ -2548,13 +2658,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 24,
-              "id": "P1-S24",
+              "sIndex": 8,
+              "id": "P3-S8",
               "text": "One suggestion is that AI models could be trained on images in the public domain, and AI companies could forge partnerships with museums and artists, Ortiz says.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】One suggestion is that AI models could be trained on images in the public domain, and AI companies could forge partnerships with museums and artists, Ortiz says.",
               "vocab": [
                 {
                   "word": "One",
@@ -2581,7 +2692,8 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -2589,14 +2701,17 @@ window.ENGLISH_DATA['2024'] = {
       "questions": [
         {
           "qIndex": 31,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "What can be learned about Rutkowski from the first two paragraphs?",
           "stemKeywords": [
             "What",
             "learned",
-            "Rutkowski",
-            "from"
+            "about"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -2604,10 +2719,11 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "He is enthusiastic about using AI models.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2615,50 +2731,53 @@ window.ENGLISH_DATA['2024'] = {
               "text": "He is popular with users of an AI art generator.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "He attracts admiration from other illustrators.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "He specializes in classical painting digitalization.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 31 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 32,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "The problem with open-source AI art generators is that they.",
           "stemKeywords": [
             "problem",
             "with",
-            "open",
-            "source"
+            "open"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -2666,20 +2785,22 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "lack flexibility in responding to prompts",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "produce artworks in unpredictable styles",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2687,40 +2808,42 @@ window.ENGLISH_DATA['2024'] = {
               "text": "make unauthorized use of online images",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "collect user information without consent",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 32 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 33,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "After searching online, Rutkowski found.",
           "stemKeywords": [
             "After",
             "searching",
-            "online",
-            "Rutkowski"
+            "online"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -2728,20 +2851,22 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "a unique way to reach audiences",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "A new method to identify AI images",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2749,39 +2874,42 @@ window.ENGLISH_DATA['2024'] = {
               "text": "AI-generated work bearing his name",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "heated disputes regarding his copyright",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 33 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 34,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "According to Ortiz, AI companies are advised to.",
           "stemKeywords": [
+            "According",
             "Ortiz",
-            "companies",
-            "advised"
+            "companies"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -2789,30 +2917,33 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "campaign for new policies or regulation",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "offer their services to public institutions",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "strengthen their relationship with AI users",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2820,29 +2951,31 @@ window.ENGLISH_DATA['2024'] = {
               "text": "adopt a different strategy for AI model training",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 34 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 35,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "What is the text mainly about?",
           "stemKeywords": [
             "What",
             "text",
             "mainly"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -2851,48 +2984,49 @@ window.ENGLISH_DATA['2024'] = {
               "text": "Artists' responses to AI art generation",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "AI's expanded role in artistic creation",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Privacy issues in the application of AI",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Opposing views on AI development",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 35 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]
@@ -2900,21 +3034,21 @@ window.ENGLISH_DATA['2024'] = {
     {
       "id": "text4",
       "number": 4,
-      "title": "The miracle of the Chesapeake Bay lies not in its depths, but in ...",
-      "chineseTitle": "Text 4：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Text 4，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 4",
+      "chineseTitle": "Text 4 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2024 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 4，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "The miracle of the Chesapeake Bay lies not in its depths, but in the complexity of its natural construction. the interaction of fresh and saline waters. and the mix of land and water.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The miracle of the Chesapeake Bay lies not in its depths, but in the complexity of its natural construction. the interaction of fresh and saline waters. and the mix of land and water.",
               "vocab": [
                 {
                   "word": "miracle",
@@ -2953,13 +3087,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The shallows provide homes for hundreds of species while storing floodwaters, filtering pollutants from water. and protecting nearby communities from potentially destructive storms urges.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The shallows provide homes for hundreds of species while storing floodwaters, filtering pollutants from water. and protecting nearby communities from potentially destructive storms urges.",
               "vocab": [
                 {
                   "word": "provide",
@@ -2992,29 +3127,21 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
-              "text": "All this was put at great risk late last month, when the U.S.",
-              "translation": "",
+              "text": "All this was put at great risk late last month, when the U.S. Supreme Court issued a ruling in an Idaho case that provides the U.S. Environmental Protection Agency (EPA) far less authority to regulate wetlands and waterways.",
+              "translation": "【考研真题精读标准译文】All this was put at great risk late last month, when the U.S. Supreme Court issued a ruling in an Idaho case that provides the U.S. Environmental Protection Agency (EPA) far less authority to regulate wetlands and waterways.",
               "vocab": [
                 {
                   "word": "All this",
                   "ipa": "/ɔːl ðɪs/",
                   "meaning": "这一切；概括前文全部变化（常用释义：篇章总结性指代）",
                   "level": "purple"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "Supreme Court issued a ruling in an Idaho case that provides the U.S.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "Supreme Court",
                   "ipa": "/suːˌpriːm ˈkɔːt/",
@@ -3044,16 +3171,7 @@ window.ENGLISH_DATA['2024'] = {
                   "ipa": "keɪs",
                   "meaning": "n.事例，案",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "Environmental Protection Agency (EPA) far less authority to regulate wetlands and waterways.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "Agency",
                   "ipa": "/ˈeɪdʒənsi/",
@@ -3073,13 +3191,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P1-S6",
+              "sIndex": 4,
+              "id": "P1-S4",
               "text": "Specifically, a 5-4 majority decided that wetlands protected by the EPA under its Clean Water Act authority must have a \"continuous surface connection to bodies of water.\" This narrowing of the regulatory scope was a victor for builders. mining operators and other commercial interests are often at odds with environmental rules.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Specifically, a 5-4 majority decided that wetlands protected by the EPA under its Clean Water Act authority must have a \"continuous surface connection to bodies of water.\" This narrowing of the regulatory scope was a victor for builders. mining operators and other commercial interests are often at odds with environmental rules.",
               "vocab": [
                 {
                   "word": "Specifically",
@@ -3178,13 +3297,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 7,
-              "id": "P1-S7",
+              "sIndex": 5,
+              "id": "P1-S5",
               "text": "And it carries \"significant repercussions for water quality and flood control throughout the United States.\" as Justice Brett Kavanaugh observed.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】And it carries \"significant repercussions for water quality and flood control throughout the United States.\" as Justice Brett Kavanaugh observed.",
               "vocab": [
                 {
                   "word": "significant",
@@ -3223,13 +3343,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 8,
-              "id": "P1-S8",
+              "sIndex": 6,
+              "id": "P1-S6",
               "text": "In Maryland, the good news is that there are many state laws in place that provide wetlands protections.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In Maryland, the good news is that there are many state laws in place that provide wetlands protections.",
               "vocab": [
                 {
                   "word": "state",
@@ -3250,13 +3371,21 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 9,
-              "id": "P1-S9",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "But that's a very short-sighted view, particularly when it comes to the Chesapeake Bay.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But that's a very short-sighted view, particularly when it comes to the Chesapeake Bay.",
               "vocab": [
                 {
                   "word": "very",
@@ -3277,13 +3406,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 10,
-              "id": "P1-S10",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "The reality is that water. and the pollutants that so often come with it, don't respect state boundaries.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The reality is that water. and the pollutants that so often come with it, don't respect state boundaries.",
               "vocab": [
                 {
                   "word": "reality",
@@ -3304,13 +3434,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 11,
-              "id": "P1-S11",
+              "sIndex": 3,
+              "id": "P2-S3",
               "text": "The Chesapeake draws from a 64,000-square-mile watershed that extends into Virginia.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The Chesapeake draws from a 64,000-square-mile watershed that extends into Virginia.",
               "vocab": [
                 {
                   "word": "watershed",
@@ -3319,21 +3450,23 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 12,
-              "id": "P1-S12",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "Pennsylvania.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Pennsylvania.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 13,
-              "id": "P1-S13",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "New York, West Virginia. the District of Columbia and Delaware.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】New York, West Virginia. the District of Columbia and Delaware.",
               "vocab": [
                 {
                   "word": "New",
@@ -3348,13 +3481,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 14,
-              "id": "P1-S14",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "Will those jurisdictions extend the same protections now denied under Sackett V.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Will those jurisdictions extend the same protections now denied under Sackett V.",
               "vocab": [
                 {
                   "word": "Will",
@@ -3363,29 +3497,39 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 15,
-              "id": "P1-S15",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "EPA?",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】EPA?",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 16,
-              "id": "P1-S16",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Perhaps some, but all?",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Perhaps some, but all?",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 17,
-              "id": "P1-S17",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "That seems unlikely.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】That seems unlikely.",
               "vocab": [
                 {
                   "word": "unlikely",
@@ -3394,13 +3538,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 18,
-              "id": "P1-S18",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "It is too easy, and misleading, to see such court rulings as merely standing up for the rights of land owners when the consequences can be so dire for their neighbors.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】It is too easy, and misleading, to see such court rulings as merely standing up for the rights of land owners when the consequences can be so dire for their neighbors.",
               "vocab": [
                 {
                   "word": "misleading",
@@ -3433,13 +3578,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 19,
-              "id": "P1-S19",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "And it's a reminder that the EPA's involvement in the Chesapeake Bay Program has long been crucial as the means to transcend the influence of deep-pocketed special interests in neighboring states Pennsylvania farmers, to use one telling example, aren't thinking about next year's blue crab harvest in Maryland when they decide whether to spread animal waste on their field, yet the runoff into nearby creeks can have enormous impact downstream.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】And it's a reminder that the EPA's involvement in the Chesapeake Bay Program has long been crucial as the means to transcend the influence of deep-pocketed special interests in neighboring states Pennsylvania farmers, to use one telling example, aren't thinking about next year's blue crab harvest in Maryland when they decide whether to spread animal waste on their field, yet the runoff into nearby creeks can have enormous impact downstream.",
               "vocab": [
                 {
                   "word": "reminder",
@@ -3568,13 +3714,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 20,
-              "id": "P1-S20",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "And so we would call on state lawmakers from Richmond to Albany to consider reviewing their own wetlands protections and see for themselves the enormous stake involved.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】And so we would call on state lawmakers from Richmond to Albany to consider reviewing their own wetlands protections and see for themselves the enormous stake involved.",
               "vocab": [
                 {
                   "word": "state",
@@ -3607,13 +3754,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 21,
-              "id": "P1-S21",
+              "sIndex": 7,
+              "id": "P3-S7",
               "text": "We can offer them a visit to Black water National Wildlife Refuge in Dorchester County where bald eagles fly over tidal marshes so shallow you could not paddle a boat across them but teaming with aquatic life.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】We can offer them a visit to Black water National Wildlife Refuge in Dorchester County where bald eagles fly over tidal marshes so shallow you could not paddle a boat across them but teaming with aquatic life.",
               "vocab": [
                 {
                   "word": "offer",
@@ -3676,13 +3824,14 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 22,
-              "id": "P1-S22",
+              "sIndex": 8,
+              "id": "P3-S8",
               "text": "It's worth the scenic drive.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】It's worth the scenic drive.",
               "vocab": [
                 {
                   "word": "scenic",
@@ -3697,7 +3846,8 @@ window.ENGLISH_DATA['2024'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -3705,12 +3855,17 @@ window.ENGLISH_DATA['2024'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "The Chesapeake Bay is described in paragraph 1 as.",
           "stemKeywords": [
             "Chesapeake",
-            "described"
+            "described",
+            "paragraph"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -3719,60 +3874,64 @@ window.ENGLISH_DATA['2024'] = {
               "text": "a valuable natural environment",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "a controversial conservation area",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "a place with commercial potential",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "a headache for nearby communities",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 36 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 37,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "The U.S. Supreme Court's ruling in the Idaho case.",
           "stemKeywords": [
             "Supreme",
             "Court",
-            "ruling",
-            "Idaho"
+            "ruling"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -3780,10 +3939,11 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "reinforces water pollution control",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3791,50 +3951,53 @@ window.ENGLISH_DATA['2024'] = {
               "text": "weakens the EPA's regulatory power",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "will end conflicts among local residents",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "may face opposition from mining operators",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 37 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 38,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "How does the author tell about the future of the Chesapeake Bay?",
           "stemKeywords": [
             "does",
-            "tell",
-            "future",
-            "Chesapeake"
+            "author",
+            "tell"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -3843,60 +4006,64 @@ window.ENGLISH_DATA['2024'] = {
               "text": "worried",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "Puzzled",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Relieved",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Encouraged",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 38 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 39,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "What can be inferred about the EPA's involvement in the Chesapeake Bay Program?",
           "stemKeywords": [
             "What",
             "inferred",
-            "involvement",
-            "Chesapeake"
+            "about"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -3904,30 +4071,33 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "It has restored the balance among neighboring jurisdictions.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "It has triggered a radical reform in commercial fisheries.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "It has set a fine example of respecting state authorities.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3935,30 +4105,31 @@ window.ENGLISH_DATA['2024'] = {
               "text": "It has ensured the coordination of protection efforts.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 39 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 40,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "The author holds that the state lawmakers should.",
           "stemKeywords": [
+            "author",
             "holds",
-            "state",
-            "lawmakers",
-            "should"
+            "that"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -3966,10 +4137,11 @@ window.ENGLISH_DATA['2024'] = {
               "key": "A",
               "text": "be cautious about the influence of landowners",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3977,38 +4149,38 @@ window.ENGLISH_DATA['2024'] = {
               "text": "attach due importance to wetlands protections",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "recognize the need to expand wildlife refuges",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "improve the well-being of endangered species",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 40 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]

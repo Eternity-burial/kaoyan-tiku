@@ -885,26 +885,22 @@
       };
     }
 
+    function setMode(m) {
+      if (m !== 'analysis' && m !== 'practice') return;
+      state.mode = m;
+      saveResume();
+      updateModeClass();
+      renderPassage();
+      renderQuestionPills();
+      renderQuestion();
+    }
+
     if (dom.btnPracticeMode) {
-      dom.btnPracticeMode.onclick = () => {
-        state.mode = 'practice';
-        saveResume();
-        updateModeClass();
-        renderPassage();
-        renderQuestionPills();
-        renderQuestion();
-      };
+      dom.btnPracticeMode.onclick = () => setMode('practice');
     }
 
     if (dom.btnAnalysisMode) {
-      dom.btnAnalysisMode.onclick = () => {
-        state.mode = 'analysis';
-        saveResume();
-        updateModeClass();
-        renderPassage();
-        renderQuestionPills();
-        renderQuestion();
-      };
+      dom.btnAnalysisMode.onclick = () => setMode('analysis');
     }
 
     if (dom.btnHelp) {
@@ -983,6 +979,16 @@
     });
   }
 
+  function setMode(m) {
+    if (m !== 'analysis' && m !== 'practice') return;
+    state.mode = m;
+    saveResume();
+    updateModeClass();
+    renderPassage();
+    renderQuestionPills();
+    renderQuestion();
+  }
+
   function escapeHtml(str) {
     if (!str) return '';
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -992,20 +998,24 @@
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
-  window.kyApp = {
+  window.englishApp = {
     init,
     activate,
     saveResume,
     loadResume,
     switchYear,
+    setMode,
     locateSentence,
     setMastery,
     setMistakeReason,
     onNoteInput,
     submitPracticeAnswer,
     toggleSolution,
-    toggleDefaultSolution
+    toggleDefaultSolution,
+    get state() { return state; },
+    get curDataset() { return getCurrentDataset(); }
   };
+  window.kyEnglishApp = window.englishApp;
 
   document.addEventListener('DOMContentLoaded', init);
 })();

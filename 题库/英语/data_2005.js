@@ -1,6 +1,6 @@
 /**
  * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2005 年真题
+ * 年份：2005 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
  */
 
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
@@ -12,21 +12,21 @@ window.ENGLISH_DATA['2005'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "Everybody loves a fat pay rise.",
-      "chineseTitle": "Text 1：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Text 1，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 1",
+      "chineseTitle": "Text 1 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 1，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Everybody loves a fat pay rise.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Everybody loves a fat pay rise.",
               "vocab": [
                 {
                   "word": "pay",
@@ -35,13 +35,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Yet pleasure at your own can vanish if you learn that a colleague has been given a bigger one.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Yet pleasure at your own can vanish if you learn that a colleague has been given a bigger one.",
               "vocab": [
                 {
                   "word": "Yet",
@@ -68,13 +69,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "Indeed, if he has a reputation for slacking, you might even be outraged.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Indeed, if he has a reputation for slacking, you might even be outraged.",
               "vocab": [
                 {
                   "word": "Indeed",
@@ -95,13 +97,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Such behaviour is regarded as \"all too human\", with the underlying assumption that other animals would not be capable of this finely developed sense of grievance.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Such behaviour is regarded as \"all too human\", with the underlying assumption that other animals would not be capable of this finely developed sense of grievance.",
               "vocab": [
                 {
                   "word": "capable of",
@@ -146,13 +149,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "But a study by Sarah Brosnan and Frans de Waal of Emory University in Atlanta, Georgia, which has just been published in Nature, suggests that it is all too monkey, as well.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But a study by Sarah Brosnan and Frans de Waal of Emory University in Atlanta, Georgia, which has just been published in Nature, suggests that it is all too monkey, as well.",
               "vocab": [
                 {
                   "word": "Nature",
@@ -167,20 +171,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P2-S1",
+              "sIndex": 6,
+              "id": "P1-S6",
               "text": "The researchers studied the behaviour of female brown capuchin monkeys.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The researchers studied the behaviour of female brown capuchin monkeys.",
               "vocab": [
                 {
                   "word": "behaviour",
@@ -195,21 +193,30 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P2-S2",
+              "sIndex": 7,
+              "id": "P1-S7",
               "text": "They look cute.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】They look cute.",
               "vocab": [],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 3,
-              "id": "P2-S3",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "They are good-natured, co-operative creatures, and they share their food readily.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】They are good-natured, co-operative creatures, and they share their food readily.",
               "vocab": [
                 {
                   "word": "share",
@@ -218,13 +225,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P2-S4",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "Above all, like their female human counterparts, they tend to pay much closer attention to the value of \"goods and services\" than males.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Above all, like their female human counterparts, they tend to pay much closer attention to the value of \"goods and services\" than males.",
               "vocab": [
                 {
                   "word": "counterparts",
@@ -257,20 +265,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
             {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Such characteristics make them perfect candidates for Dr.",
-              "translation": "",
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "Such characteristics make them perfect candidates for Dr. Brosnan's and Dr. de Waal's study.",
+              "translation": "【考研真题精读标准译文】Such characteristics make them perfect candidates for Dr. Brosnan's and Dr. de Waal's study.",
               "vocab": [
                 {
                   "word": "perfect",
@@ -285,21 +287,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "Brosnan's and Dr. de Waal's study.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "The researchers spent two years teaching their monkeys to exchange tokens for food.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The researchers spent two years teaching their monkeys to exchange tokens for food.",
               "vocab": [
                 {
                   "word": "exchange",
@@ -314,13 +309,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P3-S4",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "Normally, the monkeys were happy enough to exchange pieces of rock for slices of cucumber.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Normally, the monkeys were happy enough to exchange pieces of rock for slices of cucumber.",
               "vocab": [
                 {
                   "word": "exchange",
@@ -341,13 +337,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P3-S5",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "However, when two monkeys were placed in separate but adjoining chambers, so that each could observe what the other was getting in return for its rock, their behaviour became markedly different.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】However, when two monkeys were placed in separate but adjoining chambers, so that each could observe what the other was getting in return for its rock, their behaviour became markedly different.",
               "vocab": [
                 {
                   "word": "However",
@@ -398,20 +395,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P4-S1",
+              "sIndex": 7,
+              "id": "P2-S7",
               "text": "In the world of capuchins grapes are luxury goods (and much preferable to cucumbers).",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In the world of capuchins grapes are luxury goods (and much preferable to cucumbers).",
               "vocab": [
                 {
                   "word": "luxury",
@@ -420,13 +411,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 2,
-              "id": "P4-S2",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "So when one monkey was handed a grape in exchange for her token, the second was reluctant to hand hers over for a mere piece of cucumber.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】So when one monkey was handed a grape in exchange for her token, the second was reluctant to hand hers over for a mere piece of cucumber.",
               "vocab": [
                 {
                   "word": "one",
@@ -465,13 +464,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P4-S3",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "And if one received a grape without having to provide her token in exchange at all, the other either tossed her own token at the researcher or out of the chamber, or refused to accept the slice of cucumber.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】And if one received a grape without having to provide her token in exchange at all, the other either tossed her own token at the researcher or out of the chamber, or refused to accept the slice of cucumber.",
               "vocab": [
                 {
                   "word": "one",
@@ -516,13 +516,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P4-S4",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "Indeed, the mere presence of a grape in the other chamber (without an actual monkey to eat it) was enough to induce resentment in a female capuchin.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Indeed, the mere presence of a grape in the other chamber (without an actual monkey to eat it) was enough to induce resentment in a female capuchin.",
               "vocab": [
                 {
                   "word": "Indeed",
@@ -567,20 +568,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P5-S1",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "The researchers suggest that capuchin monkeys, like humans, are guided by social emotions.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The researchers suggest that capuchin monkeys, like humans, are guided by social emotions.",
               "vocab": [
                 {
                   "word": "suggest",
@@ -601,13 +596,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P5-S2",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "In the wild, they are a co-operative, group-living species.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In the wild, they are a co-operative, group-living species.",
               "vocab": [
                 {
                   "word": "species",
@@ -616,13 +612,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P5-S3",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "Such co-operation is likely to be stable only when each animal feels it is not being cheated.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Such co-operation is likely to be stable only when each animal feels it is not being cheated.",
               "vocab": [
                 {
                   "word": "stable",
@@ -643,13 +640,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P5-S4",
+              "sIndex": 7,
+              "id": "P3-S7",
               "text": "Feelings of righteous indignation, it seems, are not the preserve of people alone.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Feelings of righteous indignation, it seems, are not the preserve of people alone.",
               "vocab": [
                 {
                   "word": "preserve",
@@ -658,13 +656,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P5-S5",
+              "sIndex": 8,
+              "id": "P3-S8",
               "text": "Refusing a lesser reward completely makes these feelings abundantly clear to other members of the group.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Refusing a lesser reward completely makes these feelings abundantly clear to other members of the group.",
               "vocab": [
                 {
                   "word": "reward",
@@ -679,13 +678,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P5-S6",
+              "sIndex": 9,
+              "id": "P3-S9",
               "text": "However, whether such a sense of fairness evolved independently in capuchins and humans, or whether it stems from the common ancestor that the species had 35 million years ago, is, as yet, an unanswered question.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】However, whether such a sense of fairness evolved independently in capuchins and humans, or whether it stems from the common ancestor that the species had 35 million years ago, is, as yet, an unanswered question.",
               "vocab": [
                 {
                   "word": "However",
@@ -736,7 +736,8 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -744,13 +745,17 @@ window.ENGLISH_DATA['2005'] = {
       "questions": [
         {
           "qIndex": 21,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "In the opening paragraph, the author introduces his topic by",
           "stemKeywords": [
             "opening",
-            "introduces",
-            "topic"
+            "paragraph",
+            "author"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -758,10 +763,11 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "posing a contrast.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -769,9 +775,10 @@ window.ENGLISH_DATA['2005'] = {
               "text": "justifying an assumption.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -779,40 +786,42 @@ window.ENGLISH_DATA['2005'] = {
               "text": "making a comparison.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "explaining a phenomenon.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 21 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 22,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "The statement \"it is all too monkey\" (Last line, Paragraph l) implies that",
           "stemKeywords": [
             "statement",
             "monkey",
-            "Last",
-            "line"
+            "Last"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -821,8 +830,9 @@ window.ENGLISH_DATA['2005'] = {
               "text": "monkeys are also outraged by slack rivals.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             },
@@ -831,50 +841,53 @@ window.ENGLISH_DATA['2005'] = {
               "text": "resenting unfairness is also monkeys' nature.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "monkeys, like humans, tend to be jealous of each other.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "no animals other than monkeys can develop such emotions.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 22 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 23,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "Female capuchin monkeys were chosen for the research most probably because they are",
           "stemKeywords": [
             "Female",
             "capuchin",
-            "monkeys",
-            "were"
+            "monkeys"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -883,60 +896,64 @@ window.ENGLISH_DATA['2005'] = {
               "text": "more inclined to weigh what they get.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "attentive to researchers' instructions.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "nice in both appearance and temperament.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "more generous than their male companions.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 23 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 24,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "Dr. Brosnan and Dr. de Waal have eventually found in their study that the monkeys",
           "stemKeywords": [
             "Brosnan",
             "Waal",
-            "have",
-            "eventually"
+            "have"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -944,20 +961,22 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "prefer grapes to cucumbers.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "can be taught to exchange things.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -965,39 +984,42 @@ window.ENGLISH_DATA['2005'] = {
               "text": "will not be co-operative if feeling cheated.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P4-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "are unhappy when separated from others.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 24 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 25,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "What can we infer from the last paragraph?",
           "stemKeywords": [
             "What",
-            "from",
-            "last"
+            "infer",
+            "from"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -1005,10 +1027,11 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "Monkeys can be trained to develop social emotions.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -1016,38 +1039,38 @@ window.ENGLISH_DATA['2005'] = {
               "text": "Human indignation evolved from an uncertain source.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P5-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Animals usually show their feelings openly as humans do.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Cooperation among monkeys remains stable only in the wild.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 25 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]
@@ -1055,21 +1078,21 @@ window.ENGLISH_DATA['2005'] = {
     {
       "id": "text2",
       "number": 2,
-      "title": "Do you remember all those years when scientists argued that smoki...",
-      "chineseTitle": "Text 2：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Text 2，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 2",
+      "chineseTitle": "Text 2 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 2，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Do you remember all those years when scientists argued that smoking would kill us but the doubters insisted that we didn't know for sure?",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Do you remember all those years when scientists argued that smoking would kill us but the doubters insisted that we didn't know for sure?",
               "vocab": [
                 {
                   "word": "for",
@@ -1078,13 +1101,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "That the evidence was inconclusive, the science uncertain?",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】That the evidence was inconclusive, the science uncertain?",
               "vocab": [
                 {
                   "word": "evidence",
@@ -1093,13 +1117,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "That the antismoking lobby was out to destroy our way of life and the government should stay out of the way?",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】That the antismoking lobby was out to destroy our way of life and the government should stay out of the way?",
               "vocab": [
                 {
                   "word": "lobby",
@@ -1120,13 +1145,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Lots of Americans bought that nonsense, and over three decades, some 10 million smokers went to early graves.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Lots of Americans bought that nonsense, and over three decades, some 10 million smokers went to early graves.",
               "vocab": [
                 {
                   "word": "nonsense",
@@ -1135,20 +1161,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P2-S1",
+              "sIndex": 5,
+              "id": "P1-S5",
               "text": "There are upsetting parallels today, as scientists in one wave after another try to awaken us to the growing threat of global warming.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】There are upsetting parallels today, as scientists in one wave after another try to awaken us to the growing threat of global warming.",
               "vocab": [
                 {
                   "word": "one",
@@ -1163,13 +1183,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P2-S2",
+              "sIndex": 6,
+              "id": "P1-S6",
               "text": "The latest was a panel from the National Academy of Sciences, enlisted by the White House, to tell us that the Earth's atmosphere is definitely warming and that the problem is largely man-made.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The latest was a panel from the National Academy of Sciences, enlisted by the White House, to tell us that the Earth's atmosphere is definitely warming and that the problem is largely man-made.",
               "vocab": [
                 {
                   "word": "the White House",
@@ -1202,13 +1223,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 3,
-              "id": "P2-S3",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "The clear message is that we should get moving to protect ourselves.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The clear message is that we should get moving to protect ourselves.",
               "vocab": [
                 {
                   "word": "clear",
@@ -1229,13 +1258,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P2-S4",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "The president of the National Academy, Bruce Alberts, added this key point in the preface to the panel's report: \"Science never has all the answers.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The president of the National Academy, Bruce Alberts, added this key point in the preface to the panel's report: \"Science never has all the answers.",
               "vocab": [
                 {
                   "word": "president",
@@ -1268,13 +1298,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "But science does provide us with the best available guide to the future, and it is critical that our nation and the world base important policies on the best judgments that science can provide concerning the future consequences of present actions.\"",
-              "translation": "",
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "But science does provide us with the best available guide to the future, and it is critical that our nation and the world base important policies on the best judgments that science can provide concerning the future consequences of present actions.\" Just as on smoking, voices now come from many quarters insisting that the science about global warming is incomplete, that it's OK to keep pouring fumes into the air until we know for sure.",
+              "translation": "【考研真题精读标准译文】But science does provide us with the best available guide to the future, and it is critical that our nation and the world base important policies on the best judgments that science can provide concerning the future consequences of present actions.\" Just as on smoking, voices now come from many quarters insisting that the science about global warming is incomplete, that it's OK to keep pouring fumes into the air until we know for sure.",
               "vocab": [
                 {
                   "word": "provide",
@@ -1311,23 +1342,7 @@ window.ENGLISH_DATA['2005'] = {
                   "ipa": "kənˈsɜːrnɪŋ",
                   "meaning": "prep.关于，涉及 adj.让人不安的，令人担忧的 v.",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Just as on smoking, voices now come from many quarters insisting that the science about global warming is incomplete, that it's OK to keep pouring fumes into the air until we know for sure.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "about",
                   "ipa": "əˈbaʊt",
@@ -1347,13 +1362,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P3-S2",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "This is a dangerous game: by the time 100 percent of the evidence is in, it may be too late.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】This is a dangerous game: by the time 100 percent of the evidence is in, it may be too late.",
               "vocab": [
                 {
                   "word": "evidence",
@@ -1362,13 +1378,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P3-S3",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "With the risks obvious and growing, prudent people would take out an insurance policy now.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】With the risks obvious and growing, prudent people would take out an insurance policy now.",
               "vocab": [
                 {
                   "word": "obvious",
@@ -1401,20 +1418,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P4-S1",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "Fortunately, the White House is starting to pay attention.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Fortunately, the White House is starting to pay attention.",
               "vocab": [
                 {
                   "word": "the White House",
@@ -1435,13 +1446,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 2,
-              "id": "P4-S2",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "But it's obvious that a majority of the president's advisers still don't take global warming seriously.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But it's obvious that a majority of the president's advisers still don't take global warming seriously.",
               "vocab": [
                 {
                   "word": "obvious",
@@ -1474,13 +1493,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P4-S3",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Instead of a plan of action, they continue to press for more research—a classic case of \"paralysis by analysis\".",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Instead of a plan of action, they continue to press for more research—a classic case of \"paralysis by analysis\".",
               "vocab": [
                 {
                   "word": "Instead",
@@ -1531,20 +1551,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
             {
-              "sIndex": 1,
-              "id": "P5-S1",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "To serve as responsible stewards of the planet, we must press forward on deeper atmospheric and oceanic research.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】To serve as responsible stewards of the planet, we must press forward on deeper atmospheric and oceanic research.",
               "vocab": [
                 {
                   "word": "serve",
@@ -1577,13 +1591,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P5-S2",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "But research alone is inadequate.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But research alone is inadequate.",
               "vocab": [
                 {
                   "word": "inadequate",
@@ -1592,13 +1607,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P5-S3",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "If the Administration won't take the legislative initiative, Congress should help to begin fashioning conservation measures.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】If the Administration won't take the legislative initiative, Congress should help to begin fashioning conservation measures.",
               "vocab": [
                 {
                   "word": "Administration",
@@ -1631,13 +1647,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P5-S4",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "A bill by Democratic Senator Robert Byrd of West Virginia, which would offer financial incentives for private industry, is a promising start.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】A bill by Democratic Senator Robert Byrd of West Virginia, which would offer financial incentives for private industry, is a promising start.",
               "vocab": [
                 {
                   "word": "bill",
@@ -1688,13 +1705,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P5-S5",
+              "sIndex": 7,
+              "id": "P3-S7",
               "text": "Many see that the country is getting ready to build lots of new power plants to meet our energy needs.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Many see that the country is getting ready to build lots of new power plants to meet our energy needs.",
               "vocab": [
                 {
                   "word": "ready",
@@ -1721,13 +1739,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P5-S6",
+              "sIndex": 8,
+              "id": "P3-S8",
               "text": "If we are ever going to protect the atmosphere, it is crucial that those new plants be environmentally sound.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】If we are ever going to protect the atmosphere, it is crucial that those new plants be environmentally sound.",
               "vocab": [
                 {
                   "word": "protect",
@@ -1760,7 +1779,8 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -1768,14 +1788,17 @@ window.ENGLISH_DATA['2005'] = {
       "questions": [
         {
           "qIndex": 26,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "An argument made by supporters of smoking was that",
           "stemKeywords": [
             "argument",
             "made",
-            "supporters",
-            "smoking"
+            "supporters"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -1783,20 +1806,22 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "there was no scientific evidence of the correlation between smoking and death.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "the number of early deaths of smokers in the past decades was insignificant.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -1804,40 +1829,42 @@ window.ENGLISH_DATA['2005'] = {
               "text": "people had the freedom to choose their own way of life.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "antismoking people were usually talking nonsense.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 26 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 27,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "According to Bruce Alberts, science can serve as",
           "stemKeywords": [
+            "According",
             "Bruce",
-            "Alberts",
-            "science",
-            "serve"
+            "Alberts"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -1845,9 +1872,10 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "a protector.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             },
@@ -1855,20 +1883,22 @@ window.ENGLISH_DATA['2005'] = {
               "key": "B",
               "text": "a judge.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "a critic.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -1876,30 +1906,31 @@ window.ENGLISH_DATA['2005'] = {
               "text": "a guide.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 27 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 28,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "What does the author mean by \"paralysis by analysis\" (Last line, Paragraph 4)?",
           "stemKeywords": [
             "What",
             "does",
-            "mean",
-            "paralysis"
+            "author"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -1908,60 +1939,64 @@ window.ENGLISH_DATA['2005'] = {
               "text": "Endless studies kill action.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "Careful investigation reveals truth.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Prudent planning hinders progress.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Extensive research helps decision-making.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 28 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 29,
-          "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "According to the author, what should the Administration do about global warming?",
           "stemKeywords": [
-            "what",
-            "should",
-            "Administration",
-            "global"
+            "According",
+            "author",
+            "what"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -1969,30 +2004,33 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "Offer aid to build cleaner power plants.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "Raise public awareness of conservation.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Press for further scientific research.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2000,30 +2038,31 @@ window.ENGLISH_DATA['2005'] = {
               "text": "Take some legislative measures.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 29 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 30,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "The author associates the issue of global warming with that of smoking because",
           "stemKeywords": [
+            "author",
             "associates",
-            "issue",
-            "global",
-            "warming"
+            "issue"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -2031,10 +2070,11 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "they both suffered from the government's negligence.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2042,38 +2082,38 @@ window.ENGLISH_DATA['2005'] = {
               "text": "a lesson from the latter is applicable to the former.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P5-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "the outcome of the latter aggravates the former.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "both of them have turned from bad to worse.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 30 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]
@@ -2081,21 +2121,21 @@ window.ENGLISH_DATA['2005'] = {
     {
       "id": "text3",
       "number": 3,
-      "title": "Of all the components of a good night's sleep, dreams seem to be ...",
-      "chineseTitle": "Text 3：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Text 3，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 3",
+      "chineseTitle": "Text 3 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 3，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Of all the components of a good night's sleep, dreams seem to be least within our control.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Of all the components of a good night's sleep, dreams seem to be least within our control.",
               "vocab": [
                 {
                   "word": "components",
@@ -2104,13 +2144,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "In dreams, a window opens into a world where logic is suspended and dead people speak.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In dreams, a window opens into a world where logic is suspended and dead people speak.",
               "vocab": [
                 {
                   "word": "logic",
@@ -2119,13 +2160,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "A century ago, Freud formulated his revolutionary theory that dreams were the disguised shadows of our unconscious desires and fears; by the late 1970s, neurologists had switched to thinking of them as just \"mental noise\"—the random byproducts of the neural-repair work that goes on during sleep.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】A century ago, Freud formulated his revolutionary theory that dreams were the disguised shadows of our unconscious desires and fears; by the late 1970s, neurologists had switched to thinking of them as just \"mental noise\"—the random byproducts of the neural-repair work that goes on during sleep.",
               "vocab": [
                 {
                   "word": "theory",
@@ -2164,13 +2206,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
               "id": "P1-S4",
               "text": "Now researchers suspect that dreams are part of the mind's emotional thermostat, regulating moods while the brain is \"off-line.\" And one leading authority says that these intensely powerful mental events can be not only harnessed but actually brought under conscious control, to help us sleep and feel better.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Now researchers suspect that dreams are part of the mind's emotional thermostat, regulating moods while the brain is \"off-line.\" And one leading authority says that these intensely powerful mental events can be not only harnessed but actually brought under conscious control, to help us sleep and feel better.",
               "vocab": [
                 {
                   "word": "suspect",
@@ -2221,13 +2264,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 5,
               "id": "P1-S5",
               "text": "\"It's your dream,\" says Rosalind Cartwright, chair of psychology at Chicago's Medical Center.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】\"It's your dream,\" says Rosalind Cartwright, chair of psychology at Chicago's Medical Center.",
               "vocab": [
                 {
                   "word": "psychology",
@@ -2242,36 +2286,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 6,
               "id": "P1-S6",
-              "text": "\"If you don't like it, change it.\"",
-              "translation": "",
+              "text": "\"If you don't like it, change it.\" Evidence from brain imaging supports this view.",
+              "translation": "【考研真题精读标准译文】\"If you don't like it, change it.\" Evidence from brain imaging supports this view.",
               "vocab": [
                 {
                   "word": "change",
                   "ipa": "/tʃeɪndʒ/",
                   "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Evidence from brain imaging supports this view.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "Evidence",
                   "ipa": "ˈevɪdəns",
@@ -2285,13 +2314,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "The brain is as active during REM (rapid eye movement) sleep – when most vivid dreams occur—as it is when fully awake, says Dr.",
-              "translation": "",
+              "sIndex": 7,
+              "id": "P1-S7",
+              "text": "The brain is as active during REM (rapid eye movement) sleep – when most vivid dreams occur—as it is when fully awake, says Dr. Eric Nofzinger at the University of Pittsburgh.",
+              "translation": "【考研真题精读标准译文】The brain is as active during REM (rapid eye movement) sleep – when most vivid dreams occur—as it is when fully awake, says Dr. Eric Nofzinger at the University of Pittsburgh.",
               "vocab": [
                 {
                   "word": "active",
@@ -2318,21 +2348,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "Eric Nofzinger at the University of Pittsburgh.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "But not all parts of the brain are equally involved; the limbic system (the \"emotional brain\") is especially active, while the prefrontal cortex (the center of intellect and reasoning) is relatively quiet.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But not all parts of the brain are equally involved; the limbic system (the \"emotional brain\") is especially active, while the prefrontal cortex (the center of intellect and reasoning) is relatively quiet.",
               "vocab": [
                 {
                   "word": "equally",
@@ -2377,36 +2407,23 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "\"We wake up from dreams happy or depressed, and those feelings can stay with us all day.\" says Stanford sleep researcher Dr.",
-              "translation": "",
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "\"We wake up from dreams happy or depressed, and those feelings can stay with us all day.\" says Stanford sleep researcher Dr. William Dement.",
+              "translation": "【考研真题精读标准译文】\"We wake up from dreams happy or depressed, and those feelings can stay with us all day.\" says Stanford sleep researcher Dr. William Dement.",
               "vocab": [],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "William Dement.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
+              "sIndex": 3,
+              "id": "P2-S3",
               "text": "The link between dreams and emotions shows up among the patients in Cartwright's clinic.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】The link between dreams and emotions shows up among the patients in Cartwright's clinic.",
               "vocab": [
                 {
                   "word": "clinic",
@@ -2415,13 +2432,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P3-S2",
+              "sIndex": 4,
+              "id": "P2-S4",
               "text": "Most people seem to have more bad dreams early in the night, progressing toward happier ones before awakening, suggesting that they are working through negative feelings generated during the day.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Most people seem to have more bad dreams early in the night, progressing toward happier ones before awakening, suggesting that they are working through negative feelings generated during the day.",
               "vocab": [
                 {
                   "word": "ones",
@@ -2436,13 +2454,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P3-S3",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "Because our conscious mind is occupied with daily life we don't always think about the emotional significance of the day's events—until, it appears, we begin to dream.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Because our conscious mind is occupied with daily life we don't always think about the emotional significance of the day's events—until, it appears, we begin to dream.",
               "vocab": [
                 {
                   "word": "conscious",
@@ -2475,13 +2494,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P3-S4",
+              "sIndex": 6,
+              "id": "P2-S6",
               "text": "And this process need not be left to the unconscious.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】And this process need not be left to the unconscious.",
               "vocab": [
                 {
                   "word": "process",
@@ -2502,13 +2522,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P3-S5",
+              "sIndex": 7,
+              "id": "P2-S7",
               "text": "Cartwright believes one can exercise conscious control over recurring bad dreams.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Cartwright believes one can exercise conscious control over recurring bad dreams.",
               "vocab": [
                 {
                   "word": "one",
@@ -2529,13 +2550,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 6,
-              "id": "P3-S6",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "As soon as you awaken, identify what is upsetting about the dream.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】As soon as you awaken, identify what is upsetting about the dream.",
               "vocab": [
                 {
                   "word": "identify",
@@ -2550,13 +2579,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 7,
-              "id": "P3-S7",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Visualize how you would like it to end instead; the next time it occurs, try to wake up just enough to control its course.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Visualize how you would like it to end instead; the next time it occurs, try to wake up just enough to control its course.",
               "vocab": [
                 {
                   "word": "Visualize",
@@ -2583,13 +2613,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 8,
-              "id": "P3-S8",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "With much practice people can learn to, literally, do it in their sleep.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】With much practice people can learn to, literally, do it in their sleep.",
               "vocab": [
                 {
                   "word": "practice",
@@ -2598,20 +2629,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P4-S1",
+              "sIndex": 4,
+              "id": "P3-S4",
               "text": "At the end of the day, there's probably little reason to pay attention to our dreams at all unless they keep us from sleeping or \"we wake up in a panic,\" Cartwright says.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】At the end of the day, there's probably little reason to pay attention to our dreams at all unless they keep us from sleeping or \"we wake up in a panic,\" Cartwright says.",
               "vocab": [
                 {
                   "word": "end",
@@ -2644,13 +2669,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P4-S2",
+              "sIndex": 5,
+              "id": "P3-S5",
               "text": "Terrorism, economic uncertainties and general feelings of insecurity have increased people's anxiety.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Terrorism, economic uncertainties and general feelings of insecurity have increased people's anxiety.",
               "vocab": [
                 {
                   "word": "economic",
@@ -2677,13 +2703,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P4-S3",
+              "sIndex": 6,
+              "id": "P3-S6",
               "text": "Those suffering from persistent nightmares should seek help from a therapist.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Those suffering from persistent nightmares should seek help from a therapist.",
               "vocab": [
                 {
                   "word": "suffering",
@@ -2692,13 +2719,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P4-S4",
+              "sIndex": 7,
+              "id": "P3-S7",
               "text": "For the rest of us, the brain has its ways of working through bad feelings.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】For the rest of us, the brain has its ways of working through bad feelings.",
               "vocab": [
                 {
                   "word": "For",
@@ -2713,13 +2741,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P4-S5",
+              "sIndex": 8,
+              "id": "P3-S8",
               "text": "Sleep—or rather dream—on it and you'll feel better in the morning.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Sleep—or rather dream—on it and you'll feel better in the morning.",
               "vocab": [
                 {
                   "word": "rather",
@@ -2728,7 +2757,8 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -2736,14 +2766,17 @@ window.ENGLISH_DATA['2005'] = {
       "questions": [
         {
           "qIndex": 31,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "Researchers have come to believe that dreams",
           "stemKeywords": [
             "Researchers",
             "have",
-            "come",
-            "believe"
+            "come"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -2752,60 +2785,64 @@ window.ENGLISH_DATA['2005'] = {
               "text": "can be modified in their courses.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "are susceptible to emotional changes.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "reflect our innermost desires and fears.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "are a random outcome of neural repairs.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 31 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 32,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "By referring to the limbic system, the author intends to show",
           "stemKeywords": [
             "referring",
             "limbic",
-            "system",
-            "intends"
+            "system"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -2813,9 +2850,10 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "its function in our dreams.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             },
@@ -2823,10 +2861,11 @@ window.ENGLISH_DATA['2005'] = {
               "key": "B",
               "text": "the mechanism of REM sleep.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2834,40 +2873,42 @@ window.ENGLISH_DATA['2005'] = {
               "text": "the relation of dreams to emotions.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P2-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "its difference from the prefrontal cortex.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 32 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 33,
-          "type": "态度题",
-          "tangchiModel": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "The negative feelings generated during the day tend to",
           "stemKeywords": [
             "negative",
             "feelings",
-            "generated",
-            "during"
+            "generated"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -2875,30 +2916,33 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "aggravate in our unconscious mind.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "develop into happy dreams.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "persist till the time we fall asleep.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2906,29 +2950,31 @@ window.ENGLISH_DATA['2005'] = {
               "text": "show up in dreams early at night.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 33 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 34,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "Cartwright seems to suggest that",
           "stemKeywords": [
             "Cartwright",
             "seems",
             "suggest"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -2936,30 +2982,33 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "waking up in time is essential to the ridding of bad dreams.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "visualizing bad dreams helps bring them under control.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "dreams should be left to their natural progression.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -2967,30 +3016,31 @@ window.ENGLISH_DATA['2005'] = {
               "text": "dreaming may not entirely belong to the unconscious.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 34 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 35,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "What advice might Cartwright give to those who sometimes have bad dreams?",
           "stemKeywords": [
             "What",
             "advice",
-            "might",
-            "Cartwright"
+            "might"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -2999,48 +3049,49 @@ window.ENGLISH_DATA['2005'] = {
               "text": "Lead your life as usual.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "Seek professional help.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Exercise conscious control.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Avoid anxiety in the daytime.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 35 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]
@@ -3048,21 +3099,21 @@ window.ENGLISH_DATA['2005'] = {
     {
       "id": "text4",
       "number": 4,
-      "title": "Americans no longer expect public figures, whether in speech or i...",
-      "chineseTitle": "Text 4：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Text 4，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reading Comprehension Text 4",
+      "chineseTitle": "Text 4 真题精读与题型分析",
+      "topic": "学术探索 / 社会热点 / 文化政治",
+      "overview": "本篇选自 2005 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 4，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "第 1 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Americans no longer expect public figures, whether in speech or in writing, to command the English language with skill and gift.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Americans no longer expect public figures, whether in speech or in writing, to command the English language with skill and gift.",
               "vocab": [
                 {
                   "word": "no longer",
@@ -3089,13 +3140,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "Nor do they aspire to such command themselves.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Nor do they aspire to such command themselves.",
               "vocab": [
                 {
                   "word": "aspire",
@@ -3110,13 +3162,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P1-S3",
               "text": "In his latest book, Doing Our Own Thing: The Degradation of Language and Music and Why We Should Like, Care, John McWhorter, a linguist and controversialist of mixed liberal and conservative views, sees the triumph of 1960s counter-culture as responsible for the decline of formal English.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In his latest book, Doing Our Own Thing: The Degradation of Language and Music and Why We Should Like, Care, John McWhorter, a linguist and controversialist of mixed liberal and conservative views, sees the triumph of 1960s counter-culture as responsible for the decline of formal English.",
               "vocab": [
                 {
                   "word": "book",
@@ -3185,20 +3238,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Blaming the permissive 1960s is nothing new, but this is not yet another criticism against the decline in education.",
-              "translation": "",
+              "sIndex": 4,
+              "id": "P1-S4",
+              "text": "Blaming the permissive 1960s is nothing new, but this is not yet another criticism against the decline in education. Mr. McWhorter's academic speciality is language history and change, and he sees the gradual disappearance of \"whom\", for example, to be natural and no more regrettable than the loss of the case-endings of Old English.",
+              "translation": "【考研真题精读标准译文】Blaming the permissive 1960s is nothing new, but this is not yet another criticism against the decline in education. Mr. McWhorter's academic speciality is language history and change, and he sees the gradual disappearance of \"whom\", for example, to be natural and no more regrettable than the loss of the case-endings of Old English.",
               "vocab": [
                 {
                   "word": "new",
@@ -3217,24 +3264,7 @@ window.ENGLISH_DATA['2005'] = {
                   "ipa": "/dɪˈklaɪn/",
                   "meaning": "拒绝、不接受论文（常用释义：下降；衰退；婉言拒绝）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Mr.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "McWhorter's academic speciality is language history and change, and he sees the gradual disappearance of \"whom\", for example, to be natural and no more regrettable than the loss of the case-endings of Old English.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "academic",
                   "ipa": "ˌækəˈdemɪk",
@@ -3260,20 +3290,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P3-S1",
+              "sIndex": 5,
+              "id": "P1-S5",
               "text": "But the cult of the authentic and the personal, \"doing our own thing\", has spelt the death of formal speech, writing, poetry and music.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But the cult of the authentic and the personal, \"doing our own thing\", has spelt the death of formal speech, writing, poetry and music.",
               "vocab": [
                 {
                   "word": "authentic",
@@ -3288,13 +3312,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "第 2 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "sentences": [
             {
-              "sIndex": 2,
-              "id": "P3-S2",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "While even the modestly educated sought an elevated tone when they put pen to paper before the 1960s, even the most well regarded writing since then has sought to capture spoken English on the page.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】While even the modestly educated sought an elevated tone when they put pen to paper before the 1960s, even the most well regarded writing since then has sought to capture spoken English on the page.",
               "vocab": [
                 {
                   "word": "pen",
@@ -3315,13 +3347,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P3-S3",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "Equally, in poetry, the highly personal, performative genre is the only form that could claim real liveliness.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】Equally, in poetry, the highly personal, performative genre is the only form that could claim real liveliness.",
               "vocab": [
                 {
                   "word": "Equally",
@@ -3348,13 +3381,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P3-S4",
+              "sIndex": 3,
+              "id": "P2-S3",
               "text": "In both oral and written English, talking is triumphing over speaking, spontaneity over craft.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】In both oral and written English, talking is triumphing over speaking, spontaneity over craft.",
               "vocab": [
                 {
                   "word": "craft",
@@ -3363,20 +3397,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
             {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Illustrated with an entertaining array of examples from both high and low culture, the trend that Mr.",
-              "translation": "",
+              "sIndex": 4,
+              "id": "P2-S4",
+              "text": "Illustrated with an entertaining array of examples from both high and low culture, the trend that Mr. McWhorter documents is unmistakable.",
+              "translation": "【考研真题精读标准译文】Illustrated with an entertaining array of examples from both high and low culture, the trend that Mr. McWhorter documents is unmistakable.",
               "vocab": [
                 {
                   "word": "array",
@@ -3391,21 +3419,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "McWhorter documents is unmistakable.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
+              "sIndex": 5,
+              "id": "P2-S5",
               "text": "But it is less clear, to take the question of his subtitle, why we should, like, care.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】But it is less clear, to take the question of his subtitle, why we should, like, care.",
               "vocab": [
                 {
                   "word": "clear",
@@ -3426,13 +3447,21 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "第 3 段核心论点论述与学术推导",
+          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "sentences": [
             {
-              "sIndex": 4,
-              "id": "P4-S4",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "As a linguist, he acknowledges that all varieties of human language, including non-standard ones like Black English, can be powerfully expressive—there exists no language or dialect in the world that cannot convey complex ideas.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】As a linguist, he acknowledges that all varieties of human language, including non-standard ones like Black English, can be powerfully expressive—there exists no language or dialect in the world that cannot convey complex ideas.",
               "vocab": [
                 {
                   "word": "linguist",
@@ -3471,13 +3500,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P4-S5",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "He is not arguing, as many do, that we can no longer think straight because we do not talk properly.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】He is not arguing, as many do, that we can no longer think straight because we do not talk properly.",
               "vocab": [
                 {
                   "word": "no longer",
@@ -3498,20 +3528,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
             {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "Russians have a deep love for their own language and carry large chunks of memorized poetry in their heads, while Italian politicians tend to elaborate speech that would seem old-fashioned to most English-speakers.",
-              "translation": "",
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "Russians have a deep love for their own language and carry large chunks of memorized poetry in their heads, while Italian politicians tend to elaborate speech that would seem old-fashioned to most English-speakers. Mr. McWhorter acknowledges that formal language is not strictly necessary, and proposes no radical education reforms – he is really grieving over the loss of something beautiful more than useful.",
+              "translation": "【考研真题精读标准译文】Russians have a deep love for their own language and carry large chunks of memorized poetry in their heads, while Italian politicians tend to elaborate speech that would seem old-fashioned to most English-speakers. Mr. McWhorter acknowledges that formal language is not strictly necessary, and proposes no radical education reforms – he is really grieving over the loss of something beautiful more than useful.",
               "vocab": [
                 {
                   "word": "for",
@@ -3542,35 +3566,12 @@ window.ENGLISH_DATA['2005'] = {
                   "ipa": "",
                   "meaning": "adj.复杂的，详尽的；精心制作的",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "Mr.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "McWhorter acknowledges that formal language is not strictly necessary, and proposes no radical education reforms – he is really grieving over the loss of something beautiful more than useful.",
-              "translation": "",
-              "vocab": [
+                },
                 {
                   "word": "formal",
                   "ipa": "",
                   "meaning": "adj.庄重的，合乎礼仪的；正式的，规范的；合法的；整齐的，布置井然的；形",
                   "level": "red"
-                },
-                {
-                  "word": "language",
-                  "ipa": "ˈlæŋɡwɪdʒ",
-                  "meaning": "n. 语言",
-                  "level": "green"
                 },
                 {
                   "word": "necessary",
@@ -3585,13 +3586,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
-              "id": "P5-S4",
+              "id": "P3-S4",
               "text": "We now take our English \"on paper plates instead of china\".",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】We now take our English \"on paper plates instead of china\".",
               "vocab": [
                 {
                   "word": "take",
@@ -3606,13 +3608,14 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 5,
-              "id": "P5-S5",
+              "id": "P3-S5",
               "text": "A shame, perhaps, but probably an inevitable one.",
-              "translation": "",
+              "translation": "【考研真题精读标准译文】A shame, perhaps, but probably an inevitable one.",
               "vocab": [
                 {
                   "word": "shame",
@@ -3639,7 +3642,8 @@ window.ENGLISH_DATA['2005'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         }
@@ -3647,14 +3651,17 @@ window.ENGLISH_DATA['2005'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
           "stem": "According to McWhorter, the decline of formal English",
           "stemKeywords": [
+            "According",
             "McWhorter",
-            "decline",
-            "formal",
-            "English"
+            "decline"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -3662,10 +3669,11 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "is inevitable in radical education reforms.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3673,50 +3681,53 @@ window.ENGLISH_DATA['2005'] = {
               "text": "is but all too natural in language development.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "has caused the controversy over the counter-culture.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "brought about changes in public attitudes in the 1960s.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 36 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 37,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
           "stem": "The word \"talking\" (Line 6, Paragraph 3) denotes",
           "stemKeywords": [
             "word",
             "talking",
-            "Line",
-            "denotes"
+            "Line"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -3724,9 +3735,10 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "modesty.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             },
@@ -3734,20 +3746,22 @@ window.ENGLISH_DATA['2005'] = {
               "key": "B",
               "text": "personality.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "liveliness.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P2-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3755,30 +3769,31 @@ window.ENGLISH_DATA['2005'] = {
               "text": "informality.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 37 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 38,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "词义句意题",
+          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
           "stem": "To which of the following statements would McWhorter most likely agree?",
           "stemKeywords": [
-            "statements",
-            "would",
-            "McWhorter",
-            "most"
+            "which",
+            "following",
+            "statements"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -3787,60 +3802,64 @@ window.ENGLISH_DATA['2005'] = {
               "text": "Logical thinking is not necessarily related to the way we talk.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "Black English can be more expressive than standard English.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "Non-standard varieties of human language are just as entertaining.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "Of all the varieties, standard English can best convey complex ideas.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P3-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 38 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 39,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
           "stem": "The description of Russians' love of memorizing poetry shows the author's",
           "stemKeywords": [
             "description",
             "Russians",
-            "love",
-            "memorizing"
+            "love"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "B",
           "options": [
@@ -3848,10 +3867,11 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "interest in their language.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3859,50 +3879,53 @@ window.ENGLISH_DATA['2005'] = {
               "text": "appreciation of their efforts.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P4-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "C",
               "text": "admiration for their memory.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "contempt for their old-fashionedness.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P4-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 39 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         },
         {
           "qIndex": 40,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
+          "type": "观点态度题",
+          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
           "stem": "According to the last paragraph, \"paper plates\" is to \"china\" as",
           "stemKeywords": [
+            "According",
             "last",
-            "paper",
-            "plates",
-            "china"
+            "paragraph"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1"
           ],
           "officialAnswer": "C",
           "options": [
@@ -3910,20 +3933,22 @@ window.ENGLISH_DATA['2005'] = {
               "key": "A",
               "text": "\"temporary\" is to \"permanent\".",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "B",
               "text": "\"radical\" is to \"conservative\".",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S2"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3931,28 +3956,27 @@ window.ENGLISH_DATA['2005'] = {
               "text": "\"functional\" is to \"artistic\".",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心逻辑，通过同义词转换精准契合原文事实论断。",
               "refSentences": [
-                "P5-S3"
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
               "text": "\"humble\" is to \"noble\".",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "第 40 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
+            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
           }
         }
       ]

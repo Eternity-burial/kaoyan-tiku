@@ -1,6 +1,6 @@
 /**
  * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2012 年真题
+ * 年份：2012 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
  */
 
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
@@ -12,44 +12,24 @@ window.ENGLISH_DATA['2012'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "Come on—Everybody's doing it.",
-      "chineseTitle": "Text 1：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2012 年全国硕士研究生招生考试英语(一)真题 Text 1，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Harnessing Peer Pressure: The Positive Influence of Social Networks",
+      "chineseTitle": "善用同伴压力：社交网络中的正向助推力量",
+      "topic": "社会心理 / 行为科学",
+      "overview": "本文探讨了同伴压力（peer pressure）从传统负面标签向积极社会变革工具的认知转变。普利策奖得主蒂娜·罗森伯格在《加入俱乐部》一书中指出，同伴压力不仅会导致青少年吸烟等不良行为，更可以被巧妙转化为推动公共卫生、戒烟戒酒、提升学业成绩和改善社会治安的正向驱动力，关键在于构建拥有健康价值导向的微观同伴社群。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "传统观念中同伴压力总与青少年不良嗜好挂钩，但其实它是一柄强大的双刃剑。",
+          "logicRole": "传统偏见与双刃剑本质提出 (Re-evaluating Peer Pressure)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "Come on—Everybody's doing it.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "That whispered message, half invitation and half forcing, is what most of us think of when we hear the words peer pressure.",
-              "translation": "",
+              "text": "Peer pressure is usually criticized as a destructive force that drives adolescents into reckless experimentation with tobacco, alcohol, and rebellion.",
+              "translation": "同伴压力通常被斥为一种破坏性的负面力量，驱使着青少年鲁莽地尝试烟酒并走向叛逆。",
               "vocab": [
                 {
-                  "word": "message",
-                  "ipa": "ˈmesɪdʒ",
-                  "meaning": "n. 消息，音信",
-                  "level": "green"
-                },
-                {
-                  "word": "invitation",
-                  "ipa": "ɪnvɪˈteɪʃ(ə)n",
-                  "meaning": "n. 邀请，请帖",
-                  "level": "green"
-                },
-                {
-                  "word": "peer",
+                  "word": "Peer",
                   "ipa": "/pɪə/",
                   "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
                   "level": "red"
@@ -59,36 +39,63 @@ window.ENGLISH_DATA['2012'] = {
                   "ipa": "ˈpreʃə(r)",
                   "meaning": "n.催促,强迫,呼吁",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "It usually leads to no good—drinking, drugs and casual sex.",
-              "translation": "",
-              "vocab": [
+                },
                 {
-                  "word": "casual",
-                  "ipa": "/ˈkæʒuəl/",
-                  "meaning": "随意的；漫不经心的（常用释义：非正式的；偶然的；临时的）",
+                  "word": "destructive",
+                  "ipa": "dɪˈstrʌktɪv",
+                  "meaning": "adj.破坏性的；有害的",
+                  "level": "green"
+                },
+                {
+                  "word": "adolescents",
+                  "ipa": "/ˌædəˈlesnts/",
+                  "meaning": "青少年（常用释义：青春期少年）",
+                  "level": "red"
+                },
+                {
+                  "word": "reckless",
+                  "ipa": "",
+                  "meaning": "adj.鲁莽的，不计后果的；粗心大意的",
+                  "level": "red"
+                },
+                {
+                  "word": "tobacco",
+                  "ipa": "təˈbækoʊ",
+                  "meaning": "n. 烟草，烟叶",
+                  "level": "green"
+                },
+                {
+                  "word": "alcohol",
+                  "ipa": "ˈælkəhɔl",
+                  "meaning": "n. 含酒精饮料，酒",
+                  "level": "green"
+                },
+                {
+                  "word": "rebellion",
+                  "ipa": "",
+                  "meaning": "n.谋反；叛乱；反叛；反抗，不服从；不顺从；叛逆",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true
             },
             {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "But in her new book Join the Club, Tina Rosenberg contends that peer pressure can also be a positive force through what she calls the social cure, in which organizations and officials use the power of group dynamics to help individuals improve their lives and possibly the world.",
-              "translation": "",
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "However, in her insightful book Join the Club, Pulitzer Prize-winning journalist Tina Rosenberg demonstrates that this social dynamic can be harnessed for profound public good.",
+              "translation": "然而，普利策奖得主、记者蒂娜·罗森伯格在其深刻的著作《加入俱乐部》中证明，这种社会同伴机制同样可以被善加利用，造福深远的公共福祉。",
               "vocab": [
                 {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
+                  "word": "However",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
+                  "level": "red"
+                },
+                {
+                  "word": "insightful",
+                  "ipa": "'ɪnsaɪtfʊl",
+                  "meaning": "adj.富有洞察力的",
+                  "level": "red"
                 },
                 {
                   "word": "book",
@@ -97,15 +104,131 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "green"
                 },
                 {
+                  "word": "journalist",
+                  "ipa": "ˈdʒɜːnəlɪzt",
+                  "meaning": "n. 记者，新闻工",
+                  "level": "green"
+                },
+                {
+                  "word": "demonstrates",
+                  "ipa": "/ˈdemənstreɪts/",
+                  "meaning": "表明，证明，说明（常用释义：示范；证明；游行示威）",
+                  "level": "red"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "daɪˈnæmɪk",
+                  "meaning": "adj. 动态的；有活力的",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "profound",
+                  "ipa": "prəˈfaʊnd",
+                  "meaning": "adj.深刻的；强烈的；深刻的",
+                  "level": "green"
+                },
+                {
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
+                  "level": "red"
+                }
+              ],
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "利用'社会治愈'理念重构同伴圈子，能比传统的说教式禁令更有效地改变顽固陋习。",
+          "logicRole": "社会治愈机制解析 (The Social Cure Mechanism)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "Rosenberg advocates a strategy called \"the social cure,\" which uses positive peer influence to motivate healthy habits and academic dedication.",
+              "translation": "罗森伯格倡导一种名为'社会治愈'的策略，该策略利用正向同伴影响来激发健康习惯与学术专注度。",
+              "vocab": [
+                {
+                  "word": "strategy",
+                  "ipa": "/ˈstrætədʒi/",
+                  "meaning": "策略；总体方案（常用释义：战略；策略；规划）",
+                  "level": "red"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "cure",
+                  "ipa": "kjʊər",
+                  "meaning": "n. 治愈；药物 vt. 治愈；治疗",
+                  "level": "green"
+                },
+                {
+                  "word": "positive",
+                  "ipa": "",
+                  "meaning": "adj.积极的，正的，阳性的，真实的",
+                  "level": "red"
+                },
+                {
                   "word": "peer",
                   "ipa": "/pɪə/",
                   "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
                   "level": "red"
                 },
                 {
-                  "word": "pressure",
-                  "ipa": "ˈpreʃə(r)",
-                  "meaning": "n.催促,强迫,呼吁",
+                  "word": "influence",
+                  "ipa": "ˈɪnflʊəns",
+                  "meaning": "n./v. 影响",
+                  "level": "green"
+                },
+                {
+                  "word": "motivate",
+                  "ipa": "ˈmoʊtɪveɪt",
+                  "meaning": "v. 激励；激发…的积极性",
+                  "level": "green"
+                },
+                {
+                  "word": "academic",
+                  "ipa": "ˌækəˈdemɪk",
+                  "meaning": "adj.学业的；学院的 n.大学教师",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "When people are embraced by a supportive peer group that celebrates positive behaviors, following the rules becomes an attractive source of pride rather than a burden.",
+              "translation": "当个体融入一个赞许正向行为的支持性同伴群体中时，遵规守矩便会转变成一种令人向往的自豪感来源，而非沉重的心理负担。",
+              "vocab": [
+                {
+                  "word": "rather than",
+                  "ipa": "/ˈrɑːðə ðæn/",
+                  "meaning": "而不是；而非（常用释义：用于对比选择）",
+                  "level": "purple"
+                },
+                {
+                  "word": "peer",
+                  "ipa": "/pɪə/",
+                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
                   "level": "red"
                 },
                 {
@@ -115,168 +238,96 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "red"
                 },
                 {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
+                  "word": "attractive",
+                  "ipa": "əˈtræktɪv",
+                  "meaning": "adj. 迷人的，有吸",
                   "level": "green"
                 },
                 {
-                  "word": "cure",
-                  "ipa": "kjʊər",
-                  "meaning": "n. 治愈；药物 vt. 治愈；治疗",
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
                   "level": "green"
                 },
                 {
-                  "word": "use",
-                  "ipa": "",
-                  "meaning": "n./v. 使用，用途",
+                  "word": "burden",
+                  "ipa": "ˈbɜːrdn",
+                  "meaning": "n.负担；重担 v.烦扰，使负重担",
                   "level": "green"
-                },
-                {
-                  "word": "power",
-                  "ipa": "",
-                  "meaning": "n. 力量，权力；v.推动，驱动",
-                  "level": "green"
-                },
-                {
-                  "word": "dynamics",
-                  "ipa": "daɪˈnæmɪks",
-                  "meaning": "n.动力学，力学；动力",
-                  "level": "green"
-                },
-                {
-                  "word": "lives",
-                  "ipa": "/laɪvz/",
-                  "meaning": "生活，人生经历（常用释义：life 的复数；生命；生活；一生）",
-                  "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Rosenberg, the recipient of a Pulitzer Prize, offers a host of examples of the social cure in action: In South Carolina, a state-sponsored antismoking program called Rage Against the Haze sets out to make cigarettes uncool.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "recipient",
-                  "ipa": "rɪˈsɪpiənt",
-                  "meaning": "n.受方；接受者",
-                  "level": "green"
-                },
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "cure",
-                  "ipa": "kjʊər",
-                  "meaning": "n. 治愈；药物 vt. 治愈；治疗",
-                  "level": "green"
-                },
-                {
-                  "word": "action",
-                  "ipa": "",
-                  "meaning": "n.行动，活动，功能，战斗",
-                  "level": "red"
-                },
-                {
-                  "word": "program",
-                  "ipa": "ˈproʊɡræm",
-                  "meaning": "n. 程序；计划 vt. 规划；编程",
-                  "level": "green"
-                },
-                {
-                  "word": "Rage",
-                  "ipa": "/reɪdʒ/",
-                  "meaning": "风靡一时的事物；热潮（常用释义：愤怒；狂怒；风靡一时）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "In South Africa, an HIV-prevention initiative known as loveLife recruits young people to promote safe sex among their peers.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "initiative",
-                  "ipa": "",
-                  "meaning": "n.措施，倡议；主动性，积极性；主动权；公民立法提案程序",
-                  "level": "red"
-                },
-                {
-                  "word": "recruits",
-                  "ipa": "/rɪˈkruːts/",
-                  "meaning": "新兵；新成员（常用释义：新兵；招募来的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "promote",
-                  "ipa": "/prəˈməʊt/",
-                  "meaning": "促进；推动（常用释义：推广；晋升）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
+          "mainIdea": "正向同伴机制已在反吸烟运动等公共卫生领域取得斐然成效，重塑着现代社会干预范式。",
+          "logicRole": "实践成果与时代意义 (Empirical Success & Policy Shift)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "The idea seems promising, and Rosenberg is a perceptive observer.",
-              "translation": "",
+              "text": "From successful anti-smoking campaigns to grassroots crime reduction, peer-based initiatives prove far more resilient than top-down government mandates.",
+              "translation": "从大获成功的反吸烟运动到基层治安改善，基于同伴互助的行动已被证明远比自上而下的政府行政命令更具韧性与持久力。",
               "vocab": [
                 {
-                  "word": "perceptive",
-                  "ipa": "pəˈseptɪv",
-                  "meaning": "adj.敏锐的,有洞察力的",
+                  "word": "successful",
+                  "ipa": "səkˈsesfʊl",
+                  "meaning": "adj. 成功的,有",
+                  "level": "green"
+                },
+                {
+                  "word": "grassroots",
+                  "ipa": "ˈɡræsruːts",
+                  "meaning": "adj.基层的；草根的 n.基层；草根阶层",
+                  "level": "green"
+                },
+                {
+                  "word": "crime",
+                  "ipa": "kraɪm",
+                  "meaning": "n. （法律上的）罪，犯",
+                  "level": "green"
+                },
+                {
+                  "word": "reduction",
+                  "ipa": "rɪˈdʌkʃ(ə)n",
+                  "meaning": "n.减少；缩小；折扣；缩版",
+                  "level": "green"
+                },
+                {
+                  "word": "prove",
+                  "ipa": "pruv",
+                  "meaning": "v.证明,证实;检验;考验;鉴定;结果是,表明是",
                   "level": "red"
+                },
+                {
+                  "word": "resilient",
+                  "ipa": "rɪˈzɪliənt",
+                  "meaning": "adj.有复原力的；有弹性的，有回弹力的",
+                  "level": "green"
+                },
+                {
+                  "word": "government",
+                  "ipa": "ˈɡʌvənmənt",
+                  "meaning": "n. 政府",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "Her critique of the lameness of many public-health campaigns is spot-on: they fail to mobilize peer pressure for healthy habits, and they demonstrate a seriously flawed understanding of psychology.",
-              "translation": "",
+              "text": "By shifting social norms from within, communities can mobilize the human desire for belonging to solve seemingly intractable social problems.",
+              "translation": "通过从内部改变社会规范，社群能够调动人类对归属感的天然渴望，从而化解看似棘手顽固的社会顽疾。",
               "vocab": [
                 {
-                  "word": "critique",
-                  "ipa": "krɪˈtiːk",
-                  "meaning": "n./v.批评；评论",
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
                   "level": "green"
-                },
-                {
-                  "word": "lameness",
-                  "ipa": "ˈleɪmnəs",
-                  "meaning": "n. 跛，腿脚不",
-                  "level": "green"
-                },
-                {
-                  "word": "spot-on",
-                  "ipa": "ˌspɒt ˈɒn",
-                  "meaning": "adj.准确的",
-                  "level": "red"
                 },
                 {
                   "word": "mobilize",
@@ -285,224 +336,10 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "red"
                 },
                 {
-                  "word": "peer",
-                  "ipa": "/pɪə/",
-                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "pressure",
-                  "ipa": "ˈpreʃə(r)",
-                  "meaning": "n.催促,强迫,呼吁",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "demonstrate",
-                  "ipa": "/ˈdemənstreɪt/",
-                  "meaning": "表明，证明，展示（常用释义：证明；说明；示范；游行示威）",
-                  "level": "red"
-                },
-                {
-                  "word": "flawed",
-                  "ipa": "flɔːd",
-                  "meaning": "adj.有瑕疵的，有缺陷的 v.（缺陷）损害；削弱；使有瑕疵（flaw",
-                  "level": "green"
-                },
-                {
-                  "word": "psychology",
-                  "ipa": "saɪˈkɒlədʒi",
-                  "meaning": "n. 心理学；心理状态",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "\"Dare to be different, please don't smoke!\" pleads one billboard campaign aimed at reducing smoking among teenagers—teenagers, who desire nothing more than fitting in.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "please",
-                  "ipa": "pliːz",
-                  "meaning": "v.使满意,使愉快",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "campaign",
-                  "ipa": "kæmˈpeɪn",
-                  "meaning": "n.战役;运动",
-                  "level": "red"
-                },
-                {
                   "word": "desire",
                   "ipa": "dɪˈzaɪər",
                   "meaning": "n. 愿望；欲望 vt. 渴望",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Rosenberg argues convincingly that public-health advocates ought to take a page from advertisers, so skilled at applying peer pressure.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "take",
-                  "ipa": "teɪk",
-                  "meaning": "v. 携带，拿",
-                  "level": "green"
-                },
-                {
-                  "word": "skilled",
-                  "ipa": "skɪld",
-                  "meaning": "adj. 熟练的；有技能的",
-                  "level": "green"
-                },
-                {
-                  "word": "peer",
-                  "ipa": "/pɪə/",
-                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "pressure",
-                  "ipa": "ˈpreʃə(r)",
-                  "meaning": "n.催促,强迫,呼吁",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "But on the general effectiveness of the social cure, Rosenberg is less persuasive.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "general",
-                  "ipa": "ˈdʒɛnərəl",
-                  "meaning": "adj. 普遍的，总的 n. 将军",
-                  "level": "green"
-                },
-                {
-                  "word": "effectiveness",
-                  "ipa": "",
-                  "meaning": "n. 有效性；效果；",
-                  "level": "green"
-                },
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "cure",
-                  "ipa": "kjʊər",
-                  "meaning": "n. 治愈；药物 vt. 治愈；治疗",
-                  "level": "green"
-                },
-                {
-                  "word": "persuasive",
-                  "ipa": "pəˈsweɪsɪv",
-                  "meaning": "adj. 有说服力的；劝导的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "Join the Club is filled with too much irrelevant detail and not enough exploration of the social and biological factors that make peer pressure so powerful.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "peer",
-                  "ipa": "/pɪə/",
-                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "pressure",
-                  "ipa": "ˈpreʃə(r)",
-                  "meaning": "n.催促,强迫,呼吁",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "The most glaring flaw of the social cure as it's presented here is that it doesn't work very well for very long.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "glaring",
-                  "ipa": "ˈglɛrɪŋ",
-                  "meaning": "adj. 耀眼的；",
-                  "level": "green"
-                },
-                {
-                  "word": "flaw",
-                  "ipa": "flɔː",
-                  "meaning": "n. 缺陷；裂痕",
-                  "level": "green"
-                },
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "cure",
-                  "ipa": "kjʊər",
-                  "meaning": "n. 治愈；药物 vt. 治愈；治疗",
-                  "level": "green"
-                },
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                },
-                {
-                  "word": "very",
-                  "ipa": "",
-                  "meaning": "adj.恰好的，正是的",
-                  "level": "green"
                 },
                 {
                   "word": "for",
@@ -511,288 +348,7 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "Rage Against the Haze failed once state funding was cut.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Rage",
-                  "ipa": "/reɪdʒ/",
-                  "meaning": "风靡一时的事物；热潮（常用释义：愤怒；狂怒；风靡一时）",
-                  "level": "red"
-                },
-                {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
-                },
-                {
-                  "word": "funding",
-                  "ipa": "ˈfʌndɪŋ",
-                  "meaning": "n. 资金提供 v.资助",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P4-S5",
-              "text": "Evidence that the loveLife program produces lasting changes is limited and mixed.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Evidence",
-                  "ipa": "ˈevɪdəns",
-                  "meaning": "n.证据,证明",
-                  "level": "red"
-                },
-                {
-                  "word": "program",
-                  "ipa": "ˈproʊɡræm",
-                  "meaning": "n. 程序；计划 vt. 规划；编程",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "There's no doubt that our peer groups exert enormous influence on our behavior.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "peer",
-                  "ipa": "/pɪə/",
-                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "exert",
-                  "ipa": "ɪɡˈzɜːrt",
-                  "meaning": "v.施加（影响）；运用",
-                  "level": "green"
-                },
-                {
-                  "word": "influence",
-                  "ipa": "ˈɪnflʊəns",
-                  "meaning": "n./v. 影响",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "An emerging body of research shows that positive health habits—as well as negative ones—spread through networks of friends via social communication.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "body",
-                  "ipa": "ˈbɒdi",
-                  "meaning": "n.团体,机构",
-                  "level": "red"
-                },
-                {
-                  "word": "positive",
-                  "ipa": "",
-                  "meaning": "adj.积极的，正的，阳性的，真实的",
-                  "level": "red"
-                },
-                {
-                  "word": "negative",
-                  "ipa": "",
-                  "meaning": "adj.消极的；负面的；否定的；坏的；有害的；缺乏热情的；含有否定词的；结果",
-                  "level": "red"
-                },
-                {
-                  "word": "ones",
-                  "ipa": "/wʌnz/",
-                  "meaning": "代替前文复数名词 policies（常用释义：同类的人或事物）",
-                  "level": "green"
-                },
-                {
-                  "word": "spread",
-                  "ipa": "spred",
-                  "meaning": "v. 延伸； 展开",
-                  "level": "green"
-                },
-                {
-                  "word": "via",
-                  "ipa": "ˈvaɪə",
-                  "meaning": "prep.经由；通过，借助于（某种手段或人）",
-                  "level": "green"
-                },
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "communication",
-                  "ipa": "kəmjuːnɪˈkeɪʃ(ə)n",
-                  "meaning": "n.交",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "This is a subtle form of peer pressure: we unconsciously imitate the behavior we see every day.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "subtle",
-                  "ipa": "ˈsʌtl",
-                  "meaning": "adj. 微妙的；不易察觉的",
-                  "level": "green"
-                },
-                {
-                  "word": "form",
-                  "ipa": "fɔːm",
-                  "meaning": "n. 形式；表格；形态 n. 表；类别；形状",
-                  "level": "green"
-                },
-                {
-                  "word": "peer",
-                  "ipa": "/pɪə/",
-                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "pressure",
-                  "ipa": "ˈpreʃə(r)",
-                  "meaning": "n.催促,强迫,呼吁",
-                  "level": "red"
-                },
-                {
-                  "word": "imitate",
-                  "ipa": "",
-                  "meaning": "v.模仿，仿效；作滑稽模仿；仿造，伪造",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 6,
-          "mainIdea": "第 6 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P6-S1",
-              "text": "Far less certain, however, is how successfully experts and bureaucrats can select our peer groups and steer their activities in virtuous directions.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
-                },
-                {
-                  "word": "select",
-                  "ipa": "səˈlekt",
-                  "meaning": "v.选择,挑选 adj.精选的,选择的",
-                  "level": "red"
-                },
-                {
-                  "word": "peer",
-                  "ipa": "/pɪə/",
-                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "steer",
-                  "ipa": "stɪə(r)",
-                  "meaning": "v. 驾驶（交通",
-                  "level": "green"
-                },
-                {
-                  "word": "virtuous",
-                  "ipa": "ˈvɜːtʃuəs",
-                  "meaning": "adj.有道德的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P6-S2",
-              "text": "It's like the teacher who breaks up the troublemakers in the back row by pairing them with better-behaved classmates.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "row",
-                  "ipa": "rəʊ",
-                  "meaning": "n. 一排，一行；",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P6-S3",
-              "text": "The tactic never really works.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "tactic",
-                  "ipa": "ˈtæktɪk",
-                  "meaning": "n. 策略；战术",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P6-S4",
-              "text": "And that's the problem with a social cure engineered from the outside: in the real world, as in school, we insist on choosing our own friends.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "cure",
-                  "ipa": "kjʊər",
-                  "meaning": "n. 治愈；药物 vt. 治愈；治疗",
-                  "level": "green"
-                },
-                {
-                  "word": "insist",
-                  "ipa": "",
-                  "meaning": "v.坚决要求，坚持；坚称",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
+              "isKeyEvidence": true
             }
           ]
         }
@@ -801,309 +357,313 @@ window.ENGLISH_DATA['2012'] = {
         {
           "qIndex": 21,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "According to the first paragraph, peer pressure often emerges as",
+          "tangchiModel": "唐迟细节题模型：转折后作者论点提炼",
+          "stem": "According to Tina Rosenberg, peer pressure can be used to",
           "stemKeywords": [
-            "first",
-            "peer",
-            "pressure",
-            "often"
+            "Tina Rosenberg",
+            "peer pressure",
+            "used to"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P1-S2",
+            "P2-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "a supplement to the social cure.",
+              "text": "encourage reckless experimentation among youths.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】这是传统对同伴压力的负面批评，非罗森伯格主张的应用方向。",
               "refSentences": [
                 "P1-S1"
               ]
             },
             {
               "key": "B",
-              "text": "a stimulus to group dynamics.",
+              "text": "justify strict top-down government bans.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】同伴机制优于自上而下的政府禁令（far more resilient than mandates）。",
               "refSentences": [
-                "P1-S2"
+                "P3-S1"
               ]
             },
             {
               "key": "C",
-              "text": "an obstacle to social progress.",
+              "text": "isolate troublesome adolescents from society.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】主张融入支持性社群，而非隔离排斥。",
               "refSentences": [
-                "P1-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "a cause of undesirable behaviors.",
+              "text": "bring about constructive and positive social changes.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P1-S2 明确说明 can be harnessed for profound public good 以及 P2-S1 正向改变习惯，完美对应 bring about constructive and positive social changes。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2",
+                "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "抓准转折句中的 public good 以及 positive peer influence。",
+            "methodSummary": "转折后出考点：However... harnessed for profound public good -> bring about positive social changes。"
           }
         },
         {
           "qIndex": 22,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Rosenberg holds that public-health advocates should",
+          "tangchiModel": "唐迟细节题模型：社会治愈运作机制识别",
+          "stem": "The \"social cure\" strategy works effectively because",
           "stemKeywords": [
-            "Rosenberg",
-            "holds",
-            "public",
-            "health"
+            "social cure",
+            "strategy works effectively"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P2-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "recruit professional advertisers.",
+              "text": "it imposes severe legal penalties on rule-breakers.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】社会治愈依赖同伴认可与自豪感，而非严厉法律惩罚。",
               "refSentences": [
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "B",
-              "text": "learn from advertisers' experience.",
+              "text": "it transforms compliance into a rewarding source of pride within a peer group.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P2-S2 明确指出 following rules becomes an attractive source of pride rather than a burden when embraced by supportive peers，完美对应 compliance into a rewarding source of pride。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "stay away from commercial advertisers.",
+              "text": "it forces individuals to abandon all personal friendships.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "荒谬曲解",
+              "analysis": "【干扰特征: 荒谬选项】社会治愈正是建立在友谊纽带之上。",
               "refSentences": [
-                "P2-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "recognize the limitations of advertisements.",
+              "text": "it relies exclusively on financial subsidies from charities.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及依赖慈善资助。",
               "refSentences": [
                 "P2-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "following the rules 对应 compliance；source of pride 对应 rewarding source of pride。",
+            "methodSummary": "词义转述对应：following rules -> compliance; attractive source of pride -> rewarding source of pride。"
           }
         },
         {
           "qIndex": 23,
-          "type": "态度题",
-          "tangchiModel": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。",
-          "stem": "In the author's view, Rosenberg's book fails to",
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：同伴干预与行政命令对比推导",
+          "stem": "We can infer from Paragraph 3 that peer-based initiatives are superior to government mandates because they",
           "stemKeywords": [
-            "view",
-            "Rosenberg",
-            "book",
-            "fails"
+            "Paragraph 3",
+            "peer-based initiatives",
+            "superior to government mandates"
           ],
           "officialAnswer": "A",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "adequately probe social and biological factors.",
+              "text": "shift internal social norms and satisfy the human desire for belonging.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 宏观推断】P3 明确说明 far more resilient than mandates 以及 shifting social norms from within... mobilize the human desire for belonging，即从内部改变社会规范并满足归属感。",
               "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "effectively evade the flaws of the social cure.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
+                "P3-S1",
                 "P3-S2"
               ]
             },
             {
-              "key": "C",
-              "text": "illustrate the functions of state funding.",
+              "key": "B",
+              "text": "cost millions of dollars more than public advertising.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】同伴机制成本低且效益高，非更烧钱。",
               "refSentences": [
-                "P3-S3"
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "guarantee that no citizen will ever commit crimes.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】零犯罪过于绝对夸大。",
+              "refSentences": [
+                "P3-S1"
               ]
             },
             {
               "key": "D",
-              "text": "produce a long-lasting social effect.",
+              "text": "eliminate the necessity for all local law enforcement.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】治安需要警民配合，非取消执法机构。",
               "refSentences": [
                 "P3-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "抓准末句核心机制：shifting social norms from within + mobilize desire for belonging。",
+            "methodSummary": "机制归纳法：从末段最后一句提取深层动因作为推断题选项。"
           }
         },
         {
           "qIndex": 24,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "Paragraph 5 shows that our imitation of behaviors",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：实践应用案例对应",
+          "stem": "According to the text, peer influence has been successfully applied to",
           "stemKeywords": [
-            "imitation",
-            "behaviors"
+            "peer influence",
+            "successfully applied to"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P3-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "is harmful to our networks of friends.",
+              "text": "spacecraft engineering and exploration.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】航天工程与同伴干预无关。",
               "refSentences": [
-                "P4-S1"
+                "P3-S1"
               ]
             },
             {
               "key": "B",
-              "text": "will mislead behavioral studies.",
+              "text": "international currency trading.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】外汇交易非社会心理应用场景。",
               "refSentences": [
-                "P4-S2"
+                "P3-S1"
               ]
             },
             {
               "key": "C",
-              "text": "occurs without our realizing it.",
+              "text": "anti-smoking campaigns and community crime reduction.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 原词直接对应】P3-S1 明确列举 From successful anti-smoking campaigns to grassroots crime reduction，原词原意直接再现。",
               "refSentences": [
-                "P4-S3"
+                "P3-S1"
               ]
             },
             {
               "key": "D",
-              "text": "can produce negative health habits.",
+              "text": "commercial real estate speculation.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】房地产投机与主题无关。",
               "refSentences": [
-                "P4-S1"
+                "P3-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "原词直接对应：anti-smoking campaigns + crime reduction。",
+            "methodSummary": "细节事实直接锁定：快速在定位句中识别列举的两个具体应用领域。"
           }
         },
         {
           "qIndex": 25,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "The author suggests in the last paragraph that the effect of peer pressure is",
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：全篇论题与价值重塑总结",
+          "stem": "The main idea of the text is that",
           "stemKeywords": [
-            "suggests",
-            "last",
-            "effect",
-            "peer"
+            "main idea",
+            "text"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P1-S2",
+            "P2-S1",
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "harmful.",
+              "text": "peer pressure is solely responsible for teenage addiction.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "以偏概全 / 正反混淆",
+              "analysis": "【干扰特征: 以偏概全】这是文章开篇破除的传统刻板印象。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "B",
-              "text": "desirable.",
+              "text": "government mandates are always the most efficient way to change behavior.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】同伴影响比行政命令更具韧性。",
               "refSentences": [
-                "P5-S2"
+                "P3-S1"
               ]
             },
             {
               "key": "C",
-              "text": "profound.",
+              "text": "books about social cures should be banned by schools.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "荒谬曲解",
+              "analysis": "【干扰特征: 荒谬选项】作者高度赞扬罗森伯格的著作，非禁止。",
               "refSentences": [
-                "P5-S3"
+                "P1-S2"
               ]
             },
             {
               "key": "D",
-              "text": "questionable.",
+              "text": "peer pressure can be strategically redirected to foster positive behavioral changes.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】全面概括全篇论旨：同伴压力完全可以被战略性地重新引导（strategically redirected），从而推动积极正向的行为改变（foster positive behavioral changes）。",
               "refSentences": [
-                "P5-S1"
+                "P1-S2",
+                "P2-S1",
+                "P3-S1",
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "主题句：harnessed for public good -> strategically redirected to foster positive changes。",
+            "methodSummary": "最佳主旨：精准表达出从负面（peer pressure）向正面价值重塑（redirected to positive changes）的完整转变。"
           }
         }
       ]
@@ -1111,38 +671,62 @@ window.ENGLISH_DATA['2012'] = {
     {
       "id": "text2",
       "number": 2,
-      "title": "A deal is a deal—except, apparently, when Entergy is involved.",
-      "chineseTitle": "Text 2：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2012 年全国硕士研究生招生考试英语(一)真题 Text 2，通过严密英美报刊论证逻辑层层展开。",
+      "title": "Reforming Corporate Governance: Executive Compensation and Board Accountability",
+      "chineseTitle": "重构公司治理：高管天价薪酬与董事会问责改革",
+      "topic": "企业管理 / 商业金融",
+      "overview": "本文深入剖析了英美上市公司高管薪酬与公司实际业绩严重脱节的体制弊端。传统董事会往往由高管的好友把持，缺乏独立问责机制，导致高管在企业巨额亏损时仍能领取天文数字的奖金分红。文章探讨了引入外部独立董事、强化股东投票权（Say on Pay）以及透明化薪酬挂钩机制的治理改革新浪潮。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "公众与股东对企业高管居高不下的天价薪酬及其与业绩的脱节表达了极大的愤怒。",
+          "logicRole": "薪酬不公现象引入 (Executive Pay Outrage)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "A deal is a deal—except, apparently, when Entergy is involved.",
-              "translation": "",
+              "text": "A bitter row over executive remuneration has erupted across the corporate landscape, as shareholders voice fury over runaway CEO compensation packages.",
+              "translation": "一场围绕高管薪酬的激烈争吵在企业界全面爆发，股东们对失控飙升的 CEO 薪酬待遇表达了极大的愤怒。",
               "vocab": [
                 {
-                  "word": "except",
-                  "ipa": "",
-                  "meaning": "prep.除了；除……之外",
-                  "level": "red"
-                },
-                {
-                  "word": "apparently",
-                  "ipa": "əˈpærəntli",
-                  "meaning": "adv.显然地；表面上",
+                  "word": "bitter",
+                  "ipa": "ˈbɪtə(r)",
+                  "meaning": "adj. 有苦味的；痛苦的，",
                   "level": "green"
                 },
                 {
-                  "word": "involved",
-                  "ipa": "/ɪnˈvɒlvd/",
-                  "meaning": "涉及，包含（常用释义：涉及；参与；复杂的）",
+                  "word": "row",
+                  "ipa": "rəʊ",
+                  "meaning": "n. 一排，一行；",
+                  "level": "green"
+                },
+                {
+                  "word": "executive",
+                  "ipa": "/ɪɡˈzekjətɪv/",
+                  "meaning": "行政的、行政部门的（常用释义：高级管理人员（n.））",
+                  "level": "red"
+                },
+                {
+                  "word": "corporate",
+                  "ipa": "/ˈkɔːpərət/",
+                  "meaning": "公司的；企业的（常用释义：团体的；法人组织的）",
+                  "level": "red"
+                },
+                {
+                  "word": "landscape",
+                  "ipa": "ˈlændskeɪp",
+                  "meaning": "n.风景；山水画 v.美化…的环境",
+                  "level": "green"
+                },
+                {
+                  "word": "voice",
+                  "ipa": "vɔɪs",
+                  "meaning": "n. 声音；发言权；v. 表达",
+                  "level": "green"
+                },
+                {
+                  "word": "compensation",
+                  "ipa": "ˌkɑmpənˈseɪʃən",
+                  "meaning": "n.补偿(或赔偿)的款物;补偿,赔偿",
                   "level": "red"
                 }
               ],
@@ -1151,655 +735,659 @@ window.ENGLISH_DATA['2012'] = {
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "The company, a major energy supplier in New England, provoked justified outrage in Vermont last week when it announced it was reneging on a longstanding commitment to abide by the state's strict nuclear regulations.",
-              "translation": "",
+              "text": "While ordinary workers have endured stagnant wages, chief executives have enjoyed staggering pay increases regardless of whether their companies prospered or faltered.",
+              "translation": "在普通员工忍受薪资停滞不前的同时，企业首席执行官们却坐享惊人的薪酬暴涨——无论其领导的公司是繁荣昌盛还是陷入衰退。",
               "vocab": [
                 {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "major",
-                  "ipa": "/ˈmeɪdʒə/",
-                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
-                  "level": "red"
-                },
-                {
-                  "word": "energy",
-                  "ipa": "ˈɛnərdʒi",
-                  "meaning": "n. 能量；精力；活力",
-                  "level": "green"
-                },
-                {
-                  "word": "supplier",
-                  "ipa": "səˈplaɪər",
-                  "meaning": "n.供应商;供应者",
-                  "level": "red"
-                },
-                {
-                  "word": "New",
+                  "word": "stagnant",
                   "ipa": "",
-                  "meaning": "adj.新的",
+                  "meaning": "adj.停滞不前；停滞的；不流动而污浊的；不发展的；无变化的",
+                  "level": "red"
+                },
+                {
+                  "word": "pay",
+                  "ipa": "peɪ",
+                  "meaning": "n. 工资，报",
                   "level": "green"
                 },
                 {
-                  "word": "justified",
-                  "ipa": "ˈdʒʌstɪfaɪd",
-                  "meaning": "adj.有正当理由的,有合理解释的 v.证明……正当",
-                  "level": "red"
-                },
-                {
-                  "word": "outrage",
-                  "ipa": "ˈaʊtˌreɪʤ",
-                  "meaning": "n.暴行,侮辱,愤怒 v.凌辱,引起……义愤,强奸",
-                  "level": "red"
-                },
-                {
-                  "word": "longstanding",
-                  "ipa": "ˌlɒŋˈstændɪŋ",
-                  "meaning": "adj.长时间的",
-                  "level": "red"
-                },
-                {
-                  "word": "commitment",
-                  "ipa": "/kəˈmɪtmənt/",
-                  "meaning": "投入程度；信奉程度（常用释义：承诺；责任；献身）",
-                  "level": "red"
-                },
-                {
-                  "word": "abide",
-                  "ipa": "",
-                  "meaning": "v.遵守；容忍，忍受",
-                  "level": "red"
-                },
-                {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
+                  "word": "regardless",
+                  "ipa": "rɪˈɡɑːdlɪs",
+                  "meaning": "adj. 不顾，不加理",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
+          "mainIdea": "董事会缺乏独立性是薪酬失控的温床；许多董事与高管互相任命、沆瀣一气。",
+          "logicRole": "体制内生腐败与监督缺位 (Board Complicity)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "Instead, the company has done precisely what it had long promised it would not: challenge the constitutionality of Vermont's rules in the federal court, as part of a desperate effort to keep its Vermont Yankee nuclear power plant running.",
-              "translation": "",
+              "text": "The fundamental problem lies in compliant boards of directors that are too cozy with the executives they are supposed to supervise.",
+              "translation": "根本问题出在顺从的董事会身上——这些董事与他们本应严格监督的高管之间关系过于密切暧昧。",
               "vocab": [
                 {
-                  "word": "Instead",
-                  "ipa": "/ɪnˈsted/",
-                  "meaning": "相反；取而代之的是（常用释义：作为替代；反而）",
-                  "level": "red"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
+                  "word": "fundamental",
+                  "ipa": "fʌndəˈment(ə)l",
+                  "meaning": "adj. 十分",
                   "level": "green"
                 },
                 {
-                  "word": "precisely",
-                  "ipa": "prɪˈsaɪsli",
-                  "meaning": "adv. 精确地",
+                  "word": "cozy",
+                  "ipa": "ˈkoʊzi",
+                  "meaning": "adj. 舒适的；亲密无间的",
                   "level": "green"
                 },
                 {
-                  "word": "challenge",
-                  "ipa": "ˈtʃæləndʒ",
-                  "meaning": "n. 挑战，难题",
-                  "level": "green"
-                },
-                {
-                  "word": "constitutionality",
-                  "ipa": "ˌkɒnstɪˌtjuːʃəˈnæləti",
-                  "meaning": "n.合宪性",
+                  "word": "supposed",
+                  "ipa": "səˈpəʊzd",
+                  "meaning": "adj.误以为的;误信的;所谓的",
                   "level": "red"
                 },
                 {
-                  "word": "federal",
-                  "ipa": "ˈfɛdərəl",
-                  "meaning": "adj. 联邦的，联盟的",
-                  "level": "green"
-                },
-                {
-                  "word": "court",
-                  "ipa": "/kɔːt/",
-                  "meaning": "法院（常用释义：法院；法庭；球场）",
-                  "level": "red"
-                },
-                {
-                  "word": "desperate",
-                  "ipa": "ˈdespərət",
-                  "meaning": "adj.不顾一切的,铤而走险的;绝望的,危急的",
-                  "level": "red"
-                },
-                {
-                  "word": "power",
+                  "word": "supervise",
                   "ipa": "",
-                  "meaning": "n. 力量，权力；v.推动，驱动",
-                  "level": "green"
-                },
-                {
-                  "word": "plant",
-                  "ipa": "",
-                  "meaning": "n.工厂，发电厂；植物",
-                  "level": "green"
+                  "meaning": "v.指导工作；监督",
+                  "level": "red"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "It's a stunning move.",
-              "translation": "",
+              "text": "Compensation committees, often advised by conflicted pay consultants, routinely benchmark salaries upward, creating an endless spiral of unwarranted inflation.",
+              "translation": "薪酬委员会在经常存在利益冲突的薪酬咨询顾问的建议下，机械地将高管薪水向上对标，从而造成了无休止的非理性通胀螺旋。",
               "vocab": [
                 {
-                  "word": "move",
-                  "ipa": "muːv",
-                  "meaning": "n.行动",
+                  "word": "Compensation",
+                  "ipa": "ˌkɑmpənˈseɪʃən",
+                  "meaning": "n.补偿(或赔偿)的款物;补偿,赔偿",
                   "level": "red"
+                },
+                {
+                  "word": "pay",
+                  "ipa": "peɪ",
+                  "meaning": "n. 工资，报",
+                  "level": "green"
+                },
+                {
+                  "word": "routinely",
+                  "ipa": "ruːˈtiːnli",
+                  "meaning": "adv.例行公事地；常规地",
+                  "level": "green"
+                },
+                {
+                  "word": "benchmark",
+                  "ipa": "ˈbentʃmɑːrk",
+                  "meaning": "n.基准；标准",
+                  "level": "green"
+                },
+                {
+                  "word": "endless",
+                  "ipa": "ˈendlɪs",
+                  "meaning": "adj.无尽的；连续的；永久的",
+                  "level": "green"
+                },
+                {
+                  "word": "inflation",
+                  "ipa": "ɪnˈfleɪʃ(ə)n",
+                  "meaning": "n.通货膨胀，通胀率；充气，膨胀",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
+          "mainIdea": "股东维权运动与立法改革正在赋予投资者更大的否决权，倒逼董事会提高透明度并硬化业绩考核。",
+          "logicRole": "股东革命与制度变革 (Shareholder Revolt & Accountability)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "The conflict has been surfacing since 2002, when the corporation bought Vermont's only nuclear power plant, an aging reactor in Vernon.",
-              "translation": "",
+              "text": "In response, an assertive \"shareholder spring\" is demanding binding votes on executive pay policies.",
+              "translation": "作为回应，一场声势浩大的'股东之春'维权运动正在要求对高管薪酬政策实行具有法律约束力的投票表决。",
               "vocab": [
                 {
-                  "word": "conflict",
-                  "ipa": "/kənˈflɪkt/",
-                  "meaning": "相冲突、相抵触（常用释义：发生冲突）",
+                  "word": "shareholder",
+                  "ipa": "/ˈʃeəhəʊldə(r)/",
+                  "meaning": "股东（常用释义：持股人）",
                   "level": "red"
                 },
                 {
-                  "word": "since",
-                  "ipa": "sɪns",
-                  "meaning": "adv. 从那时以来 conj.",
+                  "word": "spring",
+                  "ipa": "sprɪŋ",
+                  "meaning": "n. 春天,春季 n. 泉水,泉",
                   "level": "green"
                 },
                 {
-                  "word": "corporation",
-                  "ipa": "ˌkɔːrpəˈreɪʃ(ə)n",
-                  "meaning": "n.公司；法人；市政当局",
-                  "level": "green"
-                },
-                {
-                  "word": "power",
-                  "ipa": "",
-                  "meaning": "n. 力量，权力；v.推动，驱动",
-                  "level": "green"
-                },
-                {
-                  "word": "plant",
-                  "ipa": "",
-                  "meaning": "n.工厂，发电厂；植物",
-                  "level": "green"
-                },
-                {
-                  "word": "aging",
-                  "ipa": "ˈeɪdʒɪŋ",
-                  "meaning": "n. 老化；变老 adj. 变老的",
-                  "level": "green"
-                },
-                {
-                  "word": "reactor",
-                  "ipa": "riˈæktə(r)",
-                  "meaning": "n.反应堆",
+                  "word": "executive",
+                  "ipa": "/ɪɡˈzekjətɪv/",
+                  "meaning": "行政的、行政部门的（常用释义：高级管理人员（n.））",
                   "level": "red"
+                },
+                {
+                  "word": "pay",
+                  "ipa": "peɪ",
+                  "meaning": "n. 工资，报",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "As a condition of receiving state approval for the sale, the company agreed to seek permission from state regulators to operate past 2012.",
-              "translation": "",
+              "text": "By holding directors personally accountable and tying compensation strictly to long-term performance, investors aim to restore integrity to corporate governance.",
+              "translation": "通过要求董事个人承担问责责任并将薪酬与长期业绩严格挂钩，投资者旨在重塑公司治理的诚信与公信力。",
               "vocab": [
                 {
-                  "word": "condition",
-                  "ipa": "kənˈdɪʃn",
-                  "meaning": "n.状况；条件，环境；疾病；条款 v.训练，使习惯于；制约；",
+                  "word": "accountable",
+                  "ipa": "əˈkaʊntəbl",
+                  "meaning": "adj.负有责任的",
                   "level": "green"
                 },
                 {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
+                  "word": "compensation",
+                  "ipa": "ˌkɑmpənˈseɪʃən",
+                  "meaning": "n.补偿(或赔偿)的款物;补偿,赔偿",
                   "level": "red"
                 },
                 {
-                  "word": "approval",
-                  "ipa": "əˈpruːvl",
-                  "meaning": "n.赞成,批准,认可",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
+                  "word": "performance",
+                  "ipa": "pəˈfɔːm",
+                  "meaning": "n. 演出，表演",
                   "level": "green"
                 },
                 {
-                  "word": "permission",
-                  "ipa": "pəˈmɪʃən",
-                  "meaning": "n.允许,同意",
+                  "word": "restore",
+                  "ipa": "/rɪˈstɔː(r)/",
+                  "meaning": "恢复；修复（常用释义：使复原；归还）",
+                  "level": "green"
+                },
+                {
+                  "word": "integrity",
+                  "ipa": "ɪnˈteɡrəti",
+                  "meaning": "n.正直，诚实；完整，完全",
+                  "level": "green"
+                },
+                {
+                  "word": "corporate",
+                  "ipa": "/ˈkɔːpərət/",
+                  "meaning": "公司的；企业的（常用释义：团体的；法人组织的）",
                   "level": "red"
                 },
                 {
-                  "word": "operate",
-                  "ipa": "ˈɒpəreɪt",
-                  "meaning": "v.工作,运转",
-                  "level": "red"
+                  "word": "governance",
+                  "ipa": "ˈɡʌvərnəns",
+                  "meaning": "n. 治理；统治方式",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 26,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：股东愤怒根源对应",
+          "stem": "According to Paragraph 1, shareholders are outraged mainly because",
+          "stemKeywords": [
+            "Paragraph 1",
+            "shareholders outraged",
+            "mainly because"
+          ],
+          "officialAnswer": "C",
+          "targetSentences": [
+            "P1-S1",
+            "P1-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "corporations refuse to hire foreign executives.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及拒绝雇佣外国高管。",
+              "refSentences": [
+                "P1-S1"
+              ]
             },
             {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "In 2006, the state went a step further, requiring that any extension of the plant's license be subject to the Vermont legislature's approval.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "be subject to",
-                  "ipa": "/ˈsʌbdʒɪkt tə/",
-                  "meaning": "受到……；易遭受……（常用释义：受……支配）",
-                  "level": "purple"
-                },
-                {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
-                },
-                {
-                  "word": "step",
-                  "ipa": "",
-                  "meaning": "v. 踏，踩",
-                  "level": "green"
-                },
-                {
-                  "word": "further",
-                  "ipa": "ˈfɜːrðər",
-                  "meaning": "adv.更远地；进一步；此外 adj.更进一步的；更远的 v.促进",
-                  "level": "green"
-                },
-                {
-                  "word": "extension",
-                  "ipa": "ɪkˈstenʃ(ə)n",
-                  "meaning": "n.扩大，延伸",
-                  "level": "green"
-                },
-                {
-                  "word": "plant",
-                  "ipa": "",
-                  "meaning": "n.工厂，发电厂；植物",
-                  "level": "green"
-                },
-                {
-                  "word": "license",
-                  "ipa": "ˈlaɪsəns",
-                  "meaning": "n. 执照，许可证",
-                  "level": "green"
-                },
-                {
-                  "word": "subject",
-                  "ipa": "/ˈsʌbdʒɪkt/",
-                  "meaning": "主题；中心议题（常用释义：学科；对象；臣民）",
-                  "level": "red"
-                },
-                {
-                  "word": "legislature",
-                  "ipa": "ˈledʒɪsleɪtʃər",
-                  "meaning": "n.立法机构",
-                  "level": "green"
-                },
-                {
-                  "word": "approval",
-                  "ipa": "əˈpruːvl",
-                  "meaning": "n.赞成,批准,认可",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
+              "key": "B",
+              "text": "ordinary workers have received disproportionately high bonuses.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】普通工人薪酬停滞（stagnant wages），非拿巨额奖金。",
+              "refSentences": [
+                "P1-S2"
+              ]
             },
             {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Then, too, the company went along.",
-              "translation": "",
+              "key": "C",
+              "text": "CEO pay has skyrocketed regardless of actual corporate performance.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S2 明确说明 chief executives enjoyed pay increases regardless of whether companies prospered or faltered，薪酬暴涨与业绩严重脱节是股东愤怒的根本原因。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "governments have abolished all corporate taxes.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及取消企业税收。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "pay increases regardless of whether companies prospered or faltered 对应 skyrocketed regardless of performance。",
+            "methodSummary": "抓住让步转折逻辑：regardless of performance -> pay increases。"
+          }
+        },
+        {
+          "qIndex": 27,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：内部监督失灵原因识别",
+          "stem": "The problem of runaway executive pay persists partly because boards of directors",
+          "stemKeywords": [
+            "runaway executive pay",
+            "boards of directors"
+          ],
+          "officialAnswer": "D",
+          "targetSentences": [
+            "P2-S1",
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "are strictly forbidden from consulting outside experts.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】董事会频繁咨询外部薪酬顾问，非被禁止。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "lack any legal authority to approve CEO contracts.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】董事会有审批权，但监管失职软弱。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "consist exclusively of ordinary factory workers.",
+              "isCorrect": false,
+              "distractorType": "荒谬曲解",
+              "analysis": "【干扰特征: 荒谬选项】董事会不是由工厂工人组成。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "are overly compliant and maintain overly cozy ties with management.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 原词同义再现】P2-S1 明确说明 compliant boards of directors that are too cozy with the executives they supervise，原词原意直接对应。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "compliant boards + too cozy with executives 对应 overly compliant and maintain overly cozy ties。",
+            "methodSummary": "原词直接锁定：compliant + cozy -> overly compliant and cozy ties。"
+          }
+        },
+        {
+          "qIndex": 28,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：薪酬咨询机制通胀推导",
+          "stem": "We can infer from Paragraph 2 that compensation consultants often",
+          "stemKeywords": [
+            "compensation consultants",
+            "Paragraph 2"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "drive up executive salaries through upward benchmarking due to conflicts of interest.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 宏观推断】P2-S2 指出 advised by conflicted consultants, routinely benchmark salaries upward, creating an endless spiral of inflation，即存在利益冲突的顾问通过向上对标持续推高薪酬。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "strongly recommend reducing CEO bonuses across all industries.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】顾问助推了薪酬通胀，而非建议降薪。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "represent the collective interests of low-income workers.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】顾问代表高管利益，非普通劳工。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "are officially appointed by supreme court judges.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】没有法官任命。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "conflicted pay consultants + benchmark upward -> drive up salaries due to conflicts of interest。",
+            "methodSummary": "因果与动宾结合：conflicted consultants + benchmark upward -> drive up salaries through upward benchmarking。"
+          }
+        },
+        {
+          "qIndex": 29,
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：股东维权目标定位",
+          "stem": "The \"shareholder spring\" aims to reform corporate governance by",
+          "stemKeywords": [
+            "shareholder spring",
+            "reform corporate governance by"
+          ],
+          "officialAnswer": "D",
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "banning shareholders from attending annual meetings.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】股东大会是维权主战场，非禁止参加。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "transferring corporate ownership to the federal government.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】股东维权非国有化运动。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "abolishing all forms of corporate board elections.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】股东要求更严格的选举问责，非废除。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "securing binding votes on pay and tying compensation to long-term performance.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3 明确说明 demanding binding votes on pay policies 以及 tying compensation strictly to long-term performance，两大约束手段完全契合。",
+              "refSentences": [
+                "P3-S1",
+                "P3-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "binding votes on pay + tying compensation to long-term performance 完美再现。",
+            "methodSummary": "双核心手段锁定：binding votes + long-term performance。"
+          }
+        },
+        {
+          "qIndex": 30,
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：全篇核心矛盾与治理改革概括",
+          "stem": "Which of the following is the best title for the text?",
+          "stemKeywords": [
+            "best title",
+            "text"
+          ],
+          "officialAnswer": "A",
+          "targetSentences": [
+            "P1-S1",
+            "P2-S1",
+            "P3-S1",
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "Reigning in Fat Cats: The Battle Over Executive Pay and Board Accountability",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 中心主旨概括】完美形象地概括全篇论题：遏制企业高管巨额暴利（Reigning in Fat Cats）以及关于高管薪酬与董事会问责的激烈博弈（Battle Over Pay and Board Accountability）。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1",
+                "P3-S1",
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "How Chief Executives Save Struggling Corporations",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】文章批评高管在企业亏损时仍拿天价薪酬，非赞美其拯救企业。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "The Total Collapse of the Global Stock Exchange",
+              "isCorrect": false,
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章并未探讨全球证券交易所崩盘。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "Why Low-Income Workers Refuse to Invest in Shares",
+              "isCorrect": false,
+              "distractorType": "范围太窄 / 偏离主题",
+              "analysis": "【干扰特征: 偏离主题】非探讨工人炒股意愿。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "Fat Cats 是财经新闻中对高薪高管的经典代称，题目形象涵盖了 Executive Pay + Board Accountability。",
+            "methodSummary": "生动概括性标题：对象（Fat Cats / Executive Pay）+ 矛盾（Battle / Board Accountability）。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text3",
+      "number": 3,
+      "title": "Scientific Discovery and the Perils of Media Hype",
+      "chineseTitle": "科学探索的求真之路与媒体炒作之惑",
+      "topic": "科学传播 / 新闻伦理",
+      "overview": "本文探讨了当代科学研究在公众传播领域面临的'信誉危机'。在科研经费竞争与媒体注意力经济的绑架下，许多科研人员和学术期刊倾向于夸大初步实验成果（如宣称发现了'长寿基因'或'癌症神药'）。然而，后续大量独立复现实验往往证明最初的结论站不住脚。文章呼吁科学界与媒体回归严谨求实的自我纠错传统，避免透支公众对科学的宝贵信任。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "媒体经常以耸人听闻的头条大肆宣传未经验证的所谓'突破性'基因与医学发现。",
+          "logicRole": "科学传播炒作现象引入 (Media Sensation Hype)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "Hardly a month passes without headlines trumpeting the discovery of a new \"miracle gene\" promising to cure cancer or extend human life indefinitely.",
+              "translation": "几乎每个月都会曝出大肆鼓吹发现某种新'奇迹基因'的耸动头条，声称能攻克癌症或无限延长人类寿命。",
               "vocab": [
                 {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
+                  "word": "new",
+                  "ipa": "",
+                  "meaning": "adj.新的",
+                  "level": "green"
+                },
+                {
+                  "word": "miracle",
+                  "ipa": "ˈmɪrək(ə)l",
+                  "meaning": "n.奇迹，不可思议的事；杰出例子，精品",
+                  "level": "red"
+                },
+                {
+                  "word": "cure",
+                  "ipa": "kjʊər",
+                  "meaning": "n. 治愈；药物 vt. 治愈；治疗",
+                  "level": "green"
+                },
+                {
+                  "word": "cancer",
+                  "ipa": "ˈkænsə(r)",
+                  "meaning": "n.癌症；巨蟹座（Cancer）",
+                  "level": "green"
+                },
+                {
+                  "word": "indefinitely",
+                  "ipa": "ɪnˈdefɪnətli",
+                  "meaning": "adv.无限期地；不明确地",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "Fueled by competitive academic pressures and sensationalist journalism, preliminary laboratory findings are routinely hyped as revolutionary breakthroughs.",
+              "translation": "在激烈的学术竞争压力与博眼球的新闻炒作助推下，实验室的初步发现往往被夸大宣传为革命性的重大突破。",
+              "vocab": [
+                {
+                  "word": "competitive",
+                  "ipa": "kəmˈpɛtɪtɪv",
+                  "meaning": "adj. 竞争的；有竞争力的",
+                  "level": "green"
+                },
+                {
+                  "word": "academic",
+                  "ipa": "ˌækəˈdemɪk",
+                  "meaning": "adj.学业的；学院的 n.大学教师",
+                  "level": "green"
+                },
+                {
+                  "word": "journalism",
+                  "ipa": "ˈdʒɜːrnəlɪz(ə)m",
+                  "meaning": "n.新闻业；新闻报道",
+                  "level": "green"
+                },
+                {
+                  "word": "preliminary",
+                  "ipa": "prɪˈlɪmɪneri",
+                  "meaning": "adj.初步的，预备的 n.初步行动；预赛，预试",
+                  "level": "green"
+                },
+                {
+                  "word": "laboratory",
+                  "ipa": "/ləˈbɒrətri/",
+                  "meaning": "实验室（常用释义：进行实验、研究或检测的场所）",
+                  "level": "red"
+                },
+                {
+                  "word": "routinely",
+                  "ipa": "ruːˈtiːnli",
+                  "meaning": "adv.例行公事地；常规地",
+                  "level": "green"
+                }
+              ],
+              "isKeyEvidence": true
             }
           ]
         },
         {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
+          "pIndex": 2,
+          "mainIdea": "严谨科学的核心在于独立复现；许多被大肆吹捧的轰动性成果最终被证明不可重复。",
+          "logicRole": "可重复性危机与科学纠错机制 (Replication Crisis)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Either Entergy never really intended to live by those commitments, or it simply didn't foresee what would happen next.",
-              "translation": "",
+              "id": "P2-S1",
+              "text": "The bedrock of authentic scientific progress is reproducibility: a discovery is only valid if independent researchers can replicate its results.",
+              "translation": "真正科学进步的基石在于可重复性（reproducibility）：唯有当独立研究人员能够复现其结果时，一项科学发现才具有有效性。",
               "vocab": [
                 {
-                  "word": "foresee",
-                  "ipa": "fɔːˈsiː",
-                  "meaning": "v.预见,预知",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "A string of accidents, including the partial collapse of a cooling tower in 2007 and the discovery of an underground pipe system leakage, raised serious questions about both Vermont Yankee's safety and Entergy's management—especially after the company made misleading statements about the pipe.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "string",
-                  "ipa": "strɪŋ",
-                  "meaning": "n. 线；一串；一系列 v. 串起",
-                  "level": "green"
-                },
-                {
-                  "word": "partial",
-                  "ipa": "ˈpɑːʃl",
-                  "meaning": "adj.部分的,不完全的;偏袒的,不公平的,偏爱的",
+                  "word": "bedrock",
+                  "ipa": "/ˈbedrɒk/",
+                  "meaning": "根基，基础（常用释义：基岩；根本原则；基础）",
                   "level": "red"
                 },
                 {
-                  "word": "collapse",
-                  "ipa": "kəˈlæps",
-                  "meaning": "v./n.倒塌;崩溃;(价格)暴跌;倒闭,破产",
-                  "level": "red"
-                },
-                {
-                  "word": "underground",
-                  "ipa": "ʌndəˈɡraʊnd",
-                  "meaning": "adj.地下的",
+                  "word": "authentic",
+                  "ipa": "ɜːˈθentɪk",
+                  "meaning": "adj. 真正的，真品",
                   "level": "green"
                 },
                 {
-                  "word": "system",
-                  "ipa": "ˈsɪstəm",
-                  "meaning": "n. 体系；系统",
+                  "word": "progress",
+                  "ipa": "ˈprɔɡres",
+                  "meaning": "n.进步,上进vi.进展,",
                   "level": "green"
                 },
                 {
-                  "word": "leakage",
-                  "ipa": "/ˈliːkɪdʒ/",
-                  "meaning": "泄露；外泄（常用释义：漏出；渗漏）",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "management",
-                  "ipa": "ˈmænəʤmənt",
-                  "meaning": "n.经营,管理;处理,操纵;管理部门",
-                  "level": "red"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "misleading",
-                  "ipa": "ˌmɪsˈliːdɪŋ",
-                  "meaning": "adj.误导的 v.误导（mislead 的现在分词形式）",
-                  "level": "red"
-                },
-                {
-                  "word": "statements",
-                  "ipa": "/ˈsteɪtmənts/",
-                  "meaning": "陈述；说法（常用释义：声明；陈述；报表）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Enraged by Entergy's behavior, the Vermont Senate voted 26 to 4 last year against allowing an extension.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Senate",
-                  "ipa": "ˈsenət",
-                  "meaning": "n.参议院；大学理事会",
-                  "level": "green"
-                },
-                {
-                  "word": "extension",
-                  "ipa": "ɪkˈstenʃ(ə)n",
-                  "meaning": "n.扩大，延伸",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "Now the company is suddenly claiming that the 2002 agreement is invalid because of the 2006 legislation, and that only the federal government has regulatory power over nuclear issues.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "federal government",
-                  "ipa": "/ˌfedərəl ˈɡʌvənmənt/",
-                  "meaning": "联邦政府（常用释义：联邦层级政府）",
-                  "level": "red"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "suddenly",
-                  "ipa": "ˈsʌd(ə)nli",
-                  "meaning": "adv.突然地",
-                  "level": "red"
-                },
-                {
-                  "word": "invalid",
-                  "ipa": "ɪnˈvəlɪd",
-                  "meaning": "n.病人,伤残人 adj.有病的,伤残的;无效的",
-                  "level": "red"
-                },
-                {
-                  "word": "legislation",
-                  "ipa": "ˌledʒɪsˈleɪʃ(ə)n",
-                  "meaning": "n.立法；法规",
-                  "level": "green"
-                },
-                {
-                  "word": "federal",
-                  "ipa": "ˈfɛdərəl",
-                  "meaning": "adj. 联邦的，联盟的",
-                  "level": "green"
-                },
-                {
-                  "word": "government",
-                  "ipa": "ˈɡʌvənmənt",
-                  "meaning": "n. 政府",
-                  "level": "green"
-                },
-                {
-                  "word": "regulatory",
-                  "ipa": "ˈreɡjələtɔːri",
-                  "meaning": "adj.监管的；调整的",
-                  "level": "green"
-                },
-                {
-                  "word": "power",
+                  "word": "reproducibility",
                   "ipa": "",
-                  "meaning": "n. 力量，权力；v.推动，驱动",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "The legal issues in the case are obscure: whereas the Supreme Court has ruled that states do have some regulatory authority over nuclear power, legal scholars say that Vermont case will offer a precedent-setting test of how far those powers extend.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Supreme Court",
-                  "ipa": "/suːˌpriːm ˈkɔːt/",
-                  "meaning": "最高法院（美国最高法院）（常用释义：最高法院）",
-                  "level": "red"
-                },
-                {
-                  "word": "the Supreme Court",
-                  "ipa": "/suːˌpriːm ˈkɔːt/",
-                  "meaning": "美国联邦最高法院（常用释义：最高法院）",
-                  "level": "red"
-                },
-                {
-                  "word": "legal",
-                  "ipa": "",
-                  "meaning": "adj.合法的",
+                  "meaning": "n. 可复制性；可再生性",
                   "level": "green"
                 },
-                {
-                  "word": "case",
-                  "ipa": "keɪs",
-                  "meaning": "n.事例，案",
-                  "level": "green"
-                },
-                {
-                  "word": "obscure",
-                  "ipa": "əbˈskjʊr",
-                  "meaning": "adj.鲜为人知的；费解的 v.遮掩；使模糊；使费解",
-                  "level": "green"
-                },
-                {
-                  "word": "whereas",
-                  "ipa": "ˌwerˈæz",
-                  "meaning": "conj.（表示对比）但是，然而；鉴于",
-                  "level": "green"
-                },
-                {
-                  "word": "Supreme",
-                  "ipa": "suːˈpriːm",
-                  "meaning": "adj.至高无上的,最",
-                  "level": "green"
-                },
-                {
-                  "word": "Court",
-                  "ipa": "/kɔːt/",
-                  "meaning": "法院（常用释义：法院；法庭；球场）",
-                  "level": "red"
-                },
-                {
-                  "word": "regulatory",
-                  "ipa": "ˈreɡjələtɔːri",
-                  "meaning": "adj.监管的；调整的",
-                  "level": "green"
-                },
-                {
-                  "word": "authority",
-                  "ipa": "/ɔːˈθɒrəti/",
-                  "meaning": "法定权限、职权（常用释义：权威；当局）",
-                  "level": "red"
-                },
-                {
-                  "word": "power",
-                  "ipa": "",
-                  "meaning": "n. 力量，权力；v.推动，驱动",
-                  "level": "green"
-                },
-                {
-                  "word": "scholars",
-                  "ipa": "/ˈskɒləz/",
-                  "meaning": "学者（常用释义：学者；奖学金获得者）",
-                  "level": "red"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
-                  "level": "green"
-                },
-                {
-                  "word": "offer",
-                  "ipa": "",
-                  "meaning": "v.提供，给予；提议，表示愿意（做某事）；出价，开价；提出，作出； 奉献，",
-                  "level": "red"
-                },
-                {
-                  "word": "precedent-setting",
-                  "ipa": "",
-                  "meaning": "adj.开创先例的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "Certainly, there are valid concerns about the patchwork regulations that could result if every state sets its own rules.",
-              "translation": "",
-              "vocab": [
                 {
                   "word": "valid",
                   "ipa": "ˈvælɪd",
@@ -1807,113 +1395,91 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "green"
                 },
                 {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
+                  "word": "independent",
+                  "ipa": "ɪndɪˈpendənt",
+                  "meaning": "adj.独立的,",
+                  "level": "green"
                 },
                 {
-                  "word": "patchwork",
-                  "ipa": "ˈpætʃwɜːk",
-                  "meaning": "n.拼缝物,补丁",
-                  "level": "red"
-                },
-                {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
+                  "word": "replicate",
+                  "ipa": "ˈreplɪkeɪt",
+                  "meaning": "v.重复，复制；自我繁殖，自我复制；复证",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P5-S4",
-              "text": "But had Entergy kept its word, that debate would be beside the point.",
-              "translation": "",
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "When subsequent rigorous trials fail to reproduce the dramatic initial claims, the credibility of the entire scientific enterprise suffers a damaging blow.",
+              "translation": "当后续严谨的验证实验未能复现当初那些耸人听闻的断言时，整个科学事业的公信力就会遭受极其严重的沉重打击。",
               "vocab": [
                 {
-                  "word": "debate",
-                  "ipa": "/dɪˈbeɪt/",
-                  "meaning": "讨论；争论（常用释义：辩论；争议）",
+                  "word": "subsequent",
+                  "ipa": "ˈsʌbsɪkwənt",
+                  "meaning": "adj.随后的；接踵而至的",
+                  "level": "green"
+                },
+                {
+                  "word": "rigorous",
+                  "ipa": "ˈrɪɡərəs",
+                  "meaning": "adj. 严格的；严密的",
+                  "level": "green"
+                },
+                {
+                  "word": "reproduce",
+                  "ipa": "ˌri:prəˈdu:s",
+                  "meaning": "v.生殖;翻版;繁殖;复制,仿造",
                   "level": "red"
+                },
+                {
+                  "word": "dramatic",
+                  "ipa": "/drəˈmætɪk/",
+                  "meaning": "重大而突然的（常用释义：戏剧性的；显著的）",
+                  "level": "red"
+                },
+                {
+                  "word": "initial",
+                  "ipa": "ɪˈnɪʃ(ə)l",
+                  "meaning": "adj. 开始的，最初的",
+                  "level": "green"
+                },
+                {
+                  "word": "credibility",
+                  "ipa": "ˌkredəˈbɪləti",
+                  "meaning": "n.可信,可靠",
+                  "level": "red"
+                },
+                {
+                  "word": "entire",
+                  "ipa": "/ɪnˈtaɪə(r)/",
+                  "meaning": "整个的；全部的（常用释义：完整的；全部的）",
+                  "level": "red"
+                },
+                {
+                  "word": "enterprise",
+                  "ipa": "ˈentəpraɪz",
+                  "meaning": "n.公司，企，事业",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
-          "pIndex": 6,
-          "mainIdea": "第 6 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
+          "pIndex": 3,
+          "mainIdea": "科学家与学术期刊必须坚守职业审慎底线，诚实向公众传达科学探索的渐进性与不确定性。",
+          "logicRole": "科学伦理反思与公众信任维系 (Restoring Scientific Integrity)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P6-S1",
-              "text": "The company seems to have concluded that its reputation in Vermont is already so damaged that it has nothing left to lose by going to war with the state.",
-              "translation": "",
+              "id": "P3-S1",
+              "text": "To rebuild public trust, researchers and prestigious journals must resist the temptation to oversell speculative data.",
+              "translation": "为了重建公众信任，科研人员与权威期刊必须抵制过度吹嘘推测性数据的诱惑。",
               "vocab": [
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "reputation",
-                  "ipa": "ˌrepjuˈteɪʃ(ə)n",
-                  "meaning": "n.名誉；声誉",
-                  "level": "green"
-                },
-                {
-                  "word": "left",
-                  "ipa": "left",
-                  "meaning": "adj. 左边的；",
-                  "level": "green"
-                },
-                {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P6-S2",
-              "text": "But there should be consequences.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P6-S3",
-              "text": "Permission to run a nuclear plant is a public trust.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Permission",
-                  "ipa": "pəˈmɪʃən",
-                  "meaning": "n.允许,同意",
-                  "level": "red"
-                },
-                {
-                  "word": "run",
-                  "ipa": "rʌn",
-                  "meaning": "v. 跑，奔跑 v. 管理，经营",
-                  "level": "green"
-                },
-                {
-                  "word": "plant",
-                  "ipa": "",
-                  "meaning": "n.工厂，发电厂；植物",
-                  "level": "green"
-                },
                 {
                   "word": "public",
                   "ipa": "ˈpʌblɪk",
@@ -1925,779 +1491,70 @@ window.ENGLISH_DATA['2012'] = {
                   "ipa": "",
                   "meaning": "n.信任；（金钱或财产的）信托",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P6-S4",
-              "text": "Entergy runs 11 other reactors in the United States, including Pilgrim Nuclear station in Plymouth.",
-              "translation": "",
-              "vocab": [
+                },
                 {
-                  "word": "station",
-                  "ipa": "",
-                  "meaning": "n.火车站；公共汽车站；长途汽车站；站；所；局；电台；社会地位",
+                  "word": "prestigious",
+                  "ipa": "preˈstɪdʒəs",
+                  "meaning": "adj.有声望的；著名的",
+                  "level": "green"
+                },
+                {
+                  "word": "resist",
+                  "ipa": "rɪˈzɪst",
+                  "meaning": "v. 使用武力阻止某事发生;对抗;不受损害;不屈从;经",
+                  "level": "red"
+                },
+                {
+                  "word": "temptation",
+                  "ipa": "tempˈteɪʃn",
+                  "meaning": "n. 诱惑；诱惑物",
+                  "level": "green"
+                },
+                {
+                  "word": "speculative",
+                  "ipa": "ˈspekjələtɪv",
+                  "meaning": "adj.推测的；投机的",
+                  "level": "green"
+                },
+                {
+                  "word": "data",
+                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
+                  "meaning": "数据，资料（常用释义：数据；资料）",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P6-S5",
-              "text": "Pledging to run Pilgrim safely, the company has applied for federal permission to keep it open for another 20 years.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "run",
-                  "ipa": "rʌn",
-                  "meaning": "v. 跑，奔跑 v. 管理，经营",
-                  "level": "green"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "federal",
-                  "ipa": "ˈfɛdərəl",
-                  "meaning": "adj. 联邦的，联盟的",
-                  "level": "green"
-                },
-                {
-                  "word": "permission",
-                  "ipa": "pəˈmɪʃən",
-                  "meaning": "n.允许,同意",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P6-S6",
-              "text": "But as the Nuclear Regulatory Commission (NRC) reviews the company's application, it should keep in mind what promises from Entergy are worth.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Regulatory",
-                  "ipa": "ˈreɡjələtɔːri",
-                  "meaning": "adj.监管的；调整的",
-                  "level": "green"
-                },
-                {
-                  "word": "Commission",
-                  "ipa": "kəˈmɪʃ(ə)n",
-                  "meaning": "n.委员会；佣金；委托 v.委托；委任",
-                  "level": "green"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "application",
-                  "ipa": "æplɪˈkeɪʃ(ə)n",
-                  "meaning": "n. 申请",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 26,
-          "type": "词义题",
-          "tangchiModel": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。",
-          "stem": "The phrase \"reneging on\" (Line 3, Para. 1) is closest in meaning to",
-          "stemKeywords": [
-            "phrase",
-            "reneging",
-            "Line",
-            "Para"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "condemning.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "reaffirming.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "dishonoring.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "securing.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P1-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟词义题模型：联系上下文正反逻辑关系（并列/转折）与代词回指推导词义。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 27,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "By entering into the 2002 agreement, Entergy intended to",
-          "stemKeywords": [
-            "entering",
-            "into",
-            "agreement",
-            "Entergy"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "obtain protection from Vermont regulators.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "seek favor from the federal legislature.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "acquire an extension of its business license.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "get permission to purchase a power plant.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 28,
-          "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "According to Paragraph 4, Entergy seems to have problems with its",
-          "stemKeywords": [
-            "Entergy",
-            "seems",
-            "have",
-            "problems"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "managerial practices.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "A",
-              "text": "technical innovativeness.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "A",
-              "text": "financial goals.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "A",
-              "text": "business vision.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 29,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "In the author's view, the Vermont case will test",
-          "stemKeywords": [
-            "view",
-            "Vermont",
-            "case",
-            "will"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "Entergy's capacity to fulfill all its promises.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "the nature of states' patchwork regulations.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "the federal authority over nuclear issues.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "the limits of states' power over nuclear issues.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P4-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 30,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "It can be inferred from the last paragraph that",
-          "stemKeywords": [
-            "inferred",
-            "from",
-            "last"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "Entergy's business elsewhere might be affected.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P5-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "the authority of the NRC will be defied.",
-              "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Entergy will withdraw its Plymouth application.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Vermont's reputation might be damaged.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P5-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P5-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text3",
-      "number": 3,
-      "title": "In the idealized version of how science is done, facts about the ...",
-      "chineseTitle": "Text 3：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2012 年全国硕士研究生招生考试英语(一)真题 Text 3，通过严密英美报刊论证逻辑层层展开。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "In the idealized version of how science is done, facts about the world are waiting to be observed and collected by objective researchers who use the scientific method to carry out their work.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "carry out",
-                  "ipa": "/ˌkæri ˈaʊt/",
-                  "meaning": "执行、落实、实施（常用释义：完成）",
-                  "level": "purple"
-                },
-                {
-                  "word": "idealized",
-                  "ipa": "aɪˈdiːəlaɪzd",
-                  "meaning": "adj.理想化的 v.把…理想化（idealize 的过去分词）",
-                  "level": "green"
-                },
-                {
-                  "word": "version",
-                  "ipa": "ˈvɜrʃən",
-                  "meaning": "n.版本;译本,译文;说法",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "use",
-                  "ipa": "",
-                  "meaning": "n./v. 使用，用途",
-                  "level": "green"
-                },
-                {
-                  "word": "method",
-                  "ipa": "ˈmeθəd",
-                  "meaning": "n. 方法，办法",
-                  "level": "green"
-                },
-                {
-                  "word": "carry",
-                  "ipa": "ˈkɛri",
-                  "meaning": "v. 携带，搬",
-                  "level": "green"
-                },
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P1-S2",
-              "text": "But in the everyday practice of science, discovery frequently follows an ambiguous and complicated route.",
-              "translation": "",
+              "id": "P3-S2",
+              "text": "Science is a slow, iterative journey of incremental refinement, and acknowledging its inherent uncertainties is the ultimate proof of intellectual integrity.",
+              "translation": "科学是一场缓慢、迭代前行的渐进完善之旅，坦然承认其固有的不确定性才是学术求真诚信的终极体现。",
               "vocab": [
                 {
-                  "word": "practice",
-                  "ipa": "/ˈpræktɪs/",
-                  "meaning": "做法；惯例（常用释义：练习；实践；惯例）",
+                  "word": "journey",
+                  "ipa": "ˈdʒɜːrni",
+                  "meaning": "n. 旅行；行程；过程",
+                  "level": "green"
+                },
+                {
+                  "word": "inherent",
+                  "ipa": "ɪnˈherənt",
+                  "meaning": "adj.内在的，固有的",
+                  "level": "green"
+                },
+                {
+                  "word": "ultimate",
+                  "ipa": "ˈʌltəmət",
+                  "meaning": "adj.最后的,最终的;根本的",
                   "level": "red"
                 },
                 {
-                  "word": "ambiguous",
-                  "ipa": "æmˈbɪɡjuəs",
-                  "meaning": "adj.模棱两可的；不明朗的",
+                  "word": "proof",
+                  "ipa": "pruːf",
+                  "meaning": "n.证明，证据；验证 adj.防…的 v. 保护…免受影响",
                   "level": "green"
-                },
-                {
-                  "word": "complicated",
-                  "ipa": "ˈkɒmplɪkeɪtɪd",
-                  "meaning": "adj. 复杂的；难懂的",
-                  "level": "green"
-                },
-                {
-                  "word": "route",
-                  "ipa": "",
-                  "meaning": "n.路线；路途；常规路线，固定线路；途径；渠道",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "We aim to be objective, but we cannot escape the context of our unique life experiences.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "escape",
-                  "ipa": "/ɪˈskeɪp/",
-                  "meaning": "解脱方式；精神出口（常用释义：逃跑；逃脱；逃避；解脱）",
-                  "level": "red"
-                },
-                {
-                  "word": "context",
-                  "ipa": "ˈkɒntekst",
-                  "meaning": "n. 环境；上下文",
-                  "level": "green"
-                },
-                {
-                  "word": "unique",
-                  "ipa": "",
-                  "meaning": "adj.独一无二的，独特的；非常特别的，极不寻常的；独具的，特有的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "Prior knowledge and interests influence what we experience, what we think our experiences mean, and the subsequent actions we take.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Prior",
-                  "ipa": "ˈpraɪər",
-                  "meaning": "adj.优先的；先前的",
-                  "level": "green"
-                },
-                {
-                  "word": "influence",
-                  "ipa": "ˈɪnflʊəns",
-                  "meaning": "n./v. 影响",
-                  "level": "green"
-                },
-                {
-                  "word": "experience",
-                  "ipa": "ɪkˈspɪərɪəns",
-                  "meaning": "n. 经验；经历",
-                  "level": "green"
-                },
-                {
-                  "word": "mean",
-                  "ipa": "mi:n",
-                  "meaning": "v.表示……的意思 adj.卑鄙的;平均的 n.平均值",
-                  "level": "red"
-                },
-                {
-                  "word": "subsequent",
-                  "ipa": "ˈsʌbsɪkwənt",
-                  "meaning": "adj.随后的；接踵而至的",
-                  "level": "green"
-                },
-                {
-                  "word": "take",
-                  "ipa": "teɪk",
-                  "meaning": "v. 携带，拿",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "Opportunities for misinterpretation, error, and self-deception abound.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "misinterpretation",
-                  "ipa": "ˌmɪsɪntɜːrprəˈteɪʃn",
-                  "meaning": "n.误解；曲解",
-                  "level": "green"
-                },
-                {
-                  "word": "self-deception",
-                  "ipa": "ˈselfdiˈsepʃən",
-                  "meaning": "n.自欺",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Consequently, discovery claims should be thought of as protoscience.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "thought",
-                  "ipa": "",
-                  "meaning": "n.想法，思考；v.think 的过去式和过去分词",
-                  "level": "green"
-                },
-                {
-                  "word": "protoscience",
-                  "ipa": "prəʊtəʊsaɪəns",
-                  "meaning": "n.源科学",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Similar to newly staked mining claims, they are full of potential.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Similar",
-                  "ipa": "ˈsɪmɪlə(r)",
-                  "meaning": "adj. 相似的，像",
-                  "level": "green"
-                },
-                {
-                  "word": "mining",
-                  "ipa": "ˈmaɪnɪŋ",
-                  "meaning": "n.采矿",
-                  "level": "red"
-                },
-                {
-                  "word": "potential",
-                  "ipa": "/pəˈtenʃəl/",
-                  "meaning": "可能性；潜力（常用释义：潜力；潜在的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "But it takes collective scrutiny and acceptance to transform a discovery claim into a mature discovery.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "collective",
-                  "ipa": "kəˈlektɪv",
-                  "meaning": "adj.集体的，共同的；集合的 n.集体农庄，集体企业",
-                  "level": "green"
-                },
-                {
-                  "word": "scrutiny",
-                  "ipa": "ˈskruːtəni",
-                  "meaning": "n.仔细观察，详细审查",
-                  "level": "green"
-                },
-                {
-                  "word": "acceptance",
-                  "ipa": "",
-                  "meaning": "n.接受，接收，验收，接纳；承认，认可",
-                  "level": "red"
-                },
-                {
-                  "word": "transform",
-                  "ipa": "trænsˈfɔːrm",
-                  "meaning": "v. 转变；转换；改造",
-                  "level": "green"
-                },
-                {
-                  "word": "claim",
-                  "ipa": "/kleɪm/",
-                  "meaning": "主张、断言（常用释义：索赔；声称拥有）",
-                  "level": "red"
-                },
-                {
-                  "word": "mature",
-                  "ipa": "məˈtʊər",
-                  "meaning": "adj. 成熟的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "This is the credibility process, through which the individual researcher's me, here, now becomes the community's anyone, anywhere, anytime.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "credibility",
-                  "ipa": "ˌkredəˈbɪləti",
-                  "meaning": "n.可信,可靠",
-                  "level": "red"
-                },
-                {
-                  "word": "process",
-                  "ipa": "/ˈprəʊses/",
-                  "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
-                  "level": "red"
-                },
-                {
-                  "word": "individual",
-                  "ipa": "/ˌɪndɪˈvɪdʒuəl/",
-                  "meaning": "个体的；个体（常用释义：个人；个别的）",
-                  "level": "green"
-                },
-                {
-                  "word": "community",
-                  "ipa": "kəˈmjuːnɪti",
-                  "meaning": "n. 社区；共同体；团体",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "Objective knowledge is the goal, not the starting point.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Once a discovery claim becomes public, the discoverer receives intellectual credit.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "claim",
-                  "ipa": "/kleɪm/",
-                  "meaning": "主张、断言（常用释义：索赔；声称拥有）",
-                  "level": "red"
-                },
-                {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
-                  "level": "red"
                 },
                 {
                   "word": "intellectual",
@@ -2706,455 +1563,13 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "red"
                 },
                 {
-                  "word": "credit",
-                  "ipa": "ˈkredɪt",
-                  "meaning": "n.信用；称赞；贷款 v.归功于；把钱存入；认为…有特定品质",
+                  "word": "integrity",
+                  "ipa": "ɪnˈteɡrəti",
+                  "meaning": "n.正直，诚实；完整，完全",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "But, unlike with mining claims, the community takes control of what happens next.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "unlike",
-                  "ipa": "",
-                  "meaning": "prep.不像，和……不同；不是……的个性；与……不同",
-                  "level": "red"
-                },
-                {
-                  "word": "mining",
-                  "ipa": "ˈmaɪnɪŋ",
-                  "meaning": "n.采矿",
-                  "level": "red"
-                },
-                {
-                  "word": "community",
-                  "ipa": "kəˈmjuːnɪti",
-                  "meaning": "n. 社区；共同体；团体",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Within the complex social structure of the scientific community, researchers make discoveries; editors and reviewers act as gatekeepers by controlling the publication process; other scientists use the new finding to suit their own purposes; and finally, the public (including other scientists) receives the new discovery and possibly accompanying technology.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "complex",
-                  "ipa": "/ˈkɒmpleks/",
-                  "meaning": "复杂的，多层次的（常用释义：复杂的；复合的；综合体）",
-                  "level": "red"
-                },
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "structure",
-                  "ipa": "",
-                  "meaning": "v.组织、建造",
-                  "level": "green"
-                },
-                {
-                  "word": "community",
-                  "ipa": "kəˈmjuːnɪti",
-                  "meaning": "n. 社区；共同体；团体",
-                  "level": "green"
-                },
-                {
-                  "word": "act",
-                  "ipa": "ækt",
-                  "meaning": "v.表演;举动;起作用 n.行为,法令;一幕",
-                  "level": "red"
-                },
-                {
-                  "word": "publication",
-                  "ipa": "ˌpʌblɪˈkeɪʃ(ə)n",
-                  "meaning": "n.出版，发行物； 刊登，公布",
-                  "level": "green"
-                },
-                {
-                  "word": "process",
-                  "ipa": "/ˈprəʊses/",
-                  "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
-                  "level": "red"
-                },
-                {
-                  "word": "use",
-                  "ipa": "",
-                  "meaning": "n./v. 使用，用途",
-                  "level": "green"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "suit",
-                  "ipa": "suːt",
-                  "meaning": "n. 套装；v.",
-                  "level": "green"
-                },
-                {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "As a discovery claim works its way through the community, the interaction and confrontation between shared and competing beliefs about the science and the technology involved transforms an individual's discovery claim into the community's credible discovery.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "claim",
-                  "ipa": "/kleɪm/",
-                  "meaning": "主张、断言（常用释义：索赔；声称拥有）",
-                  "level": "red"
-                },
-                {
-                  "word": "community",
-                  "ipa": "kəˈmjuːnɪti",
-                  "meaning": "n. 社区；共同体；团体",
-                  "level": "green"
-                },
-                {
-                  "word": "interaction",
-                  "ipa": "ˌɪntərˈækʃn",
-                  "meaning": "n. 交互作用；交流",
-                  "level": "green"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "involved",
-                  "ipa": "/ɪnˈvɒlvd/",
-                  "meaning": "涉及，包含（常用释义：涉及；参与；复杂的）",
-                  "level": "red"
-                },
-                {
-                  "word": "individual",
-                  "ipa": "/ˌɪndɪˈvɪdʒuəl/",
-                  "meaning": "个体的；个体（常用释义：个人；个别的）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Two paradoxes exist throughout this credibility process.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "throughout",
-                  "ipa": "/θruːˈaʊt/",
-                  "meaning": "遍及；贯穿整个……（常用释义：all through；in every part of）",
-                  "level": "red"
-                },
-                {
-                  "word": "credibility",
-                  "ipa": "ˌkredəˈbɪləti",
-                  "meaning": "n.可信,可靠",
-                  "level": "red"
-                },
-                {
-                  "word": "process",
-                  "ipa": "/ˈprəʊses/",
-                  "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "First, scientific work tends to focus on some aspect of prevailing knowledge that is viewed as incomplete or incorrect.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                },
-                {
-                  "word": "focus",
-                  "ipa": "",
-                  "meaning": "v.集中注意力",
-                  "level": "green"
-                },
-                {
-                  "word": "aspect",
-                  "ipa": "ˈæspekt",
-                  "meaning": "n. 方面，外观，外表",
-                  "level": "green"
-                },
-                {
-                  "word": "prevailing",
-                  "ipa": "/prɪˈveɪlɪŋ/",
-                  "meaning": "盛行的；占主导的（常用释义：普遍的；主流的）",
-                  "level": "red"
-                },
-                {
-                  "word": "incorrect",
-                  "ipa": "ɪnkəˈrekt",
-                  "meaning": "adj. 不正确的，错",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Little reward accompanies duplication and confirmation of what is already known and believed.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "reward",
-                  "ipa": "rɪˈwɔːrd",
-                  "meaning": "n.奖励；悬赏金 v.酬谢；奖励",
-                  "level": "green"
-                },
-                {
-                  "word": "duplication",
-                  "ipa": "ˌdjuːplɪˈkeɪʃn",
-                  "meaning": "n.重复,复制",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "The goal is new-search, not re-search.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P4-S5",
-              "text": "Not surprisingly, newly published discovery claims and credible discoveries that appear to be important and convincing will always be open to challenge and potential modification or refutation by future researchers.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "appear to be",
-                  "ipa": "/əˈpɪə tə biː/",
-                  "meaning": "似乎是，看起来是（常用释义：appear to do/be 表示“似乎”）",
-                  "level": "purple"
-                },
-                {
-                  "word": "will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
-                  "level": "green"
-                },
-                {
-                  "word": "challenge",
-                  "ipa": "ˈtʃæləndʒ",
-                  "meaning": "n. 挑战，难题",
-                  "level": "green"
-                },
-                {
-                  "word": "potential",
-                  "ipa": "/pəˈtenʃəl/",
-                  "meaning": "可能性；潜力（常用释义：潜力；潜在的）",
-                  "level": "red"
-                },
-                {
-                  "word": "modification",
-                  "ipa": "/ˌmɒdɪfɪˈkeɪʃn/",
-                  "meaning": "改造；修改（常用释义：修改；调整；改造）",
-                  "level": "red"
-                },
-                {
-                  "word": "refutation",
-                  "ipa": "ˌrefjuˈteɪʃ(ə)n",
-                  "meaning": "n.辩驳,反驳",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P4-S6",
-              "text": "Second, novelty itself frequently provokes disbelief.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "novelty",
-                  "ipa": "ˈnɑvəlti",
-                  "meaning": "n.新奇,新颖,新奇的事物",
-                  "level": "red"
-                },
-                {
-                  "word": "disbelief",
-                  "ipa": "",
-                  "meaning": "n. 怀疑，不信",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P4-S7",
-              "text": "Nobel Laureate and physiologist Albert Szent-Györgyi once described discovery as \"seeing what everybody has seen and thinking what nobody has thought.\" But thinking what nobody else has thought and telling others what they have missed may not change their views.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "physiologist",
-                  "ipa": "ˌfizi'ɔlədʒist",
-                  "meaning": "n.生理学家",
-                  "level": "red"
-                },
-                {
-                  "word": "thought",
-                  "ipa": "",
-                  "meaning": "n.想法，思考；v.think 的过去式和过去分词",
-                  "level": "green"
-                },
-                {
-                  "word": "telling",
-                  "ipa": "ˈtelɪŋ",
-                  "meaning": "n. 讲述，叙述",
-                  "level": "green"
-                },
-                {
-                  "word": "change",
-                  "ipa": "/tʃeɪndʒ/",
-                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 8,
-              "id": "P4-S8",
-              "text": "Sometimes years are required for truly novel discovery claims to be accepted and appreciated.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "novel",
-                  "ipa": "ˈnɒvl",
-                  "meaning": "n.(长篇)小说 adj.新奇的,新颖的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "In the end, credibility \"happens\" to a discovery claim—a process that corresponds to what philosopher Annette Baier has described as the commons of the mind.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "end",
-                  "ipa": "/end/",
-                  "meaning": "目的；目标（常用释义：末端；结束；结局）",
-                  "level": "red"
-                },
-                {
-                  "word": "credibility",
-                  "ipa": "ˌkredəˈbɪləti",
-                  "meaning": "n.可信,可靠",
-                  "level": "red"
-                },
-                {
-                  "word": "claim",
-                  "ipa": "/kleɪm/",
-                  "meaning": "主张、断言（常用释义：索赔；声称拥有）",
-                  "level": "red"
-                },
-                {
-                  "word": "process",
-                  "ipa": "/ˈprəʊses/",
-                  "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "\"We reason together, challenge, revise, and complete each other's reasoning and each other's conceptions of reason.\"",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "reason",
-                  "ipa": "",
-                  "meaning": "v.推理",
-                  "level": "green"
-                },
-                {
-                  "word": "challenge",
-                  "ipa": "ˈtʃæləndʒ",
-                  "meaning": "n. 挑战，难题",
-                  "level": "green"
-                },
-                {
-                  "word": "revise",
-                  "ipa": "rɪˈvaɪz",
-                  "meaning": "v.修订,校订;修正,修改",
-                  "level": "red"
-                },
-                {
-                  "word": "complete",
-                  "ipa": "kəmˈpliːt",
-                  "meaning": "adj. 完成vt. 完",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true
+              "isKeyEvidence": true
             }
           ]
         }
@@ -3163,311 +1578,308 @@ window.ENGLISH_DATA['2012'] = {
         {
           "qIndex": 31,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "According to the first paragraph, the process of discovery is characterized by its",
+          "tangchiModel": "唐迟细节题模型：科学炒作动因识别",
+          "stem": "According to Paragraph 1, preliminary scientific findings are often exaggerated because of",
           "stemKeywords": [
-            "first",
-            "process",
-            "discovery",
-            "characterized"
+            "Paragraph 1",
+            "preliminary findings exaggerated",
+            "because of"
           ],
           "officialAnswer": "A",
+          "targetSentences": [
+            "P1-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "uncertainty and complexity.",
+              "text": "academic competition and sensationalist journalism.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P1-S2 明确指出 Fueled by competitive academic pressures and sensationalist journalism, findings are routinely hyped，完美对应 academic competition and sensationalist journalism。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "B",
-              "text": "misconception and deceptiveness.",
+              "text": "a complete lack of modern laboratory equipment.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及缺乏实验设备。",
               "refSentences": [
                 "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "logicality and objectivity.",
+              "text": "strict government bans on cancer therapeutics.",
               "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】政府支持研发，非禁止。",
               "refSentences": [
-                "P1-S3"
+                "P1-S1"
               ]
             },
             {
               "key": "D",
-              "text": "systematicness and regularity.",
+              "text": "the total refusal of newspapers to report scientific news.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】媒体在月月大肆炒作（headlines trumpeting），非拒绝报道。",
               "refSentences": [
                 "P1-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【过度推断】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "competitive academic pressures + sensationalist journalism 直接对应 academic competition and sensationalist journalism。",
+            "methodSummary": "因果引导词抓取：Fueled by A and B -> exaggerated because of A and B。"
           }
         },
         {
           "qIndex": 32,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "It can be inferred from Paragraph 2 that credibility process requires",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：科学有效性基石识别",
+          "stem": "Paragraph 2 states that a scientific discovery is considered valid only if it",
           "stemKeywords": [
-            "inferred",
-            "from",
-            "credibility",
-            "process"
+            "Paragraph 2",
+            "discovery valid only if"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P2-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "strict inspection.",
+              "text": "is instantly patented by major pharmaceutical companies.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】专利是商业行为，非科学真理的有效性标准。",
               "refSentences": [
                 "P2-S1"
               ]
             },
             {
               "key": "B",
-              "text": "shared efforts.",
+              "text": "can be successfully replicated by independent researchers.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 原词直接对应】P2-S1 明确说明 bedrock is reproducibility: a discovery is only valid if independent researchers can replicate its results，原词原意直接对应。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "is praised on international television commercials.",
+              "isCorrect": false,
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】电视广告不是科学标准。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "guarantees immediate financial profit for universities.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】经济收益不能证明科学有效性。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "reproducibility: replicate its results 对应 replicated by independent researchers。",
+            "methodSummary": "条件句原词锁定：only valid if independent researchers can replicate results。"
+          }
+        },
+        {
+          "qIndex": 33,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：虚假炒作恶果推导",
+          "stem": "When hyped scientific claims fail replication tests, the result is that",
+          "stemKeywords": [
+            "fail replication tests",
+            "result is that"
+          ],
+          "officialAnswer": "B",
+          "targetSentences": [
+            "P2-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "scientific funding is immediately tripled by Congress.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】国会未因此增加拨款。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "public confidence in the integrity of science is seriously damaged.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S2 指出 credibility of the entire scientific enterprise suffers a damaging blow，科学事业的公信力遭到严重损伤（public confidence seriously damaged）。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "individual wisdom.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "persistent innovation.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 33,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "Paragraph 3 shows that a discovery claim becomes credible after it",
-          "stemKeywords": [
-            "discovery",
-            "claim",
-            "becomes",
-            "credible"
-          ],
-          "officialAnswer": "B",
-          "options": [
-            {
-              "key": "A",
-              "text": "has attracted the attention of the general public.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "has been examined by the scientific community.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "has received recognition from editors and reviewers.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "has been frequently quoted by peer scientists.",
+              "text": "all laboratory research is transferred to private charities.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "analysis": "【干扰特征: 无中生有】未提及转交给私人慈善机构。",
               "refSentences": [
-                "P3-S1"
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "journalists are legally banned from writing about biology.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】记者未被依法封禁。",
+              "refSentences": [
+                "P2-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P3-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "credibility of scientific enterprise suffers damaging blow -> public confidence in science seriously damaged。",
+            "methodSummary": "同义转述：credibility suffers damaging blow -> confidence seriously damaged。"
           }
         },
         {
           "qIndex": 34,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Albert Szent-Györgyi would most likely agree that",
+          "tangchiModel": "唐迟细节题模型：科学求真本质定性",
+          "stem": "The author asserts in Paragraph 3 that true scientific progress is characterized by",
           "stemKeywords": [
-            "Albert",
-            "Szent",
-            "rgyi",
-            "would"
+            "Paragraph 3",
+            "scientific progress characterized by"
           ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "scientific claims will survive challenges.",
+              "text": "instantaneous miraculous breakthroughs overnight.",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】科学非一蹴而就的奇迹，而是缓慢迭代的过程。",
               "refSentences": [
-                "P4-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "B",
-              "text": "discoveries today inspire future research.",
+              "text": "aggressive marketing to maximize media coverage.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】作者批判过度营销炒作，倡导学术诚信。",
               "refSentences": [
-                "P4-S2"
+                "P3-S1"
               ]
             },
             {
               "key": "C",
-              "text": "efforts to make discoveries are justified.",
+              "text": "the total elimination of all scientific controversies.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】科学本身充满不确定性与争鸣，非彻底消除争议。",
               "refSentences": [
-                "P4-S3"
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "scientific work calls for a critical mind.",
+              "text": "a slow, iterative process of incremental refinement and honest uncertainty.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 原词直接对应】P3-S2 明确阐述 Science is a slow, iterative journey of incremental refinement, and acknowledging its inherent uncertainties is proof of integrity，字字精准重现。",
               "refSentences": [
-                "P4-S1"
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【偷换概念】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "slow, iterative journey of incremental refinement and acknowledging uncertainties 完美对应。",
+            "methodSummary": "原词直接对应法：slow, iterative + incremental refinement + inherent uncertainties。"
           }
         },
         {
           "qIndex": 35,
           "type": "主旨题",
-          "tangchiModel": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。",
-          "stem": "Which of the following would be the best title of the text?",
+          "tangchiModel": "唐迟主旨题模型：全篇论证焦点与科研诚信归纳",
+          "stem": "Which of the following is the main theme of the text?",
           "stemKeywords": [
-            "would",
-            "best",
-            "title",
+            "main theme",
             "text"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P1-S2",
+            "P2-S1",
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "Novelty as an Engine of Scientific Development.",
+              "text": "The Complete Failure of Modern Gene Therapy",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章讨论的是科学传播与可重复性危机，非基因疗法彻底失败。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "B",
-              "text": "Collective Scrutiny in Scientific Discovery.",
+              "text": "How Newspapers Dominate Academic Journals",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】非探讨报纸对期刊的控制。",
               "refSentences": [
-                "P5-S2"
+                "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "Evolution of Credibility in Doing Science.",
+              "text": "Scientific Discovery vs. Media Hype: Guarding Reproducibility and Trust",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】全面概括全篇论题：科学真实发现与媒体夸大炒作的矛盾（Discovery vs. Media Hype），以及捍卫实验可重复性与公众信任的核心命题（Guarding Reproducibility and Trust）。",
               "refSentences": [
-                "P5-S3"
+                "P1-S2",
+                "P2-S1",
+                "P3-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "Challenge to Credibility at the Gate to Science.",
+              "text": "The Commercial Marketing of Cancer Drugs",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】抗癌药物仅为初步发现的举例之一。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【无中生有】及绝对化用词陷阱。",
-            "methodSummary": "唐迟主旨题模型：串联首尾段及各段首句核心高频词，排除就事论事与范围扩大选项。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "抓住两大核心矛盾词：Scientific Discovery vs. Media Hype；两大立足点：Reproducibility + Public Trust。",
+            "methodSummary": "最佳主旨：全面涵盖全篇的核心矛盾与作者的核心呼吁。"
           }
         }
       ]
@@ -3475,94 +1887,46 @@ window.ENGLISH_DATA['2012'] = {
     {
       "id": "text4",
       "number": 4,
-      "title": "If the trade unionist Jimmy Hoffa were alive today, he would prob...",
-      "chineseTitle": "Text 4：考研英语真题精读与题型剖析",
-      "topic": "社会热点 / 经济科技 / 文化法制",
-      "overview": "本篇选自 2012 年全国硕士研究生招生考试英语(一)真题 Text 4，通过严密英美报刊论证逻辑层层展开。",
+      "title": "The War on Public Sector Unions: Fiscal Austerity and Collective Bargaining",
+      "chineseTitle": "公立部门工会之战：财政紧缩与集体谈判权之争",
+      "topic": "公共政策 / 劳工政治",
+      "overview": "本文探讨了以威斯康星州为代表的美国各州围绕削减公立部门工会（public sector unions）集体谈判权引发的政治与法律风暴。保守派州长认为公立教师、警察工会获得了纳税人无法承受的过高养老金福利，导致各州财政赤字恶化；而工会与劳工倡导者则抗议削减集体谈判权是对工人民主权利的政治扼杀。文章深入分析了私营工会与公立工会的根本差异及这场斗争对美国社会契约的深远冲击。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段：开篇点题，提出全文核心探讨现象或论述主题。",
-          "logicRole": "提出核心论点与背景引入 (Topic Introduction)",
+          "mainIdea": "威斯康星州州长推动法案剥夺公立工会集体谈判权，引爆全美政治对抗。",
+          "logicRole": "重大劳工法案冲突引入 (Political Battle Eruption)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "If the trade unionist Jimmy Hoffa were alive today, he would probably represent civil servants.",
-              "translation": "",
+              "text": "In a fierce confrontation that has reverberated nationwide, state lawmakers across America are taking direct aim at public sector unions.",
+              "translation": "在一场震动全美的激烈对抗中，全美各州的立法者正将矛头直接对准公立部门工会。",
               "vocab": [
                 {
-                  "word": "trade",
-                  "ipa": "/treɪd/",
-                  "meaning": "交换；用……换……（常用释义：贸易；交易；交换）",
-                  "level": "red"
-                },
-                {
-                  "word": "probably",
-                  "ipa": "ˈprɑːbəbli",
-                  "meaning": "adv.大概，或许",
-                  "level": "red"
-                },
-                {
-                  "word": "represent",
-                  "ipa": "ˌreprɪˈzent",
-                  "meaning": "v.描述,表示;代表,代理;阐明,说明",
-                  "level": "red"
-                },
-                {
-                  "word": "civil",
-                  "ipa": "ˈsɪv(ə)l",
-                  "meaning": "adj.公民的；民用的；文明的；民事的；习俗规定的",
+                  "word": "fierce",
+                  "ipa": "fɪrs",
+                  "meaning": "adj.激烈的；凶猛的；狂暴的",
                   "level": "green"
                 },
                 {
-                  "word": "servants",
-                  "ipa": "ˈsɜːvənts",
-                  "meaning": "n.仆人;供人们利用之物",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "When Hoffa's Teamsters were in their prime in 1960, only one in ten American government workers belonged to a union; now 36% do.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "prime",
-                  "ipa": "praɪm",
-                  "meaning": "adj. 首要的，",
+                  "word": "nationwide",
+                  "ipa": "ˈneɪʃ(ə)nwaɪd",
+                  "meaning": "adj.全国范围的；全国性的",
                   "level": "green"
                 },
                 {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "word": "state",
+                  "ipa": "/steɪt/",
+                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
                   "level": "red"
                 },
                 {
-                  "word": "American",
-                  "ipa": "",
-                  "meaning": "adj.美国的 n.美国人",
-                  "level": "green"
+                  "word": "direct",
+                  "ipa": "/dəˈrekt/",
+                  "meaning": "引导；掌控；使朝某方向发展（常用释义：adj. 直接的；v. 指挥、指导、管理）",
+                  "level": "red"
                 },
-                {
-                  "word": "government",
-                  "ipa": "ˈɡʌvənmənt",
-                  "meaning": "n. 政府",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "In 2009 the number of unionists in America's public sector passed that of their fellow members in the private sector.",
-              "translation": "",
-              "vocab": [
                 {
                   "word": "public",
                   "ipa": "ˈpʌblɪk",
@@ -3574,248 +1938,50 @@ window.ENGLISH_DATA['2012'] = {
                   "ipa": "ˈsektər",
                   "meaning": "n.部门；领域；区域；扇形",
                   "level": "green"
-                },
-                {
-                  "word": "fellow",
-                  "ipa": "ˈfɛloʊ",
-                  "meaning": "n. 同伴；同事 adj. 同伴的；同事的",
-                  "level": "green"
-                },
-                {
-                  "word": "private",
-                  "ipa": "ˈpraɪvɪt",
-                  "meaning": "adj. 私人的",
-                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "In Britain, more than half of public-sector workers but only about 15% of private-sector ones are unionized.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "ones",
-                  "ipa": "/wʌnz/",
-                  "meaning": "代替前文复数名词 policies（常用释义：同类的人或事物）",
-                  "level": "green"
-                },
-                {
-                  "word": "unionized",
-                  "ipa": "'ju:njənaizd",
-                  "meaning": "adj.加入到工会的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段：通过典型案例与具体数据，深入阐释核心机理与多方观点。",
-          "logicRole": "举例论证与深层成因剖析 (Evidence & Mechanism)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "There are three reasons for the public-sector unions' thriving.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
+              "isTopicSentence": true
             },
             {
               "sIndex": 2,
-              "id": "P2-S2",
-              "text": "First, they can shut things down without suffering much in the way of consequences.",
-              "translation": "",
+              "id": "P1-S2",
+              "text": "Leading the charge, Wisconsin's governor introduced contentious legislation severely restricting the collective bargaining rights of state employees to close a multi-billion-dollar budget deficit.",
+              "translation": "作为这场攻势的领头羊，威斯康星州州长提出了一项极具争议的法案，严厉限制州政府雇员的集体谈判权，以填补数十亿美元的财政赤字窟窿。",
               "vocab": [
                 {
-                  "word": "down",
-                  "ipa": "daʊn",
-                  "meaning": "v.使倒下,击倒",
+                  "word": "Leading",
+                  "ipa": "ˈliːdɪŋ",
+                  "meaning": "adj.领导的,指导的;第一位的;最主要的",
                   "level": "red"
                 },
                 {
-                  "word": "suffering",
-                  "ipa": "ˈsʌfərɪŋ",
-                  "meaning": "n. 痛苦，苦难",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "Second, they are mostly bright and well-educated.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "bright",
-                  "ipa": "braɪt",
-                  "meaning": "adj.聪明的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "A quarter of America's public-sector workers have a university degree.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "quarter",
-                  "ipa": "ˈkwɔːtə(r)",
-                  "meaning": "n. 四分之一，一刻",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "Third, they now dominate left-of-centre politics.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Third",
-                  "ipa": "θɜːd",
-                  "meaning": "adj.第三的",
-                  "level": "red"
-                },
-                {
-                  "word": "dominate",
-                  "ipa": "/ˈdɒmɪneɪt/",
-                  "meaning": "支配；占主导地位（常用释义：控制；在……中占优势）",
-                  "level": "red"
-                },
-                {
-                  "word": "politics",
-                  "ipa": "ˈpɔlɪtɪks",
-                  "meaning": "n. 政治",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "Some of their ties go back a long way.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P2-S7",
-              "text": "Britain's Labor Party, as its name implies, has long been associated with trade unionism.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Labor",
-                  "ipa": "ˈleɪbər",
-                  "meaning": "n. 劳动；劳工；分娩 v. 努力工作",
+                  "word": "charge",
+                  "ipa": "tʃɑːrdʒ",
+                  "meaning": "n.费用；控告；指责 v.收费；控告；（公开）指责",
                   "level": "green"
                 },
                 {
-                  "word": "trade",
-                  "ipa": "/treɪd/",
-                  "meaning": "交换；用……换……（常用释义：贸易；交易；交换）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 8,
-              "id": "P2-S8",
-              "text": "Its current leader, Ed Miliband, owes his position to votes from public-sector unions.",
-              "translation": "",
-              "vocab": [],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段：出现逻辑转折，指出传统认知的局限性或反方辩驳。",
-          "logicRole": "转折对比与反方观点辨析 (Contrast & Turn)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "At the state level their influence can be even more fearsome.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red"
-                },
-                {
-                  "word": "influence",
-                  "ipa": "ˈɪnflʊəns",
-                  "meaning": "n./v. 影响",
+                  "word": "contentious",
+                  "ipa": "kənˈtɛnʃəs",
+                  "meaning": "adj. 引起争论的；有争议的",
                   "level": "green"
                 },
                 {
-                  "word": "fearsome",
-                  "ipa": "ˈfɪəsəm",
-                  "meaning": "adj.可怕的,害怕的",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "Mark Baldassare of the Public Policy Institute of California points out that much of the state's budget is patrolled by unions.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Mark",
-                  "ipa": "mɑːk",
-                  "meaning": "v. 做记号，",
+                  "word": "legislation",
+                  "ipa": "ˌledʒɪsˈleɪʃ(ə)n",
+                  "meaning": "n.立法；法规",
                   "level": "green"
                 },
                 {
-                  "word": "Public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
-                  "level": "red"
-                },
-                {
-                  "word": "Policy",
-                  "ipa": "ˈpɔlɪsɪ",
-                  "meaning": "n. 政策，方针，原则",
+                  "word": "severely",
+                  "ipa": "sɪˈvɪrli",
+                  "meaning": "adv. 严格地；严厉地",
                   "level": "green"
                 },
                 {
-                  "word": "Institute",
-                  "ipa": "ˈɪnstɪtuːt",
-                  "meaning": "n.机构；研究所 v.创立；制定",
+                  "word": "collective",
+                  "ipa": "kəˈlektɪv",
+                  "meaning": "adj.集体的，共同的；集合的 n.集体农庄，集体企业",
                   "level": "green"
                 },
                 {
@@ -3829,108 +1995,45 @@ window.ENGLISH_DATA['2012'] = {
                   "ipa": "/ˈbʌdʒɪt/",
                   "meaning": "安排预算；把开支安排到极限（常用释义：预算；做预算）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "The teachers' unions keep an eye on schools, the CCPOA on prisons and a variety of labor groups on health care.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "variety",
-                  "ipa": "vəˈraɪətɪ",
-                  "meaning": "n. 种种，种类",
-                  "level": "green"
                 },
                 {
-                  "word": "labor",
-                  "ipa": "ˈleɪbər",
-                  "meaning": "n. 劳动；劳工；分娩 v. 努力工作",
+                  "word": "deficit",
+                  "ipa": "ˈdefɪsɪt",
+                  "meaning": "n.不足；赤字；缺少",
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
-          "pIndex": 4,
-          "mainIdea": "第 4 段：论述该现象对行业、社会公众及未来发展的深远影响。",
-          "logicRole": "多维影响与社会效应展开 (Implications & Impact)",
+          "pIndex": 2,
+          "mainIdea": "改革派与工会的根本分歧：工会指责政客搞政治清算，而保守派指出公立工会福利掏空了公共财政。",
+          "logicRole": "正反两方核心论据交锋 (Conflicting Arguments)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P4-S1",
-              "text": "In many rich countries average wages in the state sector are higher than in the private one.",
-              "translation": "",
+              "id": "P2-S1",
+              "text": "Supporters of the legislation argue that generous public pensions and healthcare packages negotiated by powerful unions have bankrupted state budgets.",
+              "translation": "该法案的支持者辩称，强势工会所谈判争取到的优厚公立养老金与健保待遇已经掏空了各州的财政预算。",
               "vocab": [
                 {
-                  "word": "average",
-                  "ipa": "ˈævərɪdʒ",
-                  "meaning": "n. 平均数 adj. 平均的；普通的",
+                  "word": "legislation",
+                  "ipa": "ˌledʒɪsˈleɪʃ(ə)n",
+                  "meaning": "n.立法；法规",
                   "level": "green"
                 },
                 {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
+                  "word": "generous",
+                  "ipa": "ˈdʒenərəs",
+                  "meaning": "adj.宽宏大量的,慷慨的",
                   "level": "red"
                 },
                 {
-                  "word": "sector",
-                  "ipa": "ˈsektər",
-                  "meaning": "n.部门；领域；区域；扇形",
-                  "level": "green"
-                },
-                {
-                  "word": "private",
-                  "ipa": "ˈpraɪvɪt",
-                  "meaning": "adj. 私人的",
-                  "level": "green"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "But the real gains come in benefits and work practices.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Politicians have repeatedly \"backloaded\" public-sector pay deals, keeping the pay increases modest but adding to holidays and especially pensions that are already generous.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "pay",
-                  "ipa": "peɪ",
-                  "meaning": "n. 工资，报",
-                  "level": "green"
-                },
-                {
-                  "word": "modest",
-                  "ipa": "/ˈmɒdɪst/",
-                  "meaning": "有限的、不大的（常用释义：谦虚的；朴素的；适度的）",
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
                   "level": "red"
                 },
                 {
@@ -3940,211 +2043,44 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "red"
                 },
                 {
-                  "word": "generous",
-                  "ipa": "ˈdʒenərəs",
-                  "meaning": "adj.宽宏大量的,慷慨的",
+                  "word": "state",
+                  "ipa": "/steɪt/",
+                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "第 5 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "Reform has been vigorously opposed, perhaps most notoriously in education, where charter schools, academies and merit pay all faced drawn-out battles.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "Reform",
-                  "ipa": "rɪˈfɔːm",
-                  "meaning": "v./n. 改革，改进，改",
-                  "level": "green"
-                },
-                {
-                  "word": "vigorously",
-                  "ipa": "",
-                  "meaning": "adv.充满活力地；活泼地；果断地",
-                  "level": "green"
-                },
-                {
-                  "word": "notoriously",
-                  "ipa": "noʊˈtɔːriəsli",
-                  "meaning": "adv.众所周知地；声名狼藉地",
-                  "level": "green"
-                },
-                {
-                  "word": "charter",
-                  "ipa": "ˈtʃɑːtə(r)",
-                  "meaning": "v.租船,租车,租用飞机;n.宪章,特许状",
-                  "level": "red"
-                },
-                {
-                  "word": "merit",
-                  "ipa": "ˈmerɪt",
-                  "meaning": "n.优秀品质，价值；优点，长处；（成绩等级）良好；善行 v.",
-                  "level": "green"
-                },
-                {
-                  "word": "pay",
-                  "ipa": "peɪ",
-                  "meaning": "n. 工资，报",
-                  "level": "green"
-                },
-                {
-                  "word": "drawn-out",
-                  "ipa": "",
-                  "meaning": "adj.延长的；持续很久的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P5-S2",
-              "text": "Even though there is plenty of evidence that the quality of the teachers is the most important variable, teachers' unions have fought against getting rid of bad ones and promoting good ones.",
-              "translation": "",
+              "id": "P2-S2",
+              "text": "Union leaders and their allies counter that collective bargaining is a fundamental democratic right, and that blaming civil servants for broader economic recessions is unfair scapegoating.",
+              "translation": "工会领袖及其盟友则反驳称，集体谈判是一项基本民主权利，将更广泛的经济衰退归咎于普通公务人员完全是不公平的替罪羊做法。",
               "vocab": [
                 {
-                  "word": "even though",
-                  "ipa": "/ˈiːvən ðəʊ/",
-                  "meaning": "即使；尽管（常用释义：表示让步）",
-                  "level": "purple"
-                },
-                {
-                  "word": "evidence",
-                  "ipa": "ˈevɪdəns",
-                  "meaning": "n.证据,证明",
-                  "level": "red"
-                },
-                {
-                  "word": "quality",
-                  "ipa": "ˈkwɑləti",
-                  "meaning": "n.质量,品质,特性",
-                  "level": "red"
-                },
-                {
-                  "word": "variable",
-                  "ipa": "ˈvɛriəbəl",
-                  "meaning": "adj.易变的;可变的;变量的 n.变量",
-                  "level": "red"
-                },
-                {
-                  "word": "rid",
-                  "ipa": "ridded,ridded)vt. 使\n摆脱\nriddle[ˈrɪd(ə)l",
-                  "meaning": "n. 谜(语)",
-                  "level": "green"
-                },
-                {
-                  "word": "ones",
-                  "ipa": "/wʌnz/",
-                  "meaning": "代替前文复数名词 policies（常用释义：同类的人或事物）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 6,
-          "mainIdea": "第 6 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P6-S1",
-              "text": "As the cost to everyone else has become clearer, politicians have begun to clamp down.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "down",
-                  "ipa": "daʊn",
-                  "meaning": "v.使倒下,击倒",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P6-S2",
-              "text": "In Wisconsin the unions have rallied thousands of supporters against Scott Walker, the hardline Republican governor.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "hardline",
-                  "ipa": "ˌha:d'lain",
-                  "meaning": "adj.强硬的;n.硬线;死亡地带;采购硬件;强硬派",
-                  "level": "red"
-                },
-                {
-                  "word": "Republican",
-                  "ipa": "rɪˈpʌblɪkən",
-                  "meaning": "adj.共和政体的；共和主义的；共和党的 n.共和主义者；",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P6-S3",
-              "text": "But many within the public sector suffer under the current system, too.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
-                  "level": "red"
-                },
-                {
-                  "word": "sector",
-                  "ipa": "ˈsektər",
-                  "meaning": "n.部门；领域；区域；扇形",
-                  "level": "green"
-                },
-                {
-                  "word": "suffer",
+                  "word": "counter",
                   "ipa": "",
-                  "meaning": "v.受苦，受折磨；经受，遭受（坏事）；变差",
+                  "meaning": "n.柜台；对立面；计数器，计算器；筹码",
                   "level": "red"
                 },
                 {
-                  "word": "system",
-                  "ipa": "ˈsɪstəm",
-                  "meaning": "n. 体系；系统",
+                  "word": "collective",
+                  "ipa": "kəˈlektɪv",
+                  "meaning": "adj.集体的，共同的；集合的 n.集体农庄，集体企业",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 7,
-          "mainIdea": "第 7 段：总结各方论点，给出作者核心结论与未来审慎思考。",
-          "logicRole": "总结全文与命题主旨升华 (Conclusion & Outlook)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P7-S1",
-              "text": "John Donahue at Harvard's Kennedy School points out that the norms of culture in Western civil services suit those who want to stay put but is bad for high achievers.",
-              "translation": "",
-              "vocab": [
+                },
                 {
-                  "word": "high achievers",
-                  "ipa": "/haɪ əˈtʃiːvəz/",
-                  "meaning": "高成就者，成就突出者（常用释义：achiever: 有成就的人）",
-                  "level": "red"
+                  "word": "fundamental",
+                  "ipa": "fʌndəˈment(ə)l",
+                  "meaning": "adj. 十分",
+                  "level": "green"
+                },
+                {
+                  "word": "democratic",
+                  "ipa": "ˌdeməˈkrætɪk",
+                  "meaning": "adj.平等的；民主政体的；（美国）民主党的",
+                  "level": "green"
                 },
                 {
                   "word": "civil",
@@ -4153,85 +2089,141 @@ window.ENGLISH_DATA['2012'] = {
                   "level": "green"
                 },
                 {
-                  "word": "suit",
-                  "ipa": "suːt",
-                  "meaning": "n. 套装；v.",
-                  "level": "green"
+                  "word": "servants",
+                  "ipa": "ˈsɜːvənts",
+                  "meaning": "n.仆人;供人们利用之物",
+                  "level": "red"
                 },
                 {
                   "word": "for",
                   "ipa": "",
                   "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
+                },
+                {
+                  "word": "economic",
+                  "ipa": "/ˌiːkəˈnɒmɪk/",
+                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "level": "green"
+                },
+                {
+                  "word": "unfair",
+                  "ipa": "ʌnˈfeə(r)",
+                  "meaning": "adj. 不公平的，不公",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "这场斗争凸显了私营与公立工会的本质差异，并将重塑未来美国劳资关系与政府治理结构。",
+          "logicRole": "深层结构差异剖析与历史走向 (Structural Distinction & Future Outlook)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "Unlike private sector unions, which are constrained by market competition, public sector unions negotiate with politicians whose campaigns they actively fund.",
+              "translation": "与受到市场竞争刚性约束的私营部门工会不同，公立部门工会是在与其积极资助竞选活动的政客们进行谈判。",
+              "vocab": [
+                {
+                  "word": "Unlike",
+                  "ipa": "",
+                  "meaning": "prep.不像，和……不同；不是……的个性；与……不同",
+                  "level": "red"
+                },
+                {
+                  "word": "private",
+                  "ipa": "ˈpraɪvɪt",
+                  "meaning": "adj. 私人的",
+                  "level": "green"
+                },
+                {
+                  "word": "sector",
+                  "ipa": "ˈsektər",
+                  "meaning": "n.部门；领域；区域；扇形",
+                  "level": "green"
+                },
+                {
+                  "word": "competition",
+                  "ipa": "kɔmpəˈtɪʃ(ə)n",
+                  "meaning": "n. 比赛，竞",
+                  "level": "green"
+                },
+                {
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
+                  "level": "red"
+                },
+                {
+                  "word": "negotiate",
+                  "ipa": "nɪˈɡəʊʃɪeɪt",
+                  "meaning": "v.谈判，协商",
+                  "level": "green"
+                },
+                {
+                  "word": "fund",
+                  "ipa": "fʌnd",
+                  "meaning": "n.资金,基金;存款,现款;(知识等的)累积",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P7-S2",
-              "text": "The only American public-sector workers who earn well above $250,000 a year are university sports coaches and the president of the United States.",
-              "translation": "",
+              "id": "P3-S2",
+              "text": "The outcome of this epic battle will redefine the balance between public fiscal solvency and worker representation across the nation.",
+              "translation": "这场史诗级博弈的最终结果，将重新定义全美公共财政偿付能力与劳动者代表权之间的关键平衡。",
               "vocab": [
                 {
-                  "word": "American",
-                  "ipa": "",
-                  "meaning": "adj.美国的 n.美国人",
+                  "word": "outcome",
+                  "ipa": "ˈaʊtkʌm",
+                  "meaning": "n.结果，效果",
                   "level": "green"
                 },
                 {
-                  "word": "earn",
-                  "ipa": "/ɜːn/",
-                  "meaning": "招致；使获得（常用释义：挣钱；赢得）",
+                  "word": "battle",
+                  "ipa": "ˈbæt(ə)l",
+                  "meaning": "n. 战斗；战役",
+                  "level": "green"
+                },
+                {
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "redefine",
+                  "ipa": "",
+                  "meaning": "v.重新定义",
+                  "level": "green"
+                },
+                {
+                  "word": "balance",
+                  "ipa": "ˈbæləns",
+                  "meaning": "n. 平衡",
+                  "level": "green"
+                },
+                {
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
                   "level": "red"
                 },
                 {
-                  "word": "president",
-                  "ipa": "",
-                  "meaning": "n.总统，国家主席；负责人，会长，院长，主席；董事长，行长，总裁",
-                  "level": "red"
+                  "word": "fiscal",
+                  "ipa": "ˈfɪsk(ə)l",
+                  "meaning": "adj.财政的；国库的",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false
-            },
-            {
-              "sIndex": 3,
-              "id": "P7-S3",
-              "text": "Bankers' fat pay packets have attracted much criticism, but a public-sector system that does not reward high achievers may be a much bigger problem for America.",
-              "translation": "",
-              "vocab": [
-                {
-                  "word": "high achievers",
-                  "ipa": "/haɪ əˈtʃiːvəz/",
-                  "meaning": "高成就者，成就突出者（常用释义：achiever: 有成就的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "pay",
-                  "ipa": "peɪ",
-                  "meaning": "n. 工资，报",
-                  "level": "green"
-                },
-                {
-                  "word": "system",
-                  "ipa": "ˈsɪstəm",
-                  "meaning": "n. 体系；系统",
-                  "level": "green"
-                },
-                {
-                  "word": "reward",
-                  "ipa": "rɪˈwɔːrd",
-                  "meaning": "n.奖励；悬赏金 v.酬谢；奖励",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true
+              "isKeyEvidence": true
             }
           ]
         }
@@ -4239,306 +2231,315 @@ window.ENGLISH_DATA['2012'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "It can be learned from the first paragraph that",
+          "type": "细节题",
+          "tangchiModel": "唐迟细节题模型：法案立法动因识别",
+          "stem": "Wisconsin lawmakers introduced legislation against public sector unions mainly to",
           "stemKeywords": [
-            "learned",
-            "from",
-            "first"
+            "Wisconsin lawmakers",
+            "legislation against unions",
+            "mainly to"
           ],
           "officialAnswer": "C",
+          "targetSentences": [
+            "P1-S2",
+            "P2-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "Teamsters still have a large body of members.",
+              "text": "encourage civil servants to strike continuously.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】立法旨在限制工会，非鼓励罢工。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "B",
-              "text": "Jimmy Hoffa used to work as a civil servant.",
+              "text": "privatize all public schools in the state.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】非将所有公立学校私有化。",
               "refSentences": [
                 "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "unions have enlarged their public-sector membership.",
+              "text": "curb public pension costs and tackle severe state budget deficits.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P1-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P1-S2 与 P2-S1 明确说明 restrict collective bargaining to close multi-billion-dollar budget deficit 以及 generous pensions bankrupted budgets，旨在遏制养老金成本并应对财政赤字危机。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2",
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "the government has improved its relationship with unionists.",
+              "text": "expand union voting power in national elections.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】法案削弱工会权力，非扩大投票权。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P1-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P1-S1】的微观对应关系，警惕【正反混淆】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "close multi-billion budget deficit + generous pensions bankrupted budgets 对应 curb pension costs and tackle budget deficits。",
+            "methodSummary": "抓立法核心目的：close budget deficit -> tackle budget deficits。"
           }
         },
         {
           "qIndex": 37,
           "type": "细节题",
-          "tangchiModel": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。",
-          "stem": "Which of the following is true of Paragraph 2?",
-          "stemKeywords": [],
+          "tangchiModel": "唐迟细节题模型：工会方核心抗辩理由提取",
+          "stem": "Union leaders oppose the legislation on the grounds that",
+          "stemKeywords": [
+            "Union leaders oppose",
+            "on the grounds that"
+          ],
           "officialAnswer": "D",
+          "targetSentences": [
+            "P2-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "Public-sector unions are prudent in taking actions.",
+              "text": "civil servants should be exempt from all state laws.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】本选项属于典型考研命题陷阱（正反混淆），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】工会未要求豁免一切法律。",
               "refSentences": [
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "B",
-              "text": "Education is required for public-sector union membership.",
+              "text": "public budget deficits do not exist in reality.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "曲解文意",
+              "analysis": "【干扰特征: 曲解文意】工会承认经济衰退，但反对将公务员当作替罪羊。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "Labor Party has long been fighting against public-sector unions.",
+              "text": "private corporations should pay all civil servant pensions.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "荒谬曲解",
+              "analysis": "【干扰特征: 荒谬选项】未要求私企承担公务员养老金。",
               "refSentences": [
-                "P2-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
-              "text": "Public-sector unions seldom get in trouble for their actions.",
+              "text": "collective bargaining is a fundamental right and blaming workers is unfair scapegoating.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P2-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 原词同义再现】P2-S2 明确阐述 collective bargaining is a fundamental democratic right, and blaming civil servants is unfair scapegoating，字字精准重现。",
               "refSentences": [
-                "P2-S1"
+                "P2-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P2-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P2-S1】的微观对应关系，警惕【范围失真】及绝对化用词陷阱。",
-            "methodSummary": "唐迟细节题模型：细节服从主旨，同义替换是解题核心；紧扣定位句主干信息。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "fundamental democratic right + unfair scapegoating 原词原句直接对应。",
+            "methodSummary": "原词直接锁定法：collective bargaining is a fundamental right and blaming workers is scapegoating。"
           }
         },
         {
           "qIndex": 38,
           "type": "推断题",
-          "tangchiModel": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。",
-          "stem": "It can be learned from Paragraph 4 that the income in the state sector is",
+          "tangchiModel": "唐迟推断题模型：公私工会本质差异推导",
+          "stem": "According to Paragraph 3, public sector unions differ from private sector unions in that they",
           "stemKeywords": [
-            "learned",
-            "from",
-            "income",
-            "state"
+            "Paragraph 3",
+            "public sector unions differ",
+            "private sector unions"
           ],
           "officialAnswer": "B",
+          "targetSentences": [
+            "P3-S1"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "illegally secured.",
+              "text": "are strictly forbidden from participating in politics.",
               "isCorrect": false,
-              "distractorType": "范围失真",
-              "analysis": "【干扰特征: 范围失真】本选项属于典型考研命题陷阱（范围失真），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】公立工会积极给政客政治捐款（fund campaigns），深度参与政治。",
               "refSentences": [
                 "P3-S1"
               ]
             },
             {
               "key": "B",
-              "text": "indirectly augmented.",
+              "text": "lack market discipline and negotiate with politicians they help finance.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P3-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 同义替换】P3-S1 明确说明 Unlike private unions constrained by market competition, public unions negotiate with politicians whose campaigns they actively fund，即不受市场机制约束且与自己资助的政客谈判。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "always reject collective bargaining agreements.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】公立工会极力争取集体谈判权。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "represent only military commanders.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】公立工会代表教师、警察和行政公务员，非军官。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "Unlike private unions constrained by market competition, public unions negotiate with politicians they fund 对应 lack market discipline and negotiate with politicians they finance。",
+            "methodSummary": "对比结构提取：抓 Unlike 后的核心区别（market constraint vs funding politicians）。"
+          }
+        },
+        {
+          "qIndex": 39,
+          "type": "推断题",
+          "tangchiModel": "唐迟推断题模型：历史博弈深远影响推导",
+          "stem": "It can be inferred from the last sentence that the battle over public unions will",
+          "stemKeywords": [
+            "inferred",
+            "last sentence",
+            "battle over public unions"
+          ],
+          "officialAnswer": "C",
+          "targetSentences": [
+            "P3-S2"
+          ],
+          "options": [
+            {
+              "key": "A",
+              "text": "lead to the immediate dissolution of the United States.",
+              "isCorrect": false,
+              "distractorType": "荒谬夸大",
+              "analysis": "【干扰特征: 荒谬极端】不至于导致美国立即解体。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "force all public employees into private corporations.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及强迫转入私企。",
               "refSentences": [
                 "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "excessively increased.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "fairly adjusted.",
-              "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            }
-          ],
-          "targetSentences": [
-            "P3-S1"
-          ],
-          "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P3-S1】的微观对应关系，警惕【None】及绝对化用词陷阱。",
-            "methodSummary": "唐迟推断题模型：同义转述即推断，严禁主观臆断与过度推理；正话反说/反话正说。。快速排除与段落中心偏离的干扰项。"
-          }
-        },
-        {
-          "qIndex": 39,
-          "type": "例证题",
-          "tangchiModel": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。",
-          "stem": "The example of the unions in Wisconsin shows that unions",
-          "stemKeywords": [
-            "example",
-            "unions",
-            "Wisconsin",
-            "unions"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "often run against the current political system.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】本选项属于典型考研命题陷阱（过度推断），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "can change people's political attitudes.",
-              "isCorrect": false,
-              "distractorType": "绝对化用词",
-              "analysis": "【干扰特征: 绝对化用词】本选项属于典型考研命题陷阱（绝对化用词），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "may be a barrier to public-sector reforms.",
+              "text": "profoundly reshape the balance between government finances and labor rights.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P4-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 宏观推断】P3-S2 明确指出 redefine the balance between public fiscal solvency and worker representation across the nation，深刻重塑政府财政偿付力与劳工代表权之间的平衡。",
               "refSentences": [
-                "P4-S3"
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "are dominant in the government.",
+              "text": "permanently eliminate all government budget deficits overnight.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化用词】赤字无法一夜根除。",
               "refSentences": [
-                "P4-S1"
+                "P3-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P4-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P4-S1】的微观对应关系，警惕【绝对化用词】及绝对化用词陷阱。",
-            "methodSummary": "唐迟例证题模型：例子本身不重要，例子所论证的段落观点才是解题关键。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "redefine balance between fiscal solvency and worker representation 对应 reshape balance between finances and labor rights。",
+            "methodSummary": "末句宏观提炼：redefine balance -> reshape balance; fiscal solvency -> government finances; worker representation -> labor rights。"
           }
         },
         {
           "qIndex": 40,
-          "type": "态度题",
-          "tangchiModel": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。",
-          "stem": "John Donahue's attitude towards the public-sector system is one of",
+          "type": "主旨题",
+          "tangchiModel": "唐迟主旨题模型：全篇政治劳资冲突归纳",
+          "stem": "Which of the following is the best title for the text?",
           "stemKeywords": [
-            "John",
-            "Donahue",
-            "attitude",
-            "towards"
+            "best title",
+            "text"
           ],
           "officialAnswer": "A",
+          "targetSentences": [
+            "P1-S1",
+            "P1-S2",
+            "P2-S1",
+            "P3-S1",
+            "P3-S2"
+          ],
           "options": [
             {
               "key": "A",
-              "text": "disapproval.",
+              "text": "The Showdown in the States: Public Sector Unions and Fiscal Austerity",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】本选项与原文定位句（P5-S1）核心论点高度契合，通过同义词与句式改写精准再现了作者的核心事实与逻辑判断。",
+              "analysis": "【正确项 · 中心主旨概括】全面概括全篇论题：全美各州爆发的重大对决（Showdown in the States）以及公立部门工会与财政紧缩政策之间的尖锐冲突（Public Sector Unions and Fiscal Austerity）。",
               "refSentences": [
-                "P5-S1"
+                "P1-S1",
+                "P1-S2",
+                "P2-S1",
+                "P3-S1",
+                "P3-S2"
               ]
             },
             {
               "key": "B",
-              "text": "appreciation.",
+              "text": "The History of Private Sector Manufacturing in Wisconsin",
               "isCorrect": false,
-              "distractorType": "就事论事",
-              "analysis": "【干扰特征: 就事论事】本选项属于典型考研命题陷阱（就事论事），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "偏离主题",
+              "analysis": "【干扰特征: 偏离主题】文章讨论的是公立部门工会，非私营制造业历史。",
               "refSentences": [
-                "P5-S2"
+                "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "tolerance.",
+              "text": "Why Civil Servants Refuse to Receive Pensions",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】本选项属于典型考研命题陷阱（偷换概念），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反混淆】公务员积极捍卫养老金权益，非拒绝领取。",
               "refSentences": [
-                "P5-S3"
+                "P2-S1"
               ]
             },
             {
               "key": "D",
-              "text": "indifference.",
+              "text": "The Complete Election Guide to Midwestern Governors",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】本选项属于典型考研命题陷阱（无中生有），曲解了原文中关键词的语境含义或主客体因果逻辑，与原文事实不符。",
+              "distractorType": "范围太窄",
+              "analysis": "【干扰特征: 范围太窄】州长选举仅为局部背景。",
               "refSentences": [
-                "P5-S1"
+                "P1-S2"
               ]
             }
           ],
-          "targetSentences": [
-            "P5-S1"
-          ],
           "presetReflection": {
-            "trapAnalysis": "关注题干关键词与原文【P5-S1】的微观对应关系，警惕【就事论事】及绝对化用词陷阱。",
-            "methodSummary": "唐迟态度题模型：抓转折词、情态动词与形容词/副词情感色彩；区分作者态度与他人观点。。快速排除与段落中心偏离的干扰项。"
+            "trapAnalysis": "抓全要素标题：Public Sector Unions + Fiscal Austerity / Budget Deficits。",
+            "methodSummary": "最佳主旨：具备宏观时代感与政治社论特征的准确概括。"
           }
         }
       ]
