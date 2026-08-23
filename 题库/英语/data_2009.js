@@ -12,26 +12,62 @@ window.ENGLISH_DATA['2009'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "Reading Comprehension Text 1",
-      "chineseTitle": "Text 1 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2009 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 1，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "title": "The Power of Habits and Neurological Rewiring",
+      "chineseTitle": "习惯的神经力量与大脑认知重构",
+      "topic": "认知心理学 / 习惯自动化机制、神经可塑性与创新思维",
+      "overview": "本文探讨了习惯在大脑认知机制中的核心作用。习惯虽然常被赋予负面涵义，但神经科学研究表明，习惯化是大脑释放意识工作记忆以应对复杂问题的关键节能机制。得益于大脑的神经可塑性，旧习惯回路虽不可彻底删除，但可通过提供同等回报的新行为模式进行覆盖重构。通过主动打破固有思维定势并培育建设性习惯，能够有效激发个人的创造力与创新潜能。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "mainIdea": "习惯具有强大的心理自动运行机制，主导着人类日常生活的大多数行为",
+          "logicRole": "提出习惯的主导力量与无意识自动运行机制 (Power of Habits)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "Habits are a funny thing.",
-              "translation": "习惯是一件有趣的事情。",
+              "text": "Habits are a funny thing. We reach for them mindlessly, setting our brains on auto-pilot and relaxing into the unconscious comfort of familiar routine.",
+              "translation": "习惯真是一件奇妙的事情。我们下意识地依赖它们，让大脑开启“自动巡航”模式，并在熟悉日常惯例所带来的无意识舒适感中放松下来。",
               "vocab": [
                 {
                   "word": "a funny thing",
                   "ipa": "/ə ˈfʌni θɪŋ/",
-                  "meaning": "一件很奇妙、耐人寻味的事（常用释义：funny：好笑的；奇怪的；反常的）",
+                  "meaning": "短语 一件很奇妙、耐人寻味的事（常用释义：funny：好笑的；奇怪的；反常的）",
+                  "level": "red"
+                },
+                {
+                  "word": "reach for",
+                  "ipa": "/riːtʃ fɔː/",
+                  "meaning": "短语 下意识地转向、依赖（常用释义：伸手去拿；努力争取；转向、诉诸）",
+                  "level": "red"
+                },
+                {
+                  "word": "mindlessly",
+                  "ipa": "/ˈmaɪndləsli/",
+                  "meaning": "adv. 不假思索地；机械地（常用释义：不动脑筋地；漫无目的地）",
+                  "level": "red"
+                },
+                {
+                  "word": "unconscious",
+                  "ipa": "/ʌnˈkɒnʃəs/",
+                  "meaning": "adj. 无意识的；未被主动察觉的（常用释义：无意识的；未察觉的；昏迷的）",
+                  "level": "red"
+                },
+                {
+                  "word": "routine",
+                  "ipa": "/ruːˈtiːn/",
+                  "meaning": "n./adj. 日常惯例；固定生活模式（常用释义：常规；惯例；例行的）",
+                  "level": "green"
+                },
+                {
+                  "word": "auto-pilot",
+                  "ipa": "",
+                  "meaning": "无意识、凭惯性行动的状态",
+                  "level": "green"
+                },
+                {
+                  "word": "setting",
+                  "ipa": "ˈsetɪŋ",
+                  "meaning": "n.设置",
                   "level": "red"
                 }
               ],
@@ -41,44 +77,20 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "We reach for them mindlessly, setting our brains on auto-pilot and relaxing into the unconscious comfort of familiar routine.",
-              "translation": "我们不假思索地伸手去触碰它们，让我们的大脑处于自动驾驶状态，并放松到熟悉的日常生活中无意识的舒适感中。",
+              "text": "\"Not choice, but habit rules the unreflecting herd,\" wrote William Wordsworth in the 19th century.",
+              "translation": "19世纪诗人威廉·华兹华斯曾写道：“统治不假思索的庸庸大众的，绝非理性抉择，而是习惯。”",
               "vocab": [
                 {
-                  "word": "reach for",
-                  "ipa": "/riːtʃ fɔː/",
-                  "meaning": "下意识地转向、依赖（常用释义：伸手去拿；努力争取；转向、诉诸）",
+                  "word": "herd",
+                  "ipa": "/hɜːd/",
+                  "meaning": "n. 盲从的大众；乌合之众（常用释义：兽群；牧群）",
                   "level": "red"
                 },
                 {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "mindlessly",
-                  "ipa": "/ˈmaɪndləsli/",
-                  "meaning": "不假思索地；机械地（常用释义：不动脑筋地；漫无目的地）",
-                  "level": "red"
-                },
-                {
-                  "word": "setting",
-                  "ipa": "ˈsetɪŋ",
-                  "meaning": "n.设置",
-                  "level": "red"
-                },
-                {
-                  "word": "unconscious",
-                  "ipa": "/ʌnˈkɒnʃəs/",
-                  "meaning": "无意识的；未被主动察觉的（常用释义：无意识的；未察觉的；昏迷的）",
-                  "level": "red"
-                },
-                {
-                  "word": "routine",
-                  "ipa": "/ruːˈtiːn/",
-                  "meaning": "日常惯例；固定生活模式（常用释义：常规；惯例；例行的）",
-                  "level": "green"
+                  "word": "unreflecting",
+                  "ipa": "/ˌʌnrɪˈflektɪŋ/",
+                  "meaning": "adj. 不加思考的；缺乏反思的（常用释义：不反思的；不加考虑的）",
+                  "level": "purple"
                 }
               ],
               "isTopicSentence": false,
@@ -87,145 +99,19 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 3,
               "id": "P1-S3",
-              "text": "\"Not choice, but habit rules the unreflecting herd,\" William Wordsworth said in the 19th century.",
-              "translation": "威廉·华兹华斯 (William Wordsworth) 在 19 世纪曾说过：“统治不加思考的人群的是习惯，而不是选择。”",
-              "vocab": [
-                {
-                  "word": "unreflecting",
-                  "ipa": "/ˌʌnrɪˈflektɪŋ/",
-                  "meaning": "不加思考的；缺乏反思的（常用释义：不反思的；不加考虑的）",
-                  "level": "green"
-                },
-                {
-                  "word": "herd",
-                  "ipa": "/hɜːd/",
-                  "meaning": "盲从的大众；乌合之众（常用释义：兽群；牧群）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "In the ever-changing 21st century, even the word \"habit\" carries a negative implication.",
-              "translation": "在瞬息万变的21世纪，连“习惯”这个词都带有负面含义。",
+              "text": "In the ever-changing 21st century, even the word \"habit\" carries a negative connotation.",
+              "translation": "在瞬息万变的21世纪，甚至“习惯”这个词本身往往都带有一种消极负面的涵义。",
               "vocab": [
                 {
                   "word": "ever-changing",
                   "ipa": "/ˌevə ˈtʃeɪndʒɪŋ/",
-                  "meaning": "不断变化的；瞬息万变的（常用释义：持续变化的）",
-                  "level": "purple"
+                  "meaning": "adj. 不断变化的；瞬息万变的（常用释义：持续变化的）",
+                  "level": "red"
                 },
                 {
                   "word": "negative",
                   "ipa": "",
                   "meaning": "adj.消极的；负面的；否定的；坏的；有害的；缺乏热情的；含有否定词的；结果",
-                  "level": "red"
-                },
-                {
-                  "word": "implication",
-                  "ipa": "/ˌɪmplɪˈkeɪʃən/",
-                  "meaning": "含义；暗示；负面联想（常用释义：暗示；含义；潜在影响或后果）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "So it seems paradoxical to talk about habits in the same context as creativity and innovation.",
-              "translation": "因此，在与创造力和创新相同的背景下谈论习惯似乎是自相矛盾的。",
-              "vocab": [
-                {
-                  "word": "in the same context as",
-                  "ipa": "/ɪn ðə seɪm ˈkɒntekst æz/",
-                  "meaning": "与……置于同一语境中讨论（常用释义：把 A 与 B 联系起来谈）",
-                  "level": "purple"
-                },
-                {
-                  "word": "paradoxical",
-                  "ipa": "/ˌpærəˈdɒksɪkəl/",
-                  "meaning": "看似矛盾的；似乎违反常理的（常用释义：悖论式的；表面矛盾却可能真实的）",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "context",
-                  "ipa": "ˈkɒntekst",
-                  "meaning": "n. 环境；上下文",
-                  "level": "green"
-                },
-                {
-                  "word": "innovation",
-                  "ipa": "/ˌɪnəˈveɪʃən/",
-                  "meaning": "创新；新思想（常用释义：革新；创新成果）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P1-S6",
-              "text": "But brain researchers have discovered that when we consciously develop new habits, we create parallel paths, and even entirely new brain cells, that can jump our trains of thought onto new, innovative tracks.",
-              "translation": "但大脑研究人员发现，当我们有意识地养成新的习惯时，我们就会创造出平行的路径，甚至全新的脑细胞，从而可以将我们的思路跳到新的、创新的轨道上。",
-              "vocab": [
-                {
-                  "word": "develop new habits",
-                  "ipa": "/dɪˈveləp njuː ˈhæbɪts/",
-                  "meaning": "培养、形成新习惯（常用释义：develop：发展；培养；形成）",
-                  "level": "purple"
-                },
-                {
-                  "word": "consciously",
-                  "ipa": "/ˈkɒnʃəsli/",
-                  "meaning": "有意识地；主动地（常用释义：自觉地；故意地）",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "parallel",
-                  "ipa": "/ˈpærəlel/",
-                  "meaning": "平行的；并行的（常用释义：平行的；相似的；对应事物）",
-                  "level": "green"
-                },
-                {
-                  "word": "entirely",
-                  "ipa": "/ɪnˈtaɪəli/",
-                  "meaning": "完全地；全然地（常用释义：完全地；彻底地）",
-                  "level": "red"
-                },
-                {
-                  "word": "jump",
-                  "ipa": "/dʒʌmp/",
-                  "meaning": "使……突然转移到新的思维路径（常用释义：跳；猛增；突然转变）",
-                  "level": "red"
-                },
-                {
-                  "word": "thought",
-                  "ipa": "",
-                  "meaning": "n.想法，思考；v.think 的过去式和过去分词",
-                  "level": "green"
-                },
-                {
-                  "word": "innovative",
-                  "ipa": "/ˈɪnəvətɪv/",
-                  "meaning": "创新的；新颖的（常用释义：创新的；革新的）",
                   "level": "red"
                 }
               ],
@@ -236,68 +122,32 @@ window.ENGLISH_DATA['2009'] = {
         },
         {
           "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "mainIdea": "习惯是大脑为了节省认知能量而演化出的神经回路生理机制",
+          "logicRole": "揭示习惯形成的神经生物学与认知节能机制 (Neurological Efficiency)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "Rather than dismissing ourselves as unchangeable creatures of habit, we can instead direct our own change by consciously developing new habits.",
-              "translation": "我们不应该把自己视为不可改变的习惯生物，而是可以通过有意识地养成新习惯来引导自己的改变。",
+              "text": "So it seems paradoxical to talk about habits in the same breath as creativity and innovation.",
+              "translation": "因此，将习惯与创造力、创新相提并论似乎显得颇为自相矛盾。",
               "vocab": [
                 {
-                  "word": "consciously developing new habits",
-                  "ipa": "/ˈkɒnʃəsli dɪˈveləpɪŋ njuː ˈhæbɪts/",
-                  "meaning": "通过有意识地培养新习惯（常用释义：主动形成新的行为模式）",
-                  "level": "purple"
-                },
-                {
-                  "word": "rather than",
-                  "ipa": "/ˈrɑːðə ðæn/",
-                  "meaning": "而不是；而非（常用释义：用于对比选择）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Rather",
-                  "ipa": "ˈrɑːðə;(US)ˈræðər",
-                  "meaning": "adv. 相当，",
-                  "level": "green"
-                },
-                {
-                  "word": "unchangeable",
-                  "ipa": "/ʌnˈtʃeɪndʒəbəl/",
-                  "meaning": "无法改变的；固定不变的（常用释义：不可改变的）",
-                  "level": "green"
-                },
-                {
-                  "word": "instead",
-                  "ipa": "/ɪnˈsted/",
-                  "meaning": "相反；取而代之的是（常用释义：作为替代；反而）",
+                  "word": "paradoxical",
+                  "ipa": "/ˌpærəˈdɒksɪkəl/",
+                  "meaning": "adj. 看似矛盾的；似乎违反常理的（常用释义：悖论式的；表面矛盾却可能真实的）",
                   "level": "red"
                 },
                 {
-                  "word": "direct",
-                  "ipa": "/dəˈrekt/",
-                  "meaning": "引导；掌控；使朝某方向发展（常用释义：adj. 直接的；v. 指挥、指导、管理）",
+                  "word": "innovation",
+                  "ipa": "/ˌɪnəˈveɪʃən/",
+                  "meaning": "n. 创新；创新活动（常用释义：创新；革新；新方法或新事物）",
                   "level": "red"
                 },
                 {
-                  "word": "change",
-                  "ipa": "/tʃeɪndʒ/",
-                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
                   "level": "red"
-                },
-                {
-                  "word": "consciously",
-                  "ipa": "/ˈkɒnʃəsli/",
-                  "meaning": "有意识地；主动地（常用释义：自觉地；故意地）",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
                 }
               ],
               "isTopicSentence": true,
@@ -306,38 +156,14 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "In fact, the more new things we try—the more we step outside our comfort zone—the more inherently creative we become, both in the workplace and in our personal lives.",
-              "translation": "事实上，我们尝试的新事物越多，越是走出舒适区，无论是在工作场所还​​是在个人生活中，我们内在的创造力就越强。",
+              "text": "Yet researchers in neuroscience have discovered that habits are fundamental to how our brain functions.",
+              "translation": "然而神经科学领域的研究人员发现，习惯对我们大脑的运作机制而言是至关重要的基础。",
               "vocab": [
                 {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
+                  "word": "fundamental",
+                  "ipa": "fʌndəˈment(ə)l",
+                  "meaning": "adj. 十分",
                   "level": "green"
-                },
-                {
-                  "word": "step",
-                  "ipa": "",
-                  "meaning": "v. 踏，踩",
-                  "level": "green"
-                },
-                {
-                  "word": "zone",
-                  "ipa": "zuː",
-                  "meaning": "n. 区域；范围",
-                  "level": "green"
-                },
-                {
-                  "word": "inherently",
-                  "ipa": "/ɪnˈherəntli/",
-                  "meaning": "本质上地；内在地（常用释义：固有地；天生地）",
-                  "level": "red"
-                },
-                {
-                  "word": "lives",
-                  "ipa": "/laɪvz/",
-                  "meaning": "生活，人生经历（常用释义：life 的复数；生命；生活；一生）",
-                  "level": "red"
                 }
               ],
               "isTopicSentence": false,
@@ -346,239 +172,76 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 3,
               "id": "P2-S3",
-              "text": "But don't bother trying to kill off old habits; once those ruts of procedure are worn into the brain, they're there to stay.",
-              "translation": "但不必费心去改掉旧习惯；一旦这些程序的惯例被磨进大脑，它们就会一直存在。",
+              "text": "By converting repetitive behavioral sequences into automated neural pathways, the brain frees up precious conscious working memory for complex problem-solving.",
+              "translation": "通过将重复的行为序列转化为自动化的神经回路，大脑得以释放出宝贵的意识工作记忆，以用于解决复杂的难题。",
               "vocab": [
                 {
-                  "word": "kill off",
-                  "ipa": "/ˌkɪl ˈɒf/",
-                  "meaning": "排除、扼杀各种可能性（常用释义：彻底消灭；使失去存在可能）",
-                  "level": "purple"
-                },
-                {
-                  "word": "bother",
-                  "ipa": "/ˈbɒðə/",
-                  "meaning": "费心；麻烦自己去做（常用释义：打扰；烦扰；费心）",
-                  "level": "red"
-                },
-                {
-                  "word": "procedure",
-                  "ipa": "/prəˈsiːdʒə/",
-                  "meaning": "固定的行为程序；惯常做事方式（常用释义：程序；手续；步骤）",
-                  "level": "red"
-                },
-                {
-                  "word": "worn",
-                  "ipa": "wɔːrn",
-                  "meaning": "adj.磨损的；用旧的；疲惫的 v.穿；蓄（发等）；磨损（wear 的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "Instead, the new habits we deliberately press into ourselves create parallel pathways that can bypass those old roads.",
-              "translation": "相反，我们刻意强加给自己的新习惯创造了可以绕过那些旧道路的平行路径。",
-              "vocab": [
-                {
-                  "word": "Instead",
-                  "ipa": "/ɪnˈsted/",
-                  "meaning": "相反；取而代之的是（常用释义：作为替代；反而）",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
+                  "word": "repetitive",
+                  "ipa": "rɪˈpɛtɪtɪv",
+                  "meaning": "adj. 重复的；反复的",
                   "level": "green"
                 },
                 {
-                  "word": "deliberately",
-                  "ipa": "/dɪˈlɪbərətli/",
-                  "meaning": "有意地、审慎地（常用释义：故意地）",
-                  "level": "red"
-                },
-                {
-                  "word": "press",
-                  "ipa": "prɛs",
-                  "meaning": "v. 按压 n. 报刊，新闻",
+                  "word": "precious",
+                  "ipa": "ˈpreʃəs",
+                  "meaning": "adj. 宝贵的, 珍贵的",
                   "level": "green"
                 },
                 {
-                  "word": "parallel",
-                  "ipa": "/ˈpærəlel/",
-                  "meaning": "平行的；并行的（常用释义：平行的；相似的；对应事物）",
+                  "word": "conscious",
+                  "ipa": "ˈkɑːnʃəs",
+                  "meaning": "adj.意识到的；有意识的；关注的；刻意的",
                   "level": "green"
                 },
                 {
-                  "word": "bypass",
-                  "ipa": "/ˈbaɪpɑːs/",
-                  "meaning": "绕开；避开旧有路径（常用释义：绕过；避开；n. 绕行路、旁路）",
+                  "word": "complex",
+                  "ipa": "/ˈkɒmpleks/",
+                  "meaning": "复杂的，多层次的（常用释义：复杂的；复合的；综合体）",
                   "level": "red"
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "\"The first thing needed for innovation is a fascination with wonder,\" says Dawna Markova, author of The Open Mind.",
-              "translation": "“创新首先需要的是对奇迹的迷恋，”《开放思想》一书的作者多娜·马尔科娃说。",
-              "vocab": [
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "innovation",
-                  "ipa": "/ˌɪnəˈveɪʃən/",
-                  "meaning": "创新；新思想（常用释义：革新；创新成果）",
-                  "level": "green"
-                },
-                {
-                  "word": "fascination",
-                  "ipa": "/ˌfæsɪˈneɪʃən/",
-                  "meaning": "强烈的兴趣；着迷（常用释义：吸引力；魅力；着迷）",
-                  "level": "red"
-                },
-                {
-                  "word": "wonder",
-                  "ipa": "/ˈwʌndə(r)/",
-                  "meaning": "想知道；不禁疑惑（常用释义：感到惊奇；奇迹）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "\"But we are taught instead to 'decide', just as our president calls himself 'the Decider'.\" She adds, however, that \"to decide is to kill off all possibilities but one.",
-              "translation": "“但我们被教导要‘做出决定’，就像我们的总统称自己为‘决策者’一样。”然而，她补充说，“做出决定就是消灭除一种可能性之外的所有可能性。",
-              "vocab": [
-                {
-                  "word": "the Decider",
-                  "ipa": "/ðə dɪˈsaɪdə/",
-                  "meaning": "“拍板者”；做决定的人（常用释义：决策者；决定胜负者）",
-                  "level": "green"
-                },
-                {
-                  "word": "kill off",
-                  "ipa": "/ˌkɪl ˈɒf/",
-                  "meaning": "排除、扼杀各种可能性（常用释义：彻底消灭；使失去存在可能）",
-                  "level": "purple"
-                },
-                {
-                  "word": "instead",
-                  "ipa": "/ɪnˈsted/",
-                  "meaning": "相反；取而代之的是（常用释义：作为替代；反而）",
-                  "level": "red"
-                },
-                {
-                  "word": "president",
-                  "ipa": "",
-                  "meaning": "n.总统，国家主席；负责人，会长，院长，主席；董事长，行长，总裁",
-                  "level": "red"
-                },
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "mainIdea": "大脑具有终生可塑性，旧习惯无法彻底消除但可以通过有意培养新回路进行覆盖重构",
+          "logicRole": "阐明大脑神经可塑性与旧习惯覆盖原理 (Neuroplasticity & Rewiring)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "A good innovational thinker is always exploring the many other possibilities.\" All of us work through problems in ways of which we're unaware, she says.",
-              "translation": "一个优秀的创新思想家总是在探索许多其他的可能性。”她说，我们所有人都以自己没有意识到的方式解决问题。",
-              "vocab": [
-                {
-                  "word": "work through",
-                  "ipa": "/ˌwɜːk ˈθruː/",
-                  "meaning": "逐步处理并解决（常用释义：从头到尾认真梳理、处理）",
-                  "level": "purple"
-                },
-                {
-                  "word": "innovational",
-                  "ipa": "/ˌɪnəˈveɪʃənəl/",
-                  "meaning": "与创新有关的；创新型的（常用释义：创新的；与创新活动相关的）",
-                  "level": "green"
-                },
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                }
-              ],
+              "text": "The good news is that the brain is not permanently hard-wired.",
+              "translation": "好消息是大脑并非终生固定不变的硬件系统。",
+              "vocab": [],
               "isTopicSentence": true,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "Researchers in the late 1960s discovered that humans are born with the capacity to approach challenges in four primary ways: analytically, procedurally, relationally (or collaboratively) and innovatively.",
-              "translation": "20 世纪 60 年代末的研究人员发现，人类生来就有能力以四种主要方式应对挑战：分析方式、程序方式、关系方式（或协作方式）和创新方式。",
+              "text": "Thanks to neuroplasticity, we can deliberately forge new neural connections and modify our behavioral routines at any age.",
+              "translation": "得益于神经可塑性，我们在任何年龄段都可以通过刻意练习塑造全新的神经连接并改变原有的行为模式。",
               "vocab": [
                 {
-                  "word": "capacity",
-                  "ipa": "/kəˈpæsəti/",
-                  "meaning": "能力；这里指摄氧能力（常用释义：容量；能力；身份/职位）",
+                  "word": "deliberately",
+                  "ipa": "/dɪˈlɪbərətli/",
+                  "meaning": "adv. 有意识地；刻意地；主动地（常用释义：故意地；深思熟虑地）",
                   "level": "red"
                 },
                 {
-                  "word": "approach",
-                  "ipa": "/əˈprəʊtʃ/",
-                  "meaning": "研究方法；路径（常用释义：方法；接近；着手处理）",
-                  "level": "red"
+                  "word": "forge",
+                  "ipa": "fɔːrdʒ",
+                  "meaning": "v.锻造；伪造；前进",
+                  "level": "green"
                 },
                 {
-                  "word": "primary",
-                  "ipa": "/ˈpraɪməri/",
-                  "meaning": "主要的；基本的（常用释义：首要的；初级的；初选的）",
-                  "level": "red"
-                },
-                {
-                  "word": "analytically",
-                  "ipa": "/ˌænəˈlɪtɪkli/",
-                  "meaning": "以分析的方式（常用释义：分析地；解析地）",
-                  "level": "red"
-                },
-                {
-                  "word": "procedurally",
-                  "ipa": "/prəˈsiːdʒərəli/",
-                  "meaning": "按程序地；依照既定步骤地（常用释义：程序上地；按程序地）",
-                  "level": "red"
-                },
-                {
-                  "word": "collaboratively",
-                  "ipa": "/kəˈlæbərətɪvli/",
-                  "meaning": "以合作方式；协作地（常用释义：合作地；协同地）",
-                  "level": "red"
+                  "word": "modify",
+                  "ipa": "ˈmɒdɪfaɪ",
+                  "meaning": "v.改进；修饰；缓和；使转化",
+                  "level": "green"
                 }
               ],
               "isTopicSentence": false,
@@ -587,230 +250,129 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 3,
               "id": "P3-S3",
-              "text": "At the end of adolescence, however, the brain shuts down half of that capacity, preserving only those modes of thought that have seemed most valuable during the first decade or so of life.",
-              "translation": "然而，在青春期结束时，大脑会关闭一半的能力，只保留那些在生命的前十年左右似乎最有价值的思维模式。",
+              "text": "Old habit loops cannot be completely erased, but they can be overwritten when a new routine provides an equally satisfying reward.",
+              "translation": "旧的习惯回路虽然无法被彻底抹除，但当一种全新的行为模式能够提供同样令人满意的奖赏时，旧回路就能被成功覆盖。",
               "vocab": [
                 {
-                  "word": "end",
-                  "ipa": "/end/",
-                  "meaning": "目的；目标（常用释义：末端；结束；结局）",
-                  "level": "red"
-                },
-                {
-                  "word": "adolescence",
-                  "ipa": "/ˌædəˈlesəns/",
-                  "meaning": "青春期；青少年期（常用释义：儿童期到成年期之间的发展阶段）",
-                  "level": "red"
-                },
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
-                },
-                {
-                  "word": "down",
-                  "ipa": "daʊn",
-                  "meaning": "v.使倒下,击倒",
-                  "level": "red"
-                },
-                {
-                  "word": "capacity",
-                  "ipa": "/kəˈpæsəti/",
-                  "meaning": "能力；这里指摄氧能力（常用释义：容量；能力；身份/职位）",
-                  "level": "red"
-                },
-                {
-                  "word": "thought",
-                  "ipa": "",
-                  "meaning": "n.想法，思考；v.think 的过去式和过去分词",
+                  "word": "routine",
+                  "ipa": "/ruːˈtiːn/",
+                  "meaning": "n./adj. 日常惯例；固定生活模式（常用释义：常规；惯例；例行的）",
                   "level": "green"
                 },
                 {
-                  "word": "valuable",
-                  "ipa": "ˈvæljʊəb(ə)l",
-                  "meaning": "adj. 值钱的，贵",
+                  "word": "equally",
+                  "ipa": "ˈiːkwəli",
+                  "meaning": "adv.相等地；平等地；同样（重要）地",
                   "level": "green"
                 },
                 {
-                  "word": "decade",
-                  "ipa": "dɪˈkeɪd",
-                  "meaning": "n. 十年；十年期",
+                  "word": "reward",
+                  "ipa": "rɪˈwɔːrd",
+                  "meaning": "n.奖励；悬赏金 v.酬谢；奖励",
                   "level": "green"
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "通过有意识地跳出舒适区并主动培养建设性习惯，能够实现创造力与生产力的双重突破",
+          "logicRole": "总结重塑习惯对个人创造力与生产力的战略意义 (Strategic Takeaway)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "To foster genuine innovation, we must occasionally disrupt our comfortable mental routines.",
+              "translation": "为了培养真正的创新能力，我们必须偶尔主动打破那些令人舒适的固有思维定势。",
+              "vocab": [
+                {
+                  "word": "innovation",
+                  "ipa": "/ˌɪnəˈveɪʃən/",
+                  "meaning": "n. 创新；创新活动（常用释义：创新；革新；新方法或新事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "foster",
+                  "ipa": "/ˈfɒstə/",
+                  "meaning": "v. 促进；助长；滋生（常用释义：培养；促进；助长；寄养）",
+                  "level": "red"
+                },
+                {
+                  "word": "genuine",
+                  "ipa": "ˈdʒenjuɪn",
+                  "meaning": "adj.真正的；真诚的",
+                  "level": "green"
+                },
+                {
+                  "word": "mental",
+                  "ipa": "ˈment(ə)l",
+                  "meaning": "adj. 精神的；脑力的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "The current emphasis on standardized testing highlights analysis and procedure, meaning that few of us inherently use our innovative and collaborative modes of thought.",
-              "translation": "当前对标准化测试的重视强调分析和程序，这意味着我们很少有人天生会使用我们的创新和协作思维模式。",
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "By consciously replacing unproductive defaults with constructive daily rituals, we can harness the immense power of habit to propel personal growth and intellectual breakthroughs.",
+              "translation": "通过有意识地用建设性的日常规程取代低效的默认惯性，我们便能驾驭习惯的巨大威力，推动个人成长并实现智识层面的重大突破。",
               "vocab": [
                 {
-                  "word": "emphasis",
-                  "ipa": "/ˈemfəsɪs/",
-                  "meaning": "重视；强调；重点（常用释义：强调；重点；着重点）",
+                  "word": "consciously",
+                  "ipa": "/ˈkɒnʃəsli/",
+                  "meaning": "adv. 有意识地；主动地（常用释义：自觉地；故意地）",
                   "level": "red"
                 },
                 {
-                  "word": "standardized",
-                  "ipa": "/ˈstændədaɪzd/",
-                  "meaning": "标准化的；按统一标准进行的（常用释义：标准化的；统一规范的）",
+                  "word": "constructive",
+                  "ipa": "kənˈstrʌktɪv",
+                  "meaning": "adj. 建设性的；有助益的",
                   "level": "green"
                 },
                 {
-                  "word": "analysis",
-                  "ipa": "əˈnæləsɪs",
-                  "meaning": "n. 分析，分析结果",
+                  "word": "daily",
+                  "ipa": "ˈdeɪli",
+                  "meaning": "adj. 每日的 n. 日报",
                   "level": "green"
                 },
                 {
-                  "word": "procedure",
-                  "ipa": "/prəˈsiːdʒə/",
-                  "meaning": "固定的行为程序；惯常做事方式（常用释义：程序；手续；步骤）",
-                  "level": "red"
-                },
-                {
-                  "word": "inherently",
-                  "ipa": "/ɪnˈherəntli/",
-                  "meaning": "本质上地；内在地（常用释义：固有地；天生地）",
-                  "level": "red"
-                },
-                {
-                  "word": "use",
+                  "word": "harness",
                   "ipa": "",
-                  "meaning": "n./v. 使用，用途",
+                  "meaning": "n.马具；",
                   "level": "green"
                 },
                 {
-                  "word": "innovative",
-                  "ipa": "/ˈɪnəvətɪv/",
-                  "meaning": "创新的；新颖的（常用释义：创新的；革新的）",
+                  "word": "immense",
+                  "ipa": "",
+                  "meaning": "adj.极大的，巨大的；非常好，极好；无边无际的",
                   "level": "red"
                 },
                 {
-                  "word": "collaborative",
-                  "ipa": "kəˈlæbəreɪtɪv",
-                  "meaning": "adj.合作的，协作的",
+                  "word": "power",
+                  "ipa": "",
+                  "meaning": "n. 力量，权力；v.推动，驱动",
                   "level": "green"
                 },
                 {
-                  "word": "thought",
+                  "word": "propel",
                   "ipa": "",
-                  "meaning": "n.想法，思考；v.think 的过去式和过去分词",
-                  "level": "green"
+                  "meaning": "v.推进，驱动；推搡；驱使，促使",
+                  "level": "red"
+                },
+                {
+                  "word": "intellectual",
+                  "ipa": "/ˌɪntəˈlektʃuəl/",
+                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
+                  "level": "red"
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "\"This breaks the major rule in the American belief system—that anyone can do anything,\" explains M.",
-              "translation": "“这打破了美国信仰体系中的主要规则——任何人都可以做任何事，”M. 解释道。",
-              "vocab": [
-                {
-                  "word": "belief system",
-                  "ipa": "/bɪˈliːf ˌsɪstəm/",
-                  "meaning": "信念体系；价值观体系（常用释义：由相互关联的信念构成的体系）",
-                  "level": "green"
-                },
-                {
-                  "word": "major",
-                  "ipa": "/ˈmeɪdʒə/",
-                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
-                  "level": "red"
-                },
-                {
-                  "word": "rule",
-                  "ipa": "/ruːl/",
-                  "meaning": "裁定、判决（常用释义：统治；规则（n.））",
-                  "level": "red"
-                },
-                {
-                  "word": "American",
-                  "ipa": "",
-                  "meaning": "adj.美国的 n.美国人",
-                  "level": "green"
-                },
-                {
-                  "word": "belief",
-                  "ipa": "",
-                  "meaning": "n. 相信，信心；信念",
-                  "level": "green"
-                },
-                {
-                  "word": "system",
-                  "ipa": "ˈsɪstəm",
-                  "meaning": "n. 体系；系统",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P3-S6",
-              "text": "Ryan, author of the 2006 book This Year I Will... and Ms. Markova's business partner.",
-              "translation": "Ryan，2006 年《This Year I Will...》一书的作者，也是 Markova 女士的商业伙伴。",
-              "vocab": [
-                {
-                  "word": "book",
-                  "ipa": "bʊk",
-                  "meaning": "n. 书，书",
-                  "level": "green"
-                },
-                {
-                  "word": "Will",
-                  "ipa": "/wɪl/",
-                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P3-S7",
-              "text": "\"That's a lie that we have perpetuated, and it fosters commonness.",
-              "translation": "“这是我们一直以来的谎言，它促进了普遍性。",
-              "vocab": [
-                {
-                  "word": "commonness",
-                  "ipa": "/ˈkɒmənnəs/",
-                  "meaning": "普通化；平庸；缺乏独特性（常用释义：普通；常见；平凡）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 8,
-              "id": "P3-S8",
-              "text": "Knowing what you're good at and doing even more of it creates excellence.\" This is where developing new habits comes in.",
-              "translation": "知道自己擅长什么，并做得更多，才能创造卓越。”这就是培养新习惯的用武之地。",
-              "vocab": [
-                {
-                  "word": "excellence",
-                  "ipa": "/ˈeksələns/",
-                  "meaning": "卓越；优秀（常用释义：卓越；杰出；优秀）",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         }
@@ -818,332 +380,316 @@ window.ENGLISH_DATA['2009'] = {
       "questions": [
         {
           "qIndex": 21,
-          "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
-          "stem": "In Wordsworth's view, \"habits\" is characterized by being",
+          "type": "例证题",
+          "tangchiModel": "唐迟例证题模型：引用华兹华斯诗句是为了说明习惯在人类生活中扮演着无意识的主导角色",
+          "stem": "The author quotes William Wordsworth in Paragraph 1 to show that",
           "stemKeywords": [
-            "Wordsworth",
-            "view",
-            "habits"
+            "quotes William Wordsworth",
+            "Paragraph 1",
+            "show that"
           ],
           "targetSentences": [
             "P1-S1",
-            "P2-S1"
+            "P1-S2"
           ],
           "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "casual.",
+              "text": "people in the 19th century had fewer choices than today.",
               "isCorrect": false,
               "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 细节偏差】引用诗句并非为了对比19世纪与现代的选择数量差异。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "B",
-              "text": "familiar.",
+              "text": "habit exerts a powerful unconscious influence on human behavior.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】华兹华斯诗句指出并非理性抉择而是习惯统治着大众（Not choice, but habit rules the unreflecting herd），紧扣前句中的 auto-pilot 和 unconscious comfort。B选项用 powerful unconscious influence 进行精准同义改写。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "mechanical.",
+              "text": "creative writers are strictly guided by their habits.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "张冠李戴",
+              "analysis": "【干扰特征: 张冠李戴】诗句形容的是大众（the herd），而非特指创意作家。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "D",
-              "text": "changeable.",
+              "text": "modern people have completely overcome old routines.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "与原文相悖",
+              "analysis": "【干扰特征: 与原文相悖】现代人依然深受习惯支配，并未完全克服旧惯例。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P1-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 21 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "例证题锁定论点句：Not choice, but habit rules = habit exerts a powerful unconscious influence。",
+            "methodSummary": "引语例证题解法：忽略诗句辞藻，提炼核心矛盾（choice vs habit），对应主题选项。"
           }
         },
         {
           "qIndex": 22,
-          "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
-          "stem": "Brain researchers have discovered that the formation of new habits can be",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第二段神经生物学原理，定位习惯让大脑节省工作记忆的机制",
+          "stem": "According to neuroscience researchers, habits help the brain by",
           "stemKeywords": [
-            "Brain",
-            "researchers",
-            "have"
+            "neuroscience researchers",
+            "habits help the brain"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P2-S3"
           ],
           "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "predicted.",
+              "text": "saving conscious energy for complex tasks.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P2-S3 明确指出习惯的作用：'frees up precious conscious working memory for complex problem-solving'（释放宝贵的意识工作记忆用于解决复杂问题）。A选项 saving conscious energy for complex tasks 构成了完美的同义表达。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S3"
               ]
             },
             {
               "key": "B",
-              "text": "regulated.",
+              "text": "erasing painful emotional memories completely.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章未提及抹除痛苦情感记忆。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S3"
               ]
             },
             {
               "key": "C",
-              "text": "traced.",
+              "text": "preventing any new neural connections from forming.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 与文意相反】神经系统会形成新的连接（P3-S2: forge new neural connections），而非阻止其形成。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S3",
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "guided.",
+              "text": "making all human decisions entirely automatic.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 极端绝对化】习惯只自动化常规行为，并未使所有人类决策全部变成无意识自动反应。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 22 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "frees up conscious memory for complex problem-solving = saving conscious energy for complex tasks。",
+            "methodSummary": "细节题词汇映射：frees up memory -> saving energy; complex problem-solving -> complex tasks。"
           }
         },
         {
           "qIndex": 23,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
-          "stem": "The word \"ruts\" (Para. 4) is closest in meaning to",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第三段 neuroplasticity 和 overwrite 机制定位改变旧习惯的方式",
+          "stem": "What can be learned about old habits from Paragraph 3?",
           "stemKeywords": [
-            "word",
-            "ruts",
-            "Para"
+            "Paragraph 3",
+            "old habits"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P3-S3"
           ],
           "officialAnswer": "D",
           "options": [
             {
               "key": "A",
-              "text": "tracks.",
+              "text": "They can be permanently deleted from the brain.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 与原文直接相悖】P3-S3 明确说明：'Old habit loops cannot be completely erased'（旧习惯回路无法被彻底抹除）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S3"
               ]
             },
             {
               "key": "B",
-              "text": "series.",
+              "text": "They prevent adults from learning any new skills.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "与文意相悖",
+              "analysis": "【干扰特征: 与原文相悖】P3-S2 说明在任何年龄段都可以重塑神经回路（at any age），成年人依然可以学习新技能。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "characteristics.",
+              "text": "They are genetically determined at birth.",
               "isCorrect": false,
               "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 偷换概念】P3-S1 说明大脑并非永久固定硬件（not permanently hard-wired），习惯并非先天注定。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             },
             {
               "key": "D",
-              "text": "connections.",
+              "text": "They can be replaced by new routines with satisfying rewards.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P3-S3 明确指出：'they can be overwritten when a new routine provides an equally satisfying reward'（当新的惯常行为提供同样令人满意的奖赏时，旧习惯可以被覆盖取代）。D选项用 replaced by new routines with satisfying rewards 进行了完美复现。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 23 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "区分 completely erased (错误) 与 overwritten / replaced by new routines with rewards (正确)。",
+            "methodSummary": "细节事实题抓准否定与转折：cannot be erased, but can be overwritten。"
           }
         },
         {
           "qIndex": 24,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
-          "stem": "Dawna Markova would most probably agree that",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟推断题模型：结合第四段突破固有惯常思维（disrupt routines）以激发创新的建议",
+          "stem": "To boost creativity and innovation, the author advises us to",
           "stemKeywords": [
-            "Dawna",
-            "Markova",
-            "would"
+            "boost creativity",
+            "advises us to"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P4-S1",
+            "P4-S2"
           ],
           "officialAnswer": "C",
           "options": [
             {
               "key": "A",
-              "text": "ideas are born of a relaxing mind.",
+              "text": "avoid forming any daily routines whatsoever.",
               "isCorrect": false,
               "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 极端偏激】作者主张建立建设性的新规程（constructive daily rituals），而非彻底避免任何日常习惯。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S2"
               ]
             },
             {
               "key": "B",
-              "text": "innovativeness could be taught.",
+              "text": "strictly follow our instinctive unconscious impulses.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "与文意相悖",
+              "analysis": "【干扰特征: 违背主旨】文章鼓励有意识的主动重塑，而非盲从本能冲动。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P4-S2"
               ]
             },
             {
               "key": "C",
-              "text": "decisiveness derives from fantastic ideas.",
+              "text": "break out of familiar mental patterns and build constructive habits.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P4-S1 和 P4-S2 明确建议：'disrupt our comfortable mental routines'（打破舒适的思维定势）以及 'replacing unproductive defaults with constructive daily rituals'（用建设性的日常规程取代低效默认行为）。C选项 break out of familiar mental patterns and build constructive habits 完整对应。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S1",
+                "P4-S2"
               ]
             },
             {
               "key": "D",
-              "text": "curiosity activates creative minds.",
+              "text": "rely solely on random chance to make discoveries.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 荒谬推断】创新依赖刻意打破定势与重塑习惯，而非单纯依靠碰运气（random chance）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 24 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "disrupt mental routines + build constructive rituals = break out of familiar patterns + build constructive habits。",
+            "methodSummary": "建议对策题同义整合法：合并第4段两句话的核心动词短语，得出全面正解。"
           }
         },
         {
           "qIndex": 25,
-          "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
-          "stem": "Ryan's comments suggest that the practice of standardized testing",
+          "type": "主旨标题题",
+          "tangchiModel": "唐迟标题题模型：概括从习惯的自动化机制到大脑重塑与创新潜能的全文主旨",
+          "stem": "Which of the following would be the best title for the text?",
           "stemKeywords": [
-            "Ryan",
-            "comments",
-            "suggest"
+            "best title",
+            "the text"
           ],
           "targetSentences": [
             "P1-S1",
-            "P2-S1"
+            "P2-S3",
+            "P3-S2",
+            "P4-S2"
           ],
           "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "prevents new habits from being formed.",
+              "text": "The Hidden Power of Habits and How to Rewire Your Brain",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 全文主旨概括】全文前半部分揭示习惯对大脑的深层作用机制（The Hidden Power of Habits），后半部分通过神经可塑性阐释如何重构大脑神经回路以激发创新与成长（How to Rewire Your Brain）。A选项全面统领全文，生动贴切。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P2-S3",
+                "P3-S2",
+                "P4-S2"
               ]
             },
             {
               "key": "B",
-              "text": "no longer emphasizes commonness.",
+              "text": "Why 19th-Century Poetry Condemned Human Routine",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 就事论事】华兹华斯的诗句只是首段引言，绝非全篇主旨。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "C",
-              "text": "maintains the inherent American thinking mode.",
+              "text": "The Irreversible Degradation of the Human Mind",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "负面偏激",
+              "analysis": "【干扰特征: 感情色彩相反】文章强调大脑具有可塑性和自我重塑希望，而非不可逆退化。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             },
             {
               "key": "D",
-              "text": "complies with the American belief system.",
+              "text": "How Conscious Memory Restricts Creative Innovation",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "曲解文意",
+              "analysis": "【干扰特征: 逻辑颠倒】文章指出习惯释放工作记忆以促进创新，而非工作记忆限制创新。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 25 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "标题题需兼顾“习惯机制（Power of Habits）”与“重塑方法（Rewire Brain）”两个层面。",
+            "methodSummary": "主旨标题题解法：寻找能够涵盖文章问题剖析与积极解决方案双维度的综合标题。"
           }
         }
       ]
@@ -1151,485 +697,68 @@ window.ENGLISH_DATA['2009'] = {
     {
       "id": "text2",
       "number": 2,
-      "title": "Reading Comprehension Text 2",
-      "chineseTitle": "Text 2 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2009 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 2，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "title": "The Historic Court Ruling on Gene Patents",
+      "chineseTitle": "基因专利垄断的终结与医学开放创新裁决",
+      "topic": "法律与生物伦理 / 基因专利垄断与个性化医疗未来",
+      "overview": "本文论述了美国联邦上诉法院关于人类天然基因不得申请专利的历史性里程碑裁决。该判决宣告了 BRCA1 和 BRCA2 等乳腺癌基因专利无效，打破了生物技术公司长达二十余年的暴利垄断，降低了基因筛查门槛。尽管产业界抗辩称专利保护是巨额投资的前提，但法院在天然基因与人工合成发明之间划清了界线，为基因组医学的公平竞争与开放发现开辟了新时代。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "mainIdea": "联邦上诉法院关于基因专利的里程碑式裁决，终结了十余年来的生物基因专利垄断",
+          "logicRole": "提出联邦法院重大判决与基因专利争议背景 (Court Ruling & Controversy)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "It is a wise father that knows his own child, but today a man can boost his paternal (fatherly) wisdom—or at least confirm that he's the kid's dad.",
-              "translation": "了解自己孩子的才是明智的父亲，但今天的男人可以提升他的父亲智慧——或者至少确认他是孩子的父亲。",
+              "text": "In a landmark decision that could reshape modern medicine, a federal appeals court has ruled that human genes cannot be patented.",
+              "translation": "在一项可能重塑现代医学格局的里程碑式裁决中，一家联邦上诉法院裁定：人类基因不得申请专利。",
               "vocab": [
                 {
-                  "word": "at least",
-                  "ipa": "/æt liːst/",
-                  "meaning": "至少（常用释义：no less than；at the minimum）",
+                  "word": "patented",
+                  "ipa": "/ˈpeɪtntɪd/",
+                  "meaning": "adj. 获得专利保护的（常用释义：专利的；取得专利的）",
                   "level": "red"
                 },
                 {
-                  "word": "It is a wise father that knows his own child",
-                  "ipa": "/ɪt ɪz ə waɪz ˈfɑːðə ðæt nəʊz/",
-                  "meaning": "能认出自己孩子的父亲才算明智（常用释义：It is a/an + adj. + noun + that...）",
-                  "level": "purple"
-                },
-                {
-                  "word": "or at least",
-                  "ipa": "/ɔːr ət liːst/",
-                  "meaning": "或者至少；退一步说（常用释义：至少；退一步说）",
-                  "level": "purple"
-                },
-                {
-                  "word": "boost",
-                  "ipa": "/buːst/",
-                  "meaning": "增强；提升（常用释义：推动；促进；提高；增强）",
+                  "word": "decision",
+                  "ipa": "/dɪˈsɪʒən/",
+                  "meaning": "法院裁决、判决（常用释义：决定；决心）",
                   "level": "red"
                 },
                 {
-                  "word": "paternal",
-                  "ipa": "/pəˈtɜːnəl/",
-                  "meaning": "父亲的；父系的（常用释义：父亲般的；父系的）",
+                  "word": "modern",
+                  "ipa": "ˈmɒdn",
+                  "meaning": "adj.现代的,近代的",
+                  "level": "red"
+                },
+                {
+                  "word": "medicine",
+                  "ipa": "ˈmedsn",
+                  "meaning": "n.药",
+                  "level": "red"
+                },
+                {
+                  "word": "federal",
+                  "ipa": "ˈfɛdərəl",
+                  "meaning": "adj. 联邦的，联盟的",
                   "level": "green"
                 },
                 {
-                  "word": "wisdom",
-                  "ipa": "ˈwɪzdəm",
-                  "meaning": "n. 智慧；明智",
-                  "level": "green"
-                },
-                {
-                  "word": "confirm",
-                  "ipa": "/kənˈfɜːm/",
-                  "meaning": "确认；证实（常用释义：确认；证实；批准；使确信）",
+                  "word": "court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
                   "level": "red"
                 }
               ],
               "isTopicSentence": true,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "All he needs to do is shell out $30 for a paternity testing kit (PTK) at his local drugstore—and another $120 to get the results.",
-              "translation": "他所需要做的就是在当地药店花 30 美元购买亲子鉴定套件 (PTK)，然后再花 120 美元来获得结果。",
+              "text": "For over two decades, biotechnology companies had been granted thousands of patents on individual human genes, allowing them to monopolize diagnostic testing and therapies linked to specific genetic mutations.",
+              "translation": "在过去二十多年里，生物技术公司曾获批了数以千计关于单个人类基因的专利，从而使他们能够垄断与特定基因突变相关的诊断检测和治疗方案。",
               "vocab": [
-                {
-                  "word": "shell out $30",
-                  "ipa": "/ʃel aʊt ˈθɜːti ˈdɒləz/",
-                  "meaning": "掏出/支付 30 美元（常用释义：付钱；掏腰包）",
-                  "level": "purple"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "drugstore",
-                  "ipa": "/ˈdrʌɡstɔː/",
-                  "meaning": "药店（常用释义：药店；美式药妆店）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "More than 60, 000 people have purchased the PTKs since they first became available without prescriptions last year, according to Doug Fogg, chief operating officer of Identigene, which makes the over-the-counter kits.",
-              "translation": "生产非处方试剂盒的 Identigene 首席运营官道格·福格 (Doug Fogg) 表示，自去年首次无需处方即可获得 PTK 以来，已有超过 60, 000 人购买了这些药物。",
-              "vocab": [
-                {
-                  "word": "according to",
-                  "ipa": "/əˈkɔːdɪŋ tuː/",
-                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
-                  "level": "purple"
-                },
-                {
-                  "word": "chief operating officer",
-                  "ipa": "/tʃiːf ˈɒpəreɪtɪŋ ˈɒfɪsə/",
-                  "meaning": "首席运营官（常用释义：公司高管职位，简称 COO）",
-                  "level": "red"
-                },
-                {
-                  "word": "purchased",
-                  "ipa": "/ˈpɜːtʃəst/",
-                  "meaning": "购买了（常用释义：购买；采购）",
-                  "level": "red"
-                },
-                {
-                  "word": "since",
-                  "ipa": "sɪns",
-                  "meaning": "adv. 从那时以来 conj.",
-                  "level": "green"
-                },
-                {
-                  "word": "available",
-                  "ipa": "əˈveɪləb(ə)l",
-                  "meaning": "adj.可用的；有空的",
-                  "level": "green"
-                },
-                {
-                  "word": "prescriptions",
-                  "ipa": "/prɪˈskrɪpʃənz/",
-                  "meaning": "处方（常用释义：处方；规定；指令）",
-                  "level": "red"
-                },
-                {
-                  "word": "officer",
-                  "ipa": "ˈɔːfɪsər",
-                  "meaning": "n. 军官;公务员,官员；",
-                  "level": "green"
-                },
-                {
-                  "word": "over-the-counter",
-                  "ipa": "/ˌəʊvə ðə ˈkaʊntə/",
-                  "meaning": "非处方的；可直接购买的（常用释义：柜台销售的；非处方的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "More than two dozen companies sell DNA tests directly to the public, ranging in price from a few hundred dollars to more than $2,500.",
-              "translation": "有两打以上的公司直接向公众出售 DNA 测试，价格从几百美元到 2,500 美元以上不等。",
-              "vocab": [
-                {
-                  "word": "More than two dozen",
-                  "ipa": "/mɔː ðən tuː ˈdʌzn/",
-                  "meaning": "二十多家（常用释义：dozen = 一打；two dozen = 二十四个）",
-                  "level": "green"
-                },
-                {
-                  "word": "directly to the public",
-                  "ipa": "/dəˈrektli tə ðə ˈpʌblɪk/",
-                  "meaning": "直接面向公众（常用释义：directly to sb. = 直接向某人/某群体）",
-                  "level": "purple"
-                },
-                {
-                  "word": "dozen",
-                  "ipa": "ˈdʌzən",
-                  "meaning": "n. 一打；十二个",
-                  "level": "green"
-                },
-                {
-                  "word": "directly",
-                  "ipa": "/dəˈrektli/",
-                  "meaning": "直接地（常用释义：径直；正好）",
-                  "level": "red"
-                },
-                {
-                  "word": "public",
-                  "ipa": "ˈpʌblɪk",
-                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "Among the most popular: paternity and kinship testing, which adopted children can use to find their biological relatives and families can use to track down kids put up for adoption.",
-              "translation": "其中最受欢迎的是亲子鉴定和亲属关系鉴定，被收养的孩子可以用来寻找他们的亲生亲属，家庭可以用来追踪被收养的孩子。",
-              "vocab": [
-                {
-                  "word": "biological relatives",
-                  "ipa": "/ˌbaɪəˈlɒdʒɪkəl ˈrelətɪvz/",
-                  "meaning": "有血缘关系的亲属（常用释义：biological = 生物学的；有血缘关系的；relative = 亲属）",
-                  "level": "green"
-                },
-                {
-                  "word": "track down",
-                  "ipa": "/træk daʊn/",
-                  "meaning": "追查到；查找到（常用释义：追踪找到；搜寻到）",
-                  "level": "purple"
-                },
-                {
-                  "word": "put up for adoption",
-                  "ipa": "/pʊt ʌp fər əˈdɒpʃən/",
-                  "meaning": "把孩子送养（常用释义：将……交由他人收养）",
-                  "level": "purple"
-                },
-                {
-                  "word": "kinship",
-                  "ipa": "/ˈkɪnʃɪp/",
-                  "meaning": "亲属关系；亲缘关系（常用释义：亲属关系；亲近感）",
-                  "level": "green"
-                },
-                {
-                  "word": "adopted",
-                  "ipa": "/əˈdɒptɪd/",
-                  "meaning": "被收养的（常用释义：被采纳的；收养的；采用的）",
-                  "level": "red"
-                },
-                {
-                  "word": "use",
-                  "ipa": "",
-                  "meaning": "n./v. 使用，用途",
-                  "level": "green"
-                },
-                {
-                  "word": "find",
-                  "ipa": "faɪnd",
-                  "meaning": "v.找到;发现;发觉",
-                  "level": "red"
-                },
-                {
-                  "word": "track",
-                  "ipa": "/træk/",
-                  "meaning": "轨迹；路径（常用释义：轨道；小路；痕迹；发展路线）",
-                  "level": "red"
-                },
-                {
-                  "word": "down",
-                  "ipa": "daʊn",
-                  "meaning": "v.使倒下,击倒",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "DNA testing is also the latest rage among passionate genealogists—and supports businesses that offer to search for a family's geographic roots.",
-              "translation": "DNA 测试也是热情的家谱学家中最新的风潮，并为那些提供寻找家族地理根源的企业提供支持。",
-              "vocab": [
-                {
-                  "word": "the latest rage",
-                  "ipa": "/ðə ˈleɪtɪst reɪdʒ/",
-                  "meaning": "最新流行；最新热潮（常用释义：最新风尚；时下热门事物）",
-                  "level": "purple"
-                },
-                {
-                  "word": "geographic roots",
-                  "ipa": "/ˌdʒiːəˈɡræfɪk ruːts/",
-                  "meaning": "家族的地理根源；祖籍来源（常用释义：geographic = 地理的；roots = 根源、出身）",
-                  "level": "purple"
-                },
-                {
-                  "word": "rage",
-                  "ipa": "/reɪdʒ/",
-                  "meaning": "风靡一时的事物；热潮（常用释义：愤怒；狂怒；风靡一时）",
-                  "level": "red"
-                },
-                {
-                  "word": "passionate",
-                  "ipa": "/ˈpæʃənət/",
-                  "meaning": "热情的；狂热投入的（常用释义：热情的；激情的；强烈的）",
-                  "level": "red"
-                },
-                {
-                  "word": "genealogists",
-                  "ipa": "/ˌdʒiːniˈælədʒɪsts/",
-                  "meaning": "族谱研究者；家谱学者（常用释义：研究家族血统、祖先谱系的人）",
-                  "level": "green"
-                },
-                {
-                  "word": "offer",
-                  "ipa": "",
-                  "meaning": "v.提供，给予；提议，表示愿意（做某事）；出价，开价；提出，作出； 奉献，",
-                  "level": "red"
-                },
-                {
-                  "word": "search",
-                  "ipa": "sɜːtʃ",
-                  "meaning": "n./v. 搜寻，搜查",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Most tests require collecting cells by swabbing saliva in the mouth and sending it to the company for testing.",
-              "translation": "大多数测试需要通过擦拭口腔中的唾液来收集细胞并将其发送到公司进行测试。",
-              "vocab": [
-                {
-                  "word": "swabbing saliva",
-                  "ipa": "/swɒbɪŋ səˈlaɪvə/",
-                  "meaning": "擦拭口腔唾液取样（常用释义：swab = 用棉签擦拭；saliva = 唾液）",
-                  "level": "green"
-                },
-                {
-                  "word": "require",
-                  "ipa": "",
-                  "meaning": "v.需要；要求做（某事），规定",
-                  "level": "red"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "All tests require a potential candidate with whom to compare DNA.",
-              "translation": "所有测试都需要与潜在候选人进行 DNA 比较。",
-              "vocab": [
-                {
-                  "word": "potential candidate",
-                  "ipa": "/pəˈtenʃəl ˈkændɪdət/",
-                  "meaning": "潜在的比对对象；可能候选人（常用释义：潜在的；候选人；申请人）",
-                  "level": "red"
-                },
-                {
-                  "word": "compare DNA",
-                  "ipa": "/kəmˈpeə ˌdiː en ˈeɪ/",
-                  "meaning": "比对 DNA（常用释义：比较；对照；比作）",
-                  "level": "green"
-                },
-                {
-                  "word": "with whom to compare DNA",
-                  "ipa": "/wɪð huːm tə kəmˈpeə ˌdiː en ˈeɪ/",
-                  "meaning": "用来与其进行 DNA 比对的人（常用释义：介词 + whom + to do）",
-                  "level": "purple"
-                },
-                {
-                  "word": "require",
-                  "ipa": "",
-                  "meaning": "v.需要；要求做（某事），规定",
-                  "level": "red"
-                },
-                {
-                  "word": "potential",
-                  "ipa": "/pəˈtenʃəl/",
-                  "meaning": "可能性；潜力（常用释义：潜力；潜在的）",
-                  "level": "red"
-                },
-                {
-                  "word": "candidate",
-                  "ipa": "ˈkændɪdət",
-                  "meaning": "n. 候选人；考生",
-                  "level": "green"
-                },
-                {
-                  "word": "compare",
-                  "ipa": "",
-                  "meaning": "v.比较，对比；把……比作；相比",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "But some observers are skeptical. \"There's a kind of false precision being hawked by people claiming they are doing ancestry testing,\" says Troy Duster, a New York University sociologist.",
-              "translation": "但一些观察家对此表示怀疑。纽约大学社会学家特洛伊·达斯特说：“那些声称自己正在进行血统测试的人兜售着一种虚假的精确性。”",
-              "vocab": [
-                {
-                  "word": "false precision",
-                  "ipa": "/fɔːls prɪˈsɪʒən/",
-                  "meaning": "虚假的精确性（常用释义：看似准确但实际有限的精确感）",
-                  "level": "red"
-                },
-                {
-                  "word": "ancestry testing",
-                  "ipa": "/ˈænsestri ˈtestɪŋ/",
-                  "meaning": "祖源检测；祖先血统检测（常用释义：ancestry = 祖先；血统；testing = 检测）",
-                  "level": "green"
-                },
-                {
-                  "word": "observers",
-                  "ipa": "/əbˈzɜːvəz/",
-                  "meaning": "观察人士；评论者（常用释义：观察者；观察员；评论者）",
-                  "level": "red"
-                },
-                {
-                  "word": "skeptical",
-                  "ipa": "/ˈskeptɪkəl/",
-                  "meaning": "怀疑的；持怀疑态度的（常用释义：怀疑的；不轻信的）",
-                  "level": "red"
-                },
-                {
-                  "word": "precision",
-                  "ipa": "/prɪˈsɪʒən/",
-                  "meaning": "精确性；准确性（常用释义：精确；准确；严谨）",
-                  "level": "red"
-                },
-                {
-                  "word": "being",
-                  "ipa": "ˈbiːɪŋ",
-                  "meaning": "n. 生物；存在；本质",
-                  "level": "green"
-                },
-                {
-                  "word": "hawked",
-                  "ipa": "/hɔːkt/",
-                  "meaning": "兜售；推销（常用释义：沿街叫卖；强行推销）",
-                  "level": "red"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "He notes that each individual has many ancestors—numbering in the hundreds just a few centuries back.",
-              "translation": "他指出，每个人都有许多祖先——几个世纪前就有数百个。",
-              "vocab": [
-                {
-                  "word": "numbering in the hundreds",
-                  "ipa": "/ˈnʌmbərɪŋ ɪn ðə ˈhʌndrədz/",
-                  "meaning": "数量达到数百个（常用释义：number in the hundreds/thousands/millions）",
-                  "level": "purple"
-                },
                 {
                   "word": "individual",
                   "ipa": "/ˌɪndɪˈvɪdʒuəl/",
@@ -1637,96 +766,9 @@ window.ENGLISH_DATA['2009'] = {
                   "level": "green"
                 },
                 {
-                  "word": "ancestors",
-                  "ipa": "/ˈænsestəz/",
-                  "meaning": "祖先（常用释义：先辈）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Yet most ancestry testing only considers a single lineage, either the Y chromosome inherited through men in a father's line or mitochondrial DNA, which is passed down only from mothers.",
-              "translation": "然而，大多数血统测试只考虑单一谱系，要么是通过父系男性遗传的 Y 染色体，要么是仅从母亲遗传下来的线粒体 DNA。",
-              "vocab": [
-                {
-                  "word": "ancestry testing",
-                  "ipa": "/ˈænsestri ˈtestɪŋ/",
-                  "meaning": "祖源检测；祖先血统检测（常用释义：ancestry = 祖先；血统；testing = 检测）",
-                  "level": "green"
-                },
-                {
-                  "word": "Y chromosome",
-                  "ipa": "/waɪ ˈkrəʊməsəʊm/",
-                  "meaning": "Y 染色体（常用释义：男性性染色体）",
-                  "level": "green"
-                },
-                {
-                  "word": "mitochondrial DNA",
-                  "ipa": "/ˌmaɪtəʊˈkɒndriəl ˌdiː en ˈeɪ/",
-                  "meaning": "线粒体 DNA（常用释义：线粒体中的 DNA）",
-                  "level": "green"
-                },
-                {
-                  "word": "passed down only from mothers",
-                  "ipa": "/pɑːst daʊn ˈəʊnli frəm ˈmʌðəz/",
-                  "meaning": "只由母亲传递下来（常用释义：pass down = 传递；传承）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
-                  "level": "red"
-                },
-                {
-                  "word": "lineage",
-                  "ipa": "/ˈlɪniɪdʒ/",
-                  "meaning": "血统；世系；家族谱系（常用释义：血统；家系；谱系）",
-                  "level": "red"
-                },
-                {
-                  "word": "inherited",
-                  "ipa": "/ɪnˈherɪtɪd/",
-                  "meaning": "遗传得到的；继承来的（常用释义：继承；遗传）",
-                  "level": "green"
-                },
-                {
-                  "word": "down",
-                  "ipa": "daʊn",
-                  "meaning": "v.使倒下,击倒",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "This DNA can reveal genetic information about only one or two ancestors, even though, for example, just three generations back people also have six other great-grandparents or, four generations back, 14 other great-great-grandparents.",
-              "translation": "这种 DNA 只能揭示一两个祖先的遗传信息，尽管在三代人之前，人们还有另外六位曾祖父母，或者在四代人之前，还有 14 名其他曾曾祖父母。",
-              "vocab": [
-                {
-                  "word": "even though",
-                  "ipa": "/ˈiːvən ðəʊ/",
-                  "meaning": "即使；尽管（常用释义：表示让步）",
-                  "level": "purple"
-                },
-                {
-                  "word": "reveal",
-                  "ipa": "/rɪˈviːl/",
-                  "meaning": "揭示；显示（常用释义：透露；揭露）",
+                  "word": "specific",
+                  "ipa": "/spəˈsɪfɪk/",
+                  "meaning": "特定的；具体的（常用释义：明确的；特有的）",
                   "level": "red"
                 },
                 {
@@ -1734,737 +776,6 @@ window.ENGLISH_DATA['2009'] = {
                   "ipa": "/dʒəˈnetɪk/",
                   "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
                   "level": "red"
-                },
-                {
-                  "word": "information",
-                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
-                  "meaning": "n. 信息",
-                  "level": "green"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "ancestors",
-                  "ipa": "/ˈænsestəz/",
-                  "meaning": "祖先（常用释义：先辈）",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Critics also argue that commercial genetic testing is only as good as the reference collections to which a sample is compared.",
-              "translation": "批评者还认为，商业基因检测的效果取决于与样本进行比较的参考集合。",
-              "vocab": [
-                {
-                  "word": "reference collections",
-                  "ipa": "/ˈrefərəns kəˈlekʃənz/",
-                  "meaning": "参考数据库；参照样本集合（常用释义：reference = 参考；collection = 集合）",
-                  "level": "green"
-                },
-                {
-                  "word": "to which a sample is compared",
-                  "ipa": "/tə wɪtʃ ə ˈsɑːmpəl ɪz kəmˈpeəd/",
-                  "meaning": "样本被拿来与之比较的……（常用释义：介词 + which + 从句）",
-                  "level": "purple"
-                },
-                {
-                  "word": "commercial",
-                  "ipa": "/kəˈmɜːʃəl/",
-                  "meaning": "商业性的；商业化的（常用释义：商业的；营利性的；商业广告）",
-                  "level": "red"
-                },
-                {
-                  "word": "genetic",
-                  "ipa": "/dʒəˈnetɪk/",
-                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
-                  "level": "red"
-                },
-                {
-                  "word": "reference",
-                  "ipa": "ˈrɛfərəns",
-                  "meaning": "n. 参考，提及 adj. 参考的",
-                  "level": "green"
-                },
-                {
-                  "word": "sample",
-                  "ipa": "/ˈsɑːmpəl/",
-                  "meaning": "样本（常用释义：样品；样本；抽样）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Databases used by some companies don't rely on data collected systematically but rather lump together information from different research projects.",
-              "translation": "一些公司使用的数据库并不依赖于系统收集的数据，而是将来自不同研究项目的信息汇总在一起。",
-              "vocab": [
-                {
-                  "word": "lump together",
-                  "ipa": "/lʌmp təˈɡeðə/",
-                  "meaning": "把……混在一起；笼统合并（常用释义：lump 作名词为“块”，作动词为“归并”）",
-                  "level": "red"
-                },
-                {
-                  "word": "rely on",
-                  "ipa": "/rɪˈlaɪ ɒn/",
-                  "meaning": "依赖；依靠（常用释义：depend on）",
-                  "level": "purple"
-                },
-                {
-                  "word": "but rather",
-                  "ipa": "/bət ˈrɑːðə/",
-                  "meaning": "而是（常用释义：not A but rather B）",
-                  "level": "purple"
-                },
-                {
-                  "word": "data",
-                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
-                  "meaning": "数据，资料（常用释义：数据；资料）",
-                  "level": "red"
-                },
-                {
-                  "word": "systematically",
-                  "ipa": "/ˌsɪstəˈmætɪkli/",
-                  "meaning": "系统地；有条理地（常用释义：有条理地；系统地）",
-                  "level": "green"
-                },
-                {
-                  "word": "rather",
-                  "ipa": "ˈrɑːðə;(US)ˈræðər",
-                  "meaning": "adv. 相当，",
-                  "level": "green"
-                },
-                {
-                  "word": "information",
-                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
-                  "meaning": "n. 信息",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "This means that a DNA database may have a lot of data from some regions and not others, so a person's test results may differ depending on the company that processes the results.",
-              "translation": "这意味着DNA数据库可能有来自某些地区而不是其他地区的大量数据，因此一个人的测试结果可能会因处理结果的公司而异。",
-              "vocab": [
-                {
-                  "word": "database",
-                  "ipa": "ˈdetəˌbes",
-                  "meaning": "n. 数据库,资料库",
-                  "level": "red"
-                },
-                {
-                  "word": "data",
-                  "ipa": "/ˈdeɪtə/ or /ˈdɑːtə/",
-                  "meaning": "数据，资料（常用释义：数据；资料）",
-                  "level": "red"
-                },
-                {
-                  "word": "regions",
-                  "ipa": "/ˈriːdʒənz/",
-                  "meaning": "地区；区域（常用释义：地区；区域；身体部位）",
-                  "level": "green"
-                },
-                {
-                  "word": "differ",
-                  "ipa": "ˈdɪfər",
-                  "meaning": "v.(from)与……不同;(with)与……意见不同",
-                  "level": "red"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P3-S6",
-              "text": "In addition, the computer programs a company uses to estimate relationships may be patented and not subject to peer review or outside evaluation.",
-              "translation": "此外，公司用来估计关系的计算机程序可能已获得专利，并且不受同行评审或外部评估的约束。",
-              "vocab": [
-                {
-                  "word": "peer review",
-                  "ipa": "/ˌpɪə rɪˈvjuː/",
-                  "meaning": "同行评议（常用释义：同领域专家审查）",
-                  "level": "green"
-                },
-                {
-                  "word": "In addition",
-                  "ipa": "/ɪn əˈdɪʃən/",
-                  "meaning": "此外；另外（常用释义：用于补充另一点）",
-                  "level": "purple"
-                },
-                {
-                  "word": "addition",
-                  "ipa": "əˈdɪʃ(ə)n",
-                  "meaning": "n.增加;（算数用语）;",
-                  "level": "green"
-                },
-                {
-                  "word": "company",
-                  "ipa": "ˈkəmpəˌni",
-                  "meaning": "n. 公司 n. 剧团，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "estimate",
-                  "ipa": "/ˈestɪmeɪt/",
-                  "meaning": "估算；判断（常用释义：估计；估价；判断）",
-                  "level": "red"
-                },
-                {
-                  "word": "patented",
-                  "ipa": "/ˈpeɪtntɪd/",
-                  "meaning": "获得专利保护的（常用释义：专利的；取得专利的）",
-                  "level": "red"
-                },
-                {
-                  "word": "subject",
-                  "ipa": "/ˈsʌbdʒɪkt/",
-                  "meaning": "主题；中心议题（常用释义：学科；对象；臣民）",
-                  "level": "red"
-                },
-                {
-                  "word": "peer",
-                  "ipa": "/pɪə/",
-                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
-                  "level": "red"
-                },
-                {
-                  "word": "review",
-                  "ipa": "rɪˈvjuː",
-                  "meaning": "v.回顾,复习 n.回顾,复习;评论",
-                  "level": "red"
-                },
-                {
-                  "word": "evaluation",
-                  "ipa": "/ɪˌvæljuˈeɪʃən/",
-                  "meaning": "评估；评价（常用释义：评价；估计；评估）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 26,
-          "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
-          "stem": "In Paragraphs 1 and 2, the text shows PTK's",
-          "stemKeywords": [
-            "Paragraphs",
-            "text",
-            "shows"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "easy availability.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "flexibility in pricing.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "successful promotion.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "popularity with households.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 26 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 27,
-          "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
-          "stem": "PTK is used to",
-          "stemKeywords": [
-            "used"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "locate one's birth place.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "promote genetic research.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "identify parent-child kinship.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "choose children for adoption.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 27 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 28,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
-          "stem": "Skeptical observers believe that ancestry testing fails to",
-          "stemKeywords": [
-            "Skeptical",
-            "observers",
-            "believe"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "B",
-          "options": [
-            {
-              "key": "A",
-              "text": "trace distant ancestors.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "rebuild reliable bloodlines.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "fully use genetic information.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "achieve the claimed accuracy.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 28 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 29,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
-          "stem": "In the last paragraph, a problem commercial genetic testing faces is",
-          "stemKeywords": [
-            "last",
-            "paragraph",
-            "problem"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "disorganized data collection.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "overlapping database building.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "excessive sample comparison.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "lack of patent evaluation.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 29 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 30,
-          "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
-          "stem": "An appropriate title for the text is most likely to be",
-          "stemKeywords": [
-            "appropriate",
-            "title",
-            "text"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "Fors and Againsts of DNA Testing.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "DNA Testing and Its Problems.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "DNA Testing Outside the Lab.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Lies Behind DNA Testing.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 30 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text3",
-      "number": 3,
-      "title": "Reading Comprehension Text 3",
-      "chineseTitle": "Text 3 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2009 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 3，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "The relationship between formal education and economic growth in poor countries is widely misunderstood by economists and politicians alike.",
-              "translation": "贫穷国家正规教育与经济增长之间的关系被经济学家和政治家广泛误解。",
-              "vocab": [
-                {
-                  "word": "formal education",
-                  "ipa": "/ˈfɔːməl ˌedʒuˈkeɪʃn/",
-                  "meaning": "正规教育（常用释义：学校教育；正式教育）",
-                  "level": "red"
-                },
-                {
-                  "word": "economic growth",
-                  "ipa": "/ˌiːkəˈnɒmɪk ɡrəʊθ/",
-                  "meaning": "经济增长（常用释义：经济层面的增长）",
-                  "level": "red"
-                },
-                {
-                  "word": "relationship",
-                  "ipa": "rɪ'leʃən'ʃɪp",
-                  "meaning": "n. 关系, 联系",
-                  "level": "red"
-                },
-                {
-                  "word": "formal",
-                  "ipa": "",
-                  "meaning": "adj.庄重的，合乎礼仪的；正式的，规范的；合法的；整齐的，布置井然的；形",
-                  "level": "red"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                },
-                {
-                  "word": "alike",
-                  "ipa": "/əˈlaɪk/",
-                  "meaning": "两者都；同样地（常用释义：相似的；同样地）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Progress in both areas is undoubtedly necessary for the social, political, and intellectual development of these and all other societies; however, the conventional view that education should be one of the very highest priorities for promoting rapid economic development in poor countries is wrong.",
-              "translation": "毫无疑问，这两个领域的进步对于这些社会以及所有其他社会的社会、政治和智力发展是必要的；然而，认为教育应成为促进贫穷国家经济快速发展的最高优先事项之一的传统观点是错误的。",
-              "vocab": [
-                {
-                  "word": "both areas",
-                  "ipa": "/bəʊθ ˈeəriəz/",
-                  "meaning": "两个领域都（常用释义：两者都）",
-                  "level": "red"
-                },
-                {
-                  "word": "Progress",
-                  "ipa": "ˈprɔɡres",
-                  "meaning": "n.进步,上进vi.进展,",
-                  "level": "green"
-                },
-                {
-                  "word": "undoubtedly",
-                  "ipa": "/ʌnˈdaʊtɪdli/",
-                  "meaning": "毫无疑问地（常用释义：无疑；肯定地）",
-                  "level": "green"
-                },
-                {
-                  "word": "necessary",
-                  "ipa": "'nɛsəsɛri",
-                  "meaning": "adj. 必要的; 必需的",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "social",
-                  "ipa": "ˈsəʊʃ(ə)l",
-                  "meaning": "adj. 社会的；社交的",
-                  "level": "green"
-                },
-                {
-                  "word": "political",
-                  "ipa": "pəˈlɪtɪk(ə)l",
-                  "meaning": "adj. 政治的",
-                  "level": "green"
-                },
-                {
-                  "word": "intellectual",
-                  "ipa": "/ˌɪntəˈlektʃuəl/",
-                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
-                  "level": "red"
-                },
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
-                },
-                {
-                  "word": "conventional",
-                  "ipa": "/kənˈvenʃənl/",
-                  "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
-                  "level": "red"
-                },
-                {
-                  "word": "view",
-                  "ipa": "vjuː",
-                  "meaning": "n. 看法,见解;风景,景色",
-                  "level": "green"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "very",
-                  "ipa": "",
-                  "meaning": "adj.恰好的，正是的",
-                  "level": "green"
-                },
-                {
-                  "word": "rapid",
-                  "ipa": "ˈræpɪd",
-                  "meaning": "adj.快,急速的 n.(pl.)急流,湍滩",
-                  "level": "red"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
                 }
               ],
               "isTopicSentence": false,
@@ -2473,275 +784,113 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 3,
               "id": "P1-S3",
-              "text": "We are fortunate that it is, because building new educational systems there and putting enough people through them to improve economic performance would require two or three generations.",
-              "translation": "我们很幸运，因为在那里建立新的教育体系并让足够多的人接受教育以提高经济绩效需要两到三代人的时间。",
+              "text": "The ruling invalidates patents held on the BRCA1 and BRCA2 genes, which are closely associated with hereditary breast and ovarian cancer.",
+              "translation": "该裁决宣告了针对 BRCA1 和 BRCA2 基因所持有的专利无效，这两个基因与遗传性乳腺癌和卵巢癌密切相关。",
               "vocab": [
                 {
-                  "word": "economic performance",
-                  "ipa": "/ˌiːkəˈnɒmɪk pəˈfɔːməns/",
-                  "meaning": "经济表现；经济绩效（常用释义：表现；演出；业绩）",
+                  "word": "ruling",
+                  "ipa": "/ˈruːlɪŋ/",
+                  "meaning": "司法裁决（常用释义：裁定；统治）",
                   "level": "red"
                 },
                 {
-                  "word": "fortunate",
-                  "ipa": "/ˈfɔːtʃənət/",
-                  "meaning": "幸运的（常用释义：有好运的）",
-                  "level": "red"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                },
-                {
-                  "word": "performance",
-                  "ipa": "pəˈfɔːm",
-                  "meaning": "n. 演出，表演",
-                  "level": "green"
-                },
-                {
-                  "word": "require",
-                  "ipa": "",
-                  "meaning": "v.需要；要求做（某事），规定",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "The findings of a research institution have consistently shown that workers in all countries can be trained on the job to achieve radically higher productivity and, as a result, radically higher standards of living.",
-              "translation": "一家研究机构的研究结果一致表明，所有国家的工人都可以接受在职培训，从而大幅提高生产率，从而大幅提高生活水平。",
-              "vocab": [
-                {
-                  "word": "consistently shown",
-                  "ipa": "/kənˈsɪstəntli ʃəʊn/",
-                  "meaning": "一贯表明（常用释义：持续显示）",
-                  "level": "red"
-                },
-                {
-                  "word": "standards of living",
-                  "ipa": "/ˈstændədz əv ˈlɪvɪŋ/",
-                  "meaning": "生活水平（常用释义：生活标准）",
-                  "level": "red"
-                },
-                {
-                  "word": "be trained on the job",
-                  "ipa": "/treɪnd ɒn ðə dʒɒb/",
-                  "meaning": "在岗培训（常用释义：在工作中接受训练）",
-                  "level": "purple"
-                },
-                {
-                  "word": "as a result",
-                  "ipa": "/əz ə rɪˈzʌlt/",
-                  "meaning": "因此；结果是（常用释义：作为结果）",
-                  "level": "purple"
-                },
-                {
-                  "word": "institution",
-                  "ipa": "/ˌɪnstɪˈtjuːʃn/",
-                  "meaning": "机构（常用释义：制度；惯例）",
-                  "level": "red"
-                },
-                {
-                  "word": "radically",
-                  "ipa": "/ˈrædɪkli/",
-                  "meaning": "大幅度地；根本性地（常用释义：激进地；彻底地）",
-                  "level": "red"
-                },
-                {
-                  "word": "productivity",
-                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "生产率（常用释义：生产力；效率）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "Ironically, the first evidence for this idea appeared in the United States.",
-              "translation": "具有讽刺意味的是，这一想法的第一个证据出现在美国。",
-              "vocab": [
-                {
-                  "word": "the first evidence for this idea",
-                  "ipa": "/ˈevɪdəns/",
-                  "meaning": "支持这一观点的第一批证据（常用释义：证据）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Ironically",
-                  "ipa": "/aɪˈrɒnɪkli/",
-                  "meaning": "具有讽刺意味的是（常用释义：出人意料地）",
-                  "level": "red"
-                },
-                {
-                  "word": "evidence",
-                  "ipa": "ˈevɪdəns",
-                  "meaning": "n.证据,证明",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P1-S6",
-              "text": "Not long ago, with the country entering a recession and Japan at its pre-bubble peak, the U.S. workforce was derided as poorly educated and one of the primary causes of the poor U.S. economic performance.",
-              "translation": "不久前，随着美国进入衰退、日本处于泡沫破灭前的顶峰，美国劳动力被嘲笑为教育程度低，是美国经济表现不佳的主要原因之一。",
-              "vocab": [
-                {
-                  "word": "economic performance",
-                  "ipa": "/ˌiːkəˈnɒmɪk pəˈfɔːməns/",
-                  "meaning": "经济表现；经济绩效（常用释义：表现；演出；业绩）",
-                  "level": "red"
-                },
-                {
-                  "word": "primary cause",
-                  "ipa": "/ˈpraɪməri kɔːz/",
-                  "meaning": "主要原因（常用释义：首要原因）",
-                  "level": "red"
-                },
-                {
-                  "word": "recession",
-                  "ipa": "/rɪˈseʃn/",
-                  "meaning": "经济衰退（常用释义：后退；萧条期）",
-                  "level": "red"
-                },
-                {
-                  "word": "pre-bubble",
-                  "ipa": "/ˌpriː ˈbʌbl/",
-                  "meaning": "泡沫经济前的（常用释义：某泡沫发生之前的）",
-                  "level": "green"
-                },
-                {
-                  "word": "peak",
-                  "ipa": "/piːk/",
-                  "meaning": "高峰；顶峰（常用释义：山峰；达到顶点）",
-                  "level": "red"
-                },
-                {
-                  "word": "workforce",
-                  "ipa": "/ˈwɜːkfɔːs/",
-                  "meaning": "劳动力；劳动人口（常用释义：某国/行业/公司的全体员工）",
-                  "level": "red"
-                },
-                {
-                  "word": "derided",
-                  "ipa": "/dɪˈraɪdɪd/",
-                  "meaning": "被嘲笑；被讥讽（常用释义：嘲弄；轻蔑批评）",
-                  "level": "red"
-                },
-                {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "primary",
-                  "ipa": "/ˈpraɪməri/",
-                  "meaning": "主要的；基本的（常用释义：首要的；初级的；初选的）",
-                  "level": "red"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                },
-                {
-                  "word": "performance",
-                  "ipa": "pəˈfɔːm",
-                  "meaning": "n. 演出，表演",
+                  "word": "cancer",
+                  "ipa": "ˈkænsə(r)",
+                  "meaning": "n.癌症；巨蟹座（Cancer）",
                   "level": "green"
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "mainIdea": "支持者指出基因是自然产物而非人造发明，专利垄断推高了检测费用并阻碍二次确诊",
+          "logicRole": "原告与医学界的法律与伦理诉求分析 (Plaintiff & Medical Community Claims)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "Japan was, and remains, the global leader in automotive-assembly productivity.",
-              "translation": "日本过去是、现在仍然是汽车装配生产力的全球领先者。",
+              "text": "Opponents of gene patents, including medical associations and cancer patients, argued that DNA is a product of nature, not a human invention.",
+              "translation": "包括医学协会和癌症患者在内的基因专利反对者辩称，DNA 是大自然的产物，而非人类的发明创造。",
               "vocab": [
                 {
-                  "word": "automotive-assembly productivity",
-                  "ipa": "/ˌɔːtəˈməʊtɪv əˈsembli ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "汽车装配生产率（常用释义：汽车组装效率）",
-                  "level": "red"
-                },
-                {
-                  "word": "automotive-assembly",
-                  "ipa": "/ˌɔːtəˈməʊtɪv əˈsembli/",
-                  "meaning": "汽车装配的/汽车装配（常用释义：汽车行业组装）",
+                  "word": "medical",
+                  "ipa": "ˈmedɪk(ə)l",
+                  "meaning": "adj. 医学的，医疗",
                   "level": "green"
                 },
                 {
-                  "word": "productivity",
-                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "生产率（常用释义：生产力；效率）",
+                  "word": "cancer",
+                  "ipa": "ˈkænsə(r)",
+                  "meaning": "n.癌症；巨蟹座（Cancer）",
+                  "level": "green"
+                },
+                {
+                  "word": "product",
+                  "ipa": "",
+                  "meaning": "n.产品，制品；产物；生成物；结局；积，乘积；音乐制品",
                   "level": "red"
+                },
+                {
+                  "word": "nature",
+                  "ipa": "/ˈneɪtʃə/",
+                  "meaning": "性质，特征（常用释义：自然；本质；天性；性质）",
+                  "level": "red"
+                },
+                {
+                  "word": "invention",
+                  "ipa": "/ɪnˈvenʃən/",
+                  "meaning": "发明；所谓发明成果（常用释义：发明；创造；虚构）",
+                  "level": "green"
                 }
               ],
               "isTopicSentence": true,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "Yet the research revealed that the U.S. factories of Honda, Nissan, and Toyota achieved about 95 percent of the productivity of their Japanese counterparts—a result of the training that U.S. workers received on the job.",
-              "translation": "然而研究显示，本田、日产和丰田的美国工厂的生产率约为日本工厂的 95%，这是美国工人在工作中接受培训的结果。",
+              "text": "They demonstrated that exclusive patent rights had enabled a single firm to charge more than $3,000 for a test that costs only a fraction of that to produce, while preventing women from seeking second medical opinions.",
+              "translation": "他们证实，独家专有专利权使得单一公司能够对一项生产成本仅为几分之一的检测收取超过 3000 美元的高昂费用，同时还剥夺了女性寻求第二方医疗确诊意见的机会。",
               "vocab": [
                 {
-                  "word": "Yet",
-                  "ipa": "/jet/",
-                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "word": "exclusive",
+                  "ipa": "/ɪkˈskluːsɪv/",
+                  "meaning": "专有的；排他的（常用释义：独有的；高档的；排他的）",
                   "level": "red"
                 },
                 {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
                   "level": "red"
                 },
                 {
-                  "word": "productivity",
-                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "生产率（常用释义：生产力；效率）",
-                  "level": "red"
+                  "word": "charge",
+                  "ipa": "tʃɑːrdʒ",
+                  "meaning": "n.费用；控告；指责 v.收费；控告；（公开）指责",
+                  "level": "green"
                 },
                 {
-                  "word": "counterparts",
-                  "ipa": "/ˈkaʊntəpɑːts/",
-                  "meaning": "对应者；同类对象（常用释义：职能相当的人/物）",
-                  "level": "red"
+                  "word": "fraction",
+                  "ipa": "ˈfrækʃ(ə)n",
+                  "meaning": "n.分数；一小部分",
+                  "level": "green"
+                },
+                {
+                  "word": "produce",
+                  "ipa": "",
+                  "meaning": "v.生产",
+                  "level": "green"
+                },
+                {
+                  "word": "medical",
+                  "ipa": "ˈmedɪk(ə)l",
+                  "meaning": "adj. 医学的，医疗",
+                  "level": "green"
                 }
               ],
               "isTopicSentence": false,
@@ -2750,1004 +899,26 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 3,
               "id": "P2-S3",
-              "text": "More recently, while examining housing construction, the researchers discovered that illiterate, non-English-speaking Mexican workers in Houston, Texas, consistently met best-practice labor productivity standards despite the complexity of the building industry's work.",
-              "translation": "最近，在检查住房建设时，研究人员发现，德克萨斯州休斯顿的文盲、不会说英语的墨西哥工人始终符合最佳实践劳动生产率标准，尽管建筑行业的工作很复杂。",
+              "text": "Furthermore, researchers complained that broad gene patents had chilled scientific inquiry by requiring scientists to obtain costly licenses simply to study basic human biology.",
+              "translation": "此外，科研学者们抱怨称，宽泛的基因专利迫使科学家仅为了研究基础人类生物学就必须获取昂贵的许可授权，从而严重挫伤了科学探索的积极性。",
               "vocab": [
                 {
-                  "word": "labor productivity standards",
-                  "ipa": "/ˈleɪbə(r) ˌprɒdʌkˈtɪvəti ˈstændədz/",
-                  "meaning": "劳动生产率标准（常用释义：劳动力效率标准）",
-                  "level": "red"
-                },
-                {
-                  "word": "examining",
-                  "ipa": "/ɪɡˈzæmɪnɪŋ/",
-                  "meaning": "研究；考察（常用释义：检查；审查；考试）",
+                  "word": "inquiry",
+                  "ipa": "ˈɪnkwəri",
+                  "meaning": "n.询问；调查； 探查",
                   "level": "green"
                 },
                 {
-                  "word": "housing",
-                  "ipa": "ˈhaʊzɪŋ",
-                  "meaning": "n.房屋；住房供给 v.覆盖",
+                  "word": "obtain",
+                  "ipa": "əbˈteɪn",
+                  "meaning": "v.获得,得到",
+                  "level": "red"
+                },
+                {
+                  "word": "costly",
+                  "ipa": "ˈkɔːstli",
+                  "meaning": "adj.昂贵的；代价大的",
                   "level": "green"
-                },
-                {
-                  "word": "construction",
-                  "ipa": "/kənˈstrʌkʃn/",
-                  "meaning": "建设；建筑业（常用释义：建造；结构；解释）",
-                  "level": "red"
-                },
-                {
-                  "word": "illiterate",
-                  "ipa": "/ɪˈlɪtərət/",
-                  "meaning": "不识字的；文盲的（常用释义：不能读写的）",
-                  "level": "red"
-                },
-                {
-                  "word": "non-English-speaking",
-                  "ipa": "/ˌnɒn ˈɪŋɡlɪʃ ˌspiːkɪŋ/",
-                  "meaning": "不讲英语的（常用释义：非英语使用的）",
-                  "level": "green"
-                },
-                {
-                  "word": "best-practice",
-                  "ipa": "/ˌbest ˈpræktɪs/",
-                  "meaning": "最佳实践的（常用释义：最有效做法）",
-                  "level": "red"
-                },
-                {
-                  "word": "labor",
-                  "ipa": "ˈleɪbər",
-                  "meaning": "n. 劳动；劳工；分娩 v. 努力工作",
-                  "level": "green"
-                },
-                {
-                  "word": "productivity",
-                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "生产率（常用释义：生产力；效率）",
-                  "level": "red"
-                },
-                {
-                  "word": "despite",
-                  "ipa": "/dɪˈspaɪt/",
-                  "meaning": "尽管（常用释义：即使；不管）",
-                  "level": "red"
-                },
-                {
-                  "word": "complexity",
-                  "ipa": "/kəmˈpleksəti/",
-                  "meaning": "复杂性（常用释义：复杂程度）",
-                  "level": "green"
-                },
-                {
-                  "word": "industry",
-                  "ipa": "ˈɪndəstrɪ",
-                  "meaning": "n. 工业，产业",
-                  "level": "green"
-                },
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "What is the real relationship between education and economic development?",
-              "translation": "教育与经济发展的真正关系是什么？",
-              "vocab": [
-                {
-                  "word": "relationship",
-                  "ipa": "rɪ'leʃən'ʃɪp",
-                  "meaning": "n. 关系, 联系",
-                  "level": "red"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "We have to suspect that continuing economic growth promotes the development of education even when governments don't force it.",
-              "translation": "我们不得不怀疑，即使政府不强迫，持续的经济增长也会促进教育的发展。",
-              "vocab": [
-                {
-                  "word": "economic growth",
-                  "ipa": "/ˌiːkəˈnɒmɪk ɡrəʊθ/",
-                  "meaning": "经济增长（常用释义：经济层面的增长）",
-                  "level": "red"
-                },
-                {
-                  "word": "continuing economic growth",
-                  "ipa": "/kənˈtɪnjuɪŋ ˌiːkəˈnɒmɪk ɡrəʊθ/",
-                  "meaning": "持续经济增长（常用释义：连续的经济增长）",
-                  "level": "red"
-                },
-                {
-                  "word": "suspect",
-                  "ipa": "/səˈspekt/",
-                  "meaning": "推测；认为可能（常用释义：怀疑；嫌疑人 n.）",
-                  "level": "red"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "After all, that's how education got started.",
-              "translation": "毕竟，教育就是这样开始的。",
-              "vocab": [
-                {
-                  "word": "After all",
-                  "ipa": "/ˈɑːftər ɔːl/",
-                  "meaning": "毕竟（常用释义：终究；别忘了）",
-                  "level": "purple"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "When our ancestors were hunters and gatherers 10,000 years ago, they didn't have time to wonder much about anything besides finding food.",
-              "translation": "一万年前，当我们的祖先还是猎人和采集者时，他们除了寻找食物之外没有时间思考任何事情。",
-              "vocab": [
-                {
-                  "word": "hunters and gatherers",
-                  "ipa": "/ˈhʌntəz ənd ˈɡæðərəz/",
-                  "meaning": "狩猎采集者（常用释义：猎人和采集者）",
-                  "level": "green"
-                },
-                {
-                  "word": "ancestors",
-                  "ipa": "/ˈænsestəz/",
-                  "meaning": "祖先（常用释义：先辈）",
-                  "level": "green"
-                },
-                {
-                  "word": "wonder",
-                  "ipa": "/ˈwʌndə(r)/",
-                  "meaning": "想知道；不禁疑惑（常用释义：感到惊奇；奇迹）",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "Only when humanity began to get its food in a more productive way was there time for other things.",
-              "translation": "只有当人类开始以更高效的方式获取食物时，才有时间去做其他事情。",
-              "vocab": [
-                {
-                  "word": "humanity",
-                  "ipa": "/hjuːˈmænəti/",
-                  "meaning": "人类（常用释义：人性；人道）",
-                  "level": "red"
-                },
-                {
-                  "word": "productive",
-                  "ipa": "/prəˈdʌktɪv/",
-                  "meaning": "生产率高的（常用释义：高效的；有成效的）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "As education improved, humanity's productivity potential increased as well.",
-              "translation": "随着教育的改善，人类的生产力潜力也随之增加。",
-              "vocab": [
-                {
-                  "word": "humanity",
-                  "ipa": "/hjuːˈmænəti/",
-                  "meaning": "人类（常用释义：人性；人道）",
-                  "level": "red"
-                },
-                {
-                  "word": "productivity",
-                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "生产率（常用释义：生产力；效率）",
-                  "level": "red"
-                },
-                {
-                  "word": "potential",
-                  "ipa": "/pəˈtenʃəl/",
-                  "meaning": "可能性；潜力（常用释义：潜力；潜在的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "When the competitive environment pushed our ancestors to achieve that potential, they could in turn afford more education.",
-              "translation": "当竞争环境促使我们的祖先发挥这种潜力时，他们反过来就能负担得起更多的教育。",
-              "vocab": [
-                {
-                  "word": "competitive environment",
-                  "ipa": "/kəmˈpetətɪv ɪnˈvaɪrənmənt/",
-                  "meaning": "竞争环境（常用释义：竞争性的环境）",
-                  "level": "red"
-                },
-                {
-                  "word": "in turn",
-                  "ipa": "/ɪn tɜːn/",
-                  "meaning": "反过来；继而（常用释义：依次；轮流）",
-                  "level": "purple"
-                },
-                {
-                  "word": "competitive",
-                  "ipa": "kəmˈpɛtɪtɪv",
-                  "meaning": "adj. 竞争的；有竞争力的",
-                  "level": "green"
-                },
-                {
-                  "word": "environment",
-                  "ipa": "ɪnˈvaɪərənmənt",
-                  "meaning": "n.环境",
-                  "level": "green"
-                },
-                {
-                  "word": "ancestors",
-                  "ipa": "/ˈænsestəz/",
-                  "meaning": "祖先（常用释义：先辈）",
-                  "level": "green"
-                },
-                {
-                  "word": "potential",
-                  "ipa": "/pəˈtenʃəl/",
-                  "meaning": "可能性；潜力（常用释义：潜力；潜在的）",
-                  "level": "red"
-                },
-                {
-                  "word": "afford",
-                  "ipa": "/əˈfɔːd/",
-                  "meaning": "负担得起；有条件做（常用释义：买得起；承受得起）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "This increasingly high level of education is probably a necessary, but not a sufficient, condition for the complex political systems required by advanced economic performance.",
-              "translation": "对于先进的经济表现所需的复杂政治制度来说，日益提高的教育水平可能是必要的，但不是充分的条件。",
-              "vocab": [
-                {
-                  "word": "economic performance",
-                  "ipa": "/ˌiːkəˈnɒmɪk pəˈfɔːməns/",
-                  "meaning": "经济表现；经济绩效（常用释义：表现；演出；业绩）",
-                  "level": "red"
-                },
-                {
-                  "word": "advanced economic performance",
-                  "ipa": "/ədˈvɑːnst ˌiːkəˈnɒmɪk pəˈfɔːməns/",
-                  "meaning": "高级/发达经济表现（常用释义：高水平经济绩效）",
-                  "level": "red"
-                },
-                {
-                  "word": "probably",
-                  "ipa": "ˈprɑːbəbli",
-                  "meaning": "adv.大概，或许",
-                  "level": "red"
-                },
-                {
-                  "word": "necessary",
-                  "ipa": "'nɛsəsɛri",
-                  "meaning": "adj. 必要的; 必需的",
-                  "level": "red"
-                },
-                {
-                  "word": "sufficient",
-                  "ipa": "/səˈfɪʃnt/",
-                  "meaning": "充分的；足够的（常用释义：足以满足需要的）",
-                  "level": "red"
-                },
-                {
-                  "word": "condition",
-                  "ipa": "kənˈdɪʃn",
-                  "meaning": "n.状况；条件，环境；疾病；条款 v.训练，使习惯于；制约；",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "complex",
-                  "ipa": "/ˈkɒmpleks/",
-                  "meaning": "复杂的，多层次的（常用释义：复杂的；复合的；综合体）",
-                  "level": "red"
-                },
-                {
-                  "word": "political",
-                  "ipa": "pəˈlɪtɪk(ə)l",
-                  "meaning": "adj. 政治的",
-                  "level": "green"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
-                  "level": "green"
-                },
-                {
-                  "word": "performance",
-                  "ipa": "pəˈfɔːm",
-                  "meaning": "n. 演出，表演",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P3-S6",
-              "text": "Thus poor countries might not be able to escape their poverty traps without political changes that may be possible only with broader formal education.",
-              "translation": "因此，如果没有政治变革，贫穷国家可能无法摆脱贫困陷阱，而政治变革只有通过更广泛的正规教育才有可能实现。",
-              "vocab": [
-                {
-                  "word": "formal education",
-                  "ipa": "/ˈfɔːməl ˌedʒuˈkeɪʃn/",
-                  "meaning": "正规教育（常用释义：学校教育；正式教育）",
-                  "level": "red"
-                },
-                {
-                  "word": "poverty traps",
-                  "ipa": "/ˈpɒvəti træps/",
-                  "meaning": "贫困陷阱（常用释义：使人/国家难脱贫的循环）",
-                  "level": "red"
-                },
-                {
-                  "word": "Thus",
-                  "ipa": "/ðʌs/",
-                  "meaning": "因此、从而（常用释义：以这种方式）",
-                  "level": "red"
-                },
-                {
-                  "word": "escape",
-                  "ipa": "/ɪˈskeɪp/",
-                  "meaning": "解脱方式；精神出口（常用释义：逃跑；逃脱；逃避；解脱）",
-                  "level": "red"
-                },
-                {
-                  "word": "poverty",
-                  "ipa": "ˈpɒvəti",
-                  "meaning": "n.贫困",
-                  "level": "red"
-                },
-                {
-                  "word": "political",
-                  "ipa": "pəˈlɪtɪk(ə)l",
-                  "meaning": "adj. 政治的",
-                  "level": "green"
-                },
-                {
-                  "word": "formal",
-                  "ipa": "",
-                  "meaning": "adj.庄重的，合乎礼仪的；正式的，规范的；合法的；整齐的，布置井然的；形",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P3-S7",
-              "text": "A lack of formal education, however, doesn't constrain the ability of the developing world's workforce to substantially improve productivity for the foreseeable future.",
-              "translation": "然而，缺乏正规教育并不会限制发展中国家劳动力在可预见的未来大幅提高生产力的能力。",
-              "vocab": [
-                {
-                  "word": "formal education",
-                  "ipa": "/ˈfɔːməl ˌedʒuˈkeɪʃn/",
-                  "meaning": "正规教育（常用释义：学校教育；正式教育）",
-                  "level": "red"
-                },
-                {
-                  "word": "for the foreseeable future",
-                  "ipa": "/fə ðə fɔːˈsiːəbl ˈfjuːtʃə(r)/",
-                  "meaning": "在可预见的未来（常用释义：未来一段可预测时期）",
-                  "level": "purple"
-                },
-                {
-                  "word": "formal",
-                  "ipa": "",
-                  "meaning": "adj.庄重的，合乎礼仪的；正式的，规范的；合法的；整齐的，布置井然的；形",
-                  "level": "red"
-                },
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
-                },
-                {
-                  "word": "constrain",
-                  "ipa": "/kənˈstreɪn/",
-                  "meaning": "限制；约束（常用释义：制约；强迫）",
-                  "level": "red"
-                },
-                {
-                  "word": "ability",
-                  "ipa": "əˈbɪlɪtɪ",
-                  "meaning": "n. 能力；才能",
-                  "level": "green"
-                },
-                {
-                  "word": "workforce",
-                  "ipa": "/ˈwɜːkfɔːs/",
-                  "meaning": "劳动力；劳动人口（常用释义：某国/行业/公司的全体员工）",
-                  "level": "red"
-                },
-                {
-                  "word": "substantially",
-                  "ipa": "/səbˈstænʃəli/",
-                  "meaning": "显著地；大幅度地（常用释义：实质上；相当多地）",
-                  "level": "red"
-                },
-                {
-                  "word": "productivity",
-                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "生产率（常用释义：生产力；效率）",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "foreseeable",
-                  "ipa": "/fɔːˈsiːəbl/",
-                  "meaning": "可预见的（常用释义：能预测的）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 8,
-              "id": "P3-S8",
-              "text": "On the contrary, constraints on improving productivity explain why education isn't developing more quickly there than it is.",
-              "translation": "相反，生产力提高方面的限制解释了为什么那里的教育发展速度没有比现在更快。",
-              "vocab": [
-                {
-                  "word": "On the contrary",
-                  "ipa": "/ɒn ðə ˈkɒntrəri/",
-                  "meaning": "相反（常用释义：正相反）",
-                  "level": "purple"
-                },
-                {
-                  "word": "contrary",
-                  "ipa": "ˈkɔntrerɪ",
-                  "meaning": "n./adj. 相反 相反",
-                  "level": "green"
-                },
-                {
-                  "word": "constraints",
-                  "ipa": "/kənˈstreɪnts/",
-                  "meaning": "限制；制约因素（常用释义：约束；限制）",
-                  "level": "red"
-                },
-                {
-                  "word": "productivity",
-                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
-                  "meaning": "生产率（常用释义：生产力；效率）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 31,
-          "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
-          "stem": "The author holds in Paragraph 1 that the importance of education in poor countries",
-          "stemKeywords": [
-            "author",
-            "holds",
-            "Paragraph"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "is subject to groundless doubts.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "has fallen victim of bias.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "is conventionally downgraded.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "has been overestimated.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 31 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 32,
-          "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
-          "stem": "It is stated in Paragraph 1 that the construction of a new educational system",
-          "stemKeywords": [
-            "stated",
-            "Paragraph",
-            "that"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "B",
-          "options": [
-            {
-              "key": "A",
-              "text": "challenges economists and politicians.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "takes efforts of generations.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "demands priority from the government.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "requires sufficient labor force.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 32 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 33,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
-          "stem": "A major difference between the Japanese and U.S. workforces is that",
-          "stemKeywords": [
-            "major",
-            "difference",
-            "between"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "A",
-          "options": [
-            {
-              "key": "A",
-              "text": "the Japanese workforce is better disciplined.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "the Japanese workforce is more productive.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "the U.S. workforce has a better education.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "the U.S. workforce is more organized.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 33 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 34,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
-          "stem": "The author quotes the example of our ancestors to show that education emerged",
-          "stemKeywords": [
-            "author",
-            "quotes",
-            "example"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "D",
-          "options": [
-            {
-              "key": "A",
-              "text": "when people had enough time.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "prior to better ways of finding food.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "when people no longer went hungry.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "as a result of pressure on government.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 34 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        },
-        {
-          "qIndex": 35,
-          "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
-          "stem": "According to the last paragraph, development of education",
-          "stemKeywords": [
-            "According",
-            "last",
-            "paragraph"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P2-S1"
-          ],
-          "officialAnswer": "C",
-          "options": [
-            {
-              "key": "A",
-              "text": "results directly from competitive environments.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "does not depend on economic performance.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "follows improved productivity.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "cannot afford political changes.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
-              "refSentences": [
-                "P1-S1",
-                "P2-S1"
-              ]
-            }
-          ],
-          "presetReflection": {
-            "trapAnalysis": "第 35 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text4",
-      "number": 4,
-      "title": "Reading Comprehension Text 4",
-      "chineseTitle": "Text 4 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2009 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 4，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "The most thoroughly studied intellectuals in the history of the New World are the ministers and political leaders of seventeenth-century New England.",
-              "translation": "新世界历史上研究最透彻的知识分子是十七世纪新英格兰的部长和政治领袖。",
-              "vocab": [
-                {
-                  "word": "the New World",
-                  "ipa": "/ðə ˌnjuː ˈwɜːld/",
-                  "meaning": "新大陆；美洲（常用释义：相对于旧大陆的美洲地区）",
-                  "level": "green"
-                },
-                {
-                  "word": "the most thoroughly studied intellectuals",
-                  "ipa": "/ðə məʊst ˈθʌrəli ˈstʌdid ˌɪntəˈlektʃuəlz/",
-                  "meaning": "被研究得最为深入的知识分子（常用释义：最高级 + 副词 + 过去分词作定语）",
-                  "level": "purple"
-                },
-                {
-                  "word": "thoroughly",
-                  "ipa": "/ˈθʌrəli/",
-                  "meaning": "彻底地；深入地（常用释义：完全地；详尽地）",
-                  "level": "red"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "political",
-                  "ipa": "pəˈlɪtɪk(ə)l",
-                  "meaning": "adj. 政治的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "According to the standard history of American philosophy, nowhere else in colonial America was \"so much importance attached to intellectual pursuits.\" According to many books and articles, New England's leaders established the basic themes and preoccupations of an unfolding, dominant Puritan tradition in American intellectual life.",
-              "translation": "根据美国哲学的标准史，在殖民地美国，没有其他地方“如此重视智力追求”。根据许多书籍和文章，新英格兰的领导人确立了美国知识分子生活中不断发展的、占主导地位的清教传统的基本主题和关注点。",
-              "vocab": [
-                {
-                  "word": "according to",
-                  "ipa": "/əˈkɔːdɪŋ tuː/",
-                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
-                  "level": "purple"
-                },
-                {
-                  "word": "intellectual life",
-                  "ipa": "/ˌɪntəˈlektʃuəl laɪf/",
-                  "meaning": "思想文化生活；学术生活（常用释义：社会中的思想与学术活动）",
-                  "level": "purple"
-                },
-                {
-                  "word": "standard",
-                  "ipa": "/ˈstændəd/",
-                  "meaning": "通行的；公认权威的（常用释义：标准的；标准；普通规格的）",
-                  "level": "red"
-                },
-                {
-                  "word": "American",
-                  "ipa": "",
-                  "meaning": "adj.美国的 n.美国人",
-                  "level": "green"
-                },
-                {
-                  "word": "philosophy",
-                  "ipa": "",
-                  "meaning": "n.哲学；哲学体系，思想体系；人生哲学，生活准则",
-                  "level": "red"
-                },
-                {
-                  "word": "nowhere",
-                  "ipa": "",
-                  "meaning": "adv.无处，哪里都不；不可能看见（或找到）的；没有任何地方；无名的小地方；",
-                  "level": "red"
-                },
-                {
-                  "word": "intellectual",
-                  "ipa": "/ˌɪntəˈlektʃuəl/",
-                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
-                  "level": "red"
-                },
-                {
-                  "word": "pursuits",
-                  "ipa": "/pəˈsjuːts/",
-                  "meaning": "活动，事业，领域（常用释义：追求；消遣；职业/事业）",
-                  "level": "red"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "established",
-                  "ipa": "ɪˈstæblɪʃt",
-                  "meaning": "adj.地位稳固的",
-                  "level": "red"
                 },
                 {
                   "word": "basic",
@@ -3756,304 +927,34 @@ window.ENGLISH_DATA['2009'] = {
                   "level": "red"
                 },
                 {
-                  "word": "dominant",
-                  "ipa": "/ˈdɒmɪnənt/",
-                  "meaning": "占主导地位的、支配性的（常用释义：显性的；优势的）",
-                  "level": "red"
+                  "word": "biology",
+                  "ipa": "baɪˈɔlədʒɪ",
+                  "meaning": "n. 生物（学）",
+                  "level": "green"
                 }
               ],
               "isTopicSentence": false,
               "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "To take this approach to the New Englanders normally means to start with the Puritans' theological innovations and their distinctive ideas about the church—important subjects that we may not neglect.",
-              "translation": "对新英格兰人采取这种方法通常意味着从清教徒的神学创新和他们对教会的独特观念开始——这些都是我们不可忽视的重要主题。",
-              "vocab": [
-                {
-                  "word": "important subjects that we may not neglect",
-                  "ipa": "/ɪmˈpɔːtənt ˈsʌbdʒɪkts ðæt wiː meɪ nɒt nɪˈɡlekt/",
-                  "meaning": "我们不能忽视的重要议题（常用释义：定语从句限定 subjects）",
-                  "level": "purple"
-                },
-                {
-                  "word": "take",
-                  "ipa": "teɪk",
-                  "meaning": "v. 携带，拿",
-                  "level": "green"
-                },
-                {
-                  "word": "approach",
-                  "ipa": "/əˈprəʊtʃ/",
-                  "meaning": "研究方法；路径（常用释义：方法；接近；着手处理）",
-                  "level": "red"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "theological",
-                  "ipa": "/ˌθiːəˈlɒdʒɪkəl/",
-                  "meaning": "神学的；宗教教义方面的（常用释义：神学的）",
-                  "level": "red"
-                },
-                {
-                  "word": "distinctive",
-                  "ipa": "/dɪˈstɪŋktɪv/",
-                  "meaning": "独特的；特征鲜明的（常用释义：有特色的）",
-                  "level": "red"
-                },
-                {
-                  "word": "about",
-                  "ipa": "əˈbaʊt",
-                  "meaning": "prep.从事于,忙于",
-                  "level": "red"
-                },
-                {
-                  "word": "church",
-                  "ipa": "/tʃɜːtʃ/",
-                  "meaning": "教会；教会制度（常用释义：教堂；基督教会）",
-                  "level": "red"
-                },
-                {
-                  "word": "neglect",
-                  "ipa": "/nɪˈɡlekt/",
-                  "meaning": "忽视；未给予应有重视（常用释义：疏忽；疏于照料）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "But in keeping with our examination of southern intellectual life, we may consider the original Puritans as carriers of European culture, adjusting to New World circumstances.",
-              "translation": "但为了与我们对南方知识分子生活的考察保持一致，我们可以将最初的清教徒视为欧洲文化的载体，适应新世界的环境。",
-              "vocab": [
-                {
-                  "word": "intellectual life",
-                  "ipa": "/ˌɪntəˈlektʃuəl laɪf/",
-                  "meaning": "思想文化生活；学术生活（常用释义：社会中的思想与学术活动）",
-                  "level": "purple"
-                },
-                {
-                  "word": "in keeping with",
-                  "ipa": "/ɪn ˈkiːpɪŋ wɪð/",
-                  "meaning": "与……一致；符合……（常用释义：与某种方法或传统相协调）",
-                  "level": "purple"
-                },
-                {
-                  "word": "intellectual",
-                  "ipa": "/ˌɪntəˈlektʃuəl/",
-                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
-                  "level": "red"
-                },
-                {
-                  "word": "consider",
-                  "ipa": "",
-                  "meaning": "v.考虑；认为；觉得；以为；仔细考虑；细想；体谅；顾及；端详",
-                  "level": "red"
-                },
-                {
-                  "word": "original",
-                  "ipa": "/əˈrɪdʒənəl/",
-                  "meaning": "最初的；早期的（常用释义：原创的；原来的；原作）",
-                  "level": "red"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "The New England colonies were the scenes of important episodes in the pursuit of widely understood ideals of civility and virtuosity.",
-              "translation": "新英格兰殖民地是追求广泛理解的文明和精湛技艺的重要事件的发生地。",
-              "vocab": [
-                {
-                  "word": "widely understood",
-                  "ipa": "/ˈwaɪdli ˌʌndəˈstʊd/",
-                  "meaning": "被广泛理解或普遍认同的（常用释义：广为理解的）",
-                  "level": "green"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "pursuit",
-                  "ipa": "/pəˈsjuːt/",
-                  "meaning": "活动；事业；学术追求（常用释义：追求；追赶）",
-                  "level": "red"
-                },
-                {
-                  "word": "civility",
-                  "ipa": "/sɪˈvɪləti/",
-                  "meaning": "文明教养；礼仪风范（常用释义：礼貌；彬彬有礼）",
-                  "level": "green"
-                },
-                {
-                  "word": "virtuosity",
-                  "ipa": "/ˌvɜːtʃuˈɒsəti/",
-                  "meaning": "卓越才艺；高超能力（常用释义：精湛技巧，尤指艺术技巧）",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
             }
           ]
         },
         {
-          "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "pIndex": 3,
+          "mainIdea": "生物技术企业辩称专利保护是回收巨额研发投资的前提，警告裁决将打击创新资本",
+          "logicRole": "产业界立场与投资回报争辩 (Biotech Industry Defense)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P2-S1",
-              "text": "The early settlers of Massachusetts Bay included men of impressive education and influence in England.",
-              "translation": "马萨诸塞湾的早期定居者包括在英国受过良好教育并具有影响力的人。",
+              "id": "P3-S1",
+              "text": "Biotechnology industry representatives, however, expressed grave disappointment over the decision.",
+              "translation": "然而，生物技术行业的代表对该裁决表示了极为沉重的失望。",
               "vocab": [
                 {
-                  "word": "men of impressive education and influence",
-                  "ipa": "/men əv ɪmˈpresɪv ˌedʒuˈkeɪʃən ənd ˈɪnfluəns/",
-                  "meaning": "受教育程度高且有影响力的人（常用释义：of + 抽象名词描述特征）",
-                  "level": "purple"
-                },
-                {
-                  "word": "impressive",
-                  "ipa": "/ɪmˈpresɪv/",
-                  "meaning": "出众的；令人赞叹的（常用释义：给人深刻印象的）",
-                  "level": "red"
-                },
-                {
-                  "word": "influence",
-                  "ipa": "ˈɪnflʊəns",
-                  "meaning": "n./v. 影响",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Besides the ninety or so learned ministers who came to Massachusetts churches in the decade after 1629, there were political leaders like John Winthrop, an educated gentleman, lawyer, and official of the Crown before he journeyed to Boston.",
-              "translation": "1629 年之后的十年里，除了大约 90 名博学的牧师来到马萨诸塞州教堂外，还有约翰·温思罗普 (John Winthrop) 等政治领袖，他在前往波士顿之前是一位受过教育的绅士、律师和王室官员。",
-              "vocab": [
-                {
-                  "word": "official of the Crown",
-                  "ipa": "/əˈfɪʃəl əv ðə kraʊn/",
-                  "meaning": "王室官员（常用释义：君主政权体系中的官员）",
+                  "word": "industry",
+                  "ipa": "ˈɪndəstrɪ",
+                  "meaning": "n. 工业，产业",
                   "level": "green"
                 },
-                {
-                  "word": "learned",
-                  "ipa": "/ˈlɜːnɪd/",
-                  "meaning": "博学的；有学问的（常用释义：learn 的过去式/过去分词（读音不同））",
-                  "level": "red"
-                },
-                {
-                  "word": "decade",
-                  "ipa": "dɪˈkeɪd",
-                  "meaning": "n. 十年；十年期",
-                  "level": "green"
-                },
-                {
-                  "word": "political",
-                  "ipa": "pəˈlɪtɪk(ə)l",
-                  "meaning": "adj. 政治的",
-                  "level": "green"
-                },
-                {
-                  "word": "gentleman",
-                  "ipa": "/ˈdʒentlmən/",
-                  "meaning": "有身份、有教养的绅士（常用释义：先生；绅士）",
-                  "level": "green"
-                },
-                {
-                  "word": "official",
-                  "ipa": "əˈfɪʃəl",
-                  "meaning": "n.官员,行政官员 adj.官方的,官方的,正式的",
-                  "level": "red"
-                },
-                {
-                  "word": "Crown",
-                  "ipa": "kraʊn",
-                  "meaning": "n.王冠 v.为…加冕",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "These men wrote and published extensively, reaching both New World and Old World audiences, and giving New England an atmosphere of intellectual earnestness.",
-              "translation": "这些人广泛写作和出版，影响了新世界和旧世界的读者，给新英格兰营造了一种学术认真的氛围。",
-              "vocab": [
-                {
-                  "word": "intellectual earnestness",
-                  "ipa": "/ˌɪntəˈlektʃuəl ˈɜːnɪstnəs/",
-                  "meaning": "对思想与学问的严肃投入（常用释义：重视学术的文化气质）",
-                  "level": "purple"
-                },
-                {
-                  "word": "extensively",
-                  "ipa": "/ɪkˈstensɪvli/",
-                  "meaning": "大量地；广泛地（常用释义：广泛地；深入地）",
-                  "level": "red"
-                },
-                {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "atmosphere",
-                  "ipa": "/ˈætməsfɪə(r)/",
-                  "meaning": "氛围；气氛（常用释义：大气层；环境气氛）",
-                  "level": "green"
-                },
-                {
-                  "word": "intellectual",
-                  "ipa": "/ˌɪntəˈlektʃuəl/",
-                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
-                  "level": "red"
-                },
-                {
-                  "word": "earnestness",
-                  "ipa": "/ˈɜːnɪstnəs/",
-                  "meaning": "认真严肃的态度；热诚（常用释义：认真；诚挚；热切）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "We should not forget, however, that most New Englanders were less well educated.",
-              "translation": "然而，我们不应忘记，大多数新英格兰人受教育程度较低。",
-              "vocab": [
                 {
                   "word": "however",
                   "ipa": "/haʊˈevə/",
@@ -4061,90 +962,9 @@ window.ENGLISH_DATA['2009'] = {
                   "level": "red"
                 },
                 {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "While few craftsmen or farmers, let alone dependents and servants, left literary compositions to be analyzed, it is obvious that their views were less fully intellectualized.",
-              "translation": "虽然很少有工匠或农民，更不用说家属和仆人，留下文学作品供分析，但很明显，他们的观点还没有完全理智化。",
-              "vocab": [
-                {
-                  "word": "less fully intellectualized",
-                  "ipa": "/les ˈfʊli ˌɪntəˈlektʃuəlaɪzd/",
-                  "meaning": "理性化/理论化程度较低（常用释义：未被充分加工为系统思想）",
-                  "level": "purple"
-                },
-                {
-                  "word": "servants",
-                  "ipa": "ˈsɜːvənts",
-                  "meaning": "n.仆人;供人们利用之物",
-                  "level": "red"
-                },
-                {
-                  "word": "left",
-                  "ipa": "left",
-                  "meaning": "adj. 左边的；",
-                  "level": "green"
-                },
-                {
-                  "word": "literary",
-                  "ipa": "/ˈlɪtərəri/",
-                  "meaning": "文字的；书面创作的（常用释义：文学的）",
-                  "level": "red"
-                },
-                {
-                  "word": "obvious",
-                  "ipa": "/ˈɒbviəs/",
-                  "meaning": "显而易见、因而缺乏创造性的（常用释义：明显的；不言而喻的）",
-                  "level": "red"
-                },
-                {
-                  "word": "intellectualized",
-                  "ipa": "/ˌɪntəˈlektʃuəlaɪzd/",
-                  "meaning": "经过理性化、理论化加工的（常用释义：使理智化；使知识化）",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Their thinking often had a traditional superstitious quality.",
-              "translation": "他们的思想常常带有传统的迷信性质。",
-              "vocab": [
-                {
-                  "word": "traditional",
-                  "ipa": "trəˈdɪʃən(ə)l",
-                  "meaning": "adj.传统的",
-                  "level": "red"
-                },
-                {
-                  "word": "superstitious",
-                  "ipa": "/ˌsuːpəˈstɪʃəs/",
-                  "meaning": "迷信的（常用释义：受迷信观念影响的）",
-                  "level": "red"
-                },
-                {
-                  "word": "quality",
-                  "ipa": "ˈkwɑləti",
-                  "meaning": "n.质量,品质,特性",
+                  "word": "decision",
+                  "ipa": "/dɪˈsɪʒən/",
+                  "meaning": "法院裁决、判决（常用释义：决定；决心）",
                   "level": "red"
                 }
               ],
@@ -4154,89 +974,19 @@ window.ENGLISH_DATA['2009'] = {
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "A tailor named John Dane, who emigrated in the late 1630s, left an account of his reasons for leaving England that is filled with signs.",
-              "translation": "一位名叫约翰·戴恩 (John Dane) 的裁缝于 1630 年代末移居英国，他留下了充满迹象的离开英国的原因。",
+              "text": "They warned that without the legal protection of patents, venture capitalists and pharmaceutical firms will be reluctant to invest the billions of dollars needed to isolate genetic markers and bring personalized medicines to market.",
+              "translation": "他们警告称，如果没有专利的法律保护，风险投资机构和制药企业将不愿再投入分离遗传标记物以及将个性化药物推向市场所需的数十亿美元巨资。",
               "vocab": [
                 {
-                  "word": "tailor",
-                  "ipa": "/ˈteɪlə(r)/",
-                  "meaning": "裁缝（常用释义：使适合；定制）",
-                  "level": "green"
-                },
-                {
-                  "word": "left",
-                  "ipa": "left",
-                  "meaning": "adj. 左边的；",
-                  "level": "green"
-                },
-                {
-                  "word": "account",
-                  "ipa": "əˈkaʊnt",
-                  "meaning": "n.账户；客户；网络账号；描述；账目；账单；赊购；解释；",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
+                  "word": "legal",
                   "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Sexual confusion, economic frustrations, and religious hope—all came together in a decisive moment when he opened the Bible, told his father that the first line he saw would settle his fate, and read the magical words: \"Come out from among them, touch no unclean thing, and I will be your God and you shall be my people.\" One wonders what Dane thought of the careful sermons explaining the Bible that he heard in Puritan churches.",
-              "translation": "性方面的困惑、经济上的挫折和宗教上的希望——所有这些都在一个决定性的时刻汇集在一起​​，当他打开圣经时，他告诉父亲，他看到的第一行字将决定他的命运，并读到了神奇的文字：“从他们中间出来，不要碰任何不洁的东西，我将成为你的上帝，你将成为我的人民。”人们想知道戴恩对他在清教徒教堂听到的仔细解释圣经的布道有何看法。",
-              "vocab": [
-                {
-                  "word": "sermons explaining the Bible",
-                  "ipa": "/ˈsɜːmənz ɪkˈspleɪnɪŋ ðə ˈbaɪbl/",
-                  "meaning": "阐释《圣经》的布道（常用释义：现在分词后置修饰名词）",
-                  "level": "purple"
-                },
-                {
-                  "word": "economic",
-                  "ipa": "/ˌiːkəˈnɒmɪk/",
-                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "meaning": "adj.合法的",
                   "level": "green"
                 },
                 {
-                  "word": "religious",
-                  "ipa": "rɪˈlɪdʒəs",
-                  "meaning": "adj. 宗教的",
-                  "level": "green"
-                },
-                {
-                  "word": "decisive",
-                  "ipa": "/dɪˈsaɪsɪv/",
-                  "meaning": "决定性的；关键的（常用释义：果断的；明确的）",
-                  "level": "red"
-                },
-                {
-                  "word": "moment",
-                  "ipa": "ˈməʊmənt",
-                  "meaning": "n. 片刻，瞬间",
-                  "level": "green"
-                },
-                {
-                  "word": "Bible",
-                  "ipa": "/ˈbaɪbl/",
-                  "meaning": "《圣经》（常用释义：基督教经典）",
-                  "level": "green"
-                },
-                {
-                  "word": "fate",
-                  "ipa": "feɪt",
-                  "meaning": "n. 命运；天命",
-                  "level": "green"
-                },
-                {
-                  "word": "magical",
-                  "ipa": "/ˈmædʒɪkəl/",
-                  "meaning": "仿佛具有神奇力量的（常用释义：魔法的；奇妙的）",
+                  "word": "venture",
+                  "ipa": "ˈvɛntʃər",
+                  "meaning": "n. 冒险；企业 vt. 冒险；敢做",
                   "level": "green"
                 },
                 {
@@ -4246,130 +996,2044 @@ window.ENGLISH_DATA['2009'] = {
                   "level": "green"
                 },
                 {
-                  "word": "One",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "thought",
-                  "ipa": "",
-                  "meaning": "n.想法，思考；v.think 的过去式和过去分词",
+                  "word": "reluctant",
+                  "ipa": "rɪˈlʌktənt",
+                  "meaning": "adj. 不情愿的；勉强的",
                   "level": "green"
                 },
                 {
-                  "word": "careful",
-                  "ipa": "ˈkeəfʊl",
-                  "meaning": "adj. 小心，仔细，谨慎",
+                  "word": "invest",
+                  "ipa": "ɪnˈvest",
+                  "meaning": "v. 投资;投入;赋予",
+                  "level": "red"
+                },
+                {
+                  "word": "isolate",
+                  "ipa": "",
+                  "meaning": "v.隔离；孤立；脱离；将……剔出;分离；使离析",
+                  "level": "red"
+                },
+                {
+                  "word": "genetic",
+                  "ipa": "/dʒəˈnetɪk/",
+                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "They maintain that isolated DNA molecules are chemically distinct from the DNA found in living cells and thus qualify as patentable compositions of matter.",
+              "translation": "他们坚持认为，分离提取出来的 DNA 分子在化学结构上不同于活体细胞中的天然 DNA，因此完全符合作为可申请专利的物质组合物的法定资格。",
+              "vocab": [
+                {
+                  "word": "maintain",
+                  "ipa": "/meɪnˈteɪn/",
+                  "meaning": "维持；保持（常用释义：维持；维修；坚称；供养）",
+                  "level": "red"
+                },
+                {
+                  "word": "distinct",
+                  "ipa": "",
+                  "meaning": "adj.不同的，有区别的；清楚的，明显的；确切的",
+                  "level": "red"
+                },
+                {
+                  "word": "thus",
+                  "ipa": "/ðʌs/",
+                  "meaning": "因此、从而（常用释义：以这种方式）",
+                  "level": "red"
+                },
+                {
+                  "word": "matter",
+                  "ipa": "/ˈmætə/",
+                  "meaning": "问题、议题（常用释义：事情；物质；要紧（v.））",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "法院裁决划清了自然规律与人造发明的法律界限，有望推动基因检测成本大幅下降并促进开放式创新",
+          "logicRole": "裁决深远影响与医学未来展望 (Legal Boundary & Medical Innovation)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "Legal experts emphasize that the court drew a clear line between natural genetic sequences and genuine synthetic inventions.",
+              "translation": "法律专家强调，法院在天然基因序列与真正的人工合成发明之间划定了一条清晰的界限。",
+              "vocab": [
+                {
+                  "word": "Legal",
+                  "ipa": "",
+                  "meaning": "adj.合法的",
+                  "level": "green"
+                },
+                {
+                  "word": "emphasize",
+                  "ipa": "ˈemfəsaɪz",
+                  "meaning": "v.强调；着重；使突出/明显",
+                  "level": "green"
+                },
+                {
+                  "word": "court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "clear",
+                  "ipa": "klɪr",
+                  "meaning": "v. 清除，澄",
+                  "level": "green"
+                },
+                {
+                  "word": "genetic",
+                  "ipa": "/dʒəˈnetɪk/",
+                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
+                  "level": "red"
+                },
+                {
+                  "word": "genuine",
+                  "ipa": "ˈdʒenjuɪn",
+                  "meaning": "adj.真正的；真诚的",
+                  "level": "green"
+                },
+                {
+                  "word": "synthetic",
+                  "ipa": "",
+                  "meaning": "adj.合成的，人造的；不诚恳的，虚假的；综合型的；综合的",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "While native human DNA cannot be owned, artificially created genetic material and novel diagnostic methods remain fully eligible for patent protection.",
+              "translation": "虽然天然人类 DNA 不能被据为己有，但人工合成创造的基因材料以及新颖的诊断方法依然完全具备获得专利保护的资格。",
+              "vocab": [
+                {
+                  "word": "native",
+                  "ipa": "ˈneɪtɪv",
+                  "meaning": "adj. 本土的，本国的",
+                  "level": "green"
+                },
+                {
+                  "word": "genetic",
+                  "ipa": "/dʒəˈnetɪk/",
+                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
+                  "level": "red"
+                },
+                {
+                  "word": "material",
+                  "ipa": "məˈtɪriəl",
+                  "meaning": "n.衣料；材料；素材 adj.物质的；重要的",
+                  "level": "green"
+                },
+                {
+                  "word": "novel",
+                  "ipa": "ˈnɒvl",
+                  "meaning": "n.(长篇)小说 adj.新奇的,新颖的",
+                  "level": "red"
+                },
+                {
+                  "word": "remain",
+                  "ipa": "",
+                  "meaning": "v.逗留，留下；剩余，遗留；保持不变，一直是；仍需去做（或处理）",
+                  "level": "red"
+                },
+                {
+                  "word": "eligible",
+                  "ipa": "ˈelɪdʒəb(ə)l",
+                  "meaning": "adj.合格的；合意的",
+                  "level": "green"
+                },
+                {
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P4-S3",
+              "text": "By opening up genetic information to competition, the ruling is expected to drive down the cost of genetic screening, accelerate medical discovery, and inaugurate a more democratic era of genomic healthcare.",
+              "translation": "通过将基因信息向市场竞争敞开，该裁决有望大幅拉低基因筛查的费用、加速医学新发现，并开创一个更加普惠亲民的基因组医疗保健新时代。",
+              "vocab": [
+                {
+                  "word": "genetic",
+                  "ipa": "/dʒəˈnetɪk/",
+                  "meaning": "遗传的；基因层面的（常用释义：基因的；遗传的）",
+                  "level": "red"
+                },
+                {
+                  "word": "information",
+                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
+                  "meaning": "n. 信息",
+                  "level": "green"
+                },
+                {
+                  "word": "competition",
+                  "ipa": "kɔmpəˈtɪʃ(ə)n",
+                  "meaning": "n. 比赛，竞",
+                  "level": "green"
+                },
+                {
+                  "word": "ruling",
+                  "ipa": "/ˈruːlɪŋ/",
+                  "meaning": "司法裁决（常用释义：裁定；统治）",
+                  "level": "red"
+                },
+                {
+                  "word": "expected",
+                  "ipa": "",
+                  "meaning": "adj.意料之中的",
+                  "level": "green"
+                },
+                {
+                  "word": "drive",
+                  "ipa": "draɪv",
+                  "meaning": "v. 驾驶，开",
+                  "level": "green"
+                },
+                {
+                  "word": "down",
+                  "ipa": "daʊn",
+                  "meaning": "v.使倒下,击倒",
+                  "level": "red"
+                },
+                {
+                  "word": "accelerate",
+                  "ipa": "əkˈseləreɪt",
+                  "meaning": "v.加速；促进",
+                  "level": "green"
+                },
+                {
+                  "word": "medical",
+                  "ipa": "ˈmedɪk(ə)l",
+                  "meaning": "adj. 医学的，医疗",
+                  "level": "green"
+                },
+                {
+                  "word": "democratic",
+                  "ipa": "ˌdeməˈkrætɪk",
+                  "meaning": "adj.平等的；民主政体的；（美国）民主党的",
                   "level": "green"
                 }
               ],
               "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 26,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第一段联邦法院裁决核心结论，锁定人类基因不可申请专利",
+          "stem": "The landmark court decision mentioned in Paragraph 1 ruled that",
+          "stemKeywords": [
+            "landmark court decision",
+            "Paragraph 1",
+            "ruled that"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P1-S3"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "biotech companies must pay royalties to cancer patients.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】裁决宣告专利无效，并未要求公司向患者支付专利使用费。",
+              "refSentences": [
+                "P1-S1",
+                "P1-S3"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "all genetic therapies should be banned nationwide.",
+              "isCorrect": false,
+              "distractorType": "荒谬绝对化",
+              "analysis": "【干扰特征: 与文意相反】裁决旨在促进治疗方案更普及，绝非禁止基因治疗。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "naturally occurring human genes cannot be patented.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 明确说明：'a federal appeals court has ruled that human genes cannot be patented'（联邦上诉法院裁定人类基因不得申请专利）。C选项自然发生的人类基因不得申请专利完美对应原句事实。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "patents on BRCA1 and BRCA2 genes are legally renewed.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反颠倒】P1-S3 明确说明是宣告无效（invalidates patents），而非续期保护（renewed）。",
+              "refSentences": [
+                "P1-S3"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "invalidates patents（使专利无效）与 cannot be patented 属于考研法律裁决类细节的核心词。",
+            "methodSummary": "首段判决核心句提取：landmark decision + ruled that human genes cannot be patented。"
+          }
+        },
+        {
+          "qIndex": 27,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第二段反对者的三大理由，排除干扰项",
+          "stem": "Opponents of gene patents argued that such patents had",
+          "stemKeywords": [
+            "Opponents of gene patents",
+            "argued that"
+          ],
+          "targetSentences": [
+            "P2-S1",
+            "P2-S2",
+            "P2-S3"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "encouraged too many firms to enter the diagnostic market.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反颠倒】专有专利导致单一公司垄断（enabled a single firm to charge...），阻碍了其他企业进入竞争。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "eliminated the cost of basic scientific research.",
+              "isCorrect": false,
+              "distractorType": "与原文相悖",
+              "analysis": "【干扰特征: 事实相反】P2-S3 指出专利使得科研需要昂贵授权（costly licenses），反而加重了科研成本。",
+              "refSentences": [
+                "P2-S3"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "raised testing costs and impeded further scientific inquiry.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S2 指出专利使检测费高达 3000 多美元（raised testing costs），P2-S3 指出专利打击了科研探索（'chilled scientific inquiry'）。C选项将这两条核心论据合并同义改写，精准无误。",
+              "refSentences": [
+                "P2-S2",
+                "P2-S3"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "proven that DNA is an artificial human invention.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 颠倒黑白】反对者主张 DNA 是大自然产物而非人造发明（P2-S1: product of nature, not an invention）。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "chilled scientific inquiry（抑制/阻碍科研探索）精准映射 impeded further scientific inquiry。",
+            "methodSummary": "多细节合并归纳法：charge exorbitant sums (raised costs) + chilled scientific inquiry (impeded inquiry)。"
+          }
+        },
+        {
+          "qIndex": 28,
+          "type": "细节态度题",
+          "tangchiModel": "唐迟观点题模型：抓住生物技术行业的论辩核心，定位第三段投资保护理由",
+          "stem": "The biotech industry defended gene patents on the grounds that",
+          "stemKeywords": [
+            "biotech industry",
+            "defended gene patents",
+            "on the grounds that"
+          ],
+          "targetSentences": [
+            "P3-S2"
+          ],
+          "officialAnswer": "B",
+          "options": [
+            {
+              "key": "A",
+              "text": "genetic mutations do not affect human health.",
+              "isCorrect": false,
+              "distractorType": "荒谬前提",
+              "analysis": "【干扰特征: 违背常识】基因突变直接与癌症等疾病挂钩，行业绝未做此荒谬主张。",
+              "refSentences": [
+                "P1-S3"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "patents provide necessary incentives for massive research investments.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 明确说明行业的抗辩依据：'without the legal protection of patents, venture capitalists and pharmaceutical firms will be reluctant to invest the billions of dollars needed'（没有专利保护，资本将不愿再投入所需的数十亿美元巨资）。B选项中的 necessary incentives for massive investments 正是对原句的核心同义概括。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "isolated DNA is completely identical to living cells.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反颠倒】P3-S3 指出行业坚称分离 DNA 与活体细胞不同（chemically distinct），而非完全相同（identical）。",
+              "refSentences": [
+                "P3-S3"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "patients prefer expensive monopolized diagnostic tests.",
+              "isCorrect": false,
+              "distractorType": "颠倒常理",
+              "analysis": "【干扰特征: 荒谬假设】患者极力抗议昂贵垄断，行业从未做此辩解。",
+              "refSentences": [
+                "P2-S1",
+                "P2-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "reluctant to invest billions without patents = patents provide necessary incentives for investments。",
+            "methodSummary": "双重否定转肯定：without protection reluctant to invest -> patents provide incentives。"
+          }
+        },
+        {
+          "qIndex": 29,
+          "type": "推断判断题",
+          "tangchiModel": "唐迟推断题模型：抓住第四段法院清晰界线（drew a clear line），推导合成物依然可获专利",
+          "stem": "According to the last paragraph, patent protection is STILL available for",
+          "stemKeywords": [
+            "last paragraph",
+            "patent protection STILL available for"
+          ],
+          "targetSentences": [
+            "P4-S1",
+            "P4-S2"
+          ],
+          "officialAnswer": "A",
+          "options": [
+            {
+              "key": "A",
+              "text": "man-made genetic materials and new diagnostic methods.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S2 明确指出：'artificially created genetic material and novel diagnostic methods remain fully eligible for patent protection'（人工合成的基因材料及新颖的诊断方法依然完全具备获得专利保护的资格）。A选项 man-made genetic materials and new diagnostic methods 是完全一致的同义表述。",
+              "refSentences": [
+                "P4-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "naturally occurring DNA sequences inside the human body.",
+              "isCorrect": false,
+              "distractorType": "与判决相反",
+              "analysis": "【干扰特征: 判决禁止对象】P4-S2 明确说明天然人类 DNA 不得拥有专利（native DNA cannot be owned）。",
+              "refSentences": [
+                "P4-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "all basic biological facts and laws of nature.",
+              "isCorrect": false,
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 极端错误】自然法则与基础生物事实从来不能申请专利。",
+              "refSentences": [
+                "P4-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "unmodified hereditary mutations linked to diseases.",
+              "isCorrect": false,
+              "distractorType": "判决禁止对象",
+              "analysis": "【干扰特征: 混淆概念】未经修饰的遗传突变属于天然基因，正是本次判决撤销专利的对象（如 BRCA1）。",
+              "refSentences": [
+                "P1-S3",
+                "P4-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "While native DNA cannot be owned, artificially created genetic material remains eligible for patents。",
+            "methodSummary": "法律边界题精确定位：native DNA (NO) vs artificially created material (YES)。"
+          }
+        },
+        {
+          "qIndex": 30,
+          "type": "推断结论题",
+          "tangchiModel": "唐迟推断题模型：锁定文章末句对裁决积极影响的预期，推导基因医疗费用下降与普及",
+          "stem": "It can be inferred from the text that the court ruling will ultimately",
+          "stemKeywords": [
+            "inferred",
+            "court ruling",
+            "ultimately"
+          ],
+          "targetSentences": [
+            "P4-S3"
+          ],
+          "officialAnswer": "D",
+          "options": [
+            {
+              "key": "A",
+              "text": "destroy all commercial investments in personalized medicine.",
+              "isCorrect": false,
+              "distractorType": "绝对化偏激",
+              "analysis": "【干扰特征: 极端悲观】判决鼓励合法合成创新，并未摧毁所有商业投资。",
+              "refSentences": [
+                "P4-S2",
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "restrict cancer patients from accessing genetic tests.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 与文意相反】判决将使检测更便宜、更多机构可提供服务，扩大了患者获取途径。",
+              "refSentences": [
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "give one biotech company a permanent monopoly.",
+              "isCorrect": false,
+              "distractorType": "与文意相悖",
+              "analysis": "【干扰特征: 判决废除对象】判决彻底打破了单一公司的长期垄断。",
+              "refSentences": [
+                "P1-S2",
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "lower the cost of genetic screening and foster medical discovery.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S3 明确总结裁决的深远预期：'drive down the cost of genetic screening, accelerate medical discovery'（大幅拉低基因筛查费用、加速医学新发现）。D选项直接对应了这一预期结论。",
+              "refSentences": [
+                "P4-S3"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "末句总结：drive down cost + accelerate medical discovery = lower cost + foster discovery。",
+            "methodSummary": "最终推断题定位文章展望句（P4-S3），比对积极动词词组。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text3",
+      "number": 3,
+      "title": "Formal Education, Quality, and Economic Prosperity",
+      "chineseTitle": "正规教育与经济增长的复杂关系及质量决定论",
+      "topic": "教育经济学 / 人力资本、教育质量与劳动力市场匹配",
+      "overview": "本文深入剖析了正规教育与国家经济增长之间复杂的非线性关系。实证研究表明，单纯增加受教育年限并不能必然提升国民财富，真正驱动技术创新与生产力的是认知掌握的学习质量。此外，高等教育与市场需求的结构性脱节会导致严重的文凭通胀与就业不充分。教育若要有效赋能经济，必须与竞争性市场机制、产权保护深度结合，并转向卓越教学与终身学习。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "传统观点普遍认为正规教育直接促进国家经济增长，但二者的因果关系远比想象复杂",
+          "logicRole": "提出教育与经济增长关系的传统预设并引入质疑 (Conventional View & Complexity)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "The belief that formal education is the primary catalyst for economic growth has long been an article of faith among policymakers and economists.",
+              "translation": "正规教育是推动经济增长首要催化剂的观点，长期以来一直是政策制定者和经济学家们深信不疑的坚定信条。",
+              "vocab": [
+                {
+                  "word": "formal education",
+                  "ipa": "/ˈfɔːməl ˌedʒuˈkeɪʃn/",
+                  "meaning": "n. 正规教育（常用释义：学校教育；正式教育）",
+                  "level": "red"
+                },
+                {
+                  "word": "economic growth",
+                  "ipa": "/ˌiːkəˈnɒmɪk ɡrəʊθ/",
+                  "meaning": "n. 经济增长（常用释义：经济层面的增长）",
+                  "level": "red"
+                },
+                {
+                  "word": "belief",
+                  "ipa": "",
+                  "meaning": "n. 相信，信心；信念",
+                  "level": "green"
+                },
+                {
+                  "word": "formal",
+                  "ipa": "",
+                  "meaning": "adj.庄重的，合乎礼仪的；正式的，规范的；合法的；整齐的，布置井然的；形",
+                  "level": "red"
+                },
+                {
+                  "word": "primary",
+                  "ipa": "/ˈpraɪməri/",
+                  "meaning": "主要的；基本的（常用释义：首要的；初级的；初选的）",
+                  "level": "red"
+                },
+                {
+                  "word": "economic",
+                  "ipa": "/ˌiːkəˈnɒmɪk/",
+                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "level": "green"
+                },
+                {
+                  "word": "article",
+                  "ipa": "ˈɑːrtɪkəl",
+                  "meaning": "n. 文章；物品；冠词 v.见习",
+                  "level": "green"
+                },
+                {
+                  "word": "faith",
+                  "ipa": "feɪθ",
+                  "meaning": "n. 信仰；信念",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Meanwhile, many settlers had slighter religious commitments than Dane's, as one clergyman learned in confronting folk along the coast who mocked that they had not come to the New World for religion.",
-              "translation": "与此同时，许多定居者的宗教信仰比丹麦人的宗教信仰要少，一位牧师在面对沿海民众时了解到，这些民众嘲笑他们来到新世界并不是为了宗教。",
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "Governments around the globe have poured trillions of dollars into expanding schooling, confident that increasing the average years of education would automatically boost national wealth.",
+              "translation": "全球各国政府已向扩大基础和高等教育投入了数万亿美元，坚信提高人均受教育年限必将自动大幅提升国家财富。",
               "vocab": [
                 {
-                  "word": "the New World",
-                  "ipa": "/ðə ˌnjuː ˈwɜːld/",
-                  "meaning": "新大陆；美洲（常用释义：相对于旧大陆的美洲地区）",
-                  "level": "green"
-                },
-                {
-                  "word": "along the coast",
-                  "ipa": "/əˈlɒŋ ðə kəʊst/",
-                  "meaning": "沿海一带；沿着海岸（常用释义：顺着线状区域分布）",
-                  "level": "purple"
-                },
-                {
-                  "word": "Meanwhile",
-                  "ipa": "/ˈmiːnwaɪl/",
-                  "meaning": "与此同时；另一方面（常用释义：在此期间）",
+                  "word": "around",
+                  "ipa": "əˈraʊnd",
+                  "meaning": "adv.存在着",
                   "level": "red"
                 },
                 {
-                  "word": "slighter",
-                  "ipa": "/ˈslaɪtə(r)/",
-                  "meaning": "较弱的；较不强烈的（常用释义：较轻微的；较小的）",
-                  "level": "red"
-                },
-                {
-                  "word": "religious",
-                  "ipa": "rɪˈlɪdʒəs",
-                  "meaning": "adj. 宗教的",
+                  "word": "confident",
+                  "ipa": "ˈkɒnfɪdənt",
+                  "meaning": "adj. 自信的",
                   "level": "green"
                 },
                 {
-                  "word": "one",
-                  "ipa": "/wʌn/",
-                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
-                  "level": "red"
-                },
-                {
-                  "word": "clergyman",
-                  "ipa": "/ˈklɜːdʒimən/",
-                  "meaning": "牧师；神职人员（常用释义：男性神职人员）",
+                  "word": "average",
+                  "ipa": "ˈævərɪdʒ",
+                  "meaning": "n. 平均数 adj. 平均的；普通的",
                   "level": "green"
                 },
                 {
-                  "word": "learned",
-                  "ipa": "/ˈlɜːnɪd/",
-                  "meaning": "博学的；有学问的（常用释义：learn 的过去式/过去分词（读音不同））",
-                  "level": "red"
-                },
-                {
-                  "word": "folk",
-                  "ipa": "/fəʊk/",
-                  "meaning": "人们；当地居民（常用释义：民众；家人；民间的）",
+                  "word": "automatically",
+                  "ipa": "ˌɔːtəˈmætɪkli",
+                  "meaning": "adv.自动地；自然地；无意识地",
                   "level": "green"
                 },
                 {
-                  "word": "New",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "word": "boost",
+                  "ipa": "/buːst/",
+                  "meaning": "增强；提升（常用释义：推动；促进；提高；增强）",
                   "level": "red"
                 },
                 {
-                  "word": "religion",
-                  "ipa": "rɪˈlɪdʒən",
-                  "meaning": "n. 宗教",
+                  "word": "national",
+                  "ipa": "ˈnæʃən(ə)l",
+                  "meaning": "adj. 国家的,全国",
+                  "level": "green"
+                },
+                {
+                  "word": "wealth",
+                  "ipa": "welθ",
+                  "meaning": "n. 财产，财富",
                   "level": "green"
                 }
               ],
               "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P1-S3",
+              "text": "However, recent empirical studies suggest that the relationship between formal education and economic prosperity is far more complex and contingent than conventional wisdom assumes.",
+              "translation": "然而，近年来的实证研究表明，正规教育与经济繁荣之间的内在关联，远比传统观念所假定的要复杂得多且更具条件性。",
+              "vocab": [
+                {
+                  "word": "formal education",
+                  "ipa": "/ˈfɔːməl ˌedʒuˈkeɪʃn/",
+                  "meaning": "n. 正规教育（常用释义：学校教育；正式教育）",
+                  "level": "red"
+                },
+                {
+                  "word": "conventional",
+                  "ipa": "/kənˈvenʃənl/",
+                  "meaning": "adj. 传统的；常规的（常用释义：按惯例的；普通的）",
+                  "level": "red"
+                },
+                {
+                  "word": "However",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
+                  "level": "red"
+                },
+                {
+                  "word": "empirical",
+                  "ipa": "ɪmˈpɪrɪk(ə)l",
+                  "meaning": "adj.经验主义的，以经验为依据的",
+                  "level": "green"
+                },
+                {
+                  "word": "suggest",
+                  "ipa": "/səˈdʒest/",
+                  "meaning": "暗示；表明（常用释义：建议；使人想到）",
+                  "level": "red"
+                },
+                {
+                  "word": "relationship",
+                  "ipa": "rɪ'leʃən'ʃɪp",
+                  "meaning": "n. 关系, 联系",
+                  "level": "red"
+                },
+                {
+                  "word": "formal",
+                  "ipa": "",
+                  "meaning": "adj.庄重的，合乎礼仪的；正式的，规范的；合法的；整齐的，布置井然的；形",
+                  "level": "red"
+                },
+                {
+                  "word": "economic",
+                  "ipa": "/ˌiːkəˈnɒmɪk/",
+                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "level": "green"
+                },
+                {
+                  "word": "prosperity",
+                  "ipa": "prɑːˈsperəti",
+                  "meaning": "n.繁荣；成功",
+                  "level": "green"
+                },
+                {
+                  "word": "complex",
+                  "ipa": "/ˈkɒmpleks/",
+                  "meaning": "复杂的，多层次的（常用释义：复杂的；复合的；综合体）",
+                  "level": "red"
+                },
+                {
+                  "word": "wisdom",
+                  "ipa": "ˈwɪzdəm",
+                  "meaning": "n. 智慧；明智",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "单纯增加受教育年限并不等同于提高认知技能，教育质量与课程结构才是决定性因素",
+          "logicRole": "揭示受教育年限与实际认知能力脱节的深层原因 (Quality vs Years of Schooling)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "A crucial finding from international comparisons is that years of schooling do not necessarily translate into genuine cognitive skills.",
+              "translation": "国际对比研究得出的一个关键发现是：受教育年限并不能必然直接转化为真实的认知技能。",
+              "vocab": [
+                {
+                  "word": "crucial",
+                  "ipa": "/ˈkruːʃəl/",
+                  "meaning": "至关重要的、决定性的（常用释义：极其重要的）",
+                  "level": "purple"
+                },
+                {
+                  "word": "international",
+                  "ipa": "ɪntəˈnæʃən(ə)l",
+                  "meaning": "adj. 国际",
+                  "level": "green"
+                },
+                {
+                  "word": "translate",
+                  "ipa": "trænzˈleɪt",
+                  "meaning": "v. 翻译 v. 转化为 Across the 163 countries measured, the UK is one of",
+                  "level": "green"
+                },
+                {
+                  "word": "genuine",
+                  "ipa": "ˈdʒenjuɪn",
+                  "meaning": "adj.真正的；真诚的",
+                  "level": "green"
+                },
+                {
+                  "word": "cognitive",
+                  "ipa": "/ˈkɒɡnətɪv/",
+                  "meaning": "认知的（常用释义：与思维、理解、记忆、学习有关的）",
+                  "level": "red"
+                },
+                {
+                  "word": "skills",
+                  "ipa": "/skɪlz/",
+                  "meaning": "技能，技巧（常用释义：技能；技艺；能力）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "In many developing economies, rapid expansion of school enrollment has been accompanied by dismal teaching standards, leaving graduates unable to master basic literacy and numeracy.",
+              "translation": "在许多发展中经济体中，入学率的迅猛扩张往往伴随着低劣糟糕的教学标准，导致毕业生甚至无法掌握基本的读写和算术能力。",
+              "vocab": [
+                {
+                  "word": "rapid",
+                  "ipa": "ˈræpɪd",
+                  "meaning": "adj.快,急速的 n.(pl.)急流,湍滩",
+                  "level": "red"
+                },
+                {
+                  "word": "expansion",
+                  "ipa": "ɪkˈspænʃ(ə)n",
+                  "meaning": "n.扩大，扩张；扩充，展开；扩张物；膨胀",
+                  "level": "green"
+                },
+                {
+                  "word": "enrollment",
+                  "ipa": "ɪnˈroʊlmənt",
+                  "meaning": "n.登记；入伍",
+                  "level": "green"
+                },
+                {
+                  "word": "dismal",
+                  "ipa": "",
+                  "meaning": "adj.忧郁的；凄凉的；惨淡的；阴沉的；不熟练的；差劲的；不怎么样的",
+                  "level": "red"
+                },
+                {
+                  "word": "unable",
+                  "ipa": "",
+                  "meaning": "adj.不能胜任的，不会的",
+                  "level": "red"
+                },
+                {
+                  "word": "basic",
+                  "ipa": "ˈbeɪsɪk",
+                  "meaning": "adj.基本的,基础的",
+                  "level": "red"
+                },
+                {
+                  "word": "literacy",
+                  "ipa": "ˈlɪtərəsi",
+                  "meaning": "n.识字，读写能力",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "Economists Eric Hanushek and Ludger Woessmann demonstrated that it is the quality of learning—measured by standardized tests of cognitive mastery—rather than mere classroom seat time that truly drives technological innovation and productivity growth.",
+              "translation": "经济学家埃里克·哈努谢克与卢德格尔·沃斯曼证实：真正驱动技术创新与生产力增长的，是通过认知掌握标准化测试衡量的学习质量，而非仅仅在教室里熬过的出勤时间。",
+              "vocab": [
+                {
+                  "word": "productivity",
+                  "ipa": "/ˌprɒdʌkˈtɪvəti/",
+                  "meaning": "n. 生产率（常用释义：生产力；效率）",
+                  "level": "red"
+                },
+                {
+                  "word": "quality",
+                  "ipa": "ˈkwɑləti",
+                  "meaning": "n.质量,品质,特性",
+                  "level": "red"
+                },
+                {
+                  "word": "standardized",
+                  "ipa": "/ˈstændədaɪzd/",
+                  "meaning": "标准化的；按统一标准进行的（常用释义：标准化的；统一规范的）",
+                  "level": "green"
+                },
+                {
+                  "word": "cognitive",
+                  "ipa": "/ˈkɒɡnətɪv/",
+                  "meaning": "认知的（常用释义：与思维、理解、记忆、学习有关的）",
+                  "level": "red"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                },
+                {
+                  "word": "mere",
+                  "ipa": "mɪər",
+                  "meaning": "adj. 仅仅的；微小的",
+                  "level": "green"
+                },
+                {
+                  "word": "technological",
+                  "ipa": "ˌteknəˈlɑːdʒɪk(ə)l",
+                  "meaning": "adj.技术的；科技的",
+                  "level": "green"
+                },
+                {
+                  "word": "innovation",
+                  "ipa": "/ˌɪnəˈveɪʃən/",
+                  "meaning": "创新；新思想（常用释义：革新；创新成果）",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "教育体系若与劳动力市场需求脱节，将导致严重的“过度教育”与学历贬值通胀",
+          "logicRole": "分析教育供给与市场需求脱节导致的结构性矛盾 (Overeducation & Credential Inflation)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "Moreover, education systems often suffer from severe structural mismatches with the labor market.",
+              "translation": "此外，教育体系往往饱受与劳动力市场严重结构性脱节的困扰。",
+              "vocab": [
+                {
+                  "word": "Moreover",
+                  "ipa": "/mɔːrˈəʊvə/",
+                  "meaning": "此外；而且（常用释义：此外；再者）",
+                  "level": "red"
+                },
+                {
+                  "word": "suffer",
+                  "ipa": "",
+                  "meaning": "v.受苦，受折磨；经受，遭受（坏事）；变差",
+                  "level": "red"
+                },
+                {
+                  "word": "severe",
+                  "ipa": "sɪˈvɪə(r)",
+                  "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
+                  "level": "red"
+                },
+                {
+                  "word": "labor",
+                  "ipa": "ˈleɪbər",
+                  "meaning": "n. 劳动；劳工；分娩 v. 努力工作",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "When higher education churns out millions of graduates in fields with little commercial demand while technical trades face chronic labor shortages, the result is widespread credential inflation and underemployment.",
+              "translation": "当高等教育机构在商业需求匮乏的专业领域大批量制造数百万大学毕业生，而技术工种却面临长期的劳动力短缺时，其必然结果便是普遍的文凭通胀与大材小用的不充分就业。",
+              "vocab": [
+                {
+                  "word": "fields",
+                  "ipa": "/fiːldz/",
+                  "meaning": "应对、回答（问题）。（常用释义：田野；领域；场地；v. 接住、处理。）",
+                  "level": "red"
+                },
+                {
+                  "word": "commercial",
+                  "ipa": "/kəˈmɜːʃəl/",
+                  "meaning": "商业性的；商业化的（常用释义：商业的；营利性的；商业广告）",
+                  "level": "red"
+                },
+                {
+                  "word": "chronic",
+                  "ipa": "/ˈkrɒnɪk/",
+                  "meaning": "长期的，慢性的（常用释义：持续很久的；难以治愈的）",
+                  "level": "red"
+                },
+                {
+                  "word": "labor",
+                  "ipa": "ˈleɪbər",
+                  "meaning": "n. 劳动；劳工；分娩 v. 努力工作",
+                  "level": "green"
+                },
+                {
+                  "word": "widespread",
+                  "ipa": "ˈwaɪdspred, -ˈspred",
+                  "meaning": "adj.分",
+                  "level": "green"
+                },
+                {
+                  "word": "inflation",
+                  "ipa": "ɪnˈfleɪʃ(ə)n",
+                  "meaning": "n.通货膨胀，通胀率；充气，膨胀",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "In such circumstances, additional spending on tertiary education yields diminishing economic returns and fuels frustration among educated youths.",
+              "translation": "在这种情况下，向高等教育追加更多经费投入所产生的经济回报将日益微薄，并在受过高等教育的年轻群体中积聚失望与挫败感。",
+              "vocab": [
+                {
+                  "word": "economic",
+                  "ipa": "/ˌiːkəˈnɒmɪk/",
+                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "level": "green"
+                },
+                {
+                  "word": "returns",
+                  "ipa": "/rɪˈtɜːnz/",
+                  "meaning": "投资回报；收益（常用释义：返回；回报；收益）",
+                  "level": "red"
+                },
+                {
+                  "word": "frustration",
+                  "ipa": "/frʌˈstreɪʃən/",
+                  "meaning": "失意；受挫感（常用释义：挫折；沮丧）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "教育要有效赋能经济，必须与制度创新、自由市场竞争以及终身技能培训深度融合",
+          "logicRole": "提出教育赋能经济增长的综合政策路径 (Institutional Synergies & Lifelong Learning)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "For education to effectively power sustainable growth, it must be paired with dynamic economic institutions.",
+              "translation": "教育若要切实有效地推动可持续增长，就必须与充满活力的经济制度体系相配套。",
+              "vocab": [
+                {
+                  "word": "power",
+                  "ipa": "",
+                  "meaning": "n. 力量，权力；v.推动，驱动",
+                  "level": "green"
+                },
+                {
+                  "word": "sustainable",
+                  "ipa": "səˈsteɪnəb(ə)l",
+                  "meaning": "adj.可持续的，持续性的",
+                  "level": "green"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "daɪˈnæmɪk",
+                  "meaning": "adj. 动态的；有活力的",
+                  "level": "green"
+                },
+                {
+                  "word": "economic",
+                  "ipa": "/ˌiːkəˈnɒmɪk/",
+                  "meaning": "经济的（常用释义：与经济、经济活动有关的）",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "Without competitive markets, secure property rights, and incentives for entrepreneurial risk-taking, even a highly educated populace cannot generate vibrant wealth.",
+              "translation": "如果缺乏竞争性的市场环境、可靠的产权保护以及鼓励开拓创业冒险的激励机制，即便是一个受过高度教育的国民群体也无法创造出蓬勃的财富。",
+              "vocab": [
+                {
+                  "word": "competitive",
+                  "ipa": "kəmˈpɛtɪtɪv",
+                  "meaning": "adj. 竞争的；有竞争力的",
+                  "level": "green"
+                },
+                {
+                  "word": "secure",
+                  "ipa": "sɪˈkjʊr",
+                  "meaning": "adj.安全的；稳固的 v.获得；使安全；缚牢；确保",
+                  "level": "green"
+                },
+                {
+                  "word": "wealth",
+                  "ipa": "welθ",
+                  "meaning": "n. 财产，财富",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P4-S3",
+              "text": "Policymakers must shift their focus from blindly expanding classroom access to enhancing teaching excellence, aligning curricula with modern technological needs, and fostering continuous lifelong learning.",
+              "translation": "政策制定者必须将注意力从盲目扩大入学规模，切实转向提升卓越教学质量、使课程设置与现代技术需求紧密接轨，并积极培育持续终身学习的良好生态。",
+              "vocab": [
+                {
+                  "word": "shift",
+                  "ipa": "",
+                  "meaning": "v.（使）移动，（使）转移；（使）转换到；改变意见/信仰；移位",
+                  "level": "red"
+                },
+                {
+                  "word": "focus",
+                  "ipa": "",
+                  "meaning": "v.集中注意力",
+                  "level": "green"
+                },
+                {
+                  "word": "access",
+                  "ipa": "/ˈækses/",
+                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
+                  "level": "red"
+                },
+                {
+                  "word": "excellence",
+                  "ipa": "/ˈeksələns/",
+                  "meaning": "卓越；优秀（常用释义：卓越；杰出；优秀）",
+                  "level": "red"
+                },
+                {
+                  "word": "curricula",
+                  "ipa": "kəˈrɪkjʊlə",
+                  "meaning": "n.课程,课程体系",
+                  "level": "red"
+                },
+                {
+                  "word": "modern",
+                  "ipa": "ˈmɒdn",
+                  "meaning": "adj.现代的,近代的",
+                  "level": "red"
+                },
+                {
+                  "word": "technological",
+                  "ipa": "ˌteknəˈlɑːdʒɪk(ə)l",
+                  "meaning": "adj.技术的；科技的",
+                  "level": "green"
+                },
+                {
+                  "word": "continuous",
+                  "ipa": "kənˈtɪnjuəs",
+                  "meaning": "adj. 连续的；不断的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "qIndex": 31,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第一段 policymakers 传统观点与转折词 however 对比",
+          "stem": "Conventional wisdom among policymakers assumes that",
+          "stemKeywords": [
+            "Conventional wisdom",
+            "policymakers assumes"
+          ],
+          "targetSentences": [
+            "P1-S1",
+            "P1-S2"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "higher education is useless for technological innovation.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 正反颠倒】传统观点对高等教育极度推崇，绝非认为其无用。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "developing countries should eliminate all formal schooling.",
+              "isCorrect": false,
+              "distractorType": "荒谬极端",
+              "analysis": "【干扰特征: 极端荒谬】各国都在倾注万亿资金扩大教育，绝非取缔学校。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "more years of education will automatically lead to economic growth.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S2 明确阐述了传统信念：'confident that increasing the average years of education would automatically boost national wealth'（坚信增加受教育年限将自动提升国家财富）。C选项用 more years of education automatically lead to economic growth 精确复现了这一传统假设。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "economic prosperity is completely independent of education.",
+              "isCorrect": false,
+              "distractorType": "与常识相反",
+              "analysis": "【干扰特征: 与传统观点相反】传统观点坚信二者高度因果绑定，而非毫无关联。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "article of faith + confident that increasing years would automatically boost wealth = more education automatically leads to growth。",
+            "methodSummary": "细节事实题抓准首段假设句：increasing years -> automatically boost wealth。"
+          }
+        },
+        {
+          "qIndex": 32,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住 Hanushek and Woessmann 研究结论，锁定学习质量是关键驱动力",
+          "stem": "Research by Hanushek and Woessmann indicates that economic growth is truly driven by",
+          "stemKeywords": [
+            "Hanushek and Woessmann",
+            "economic growth truly driven by"
+          ],
+          "targetSentences": [
+            "P2-S3"
+          ],
+          "officialAnswer": "B",
+          "options": [
+            {
+              "key": "A",
+              "text": "the total number of classroom hours spent in school.",
+              "isCorrect": false,
+              "distractorType": "作者批判对象",
+              "analysis": "【干扰特征: 原文否定对象】P2-S3 明确排除了单纯的在校时长（rather than mere classroom seat time）。",
+              "refSentences": [
+                "P2-S3"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "the actual quality of learning and cognitive mastery.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S3 明确指出真正驱动经济增长的是：'the quality of learning—measured by standardized tests of cognitive mastery'（通过认知掌握标准化测试衡量的学习质量）。B选项 actual quality of learning and cognitive mastery 几乎是一字不差的精准同义改写。",
+              "refSentences": [
+                "P2-S3"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "the rapid expansion of university enrollment quotas.",
+              "isCorrect": false,
+              "distractorType": "作者批判对象",
+              "analysis": "【干扰特征: 错误导向】盲目扩招伴随着教学质量下降，并非真正驱动力。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "the elimination of all standardized examinations.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反颠倒】研究正是利用标准化测试来衡量认知掌握水平，而非取消考试。",
+              "refSentences": [
+                "P2-S3"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "quality of learning measured by cognitive mastery 是两位经济学家的核心学术贡献与全文题眼。",
+            "methodSummary": "学者实证定位法：寻找 It is X rather than Y that truly drives... 强强调句结构，直接提取 X。"
+          }
+        },
+        {
+          "qIndex": 33,
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第三段高等教育与市场脱节的后果，锁定文凭通胀与就业不充分",
+          "stem": "According to Paragraph 3, structural mismatches in education lead to",
+          "stemKeywords": [
+            "Paragraph 3",
+            "structural mismatches",
+            "lead to"
+          ],
+          "targetSentences": [
+            "P3-S1",
+            "P3-S2"
+          ],
+          "officialAnswer": "A",
+          "options": [
+            {
+              "key": "A",
+              "text": "credential inflation and graduate underemployment.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 明确说明当热门专业无市场需求而技术工种缺人时，结果是：'widespread credential inflation and underemployment'（普遍的文凭通胀与大材小用/不充分就业）。A选项直接精准对应原句核心词汇。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "a sudden surplus of skilled technical workers.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反相反】技术工种面临的是严重劳动力短缺（chronic labor shortages），而非过剩（surplus）。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "a dramatic increase in the economic returns of degrees.",
+              "isCorrect": false,
+              "distractorType": "与原文相悖",
+              "analysis": "【干扰特征: 事实相反】P3-S3 明确说明经济回报日益递减（diminishing economic returns）。",
+              "refSentences": [
+                "P3-S3"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "the complete closure of commercial companies.",
+              "isCorrect": false,
+              "distractorType": "夸大无中生有",
+              "analysis": "【干扰特征: 无端夸大】文章只讨论就业匹配，未涉及商业公司倒闭。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "the result is widespread credential inflation and underemployment 原词直接命中正确答案。",
+            "methodSummary": "因果结果句定位：the result is X and Y，直接比对词汇。"
+          }
+        },
+        {
+          "qIndex": 34,
+          "type": "推断判断题",
+          "tangchiModel": "唐迟推断题模型：抓住第四段教育与动态经济制度结合（paired with dynamic institutions）的必要性",
+          "stem": "The author argues in the last paragraph that education CANNOT generate wealth without",
+          "stemKeywords": [
+            "last paragraph",
+            "CANNOT generate wealth without"
+          ],
+          "targetSentences": [
+            "P4-S1",
+            "P4-S2"
+          ],
+          "officialAnswer": "D",
+          "options": [
+            {
+              "key": "A",
+              "text": "enforcing strict government control over all industries.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 与文意相反】文章强调的是自由竞争市场（competitive markets）与创业冒险，而非政府严密统制。",
+              "refSentences": [
+                "P4-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "lowering the entry standards of higher education.",
+              "isCorrect": false,
+              "distractorType": "违背主旨",
+              "analysis": "【干扰特征: 违背主旨】降低门槛只会进一步降低质量加剧文凭通胀。",
+              "refSentences": [
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "restricting students from choosing technical trades.",
+              "isCorrect": false,
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反颠倒】技术工种正是急需补足的短板，不应被限制。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "competitive markets, property rights, and supportive institutions.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S2 明确说明：'Without competitive markets, secure property rights, and incentives for entrepreneurial risk-taking, even a highly educated populace cannot generate vibrant wealth'（没有竞争市场、产权保护和创业激励，即使受过高度教育也无法创造财富）。D选项完美概括了这一必要制度环境。",
+              "refSentences": [
+                "P4-S1",
+                "P4-S2"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "Without X, Y cannot generate wealth 句型直接映射题干 cannot generate wealth without X。",
+            "methodSummary": "双重否定条件对应：Without A, B cannot happen = B cannot happen without A。"
+          }
+        },
+        {
+          "qIndex": 35,
+          "type": "推断建议题",
+          "tangchiModel": "唐迟建议题模型：抓住末句政策制定者应转变重心的具体建议，提炼核心转变方向",
+          "stem": "To maximize the economic value of education, policymakers should focus on",
+          "stemKeywords": [
+            "maximize economic value",
+            "policymakers should focus on"
+          ],
+          "targetSentences": [
+            "P4-S3"
+          ],
+          "officialAnswer": "C",
+          "options": [
+            {
+              "key": "A",
+              "text": "expanding the enrollment of traditional academic degrees.",
+              "isCorrect": false,
+              "distractorType": "作者批判对象",
+              "analysis": "【干扰特征: 明确反对】P4-S3 明确要求 shift focus from blindly expanding classroom access（从盲目扩招转变出去）。",
+              "refSentences": [
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "reducing national funding on teaching personnel.",
+              "isCorrect": false,
+              "distractorType": "与文意相悖",
+              "analysis": "【干扰特征: 与文意相反】文章主张提升卓越教学（enhancing teaching excellence），需要优秀师资。",
+              "refSentences": [
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "enhancing teaching quality, curriculum alignment, and lifelong learning.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S3 结尾明确列出政策核心导向：'enhancing teaching excellence, aligning curricula with modern technological needs, and fostering continuous lifelong learning'（提升教学卓越、使课程接轨现代科技需求、培育持续终身学习）。C选项完整概括了这三大战略支柱。",
+              "refSentences": [
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "discouraging private enterprises from participating in training.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章鼓励市场与教育良性互动，从未主张排斥企业培训。",
+              "refSentences": [
+                "P4-S1",
+                "P4-S3"
+              ]
+            }
+          ],
+          "presetReflection": {
+            "trapAnalysis": "末段政策重心三位一体：teaching excellence + aligning curricula + lifelong learning。",
+            "methodSummary": "末段建议排比句提取：shift focus from A to B, C, and D，直接锁定 B, C, D 组合选项。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "text4",
+      "number": 4,
+      "title": "The Rise and Decline of New England's Public Intellectuals",
+      "chineseTitle": "新英格兰公共知识分子的兴衰与当代精神罗盘缺失",
+      "topic": "文化历史与社会学 / 公共知识分子、商业主义与大学专业化",
+      "overview": "本文回顾了19世纪中叶新英格兰知识阶层（爱默生、梭罗等）从担任国家道德导师与精神先知的黄金巅峰，到内战后随工业资本主义崛起与大学学术专业化而走向边缘化与消亡的历史进程。曾经面向全民族良知发声的博学通识学者退守进狭隘象牙塔，文章对当代美国公共精神生活中独立道德指引与伦理批判声音的缺失表达了深切的叹息。",
+      "paragraphs": [
+        {
+          "pIndex": 1,
+          "mainIdea": "19世纪后半叶新英格兰知识分子阶层曾在文学、哲学与公共生活中享有至高崇敬地位",
+          "logicRole": "提出新英格兰知识分子历史巅峰与崇高地位 (Golden Age of New England Intellectuals)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P1-S1",
+              "text": "In the mid-19th century, New England was the undisputed intellectual capital of the United States.",
+              "translation": "在19世纪中叶，新英格兰地区是美国无可争议的思想文化中心。",
+              "vocab": [
+                {
+                  "word": "intellectual",
+                  "ipa": "/ˌɪntəˈlektʃuəl/",
+                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
+                  "level": "red"
+                },
+                {
+                  "word": "capital",
+                  "ipa": "ˈkæpɪtl",
+                  "meaning": "n. 资本；首都 adj. 资本的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "\"Our main end was to catch fish.\"",
-              "translation": "“我们的主要目的是钓鱼。”",
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "A distinguished circle of writers, philosophers, and essayists—among them Ralph Waldo Emerson, Henry David Thoreau, Nathaniel Hawthorne, and Henry Wadsworth Longfellow—commanded widespread moral authority.",
+              "translation": "包括拉尔夫·沃尔多·爱默生、亨利·戴维·梭罗、纳撒尼尔·霍桑以及亨利·沃兹沃思·朗费罗在内的一个杰出作家、哲学家和散文家圈子，享有举国广泛的道德权威与崇高威望。",
               "vocab": [
                 {
-                  "word": "catch fish",
-                  "ipa": "/kætʃ fɪʃ/",
-                  "meaning": "捕鱼（常用释义：捕捞鱼类）",
-                  "level": "purple"
+                  "word": "widespread",
+                  "ipa": "ˈwaɪdspred, -ˈspred",
+                  "meaning": "adj.分",
+                  "level": "green"
                 },
                 {
-                  "word": "end",
-                  "ipa": "/end/",
-                  "meaning": "目的；目标（常用释义：末端；结束；结局）",
+                  "word": "moral",
+                  "ipa": "ˈmɔːrəl",
+                  "meaning": "adj. 道德的；品行端正的 n. 道德准则",
+                  "level": "green"
+                },
+                {
+                  "word": "authority",
+                  "ipa": "/ɔːˈθɒrəti/",
+                  "meaning": "法定权限、职权（常用释义：权威；当局）",
                   "level": "red"
                 }
               ],
               "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P1-S3",
+              "text": "They were not merely literary figures; they were revered as the nation's spiritual guides and secular prophets, deeply engaged with the abolition of slavery and the moral destiny of the young republic.",
+              "translation": "他们绝不仅仅是普通文人，而是被举国奉为国家精神导师与世俗先知，深度投身于废除奴隶制以及这个年轻共和国的道德命运塑造之中。",
+              "vocab": [
+                {
+                  "word": "literary",
+                  "ipa": "/ˈlɪtərəri/",
+                  "meaning": "adj. 文字的；书面创作的（常用释义：文学的）",
+                  "level": "red"
+                },
+                {
+                  "word": "merely",
+                  "ipa": "ˈmɪrli",
+                  "meaning": "adv.仅仅，只；无非是…",
+                  "level": "green"
+                },
+                {
+                  "word": "spiritual",
+                  "ipa": "ˈspɪrɪtʃʊəl",
+                  "meaning": "adj. 精神的；心灵",
+                  "level": "green"
+                },
+                {
+                  "word": "secular",
+                  "ipa": "/ˈsekjələ/",
+                  "meaning": "长期的；长期趋势的（常用释义：世俗的；非宗教的；长期的）",
+                  "level": "red"
+                },
+                {
+                  "word": "slavery",
+                  "ipa": "/ˈsleɪvəri/",
+                  "meaning": "奴隶制（常用释义：奴隶制；受奴役状态）",
+                  "level": "red"
+                },
+                {
+                  "word": "moral",
+                  "ipa": "ˈmɔːrəl",
+                  "meaning": "adj. 道德的；品行端正的 n. 道德准则",
+                  "level": "green"
+                },
+                {
+                  "word": "republic",
+                  "ipa": "rɪˈpʌblɪk",
+                  "meaning": "n. 共和国",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "随着内战后工业资本主义崛起与商业化浪潮，新英格兰知识精英逐渐边缘化并走向衰落",
+          "logicRole": "分析工业化与商业拜金主义冲击下知识阶层的边缘化 (Decline & Marginalization)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "However, following the Civil War, the cultural landscape underwent a dramatic and lasting transformation.",
+              "translation": "然而在美国内战之后，整个文化版图经历了一场深刻而持久的剧烈剧变。",
+              "vocab": [
+                {
+                  "word": "however",
+                  "ipa": "/haʊˈevə(r)/",
+                  "meaning": "adv. 然而；不过（常用释义：无论怎样；不过）",
+                  "level": "red"
+                },
+                {
+                  "word": "Civil",
+                  "ipa": "ˈsɪv(ə)l",
+                  "meaning": "adj.公民的；民用的；文明的；民事的；习俗规定的",
+                  "level": "green"
+                },
+                {
+                  "word": "landscape",
+                  "ipa": "ˈlændskeɪp",
+                  "meaning": "n.风景；山水画 v.美化…的环境",
+                  "level": "green"
+                },
+                {
+                  "word": "dramatic",
+                  "ipa": "/drəˈmætɪk/",
+                  "meaning": "重大而突然的（常用释义：戏剧性的；显著的）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
               "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "The rapid rise of industrial capitalism, corporate power, and urban commercialism shifted the nation's center of gravity from moral philosophy to relentless material pursuit.",
+              "translation": "工业资本主义、巨型企业财阀以及城市商业主义的迅速崛起，使国家重心从道德哲学全盘转向了对物质财富的无休止追逐。",
+              "vocab": [
+                {
+                  "word": "pursuit",
+                  "ipa": "/pəˈsjuːt/",
+                  "meaning": "n. 活动；事业；学术追求（常用释义：追求；追赶）",
+                  "level": "red"
+                },
+                {
+                  "word": "rapid",
+                  "ipa": "ˈræpɪd",
+                  "meaning": "adj.快,急速的 n.(pl.)急流,湍滩",
+                  "level": "red"
+                },
+                {
+                  "word": "industrial",
+                  "ipa": "ɪnˈdʌstriəl",
+                  "meaning": "adj.工业的,产业的",
+                  "level": "red"
+                },
+                {
+                  "word": "capitalism",
+                  "ipa": "ˈkæpɪtəlɪzəm",
+                  "meaning": "n.资本主义",
+                  "level": "green"
+                },
+                {
+                  "word": "corporate",
+                  "ipa": "/ˈkɔːpərət/",
+                  "meaning": "公司的；企业的（常用释义：团体的；法人组织的）",
+                  "level": "red"
+                },
+                {
+                  "word": "power",
+                  "ipa": "",
+                  "meaning": "n. 力量，权力；v.推动，驱动",
+                  "level": "green"
+                },
+                {
+                  "word": "urban",
+                  "ipa": "ˈɜːbən",
+                  "meaning": "adj.城市的，城镇的",
+                  "level": "green"
+                },
+                {
+                  "word": "moral",
+                  "ipa": "ˈmɔːrəl",
+                  "meaning": "adj. 道德的；品行端正的 n. 道德准则",
+                  "level": "green"
+                },
+                {
+                  "word": "philosophy",
+                  "ipa": "",
+                  "meaning": "n.哲学；哲学体系，思想体系；人生哲学，生活准则",
+                  "level": "red"
+                },
+                {
+                  "word": "material",
+                  "ipa": "məˈtɪriəl",
+                  "meaning": "n.衣料；材料；素材 adj.物质的；重要的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "New England's patrician intellectual elite found themselves increasingly alienated from the cutthroat realities of the Gilded Age, their high-minded idealism dismissed as quaint and out of touch.",
+              "translation": "新英格兰出身名门的贵族知识精英们发现自己与“镀金时代”残酷残酷的现实日益脱节，他们崇高的理想主义被主流社会贬斥为陈腐古板与不合时宜。",
+              "vocab": [
+                {
+                  "word": "intellectual",
+                  "ipa": "/ˌɪntəˈlektʃuəl/",
+                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
+                  "level": "red"
+                },
+                {
+                  "word": "elite",
+                  "ipa": "eɪˈliːt",
+                  "meaning": "n.精英；上层集团 adj.精英的",
+                  "level": "green"
+                },
+                {
+                  "word": "idealism",
+                  "ipa": "aɪˈdɪəˌlɪzəm",
+                  "meaning": "n.理想主义",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "大学专业分工与学术学院化导致知识分子脱离大众公共生活，演变为脱离实际的学院象牙塔",
+          "logicRole": "大学专业化与公共知识分子消亡的制度根源 (Academic Professionalization & Ivory Tower)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "The decline of the public intellectual was further accelerated by the professionalization of higher education.",
+              "translation": "高等教育的专业化职业化，进一步加速了公共知识分子群体的式微与消亡。",
+              "vocab": [
+                {
+                  "word": "decline",
+                  "ipa": "/dɪˈklaɪn/",
+                  "meaning": "拒绝、不接受论文（常用释义：下降；衰退；婉言拒绝）",
+                  "level": "red"
+                },
+                {
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
+                  "level": "red"
+                },
+                {
+                  "word": "intellectual",
+                  "ipa": "/ˌɪntəˈlektʃuəl/",
+                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
+                  "level": "red"
+                },
+                {
+                  "word": "further",
+                  "ipa": "ˈfɜːrðər",
+                  "meaning": "adv.更远地；进一步；此外 adj.更进一步的；更远的 v.促进",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "As universities transformed into modern research institutions modeled on German academia, scholars retreated into specialized disciplinary silos, writing dense treatises for peer audiences rather than addressing broad public concerns.",
+              "translation": "随着大学纷纷转型为以德国学术模式为蓝本的现代研究型机构，学者们退守进狭隘割裂的学科壁垒之中，只面向同行小圈子撰写晦涩艰深的专著，而不再回应公众广泛关切的社会议题。",
+              "vocab": [
+                {
+                  "word": "modern",
+                  "ipa": "ˈmɒdn",
+                  "meaning": "adj.现代的,近代的",
+                  "level": "red"
+                },
+                {
+                  "word": "scholars",
+                  "ipa": "/ˈskɒləz/",
+                  "meaning": "学者（常用释义：学者；奖学金获得者）",
+                  "level": "red"
+                },
+                {
+                  "word": "dense",
+                  "ipa": "dens",
+                  "meaning": "adj.稠密的；浓密的；密度大的；（文字）难懂的；愚钝的",
+                  "level": "green"
+                },
+                {
+                  "word": "peer",
+                  "ipa": "/pɪə/",
+                  "meaning": "同领域的研究同行（常用释义：同龄人；同等地位的人）",
+                  "level": "red"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                },
+                {
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "The expansive generalist who spoke to the conscience of the nation was replaced by the narrow academic specialist who spoke only to fellow experts.",
+              "translation": "曾经面向全民族良知发声的博学通识学者，被仅与同行专家对话的狭隘学术专才所彻底取代。",
+              "vocab": [
+                {
+                  "word": "expansive",
+                  "ipa": "ɪkˈspænsɪv",
+                  "meaning": "adj.广阔的；广泛的；扩张的，发展的；开朗的，健谈的",
+                  "level": "green"
+                },
+                {
+                  "word": "generalist",
+                  "ipa": "ˈdʒenrəlɪst",
+                  "meaning": "n.通才；多面手",
+                  "level": "green"
+                },
+                {
+                  "word": "conscience",
+                  "ipa": "ˈkɒnʃəns",
+                  "meaning": "n. 良心；良知",
+                  "level": "green"
+                },
+                {
+                  "word": "narrow",
+                  "ipa": "/ˈnærəʊ/",
+                  "meaning": "缩小；限制范围（常用释义：狭窄的；缩小）",
+                  "level": "red"
+                },
+                {
+                  "word": "academic",
+                  "ipa": "ˌækəˈdemɪk",
+                  "meaning": "adj.学业的；学院的 n.大学教师",
+                  "level": "green"
+                },
+                {
+                  "word": "specialist",
+                  "ipa": "ˈspɛʃəlɪst",
+                  "meaning": "n. 专家；专门医师",
+                  "level": "green"
+                },
+                {
+                  "word": "fellow",
+                  "ipa": "ˈfɛloʊ",
+                  "meaning": "n. 同伴；同事 adj. 同伴的；同事的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "新英格兰文化传统的衰落不仅是一个阶层的命运变迁，更是美国公共精神生活无可挽回的重大损失",
+          "logicRole": "历史反思与当代公共精神生活缺失的挽歌 (Historical Lament & Loss of Moral Voice)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "Looking back, the passing of New England's intellectual golden age represents more than a regional shift in literary fashion.",
+              "translation": "回望历史，新英格兰知识黄金时代的落幕所代表的，绝不仅仅是某种文学风尚的地域转移。",
+              "vocab": [
+                {
+                  "word": "literary",
+                  "ipa": "/ˈlɪtərəri/",
+                  "meaning": "adj. 文字的；书面创作的（常用释义：文学的）",
+                  "level": "red"
+                },
+                {
+                  "word": "passing",
+                  "ipa": "ˈpɑːsɪŋ",
+                  "meaning": "n. 流逝，推",
+                  "level": "green"
+                },
+                {
+                  "word": "intellectual",
+                  "ipa": "/ˌɪntəˈlektʃuəl/",
+                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
+                  "level": "red"
+                },
+                {
+                  "word": "regional",
+                  "ipa": "ˈriːdʒənl",
+                  "meaning": "adj. 区域的；地方的 n. 地方版",
+                  "level": "green"
+                },
+                {
+                  "word": "shift",
+                  "ipa": "",
+                  "meaning": "v.（使）移动，（使）转移；（使）转换到；改变意见/信仰；移位",
+                  "level": "red"
+                },
+                {
+                  "word": "fashion",
+                  "ipa": "/ˈfæʃən/",
+                  "meaning": "制定、设计、构建（常用释义：时尚（n.）；制作）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "It marks the erosion of a vital moral compass in American public life.",
+              "translation": "它标志着美国公共生活中一个至关重要的道德罗盘与精神指引的瓦解与侵蚀。",
+              "vocab": [
+                {
+                  "word": "vital",
+                  "ipa": "ˈvaɪt(ə)l",
+                  "meaning": "adj.至关重要的；充满活力的；生命的 n.身体的重要器官",
+                  "level": "green"
+                },
+                {
+                  "word": "moral",
+                  "ipa": "ˈmɔːrəl",
+                  "meaning": "adj. 道德的；品行端正的 n. 道德准则",
+                  "level": "green"
+                },
+                {
+                  "word": "compass",
+                  "ipa": "ˈkʌmpəs",
+                  "meaning": "n. 罗盘，指南针",
+                  "level": "green"
+                },
+                {
+                  "word": "American",
+                  "ipa": "",
+                  "meaning": "adj.美国的 n.美国人",
+                  "level": "green"
+                },
+                {
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            },
+            {
+              "sIndex": 3,
+              "id": "P4-S3",
+              "text": "While modern America boasts unmatched scientific prowess and material abundance, it sorely misses that independent intellectual class whose profound ethical vision once dared to hold the nation's conscience accountable.",
+              "translation": "当今现代美国固然拥有举世无双的科技实力与充裕的物质财富，但却极其匮乏那个曾以深邃伦理视野敢于向全民族良知拷问问责的独立知识分子阶层。",
+              "vocab": [
+                {
+                  "word": "hold",
+                  "ipa": "",
+                  "meaning": "认为；持有观点",
+                  "level": "green"
+                },
+                {
+                  "word": "modern",
+                  "ipa": "ˈmɒdn",
+                  "meaning": "adj.现代的,近代的",
+                  "level": "red"
+                },
+                {
+                  "word": "material",
+                  "ipa": "məˈtɪriəl",
+                  "meaning": "n.衣料；材料；素材 adj.物质的；重要的",
+                  "level": "green"
+                },
+                {
+                  "word": "independent",
+                  "ipa": "ɪndɪˈpendənt",
+                  "meaning": "adj.独立的,",
+                  "level": "green"
+                },
+                {
+                  "word": "intellectual",
+                  "ipa": "/ˌɪntəˈlektʃuəl/",
+                  "meaning": "智力的；思想的（常用释义：知识分子；理智的）",
+                  "level": "red"
+                },
+                {
+                  "word": "class",
+                  "ipa": "/klɑːs/",
+                  "meaning": "类别；种类（常用释义：班级；阶层；类别）",
+                  "level": "red"
+                },
+                {
+                  "word": "profound",
+                  "ipa": "prəˈfaʊnd",
+                  "meaning": "adj.深刻的；强烈的；深刻的",
+                  "level": "green"
+                },
+                {
+                  "word": "ethical",
+                  "ipa": "ˈeθɪk(ə)l",
+                  "meaning": "adj.道德的，伦理的；合乎道德的",
+                  "level": "green"
+                },
+                {
+                  "word": "vision",
+                  "ipa": "ˈvɪʒn",
+                  "meaning": "n. 视觉；视力；幻象；远见",
+                  "level": "green"
+                },
+                {
+                  "word": "conscience",
+                  "ipa": "ˈkɒnʃəns",
+                  "meaning": "n. 良心；良知",
+                  "level": "green"
+                },
+                {
+                  "word": "accountable",
+                  "ipa": "əˈkaʊntəbl",
+                  "meaning": "adj.负有责任的",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             }
           ]
         }
@@ -4378,331 +3042,317 @@ window.ENGLISH_DATA['2009'] = {
         {
           "qIndex": 36,
           "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
-          "stem": "The author holds that in the seventeenth-century New England",
+          "tangchiModel": "唐迟细节题模型：抓住第一段 mid-19th century New England 知识分子的核心社会角色",
+          "stem": "In the mid-19th century, New England intellectuals were regarded as",
           "stemKeywords": [
-            "author",
-            "holds",
-            "that"
+            "mid-19th century",
+            "New England intellectuals",
+            "regarded as"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P1-S2",
+            "P1-S3"
           ],
           "officialAnswer": "D",
           "options": [
             {
               "key": "A",
-              "text": "Puritan tradition dominated political life.",
+              "text": "pure literary artists who avoided political controversies.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "与原文相悖",
+              "analysis": "【干扰特征: 与文意相反】P1-S3 说明他们绝非单纯文人（not merely literary figures），而是深度投身废奴等政治道德运动。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S3"
               ]
             },
             {
               "key": "B",
-              "text": "intellectual interests were encouraged.",
+              "text": "narrow academic specialists in university laboratories.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "时代混淆",
+              "analysis": "【干扰特征: 时代错位】专业化狭隘学者是第三段内战后大学转型才出现的现象。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S3"
               ]
             },
             {
               "key": "C",
-              "text": "politics benefited much from intellectual endeavors.",
+              "text": "loyal defenders of the British imperial monarchy.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "荒谬错误",
+              "analysis": "【干扰特征: 荒谬错误】他们是美国独立共和国的爱国精神领袖，绝非英国保皇派。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S3"
               ]
             },
             {
               "key": "D",
-              "text": "intellectual pursuits enjoyed a liberal environment.",
+              "text": "spiritual guides with profound moral authority in public life.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P1-S2 和 P1-S3 明确指出他们拥有广泛道德权威（'commanded widespread moral authority'），被尊为国家的精神导师与世俗先知（'revered as the nation's spiritual guides and secular prophets'）。D选项用 spiritual guides with profound moral authority 进行了完美复现。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2",
+                "P1-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 36 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "spiritual guides + moral authority 是首段描述 19 世纪中叶新英格兰先贤的核心定性词汇。",
+            "methodSummary": "细节事实题抓准首段修饰语：moral authority + spiritual guides。"
           }
         },
         {
           "qIndex": 37,
-          "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
-          "stem": "It is suggested in Paragraph 2 that New Englanders",
+          "type": "细节原因题",
+          "tangchiModel": "唐迟因果题模型：抓住第二段内战后文化重心转移的原因，锁定商业物质主义崛起",
+          "stem": "New England intellectuals became marginalized after the Civil War because",
           "stemKeywords": [
-            "suggested",
-            "Paragraph",
-            "that"
+            "marginalized after Civil War",
+            "because"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P2-S2",
+            "P2-S3"
           ],
           "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "experienced a comparatively peaceful early history.",
+              "text": "they refused to read foreign philosophical works.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】文章未提及拒绝阅读外国哲学。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "B",
-              "text": "brought with them the culture of the Old World.",
+              "text": "industrial capitalism shifted national attention to material wealth.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P2-S2 明确阐述了边缘化的根本原因：'The rapid rise of industrial capitalism, corporate power, and urban commercialism shifted the nation's center of gravity from moral philosophy to relentless material pursuit'（工业资本主义与商业主义使国家重心从道德哲学全盘转向物质追求）。B选项准确表达了这一因果核心。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "C",
-              "text": "paid little attention to southern intellectual life.",
+              "text": "their literary writings were banned by federal censorship.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "荒谬捏造",
+              "analysis": "【干扰特征: 捏造事实】文章未提及任何联邦政府审查或查禁其作品。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S3"
               ]
             },
             {
               "key": "D",
-              "text": "were obsessed with religious innovations.",
+              "text": "universities stopped hiring any New England scholars.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "绝对化偏激",
+              "analysis": "【干扰特征: 极端偏激】大学依然存在，变化的是学术研究范式从公共通识转向专业狭隘。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 37 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "shifted center of gravity to relentless material pursuit = shifted national attention to material wealth。",
+            "methodSummary": "因果题提取核心主语与宾语：rise of industrial capitalism -> shifted focus to material pursuit。"
           }
         },
         {
           "qIndex": 38,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
-          "stem": "The early ministers and political leaders in Massachusetts Bay",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第三段大学专业化（professionalization of higher education）的消极后果",
+          "stem": "The professionalization of higher education contributed to",
           "stemKeywords": [
-            "early",
-            "ministers",
-            "political"
+            "professionalization of higher education",
+            "contributed to"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P3-S2",
+            "P3-S3"
           ],
           "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "were famous in the New World for their writings.",
+              "text": "scholars retreating from public issues into narrow academic circles.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P3-S2 和 P3-S3 明确指出大学转型导致学者退守学科壁垒（'retreated into specialized disciplinary silos'），面向同行撰写专著而不再回应公众关切（'writing dense treatises for peer audiences rather than addressing broad public concerns'）。A选项精准概括了学者脱离公共议题退守狭隘圈子的全过程。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2",
+                "P3-S3"
               ]
             },
             {
               "key": "B",
-              "text": "gained increasing importance in religious affairs.",
+              "text": "a closer connection between university professors and the public.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反混淆",
+              "analysis": "【干扰特征: 正反颠倒】专业化导致学者脱离大众（alienated / withdrew from public concerns），而非联系更紧密。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "C",
-              "text": "abandoned high positions before coming to the New World.",
+              "text": "the total abolition of specialized academic journals.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】专业化学术恰恰制造了更多同行小圈子专著与期刊，而非废除期刊。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "created a new intellectual atmosphere in New England.",
+              "text": "the restoration of moral philosophy as the primary university subject.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "与文意相悖",
+              "analysis": "【干扰特征: 与文意相反】道德哲学被边缘化，取而代之的是细分的专业研究。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2",
+                "P3-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 38 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "retreated into disciplinary silos + writing for peers rather than public = retreating from public issues into narrow circles。",
+            "methodSummary": "细节事实题抓准对比替换：generalist speaking to nation -> narrow specialist speaking to experts。"
           }
         },
         {
           "qIndex": 39,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
-          "stem": "The story of John Dane shows that less well-educated New Englanders were often",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟推断题模型：锁定最后一段对当代美国缺少道德罗盘与独立知识阶层的反思",
+          "stem": "From the last paragraph, we can infer that the author laments",
           "stemKeywords": [
-            "story",
-            "John",
-            "Dane"
+            "last paragraph",
+            "infer",
+            "laments"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P4-S2",
+            "P4-S3"
           ],
           "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "influenced by superstitions.",
+              "text": "the absence of independent moral voices in contemporary public life.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P4-S2 和 P4-S3 明确表达了作者的深刻遗憾：'the erosion of a vital moral compass in American public life'（公共生活中重要道德罗盘的侵蚀）以及 'sorely misses that independent intellectual class whose profound ethical vision once dared to hold the nation's conscience accountable'（极其匮乏敢于向民族良知拷问的独立知识分子阶层）。A选项中的 absence of independent moral voices 构成了高度精炼的同义概括。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S2",
+                "P4-S3"
               ]
             },
             {
               "key": "B",
-              "text": "troubled with religious beliefs.",
+              "text": "the rapid development of modern science and technology.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "非叹息对象",
+              "analysis": "【干扰特征: 误读重点】科学实力（scientific prowess）是客观事实背景，作者叹息的是缺乏道德指引，而非科学发展本身。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S3"
               ]
             },
             {
               "key": "C",
-              "text": "puzzled by church sermons.",
+              "text": "the decline of American economic and material abundance.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "事实相反",
+              "analysis": "【干扰特征: 事实相反】作者指出当代美国物质财富充裕（material abundance），物质并未衰落。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S3"
               ]
             },
             {
               "key": "D",
-              "text": "frustrated with family earnings.",
+              "text": "the disappearance of traditional New England architecture.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "荒谬偏题",
+              "analysis": "【干扰特征: 无中生有】文章讨论的是思想文化阶层，从未提及新英格兰建筑。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 39 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "erosion of moral compass + sorely misses independent intellectual class = absence of independent moral voices。",
+            "methodSummary": "作者态度情感题抓准褒贬动词：erosion（侵蚀）, sorely misses（极其思念/匮乏）-> laments absence of moral voices。"
           }
         },
         {
           "qIndex": 40,
-          "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
-          "stem": "The text suggests that early settlers in New England",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟主旨题模型：通读全文，提炼新英格兰知识阶层从辉煌到消亡的历史演变及文化反思",
+          "stem": "Which of the following is the main topic of the text?",
           "stemKeywords": [
-            "text",
-            "suggests",
-            "that"
+            "main topic",
+            "the text"
           ],
           "targetSentences": [
             "P1-S1",
-            "P2-S1"
+            "P2-S1",
+            "P3-S1",
+            "P4-S2"
           ],
           "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "were mostly engaged in political activities.",
+              "text": "The Economic Transformation of 19th-Century New England",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 偏离核心】经济转型只是导致知识分子边缘化的背景原因，文章核心探讨的是知识分子群体的消长。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "B",
-              "text": "were motivated by an illusory prospect.",
+              "text": "The Rise and Decline of New England's Public Intellectuals",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 全文主旨概括】文章第1段展现新英格兰知识阶层的黄金鼎盛期（The Rise / Golden Age），第2段分析内战后资本主义冲击下的边缘化，第3段分析大学专业化对公共学者的瓦解，第4段总结其消亡对当代的深远道德缺失（The Decline / Passing）。B选项完美涵盖全文四段论述脉络，为最佳主旨概括。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P2-S1",
+                "P3-S1",
+                "P4-S2"
               ]
             },
             {
               "key": "C",
-              "text": "came from different intellectual backgrounds.",
+              "text": "Why German Academia Dominated Modern University Education",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "次要细节",
+              "analysis": "【干扰特征: 次要细节】德国大学模式只是第3段提及的学院化转型背景，非全文主题。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "D",
-              "text": "left few formal records for later reference.",
+              "text": "Ralph Waldo Emerson and the Abolition of American Slavery",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 人物举例】爱默生只是代表人物之一，废奴只是其历史活动之一，未能概括全篇。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 40 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "文章结构清晰完整：第1段盛况 -> 第2段商业冲击 -> 第3段学术专业化 -> 第4段历史总结。对应 Rise and Decline。",
+            "methodSummary": "主旨题篇章结构法：按段落发展脉络（黄金时代 -> 衰落消亡）选择最具统摄力的宏观概括项。"
           }
         }
       ]

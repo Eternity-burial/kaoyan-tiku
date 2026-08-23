@@ -1,6 +1,6 @@
 /**
  * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2010 年真题
+ * 年份：2010 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构优化)
  */
 
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
@@ -13,443 +13,586 @@ window.ENGLISH_DATA['2010'] = {
       "id": "text1",
       "number": 1,
       "title": "Decline of Arts Criticism in Newspapers",
-      "chineseTitle": "报业艺术评论的衰落与挽歌",
-      "topic": "文化传媒 / 报业变迁",
-      "overview": "本文探讨了过去25年间英语报纸中艺术评论在数量与深度上的无可挽回的衰落。作者回顾了二战前英国报纸艺术评论的黄金时代（如萧伯纳、纽曼等大师），并以著名乐评家卡达斯（Cardus）的被遗忘为例，指出现代读者口味的变化与业余乐评传统的退潮，表达了对这一严肃文化传统消逝的惋惜。",
+      "chineseTitle": "报业艺术评论的衰落与消逝的地平线",
+      "topic": "文化传媒与报业变迁 / 报纸艺术评论范围与严肃性的无可挽回衰落、二战前黄金时代（萧伯纳/纽曼）与卡达斯被遗忘",
+      "overview": "本文探讨了过去25年间英语报纸中艺术评论在数量与思想深度上的无可挽回的急剧衰落。作者深情回顾了二战前英国报纸艺术评论自由广博、文采斐然的黄金时代（如萧伯纳、纽曼等大师视新闻评论为神圣天职），并以著名古典乐评家内维尔·卡达斯（Cardus）的被时代遗忘为例，深入剖析了后现代读者阅读口味的变迁与业余通识乐评传统的全线溃退，表达了对报业中这一严肃崇高文化传统消逝的深切惋惜与时代挽歌（The Lost Horizon in Newspapers）。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "指出过去四分之一世纪英语报纸中最深远的变化是艺术报道范围与严肃性的急剧衰退。",
-          "logicRole": "开门见山提出全文中心论点 (Topic)",
+          "mainIdea": "过去25年间英语报纸中最深远的变化是艺术报道在范围与严肃性上的无可挽回的衰落",
+          "logicRole": "开宗明义提出全文中心论点：报纸艺术报道的急剧衰落 (Decline in Arts Coverage)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Of all the changes that have taken place in English-language newspapers during the past quarter-century, perhaps the most far-reaching has been the inexorable decline in the scope and seriousness of their arts coverage.",
-              "translation": "在过去四分之一世纪里英语报纸所发生的所有变化中，影响最为深远的或许要数其艺术报道在范围和严肃性上无可挽回的衰落了。",
+              "translation": "在过去四分之一世纪里英语报纸所发生的全部变迁之中，影响最为深远的或许莫过于其艺术报道在报道范围与思想严肃性上无可挽回的急剧衰落（inexorable decline in arts coverage / English newspapers used to carry more reviews）。",
               "vocab": [
                 {
-                  "word": "quarter-century",
-                  "ipa": "ˌkwɔːtə ˈsentʃəri",
-                  "meaning": "四分之一世纪（25年）",
+                  "word": "place",
+                  "ipa": "",
+                  "meaning": "v.放置",
                   "level": "green"
                 },
                 {
                   "word": "far-reaching",
-                  "ipa": "ˌfɑː ˈriːtʃɪŋ",
-                  "meaning": "影响深远的",
+                  "ipa": "/ˌfɑːˈriːtʃɪŋ/",
+                  "meaning": "影响深远的、范围广泛的（常用释义：具有广泛而长期影响的）",
                   "level": "red"
                 },
                 {
                   "word": "inexorable",
                   "ipa": "ɪnˈeksərəbl",
-                  "meaning": "不可阻挡的，无可挽回的",
+                  "meaning": "adj.不可阻挡的;无法改变的",
                   "level": "red"
                 },
                 {
-                  "word": "arts coverage",
-                  "ipa": "ɑːts ˈkʌvərɪdʒ",
-                  "meaning": "艺术报道（熟词僻义：coverage 报道）",
-                  "level": "purple"
+                  "word": "decline",
+                  "ipa": "/dɪˈklaɪn/",
+                  "meaning": "拒绝、不接受论文（常用释义：下降；衰退；婉言拒绝）",
+                  "level": "red"
+                },
+                {
+                  "word": "scope",
+                  "ipa": "/skəʊp/",
+                  "meaning": "范围；适用范围（常用释义：范围；余地）",
+                  "level": "red"
+                },
+                {
+                  "word": "coverage",
+                  "ipa": "ˈkəvərɪdʒ",
+                  "meaning": "n. 覆盖，覆盖",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "40岁以下的年轻读者难以想象大城市报纸曾充斥高水准评论，20世纪许多重要评论集都源自报纸。",
-          "logicRole": "今昔对比，阐述过去报纸艺术评论的繁荣与学术分量",
+          "mainIdea": "年轻读者难以想象大报曾充斥高质量评论，20世纪大量重要评论集均源自报纸，如今读来令人惊叹",
+          "logicRole": "今昔对比：阐述过去报纸艺术评论的学术分量与繁荣辉煌 (Newspapers Used to Carry More Reviews)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "It is difficult to the point of impossibility for the average reader under the age of forty to imagine a time when high-quality arts criticism could be found in most big-city newspapers.",
-              "translation": "对于40岁以下的普通读者来说，要想象一个在大多数大城市报纸上都能读到高质量艺术评论的时代，几乎是不可能的事。",
+              "translation": "对于当今年龄在四十岁以下的普通读者而言，若要让他们去想象一个在绝大多数大城市报纸上随处可见高质量艺术评论的昔日时代，几乎是一件困难到绝不可能的事情。",
               "vocab": [
                 {
-                  "word": "to the point of",
-                  "ipa": "tuː ðə pɔɪnt ɒv",
-                  "meaning": "达到……的程度",
-                  "level": "purple"
+                  "word": "difficult",
+                  "ipa": "",
+                  "meaning": "adj.困难的，费力的；不友好的，难对付的",
+                  "level": "red"
                 },
                 {
-                  "word": "criticism",
-                  "ipa": "ˈkrɪtɪsɪzəm",
-                  "meaning": "批评，评论（常考核心词）",
+                  "word": "impossibility",
+                  "ipa": "ɪmˌpɒsəˈbɪləti",
+                  "meaning": "n.不可能的事；不可能性",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
+                },
+                {
+                  "word": "average",
+                  "ipa": "ˈævərɪdʒ",
+                  "meaning": "n. 平均数 adj. 平均的；普通的",
+                  "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Yet a considerable number of the most significant collections of criticism published in the 20th century consisted in large part of newspaper reviews.",
-              "translation": "然而，20世纪出版的最具分量的批评文集中，有相当一部分主要由报纸评论汇编而成。",
+              "translation": "然而，在整个二十世纪所出版的最具学术分量与历史意义的宏篇批评文集中，有相当庞大的数量在很大程度上正是由刊载于报纸上的专业评论汇编而成（consisted of newspaper reviews）。",
               "vocab": [
                 {
-                  "word": "considerable",
-                  "ipa": "kənˈsɪdərəbl",
-                  "meaning": "相当多的，大量的",
+                  "word": "Yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
                   "level": "red"
                 },
                 {
-                  "word": "consist of",
-                  "ipa": "kənˈsɪst ɒv",
-                  "meaning": "由……组成",
-                  "level": "purple"
+                  "word": "considerable",
+                  "ipa": "kənˈsɪdərəbl",
+                  "meaning": "adj. 相当大的；重要的",
+                  "level": "green"
+                },
+                {
+                  "word": "significant",
+                  "ipa": "sɪɡˈnɪfɪkənt",
+                  "meaning": "adj.重要的；显著的；意味深长的",
+                  "level": "green"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             },
             {
               "sIndex": 3,
               "id": "P2-S3",
               "text": "To read such books today is to marvel at the fact that their learned contents were once deemed suitable for publication in general-circulation dailies.",
-              "translation": "今天读到这些书，人们不禁会对这样一个事实感到惊叹：那些博大精深的内容曾经一度被认为适合刊登在大众发行的日报上。",
+              "translation": "在今天重读这些沉甸甸的书籍，人们不禁会由衷惊叹于这样一个不可思议的历史事实：它们那些博大精深的博学内容，在当年竟然被认为完全适合发表在大众广泛发行的日常日报之上！",
               "vocab": [
                 {
-                  "word": "marvel at",
-                  "ipa": "ˈmɑːvl æt",
-                  "meaning": "对……感到惊叹/惊奇",
-                  "level": "purple"
+                  "word": "marvel",
+                  "ipa": "ˈmɑːvl",
+                  "meaning": "v.感到惊奇,大为赞赏",
+                  "level": "red"
                 },
                 {
                   "word": "learned",
-                  "ipa": "ˈlɜːnɪd",
-                  "meaning": "博学的，深奥的（注意双音节读音）",
+                  "ipa": "/ˈlɜːnɪd/",
+                  "meaning": "博学的；有学问的（常用释义：learn 的过去式/过去分词（读音不同））",
                   "level": "red"
                 },
                 {
-                  "word": "deem",
-                  "ipa": "diːm",
-                  "meaning": "认为，视作",
+                  "word": "suitable",
+                  "ipa": "ˈsjuːtəb(ə)l",
+                  "meaning": "adj. 合适的，适宜",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
-                  "word": "general-circulation",
-                  "ipa": "ˈdʒenrəl ˌsɜːkjəˈleɪʃn",
-                  "meaning": "大众发行的，大流通量的",
+                  "word": "publication",
+                  "ipa": "ˌpʌblɪˈkeɪʃ(ə)n",
+                  "meaning": "n.出版，发行物； 刊登，公布",
                   "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "回顾二战前英国报业黄金时代：新闻纸廉价、评论篇幅长、评论家将新闻工作视为神圣使命（如萧伯纳、纽曼）。",
-          "logicRole": "历史溯源，展现专业评论家的高度责任感与才华",
+          "mainIdea": "二战前英国报纸充斥不拘一格的随性长篇评论，萧伯纳与纽曼视新闻评论为崇高天职，非所有作家都能胜任",
+          "logicRole": "追忆二战前英国报评黄金时代：主题自由随性且评论家以新闻事业为崇高使命 (Free Themes & Journalism as Calling)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "We are even farther removed from the unfocused newspaper reviews published in England between the turn of the 20th century and the eve of World War II, at a time when newsprint was dirt-cheap and stylish arts criticism was considered an ornament to the publications in which it appeared.",
-              "translation": "我们与20世纪初至二战前夕英国出版的那些自由随笔式的报纸评论更是相隔久远；在那个年代，新闻纸极其便宜，典雅格调的艺术评论被视为报刊的装点与荣耀。",
+              "translation": "我们与二十世纪初至二战前夕在英国报刊上发表的那些“不拘一格、主题自由随性”（unfocused newspaper reviews / characterized by free themes）的艺术评论，相隔得更是无比遥远——在那个新闻白报纸极其廉价便宜的年代，文笔优雅优美、风格卓绝的艺术评论被视作其所刊登报刊的耀眼华美装饰。",
               "vocab": [
                 {
-                  "word": "far removed from",
-                  "ipa": "fɑː rɪˈmuːvd frɒm",
-                  "meaning": "远离……，与……大相径庭",
-                  "level": "purple"
-                },
-                {
                   "word": "unfocused",
-                  "ipa": "ʌnˈfəʊkəst",
-                  "meaning": "不受限制的，自由随性的（熟词僻义）",
-                  "level": "red"
+                  "ipa": "",
+                  "meaning": "adj.未聚焦的；杂感式的",
+                  "level": "green"
                 },
                 {
                   "word": "newsprint",
-                  "ipa": "ˈnjuːzprɪnt",
-                  "meaning": "新闻纸",
+                  "ipa": "ˈnuːzprɪnt",
+                  "meaning": "n.新闻用纸（=newspaper）",
                   "level": "green"
                 },
                 {
                   "word": "dirt-cheap",
                   "ipa": "ˌdɜːt ˈtʃiːp",
-                  "meaning": "极其便宜的",
+                  "meaning": "adj.非常便宜的",
+                  "level": "red"
+                },
+                {
+                  "word": "stylish",
+                  "ipa": "ˈstaɪlɪʃ",
+                  "meaning": "adj.时髦的；有格调的",
                   "level": "green"
+                },
+                {
+                  "word": "considered",
+                  "ipa": "kənˈsɪdəd",
+                  "meaning": "adj.深思熟虑的",
+                  "level": "red"
                 },
                 {
                   "word": "ornament",
                   "ipa": "ˈɔːnəmənt",
-                  "meaning": "装饰品，增色之物",
-                  "level": "green"
+                  "meaning": "v.装饰,美化 n.装饰,装饰物",
+                  "level": "red"
                 }
               ],
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "In those far-off days, it was taken for granted that the critics of major papers would write in detail and at length about the events they covered.",
-              "translation": "在那些遥远的岁月里，主流报纸的评论员就其报道的事件撰写详尽长文被视作理所当然之事。",
+              "translation": "在那些遥远的黄金岁月里，各大主流主流报纸的评论家们对自己所报道的艺术文化事件进行详尽细致、洋洋洒洒的长篇大论，被视作理所当然、天经地义的规范。",
               "vocab": [
                 {
                   "word": "far-off",
-                  "ipa": "ˌfɑːr ˈɒf",
-                  "meaning": "遥远的",
-                  "level": "green"
+                  "ipa": "",
+                  "meaning": "adj.遥远的",
+                  "level": "red"
                 },
                 {
-                  "word": "take for granted",
-                  "ipa": "teɪk fə ˈɡrɑːntɪd",
-                  "meaning": "想当然，认为理所当然",
-                  "level": "purple"
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 },
                 {
-                  "word": "at length",
-                  "ipa": "æt leŋθ",
-                  "meaning": "详尽地，冗长地",
-                  "level": "purple"
+                  "word": "major",
+                  "ipa": "/ˈmeɪdʒə/",
+                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
+                  "level": "red"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Theirs was a serious business, and even those reviewers who wore their learning lightly, like George Bernard Shaw and Ernest Newman, could be trusted to know what they were about.",
-              "translation": "他们的工作是一份严肃的事业；即使是像乔治·萧伯纳和欧内斯特·纽曼这样举重若轻地展现学识的评论家，也绝对值得信赖且深谙自己的专业。",
+              "translation": "他们的工作是一项严肃崇高的专业事业；即便像乔治·伯纳德·萧（George Bernard Shaw）和欧内斯特·纽曼（Ernest Newman）这样举重若轻、深入浅出展现博学造诣的大师级评论家，也完全值得信赖并深谙自己所从事的行当本质。",
               "vocab": [
                 {
-                  "word": "wear one's learning lightly",
-                  "ipa": "weə lɜːnɪŋ ˈlaɪtli",
-                  "meaning": "深入浅出，举重若轻地展现学识",
-                  "level": "purple"
-                },
-                {
-                  "word": "know what one is about",
-                  "ipa": "nəʊ wɒt wʌn ɪz əˈbaʊt",
-                  "meaning": "精通自己的行当，深谙此道",
-                  "level": "purple"
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
               "id": "P3-S4",
-              "text": "These men believed in journalism as a calling, and were proud to be published in the daily press.",
-              "translation": "这些人将新闻业奉为崇高的天职使命，并以能在日报上发表文章为荣。",
+              "text": "These men believed in journalism as a calling, and were proud to be published in the daily press. \"So few authors have brains enough or literary gift enough to keep their own end up in journalism,\" Newman wrote, \"that I am tempted to define 'journalism' as 'a term of contempt applied by writers who are not read to writers who are'.\"",
+              "translation": "这些批评巨匠坚信新闻事业是自己毕生矢志不渝的神圣天职（calling），并为自己的文字能够每日见诸报端而深感无上自豪。“极少有作家拥有足够的才智或文学天赋，能够在高要求的新闻写作中坚守阵地立于不败之地（Not all writers are capable of journalistic writing），”纽曼曾犀利写道，“以至于我常常忍不住想要将‘新闻写作’定义为：‘那些无人问津的拙劣作家，用来鄙夷攻击那些拥有海量忠实读者的成功作家的轻蔑之词’。”",
               "vocab": [
+                {
+                  "word": "journalism",
+                  "ipa": "ˈdʒɜːrnəlɪz(ə)m",
+                  "meaning": "n.新闻业；新闻报道",
+                  "level": "green"
+                },
                 {
                   "word": "calling",
                   "ipa": "ˈkɔːlɪŋ",
-                  "meaning": "天职，使命感（熟词僻义）",
-                  "level": "red"
-                }
-              ],
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "\"So few authors have brains enough or literary gift enough to keep their own end up in journalism,\" Newman wrote, \"that I am tempted to define 'journalism' as 'a term of contempt applied by writers who are not read to writers who are'.\"",
-              "translation": "纽曼曾写道：“极少有作家具备足够的才智或文学天赋在新闻界立足并保持水准，以至于我常忍不住将‘新闻写作’定义为‘那些无人问津的作家用来鄙视广受欢迎的作家时所使用的轻蔑字眼’。”",
-              "vocab": [
-                {
-                  "word": "keep one's end up",
-                  "ipa": "kiːp wʌnz end ʌp",
-                  "meaning": "坚守阵地，在困境中保持水准/立足",
-                  "level": "purple"
+                  "meaning": "n. 呼喊；打电",
+                  "level": "green"
                 },
                 {
-                  "word": "tempted",
-                  "ipa": "ˈtemptɪd",
-                  "meaning": "禁不住想……，受诱惑的",
+                  "word": "daily",
+                  "ipa": "ˈdeɪli",
+                  "meaning": "adj. 每日的 n. 日报",
+                  "level": "green"
+                },
+                {
+                  "word": "press",
+                  "ipa": "prɛs",
+                  "meaning": "v. 按压 n. 报刊，新闻",
+                  "level": "green"
+                },
+                {
+                  "word": "literary",
+                  "ipa": "/ˈlɪtərəri/",
+                  "meaning": "文字的；书面创作的（常用释义：文学的）",
+                  "level": "red"
+                },
+                {
+                  "word": "end",
+                  "ipa": "/end/",
+                  "meaning": "目的；目标（常用释义：末端；结束；结局）",
+                  "level": "red"
+                },
+                {
+                  "word": "define",
+                  "ipa": "dɪˈfaɪn",
+                  "meaning": "v. 定义，限定；使明确",
+                  "level": "green"
+                },
+                {
+                  "word": "term",
+                  "ipa": "tɝm",
+                  "meaning": "n. 学期;术语;条款;期限 v. 把…叫做",
                   "level": "red"
                 },
                 {
                   "word": "contempt",
-                  "ipa": "kənˈtempt",
-                  "meaning": "轻视，蔑视",
+                  "ipa": "",
+                  "meaning": "n.轻视，蔑视；忽视，不顾；藐视法庭",
                   "level": "red"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 4,
-          "mainIdea": "以著名音乐评论家内维尔·卡达斯（Neville Cardus）为例，说明昔日顶尖评论家如今已被世人遗忘。",
-          "logicRole": "典型个案举例，论证严肃艺术评论家被遗忘的现实",
+          "mainIdea": "著名乐评家卡达斯生前享誉全英并受封爵士，如今其乐评著作却绝版被遗忘，仅作为板球作家被知晓",
+          "logicRole": "以乐评泰斗卡达斯被时代无情遗忘为例印证严肃艺术评论的彻底沉沦 (Neville Cardus Virtually Forgotten)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P4-S1",
-              "text": "Unfortunately, these critics are virtually forgotten.",
-              "translation": "不幸的是，这些批评家如今几乎已被世人遗忘。",
+              "text": "Unfortunately, these critics are virtually forgotten. Neville Cardus, who wrote for the Manchester Guardian from 1917 until shortly before his death in 1975, is now known solely as a writer of essays on the game of cricket.",
+              "translation": "然而令人痛心的是，这些昔日的大师级批评家如今已几乎被世人彻底遗忘。从1917年一直为《曼彻斯特卫报》撰稿直至1975年辞世前夕的内维尔·卡达斯（Neville Cardus），如今在公众眼里仅仅被知晓为一名撰写板球运动杂文的散文作者。",
               "vocab": [
                 {
+                  "word": "Unfortunately",
+                  "ipa": "ʌnˈfɔːtjʊnətlɪ",
+                  "meaning": "adv. 不幸",
+                  "level": "green"
+                },
+                {
                   "word": "virtually",
-                  "ipa": "ˈvɜːtʃuəli",
-                  "meaning": "几乎，实际上",
+                  "ipa": "ˈvɜːrtʃuəli",
+                  "meaning": "adv. 几乎；实际上",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "Neville Cardus, who wrote for the Manchester Guardian from 1917 until shortly before his death in 1975, is now known solely as a writer of essays on the game of cricket.",
-              "translation": "内维尔·卡达斯从1917年直到1975年逝世前不久一直为《曼彻斯特卫报》撰稿，但现在人们仅仅知道他是一位板球运动散文作家。",
-              "vocab": [
+                },
+                {
+                  "word": "Guardian",
+                  "ipa": "",
+                  "meaning": "n.监护人；守卫者，保护者；院长",
+                  "level": "red"
+                },
+                {
+                  "word": "shortly",
+                  "ipa": "ˈʃɔːtlɪ",
+                  "meaning": "adv. 不久",
+                  "level": "green"
+                },
                 {
                   "word": "solely",
                   "ipa": "ˈsəʊlli",
-                  "meaning": "仅仅，唯一地",
-                  "level": "red"
+                  "meaning": "adv. 单独地；唯一地",
+                  "level": "green"
                 },
                 {
                   "word": "cricket",
                   "ipa": "ˈkrɪkɪt",
-                  "meaning": "板球运动（熟词僻义：非蟋蟀）",
+                  "meaning": "n. 板球运动；蟋蟀",
                   "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
-              "sIndex": 3,
-              "id": "P4-S3",
+              "sIndex": 2,
+              "id": "P4-S2",
               "text": "During his lifetime, though, he was also one of England's foremost classical-music critics, and a stylist so widely admired that his Autobiography (1947) became a best-seller.",
-              "translation": "然而在他生前，他曾是英国最顶尖的古典音乐评论家之一，也是一位备受赞赏的文体大师，其1947年的《自传》甚至成为畅销书。",
+              "translation": "但在他生前，他曾是不折不扣的英国最顶尖古典音乐首席评论家之一，更是一位文风备受万人倾慕的语言大师，其1947年出版的《自传》曾一举荣登全国畅销书榜首。",
               "vocab": [
                 {
+                  "word": "lifetime",
+                  "ipa": "ˈlaɪftaɪm",
+                  "meaning": "n.一生，终生；寿命，有效期",
+                  "level": "green"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
                   "word": "foremost",
-                  "ipa": "ˈfɔːməʊst",
-                  "meaning": "最重要的，最著名的",
+                  "ipa": "ˈfɔːmoʊst",
+                  "meaning": "adj.最先的;最初的;主要的 ;最重要的、最好的、一流",
                   "level": "red"
                 },
                 {
                   "word": "stylist",
                   "ipa": "ˈstaɪlɪst",
-                  "meaning": "文体家，讲究文采的作家",
-                  "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "He was knighted in 1967, the first music critic to be so honored. Yet only one of his books is now in print, and his vast body of writings on music is unknown save to specialists.",
-              "translation": "他在1967年被册封为爵士，是首位获此殊荣的音乐评论家。然而如今他只有一本书还在出版，而其浩瀚的音乐著作除了专业学者外无人知晓。",
-              "vocab": [
-                {
-                  "word": "knighted",
-                  "ipa": "ˈnaɪtɪd",
-                  "meaning": "被封为爵士",
-                  "level": "green"
+                  "meaning": "n.语言风格优美的人;文学家",
+                  "level": "red"
                 },
                 {
-                  "word": "in print",
-                  "ipa": "ɪn prɪnt",
-                  "meaning": "（书籍）仍在印刷发行的",
-                  "level": "purple"
-                },
-                {
-                  "word": "save to",
-                  "ipa": "seɪv tuː",
-                  "meaning": "除……之外（熟词僻义：save = except）",
+                  "word": "Autobiography",
+                  "ipa": "",
+                  "meaning": "n.自传",
                   "level": "red"
                 }
               ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 3,
+              "id": "P4-S3",
+              "text": "He was knighted in 1967, the first music critic to be so honored. Yet only one of his books is now in print, and his vast body of writings on music is unknown save to specialists.",
+              "translation": "他在1967年被英国王室册封为爵士，成为历史上首位获此殊荣的音乐评论家。然而时至今日，他生前浩瀚的著作中仅有一本尚在印刷出版，其关于音乐的海量皇皇巨著除了极少数专业学者之外早已无人问津（unknown save to specialists）。",
+              "vocab": [
+                {
+                  "word": "critic",
+                  "ipa": "ˈkrɪtɪk",
+                  "meaning": "n. 批评家；评论员",
+                  "level": "green"
+                },
+                {
+                  "word": "Yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "level": "red"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "vast",
+                  "ipa": "vɑːst;(US)væst",
+                  "meaning": "adj. 巨大的，广",
+                  "level": "green"
+                },
+                {
+                  "word": "body",
+                  "ipa": "ˈbɒdi",
+                  "meaning": "n.团体,机构",
+                  "level": "red"
+                },
+                {
+                  "word": "save",
+                  "ipa": "prɛs",
+                  "meaning": "v. 救助，搭",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 5,
-          "mainIdea": "卡达斯式的评论不可能复兴：读者品味变迁、华丽文风不再受欢迎、业余乐评传统全面溃退。",
-          "logicRole": "总结与深化，指出严肃评论衰落的根本原因与不可逆性",
+          "mainIdea": "读者品味已变且后现代读者不再青睐繁复散文，业余乐评传统全线退潮使得卡达斯复兴希望渺茫",
+          "logicRole": "总结全篇：后现代读者品味变迁与业余乐评传统退潮使得严肃乐评复兴渺茫 (Music Criticism May Not Appeal to Readers Today)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P5-S1",
               "text": "Is there any chance that Cardus's criticism will enjoy a revival? The prospect seems remote.",
-              "translation": "卡达斯的评论还有可能迎来复兴吗？这种前景看起来极其渺茫。",
+              "translation": "卡达斯的严肃音乐评论未来是否还有哪怕一丝重获复兴的生机？这种前景看起来极其渺茫黯淡。",
               "vocab": [
                 {
-                  "word": "revival",
-                  "ipa": "rɪˈvaɪvl",
-                  "meaning": "复苏，复兴",
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "enjoy",
+                  "ipa": "/ɪnˈdʒɔɪ/",
+                  "meaning": "享有；拥有（常用释义：享受；喜欢）",
                   "level": "red"
                 },
                 {
+                  "word": "revival",
+                  "ipa": "rɪˈvaɪvl",
+                  "meaning": "n. 复苏；复兴",
+                  "level": "green"
+                },
+                {
                   "word": "prospect",
-                  "ipa": "ˈprɒspekt",
-                  "meaning": "前景，前途",
-                  "level": "red"
+                  "ipa": "ˈprɑːspekt",
+                  "meaning": "n.可能性；展望；前景；有前途的人；潜在主顾；景象 v.",
+                  "level": "green"
                 },
                 {
                   "word": "remote",
                   "ipa": "rɪˈməʊt",
-                  "meaning": "遥远的，微乎其微的（熟词僻义）",
-                  "level": "red"
+                  "meaning": "adj. 偏远的，偏僻的",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P5-S2",
-              "text": "Journalistic tastes had changed long before his death, and postmodern readers have little use for the richly upholstered Vicwardian prose in which he specialized.",
-              "translation": "早在卡达斯去世之前，新闻界的品味就已经改变了，而后现代的读者对他所擅长的那种词藻华丽的维多利亚-爱德华时期的散文风格毫无兴趣。",
+              "text": "Journalistic tastes had changed long before his death, and postmodern readers have little use for the richly upholstered Vicwardian prose in which he specialized. Moreover, the amateur tradition in music criticism has been in headlong retreat.",
+              "translation": "早在卡达斯去世之前，新闻受众的阅读品味便早已发生剧变；当今的后现代读者对卡达斯所擅长的那种词藻华丽繁复、典雅雍容的维多利亚-爱德华式复古散文风骨几乎毫无兴趣与需求（postmodern readers have little use / Cardus's music criticism may not appeal to readers today）。更为致命的是，音乐评论界曾经辉煌的业余通识文人传统（amateur tradition），如今正在全线溃败、急剧退潮之中（The Lost Horizon in Newspapers）！",
               "vocab": [
                 {
-                  "word": "have little use for",
-                  "ipa": "hæv ˈlɪtl juːs fɔː",
-                  "meaning": "对……不屑一顾/不需要/无兴趣",
-                  "level": "purple"
-                },
-                {
-                  "word": "richly upholstered",
-                  "ipa": "ˈrɪtʃli ʌpˈhəʊlstəd",
-                  "meaning": "辞藻华丽的，装饰繁复的",
+                  "word": "Journalistic",
+                  "ipa": "ˌdʒɜːrnəˈlɪstɪk",
+                  "meaning": "adj. 新闻业的；新闻工作者的",
                   "level": "green"
                 },
                 {
-                  "word": "Vicwardian",
-                  "ipa": "vɪkˈwɔːdiən",
-                  "meaning": "维多利亚与爱德华时期的（合成词）",
+                  "word": "use",
+                  "ipa": "",
+                  "meaning": "n./v. 使用，用途",
                   "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 },
                 {
                   "word": "prose",
-                  "ipa": "prəʊz",
-                  "meaning": "散文，文字风格",
-                  "level": "green"
-                }
-              ],
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "Moreover, the amateur tradition in music criticism has been in headlong retreat.",
-              "translation": "此外，音乐评论界的业余爱好者传统也一直在急剧溃退。",
-              "vocab": [
+                  "ipa": "",
+                  "meaning": "n.散文，白话文；一段散文；平淡乏味的文章",
+                  "level": "red"
+                },
+                {
+                  "word": "Moreover",
+                  "ipa": "/mɔːrˈəʊvə/",
+                  "meaning": "此外；而且（常用释义：此外；再者）",
+                  "level": "red"
+                },
                 {
                   "word": "amateur",
                   "ipa": "ˈæmətə(r)",
-                  "meaning": "业余的，非职业的",
-                  "level": "red"
+                  "meaning": "adj. 业余爱好的",
+                  "level": "green"
                 },
                 {
                   "word": "headlong",
                   "ipa": "ˈhedlɒŋ",
-                  "meaning": "迅猛的，头也不回的",
+                  "meaning": "adv. 轻率地；迅速地；adj. 轻率的；头向前的",
                   "level": "green"
                 },
                 {
-                  "word": "in retreat",
-                  "ipa": "ɪn rɪˈtriːt",
-                  "meaning": "在衰退，在撤退",
-                  "level": "purple"
+                  "word": "retreat",
+                  "ipa": "rɪˈtriːt",
+                  "meaning": "v. 撤退；n. 撤退",
+                  "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             }
           ]
         }
@@ -457,20 +600,15 @@ window.ENGLISH_DATA['2010'] = {
       "questions": [
         {
           "qIndex": 21,
-          "type": "细节题",
-          "tangchiModel": "细节服从主旨 / 同义替换原则",
+          "type": "细节推断题",
+          "tangchiModel": "唐迟细节题模型：抓住第一、二段关于过去报纸刊登大量艺术评论的事实（inexorable decline in arts coverage / 20th century criticism collections consisted in large part of newspaper reviews），锁定过去英语报纸曾经刊载过更多艺术评论（English-language newspapers used to carry more arts reviews）",
           "stem": "It is indicated in Paragraphs 1 and 2 that",
           "stemKeywords": [
-            "indicated",
-            "Paragraphs 1 and 2"
+            "indicated in Paragraphs 1 and 2"
           ],
           "targetSentences": [
             "P1-S1",
             "P2-S2"
-          ],
-          "distractorSentences": [
-            "P2-S1",
-            "P2-S3"
           ],
           "officialAnswer": "B",
           "options": [
@@ -478,8 +616,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "arts criticism has disappeared from big-city newspapers.",
               "isCorrect": false,
-              "distractorType": "绝对化 / 过度推断",
-              "analysis": "文中 P1-S1 明确说明是 decline（范围和严肃性衰落），P2-S1 指出难以想象高质量评论，但并未说“完全消失”（disappeared），属于绝对化极端错误。",
+              "distractorType": "绝对化词汇",
+              "analysis": "【干扰特征: 绝对化夸大】P1-S1 指出是 decline（范围和严肃性衰退），P2-S1 指出难以想象高质量评论，但并未说‘完全消失绝迹’（disappeared），属于绝对化极端错误。",
               "refSentences": [
                 "P1-S1",
                 "P2-S1"
@@ -490,7 +628,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "English-language newspapers used to carry more arts reviews.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义改写】原文 P1-S1 指出 coverage 在 decline，P2-S2 指出 20 世纪大量批评文集由报纸评论组成（consisted in large part of newspaper reviews）。两处信息均印证了过去报纸刊登的艺术评论更多（used to carry more arts reviews）。",
+              "analysis": "【正确项 · 同义改写】P1-S1 明确指出报纸艺术报道在范围和严肃性上正在急剧衰退（inexorable decline in arts coverage），P2-S2 紧接着指出20世纪最重磅的批评文集中有相当大部分主要由当年的报纸评论汇编而成（consisted in large part of newspaper reviews）。两处核心信息共同严密印证了：昔日的英语报纸曾经刊载过远为丰富多样的艺术评论（used to carry more arts reviews）。B选项精准吻合。",
               "refSentences": [
                 "P1-S1",
                 "P2-S2"
@@ -501,15 +639,17 @@ window.ENGLISH_DATA['2010'] = {
               "text": "high-quality newspapers retain a large body of readers.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "原文完全没有提到现在高质量报纸是否依然拥有大量读者。",
-              "refSentences": []
+              "analysis": "【干扰特征: 无中生有】原文完全没有提及当今高质量报纸是否依然保有庞大的读者群体。",
+              "refSentences": [
+                "P2-S1"
+              ]
             },
             {
               "key": "D",
               "text": "young readers doubt the suitability of criticism on dailies.",
               "isCorrect": false,
               "distractorType": "偷换概念",
-              "analysis": "原文 P2-S1 指出年轻读者是“难以想象”（difficult to imagine）曾经有那样的时代，而不是“怀疑其适合性”（doubt suitability）。",
+              "analysis": "【干扰特征: 偷换概念】P2-S1 指出40岁以下读者是‘难以想象’（difficult to imagine）曾经有那样的黄金时代，而非在主观上‘怀疑批评在日报上的适宜性’（doubt suitability）。",
               "refSentences": [
                 "P2-S1",
                 "P2-S3"
@@ -517,14 +657,14 @@ window.ENGLISH_DATA['2010'] = {
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "本题极易误选 A 或 D。选 A 是将'衰退(decline)'夸大为'消失(disappeared)'；选 D 则是误把'难以想象过去的光景'理解为主观上的'怀疑批判'。",
-            "methodSummary": "细节题首要原则是忠于原文用词程度，选项出现 absolute（绝对化）词汇如 disappeared 时要高度警惕同义替换的保真度。"
+            "trapAnalysis": "decline in arts coverage + 20th century criticism consisted in large part of newspaper reviews = English-language newspapers used to carry more arts reviews。",
+            "methodSummary": "细节归纳法则：忠于原文用词程度，排除绝对化词汇（disappeared），识别 decline 与 consisted of newspaper reviews 的时间对比暗示。"
           }
         },
         {
           "qIndex": 22,
-          "type": "细节题",
-          "tangchiModel": "精准定位 + 词义同义改写",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第三段首句关于二战前英国报纸评论核心特征的定性（unfocused newspaper reviews at a time when stylish arts criticism was considered an ornament），锁定二战前英国报评的显著特征是主题自由随性、不拘一格（free themes）",
           "stem": "Newspaper reviews in England before World War II were characterized by",
           "stemKeywords": [
             "Newspaper reviews in England",
@@ -534,10 +674,6 @@ window.ENGLISH_DATA['2010'] = {
           "targetSentences": [
             "P3-S1"
           ],
-          "distractorSentences": [
-            "P3-S2",
-            "P3-S3"
-          ],
           "officialAnswer": "A",
           "options": [
             {
@@ -545,7 +681,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "free themes.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·精准同义替换】原文 P3-S1 明确描述该时期的评论为 unfocused newspaper reviews。unfocused 在此语境下指主题不受约束、随性挥洒、不拘一格，对应 free themes。",
+              "analysis": "【正确项 · 精准同义替换】P3-S1 明确描述该时期英国报评的形态特征：'unfocused newspaper reviews published in England between the turn of the 20th century and the eve of World War II'。unfocused 在此文学与文化语境下特指评论家不受单一特定狭窄论题约束、随性挥洒、不拘一格的洒脱文风，与 free themes（自由广博、不受限的主题）完全同义对应。A选项精准吻合。",
               "refSentences": [
                 "P3-S1"
               ]
@@ -554,8 +690,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "casual style.",
               "isCorrect": false,
-              "distractorType": "正反混淆 / 断章取义",
-              "analysis": "P3-S1 说的是 stylish（优美典雅的），P3-S3 强调 Theirs was a serious business（严肃的事业）。虽然提到 wore learning lightly（深入浅出），但并非文风随意随便（casual style）。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实完全相反】P3-S1 和 P3-S3 明确指出当年的评论是 stylish（文笔优雅典雅）且 serious business（严肃事业），绝非随随便便的敷衍随意文风（casual style）。",
               "refSentences": [
                 "P3-S1",
                 "P3-S3"
@@ -565,8 +701,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "elaborate layout.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "P3-S1 提到 ornament（装点），是指文章的高质量给报纸增色，并非版面设计复杂考究（elaborate layout）。",
+              "distractorType": "偷换概念版面",
+              "analysis": "【干扰特征: 偷换概念】原文 ornament 指评论文字本身的华美文采装饰了刊物，非报纸物理版面设计复杂（elaborate layout）。",
               "refSentences": [
                 "P3-S1"
               ]
@@ -575,31 +711,30 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "radical viewpoints.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "文中没有提及评论观点是否“激进”（radical viewpoints）。",
-              "refSentences": []
+              "distractorType": "无中生有激进观点",
+              "analysis": "【干扰特征: 无端捏造】未提及二战前评论家持有激进观点（radical viewpoints），大师们展现的是博学与严谨。",
+              "refSentences": [
+                "P3-S3"
+              ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "unfocused 是本题核心解题眼。考生常把 unfocused 误认成贬义的'没有焦点/散漫'，但在艺术散文语境下它表示'自由随性、海阔天空'，与 free themes 完美契合。",
-            "methodSummary": "关注唐迟'词汇在特定语境下的引申义'，不要机械背诵字典第一义项。"
+            "trapAnalysis": "unfocused newspaper reviews = free themes（主题不受拘束、自由随性）。",
+            "methodSummary": "熟词僻义同义转换：unfocused 在文艺评论语境下非贬义的“散乱”，而是褒义的“主题自由广博（free themes）”。"
           }
         },
         {
           "qIndex": 23,
-          "type": "推断题",
-          "tangchiModel": "长难句逻辑推断 / 正话反说与转折",
+          "type": "观点推断题",
+          "tangchiModel": "唐迟观点题模型：抓住第三段末句 Newman 对新闻写作要求的名言（So few authors have brains enough or literary gift enough to keep their own end up in journalism），锁定 Shaw 与 Newman 必然共同认同“并非所有作家都能胜任高水准的新闻写作（Not all writers are capable of journalistic writing）”",
           "stem": "Which of the following would Shaw and Newman most probably agree on?",
           "stemKeywords": [
             "Shaw and Newman",
             "most probably agree on"
           ],
           "targetSentences": [
-            "P3-S4",
-            "P3-S5"
-          ],
-          "distractorSentences": [
-            "P3-S3"
+            "P3-S3",
+            "P3-S4"
           ],
           "officialAnswer": "D",
           "options": [
@@ -607,8 +742,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "It is writers' duty to fulfill journalistic goals.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "P3-S4 说明这些评论家自身将新闻视为使命（calling），但并未说这是所有作家的责任义务（duty）。",
+              "distractorType": "偷换概念责任义务",
+              "analysis": "【干扰特征: 概念偏差】两位大师视新闻为神圣志向（calling），但并未道德绑架所有作家都必须承担新闻职责（duty）。",
               "refSentences": [
                 "P3-S4"
               ]
@@ -617,21 +752,20 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "It is contemptible for writers to be journalists.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "Newman 嘲讽的是那些自己写不好新闻稿、无人问津却鄙视新闻业的纯文学作家，他本人对新闻工作极其自豪，绝不认为当记者是可鄙的（contemptible）。",
+              "distractorType": "正反颠倒讽刺对象",
+              "analysis": "【干扰特征: 事实完全相反】纽曼原句是讽刺那些无能的拙劣作家因嫉妒才鄙视新闻写作，纽曼本人为从事新闻倍感自豪。",
               "refSentences": [
-                "P3-S4",
-                "P3-S5"
+                "P3-S4"
               ]
             },
             {
               "key": "C",
               "text": "Writers are likely to be tempted into journalism.",
               "isCorrect": false,
-              "distractorType": "偷换概念 / 字面误导",
-              "analysis": "原文 Newman 说的是 I am tempted to define（我忍不住想把新闻定义为……），而非 writers are tempted into journalism（作家容易被诱惑进入新闻业）。",
+              "distractorType": "字面望文生义",
+              "analysis": "【干扰特征: 句式误读】原文 I am tempted to define 是指‘纽曼忍不住想给新闻下定义’，非作家受诱惑进入新闻界。",
               "refSentences": [
-                "P3-S5"
+                "P3-S4"
               ]
             },
             {
@@ -639,34 +773,29 @@ window.ENGLISH_DATA['2010'] = {
               "text": "Not all writers are capable of journalistic writing.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义转换】P3-S5 中 Newman 明确写道：“So few authors have brains enough or literary gift enough to keep their own end up in journalism（极少有作家具备足够的头脑或才华在新闻写作中立足）”，双重否定/限制表述同义转写即为“并非所有作家都能胜任新闻写作（Not all writers are capable...）”。",
+              "analysis": "【正确项 · 同义改写】P3-S4 明确引述纽曼的犀利论断：'So few authors have brains enough or literary gift enough to keep their own end up in journalism'（极少有作家拥有足够的才智或文学天赋在新闻写作中立足）。so few authors have brains/gift enough 与 Not all writers are capable of journalistic writing（并非所有作家都能胜任新闻写作）完全同义对应。D选项精准吻合。",
               "refSentences": [
-                "P3-S5"
+                "P3-S4"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "C 选项是典型的'字面同形词干扰'（tempted）。考官利用题干或选项里出现的生僻词诱导不读懂句意的考生对号入座。",
-            "methodSummary": "遇到原词复现的选项要加倍小心，考研英语阅读的'正确答案通常是同义替换，原词重现多为陷阱'。"
+            "trapAnalysis": "So few authors have brains enough or literary gift enough = Not all writers are capable of journalistic writing。",
+            "methodSummary": "引语双重否定与全称判断转换：so few have enough talent 即等于 not all are capable。"
           }
         },
         {
           "qIndex": 24,
-          "type": "推断题",
-          "tangchiModel": "逻辑因果推导 / 细节归纳",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住最后两段关于卡达斯现状与后现代读者品味变迁的陈述（postmodern readers have little use for Vicwardian prose / unknown save to specialists），锁定卡达斯的音乐评论在今天可能不再吸引现代读者（His music criticism may not appeal to readers today）",
           "stem": "What can be learned about Cardus according to the last two paragraphs?",
           "stemKeywords": [
             "learned about Cardus",
             "last two paragraphs"
           ],
           "targetSentences": [
-            "P4-S4",
-            "P5-S1",
+            "P4-S3",
             "P5-S2"
-          ],
-          "distractorSentences": [
-            "P4-S2",
-            "P5-S3"
           ],
           "officialAnswer": "A",
           "options": [
@@ -675,9 +804,8 @@ window.ENGLISH_DATA['2010'] = {
               "text": "His music criticism may not appeal to readers today.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·合理推论】P5-S1 指出 Cardus 评论复兴的前景极其渺茫（remote），P5-S2 进一步指出后现代读者对其华丽文风毫无兴趣（postmodern readers have little use for... prose in which he specialized）。由此可明确推知其音乐评论难以吸引当今读者（may not appeal to readers today）。",
+              "analysis": "【正确项 · 同义改写】P5-S2 明确指出卡达斯评论无法复兴的深层原因：'postmodern readers have little use for the richly upholstered Vicwardian prose in which he specialized'（当今后现代读者对他所擅长的那种华丽复古散文几乎毫无需求和兴趣）。have little use for 与 may not appeal to readers today（在今天可能无法吸引读者）完全同义对应。A选项精准吻合。",
               "refSentences": [
-                "P5-S1",
                 "P5-S2"
               ]
             },
@@ -685,51 +813,54 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "His reputation as a music critic has long been in dispute.",
               "isCorrect": false,
-              "distractorType": "无中生有 / 与原文矛盾",
-              "analysis": "P4-S3 指出他生前备受赞赏（widely admired），被封为爵士，其声誉从未受到争议（in dispute）。",
+              "distractorType": "正反颠倒声誉",
+              "analysis": "【干扰特征: 事实完全相反】P4-S2 和 P4-S3 指出他是公认的最顶尖首席乐评家且受封爵士（foremost critic/knighted），声誉极高从未存争议。",
               "refSentences": [
-                "P4-S3",
-                "P4-S4"
+                "P4-S2",
+                "P4-S3"
               ]
             },
             {
               "key": "C",
               "text": "His style caters largely to modern specialists.",
               "isCorrect": false,
-              "distractorType": "偷换概念 / 曲解文意",
-              "analysis": "P4-S4 中 unknown save to specialists 指的是“除了专家之外无人知晓”（表示普通读者不知道），而不是指他的风格主动迎合现代专家（caters to）。",
+              "distractorType": "偷换因果目的",
+              "analysis": "【干扰特征: 偷换概念】P4-S3 是说除了专家外无人知晓（unknown save to specialists），但卡达斯写作为了大众，绝非迎合现代专家。",
               "refSentences": [
-                "P4-S4"
+                "P4-S3",
+                "P5-S2"
               ]
             },
             {
               "key": "D",
               "text": "His writings fail to follow the amateur tradition.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "P5-S3 提到业余传统在退潮，而 Cardus 正是该传统的代表人物之一，并非未能遵循该传统。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】卡达斯正是老派业余文人乐评传统的集大成代表（amateur tradition），该传统随着他的离去而溃退。",
               "refSentences": [
-                "P5-S3"
+                "P5-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "C 项将'除了专家以外无人知晓(save to specialists)'偷换为主观目的'迎合现代专家(caters to)'，属于典型的逻辑偷换。",
-            "methodSummary": "注意英文中 save 作为介词表示 except，看清主被动关系与施动者意图。"
+            "trapAnalysis": "postmodern readers have little use for his prose = His music criticism may not appeal to readers today。",
+            "methodSummary": "原句细节同义转述：have little use for 转换为 not appeal to readers today。"
           }
         },
         {
           "qIndex": 25,
-          "type": "主旨题",
-          "tangchiModel": "串线法 / 论点论据关系 / 排除局部与泛化项",
+          "type": "主旨标题题",
+          "tangchiModel": "唐迟主旨题模型：通读全文，提炼全篇围绕报纸严肃艺术评论从二战前黄金时代的辉煌到如今走向消逝衰落、如同报业消失的地平线一般的挽歌主旨（The Lost Horizon in Newspapers）",
           "stem": "What would be the best title for the text?",
           "stemKeywords": [
             "best title for the text"
           ],
           "targetSentences": [
             "P1-S1",
+            "P2-S1",
+            "P3-S1",
             "P4-S1",
-            "P5-S1"
+            "P5-S2"
           ],
           "officialAnswer": "B",
           "options": [
@@ -737,10 +868,11 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "Newspapers of the Good Old Days",
               "isCorrect": false,
-              "distractorType": "范围过大 / 偏离核心主题",
-              "analysis": "本文核心是艺术评论的衰落，而不是笼统回忆过去美好的报纸时代。",
+              "distractorType": "泛化泛指",
+              "analysis": "【干扰特征: 范围过宽】文章核心聚焦于报纸中的‘艺术评论’（arts criticism），而非泛泛回忆过去的好报纸。",
               "refSentences": [
-                "P1-S1"
+                "P1-S1",
+                "P3-S1"
               ]
             },
             {
@@ -748,19 +880,21 @@ window.ENGLISH_DATA['2010'] = {
               "text": "The Lost Horizon in Newspapers",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·主旨隐喻】文章首尾呼应：从 P1 报纸艺术报道的严肃性衰落（decline in scope and seriousness），到 P3 黄金时代的繁荣，再到 P4/P5 严肃批评家的彻底被遗忘与无法复兴。Lost Horizon（消失的视野/逝去的地平线）生动概括了报纸中那片曾经广阔深邃的严肃艺术评论园地的消逝。",
+              "analysis": "【正确项 · 象征主旨高度概括】全文通篇以艺术评论在英语报纸上的衰落为主线：P1-S1 开宗明义提出艺术报道的无可挽回衰落（inexorable decline in arts coverage）；P2-P3 深情追忆过去高质量评论作为报刊华美装饰、大师辈出的辉煌时代；P4-P5 以卡达斯被遗忘、业余乐评传统全线退潮作为时代落幕的挽歌。B选项 The Lost Horizon in Newspapers（报纸上消逝的地平线/逝去的风景）运用精妙的文学意象，既涵盖了核心载体（Newspapers），又生动象征了严肃艺术评论这一崇高文化传统的消逝与沦落，为最具深度与概括力的最佳标题。",
               "refSentences": [
                 "P1-S1",
+                "P2-S1",
+                "P3-S1",
                 "P4-S1",
-                "P5-S1"
+                "P5-S2"
               ]
             },
             {
               "key": "C",
               "text": "Mournful Decline of Journalism",
               "isCorrect": false,
-              "distractorType": "范围扩大",
-              "analysis": "文章讨论的是报纸中的 arts coverage（艺术评论），并非整个新闻业（journalism）的衰落。",
+              "distractorType": "以偏概全夸大范围",
+              "analysis": "【干扰特征: 范围扩大】衰落的是报纸中的‘严肃艺术评论板块’（arts coverage），而非整个新闻传媒业（journalism）的整体衰落。",
               "refSentences": [
                 "P1-S1"
               ]
@@ -769,16 +903,17 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "Prominent Critics in Memory",
               "isCorrect": false,
-              "distractorType": "就事论事 / 以偏概全",
-              "analysis": "Cardus 等知名评论家只是作者用来证明艺术评论衰落的论据，不能代表全文主旨。",
+              "distractorType": "局部细节人物",
+              "analysis": "【干扰特征: 局限于人物】萧伯纳、纽曼和卡达斯等著名评论家只是作者用来证明严肃评论繁荣与衰落的论证例证，非全文核心主旨。",
               "refSentences": [
+                "P3-S3",
                 "P4-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "主旨题最容易掉入 C（范围过大）或 D（局部论据以偏概全）的陷阱。抓住全文最高频出现的中心词：arts coverage/criticism 在报纸中的衰败。",
-            "methodSummary": "唐迟主旨题法则：核心词必现；排除过大（C把艺术评论扩大到整个新闻业）与过小（D把文章当成了人物传记回忆录）。"
+            "trapAnalysis": "inexorable decline in arts coverage + glorious past vs forgotten present = The Lost Horizon in Newspapers（报纸上消逝的地平线）。",
+            "methodSummary": "文学象征标题法：识别文章核心论题（arts coverage in newspapers）与情感基调（消逝的挽歌），锁定 The Lost Horizon in Newspapers。"
           }
         }
       ]
@@ -786,108 +921,174 @@ window.ENGLISH_DATA['2010'] = {
     {
       "id": "text2",
       "number": 2,
-      "title": "The Crisis of Business-Method Patents",
-      "chineseTitle": "商业方法专利的危机与转折",
-      "topic": "法律与商业创新",
-      "overview": "本文报道了美国联邦巡回上诉法院（CAFC）准备对商业方法专利进行全面审查并可能缩减其保护范围。文章回顾了1998年State Street Bank案引发的商业专利泛滥，分析了著名的Bilski案对改变法律实践的潜在影响，以及最高法院近期对显而易见发明的反专利趋势。",
+      "title": "The Federal Circuit and Business-Method Patents Controversy",
+      "chineseTitle": "联邦巡回法院对商业方法专利的收紧与司法重审",
+      "topic": "知识产权与商业法 / 商业方法专利滥用与争议、比尔斯基案（In re Bilski）、最高法院反专利倾向与全庭重审",
+      "overview": "本文深入剖析了美国联邦巡回上诉法院针对备受争议的“商业方法专利”（business-method patents）所掀起的司法收紧与审查风暴。过去十年成千上万件商业方法被滥发为专利（如亚马逊一键下单），引发了互联网与金融业的防卫性抢注狂潮。如今法院准备全面设限，代表了一次戏剧性的态度大转变（about-face）。具有划时代意义的比尔斯基案（In re Bilski）由全部12位法官全席重审，极可能彻底消灭整大类专利。结合最高法院收窄专利保护范围、批评常识性发明被滥发为专利的宏观趋势，文章揭示了商业方法专利正面临着灭顶之灾般的迫近威胁（A looming threat）。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "过去十年中成千上万的商业方法被授予专利，如亚马逊的一键支付、美林的资产配置策略等。",
-          "logicRole": "交代背景，说明商业方法专利的普遍存在",
+          "mainIdea": "过去十年成千上万件“商业方法”被授予专利，涵盖亚马逊一键支付、美林证券资产配置策略及搬箱子技术",
+          "logicRole": "提出过去十年商业方法专利爆发式授权的背景 (Business-Method Patents Background)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Over the past decade, thousands of patents have been granted for what are called business methods.",
-              "translation": "在过去的十年里，成千上万项所谓的商业方法被授予了专利权。",
+              "translation": "在过去的十年间，已有成千上万件所谓的“商业方法”（business methods）被正式授予了专利权保护。",
               "vocab": [
                 {
-                  "word": "grant",
-                  "ipa": "ɡrɑːnt",
-                  "meaning": "授予，准予",
-                  "level": "red"
+                  "word": "over the past decade",
+                  "ipa": "/ˈəʊvə ðə pɑːst ˈdekeɪd/",
+                  "meaning": "在过去十年里（常用释义：过去十年间）",
+                  "level": "purple"
                 },
                 {
-                  "word": "business methods",
-                  "ipa": "ˈbɪznəs ˈmeθədz",
-                  "meaning": "商业方法（专有名词）",
+                  "word": "decade",
+                  "ipa": "dɪˈkeɪd",
+                  "meaning": "n. 十年；十年期",
                   "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "Amazon.com received one for its \"one-click\" online payment system.",
-              "translation": "亚马逊网站凭借其“一键式”在线支付系统获得了一项专利。",
+              "text": "Amazon.com received one for its \"one-click\" online payment system. Merrill Lynch got legal protection for an asset allocation strategy. One inventor patented a technique for lifting a box.",
+              "translation": "亚马逊网站凭借其独创的“一键下单”在线支付系统斩获了一项专利；美林证券为其资产配置策略赢得了法律专利保护；甚至有一位发明者竟然为一种徒手搬箱子的操作技巧申请并成功获得了专利！",
               "vocab": [
                 {
-                  "word": "one-click",
-                  "ipa": "wʌn klɪk",
-                  "meaning": "一键式的",
+                  "word": "asset allocation strategy",
+                  "ipa": "—",
+                  "meaning": "资产配置策略（常用释义：资产分配方案）",
+                  "level": "purple"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "online",
+                  "ipa": "/ˌɒnˈlaɪn/",
+                  "meaning": "可通过互联网访问的；在线（常用释义：在线的；联网地）",
+                  "level": "red"
+                },
+                {
+                  "word": "payment",
+                  "ipa": "ˈpeɪmənt",
+                  "meaning": "n.支付,付款额",
+                  "level": "red"
+                },
+                {
+                  "word": "system",
+                  "ipa": "ˈsɪstəm",
+                  "meaning": "n. 体系；系统",
                   "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Merrill Lynch got legal protection for an asset allocation strategy.",
-              "translation": "美林证券为其资产配置策略获得了法律保护。",
-              "vocab": [
+                },
                 {
-                  "word": "asset allocation",
-                  "ipa": "ˈæset ˌæləˈkeɪʃn",
-                  "meaning": "资产配置",
+                  "word": "legal",
+                  "ipa": "",
+                  "meaning": "adj.合法的",
                   "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "One inventor patented a technique for lifting a box.",
-              "translation": "甚至有一位发明家为一种抬箱子的技巧申请了专利。",
-              "vocab": [
+                },
                 {
-                  "word": "patent",
-                  "ipa": "ˈpætnt",
-                  "meaning": "v. 申请专利 / n. 专利",
+                  "word": "asset",
+                  "ipa": "/ˈæset/",
+                  "meaning": "资产；有价值的资源（常用释义：资产；优点）",
+                  "level": "red"
+                },
+                {
+                  "word": "allocation",
+                  "ipa": "/ˌæləˈkeɪʃən/",
+                  "meaning": "配置；分配（常用释义：分配；拨款；配置）",
+                  "level": "red"
+                },
+                {
+                  "word": "strategy",
+                  "ipa": "/ˈstrætədʒi/",
+                  "meaning": "策略；总体方案（常用释义：战略；策略；规划）",
+                  "level": "red"
+                },
+                {
+                  "word": "inventor",
+                  "ipa": "ɪnˈventə(r)",
+                  "meaning": "n.发明者，发明家",
+                  "level": "green"
+                },
+                {
+                  "word": "patented",
+                  "ipa": "/ˈpeɪtntɪd/",
+                  "meaning": "获得专利保护的（常用释义：专利的；取得专利的）",
                   "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "美国最高专利法院（CAFC）准备通过审理著名的Bilski案缩减商业方法专利，这可能彻底消除此类专利。",
-          "logicRole": "提出核心事件：司法态度发生重大逆转",
+          "mainIdea": "最高专利法院准备全面收紧充满争议的商业方法专利，比尔斯基案可能彻底消灭整类专利",
+          "logicRole": "指出联邦巡回法院准备收紧商业方法专利，比尔斯基案引发广泛关注 (Possible Restriction on Granting)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Now the nation's top patent court appears completely ready to scale back on business-method patents, which have been controversial ever since they were first authorized 10 years ago.",
-              "translation": "现在，美国最高专利法院似乎完全准备好缩减商业方法专利的范围，而这类专利自十年前首次获得授权以来就一直饱受争议。",
+              "translation": "如今，美国最高专利审判法院似乎已彻底下定决心，准备大刀阔斧地全面收紧与削减商业方法专利（ready to scale back on business-method patents / possible restriction on their granting）——这类专利自十年前最初获得法律认可授权以来，便始终身处激烈的舆论与法律争议漩涡之中。",
               "vocab": [
                 {
-                  "word": "scale back on",
-                  "ipa": "skeɪl bæk ɒn",
-                  "meaning": "削减，缩减规模",
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
+                  "level": "red"
+                },
+                {
+                  "word": "court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "ready",
+                  "ipa": "ˈredi",
+                  "meaning": "adj.愿意的",
+                  "level": "red"
+                },
+                {
+                  "word": "scale",
+                  "ipa": "/skeɪl/",
+                  "meaning": "量表；测量等级体系。（常用释义：刻度；规模；比例；等级。）",
                   "level": "red"
                 },
                 {
                   "word": "controversial",
-                  "ipa": "ˌkɒntrəˈvɜːʃl",
-                  "meaning": "有争议的",
+                  "ipa": "/ˌkɒntrəˈvɜːʃəl/",
+                  "meaning": "有争议的（常用释义：引发分歧的）",
                   "level": "red"
                 },
                 {
-                  "word": "authorize",
-                  "ipa": "ˈɔːθəraɪz",
-                  "meaning": "批准，授权",
-                  "level": "red"
+                  "word": "since",
+                  "ipa": "sɪns",
+                  "meaning": "adv. 从那时以来 conj.",
+                  "level": "green"
                 }
               ],
               "isTopicSentence": true,
@@ -897,269 +1098,728 @@ window.ENGLISH_DATA['2010'] = {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "In a move that has intellectual-property lawyers abuzz, the U.S. Court of Appeals for the Federal Circuit said it would use a particular case to conduct a broad review of business-method patents.",
-              "translation": "在一项令知识产权律师们议论纷纷的举动中，美国联邦巡回上诉法院表示将利用一个特定案件对商业方法专利进行广泛审查。",
+              "translation": "在一项令全美知识产权律师界群情激昂、奔走相告的重大司法举措中，美国联邦巡回上诉法院（CAFC）正式宣布，将借助一起极为特殊的案件对整个商业方法专利展开极其广泛深入的全面司法审查。",
               "vocab": [
                 {
-                  "word": "intellectual-property",
-                  "ipa": "ˌɪntəlektʃuəl ˈprɒpəti",
-                  "meaning": "知识产权",
-                  "level": "purple"
+                  "word": "broad review",
+                  "ipa": "/brɔːd rɪˈvjuː/",
+                  "meaning": "广泛、全面的审查（常用释义：总体回顾；广泛评估）",
+                  "level": "green"
+                },
+                {
+                  "word": "move",
+                  "ipa": "muːv",
+                  "meaning": "n.行动",
+                  "level": "red"
                 },
                 {
                   "word": "abuzz",
-                  "ipa": "əˈbʌz",
-                  "meaning": "议论纷纷的，嘈杂的",
+                  "ipa": "əˈbəz",
+                  "meaning": "adj. 嗡嗡的；",
                   "level": "green"
                 },
                 {
-                  "word": "broad review",
-                  "ipa": "brɔːd rɪˈvjuː",
-                  "meaning": "广泛审查",
+                  "word": "Court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "Federal",
+                  "ipa": "ˈfɛdərəl",
+                  "meaning": "adj. 联邦的，联盟的",
                   "level": "green"
+                },
+                {
+                  "word": "Circuit",
+                  "ipa": "ˈsɜːkɪt",
+                  "meaning": "n. 环形路线，巡回赛",
+                  "level": "green"
+                },
+                {
+                  "word": "use",
+                  "ipa": "",
+                  "meaning": "n./v. 使用，用途",
+                  "level": "green"
+                },
+                {
+                  "word": "particular",
+                  "ipa": "/pəˈtɪkjələ(r)/",
+                  "meaning": "某一特定的（常用释义：特定的；特别的；讲究的）",
+                  "level": "red"
+                },
+                {
+                  "word": "case",
+                  "ipa": "keɪs",
+                  "meaning": "n.事例，案",
+                  "level": "green"
+                },
+                {
+                  "word": "conduct",
+                  "ipa": "/kənˈdʌkt/ v.; /ˈkɒndʌkt/ n.",
+                  "meaning": "进行，开展（常用释义：进行；指挥；带领；行为）",
+                  "level": "red"
+                },
+                {
+                  "word": "review",
+                  "ipa": "rɪˈvjuː",
+                  "meaning": "v.回顾,复习 n.回顾,复习;评论",
+                  "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 3,
               "id": "P2-S3",
-              "text": "In re Bilski, as the case is known, is \"a very big deal,\" says Dennis D. Crouch of the University of Missouri School of Law.",
-              "translation": "密苏里大学法学院的丹尼斯·克劳奇表示，这起被称为“比尔斯基案”（In re Bilski）的案件是“一件非同小可的大事”。",
+              "text": "In re Bilski, as the case is known, is \"a very big deal,\" says Dennis D. Crouch of the University of Missouri School of Law. It \"has the potential to eliminate an entire class of patents.\"",
+              "translation": "这起被称为“比尔斯基案”（In re Bilski）的重磅诉讼案“绝对非同小可，具有划时代意义，”密苏里大学法学院教授丹尼斯·克劳奇深刻指出，该案“极有可能彻底消灭取缔整整一大类专利（may change legal practices in U.S. / eliminate entire class）！”",
               "vocab": [
                 {
-                  "word": "a big deal",
-                  "ipa": "ə bɪɡ diːl",
-                  "meaning": "重大事件",
+                  "word": "as the case is known",
+                  "ipa": "—",
+                  "meaning": "该案件通常被称为……（常用释义：插入说明名称）",
                   "level": "purple"
-                }
-              ]
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "It \"has the potential to eliminate an entire class of patents.\"",
-              "translation": "它“有可能彻底废除整整一大类专利”。",
-              "vocab": [
+                },
+                {
+                  "word": "case",
+                  "ipa": "keɪs",
+                  "meaning": "n.事例，案",
+                  "level": "green"
+                },
+                {
+                  "word": "very",
+                  "ipa": "",
+                  "meaning": "adj.恰好的，正是的",
+                  "level": "green"
+                },
+                {
+                  "word": "potential",
+                  "ipa": "/pəˈtenʃəl/",
+                  "meaning": "可能性；潜力（常用释义：潜力；潜在的）",
+                  "level": "red"
+                },
                 {
                   "word": "eliminate",
-                  "ipa": "ɪˈlɪmɪneɪt",
-                  "meaning": "消除，根除",
+                  "ipa": "/ɪˈlɪmɪneɪt/",
+                  "meaning": "消除；取消（常用释义：消除；淘汰；排除）",
+                  "level": "red"
+                },
+                {
+                  "word": "entire",
+                  "ipa": "/ɪnˈtaɪə(r)/",
+                  "meaning": "整个的；全部的（常用释义：完整的；全部的）",
+                  "level": "red"
+                },
+                {
+                  "word": "class",
+                  "ipa": "/klɑːs/",
+                  "meaning": "类别；种类（常用释义：班级；阶层；类别）",
                   "level": "red"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "限制商业专利将是巨大的态度转变，因为正是该法院1998年批准了此类专利，随后引发了专利申请狂潮与防御性申请。",
-          "logicRole": "回顾历史成因，揭示大企业被动防守申请的荒诞现实",
+          "mainIdea": "对商业方法设限是一次戏剧性态度大转变（about-face），当年正是该法院亲手开启了互联网和华尔街的防卫性抢注狂潮",
+          "logicRole": "解释法院态度大转变（about-face = change of attitude）及此前引发的专利军备竞赛 (About-Face / Change of Attitude)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
               "text": "Curbs on business-method claims would be a dramatic about-face, because it was the Federal Circuit itself that introduced such patents with its 1998 decision in the so-called State Street Bank case, approving a patent on a way of pooling mutual-fund assets.",
-              "translation": "对商业方法专利申请的限制将是一个戏剧性的态度大转变（about-face），因为正是联邦巡回法院自己在1998年所谓的“州街银行案”判决中引入了此类专利，批准了对一种集合共同基金资产的方法授予专利。",
+              "translation": "如今若对商业方法专利主张施加严格限制，将构成一次极具戏剧性的“态度彻底大转变”（a dramatic about-face / change of attitude）——因为当年恰恰正是联邦巡回法院自身，在1998年著名的“州街银行案”（State Street Bank case）判决中亲手确立引入了此类专利，正式批准了一项关于共同基金资产池化汇集的管理专利。",
               "vocab": [
                 {
-                  "word": "curb",
-                  "ipa": "kɜːb",
-                  "meaning": "限制，抑制",
+                  "word": "a dramatic about-face",
+                  "ipa": "/ə drəˌmætɪk əˈbaʊt feɪs/",
+                  "meaning": "重大的立场或政策逆转（常用释义：彻底转向）",
+                  "level": "purple"
+                },
+                {
+                  "word": "dramatic",
+                  "ipa": "/drəˈmætɪk/",
+                  "meaning": "重大而突然的（常用释义：戏剧性的；显著的）",
                   "level": "red"
                 },
                 {
                   "word": "about-face",
-                  "ipa": "əˌbaʊt ˈfeɪs",
-                  "meaning": "彻底改变（态度/立场），大转弯",
+                  "ipa": "",
+                  "meaning": "n.政策或意见的 180 度改变",
+                  "level": "green"
+                },
+                {
+                  "word": "Federal",
+                  "ipa": "ˈfɛdərəl",
+                  "meaning": "adj. 联邦的，联盟的",
+                  "level": "green"
+                },
+                {
+                  "word": "Circuit",
+                  "ipa": "ˈsɜːkɪt",
+                  "meaning": "n. 环形路线，巡回赛",
+                  "level": "green"
+                },
+                {
+                  "word": "decision",
+                  "ipa": "/dɪˈsɪʒən/",
+                  "meaning": "法院裁决、判决（常用释义：决定；决心）",
                   "level": "red"
                 },
                 {
-                  "word": "pool",
-                  "ipa": "puːl",
-                  "meaning": "集合，汇集（熟词僻义）",
+                  "word": "so-called",
+                  "ipa": "/ˌsəʊ ˈkɔːld/",
+                  "meaning": "所谓的、被称为……的（常用释义：有时暗含怀疑或讽刺）",
                   "level": "green"
                 },
                 {
-                  "word": "mutual-fund",
-                  "ipa": "ˌmjuːtʃuəl ˈfʌnd",
-                  "meaning": "共同基金",
+                  "word": "State",
+                  "ipa": "/steɪt/",
+                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
+                  "level": "red"
+                },
+                {
+                  "word": "case",
+                  "ipa": "keɪs",
+                  "meaning": "n.事例，案",
                   "level": "green"
+                },
+                {
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
+                  "level": "red"
                 }
               ],
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
               "text": "That ruling produced an explosion in business-method patent filings, initially by emerging Internet companies trying to stake out exclusive rights to specific types of online transactions.",
-              "translation": "该裁决引发了商业方法专利申请的爆炸式增长，最初是新兴互联网公司试图确立对特定类型在线交易的排他性专有权利。",
+              "translation": "当年的那项司法裁决在全美掀起了一场商业方法专利申请的爆炸式狂潮，起初是新兴互联网公司竞相申请，试图以此确立并垄断对特定在线交易类型的排他性专有权利。",
               "vocab": [
                 {
-                  "word": "stake out",
-                  "ipa": "steɪk aʊt",
-                  "meaning": "确立界限，占有",
-                  "level": "purple"
+                  "word": "ruling",
+                  "ipa": "/ˈruːlɪŋ/",
+                  "meaning": "司法裁决（常用释义：裁定；统治）",
+                  "level": "red"
                 },
                 {
-                  "word": "exclusive rights",
-                  "ipa": "ɪkˈskluːsɪv raɪts",
-                  "meaning": "专有权，排他权",
-                  "level": "purple"
+                  "word": "explosion",
+                  "ipa": "/ɪkˈspləʊʒən/",
+                  "meaning": "激增；爆发式增长（常用释义：爆炸；突然爆发）",
+                  "level": "red"
+                },
+                {
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
+                  "level": "red"
+                },
+                {
+                  "word": "initially",
+                  "ipa": "/ɪˈnɪʃəli/",
+                  "meaning": "起初；最初（常用释义：最初；开始时）",
+                  "level": "red"
+                },
+                {
+                  "word": "stake",
+                  "ipa": "steɪk",
+                  "meaning": "n.股份；利害关系；桩 v.拿…冒险；用桩支撑",
+                  "level": "green"
+                },
+                {
+                  "word": "exclusive",
+                  "ipa": "/ɪkˈskluːsɪv/",
+                  "meaning": "专有的；排他的（常用释义：独有的；高档的；排他的）",
+                  "level": "red"
+                },
+                {
+                  "word": "specific",
+                  "ipa": "/spəˈsɪfɪk/",
+                  "meaning": "特定的；具体的（常用释义：明确的；特有的）",
+                  "level": "red"
+                },
+                {
+                  "word": "online",
+                  "ipa": "/ˌɒnˈlaɪn/",
+                  "meaning": "可通过互联网访问的；在线（常用释义：在线的；联网地）",
+                  "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 3,
               "id": "P3-S3",
               "text": "Later, more established companies raced to add such patents to their files, if only as a defensive move against rivals that might beat them to the punch.",
-              "translation": "随后，更多老牌知名企业也竞相将此类专利纳入囊中，哪怕这仅仅是为了防范竞争对手抢占先机的一种防御性举措。",
+              "translation": "随后，更多历史悠久的老牌行业巨头也争先恐后地将此类专利纳入自己的专利储备库，哪怕这仅仅是为了防范竞争对手抢占先机先发制人而采取的无奈防御之举。",
               "vocab": [
                 {
                   "word": "established",
                   "ipa": "ɪˈstæblɪʃt",
-                  "meaning": "老牌的，确立稳固地位的",
+                  "meaning": "adj.地位稳固的",
+                  "level": "red"
+                },
+                {
+                  "word": "defensive",
+                  "ipa": "dɪˈfensɪv",
+                  "meaning": "adj.防御的；生气的 n.防御态势；辩护",
                   "level": "green"
                 },
                 {
-                  "word": "beat sb to the punch",
-                  "ipa": "biːt tə ðə pʌntʃ",
-                  "meaning": "抢先一步，占得先机",
-                  "level": "purple"
+                  "word": "move",
+                  "ipa": "muːv",
+                  "meaning": "n.行动",
+                  "level": "red"
+                },
+                {
+                  "word": "punch",
+                  "ipa": "/pʌntʃ/",
+                  "meaning": "习语中指“关键出手/行动时机”（常用释义：一拳；冲击力；打孔器）",
+                  "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 4,
               "id": "P3-S4",
-              "text": "In 2005, IBM noted in a court filing that it had been issued more than 300 business-method patents, despite the fact that it questioned the legal basis for granting them.",
-              "translation": "2005年，IBM 在一份法庭文件中指出，尽管它质疑授予此类专利的法律依据，但它自己已经获得了300多项商业方法专利。",
+              "text": "In 2005, IBM noted in a court filing that it had been issued more than 300 business-method patents, despite the fact that it questioned the legal basis for granting them. Similarly, some Wall Street investment firms armed themselves with patents for financial products, even as they took positions in court cases opposing the practice.",
+              "translation": "在2005年的一份法庭诉讼文件中，IBM 公司明确指出自己已被动获批了300多项商业方法专利，尽管其自身从根本上一直公开质疑授予这些专利的法律依据合规性。类似地，一些华尔街顶级投资机构也纷纷用金融产品专利将自己武装到牙齿，即便它们在其他法庭诉讼中始终坚定站在公开反对这一荒谬做法的立场之上。",
               "vocab": [
                 {
-                  "word": "court filing",
-                  "ipa": "kɔːt ˈfaɪlɪŋ",
-                  "meaning": "法庭案卷，诉讼文件",
-                  "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "Similarly, some Wall Street investment firms armed themselves with patents for financial products, even as they took positions in court cases opposing the practice.",
-              "translation": "同样，一些华尔街投资公司用金融产品专利全副武装自己，即便它们在法庭诉讼中站在反对这种做法的立场上。",
-              "vocab": [
+                  "word": "legal basis",
+                  "ipa": "/ˈliːɡəl ˈbeɪsɪs/",
+                  "meaning": "法律依据（常用释义：法律基础；法律根据）",
+                  "level": "red"
+                },
                 {
-                  "word": "arm oneself with",
-                  "ipa": "ɑːm wʌnˈself wɪð",
-                  "meaning": "用……武装自己",
+                  "word": "in a court filing",
+                  "ipa": "—",
+                  "meaning": "在向法院提交的文件中（常用释义：在法院申报文件中）",
                   "level": "purple"
+                },
+                {
+                  "word": "court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "filing",
+                  "ipa": "/ˈfaɪlɪŋ/",
+                  "meaning": "向法院或机构正式提交的文件；申请（常用释义：归档；锉削；申报文件）",
+                  "level": "red"
+                },
+                {
+                  "word": "despite",
+                  "ipa": "/dɪˈspaɪt/",
+                  "meaning": "尽管（常用释义：即使；不管）",
+                  "level": "red"
+                },
+                {
+                  "word": "legal",
+                  "ipa": "",
+                  "meaning": "adj.合法的",
+                  "level": "green"
+                },
+                {
+                  "word": "basis",
+                  "ipa": "ˈbeɪsɪs",
+                  "meaning": "n. 基础；原因，缘由，",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "granting",
+                  "ipa": "ˈɡræntɪŋ",
+                  "meaning": "v.同意，准予（grant 的 ing形式）",
+                  "level": "green"
+                },
+                {
+                  "word": "Similarly",
+                  "ipa": "ˈsɪmələrli",
+                  "meaning": "adv. 同样地；类似地",
+                  "level": "green"
+                },
+                {
+                  "word": "investment",
+                  "ipa": "/ɪnˈvestmənt/",
+                  "meaning": "公共科研投入、投资（常用释义：投资；投入；投资物）",
+                  "level": "green"
+                },
+                {
+                  "word": "financial",
+                  "ipa": "",
+                  "meaning": "adj.金融的，财政的，财务的",
+                  "level": "red"
+                },
+                {
+                  "word": "practice",
+                  "ipa": "/ˈpræktɪs/",
+                  "meaning": "做法；惯例（常用释义：练习；实践；惯例）",
+                  "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 4,
-          "mainIdea": "比尔斯基案涉及能源市场对冲风险的专利，法院罕见地安排全体12名法官共同审理，以评估是否推翻州街银行案判决。",
-          "logicRole": "具体案件剖析，强调司法审理的超常规规格",
+          "mainIdea": "比尔斯基案涉及能源市场风险对冲方法，联邦巡回法院破天荒召集全部12位法官全席审理并重审州街银行先例",
+          "logicRole": "介绍比尔斯基案全席审理的罕见规格与重新评估先例的核心目标 (En Banc Review of Bilski)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P4-S1",
               "text": "The Bilski case involves a claimed patent on a method for hedging risk in the energy market.",
-              "translation": "比尔斯基案涉及一项在能源市场对冲风险方法的专利申请。",
+              "translation": "比尔斯基诉讼案的核心，涉及一项关于在能源市场中进行风险对冲操作方法的专利申请主张。",
               "vocab": [
                 {
-                  "word": "hedging risk",
-                  "ipa": "ˈhedʒɪŋ rɪsk",
-                  "meaning": "对冲风险（金融词汇）",
+                  "word": "case",
+                  "ipa": "keɪs",
+                  "meaning": "n.事例，案",
+                  "level": "green"
+                },
+                {
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
+                  "level": "red"
+                },
+                {
+                  "word": "method",
+                  "ipa": "ˈmeθəd",
+                  "meaning": "n. 方法，办法",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "energy",
+                  "ipa": "ˈɛnərdʒi",
+                  "meaning": "n. 能量；精力；活力",
                   "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P4-S2",
               "text": "The Federal Circuit issued an unusual order stating that the case would be heard by all 12 of the court's judges, rather than a typical panel of three, and that one issue it wants to evaluate is whether it should \"reconsider\" its State Street Bank ruling.",
-              "translation": "联邦巡回法院发布了一项不同寻常的命令，宣布该案将由全部12名法官全席审理，而不是通常由3人组成的分庭审理；并且法院希望评估的核心问题之一就是是否应当“重新考虑”其州街银行案的裁决。",
+              "translation": "联邦巡回法院极其罕见地下达了一项非同寻常的司法命令：宣布该案将由该法院全部12位联邦法官组成全席法庭（en banc）共同开庭审理，而非通常的三人合议庭；而法庭想要深入审查评估的核心议题之一，正是该法院是否应当彻底“重新审视并推翻”其当年的州街银行案判决先例。",
               "vocab": [
                 {
-                  "word": "panel",
-                  "ipa": "ˈpænl",
-                  "meaning": "（法官）审判小组，陪审团",
+                  "word": "rather than",
+                  "ipa": "/ˈrɑːðə ðæn/",
+                  "meaning": "而不是；而非（常用释义：用于对比选择）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Federal",
+                  "ipa": "ˈfɛdərəl",
+                  "meaning": "adj. 联邦的，联盟的",
                   "level": "green"
                 },
                 {
+                  "word": "Circuit",
+                  "ipa": "ˈsɜːkɪt",
+                  "meaning": "n. 环形路线，巡回赛",
+                  "level": "green"
+                },
+                {
+                  "word": "unusual",
+                  "ipa": "",
+                  "meaning": "adj.不寻常的，罕见的；与众不同的，独特的",
+                  "level": "red"
+                },
+                {
+                  "word": "order",
+                  "ipa": "/ˈɔːdə(r)/",
+                  "meaning": "法院命令；裁定（常用释义：命令；次序；订单）",
+                  "level": "red"
+                },
+                {
+                  "word": "case",
+                  "ipa": "keɪs",
+                  "meaning": "n.事例，案",
+                  "level": "green"
+                },
+                {
+                  "word": "court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                },
+                {
+                  "word": "typical",
+                  "ipa": "ˈtɪpɪk(ə)l",
+                  "meaning": "adj.典型的；一贯的；不出所料",
+                  "level": "green"
+                },
+                {
+                  "word": "panel",
+                  "ipa": "/ˈpænəl/",
+                  "meaning": "法官合议庭；审判小组（常用释义：专家组；面板；镶板）",
+                  "level": "green"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "issue",
+                  "ipa": "/ˈɪʃuː/",
+                  "meaning": "问题、议题（常用释义：发行；期号；结果）",
+                  "level": "red"
+                },
+                {
+                  "word": "evaluate",
+                  "ipa": "/ɪˈvæljueɪt/",
+                  "meaning": "评估；审查（常用释义：评价；估量）",
+                  "level": "red"
+                },
+                {
                   "word": "reconsider",
-                  "ipa": "ˌriːkənˈsɪdə(r)",
-                  "meaning": "重新考虑，重新审议",
+                  "ipa": "/ˌriːkənˈsɪdə(r)/",
+                  "meaning": "重新考虑；重新审视（常用释义：再考虑）",
+                  "level": "red"
+                },
+                {
+                  "word": "State",
+                  "ipa": "/steɪt/",
+                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
+                  "level": "red"
+                },
+                {
+                  "word": "ruling",
+                  "ipa": "/ˈruːlɪŋ/",
+                  "meaning": "司法裁决（常用释义：裁定；统治）",
                   "level": "red"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 5,
-          "mainIdea": "巡回法院的行动顺应了美国最高法院近期收紧专利保护范围、遏制显而易见发明的反专利大趋势。",
-          "logicRole": "宏观司法背景，揭示变革背后的更高层推动力",
+          "mainIdea": "最高法院近期一系列判决收窄专利保护范围并批评显而易见的专利被过度滥发，巡回法院正顺应这一反专利趋势",
+          "logicRole": "揭示最高法院收紧显而易见专利的宏观司法风向与对滥发专利的反思 (Unnecessarily Issued / Anti-Patent Trend)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P5-S1",
               "text": "The Federal Circuit's action comes in the wake of a series of recent decisions by the Supreme Court that has narrowed the scope of protections for patent holders.",
-              "translation": "联邦巡回法院的这一举措紧随最高法院近期做出的一系列缩减专利持有人保护范围的裁决之后。",
+              "translation": "联邦巡回法院的这一重磅行动，紧随美国联邦最高法院近期做出的一系列收窄专利权人保护范围的重大司法裁决之后而来。",
               "vocab": [
                 {
-                  "word": "in the wake of",
-                  "ipa": "ɪn ðə weɪk ɒv",
-                  "meaning": "紧随……之后，作为……的结果",
+                  "word": "Supreme Court",
+                  "ipa": "/suːˌpriːm ˈkɔːt/",
+                  "meaning": "最高法院（美国最高法院）（常用释义：最高法院）",
+                  "level": "red"
+                },
+                {
+                  "word": "patent holder",
+                  "ipa": "/ˈpeɪtənt ˌhəʊldə(r)/",
+                  "meaning": "专利权人（常用释义：专利持有人）",
+                  "level": "green"
+                },
+                {
+                  "word": "a series of",
+                  "ipa": "—",
+                  "meaning": "一系列的（常用释义：连续的一组）",
                   "level": "purple"
                 },
                 {
-                  "word": "narrow the scope of",
-                  "ipa": "ˈnærəʊ ðə skəʊp ɒv",
-                  "meaning": "缩小……的范围",
-                  "level": "purple"
+                  "word": "the Supreme Court",
+                  "ipa": "/suːˌpriːm ˈkɔːt/",
+                  "meaning": "美国联邦最高法院（常用释义：最高法院）",
+                  "level": "red"
+                },
+                {
+                  "word": "Federal",
+                  "ipa": "ˈfɛdərəl",
+                  "meaning": "adj. 联邦的，联盟的",
+                  "level": "green"
+                },
+                {
+                  "word": "Circuit",
+                  "ipa": "ˈsɜːkɪt",
+                  "meaning": "n. 环形路线，巡回赛",
+                  "level": "green"
+                },
+                {
+                  "word": "action",
+                  "ipa": "",
+                  "meaning": "n.行动，活动，功能，战斗",
+                  "level": "red"
+                },
+                {
+                  "word": "Supreme",
+                  "ipa": "suːˈpriːm",
+                  "meaning": "adj.至高无上的,最",
+                  "level": "green"
+                },
+                {
+                  "word": "Court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "scope",
+                  "ipa": "/skəʊp/",
+                  "meaning": "范围；适用范围（常用释义：范围；余地）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
+                  "level": "red"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P5-S2",
-              "text": "Last April, for example, the justices signaled that too many patents were being upheld for \"inventions\" that are obvious.",
-              "translation": "例如去年四月，大法官们示意，有太多显而易见的“发明”被维持了专利权。",
+              "text": "Last April, for example, the justices signaled that too many patents were being upheld for \"inventions\" that are obvious. The judges on the Federal Circuit are \"reacting to the anti-patent trend at the Supreme Court,\" says Harold C. Wegner, a patent attorney and professor at George Washington University Law School.",
+              "translation": "例如，就在去年四月，最高法院的大法官们便已明确释放强烈信号：有太多完全属于显而易见常识的所谓‘发明’，竟然被荒谬地维系并授予了专利权（too many patents upheld for obvious inventions / business-method patents are often unnecessarily issued）。乔治·华盛顿大学法学院教授、资深专利律师哈罗德·韦格纳深刻指出，联邦巡回法院的法官们“正在积极顺应最高法院当前掀起的反专利激进扩张的司法大趋势（A looming threat to business-method patents）。”",
               "vocab": [
                 {
-                  "word": "uphold",
-                  "ipa": "ʌpˈhəʊld",
-                  "meaning": "维持，赞成（裁决）",
+                  "word": "Supreme Court",
+                  "ipa": "/suːˌpriːm ˈkɔːt/",
+                  "meaning": "最高法院（美国最高法院）（常用释义：最高法院）",
                   "level": "red"
                 },
                 {
+                  "word": "the Supreme Court",
+                  "ipa": "/suːˌpriːm ˈkɔːt/",
+                  "meaning": "美国联邦最高法院（常用释义：最高法院）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "being",
+                  "ipa": "ˈbiːɪŋ",
+                  "meaning": "n. 生物；存在；本质",
+                  "level": "green"
+                },
+                {
                   "word": "obvious",
-                  "ipa": "ˈɒbviəs",
-                  "meaning": "显而易见的，缺乏创造性的",
+                  "ipa": "/ˈɒbviəs/",
+                  "meaning": "显而易见、因而缺乏创造性的（常用释义：明显的；不言而喻的）",
+                  "level": "red"
+                },
+                {
+                  "word": "Federal",
+                  "ipa": "ˈfɛdərəl",
+                  "meaning": "adj. 联邦的，联盟的",
+                  "level": "green"
+                },
+                {
+                  "word": "Circuit",
+                  "ipa": "ˈsɜːkɪt",
+                  "meaning": "n. 环形路线，巡回赛",
+                  "level": "green"
+                },
+                {
+                  "word": "trend",
+                  "ipa": "/trend/",
+                  "meaning": "趋势（常用释义：趋势；倾向；潮流）",
+                  "level": "red"
+                },
+                {
+                  "word": "Supreme",
+                  "ipa": "suːˈpriːm",
+                  "meaning": "adj.至高无上的,最",
+                  "level": "green"
+                },
+                {
+                  "word": "Court",
+                  "ipa": "/kɔːt/",
+                  "meaning": "法院（常用释义：法院；法庭；球场）",
+                  "level": "red"
+                },
+                {
+                  "word": "patent",
+                  "ipa": "/ˈpeɪtənt/",
+                  "meaning": "为……取得专利（常用释义：取得专利；授予专利权）",
+                  "level": "red"
+                },
+                {
+                  "word": "attorney",
+                  "ipa": "/əˈtɜːni/",
+                  "meaning": "律师（常用释义：律师；代理人）",
+                  "level": "green"
+                },
+                {
+                  "word": "professor",
+                  "ipa": "prəˈfesə(r)",
+                  "meaning": "n. 教授",
+                  "level": "green"
+                },
+                {
+                  "word": "Washington",
+                  "ipa": "/ˈwɒʃɪŋtən/",
+                  "meaning": "美国联邦政府（常用释义：华盛顿（城市））",
                   "level": "red"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "The judges on the Federal Circuit are \"reacting to the anti-patent trend at the Supreme Court,\" says Harold C. Wegner, a patent attorney and professor at George Washington University Law School.",
-              "translation": "乔治·华盛顿大学法学院教授兼专利律师哈罗德·韦格纳表示，联邦巡回法院的法官们“正在对最高法院的反专利趋势做出反应”。",
-              "vocab": [
-                {
-                  "word": "anti-patent trend",
-                  "ipa": "ˈænti ˈpætnt trend",
-                  "meaning": "反专利趋势",
-                  "level": "purple"
-                }
-              ]
             }
           ]
         }
@@ -1167,19 +1827,14 @@ window.ENGLISH_DATA['2010'] = {
       "questions": [
         {
           "qIndex": 26,
-          "type": "细节题",
-          "tangchiModel": "因果逻辑对应 / 找准原因定位点",
+          "type": "细节原因题",
+          "tangchiModel": "唐迟因果题模型：抓住第二段首句关于商业方法专利近期再次引发广泛瞩目的核心驱动力（court completely ready to scale back on business-method patents），锁定该类专利近期引发巨大关注是因为法院可能对其授权施加严格限制（the possible restriction on their granting）",
           "stem": "Business-method patents have recently aroused concern because of",
           "stemKeywords": [
             "Business-method patents",
-            "recently aroused concern",
-            "because of"
+            "recently aroused concern because of"
           ],
           "targetSentences": [
-            "P2-S1"
-          ],
-          "distractorSentences": [
-            "P1-S3",
             "P2-S1"
           ],
           "officialAnswer": "C",
@@ -1188,18 +1843,20 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "their limited value to businesses.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "文中没有提到这些专利对企业的价值有限。",
-              "refSentences": []
+              "distractorType": "正反颠倒商业价值",
+              "analysis": "【干扰特征: 事实完全相反】第一段展示亚马逊一键下单和美林证券资产配置均依赖其获得垄断暴利，商业价值极大，非价值有限。",
+              "refSentences": [
+                "P1-S2"
+              ]
             },
             {
               "key": "B",
               "text": "their connection with asset allocation.",
               "isCorrect": false,
-              "distractorType": "就事论事 / 局部细节",
-              "analysis": "P1-S3 提到 asset allocation 只是美林证券申请的一个具体例子，并非引发近期全行业关注的原因。",
+              "distractorType": "以偏概全局部案例",
+              "analysis": "【干扰特征: 局部细节】资产配置（asset allocation）只是美林证券申请的一个具体案例，无法解释全行业范围内的巨大震动。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2"
               ]
             },
             {
@@ -1207,7 +1864,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "the possible restriction on their granting.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义改写】原文 P2-S1 指出 top patent court appears completely ready to scale back on business-method patents（法院准备削减商业方法专利）。scale back on 与 possible restriction on their granting（可能对其授予进行限制）完全对等。",
+              "analysis": "【正确项 · 同义替换】P2-S1 明确揭示引发关注的根本诱因：'Now the nation's top patent court appears completely ready to scale back on business-method patents'（如今国家最高专利法院似乎完全准备好缩减收紧商业方法专利）。scale back on business-method patents 与 the possible restriction on their granting（对其授权授予可能施加的限制约束）完全同义对应。C选项精准吻合。",
               "refSentences": [
                 "P2-S1"
               ]
@@ -1216,33 +1873,28 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "the controversy over their authorization.",
               "isCorrect": false,
-              "distractorType": "偷换时间范围",
-              "analysis": "P2-S1 指出争议是 ever since they were authorized 10 years ago（十年前开始一直存在），并非 recently aroused concern（近期才引起关注）的原因。",
+              "distractorType": "偷换时间状态",
+              "analysis": "【干扰特征: 偷换时间修饰】P2-S1 指出争议是十年前授权以来就一直存在的（ever since 10 years ago），而近期（recently）引发轩然大波的触发点在于法院准备收紧取缔它们。",
               "refSentences": [
                 "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "D 项属于典型的'偷换时间概念'陷阱。题干问的是 recently（近期为何引关注），争议早在10年前就有了，近期引爆关注是因为法院要 scale back（限制裁减）。",
-            "methodSummary": "细节题务必注意时间限定词（recently vs 10 years ago），紧扣导致变化的直接触发因。"
+            "trapAnalysis": "ready to scale back on business-method patents = the possible restriction on their granting。",
+            "methodSummary": "时间状语与触发原因匹配：recently 指向 scale back 对应的 possible restriction on granting。"
           }
         },
         {
           "qIndex": 27,
-          "type": "细节题",
-          "tangchiModel": "事实细节提取 / 同义替换",
+          "type": "细节推断题",
+          "tangchiModel": "唐迟推断题模型：抓住第二段末句法学教授对比尔斯基案潜在深远影响的定性（a very big deal / has potential to eliminate an entire class of patents），锁定比尔斯基案的判决极有可能会根本性地改变美国的司法实践与专利格局（It may change the legal practices in the U.S.）",
           "stem": "Which of the following is true of the Bilski case?",
           "stemKeywords": [
             "true of the Bilski case"
           ],
           "targetSentences": [
-            "P2-S4",
-            "P4-S2"
-          ],
-          "distractorSentences": [
-            "P2-S3",
-            "P4-S2"
+            "P2-S3"
           ],
           "officialAnswer": "D",
           "options": [
@@ -1250,8 +1902,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "Its ruling complies with the court decisions.",
               "isCorrect": false,
-              "distractorType": "事实相反",
-              "analysis": "P4-S2 明确说明法院正在 reconsider（重审并可能推翻）之前的先例，尚未做出裁决，谈不上已符合裁决。",
+              "distractorType": "正反颠倒先例",
+              "analysis": "【干扰特征: 事实相反】P4-S2 明确指出该案意在重新审视并推翻以往判决（reconsider State Street Bank ruling），并非顺从旧判决。",
               "refSentences": [
                 "P4-S2"
               ]
@@ -1260,8 +1912,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "It involves a very big business transaction.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "P2-S3 中 a very big deal 指的是这个案件影响重大，而不是案件涉及巨大的商业交易（business transaction）。",
+              "distractorType": "偷换概念交易",
+              "analysis": "【干扰特征: 偷换概念】克劳奇说该案是 a very big deal（意义极其重大影响深远），被字面曲解偷换为‘巨额商业交易’。",
               "refSentences": [
                 "P2-S3"
               ]
@@ -1270,8 +1922,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "It has been dismissed by the Federal Circuit.",
               "isCorrect": false,
-              "distractorType": "与事实相反",
-              "analysis": "P4-S2 明确提到案件正在由全席12名法官审理，并没有被驳回（dismissed）。",
+              "distractorType": "事实完全相反",
+              "analysis": "【干扰特征: 事实相反】P4-S2 明确指出联邦巡回法院召集全部12位法官全席开庭审理，极其高度重视，绝非驳回不予受理（dismissed）。",
               "refSentences": [
                 "P4-S2"
               ]
@@ -1281,26 +1933,26 @@ window.ENGLISH_DATA['2010'] = {
               "text": "It may change the legal practices in the U.S.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义归纳】P2-S4 明确指出该案 has the potential to eliminate an entire class of patents（有可能废除整整一大类专利），P4-S2 提到重新评估1998年确立的判例。这表明该案可能改变美国的法律实践（change legal practices）。",
+              "analysis": "【正确项 · 合理推断】P2-S3 明确阐述比尔斯基案的颠覆性法律后果：'\"a very big deal... has the potential to eliminate an entire class of patents\"'（这是一件极其重大的大案，具有彻底消灭取缔整整一类专利的巨大潜能）。消灭整整一大类长期存在的专利，意味着该案将根本性地彻底颠覆改变全美知识产权的司法实践与判决规则（It may change the legal practices in the U.S.）。D选项精准契合推理。",
               "refSentences": [
-                "P2-S4",
-                "P4-S2"
+                "P2-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "B 项利用 a very big deal 偷换为 a very big business transaction，测试考生的词组理解与概念辨析能力。",
-            "methodSummary": "唐迟法则：正确选项往往含有 may/potential 等委婉推断词，绝对武断的选项往往错误。"
+            "trapAnalysis": "has potential to eliminate an entire class of patents = It may change the legal practices in the U.S.。",
+            "methodSummary": "司法影响推断：eliminate an entire class of patents 概括为 change legal practices in U.S.。"
           }
         },
         {
           "qIndex": 28,
-          "type": "词义题",
-          "tangchiModel": "转折与对比逻辑 / 上下文语义场推导",
+          "type": "词义指代题",
+          "tangchiModel": "唐迟词义题模型：抓住第三段首句语境逻辑（Curbs on business-method claims would be a dramatic about-face, because it was Federal Circuit itself that introduced such patents in 1998），从亲手确立引入转为严加限制取缔，锁定 about-face 精准指代“态度的彻底转变”（change of attitude）",
           "stem": "The word \"about-face\" (Line 1, Para. 3) most probably means",
           "stemKeywords": [
             "about-face",
-            "Line 1, Para. 3"
+            "Line 1, Para. 3",
+            "most probably means"
           ],
           "targetSentences": [
             "P3-S1"
@@ -1311,8 +1963,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "loss of goodwill.",
               "isCorrect": false,
-              "distractorType": "字面胡乱引申",
-              "analysis": "goodwill 表示商誉/善意，与法院立场无关。",
+              "distractorType": "偷换概念商誉",
+              "analysis": "【干扰特征: 概念偏差】未涉及商业商誉损失（loss of goodwill），讲的是法院司法立场的转向。",
               "refSentences": [
                 "P3-S1"
               ]
@@ -1321,8 +1973,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "increase of hostility.",
               "isCorrect": false,
-              "distractorType": "主观臆断",
-              "analysis": "hostility 表示敌意，文章讨论的是法律标准修正，并非情绪敌对。",
+              "distractorType": "情感偏激",
+              "analysis": "【干扰特征: 情感偏差】法院是法律立场的修正调整，非敌意增加（increase of hostility）。",
               "refSentences": [
                 "P3-S1"
               ]
@@ -1332,7 +1984,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "change of attitude.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·语境推导】P3-S1 解释道：限制此类专利将是 dramatic about-face，because 恰恰是巡回法院自己在1998年引入了这种专利（introduced such patents... now curbs）。从“亲自引入开创”到“如今实施限制”，这显然是立场的180度大转变，即 change of attitude。",
+              "analysis": "【正确项 · 语境词义精准对应】P3-S1 形成极其鲜明的逻辑转折：'Curbs on business-method claims would be a dramatic about-face, because it was the Federal Circuit itself that introduced such patents in 1998'（现在对商业方法施加限制将是一次巨大的 about-face，因为当年恰恰是该法院自己批准引入了此类专利）。从十年前的“亲自确立认可”骤然转向今天的“设限削减”，这种180度大转弯正是典型的“立场的彻底改变 / 态度的巨大转变”（change of attitude）。C选项完全精准吻合。",
               "refSentences": [
                 "P3-S1"
               ]
@@ -1341,22 +1993,22 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "enhancement of dignity.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "dignity 意为尊严，与上下文逻辑毫无关联。",
+              "distractorType": "无中生有尊严",
+              "analysis": "【干扰特征: 概念偏差】未提及尊严的提升（enhancement of dignity）。",
               "refSentences": [
                 "P3-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "词义题万能解法：代入 because 后的因果解释句子。1998年支持批准，现在限制取消，前后对比即为'态度彻底转变'。",
-            "methodSummary": "词义题绝不考单词生僻义，考的是根据上下文逻辑关系（因果、转折、对立）推测词义的能力。"
+            "trapAnalysis": "introduced patents in 1998 -> now curbs on patents = dramatic about-face = change of attitude（态度的彻底转变）。",
+            "methodSummary": "成语语境对照法：结合1998年引入与如今设限的180度反差，锁定 change of attitude。"
           }
         },
         {
           "qIndex": 29,
-          "type": "推断题",
-          "tangchiModel": "段落末尾结论提取 / 顺藤摸瓜",
+          "type": "细节推断题",
+          "tangchiModel": "唐迟推断题模型：抓住最后两段关于最高法院批评大量专利被轻易授予常识性发明的论断（too many patents were being upheld for \"inventions\" that are obvious），锁定商业方法专利在过去往往是在没有必要的情况下被泛滥滥发了（are often unnecessarily issued）",
           "stem": "We learn from the last two paragraphs that business-method patents",
           "stemKeywords": [
             "learn from the last two paragraphs",
@@ -1365,21 +2017,17 @@ window.ENGLISH_DATA['2010'] = {
           "targetSentences": [
             "P5-S2"
           ],
-          "distractorSentences": [
-            "P4-S1",
-            "P5-S1"
-          ],
           "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "are immune to legal challenges.",
               "isCorrect": false,
-              "distractorType": "与事实相反",
-              "analysis": "全文都在讲商业专利正在经受法庭的严峻重审挑战，绝非不受法律质疑（immune）。",
+              "distractorType": "正反颠倒司法豁免",
+              "analysis": "【干扰特征: 事实完全相反】全篇专讲商业方法专利正面临最高法院和巡回法院的全方位司法围剿审查，绝非免受挑战（immune）。",
               "refSentences": [
                 "P4-S2",
-                "P5-S1"
+                "P5-S2"
               ]
             },
             {
@@ -1387,7 +2035,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "are often unnecessarily issued.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义转换】P5-S2 指出：the justices signaled that too many patents were being upheld for 'inventions' that are obvious（大法官们示意，有太多显而易见的所谓'发明'被维持了专利权）。'显而易见的发明被授予专利'即意味着这些专利通常是不必要授予的（unnecessarily issued）。",
+              "analysis": "【正确项 · 同义替换】P5-S2 明确引述最高法院大法官们的严厉批评定调：'justices signaled that too many patents were being upheld for \"inventions\" that are obvious'（大法官们明确指出，有太多属于显而易见常识的所谓发明被维系授予了专利）。把原本显而易见、缺乏实质创造性的常识方案大肆批准为专利，其本质正是“往往被毫无必要地滥发了”（are often unnecessarily issued）。B选项精准契合最高法院的批判立场。",
               "refSentences": [
                 "P5-S2"
               ]
@@ -1396,38 +2044,43 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "lower the esteem for patent holders.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "文中没有提及是否降低了对专利持有人的尊重（esteem）。",
-              "refSentences": []
+              "distractorType": "偷换概念声誉",
+              "analysis": "【干扰特征: 概念偏差】未提及降低专利持有者的社会威望（lower the esteem）。",
+              "refSentences": [
+                "P5-S2"
+              ]
             },
             {
               "key": "D",
               "text": "increase the incidence of risks.",
               "isCorrect": false,
-              "distractorType": "偷换概念 / 张冠李戴",
-              "analysis": "P4-S1 提到 Bilski 案涉及的是 hedging risk（对冲/规避风险）的方法，而非专利本身增加了风险的发生（increase incidence of risks）。",
+              "distractorType": "偷换概念风险",
+              "analysis": "【干扰特征: 概念偏差】P4-S1 讲的是比尔斯基申请的是对冲风险的方法（hedging risk），非商业专利增加了风险发生率。",
               "refSentences": [
                 "P4-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "D 项将文本中的 hedging risk（对冲风险）恶意篡改为 increase the incidence of risks（增加风险发生率），属于概念扭曲。",
-            "methodSummary": "对应 P5-S2 的 too many patents... that are obvious，'过于浅显的发明拿了太多专利' = '很多专利发得毫无必要'。"
+            "trapAnalysis": "too many patents upheld for \"inventions\" that are obvious = are often unnecessarily issued（往往被不必要地滥发）。",
+            "methodSummary": "原句批判意图提炼：too many patents for obvious inventions 概括为 unnecessarily issued。"
           }
         },
         {
           "qIndex": 30,
-          "type": "主旨题",
-          "tangchiModel": "文章核心对象与矛盾焦点提炼",
+          "type": "主旨大意题",
+          "tangchiModel": "唐迟主旨题模型：通读全文，提炼全篇围绕最高专利审判法院借助比尔斯基案准备收紧取缔商业方法专利、商业方法专利面临若隐若现的灭顶之灾威胁的核心主旨（A looming threat to business-method patents）",
           "stem": "Which of the following would be the subject of the text?",
           "stemKeywords": [
             "subject of the text"
           ],
           "targetSentences": [
+            "P1-S1",
             "P2-S1",
+            "P2-S3",
             "P3-S1",
-            "P5-S1"
+            "P4-S2",
+            "P5-S2"
           ],
           "officialAnswer": "A",
           "options": [
@@ -1436,20 +2089,24 @@ window.ENGLISH_DATA['2010'] = {
               "text": "A looming threat to business-method patents.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·完美概括】全文围绕商业方法专利面临被削减（scale back）、甚至彻底废除（eliminate an entire class）的危机展开。looming threat（隐约逼近的威胁）精准传达了巡回法院和最高法院联手收紧政策给该领域带来的冲击。",
+              "analysis": "【正确项 · 全文主旨高度概括】全文通篇聚焦于“商业方法专利所面临的司法收紧与取缔危机”：第1段介绍过去泛滥申请的背景；第2段指出专利法院准备收紧削减（scale back）、比尔斯基案可能消灭整类专利；第3段指出这代表了立场的反转；第4段指出全席审理重审先例；第5段指出最高法院的反专利扩张趋势。A选项 A looming threat to business-method patents（商业方法专利所面临的逼近威胁/乌云压顶）全面、准确且传神地概括了全文的主旨核心，为最佳标题。",
               "refSentences": [
+                "P1-S1",
                 "P2-S1",
-                "P2-S4",
-                "P5-S1"
+                "P2-S3",
+                "P3-S1",
+                "P4-S2",
+                "P5-S2"
               ]
             },
             {
               "key": "B",
               "text": "Protection for business-method patent holders.",
               "isCorrect": false,
-              "distractorType": "事实相反",
-              "analysis": "文章讲的是缩减保护（narrow scope of protection），而非保护专利持有人。",
+              "distractorType": "正反颠倒保护",
+              "analysis": "【干扰特征: 事实完全相反】文章通篇探讨的是如何削减取缔此类专利、收窄保护范围（narrowed protections），非保护专利持有者。",
               "refSentences": [
+                "P2-S1",
                 "P5-S1"
               ]
             },
@@ -1457,28 +2114,28 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "A legal case regarding business-method patents.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "Bilski 案只是文章用来探讨整个商业专利危机的大背景切入点与论据，并非全文的全部内容。",
+              "distractorType": "以偏概全局部案例",
+              "analysis": "【干扰特征: 局限于案例】比尔斯基案只是法院用来推翻旧判决、收紧全行业专利的切入点契机，文章探讨的是整个商业方法专利的宏观危机命运。",
               "refSentences": [
-                "P2-S3",
-                "P4-S1"
+                "P2-S2",
+                "P4-S2"
               ]
             },
             {
               "key": "D",
               "text": "A prevailing trend against business-method patents.",
               "isCorrect": false,
-              "distractorType": "过度夸大程度 / 偷换概念",
-              "analysis": "P5-S3 提到的是 anti-patent trend at the Supreme Court，是最高法院内部的反专利倾向，而且危机刚刚逼近（looming），并非全社会已形成了席卷的普遍趋势（prevailing trend）。A 选项用 looming threat 更加贴合全文审理中的现状。",
+              "distractorType": "概念夸大",
+              "analysis": "【干扰特征: 程度过满】目前法院还在审理评估重审阶段（reconsider），虽然威胁逼近（looming threat），但尚未彻底成为已然落地的普遍既成事实潮流（prevailing trend）。",
               "refSentences": [
                 "P2-S1",
-                "P5-S3"
+                "P4-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "A 与 D 的辨析是考研英语一的经典高难度区分。D 用了 prevailing（普遍盛行的），夸大了目前仅在法院层面试点的危机；A 用 looming threat（逼近的威胁）最客观精准。",
-            "methodSummary": "主旨题注意形容词分寸感（looming vs prevailing），紧扣文章核心论调。"
+            "trapAnalysis": "scale back + potential to eliminate an entire class of patents = A looming threat to business-method patents。",
+            "methodSummary": "全文核心主旨锁定：识别核心对象（business-method patents）与其面临的迫近危机态势（looming threat）。"
           }
         }
       ]
@@ -1486,369 +2143,756 @@ window.ENGLISH_DATA['2010'] = {
     {
       "id": "text3",
       "number": 3,
-      "title": "Challenging the Influentials Theory in Social Epidemics",
-      "chineseTitle": "对“意见领袖引发社会风潮”假说的颠覆",
-      "topic": "社会学与网络传播",
-      "overview": "本文针对马尔科姆·格拉德威尔在《引爆点》中提出的“社会风潮由少数意见领袖（influentials）主导”的传统理论提出挑战。最新研究表明，意见领袖的影响力远没有想象中那么大；社会大流行的关键不在于是否有极少数的意见领袖，而在于网络中是否存在足够多容易受到影响的大众人群（critical mass of easily influenced people）。",
+      "title": "The Tipping Point Under Question: Social Influence Dynamics",
+      "chineseTitle": "引爆点理论质疑：社交影响力的真正动力学机制",
+      "topic": "传播学与社会网络动力学 / 格拉德威尔“关键人物”（Influentials）神话、两级传播理论、计算机模拟揭示易受影响的群体关键规模",
+      "overview": "本文对马尔科姆·格拉德威尔在《引爆点》中所宣扬的“极少数关键人物驱动社会流行”的传统神话发起了颠覆性的学术批判。文章指出，营销界所迷信的“二级传播理论”在很大程度上缺乏扎实确凿的实证检验。学者通过人际传播观察指出，普通关键人物与外界的直接社交互动极其有限；数千次精密计算机网络模拟最终证明：决定一场社会流行能否形成“全局级联”传播的关键要素，绝非取决于是否存在极少数特殊关键人物，而恰恰取决于网络中是否存在达到临界规模的、极其容易受到外界影响的庞大易感人群（The readiness to be influenced）。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "格拉德威尔在《引爆点》中认为社会潮流由少数意见领袖推动，这种观点直观诱人，但无法解释思想真正如何传播。",
-          "logicRole": "提出传统流行观点，并以 but 转折引出质疑",
+          "mainIdea": "格拉德威尔在《引爆点》中提出社交流行主要由极少数“关键人物”驱动，这一直觉上吸引人的观点却未能解释观点究竟如何传播",
+          "logicRole": "引出格拉德威尔《引爆点》中关于“关键人物”驱动观点的讨论 (Discuss Influentials' Function)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "In his book The Tipping Point, Malcolm Gladwell argues that \"social epidemics\" are driven in large part by the actions of a tiny minority of special individuals, often called influentials, who are unusually informed, persuasive, or well connected.",
-              "translation": "马尔科姆·格拉德威尔在其著作《引爆点》中论证道：“社会风潮”在很大程度上是由极少数被称为“意见领袖”（influentials）的特殊个体推动的，这些人往往消息异常灵通、极具说服力或拥有广泛人脉。",
+              "translation": "马尔科姆·格拉德威尔在其畅销著作《引爆点》中极力主张：“社会风潮/社会流行”（social epidemics）在很大程度上是由极少数被称为“关键人物/影响力人士”（influentials）的特殊个体的行为所驱动的（discuss influentials' function in spreading ideas）——这些人往往掌握着超乎寻常的丰富信息、具备非凡的说服力，或拥有极其广泛的人脉网络。",
               "vocab": [
                 {
-                  "word": "social epidemics",
-                  "ipa": "ˈsəʊʃl ˌepɪˈdemɪks",
-                  "meaning": "社会风潮，社会流行现象",
+                  "word": "book",
+                  "ipa": "bʊk",
+                  "meaning": "n. 书，书",
                   "level": "green"
                 },
                 {
-                  "word": "influentials",
-                  "ipa": "ˌɪnfluˈenʃlz",
-                  "meaning": "有影响力的人物，意见领袖",
-                  "level": "red"
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
                 },
                 {
-                  "word": "well connected",
-                  "ipa": "wel kəˈnektɪd",
-                  "meaning": "人脉广泛的，社交广泛的",
+                  "word": "tiny",
+                  "ipa": "ˈtaɪni",
+                  "meaning": "adj. 极小的",
+                  "level": "green"
+                },
+                {
+                  "word": "minority",
+                  "ipa": "maɪˈnɔː rəti",
+                  "meaning": "n. 少数；少数",
+                  "level": "green"
+                },
+                {
+                  "word": "special",
+                  "ipa": "ˈspeʃ(ə)l",
+                  "meaning": "adj. 特别的，专门的",
+                  "level": "green"
+                },
+                {
+                  "word": "informed",
+                  "ipa": "ɪnˈfɔːrmd",
+                  "meaning": "adj.了解情况的；有根据的；明智的 v. 通知；了解，熟悉",
+                  "level": "green"
+                },
+                {
+                  "word": "persuasive",
+                  "ipa": "pəˈsweɪsɪv",
+                  "meaning": "adj. 有说服力的；劝导的",
                   "level": "green"
                 }
               ],
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "The idea is intuitively compelling, but it doesn't explain how ideas actually spread.",
-              "translation": "这一观点直觉上令人信服，但它并没有解释思想究竟是如何实际传播开来的。",
+              "translation": "这一观点在直觉上虽然极其引人入胜、极具说服力，但它却根本无法真正合理解释思想与观点在现实社会中究竟是如何具体传播开来的。",
               "vocab": [
                 {
                   "word": "intuitively",
                   "ipa": "ɪnˈtjuːɪtɪvli",
-                  "meaning": "凭直觉地",
-                  "level": "red"
+                  "meaning": "adv.凭直觉地",
+                  "level": "green"
                 },
                 {
                   "word": "compelling",
-                  "ipa": "kəmˈpelɪŋ",
-                  "meaning": "令人信服的，引人注目的",
-                  "level": "red"
+                  "ipa": "kəmˈpɛlɪŋ",
+                  "meaning": "adj. 不可抗拒",
+                  "level": "green"
+                },
+                {
+                  "word": "spread",
+                  "ipa": "spred",
+                  "meaning": "v. 延伸； 展开",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "意见领袖理论源于未经检验的“两级传播理论”；营销人员对其推崇备至，但也仅符合轶事传闻。",
-          "logicRole": "剖析传统理论的来源及其缺乏严密验证的本质",
+          "mainIdea": "关键人物的重要性源于听起来合理但缺乏检验的“二级传播理论”，营销人员对其深信不疑却亟需确凿实证检验其有效性",
+          "logicRole": "阐明二级传播理论虽受营销者推崇但缺乏实证检验 (Two-Step Flow Requires Solid Evidence)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "The supposed importance of influentials derives from a plausible-sounding but largely untested theory called the \"two-step flow of communication\": Information flows from the media to the influentials and from them to everyone else.",
-              "translation": "意见领袖所谓的重要性源自一个听起来合情合理但基本未经验证的理论——即“二级传播理论”：信息先从大众媒体流向意见领袖，再由他们流向其他所有人。",
+              "translation": "人们所假设的关键人物的极端重要性，源自一种听起来合情合理、但在很大程度上却根本未经验证检验的古老假说——所谓的“二级传播理论”（two-step flow of communication / requires solid evidence for its validity）：信息首先从大众媒介流向极少数关键人物，再由这些关键人物二级传递给社会上的其他所有人。",
               "vocab": [
                 {
-                  "word": "derive from",
-                  "ipa": "dɪˈraɪv frɒm",
-                  "meaning": "源于，来自",
-                  "level": "purple"
-                },
-                {
-                  "word": "plausible-sounding",
-                  "ipa": "ˈplɔːzəbl ˈsaʊndɪŋ",
-                  "meaning": "听起来合情合理的",
+                  "word": "supposed",
+                  "ipa": "səˈpəʊzd",
+                  "meaning": "adj.误以为的;误信的;所谓的",
                   "level": "red"
                 },
                 {
-                  "word": "untested",
-                  "ipa": "ʌnˈtestɪd",
-                  "meaning": "未经验证的",
-                  "level": "red"
+                  "word": "theory",
+                  "ipa": "ˈθiːəri",
+                  "meaning": "n. 理论",
+                  "level": "green"
                 },
                 {
-                  "word": "two-step flow",
-                  "ipa": "tuː step fləʊ",
-                  "meaning": "二级传播（传播学概念）",
+                  "word": "communication",
+                  "ipa": "kəmjuːnɪˈkeɪʃ(ə)n",
+                  "meaning": "n.交",
+                  "level": "green"
+                },
+                {
+                  "word": "Information",
+                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
+                  "meaning": "n. 信息",
+                  "level": "green"
+                },
+                {
+                  "word": "media",
+                  "ipa": "ˈmiːdɪə",
+                  "meaning": "n. 大众传播媒介",
                   "level": "green"
                 }
               ],
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
               "text": "Marketers have embraced the two-step flow because it suggests that if they can just find and influence the influentials, those select people will do most of the work for them.",
-              "translation": "营销人员欣然接受了二级传播理论，因为该理论表明，只要他们能找到并影响那些意见领袖，那些精选出来的少数人就会替他们完成大部分推广工作。",
+              "translation": "营销人员之所以狂热拥抱二级传播理论，是因为该理论暗示：只要他们能够精准找到并成功影响这批关键人物，这些被选中的精英就会替他们代劳完成绝大部分的推广传播工作。",
               "vocab": [
                 {
-                  "word": "embrace",
-                  "ipa": "ɪmˈbreɪs",
-                  "meaning": "欣然接受，拥抱（理论/观念）",
+                  "word": "suggests",
+                  "ipa": "/səˈdʒests/",
+                  "meaning": "表明，暗示（常用释义：建议；表明；暗示）",
+                  "level": "red"
+                },
+                {
+                  "word": "find",
+                  "ipa": "faɪnd",
+                  "meaning": "v.找到;发现;发觉",
+                  "level": "red"
+                },
+                {
+                  "word": "influence",
+                  "ipa": "ˈɪnflʊəns",
+                  "meaning": "n./v. 影响",
+                  "level": "green"
+                },
+                {
+                  "word": "select",
+                  "ipa": "səˈlekt",
+                  "meaning": "v.选择,挑选 adj.精选的,选择的",
+                  "level": "red"
+                },
+                {
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "work",
+                  "ipa": "wɜ:rk",
+                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 3,
               "id": "P2-S3",
-              "text": "The theory also seems to explain the sudden and unexpected popularity of certain looks, brands, or neighborhoods.",
-              "translation": "该理论似乎还能解释某些时尚外观、品牌或街区为何会突然意外地风靡一时。",
+              "text": "The theory also seems to explain the sudden and unexpected popularity of certain looks, brands, or neighborhoods. In many such cases, a cursory search for causes finds that some small group of people was wearing, promoting, or developing whatever it is before anyone else paid attention. Anecdotal evidence of this kind fits nicely with the idea that only certain special people can drive trends.",
+              "translation": "该理论似乎还能解释某些特定穿搭造型、时尚品牌或网红街区何以突然意外爆红。在许多此类案例中，对原因的草率粗浅追溯往往会发现：在其他任何人注意到之前，某小撮特定群体确实早已在穿戴、推广或培育该事物了。此类轶事传闻证据，恰好与“唯有特定特殊个体才能引领时代潮流”的直觉认知严丝合缝地契合在了一起。",
               "vocab": [
                 {
-                  "word": "neighborhood",
-                  "ipa": "ˈneɪbəhʊd",
-                  "meaning": "街区，社区",
+                  "word": "theory",
+                  "ipa": "ˈθiːəri",
+                  "meaning": "n. 理论",
                   "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "In many such cases, a cursory search for causes finds that some small group of people was wearing, promoting, or developing whatever it is before anyone else paid attention.",
-              "translation": "在很多此类案例中，对原因的草率探究都会发现，在其他人注意到之前，确实有一小群人早就在穿戴、推广或发展该事物了。",
-              "vocab": [
+                },
+                {
+                  "word": "sudden",
+                  "ipa": "ˈsʌd(ə)n",
+                  "meaning": "adj. 突然的",
+                  "level": "green"
+                },
+                {
+                  "word": "unexpected",
+                  "ipa": "",
+                  "meaning": "adj.意料之外的",
+                  "level": "green"
+                },
                 {
                   "word": "cursory",
                   "ipa": "ˈkɜːsəri",
-                  "meaning": "粗略的，草率的",
+                  "meaning": "adj.粗略的,仓促的",
                   "level": "red"
-                }
-              ]
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "Anecdotal evidence of this kind fits nicely with the idea that only certain special people can drive trends.",
-              "translation": "这种传闻轶事式的证据恰好迎合了“唯有某些特殊人物才能引领潮流”的观念。",
-              "vocab": [
+                },
                 {
-                  "word": "anecdotal evidence",
-                  "ipa": "ˌænɪkˈdəʊtl ˈevɪdəns",
-                  "meaning": "轶事证据，传闻证据（非科学实证）",
-                  "level": "purple"
+                  "word": "search",
+                  "ipa": "sɜːtʃ",
+                  "meaning": "n./v. 搜寻，搜查",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "attention",
+                  "ipa": "əˈtenʃ(ə)n",
+                  "meaning": "n. 注意，关心",
+                  "level": "green"
+                },
+                {
+                  "word": "Anecdotal",
+                  "ipa": "ˌænɪkˈdəʊt(ə)l",
+                  "meaning": "adj.轶事的;趣闻的;传闻的",
+                  "level": "red"
+                },
+                {
+                  "word": "evidence",
+                  "ipa": "ˈevɪdəns",
+                  "meaning": "n.证据,证明",
+                  "level": "red"
+                },
+                {
+                  "word": "special",
+                  "ipa": "ˈspeʃ(ə)l",
+                  "meaning": "adj. 特别的，专门的",
+                  "level": "green"
+                },
+                {
+                  "word": "drive",
+                  "ipa": "draɪv",
+                  "meaning": "v. 驾驶，开",
+                  "level": "green"
                 }
               ],
-              "isKeyEvidence": true
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 3,
-          "mainIdea": "最新研究得出截然相反的结论：意见领袖对社会潮流的影响远比想象的小，甚至根本不是必需的。",
-          "logicRole": "提出核心反驳论点 (Main Counter-claim)",
+          "mainIdea": "最新研究发现关键人物对社会流行的影响远小于一般假设，甚至根本可有可无",
+          "logicRole": "转折提出最新研究发现：关键人物对社会流行的实际影响微乎其微 (Influentials Have Far Less Impact)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "In their recent work, however, some researchers have come up with the finding that influentials have far less impact on social epidemics than is generally supposed.",
-              "translation": "然而在最近的研究中，一些研究人员发现，意见领袖对社会风潮的影响远没有普遍认为的那么大。",
+              "text": "In their recent work, however, some researchers have come up with the finding that influentials have far less impact on social epidemics than is generally supposed. In fact, they don't seem to be required at all.",
+              "translation": "然而，在近期的科学研究中，一些学者却得出了颠覆性的惊人发现：关键人物对社会流行的实际驱动影响，远远小于人们普遍所设想的程度。事实上，在社会流行浪潮的爆发中，他们甚至根本就不是必不可少的！",
               "vocab": [
                 {
-                  "word": "come up with",
-                  "ipa": "kʌm ʌp wɪð",
-                  "meaning": "提出，发现",
-                  "level": "purple"
+                  "word": "work",
+                  "ipa": "wɜ:rk",
+                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
+                  "level": "red"
+                },
+                {
+                  "word": "however",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
+                  "level": "red"
                 },
                 {
                   "word": "impact",
-                  "ipa": "ˈɪmpækt",
-                  "meaning": "影响，冲击",
+                  "ipa": "",
+                  "meaning": "n.撞击，冲击力；巨大影响，强大作用",
+                  "level": "red"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "generally",
+                  "ipa": "ˈdʒen(ə)rəli",
+                  "meaning": "adv.通常；普遍地；大概",
+                  "level": "green"
+                },
+                {
+                  "word": "supposed",
+                  "ipa": "səˈpəʊzd",
+                  "meaning": "adj.误以为的;误信的;所谓的",
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "In fact, they don't seem to be required at all.",
-              "translation": "事实上，他们似乎根本就不是必需的。",
-              "vocab": [
-                {
-                  "word": "not at all",
-                  "ipa": "nɒt æt ɔːl",
-                  "meaning": "一点也不，根本不",
-                  "level": "purple"
-                }
-              ]
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 4,
-          "mainIdea": "分析人际互动的真实机制：非名人意见领袖社交圈有限，风潮需要受影响者逐级再去影响他人（级联反应）。",
-          "logicRole": "机制剖析，从人际传播网络结构解释为何意见领袖无法单凭自身决定流行",
+          "mainIdea": "除了奥普拉等媒体巨星，普通关键人物社交互动有限，影响力的广泛级联传播取决于受影响者能否继续影响其熟人",
+          "logicRole": "阐释人际传播机制：“这些人”指代被影响后继而影响他人的人 (Influenced and Then Influence Others)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P4-S1",
               "text": "The researchers' argument stems from a simple observation about social influence: With the exception of a few celebrities like Oprah Winfrey—whose outsize presence is primarily a function of media, not interpersonal, influence—even the most influential members of a population simply don't interact with that many others.",
-              "translation": "研究人员的论点源于对社会影响力的一项简单观察：除了少数像奥普拉·温弗瑞这样的名人之外（其巨大的存在感主要源于大众媒体而非人际影响），一个群体中哪怕是最具影响力的人，其直接交往的人数也非常有限。",
+              "translation": "研究学者们的论点源于对社会影响力的一项极其朴素的现实观察：除了像奥普拉·温弗瑞（Oprah Winfrey）这样极少数拥有大众媒体超凡曝光度（其巨大影响力主要归功于大众传媒而非人际传播）的超级名流之外，一个群体中即便是最具影响力的普通个体，实际上也根本不可能与那么多人发生直接的日常社交互动（power of influence goes with social interactions）。",
               "vocab": [
                 {
+                  "word": "argument",
+                  "ipa": "ˈɑːrɡjumənt",
+                  "meaning": "n. 争论；论点；理由",
+                  "level": "green"
+                },
+                {
+                  "word": "observation",
+                  "ipa": "ˌɒbzəˈveɪʃ(ə)n",
+                  "meaning": "n.观察；观察力；观察资料",
+                  "level": "red"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "influence",
+                  "ipa": "ˈɪnflʊəns",
+                  "meaning": "n./v. 影响",
+                  "level": "green"
+                },
+                {
+                  "word": "exception",
+                  "ipa": "ɪkˈsepʃn",
+                  "meaning": "n.例外，除外",
+                  "level": "green"
+                },
+                {
                   "word": "outsize",
-                  "ipa": "ˈaʊtsaɪz",
-                  "meaning": "特大的，超常的",
+                  "ipa": "ˈaʊtˌsaɪz",
+                  "meaning": "adj.特大的",
+                  "level": "red"
+                },
+                {
+                  "word": "presence",
+                  "ipa": "ˈprez(ə)ns",
+                  "meaning": "n.存在；出席",
+                  "level": "green"
+                },
+                {
+                  "word": "primarily",
+                  "ipa": "/praɪˈmerəli/",
+                  "meaning": "主要地；首要地。（常用释义：主要地。）",
+                  "level": "red"
+                },
+                {
+                  "word": "function",
+                  "ipa": "ˈfʌŋkʃ(ə)n",
+                  "meaning": "n.功能，职责；宴会；函数，应变量 v.运转；行使职责，",
+                  "level": "green"
+                },
+                {
+                  "word": "media",
+                  "ipa": "ˈmiːdɪə",
+                  "meaning": "n. 大众传播媒介",
                   "level": "green"
                 },
                 {
                   "word": "interpersonal",
-                  "ipa": "ˌɪntəˈpɜːsnl",
-                  "meaning": "人际的，人与人之间的",
+                  "ipa": "/ˌɪntəˈpɜːsənl/",
+                  "meaning": "人际之间的（常用释义：人与人之间的）",
                   "level": "red"
+                },
+                {
+                  "word": "influential",
+                  "ipa": "ˌɪnfluˈɛnʧəl",
+                  "meaning": "adj.有影响的;有权势的 n.有影响力的人或事物",
+                  "level": "red"
+                },
+                {
+                  "word": "population",
+                  "ipa": "/ˌpɒpjuˈleɪʃn/",
+                  "meaning": "人群；总体人口（常用释义：人口；全体居民）",
+                  "level": "green"
+                },
+                {
+                  "word": "interact",
+                  "ipa": "",
+                  "meaning": "v.互动",
+                  "level": "green"
                 }
               ],
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
               "sIndex": 2,
               "id": "P4-S2",
               "text": "Yet it is precisely these non-celebrity influentials who, according to the two-step-flow theory, are supposed to drive social epidemics, by influencing their friends and colleagues directly.",
-              "translation": "然而根据二级传播理论，恰恰是这些非名人的意见领袖应该通过直接影响他们的朋友和同事来推动社会风潮。",
+              "translation": "然而，根据二级传播理论的假设，恰恰正是这些非名人草根关键人物，被认为应当通过直接影响身边的朋友与同事来驱动整场社会流行。",
               "vocab": [
+                {
+                  "word": "according to",
+                  "ipa": "/əˈkɔːdɪŋ tuː/",
+                  "meaning": "根据；按照……的说法（常用释义：用于交代观点来源）",
+                  "level": "purple"
+                },
+                {
+                  "word": "Yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "level": "red"
+                },
                 {
                   "word": "precisely",
                   "ipa": "prɪˈsaɪsli",
-                  "meaning": "恰恰，精确地",
+                  "meaning": "adv. 精确地",
+                  "level": "green"
+                },
+                {
+                  "word": "theory",
+                  "ipa": "ˈθiːəri",
+                  "meaning": "n. 理论",
+                  "level": "green"
+                },
+                {
+                  "word": "supposed",
+                  "ipa": "səˈpəʊzd",
+                  "meaning": "adj.误以为的;误信的;所谓的",
+                  "level": "red"
+                },
+                {
+                  "word": "drive",
+                  "ipa": "draɪv",
+                  "meaning": "v. 驾驶，开",
+                  "level": "green"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "directly",
+                  "ipa": "/dəˈrektli/",
+                  "meaning": "直接地（常用释义：径直；正好）",
                   "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 3,
               "id": "P4-S3",
               "text": "For a social epidemic to occur, however, each person so affected must then influence his or her own acquaintances, who must in turn influence theirs, and so on; and just how many others pay attention to each of these people has little to do with the initial influential.",
-              "translation": "然而，一场社会风潮若要真正形成，每个受到影响的人必须再去影响他或她自己的熟人，而这些熟人又必须反过来影响他们自己的熟人，以此类推；而究竟有多少其他人会关注这些被影响的人，与最初那位意见领袖几乎毫无关系。",
+              "translation": "然而，一场社会流行若要真正形成，每一个受到初始影响的人都必须继而再去影响他或她自己的熟人圈子，而这些熟人又必须反过来继续影响他们各自的熟人，以此类推层层级联传递；而究竟有多少其他人会响应关注“这些人”（each of these people，即受到影响继而又去影响他人的普通人 / are influenced and then influence others），实际上与最初的那位关键人物几乎毫无半点关系！",
               "vocab": [
                 {
-                  "word": "acquaintance",
-                  "ipa": "əˈkweɪntəns",
-                  "meaning": "熟人",
+                  "word": "in turn",
+                  "ipa": "/ɪn tɜːn/",
+                  "meaning": "反过来；继而（常用释义：依次；轮流）",
+                  "level": "purple"
+                },
+                {
+                  "word": "For",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
-                  "word": "in turn",
-                  "ipa": "ɪn tɜːn",
-                  "meaning": "相应地，依次，反过来",
-                  "level": "purple"
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
                 },
                 {
-                  "word": "have little to do with",
-                  "ipa": "hæv ˈlɪtl tuː duː wɪð",
-                  "meaning": "与……几乎毫无关系",
-                  "level": "purple"
+                  "word": "epidemic",
+                  "ipa": "ˌɛpəˈdɛmɪk",
+                  "meaning": "adj.流行性的;传染的 n.流行病;传播",
+                  "level": "red"
+                },
+                {
+                  "word": "however",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
+                  "level": "red"
+                },
+                {
+                  "word": "influence",
+                  "ipa": "ˈɪnflʊəns",
+                  "meaning": "n./v. 影响",
+                  "level": "green"
+                },
+                {
+                  "word": "pay",
+                  "ipa": "peɪ",
+                  "meaning": "n. 工资，报",
+                  "level": "green"
+                },
+                {
+                  "word": "attention",
+                  "ipa": "əˈtenʃ(ə)n",
+                  "meaning": "n. 注意，关心",
+                  "level": "green"
+                },
+                {
+                  "word": "initial",
+                  "ipa": "ɪˈnɪʃ(ə)l",
+                  "meaning": "adj. 开始的，最初的",
+                  "level": "green"
+                },
+                {
+                  "word": "influential",
+                  "ipa": "ˌɪnfluˈɛnʧəl",
+                  "meaning": "adj.有影响的;有权势的 n.有影响力的人或事物",
+                  "level": "red"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             },
             {
               "sIndex": 4,
               "id": "P4-S4",
               "text": "If people in the network just two degrees removed from the initial influential prove resistant, for example, the cascade of change won't propagate very far or affect many people.",
-              "translation": "举例来说，如果网络中与最初意见领袖仅隔两层关系的人表现出抵触，那么变革的级联效应就不会传播很远，也不会影响到很多人。",
+              "translation": "举例而言，如果社交网络中与最初关键人物仅隔两层关系节点的人表现出抵触或不感兴趣，那么这场变革的级联传播链条就根本无法走远，更不可能波及影响到广大公众。",
               "vocab": [
                 {
-                  "word": "two degrees removed",
-                  "ipa": "tuː dɪˈɡriːz rɪˈmuːvd",
-                  "meaning": "相隔两层的（社交网络度数）",
-                  "level": "purple"
+                  "word": "initial",
+                  "ipa": "ɪˈnɪʃ(ə)l",
+                  "meaning": "adj. 开始的，最初的",
+                  "level": "green"
                 },
                 {
-                  "word": "resistant",
-                  "ipa": "rɪˈzɪstənt",
-                  "meaning": "有抵触的，有抵抗力的",
+                  "word": "influential",
+                  "ipa": "ˌɪnfluˈɛnʧəl",
+                  "meaning": "adj.有影响的;有权势的 n.有影响力的人或事物",
+                  "level": "red"
+                },
+                {
+                  "word": "prove",
+                  "ipa": "pruv",
+                  "meaning": "v.证明,证实;检验;考验;鉴定;结果是,表明是",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
                   "word": "cascade",
                   "ipa": "kæˈskeɪd",
-                  "meaning": "级联反应，一连串的传递",
+                  "meaning": "n.小瀑布；倾泻；倾泻/涌出的东西 v.流注；大量落下",
+                  "level": "green"
+                },
+                {
+                  "word": "change",
+                  "ipa": "/tʃeɪndʒ/",
+                  "meaning": "改变（法律惯例）（常用释义：改变；更换；变化）",
                   "level": "red"
                 },
                 {
                   "word": "propagate",
                   "ipa": "ˈprɒpəɡeɪt",
-                  "meaning": "传播，繁衍",
+                  "meaning": "v.传播;宣传",
+                  "level": "red"
+                },
+                {
+                  "word": "very",
+                  "ipa": "",
+                  "meaning": "adj.恰好的，正是的",
+                  "level": "green"
+                },
+                {
+                  "word": "affect",
+                  "ipa": "",
+                  "meaning": "v.影响；侵袭，感染；深深打动，震撼； 假装，佯装",
                   "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 5,
-          "mainIdea": "计算机模拟表明：引发全球级联反应的核心要素不在于少数意见领袖，而在于是否存在大量容易被影响的人。",
-          "logicRole": "给出实证科学结论，提出决定社会传播的关键法则",
+          "mainIdea": "数千次计算机模拟表明“全局级联”的首要前提不是极少数关键人物，而是大量容易受到影响的庞大易感人群",
+          "logicRole": "计算机模拟实证结论：社交影响力的核心关键在于大众容易被影响的准备程度 (Readiness to be Influenced)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P5-S1",
               "text": "Building on this basic truth about interpersonal influence, the researchers studied the dynamics of social influence by conducting thousands of computer simulations of populations, manipulating a number of variables relating to people's ability to influence others and their tendency to be influenced.",
-              "translation": "基于关于人际影响力的这一基本事实，研究人员通过对人群进行数千次计算机模拟，操纵与人们影响他人的能力及其受影响倾向相关的若干变量，对社会影响力的动态机制展开了研究。",
+              "translation": "基于人际传播这一基本客观真相，研究人员通过对庞大人口群体进行数千次精密计算机模拟仿真，深入研究了社会影响力的动力学机制——在模拟中操纵了与个体影响他人的能力以及个体容易受到他人影响的倾向性（tendency to be influenced）相关的多项关键变量。",
               "vocab": [
+                {
+                  "word": "basic",
+                  "ipa": "ˈbeɪsɪk",
+                  "meaning": "adj.基本的,基础的",
+                  "level": "red"
+                },
+                {
+                  "word": "about",
+                  "ipa": "əˈbaʊt",
+                  "meaning": "prep.从事于,忙于",
+                  "level": "red"
+                },
+                {
+                  "word": "interpersonal",
+                  "ipa": "/ˌɪntəˈpɜːsənl/",
+                  "meaning": "人际之间的（常用释义：人与人之间的）",
+                  "level": "red"
+                },
+                {
+                  "word": "influence",
+                  "ipa": "ˈɪnflʊəns",
+                  "meaning": "n./v. 影响",
+                  "level": "green"
+                },
                 {
                   "word": "dynamics",
                   "ipa": "daɪˈnæmɪks",
-                  "meaning": "动态机制，动力学",
+                  "meaning": "n.动力学，力学；动力",
+                  "level": "green"
+                },
+                {
+                  "word": "social",
+                  "ipa": "ˈsəʊʃ(ə)l",
+                  "meaning": "adj. 社会的；社交的",
+                  "level": "green"
+                },
+                {
+                  "word": "populations",
+                  "ipa": "/ˌpɒpjəˈleɪʃənz/",
+                  "meaning": "人群；研究总体。（常用释义：人口；群体；总体。）",
                   "level": "red"
                 },
                 {
-                  "word": "simulation",
-                  "ipa": "ˌsɪmjuˈleɪʃn",
-                  "meaning": "模拟，仿真",
-                  "level": "red"
+                  "word": "ability",
+                  "ipa": "əˈbɪlɪtɪ",
+                  "meaning": "n. 能力；才能",
+                  "level": "green"
                 },
                 {
-                  "word": "manipulate",
-                  "ipa": "məˈnɪpjuleɪt",
-                  "meaning": "操纵，控制（变量）",
-                  "level": "red"
+                  "word": "tendency",
+                  "ipa": "ˈtendənsɪ",
+                  "meaning": "n. 倾向，偏好，性",
+                  "level": "green"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P5-S2",
               "text": "They found that the principal requirement for what is called \"global cascades\"—the widespread propagation of influence through networks—is the presence not of a few influentials but, rather, of a critical mass of easily influenced people.",
-              "translation": "他们发现，所谓“全局级联”（即影响力在网络中的广泛传播）的首要必要条件，并不是少数意见领袖的存在，而是存在着大量极易受到影响的人群（critical mass of easily influenced people）。",
+              "translation": "他们最终得出了至关重要的科学结论：形成所谓“全局级联”（global cascades，即影响力在整个社交网络中的广泛大面积扩散传播）的首要核心必备条件，绝非取决于是否存在极少数特殊关键人物，而恰恰取决于是否存在达到临界规模的、极其容易受到外界影响的庞大人群基数（a critical mass of easily influenced people / The readiness to be influenced）！",
               "vocab": [
                 {
-                  "word": "principal requirement",
-                  "ipa": "ˈprɪnsəpl rɪˈkwaɪəmənt",
-                  "meaning": "首要条件，核心要求",
-                  "level": "purple"
-                },
-                {
-                  "word": "global cascades",
-                  "ipa": "ˈɡləʊbl kæˈskeɪdz",
-                  "meaning": "全局级联，全面连锁反应",
+                  "word": "principal",
+                  "ipa": "",
+                  "meaning": "adj.最重要的，首要的",
                   "level": "green"
                 },
                 {
-                  "word": "critical mass",
-                  "ipa": "ˌkrɪtɪkl ˈmæs",
-                  "meaning": "临界规模，关键多数（物理借词）",
+                  "word": "requirement",
+                  "ipa": "rɪˈkwaɪərmənt",
+                  "meaning": "n. 要求；必要条件",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
-                  "word": "easily influenced",
-                  "ipa": "ˈiːzəli ˈɪnfluənst",
-                  "meaning": "容易受影响的",
-                  "level": "purple"
+                  "word": "widespread",
+                  "ipa": "ˈwaɪdspred, -ˈspred",
+                  "meaning": "adj.分",
+                  "level": "green"
+                },
+                {
+                  "word": "propagation",
+                  "ipa": "",
+                  "meaning": "n.传播；扩展；宣传",
+                  "level": "green"
+                },
+                {
+                  "word": "influence",
+                  "ipa": "ˈɪnflʊəns",
+                  "meaning": "n./v. 影响",
+                  "level": "green"
+                },
+                {
+                  "word": "presence",
+                  "ipa": "ˈprez(ə)ns",
+                  "meaning": "n.存在；出席",
+                  "level": "green"
+                },
+                {
+                  "word": "rather",
+                  "ipa": "ˈrɑːðə;(US)ˈræðər",
+                  "meaning": "adv. 相当，",
+                  "level": "green"
+                },
+                {
+                  "word": "critical",
+                  "ipa": "ˈkrɪtɪk(ə)l",
+                  "meaning": "adj.批评的；关键的；严重的；病重的；评论性的；临界的",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": true,
+              "isTopicSentence": false,
               "isKeyEvidence": true
             }
           ]
@@ -1857,8 +2901,8 @@ window.ENGLISH_DATA['2010'] = {
       "questions": [
         {
           "qIndex": 31,
-          "type": "例证题",
-          "tangchiModel": "引述名人/专著的目的 -> 引出全文讨论焦点",
+          "type": "例证修辞题",
+          "tangchiModel": "唐迟例证题模型：抓住第一段开篇引用格拉德威尔《引爆点》一书的由头（argues social epidemics are driven by influentials who are informed, persuasive...），锁定作者引用该书是为了引出并探讨“关键人物在观点与信息传播中所扮演的角色与作用（discuss influentials' function in spreading ideas）”",
           "stem": "By citing the book The Tipping Point, the author intends to",
           "stemKeywords": [
             "citing the book The Tipping Point",
@@ -1874,16 +2918,18 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "analyze the consequences of social epidemics.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "文章没有分析社会风潮带来的后果。",
-              "refSentences": []
+              "distractorType": "偷换论题为后果",
+              "analysis": "【干扰特征: 偷换焦点】引用该书是为了探讨流行传播的‘驱动机制与主体’，非分析社会流行带来的宏观后果（consequences）。",
+              "refSentences": [
+                "P1-S1"
+              ]
             },
             {
               "key": "B",
               "text": "discuss influentials' function in spreading ideas.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·中心论题引出】第一段作者引用《引爆点》指出 Gladwell 认为社交风潮由 influentials 推动，但紧接着在 P1-S2 指出它无法解释思想实际如何传播。全文由此展开探讨意见领袖在思想传播中的真正作用（discuss influentials' function in spreading ideas）。",
+              "analysis": "【正确项 · 修辞目的定位】P1-S1 明确引述《引爆点》的核心命题：'Malcolm Gladwell argues that \"social epidemics\" are driven in large part by the actions of a tiny minority of special individuals, often called influentials... doesn't explain how ideas actually spread'（格拉德威尔主张社会流行由极少数关键人物驱动，但未能解释观点究竟如何传播）。作者借由引用该书的核心观点，开篇即极其自然地引出了全文的核心研讨议题：深入探讨关键人物在观点传播中所发挥的实际功能与作用（discuss influentials' function in spreading ideas）。B选项精准吻合修辞目的。",
               "refSentences": [
                 "P1-S1",
                 "P1-S2"
@@ -1893,8 +2939,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "exemplify people's intuitive response to social epidemics.",
               "isCorrect": false,
-              "distractorType": "偷换概念 / 局部干扰",
-              "analysis": "P1-S2 提到 The idea is intuitively compelling（该想法直觉上令人信服），但这只是作者对该假说的评价，引用《引爆点》并不是为了证明人们对社会风潮的直觉反应。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 概念偏差】P1-S2 讲的是该观点在直觉上引人入胜（intuitively compelling），非举例说明公众对流行的直觉反应。",
               "refSentences": [
                 "P1-S2"
               ]
@@ -1903,34 +2949,29 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "describe the essential characteristics of influentials.",
               "isCorrect": false,
-              "distractorType": "就事论事 / 以偏概全",
-              "analysis": "虽然 P1-S1 提到了 influentials 是 informed, persuasive 等，但这只是对书中概念的顺带复述，并非作者引用该书的写作意图（intends to）。",
+              "distractorType": "以偏概全局部修饰",
+              "analysis": "【干扰特征: 局部细节】博学、善辩是关键人物的修饰性定语，全书的核心论点在于他们驱动流行的功能机制。",
               "refSentences": [
                 "P1-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "例证题核心法则：例子本身（D提到的特征）永远只是工具，引述论据的目的是为了引出观点或讨论议题（B探讨意见领袖在传播中的功能）。",
-            "methodSummary": "唐迟法则：首段引入某人著作/观点，通常是为了'引出全文的核心讨论主题'。"
+            "trapAnalysis": "citing Gladwell's claim that influentials drive social epidemics = discuss influentials' function in spreading ideas。",
+            "methodSummary": "首段引书意图提取：识别全篇核心论题（how ideas spread / role of influentials），锁定 B。"
           }
         },
         {
           "qIndex": 32,
-          "type": "推断题",
-          "tangchiModel": "转折与限定词推断 / 识别作者批判立场",
+          "type": "细节推断题",
+          "tangchiModel": "唐迟细节题模型：抓住第二段首句对“二级传播理论”的学术定性（derives from a plausible-sounding but largely untested theory），锁定作者认为该理论在很大程度上未经实证检验，其有效性亟需确凿扎实的证据支持（requires solid evidence for its validity）",
           "stem": "The author suggests that the \"two-step-flow theory\"",
           "stemKeywords": [
-            "two-step-flow theory",
-            "author suggests"
+            "author suggests",
+            "\"two-step-flow theory\""
           ],
           "targetSentences": [
-            "P2-S1",
-            "P2-S5"
-          ],
-          "distractorSentences": [
-            "P2-S2",
-            "P2-S3"
+            "P2-S1"
           ],
           "officialAnswer": "D",
           "options": [
@@ -1938,9 +2979,10 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "serves as a solution to marketing problems.",
               "isCorrect": false,
-              "distractorType": "夸大事实 / 偷换概念",
-              "analysis": "P2-S2 说营销人员欣然接受该理论（marketers have embraced），但并未说该理论就是解决营销问题的现成方案（solution）。",
+              "distractorType": "偷换概念营销方案",
+              "analysis": "【干扰特征: 偷换概念】P2-S2 讲的是营销人员一厢情愿地采纳了该理论（Marketers embraced），但作者认为该理论本身充满漏洞与未检验性，非真正的解决良方。",
               "refSentences": [
+                "P2-S1",
                 "P2-S2"
               ]
             },
@@ -1948,8 +2990,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "has helped explain certain prevalent trends.",
               "isCorrect": false,
-              "distractorType": "偷换概念 / 抹去限定词",
-              "analysis": "P2-S3 原文是 The theory also seems to explain（该理论'似乎'解释了），作者用 seems to 表达怀疑，选项将其说成已确凿帮助解释了（has helped explain）。",
+              "distractorType": "偷换表象为真相",
+              "analysis": "【干扰特征: 混淆表象】P2-S3 讲的是该理论‘表面上似乎解释了爆红’（seems to explain），依靠的是粗浅的个案传闻证据（cursory/anecdotal），非作者认同的客观有效解释。",
               "refSentences": [
                 "P2-S3"
               ]
@@ -1958,8 +3000,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "has won support from influentials.",
               "isCorrect": false,
-              "distractorType": "张冠李戴",
-              "analysis": "支持该理论的是 Marketers（营销人员），而非 influentials 本人。",
+              "distractorType": "偷换支持主体",
+              "analysis": "【干扰特征: 偷换主体】受到的是营销人员（Marketers）的狂热追捧，非赢得关键人物自身的支持。",
               "refSentences": [
                 "P2-S2"
               ]
@@ -1969,33 +3011,27 @@ window.ENGLISH_DATA['2010'] = {
               "text": "requires solid evidence for its validity.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·批判态度归纳】P2-S1 作者明确将二级传播理论定性为 plausible-sounding but largely untested theory（听起来合理但基本未经验证的理论），P2-S5 又指出支撑它的只是 Anecdotal evidence（轶事/传闻证据）。这充分表明作者认为该理论若要成立，还需要坚实证据的支持（requires solid evidence for its validity）。",
+              "analysis": "【正确项 · 同义替换】P2-S1 明确揭示作者对二级传播理论的批判性定性：'The supposed importance of influentials derives from a plausible-sounding but largely untested theory called the \"two-step flow of communication\"'（源自一个听起来合理但在很大程度上未经验证的理论）。largely untested（很大程度上未经验证）与 requires solid evidence for its validity（要证明其有效性需要扎实确凿的证据支持）完全同义对应。D选项精准吻合。",
               "refSentences": [
-                "P2-S1",
-                "P2-S5"
+                "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "B 项去掉原文的 seems to，把假设语气变成既成事实，是考研英语最经典的'将可能性说成必然性'的干扰手法。",
-            "methodSummary": "抓住作者的褒贬态度词（untested, anecdotal），精准对应 solid evidence。"
+            "trapAnalysis": "plausible-sounding but largely untested theory = requires solid evidence for its validity。",
+            "methodSummary": "学术定性同义转换：largely untested 直接转换为 requires solid evidence for validity。"
           }
         },
         {
           "qIndex": 33,
-          "type": "细节题",
-          "tangchiModel": "事实因果提取 / 排除局部与干扰",
+          "type": "细节推断题",
+          "tangchiModel": "唐迟细节题模型：抓住第四段首句学者关于社会影响力的人际观察（even the most influential members simply don't interact with that many others / presence is function of media not interpersonal），锁定学者的观察表明社会影响力的实际发挥与人际社交互动密切相伴（the power of influence goes with social interactions）",
           "stem": "What the researchers have observed recently shows that",
           "stemKeywords": [
-            "researchers have observed recently",
-            "shows that"
+            "researchers have observed recently shows that"
           ],
           "targetSentences": [
             "P4-S1"
-          ],
-          "distractorSentences": [
-            "P4-S1",
-            "P4-S2"
           ],
           "officialAnswer": "A",
           "options": [
@@ -2004,7 +3040,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "the power of influence goes with social interactions.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义转换】P4-S1 指出研究人员的观察结论：除了极少数名人之外，即使群体中最有影响力的人交往人数也极其有限（simply don't interact with that many others）。由此说明，现实中影响力的发挥是与其实际社交互动范围紧密挂钩并受到限制的（power of influence goes with social interactions）。",
+              "analysis": "【正确项 · 合理推断】P4-S1 明确阐述学者们的观察基石：'The researchers' argument stems from a simple observation about social influence: With the exception of a few celebrities... even the most influential members of a population simply don't interact with that many others'（普通关键人物根本无法与那么多人产生直接社交互动，因此无法单凭个人掀起风暴）。这深刻表明：影响力的产生与扩散必须依赖实际的人际社交互动（the power of influence goes with social interactions / interpersonal interaction）。A选项精准契合推理。",
               "refSentences": [
                 "P4-S1"
               ]
@@ -2013,8 +3049,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "interpersonal links can be enhanced through the media.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "P4-S1 明确区分了 media 与 interpersonal influence，指出名人的存在感是媒体功能的产物而非人际影响，并未提出媒体能增强人际联系。",
+              "distractorType": "偷换概念媒体",
+              "analysis": "【干扰特征: 概念混淆】P4-S1 明确将大众媒体影响力与人际传播影响（interpersonal influence）进行严格切割对比，非通过媒体增强人际纽带。",
               "refSentences": [
                 "P4-S1"
               ]
@@ -2023,8 +3059,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "influentials have more channels to reach the public.",
               "isCorrect": false,
-              "distractorType": "与事实相反",
-              "analysis": "文中恰恰说明非名人意见领袖接触公众的渠道和直接交往圈非常有限。",
+              "distractorType": "正反颠倒渠道",
+              "analysis": "【干扰特征: 事实完全相反】学者恰恰观察到普通关键人物与大众互动的渠道极其有限（don't interact with that many others）。",
               "refSentences": [
                 "P4-S1"
               ]
@@ -2033,27 +3069,25 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "most celebrities enjoy wide media attention.",
               "isCorrect": false,
-              "distractorType": "就事论事 / 以偏概全",
-              "analysis": "提到 Oprah 等名人只是为了作为特例排除在外（With the exception of...），并非研究人员观察得出的核心结论。",
+              "distractorType": "以偏概全让步细节",
+              "analysis": "【干扰特征: 局限于让步从句】奥普拉等名人只是作为例外（With the exception of a few celebrities）提及，学者研究的重心在非名人普通大众网络上。",
               "refSentences": [
                 "P4-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "D 项抓住文中的 Oprah Winfrey 大做文章，但原文明确写着 With the exception of a few celebrities（作为例外），属于典型的'用次要让步成分冒充核心结论'。",
-            "methodSummary": "定位长难句时，破折号或让步状语里的例子通常是干扰项的高发区，要抓句子主干。"
+            "trapAnalysis": "social influence is primarily a function of interpersonal interaction (not interact with many = cannot drive epidemics alone) = the power of influence goes with social interactions。",
+            "methodSummary": "人际互动逻辑提炼：强调 interpersonal 与 interact with others 对应的 the power of influence goes with social interactions。"
           }
         },
         {
           "qIndex": 34,
-          "type": "词义题",
-          "tangchiModel": "代词与指代逻辑 / 句式链条回溯",
+          "type": "代词指代题",
+          "tangchiModel": "唐迟代词题模型：抓住第四段第三句上下文指代链条（each person so affected must then influence acquaintances, who in turn influence theirs... how many pay attention to each of these people），锁定“these people”指代那些受到前人影响、继而又去影响周围其他人的普通受众（are influenced and then influence others）",
           "stem": "The underlined phrase \"these people\" in Paragraph 4 refers to the ones who",
           "stemKeywords": [
-            "these people",
-            "Paragraph 4",
-            "refers to"
+            "these people in Paragraph 4 refers to"
           ],
           "targetSentences": [
             "P4-S3"
@@ -2064,8 +3098,8 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "stay outside the network of social influence.",
               "isCorrect": false,
-              "distractorType": "与事实相反",
-              "analysis": "这些人正处在传播链条的级联网络之中，绝非身处网络之外（outside）。",
+              "distractorType": "正反颠倒网络之外",
+              "analysis": "【干扰特征: 事实相反】这些人正处于影响传递网络的核心级联节点上，绝非游离在网络之外（stay outside）。",
               "refSentences": [
                 "P4-S3"
               ]
@@ -2074,10 +3108,11 @@ window.ENGLISH_DATA['2010'] = {
               "key": "B",
               "text": "have little contact with the source of influence.",
               "isCorrect": false,
-              "distractorType": "无中生有 / 曲解",
-              "analysis": "句中强调的是他们作为传播中间节点的作用，而不是他们与源头的接触多寡。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 偷换重点】文末指出可能与源头隔两层，但代词紧承的是前句中每一个‘受到影响又去影响熟人’的链条传递者。",
               "refSentences": [
-                "P4-S3"
+                "P4-S3",
+                "P4-S4"
               ]
             },
             {
@@ -2085,7 +3120,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "are influenced and then influence others.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·语法回溯】回溯 P4-S3 原文：“each person so affected must then influence his or her own acquaintances, who must in turn influence theirs, and so on; and just how many others pay attention to each of these people...”。这里的 each of these people 紧密指代前面链条中的每一个“自身受到影响（so affected）进而再去影响自己熟人（then influence others）”的中间传播者。",
+              "analysis": "【正确项 · 上下文指代关系精准锁定】P4-S3 句式结构极其清晰：'each person so affected must then influence his or her own acquaintances, who must in turn influence theirs, and so on; and just how many others pay attention to each of these people has little to do with initial influential'。上下文中的 each of these people 紧紧指代前文中出现的'each person so affected... influence acquaintances... in turn influence theirs'这一系列环环相扣的传递者。即指代那些“自身先受到了他人影响，随后又转而去影响其他周围人的普通大众”（are influenced and then influence others）。C选项完全精准吻合。",
               "refSentences": [
                 "P4-S3"
               ]
@@ -2094,28 +3129,29 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "are influenced by the initial influential.",
               "isCorrect": false,
-              "distractorType": "范围缩小 / 偷换概念",
-              "analysis": "这群人包括了第二级、第三级乃至更后级的受影响者，并非仅仅局限于直接受到最初意见领袖影响的第一批人。",
+              "distractorType": "以偏概全第一级",
+              "analysis": "【干扰特征: 局限于第一级】链条涵盖后续多层级联的熟人（who in turn influence theirs），后半句明确指出与最初关键人物（initial influential）几乎无关。",
               "refSentences": [
                 "P4-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "D 项只关注到了传播链的第一环，忽略了 who must in turn influence theirs... 的多级链式传递（and so on）。",
-            "methodSummary": "代词指代题必看前置修饰与对应动作：so affected（被影响）+ then influence（再去影响）。"
+            "trapAnalysis": "each person so affected must then influence acquaintances, who in turn influence theirs -> each of these people = are influenced and then influence others。",
+            "methodSummary": "代词就近前指法则：追踪 each person so affected who influence others 的完整传递定义，锁定 C。"
           }
         },
         {
           "qIndex": 35,
-          "type": "细节题",
-          "tangchiModel": "文章最终实证结论 / 主旨细节对应",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第五段计算机模拟得出的终极结论（principal requirement for global cascades is the presence of a critical mass of easily influenced people），锁定社会影响动力学中最核心的决定性要素是大众容易受到他人影响的倾向与准备程度（The readiness to be influenced）",
           "stem": "What is the essential element in the dynamics of social influence?",
           "stemKeywords": [
             "essential element",
             "dynamics of social influence"
           ],
           "targetSentences": [
+            "P5-S1",
             "P5-S2"
           ],
           "officialAnswer": "C",
@@ -2124,16 +3160,18 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "The eagerness to be accepted.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "文中没有提及渴望被接纳（eagerness to be accepted）。",
-              "refSentences": []
+              "distractorType": "偷换概念渴望接纳",
+              "analysis": "【干扰特征: 概念偏差】未提及个体渴望被群体接纳的心理，重点在于受外界影响的易感性（tendency to be influenced）。",
+              "refSentences": [
+                "P5-S1"
+              ]
             },
             {
               "key": "B",
               "text": "The impulse to influence others.",
               "isCorrect": false,
-              "distractorType": "偷换主体 / 概念倒置",
-              "analysis": "文章得出的结论是受影响者的重要性，而非施加影响的冲动（impulse to influence）。",
+              "distractorType": "主客颠倒主动影响",
+              "analysis": "【干扰特征: 变量颠倒】学者指出主动影响他人的能力不是关键，决定性要素是人群中被动‘容易受到影响’的临界群体规模。",
               "refSentences": [
                 "P5-S2"
               ]
@@ -2143,8 +3181,9 @@ window.ENGLISH_DATA['2010'] = {
               "text": "The readiness to be influenced.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义改写】P5-S2 给出研究的最终核心结论：全局级联的首要条件（principal requirement = essential element）是存在 a critical mass of easily influenced people（大量容易受到影响的人）。'容易受到影响/具有受影响的倾向'同义改写即为 The readiness to be influenced（乐于/容易接受影响）。",
+              "analysis": "【正确项 · 同义替换】P5-S1 和 P5-S2 明确交代数千次模拟得出的最核心结论：'the principal requirement for what is called \"global cascades\"... is the presence not of a few influentials but, rather, of a critical mass of easily influenced people'（全局级联的首要条件绝非极少数关键人物，而是大量容易受影响的人群的存在）。easily influenced people / tendency to be influenced 与 The readiness to be influenced（容易/愿意受到他人影响的准备状态与易感倾向）完全同义对应。C选项完全精准吻合全篇结论句。",
               "refSentences": [
+                "P5-S1",
                 "P5-S2"
               ]
             },
@@ -2152,16 +3191,16 @@ window.ENGLISH_DATA['2010'] = {
               "key": "D",
               "text": "The inclination to rely on others.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "rely on others 指依赖他人，与受到他人观点影响（be influenced）是完全不同的概念。",
+              "distractorType": "偷换概念依赖",
+              "analysis": "【干扰特征: 概念偏差】受观念影响（be influenced）不等于在生活或决策中盲目依赖他人（rely on others）。",
               "refSentences": [
                 "P5-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "easily influenced people（易受影响者）在选项中被完美同义改写为 readiness to be influenced。很多考生不认识 readiness 在此表示'容易/准备就绪的倾向'而不敢选。",
-            "methodSummary": "抓住全文最核心的反常识结论（作者立论焦点）：决定流行的不是少数领袖，而是大众容易受影响的特质。"
+            "trapAnalysis": "principal requirement is a critical mass of easily influenced people = The readiness to be influenced。",
+            "methodSummary": "结论句原词提炼：easily influenced people 转换为 readiness to be influenced。"
           }
         }
       ]
@@ -2169,127 +3208,440 @@ window.ENGLISH_DATA['2010'] = {
     {
       "id": "text4",
       "number": 4,
-      "title": "Standard-Setters Under Bank Lobbying Pressure",
-      "chineseTitle": "银行业游说与会计准则独立性危机",
-      "topic": "金融监管与会计博弈",
-      "overview": "本文探讨了金融危机中欧美银行业将巨额亏损归咎于公允价值会计准则（按市值计价），并通过政治游说迫使美欧会计准则制定机构（FASB与IASB）妥协放宽规则。作者尖锐地指出银行是在逃避坏账现实，强烈呼吁准则制定机构必须保持独立性，否则将阻碍金融系统的真正复苏。",
+      "title": "Accounting Standard-Setters Under Political Pressure",
+      "chineseTitle": "金融危机下会计准则制定者的独立性危机",
+      "topic": "金融监管与会计法治 / 银行将巨额亏损归咎于公允价值计量规则（Fair Value Accounting）、游说国会削弱 FASB/IASB 独立性、妥协带来的恶果",
+      "overview": "本文深入揭露了金融危机爆发后，各大银行在幕后向会计准则制定者发难甩锅、通过政治游说迫使监管屈服的残酷内幕。银行抱怨按第三方市价估值的公允价值规则迫使其确认巨额亏损，并游说美国国会迫使 FASB 仓促修改规则赋予管理层主观估值空间，欧洲政界麦克里维亦向 IASB 强硬施压。作者尖锐指出，真正脱离现实的是银行自身严重虚夸高估资产价值。健全成功的资本市场需要独立且敢于抗争的准则制定者，作者高度赞扬 FASB 和 IASB 历来捍卫公正的勇气，并对其在政治暴力与利益集团围攻下被迫妥协屈服的无辜艰难处境深表同情（sympathy）。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "银行家公开自责，暗地里却将巨额亏损归咎于会计准则制定者强制要求按公允市价评估资产。",
-          "logicRole": "交代冲突起因：银行业对市值计价规则的不满与抱怨",
+          "mainIdea": "银行家在公开场合自责却在私下将巨额亏损甩锅给会计准则制定者，抱怨按第三方市价估值不公平",
+          "logicRole": "揭露银行家私下向会计准则制定者发难甩锅，抱怨被迫遵守不利的资产估值规则 (Follow Unfavorable Rules)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "Bankers have been blaming themselves for their troubles in public. Behind the scenes, they have been taking aim at someone else: the accounting standard-setters.",
-              "translation": "银行家们在公开场合一直将自身的困境归咎于自己。但在幕后，他们却一直在将矛头对准另一个人群：会计准则制定者。",
+              "translation": "银行家们在公开场合一直摆出一副将金融危机困境归咎于自身失误的忏悔姿态；然而在幕后私底下，他们却早已将攻击的矛头暗暗对准了另一个人选——会计准则制定者们（accounting standard-setters）。",
               "vocab": [
                 {
-                  "word": "behind the scenes",
-                  "ipa": "bɪˈhaɪnd ðə siːnz",
-                  "meaning": "在幕后，暗中",
-                  "level": "purple"
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 },
                 {
-                  "word": "take aim at",
-                  "ipa": "teɪk eɪm æt",
-                  "meaning": "将矛头对准，抨击",
-                  "level": "purple"
-                },
-                {
-                  "word": "standard-setters",
-                  "ipa": "ˈstændəd ˈsetəz",
-                  "meaning": "会计准则制定机构/人员",
+                  "word": "public",
+                  "ipa": "ˈpʌblɪk",
+                  "meaning": "adj.公共的,公用的;公开的,公然的 n.公众,民众",
                   "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "Their rules, moan the banks, have forced them to report enormous losses, and it's just not fair.",
-              "translation": "银行抱怨说，正是这些准则制定者的规则强迫他们报告巨额亏损，而这太不公平了。",
+              "text": "Their rules, moan the banks, have forced them to report enormous losses, and it's just not fair. These rules say they must value some assets at the price a third party would pay, not the price managers and regulators would like them to fetch.",
+              "translation": "各大银行纷纷抱怨呻吟道：正是准则制定者制定的严苛规则逼迫他们必须如实申报披露巨额亏损，而这“简直太不公平了”。这些会计准则（公允价值会计准则）白纸黑字地规定：银行必须按照第三方买家实际愿意支付的市场价格对部分资产进行估值，而绝非按照银行管理层和监管机构一厢情愿渴望达到的理想高价来估值（Bankers complained they were forced to follow unfavorable asset evaluation rules）！",
               "vocab": [
                 {
                   "word": "moan",
-                  "ipa": "məʊn",
-                  "meaning": "抱怨，呻吟",
+                  "ipa": "moʊn",
+                  "meaning": "n.呻吟声,悲叹声 v.呻吟,抱怨,悲叹",
+                  "level": "red"
+                },
+                {
+                  "word": "fair",
+                  "ipa": "feə(r)",
+                  "meaning": "adj. 公平的，合理的 adj.",
                   "level": "green"
                 },
                 {
-                  "word": "enormous",
-                  "ipa": "ɪˈnɔːməs",
-                  "meaning": "巨大的，庞大的",
-                  "level": "red"
-                }
-              ],
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "These rules say they must value some assets at the price a third party would pay, not the price managers and regulators would like them to fetch.",
-              "translation": "这些规则要求，银行必须按照第三方愿意支付的价格来评估某些资产，而不是按照管理者和监管者希望它们卖出的价格来评估。",
-              "vocab": [
-                {
                   "word": "value",
-                  "ipa": "ˈvæljuː",
-                  "meaning": "v. 给……估价",
+                  "ipa": "ˈvælju",
+                  "meaning": "n.价格;价值;实用性 v.评价,估价;尊重",
                   "level": "red"
                 },
                 {
-                  "word": "third party",
-                  "ipa": "ˌθɜːd ˈpɑːti",
-                  "meaning": "第三方（指市场公允买家）",
+                  "word": "third",
+                  "ipa": "θɜːd",
+                  "meaning": "adj.第三的",
+                  "level": "red"
+                },
+                {
+                  "word": "pay",
+                  "ipa": "peɪ",
+                  "meaning": "n. 工资，报",
                   "level": "green"
                 },
                 {
                   "word": "fetch",
-                  "ipa": "fetʃ",
-                  "meaning": "售得，卖得（某价钱）",
-                  "level": "red"
+                  "ipa": "fɛtʃ",
+                  "meaning": "v. 取来，拿",
+                  "level": "green"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             }
           ]
         },
         {
           "pIndex": 2,
-          "mainIdea": "不幸的是银行游说奏效，资本市场运转所必需的准则独立性正在受到损害，这将阻碍银行体系复苏。",
-          "logicRole": "提出作者核心担忧：独立性受损危害极大",
+          "mainIdea": "银行游说正在奏效，资本市场赖以正常运转的准则制定者独立性正遭到严重削弱妥协",
+          "logicRole": "指出银行政治游说奏效，准则制定者的独立性正遭到危险妥协 (Weakening of Independence)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
               "text": "Unfortunately, banks' lobbying now seems to be working.",
-              "translation": "不幸的是，银行的游说现在似乎正在起作用。",
+              "translation": "然而不幸的是，各大银行所发起的政治游说攻势如今似乎正在大获全胜奏效。",
               "vocab": [
                 {
+                  "word": "Unfortunately",
+                  "ipa": "ʌnˈfɔːtjʊnətlɪ",
+                  "meaning": "adv. 不幸",
+                  "level": "green"
+                },
+                {
                   "word": "lobbying",
-                  "ipa": "ˈlɒbiɪŋ",
-                  "meaning": "游说（政治活动）",
+                  "ipa": "ˈlɒbɪɪŋ",
+                  "meaning": "n.游说",
                   "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "The details may be unknowable, but the independence of standard-setters, essential to the proper functioning of capital markets, is being compromised.",
-              "translation": "具体细节或许无从得知，但对于资本市场正常运转至关重要的准则制定者的独立性，正在受到损害与妥协。",
+              "text": "The details may be unknowable, but the independence of standard-setters, essential to the proper functioning of capital markets, is being compromised. And, unless banks carry toxic assets at prices that attract buyers, reviving the banking system will be difficult.",
+              "translation": "其中的内幕细节或许无人知晓，但对于现代资本市场健康有序运转而言不可或缺的“准则制定者的独立性”（independence of standard-setters），如今却正在遭到严重的损害与妥协削弱（is being compromised / weakening of its independence）。而且，除非银行能够按照真正能够吸引买家的公允市场价格来如实减记并持有有毒不良资产，否则要想真正复苏银行业体系将是痴人说梦。",
               "vocab": [
                 {
                   "word": "independence",
-                  "ipa": "ˌɪndɪˈpendəns",
-                  "meaning": "独立性",
+                  "ipa": "ɪndɪˈpendəns",
+                  "meaning": "n. 独立",
+                  "level": "green"
+                },
+                {
+                  "word": "essential",
+                  "ipa": "ɪˈsenʃ(ə)l",
+                  "meaning": "adj.必不可少的；基本的，精髓的 n.必需品；要素，本质",
+                  "level": "green"
+                },
+                {
+                  "word": "proper",
+                  "ipa": "ˈprɔpə(r)",
+                  "meaning": "adj. 恰当的，合适的",
+                  "level": "green"
+                },
+                {
+                  "word": "capital",
+                  "ipa": "ˈkæpɪtl",
+                  "meaning": "n. 资本；首都 adj. 资本的",
+                  "level": "green"
+                },
+                {
+                  "word": "being",
+                  "ipa": "ˈbiːɪŋ",
+                  "meaning": "n. 生物；存在；本质",
+                  "level": "green"
+                },
+                {
+                  "word": "carry",
+                  "ipa": "ˈkɛri",
+                  "meaning": "v. 携带，搬",
+                  "level": "green"
+                },
+                {
+                  "word": "attract",
+                  "ipa": "",
+                  "meaning": "v.吸引；产生引力；引起；有吸引力",
                   "level": "red"
                 },
                 {
-                  "word": "compromise",
-                  "ipa": "ˈkɒmprəmaɪz",
-                  "meaning": "损害，妥协，危及（熟词僻义）",
+                  "word": "system",
+                  "ipa": "ˈsɪstəm",
+                  "meaning": "n. 体系；系统",
+                  "level": "green"
+                },
+                {
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "difficult",
+                  "ipa": "",
+                  "meaning": "adj.困难的，费力的；不友好的，难对付的",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "美国财务会计准则委员会在国会施压下被迫妥协放宽规则，给银行更大自由度，导致独立性受损",
+          "logicRole": "介绍 FASB 在国会施压下修改规则给银行更大主观估值空间 (FASB Rule Changes Under Pressure)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "After a bruising encounter with Congress, America's Financial Accounting Standards Board (FASB) rushed through rule changes.",
+              "translation": "在与美国国会经历了一场伤痕累累的激烈交锋施压之后，美国财务会计准则委员会（FASB）不得不仓促火速通过了规则修改方案。",
+              "vocab": [
+                {
+                  "word": "bruising",
+                  "ipa": "ˈbruzɪŋ",
+                  "meaning": "n. 淤伤，挫",
+                  "level": "green"
+                },
+                {
+                  "word": "encounter",
+                  "ipa": "ɪnˈkaʊntə(r)",
+                  "meaning": "n./v. 遭遇；遇到",
+                  "level": "green"
+                },
+                {
+                  "word": "Congress",
+                  "ipa": "",
+                  "meaning": "n.国民大会，代表大会，（美国及其他国家的）国会，议会",
+                  "level": "red"
+                },
+                {
+                  "word": "Financial",
+                  "ipa": "",
+                  "meaning": "adj.金融的，财政的，财务的",
+                  "level": "red"
+                },
+                {
+                  "word": "Board",
+                  "ipa": "/bɔːd/",
+                  "meaning": "董事会（常用释义：木板；登机；伙食）",
+                  "level": "red"
+                },
+                {
+                  "word": "rule",
+                  "ipa": "/ruːl/",
+                  "meaning": "裁定、判决（常用释义：统治；规则（n.））",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "These gave banks more freedom to use models to value illiquid assets and more flexibility in recognizing losses on long-term assets in their income statements. Bob Herz, the FASB's chairman, cried out against those who \"question our motives.\" Yet bank shares rose and the changes enhance what one lobbying group politely calls \"the use of judgment by management.\"",
+              "translation": "这些规则修改给予了银行更大的自由度去运用内部数学模型对非流动性资产进行主观估值，并在利润表中确认长期资产亏损时赋予了其更大的自主灵活性。FASB 主席鲍勃·赫兹大声抗议那些“质疑我们动机”的人；然而，银行股股价应声大涨，这些修改极大地强化了某家游说团体所委婉宣称的“由管理层行使主观自由裁量权”。",
+              "vocab": [
+                {
+                  "word": "use",
+                  "ipa": "",
+                  "meaning": "n./v. 使用，用途",
+                  "level": "green"
+                },
+                {
+                  "word": "value",
+                  "ipa": "ˈvælju",
+                  "meaning": "n.价格;价值;实用性 v.评价,估价;尊重",
+                  "level": "red"
+                },
+                {
+                  "word": "flexibility",
+                  "ipa": "/ˌfleksəˈbɪləti/",
+                  "meaning": "灵活性；价格弹性（常用释义：灵活性；适应性）",
+                  "level": "red"
+                },
+                {
+                  "word": "income",
+                  "ipa": "ˈɪnkʌm",
+                  "meaning": "n.收入，收益",
+                  "level": "green"
+                },
+                {
+                  "word": "statements",
+                  "ipa": "/ˈsteɪtmənts/",
+                  "meaning": "陈述；说法（常用释义：声明；陈述；报表）",
+                  "level": "red"
+                },
+                {
+                  "word": "question",
+                  "ipa": "/ˈkwestʃən/",
+                  "meaning": "质疑……的合理性（常用释义：询问；怀疑；质疑）",
+                  "level": "red"
+                },
+                {
+                  "word": "Yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "level": "red"
+                },
+                {
+                  "word": "enhance",
+                  "ipa": "ɪnˈhæns",
+                  "meaning": "v.加强；提高",
+                  "level": "green"
+                },
+                {
+                  "word": "one",
+                  "ipa": "/wʌn/",
+                  "meaning": "其中一个（问题）（常用释义：一；一个人/事物）",
+                  "level": "red"
+                },
+                {
+                  "word": "lobbying",
+                  "ipa": "ˈlɒbɪɪŋ",
+                  "meaning": "n.游说",
+                  "level": "red"
+                },
+                {
+                  "word": "management",
+                  "ipa": "ˈmænəʤmənt",
+                  "meaning": "n.经营,管理;处理,操纵;管理部门",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "欧洲政要麦克里维要求国际会计准则委员会照搬美国放宽规则，反对 IASB 孤立于政治之外闭门造车自主制定规则",
+          "logicRole": "麦克里维警告 IASB 不要生活在政治真空中，反对其在制定规则上独断专行 (McCreevy Objects to Acting on Own)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "European ministers instantly demanded that the International Accounting Standards Board (IASB) do likewise.",
+              "translation": "欧洲各国的财政部长们随即迅速跟进，强烈要求国际会计准则理事会（IASB）也必须照葫芦画瓢做出同样的放宽妥协。",
+              "vocab": [
+                {
+                  "word": "instantly",
+                  "ipa": "ˈɪnstəntli",
+                  "meaning": "adv.立刻,马上",
+                  "level": "red"
+                },
+                {
+                  "word": "International",
+                  "ipa": "ɪntəˈnæʃən(ə)l",
+                  "meaning": "adj. 国际",
+                  "level": "green"
+                },
+                {
+                  "word": "Board",
+                  "ipa": "/bɔːd/",
+                  "meaning": "董事会（常用释义：木板；登机；伙食）",
+                  "level": "red"
+                },
+                {
+                  "word": "likewise",
+                  "ipa": "ˈlaɪkwaɪz",
+                  "meaning": "adv.同样地，类似地；我有同感；也，还",
+                  "level": "green"
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "The IASB says it does not want to act without overall planning, but the pressure to fold when it completes its reconstruction of rules later this year is strong. Charlie McCreevy, a European commissioner, warned the IASB that it did \"not live in a political vacuum\" but \"in the real world\" and that Europe could yet develop different rules.",
+              "translation": "IASB 虽表示不希望在缺乏统筹规划的情况下草率行事，但在今年晚些时候完成规则重构时被迫屈服低头的压力极其巨大。欧盟专员查理·麦克里维（Charlie McCreevy）公开严厉警告 IASB：它“绝非生活在与世隔绝的政治真空之中”，而是“身处残酷的现实世界里”，并威胁欧洲随时可以另起炉灶自行制定一套完全不同的会计规则（McCreevy objects to IASB's attempt to act on their own in rule-setting）！",
+              "vocab": [
+                {
+                  "word": "act",
+                  "ipa": "ækt",
+                  "meaning": "v.表演;举动;起作用 n.行为,法令;一幕",
+                  "level": "red"
+                },
+                {
+                  "word": "overall",
+                  "ipa": "ˌoʊvərˈɔːl",
+                  "meaning": "adj. 全部的；总体的 adv. 全部",
+                  "level": "green"
+                },
+                {
+                  "word": "pressure",
+                  "ipa": "ˈpreʃə(r)",
+                  "meaning": "n.催促,强迫,呼吁",
+                  "level": "red"
+                },
+                {
+                  "word": "fold",
+                  "ipa": "fəʊld",
+                  "meaning": "v. 折叠；n.",
+                  "level": "green"
+                },
+                {
+                  "word": "reconstruction",
+                  "ipa": "",
+                  "meaning": "n.重建",
+                  "level": "green"
+                },
+                {
+                  "word": "commissioner",
+                  "ipa": "kəˈmɪʃənər",
+                  "meaning": "n.委员，专员；首长，长官",
+                  "level": "green"
+                },
+                {
+                  "word": "political",
+                  "ipa": "pəˈlɪtɪk(ə)l",
+                  "meaning": "adj. 政治的",
+                  "level": "green"
+                },
+                {
+                  "word": "yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "level": "red"
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 5,
+          "mainIdea": "银行自身严重高估资产价值脱离现实，声称市价夸大损失但其股价跌破净资产证明投资者对银行资产严重怀疑",
+          "logicRole": "指出银行脱离现实严重虚夸资产真实价值 (Exaggerated Real Value of Assets)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P5-S1",
+              "text": "It was banks that were on the wrong planet, with accounts that vastly overvalued assets. Today they argue that market prices overstate losses, because they largely reflect the temporary illiquidity of markets, not the likely extent of bad debts.",
+              "translation": "真正脱离客观现实、活在“另一个错误星球”上的恰恰正是银行自身——其账目曾极端严重地高估了资产的真实价值（vastly overvalued assets / exaggerated the real value of their assets）！今天他们强辩称现行市场价格夸大了实际亏损，因为市价主要反映的是市场的暂时性流动性枯竭，而非坏账的真实严重程度。",
+              "vocab": [
+                {
+                  "word": "reflect",
+                  "ipa": "rɪˈflekt",
+                  "meaning": "v. 反映，反射",
+                  "level": "green"
+                },
+                {
+                  "word": "temporary",
+                  "ipa": "/ˈtemprəri/",
+                  "meaning": "暂时的，临时的（常用释义：lasting for a short time）",
+                  "level": "red"
+                },
+                {
+                  "word": "extent",
+                  "ipa": "",
+                  "meaning": "n.程度；范围，长度",
                   "level": "red"
                 }
               ],
@@ -2297,344 +3649,214 @@ window.ENGLISH_DATA['2010'] = {
               "isKeyEvidence": true
             },
             {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "And, unless banks carry toxic assets at prices that attract buyers, reviving the banking system will be difficult.",
-              "translation": "而且，除非银行以能够吸引买家的公允价格将有毒资产记账，否则想要复苏银行体系将极其困难。",
-              "vocab": [
-                {
-                  "word": "toxic assets",
-                  "ipa": "ˈtɒksɪk ˈæsets",
-                  "meaning": "有毒资产，不良资产",
-                  "level": "purple"
-                },
-                {
-                  "word": "revive",
-                  "ipa": "rɪˈvaɪv",
-                  "meaning": "复苏，使恢复",
-                  "level": "red"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "美国FASB在国会施压下被迫妥协放宽规则，允许银行用自身模型估值，银行股价应声上涨。",
-          "logicRole": "美国战场个案：FASB被国会压服的妥协经过",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "After a bruising encounter with Congress, America's Financial Accounting Standards Board (FASB) rushed through rule changes.",
-              "translation": "在与国会进行了一场激烈的交锋之后，美国财务会计准则委员会（FASB）匆忙通过了规则修改。",
-              "vocab": [
-                {
-                  "word": "bruising encounter",
-                  "ipa": "ˈbruːzɪŋ ɪnˈkaʊntə(r)",
-                  "meaning": "激烈的交锋/对抗",
-                  "level": "green"
-                },
-                {
-                  "word": "rush through",
-                  "ipa": "rʌʃ θruː",
-                  "meaning": "匆忙通过",
-                  "level": "purple"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "These gave banks more freedom to use models to value illiquid assets and more flexibility in recognizing losses on long-term assets in their income statements.",
-              "translation": "这些修改给予了银行更多自由去使用内部模型来评估缺乏流动性的资产，并在收益表中确认长期资产亏损时拥有了更大的灵活性。",
-              "vocab": [
-                {
-                  "word": "illiquid",
-                  "ipa": "ɪˈlɪkwɪd",
-                  "meaning": "缺乏流动性的，变现困难的",
-                  "level": "red"
-                },
-                {
-                  "word": "flexibility",
-                  "ipa": "ˌfleksəˈbɪləti",
-                  "meaning": "灵活性",
-                  "level": "red"
-                },
-                {
-                  "word": "income statement",
-                  "ipa": "ˈɪnkʌm ˈsteɪtmənt",
-                  "meaning": "损益表，收益表",
-                  "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Bob Herz, the FASB's chairman, cried out against those who \"question our motives.\"",
-              "translation": "FASB 主席鲍勃·赫茨对那些“质疑我们动机”的人大声抗议。",
-              "vocab": [
-                {
-                  "word": "cry out against",
-                  "ipa": "kraɪ aʊt əˈɡenst",
-                  "meaning": "强烈抗议，大声反对",
-                  "level": "purple"
-                }
-              ]
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Yet bank shares rose and the changes enhance what one lobbying group politely calls \"the use of judgment by management.\"",
-              "translation": "然而银行股价应声上涨，而且这些修改加强了某个游说团体所客气称作的“管理层自主判断的运用”。",
-              "vocab": [
-                {
-                  "word": "enhance",
-                  "ipa": "ɪnˈhɑːns",
-                  "meaning": "提高，增强",
-                  "level": "red"
-                },
-                {
-                  "word": "judgment",
-                  "ipa": "ˈdʒʌdʒmənt",
-                  "meaning": "判断力，裁量权",
-                  "level": "red"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "欧洲部长们立即要求IASB照此办理，欧盟专员麦克里维警告IASB并非生活在政治真空中。",
-          "logicRole": "欧洲战场延伸：政客强压国际会计准则委员会妥协",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "European ministers instantly demanded that the International Accounting Standards Board (IASB) do likewise.",
-              "translation": "欧洲的部长们随即要求国际会计准则理事会（IASB）照此办理。",
-              "vocab": [
-                {
-                  "word": "do likewise",
-                  "ipa": "duː ˈlaɪkwaɪz",
-                  "meaning": "照样做，同样办理",
-                  "level": "purple"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "The IASB says it does not want to act without overall planning, but the pressure to fold when it completes its reconstruction of rules later this year is strong.",
-              "translation": "IASB 表示不希望在缺乏统筹规划的情况下仓促行事，但当其在今年晚些时候完成规则重构时，要求其屈服认输的压力非常巨大。",
-              "vocab": [
-                {
-                  "word": "fold",
-                  "ipa": "fəʊld",
-                  "meaning": "屈服，认输（熟词僻义：扑克牌弃牌）",
-                  "level": "red"
-                }
-              ]
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Charlie McCreevy, a European commissioner, warned the IASB that it did \"not live in a political vacuum\" but \"in the real world\" and that Europe could yet develop different rules.",
-              "translation": "欧盟专员查理·麦克里维警告 IASB：它“并非生活在政治真空中”，而是“生活在现实世界里”，并威胁称欧洲甚至可能制定自己的一套不同规则。",
-              "vocab": [
-                {
-                  "word": "political vacuum",
-                  "ipa": "pəˈlɪtɪkl ˈvækjuːm",
-                  "meaning": "政治真空",
-                  "level": "purple"
-                }
-              ],
-              "isKeyEvidence": true
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "银行脱离现实并大幅高估资产；市场低迷是因为银行害怕确认亏损而不愿出售资产。",
-          "logicRole": "作者深度剖析：揭穿银行自欺欺人的把戏",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "It was banks that were on the wrong planet, with accounts that vastly overvalued assets.",
-              "translation": "真正脱离现实（生活在错误星球上）的是银行自己，它们的账目极大高估了资产价值。",
-              "vocab": [
-                {
-                  "word": "on the wrong planet",
-                  "ipa": "ɒn ðə rɒŋ ˈplænɪt",
-                  "meaning": "脱离现实，不切实际",
-                  "level": "purple"
-                },
-                {
-                  "word": "vastly",
-                  "ipa": "ˈvɑːstli",
-                  "meaning": "极大地，极其",
-                  "level": "red"
-                },
-                {
-                  "word": "overvalue",
-                  "ipa": "ˌəʊvəˈvæljuː",
-                  "meaning": "高估（价值）",
-                  "level": "red"
-                }
-              ],
-              "isKeyEvidence": true
-            },
-            {
               "sIndex": 2,
               "id": "P5-S2",
-              "text": "Today they argue that market prices overstate losses, because they largely reflect the temporary illiquidity of markets, not the likely extent of bad debts.",
-              "translation": "如今银行辩称市场价格夸大了亏损，因为市价主要反映的是市场暂时的流动性匮乏，而不是坏账的实际程度。",
+              "text": "The truth will not be known for years. But banks' shares trade below their book value, suggesting that investors are skeptical. And dead markets partly reflect the paralysis of banks which will not sell assets for fear of booking losses, yet are reluctant to buy all those supposed bargains.",
+              "translation": "真相在未来数年内或许都难以水落石出。但各大银行的股票交易价格已跌破账面净资产值，这深刻表明广大投资者对银行账面怀有深深的怀疑与不信任。而陷入死寂冰冻的资产交易市场，在很大程度上正是由于银行自身的瘫痪所致——它们唯恐确认亏损而死死攥住不良资产不肯抛售，却又根本不愿掏钱去接盘购买那些所谓的打折低价货。",
               "vocab": [
                 {
-                  "word": "overstate",
-                  "ipa": "ˌəʊvəˈsteɪt",
-                  "meaning": "夸大，夸深",
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
-                  "word": "bad debts",
-                  "ipa": "bæd dets",
-                  "meaning": "坏账，不良贷款",
-                  "level": "green"
-                }
-              ]
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "The truth will not be known for years. But banks' shares trade below their book value, suggesting that investors are skeptical.",
-              "translation": "真相在数年之内恐难见分晓。但银行的股票交易价格低于其账面净值，这表明投资者深表怀疑。",
-              "vocab": [
+                  "word": "trade",
+                  "ipa": "/treɪd/",
+                  "meaning": "交换；用……换……（常用释义：贸易；交易；交换）",
+                  "level": "red"
+                },
                 {
-                  "word": "book value",
-                  "ipa": "bʊk ˈvæljuː",
-                  "meaning": "账面价值",
+                  "word": "book",
+                  "ipa": "bʊk",
+                  "meaning": "n. 书，书",
                   "level": "green"
+                },
+                {
+                  "word": "value",
+                  "ipa": "ˈvælju",
+                  "meaning": "n.价格;价值;实用性 v.评价,估价;尊重",
+                  "level": "red"
                 },
                 {
                   "word": "skeptical",
-                  "ipa": "ˈskeptɪkl",
-                  "meaning": "怀疑的",
+                  "ipa": "/ˈskeptɪkəl/",
+                  "meaning": "怀疑的；持怀疑态度的（常用释义：怀疑的；不轻信的）",
                   "level": "red"
-                }
-              ]
-            },
-            {
-              "sIndex": 4,
-              "id": "P5-S4",
-              "text": "And dead markets partly reflect the paralysis of banks which will not sell assets for fear of booking losses, yet are reluctant to buy all those supposed bargains.",
-              "translation": "死气沉沉的市场在一定程度上反映了银行自身的瘫痪状态：它们因害怕计入亏损而不愿出售资产，却又不情愿去买进那些所谓便宜廉价的资产。",
-              "vocab": [
+                },
+                {
+                  "word": "partly",
+                  "ipa": "ˈpɑːrtli",
+                  "meaning": "adv.部分地；在一定程度上",
+                  "level": "green"
+                },
+                {
+                  "word": "reflect",
+                  "ipa": "rɪˈflekt",
+                  "meaning": "v. 反映，反射",
+                  "level": "green"
+                },
                 {
                   "word": "paralysis",
                   "ipa": "pəˈræləsɪs",
-                  "meaning": "瘫痪，麻痹",
+                  "meaning": "n.瘫痪",
+                  "level": "red"
+                },
+                {
+                  "word": "yet",
+                  "ipa": "/jet/",
+                  "meaning": "然而；但是（常用释义：然而；还；尚）",
+                  "level": "red"
+                },
+                {
+                  "word": "reluctant",
+                  "ipa": "rɪˈlʌktənt",
+                  "meaning": "adj. 不情愿的；勉强的",
                   "level": "green"
                 },
                 {
-                  "word": "book losses",
-                  "ipa": "bʊk ˈlɒsɪz",
-                  "meaning": "入账亏损，确认亏损",
-                  "level": "purple"
-                },
-                {
-                  "word": "supposed bargains",
-                  "ipa": "səˈpəʊzd ˈbɑːɡɪnz",
-                  "meaning": "所谓的便宜货",
-                  "level": "green"
+                  "word": "supposed",
+                  "ipa": "səˈpəʊzd",
+                  "meaning": "adj.误以为的;误信的;所谓的",
+                  "level": "red"
                 }
-              ]
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": false
             }
           ]
         },
         {
           "pIndex": 6,
-          "mainIdea": "解决危机的唯一出路是正视并确认亏损；准则制定机构必须保持独立甚至敢于对抗，一味妥协只会引来更多干预。",
-          "logicRole": "全文结论与号召：坚守独立底线，反对政治干预",
+          "mainIdea": "成功市场需要独立甚至敢于抗争的准则制定者，FASB 和 IASB 过去坚决捍卫公正但如今被迫屈服，作者对其深表同情",
+          "logicRole": "总结全篇：表达对准则制定者在政治与利益集团围攻下妥协的深切同情 (Author's Sympathy Towards Standard-Setters)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P6-S1",
-              "text": "To get the system working again, losses must be recognized and dealt with.",
-              "translation": "要让整个金融体系重新恢复运转，亏损必须被如实确认和处理。",
+              "text": "To get the system working again, losses must be recognized and dealt with. America's new plan to buy up toxic assets will not work unless banks mark assets to levels which buyers find attractive.",
+              "translation": "要想让整个金融体系重新恢复运转，资产损失就必须被如实承认并彻底处置。美国收购有毒不良资产的新计划若想奏效，前提必须是银行将资产减记标注到买家认为具有吸引力的合理价位。",
               "vocab": [
                 {
-                  "word": "recognize",
-                  "ipa": "ˈrekəɡnaɪz",
-                  "meaning": "确认（亏损）（会计专业术语）",
+                  "word": "system",
+                  "ipa": "ˈsɪstəm",
+                  "meaning": "n. 体系；系统",
+                  "level": "green"
+                },
+                {
+                  "word": "new",
+                  "ipa": "",
+                  "meaning": "adj.新的",
+                  "level": "green"
+                },
+                {
+                  "word": "will",
+                  "ipa": "/wɪl/",
+                  "meaning": "遗嘱（常用释义：将要；意志；遗嘱）",
+                  "level": "green"
+                },
+                {
+                  "word": "work",
+                  "ipa": "wɜ:rk",
+                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
                   "level": "red"
+                },
+                {
+                  "word": "mark",
+                  "ipa": "mɑːk",
+                  "meaning": "v. 做记号，",
+                  "level": "green"
+                },
+                {
+                  "word": "find",
+                  "ipa": "faɪnd",
+                  "meaning": "v.找到;发现;发觉",
+                  "level": "red"
+                },
+                {
+                  "word": "attractive",
+                  "ipa": "əˈtræktɪv",
+                  "meaning": "adj. 迷人的，有吸",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": true
+              "isTopicSentence": true,
+              "isKeyEvidence": false
             },
             {
               "sIndex": 2,
               "id": "P6-S2",
-              "text": "America's new plan to buy up toxic assets will not work unless banks mark assets to levels which buyers find attractive.",
-              "translation": "除非银行将资产调降至买家觉得有吸引力的水平，否则美国收购有毒资产的新计划根本行不通。",
+              "text": "Successful markets require independent and even combative standard-setters. The FASB and IASB have been exactly that, cleaning up rules on stock options and pensions, for example, against hostility from special interests. But by giving in to critics now they are inviting pressure to make more concessions.",
+              "translation": "健全成功的资本市场需要独立自主、甚至敢于据理力争对抗强权的准则制定者。FASB 和 IASB 在历史上恰恰一直正是这样令人敬佩的捍卫者——例如在股票期权和养老金会计规则清理中，顶住了来自特殊利益集团的重重敌意与阻挠。然而在当下的政治围攻下，由于他们如今向批评者被迫屈服低头，这必将引来外界要求他们做出更多步步退让妥协的巨大政治施压（author's attitude towards standard-setters is one of sympathy）！",
               "vocab": [
                 {
-                  "word": "mark assets to",
-                  "ipa": "mɑːk ˈæsets tuː",
-                  "meaning": "将资产调账至……",
-                  "level": "purple"
-                }
-              ]
-            },
-            {
-              "sIndex": 3,
-              "id": "P6-S3",
-              "text": "Successful markets require independent and even combative standard-setters. The FASB and IASB have been exactly that, cleaning up rules on stock options and pensions, for example, against hostility from special interests.",
-              "translation": "成功的市场需要独立甚至敢于战斗的准则制定者。FASB 和 IASB 过去正是如此，例如顶住来自特殊利益集团的敌意，清理了关于股票期权和养老金的会计规则。",
-              "vocab": [
-                {
-                  "word": "combative",
-                  "ipa": "ˈkɒmbətɪv",
-                  "meaning": "好斗的，敢于战斗对抗的",
-                  "level": "red"
-                },
-                {
-                  "word": "stock options",
-                  "ipa": "stɒk ˈɒpʃnz",
-                  "meaning": "股票期权",
+                  "word": "Successful",
+                  "ipa": "səkˈsesfʊl",
+                  "meaning": "adj. 成功的,有",
                   "level": "green"
                 },
                 {
-                  "word": "special interests",
-                  "ipa": "ˈspeʃl ˈɪntrəsts",
-                  "meaning": "特殊利益集团",
-                  "level": "purple"
-                }
-              ],
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 4,
-              "id": "P6-S4",
-              "text": "But by giving in to critics now they are inviting pressure to make more concessions.",
-              "translation": "但如果它们现在向批评者屈服妥协，就会招致要求其做出更多让步的巨大压力。",
-              "vocab": [
-                {
-                  "word": "give in to",
-                  "ipa": "ɡɪv ɪn tuː",
-                  "meaning": "向……屈服，让步",
-                  "level": "purple"
+                  "word": "require",
+                  "ipa": "",
+                  "meaning": "v.需要；要求做（某事），规定",
+                  "level": "red"
                 },
                 {
-                  "word": "concession",
-                  "ipa": "kənˈseʃn",
-                  "meaning": "让步，妥协",
+                  "word": "independent",
+                  "ipa": "ɪndɪˈpendənt",
+                  "meaning": "adj.独立的,",
+                  "level": "green"
+                },
+                {
+                  "word": "exactly",
+                  "ipa": "ex'act·ly",
+                  "meaning": "adv. 精确地；确切地",
+                  "level": "green"
+                },
+                {
+                  "word": "stock",
+                  "ipa": "/stɒk/",
+                  "meaning": "股票（常用释义：股票；库存；储备）",
+                  "level": "green"
+                },
+                {
+                  "word": "pensions",
+                  "ipa": "/ˈpenʃənz/",
+                  "meaning": "养老金；退休金（常用释义：退休金；抚恤金）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "hostility",
+                  "ipa": "/hɒˈstɪləti/",
+                  "meaning": "敌意；敌对态度（常用释义：敌对；敌意）",
+                  "level": "red"
+                },
+                {
+                  "word": "special",
+                  "ipa": "ˈspeʃ(ə)l",
+                  "meaning": "adj. 特别的，专门的",
+                  "level": "green"
+                },
+                {
+                  "word": "pressure",
+                  "ipa": "ˈpreʃə(r)",
+                  "meaning": "n.催促,强迫,呼吁",
                   "level": "red"
                 }
               ],
+              "isTopicSentence": false,
               "isKeyEvidence": true
             }
           ]
@@ -2643,16 +3865,15 @@ window.ENGLISH_DATA['2010'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "细节题",
-          "tangchiModel": "事实细节提取 / 诉求与原因对应",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第一段末句关于银行家私下抱怨会计准则的核心内容（Their rules forced them to report enormous losses / value assets at price third party would pay not managers like），锁定银行家抱怨自己被迫遵守不利于自身的严苛资产估值规则（follow unfavorable asset evaluation rules）",
           "stem": "Bankers complained that they were forced to",
           "stemKeywords": [
             "Bankers complained",
             "forced to"
           ],
           "targetSentences": [
-            "P1-S2",
-            "P1-S3"
+            "P1-S2"
           ],
           "officialAnswer": "A",
           "options": [
@@ -2661,64 +3882,60 @@ window.ENGLISH_DATA['2010'] = {
               "text": "follow unfavorable asset evaluation rules.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义替换】P1-S2 提到 Their rules... forced them to report enormous losses（规则迫使他们报告巨额亏损），P1-S3 进一步说明这些规则要求按第三方市价估值而非管理层期望的价格。这种对其盈利不利的估值规则即为 unfavorable asset evaluation rules。",
+              "analysis": "【正确项 · 同义替换】P1-S2 明确阐明银行家的抱怨焦点：'Their rules, moan the banks, have forced them to report enormous losses, and it's just not fair. These rules say they must value some assets at the price a third party would pay, not the price managers... would like'（银行抱怨规则强迫他们如实确认巨额亏损，要求按第三方买家出价估值而非管理层期望价）。forced to report enormous losses / value at third party price 与 follow unfavorable asset evaluation rules（被迫遵守不利于自身的资产评估规则）完全同义对应。A选项精准吻合。",
               "refSentences": [
-                "P1-S2",
-                "P1-S3"
+                "P1-S2"
               ]
             },
             {
               "key": "B",
               "text": "collect payments from third parties.",
               "isCorrect": false,
-              "distractorType": "偷换概念 / 曲解原词",
-              "analysis": "P1-S3 中的 third party 指的是评估资产时参考的第三方买家出价，并非银行被迫向第三方收取付款（collect payments）。",
+              "distractorType": "偷换概念收款",
+              "analysis": "【干扰特征: 概念偏差】原文是按第三方愿意支付的市价估值（price third party would pay），非被迫去向第三方收款（collect payments）。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2"
               ]
             },
             {
               "key": "C",
               "text": "cooperate with the price managers.",
               "isCorrect": false,
-              "distractorType": "拼凑偷换",
-              "analysis": "将 managers 和 price 两个词拼凑在一起制造了 price managers 的虚假概念。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 概念混淆】原文是 price that managers would like（管理层期望的价格），price 与 managers 并非指所谓的价格管理员职务。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2"
               ]
             },
             {
               "key": "D",
               "text": "reevaluate some of their assets.",
               "isCorrect": false,
-              "distractorType": "偷换矛盾核心",
-              "analysis": "银行并非抗拒重新估值（reevaluate），而是抗拒按照市价公允规则进行对自身极其不利的估值（unfavorable rules）。",
+              "distractorType": "以偏概全偏离抱怨核心",
+              "analysis": "【干扰特征: 概念泛化】银行抱怨的致命痛点不在于‘重新评估动作本身’，而在于‘必须遵守按暴跌市价确认巨亏这一极其不利的规则’（unfavorable rules）。",
               "refSentences": [
-                "P1-S3"
+                "P1-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "D 项看似有道理，但没有抓住银行'抱怨(complained)'的实质——实质是估值规则对它们不利（unfavorable），导致巨亏。",
-            "methodSummary": "细节题紧扣题干情感色彩（complained 必定对应负面评价 unfavorable）。"
+            "trapAnalysis": "forced them to report enormous losses by valuing assets at third party price = follow unfavorable asset evaluation rules。",
+            "methodSummary": "原句痛点同义改写：rules forced enormous losses 转换为 follow unfavorable asset evaluation rules。"
           }
         },
         {
           "qIndex": 37,
-          "type": "推断题",
-          "tangchiModel": "因果与作者观点提取 / 寻找深层隐患",
+          "type": "细节推断题",
+          "tangchiModel": "唐迟推断题模型：抓住第二段与第三段作者对 FASB 仓促修改规则后果的警示（independence of standard-setters is being compromised / gave banks more freedom to use models），锁定作者认为 FASB 屈服修改规则将直接导致其作为准则制定者的独立性遭到严重削弱（the weakening of its independence）",
           "stem": "According to the author, the rule changes of the FASB may result in",
           "stemKeywords": [
             "author",
-            "rule changes of the FASB",
-            "result in"
+            "rule changes of the FASB may result in"
           ],
           "targetSentences": [
             "P2-S2",
-            "P6-S4"
-          ],
-          "distractorSentences": [
-            "P3-S4"
+            "P3-S1",
+            "P3-S2"
           ],
           "officialAnswer": "D",
           "options": [
@@ -2726,28 +3943,28 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "the diminishing role of management.",
               "isCorrect": false,
-              "distractorType": "事实相反",
-              "analysis": "P3-S4 明确指出规则修改 enhanced the use of judgment by management（强化了管理层的自主裁量权），而非削弱（diminishing）。",
+              "distractorType": "正反颠倒管理层权力",
+              "analysis": "【干扰特征: 事实完全相反】P3-S2 明确指出修改规则后增强了管理层的主观裁量权（enhance use of judgment by management），管理层权力反而扩大膨胀。",
               "refSentences": [
-                "P3-S4"
+                "P3-S2"
               ]
             },
             {
               "key": "B",
               "text": "the revival of the banking system.",
               "isCorrect": false,
-              "distractorType": "与作者观点相反",
-              "analysis": "P2-S3 指出若不按真实市价处理有毒资产，复苏银行系统将极其困难（reviving will be difficult），修改规则无法带来真正的复苏。",
+              "distractorType": "正反颠倒复苏前景",
+              "analysis": "【干扰特征: 事实完全相反】P2-S2 明确指出放宽规则掩盖有毒资产将使银行业体系复苏变得更加困难（reviving banking system will be difficult）。",
               "refSentences": [
-                "P2-S3"
+                "P2-S2"
               ]
             },
             {
               "key": "C",
               "text": "the banks' long-term asset losses.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "资产亏损是既成事实，并非规则修改带来的结果（result in）。",
+              "distractorType": "正反颠倒确认亏损",
+              "analysis": "【干扰特征: 事实相反】修改规则给予银行更多灵活性来推迟或少确认长期资产损失，非导致亏损产生。",
               "refSentences": [
                 "P3-S2"
               ]
@@ -2757,31 +3974,29 @@ window.ENGLISH_DATA['2010'] = {
               "text": "the weakening of its independence.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义转换】P2-S2 明确警示：the independence of standard-setters... is being compromised（准则制定者的独立性正在遭到削弱妥协）。P6-S4 再次强调向批评者屈服将引来更多妥协。因此 FASB 的退让直接导致其自身独立性的削弱（weakening of its independence）。",
+              "analysis": "【正确项 · 同义替换】P2-S2 明确指出游说奏效和修改规则的核心灾难性恶果：'the independence of standard-setters, essential to the proper functioning of capital markets, is being compromised'（准则制定者的独立性正在遭到妥协损害）。is being compromised 与 the weakening of its independence（其独立性遭到削弱）完全同义对应。D选项精准吻合作者的核心批判论点。",
               "refSentences": [
                 "P2-S2",
-                "P6-S4"
+                "P3-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "A 项将 enhance judgment 说成 diminishing role，是典型的正反颠倒陷阱。",
-            "methodSummary": "compromise 熟词僻义在考研中常考'危及/损害/削弱'，直接对应 weakening。"
+            "trapAnalysis": "independence of standard-setters is being compromised = the weakening of its independence。",
+            "methodSummary": "核心论点同义转述：compromised independence 转换为 the weakening of its independence。"
           }
         },
         {
           "qIndex": 38,
-          "type": "细节题",
-          "tangchiModel": "人物言论与诉求定位 / 区分反对与支持",
+          "type": "观点细节题",
+          "tangchiModel": "唐迟观点题模型：抓住第四段末句欧盟专员 McCreevy 对 IASB 的严厉警告（warned IASB it did not live in a political vacuum but in real world / Europe could develop different rules），锁定 McCreevy 反对并抗议 IASB 试图在制定会计规则时完全自作主张、独断专行（act on their own in rule-setting）",
           "stem": "According to Paragraph 4, McCreevy objects to the IASB's attempt to",
           "stemKeywords": [
             "Paragraph 4",
-            "McCreevy objects to",
-            "IASB's attempt to"
+            "McCreevy objects to IASB's attempt to"
           ],
           "targetSentences": [
-            "P4-S2",
-            "P4-S3"
+            "P4-S2"
           ],
           "officialAnswer": "C",
           "options": [
@@ -2789,54 +4004,57 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "keep away from political influences.",
               "isCorrect": false,
-              "distractorType": "正反混淆 / 逻辑倒置",
-              "analysis": "McCreevy 强调 IASB 不能脱离政治现实（not in a political vacuum），他自己正是政治势力的代表，他反对的是 IASB 不理睬政治干预、自顾自搞统筹的做法。",
+              "distractorType": "偷换主客体表达",
+              "analysis": "【干扰特征: 概念偏差】麦克里维警告其不要生活在政治真空中，反对的是其在准则制定上不顾政界诉求孤行己见（act on their own in rule-setting）。",
               "refSentences": [
-                "P4-S3"
+                "P4-S2"
               ]
             },
             {
               "key": "B",
               "text": "evade the pressure from their peers.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "文中没有提及来自同侪（peers）的压力。",
-              "refSentences": []
+              "distractorType": "偷换施压主体",
+              "analysis": "【干扰特征: 偷换施压方】施压方是政界部长与欧盟专员（ministers/commissioner），非来自同行（peers）。",
+              "refSentences": [
+                "P4-S1",
+                "P4-S2"
+              ]
             },
             {
               "key": "C",
               "text": "act on their own in rule-setting.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·同义转述】P4-S2 提到 IASB 试图按自己的节奏统筹规划（not want to act without overall planning），而 McCreevy 严厉警告其不要自视孤立、要顾及政治现实。这说明他反对的是 IASB 闭门独断、自行其是地制定准则（act on their own in rule-setting）。",
+              "analysis": "【正确项 · 语境含义提炼】P4-S2 明确交代麦克里维的警告矛头：IASB 表示不愿盲目跟风妥协，麦克里维随即警告 IASB 并非生活在政治真空中，威胁欧洲将自行制定不同规则。麦克里维严厉反对的正是：IASB 企图不顾政界和银行业的诉求与施压、在会计规则制定上自行其是、独立独行（act on their own in rule-setting）。C选项精准契合麦克里维的反对对象。",
               "refSentences": [
-                "P4-S2",
-                "P4-S3"
+                "P4-S2"
               ]
             },
             {
               "key": "D",
               "text": "take gradual measures in reform.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "文中 IASB 只是要求统筹规划，并非推行渐进改革（gradual measures）。",
+              "distractorType": "无中生有渐进改革",
+              "analysis": "【干扰特征: 概念偏差】未提及反对渐进式改革，重点在于要求 IASB 必须立刻同美国一样屈服放宽规则。",
               "refSentences": [
+                "P4-S1",
                 "P4-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "A 选项极其阴险！McCreevy 是政治家，他希望 IASB 屈服于政治，所以他反对 IASB 试图'自行独立'（C项）。选 A 容易犯'分不清谁反对谁'的主客体混乱错误。",
-            "methodSummary": "做人物态度题时，务必看清题干问的是'该人物反对什么'，理清政客与准则制定者的对立立场。"
+            "trapAnalysis": "warned not live in political vacuum and Europe could develop different rules = objects to attempt to act on their own in rule-setting。",
+            "methodSummary": "政治施压意图提炼：警告不要孤芳自赏脱离政治，即反对其在规则制定中 act on their own。"
           }
         },
         {
           "qIndex": 39,
-          "type": "词义题",
-          "tangchiModel": "隐喻词义与后置解释对齐",
+          "type": "细节推断题",
+          "tangchiModel": "唐迟推断题模型：抓住第五段首句作者指出银行“活在错误星球上”的具体原因（It was banks that were on the wrong planet, with accounts that vastly overvalued assets），锁定作者认为银行脱离现实是因为其账目极其严重地夸大了资产的真实价值（exaggerated the real value of their assets）",
           "stem": "The author thinks the banks were \"on the wrong planet\" in that they",
           "stemKeywords": [
-            "on the wrong planet",
+            "banks were \"on the wrong planet\"",
             "in that they"
           ],
           "targetSentences": [
@@ -2848,11 +4066,10 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "misinterpreted market price indicators.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "银行并非误读了市价指标，而是故意不承认市价反映的真实亏损。",
+              "distractorType": "偷换概念解读指标",
+              "analysis": "【干扰特征: 概念偏差】银行是故意狡辩市价是流动性问题，非看不懂市场价格指标。",
               "refSentences": [
-                "P5-S1",
-                "P5-S2"
+                "P5-S1"
               ]
             },
             {
@@ -2860,7 +4077,7 @@ window.ENGLISH_DATA['2010'] = {
               "text": "exaggerated the real value of their assets.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·原句后置解释直击】P5-S1 原文：It was banks that were on the wrong planet, with accounts that vastly overvalued assets。破折号后直接对'on the wrong planet'进行同位解释：with accounts that vastly overvalued assets（账目极大高估了资产价值）。overvalued assets 与 exaggerated the real value of their assets 构成百分之百精准对齐！",
+              "analysis": "【正确项 · 同义替换】P5-S1 原文因果关系极其明确：'It was banks that were on the wrong planet, with accounts that vastly overvalued assets'（真正活在错误星球上脱离现实的是银行自身，因为它们的账目极端严重地高估了资产价值）。vastly overvalued assets 与 exaggerated the real value of their assets（严重夸大了其资产的真实价值）完全同义对应。B选项完全精准吻合。",
               "refSentences": [
                 "P5-S1"
               ]
@@ -2869,41 +4086,39 @@ window.ENGLISH_DATA['2010'] = {
               "key": "C",
               "text": "neglected the likely existence of bad debts.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "P5-S2 提到银行争辩市价不反映坏账程度，而非忽视坏账的存在。",
+              "distractorType": "次要借口",
+              "analysis": "【干扰特征: 次要表象】坏账是资产贬值的实质，作者直接定性的脱离现实原因在于账目资产估值极端虚高夸大（vastly overvalued assets）。",
               "refSentences": [
-                "P5-S2"
+                "P5-S1"
               ]
             },
             {
               "key": "D",
               "text": "denied booking losses in their sale of assets.",
               "isCorrect": false,
-              "distractorType": "偷换事实",
-              "analysis": "P5-S4 说明银行是根本不敢出售资产（will not sell assets for fear of booking losses），而非在出售时否认入账。",
+              "distractorType": "正反颠倒拒绝卖出",
+              "analysis": "【干扰特征: 事实相反】P5-S2 指出银行是因害怕确认亏损而死死攥住不肯抛售资产（will not sell assets for fear of booking losses），非在出售时拒绝记账。",
               "refSentences": [
-                "P5-S4"
+                "P5-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "本题是送分级别的词义定位题。on the wrong planet 后面紧跟着 with accounts that vastly overvalued assets，无需过度脑补，直接寻找 overvalued 的同义词 exaggerated。",
-            "methodSummary": "唐迟词义法则：标点符号与伴随状语（with...）是词义题最直观的线索提供区。"
+            "trapAnalysis": "on the wrong planet, with accounts that vastly overvalued assets = exaggerated the real value of their assets。",
+            "methodSummary": "原句细节直接提取：vastly overvalued assets 转换为 exaggerated the real value of assets。"
           }
         },
         {
           "qIndex": 40,
-          "type": "态度题",
-          "tangchiModel": "褒贬情感色彩词分析 / 全文论调定性",
+          "type": "情感态度题",
+          "tangchiModel": "唐迟态度题模型：抓住第六段作者对准则制定者的评价与定性（FASB and IASB have been combative cleaning up rules against hostility, but by giving in now they invite pressure to make more concessions），锁定作者对准则制定者在特殊利益与政治围攻下的艰难处境与被迫妥协深表同情（sympathy）",
           "stem": "The author's attitude towards standard-setters is one of",
           "stemKeywords": [
-            "author's attitude",
-            "towards standard-setters"
+            "author's attitude towards standard-setters"
           ],
           "targetSentences": [
             "P2-S2",
-            "P6-S3",
-            "P6-S4"
+            "P6-S2"
           ],
           "officialAnswer": "D",
           "options": [
@@ -2911,30 +4126,31 @@ window.ENGLISH_DATA['2010'] = {
               "key": "A",
               "text": "satisfaction.",
               "isCorrect": false,
-              "distractorType": "与事实相反",
-              "analysis": "作者对准则制定者目前的妥协屈服感到担忧与批评，绝非满意（satisfaction）。",
+              "distractorType": "正反颠倒满意",
+              "analysis": "【干扰特征: 情感相反】作者对他们被迫向政界屈服妥协深感忧虑痛惜，绝非感到满意欣慰（satisfaction）。",
               "refSentences": [
-                "P6-S4"
+                "P2-S2",
+                "P6-S2"
               ]
             },
             {
               "key": "B",
               "text": "skepticism.",
               "isCorrect": false,
-              "distractorType": "张冠李戴",
-              "analysis": "P5-S3 中 skeptical 是指投资者对银行账面价值的怀疑，作者怀疑的是银行，对准则制定机构则是同情与支持。",
+              "distractorType": "张冠李戴怀疑对象",
+              "analysis": "【干扰特征: 偷换对象】P5-S2 中作者和投资者怀疑的是银行的虚假账面（investors are skeptical of banks），非怀疑准则制定者。",
               "refSentences": [
-                "P5-S3"
+                "P5-S2"
               ]
             },
             {
               "key": "C",
               "text": "objectiveness.",
               "isCorrect": false,
-              "distractorType": "态度模糊干扰",
-              "analysis": "作者具有极度鲜明的立场，强烈呼吁保护准则制定者的独立性，绝非冷眼旁观的客观中立（objectiveness）。",
+              "distractorType": "空泛中立",
+              "analysis": "【干扰特征: 过于中立】作者字里行间带有极其强烈的价值取向与同情悲悯，高度赞扬其历史功绩并痛惜其遭受政治围攻。",
               "refSentences": [
-                "P6-S3"
+                "P6-S2"
               ]
             },
             {
@@ -2942,24 +4158,19 @@ window.ENGLISH_DATA['2010'] = {
               "text": "sympathy.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项·深层态度归纳】纵观全文，作者指出准则制定者至关重要（essential），赞扬他们过去敢于硬碰利益集团（combative against hostility），为他们在政客和银行围剿下的屈服感到惋惜（bruising encounter, giving in now inviting more pressure），对其处境深表同情与道义支持（sympathy）。",
+              "analysis": "【正确项 · 情感基调定位】P6-S2 明确赞扬 FASB 和 IASB 历来是敢于对抗特殊利益敌意、捍卫市场公正的勇敢战士（independent and even combative, against hostility from special interests），但在当下的政治绞杀与银行围攻下，却不得不遗憾屈服并面临被进一步步步紧逼的悲惨境地。作者对其维护资本市场健康运转的独立性给予了极高评价，对其遭受政治霸凌被迫妥协的无辜处境深表理解与同情（sympathy）。D选项精准契合作者的情感立场。",
               "refSentences": [
                 "P2-S2",
-                "P6-S3",
-                "P6-S4"
+                "P6-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "态度题常考：sympathy 在考研中不仅表示'怜悯'，更常表示'赞同、支持与同情其艰难处境'。不要误以为态度题只能选 objective。",
-            "methodSummary": "当作者通篇为一方辩护并痛斥其对手（银行和政客）时，态度必然是同情与坚决支持（sympathy/support）。"
+            "trapAnalysis": "brave standard-setters against hostility now forced to give in to political pressure = sympathy（深表同情）。",
+            "methodSummary": "态度褒贬与同情倾向提炼：高度肯定其历史抗争并痛惜其当下被围攻妥协，锁定 sympathy。"
           }
         }
       ]
     }
   ]
 };
-
-
-// 向下兼容别名
-window.ENGLISH_2010_DATA = window.ENGLISH_DATA['2010'];

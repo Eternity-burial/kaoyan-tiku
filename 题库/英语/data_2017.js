@@ -12,21 +12,21 @@ window.ENGLISH_DATA['2017'] = {
     {
       "id": "text1",
       "number": 1,
-      "title": "Reading Comprehension Text 1",
-      "chineseTitle": "Text 1 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2017 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 1，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "title": "Airport Security Lines and the PreCheck Reform",
+      "chineseTitle": "美国机场安检拥堵危机与预检计划（PreCheck）改革",
+      "topic": "公共交通与安保政策 / TSA 机场安检长队、恐怖袭击阴影与 PreCheck 预检高价困局",
+      "overview": "本文深入探讨了全美主要机场面临的极其严重的安检大排长龙危机。在恐怖袭击阴影下，民众固然理解严格安检的必要性，但过度延误对社会经济生活造成了巨大拖累。TSA 秘密抽查暴露的安全漏洞与低油价带来的旅客暴增共同加剧了拥堵。文章指出，PreCheck 快速预检计划本可实现旅客与安保的双赢分流，但85美元的高昂注册费成为其推广的致命硬伤。文章呼吁国会降费补贴，切实让预检计划发挥实效以化解排队危机。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "mainIdea": "美国各大主要机场安检排队极其漫长，官方建议乘客提前三小时到达",
+          "logicRole": "提出全美机场安检排队漫长与提前到场建议 (Severe Airport Security Queues)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "First two hours, now three hours—this is how far in advance authorities are recommending people show up to catch a domestic flight, at least at some major U.S. airports with increasingly massive security lines.",
-              "translation": "最初是两个小时，现在是三个小时——这是当局建议人们提前多长时间到达机场搭乘国内航班的时间，至少在美国一些安检线越来越密集的主要机场是这样。",
+              "translation": "起初是提前两小时，如今竟变成了提前三小时——这是官方当局建议旅客搭乘国内航班时所需提前到达机场的时间，至少在美国一些安检队伍日益冗长臃肿的大型主要机场情况正是如此。",
               "vocab": [
                 {
                   "word": "at least",
@@ -67,12 +67,19 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": true,
               "isKeyEvidence": false
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "民众虽愿为安全容忍安检，但空耗时间对经济与个人生活造成极大拖累",
+          "logicRole": "阐释民众容忍安检的动因及过度延误的负面代价 (Tolerance vs Infuriating Delay)",
+          "sentences": [
             {
-              "sIndex": 2,
-              "id": "P1-S2",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "Americans are willing to tolerate time-consuming security procedures in return for increased safety.",
-              "translation": "美国人愿意容忍耗时的安全程序，以换取更高的安全性。",
+              "translation": "美国民众固然愿意为了换取更高的出行安全保障而容忍耗时费力的繁琐安检程序。",
               "vocab": [
                 {
                   "word": "willing",
@@ -105,14 +112,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
-              "sIndex": 3,
-              "id": "P1-S3",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "The crash of EgyptAir Flight 804, which terrorists may have downed over the Mediterranean Sea, provides another tragic reminder of why.",
-              "translation": "恐怖分子可能在地中海上空击落的埃及航空 804 号航班的坠机事件再次悲剧性地提醒人们原因。",
+              "translation": "可能系恐怖分子在地中海击落的埃及航空 MS804 航班空难悲剧，再次从惨痛的侧面提醒了人们为何必须严格安检。",
               "vocab": [
                 {
                   "word": "crash",
@@ -134,13 +141,13 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "But demanding too much of air travelers or providing too little security in return undermines public support for the process.",
-              "translation": "但对航空旅客要求过高或提供的安全保障太少会削弱公众对这一过程的支持。",
+              "sIndex": 3,
+              "id": "P2-S3",
+              "text": "But demanding too much of air travelers or providing too little security in return undermines public support for the process. And it should: Wasted time is a drag on Americans' economic and private lives, not to mention infuriating.",
+              "translation": "然而，对航空旅客提出过于苛刻的时间要求，或者未能提供切实匹配的安全回报，都会极大地侵蚀公众对安检流程的支持。事实理应如此：虚掷浪费的时间不仅令人极度抓狂恼火，更是对美国民众经济与私人生活的沉重拖累。",
               "vocab": [
                 {
                   "word": "air",
@@ -183,17 +190,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "/ˈprəʊses/",
                   "meaning": "流程；业务流程（常用释义：过程；加工；处理）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "And it should: Wasted time is a drag on Americans' economic and private lives, not to mention infuriating.",
-              "translation": "它应该是：浪费时间会拖累美国人的经济和私人生活，更不用说令人愤怒了。",
-              "vocab": [
+                },
                 {
                   "word": "drag",
                   "ipa": "dræg",
@@ -233,12 +230,19 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "TSA 秘密暗访暴露安检漏洞，强化安检叠加低油价带来的旅客暴增导致机场大拥堵",
+          "logicRole": "分析安检升级与客流激增共同导致的拥堵成因 (Lax Security Leaks & Passenger Surge)",
+          "sentences": [
             {
-              "sIndex": 6,
-              "id": "P1-S6",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "Last year, the Transportation Security Administration (TSA) found in a secret check that undercover investigators were able to sneak weapons—both fake and real—past airport security nearly every time they tried.",
-              "translation": "去年，美国运输安全管理局 (TSA) 在一次秘密检查中发现，卧底调查人员几乎每次尝试都能偷偷携带武器（无论是假的还是真品）通过机场安检。",
+              "translation": "去年，美国运输安全管理局（TSA）在一项绝密抽查中发现，卧底调查人员几乎每一次尝试都能将武器（无论真假）神不知鬼不觉地带过机场安检通道。",
               "vocab": [
                 {
                   "word": "Security",
@@ -283,14 +287,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 7,
-              "id": "P1-S7",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Enhanced security measures since then, combined with a rise in airline travel due to the improving economy and low oil prices, have resulted in long waits at major airports such as Chicago's O'Hare International. It is not yet clear how much more effective airline security has become—but the lines are obvious.",
-              "translation": "此后加强了安全措施，加上经济好转和低油价导致航空旅行增加，导致芝加哥奥黑尔国际机场等主要机场出现长时间等待。目前尚不清楚航空公司的安全措施变得更加有效，但界限是显而易见的。",
+              "translation": "自那以后出台的加严安检举措，叠加经济复苏与低油价带来的航空出行旅客数量暴增，直接导致芝加哥奥黑尔国际机场等全美各大核心枢纽排起了望不到头的漫长长龙。目前尚不清楚航空安保的实际效能提升了多少——但眼前那一眼望不到头的拥堵长队却是显而易见的。",
               "vocab": [
                 {
                   "word": "security",
@@ -354,20 +358,20 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
-          "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "pIndex": 4,
+          "mainIdea": "政府未预料到客流激增，仓促增派安检员并受限于场地与行李收费争议",
+          "logicRole": "剖析运力误判、物理场地限制与随身行李争议 (Underestimated Traffic & Infrastructure Limits)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P2-S1",
+              "id": "P4-S1",
               "text": "Part of the issue is that the government did not anticipate the steep increase in airline travel, so the TSA is now rushing to get new screeners on the line.",
-              "translation": "部分问题在于，政府没有预见到航空旅行的急剧增加，因此运输安全管理局现在正急于在线路上安装新的安检员。",
+              "translation": "问题的部分根源在于政府未能提前预见航空旅客出行数量的急剧攀升，因此 TSA 如今正手忙脚乱地仓促招募并增派新的安检人员赶赴一线岗位。",
               "vocab": [
                 {
                   "word": "issue",
@@ -413,13 +417,13 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": true,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Part of the issue is that airports have only so much room for screening lanes.",
-              "translation": "部分问题在于，机场用于安检通道的空间有限。",
+              "id": "P4-S2",
+              "text": "Part of the issue is that airports have only so much room for screening lanes. Another factor may be that more people are trying to overpack their carry-on bags to avoid checked-baggage fees, though the airlines strongly dispute this.",
+              "translation": "另一部分根源则在于机场内部可供开辟安检通道的物理空间极为有限；还有一个潜在诱因或许是越来越多的旅客为了省下托运行李费而试图往随身携带的行李箱里塞满物品，尽管各家航空公司对此说法持坚决反驳态度。",
               "vocab": [
                 {
                   "word": "issue",
@@ -438,17 +442,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "",
                   "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "Another factor may be that more people are trying to overpack their carry-on bags to avoid checked-baggage fees, though the airlines strongly dispute this.",
-              "translation": "另一个因素可能是越来越多的人试图过度包装随身行李以避免托运行李费，尽管航空公司强烈反对这一点。",
-              "vocab": [
+                },
                 {
                   "word": "overpack",
                   "ipa": "əʊvəˈpæk",
@@ -470,12 +464,19 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 5,
+          "mainIdea": "PreCheck 预检计划本可实现双赢加速安检，但85美元的高昂注册费成为其致命短板",
+          "logicRole": "介绍 PreCheck 快速安检方案及其过高费用的致命缺陷 (PreCheck Program & Sticker Shock)",
+          "sentences": [
             {
-              "sIndex": 4,
-              "id": "P2-S4",
+              "sIndex": 1,
+              "id": "P5-S1",
               "text": "There is one step the TSA could take that would not require remodeling airports or rushing to hire: Enroll more people in the PreCheck program.",
-              "translation": "TSA 可以采取一项不需要改造机场或急于招聘的步骤：让更多人参加 PreCheck 计划。",
+              "translation": "其实 TSA 完全可以采取一项既无需大兴土木改造机场、也无需仓促大举扩招人员的立竿见影之策：那就是吸引更多旅客注册加入 PreCheck“快速预检计划”。",
               "vocab": [
                 {
                   "word": "one",
@@ -514,14 +515,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "PreCheck is supposed to be a win-win for travelers and the TSA.",
-              "translation": "PreCheck 对于旅客和 TSA 来说应该是双赢的。",
+              "sIndex": 2,
+              "id": "P5-S2",
+              "text": "PreCheck is supposed to be a win-win for travelers and the TSA. Passengers who pass a background check are eligible to use expedited screening lanes. This allows the TSA to focus on travelers who are higher risk, saving time for everyone involved. The TSA wants to enroll 25 million people in PreCheck.",
+              "translation": "PreCheck 计划本应是让广大旅客与 TSA 实现互利双赢的举措。通过背景安全审查的旅客有资格走快速（expedited）安检通道，这使得 TSA 能够集中精力排查那些风险更高的旅客，从而为所有相关方大幅节省宝贵时间。TSA 期望能招募2500万人加入该计划。",
               "vocab": [
                 {
                   "word": "supposed",
@@ -540,17 +541,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "",
                   "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "Passengers who pass a background check are eligible to use expedited screening lanes.",
-              "translation": "通过背景调查的乘客有资格使用快速安检通道。",
-              "vocab": [
+                },
                 {
                   "word": "background",
                   "ipa": "ˈbækɡraʊnd",
@@ -580,17 +571,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˈekspədaɪtɪd",
                   "meaning": "v.加快，促进；迅速执行；派送（expedite 的过去式和过",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P2-S7",
-              "text": "This allows the TSA to focus on travelers who are higher risk, saving time for everyone involved.",
-              "translation": "这使得 TSA 能够专注于风险较高的旅客，为每个相关人员节省时间。",
-              "vocab": [
+                },
                 {
                   "word": "focus",
                   "ipa": "",
@@ -604,34 +585,11 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 },
                 {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
                   "word": "involved",
                   "ipa": "/ɪnˈvɒlvd/",
                   "meaning": "涉及，包含（常用释义：涉及；参与；复杂的）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "The TSA wants to enroll 25 million people in PreCheck.",
-              "translation": "TSA 希望让 2500 万人参加 PreCheck。",
-              "vocab": [
+                },
                 {
                   "word": "enroll",
                   "ipa": "ɪnˈroʊl",
@@ -639,14 +597,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
+              "isTopicSentence": false,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "It has not gotten anywhere close to that, and one big reason is sticker shock: Passengers must pay $85 every five years to process their background checks.",
-              "translation": "但实际情况还远未达到这一目标，其中一个重要原因是价格令人震惊：乘客必须每五年支付 85 美元来处理他们的背景调查。",
+              "sIndex": 3,
+              "id": "P5-S3",
+              "text": "It has not gotten anywhere close to that, and one big reason is sticker shock: Passengers must pay $85 every five years to process their background checks. Since the beginning, this price tag has been PreCheck's fatal flaw.",
+              "translation": "然而目前的注册人数离这一宏伟目标相去甚远，其中一个关键原因正是“令人咋舌的高价冲击”（sticker shock）：旅客每五年必须掏出85美元来支付其背景调查的处理费用。自该计划诞生之日起，这一高昂的价格标签就一直是其致命的硬伤软肋。",
               "vocab": [
                 {
                   "word": "one",
@@ -683,17 +641,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˈbækɡraʊnd",
                   "meaning": "n. 背景",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Since the beginning, this price tag has been PreCheck's fatal flaw.",
-              "translation": "从一开始，这个价格标签就是PreCheck的致命缺陷。",
-              "vocab": [
+                },
                 {
                   "word": "Since",
                   "ipa": "sɪns",
@@ -714,30 +662,20 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
               "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Upcoming reforms might bring the price to a more reasonable level.",
-              "translation": "即将到来的改革可能会使价格达到更合理的水平。",
+              "id": "P5-S4",
+              "text": "Upcoming reforms might bring the price to a more reasonable level. But Congress should look into doing so directly, by helping to finance PreCheck enrollment or to cut costs in other ways.",
+              "translation": "即将展开的改革有望将价格降至更为合理的区间；但国会理应通过直接提供财政补贴或通过其他途径削减成本来推动降价落实。",
               "vocab": [
                 {
                   "word": "reasonable",
                   "ipa": "ˈriːzənəb(ə)l",
                   "meaning": "adj. 合乎情理",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "But Congress should look into doing so directly, by helping to finance PreCheck enrollment or to cut costs in other ways.",
-              "translation": "但国会应该考虑直接这样做，通过帮助资助 PreCheck 注册或以其他方式削减成本。",
-              "vocab": [
+                },
                 {
                   "word": "Congress",
                   "ipa": "",
@@ -765,12 +703,19 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 6,
+          "mainIdea": "TSA 绝不能继续把资源闲置在空荡的预检通道，必须切实推动该项目有效运转",
+          "logicRole": "呼吁改革并彻底解决机场安检大拥堵 (Call to Action & Getting PreCheck Working)",
+          "sentences": [
             {
-              "sIndex": 6,
-              "id": "P3-S6",
-              "text": "The TSA cannot continue diverting resources into underused PreCheck lanes while most of the traveling public suffers in unnecessary lines.",
-              "translation": "TSA 不能继续将资源转移到未充分利用的预检车道上，而大多数出行公众却在不必要的线路中苦苦挣扎。",
+              "sIndex": 1,
+              "id": "P6-S1",
+              "text": "The TSA cannot continue diverting resources into underused PreCheck lanes while most of the traveling public suffers in unnecessary lines. It is long past time to make the program work.",
+              "translation": "当绝大多数普通出行大众还在冗长不必要的安检长队中备受煎熬苦等时，TSA 绝不能继续把宝贵的安检资源错误挪用并闲置在利用率低下的 PreCheck 通道上。让该计划切实发挥应有效能的时刻，早已刻不容缓！",
               "vocab": [
                 {
                   "word": "continue",
@@ -795,17 +740,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "",
                   "meaning": "adj.不必要的；多余的，无用的",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P3-S7",
-              "text": "It is long past time to make the program work.",
-              "translation": "早就该让这个计划发挥作用了。",
-              "vocab": [
+                },
                 {
                   "word": "program",
                   "ipa": "ˈproʊɡræm",
@@ -819,8 +754,8 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             }
           ]
         }
@@ -828,332 +763,317 @@ window.ENGLISH_DATA['2017'] = {
       "questions": [
         {
           "qIndex": 21,
-          "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
+          "type": "例证题",
+          "tangchiModel": "唐迟例证题模型：引用埃及航空 804 航班空难是为了证明前句论点——美国人之所以愿意容忍耗时费力的繁琐安检以换取安全保障",
           "stem": "The crash of EgyptAir Flight 804 is mentioned to",
           "stemKeywords": [
-            "crash",
-            "EgyptAir",
-            "Flight"
+            "crash of EgyptAir Flight 804",
+            "mentioned to"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P2-S1",
+            "P2-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "explain American's tolerance of current security checks.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "text": "explain Americans' tolerance of current security checks.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 例证论点对应】P2-S1 和 P2-S2 紧密相连：'Americans are willing to tolerate time-consuming security procedures in return for increased safety. The crash of EgyptAir Flight 804... provides another tragic reminder of why'（美国人愿意容忍耗时安检以换取安全，埃航空难悲剧提醒了人们为何如此）。引用该空难正是为了解释美国人为何能够容忍现行繁琐安检程序。A选项精准对应论点。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S1",
+                "P2-S2"
               ]
             },
             {
               "key": "B",
               "text": "stress the urgency to strengthen security worldwide.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 过于宽泛】文章聚焦于美国本土机场安检效率与排队问题，非全球安保呼吁。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "C",
               "text": "highlight the necessity of upgrading major U.S. airports.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】与机场物理硬件升级改造无关。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S1"
               ]
             },
             {
               "key": "D",
               "text": "emphasize the importance of privacy protection.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 偏离主题】文章讨论安检耗时与生命安全，未涉及隐私保护。",
               "refSentences": [
-                "P1-S1",
                 "P2-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 21 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "willing to tolerate time-consuming security in return for safety + EgyptAir provides reminder of why = explain Americans' tolerance of security checks。",
+            "methodSummary": "例证题前句论点提取法：抓准 provides tragic reminder of why 指向前句 Americans willing to tolerate security checks。"
           }
         },
         {
           "qIndex": 22,
-          "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
+          "type": "细节原因题",
+          "tangchiModel": "唐迟因果题模型：抓住第三、四段导致机场大拥堵的核心诱因，锁定经济复苏与低油价带来的旅客数量暴增",
           "stem": "Which of the following contributes to long waits at major airports?",
           "stemKeywords": [
-            "Which",
-            "following",
-            "contributes"
+            "contributes to long waits",
+            "major airports"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P3-S2",
+            "P4-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "New restrictions on carry-on bags.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 偷换概念】是旅客试图多装行李以逃避托运费，非出台了新的随身行李限制。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S2"
               ]
             },
             {
               "key": "B",
               "text": "The declining efficiency of the TSA.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 概念混淆】TSA 是在加强安检措施（Enhanced security measures），非效率衰退。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "C",
               "text": "An increase in the number of travelers.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S2 和 P4-S1 明确列举导致长队的两大关键原因：加严安检以及'a rise in airline travel due to improving economy and low oil prices... steep increase in airline travel'（经济改善与低油价带来的航空出行暴增、陡增）。C选项 An increase in the number of travelers（旅客人数增加）是 rise/steep increase in airline travel 的完全等价同义替换。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2",
+                "P4-S1"
               ]
             },
             {
               "key": "D",
               "text": "Frequent unexpected secret checks.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "张冠李戴",
+              "analysis": "【干扰特征: 偷换环节】秘密抽查（secret check）是去年发现漏洞的暗访，非日常对旅客的频繁秘密抽查。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 22 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "rise in airline travel + steep increase in airline travel = An increase in the number of travelers。",
+            "methodSummary": "多因果细节提取法：抓准 resulted in long waits 句中的核心主语（rise in airline travel）。"
           }
         },
         {
           "qIndex": 23,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "type": "词义猜测题",
+          "tangchiModel": "唐迟词义题模型：抓住第五段 PreCheck 快速安检通道语境（saving time for everyone），锁定 faster 同义词",
           "stem": "The word \"expedited\" (Line 4, Para. 5) is closest in meaning to",
           "stemKeywords": [
-            "word",
             "expedited",
-            "Line"
+            "Line 4 Para 5",
+            "closest in meaning to"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P5-S2"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "quieter.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 偏离语境】quieter 意为更安静，与快速通行无关。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             },
             {
               "key": "B",
               "text": "cheaper.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】预检计划非常昂贵（$85高价），绝非 cheaper。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S3"
               ]
             },
             {
               "key": "C",
               "text": "wider.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "字面偏差",
+              "analysis": "【干扰特征: 物理宽度偏差】wider 意为更宽阔，非通关速度加快。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             },
             {
               "key": "D",
               "text": "faster.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P5-S2 中 'Passengers who pass a background check are eligible to use expedited screening lanes... saving time for everyone' 意为通过背景调查的旅客可以使用“加速/快速通道”，从而为所有人节省时间。expedited 意为“加速的、快捷的”，与 faster（更快速的）完全同义。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 23 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "expedited screening lanes = lanes that speed up the process = saving time = faster lanes。",
+            "methodSummary": "语境功能推断法：结合后文 saving time for everyone，直接推断 expedited 意为 faster。"
           }
         },
         {
           "qIndex": 24,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第五段 PreCheck 计划未能达标的致命原因，锁定85美元注册费价格过高不合理",
           "stem": "One problem with the PreCheck program is",
           "stemKeywords": [
-            "problem",
-            "with",
-            "PreCheck"
+            "One problem with",
+            "PreCheck program"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P5-S3"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "a dramatic reduction of its scale.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】是注册人数从未达到目标（not gotten anywhere close），非规模被大幅缩减。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S3"
               ]
             },
             {
               "key": "B",
               "text": "its wrongly-directed implementation.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 泛化指责】计划初衷良好（win-win），问题卡在价格阻碍了推广。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2",
+                "P5-S3"
               ]
             },
             {
               "key": "C",
               "text": "the government's reluctance to back it.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】TSA 大力推广并设定2500万目标，政府积极支持，呼吁国会直接补贴资金。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2",
+                "P5-S4"
               ]
             },
             {
               "key": "D",
               "text": "an unreasonable price for enrollment.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P5-S3 明确指出致命缺陷：'one big reason is sticker shock: Passengers must pay $85 every five years... this price tag has been PreCheck's fatal flaw'（关键原因正是85美元的高价冲击……价格标签一直是致命软肋）。D选项 an unreasonable price for enrollment（过高的不合理注册价格）是对 sticker shock 与 fatal flaw price tag 最精准的概括。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S3"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 24 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "sticker shock + $85 price tag has been fatal flaw = an unreasonable price for enrollment。",
+            "methodSummary": "问题定位法：抓准 fatal flaw 和 sticker shock 对应的价格过高问题。"
           }
         },
         {
           "qIndex": 25,
-          "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "type": "主旨标题题",
+          "tangchiModel": "唐迟标题题模型：通读全文，提炼全美旅客深陷机场漫长安检长队困局这一全篇核心现象与主旨",
           "stem": "Which of the following would be the best title for the text?",
           "stemKeywords": [
-            "Which",
-            "following",
-            "would"
+            "best title",
+            "the text"
           ],
           "targetSentences": [
             "P1-S1",
-            "P2-S1"
+            "P3-S2",
+            "P5-S3",
+            "P6-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "Less Screening for More Safety",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "违背常理逻辑",
+              "analysis": "【干扰特征: 荒谬错误】减少安检不能换来更多安全，文章强调的是优化流程与预检分流。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S1",
+                "P5-S2"
               ]
             },
             {
               "key": "B",
               "text": "PreCheck—a Belated Solution",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 评价不符】PreCheck 早已推出但因高价受阻（fatal flaw），非迟来的解决方案（belated）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S3"
               ]
             },
             {
               "key": "C",
               "text": "Getting Stuck in Security Lines",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 全文主旨概括】全文从开篇描绘全美主要机场排队两三小时的惊人乱象（massive security lines），到深入剖析安检升级与客流激增的拥堵根源，再到反思 PreCheck 高价导致通道闲置而普通旅客依然深陷不必要长队（suffers in unnecessary lines）。全篇核心痛点始终牢牢锚定在“深陷安检长队”（Getting Stuck in Security Lines）这一全民焦点危机上。C选项最为形象、贴切且高度统摄全篇。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P3-S2",
+                "P5-S3",
+                "P6-S1"
               ]
             },
             {
               "key": "D",
               "text": "Underused PreCheck Lanes",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 局部细节】预检通道闲置只是后半部分提到的对策短板之一，未能统领全文关于机场大拥堵现象与客流成因的全局。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P6-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 25 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "Getting Stuck in Security Lines (全篇核心现象与痛点)。",
+            "methodSummary": "主旨标题题解法：选择能够贯穿首段（massive security lines）、中段（lines are obvious）到尾段（suffers in unnecessary lines）的综合概括项。"
           }
         }
       ]
@@ -1161,21 +1081,21 @@ window.ENGLISH_DATA['2017'] = {
     {
       "id": "text2",
       "number": 2,
-      "title": "Reading Comprehension Text 2",
-      "chineseTitle": "Text 2 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2017 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 2，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "title": "The Thirty Meter Telescope on Mauna Kea and Hawaiian Culture",
+      "chineseTitle": "夏威夷莫纳克亚山三十米望远镜（TMT）与本土文化冲突",
+      "topic": "科技前沿与原住民文化 / 天文学前沿探索与夏威夷土著圣地信仰的冲突与和解",
+      "overview": "本文探讨了在夏威夷莫纳克亚圣山兴建三十米巨型望远镜（TMT）所引发的激烈抗议与文化冲突。莫纳克亚山既是拥有无与伦比大气清晰度的全球最佳天文台址，又是夏威夷土著敬奉的连接天地的圣地肚脐，望远镜曾唤醒主权沦丧的历史创伤。文章指出现代天文学与古代波利尼西亚航海观星在探索终极起源上精神同源，并高度肯定了天文学界为保护生态与圣山所做出的选址妥协，呼吁文化遗产与星空探索和谐共生。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "mainIdea": "夏威夷历史上有深厚的天文观测传统，但如今三十米望远镜（TMT）的兴建引发了激烈抗议",
+          "logicRole": "提出古代夏威夷天文学传统与现代 TMT 建设引发的抗议冲突 (Ancient Astronomy vs TMT Protests)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "\"The ancient Hawaiians were astronomers,\" wrote Queen Liliuokalani, Hawaii's last reigning monarch, in 1897.",
-              "translation": "“古代夏威夷人都是天文学家，”夏威夷最后一位在位君主莉留卡拉尼女王 (Queen Liliuokalani) 于 1897 年写道。",
+              "text": "\"The ancient Hawaiians were astronomers,\" wrote Queen Liliuokalani, Hawaii's last reigning monarch, in 1897. Star watchers were among the most esteemed members of Hawaiian society.",
+              "translation": "“古代夏威夷人就是天文学家，”夏威夷王国最后一位在位君主莉莉乌欧卡拉尼女王在1897年写道。在古代夏威夷社会中，仰望星空的观星者历来属于最受尊崇敬重的人群之列。",
               "vocab": [
                 {
                   "word": "ancient",
@@ -1194,17 +1114,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˈmɑːnərk",
                   "meaning": "n.君主；帝王",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Star watchers were among the most esteemed members of Hawaiian society.",
-              "translation": "观星者是夏威夷社会最受尊敬的成员之一。",
-              "vocab": [
+                },
                 {
                   "word": "esteemed",
                   "ipa": "ɪˈstiːmd",
@@ -1218,31 +1128,21 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Sadly, all is not well with astronomy in Hawaii today.",
-              "translation": "可悲的是，今天夏威夷的天文学一切都不太顺利。",
+              "sIndex": 2,
+              "id": "P1-S2",
+              "text": "Sadly, all is not well with astronomy in Hawaii today. Protests have erupted over construction of the Thirty Meter Telescope (TMT), a giant observatory that promises to revolutionize humanity's view of the cosmos.",
+              "translation": "令人遗憾的是，天文学在当今夏威夷的处境却难言乐观。围绕“三十米望远镜”（TMT）的修建工程爆发了激烈的民众抗议——这是一座有望彻底颠覆并革新人类宇宙视野的巨型天文台。",
               "vocab": [
                 {
                   "word": "astronomy",
                   "ipa": "əˈstrɔnəmɪ",
                   "meaning": "n. 天文学",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "Protests have erupted over construction of the Thirty Meter Telescope (TMT), a giant observatory that promises to revolutionize humanity's view of the cosmos.",
-              "translation": "三十米望远镜（TMT）的建造引发了抗议活动，这是一个有望彻底改变人类宇宙观的巨型天文台。",
-              "vocab": [
+                },
                 {
                   "word": "construction",
                   "ipa": "/kənˈstrʌkʃn/",
@@ -1294,12 +1194,19 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "莫纳克亚休眠火山被土著尊为连接天地的肚脐圣地，同时也是全球最绝佳的天文观测台址",
+          "logicRole": "阐明莫纳克亚山独特的宗教神圣性与无与伦比的地理天文优势 (Sacred Piko vs Unsurpassed Astronomy Site)",
+          "sentences": [
             {
-              "sIndex": 5,
-              "id": "P1-S5",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "At issue is the TMT's planned location on Mauna Kea, a dormant volcano worshiped by some Hawaiians as the piko, that connects the Hawaiian Islands to the heavens.",
-              "translation": "争议焦点在于 TMT 计划选址莫纳克亚火山，这座休眠火山被一些夏威夷人崇拜为“piko”，连接着夏威夷群岛和天堂。",
+              "translation": "争议的焦点在于 TMT 选址规划建在莫纳克亚山（Mauna Kea）——这是一座被部分夏威夷土著敬奉为“肚脐”（piko）、将夏威夷群岛与上天神灵紧密相连的休眠火山。",
               "vocab": [
                 {
                   "word": "issue",
@@ -1320,23 +1227,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P1-S6",
-              "text": "But Mauna Kea is also home to some of the world's most powerful telescopes.",
-              "translation": "但莫纳克亚山还拥有一些世界上最强大的望远镜。",
-              "vocab": [],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P1-S7",
-              "text": "Rested in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity.",
-              "translation": "莫纳克亚山坐落在太平洋上，其山峰高出地球大部分稠密大气层，这里的条件允许望远镜获得无与伦比的清晰度图像。",
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "But Mauna Kea is also home to some of the world's most powerful telescopes. Rested in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity.",
+              "translation": "但莫纳克亚山同时也是世界上若干最强大望远镜的所在地。耸立于浩瀚太平洋之中的莫纳克亚峰顶，高高矗立于地球绝大部分稠密大气层之上，其独特的地理气候条件使得望远镜能够捕捉到具有无与伦比清晰度的深空天体图像。",
               "vocab": [
                 {
                   "word": "peak",
@@ -1388,20 +1286,20 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
-          "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
+          "pIndex": 3,
+          "mainIdea": "本土居民与环保人士长期视巨型望远镜为对圣地的亵渎，以及对曾经主权沦丧屈辱历史的痛苦唤醒",
+          "logicRole": "揭示反对望远镜背后的圣地信仰与主权沦丧历史创伤 (Desecration of Sacred Land & Historical Trauma)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Opposition to telescopes on Mauna Kea is nothing new.",
-              "translation": "反对在莫纳克亚山安装望远镜并不是什么新鲜事。",
+              "id": "P3-S1",
+              "text": "Opposition to telescopes on Mauna Kea is nothing new. A small but vocal group of Hawaiians and environmentalists have long viewed their presence as disrespect for sacred land and a painful reminder of the occupation of what was once a sovereign nation.",
+              "translation": "对在莫纳克亚山上修建望远镜的反对由来已久。人数虽少但发声强烈的夏威夷人和环保主义者长期以来一直将这些巨型设施的矗立视作对神圣土地的亵渎与不敬，并且是对这个曾经的主权国家惨遭占领那段屈辱痛苦历史的刺痛唤醒。",
               "vocab": [
                 {
                   "word": "Opposition",
@@ -1414,17 +1312,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "",
                   "meaning": "adj.新的",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "A small but vocal group of Hawaiians and environmentalists have long viewed their presence as disrespect for sacred land and a painful reminder of the occupation of what was once a sovereign nation.",
-              "translation": "一小群夏威夷人和环保主义者长期以来一直认为他们的存在是对神圣土地的不尊重，也是对曾经的主权国家被占领的痛苦提醒。",
-              "vocab": [
+                },
                 {
                   "word": "vocal",
                   "ipa": "ˈvoʊkəl",
@@ -1468,14 +1356,21 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": true
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "天文学家应承担部分责任，因其急于建造更大望远镜而忽视了生态保护与本土文化复兴",
+          "logicRole": "反思天文学界急功近利忽视生态脆弱性与本土文化复兴的过失 (Astronomers' Fault & Cultural Renaissance)",
+          "sentences": [
             {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "Some blame for the current controversy belongs to astronomers.",
-              "translation": "当前争议的部分责任应归咎于天文学家。",
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "Some blame for the current controversy belongs to astronomers. In their eagerness to build bigger telescopes, they forgot that science is not the only way of understanding the world.",
+              "translation": "当前的争议中，天文学家自身确实也难辞其咎。在急切渴望建造更大望远镜的过程中，他们忘却了科学绝非人类理解认识世界的唯一途径。",
               "vocab": [
                 {
                   "word": "blame",
@@ -1494,17 +1389,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "/ˈkɒntrəvɜːsi/",
                   "meaning": "争议；争论（常用释义：公开争论；争议）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "In their eagerness to build bigger telescopes, they forgot that science is not the only way of understanding the world.",
-              "translation": "在渴望建造更大的望远镜的过程中，他们忘记了科学并不是理解世界的唯一方式。",
-              "vocab": [
+                },
                 {
                   "word": "eagerness",
                   "ipa": "ˈiːɡərnəs",
@@ -1512,14 +1397,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "They did not always prioritize the protection of Mauna Kea's fragile ecosystems or its holiness to the island's inhabitants.",
-              "translation": "他们并不总是优先考虑保护莫纳克亚脆弱的生态系统或其对岛上居民的神圣性。",
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "They did not always prioritize the protection of Mauna Kea's fragile ecosystems or its holiness to the island's inhabitants. Hawaiian culture is not a relic of the past; it is a living culture undergoing a renaissance today.",
+              "translation": "他们并未始终将保护莫纳克亚山脆弱的生态系统或其对岛民的神圣信仰置于首要位置。夏威夷文化绝非陈列于博物馆的历史遗迹，而是一种在今天正历经伟大复兴的鲜活生命力文化。",
               "vocab": [
                 {
                   "word": "prioritize",
@@ -1538,17 +1423,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˈhoʊlinəs",
                   "meaning": "n.神圣，圣洁；陛下",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "Hawaiian culture is not a relic of the past; it is a living culture undergoing a renaissance today.",
-              "translation": "夏威夷文化并不是过去的遗物，而是过去的产物。这是一种活生生的文化，如今正在复兴。",
-              "vocab": [
+                },
                 {
                   "word": "relic",
                   "ipa": "ˈrelɪk",
@@ -1564,12 +1439,19 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 5,
+          "mainIdea": "天文学与波利尼西亚航海探索精神一脉相承，二者都在追寻人类终极起源的远古召唤",
+          "logicRole": "阐明现代天文学与古代航海观星共同的探索同源性 (Shared Roots & Primal Calling)",
+          "sentences": [
             {
-              "sIndex": 7,
-              "id": "P2-S7",
-              "text": "Yet science has a cultural history, too, with roots going back to the dawn of civilization.",
-              "translation": "然而，科学也有其文化历史，其根源可以追溯到文明之初。",
+              "sIndex": 1,
+              "id": "P5-S1",
+              "text": "Yet science has a cultural history, too, with roots going back to the dawn of civilization. The same curiosity to find what lies beyond the horizon that first brought early Polynesians to Hawaii's shores inspires astronomers today to explore the heavens.",
+              "translation": "然而科学自身同样拥有深厚的文化历史渊源，其根系可一路追溯至人类文明的黎明破晓。正是那份探寻地平线之外未知世界的同一份好奇心，在远古时期指引早期波利尼西亚人航海抵达夏威夷海岸，如今又同样在激励着天文学家去深入探索苍穹天际。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -1588,24 +1470,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˌsɪvələˈzeɪʃn",
                   "meaning": "n.文明；社会文明",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "The same curiosity to find what lies beyond the horizon that first brought early Polynesians to Hawaii's shores inspires astronomers today to explore the heavens.",
-              "translation": "早期波利尼西亚人最初来到夏威夷海岸时，出于对地平线之外的事物的好奇心，今天的天文学家也开始探索天空。",
-              "vocab": [
+                },
                 {
                   "word": "curiosity",
                   "ipa": "/ˌkjʊəriˈɒsəti/",
@@ -1632,13 +1497,13 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": true,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
               "sIndex": 2,
-              "id": "P3-S2",
-              "text": "Calls to disassemble all telescopes on Mauna Kea or to ban future development there ignore the reality that astronomy and Hawaiian culture both seek to answer big questions about who we are, where we come from and where we are going.",
-              "translation": "拆除莫纳克亚山上所有望远镜或禁止那里未来开发的呼吁忽视了这样一个现实：天文学和夏威夷文化都试图回答关于我们是谁、我们从哪里来以及我们要去哪里的重大问题。",
+              "id": "P5-S2",
+              "text": "Calls to disassemble all telescopes on Mauna Kea or to ban future development there ignore the reality that astronomy and Hawaiian culture both seek to answer big questions about who we are, where we come from and where we are going. Perhaps that is why we explore the starry skies, as if answering a primal calling to know ourselves and our true ancestral homes.",
+              "translation": "要求拆除莫纳克亚山上所有望远镜或禁止未来一切开发的极端呼声，忽视了一个基本事实：天文学与夏威夷文化都在共同探寻回答那些根本性的重大命题——我们是谁、我们从何处来、又将向何处去。这或许正是我们探索璀璨星空的真谛所在，宛如在回应一种了解我们自身以及探寻我们真正祖先故土的原始远古召唤。",
               "vocab": [
                 {
                   "word": "disassemble",
@@ -1681,17 +1546,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "əˈbaʊt",
                   "meaning": "prep.从事于,忙于",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Perhaps that is why we explore the starry skies, as if answering a primal calling to know ourselves and our true ancestral homes.",
-              "translation": "也许这就是我们探索星空的原因，仿佛回应了了解我们自己和我们真正的祖先家园的原始召唤。",
-              "vocab": [
+                },
                 {
                   "word": "explore",
                   "ipa": "ɪkˈsplɔː(r)",
@@ -1718,13 +1573,20 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 6,
+          "mainIdea": "天文学界做出妥协保护生态与圣山，莫纳克亚山应完全容纳文化传承与星空探索的和谐共生",
+          "logicRole": "全面肯定选址妥协方案并倡导科学与文化包容共赢 (Author's Full Approval & Compromise)",
+          "sentences": [
             {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "The astronomy community is making compromises to change its use of Mauna Kea.",
-              "translation": "天文学界正在做出妥协，以改变对莫纳克亚山的使用。",
+              "sIndex": 1,
+              "id": "P6-S1",
+              "text": "The astronomy community is making compromises to change its use of Mauna Kea. The TMT site was chosen to minimize the telescope's visibility around the island and to avoid archaeological and environmental impact. To limit the number of telescopes on Mauna Kea, old ones will be removed at the end of their lifetimes and their sites returned to a natural state.",
+              "translation": "天文学界正在做出诚恳妥协以改变对莫纳克亚山的使用方式。TMT 的最终选址经过精心考量，最大限度降低了全岛对望远镜的视觉可见度，并有效规避了对考古遗址与生态环境的影响；为了严格限制山上望远镜的总量，老化退役的望远镜将在其寿命终结时被彻底拆除，原址将全部恢复自然生态原貌。",
               "vocab": [
                 {
                   "word": "astronomy",
@@ -1749,17 +1611,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "",
                   "meaning": "n./v. 使用，用途",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "The TMT site was chosen to minimize the telescope's visibility around the island and to avoid archaeological and environmental impact.",
-              "translation": "选择 TMT 地点是为了最大限度地减少望远镜在岛屿周围的能见度，并避免对考古和环境造成影响。",
-              "vocab": [
+                },
                 {
                   "word": "minimize",
                   "ipa": "ˈmɪnɪmaɪz",
@@ -1795,17 +1647,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "",
                   "meaning": "n.撞击，冲击力；巨大影响，强大作用",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P3-S6",
-              "text": "To limit the number of telescopes on Mauna Kea, old ones will be removed at the end of their lifetimes and their sites returned to a natural state.",
-              "translation": "为了限制莫纳克亚山上的望远镜数量，旧望远镜将在其使用寿命结束时被拆除，并将其位置恢复到自然状态。",
-              "vocab": [
+                },
                 {
                   "word": "ones",
                   "ipa": "/wʌnz/",
@@ -1831,14 +1673,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 7,
-              "id": "P3-S7",
+              "sIndex": 2,
+              "id": "P6-S2",
               "text": "There is no reason why everyone cannot be welcomed on Mauna Kea to embrace their cultural heritage and to study the stars.",
-              "translation": "没有理由不欢迎每个人来到莫纳克亚山拥抱他们的文化遗产并研究星星。",
+              "translation": "完全没有任何理由不热情欢迎每一个人来到莫纳克亚山——既在这里深情拥抱他们世代传承的文化遗产，又在这里携手探索浩瀚璀璨的星空。",
               "vocab": [
                 {
                   "word": "reason",
@@ -1860,7 +1702,7 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         }
@@ -1869,82 +1711,77 @@ window.ENGLISH_DATA['2017'] = {
         {
           "qIndex": 26,
           "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
+          "tangchiModel": "唐迟细节题模型：抓住第一段女王名言（ancient Hawaiians were astronomers, most esteemed members），锁定天文学在古代夏威夷社会中的重要地位",
           "stem": "Queen Liliuokalani's remark in Paragraph 1 indicates",
           "stemKeywords": [
-            "Queen",
-            "Liliuokalani",
-            "remark"
+            "Queen Liliuokalani's remark",
+            "Paragraph 1",
+            "indicates"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P1-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "her conservative view on the historical role of astronomy.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "偷换态度",
+              "analysis": "【干扰特征: 偷换态度】女王是骄傲自豪地肯定古代观星传统，非保守狭隘观点（conservative view）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "B",
               "text": "the importance of astronomy in ancient Hawaiian society.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 明确引述女王言论：'The ancient Hawaiians were astronomers... Star watchers were among the most esteemed members of Hawaiian society'（古代夏威夷人是天文学家，观星者属于社会最受尊崇的成员）。B选项 the importance of astronomy in ancient Hawaiian society（天文学在古代夏威夷社会中的重要地位）精准概括了引言要旨。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "C",
               "text": "the regrettable decline of astronomy in ancient times.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 时代错配】古代天文学是繁荣受尊崇的，衰退受阻是现代发生的事情（P1-S2: all is not well today）。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P1-S2"
               ]
             },
             {
               "key": "D",
               "text": "her appreciation of star watchers' feats in her time.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "时间混淆",
+              "analysis": "【干扰特征: 时代混淆】女王评价的是古代（ancient Hawaiians）的历史传统，非她所处时代当代观星者的成就。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 26 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "ancient Hawaiians were astronomers + most esteemed members = importance of astronomy in ancient Hawaiian society。",
+            "methodSummary": "首段引语事实题：抓准 Queen Liliuokalani 引言主旨（ancient Hawaiians + esteemed members）。"
           }
         },
         {
           "qIndex": 27,
-          "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
+          "type": "细节原因题",
+          "tangchiModel": "唐迟因果题模型：抓住第二段莫纳克亚山成为理想天文台址的理由，锁定其耸立于稠密大气层之上的地理特征",
           "stem": "Mauna Kea is deemed as an ideal astronomical site due to",
           "stemKeywords": [
-            "Mauna",
-            "deemed",
-            "ideal"
+            "Mauna Kea",
+            "ideal astronomical site",
+            "due to"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P2-S2"
           ],
           "officialAnswer": "A",
           "options": [
@@ -1953,10 +1790,9 @@ window.ENGLISH_DATA['2017'] = {
               "text": "its geographical features.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P2-S2 明确解释其成为绝佳台址的自然原因：'Rested in the Pacific Ocean, Mauna Kea's peak rises above the bulk of our planet's dense atmosphere, where conditions allow telescopes to obtain images of unsurpassed clarity'（峰顶耸立于太平洋之中，高出稠密大气层，从而获得无与伦比的清晰图像）。A选项 its geographical features（其独特的地理地貌特征）精准统摄了这一自然地理优势。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
@@ -1964,142 +1800,132 @@ window.ENGLISH_DATA['2017'] = {
               "text": "its protective surroundings.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 概念偏差】优势在于海拔高、空气稀薄视野开阔，非周围具有保护性屏障。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "C",
               "text": "its religious implications.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "张冠李戴",
+              "analysis": "【干扰特征: 维度错配】宗教神圣性（piko/肚脐）是土著反对修建的理由，绝非科学家选址的天文物理原因。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S1",
+                "P2-S2"
               ]
             },
             {
               "key": "D",
               "text": "its existing infrastructure.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 偏离根本】关键在于得天独厚的大气透明度地理环境，非既有基础设施。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 27 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "Rested in Pacific Ocean, peak rises above dense atmosphere = geographical features。",
+            "methodSummary": "因果题自然特征抽象化：将峰顶高出稠密大气层的自然地理条件概括为 geographical features。"
           }
         },
         {
           "qIndex": 28,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "type": "细节原因题",
+          "tangchiModel": "唐迟因果题模型：抓住第三段部分当地居民反对建造 TMT 的深层历史心理原因，锁定其唤醒了主权被占领的屈辱历史",
           "stem": "The construction of the TMT is opposed by some locals partly because",
           "stemKeywords": [
-            "construction",
-            "opposed",
-            "some"
+            "construction of TMT opposed",
+            "some locals partly because"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P3-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "it may risk ruining their intellectual life.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 荒谬错误】并未破坏其精神智识生活，当地人反对的是对圣地的破坏与历史伤害。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             },
             {
               "key": "B",
               "text": "it reminds them of a humiliating history.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S1 明确说明反对的深层历史原因：'have long viewed their presence as disrespect for sacred land and a painful reminder of the occupation of what was once a sovereign nation'（将其视作对圣地的不敬，以及对曾经的主权国家惨遭占领那段痛苦历史的痛苦提醒）。B选项 it reminds them of a humiliating history（使他们回忆起屈辱的历史）构成了对 painful reminder of the occupation 最传神的同义转述。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             },
             {
               "key": "C",
               "text": "their culture will lose a chance of revival.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】夏威夷文化正在经历伟大复兴（P4-S2: undergoing a renaissance），未丧失复兴机会。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S2"
               ]
             },
             {
               "key": "D",
               "text": "they fear losing control of Mauna Kea.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 偏离原文】文章强调的是圣地受亵渎与主权沦丧的历史创伤，非具体的土地控制权之争。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 28 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "painful reminder of the occupation of what was once a sovereign nation = reminds them of a humiliating history。",
+            "methodSummary": "历史原因细节题：抓准 painful reminder of occupation 对应 reminds them of a humiliating history。"
           }
         },
         {
           "qIndex": 29,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "type": "推断判断题",
+          "tangchiModel": "唐迟推断题模型：抓住第五段古代波利尼西亚人跨洋探索与现代天文学共同解答起源终极命题的论述，提炼现代天文学正在实现古代夏威夷人的探索梦想",
           "stem": "It can be inferred from Paragraph 5 that progress in today's astronomy",
           "stemKeywords": [
-            "inferred",
-            "from",
-            "Paragraph"
+            "inferred from Paragraph 5",
+            "progress in today's astronomy"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P5-S1",
+            "P5-S2"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "is fulfilling the dreams of ancient Hawaiians.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 合理推断】P5-S1 和 P5-S2 深入论证了二者的探索同源性：当年引导波利尼西亚人航海的好奇心与今天天文学家探索苍穹的好奇心完全相通（'The same curiosity... inspires astronomers today'），两者都在探寻人类从何而来向何处去的终极梦想，回应探索祖先故土的远古召唤。据此可严谨推断出：当今天文学的进步正是在承续并实现古代夏威夷人的探索梦想（fulfilling the dreams of ancient Hawaiians）。A选项高度契合文意。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S1",
+                "P5-S2"
               ]
             },
             {
               "key": "B",
               "text": "helps spread Hawaiian culture across the world.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 偏离主旨】文章未提及天文学帮助在全球传播夏威夷文化。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S1"
               ]
             },
             {
@@ -2107,93 +1933,88 @@ window.ENGLISH_DATA['2017'] = {
               "text": "may uncover the origin of Hawaiian culture.",
               "isCorrect": false,
               "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 偷换概念】天文学探寻的是宇宙和全人类起源（ancestral homes），非专门考证夏威夷民俗起源。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             },
             {
               "key": "D",
               "text": "will eventually soften Hawaiians' hostility.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 强加因果】化解敌意靠的是第六段的尊重、妥协与生态恢复，非天文学自身的学术进展。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P6-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 29 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "The same curiosity that brought Polynesians to Hawaii inspires astronomers to explore heavens = fulfilling dreams of ancient Hawaiians。",
+            "methodSummary": "精神内核推断题：抓准 The same curiosity + primal calling to know ourselves and ancestral homes 的同源传承。"
           }
         },
         {
           "qIndex": 30,
           "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "tangchiModel": "唐迟态度题模型：抓住第六段 author 对 TMT 选址妥协与多元共存的评价（There is no reason why everyone cannot be welcomed），锁定完全赞同支持（full approval）",
           "stem": "The author's attitude toward choosing Mauna Kea as the TMT site is one of",
           "stemKeywords": [
-            "author",
-            "attitude",
-            "toward"
+            "author's attitude",
+            "choosing Mauna Kea as TMT site"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P6-S1",
+            "P6-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "severe criticism.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 态度相反】作者批评的是早期忽视生态的粗暴做法，对如今兼顾保护与妥协的 TMT 选址方案高度赞许。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S1",
+                "P6-S1"
               ]
             },
             {
               "key": "B",
               "text": "passive acceptance.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "消极态度排除",
+              "analysis": "【干扰特征: 消极被动】作者在文末发出充满热情的欢迎呼吁，绝非被动勉强接受。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P6-S2"
               ]
             },
             {
               "key": "C",
               "text": "slight hesitancy.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "犹豫迟疑排除",
+              "analysis": "【干扰特征: 模糊不准】末句双重否定表极其坚定的肯定（There is no reason why not...），绝无丝毫迟疑。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P6-S2"
               ]
             },
             {
               "key": "D",
               "text": "full approval.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 态度精准匹配】P6-S1 详述了 TMT 选址为降低可见度、规避考古与生态影响所做出的妥协，P6-S2 更是以坚定有力的双重否定句总结：'There is no reason why everyone cannot be welcomed on Mauna Kea to embrace cultural heritage and study the stars'（完全没有任何理由不热情欢迎大家既在此拥抱文化又在此研究星空）。作者对这一平衡妥协的选址方案给予了完全赞同与支持（full approval）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P6-S1",
+                "P6-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 30 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "There is no reason why everyone cannot be welcomed to embrace heritage and study stars = full approval。",
+            "methodSummary": "文末双重否定态度题：There is no reason why... cannot be welcomed 表达极其坚定的赞同支持（full approval）。"
           }
         }
       ]
@@ -2201,30 +2022,21 @@ window.ENGLISH_DATA['2017'] = {
     {
       "id": "text3",
       "number": 3,
-      "title": "Reading Comprehension Text 3",
-      "chineseTitle": "Text 3 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2017 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 3，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "title": "The Limits of GDP and the Measure of Well-Being",
+      "chineseTitle": "GDP 指标的局限性与国民幸福福祉（Well-being）评估",
+      "topic": "宏观经济学与社会福祉 / 英国脱欧、GDP 指标缺陷与国民福祉（Well-being）综合考量",
+      "overview": "本文以罗伯特·肯尼迪对 GDP 的经典批判和英国脱欧公投为切入点，深刻反思了单纯将 GDP 视作国家成功唯一标准的严重局限。实证研究显示，英国 GDP 数据虽曾领先西方，但在将增长转化为国民实际福祉上却严重垫底，医疗教育持续下滑。文章强调 GDP 无法涵盖环境质量与教育成效等构成幸福感的核心要素，大声疾呼富国决策者必须深切汲取教训，将精力重心全面转向考量超越 GDP 以外的诸多国民福祉综合指标。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "mainIdea": "肯尼迪曾指出GDP无法衡量让生活有价值的事物，英国脱欧背景下有必要重新审视该指标",
+          "logicRole": "引用肯尼迪名言与英国脱欧背景引出对GDP局限性的深刻反思 (Kennedy's Critique & Brexit Background)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "Robert F.",
-              "translation": "罗伯特·F.",
-              "vocab": [],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Kennedy once said that a country's GDP measures \"everything except that which makes life worthwhile.\" With Britain voting to leave the European Union, and GDP already predicted to slow as a result, it is now a timely moment to assess what he was referring to.",
-              "translation": "肯尼迪曾经说过，一个国家的国内生产总值衡量的是“除了那些让生活有价值的东西之外的一切”。随着英国公投脱欧，国内生产总值预计将因此放缓，现在是评估他所指内容的时候了。",
+              "text": "Robert F. Kennedy once said that a country's GDP measures \"everything except that which makes life worthwhile.\" With Britain voting to leave the European Union, and GDP already predicted to slow as a result, it is now a timely moment to assess what he was referring to.",
+              "translation": "罗伯特·F·肯尼迪曾深刻指出：一个国家的国内生产总值（GDP）所衡量的“涵盖了一切，唯独排除了那些让生活真正变得有价值的事物”。随着英国公投决定脱离欧盟，且 GDP 预计将因此出现增长放缓，当下正是重新审视他当年这番言论真正所指的绝佳适宜契机。",
               "vocab": [
                 {
                   "word": "as a result",
@@ -2263,14 +2075,21 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": true
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "GDP 衡量无关紧要之物却遗漏关键要素，英国即便GDP亮眼仍有上千万人投票支持脱欧",
+          "logicRole": "剖析GDP指标缺陷并提出英国高增长与脱欧公投的巨大反差 (GDP Flaws & Brexit Paradox)",
+          "sentences": [
             {
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "The question of GDP and its usefulness has annoyed policymakers for over half a century.",
-              "translation": "半个多世纪以来，GDP 及其有用性问题一直困扰着政策制定者。",
+              "sIndex": 1,
+              "id": "P2-S1",
+              "text": "The question of GDP and its usefulness has annoyed policymakers for over half a century. Many argue that it is a flawed concept. It measures things that do not matter and misses things that do.",
+              "translation": "关于 GDP 指标及其有效性的疑问，已经困扰了政策制定者半个多世纪之久。许多人坚称它是一个存在根本缺陷的劣质概念：它衡量了那些无关紧要的东西，却恰恰遗漏了那些真正至关重要的事物。",
               "vocab": [
                 {
                   "word": "question",
@@ -2289,17 +2108,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "",
                   "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "Many argue that it is a flawed concept.",
-              "translation": "许多人认为这是一个有缺陷的概念。",
-              "vocab": [
+                },
                 {
                   "word": "flawed",
                   "ipa": "flɔːd",
@@ -2311,17 +2120,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "/ˈkɒnsept/",
                   "meaning": "概念；理念（常用释义：观念；构想）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "It measures things that do not matter and misses things that do.",
-              "translation": "它衡量不重要的事情并错过重要的事情。",
-              "vocab": [
+                },
                 {
                   "word": "matter",
                   "ipa": "/ˈmætə/",
@@ -2329,14 +2128,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 6,
-              "id": "P1-S6",
-              "text": "By most recent measures, the UK's GDP has been the envy of the Western world, with record low unemployment and high growth figures.",
-              "translation": "根据最近的衡量标准，英国的国内生产总值一直令西方世界羡慕不已，失业率创历史新低，增长数据却很高。",
+              "sIndex": 2,
+              "id": "P2-S2",
+              "text": "By most recent measures, the UK's GDP has been the envy of the Western world, with record low unemployment and high growth figures. If everything was going so well, then why did over 17 million people vote for Brexit, despite the warnings about what it could do to their country's economic prospects?",
+              "translation": "根据最近的大多数衡量指标，英国的 GDP 增长曾一度令整个西方世界艳羡不已，不仅失业率创历史新低，经济增长数据也格外抢眼。然而，如果一切真的运转得如此完美无瑕，那么为何依然有超过1700万民众毅然投票支持脱欧——哪怕此前各界已就脱欧对国家经济前景的沉重打击发出了严厉警告？",
               "vocab": [
                 {
                   "word": "record",
@@ -2349,24 +2148,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ʌnɪmˈplɔɪmənt",
                   "meaning": "n.失业,",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "If everything was going so well, then why did over 17 million people vote for Brexit, despite the warnings about what it could do to their country's economic prospects?",
-              "translation": "如果一切进展顺利，那么为什么超过 1700 万人投票支持英国脱欧，尽管有人警告英国脱欧可能对其国家的经济前景产生影响？",
-              "vocab": [
+                },
                 {
                   "word": "for",
                   "ipa": "",
@@ -2398,14 +2180,21 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "年度福祉转化研究显示英国在将增长转化为民众福祉上表现最差，必须纳入多维指标",
+          "logicRole": "引入跨国福祉转化实证研究并揭示英国垫底真相 (Growth-to-Wellbeing Conversion Gap)",
+          "sentences": [
             {
-              "sIndex": 2,
-              "id": "P2-S2",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "A recent annual study of countries and their ability to convert growth into well-being sheds some light on that question.",
-              "translation": "最近一项针对各国及其将增长转化为福祉的能力的年度研究为这个问题提供了一些线索。",
+              "translation": "近期一项关于各国将其经济增长转化为国民真实福祉能力的年度研究，为解答这一谜团提供了极具启发性的明亮线索。",
               "vocab": [
                 {
                   "word": "annual",
@@ -2438,14 +2227,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
-              "sIndex": 3,
-              "id": "P2-S3",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Across the 163 countries measured, the UK is one of the poorest performers in ensuring that economic growth is translated into meaningful improvements for its citizens.",
-              "translation": "在所调查的 163 个国家中，英国是在确保经济增长转化为对其公民有意义的改善方面表现最差的国家之一。",
+              "translation": "在所评估测量的全部163个国家中，英国在确保经济增长切实转化为造福广大国民的有意义民生改善方面，竟然是表现最差垫底的国家之一。",
               "vocab": [
                 {
                   "word": "economic growth",
@@ -2479,13 +2268,13 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P2-S4",
+              "sIndex": 3,
+              "id": "P3-S3",
               "text": "Rather than just focusing on GDP, over 40 different sets of criteria from health, education and civil society engagement have been measured to get a more rounded assessment of how countries are performing.",
-              "translation": "我们不仅仅关注 GDP，还衡量了 40 多套不同的健康、教育和民间社会参与标准，以便更全面地评估各国的表现。",
+              "translation": "该研究不再仅仅狭隘地盯住 GDP 数字，而是综合测评了涵盖医疗卫生、教育发展以及公民社会参与等超过40个不同维度的多套指标，从而对各国的综合表现做出了更为全面立体、客观周延的科学评估。",
               "vocab": [
                 {
                   "word": "rather than",
@@ -2538,29 +2327,26 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": false
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "主要经济体在医疗教育等关键福祉领域持续下滑，而部分较穷欧洲国家却取得巨大进步",
+          "logicRole": "对比富国福祉倒退与部分穷国福祉跃升的鲜明反差 (Rich vs Poor Countries in Well-Being)",
+          "sentences": [
             {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "While all of these countries face their own challenges, there are a number of consistent themes.",
-              "translation": "尽管所有这些国家都面临着各自的挑战，但也有一些一致的主题。",
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "While all of these countries face their own challenges, there are a number of consistent themes. Yes, there has been a budding economic recovery since the 2008 global crash, but in key indicators in areas such as health and education, major economies have continued to decline.",
+              "translation": "尽管所有这些国家都面临着各自独特的严峻挑战，但其中依然存在若干高度一致的共同主题。诚然，自2008年全球金融危机以来经济确实出现了一定程度的萌芽式复苏，但在医疗健康和教育等关键民生福祉指标上，各大主要经济体却在持续下滑退步。",
               "vocab": [
                 {
                   "word": "consistent",
                   "ipa": "kənˈsɪstənt",
                   "meaning": "adj.一贯的；持续的；固守的；一致的",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "Yes, there has been a budding economic recovery since the 2008 global crash, but in key indicators in areas such as health and education, major economies have continued to decline.",
-              "translation": "是的，自 2008 年全球金融危机以来，经济复苏已初露端倪，但在健康和教育等领域的关键指标中，主要经济体仍在持续下滑。",
-              "vocab": [
+                },
                 {
                   "word": "budding",
                   "ipa": "ˈbʌdɪŋ",
@@ -2604,21 +2390,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
-          "sentences": [
+            },
             {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Yet this isn't the case with all countries.",
-              "translation": "但并非所有国家都是如此。",
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "Yet this isn't the case with all countries. Some relatively poor European countries have seen huge improvements across measures including civil society, income equality and the environment.",
+              "translation": "然而并非所有国家皆是如此。欧洲一些相对并不富裕的国家，在包括公民社会建设、收入分配平等以及生态环境质量在内的多项衡量指标上，却取得了令人瞩目的巨大进步改善。",
               "vocab": [
                 {
                   "word": "Yet",
@@ -2631,17 +2410,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "keɪs",
                   "meaning": "n.事例，案",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "Some relatively poor European countries have seen huge improvements across measures including civil society, income equality and the environment.",
-              "translation": "一些相对贫穷的欧洲国家在公民社会、收入平等和环境等方面取得了巨大进步。",
-              "vocab": [
+                },
                 {
                   "word": "relatively",
                   "ipa": "ˈrelətɪvli",
@@ -2680,13 +2449,13 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": true
+              "isKeyEvidence": false
             },
             {
               "sIndex": 3,
-              "id": "P3-S3",
+              "id": "P4-S3",
               "text": "This is a lesson that rich countries can learn: When GDP is no longer regarded as the sole measure of a country's success, the world looks very different.",
-              "translation": "这是富裕国家可以吸取的一个教训：当GDP不再被视为衡量一个国家成功的唯一标准时，世界看起来就大不一样了。",
+              "translation": "这是所有富裕发达国家理应深切汲取的深刻教训：一旦不再将 GDP 视作衡量一个国家成功与否的唯一尺度，整个世界展现出的面貌将截然不同。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -2714,13 +2483,20 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 5,
+          "mainIdea": "GDP 无法涵盖环境与教育等幸福核心要素，决策者应将重心转向增进国民福祉",
+          "logicRole": "总结呼吁政策制定者摆脱GDP崇拜并全面聚焦国民福祉 (Refocusing on Well-Being Beyond GDP)",
+          "sentences": [
             {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "So, what Kennedy was referring to was that while GDP has been the most common method for measuring the economic activity of nations, as a measure, it is no longer enough.",
-              "translation": "因此，肯尼迪所指的是，虽然GDP一直是衡量国家经济活动的最常用方法，但作为一种衡量标准，它已经不够了。",
+              "sIndex": 1,
+              "id": "P5-S1",
+              "text": "So, what Kennedy was referring to was that while GDP has been the most common method for measuring the economic activity of nations, as a measure, it is no longer enough. It does not include important factors such as environmental quality or education outcomes—all things that contribute to a person's sense of well-being.",
+              "translation": "因此，肯尼迪当年真正意指的正是：尽管 GDP 一直是衡量国家经济活动最常用的通用手段，但作为一项衡量尺度，它如今已远远不够用了。它根本无法涵盖环境质量或教育成效等至关重要的核心因素——而这一切恰恰正是构成一个人切身幸福感（sense of well-being）的关键支柱。",
               "vocab": [
                 {
                   "word": "no longer",
@@ -2757,17 +2533,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "/ˈmeʒə/",
                   "meaning": "衡量；测量。（常用释义：测量；衡量；尺寸为。）",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "It does not include important factors such as environmental quality or education outcomes—all things that contribute to a person's sense of well-being.",
-              "translation": "它不包括环境质量或教育成果等所有有助于人们幸福感的重要因素。",
-              "vocab": [
+                },
                 {
                   "word": "include",
                   "ipa": "ɪnˈkluːd",
@@ -2799,19 +2565,25 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 6,
-              "id": "P3-S6",
-              "text": "The sharp hit to growth predicted around the world and in the UK could lead to a decline in the everyday services we depend on for our well-being and for growth.",
-              "translation": "预计世界各地和英国的增长将受到严重打击，这可能会导致我们赖以福祉和增长的日常服务减少。",
+              "sIndex": 2,
+              "id": "P5-S2",
+              "text": "The sharp hit to growth predicted around the world and in the UK could lead to a decline in the everyday services we depend on for our well-being and for growth. But policymakers who refocus efforts on improving well-being rather than simply worrying about GDP figures could avoid the forecasted doom and may even see progress.",
+              "translation": "全球以及英国所预测的经济增长急剧受挫，固然可能导致我们赖以维系福祉与增长的日常公共服务出现下滑；然而，若政策制定者能够将精力重心重新聚焦于切实改善国民福祉、而非单纯为冷冰冰的 GDP 数字患得患失，就完全有可能成功避开预言中的灰暗末日，甚至迎来真正意义上的长足进步。",
               "vocab": [
                 {
                   "word": "depend on",
                   "ipa": "/dɪˈpend ɒn/",
                   "meaning": "取决于；依赖于（常用释义：依靠）",
+                  "level": "purple"
+                },
+                {
+                  "word": "rather than",
+                  "ipa": "/ˈrɑːðə ðæn/",
+                  "meaning": "而不是；而非（常用释义：用于对比选择）",
                   "level": "purple"
                 },
                 {
@@ -2849,33 +2621,11 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˈwelbiːɪŋ",
                   "meaning": "n.幸福，安康；（国家的）繁荣",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 7,
-              "id": "P3-S7",
-              "text": "But policymakers who refocus efforts on improving well-being rather than simply worrying about GDP figures could avoid the forecasted doom and may even see progress.",
-              "translation": "但政策制定者若能重新将工作重点放在改善福祉上，而不是仅仅担心 GDP 数据，就可以避免预期的厄运，甚至可能看到进展。",
-              "vocab": [
-                {
-                  "word": "rather than",
-                  "ipa": "/ˈrɑːðə ðæn/",
-                  "meaning": "而不是；而非（常用释义：用于对比选择）",
-                  "level": "purple"
                 },
                 {
                   "word": "refocus",
                   "ipa": "ˌriːˈfoʊkəs",
                   "meaning": "v.使…（透镜）重新聚焦；改变重点；改变使用范围",
-                  "level": "green"
-                },
-                {
-                  "word": "well-being",
-                  "ipa": "ˈwelbiːɪŋ",
-                  "meaning": "n.幸福，安康；（国家的）繁荣",
                   "level": "green"
                 },
                 {
@@ -2904,7 +2654,7 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         }
@@ -2912,215 +2662,199 @@ window.ENGLISH_DATA['2017'] = {
       "questions": [
         {
           "qIndex": 31,
-          "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
+          "type": "例证题",
+          "tangchiModel": "唐迟例证题模型：引用罗伯特·肯尼迪名言（GDP 衡量了一切，唯独排除了让生活有价值的事物），说明其对 GDP 指标评价极低",
           "stem": "Robert F. Kennedy is cited because he",
           "stemKeywords": [
-            "Robert",
-            "Kennedy",
-            "cited"
+            "Robert F. Kennedy",
+            "cited because"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P1-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "praised the UK for its GDP.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 张冠李戴】肯尼迪是在批判 GDP 指标的局限性，非称赞英国。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "B",
               "text": "identified GDP with happiness.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】肯尼迪指出 GDP 恰恰排除了真正让生活有价值的事物（except that which makes life worthwhile），绝未将其等同于幸福。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "C",
               "text": "misinterpreted the role of GDP.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "贬低作者赞同对象",
+              "analysis": "【干扰特征: 颠倒评价】作者完全赞同肯尼迪的前瞻洞见，非指责其曲解误读。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P5-S1"
               ]
             },
             {
               "key": "D",
               "text": "had a low opinion of GDP.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 明确引述肯尼迪的名言：'GDP measures everything except that which makes life worthwhile'（GDP 衡量了一切，唯独排除了那些让生活真正有价值的事物）。这表明他对 GDP 作为国家衡量尺度的评价极低（had a low opinion of GDP）。D选项精准概括了其批评态度。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 31 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "GDP measures everything except what makes life worthwhile = had a low opinion of GDP。",
+            "methodSummary": "引语评价题：抓准名言中的贬义否定结构（except that which makes life worthwhile -> had a low opinion of）。"
           }
         },
         {
           "qIndex": 32,
           "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
+          "tangchiModel": "唐迟推断题模型：抓住第二段英国 GDP 曾令西方世界艳羡（the envy of the Western world with high growth），锁定 GDP 作为成功的衡量标准在英国曾被广泛推崇定义",
           "stem": "It can be inferred from Paragraph 2 that",
           "stemKeywords": [
-            "inferred",
-            "from",
-            "Paragraph"
+            "inferred from Paragraph 2"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P2-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "the UK is reluctant to remold its economic pattern.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】第二段未讨论重塑经济模式的意愿问题。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "B",
               "text": "GDP as the measure of success is widely defined in the UK.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 合理推断】P2-S2 明确指出英国此前对自身高增长、低失业率 GDP 数据的自豪与艳羡（'the UK's GDP has been the envy of the Western world... If everything was going so well'），英国社会此前普遍将高企的 GDP 数据直接等同于“一切运转良好”（everything was going well）。据此可严谨推断出：将 GDP 视作衡量成功的标准在英国曾被广泛接受与定义。B选项高度契合推理。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "C",
               "text": "the UK will contribute less to the world economy.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 偏离段落主旨】非第二段推导的核心结论。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             },
             {
               "key": "D",
               "text": "policymakers in the UK are paying less attention to GDP.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】决策者长期深陷 GDP 崇拜并为此困扰，正是作者呼吁改正的对象。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S1",
+                "P5-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 32 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "the UK's GDP has been the envy of the Western world / if everything was going so well = GDP as measure of success is widely defined in the UK。",
+            "methodSummary": "段落推断题：结合 envy of the Western world 反推英国社会对 GDP 成功标准的推崇接受度。"
           }
         },
         {
           "qIndex": 33,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第三段年度福祉研究的作用（sheds some light on that question），锁定其研究结果极具启发性（enlightening）",
           "stem": "Which of the following is true about the recent annual study?",
           "stemKeywords": [
-            "Which",
-            "following",
-            "true"
+            "true about recent annual study"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P3-S1",
+            "P3-S2"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "It is sponsored by 163 countries.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】163个国家是被评估测量的样本对象（Across 163 countries measured），非出资赞助方（sponsored by）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S2"
               ]
             },
             {
               "key": "B",
               "text": "It excludes GDP as an indicator.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】研究是测评将经济增长转化为福祉的能力（convert growth into well-being），并不单纯排除 GDP，而是结合了多维指标。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1",
+                "P3-S3"
               ]
             },
             {
               "key": "C",
               "text": "Its criteria are questionable.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "褒贬颠倒",
+              "analysis": "【干扰特征: 贬义否定】作者赞赏其多维指标提供了更加全面立体的评估（more rounded assessment），绝非质疑其标准。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S3"
               ]
             },
             {
               "key": "D",
               "text": "Its results are enlightening.",
-              "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S1 明确评价该研究的重大价值：'A recent annual study... sheds some light on that question'（为解答这一问题提供了明亮的线索/启发）。shed light on sth 意为“提供阐明与启发”，与 Its results are enlightening（其研究结果极具启发性）完全同义吻合。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 33 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "sheds some light on that question = Its results are enlightening。",
+            "methodSummary": "习语对应法：shed light on（阐明/启发）直接对应形容词 enlightening。"
           }
         },
         {
           "qIndex": 34,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "type": "推断建议题",
+          "tangchiModel": "唐迟建议题模型：抓住最后两段的核心论点（GDP is no longer enough... include environmental quality and education），锁定考量超越 GDP 以外诸多因素的必要性",
           "stem": "In the last two paragraphs, the author suggests that",
           "stemKeywords": [
-            "last",
-            "paragraphs",
-            "author"
+            "last two paragraphs",
+            "author suggests that"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P4-S3",
+            "P5-S1",
+            "P5-S2"
           ],
           "officialAnswer": "C",
           "options": [
@@ -3128,22 +2862,20 @@ window.ENGLISH_DATA['2017'] = {
               "key": "A",
               "text": "the UK is preparing for an economic boom.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】当前预测显示经济增长将遭遇大幅放缓与重挫（sharp hit to growth），非繁荣（boom）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             },
             {
               "key": "B",
               "text": "high GDP foreshadows an economic decline.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "强加荒谬因果",
+              "analysis": "【干扰特征: 强加因果】文章指出 GDP 忽视了福祉，非高 GDP 预示经济衰退。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S1"
               ]
             },
             {
@@ -3151,42 +2883,44 @@ window.ENGLISH_DATA['2017'] = {
               "text": "it is essential to consider factors beyond GDP.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P4-S3、P5-S1 和 P5-S2 明确反复强调作者的核心建议：'When GDP is no longer regarded as sole measure... as a measure, it is no longer enough. It does not include important factors such as environmental quality... refocus efforts on improving well-being'（不再把 GDP 作为唯一尺度，GDP 已经不够用了，必须纳入环境、教育等因素，重新聚焦改善福祉）。C选项 it is essential to consider factors beyond GDP（考量超越 GDP 以外的诸多因素至关重要）是对最后两段全部主旨最精炼的核心概括。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S3",
+                "P5-S1",
+                "P5-S2"
               ]
             },
             {
               "key": "D",
               "text": "it requires caution to handle economic issues.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "空泛泛指",
+              "analysis": "【干扰特征: 过于宽泛】未能点出超越 GDP 追求综合福祉这一核心主张。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 34 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "GDP as a measure is no longer enough... include environment and education = essential to consider factors beyond GDP。",
+            "methodSummary": "收尾主旨提炼法：抓住末两段的核心规范性主张（refocus on factors beyond GDP）。"
           }
         },
         {
           "qIndex": 35,
-          "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "type": "主旨标题题",
+          "tangchiModel": "唐迟标题题模型：通读全文，提炼以英国高 GDP 与福祉脱节为镜鉴反思单纯追逐 GDP 指标的主旨",
           "stem": "Which of the following is the best title for the text?",
           "stemKeywords": [
-            "Which",
-            "following",
-            "best"
+            "best title",
+            "the text"
           ],
           "targetSentences": [
             "P1-S1",
-            "P2-S1"
+            "P2-S2",
+            "P3-S2",
+            "P4-S3",
+            "P5-S1"
           ],
           "officialAnswer": "A",
           "options": [
@@ -3195,49 +2929,51 @@ window.ENGLISH_DATA['2017'] = {
               "text": "High GDP But Inadequate Well-being, a UK Lesson",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 全文主旨概括】文章以肯尼迪批评 GDP 开篇，以英国脱欧公投和实证数据为典型案例（英国 GDP 增长亮眼却在转化为国民福祉上严重垫底），深入反思了各大主要经济体 GDP 与福祉脱节的危机，并明确提出这是所有富国必须汲取的深刻教训（a lesson that rich countries can learn / a UK Lesson）。A选项 High GDP But Inadequate Well-being, a UK Lesson（高 GDP 却福祉不足：来自英国的深刻教训）全面、精准、生动地统摄了全文的核心论点与案例，为最佳标题。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P2-S2",
+                "P3-S2",
+                "P4-S3",
+                "P5-S1"
               ]
             },
             {
               "key": "B",
               "text": "GDP Figures, a Window on Global Economic Health",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 观点相反】文章全篇都在批判 GDP 无法真实反映国民健康与福祉（flawed concept / no longer enough）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P2-S1",
+                "P5-S1"
               ]
             },
             {
               "key": "C",
               "text": "Robert F. Kennedy, a Terminator of GDP",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 次要引子人物】肯尼迪只是第一段引出话题的名人引言，非文章主角。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             },
             {
               "key": "D",
               "text": "Brexit, the UK's Gateway to Well-being",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "主观幻想",
+              "analysis": "【干扰特征: 偏离文章】脱欧只是折射民众不满的背景现象，文章并未宣称脱欧是通往福祉的康庄大道。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P2-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 35 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "High GDP But Inadequate Well-being (核心矛盾) + a UK Lesson (全篇核心案例与教训)。",
+            "methodSummary": "主旨标题题综合归纳法：选择同时包含文章核心矛盾（GDP vs Well-being）和关键案例（UK Lesson）的综合项。"
           }
         }
       ]
@@ -3245,21 +2981,21 @@ window.ENGLISH_DATA['2017'] = {
     {
       "id": "text4",
       "number": 4,
-      "title": "Reading Comprehension Text 4",
-      "chineseTitle": "Text 4 真题精读与题型分析",
-      "topic": "学术探索 / 社会热点 / 文化政治",
-      "overview": "本篇选自 2017 年全国硕士研究生招生考试英语(一)真题 Reading Comprehension Text 4，全面涵盖考研核心高频词汇、长难句剖析与经典命题逻辑。",
+      "title": "The Supreme Court Ruling on McDonnell's Corruption Conviction",
+      "chineseTitle": "美国最高法院推翻弗吉尼亚前州长受贿定罪与政治偏袒界定",
+      "topic": "宪政法律与廉政建设 / 官员职务行为（Official Acts）、政治偏袒与政务透明法治",
+      "overview": "本文探讨了美国最高法院一致推翻前弗吉尼亚州长麦克唐纳受贿定罪的里程碑判决。法院在道德上对其收受名表豪车深感鄙夷的同时，在法理上明确界定了受贿罪必须涉及具体职权范围内的“职务行为”或合同审批等实质性回报，单纯引见官员并不入罪。文章指出代议制宪法契约保护民选代表回应选民需求，但呼吁必须通过严格执行政务透明度法律确保所有人享有平等的政府接触机会，高度评价该判决是反腐法治的重要进步。",
       "paragraphs": [
         {
           "pIndex": 1,
-          "mainIdea": "第 1 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 1)",
+          "mainIdea": "最高法院罕见一致推翻前弗吉尼亚州长受贿定罪，但在道德层面对其收受豪车名表的行径深感鄙夷",
+          "logicRole": "提出最高法院推翻前州长定罪与道德鄙夷的罕见裁决 (Supreme Court McDonnell Ruling)",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
               "text": "In a rare unanimous ruling, the US Supreme Court has overturned the corruption conviction of a former Virginia governor, Robert McDonnell.",
-              "translation": "美国最高法院罕见地一致裁决，推翻了对前弗吉尼亚州州长罗伯特·麦克唐纳的腐败定罪。",
+              "translation": "在一次极其罕见的全体一致裁决中，美国联邦最高法院推翻了对弗吉尼亚州前州长罗伯特·麦克唐纳的受贿腐败定罪。",
               "vocab": [
                 {
                   "word": "Supreme Court",
@@ -3323,7 +3059,7 @@ window.ENGLISH_DATA['2017'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "But it did so while holding its nose at the ethics of his conduct, which included accepting gifts such as a Rolex watch and a Ferrari automobile from a company seeking access to government.",
-              "translation": "但它在这样做的同时，对他的行为道德嗤之以鼻，其中包括接受一家寻求与政府接触的公司赠送的劳力士手表和法拉利汽车等礼物。",
+              "translation": "然而，最高法院在做出这一裁决的同时，对其行为的道德伦理操守表现出了极度的鄙夷不屑（holding its nose）——麦克唐纳的恶劣行径包括从一家企图结交政府高官的企业那里收受劳力士金表和法拉利跑车等奢华厚礼。",
               "vocab": [
                 {
                   "word": "ethics",
@@ -3364,12 +3100,19 @@ window.ENGLISH_DATA['2017'] = {
               ],
               "isTopicSentence": false,
               "isKeyEvidence": true
-            },
+            }
+          ]
+        },
+        {
+          "pIndex": 2,
+          "mainIdea": "法院裁定单纯引见其他官员不构成受贿罪，必须证明其针对职权范围内的具体事务做出职务行为",
+          "logicRole": "阐明法律上构成受贿罪必须涉及具体“职务行为” (Definition of Official Acts)",
+          "sentences": [
             {
-              "sIndex": 3,
-              "id": "P1-S3",
+              "sIndex": 1,
+              "id": "P2-S1",
               "text": "The high court's decision said the judge in Mr. McDonnell's trial failed to tell a jury that it must look only at his \"official acts,\" or the former governor's decisions on \"specific\" and \"unsettled\" issues related to his duties.",
-              "translation": "高等法院的裁决称，审判麦克唐纳先生的法官未能告诉陪审团，陪审团必须只考虑他的“官方行为”，或者前州长对与其职责相关的“具体”和“未解决”问题的决定。",
+              "translation": "最高法院的判决指出，在麦克唐纳案件的一审审理中，法官未能向陪审团明确说明：必须仅仅审视其是否做出了真正的“职务行为”（official acts），即这位前州长针对与其职责相关的“具体的”且“尚未决定的”待办事项所做出的实质性裁决。",
               "vocab": [
                 {
                   "word": "court",
@@ -3426,14 +3169,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isTopicSentence": true,
+              "isKeyEvidence": true
             },
             {
-              "sIndex": 4,
-              "id": "P1-S4",
+              "sIndex": 2,
+              "id": "P2-S2",
               "text": "Merely helping a gift-giver gain access to other officials, unless done with clear intent to pressure those officials, is not corruption, the justices found.",
-              "translation": "法官们发现，仅仅帮助送礼者接触其他官员，除非明显是为了向这些官员施压，否则并不构成腐败。",
+              "translation": "大法官们认定，仅仅协助送礼者接触引见其他政府官员，只要未带有向那些官员明确施压的意图，在法律上并不构成受贿腐败犯罪。",
               "vocab": [
                 {
                   "word": "Merely",
@@ -3473,13 +3216,20 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 3,
+          "mainIdea": "收礼引见固然令人作呕，但反受贿法要求必须有合同或法规审批等实质性具体回报的铁证",
+          "logicRole": "区分道德丑陋与法律证据：单纯牵线搭桥非受贿 (Distasteful Favors vs Concrete Returns)",
+          "sentences": [
             {
-              "sIndex": 5,
-              "id": "P1-S5",
+              "sIndex": 1,
+              "id": "P3-S1",
               "text": "The court did suggest that accepting favors in return for opening doors is \"distasteful\" and \"nasty.\" But under anti-bribery laws, proof must be made of concrete benefits, such as approval of a contract or regulation.",
-              "translation": "法院确实表示，接受好处以换取开门是“令人厌恶的”和“令人讨厌的”。但根据反贿赂法，必须证明具体利益，例如合同或法规的批准。",
+              "translation": "最高法院确实指出，通过收受好处来为送礼者“敞开方便之门”在道德上是“令人作呕”且“丑陋下作”的。但在反受贿刑法体系下，必须确凿证明送礼者获得了实质性的具体利益回报（concrete benefits/returns），例如合同审批或法规修改许可等。",
               "vocab": [
                 {
                   "word": "court",
@@ -3548,21 +3298,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "第 2 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 2)",
-          "sentences": [
+              "isTopicSentence": true,
+              "isKeyEvidence": true
+            },
             {
-              "sIndex": 1,
-              "id": "P2-S1",
+              "sIndex": 2,
+              "id": "P3-S2",
               "text": "Simply arranging a meeting, making a phone call, or hosting an event is not an \"official act\".",
-              "translation": "简单地安排会议、打电话或举办活动并不是“官方行为”。",
+              "translation": "单纯安排一次会面、打一通引见电话或主持一场活动，本身并不属于法律意义上的“职务行为”。",
               "vocab": [
                 {
                   "word": "event",
@@ -3583,14 +3326,21 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 }
               ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 4,
+          "mainIdea": "该判决在法理上站得住脚，民选代表理应有权倾听并回应选民诉求而免于动辄被诉受贿",
+          "logicRole": "阐明代议制政府倾听回应选民诉求的法理基石 (Legally Sound & Constituents' Concerns)",
+          "sentences": [
             {
-              "sIndex": 2,
-              "id": "P2-S2",
+              "sIndex": 1,
+              "id": "P4-S1",
               "text": "The court's ruling is legally sound in defining a kind of favoritism that is not criminal. Elected leaders must be allowed to help supporters deal with bureaucratic problems without fear of prosecution for bribery.",
-              "translation": "法院的裁决在定义一种不构成犯罪的偏袒方面是合法合理的。必须允许当选领导人帮助支持者处理官僚问题，而不必担心因贿赂而被起诉。",
+              "translation": "最高法院的裁决在法理逻辑上是站得住脚的，它精准界定了一种不构成刑事犯罪的偏袒行为。民选领导人必须被允许帮助支持者排忧解难、处理官僚程序难题，而无需时刻担忧动辄遭到受贿起诉。",
               "vocab": [
                 {
                   "word": "deal with",
@@ -3653,14 +3403,14 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": true
             },
             {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "\"The basic compact underlying representative government,\" wrote Chief Justice John Roberts for the court, \"assumes that public officials will hear from their constituents and act on their concerns.\" But the ruling reinforces the need for citizens and their elected representatives, not the courts, to ensure equality of access to government.",
-              "translation": "首席大法官约翰·罗伯茨为法院写道：“代议制政府的基本契约假定公职人员将听取选民的意见并根据他们的关切采取行动。”但这一裁决强调了公民及其选出的代表（而不是法院）确保平等参与政府事务的必要性。",
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "\"The basic compact underlying representative government,\" wrote Chief Justice John Roberts for the court, \"assumes that public officials will hear from their constituents and act on their concerns.\"",
+              "translation": "首席大法官约翰·罗伯茨代表最高法院撰写判词道：“代议制政府的根本社会契约假定：公职人员应当倾听其选区选民的呼声，并对其关切的事项采取行动。”",
               "vocab": [
                 {
                   "word": "Chief Justice",
@@ -3733,11 +3483,34 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ækt",
                   "meaning": "v.表演;举动;起作用 n.行为,法令;一幕",
                   "level": "red"
-                },
+                }
+              ],
+              "isTopicSentence": false,
+              "isKeyEvidence": true
+            }
+          ]
+        },
+        {
+          "pIndex": 5,
+          "mainIdea": "防止权钱交易不能单靠法院判刑，必须强化政府透明度法律以确保公民接触政府的机会均等",
+          "logicRole": "呼吁通过政务透明立法确保公共渠道接触的公平游戏规则 (Fair Play in Official Access & Transparency)",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P4-S1",
+              "text": "But the ruling reinforces the need for citizens and their elected representatives, not the courts, to ensure equality of access to government.",
+              "translation": "然而，该判决进一步凸显了公民及其民选代表自身（而非依靠法院）来切实保障所有人接触政府渠道平等机会的紧迫性。",
+              "vocab": [
                 {
                   "word": "ruling",
                   "ipa": "/ˈruːlɪŋ/",
                   "meaning": "司法裁决（常用释义：裁定；统治）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 },
                 {
@@ -3757,16 +3530,22 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "/ˈækses/",
                   "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
                   "level": "red"
+                },
+                {
+                  "word": "government",
+                  "ipa": "ˈɡʌvənmənt",
+                  "meaning": "n. 政府",
+                  "level": "green"
                 }
               ],
-              "isTopicSentence": false,
+              "isTopicSentence": true,
               "isKeyEvidence": false
             },
             {
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "Officials must not be allowed to play favorites in providing information or in arranging meetings simply because an individual or group provides a campaign donation or a personal gift.",
-              "translation": "不得仅仅因为个人或团体提供竞选捐款或个人礼物而在提供信息或安排会议时偏袒官员。",
+              "sIndex": 2,
+              "id": "P4-S2",
+              "text": "Officials must not be allowed to play favorites in providing information or in arranging meetings simply because an individual or group provides a campaign donation or a personal gift. This type of integrity requires well-enforced laws in government transparency, such as records of official meetings, rules on lobbying, and information about each elected leader's source of wealth.",
+              "translation": "绝不能允许官员仅仅因为某个个人或团体提供了竞选政治献金或私人礼物，就在提供政府信息或安排高官会面时搞亲疏偏袒。这种廉政诚信需要依靠严格执行的政府政务透明度法律来予以规范保障——例如官方会晤记录公开、严密游说法规以及公开每位民选领导人的财产财富来源。",
               "vocab": [
                 {
                   "word": "information",
@@ -3791,17 +3570,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "dəʊˈneɪʃ(ə)n",
                   "meaning": "n.捐赠物,尤指捐款",
                   "level": "red"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "This type of integrity requires well-enforced laws in government transparency, such as records of official meetings, rules on lobbying, and information about each elected leader's source of wealth.",
-              "translation": "这种诚信需要在政府透明度方面执行良好的法律，例如正式会议记录、游说规则以及有关每位当选领导人财富来源的信息。",
-              "vocab": [
+                },
                 {
                   "word": "integrity",
                   "ipa": "ɪnˈteɡrəti",
@@ -3833,12 +3602,6 @@ window.ENGLISH_DATA['2017'] = {
                   "level": "red"
                 },
                 {
-                  "word": "information",
-                  "ipa": "ɪnfəˈmeɪʃ(ə)n",
-                  "meaning": "n. 信息",
-                  "level": "green"
-                },
-                {
                   "word": "about",
                   "ipa": "əˈbaʊt",
                   "meaning": "prep.从事于,忙于",
@@ -3852,20 +3615,20 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         },
         {
-          "pIndex": 3,
-          "mainIdea": "第 3 段核心论点论述与学术推导",
-          "logicRole": "逻辑论证层级与篇章发展 (Paragraph 3)",
+          "pIndex": 6,
+          "mainIdea": "若关系可以花钱收买将动摇民主基石，最高法院判决是反腐与遏制官方偏袒的向前一步",
+          "logicRole": "总结民主平等基石并高度评价最高法院判决的法治进步意义 (Supportive Attitude & Anti-Corruption Progress)",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P3-S1",
-              "text": "Favoritism in official access can fan public perceptions of corruption.",
-              "translation": "官方准入中的偏袒可能会加深公众对腐败的看法。",
+              "id": "P6-S1",
+              "text": "Favoritism in official access can fan public perceptions of corruption. But it is not always corruption. Rather officials must avoid double standards, or different types of access for average people and the wealthy. If connections can be bought, a basic premise of democratic society—that all are equal in treatment by government—is undermined. Good governance rests on an understanding of the inherent worth of each individual.",
+              "translation": "在接触官方渠道上的偏袒确实会助长公众对腐败的感知，但这在法律上并不总等同于腐败犯罪。官员必须坚决避免搞双重标准，即避免让普通平民与富豪权贵享有截然不同的政府接触渠道。如果政界人脉关系可以用金钱购买，那么民主社会的基本前提预设——即所有人在接受政府对待时一律平等——将被彻底瓦解。良政善治必须建立在深刻理解并尊重每个个体固有尊严与价值的基础之上。",
               "vocab": [
                 {
                   "word": "Favoritism",
@@ -3902,44 +3665,12 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "kəˈrʌpʃ(ə)n",
                   "meaning": "n.贪污，腐败；堕落；变体",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": true,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "But it is not always corruption.",
-              "translation": "但这并不总是腐败。",
-              "vocab": [
-                {
-                  "word": "corruption",
-                  "ipa": "kəˈrʌpʃ(ə)n",
-                  "meaning": "n.贪污，腐败；堕落；变体",
-                  "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": true
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Rather officials must avoid double standards, or different types of access for average people and the wealthy.",
-              "translation": "相反，官员们必须避免双重标准，或者为普通民众和富人提供不同类型的准入机会。",
-              "vocab": [
+                },
                 {
                   "word": "Rather",
                   "ipa": "ˈrɑːðə;(US)ˈræðər",
                   "meaning": "adv. 相当，",
                   "level": "green"
-                },
-                {
-                  "word": "access",
-                  "ipa": "/ˈækses/",
-                  "meaning": "获取、使用科研成果的机会或权利（常用释义：进入；接触；访问、获取）",
-                  "level": "red"
                 },
                 {
                   "word": "for",
@@ -3958,17 +3689,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˈwelθɪ",
                   "meaning": "adj. 富的",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "If connections can be bought, a basic premise of democratic society—that all are equal in treatment by government – is undermined.",
-              "translation": "如果可以收买人脉，民主社会的基本前提——政府对待所有人一律平等——就会遭到破坏。",
-              "vocab": [
+                },
                 {
                   "word": "basic",
                   "ipa": "ˈbeɪsɪk",
@@ -4010,17 +3731,7 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "ˈɡʌvənmənt",
                   "meaning": "n. 政府",
                   "level": "green"
-                }
-              ],
-              "isTopicSentence": false,
-              "isKeyEvidence": false
-            },
-            {
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "Good governance rests on an understanding of the inherent worth of each individual. The court's ruling is a step forward in the struggle against both corruption and official favoritism.",
-              "translation": "良好的治理取决于对每个人的内在价值的理解。法院的裁决是反对腐败和官员偏袒的斗争中向前迈出的一步。",
-              "vocab": [
+                },
                 {
                   "word": "governance",
                   "ipa": "ˈɡʌvərnəns",
@@ -4038,7 +3749,17 @@ window.ENGLISH_DATA['2017'] = {
                   "ipa": "/ˌɪndɪˈvɪdʒuəl/",
                   "meaning": "个体的；个体（常用释义：个人；个别的）",
                   "level": "green"
-                },
+                }
+              ],
+              "isTopicSentence": true,
+              "isKeyEvidence": false
+            },
+            {
+              "sIndex": 2,
+              "id": "P6-S2",
+              "text": "The court's ruling is a step forward in the struggle against both corruption and official favoritism.",
+              "translation": "最高法院的这一裁决，是人类在同腐败以及官方不当偏袒作坚决斗争的法治征程中所迈出的扎实向前一步。",
+              "vocab": [
                 {
                   "word": "court",
                   "ipa": "/kɔːt/",
@@ -4089,7 +3810,7 @@ window.ENGLISH_DATA['2017'] = {
                 }
               ],
               "isTopicSentence": false,
-              "isKeyEvidence": false
+              "isKeyEvidence": true
             }
           ]
         }
@@ -4097,17 +3818,16 @@ window.ENGLISH_DATA['2017'] = {
       "questions": [
         {
           "qIndex": 36,
-          "type": "细节事实题",
-          "tangchiModel": "唐迟真题阅读模型：细节事实题定位与逻辑排查法",
-          "stem": "The underlined sentence (Para.1) most probably shows that the court",
+          "type": "词句理解题",
+          "tangchiModel": "唐迟词义/语义推断模型：抓住第一段 holding its nose at the ethics of his conduct 习语隐喻（捏着鼻子表达厌恶），锁定法院对麦克唐纳的操守行为极度鄙夷不屑（contemptuous）",
+          "stem": "The underlined sentence (Para. 1) most probably shows that the court",
           "stemKeywords": [
-            "underlined",
-            "sentence",
-            "Para"
+            "holding its nose",
+            "Para 1",
+            "most probably shows"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P1-S2"
           ],
           "officialAnswer": "C",
           "options": [
@@ -4115,10 +3835,9 @@ window.ENGLISH_DATA['2017'] = {
               "key": "A",
               "text": "avoided defining the extent of McDonnell's duties.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】法院在判决中严格界定了职务行为范围，非回避界定。",
               "refSentences": [
-                "P1-S1",
                 "P2-S1"
               ]
             },
@@ -4126,11 +3845,10 @@ window.ENGLISH_DATA['2017'] = {
               "key": "B",
               "text": "made no compromise in convicting McDonnell.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "事实相反",
+              "analysis": "【干扰特征: 事实相反】法院最终推翻了定罪（overturned conviction），非坚判定罪。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S1"
               ]
             },
             {
@@ -4138,76 +3856,75 @@ window.ENGLISH_DATA['2017'] = {
               "text": "was contemptuous of McDonnell's conduct.",
               "isCorrect": true,
               "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "analysis": "【正确项 · 同义替换】P1-S2 中 'holding its nose at the ethics of his conduct' 是形象的习语表达（字面意为“捏着鼻子”，比喻对某种腐败丑恶行径感到恶心厌恶、鄙视不屑）。结合后文将其称为 distasteful and nasty（恶心下作），C选项 was contemptuous of McDonnell's conduct（对麦克唐纳的行径极度鄙夷不屑）完全精准吻合。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2",
+                "P3-S1"
               ]
             },
             {
               "key": "D",
               "text": "refused to comment on McDonnell's ethics.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】法院明确评论其道德丑陋（distasteful and nasty），未拒绝置评。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2",
+                "P3-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 36 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "hold one's nose at sth = to express strong disgust or contempt = was contemptuous of his conduct。",
+            "methodSummary": "习语推断法：hold one's nose 比喻强烈的厌恶鄙夷，直接对应 contemptuous。"
           }
         },
         {
           "qIndex": 37,
-          "type": "推断判断题",
-          "tangchiModel": "唐迟真题阅读模型：推断判断题定位与逻辑排查法",
-          "stem": "According to Paragraph 4, an official act is deemed corruptive only if it involves",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第三段反受贿法对 official act 的定罪门槛，锁定必须涉及给送礼者带来实质性具体回报（concrete returns/benefits）",
+          "stem": "According to Paragraph 3, an official act is deemed corruptive only if it involves",
           "stemKeywords": [
-            "According",
-            "Paragraph",
-            "official"
+            "Paragraph 3",
+            "official act",
+            "deemed corruptive only if",
+            "involves"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P3-S1",
+            "P3-S2"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
               "text": "leaking secrets intentionally.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 罪名混淆】未提及故意泄露国家机密。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             },
             {
               "key": "B",
               "text": "sizable gains in the form of gifts.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 B 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "必要非充分条件",
+              "analysis": "【干扰特征: 概念混淆】麦克唐纳收受了巨额豪礼（劳力士和法拉利），但若无具体职务回报依然不构成受贿罪。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2",
+                "P3-S1"
               ]
             },
             {
               "key": "C",
               "text": "concrete returns for gift-givers.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P3-S1 明确阐述反受贿法的定罪条件：'under anti-bribery laws, proof must be made of concrete benefits, such as approval of a contract or regulation'（在反受贿法下，必须确凿证明送礼者获得了具体的实质利益回报，如合同审批）。C选项 concrete returns for gift-givers（给送礼者带来的具体回报）是 concrete benefits 的完全等价同义改写。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             },
             {
@@ -4215,214 +3932,207 @@ window.ENGLISH_DATA['2017'] = {
               "text": "breaking contracts officially.",
               "isCorrect": false,
               "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "analysis": "【干扰特征: 概念错误】受贿是指违规批准合同（approval of contract），非毁约。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P3-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 37 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "proof must be made of concrete benefits such as approval of a contract = concrete returns for gift-givers。",
+            "methodSummary": "法律要件题定位：抓准 anti-bribery laws, proof must be made of concrete benefits 对应的 concrete returns。"
           }
         },
         {
           "qIndex": 38,
-          "type": "词义句意题",
-          "tangchiModel": "唐迟真题阅读模型：词义句意题定位与逻辑排查法",
+          "type": "细节事实题",
+          "tangchiModel": "唐迟细节题模型：抓住第四段首席大法官罗伯茨判词的核心假设，锁定代议制政府假设公职人员有正当理由倾听并回应选民需求",
           "stem": "The court's ruling is based on the assumption that public officials are",
           "stemKeywords": [
-            "court",
-            "ruling",
-            "based"
+            "court's ruling",
+            "based on the assumption",
+            "public officials are"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P4-S1",
+            "P4-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
               "text": "justified in addressing the needs of their constituents.",
-              "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "【干扰特征: 正反混淆】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S2 明确引述首席大法官的判决前提假设：'The basic compact underlying representative government assumes that public officials will hear from their constituents and act on their concerns'（代议制政府的根本契约假定：公职人员应当倾听选民呼声并对其关切采取行动）。A选项 justified in addressing the needs of their constituents（有正当理由去回应解决其选区选民的需求）完全精准还原了该假设原意。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S2"
               ]
             },
             {
               "key": "B",
               "text": "qualified to deal independently with bureaucratic issues.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】是帮助支持者处理官僚难题，非官员自身独立解决官僚问题。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S1"
               ]
             },
             {
               "key": "C",
               "text": "allowed to focus on the concerns of their supporters.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "以偏概全狭隘化",
+              "analysis": "【干扰特征: 狭隘化】宪法契约针对全体选区选民（constituents），非仅针对私人支持者搞偏袒。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S2",
+                "P5-S2"
               ]
             },
             {
               "key": "D",
               "text": "exempt from conviction on the charge of favoritism.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 D 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 绝对化】若偏袒伴随实质受贿仍会被定罪，并未赋予全面免罪权。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S1",
+                "P5-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 38 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "assumes that public officials will hear from constituents and act on concerns = justified in addressing needs of constituents。",
+            "methodSummary": "原句假设提取法：抓准 assumes that 后的定性从句（hear from constituents and act on concerns）。"
           }
         },
         {
           "qIndex": 39,
-          "type": "主旨大意题",
-          "tangchiModel": "唐迟真题阅读模型：主旨大意题定位与逻辑排查法",
+          "type": "细节目的题",
+          "tangchiModel": "唐迟目的题模型：抓住第五段需要严格执行政府透明度法律的目的，锁定确保在接触官方渠道时的公平竞争与机会均等（fair play in official access）",
           "stem": "Well-enforced laws in government transparency are needed to",
           "stemKeywords": [
-            "Well",
-            "enforced",
-            "laws"
+            "Well-enforced laws",
+            "government transparency",
+            "needed to"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P5-S1",
+            "P5-S2"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
               "text": "awaken the conscience of officials.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 以偏概全】选项 A 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "泛化主观",
+              "analysis": "【干扰特征: 空泛说教】透明度法律是制度硬性约束，非单纯唤醒官员良心。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             },
             {
               "key": "B",
               "text": "guarantee fair play in official access.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P5-S1 和 P5-S2 明确阐明政务透明立法的终极目的：'ensure equality of access to government... Officials must not be allowed to play favorites... This type of integrity requires well-enforced laws in government transparency'（确保所有人接触政府渠道平等，绝不能允许官员搞亲疏偏袒，这种廉政需要严格执行政务透明法）。B选项 guarantee fair play in official access（保障在接触官方渠道时的公平竞争/机会均等）是对 equality of access 与 not playing favorites 最完美的同义概括。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S1",
+                "P5-S2"
               ]
             },
             {
               "key": "C",
               "text": "allow for certain kinds of lobbying.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 C 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 目的颠倒】透明法是为了严格规范监管游说（rules on lobbying），防止权钱勾结，非给游说开绿灯。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S2"
               ]
             },
             {
               "key": "D",
               "text": "inspire hopes in average people.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "空洞泛化",
+              "analysis": "【干扰特征: 过于笼统】核心在于制度层面保障平民与富人享有平等的政府接触机会（equality of access）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P5-S1",
+                "P6-S1"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 39 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "ensure equality of access to government + not play favorites = guarantee fair play in official access。",
+            "methodSummary": "目的题核心概念对应：equality of access to government 对应 fair play in official access。"
           }
         },
         {
           "qIndex": 40,
           "type": "观点态度题",
-          "tangchiModel": "唐迟真题阅读模型：观点态度题定位与逻辑排查法",
+          "tangchiModel": "唐迟态度题模型：抓住末段 author 对最高法院判决的终极定性评价（The court's ruling is a step forward...），锁定完全赞同支持（supportive）",
           "stem": "The author's attitude toward the court's ruling is",
           "stemKeywords": [
-            "author",
-            "attitude",
-            "toward"
+            "author's attitude",
+            "court's ruling"
           ],
           "targetSentences": [
-            "P1-S1",
-            "P2-S1"
+            "P4-S1",
+            "P6-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
               "text": "sarcastic.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】选项 A 严格遵循题干定位句的核心事实逻辑，通过同义表达精准契合原文论断。",
+              "isCorrect": false,
+              "distractorType": "态度不准",
+              "analysis": "【干扰特征: 讽刺偏差】作者讽刺的是麦克唐纳的收礼行径，对法院判决本身持高度肯定的法治评价。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P1-S2",
+                "P6-S2"
               ]
             },
             {
               "key": "B",
               "text": "tolerant.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 过度推断】选项 B 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "消极态度排除",
+              "analysis": "【干扰特征: 宽容排除】作者态度积极鲜明，非勉强容忍。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P6-S2"
               ]
             },
             {
               "key": "C",
               "text": "skeptical.",
               "isCorrect": false,
-              "distractorType": "绝对化词汇",
-              "analysis": "【干扰特征: 绝对化词汇】选项 C 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 态度相反】作者称赞判决法理扎实（legally sound）且是重大进步（step forward），绝非怀疑（skeptical）。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S1",
+                "P6-S2"
               ]
             },
             {
               "key": "D",
               "text": "supportive.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选项 D 违背原文细节，存在明显的逻辑偏差或概念偷换。",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 态度精准匹配】P4-S1 明确赞许该裁决在法理逻辑上站得住脚（legally sound），P6-S2 在文末盖棺定论：'The court's ruling is a step forward in the struggle against both corruption and official favoritism'（最高法院的这一裁决是在反腐和遏制官方偏袒斗争中所迈出的坚实向前一步）。作者对该判决持极其明确的赞赏与支持（supportive）态度。",
               "refSentences": [
-                "P1-S1",
-                "P2-S1"
+                "P4-S1",
+                "P6-S2"
               ]
             }
           ],
           "presetReflection": {
-            "trapAnalysis": "第 40 题重点考查定位句与选项之间的同义替换精准度，注意排除干扰项的干扰特征。",
-            "methodSummary": "细节题直选与排除法则：抓准题干核心关键词快速定位，对比定位句语义，排除无中生有与偷换概念选项。"
+            "trapAnalysis": "legally sound + a step forward in the struggle against corruption = supportive。",
+            "methodSummary": "态度题褒义评价词定位：legally sound 与 a step forward 直接锁定正面支持态度（supportive）。"
           }
         }
       ]
