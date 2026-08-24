@@ -252,17 +252,69 @@
         </div><!-- #mainAreaContent -->
         <div class="dashboard-panel" id="dashboardPanel" style="display:none">
           <div class="db-overview" id="dbOverview">
-            <!-- 考研冲刺倒计时仪表卡片 -->
-            <div class="kaoyan-countdown-card" id="dbCountdownCard">
-              <div class="countdown-card-left">
-                <div class="countdown-card-title">考研初试倒计时</div>
-                <div class="countdown-quote" id="dbCountdownQuote">“星光不问赶路人，时光不负有心人。”</div>
+            <!-- 顶部看板行：倒计时仪表 + 全学科总掌握度看板 -->
+            <div class="db-header-row">
+              <!-- 考研冲刺倒计时仪表卡片 -->
+              <div class="kaoyan-countdown-card" id="dbCountdownCard">
+                <div class="countdown-card-left">
+                  <div class="countdown-card-title">考研初试倒计时</div>
+                  <div class="countdown-quote" id="dbCountdownQuote">“星光不问赶路人，时光不负有心人。”</div>
+                </div>
+                <div class="countdown-card-right">
+                  <span class="countdown-num" id="dbCountdownDays">--</span>
+                  <span class="countdown-unit">天</span>
+                </div>
               </div>
-              <div class="countdown-card-right">
-                <span class="countdown-num" id="dbCountdownDays">--</span>
-                <span class="countdown-unit">天</span>
+
+              <!-- 全学科总掌握度看板卡片 -->
+              <div class="db-overall-card" id="dbOverallCard">
+                <div class="db-overall-chart-wrap">
+                  <canvas id="dbMasterCanvas" width="90" height="90"></canvas>
+                  <div class="db-overall-pct" id="dbMasterPct">0%</div>
+                </div>
+                <div class="db-overall-info">
+                  <div class="db-overall-title">学科全量总进度</div>
+                  <div class="db-overall-metrics">
+                    <div class="db-metric-item">
+                      <span class="metric-label">已推进题量</span>
+                      <span class="metric-val" id="dbMetricDone">0 / 0</span>
+                    </div>
+                    <div class="db-metric-item">
+                      <span class="metric-label">熟练掌握</span>
+                      <span class="metric-val text-prof" id="dbMetricProf">0 题</span>
+                    </div>
+                    <div class="db-metric-item">
+                      <span class="metric-label">模糊需复习</span>
+                      <span class="metric-val text-vag" id="dbMetricVag">0 题</span>
+                    </div>
+                    <div class="db-metric-item">
+                      <span class="metric-label">不会错题</span>
+                      <span class="metric-val text-wrong" id="dbMetricWrong">0 题</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- 每日推进统计趋势图卡片 -->
+            <div class="db-trend-card" id="dbTrendCard">
+              <div class="db-trend-header">
+                <div class="db-trend-title">
+                  <span class="trend-title-main">📊 近 14 天推进趋势</span>
+                  <span class="trend-subtitle">每日刷题与复习强度分析</span>
+                </div>
+                <div class="db-trend-stats" id="dbTrendStats">
+                  <span class="trend-stat-tag" id="dbTrendTotal">近14天累计: -- 题</span>
+                  <span class="trend-stat-tag" id="dbTrendAvg">日均: -- 题/天</span>
+                </div>
+              </div>
+              <div class="db-trend-chart-wrap">
+                <canvas id="dbTrendCanvas"></canvas>
+              </div>
+            </div>
+
+            <!-- 分书籍/分模块环形进度图网格 -->
+            <div class="db-section-title">分模块进度明细（点击进入章节列表）</div>
             <div class="db-grid" id="dbGrid"></div>
           </div>
           <div class="db-detail" id="dbDetail" style="display:none">

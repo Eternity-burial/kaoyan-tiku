@@ -992,6 +992,9 @@
     }
     renderQuestionPills();
     renderReflection(getCurrentQuestion());
+    if (!togglingOff && typeof window.recordStudyActivity === 'function') {
+      window.recordStudyActivity();
+    }
     // 仅在首次标记（原本无熟练度）时才自动跳到下一题
     if (!togglingOff && !had && state.currentQIndex < 4) {
       switchQuestion(1);

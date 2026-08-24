@@ -795,6 +795,283 @@
       ];
     }
 
+    // 计算当前激活科目下所有章节的全量总览数据
+    function getSubjectOverallStats() {
+      var totalQ = 0, doneQ = 0, profQ = 0, vagQ = 0, wrongQ = 0;
+      if (typeof CHAPTERS !== 'undefined' && Array.isArray(CHAPTERS)) {
+        for (var i = 0; i < CHAPTERS.length; i++) {
+          var ch = CHAPTERS[i];
+          if (!ch || ch.total === 0) continue;
+          var stats = getChStats(ch);
+          var len = ch.ownTotal || ch.total;
+          totalQ += len;
+          doneQ += stats.done;
+          profQ += (stats.lv5 + stats.lv4);
+          vagQ += (stats.lv3 + stats.lv2);
+          wrongQ += stats.lv1;
+        }
+      }
+      var pct = totalQ > 0 ? Math.round((doneQ / totalQ) * 100) : 0;
+      var profPct = totalQ > 0 ? Math.round((profQ / totalQ) * 100) : 0;
+      return {
+        total: totalQ,
+        done: doneQ,
+        proficient: profQ,
+        vague: vagQ,
+        wrong: wrongQ,
+        unmarked: totalQ - doneQ,
+        progressPct: pct,
+        proficientPct: profPct
+      };
+    }
+
+    // 获取最近 N 天的每日推进刷题数据（融合 SM-2 历史与本地学习打卡日志）
+    function getDailyStudyData(daysCount) {
+      if (!daysCount) daysCount = 14;
+      var dailyMap = {};
+      var now = new Date();
+      for (var i = daysCount - 1; i >= 0; i--) {
+        var d = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+        var y = d.getFullYear();
+        var m = String(d.getMonth() + 1).padStart(2, '0');
+        var day = String(d.getDate()).padStart(2, '0');
+        var key = y + '-' + m + '-' + day;
+        var label = (d.getMonth() + 1) + '/' + d.getDate();
+        dailyMap[key] = { key: key, label: label, count: 0, date: d };
+      }
+
+      // 从 SM-2 历史记录中回填历史做题与复习数据
+      for (var k = 0; k < localStorage.length; k++) {
+        var lk = localStorage.key(k);
+        if (lk && lk.startsWith('sm2_')) {
+          try {
+            var data = JSON.parse(localStorage.getItem(lk));
+            if (data && typeof data === 'object') {
+              Object.values(data).forEach(function(record) {
+                if (record && record.history && Array.isArray(record.history)) {
+                  record.history.forEach(function(h) {
+                    if (h.date) {
+                      var hd = new Date(h.date);
+                      var y = hd.getFullYear();
+                      var m = String(hd.getMonth() + 1).padStart(2, '0');
+                      var day = String(hd.getDate()).padStart(2, '0');
+                      var dk = y + '-' + m + '-' + day;
+                      if (dailyMap[dk]) {
+                        dailyMap[dk].count++;
+                      }
+                    }
+                  });
+                }
+              });
+            }
+          } catch (e) {}
+        }
+      }
+
+      // 叠加实时学习打卡日志
+      try {
+        var studyLog = JSON.parse(localStorage.getItem('kaoyan_study_log') || '{}');
+        Object.keys(studyLog).forEach(function(dk) {
+          if (dailyMap[dk]) {
+            dailyMap[dk].count = Math.max(dailyMap[dk].count, studyLog[dk].count || 0);
+          }
+        });
+      } catch (e) {}
+
+      return Object.values(dailyMap);
+    }
+
+    // 记录做题打卡推进
+    function recordStudyActivity() {
+      var now = new Date();
+      var y = now.getFullYear();
+      var m = String(now.getMonth() + 1).padStart(2, '0');
+      var d = String(now.getDate()).padStart(2, '0');
+      var dk = y + '-' + m + '-' + d;
+      try {
+        var studyLog = JSON.parse(localStorage.getItem('kaoyan_study_log') || '{}');
+        studyLog[dk] = studyLog[dk] || { count: 0 };
+        studyLog[dk].count++;
+        localStorage.setItem('kaoyan_study_log', JSON.stringify(studyLog));
+        if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+          window.storageSync.scheduleSave();
+        }
+      } catch (e) {}
+    }
+    window.recordStudyActivity = recordStudyActivity;
+
+    // 辅助圆角矩形路径
+    function roundRect(ctx, x, y, width, height, radius) {
+      if (width < 2 * radius) radius = width / 2;
+      if (height < 2 * radius) radius = height / 2;
+      if (height <= 0) return;
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + width, y, x + width, y + height, radius);
+      ctx.arcTo(x + width, y + height, x, y + height, 0);
+      ctx.arcTo(x, y + height, x, y, 0);
+      ctx.arcTo(x, y, x + width, y, radius);
+      ctx.closePath();
+    }
+
+    // 绘制总掌握度主环形进度表
+    function drawMasterGauge(canvas, stats) {
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var dpr = window.devicePixelRatio || 1;
+      var size = 90;
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      canvas.style.width = size + 'px';
+      canvas.style.height = size + 'px';
+      ctx.scale(dpr, dpr);
+
+      var isDark = currentTheme === 'dark';
+      var cx = size / 2, cy = size / 2;
+      var r = 36;
+      var lineWidth = 7;
+      var p = stats.total > 0 ? (stats.done / stats.total) : 0;
+
+      ctx.clearRect(0, 0, size, size);
+
+      // 底轨
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, 2 * Math.PI);
+      ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(102, 8, 116, 0.08)';
+      ctx.lineWidth = lineWidth;
+      ctx.stroke();
+
+      // 渐变进度条
+      if (p > 0) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + p * 2 * Math.PI);
+        var grad = ctx.createLinearGradient(0, 0, size, size);
+        if (isDark) {
+          grad.addColorStop(0, '#b388ff');
+          grad.addColorStop(1, '#8a2b9c');
+        } else {
+          grad.addColorStop(0, '#8a2b9c');
+          grad.addColorStop(1, '#660874');
+        }
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = lineWidth;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      }
+    }
+
+    // 绘制近 14 天推进趋势图（高 DPI 柱状与日均线）
+    function drawTrendChart(canvas, dailyData) {
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var dpr = window.devicePixelRatio || 1;
+      var container = canvas.parentElement;
+      var width = container ? container.clientWidth : 600;
+      var height = 130;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.scale(dpr, dpr);
+
+      var isDark = currentTheme === 'dark';
+      ctx.clearRect(0, 0, width, height);
+
+      if (!dailyData || dailyData.length === 0) return;
+
+      var paddingLeft = 32, paddingRight = 16, paddingTop = 22, paddingBottom = 24;
+      var chartW = width - paddingLeft - paddingRight;
+      var chartH = height - paddingTop - paddingBottom;
+
+      var maxVal = 0;
+      var sum = 0;
+      dailyData.forEach(function(d) {
+        if (d.count > maxVal) maxVal = d.count;
+        sum += d.count;
+      });
+      if (maxVal < 10) maxVal = 10;
+      else maxVal = Math.ceil(maxVal * 1.18);
+
+      var avg = Math.round(sum / dailyData.length);
+
+      // Y 轴刻度与横向辅助网格
+      ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.05)';
+      ctx.lineWidth = 1;
+      ctx.fillStyle = isDark ? '#7a7a8c' : '#999999';
+      ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+
+      for (var s = 0; s <= 2; s++) {
+        var val = Math.round((maxVal / 2) * s);
+        var y = paddingTop + chartH - (val / maxVal) * chartH;
+        ctx.beginPath();
+        ctx.moveTo(paddingLeft, y);
+        ctx.lineTo(width - paddingRight, y);
+        ctx.stroke();
+        ctx.fillText(String(val), paddingLeft - 6, y);
+      }
+
+      // 绘制每日柱状图
+      var count = dailyData.length;
+      var barGap = 6;
+      var totalBarWidth = (chartW - (count - 1) * barGap) / count;
+      var barWidth = Math.min(26, Math.max(10, totalBarWidth));
+      var actualGap = count > 1 ? (chartW - barWidth * count) / (count - 1) : 0;
+
+      ctx.textAlign = 'center';
+
+      dailyData.forEach(function(d, idx) {
+        var x = paddingLeft + idx * (barWidth + actualGap);
+        var barH = (d.count / maxVal) * chartH;
+        var y = paddingTop + chartH - barH;
+
+        // 柱子底轨背景槽
+        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)';
+        roundRect(ctx, x, paddingTop, barWidth, chartH, 3);
+        ctx.fill();
+
+        // 推进活跃柱
+        if (d.count > 0) {
+          var grad = ctx.createLinearGradient(0, y, 0, paddingTop + chartH);
+          if (isDark) {
+            grad.addColorStop(0, '#b388ff');
+            grad.addColorStop(1, 'rgba(102, 8, 116, 0.6)');
+          } else {
+            grad.addColorStop(0, '#8a2b9c');
+            grad.addColorStop(1, '#660874');
+          }
+          ctx.fillStyle = grad;
+          roundRect(ctx, x, y, barWidth, barH, 3);
+          ctx.fill();
+
+          // 柱顶数量文字
+          ctx.fillStyle = isDark ? '#e2e2e8' : '#333333';
+          ctx.font = 'bold 10px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+          ctx.fillText(String(d.count), x + barWidth / 2, y - 5);
+        }
+
+        // 底部日期标注
+        ctx.fillStyle = isDark ? '#8e8e9c' : '#777777';
+        ctx.font = '10px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.fillText(d.label, x + barWidth / 2, height - 8);
+      });
+
+      // 日均虚线标注
+      if (avg > 0) {
+        var avgY = paddingTop + chartH - (avg / maxVal) * chartH;
+        ctx.beginPath();
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = isDark ? 'rgba(179, 136, 255, 0.55)' : 'rgba(102, 8, 116, 0.5)';
+        ctx.lineWidth = 1.2;
+        ctx.moveTo(paddingLeft, avgY);
+        ctx.lineTo(width - paddingRight, avgY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+
+    // 绘制分书籍同心圆环形图（彻底消除 30 个同心细圆相互叠加产生的摩尔纹）
     function drawDonut(canvas, chapters, label) {
       var ctx = canvas.getContext('2d');
       var dpr = window.devicePixelRatio || 1;
@@ -823,15 +1100,23 @@
 
       var purpleDark = isDark ? [179, 136, 255] : [102, 8, 116];
       var purpleLight = isDark ? [77, 6, 89] : [225, 190, 231];
-      var unfilledColor = isDark ? 'rgba(255, 255, 255, 0.08)' : '#e8e8e8';
+      var unfilledColor = isDark ? 'rgba(255, 255, 255, 0.05)' : '#f2edf4';
       var centerBg = isDark ? '#22232a' : '#ffffff';
       var strokeColor = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.08)';
       var labelColor = isDark ? '#e2e2e8' : '#333333';
       var pctColor = isDark ? '#b388ff' : '#660874';
 
+      // 1. 一次性绘制连续光滑的整圈底轨，彻底消除 30 个独立同心细圆相互叠加产生的摩尔纹（Moire Fringe）
+      ctx.beginPath();
+      ctx.arc(cx, cy, outerR, 0, 2 * Math.PI);
+      ctx.arc(cx, cy, innerR, 0, 2 * Math.PI, true);
+      ctx.closePath();
+      ctx.fillStyle = unfilledColor;
+      ctx.fill();
+
       var totalDone = 0, totalQ = 0;
 
-      // Inner to outer: inner ring = chapter 0 (第1讲), outer ring = last chapter
+      // 2. 仅绘制已完成有进度的章节扇形弧（内到外：第0讲到最后一讲）
       for (var i = 0; i < ringCount; i++) {
         var ri = innerR + i * ringWidth;
         var ro = innerR + (i + 1) * ringWidth;
@@ -839,29 +1124,19 @@
         totalDone += pr.done;
         totalQ += pr.total;
         var p = pr.progress;
-        var color = dbLerpColor(purpleLight, purpleDark, p);
-        var cStr = 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
-
-        // Filled arc (clockwise from top)
-        ctx.beginPath();
-        ctx.arc(cx, cy, ro, -Math.PI / 2, -Math.PI / 2 + p * 2 * Math.PI);
-        ctx.arc(cx, cy, ri, -Math.PI / 2 + p * 2 * Math.PI, -Math.PI / 2, true);
-        ctx.closePath();
-        ctx.fillStyle = cStr;
-        ctx.fill();
-
-        // Unfilled arc
-        if (p < 1) {
+        if (p > 0) {
+          var color = dbLerpColor(purpleLight, purpleDark, p);
+          var cStr = 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
           ctx.beginPath();
-          ctx.arc(cx, cy, ro, -Math.PI / 2 + p * 2 * Math.PI, -Math.PI / 2 + 2 * Math.PI);
-          ctx.arc(cx, cy, ri, -Math.PI / 2 + 2 * Math.PI, -Math.PI / 2 + p * 2 * Math.PI, true);
+          ctx.arc(cx, cy, ro, -Math.PI / 2, -Math.PI / 2 + p * 2 * Math.PI);
+          ctx.arc(cx, cy, ri, -Math.PI / 2 + p * 2 * Math.PI, -Math.PI / 2, true);
           ctx.closePath();
-          ctx.fillStyle = unfilledColor;
+          ctx.fillStyle = cStr;
           ctx.fill();
         }
       }
 
-      // Center circle with slight shadow
+      // 中心圆卡片
       ctx.beginPath();
       ctx.arc(cx, cy, innerR, 0, 2 * Math.PI);
       ctx.fillStyle = centerBg;
@@ -870,7 +1145,7 @@
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      // Center text
+      // 中心文字
       var pct = totalQ > 0 ? Math.round(totalDone / totalQ * 100) : 0;
       ctx.fillStyle = labelColor;
       ctx.font = 'bold 12px "Microsoft YaHei","PingFang SC",sans-serif';
@@ -949,6 +1224,36 @@
       document.getElementById('dbOverview').style.display = '';
       document.getElementById('dbDetail').style.display = 'none';
 
+      // 1. 计算并渲染全学科总掌握度与指标
+      var stats = getSubjectOverallStats();
+      var pctEl = document.getElementById('dbMasterPct');
+      if (pctEl) pctEl.textContent = stats.progressPct + '%';
+
+      var metricDone = document.getElementById('dbMetricDone');
+      if (metricDone) metricDone.textContent = stats.done + ' / ' + stats.total;
+
+      var metricProf = document.getElementById('dbMetricProf');
+      if (metricProf) metricProf.textContent = stats.proficient + ' 题 (' + stats.proficientPct + '%)';
+
+      var metricVag = document.getElementById('dbMetricVag');
+      if (metricVag) metricVag.textContent = stats.vague + ' 题';
+
+      var metricWrong = document.getElementById('dbMetricWrong');
+      if (metricWrong) metricWrong.textContent = stats.wrong + ' 题';
+
+      // 2. 每日推进统计趋势
+      var dailyData = getDailyStudyData(14);
+      var totalPeriod = 0;
+      dailyData.forEach(function(d) { totalPeriod += d.count; });
+      var avgPeriod = Math.round(totalPeriod / dailyData.length);
+
+      var tagTotal = document.getElementById('dbTrendTotal');
+      if (tagTotal) tagTotal.textContent = '近14天累计: ' + totalPeriod + ' 题';
+
+      var tagAvg = document.getElementById('dbTrendAvg');
+      if (tagAvg) tagAvg.textContent = '日均: ' + avgPeriod + ' 题/天';
+
+      // 3. 渲染各个书籍卡片 DOM
       var grid = document.getElementById('dbGrid');
       var html = '';
       var books = getSortedWbs(); // 按当前科目返回 {wb,label} 列表
@@ -962,8 +1267,14 @@
       }
       grid.innerHTML = html;
 
-      // Draw donuts after DOM update
+      // 4. DOM 更新后绘制所有 Canvas
       setTimeout(function() {
+        var masterCanvas = document.getElementById('dbMasterCanvas');
+        if (masterCanvas) drawMasterGauge(masterCanvas, stats);
+
+        var trendCanvas = document.getElementById('dbTrendCanvas');
+        if (trendCanvas) drawTrendChart(trendCanvas, dailyData);
+
         for (var b = 0; b < books.length; b++) {
           var wb = books[b].wb;
           var chapters = getBookChapters(wb);
@@ -2300,6 +2611,7 @@
       } else if (!togglingOff && score) {
         // 常规答题改标：重定基线，首次标记（原本未做）时自动跳到下一题
         rebaselineSm2(current, score);
+        recordStudyActivity();
         if (!had) navNext();
       }
       renderSm2InfoBar();
