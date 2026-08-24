@@ -2726,20 +2726,15 @@
       transform: translateY(-1px);
     }
 
-    /* 专业试卷暗化反色（自然黑灰底 + 柔和白字，彻底去除高饱和刺眼反色） */
+    /* 试卷柔和暗化（降低刺眼白底亮度与眩光，避免强行反色失真） */
     .dark-img-filter,
     body[data-theme="dark"] .question-img.dark-filter,
     body[data-theme="dark"] .solution-img.dark-filter,
     body[data-theme="dark"] .lightbox-img.dark-filter {
-      filter: invert(0.92) contrast(0.96) brightness(0.85) grayscale(0.3);
+      filter: brightness(0.76) contrast(1.04);
+      opacity: 0.92;
       border-radius: 6px;
-      background-color: #222328;
-    }
-
-    /* 羊皮纸暖阳模式试卷微调（微暖色温） */
-    body[data-theme="warm"] .question-img,
-    body[data-theme="warm"] .solution-img {
-      filter: sepia(0.08) contrast(0.98);
+      transition: filter 0.2s ease, opacity 0.2s ease;
     }
 
     /* ===== SM-2 未来 7 天负荷预测直方图 ===== */
