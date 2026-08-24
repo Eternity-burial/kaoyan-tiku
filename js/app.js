@@ -1,3 +1,20 @@
+'use strict';
+
+    // ===== 全局常量 =====
+    // 仪表盘/错题本列顺序（高数→线代→概率论）
+    var SUBJECT_ORDER = ['高数', '线代', '概率论'];
+
+    // localStorage 容量溢出保护：写入失败时静默捕获并在控制台提示
+    // 大体积数据（标注 JSON、SM-2 全量）优先使用此函数，避免 QuotaExceededError 静默丢失数据
+    function safeLSSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (e) {
+        if (e && (e.name === 'QuotaExceededError' || e.code === 22)) {
+          console.warn('[题库] localStorage 已满，无法保存键:', key, '。请尝试清理旧标注数据。');
+        }
+      }
+    }
 
     // ===== 章节数据（已移至 js/chapters.js）=====
 
@@ -823,7 +840,7 @@
         var bs = baseSubject(ch.subj);
         (colMap[bs] = colMap[bs] || []).push(ch);
       });
-      var SUBJECT_ORDER = ['高数', '线代', '概率论'];
+      // 列顺序使用模块级 SUBJECT_ORDER 常量（高数→线代→概率论，其余排后）
       var colKeys = [];
       SUBJECT_ORDER.forEach(function(s) { if (colMap[s]) colKeys.push(s); });
       Object.keys(colMap).forEach(function(s) { if (colKeys.indexOf(s) === -1) colKeys.push(s); });
@@ -1266,8 +1283,7 @@
       if (totalWrong === 0) {
         html = '<div class="wrongbook-empty">暂无标记为「不会」「困难」「模糊」「较熟练」的题目</div>';
       } else {
-        // 列顺序：高数 → 线代 → 概率论（其余排后）
-        const SUBJECT_ORDER = ['高数', '线代', '概率论'];
+        // 列顺序：高数 → 线代 → 概率论（其余排后，使用模块级 SUBJECT_ORDER 常量）
         const colKeys = [];
         SUBJECT_ORDER.forEach(function(s) { if (colMap[s]) colKeys.push(s); });
         Object.keys(colMap).forEach(function(s) { if (colKeys.indexOf(s) === -1) colKeys.push(s); });
@@ -1934,14 +1950,11 @@
 
     // ===== 题号右上角「有笔记 / 有标注」提示（右侧导航角标） =====
     // 指定题号 idx 的题目图/解析图是否有标注
+    // 优化：通过 imgAnnotations 索引前缀匹配，避免逐号探测最多 20 张解析图分片的硬编码上限
     function hasQuestionImagesAnnotated(idx) {
-      // 用 getImgPath(idx) 自动路由到伴章路径（1000题 段）
-      const base = getImgPath(idx);
-      if (hasAnnotation(base + '_question.png')) return true;
-      for (var n = 1; n <= 20; n++) {
-        if (hasAnnotation(n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png')) return true;
-      }
-      return false;
+      const base = normalizeAnnotSrc(getImgPath(idx));
+      // 任何以该题 base 路径为前缀的标注 key 存在，即认为该题有标注
+      return Object.keys(imgAnnotations).some(function(k) { return k.indexOf(base) === 0; });
     }
     // 有笔记（按当前题号 label）或任一图片有标注 → 右侧导航题号亮提示圆点（见 renderNav/appendBadges）
 
@@ -2299,7 +2312,7 @@
     }
     function saveAnnotation(imgSrc, state) {
       imgAnnotations[normalizeAnnotSrc(imgSrc)] = state;
-      try { localStorage.setItem(annotKey(imgSrc), JSON.stringify(state)); } catch (e) {}
+      safeLSSet(annotKey(imgSrc), JSON.stringify(state)); // 标注 JSON 体积较大，用 safeLSSet 防配额溢出静默丢失
     }
     function getAnnotation(imgSrc) { return imgAnnotations[normalizeAnnotSrc(imgSrc)] || null; }
     function clearAnnotation(imgSrc) {
