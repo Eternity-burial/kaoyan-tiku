@@ -142,8 +142,13 @@
       scrollbar-color: rgba(128,128,128,0.2) transparent;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 8px;
       padding-right: 4px;
+    }
+
+    /* 强制左侧栏所有子模块外边距彻底归零，间距全部由 flex gap 统一精确掌控 */
+    .sidebar-left > * {
+      margin: 0 !important;
     }
 
     .sidebar-left::-webkit-scrollbar {
@@ -354,7 +359,7 @@
       transition: all 0.2s ease;
       color: var(--text);
       text-align: center;
-      margin-top: 6px;
+      margin: 0;
       white-space: nowrap;
     }
 
@@ -499,7 +504,7 @@
       padding: 10px;
       border: 1px solid var(--glass-border);
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-      margin-bottom: 10px;
+      margin: 0;
     }
 
     .filter-toolbar .filter-header {
@@ -633,8 +638,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin: 0;
       background: var(--glass-bg);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -2119,8 +2123,7 @@
       -webkit-backdrop-filter: blur(12px) saturate(1.12);
       border-radius: var(--radius-md);
       padding: 12px;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin: 0;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -2823,7 +2826,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       padding: 10px 12px;
-      margin-bottom: 12px;
+      margin: 0;
       text-align: center;
       box-shadow: var(--shadow-sm);
     }
