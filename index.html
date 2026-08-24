@@ -21,9 +21,84 @@
         <div class="countdown-sidebar-sub" id="sidebarCountdownDate">2026/12/19</div>
       </div>
 
-      <!-- 实时时钟挂件（倒计时正下方） -->
+      <!-- 实时 8 字数码管时钟挂件（倒计时正下方） -->
       <div class="sidebar-clock" id="sidebarClock">
-        <div class="clock-time" id="clockTime">--:--:--</div>
+        <div class="seg-clock-display" id="segClock">
+          <div class="seg-digit" id="segH1" data-val="0">
+            <svg viewBox="0 0 20 34" class="seg-svg">
+              <polygon class="seg seg-a" points="3,2 17,2 14,5 6,5" />
+              <polygon class="seg seg-b" points="18,3 18,16 15,14 15,6" />
+              <polygon class="seg seg-c" points="18,18 18,31 15,28 15,20" />
+              <polygon class="seg seg-d" points="3,32 17,32 14,29 6,29" />
+              <polygon class="seg seg-e" points="2,18 2,31 5,28 5,20" />
+              <polygon class="seg seg-f" points="2,3 2,16 5,14 5,6" />
+              <polygon class="seg seg-g" points="3,17 6,15 14,15 17,17 14,19 6,19" />
+            </svg>
+          </div>
+          <div class="seg-digit" id="segH2" data-val="0">
+            <svg viewBox="0 0 20 34" class="seg-svg">
+              <polygon class="seg seg-a" points="3,2 17,2 14,5 6,5" />
+              <polygon class="seg seg-b" points="18,3 18,16 15,14 15,6" />
+              <polygon class="seg seg-c" points="18,18 18,31 15,28 15,20" />
+              <polygon class="seg seg-d" points="3,32 17,32 14,29 6,29" />
+              <polygon class="seg seg-e" points="2,18 2,31 5,28 5,20" />
+              <polygon class="seg seg-f" points="2,3 2,16 5,14 5,6" />
+              <polygon class="seg seg-g" points="3,17 6,15 14,15 17,17 14,19 6,19" />
+            </svg>
+          </div>
+          <div class="seg-colon">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="seg-digit" id="segM1" data-val="0">
+            <svg viewBox="0 0 20 34" class="seg-svg">
+              <polygon class="seg seg-a" points="3,2 17,2 14,5 6,5" />
+              <polygon class="seg seg-b" points="18,3 18,16 15,14 15,6" />
+              <polygon class="seg seg-c" points="18,18 18,31 15,28 15,20" />
+              <polygon class="seg seg-d" points="3,32 17,32 14,29 6,29" />
+              <polygon class="seg seg-e" points="2,18 2,31 5,28 5,20" />
+              <polygon class="seg seg-f" points="2,3 2,16 5,14 5,6" />
+              <polygon class="seg seg-g" points="3,17 6,15 14,15 17,17 14,19 6,19" />
+            </svg>
+          </div>
+          <div class="seg-digit" id="segM2" data-val="0">
+            <svg viewBox="0 0 20 34" class="seg-svg">
+              <polygon class="seg seg-a" points="3,2 17,2 14,5 6,5" />
+              <polygon class="seg seg-b" points="18,3 18,16 15,14 15,6" />
+              <polygon class="seg seg-c" points="18,18 18,31 15,28 15,20" />
+              <polygon class="seg seg-d" points="3,32 17,32 14,29 6,29" />
+              <polygon class="seg seg-e" points="2,18 2,31 5,28 5,20" />
+              <polygon class="seg seg-f" points="2,3 2,16 5,14 5,6" />
+              <polygon class="seg seg-g" points="3,17 6,15 14,15 17,17 14,19 6,19" />
+            </svg>
+          </div>
+          <div class="seg-colon">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="seg-digit" id="segS1" data-val="0">
+            <svg viewBox="0 0 20 34" class="seg-svg">
+              <polygon class="seg seg-a" points="3,2 17,2 14,5 6,5" />
+              <polygon class="seg seg-b" points="18,3 18,16 15,14 15,6" />
+              <polygon class="seg seg-c" points="18,18 18,31 15,28 15,20" />
+              <polygon class="seg seg-d" points="3,32 17,32 14,29 6,29" />
+              <polygon class="seg seg-e" points="2,18 2,31 5,28 5,20" />
+              <polygon class="seg seg-f" points="2,3 2,16 5,14 5,6" />
+              <polygon class="seg seg-g" points="3,17 6,15 14,15 17,17 14,19 6,19" />
+            </svg>
+          </div>
+          <div class="seg-digit" id="segS2" data-val="0">
+            <svg viewBox="0 0 20 34" class="seg-svg">
+              <polygon class="seg seg-a" points="3,2 17,2 14,5 6,5" />
+              <polygon class="seg seg-b" points="18,3 18,16 15,14 15,6" />
+              <polygon class="seg seg-c" points="18,18 18,31 15,28 15,20" />
+              <polygon class="seg seg-d" points="3,32 17,32 14,29 6,29" />
+              <polygon class="seg seg-e" points="2,18 2,31 5,28 5,20" />
+              <polygon class="seg seg-f" points="2,3 2,16 5,14 5,6" />
+              <polygon class="seg seg-g" points="3,17 6,15 14,15 17,17 14,19 6,19" />
+            </svg>
+          </div>
+        </div>
         <div class="clock-date" id="clockDate">----/--/-- 星期-</div>
       </div>
 
@@ -58,13 +133,13 @@
 
       <button id="btnSolDefault" class="sol-default-btn">解析默认：显示<span class="sol-key">Shift+Space</span></button>
 
-      <button id="btnDashboard" class="sol-default-btn" style="margin-top:8px">全局进度<span class="sol-key">V</span></button>
-      <button id="btnWrongBook" class="sol-default-btn" style="margin-top:8px">错题本<span class="sol-key">B</span></button>
-      <button id="btnSm2PanelSidebar" class="sol-default-btn" style="margin-top:8px" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
-      <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
-      <button id="btnToggleTheme" class="sol-default-btn" style="margin-top:8px">主题：明亮<span class="sol-key">Y</span></button>
-      <button id="btnDarkFilter" class="sol-default-btn" style="margin-top:8px">试卷暗化：关<span class="sol-key">U</span></button>
-      <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
+      <button id="btnDashboard" class="sol-default-btn">全局进度<span class="sol-key">V</span></button>
+      <button id="btnWrongBook" class="sol-default-btn">错题本<span class="sol-key">B</span></button>
+      <button id="btnSm2PanelSidebar" class="sol-default-btn" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
+      <button id="btnShortcutHelp" class="sol-default-btn">快捷键帮助<span class="sol-key">H</span></button>
+      <button id="btnToggleTheme" class="sol-default-btn">主题：明亮<span class="sol-key">Y</span></button>
+      <button id="btnDarkFilter" class="sol-default-btn">试卷暗化：关<span class="sol-key">U</span></button>
+      <button id="btnSwitchSubject" class="sol-default-btn">切换科目<span class="sol-key">G</span></button>
 
       <!-- 错题导出模块（倒数第二个） -->
       <div class="export-section" id="exportSection">

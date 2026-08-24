@@ -49,6 +49,12 @@
       --radius-md: 14px;
       --radius-lg: 18px;
       --radius-pill: 12px;
+
+      /* 8 字数码管时钟色彩 */
+      --seg-on: #660874;
+      --seg-off: rgba(71, 76, 101, 0.08);
+      --seg-glow: rgba(102, 8, 116, 0.25);
+      --seg-bg: rgba(255, 255, 255, 0.65);
     }
 
     /* 沉浸暗夜模式 Liquid Dark Glass（紫色直接使用明亮清华紫） */
@@ -77,6 +83,12 @@
       --gel-hov-top: rgba(52, 54, 66, 0.95);
       --gel-hov-bot: rgba(39, 40, 50, 0.95);
       --gel-border: rgba(255, 255, 255, 0.12);
+
+      /* 暗夜 8 字数码管荧光 */
+      --seg-on: #b388ff;
+      --seg-off: rgba(255, 255, 255, 0.05);
+      --seg-glow: rgba(179, 136, 255, 0.45);
+      --seg-bg: rgba(20, 21, 26, 0.75);
     }
 
     * {
@@ -130,7 +142,7 @@
       scrollbar-color: rgba(128,128,128,0.2) transparent;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 7px;
       padding-right: 4px;
     }
 
@@ -359,29 +371,120 @@
       margin-top: 2px;
     }
 
-    /* ===== 侧栏实时时钟挂件 ===== */
+    /* ===== 侧栏 8 字数码管实时时钟挂件 ===== */
     .sidebar-clock {
-      background: var(--glass-bg);
+      background: var(--seg-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 8px 10px;
-      margin-bottom: 10px;
+      padding: 8px 6px 6px;
       text-align: center;
       box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
-    .clock-time {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      font-variant-numeric: tabular-nums;
-      font-feature-settings: "tnum";
+    .seg-clock-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 2px 0;
     }
+    .seg-digit {
+      width: 14px;
+      height: 24px;
+      display: inline-block;
+    }
+    .seg-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .seg {
+      fill: var(--seg-off);
+      transition: fill 0.1s ease, filter 0.1s ease;
+    }
+    .seg-colon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 6px;
+      height: 24px;
+    }
+    .seg-colon span {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--seg-on);
+      box-shadow: 0 0 3px var(--seg-glow);
+      animation: segColonBlink 1s infinite ease-in-out;
+    }
+    @keyframes segColonBlink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.18; transform: scale(0.75); }
+    }
+
+    /* 7 段数码管 0-9 点亮规则 */
+    .seg-digit[data-val="0"] .seg-a,
+    .seg-digit[data-val="0"] .seg-b,
+    .seg-digit[data-val="0"] .seg-c,
+    .seg-digit[data-val="0"] .seg-d,
+    .seg-digit[data-val="0"] .seg-e,
+    .seg-digit[data-val="0"] .seg-f { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="1"] .seg-b,
+    .seg-digit[data-val="1"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="2"] .seg-a,
+    .seg-digit[data-val="2"] .seg-b,
+    .seg-digit[data-val="2"] .seg-g,
+    .seg-digit[data-val="2"] .seg-e,
+    .seg-digit[data-val="2"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="3"] .seg-a,
+    .seg-digit[data-val="3"] .seg-b,
+    .seg-digit[data-val="3"] .seg-g,
+    .seg-digit[data-val="3"] .seg-c,
+    .seg-digit[data-val="3"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="4"] .seg-f,
+    .seg-digit[data-val="4"] .seg-g,
+    .seg-digit[data-val="4"] .seg-b,
+    .seg-digit[data-val="4"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="5"] .seg-a,
+    .seg-digit[data-val="5"] .seg-f,
+    .seg-digit[data-val="5"] .seg-g,
+    .seg-digit[data-val="5"] .seg-c,
+    .seg-digit[data-val="5"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="6"] .seg-a,
+    .seg-digit[data-val="6"] .seg-f,
+    .seg-digit[data-val="6"] .seg-g,
+    .seg-digit[data-val="6"] .seg-e,
+    .seg-digit[data-val="6"] .seg-c,
+    .seg-digit[data-val="6"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="7"] .seg-a,
+    .seg-digit[data-val="7"] .seg-b,
+    .seg-digit[data-val="7"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="8"] .seg { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
+    .seg-digit[data-val="9"] .seg-a,
+    .seg-digit[data-val="9"] .seg-b,
+    .seg-digit[data-val="9"] .seg-c,
+    .seg-digit[data-val="9"] .seg-d,
+    .seg-digit[data-val="9"] .seg-f,
+    .seg-digit[data-val="9"] .seg-g { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+
     .clock-date {
-      font-size: 11px;
+      font-size: 10.5px;
+      font-weight: 600;
       color: var(--text-muted);
-      margin-top: 2px;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
     }
 
     /* ===== 筛选工具栏（紧凑型网格，大幅节省垂直空间） ===== */

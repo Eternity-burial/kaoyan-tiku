@@ -361,14 +361,26 @@
       }
     }
 
-    // ===== 侧边栏实时时钟 =====
+    // ===== 侧边栏 8 字数码管实时时钟 =====
     function updateClock() {
       const now = new Date();
       const h = String(now.getHours()).padStart(2, '0');
       const m = String(now.getMinutes()).padStart(2, '0');
       const s = String(now.getSeconds()).padStart(2, '0');
-      const timeEl = document.getElementById('clockTime');
-      if (timeEl) timeEl.textContent = h + ':' + m + ':' + s;
+
+      const dH1 = document.getElementById('segH1');
+      const dH2 = document.getElementById('segH2');
+      const dM1 = document.getElementById('segM1');
+      const dM2 = document.getElementById('segM2');
+      const dS1 = document.getElementById('segS1');
+      const dS2 = document.getElementById('segS2');
+
+      if (dH1) dH1.setAttribute('data-val', h[0]);
+      if (dH2) dH2.setAttribute('data-val', h[1]);
+      if (dM1) dM1.setAttribute('data-val', m[0]);
+      if (dM2) dM2.setAttribute('data-val', m[1]);
+      if (dS1) dS1.setAttribute('data-val', s[0]);
+      if (dS2) dS2.setAttribute('data-val', s[1]);
 
       const dateEl = document.getElementById('clockDate');
       if (dateEl) {
