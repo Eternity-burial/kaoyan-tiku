@@ -361,6 +361,28 @@
       }
     }
 
+    // ===== 侧边栏实时时钟 =====
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      const timeEl = document.getElementById('clockTime');
+      if (timeEl) timeEl.textContent = h + ':' + m + ':' + s;
+
+      const dateEl = document.getElementById('clockDate');
+      if (dateEl) {
+        const y = now.getFullYear();
+        const mo = String(now.getMonth() + 1).padStart(2, '0');
+        const d = String(now.getDate()).padStart(2, '0');
+        const days = ['日', '一', '二', '三', '四', '五', '六'];
+        const day = days[now.getDay()];
+        dateEl.textContent = y + '/' + mo + '/' + d + ' 周' + day;
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
     // ===== 昼夜主题（默认清华紫明亮 / 沉浸暗夜）与试卷暗化 =====
     var currentTheme = localStorage.getItem('kaoyan_theme') || 'light';
     var darkImageFilter = localStorage.getItem('kaoyan_dark_img_filter') === '1';

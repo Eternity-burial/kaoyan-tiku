@@ -21,28 +21,61 @@
         <div class="countdown-sidebar-sub" id="sidebarCountdownDate">2026/12/19</div>
       </div>
 
+      <!-- 实时时钟挂件（倒计时正下方） -->
+      <div class="sidebar-clock" id="sidebarClock">
+        <div class="clock-time" id="clockTime">--:--:--</div>
+        <div class="clock-date" id="clockDate">----/--/-- 星期-</div>
+      </div>
+
+      <!-- 状态筛选（紧凑型网格，大幅节省空间） -->
       <div class="filter-toolbar" id="filterToolbar">
-        <div class="filter-label">状态筛选</div>
-        <div class="filter-hint">可组合选择</div>
-        <button class="filter-btn active" data-filter="all" aria-pressed="true">全部 <span
-            class="filter-count"></span><span class="filter-key">Shift+A</span></button>
-        <button class="filter-btn" data-filter="proficient" aria-pressed="false">熟练 <span
-            class="filter-count"></span><span class="filter-key">Shift+Z</span></button>
-        <button class="filter-btn" data-filter="vague" aria-pressed="false">模糊 <span class="filter-count"></span><span
-            class="filter-key">Shift+X</span></button>
-        <button class="filter-btn" data-filter="wrong" aria-pressed="false">不会 <span class="filter-count"></span><span
-            class="filter-key">Shift+C</span></button>
-        <button class="filter-btn" data-filter="unmarked" aria-pressed="false">带笔记 <span
-            class="filter-count"></span><span class="filter-key">Shift+N</span></button>
+        <div class="filter-header">
+          <span class="filter-label">状态筛选</span>
+        </div>
+        <div class="filter-grid">
+          <button class="filter-btn filter-btn-all active" data-filter="all" aria-pressed="true">
+            <span class="filter-btn-main">全部 <span class="filter-count"></span></span>
+            <span class="filter-key">Shift+A</span>
+          </button>
+          <button class="filter-btn" data-filter="proficient" aria-pressed="false">
+            <span class="filter-btn-main">熟练 <span class="filter-count"></span></span>
+            <span class="filter-key">Shift+Z</span>
+          </button>
+          <button class="filter-btn" data-filter="vague" aria-pressed="false">
+            <span class="filter-btn-main">模糊 <span class="filter-count"></span></span>
+            <span class="filter-key">Shift+X</span>
+          </button>
+          <button class="filter-btn" data-filter="wrong" aria-pressed="false">
+            <span class="filter-btn-main">不会 <span class="filter-count"></span></span>
+            <span class="filter-key">Shift+C</span>
+          </button>
+          <button class="filter-btn" data-filter="unmarked" aria-pressed="false">
+            <span class="filter-btn-main">带笔记 <span class="filter-count"></span></span>
+            <span class="filter-key">Shift+N</span>
+          </button>
+        </div>
       </div>
 
-      <div class="export-section">
-        <div class="export-label">导出</div>
-        <button id="btnExportVague" class="export-btn btn-export-vague">导出模糊</button>
-        <button id="btnExportWrong" class="export-btn btn-export-wrong">导出不会</button>
+      <button id="btnSolDefault" class="sol-default-btn">解析默认：显示<span class="sol-key">Shift+Space</span></button>
+
+      <button id="btnDashboard" class="sol-default-btn" style="margin-top:8px">全局进度<span class="sol-key">V</span></button>
+      <button id="btnWrongBook" class="sol-default-btn" style="margin-top:8px">错题本<span class="sol-key">B</span></button>
+      <button id="btnSm2PanelSidebar" class="sol-default-btn" style="margin-top:8px" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
+      <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
+      <button id="btnToggleTheme" class="sol-default-btn" style="margin-top:8px">主题：明亮<span class="sol-key">Y</span></button>
+      <button id="btnDarkFilter" class="sol-default-btn" style="margin-top:8px">试卷暗化：关<span class="sol-key">U</span></button>
+      <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
+
+      <!-- 错题导出模块（倒数第二个） -->
+      <div class="export-section" id="exportSection">
+        <div class="export-label">错题导出</div>
+        <div class="export-actions-row">
+          <button id="btnExportVague" class="export-btn btn-export-vague">导出模糊</button>
+          <button id="btnExportWrong" class="export-btn btn-export-wrong">导出不会</button>
+        </div>
       </div>
 
-      <!-- 本地文件实时同步联动卡片 -->
+      <!-- 本地文件实时同步联动卡片（最下方） -->
       <div class="storage-sync-section" id="storageSyncSection">
         <div class="sync-header">
           <span class="sync-dot dot-offline" id="syncStatusDot"></span>
@@ -56,16 +89,6 @@
           <button id="btnSyncImport" class="sync-mini-btn" title="从 JSON 文件恢复数据">恢复备份</button>
         </div>
       </div>
-
-      <button id="btnSolDefault" class="sol-default-btn">解析默认：显示<span class="sol-key">Shift+Space</span></button>
-
-      <button id="btnDashboard" class="sol-default-btn" style="margin-top:8px">全局进度<span class="sol-key">V</span></button>
-      <button id="btnWrongBook" class="sol-default-btn" style="margin-top:8px">错题本<span class="sol-key">B</span></button>
-      <button id="btnSm2PanelSidebar" class="sol-default-btn" style="margin-top:8px" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
-      <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
-      <button id="btnToggleTheme" class="sol-default-btn" style="margin-top:8px">主题：明亮<span class="sol-key">Y</span></button>
-      <button id="btnDarkFilter" class="sol-default-btn" style="margin-top:8px">试卷暗化：关<span class="sol-key">U</span></button>
-      <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
 
     </div>
 
