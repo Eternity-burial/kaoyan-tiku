@@ -2238,9 +2238,9 @@
           rebaselineSm2(current, score);
         }
       } else if (!togglingOff && score) {
-        // 常规答题改标：重定基线，并自动跳到下一题
+        // 常规答题改标：重定基线，首次标记（原本未做）时自动跳到下一题
         rebaselineSm2(current, score);
-        navNext();
+        if (!had) navNext();
       }
       renderSm2InfoBar();
     }
