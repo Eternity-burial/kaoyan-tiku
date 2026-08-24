@@ -456,10 +456,16 @@
       var enable = (currentTheme === 'dark' && darkImageFilter);
       var qImg = document.getElementById('questionImg');
       var lbImg = document.getElementById('lightboxImg');
+      var qAnnotOverlay = document.getElementById('qAnnotOverlay');
+      var lbAnnotOverlay = document.getElementById('lightboxAnnotOverlay');
+
       if (qImg) qImg.classList.toggle('dark-filter', enable);
       if (lbImg) lbImg.classList.toggle('dark-filter', enable);
-      document.querySelectorAll('.solution-img, #solutionImgs img, .solution-imgs img, #solutionArea img').forEach(function(img) {
-        img.classList.toggle('dark-filter', enable);
+      if (qAnnotOverlay) qAnnotOverlay.classList.toggle('dark-filter', enable);
+      if (lbAnnotOverlay) lbAnnotOverlay.classList.toggle('dark-filter', enable);
+
+      document.querySelectorAll('.solution-img, #solutionImgs img, .solution-imgs img, #solutionArea img, .annot-overlay, .annot-wrapper, mjs-marker-view, mjs-marker-area').forEach(function(el) {
+        el.classList.toggle('dark-filter', enable);
       });
     }
 
@@ -2307,9 +2313,12 @@
       // 计算 SVG 矩阵 → NaN → 标注区域被放大/错乱。等图片可见后再渲染（见 updateSolutionUI 的重新触发）。
       if (imgEl.getBoundingClientRect().width === 0 || imgEl.getBoundingClientRect().height === 0) return;
       overlayEl.style.display = '';
+      const enable = (currentTheme === 'dark' && darkImageFilter);
+      overlayEl.classList.toggle('dark-filter', enable);
       try {
         const viewer = new markerjs3.MarkerView();
         _annotViewers[key] = viewer;
+        viewer.classList.toggle('dark-filter', enable);
         overlayEl.appendChild(viewer);
         viewer.targetImage = imgEl;
         viewer.show(state);
@@ -2901,8 +2910,11 @@
       if (!lbCurrentSrc || !hasA) { lbOverlay.style.display = 'none'; return; }
       const img = document.getElementById('lightboxImg');
       lbOverlay.style.display = '';
+      const enable = (currentTheme === 'dark' && darkImageFilter);
+      lbOverlay.classList.toggle('dark-filter', enable);
       const apply = function () {
         const mview = new markerjs3.MarkerView();
+        mview.classList.toggle('dark-filter', enable);
         lbOverlay.appendChild(mview);
         mview.targetImage = img;
         mview.show(getAnnotation(lbCurrentSrc));
@@ -3028,6 +3040,8 @@
         try { ma.restoreState(state); } catch (e) {}
       }
       overlay.appendChild(ma);
+      const enable = (currentTheme === 'dark' && darkImageFilter);
+      if (ma) ma.classList.toggle('dark-filter', enable);
       // 滚轮缩放/右键粗细/横向切工具（capture 拦截，避免冒泡到 overlay 缩放监听）
       ma.addEventListener('wheel', onAnnotWheel, { passive: false, capture: true });
       // Shift 锁定：marker.js 的 window pointermove/up 在 appendChild 时已注册且永不移除，
