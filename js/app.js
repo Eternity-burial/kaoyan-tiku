@@ -825,13 +825,29 @@
       };
     }
 
-    // 获取最近 N 天的每日推进刷题数据（融合 SM-2 历史与本地学习打卡日志）
+    // 考研学习日判定算法：以每日清晨 04:00 为分界（00:00~03:59 的深夜复习归属前一学习日）
+    function getStudyDayDate(ts) {
+      var d = ts ? new Date(ts) : new Date();
+      // 减去 4 小时偏移量：让凌晨 00:00~03:59 自动翻入上一自然日
+      return new Date(d.getTime() - 4 * 3600 * 1000);
+    }
+
+    function getStudyDayKey(ts) {
+      var sd = getStudyDayDate(ts);
+      var y = sd.getFullYear();
+      var m = String(sd.getMonth() + 1).padStart(2, '0');
+      var d = String(sd.getDate()).padStart(2, '0');
+      return y + '-' + m + '-' + d;
+    }
+
+    // 获取最近 N 天的每日推进刷题数据（按每日清晨 04:00 归集考研学习日）
     function getDailyStudyData(daysCount) {
       if (!daysCount) daysCount = 14;
       var dailyMap = {};
-      var now = new Date();
+      var baseDay = getStudyDayDate(); // 当前考研学习日基准
+
       for (var i = daysCount - 1; i >= 0; i--) {
-        var d = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+        var d = new Date(baseDay.getTime() - i * 24 * 60 * 60 * 1000);
         var y = d.getFullYear();
         var m = String(d.getMonth() + 1).padStart(2, '0');
         var day = String(d.getDate()).padStart(2, '0');
@@ -840,7 +856,7 @@
         dailyMap[key] = { key: key, label: label, count: 0, date: d };
       }
 
-      // 从 SM-2 历史记录中回填历史做题与复习数据
+      // 从 SM-2 历史记录中回填历史做题与复习数据（按 4:00 AM 归入考研学习日）
       for (var k = 0; k < localStorage.length; k++) {
         var lk = localStorage.key(k);
         if (lk && lk.startsWith('sm2_')) {
@@ -851,11 +867,7 @@
                 if (record && record.history && Array.isArray(record.history)) {
                   record.history.forEach(function(h) {
                     if (h.date) {
-                      var hd = new Date(h.date);
-                      var y = hd.getFullYear();
-                      var m = String(hd.getMonth() + 1).padStart(2, '0');
-                      var day = String(hd.getDate()).padStart(2, '0');
-                      var dk = y + '-' + m + '-' + day;
+                      var dk = getStudyDayKey(h.date);
                       if (dailyMap[dk]) {
                         dailyMap[dk].count++;
                       }
@@ -881,13 +893,9 @@
       return Object.values(dailyMap);
     }
 
-    // 记录做题打卡推进
+    // 记录做题打卡推进（按每日凌晨 04:00 归属考研学习日）
     function recordStudyActivity() {
-      var now = new Date();
-      var y = now.getFullYear();
-      var m = String(now.getMonth() + 1).padStart(2, '0');
-      var d = String(now.getDate()).padStart(2, '0');
-      var dk = y + '-' + m + '-' + d;
+      var dk = getStudyDayKey(Date.now());
       try {
         var studyLog = JSON.parse(localStorage.getItem('kaoyan_study_log') || '{}');
         studyLog[dk] = studyLog[dk] || { count: 0 };
@@ -914,7 +922,7 @@
       ctx.closePath();
     }
 
-    // 绘制总掌握度主环形进度表
+    // 绘制总掌握度主环形进度表（清华紫纯正渐变）
     function drawMasterGauge(canvas, stats) {
       if (!canvas) return;
       var ctx = canvas.getContext('2d');
@@ -941,13 +949,13 @@
       ctx.lineWidth = lineWidth;
       ctx.stroke();
 
-      // 渐变进度条
+      // 渐变进度条（清华紫双色调）
       if (p > 0) {
         ctx.beginPath();
         ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + p * 2 * Math.PI);
         var grad = ctx.createLinearGradient(0, 0, size, size);
         if (isDark) {
-          grad.addColorStop(0, '#b388ff');
+          grad.addColorStop(0, '#cf6fe8');
           grad.addColorStop(1, '#8a2b9c');
         } else {
           grad.addColorStop(0, '#8a2b9c');
@@ -960,7 +968,7 @@
       }
     }
 
-    // 绘制近 14 天推进趋势图（高 DPI 柱状与日均线）
+    // 绘制近 14 天推进趋势图（高 DPI 柱状与日均线，清华紫系）
     function drawTrendChart(canvas, dailyData) {
       if (!canvas) return;
       var ctx = canvas.getContext('2d');
@@ -1031,12 +1039,12 @@
         roundRect(ctx, x, paddingTop, barWidth, chartH, 3);
         ctx.fill();
 
-        // 推进活跃柱
+        // 推进活跃柱（纯正清华紫发光渐变）
         if (d.count > 0) {
           var grad = ctx.createLinearGradient(0, y, 0, paddingTop + chartH);
           if (isDark) {
-            grad.addColorStop(0, '#b388ff');
-            grad.addColorStop(1, 'rgba(102, 8, 116, 0.6)');
+            grad.addColorStop(0, '#cf6fe8');
+            grad.addColorStop(1, 'rgba(102, 8, 116, 0.65)');
           } else {
             grad.addColorStop(0, '#8a2b9c');
             grad.addColorStop(1, '#660874');
@@ -1057,12 +1065,12 @@
         ctx.fillText(d.label, x + barWidth / 2, height - 8);
       });
 
-      // 日均虚线标注
+      // 日均虚线标注（清华紫柔和辉光线）
       if (avg > 0) {
         var avgY = paddingTop + chartH - (avg / maxVal) * chartH;
         ctx.beginPath();
         ctx.setLineDash([4, 4]);
-        ctx.strokeStyle = isDark ? 'rgba(179, 136, 255, 0.55)' : 'rgba(102, 8, 116, 0.5)';
+        ctx.strokeStyle = isDark ? 'rgba(207, 111, 232, 0.65)' : 'rgba(102, 8, 116, 0.5)';
         ctx.lineWidth = 1.2;
         ctx.moveTo(paddingLeft, avgY);
         ctx.lineTo(width - paddingRight, avgY);
@@ -1071,7 +1079,7 @@
       }
     }
 
-    // 绘制分书籍同心圆环形图（彻底消除 30 个同心细圆相互叠加产生的摩尔纹）
+    // 绘制分书籍同心圆环形图（纯正清华紫系 + 抗摩尔纹）
     function drawDonut(canvas, chapters, label) {
       var ctx = canvas.getContext('2d');
       var dpr = window.devicePixelRatio || 1;
@@ -1098,13 +1106,13 @@
 
       ctx.clearRect(0, 0, size, size);
 
-      var purpleDark = isDark ? [179, 136, 255] : [102, 8, 116];
-      var purpleLight = isDark ? [77, 6, 89] : [225, 190, 231];
+      var purpleDark = isDark ? [207, 111, 232] : [102, 8, 116];
+      var purpleLight = isDark ? [102, 8, 116] : [225, 190, 231];
       var unfilledColor = isDark ? 'rgba(255, 255, 255, 0.05)' : '#f2edf4';
       var centerBg = isDark ? '#22232a' : '#ffffff';
       var strokeColor = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.08)';
       var labelColor = isDark ? '#e2e2e8' : '#333333';
-      var pctColor = isDark ? '#b388ff' : '#660874';
+      var pctColor = isDark ? '#cf6fe8' : '#660874';
 
       // 1. 一次性绘制连续光滑的整圈底轨，彻底消除 30 个独立同心细圆相互叠加产生的摩尔纹（Moire Fringe）
       ctx.beginPath();
