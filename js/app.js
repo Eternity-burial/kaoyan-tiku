@@ -1445,13 +1445,14 @@
             const labels = ch.labels || [];
             var g = item.groups;
             html += '<div class="wrongbook-chapter-card">' +
-              '<div class="wrongbook-chapter-name">' + name +
-              '<span class="wrongbook-status-count">' +
+              '<div class="wrongbook-chapter-header">' +
+              '<div class="wrongbook-chapter-title">' + name + '</div>' +
+              '<div class="wrongbook-status-count">' +
               (g.familiar ? '<span class="ws w-familiar">较熟 ' + g.familiar.length + '</span>' : '') +
               (g.vague ? '<span class="ws w-vague">模糊 ' + g.vague.length + '</span>' : '') +
               (g.rusty ? '<span class="ws w-rusty">困难 ' + g.rusty.length + '</span>' : '') +
               (g.wrong ? '<span class="ws w-wrong">不会 ' + g.wrong.length + '</span>' : '') +
-              '</span></div>' +
+              '</div></div>' +
               '<div class="wrongbook-q-grid">';
             function qItem(idx, cls, statTitle) {
               const label = labels[idx] || (idx + 1);
@@ -1462,11 +1463,19 @@
               let titleText = '第' + label + '题（' + statTitle + '）';
               if (isQ && qc) {
                 const secInfo = ch.sections ? ch.sections.find(function(s) { return idx >= s.start && idx < s.start + s.count; }) : null;
-                const typeName = secInfo ? secInfo.type : '习题';
+                let typeName = secInfo ? secInfo.type : '习题';
+                if (typeName.indexOf('计算') !== -1) typeName = '计算';
+                else if (typeName.indexOf('选择') !== -1) typeName = '选择';
+                else if (typeName.indexOf('填空') !== -1) typeName = '填空';
+                else if (typeName.indexOf('证明') !== -1) typeName = '证明';
+                else if (typeName.indexOf('最值') !== -1) typeName = '最值';
+                else if (typeName.indexOf('应用') !== -1) typeName = '应用';
+                else if (typeName.length > 2) typeName = typeName.slice(0, 2);
+
                 tag = qc.wb === '1000题' ? '<span class="ws q1000-tag">1000</span>' : '<span class="ws lf-tag">' + typeName + '</span>';
                 titleText = (secInfo ? secInfo.type + ' ' : '') + '第' + dispLabel + '题 (' + label + ')（' + statTitle + '）';
               }
-              return '<span class="wrongbook-q-item ' + cls + '" data-chapter="' + ch.id + '" data-index="' + idx + '" title="' + titleText + '">' + dispLabel + tag + '</span>';
+              return '<span class="wrongbook-q-item ' + cls + '" data-chapter="' + ch.id + '" data-index="' + idx + '" title="' + titleText + '"><span class="q-num">' + dispLabel + '</span>' + tag + '</span>';
             }
             if (g.wrong) for (var wIdx of g.wrong) html += qItem(wIdx, 'wrong', '不会');
             if (g.rusty) for (var rIdx of g.rusty) html += qItem(rIdx, 'rusty', '困难');

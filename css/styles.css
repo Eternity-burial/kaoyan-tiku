@@ -1019,22 +1019,30 @@
       background: var(--card-bg);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border-radius: 10px;
-      padding: 14px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
-    .wrongbook-chapter-name {
+    .wrongbook-chapter-header {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      font-weight: 600;
-      font-size: 0.95em;
+      flex-direction: column;
+      gap: 6px;
       margin-bottom: 10px;
-      color: var(--text);
     }
-    .wrongbook-status-count { display: inline-flex; gap: 6px; flex: 0 0 auto; }
+    .wrongbook-chapter-title {
+      font-weight: 700;
+      font-size: 0.95em;
+      line-height: 1.4;
+      color: var(--text);
+      word-break: break-word;
+    }
+    .wrongbook-status-count {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: center;
+    }
     .wrongbook-status-count .ws {
       font-size: 0.72em;
       font-weight: 600;
@@ -1043,6 +1051,7 @@
       padding: 2px 8px;
       border: 1px solid transparent;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      white-space: nowrap;
     }
     .ws.w-wrong {
       background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
@@ -1062,28 +1071,31 @@
     }
     .wrongbook-q-grid {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr)); /* 每行 5 个 */
-      gap: 4px;
+      grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+      gap: 5px;
     }
     .wrongbook-q-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       min-width: 0;
-      min-height: 28px;
+      height: 28px;
       padding: 2px 4px;
       border: 1px solid var(--unfamiliar-dark);
       border-radius: var(--radius-pill);
       background: linear-gradient(180deg, var(--unfamiliar) 0%, var(--unfamiliar-dark) 100%);
       color: #fff;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 600;
       box-shadow: 0 1px 4px rgba(255, 59, 48, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       cursor: pointer;
       transition: all 0.15s;
+    }
+    .wrongbook-q-item .q-num {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .wrongbook-q-item:hover {
       transform: translateY(-1px);
@@ -1094,16 +1106,28 @@
       border-color: var(--uncertain-dark);
       box-shadow: 0 1px 4px rgba(255, 149, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
+    .wrongbook-q-item.rusty {
+      background: linear-gradient(180deg, var(--lv2) 0%, var(--lv2-dark) 100%);
+      border-color: var(--lv2-dark);
+      box-shadow: 0 1px 4px var(--lv2-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    .wrongbook-q-item.familiar {
+      background: linear-gradient(180deg, var(--lv4) 0%, var(--lv4-dark) 100%);
+      border-color: var(--lv4-dark);
+      box-shadow: 0 1px 4px var(--lv4-alpha), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
     /* 错题本里 1000题 / 习题 题目的角标 */
     .wrongbook-q-item .q1000-tag,
     .wrongbook-q-item .lf-tag {
-      font-size: 0.72em;
-      font-weight: 600;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 1;
       color: #fff;
-      background: rgba(0, 0, 0, 0.28);
-      border-radius: var(--radius-pill);
-      padding: 0 3px;
-      margin-left: 3px;
+      background: rgba(0, 0, 0, 0.32);
+      border-radius: 4px;
+      padding: 1.5px 2.5px;
+      margin-left: 2px;
+      flex-shrink: 0;
     }
     .wrongbook-empty {
       text-align: center;
