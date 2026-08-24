@@ -424,6 +424,14 @@
       }
       updateImageDarkFilter();
       notifyStorageSync();
+
+      // 若当前正处于全局进度总览面板，立即重绘环形图以适配新主题配色
+      if (typeof dashboardOpen !== 'undefined' && dashboardOpen) {
+        var dbOverview = document.getElementById('dbOverview');
+        if (dbOverview && dbOverview.style.display !== 'none') {
+          renderDashboardOverview();
+        }
+      }
     }
 
     function toggleTheme() {
@@ -797,12 +805,13 @@
       canvas.style.height = size + 'px';
       ctx.scale(dpr, dpr);
 
+      var isDark = currentTheme === 'dark';
       var cx = size / 2, cy = size / 2;
       var outerR = 108;
       var innerR = 28;
       var ringCount = chapters.length;
       if (ringCount === 0) {
-        ctx.fillStyle = '#999';
+        ctx.fillStyle = isDark ? '#888' : '#999';
         ctx.font = '14px "Microsoft YaHei",sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText('(无数据)', cx, cy);
@@ -812,8 +821,14 @@
 
       ctx.clearRect(0, 0, size, size);
 
-      var purpleDark = [102, 8, 116];
-      var purpleLight = [225, 190, 231];
+      var purpleDark = isDark ? [179, 136, 255] : [102, 8, 116];
+      var purpleLight = isDark ? [77, 6, 89] : [225, 190, 231];
+      var unfilledColor = isDark ? 'rgba(255, 255, 255, 0.08)' : '#e8e8e8';
+      var centerBg = isDark ? '#22232a' : '#ffffff';
+      var strokeColor = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.08)';
+      var labelColor = isDark ? '#e2e2e8' : '#333333';
+      var pctColor = isDark ? '#b388ff' : '#660874';
+
       var totalDone = 0, totalQ = 0;
 
       // Inner to outer: inner ring = chapter 0 (第1讲), outer ring = last chapter
@@ -841,7 +856,7 @@
           ctx.arc(cx, cy, ro, -Math.PI / 2 + p * 2 * Math.PI, -Math.PI / 2 + 2 * Math.PI);
           ctx.arc(cx, cy, ri, -Math.PI / 2 + 2 * Math.PI, -Math.PI / 2 + p * 2 * Math.PI, true);
           ctx.closePath();
-          ctx.fillStyle = '#e8e8e8';
+          ctx.fillStyle = unfilledColor;
           ctx.fill();
         }
       }
@@ -849,20 +864,20 @@
       // Center circle with slight shadow
       ctx.beginPath();
       ctx.arc(cx, cy, innerR, 0, 2 * Math.PI);
-      ctx.fillStyle = '#fff';
+      ctx.fillStyle = centerBg;
       ctx.fill();
-      ctx.strokeStyle = 'rgba(0,0,0,0.08)';
+      ctx.strokeStyle = strokeColor;
       ctx.lineWidth = 1;
       ctx.stroke();
 
       // Center text
       var pct = totalQ > 0 ? Math.round(totalDone / totalQ * 100) : 0;
-      ctx.fillStyle = '#333';
+      ctx.fillStyle = labelColor;
       ctx.font = 'bold 12px "Microsoft YaHei","PingFang SC",sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(label, cx, cy - 9);
-      ctx.fillStyle = '#660874';
+      ctx.fillStyle = pctColor;
       ctx.font = 'bold 17px "Microsoft YaHei","PingFang SC",sans-serif';
       ctx.fillText(pct + '%', cx, cy + 11);
     }
@@ -4058,23 +4073,29 @@ ${cardsHTML}
       const key = e.key.toLowerCase();
       const isShift = e.shiftKey;
 
-      // 英语科目处于激活态时，由 english_app.js 接管做题按键，仅放行 G（科目选择）与 Esc
+      // 英语科目处于激活态时，由 english_app.js 接管做题按键，主系统放行系统级按键（G / Esc / Y / U）
       if (curSubjectId === 'english') {
         if (key === 'g') {
           if (subjectPickerOpen) closeSubjectPicker();
           else openSubjectPicker();
         } else if (key === 'escape' && subjectPickerOpen) {
           closeSubjectPicker();
+        } else if (key === 'y') {
+          toggleTheme();
+        } else if (key === 'u') {
+          toggleImageDarkFilter();
         }
         return;
       }
 
-      // 面板（全局进度/错题本/快捷键帮助/科目选择）打开时，仅允许面板相关按键，避免误操作隐藏的章节
+      // 系统全局控制键（Y 主题切换 / U 试卷暗化 / G 科目切换 / H 快捷键帮助 / Esc 关闭）：
+      // 具备最高全局优先级，在任何面板（全局进度 V / 错题本 B / 间隔复习 M / 科目选择 G）打开时均可随时响应！
+      // 题目级操作键（A/D/W/S/Z/X/C 等）在面板打开时予以拦截，避免在面板下静默操作隐藏题目。
       if (subjectPickerOpen) {
-        // 科目选择弹窗独占：只放行 G（重新打开/切换）与 Esc（关闭），H 等不再叠加其它弹窗
-        if (key !== 'g' && key !== 'escape') return;
+        // 科目选择弹窗：放行 G（切换）、Esc（关闭）、Y（主题）、U（暗化）
+        if (key !== 'g' && key !== 'escape' && key !== 'y' && key !== 'u') return;
       } else if (dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) {
-        const panelKeys = ['h', 'escape'];
+        const panelKeys = ['h', 'escape', 'g', 'y', 'u'];
         if (dashboardOpen || wrongBookOpen) panelKeys.push('v', 'b');
         if (sm2PanelOpen) panelKeys.push('m');
         if (!panelKeys.includes(key)) return;
