@@ -386,12 +386,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2px;
+      gap: 2.5px;
       padding: 2px 0;
     }
     .seg-digit {
-      width: 14px;
-      height: 24px;
+      width: 15px;
+      height: 26px;
       display: inline-block;
     }
     .seg-svg {
@@ -408,13 +408,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 5px;
-      width: 6px;
-      height: 24px;
+      gap: 6px;
+      width: 5px;
+      height: 26px;
     }
     .seg-colon span {
-      width: 3px;
-      height: 3px;
+      width: 3.5px;
+      height: 3.5px;
       border-radius: 50%;
       background: var(--seg-on);
       box-shadow: 0 0 3px var(--seg-glow);
@@ -422,62 +422,62 @@
     }
     @keyframes segColonBlink {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.18; transform: scale(0.75); }
+      50% { opacity: 0.2; transform: scale(0.8); }
     }
 
-    /* 7 段数码管 0-9 点亮规则 */
+    /* 7 段粗体数码管 0-9 点亮规则 */
     .seg-digit[data-val="0"] .seg-a,
     .seg-digit[data-val="0"] .seg-b,
     .seg-digit[data-val="0"] .seg-c,
     .seg-digit[data-val="0"] .seg-d,
     .seg-digit[data-val="0"] .seg-e,
-    .seg-digit[data-val="0"] .seg-f { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="0"] .seg-f { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="1"] .seg-b,
-    .seg-digit[data-val="1"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="1"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="2"] .seg-a,
     .seg-digit[data-val="2"] .seg-b,
     .seg-digit[data-val="2"] .seg-g,
     .seg-digit[data-val="2"] .seg-e,
-    .seg-digit[data-val="2"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="2"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="3"] .seg-a,
     .seg-digit[data-val="3"] .seg-b,
     .seg-digit[data-val="3"] .seg-g,
     .seg-digit[data-val="3"] .seg-c,
-    .seg-digit[data-val="3"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="3"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="4"] .seg-f,
     .seg-digit[data-val="4"] .seg-g,
     .seg-digit[data-val="4"] .seg-b,
-    .seg-digit[data-val="4"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="4"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="5"] .seg-a,
     .seg-digit[data-val="5"] .seg-f,
     .seg-digit[data-val="5"] .seg-g,
     .seg-digit[data-val="5"] .seg-c,
-    .seg-digit[data-val="5"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="5"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="6"] .seg-a,
     .seg-digit[data-val="6"] .seg-f,
     .seg-digit[data-val="6"] .seg-g,
     .seg-digit[data-val="6"] .seg-e,
     .seg-digit[data-val="6"] .seg-c,
-    .seg-digit[data-val="6"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="6"] .seg-d { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="7"] .seg-a,
     .seg-digit[data-val="7"] .seg-b,
-    .seg-digit[data-val="7"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="7"] .seg-c { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
-    .seg-digit[data-val="8"] .seg { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="8"] .seg { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .seg-digit[data-val="9"] .seg-a,
     .seg-digit[data-val="9"] .seg-b,
     .seg-digit[data-val="9"] .seg-c,
     .seg-digit[data-val="9"] .seg-d,
     .seg-digit[data-val="9"] .seg-f,
-    .seg-digit[data-val="9"] .seg-g { fill: var(--seg-on); filter: drop-shadow(0 0 1.5px var(--seg-glow)); }
+    .seg-digit[data-val="9"] .seg-g { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .clock-date {
       font-size: 10.5px;
