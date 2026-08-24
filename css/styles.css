@@ -51,12 +51,12 @@
       --radius-pill: 12px;
     }
 
-    /* 沉浸暗夜模式 Liquid Dark Glass */
+    /* 沉浸暗夜模式 Liquid Dark Glass（紫色直接使用明亮清华紫） */
     [data-theme="dark"] {
-      --primary: #b388ff;
-      --primary-dark: #7c4dff;
-      --primary-light: #d1b8ff;
-      --primary-alpha: rgba(179, 136, 255, 0.22);
+      --primary: #660874;
+      --primary-dark: #4d0659;
+      --primary-light: #8a2b9c;
+      --primary-alpha: rgba(102, 8, 116, 0.22);
 
       --bg: #141518;
       --main-bg: rgba(26, 27, 33, 0.72);

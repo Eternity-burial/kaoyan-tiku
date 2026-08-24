@@ -381,8 +381,8 @@
       var engTxtTheme = document.getElementById('engTxtTheme');
       var themeLabel = THEME_NAMES[theme] || '明亮';
 
-      if (btnTheme) btnTheme.textContent = '主题：' + themeLabel;
-      if (engTxtTheme) engTxtTheme.textContent = '主题：' + themeLabel;
+      if (btnTheme) btnTheme.innerHTML = '主题：' + themeLabel + '<span class="sol-key">Y</span>';
+      if (engTxtTheme) engTxtTheme.textContent = '主题：' + themeLabel + ' (Y)';
 
       var btnDarkFilter = document.getElementById('btnDarkFilter');
       if (btnDarkFilter) {
@@ -395,6 +395,7 @@
     function toggleTheme() {
       applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
     }
+    window.toggleTheme = toggleTheme;
 
     function toggleImageDarkFilter() {
       darkImageFilter = !darkImageFilter;
@@ -4105,8 +4106,9 @@ ${cardsHTML}
         case 'v': toggleDashboard(); break;
         case 'b': toggleWrongBook(); break;
         case 'm': toggleSm2Panel(); break;
-        // 切换科目
+        // 切换科目与主题
         case 'g': openSubjectPicker(); break;
+        case 'y': toggleTheme(); break;
         // 灯箱快捷键
         // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
         case 'escape':
