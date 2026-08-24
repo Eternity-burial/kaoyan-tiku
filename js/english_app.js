@@ -100,6 +100,9 @@
     try {
       localStorage.setItem('kaoyan_resume_english', JSON.stringify(data));
       localStorage.setItem('ky_english_mode', state.mode);
+      // 按年份独立记忆上次停的 Text + 题目（切年份时恢复，而不是每次都回到第1篇第1题）
+      const yearKey = `kaoyan_resume_english_y${state.currentYear}`;
+      localStorage.setItem(yearKey, JSON.stringify({ textId: state.currentTextId, qIndex: state.currentQIndex }));
       let map = {};
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
       map['english'] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear, mode: state.mode };
@@ -248,7 +251,7 @@
     if (dom.panelYear) dom.panelYear.classList.remove('open');
   }
 
-  // 切换年份
+  // 切换年份：恢复该年上次停的位置（无记录则从第1篇第1题开始）
   function switchYear(year) {
     if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) return;
     state.currentYear = year;
@@ -256,8 +259,30 @@
 
     const dataset = getCurrentDataset();
     if (dataset.texts && dataset.texts.length > 0) {
-      state.currentTextId = dataset.texts[0].id;
-      state.currentQIndex = dataset.texts[0].questions[0].qIndex;
+      // 尝试恢复该年的上次阅读位置
+      let restored = false;
+      try {
+        const yearKey = `kaoyan_resume_english_y${year}`;
+        const saved = JSON.parse(localStorage.getItem(yearKey));
+        if (saved) {
+          const text = dataset.texts.find(t => t.id === saved.textId);
+          if (text) {
+            state.currentTextId = text.id;
+            if (text.questions && text.questions.some(q => q.qIndex === saved.qIndex)) {
+              state.currentQIndex = saved.qIndex;
+            } else if (text.questions && text.questions.length > 0) {
+              state.currentQIndex = text.questions[0].qIndex;
+            }
+            restored = true;
+          }
+        }
+      } catch (e) {}
+      // 无记录则默认落在第1篇第1题
+      if (!restored) {
+        state.currentTextId = dataset.texts[0].id;
+        const firstQ = dataset.texts[0].questions;
+        state.currentQIndex = firstQ && firstQ.length > 0 ? firstQ[0].qIndex : 1;
+      }
     }
     state.showSolution = state.defaultShowSolution;
 
@@ -362,7 +387,7 @@
     });
   }
 
-  // 切换 Text
+  // 切换 Text（篇章）
   function switchText(textId, targetQIndex = null) {
     state.currentTextId = textId;
     const text = getCurrentText();
@@ -381,6 +406,7 @@
       state.currentQIndex = text.questions[0].qIndex;
     }
 
+    saveResume(); // 切换篇章后保存位置（恢复时可精确到篇章+题目）
     renderPassage();
     renderQuestionPills();
     renderQuestion();
