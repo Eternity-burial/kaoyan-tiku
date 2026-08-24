@@ -200,6 +200,12 @@
         else if (removeRaw) removeRaw(src.ch); // 空源不写、清掉残留空对象，保持存储干净
       });
     }
+    function notifyStorageSync() {
+      if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+        window.storageSync.scheduleSave();
+      }
+    }
+
     function loadStatuses() {
       statuses = loadIndexedObj(function (ch) { return localStorage.getItem(chapterStatusKey(ch)); });
     }
@@ -207,6 +213,7 @@
       saveIndexedObj(statuses,
         function (ch, val) { localStorage.setItem(chapterStatusKey(ch), val); },
         function (ch) { localStorage.removeItem(chapterStatusKey(ch)); });
+      notifyStorageSync();
     }
     function loadQBad() {
       qBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); });
@@ -215,6 +222,7 @@
       saveIndexedObj(qBad,
         function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_qbad', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); });
+      notifyStorageSync();
     }
     function loadSBad() {
       sBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
@@ -223,6 +231,7 @@
       saveIndexedObj(sBad,
         function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_sbad', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
+      notifyStorageSync();
     }
 
     // ===== 全局 UI 状态持久化（跨会话记忆） =====
@@ -245,6 +254,7 @@
     }
     function saveGlobalFilters() {
       try { localStorage.setItem(globalUIFilterKey(), JSON.stringify(Array.from(currentFilters))); } catch (e) {}
+      notifyStorageSync();
     }
 
     function loadSolutionPref() {
@@ -257,6 +267,7 @@
     }
     function saveSolutionPref() {
       try { localStorage.setItem(uiSolutionStorageKey(), JSON.stringify({ show: !!showSolution, def: !!defaultShowSolution })); } catch (e) {}
+      notifyStorageSync();
     }
 
     // ===== 笔记数据（按书分离：复合键 '<源章节id>::<label>'） =====
@@ -297,6 +308,7 @@
         if (keys.length > 0) localStorage.setItem(key, JSON.stringify(part));
         else localStorage.removeItem(key); // 空源不写、清残留空对象
       });
+      notifyStorageSync();
     }
 
     function getStatusClass(idx) {
@@ -307,6 +319,104 @@
       if (s === 'rusty') return 'rusty';
       if (s === 'wrong') return 'wrong';
       return '';
+    }
+
+    // ===== 考研倒计时 =====
+    const MOTIVATION_QUOTES = [
+      '“星光不问赶路人，时光不负有心人。”',
+      '“日拱一卒无有穷，终有凌云登顶时。”',
+      '“既然选择了远方，便只顾风雨兼程。”',
+      '“每一个清晨与深夜的伏案，都是通往梦想的阶梯。”',
+      '“沉潜笃定，静待花开；乾坤未定，你我皆是黑马！”'
+    ];
+
+    function getKaoyanTargetDate() {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      let target = new Date(currentYear, 11, 19, 8, 30, 0); // 12月19日
+      if (now > target) {
+        target = new Date(currentYear + 1, 11, 19, 8, 30, 0);
+      }
+      return target;
+    }
+
+    function renderCountdown() {
+      const target = getKaoyanTargetDate();
+      const now = new Date();
+      const diffMs = target - now;
+      const days = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+
+      const sbDays = document.getElementById('sidebarCountdownDays');
+      const sbDate = document.getElementById('sidebarCountdownDate');
+      if (sbDays) sbDays.textContent = days + ' 天';
+      if (sbDate) sbDate.textContent = target.getFullYear() + '/' + (target.getMonth() + 1) + '/' + target.getDate();
+
+      const dbDays = document.getElementById('dbCountdownDays');
+      const dbQuote = document.getElementById('dbCountdownQuote');
+      if (dbDays) dbDays.textContent = days;
+      if (dbQuote) {
+        const startOfYear = new Date(now.getFullYear(), 0, 1);
+        const dayOfYear = Math.floor((now - startOfYear) / (1000 * 60 * 60 * 24));
+        dbQuote.textContent = MOTIVATION_QUOTES[dayOfYear % MOTIVATION_QUOTES.length];
+      }
+    }
+
+    // ===== 昼夜主题（默认清华紫明亮 / 沉浸暗夜）与试卷暗化 =====
+    var currentTheme = localStorage.getItem('kaoyan_theme') || 'light';
+    var darkImageFilter = localStorage.getItem('kaoyan_dark_img_filter') === '1';
+
+    const THEME_NAMES = {
+      light: '明亮',
+      dark: '暗夜'
+    };
+
+    function applyTheme(theme) {
+      if (theme !== 'dark') theme = 'light';
+      currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.body.setAttribute('data-theme', theme);
+      localStorage.setItem('kaoyan_theme', theme);
+
+      var btnTheme = document.getElementById('btnToggleTheme');
+      var engTxtTheme = document.getElementById('engTxtTheme');
+      var themeLabel = THEME_NAMES[theme] || '明亮';
+
+      if (btnTheme) btnTheme.textContent = '主题：' + themeLabel;
+      if (engTxtTheme) engTxtTheme.textContent = '主题：' + themeLabel;
+
+      var btnDarkFilter = document.getElementById('btnDarkFilter');
+      if (btnDarkFilter) {
+        btnDarkFilter.style.display = (theme === 'dark') ? 'block' : 'none';
+      }
+      updateImageDarkFilter();
+      notifyStorageSync();
+    }
+
+    function toggleTheme() {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+
+    function toggleImageDarkFilter() {
+      darkImageFilter = !darkImageFilter;
+      localStorage.setItem('kaoyan_dark_img_filter', darkImageFilter ? '1' : '0');
+      updateImageDarkFilter();
+      notifyStorageSync();
+    }
+
+    function updateImageDarkFilter() {
+      var btnDarkFilter = document.getElementById('btnDarkFilter');
+      if (btnDarkFilter) {
+        btnDarkFilter.textContent = '试卷暗化：' + (darkImageFilter ? '开' : '关');
+        btnDarkFilter.classList.toggle('active', darkImageFilter);
+      }
+      var enable = (currentTheme === 'dark' && darkImageFilter);
+      var qImg = document.getElementById('questionImg');
+      var lbImg = document.getElementById('lightboxImg');
+      if (qImg) qImg.classList.toggle('dark-filter', enable);
+      if (lbImg) lbImg.classList.toggle('dark-filter', enable);
+      document.querySelectorAll('.solution-img, #solutionImgs img, .solution-imgs img, #solutionArea img').forEach(function(img) {
+        img.classList.toggle('dark-filter', enable);
+      });
     }
 
     // ===== 图片路径（按当前科目的 getImgPath） =====
@@ -784,6 +894,7 @@
     }
     function renderDashboardOverview() {
       showDashboardBackBtn(false);
+      renderCountdown();
       document.getElementById('dbOverview').style.display = '';
       document.getElementById('dbDetail').style.display = 'none';
 
@@ -996,6 +1107,7 @@
       // 章节级记忆：切回某章时恢复上次停的题（键含 ch id，无 ch 字段）
       if (currentChapterId) map[curSubjectId + '::ch::' + currentChapterId] = { idx: current, sub: !!subMode };
       try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
+      notifyStorageSync();
     }
     // 读取某章的章节级停靠记录（无记录/记录失效返回 null）
     function loadChapterResume(chId) {
@@ -1731,6 +1843,7 @@
           wrap.appendChild(overlay);
           container.appendChild(wrap);
           img.classList.toggle('sbad-border', !!sBad[current]); // 异步加载后才生效，需在追加时补齐边框
+          img.classList.toggle('dark-filter', (currentTheme === 'dark' && darkImageFilter));
           // 若该图有标注，加载完成后叠加显示
           if (hasAnnotation(src)) renderImageAnnotation(src, img, overlay);
           tryAdd(n + 1); // 加载成功则继续探测下一张
@@ -2079,6 +2192,41 @@
       });
     }
 
+    // ===== DOM 增量补丁更新（无需销毁重建整个题号网格） =====
+    function patchNavStatus(idx) {
+      if (!isAllFilterActive()) {
+        renderNav();
+        return;
+      }
+      const ch = getChapter();
+      if (!ch || !ch.subGroups) { renderNav(); return; }
+      const g = groupOfIndex(idx);
+      if (!g) { renderNav(); return; }
+      const btn = document.querySelector('.qnav button[data-group-start="' + g.startIdx + '"]');
+      if (!btn) { renderNav(); return; }
+
+      if (g.isParent) {
+        var anyStatus = false;
+        const bars = btn.querySelectorAll('.sub-bar');
+        for (var k = 0; k < g.count; k++) {
+          var subIdx = g.startIdx + k;
+          var st = statuses[subIdx];
+          if (st) anyStatus = true;
+          if (bars[k]) {
+            bars[k].className = 'sub-bar' + (st ? ' ' + st : '') + ((subMode && subIdx === current) ? ' active-sub' : '');
+          }
+        }
+        btn.classList.toggle('has-color', anyStatus);
+      } else {
+        var cls = '';
+        if (ch.isKnowledge && ch.isKnowledge[g.startIdx]) cls += ' is-knowledge';
+        if (g.startIdx === current) cls += ' active';
+        cls += ' ' + getStatusClass(g.startIdx);
+        btn.className = cls.trim();
+      }
+      appendBadges(btn, g.startIdx);
+    }
+
     function setStatus(status) {
       const had = statuses[current];
       // 复习会话中不允许取消标记（同一键重复选 = 正常记录，不 toggle off）
@@ -2087,7 +2235,7 @@
       if (!togglingOff) pushUndo(current, had);
       if (togglingOff) { delete statuses[current]; pushUndo(current, had); }
       else { statuses[current] = status; }
-      saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
+      saveStatuses(); updateStatusBtns(); renderStats(); patchNavStatus(current); updateFilterCounts();
       const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
       const score = scoreMap[status];
       if (reviewSession && !togglingOff && score) {
@@ -2103,9 +2251,9 @@
           rebaselineSm2(current, score);
         }
       } else if (!togglingOff && score) {
-        // 非复习改标：重定基线（不累加），首打标自动跳到下一题
+        // 常规答题改标：重定基线，并自动跳到下一题
         rebaselineSm2(current, score);
-        if (!had) navNext();
+        navNext();
       }
       renderSm2InfoBar();
     }
@@ -2122,7 +2270,7 @@
       switchTo(act.idx);
       if (act.prevStatus) { statuses[act.idx] = act.prevStatus; }
       else { delete statuses[act.idx]; }
-      saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
+      saveStatuses(); updateStatusBtns(); renderStats(); patchNavStatus(act.idx); updateFilterCounts();
       renderSm2InfoBar();
     }
 
@@ -2313,12 +2461,14 @@
     function saveAnnotation(imgSrc, state) {
       imgAnnotations[normalizeAnnotSrc(imgSrc)] = state;
       safeLSSet(annotKey(imgSrc), JSON.stringify(state)); // 标注 JSON 体积较大，用 safeLSSet 防配额溢出静默丢失
+      notifyStorageSync();
     }
     function getAnnotation(imgSrc) { return imgAnnotations[normalizeAnnotSrc(imgSrc)] || null; }
     function clearAnnotation(imgSrc) {
       const key = normalizeAnnotSrc(imgSrc);
       delete imgAnnotations[key];
       try { localStorage.removeItem('annot_' + key); } catch (e) {}
+      notifyStorageSync();
     }
     function hasAnnotation(imgSrc) { return !!getAnnotation(imgSrc); }
     loadAnnotations();
@@ -2366,6 +2516,8 @@
       const img = document.getElementById('lightboxImg');
       lbCurrentSrc = src;
       img.src = src;
+      const enable = (currentTheme === 'dark' && darkImageFilter);
+      img.classList.toggle('dark-filter', enable);
       lbScale = 1; lbTranslateX = 0; lbTranslateY = 0;
       img.style.transform = '';
       overlay.classList.add('show');
@@ -3171,6 +3323,7 @@ ${cardsHTML}
           localStorage.removeItem(sm2Key(src.ch));
         }
       });
+      notifyStorageSync();
     }
 
     // 读取任意章节「合并后」的 SM-2（own 段 + 1000题伴章段），键为合并索引 0..total-1
@@ -3198,6 +3351,7 @@ ${cardsHTML}
           localStorage.removeItem(sm2Key(src.ch));
         }
       });
+      notifyStorageSync();
     }
 
     // ===== 重置所有 SM-2 复习进度（清除 bug 遗留数据后重新迁移） =====
@@ -3313,6 +3467,47 @@ ${cardsHTML}
     function rebaselineSm2(idx, score) {
       sm2[idx] = calcSM2(getSm2Seed(score), score);
       saveSm2();
+    }
+
+    // ===== SM-2 未来 7 天到期负荷预测直方图 =====
+    function renderSm2Projection() {
+      var container = document.getElementById('sm2ProjectionBars');
+      if (!container) return;
+
+      var now = new Date();
+      var todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+      var ONE_DAY = 24 * 60 * 60 * 1000;
+      var dayCounts = [0, 0, 0, 0, 0, 0, 0];
+      var dayLabels = ['今天', '明天', '后天', '第4天', '第5天', '第6天', '第7天'];
+
+      if (CHAPTERS && CHAPTERS.length > 0) {
+        CHAPTERS.forEach(function(ch) {
+          var sm2Obj = readMergedSm2(ch);
+          for (var idx in sm2Obj) {
+            var item = sm2Obj[idx];
+            if (item && item.nextReview) {
+              var diffDays = Math.floor((item.nextReview - todayStart) / ONE_DAY);
+              if (diffDays <= 0) {
+                dayCounts[0]++;
+              } else if (diffDays < 7) {
+                dayCounts[diffDays]++;
+              }
+            }
+          }
+        });
+      }
+
+      var maxCount = Math.max(1, Math.max.apply(null, dayCounts));
+      container.innerHTML = dayCounts.map(function(count, i) {
+        var heightPercent = Math.max(8, Math.round((count / maxCount) * 100));
+        return '<div class="sm2-proj-col">' +
+          '<div class="sm2-proj-bar-wrapper">' +
+            '<span class="sm2-proj-count">' + count + '</span>' +
+            '<div class="sm2-proj-bar' + (i === 0 ? ' today' : '') + '" style="height:' + heightPercent + '%"></div>' +
+          '</div>' +
+          '<span class="sm2-proj-label">' + dayLabels[i] + '</span>' +
+        '</div>';
+      }).join('');
     }
 
     // ---- SM-2 复习面板 ----
@@ -3459,6 +3654,9 @@ ${cardsHTML}
       document.querySelector('#sm2CardOverdue .sm2-stat-num').textContent = allOverdue;
       document.querySelector('#sm2CardQueue .sm2-stat-num').textContent = allQueued;
       document.querySelector('#sm2CardMastered .sm2-stat-num').textContent = allMastered;
+
+      // 渲染未来 7 天到期负荷预测微型直方图
+      renderSm2Projection();
 
       // 渲染章节列表：科目仅有 1 个模块（822）时不渲染模块头，退化为按书布局
       var chHtml = '';
@@ -4034,6 +4232,40 @@ ${cardsHTML}
       updateFilterButtons(); // 恢复筛选按钮高亮（需在 renderNav 之后，按钮已重建）
       renderSolDefaultBtn(); updateSolutionUI();
     }
-    // 首次加载（无已选科目）弹出科目选择（等 DOM 就绪，科目弹窗 HTML 在脚本后）
-    if (!savedSubject) document.addEventListener('DOMContentLoaded', function () { openSubjectPicker(); });
+    // DOM 就绪后初始化主题、倒计时与事件绑定
+    document.addEventListener('DOMContentLoaded', function () {
+      applyTheme(localStorage.getItem('kaoyan_theme') || 'light');
+      renderCountdown();
+
+      var btnTheme = document.getElementById('btnToggleTheme');
+      if (btnTheme) btnTheme.onclick = toggleTheme;
+      var btnFilter = document.getElementById('btnDarkFilter');
+      if (btnFilter) btnFilter.onclick = toggleImageDarkFilter;
+
+      // 首次加载（无已选科目）弹出科目选择
+      if (!savedSubject) openSubjectPicker();
+    });
+
+    // 暴露核心刷新与读取方法至 window，供本地同步模块与英语模块触发联动
+    window.loadStatuses = loadStatuses;
+    window.loadQBad = loadQBad;
+    window.loadSBad = loadSBad;
+    window.loadNotes = loadNotes;
+    window.loadAnnotations = loadAnnotations;
+    window.loadSm2 = loadSm2;
+    window.loadGlobalFilters = loadGlobalFilters;
+    window.loadSolutionPref = loadSolutionPref;
+    window.renderStats = renderStats;
+    window.renderNav = renderNav;
+    window.renderNotes = renderNotes;
+    window.updateFilterCounts = updateFilterCounts;
+    window.renderSm2InfoBar = renderSm2InfoBar;
+    window.renderCountdown = renderCountdown;
+    window.toggleTheme = toggleTheme;
+    window.applyTheme = applyTheme;
+    window.toggleImageDarkFilter = toggleImageDarkFilter;
+    window.switchTo = switchTo;
+    window.switchChapter = switchChapter;
+    window.openSubjectPicker = openSubjectPicker;
+    window.closeSubjectPicker = closeSubjectPicker;
   

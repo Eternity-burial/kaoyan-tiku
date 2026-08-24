@@ -14,6 +14,13 @@
 
     <div class="sidebar-left">
 
+      <!-- 考研倒计时侧栏挂件 -->
+      <div class="kaoyan-countdown-sidebar" id="sidebarCountdown">
+        <div class="countdown-sidebar-label">距离考研初试</div>
+        <div class="countdown-sidebar-days" id="sidebarCountdownDays">-- 天</div>
+        <div class="countdown-sidebar-sub" id="sidebarCountdownDate">2026/12/19</div>
+      </div>
+
       <div class="filter-toolbar" id="filterToolbar">
         <div class="filter-label">状态筛选</div>
         <div class="filter-hint">可组合选择</div>
@@ -35,12 +42,29 @@
         <button id="btnExportWrong" class="export-btn btn-export-wrong">导出不会</button>
       </div>
 
+      <!-- 本地文件实时同步联动卡片 -->
+      <div class="storage-sync-section" id="storageSyncSection">
+        <div class="sync-header">
+          <span class="sync-dot dot-offline" id="syncStatusDot"></span>
+          <span class="sync-status-text" id="syncStatusText">本地未关联</span>
+        </div>
+        <div class="sync-filename" id="syncFileName" title="数据存放路径">仅存于浏览器缓存</div>
+        <button id="btnLinkLocalFile" class="sync-btn">关联本地文件</button>
+        <button id="btnUnlinkFile" class="sync-btn-unlink" style="display:none" title="断开与本地文件的连接">断开连接</button>
+        <div class="sync-actions-row">
+          <button id="btnSyncExport" class="sync-mini-btn" title="导出完整数据为 JSON 备份文件">导出备份</button>
+          <button id="btnSyncImport" class="sync-mini-btn" title="从 JSON 文件恢复数据">恢复备份</button>
+        </div>
+      </div>
+
       <button id="btnSolDefault" class="sol-default-btn">解析默认：显示<span class="sol-key">Shift+Space</span></button>
 
       <button id="btnDashboard" class="sol-default-btn" style="margin-top:8px">全局进度<span class="sol-key">V</span></button>
       <button id="btnWrongBook" class="sol-default-btn" style="margin-top:8px">错题本<span class="sol-key">B</span></button>
       <button id="btnSm2PanelSidebar" class="sol-default-btn" style="margin-top:8px" onclick="toggleSm2Panel()">间隔复习<span class="sol-key">M</span></button>
       <button id="btnShortcutHelp" class="sol-default-btn" style="margin-top:8px">快捷键帮助<span class="sol-key">H</span></button>
+      <button id="btnToggleTheme" class="sol-default-btn" style="margin-top:8px">主题：明亮</button>
+      <button id="btnDarkFilter" class="sol-default-btn" style="margin-top:8px">试卷暗化：关</button>
       <button id="btnSwitchSubject" class="sol-default-btn" style="margin-top:8px">切换科目<span class="sol-key">G</span></button>
 
     </div>
@@ -130,6 +154,17 @@
         </div><!-- #mainAreaContent -->
         <div class="dashboard-panel" id="dashboardPanel" style="display:none">
           <div class="db-overview" id="dbOverview">
+            <!-- 考研冲刺倒计时仪表卡片 -->
+            <div class="kaoyan-countdown-card" id="dbCountdownCard">
+              <div class="countdown-card-left">
+                <div class="countdown-card-title">考研初试倒计时</div>
+                <div class="countdown-quote" id="dbCountdownQuote">“星光不问赶路人，时光不负有心人。”</div>
+              </div>
+              <div class="countdown-card-right">
+                <span class="countdown-num" id="dbCountdownDays">--</span>
+                <span class="countdown-unit">天</span>
+              </div>
+            </div>
             <div class="db-grid" id="dbGrid"></div>
           </div>
           <div class="db-detail" id="dbDetail" style="display:none">
@@ -147,6 +182,14 @@
               <div class="sm2-stat-card" id="sm2CardOverdue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">已逾期</div></div>
               <div class="sm2-stat-card" id="sm2CardQueue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">队列中</div></div>
               <div class="sm2-stat-card" id="sm2CardMastered"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">已掌握</div></div>
+            </div>
+            <!-- 未来 7 天到期复习负荷预测直方图 -->
+            <div class="sm2-projection-section" id="sm2ProjectionSection">
+              <div class="sm2-projection-title">
+                <span>未来 7 天到期复习负荷预测</span>
+                <span style="font-weight:normal;font-size:11px;color:var(--text-muted)">合理分配每日做题量</span>
+              </div>
+              <div class="sm2-projection-bars" id="sm2ProjectionBars"></div>
             </div>
             <div class="sm2-mode-row">
               <span class="sm2-mode-label">刷题模式</span>
@@ -171,7 +214,7 @@
         <div class="review-queue-header" id="reviewQueueHeader">本次复习 0 题</div>
         <div class="review-queue" id="reviewQueue"></div>
       </div>
-      <div id="qnavContainer" style="background:rgba(255,255,255,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.45);margin-top:12px">
+      <div id="qnavContainer" class="qnav-container">
         <div class="qnav-label">题号</div>
         <div class="qnav" id="qnav"></div>
       </div>
@@ -274,15 +317,21 @@
           <button class="mode-btn" id="engBtnPracticeMode" title="快捷键: M">做题模式</button>
         </div>
         <button class="toggle-btn" id="engBtnToggleSol" title="快捷键: Space (单题) / Shift+Space (默认)">
-          <span id="engTxtToggleSol">💡 解析</span>
+          <span id="engTxtToggleSol">解析</span>
           <span class="shortcut-badge">Space</span>
         </button>
         <button class="toggle-btn" id="engBtnToggleTrans" title="快捷键: T">
-          <span>🇨🇳 全文译文</span>
+          <span>全文译文</span>
           <span class="shortcut-badge">T</span>
         </button>
+        <button class="toggle-btn" id="engBtnVocabBook" title="真题生词收藏本">
+          <span>生词本</span>
+        </button>
+        <button class="toggle-btn" id="engBtnThemeToggle" title="切换阅读主题">
+          <span id="engTxtTheme">主题：明亮</span>
+        </button>
         <button class="toggle-btn" id="engBtnHelp" title="快捷键: H">
-          <span>⌨️ 快捷键</span>
+          <span>快捷键</span>
           <span class="shortcut-badge">H</span>
         </button>
       </div>
@@ -309,11 +358,28 @@
     <!-- 词汇详情悬停浮窗 -->
     <div class="vocab-popover" id="engVocabPopover"></div>
 
+    <!-- 生词本自测与管理弹窗 -->
+    <div class="vocab-notebook-overlay" id="engModalVocabBook">
+      <div class="vocab-notebook-modal">
+        <div class="vocab-modal-header">
+          <div class="vocab-modal-title">真题生词本 <span id="vocabTotalBadge" style="font-size:12px;color:var(--text-muted);font-weight:normal">(共 0 词)</span></div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <button id="btnToggleVocabBlur" class="theme-toggle-btn" style="font-size:11px">遮挡释义自测</button>
+            <button id="btnExportVocab" class="theme-toggle-btn" style="font-size:11px">导出生词</button>
+            <button class="btn-close-modal" id="btnCloseVocabBook">&times;</button>
+          </div>
+        </div>
+        <div class="vocab-modal-body" id="vocabModalBody">
+          <div class="vocab-grid" id="vocabGrid"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- 英语快捷键帮助弹窗 -->
     <div class="modal-overlay" id="engModalHelp">
       <div class="modal-card">
         <div class="modal-header">
-          <h3>⌨️ 考研英语快捷键指南</h3>
+          <h3>考研英语快捷键指南</h3>
           <button class="btn-close-modal" id="engBtnCloseHelp">&times;</button>
         </div>
         <div class="shortcut-grid">
@@ -412,6 +478,7 @@
   <script src="lib/katex/katex.min.js"></script>
   <script src="lib/katex/contrib/auto-render.min.js"></script>
   <script src="lib/markerjs3/markerjs3.umd.js"></script>
+  <script src="js/storage_sync.js"></script>
   <script src="js/chapters.js"></script>
   <script src="题库/英语/data_1998.js"></script>
   <script src="题库/英语/data_1999.js"></script>
