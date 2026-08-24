@@ -3094,9 +3094,6 @@
     body[data-theme="dark"] .question-img.dark-filter,
     body[data-theme="dark"] .solution-img.dark-filter,
     body[data-theme="dark"] .lightbox-img.dark-filter,
-    body[data-theme="dark"] .annot-overlay.dark-filter,
-    body[data-theme="dark"] .lightbox-annot-overlay.dark-filter,
-    body[data-theme="dark"] mjs-marker-view.dark-filter,
     body[data-theme="dark"] mjs-marker-area.dark-filter {
       filter: brightness(0.76) contrast(1.04);
       opacity: 0.92;

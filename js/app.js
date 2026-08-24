@@ -456,15 +456,11 @@
       var enable = (currentTheme === 'dark' && darkImageFilter);
       var qImg = document.getElementById('questionImg');
       var lbImg = document.getElementById('lightboxImg');
-      var qAnnotOverlay = document.getElementById('qAnnotOverlay');
-      var lbAnnotOverlay = document.getElementById('lightboxAnnotOverlay');
 
       if (qImg) qImg.classList.toggle('dark-filter', enable);
       if (lbImg) lbImg.classList.toggle('dark-filter', enable);
-      if (qAnnotOverlay) qAnnotOverlay.classList.toggle('dark-filter', enable);
-      if (lbAnnotOverlay) lbAnnotOverlay.classList.toggle('dark-filter', enable);
 
-      document.querySelectorAll('.solution-img, #solutionImgs img, .solution-imgs img, #solutionArea img, .annot-overlay, .annot-wrapper, mjs-marker-view, mjs-marker-area').forEach(function(el) {
+      document.querySelectorAll('.solution-img, #solutionImgs img, .solution-imgs img, #solutionArea img, mjs-marker-area').forEach(function(el) {
         el.classList.toggle('dark-filter', enable);
       });
     }
@@ -2313,15 +2309,21 @@
       // 计算 SVG 矩阵 → NaN → 标注区域被放大/错乱。等图片可见后再渲染（见 updateSolutionUI 的重新触发）。
       if (imgEl.getBoundingClientRect().width === 0 || imgEl.getBoundingClientRect().height === 0) return;
       overlayEl.style.display = '';
-      const enable = (currentTheme === 'dark' && darkImageFilter);
-      overlayEl.classList.toggle('dark-filter', enable);
       try {
         const viewer = new markerjs3.MarkerView();
         _annotViewers[key] = viewer;
-        viewer.classList.toggle('dark-filter', enable);
         overlayEl.appendChild(viewer);
         viewer.targetImage = imgEl;
         viewer.show(state);
+        // 关键：MarkerView 内部会在 Shadow DOM 里克隆一张 _editingTarget 底图。
+        // 普通只读浏览时，底层原图（#questionImg / .solution-img）已有标准 dark-filter 样式。
+        // 若 MarkerView 内部克隆底图可见，会导致双重底图重叠以及多层滤镜乘法导致图片过暗。
+        // 注入 Shadow DOM 样式彻底隐藏内部克隆底图，上层仅保留透明的 SVG 标注，底图 100% 复用真实原图。
+        if (viewer.shadowRoot) {
+          const st = document.createElement('style');
+          st.textContent = 'img { display: none !important; }';
+          viewer.shadowRoot.appendChild(st);
+        }
       } catch (e) { /* 标注渲染失败时静默 */ }
     }
     function renderQuestionAnnotations() {
@@ -2910,14 +2912,16 @@
       if (!lbCurrentSrc || !hasA) { lbOverlay.style.display = 'none'; return; }
       const img = document.getElementById('lightboxImg');
       lbOverlay.style.display = '';
-      const enable = (currentTheme === 'dark' && darkImageFilter);
-      lbOverlay.classList.toggle('dark-filter', enable);
       const apply = function () {
         const mview = new markerjs3.MarkerView();
-        mview.classList.toggle('dark-filter', enable);
         lbOverlay.appendChild(mview);
         mview.targetImage = img;
         mview.show(getAnnotation(lbCurrentSrc));
+        if (mview.shadowRoot) {
+          const st = document.createElement('style');
+          st.textContent = 'img { display: none !important; }';
+          mview.shadowRoot.appendChild(st);
+        }
       };
       if (img.complete && img.naturalWidth > 0) apply();
       else { img.onload = function() { apply(); }; }
