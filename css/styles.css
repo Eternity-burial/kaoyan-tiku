@@ -1,85 +1,82 @@
-    /* ===== Quiet Liquid 核心设计令牌 (对标真题排版与 WCAG AA 权威色彩规范) ===== */
+    /* ===== Quiet Liquid 核心设计令牌 (苹果 Liquid Glass 质感 + 原版 5 级掌握度色板) ===== */
     :root {
       --primary: #660874;
       --primary-dark: #4d0659;
-      --primary-light: #831899;
-      --primary-alpha: rgba(102, 8, 116, 0.12);
-      --primary-alpha-light: rgba(102, 8, 116, 0.05);
+      --primary-light: #8a2b9c;
+      --primary-alpha: rgba(102, 8, 116, 0.22);
+      --bg: #eef2f7;
+      --main-bg: rgba(255, 255, 255, 0.55);
+      --card-bg: rgba(255, 255, 255, 0.66);
+      --panel-bg: rgba(255, 255, 255, 0.72);
+      --input-bg: rgba(255, 255, 255, 0.85);
+      --glass-bg: rgba(255, 255, 255, 0.66);
+      --glass-border: rgba(255, 255, 255, 0.72);
 
-      --bg: #f1f5f9;
-      --main-bg: rgba(255, 255, 255, 0.92);
-      --card-bg: #ffffff;
-      --panel-bg: #ffffff;
-      --input-bg: #f8fafc;
-      --glass-bg: rgba(255, 255, 255, 0.85);
-      --glass-border: rgba(226, 232, 240, 0.9);
+      --text: #252735;
+      --text-secondary: #555b6c;
+      --text-muted: #747887;
+      --text-light: #b8bcc6;
+      --border: rgba(71, 76, 101, 0.14);
 
-      --text: #1e293b;
-      --text-secondary: #475569;
-      --text-muted: #64748b;
-      --text-light: #94a3b8;
-      --border: #e2e8f0;
+      --mastered: #389E0D;
+      --mastered-dark: #1B5E20;
+      --mastered-alpha: rgba(56, 158, 13, 0.2);
+      --uncertain: #FBC02D;
+      --uncertain-dark: #F57F17;
+      --uncertain-alpha: rgba(251, 192, 45, 0.2);
+      --unfamiliar: #D32F2F;
+      --unfamiliar-dark: #B71C1C;
+      --unfamiliar-alpha: rgba(211, 47, 47, 0.2);
+      --wrong: #B71C1C;
 
-      --mastered: #16a34a;
-      --mastered-dark: #15803d;
-      --mastered-alpha: rgba(22, 163, 74, 0.2);
-      --uncertain: #d97706;
-      --uncertain-dark: #b45309;
-      --uncertain-alpha: rgba(217, 119, 6, 0.2);
-      --unfamiliar: #dc2626;
-      --unfamiliar-dark: #b91c1c;
-      --unfamiliar-alpha: rgba(220, 38, 38, 0.2);
-      --wrong: #dc2626;
+      /* 5 级掌握度原版色板：绿→黄绿→黄→橙→红 (严格锁定不改) */
+      --lv5: #389E0D; --lv5-dark: #1B5E20; --lv5-alpha: rgba(56,158,13,0.2);
+      --lv4: #7CB305; --lv4-dark: #558B2F; --lv4-alpha: rgba(124,179,5,0.2);
+      --lv3: #FBC02D; --lv3-dark: #F57F17; --lv3-alpha: rgba(251,192,45,0.2);
+      --lv2: #F57C00; --lv2-dark: #BF360C; --lv2-alpha: rgba(245,124,0,0.2);
+      --lv1: #D32F2F; --lv1-dark: #B71C1C; --lv1-alpha: rgba(211,47,47,0.2);
 
-      /* 5 级掌握度权威色板（绿→黄绿→黄→橙→红） */
-      --lv5: #16a34a; --lv5-dark: #15803d; --lv5-alpha: rgba(22,163,74,0.22);
-      --lv4: #65a30d; --lv4-dark: #4d7c0f; --lv4-alpha: rgba(101,163,13,0.22);
-      --lv3: #d97706; --lv3-dark: #b45309; --lv3-alpha: rgba(217,119,6,0.22);
-      --lv2: #ea580c; --lv2-dark: #c2410c; --lv2-alpha: rgba(234,88,12,0.22);
-      --lv1: #dc2626; --lv1-dark: #b91c1c; --lv1-alpha: rgba(220,38,38,0.22);
-
-      --gel-top: #ffffff;
-      --gel-bot: #f1f5f9;
+      --gel-top: rgba(255, 255, 255, 0.92);
+      --gel-bot: rgba(246, 247, 251, 0.92);
       --gel-hov-top: #ffffff;
-      --gel-hov-bot: #e2e8f0;
-      --gel-border: #cbd5e1;
+      --gel-hov-bot: #f1f2f8;
+      --gel-border: rgba(71, 76, 101, 0.15);
 
-      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-      --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.07);
-      --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.10);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
+      --shadow-sm: 0 1px 2px rgba(32, 36, 58, 0.06);
+      --shadow-md: 0 8px 22px rgba(53, 58, 89, 0.08);
+      --shadow-lg: 0 12px 30px rgba(53, 58, 89, 0.12);
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
       --radius-pill: 12px;
     }
 
-    /* 沉浸石墨深灰暗夜模式（无刺眼杂色、无眩光） */
+    /* 沉浸暗夜模式 Liquid Dark Glass */
     [data-theme="dark"] {
       --primary: #b388ff;
       --primary-dark: #7c4dff;
       --primary-light: #d1b8ff;
-      --primary-alpha: rgba(179, 136, 255, 0.18);
-      --primary-alpha-light: rgba(179, 136, 255, 0.08);
+      --primary-alpha: rgba(179, 136, 255, 0.22);
 
-      --bg: #0f172a;
-      --main-bg: #1e293b;
-      --card-bg: #1e293b;
-      --panel-bg: #1e293b;
-      --input-bg: #0f172a;
-      --glass-bg: rgba(30, 41, 59, 0.92);
-      --glass-border: rgba(255, 255, 255, 0.08);
+      --bg: #141518;
+      --main-bg: rgba(26, 27, 33, 0.72);
+      --card-bg: rgba(34, 35, 42, 0.80);
+      --panel-bg: rgba(29, 30, 36, 0.80);
+      --input-bg: rgba(22, 23, 27, 0.88);
+      --glass-bg: rgba(26, 27, 33, 0.72);
+      --glass-border: rgba(255, 255, 255, 0.10);
 
-      --text: #f1f5f9;
+      --text: #e2e2e8;
       --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --text-light: #64748b;
-      --border: rgba(255, 255, 255, 0.08);
+      --text-muted: #8e8e9c;
+      --text-light: #5e5e6c;
+      --border: rgba(255, 255, 255, 0.10);
 
-      --gel-top: #334155;
-      --gel-bot: #1e293b;
-      --gel-hov-top: #475569;
-      --gel-hov-bot: #334155;
-      --gel-border: rgba(255, 255, 255, 0.10);
+      --gel-top: rgba(42, 43, 52, 0.85);
+      --gel-bot: rgba(32, 33, 40, 0.85);
+      --gel-hov-top: rgba(52, 54, 66, 0.95);
+      --gel-hov-bot: rgba(39, 40, 50, 0.95);
+      --gel-border: rgba(255, 255, 255, 0.12);
     }
 
     * {
@@ -90,22 +87,24 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       min-height: 100vh;
       color: var(--text);
       background:
-        radial-gradient(circle at 12% 8%, rgba(102, 8, 116, 0.07), transparent 32%),
-        radial-gradient(circle at 88% 16%, rgba(22, 163, 74, 0.05), transparent 30%),
-        radial-gradient(circle at 72% 88%, rgba(102, 8, 116, 0.05), transparent 32%),
-        var(--bg);
+        radial-gradient(circle at 12% 8%, rgba(174, 154, 232, 0.25), transparent 31%),
+        radial-gradient(circle at 88% 16%, rgba(140, 190, 226, 0.22), transparent 30%),
+        radial-gradient(circle at 72% 88%, rgba(238, 190, 154, 0.18), transparent 32%),
+        #eef2f7;
       background-attachment: fixed;
       padding: 24px;
       transition: background 0.25s ease, color 0.25s ease;
     }
 
     body[data-theme="dark"] {
-      background: #0f172a;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(102, 8, 116, 0.18), transparent 31%),
+        radial-gradient(circle at 88% 16%, rgba(27, 94, 32, 0.15), transparent 30%),
+        radial-gradient(circle at 72% 88%, rgba(102, 8, 116, 0.15), transparent 32%),
+        #141518;
       color: var(--text);
     }
 
@@ -1378,18 +1377,18 @@
       border-radius: 4px;
     }
 
-    /* ===== 主区域 ===== */
+    /* ===== 主区域 Liquid Glass ===== */
     .main-area {
       width: 100%;
-      max-width: 900px;
+      max-width: 980px;
       margin: 0 auto;
+      padding: 24px 26px 28px;
       background: var(--main-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 16px;
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      border-radius: var(--radius-lg);
       border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-lg);
-      padding: 24px;
+      box-shadow: 0 22px 55px rgba(48, 53, 82, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.28);
       display: flex;
       flex-direction: column;
       align-items: center;
