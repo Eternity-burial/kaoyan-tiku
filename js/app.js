@@ -682,12 +682,12 @@
           (seg.label ? '<div class="stats-seg-label">' + seg.label + '</div>' : '') +
           '<div class="stats-bar-wrap"><div class="stats-bar-fill" style="width:' + pct + '%"></div></div>' +
           '<div class="stats-counts">' +
-            '<span><span class="sc-dot" style="background:#389E0D"></span>熟练 ' + lv5 + '</span>' +
-            '<span><span class="sc-dot" style="background:#7CB305"></span>较熟 ' + lv4 + '</span>' +
-            '<span><span class="sc-dot" style="background:#FBC02D"></span>模糊 ' + lv3 + '</span>' +
-            '<span><span class="sc-dot" style="background:#F57C00"></span>困难 ' + lv2 + '</span>' +
-            '<span><span class="sc-dot" style="background:#D32F2F"></span>不会 ' + lv1 + '</span>' +
-            '<span><span class="sc-dot" style="background:#bbb"></span>未做 ' + un + '</span>' +
+            '<span><span class="sc-dot" style="background:var(--lv5)"></span>熟练 <span class="sc-val">' + lv5 + '</span></span>' +
+            '<span><span class="sc-dot" style="background:var(--lv4)"></span>较熟 <span class="sc-val">' + lv4 + '</span></span>' +
+            '<span><span class="sc-dot" style="background:var(--lv3)"></span>模糊 <span class="sc-val">' + lv3 + '</span></span>' +
+            '<span><span class="sc-dot" style="background:var(--lv2)"></span>困难 <span class="sc-val">' + lv2 + '</span></span>' +
+            '<span><span class="sc-dot" style="background:var(--lv1)"></span>不会 <span class="sc-val">' + lv1 + '</span></span>' +
+            '<span><span class="sc-dot" style="background:var(--text-light)"></span>未做 <span class="sc-val">' + un + '</span></span>' +
           '</div>' +
         '</div>';
       }).join('');

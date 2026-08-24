@@ -1,54 +1,55 @@
-    /* ===== Quiet Liquid 核心设计令牌 ===== */
+    /* ===== Quiet Liquid 核心设计令牌 (对标真题排版与 WCAG AA 权威色彩规范) ===== */
     :root {
       --primary: #660874;
       --primary-dark: #4d0659;
-      --primary-light: #8a2b9c;
+      --primary-light: #831899;
       --primary-alpha: rgba(102, 8, 116, 0.12);
-      --primary-alpha-light: rgba(102, 8, 116, 0.06);
+      --primary-alpha-light: rgba(102, 8, 116, 0.05);
 
-      --bg: #eef2f7;
-      --main-bg: rgba(255, 255, 255, 0.85);
-      --card-bg: rgba(255, 255, 255, 0.98);
-      --panel-bg: rgba(255, 255, 255, 0.98);
-      --input-bg: #ffffff;
-      --glass-bg: rgba(255, 255, 255, 0.72);
-      --glass-border: rgba(255, 255, 255, 0.85);
+      --bg: #f1f5f9;
+      --main-bg: rgba(255, 255, 255, 0.92);
+      --card-bg: #ffffff;
+      --panel-bg: #ffffff;
+      --input-bg: #f8fafc;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(226, 232, 240, 0.9);
 
-      --text: #252735;
+      --text: #1e293b;
+      --text-secondary: #475569;
       --text-muted: #64748b;
       --text-light: #94a3b8;
-      --border: rgba(71, 76, 101, 0.14);
+      --border: #e2e8f0;
 
-      --mastered: #389E0D;
-      --mastered-dark: #1B5E20;
-      --mastered-alpha: rgba(56, 158, 13, 0.2);
-      --uncertain: #FBC02D;
-      --uncertain-dark: #F57F17;
-      --uncertain-alpha: rgba(251, 192, 45, 0.2);
-      --unfamiliar: #D32F2F;
-      --unfamiliar-dark: #B71C1C;
-      --unfamiliar-alpha: rgba(211, 47, 47, 0.2);
-      --wrong: #B71C1C;
+      --mastered: #16a34a;
+      --mastered-dark: #15803d;
+      --mastered-alpha: rgba(22, 163, 74, 0.2);
+      --uncertain: #d97706;
+      --uncertain-dark: #b45309;
+      --uncertain-alpha: rgba(217, 119, 6, 0.2);
+      --unfamiliar: #dc2626;
+      --unfamiliar-dark: #b91c1c;
+      --unfamiliar-alpha: rgba(220, 38, 38, 0.2);
+      --wrong: #dc2626;
 
-      /* 5 级掌握度色板：绿→黄绿→黄→橙→红 */
-      --lv5: #389E0D; --lv5-dark: #1B5E20; --lv5-alpha: rgba(56,158,13,0.2);
-      --lv4: #7CB305; --lv4-dark: #558B2F; --lv4-alpha: rgba(124,179,5,0.2);
-      --lv3: #FBC02D; --lv3-dark: #F57F17; --lv3-alpha: rgba(251,192,45,0.2);
-      --lv2: #F57C00; --lv2-dark: #BF360C; --lv2-alpha: rgba(245,124,0,0.2);
-      --lv1: #D32F2F; --lv1-dark: #B71C1C; --lv1-alpha: rgba(211,47,47,0.2);
+      /* 5 级掌握度权威色板（绿→黄绿→黄→橙→红） */
+      --lv5: #16a34a; --lv5-dark: #15803d; --lv5-alpha: rgba(22,163,74,0.22);
+      --lv4: #65a30d; --lv4-dark: #4d7c0f; --lv4-alpha: rgba(101,163,13,0.22);
+      --lv3: #d97706; --lv3-dark: #b45309; --lv3-alpha: rgba(217,119,6,0.22);
+      --lv2: #ea580c; --lv2-dark: #c2410c; --lv2-alpha: rgba(234,88,12,0.22);
+      --lv1: #dc2626; --lv1-dark: #b91c1c; --lv1-alpha: rgba(220,38,38,0.22);
 
-      --gel-top: rgba(255, 255, 255, 0.92);
-      --gel-bot: rgba(246, 247, 251, 0.92);
+      --gel-top: #ffffff;
+      --gel-bot: #f1f5f9;
       --gel-hov-top: #ffffff;
-      --gel-hov-bot: #f1f2f8;
-      --gel-border: rgba(71, 76, 101, 0.15);
+      --gel-hov-bot: #e2e8f0;
+      --gel-border: #cbd5e1;
 
-      --shadow-sm: 0 1px 2px rgba(32, 36, 58, 0.06);
-      --shadow-md: 0 8px 22px rgba(53, 58, 89, 0.08);
-      --shadow-lg: 0 12px 30px rgba(53, 58, 89, 0.12);
-      --radius-sm: 10px;
-      --radius-md: 14px;
-      --radius-lg: 18px;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.07);
+      --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.10);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
       --radius-pill: 12px;
     }
 
@@ -60,23 +61,24 @@
       --primary-alpha: rgba(179, 136, 255, 0.18);
       --primary-alpha-light: rgba(179, 136, 255, 0.08);
 
-      --bg: #141518;
-      --main-bg: #1a1b20;
-      --card-bg: #22232a;
-      --panel-bg: #1d1e24;
-      --input-bg: #16171b;
-      --glass-bg: rgba(26, 27, 33, 0.95);
-      --glass-border: rgba(255, 255, 255, 0.09);
+      --bg: #0f172a;
+      --main-bg: #1e293b;
+      --card-bg: #1e293b;
+      --panel-bg: #1e293b;
+      --input-bg: #0f172a;
+      --glass-bg: rgba(30, 41, 59, 0.92);
+      --glass-border: rgba(255, 255, 255, 0.08);
 
-      --text: #e2e2e8;
-      --text-muted: #8e8e9c;
-      --text-light: #5e5e6c;
-      --border: rgba(255, 255, 255, 0.09);
+      --text: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-light: #64748b;
+      --border: rgba(255, 255, 255, 0.08);
 
-      --gel-top: #2a2b34;
-      --gel-bot: #202128;
-      --gel-hov-top: #343642;
-      --gel-hov-bot: #272832;
+      --gel-top: #334155;
+      --gel-bot: #1e293b;
+      --gel-hov-top: #475569;
+      --gel-hov-bot: #334155;
       --gel-border: rgba(255, 255, 255, 0.10);
     }
 
@@ -87,22 +89,24 @@
     }
 
     body {
-      font-family: "Microsoft YaHei", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       min-height: 100vh;
       color: var(--text);
       background:
-        radial-gradient(circle at 12% 8%, rgba(174, 154, 232, 0.25), transparent 31%),
-        radial-gradient(circle at 88% 16%, rgba(140, 190, 226, 0.22), transparent 30%),
-        radial-gradient(circle at 72% 88%, rgba(238, 190, 154, 0.18), transparent 32%),
-        #eef2f7;
+        radial-gradient(circle at 12% 8%, rgba(102, 8, 116, 0.07), transparent 32%),
+        radial-gradient(circle at 88% 16%, rgba(22, 163, 74, 0.05), transparent 30%),
+        radial-gradient(circle at 72% 88%, rgba(102, 8, 116, 0.05), transparent 32%),
+        var(--bg);
       background-attachment: fixed;
       padding: 24px;
       transition: background 0.25s ease, color 0.25s ease;
     }
 
     body[data-theme="dark"] {
-      background: #141518;
-      color: #e2e2e8;
+      background: #0f172a;
+      color: var(--text);
     }
 
     /* ===== 三栏布局 ===== */
@@ -125,6 +129,9 @@
       overflow-x: hidden;
       scrollbar-width: thin;
       scrollbar-color: rgba(128,128,128,0.2) transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
       padding-right: 4px;
     }
 
@@ -147,14 +154,20 @@
       min-width: 0;
     }
 
+    /* 右侧边栏独立垂直滑动 + 纯净 Flex 垂直间距，彻底消除重叠 */
     .sidebar-right {
       flex: 0 0 268px;
       position: sticky;
       top: 24px;
       max-height: calc(100vh - 40px);
       overflow-y: auto;
+      overflow-x: hidden;
       scrollbar-width: thin;
       scrollbar-color: rgba(128,128,128,0.2) transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-right: 4px;
     }
 
     .sidebar-right::-webkit-scrollbar {
@@ -176,14 +189,14 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 20px;
+      padding: 8px 18px;
       border: 1px solid var(--gel-border, var(--border));
       border-radius: var(--radius-pill);
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 500;
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
-      box-shadow: var(--shadow-md),
+      box-shadow: var(--shadow-sm),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
       transition: all 0.2s ease;
       color: var(--text);
@@ -292,25 +305,28 @@
     .gel-btn.btn-status.rusty .key,
     .gel-btn.btn-status.wrong .key { color: #fff; }
 
-    /* 进度块与右侧栏容器 */
+    /* 进度块与右侧栏容器 (严格独立、杜绝重叠) */
     .chapter-selector,
     #statsBlock,
+    #reviewQueuePanel,
     .qnav-container {
       background: var(--glass-bg);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-radius: 12px;
-      padding: 12px;
+      padding: 12px 14px;
       border: 1px solid var(--glass-border);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      box-shadow: var(--shadow-sm);
+      margin: 0;
     }
 
     #statsBlock .chapter-label,
     .qnav-label {
       font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-      font-weight: bold;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     /* ===== 解析默认开关（左侧栏） ===== */
@@ -936,70 +952,84 @@
     }
 
     .stats-bar-wrap {
-      height: 10px;
-      background: #e8e9f0;
-      border-radius: 5px;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
       overflow: hidden;
-      margin-bottom: 6px;
+      margin: 6px 0 8px;
+    }
+
+    [data-theme="dark"] .stats-bar-wrap {
+      background: #334155;
     }
 
     .stats-bar-fill {
       height: 100%;
-      border-radius: 5px;
-      background: linear-gradient(90deg, var(--lv1) 0%, var(--lv2) 20%, var(--lv3) 50%, var(--lv4) 75%, var(--lv5) 100%);
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--lv1) 0%, var(--lv2) 25%, var(--lv3) 50%, var(--lv4) 75%, var(--lv5) 100%);
       transition: width 0.4s ease;
     }
 
     .stats-counts {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3px 10px;
-      font-size: 11px;
-      color: #777;
+      gap: 4px 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 500;
     }
 
     .stats-counts span {
       display: flex;
       align-items: center;
-      gap: 3px;
+      gap: 4px;
     }
 
     .stats-counts .sc-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .stats-counts .sc-val {
+      font-weight: 600;
+      color: var(--text);
+      margin-left: 1px;
     }
 
     /* 合并章节（1000题并入）的按书分段统计块 */
     .stats-seg {
-      padding: 6px 0;
+      padding: 4px 0;
     }
     .stats-seg + .stats-seg {
-      border-top: 1px dashed #e2e3ea;
-      margin-top: 6px;
+      border-top: 1px dashed var(--border);
+      margin-top: 8px;
+      padding-top: 8px;
     }
     .stats-seg-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-bottom: 3px;
+      font-size: 11.5px;
+      color: var(--text-secondary);
+      margin-bottom: 2px;
       font-weight: 600;
     }
 
     /* ===== 题号网格（右侧栏） ===== */
     .qnav-label {
       font-size: 13px;
-      color: var(--text-muted);
-      margin: 8px 0 4px;
-      font-weight: bold;
+      color: var(--text);
+      margin: 0 0 6px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     .qnav {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      max-width: 260px;
-      margin: 8px auto 4px auto;
+      gap: 5px;
+      width: 100%;
+      margin: 0;
     }
 
     .qnav button {
@@ -1010,7 +1040,8 @@
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
       cursor: pointer;
       font-size: 12px;
-      color: #555;
+      color: var(--text);
+      font-weight: 500;
       box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.7);
       transition: all 0.15s;
       display: flex;
@@ -1024,7 +1055,7 @@
       border-color: var(--primary);
       color: var(--primary);
       transform: translateY(-1px);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .qnav button.filtered-out {
