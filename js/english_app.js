@@ -977,19 +977,18 @@
     `;
   }
 
-  // 记录掌握状态 (按当前年份存储)
-  function setMastery(qIndex, status) {
-    if (state.mastery[qIndex] === status) {
-      delete state.mastery[qIndex];
-    } else {
-      state.mastery[qIndex] = status;
-    }
+  // 记录掌握状态 (按当前年份存储) 并自动跳转下一题
+  function setMastery(qIndex, status, autoAdvance = true) {
+    state.mastery[qIndex] = status;
     localStorage.setItem(`ky_english_mastery_${state.currentYear}`, JSON.stringify(state.mastery));
     if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
       window.storageSync.scheduleSave();
     }
     renderQuestionPills();
     renderReflection(getCurrentQuestion());
+    if (autoAdvance && state.currentQIndex < 4) {
+      switchQuestion(1);
+    }
   }
 
   // 记录错因标签

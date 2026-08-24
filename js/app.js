@@ -2229,16 +2229,12 @@
 
     function setStatus(status) {
       const had = statuses[current];
-      // 复习会话中不允许取消标记（同一键重复选 = 正常记录，不 toggle off）
-      const togglingOff = reviewSession ? false : (had === status);
-      // 撤销栈：记录本次修改前的状态
-      if (!togglingOff) pushUndo(current, had);
-      if (togglingOff) { delete statuses[current]; pushUndo(current, had); }
-      else { statuses[current] = status; }
+      pushUndo(current, had);
+      statuses[current] = status;
       saveStatuses(); updateStatusBtns(); renderStats(); patchNavStatus(current); updateFilterCounts();
       const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
       const score = scoreMap[status];
-      if (reviewSession && !togglingOff && score) {
+      if (reviewSession && score) {
         // 复习会话评级：延迟提交，不即时改 SM-2
         const item = reviewCurrentItem();
         const isReviewTarget = item && currentChapterId === item.chapterId && current === item.idx;
@@ -2250,8 +2246,8 @@
           // A/D/W/S 漂移到相邻题评级：只重定基线，不改复习位置
           rebaselineSm2(current, score);
         }
-      } else if (!togglingOff && score) {
-        // 常规答题改标：重定基线，并自动跳到下一题
+      } else if (score) {
+        // 常规答题改标：重定基线，并 100% 自动跳到下一题
         rebaselineSm2(current, score);
         navNext();
       }
