@@ -403,11 +403,12 @@
       updateImageDarkFilter();
       notifyStorageSync();
     }
+    window.toggleImageDarkFilter = toggleImageDarkFilter;
 
     function updateImageDarkFilter() {
       var btnDarkFilter = document.getElementById('btnDarkFilter');
       if (btnDarkFilter) {
-        btnDarkFilter.textContent = '试卷暗化：' + (darkImageFilter ? '开' : '关');
+        btnDarkFilter.innerHTML = '试卷暗化：' + (darkImageFilter ? '开' : '关') + '<span class="sol-key">U</span>';
         btnDarkFilter.classList.toggle('active', darkImageFilter);
       }
       var enable = (currentTheme === 'dark' && darkImageFilter);
@@ -4106,9 +4107,10 @@ ${cardsHTML}
         case 'v': toggleDashboard(); break;
         case 'b': toggleWrongBook(); break;
         case 'm': toggleSm2Panel(); break;
-        // 切换科目与主题
+        // 切换科目与主题与试卷暗化
         case 'g': openSubjectPicker(); break;
         case 'y': toggleTheme(); break;
+        case 'u': toggleImageDarkFilter(); break;
         // 灯箱快捷键
         // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
         case 'escape':

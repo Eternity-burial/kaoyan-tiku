@@ -1324,6 +1324,9 @@
       else if (e.key === 'y' || e.key === 'Y') {
         if (typeof window.toggleTheme === 'function') window.toggleTheme();
       }
+      else if (e.key === 'u' || e.key === 'U') {
+        if (typeof window.toggleImageDarkFilter === 'function') window.toggleImageDarkFilter();
+      }
       else if (e.key === 'h' || e.key === 'H') { if (dom.btnHelp) dom.btnHelp.click(); }
       else if (e.key === 'Escape') {
         closeYearDropdown();
