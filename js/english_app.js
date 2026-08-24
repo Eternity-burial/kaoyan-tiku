@@ -47,17 +47,192 @@
       btnPracticeMode: document.getElementById('engBtnPracticeMode'),
       btnAnalysisMode: document.getElementById('engBtnAnalysisMode'),
       vocabPopover: document.getElementById('engVocabPopover'),
+      btnVocabBook: document.getElementById('engBtnVocabBook'),
+      modalVocabBook: document.getElementById('engModalVocabBook'),
+      btnCloseVocabBook: document.getElementById('btnCloseVocabBook'),
+      btnThemeToggle: document.getElementById('engBtnThemeToggle'),
       modalHelp: document.getElementById('engModalHelp'),
       btnHelp: document.getElementById('engBtnHelp'),
       btnCloseHelp: document.getElementById('engBtnCloseHelp')
     };
   }
 
-  // 获取所有已加载的真题年份
+  // ===== 真人原声与神经网络双轨发音引擎 =====
+  function playWordPronunciation(word, type = 1) {
+    if (!word) return;
+    const cleanWord = word.trim().toLowerCase();
+    
+    // 优先调用有道高保真真人发音录音 (1: 英音, 2: 美音)
+    const audioUrl = `https://dict.youdao.com/dictvoice?type=${type}&audio=${encodeURIComponent(cleanWord)}`;
+    const audio = new Audio(audioUrl);
+    
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // 离线/网络失败时，无缝降级为浏览器原生 Web Speech API (Edge 神经网络自然人声)
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(cleanWord);
+          utterance.lang = type === 1 ? 'en-GB' : 'en-US';
+          utterance.rate = 0.9;
+          window.speechSynthesis.speak(utterance);
+        }
+      });
+    }
+  }
+
+  // ===== 生词本管理 =====
+  let starredWords = {};
+  let vocabBlurMode = true;
+
+  function loadStarredWords() {
+    try {
+      starredWords = JSON.parse(localStorage.getItem('ky_english_starred_words') || '{}');
+    } catch (e) {
+      starredWords = {};
+    }
+  }
+
+  function saveStarredWords() {
+    try {
+      localStorage.setItem('ky_english_starred_words', JSON.stringify(starredWords));
+      if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+        window.storageSync.scheduleSave();
+      }
+    } catch (e) {}
+  }
+
+  function isWordStarred(word) {
+    if (!word) return false;
+    return !!starredWords[word.toLowerCase()];
+  }
+
+  function toggleStarWord(word, meta) {
+    if (!word) return;
+    const k = word.toLowerCase();
+    if (starredWords[k]) {
+      delete starredWords[k];
+    } else {
+      starredWords[k] = {
+        word: word,
+        ipa: meta.ipa || '',
+        meaning: meta.meaning || '',
+        year: meta.year || state.currentYear,
+        textId: meta.textId || state.currentTextId,
+        date: new Date().toLocaleDateString()
+      };
+    }
+    saveStarredWords();
+    renderVocabNotebook();
+  }
+
+  function openVocabNotebook() {
+    loadStarredWords();
+    renderVocabNotebook();
+    const modal = document.getElementById('engModalVocabBook');
+    if (modal) modal.classList.add('show');
+  }
+
+  function closeVocabNotebook() {
+    const modal = document.getElementById('engModalVocabBook');
+    if (modal) modal.classList.remove('show');
+  }
+
+  function renderVocabNotebook() {
+    const grid = document.getElementById('vocabGrid');
+    const badge = document.getElementById('vocabTotalBadge');
+    if (!grid) return;
+
+    const list = Object.values(starredWords);
+    if (badge) badge.textContent = `(共 ${list.length} 词)`;
+
+    if (list.length === 0) {
+      grid.innerHTML = `
+        <div class="vocab-empty" style="grid-column: 1 / -1; padding: 40px 20px; text-align: center;">
+          <div style="font-size:15px;color:var(--text);font-weight:700;">生词本暂无记录</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">在精读文章中悬浮或点击任意标红/标绿重点词汇，点击“收藏”即可集中复习自测</div>
+        </div>
+      `;
+      return;
+    }
+
+    grid.innerHTML = list.map(item => `
+      <div class="vocab-card">
+        <div class="vocab-card-head">
+          <div>
+            <span class="vocab-word-text">${escapeHtml(item.word)}</span>
+            <span class="vocab-word-phonetic">[${escapeHtml(item.ipa)}]</span>
+          </div>
+          <div style="display:flex;gap:4px;">
+            <button class="popover-btn" title="英音发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(item.word)}', 1)">英音</button>
+            <button class="popover-btn" title="美音发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(item.word)}', 2)">美音</button>
+          </div>
+        </div>
+        <div class="vocab-word-trans ${vocabBlurMode ? 'blur-mode' : ''}" title="点击显隐释义" onclick="this.classList.toggle('blur-mode')">
+          ${escapeHtml(item.meaning)}
+        </div>
+        <div class="vocab-card-meta">
+          <span>${item.year} 年真题 · ${item.textId || ''}</span>
+          <button class="vocab-unstar-btn" onclick="window.kyApp.toggleStarWord('${escapeHtml(item.word)}', {})">移除</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function exportStarredWords() {
+    const list = Object.values(starredWords);
+    if (list.length === 0) {
+      alert('生词本为空，无需导出');
+      return;
+    }
+    let md = `# 考研英语真题生词本 (共 ${list.length} 词)\n\n| 单词 | 音标 | 考研释义 | 真题出处 |\n| :--- | :--- | :--- | :--- |\n`;
+    list.forEach(w => {
+      md += `| **${w.word}** | [${w.ipa}] | ${w.meaning.replace(/\|/g, '/')} | ${w.year} ${w.textId || ''} |\n`;
+    });
+
+    const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `考研英语真题生词本_${new Date().toISOString().slice(0, 10)}.md`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // 所有真题年份清单 (1998 ~ 2026)
+  const ALL_ENGLISH_YEARS = Array.from({ length: 29 }, (_, i) => String(1998 + i));
+  const loadingYears = new Map();
+
+  // 动态异步按需加载指定年份的真题数据 (支持 local file:// 与 http://)
+  function loadYearDataAsync(year) {
+    if (window.ENGLISH_DATA && window.ENGLISH_DATA[year]) {
+      return Promise.resolve(window.ENGLISH_DATA[year]);
+    }
+    if (loadingYears.has(year)) {
+      return loadingYears.get(year);
+    }
+    const p = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = `题库/英语/data_${year}.js`;
+      script.onload = () => {
+        loadingYears.delete(year);
+        resolve(window.ENGLISH_DATA && window.ENGLISH_DATA[year]);
+      };
+      script.onerror = (e) => {
+        loadingYears.delete(year);
+        reject(new Error(`加载 ${year} 年真题失败`));
+      };
+      document.head.appendChild(script);
+    });
+    loadingYears.set(year, p);
+    return p;
+  }
+
+  // 获取所有支持的真题年份
   function getAvailableYears() {
-    if (!window.ENGLISH_DATA) return ['2010'];
-    const years = Object.keys(window.ENGLISH_DATA);
-    return years.length > 0 ? years.sort((a, b) => parseInt(a) - parseInt(b)) : ['2010'];
+    return ALL_ENGLISH_YEARS;
   }
 
   // 获取当前选定年份的数据集
@@ -97,6 +272,12 @@
       typeFilter: state.typeFilter,
       showAllTranslation: !!state.showAllTranslation
     };
+    function notifyStorageSync() {
+      if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+        window.storageSync.scheduleSave();
+      }
+    }
+
     try {
       localStorage.setItem('kaoyan_resume_english', JSON.stringify(data));
       localStorage.setItem('ky_english_mode', state.mode);
@@ -107,6 +288,7 @@
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
       map['english'] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear, mode: state.mode };
       localStorage.setItem('kaoyan_resume', JSON.stringify(map));
+      notifyStorageSync();
     } catch (e) {}
   }
 
@@ -163,6 +345,7 @@
         show: !!state.showSolution,
         def: !!state.defaultShowSolution
       }));
+      notifyStorageSync();
     } catch (e) {}
   }
 
@@ -252,8 +435,20 @@
   }
 
   // 切换年份：恢复该年上次停的位置（无记录则从第1篇第1题开始）
-  function switchYear(year) {
-    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) return;
+  async function switchYear(year) {
+    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) {
+      if (dom.passagePane) {
+        dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${year} 年真题精读数据...</div>`;
+      }
+      try {
+        await loadYearDataAsync(year);
+      } catch (err) {
+        if (dom.passagePane) {
+          dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#dc2626;text-align:center;"><div style="font-size:28px;margin-bottom:12px;">⚠️</div>加载 ${year} 年真题失败，请检查题库文件是否存在</div>`;
+        }
+        return;
+      }
+    }
     state.currentYear = year;
     loadYearStorage();
 
@@ -296,7 +491,7 @@
   }
 
   // 初始化应用
-  function init() {
+  async function init() {
     initDom();
     if (!dom.passagePane) return;
     if (state.initialized) return;
@@ -304,6 +499,17 @@
 
     loadResume();
     loadSolutionPref();
+
+    // 动态异步载入初始年份数据
+    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear]) {
+      if (dom.passagePane) {
+        dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${state.currentYear} 年真题精读数据...</div>`;
+      }
+      try {
+        await loadYearDataAsync(state.currentYear);
+      } catch (e) {}
+    }
+
     loadYearStorage();
 
     renderYearSelector();
@@ -318,13 +524,21 @@
     updateModeClass();
   }
 
-  function activate() {
+  async function activate() {
     initDom();
     if (!state.initialized) {
-      init();
+      await init();
     } else {
       loadResume();
       loadSolutionPref();
+      if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear]) {
+        if (dom.passagePane) {
+          dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${state.currentYear} 年真题精读数据...</div>`;
+        }
+        try {
+          await loadYearDataAsync(state.currentYear);
+        } catch (e) {}
+      }
       loadYearStorage();
       renderYearSelector();
       renderTextTabs();
@@ -771,6 +985,9 @@
       state.mastery[qIndex] = status;
     }
     localStorage.setItem(`ky_english_mastery_${state.currentYear}`, JSON.stringify(state.mastery));
+    if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+      window.storageSync.scheduleSave();
+    }
     renderQuestionPills();
     renderReflection(getCurrentQuestion());
   }
@@ -784,6 +1001,9 @@
       state.notes[qIndex].mistakeTag = reason;
     }
     localStorage.setItem(`ky_english_notes_${state.currentYear}`, JSON.stringify(state.notes));
+    if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+      window.storageSync.scheduleSave();
+    }
     renderReflection(getCurrentQuestion());
   }
 
@@ -795,6 +1015,9 @@
       if (!state.notes[qIndex]) state.notes[qIndex] = { mistakeTag: '', text: '' };
       state.notes[qIndex].text = val;
       localStorage.setItem(`ky_english_notes_${state.currentYear}`, JSON.stringify(state.notes));
+      if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+        window.storageSync.scheduleSave();
+      }
     }, 300);
   }
 
@@ -835,49 +1058,114 @@
   }
 
   // 文章区域事件绑定
+  let popoverHideTimer = null;
+  let isVocabPinned = false;
+  let pinnedWordEl = null;
+
   function attachPassageEvents() {
     if (!dom.passagePane) return;
     dom.passagePane.querySelectorAll('.vocab-word').forEach(vEl => {
+      // 鼠标悬停进入
       vEl.addEventListener('mouseenter', (e) => {
         if (state.mode === 'practice') return;
+        if (isVocabPinned) return; // 处于点击常驻锁定时，不随鼠标划过切换
+        clearTimeout(popoverHideTimer);
         const word = vEl.dataset.word;
         const ipa = vEl.dataset.ipa;
         const meaning = vEl.dataset.meaning;
-        showVocabPopover(e, word, ipa, meaning);
+        showVocabPopover(vEl, word, ipa, meaning);
       });
+
+      // 鼠标移出：给予 400ms 缓冲并结合悬浮桥接，鼠标可自由滑入浮窗
       vEl.addEventListener('mouseleave', () => {
-        hideVocabPopover();
+        if (isVocabPinned) return;
+        clearTimeout(popoverHideTimer);
+        popoverHideTimer = setTimeout(() => {
+          hideVocabPopover();
+        }, 400);
+      });
+
+      // 点击单词：永久常驻锁定（Pin），无需小心翼翼保持鼠标位置
+      vEl.addEventListener('click', (e) => {
+        if (state.mode === 'practice') return;
+        e.stopPropagation();
+        const word = vEl.dataset.word;
+        const ipa = vEl.dataset.ipa;
+        const meaning = vEl.dataset.meaning;
+
+        if (isVocabPinned && pinnedWordEl === vEl) {
+          // 再次点击同一单词：解锁并关闭
+          isVocabPinned = false;
+          pinnedWordEl = null;
+          hideVocabPopover();
+        } else {
+          // 锁定到当前单词
+          isVocabPinned = true;
+          pinnedWordEl = vEl;
+          clearTimeout(popoverHideTimer);
+          showVocabPopover(vEl, word, ipa, meaning, true);
+        }
       });
     });
 
     dom.passagePane.querySelectorAll('.sentence-item').forEach(sEl => {
-      sEl.addEventListener('click', () => {
+      sEl.addEventListener('click', (e) => {
         if (state.mode === 'practice') return;
+        if (e.target.closest('.vocab-word')) return;
         sEl.classList.toggle('show-trans');
       });
     });
   }
 
-  // 显示词汇气泡
-  function showVocabPopover(e, word, ipa, meaning) {
+  // 显示词汇气泡（支持点击常驻锁定与真人发音/收藏）
+  function showVocabPopover(anchorEl, word, ipa, meaning, isPinned = false) {
     if (!dom.vocabPopover) return;
     const pop = dom.vocabPopover;
+    const starred = isWordStarred(word);
+    
+    pop.classList.toggle('pinned', isPinned);
     pop.innerHTML = `
-      <div>
-        <span class="popover-word">${escapeHtml(word)}</span>
-        <span class="popover-ipa">[${escapeHtml(ipa)}]</span>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+        <div>
+          <span class="popover-word">${escapeHtml(word)}</span>
+          <span class="popover-ipa">[${escapeHtml(ipa)}]</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;">
+          <button class="popover-btn" title="英音真人发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(word)}', 1)">英音</button>
+          <button class="popover-btn" title="美音真人发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(word)}', 2)">美音</button>
+          <button class="popover-btn ${starred ? 'starred' : ''}" id="btnStarPop_${escapeHtml(word)}" title="收藏至生词本" onclick="window.kyApp.toggleStarWord('${escapeHtml(word)}', {ipa: '${escapeHtml(ipa)}', meaning: '${escapeHtml(meaning)}'}); const b = document.getElementById('btnStarPop_${escapeHtml(word)}'); if(b){ b.classList.toggle('starred'); b.textContent = b.classList.contains('starred') ? '已收藏' : '收藏'; }">${starred ? '已收藏' : '收藏'}</button>
+        </div>
       </div>
       <div class="popover-meaning">${escapeHtml(meaning)}</div>
     `;
     pop.style.display = 'block';
 
-    const rect = e.target.getBoundingClientRect();
-    pop.style.left = `${Math.min(window.innerWidth - 300, Math.max(10, rect.left))}px`;
-    pop.style.top = `${rect.bottom + 8}px`;
+    pop.onmouseenter = () => {
+      clearTimeout(popoverHideTimer);
+    };
+    pop.onmouseleave = () => {
+      if (isVocabPinned) return;
+      clearTimeout(popoverHideTimer);
+      popoverHideTimer = setTimeout(() => hideVocabPopover(), 400);
+    };
+
+    const rect = anchorEl.getBoundingClientRect();
+    const popHeight = 110;
+    let top = rect.bottom + 6;
+    if (top + popHeight > window.innerHeight) {
+      top = Math.max(10, rect.top - popHeight - 6);
+    }
+    pop.style.left = `${Math.min(window.innerWidth - 330, Math.max(10, rect.left))}px`;
+    pop.style.top = `${top}px`;
   }
 
   function hideVocabPopover() {
-    if (dom.vocabPopover) dom.vocabPopover.style.display = 'none';
+    isVocabPinned = false;
+    pinnedWordEl = null;
+    if (dom.vocabPopover) {
+      dom.vocabPopover.style.display = 'none';
+      dom.vocabPopover.classList.remove('pinned');
+    }
   }
 
   // 设置事件监听
@@ -892,6 +1180,11 @@
     document.addEventListener('click', (e) => {
       if (dom.ddYear && !dom.ddYear.contains(e.target)) {
         closeYearDropdown();
+      }
+      if (dom.vocabPopover && dom.vocabPopover.style.display !== 'none') {
+        if (!dom.vocabPopover.contains(e.target) && !e.target.closest('.vocab-word')) {
+          hideVocabPopover();
+        }
       }
     });
 
@@ -908,6 +1201,40 @@
         saveResume();
         if (dom.passagePane) dom.passagePane.classList.toggle('show-all-trans', state.showAllTranslation);
         dom.btnToggleTrans.classList.toggle('active', state.showAllTranslation);
+      };
+    }
+
+    if (dom.btnVocabBook) {
+      dom.btnVocabBook.onclick = openVocabNotebook;
+    }
+    if (dom.btnCloseVocabBook) {
+      dom.btnCloseVocabBook.onclick = closeVocabNotebook;
+    }
+    const modalVocab = document.getElementById('engModalVocabBook');
+    if (modalVocab) {
+      modalVocab.onclick = (e) => {
+        if (e.target === modalVocab) closeVocabNotebook();
+      };
+    }
+
+    const btnToggleBlur = document.getElementById('btnToggleVocabBlur');
+    if (btnToggleBlur) {
+      btnToggleBlur.onclick = () => {
+        vocabBlurMode = !vocabBlurMode;
+        renderVocabNotebook();
+      };
+    }
+
+    const btnExpVocab = document.getElementById('btnExportVocab');
+    if (btnExpVocab) {
+      btnExpVocab.onclick = exportStarredWords;
+    }
+
+    if (dom.btnThemeToggle) {
+      dom.btnThemeToggle.onclick = () => {
+        if (typeof window.toggleTheme === 'function') {
+          window.toggleTheme();
+        }
       };
     }
 
@@ -970,26 +1297,13 @@
         return;
       }
 
-      if (e.key === '1' || e.key === 'a' || e.key === 'A') { onOptionClick('A'); }
-      else if (e.key === '2' || e.key === 'b' || e.key === 'B') { onOptionClick('B'); }
-      else if (e.key === '3' || e.key === 'c' || e.key === 'C') { onOptionClick('C'); }
-      else if (e.key === '4' || e.key === 'd' || e.key === 'D') { onOptionClick('D'); }
-      else if (e.key === 'q' || e.key === 'Q' || e.key === 'ArrowLeft') {
-        navPrev();
+      if (['1', '2', '3', '4'].includes(e.key)) {
+        const optionKeys = ['A', 'B', 'C', 'D'];
+        const opt = optionKeys[parseInt(e.key) - 1];
+        if (opt) selectOption(q.qIndex, opt);
       }
-      else if (e.key === 'e' || e.key === 'E' || e.key === 'ArrowRight') {
-        navNext();
-      }
-      else if (e.key === 'g' || e.key === 'G') {
-        if (typeof window.openSubjectPicker === 'function') {
-          window.openSubjectPicker();
-        }
-      }
-      else if (e.key === 'Escape') {
-        closeYearDropdown();
-        if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
-        if (dom.modalHelp) dom.modalHelp.classList.remove('active');
-      }
+      else if (e.key === 'q' || e.key === 'Q' || e.key === 'ArrowLeft') { switchQuestion(-1); }
+      else if (e.key === 'e' || e.key === 'E' || e.key === 'ArrowRight') { switchQuestion(1); }
       else if (e.key === 'z' || e.key === 'Z') { setMastery(q.qIndex, 'proficient'); }
       else if (e.key === 'x' || e.key === 'X') { setMastery(q.qIndex, 'vague'); }
       else if (e.key === 'c' || e.key === 'C') { setMastery(q.qIndex, 'wrong'); }
@@ -998,7 +1312,16 @@
         if (state.mode === 'analysis' && dom.btnPracticeMode) dom.btnPracticeMode.click();
         else if (dom.btnAnalysisMode) dom.btnAnalysisMode.click();
       }
+      else if (e.key === 'g' || e.key === 'G') {
+        if (typeof window.openSubjectPicker === 'function') window.openSubjectPicker();
+      }
       else if (e.key === 'h' || e.key === 'H') { if (dom.btnHelp) dom.btnHelp.click(); }
+      else if (e.key === 'Escape') {
+        closeYearDropdown();
+        closeVocabNotebook();
+        if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
+        if (dom.modalHelp) dom.modalHelp.classList.remove('active');
+      }
       else if (e.key === 'Enter' && state.mode === 'practice') {
         submitPracticeAnswer();
       }
@@ -1038,9 +1361,14 @@
     submitPracticeAnswer,
     toggleSolution,
     toggleDefaultSolution,
+    playWordPronunciation,
+    toggleStarWord,
+    openVocabNotebook,
+    closeVocabNotebook,
     get state() { return state; },
     get curDataset() { return getCurrentDataset(); }
   };
+  window.kyApp = window.englishApp;
   window.kyEnglishApp = window.englishApp;
 
   document.addEventListener('DOMContentLoaded', init);

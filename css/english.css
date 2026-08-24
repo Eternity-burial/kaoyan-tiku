@@ -966,39 +966,80 @@
   line-height: 1.6;
 }
 
-/* ================= 词汇浮窗卡片 ================= */
+/* ================= 词汇浮窗卡片（支持点击钉住与悬浮桥接） ================= */
 .vocab-popover {
   position: fixed;
   background: #ffffff;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 10px 14px;
-  box-shadow: 0 8px 24px rgba(53, 58, 89, 0.15);
+  border-radius: 10px;
+  padding: 12px 15px;
+  box-shadow: 0 10px 30px rgba(53, 58, 89, 0.18);
   z-index: 1000;
-  max-width: 280px;
+  width: 320px;
+  max-width: 90vw;
   display: none;
-  pointer-events: none;
+  pointer-events: auto;
   animation: fadeIn 0.15s ease;
 }
 
+/* 隐形悬浮安全桥接（避免鼠标跨越空隙时失焦） */
+.vocab-popover::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -8px;
+  right: -8px;
+  height: 14px;
+}
+
+.vocab-popover.pinned {
+  border-color: var(--primary);
+  box-shadow: 0 12px 36px rgba(102, 8, 116, 0.22);
+}
+
 .popover-word {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 800;
   color: var(--primary);
+  letter-spacing: -0.01em;
 }
 
 .popover-ipa {
   font-size: 12px;
-  color: #64748b;
+  color: var(--text-secondary);
   font-family: var(--font-mono);
   margin-left: 6px;
 }
 
 .popover-meaning {
   font-size: 13px;
-  color: #334155;
-  margin-top: 4px;
-  line-height: 1.4;
+  color: var(--text-main);
+  margin-top: 6px;
+  line-height: 1.5;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 6px;
+}
+
+.popover-btn {
+  background: var(--border-light);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.popover-btn:hover {
+  background: var(--primary-alpha);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.popover-btn.starred {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #b45309;
 }
 
 @keyframes fadeIn {
@@ -1105,4 +1146,294 @@
   min-width: 140px;
   max-width: 220px;
   z-index: 120;
+}
+
+
+
+/* ================= 沉浸深灰暗夜模式全面深度适配 ================= */
+[data-theme="dark"] .english-app-layout {
+  background: #141518 !important;
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .english-header {
+  background: #1a1b20 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .btn-back-home,
+[data-theme="dark"] .toggle-btn,
+[data-theme="dark"] .theme-toggle-btn {
+  background: #23242c !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .btn-back-home:hover,
+[data-theme="dark"] .toggle-btn:hover,
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background: #2b2d38 !important;
+  border-color: var(--primary) !important;
+  color: var(--primary-light) !important;
+}
+
+[data-theme="dark"] .text-tabs,
+[data-theme="dark"] .mode-switches {
+  background: #16171b !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .text-tab,
+[data-theme="dark"] .mode-btn {
+  color: #8e8e9c !important;
+}
+
+[data-theme="dark"] .text-tab:hover,
+[data-theme="dark"] .mode-btn:hover {
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .text-tab.active,
+[data-theme="dark"] .mode-btn.active {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+/* 左栏：文章阅读区 */
+[data-theme="dark"] .passage-pane,
+[data-theme="dark"] .analysis-pane {
+  background: #1a1b20 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e2e8 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .passage-title-en {
+  color: #e6e6ed !important;
+}
+
+[data-theme="dark"] .passage-title-zh {
+  color: #8e8e9c !important;
+}
+
+[data-theme="dark"] .passage-overview-card {
+  background: #16171b !important;
+  border-left-color: var(--primary) !important;
+  color: #b0b0be !important;
+}
+
+[data-theme="dark"] .paragraph-block {
+  background: #22232a !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .paragraph-block:hover {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .paragraph-logic-role {
+  background: rgba(157, 112, 255, 0.12) !important;
+  border-color: rgba(157, 112, 255, 0.25) !important;
+  color: var(--primary-light) !important;
+}
+
+[data-theme="dark"] .paragraph-main-idea {
+  color: #8e8e9c !important;
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .sentence-item {
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .sentence-item:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+[data-theme="dark"] .sentence-id-tag {
+  background: #16171b !important;
+  color: #8e8e9c !important;
+}
+
+[data-theme="dark"] .sentence-text {
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .sentence-trans {
+  color: #9e9ea8 !important;
+  background: #16171b !important;
+  border-top-color: rgba(255, 255, 255, 0.06) !important;
+  border-left-color: var(--primary) !important;
+}
+
+/* 单词高亮暗色滤镜适配（绝无刺眼亮白背景） */
+[data-theme="dark"] .vocab-word.level-red {
+  color: #f87171 !important;
+  background: rgba(239, 68, 68, 0.18) !important;
+  border-bottom: 1.5px solid #ef4444 !important;
+}
+
+[data-theme="dark"] .vocab-word.level-green {
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.18) !important;
+  border-bottom: 1.5px solid #10b981 !important;
+}
+
+[data-theme="dark"] .vocab-word.level-purple,
+[data-theme="dark"] .vocab-word.level-blue {
+  color: #38bdf8 !important;
+  background: rgba(14, 165, 233, 0.18) !important;
+  border-bottom: 1.5px solid #0ea5e9 !important;
+}
+
+/* 纯净做题模考在暗色模式下的适配 */
+[data-theme="dark"] .mode-practice-active .passage-pane {
+  background: #1a1b20 !important;
+}
+
+[data-theme="dark"] .mode-practice-active .sentence-text,
+[data-theme="dark"] .mode-practice-active .stem-text {
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .mode-practice-active .option-text {
+  color: #c2c2ce !important;
+}
+
+/* 右栏：题目工作台组件 */
+[data-theme="dark"] .question-toolbar {
+  background: #16171b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .filter-chip {
+  background: #23242c !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #8e8e9c !important;
+}
+
+[data-theme="dark"] .filter-chip:hover {
+  border-color: var(--primary) !important;
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .filter-chip.active {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .q-pill {
+  background: #23242c !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .q-pill .q-num {
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .q-pill:hover {
+  border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .q-pill.active {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .stem-card,
+[data-theme="dark"] .distractor-card,
+[data-theme="dark"] .explanation-card,
+[data-theme="dark"] .reflection-card,
+[data-theme="dark"] .vocab-notebook-modal,
+[data-theme="dark"] .modal-card,
+[data-theme="dark"] .guide-card {
+  background: #22232a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e2e8 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .stem-text {
+  color: #e6e6ed !important;
+}
+
+[data-theme="dark"] .tangchi-badge {
+  background: rgba(162, 28, 175, 0.18) !important;
+  border-color: rgba(245, 208, 254, 0.25) !important;
+  color: #e879f9 !important;
+}
+
+[data-theme="dark"] .option-card {
+  background: #16171b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #d6d7dc !important;
+}
+
+[data-theme="dark"] .option-card:hover {
+  background: #23242c !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .option-key {
+  background: #23242c !important;
+  color: #8e8e9c !important;
+}
+
+[data-theme="dark"] .option-text {
+  color: #d6d7dc !important;
+}
+
+[data-theme="dark"] .option-card.selected {
+  background: rgba(239, 68, 68, 0.16) !important;
+  border-color: #ef4444 !important;
+}
+
+[data-theme="dark"] .option-card.correct {
+  background: rgba(16, 185, 129, 0.16) !important;
+  border-color: #10b981 !important;
+}
+
+[data-theme="dark"] .reflection-textarea {
+  background: #16171b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .vocab-popover {
+  background: #25262f !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #e2e2e8 !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .vocab-card {
+  background: #16171b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .vocab-word-text {
+  color: var(--primary-light) !important;
+}
+
+[data-theme="dark"] .vocab-word-trans {
+  background: #22232a !important;
+  color: #e2e2e8 !important;
+}
+
+[data-theme="dark"] .vocab-word-trans.blur-mode {
+  background: #16171b !important;
+  color: transparent !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="dark"] .guide-body {
+  background: #16171b !important;
+  color: #8e8e9c !important;
+}
+
+[data-theme="dark"] .shortcut-row {
+  color: #e2e2e8 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
 }
