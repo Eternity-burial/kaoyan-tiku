@@ -1755,10 +1755,19 @@
         if (pos > 0) { switchTo(vis[pos - 1]); return; }
       }
       const groups = visibleGroups();
+      if (groups.length === 0) return;
       const gi = groups.indexOf(g);
-      if (gi <= 0) return;
-      const pv = groupVisibleIndices(groups[gi - 1]);
-      if (pv.length > 0) switchTo(pv[pv.length - 1]);
+      if (gi > 0) {
+        const pv = groupVisibleIndices(groups[gi - 1]);
+        if (pv.length > 0) { switchTo(pv[pv.length - 1]); return; }
+      } else if (gi === -1) {
+        // 当前组不在可见列表中（被过滤器排除），寻找前一个可见组
+        const prevG = groups.slice().reverse().find(function (cand) { return cand.startIdx < g.startIdx; });
+        if (prevG) {
+          const pv = groupVisibleIndices(prevG);
+          if (pv.length > 0) { switchTo(pv[pv.length - 1]); return; }
+        }
+      }
     }
 
     // D：下一题（题组级：跳下一题组第一个可见子题；子题级：组内+1，越界跳下一组开头）
@@ -1771,10 +1780,26 @@
         if (pos !== -1 && pos < vis.length - 1) { switchTo(vis[pos + 1]); return; }
       }
       const groups = visibleGroups();
+      if (groups.length === 0) return;
       const gi = groups.indexOf(g);
-      if (gi === -1 || gi >= groups.length - 1) return;
-      const nv = groupVisibleIndices(groups[gi + 1]);
-      if (nv.length > 0) switchTo(nv[0]);
+      if (gi !== -1) {
+        if (gi < groups.length - 1) {
+          const nv = groupVisibleIndices(groups[gi + 1]);
+          if (nv.length > 0) switchTo(nv[0]);
+        }
+      } else {
+        // 关键修复：当前题目刚被打标并被过滤器移出（例如处于「未做」或「模糊」筛选态），
+        // gi 为 -1，此时寻找第一个起始序号大于当前题的可见组进行跳转
+        const nextG = groups.find(function (cand) { return cand.startIdx > g.startIdx; });
+        if (nextG) {
+          const nv = groupVisibleIndices(nextG);
+          if (nv.length > 0) { switchTo(nv[0]); return; }
+        } else if (groups.length > 0) {
+          // 若后续没有了，跳转到剩余筛选列表的第一个
+          const firstNv = groupVisibleIndices(groups[0]);
+          if (firstNv.length > 0) switchTo(firstNv[0]);
+        }
+      }
     }
 
     // F：切换小题选择模式（全局开关，跨章保持；当前题无子题时仅切换开关，导航仍正常逐题/逐组）
@@ -2149,37 +2174,39 @@
     function toggleQBad() { qBad[current] = !qBad[current]; if (!qBad[current]) delete qBad[current]; saveQBad(); updateQBadBtn(); updateImgBadWarnings(); renderNav(); }
     function toggleSBad() { sBad[current] = !sBad[current]; if (!sBad[current]) delete sBad[current]; saveSBad(); updateSBadBtn(); updateImgBadWarnings(); renderNav(); }
 
-    // ===== 组合键检测（Z/X/C 5级打标） =====
-    // 顺序无关：任意顺序按下 Z+X → 较熟练；X+C → 困难；单键 200ms 超时后触发各自等级
-    // 注：C 也需等待 200ms（非立即触发），否则 C+X 无法识别为「困难」。
-    let comboState = { z: false, x: false, c: false, timer: null };
+    // ===== 掌握度按键响应（极速 0 延迟响应 + 组合键智能识别） =====
+    let lastKeyTime = 0;
+    let lastKeyChar = '';
     function resetCombo() {
-      comboState.z = false; comboState.x = false; comboState.c = false;
-      if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; }
+      lastKeyTime = 0;
+      lastKeyChar = '';
     }
     function handleStatusKey(key) {
       // 注：调用方已在 keydown 中做了 INPUT/TEXTAREA 过滤
       var ch = key.toLowerCase();
       if (ch !== 'z' && ch !== 'x' && ch !== 'c') { resetCombo(); return; }
-      comboState[ch] = true;
-      // 清除之前的超时计时器（每次按键重新计时 200ms）
-      if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; }
-      // 检测组合键（顺序无关）
-      // Z + X → 较熟练 (familiar, lv4)
-      if (comboState.z && comboState.x) {
-        setStatus('familiar'); resetCombo(); return;
+      var now = Date.now();
+      // 检查连按组合（120ms 窗口内连续按下 Z+X 或 X+C）
+      if (now - lastKeyTime < 120) {
+        if ((lastKeyChar === 'z' && ch === 'x') || (lastKeyChar === 'x' && ch === 'z')) {
+          // Z+X -> 较熟 (familiar, lv4)
+          setStatus('familiar', true);
+          resetCombo();
+          return;
+        }
+        if ((lastKeyChar === 'x' && ch === 'c') || (lastKeyChar === 'c' && ch === 'x')) {
+          // X+C -> 困难 (rusty, lv2)
+          setStatus('rusty', true);
+          resetCombo();
+          return;
+        }
       }
-      // X + C → 困难 (rusty, lv2)
-      if (comboState.x && comboState.c) {
-        setStatus('rusty'); resetCombo(); return;
-      }
-      // 未形成组合，等待 200ms 后按单键触发
-      comboState.timer = setTimeout(function() {
-        if (comboState.z) { setStatus('proficient'); }
-        else if (comboState.x) { setStatus('vague'); }
-        else if (comboState.c) { setStatus('wrong'); }
-        resetCombo();
-      }, 200);
+      lastKeyTime = now;
+      lastKeyChar = ch;
+      // 单键即刻 0 延迟触发
+      if (ch === 'z') setStatus('proficient', true);
+      else if (ch === 'x') setStatus('vague', true);
+      else if (ch === 'c') setStatus('wrong', true);
     }
 
     // ===== 掌握度 =====
@@ -2227,11 +2254,25 @@
       appendBadges(btn, g.startIdx);
     }
 
-    function setStatus(status) {
+    function setStatus(status, fromKeyboard) {
       const had = statuses[current];
+      // 仅在鼠标手动点击当前已激活的状态按钮时允许取消标记；键盘打标始终覆盖并跳转
+      const togglingOff = fromKeyboard ? false : (had === status);
       pushUndo(current, had);
-      statuses[current] = status;
+      if (togglingOff) {
+        delete statuses[current];
+      } else {
+        statuses[current] = status;
+      }
       saveStatuses(); updateStatusBtns(); renderStats(); patchNavStatus(current); updateFilterCounts();
+
+      if (togglingOff) {
+        // 取消标记：更新 SM-2 并停留在当前题
+        rebaselineSm2(current, null);
+        renderSm2InfoBar();
+        return;
+      }
+
       const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
       const score = scoreMap[status];
       if (reviewSession && score) {
@@ -3461,7 +3502,11 @@ ${cardsHTML}
     }
     // 重定基线（非复习改标 / 复习中漂移到相邻题）：从对应等级种子重新计算，不累加
     function rebaselineSm2(idx, score) {
-      sm2[idx] = calcSM2(getSm2Seed(score), score);
+      if (!score) {
+        delete sm2[idx];
+      } else {
+        sm2[idx] = calcSM2(getSm2Seed(score), score);
+      }
       saveSm2();
     }
 

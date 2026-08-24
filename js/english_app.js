@@ -978,15 +978,21 @@
   }
 
   // 记录掌握状态 (按当前年份存储) 并自动跳转下一题
-  function setMastery(qIndex, status, autoAdvance = true) {
-    state.mastery[qIndex] = status;
+  function setMastery(qIndex, status, fromKeyboard = false) {
+    const had = state.mastery[qIndex];
+    const togglingOff = fromKeyboard ? false : (had === status);
+    if (togglingOff) {
+      delete state.mastery[qIndex];
+    } else {
+      state.mastery[qIndex] = status;
+    }
     localStorage.setItem(`ky_english_mastery_${state.currentYear}`, JSON.stringify(state.mastery));
     if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
       window.storageSync.scheduleSave();
     }
     renderQuestionPills();
     renderReflection(getCurrentQuestion());
-    if (autoAdvance && state.currentQIndex < 4) {
+    if (!togglingOff && state.currentQIndex < 4) {
       switchQuestion(1);
     }
   }
@@ -1303,9 +1309,9 @@
       }
       else if (e.key === 'q' || e.key === 'Q' || e.key === 'ArrowLeft') { switchQuestion(-1); }
       else if (e.key === 'e' || e.key === 'E' || e.key === 'ArrowRight') { switchQuestion(1); }
-      else if (e.key === 'z' || e.key === 'Z') { setMastery(q.qIndex, 'proficient'); }
-      else if (e.key === 'x' || e.key === 'X') { setMastery(q.qIndex, 'vague'); }
-      else if (e.key === 'c' || e.key === 'C') { setMastery(q.qIndex, 'wrong'); }
+      else if (e.key === 'z' || e.key === 'Z') { setMastery(q.qIndex, 'proficient', true); }
+      else if (e.key === 'x' || e.key === 'X') { setMastery(q.qIndex, 'vague', true); }
+      else if (e.key === 'c' || e.key === 'C') { setMastery(q.qIndex, 'wrong', true); }
       else if (e.key === 't' || e.key === 'T') { if (dom.btnToggleTrans) dom.btnToggleTrans.click(); }
       else if (e.key === 'm' || e.key === 'M') {
         if (state.mode === 'analysis' && dom.btnPracticeMode) dom.btnPracticeMode.click();
