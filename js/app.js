@@ -2174,39 +2174,34 @@
     function toggleQBad() { qBad[current] = !qBad[current]; if (!qBad[current]) delete qBad[current]; saveQBad(); updateQBadBtn(); updateImgBadWarnings(); renderNav(); }
     function toggleSBad() { sBad[current] = !sBad[current]; if (!sBad[current]) delete sBad[current]; saveSBad(); updateSBadBtn(); updateImgBadWarnings(); renderNav(); }
 
-    // ===== 掌握度按键响应（极速 0 延迟响应 + 组合键智能识别） =====
-    let lastKeyTime = 0;
-    let lastKeyChar = '';
+    // ===== 组合键检测（Z/X/C 5级打标） =====
+    let comboState = { z: false, x: false, c: false, timer: null };
     function resetCombo() {
-      lastKeyTime = 0;
-      lastKeyChar = '';
+      comboState.z = false; comboState.x = false; comboState.c = false;
+      if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; }
     }
     function handleStatusKey(key) {
       // 注：调用方已在 keydown 中做了 INPUT/TEXTAREA 过滤
       var ch = key.toLowerCase();
       if (ch !== 'z' && ch !== 'x' && ch !== 'c') { resetCombo(); return; }
-      var now = Date.now();
-      // 检查连按组合（120ms 窗口内连续按下 Z+X 或 X+C）
-      if (now - lastKeyTime < 120) {
-        if ((lastKeyChar === 'z' && ch === 'x') || (lastKeyChar === 'x' && ch === 'z')) {
-          // Z+X -> 较熟 (familiar, lv4)
-          setStatus('familiar', true);
-          resetCombo();
-          return;
-        }
-        if ((lastKeyChar === 'x' && ch === 'c') || (lastKeyChar === 'c' && ch === 'x')) {
-          // X+C -> 困难 (rusty, lv2)
-          setStatus('rusty', true);
-          resetCombo();
-          return;
-        }
+      comboState[ch] = true;
+      if (comboState.timer) { clearTimeout(comboState.timer); comboState.timer = null; }
+      // 检测组合键（顺序无关）
+      // Z + X → 较熟练 (familiar, lv4)
+      if (comboState.z && comboState.x) {
+        setStatus('familiar'); resetCombo(); return;
       }
-      lastKeyTime = now;
-      lastKeyChar = ch;
-      // 单键即刻 0 延迟触发
-      if (ch === 'z') setStatus('proficient', true);
-      else if (ch === 'x') setStatus('vague', true);
-      else if (ch === 'c') setStatus('wrong', true);
+      // X + C → 困难 (rusty, lv2)
+      if (comboState.x && comboState.c) {
+        setStatus('rusty'); resetCombo(); return;
+      }
+      // 未形成组合，等待 120ms 后按单键触发
+      comboState.timer = setTimeout(function() {
+        if (comboState.z) { setStatus('proficient'); }
+        else if (comboState.x) { setStatus('vague'); }
+        else if (comboState.c) { setStatus('wrong'); }
+        resetCombo();
+      }, 120);
     }
 
     // ===== 掌握度 =====
@@ -2219,63 +2214,18 @@
       });
     }
 
-    // ===== DOM 增量补丁更新（无需销毁重建整个题号网格） =====
-    function patchNavStatus(idx) {
-      if (!isAllFilterActive()) {
-        renderNav();
-        return;
-      }
-      const ch = getChapter();
-      if (!ch || !ch.subGroups) { renderNav(); return; }
-      const g = groupOfIndex(idx);
-      if (!g) { renderNav(); return; }
-      const btn = document.querySelector('.qnav button[data-group-start="' + g.startIdx + '"]');
-      if (!btn) { renderNav(); return; }
-
-      if (g.isParent) {
-        var anyStatus = false;
-        const bars = btn.querySelectorAll('.sub-bar');
-        for (var k = 0; k < g.count; k++) {
-          var subIdx = g.startIdx + k;
-          var st = statuses[subIdx];
-          if (st) anyStatus = true;
-          if (bars[k]) {
-            bars[k].className = 'sub-bar' + (st ? ' ' + st : '') + ((subMode && subIdx === current) ? ' active-sub' : '');
-          }
-        }
-        btn.classList.toggle('has-color', anyStatus);
-      } else {
-        var cls = '';
-        if (ch.isKnowledge && ch.isKnowledge[g.startIdx]) cls += ' is-knowledge';
-        if (g.startIdx === current) cls += ' active';
-        cls += ' ' + getStatusClass(g.startIdx);
-        btn.className = cls.trim();
-      }
-      appendBadges(btn, g.startIdx);
-    }
-
-    function setStatus(status, fromKeyboard) {
+    function setStatus(status) {
       const had = statuses[current];
-      // 仅在鼠标手动点击当前已激活的状态按钮时允许取消标记；键盘打标始终覆盖并跳转
-      const togglingOff = fromKeyboard ? false : (had === status);
-      pushUndo(current, had);
-      if (togglingOff) {
-        delete statuses[current];
-      } else {
-        statuses[current] = status;
-      }
-      saveStatuses(); updateStatusBtns(); renderStats(); patchNavStatus(current); updateFilterCounts();
-
-      if (togglingOff) {
-        // 取消标记：更新 SM-2 并停留在当前题
-        rebaselineSm2(current, null);
-        renderSm2InfoBar();
-        return;
-      }
-
+      // 复习会话中不允许取消标记（同一键重复选 = 正常记录，不 toggle off）
+      const togglingOff = reviewSession ? false : (had === status);
+      // 撤销栈：记录本次修改前的状态
+      if (!togglingOff) pushUndo(current, had);
+      if (togglingOff) { delete statuses[current]; pushUndo(current, had); }
+      else { statuses[current] = status; }
+      saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
       const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
       const score = scoreMap[status];
-      if (reviewSession && score) {
+      if (reviewSession && !togglingOff && score) {
         // 复习会话评级：延迟提交，不即时改 SM-2
         const item = reviewCurrentItem();
         const isReviewTarget = item && currentChapterId === item.chapterId && current === item.idx;
@@ -2287,8 +2237,8 @@
           // A/D/W/S 漂移到相邻题评级：只重定基线，不改复习位置
           rebaselineSm2(current, score);
         }
-      } else if (score) {
-        // 常规答题改标：重定基线，并 100% 自动跳到下一题
+      } else if (!togglingOff && score) {
+        // 常规答题改标：重定基线，并自动跳到下一题
         rebaselineSm2(current, score);
         navNext();
       }
@@ -2307,7 +2257,7 @@
       switchTo(act.idx);
       if (act.prevStatus) { statuses[act.idx] = act.prevStatus; }
       else { delete statuses[act.idx]; }
-      saveStatuses(); updateStatusBtns(); renderStats(); patchNavStatus(act.idx); updateFilterCounts();
+      saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
       renderSm2InfoBar();
     }
 
