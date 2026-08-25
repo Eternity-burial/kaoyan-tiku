@@ -330,24 +330,74 @@
             <div class="sm2-stats-row">
               <div class="sm2-stat-card" id="sm2CardDue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">今日到期</div></div>
               <div class="sm2-stat-card" id="sm2CardOverdue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">已逾期</div></div>
-              <div class="sm2-stat-card" id="sm2CardQueue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">队列中</div></div>
+              <div class="sm2-stat-card" id="sm2CardTodayReviewed"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">今日已复习</div></div>
+              <div class="sm2-stat-card" id="sm2CardRetention"><div class="sm2-stat-num">100%</div><div class="sm2-stat-label">记忆保持率</div></div>
+              <div class="sm2-stat-card" id="sm2CardStreak"><div class="sm2-stat-num">0天</div><div class="sm2-stat-label">连续打卡</div></div>
               <div class="sm2-stat-card" id="sm2CardMastered"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">已掌握</div></div>
             </div>
             <!-- 未来 7 天到期复习负荷预测直方图 -->
             <div class="sm2-projection-section" id="sm2ProjectionSection">
               <div class="sm2-projection-title">
                 <span>未来 7 天到期复习负荷预测</span>
-                <span style="font-weight:normal;font-size:11px;color:var(--text-muted)">合理分配每日做题量</span>
+                <span style="font-weight:normal;font-size:11px;color:var(--text-muted)">科学平抑每日记忆负荷</span>
               </div>
               <div class="sm2-projection-bars" id="sm2ProjectionBars"></div>
             </div>
-            <div class="sm2-mode-row">
-              <span class="sm2-mode-label">刷题模式</span>
-              <label class="sm2-radio"><input type="radio" name="sm2mode" value="sequential" checked> 顺序</label>
-              <label class="sm2-radio"><input type="radio" name="sm2mode" value="random"> 随机</label>
-              <label class="sm2-radio"><input type="radio" name="sm2mode" value="overdue"> 仅逾期</label>
+
+            <!-- 复习策略与批次容量控制面板 -->
+            <div class="sm2-config-panel">
+              <div class="sm2-config-group">
+                <div class="sm2-config-title">🎯 复习策略模式</div>
+                <div class="sm2-mode-grid">
+                  <label class="sm2-strategy-card active">
+                    <input type="radio" name="sm2mode" value="smart" checked>
+                    <div class="strategy-icon">🧠</div>
+                    <div class="strategy-info">
+                      <span class="strategy-name">智能优先级</span>
+                      <span class="strategy-desc">逾期度 × 错题率 × 薄弱度加权推荐</span>
+                    </div>
+                  </label>
+                  <label class="sm2-strategy-card">
+                    <input type="radio" name="sm2mode" value="overdue">
+                    <div class="strategy-icon">🔥</div>
+                    <div class="strategy-info">
+                      <span class="strategy-name">艾宾浩斯抢险</span>
+                      <span class="strategy-desc">仅逾期题目 · 按逾期严重天数降序攻坚</span>
+                    </div>
+                  </label>
+                  <label class="sm2-strategy-card">
+                    <input type="radio" name="sm2mode" value="random">
+                    <div class="strategy-icon">🎲</div>
+                    <div class="strategy-info">
+                      <span class="strategy-name">随机穿插</span>
+                      <span class="strategy-desc">跨学科彻底混洗 · 模拟考场真实情境</span>
+                    </div>
+                  </label>
+                  <label class="sm2-strategy-card">
+                    <input type="radio" name="sm2mode" value="sequential">
+                    <div class="strategy-icon">📖</div>
+                    <div class="strategy-info">
+                      <span class="strategy-name">章节顺序</span>
+                      <span class="strategy-desc">按教材讲次与题号逐题递进复习</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="sm2-config-group sm2-batch-group">
+                <div class="sm2-config-title">⏱️ 冲刺组容量（番茄负荷分流）</div>
+                <div class="sm2-batch-pills" id="sm2BatchPills">
+                  <button type="button" class="sm2-batch-btn" data-batch="20">20 题冲刺</button>
+                  <button type="button" class="sm2-batch-btn active" data-batch="30">30 题标准</button>
+                  <button type="button" class="sm2-batch-btn" data-batch="50">50 题强化</button>
+                  <button type="button" class="sm2-batch-btn" data-batch="0">全部到期</button>
+                </div>
+              </div>
+
+              <div class="sm2-action-row">
+                <button id="btnSm2StartAll" class="gel-btn btn-status proficient sm2-start-main-btn">🚀 开始智能复习冲刺</button>
+              </div>
             </div>
-            <button id="btnSm2StartAll" class="gel-btn btn-status proficient">开始全部复习</button>
           </div>
           <div class="sm2-chapters" id="sm2Chapters"></div>
         </div>
@@ -442,6 +492,48 @@
         <div class="shortcut-row"><span class="key"><kbd>H</kbd></span><span class="desc">打开/关闭此帮助</span></div>
       </div>
       <div class="shortcut-close-hint">按 Esc 或点击背景关闭</div>
+    </div>
+  </div>
+
+  <!-- 复习完成结算战报弹窗 -->
+  <div class="review-summary-overlay" id="reviewSummaryOverlay" style="display:none">
+    <div class="review-summary-modal" id="reviewSummaryModal">
+      <div class="summary-header">
+        <div class="summary-badge">🎉 冲刺达成</div>
+        <h2 class="summary-title">本轮复习圆满完成！</h2>
+        <p class="summary-subtitle" id="summaryTimeText">温故而知新，距离考研上岸又近一步。</p>
+      </div>
+
+      <div class="summary-stats-grid">
+        <div class="summary-stat-box">
+          <span class="stat-box-val" id="summaryTotalCount">0</span>
+          <span class="stat-box-label">本次复习题量</span>
+        </div>
+        <div class="summary-stat-box highlight">
+          <span class="stat-box-val" id="summaryRetentionPct">100%</span>
+          <span class="stat-box-label">记忆保持率</span>
+        </div>
+        <div class="summary-stat-box">
+          <span class="stat-box-val" id="summaryDurationText">--</span>
+          <span class="stat-box-label">冲刺耗时</span>
+        </div>
+      </div>
+
+      <div class="summary-breakdown-card">
+        <div class="breakdown-title">本次掌握度分布</div>
+        <div class="breakdown-pills">
+          <div class="breakdown-pill prof"><span class="bp-dot"></span>熟练 <b id="bpProf">0</b></div>
+          <div class="breakdown-pill fam"><span class="bp-dot"></span>较熟练 <b id="bpFam">0</b></div>
+          <div class="breakdown-pill vag"><span class="bp-dot"></span>模糊 <b id="bpVag">0</b></div>
+          <div class="breakdown-pill rus"><span class="bp-dot"></span>困难 <b id="bpRus">0</b></div>
+          <div class="breakdown-pill wrg"><span class="bp-dot"></span>不会 <b id="bpWrg">0</b></div>
+        </div>
+      </div>
+
+      <div class="summary-actions">
+        <button class="summary-btn btn-sec" id="btnSummaryExit">完成并退出</button>
+        <button class="summary-btn btn-pri" id="btnSummaryNext">🚀 再来一组冲刺</button>
+      </div>
     </div>
   </div>
 
