@@ -300,7 +300,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "Following Fossen's standard equations, the 6-DOF underwater dynamics are: M \\dot{\\nu} + C(\\nu)\\nu + D(\\nu)\\nu + g(\\eta) = \\tau, and \\dot{\\eta} = J(\\eta)\\nu.",
+              "text": "Following Fossen's standard equations, the 6-DOF underwater dynamics are: $\\boldsymbol{M} \\dot{\\boldsymbol{\\nu}} + \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta}) = \\boldsymbol{\\tau}$, and $\\dot{\\boldsymbol{\\eta}} = \\boldsymbol{J}(\\boldsymbol{\\eta})\\boldsymbol{\\nu}$.",
               "translation": "根据 Fossen 海洋航行器动力学标准理论，6 自由度 AUV 动力学方程表示为：$\\boldsymbol{M}\\dot{\\boldsymbol{\\nu}} + \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta}) = \\boldsymbol{\\tau}$；$\\dot{\\boldsymbol{\\eta}} = \\boldsymbol{J}(\\boldsymbol{\\eta})\\boldsymbol{\\nu}$。",
               "vocab": [
                 {
@@ -326,7 +326,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "Here, M = M_{RB} + M_A combines rigid-body and hydrodynamic added mass, D(\\nu) = D_{lin} + D_{quad}(\\nu) includes quadratic damping, and g(\\eta) represents gravity/buoyancy restoring forces.",
+              "text": "Here, $\\boldsymbol{M} = \\boldsymbol{M}_{RB} + \\boldsymbol{M}_A$ combines rigid-body and hydrodynamic added mass, $\\boldsymbol{D}(\\boldsymbol{\\nu}) = \\boldsymbol{D}_{lin} + \\boldsymbol{D}_{quad}(\\boldsymbol{\\nu})$ includes quadratic damping, and $\\boldsymbol{g}(\\boldsymbol{\\eta})$ represents gravity/buoyancy restoring forces.",
               "translation": "其中 $\\boldsymbol{M} = \\boldsymbol{M}_{RB} + \\boldsymbol{M}_A$ 为刚体质量与水动力附加质量之和，$\\boldsymbol{D}(\\boldsymbol{\\nu})$ 包含线性与二次阻尼对角矩阵，$\\boldsymbol{g}(\\boldsymbol{\\eta})$ 为重力与浮力恢复力矩矢量。",
               "vocab": [
                 {
@@ -364,7 +364,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 3,
               "id": "P3-S3",
-              "text": "Model-based Feedback Linearization defines \\tau_{ref} = M a_{ref} + f(\\nu, \\eta), where f(\\nu, \\eta) = C(\\nu)\\nu + D(\\nu)\\nu + g(\\eta); any identification error in f directly corrupts decoupling.",
+              "text": "Model-based Feedback Linearization defines $\\boldsymbol{\\tau}_{ref} = \\boldsymbol{M} \\boldsymbol{a}_{ref} + \\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta})$, where $\\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta}) = \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta})$; any identification error in $\\boldsymbol{f}$ directly corrupts decoupling.",
               "translation": "经典基于模型的反馈线性化（FBL）控制律为：$\\boldsymbol{\\tau}_{ref} = \\boldsymbol{M} \\boldsymbol{a}_{ref} + \\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta})$，其中 $\\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta}) = \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta})$。其本质缺陷在于一旦阻尼或恢复力矩存在微小辨识误差，就会施加错误推力引发持续漂移。",
               "vocab": [
                 {
@@ -422,7 +422,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P4-S1",
-              "text": "At high sampling frequencies (50-100 Hz), hydrodynamic changes between consecutive steps are negligible compared to thruster force increments: M \\dot{\\nu} \\approx M \\dot{\\nu}_0 + (\\tau - \\tau_0).",
+              "text": "At high sampling frequencies (50-100 Hz), hydrodynamic changes between consecutive steps are negligible compared to thruster force increments: $\\boldsymbol{M} \\dot{\\boldsymbol{\\nu}} \\approx \\boldsymbol{M} \\dot{\\boldsymbol{\\nu}}_0 + (\\boldsymbol{\\tau} - \\boldsymbol{\\tau}_0)$.",
               "translation": "由于控制回路采样频率高（50~100 Hz），在相邻采样间隔内航行器水动力变化相比执行机构推力增量是极小量：$\\boldsymbol{M}\\dot{\\boldsymbol{\\nu}} \\approx \\boldsymbol{M}\\dot{\\boldsymbol{\\nu}}_0 + (\\boldsymbol{\\tau} - \\boldsymbol{\\tau}_0)$。",
               "vocab": [
                 {
@@ -448,7 +448,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 2,
               "id": "P4-S2",
-              "text": "Replacing with filtered acceleration \\dot{\\nu}_f and thruster force \\tau_f yields the core INDI law: \\tau_{ref} = \\tau_f + M(a_{ref} - \\dot{\\nu}_f).",
+              "text": "Replacing with filtered acceleration $\\dot{\\boldsymbol{\\nu}}_f$ and thruster force $\\boldsymbol{\\tau}_f$ yields the core INDI law: $\\boldsymbol{\\tau}_{ref} = \\boldsymbol{\\tau}_f + \\boldsymbol{M}(\\boldsymbol{a}_{ref} - \\dot{\\boldsymbol{\\nu}}_f)$.",
               "translation": "用滤波传感器实测加速度 $\\dot{\\boldsymbol{\\nu}}_f$ 和推进器推力 $\\boldsymbol{\\tau}_f$ 替代，推导得出 **水下 INDI 控制律**：$\\boldsymbol{\\tau}_{ref} = \\boldsymbol{\\tau}_f + \\boldsymbol{M} (\\boldsymbol{a}_{ref} - \\dot{\\boldsymbol{\\nu}}_f)$。",
               "vocab": [
                 {
@@ -468,7 +468,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 3,
               "id": "P4-S3",
-              "text": "Crucially, this equation contains zero terms of damping D(\\nu), Coriolis C(\\nu), or restoring g(\\eta), reducing the entire parameter tuning burden to merely the inertia matrix M.",
+              "text": "Crucially, this equation contains zero terms of damping $\\boldsymbol{D}(\\boldsymbol{\\nu})$, Coriolis $\\boldsymbol{C}(\\boldsymbol{\\nu})$, or restoring $\\boldsymbol{g}(\\boldsymbol{\\eta})$, reducing the entire parameter tuning burden to merely the inertia matrix $\\boldsymbol{M}$.",
               "translation": "核心优势：整个公式中**完全不包含阻尼 $\\boldsymbol{D}(\\boldsymbol{\\nu})$、科氏力 $\\boldsymbol{C}(\\boldsymbol{\\nu})$ 和恢复力 $\\boldsymbol{g}(\\boldsymbol{\\eta})$！** 将水下建模负担缩减至仅需一个惯性矩阵 $\\boldsymbol{M}$。",
               "vocab": [
                 {
@@ -513,7 +513,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P5-S1",
-              "text": "Thruster allocation maps 6-DOF wrench \\tau_{ref} to 8 thruster commands u via weighted Moore-Penrose pseudoinverse: u = B^T (B B^T)^-1 \\tau_{ref}.",
+              "text": "Thruster allocation maps 6-DOF wrench $\\boldsymbol{\\tau}_{ref}$ to 8 thruster commands $\\boldsymbol{u}$ via weighted Moore-Penrose pseudoinverse: $\\boldsymbol{u} = \\boldsymbol{B}^T (\\boldsymbol{B} \\boldsymbol{B}^T)^{-1} \\boldsymbol{\\tau}_{ref}$.",
               "translation": "推进器控制分配通过加权 Moore-Penrose 伪逆将 6 自由度力矩指令分配给 8 个推进器：$\\boldsymbol{u} = \\boldsymbol{B}^T (\\boldsymbol{B} \\boldsymbol{B}^T)^{-1} \\boldsymbol{\\tau}_{ref}$。",
               "vocab": [
                 {
@@ -551,7 +551,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 2,
               "id": "P5-S2",
-              "text": "To prevent Gimbal Lock singularity at 90-degree pitch, the outer attitude loop uses an SO(3) Lie Group error formulation: \\omega_{ref} = K_\\Omega \\sum e_i \\times (R_d^T R e_i).",
+              "text": "To prevent Gimbal Lock singularity at 90-degree pitch, the outer attitude loop uses an SO(3) Lie Group error formulation: $\\boldsymbol{\\omega}_{ref} = \\boldsymbol{K}_\\Omega \\sum \\boldsymbol{e}_i \\times (\\boldsymbol{R}_d^T \\boldsymbol{R} \\boldsymbol{e}_i)$.",
               "translation": "为了消除 90° 俯仰翻转中的万向节死锁奇异性，姿态外环采用基于李群 $SO(3)$ 旋转矩阵的姿态误差控制律：$\\boldsymbol{\\omega}_{ref}(\\boldsymbol{R}, \\boldsymbol{R}_d) = \\boldsymbol{K}_\\Omega \\sum_{i=1}^3 \\boldsymbol{e}_i \\times (\\boldsymbol{R}_d^T \\boldsymbol{R} \\boldsymbol{e}_i)$。",
               "vocab": [
                 {

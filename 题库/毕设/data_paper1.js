@@ -628,7 +628,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 1,
               "id": "P5-S1",
-              "text": "Let W = {x_W, y_W, z_W} denote the world inertial frame and B = {x_B, y_B, z_B} denote the body-fixed frame.",
+              "text": "Let $\\mathcal{W} = \\{x_W, y_W, z_W\\}$ denote the world inertial frame and $\\mathcal{B} = \\{x_B, y_B, z_B\\}$ denote the body-fixed frame.",
               "translation": "定义惯性坐标系为 $\\mathcal{W} = \\{x_W, y_W, z_W\\}$，机体坐标系为 $\\mathcal{B} = \\{x_B, y_B, z_B\\}$。",
               "vocab": [
                 {
@@ -642,7 +642,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P5-S2",
-              "text": "The rigid-body quadrotor dynamics are formulated as: \\dot{\\xi} = v, m \\dot{v} = m g_W + R f_B + f_a, \\dot{q} = \\frac{1}{2} q \\otimes [0, \\Omega_B^T]^T, and J \\dot{\\Omega}_B = \\tau_B - \\Omega_B \\times (J \\Omega_B).",
+              "text": "The rigid-body quadrotor dynamics are formulated as: $\\dot{\\boldsymbol{\\xi}} = \\boldsymbol{v}$, $m \\dot{\\boldsymbol{v}} = m \\boldsymbol{g}_W + \\boldsymbol{R} \\boldsymbol{f}_B + \\boldsymbol{f}_a$, $\\dot{\\boldsymbol{q}} = \\frac{1}{2} \\boldsymbol{q} \\otimes [0, \\boldsymbol{\\Omega}_B^T]^T$, and $\\boldsymbol{J} \\dot{\\boldsymbol{\\Omega}}_B = \\boldsymbol{\\tau}_B - \\boldsymbol{\\Omega}_B \\times (\\boldsymbol{J} \\boldsymbol{\\Omega}_B)$.",
               "translation": "四旋翼刚体动力学模型由下式描述：$\\dot{\\boldsymbol{\\xi}} = \\boldsymbol{v}$；$m \\dot{\\boldsymbol{v}} = m \\boldsymbol{g}_W + \\boldsymbol{R} \\boldsymbol{f}_B + \\boldsymbol{f}_a$；$\\dot{\\boldsymbol{q}} = \\frac{1}{2} \\boldsymbol{q} \\otimes [0, \\boldsymbol{\\Omega}_B^T]^T$；$\\boldsymbol{J} \\dot{\\boldsymbol{\\Omega}}_B = \\boldsymbol{\\tau}_B - \\boldsymbol{\\Omega}_B \\times (\\boldsymbol{J} \\boldsymbol{\\Omega}_B)$。",
               "vocab": [
                 {
@@ -662,7 +662,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 3,
               "id": "P5-S3",
-              "text": "Here, \\xi is position, v is linear velocity, R in SO(3) is rotation parameterized by quaternion q, J is inertia matrix, \\Omega_B is body angular velocity, f_B = [0, 0, T]^T is total thrust, and \\tau_B is three-axis moment.",
+              "text": "Here, $\\boldsymbol{\\xi}$ is position, $\\boldsymbol{v}$ is linear velocity, $\\boldsymbol{R} \\in SO(3)$ is rotation parameterized by quaternion $\\boldsymbol{q}$, $\\boldsymbol{J}$ is inertia matrix, $\\boldsymbol{\\Omega}_B$ is body angular velocity, $\\boldsymbol{f}_B = [0, 0, T]^T$ is total thrust, and $\\boldsymbol{\\tau}_B$ is three-axis moment.",
               "translation": "其中：$\\boldsymbol{\\xi}$ 为世界系位置，$\\boldsymbol{v}$ 为线速度；$m$ 为总质量，$\\boldsymbol{g}_W = [0,0,-g]^T$ 为重力加速度；$\\boldsymbol{R} \\in SO(3)$ 为旋转矩阵，$\\boldsymbol{q}$ 为四元数；$\\boldsymbol{J}$ 为转动惯量矩阵，$\\boldsymbol{\\Omega}_B$ 为角速度；$\\boldsymbol{f}_B = [0, 0, T]^T$ 为总推力，$T = \\sum f_i$；$\\boldsymbol{\\tau}_B$ 为合成控制力矩。",
               "vocab": [
                 {
@@ -707,7 +707,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 1,
               "id": "P6-S1",
-              "text": "At high flight speeds, aerodynamic drag f_a cannot be neglected and causes severe lateral sliding in high-speed turns.",
+              "text": "At high flight speeds, aerodynamic drag $\\boldsymbol{f}_a$ cannot be neglected and causes severe lateral sliding in high-speed turns.",
               "translation": "在高速飞行时，空气阻力 $\\boldsymbol{f}_a$ 不可忽略。若忽略阻力会导致飞行器在急弯处因向心力不足产生严重的侧向漂移。",
               "vocab": [
                 {
@@ -733,7 +733,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P6-S2",
-              "text": "We adopt a wind-tunnel validated composite drag model: f_a = - R D_v R^T v, where D_v = diag(d_x, d_y, d_z) denotes the diagonal drag coefficients.",
+              "text": "We adopt a wind-tunnel validated composite drag model: $\\boldsymbol{f}_a = - \\boldsymbol{R} \\boldsymbol{D}_v \\boldsymbol{R}^T \\boldsymbol{v}$, where $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ denotes the diagonal drag coefficients.",
               "translation": "本文采用经过风洞实验验证的复合阻力模型：$\\boldsymbol{f}_a = - \\boldsymbol{R} \\boldsymbol{D}_v \\boldsymbol{R}^T \\boldsymbol{v}$，其中 $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ 为对角空气阻力系数矩阵，显式包含了转子诱导阻力与机身迎风阻力。",
               "vocab": [
                 {
@@ -778,7 +778,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 1,
               "id": "P7-S1",
-              "text": "NMPC discretizes the dynamics into N intervals dt = h/N over horizon [t, t+h] and solves a constrained quadratic cost optimization min \\sum ||x_k - x_{k,r}||_Q^2 + ||u_k - u_{k,r}||_Qu^2.",
+              "text": "NMPC discretizes the dynamics into $N$ intervals $dt = h/N$ over horizon $[t, t+h]$ and solves a constrained quadratic cost optimization $\\min_{\\boldsymbol{u}} \\sum (\\|\\boldsymbol{x}_k - \\boldsymbol{x}_{k,r}\\|_{\\boldsymbol{Q}}^2 + \\|\\boldsymbol{u}_k - \\boldsymbol{u}_{k,r}\\|_{\\boldsymbol{Q}_u}^2)$.",
               "translation": "NMPC 在有限时域 $[t, t+h]$ 内将系统离散化为 $N$ 个等长步长区间 $dt = h/N$，构建如下受约束的非线性优化命题：$\\min_{\\boldsymbol{u}} \\sum_{k=0}^{N-1} (\\|\\boldsymbol{x}_k - \\boldsymbol{x}_{k,r}\\|_{\\boldsymbol{Q}}^2 + \\|\\boldsymbol{u}_k - \\boldsymbol{u}_{k,r}\\|_{\\boldsymbol{Q}_u}^2) + \\|\\boldsymbol{x}_N - \\boldsymbol{x}_{N,r}\\|_{\\boldsymbol{Q}_N}^2$。",
               "vocab": [
                 {
@@ -810,7 +810,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P7-S2",
-              "text": "Constraints explicitly enforce actuator thrust bounds u_i in [u_min, u_max] and angular velocity bounds \\Omega_B in [\\Omega_min, \\Omega_max].",
+              "text": "Constraints explicitly enforce actuator thrust bounds $u_i \\in [u_{\\min}, u_{\\max}]$ and angular velocity bounds $\\boldsymbol{\\Omega}_B \\in [\\boldsymbol{\\Omega}_{\\min}, \\boldsymbol{\\Omega}_{\\max}]$.",
               "translation": "约束条件显式包含了系统动力学状态转移 $\\boldsymbol{x}_{k+1} = f(\\boldsymbol{x}_k, \\boldsymbol{u}_k)$、机体角速度限制 $\\boldsymbol{\\Omega}_B \\in [\\boldsymbol{\\Omega}_{\\min}, \\boldsymbol{\\Omega}_{\\max}]$ 以及各电机推力指令硬约束 $u_i \\in [u_{\\min}, u_{\\max}]$。",
               "vocab": [
                 {
@@ -875,7 +875,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 1,
               "id": "P8-S1",
-              "text": "DFBC selects position and yaw \\sigma = [x, y, z, \\psi]^T as flat outputs, deriving the desired body z-axis from desired acceleration a_des accounting for aerodynamic drag.",
+              "text": "DFBC selects position and yaw $\\boldsymbol{\\sigma} = [x, y, z, \\psi]^T$ as flat outputs, deriving the desired body z-axis from desired acceleration $\\boldsymbol{a}_{\\text{des}}$ accounting for aerodynamic drag.",
               "translation": "四旋翼的平坦输出选取为位置与偏航角 $\\boldsymbol{\\sigma} = [x, y, z, \\psi]^T$。考虑气动阻力后的期望合力加速度为 $\\boldsymbol{a}_{\\text{des}} = \\ddot{\\boldsymbol{\\xi}}_{ref} + \\boldsymbol{K}_p(\\boldsymbol{\\xi}_{ref} - \\boldsymbol{\\xi}) + \\boldsymbol{K}_d(\\dot{\\boldsymbol{\\xi}}_{ref} - \\dot{\\boldsymbol{\\xi}}) - \\boldsymbol{g}_W - \\frac{1}{m}\\boldsymbol{f}_a$，由此解得期望机体 $z_B$ 轴方向 $\\boldsymbol{z}_{B,\\text{des}} = \\boldsymbol{a}_{\\text{des}} / \\|\\boldsymbol{a}_{\\text{des}}\\|$。",
               "vocab": [
                 {
@@ -907,7 +907,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P8-S2",
-              "text": "By taking higher-order derivatives involving trajectory jerk and snap, DFBC algebraically computes feedforward angular velocity \\Omega_{B,des} and acceleration \\dot{\\Omega}_{B,des}.",
+              "text": "By taking higher-order derivatives involving trajectory jerk and snap, DFBC algebraically computes feedforward angular velocity $\\boldsymbol{\\Omega}_{B,\\text{des}}$ and acceleration $\\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}}$.",
               "translation": "通过对 $\\boldsymbol{a}_{\\text{des}}$ 进行二阶求导（涉及轨迹加加速度 Jerk 与加加加速度 Snap），可纯解析代数求出期望角速度 $\\boldsymbol{\\Omega}_{B,\\text{des}}$ 与期望角加速度 $\\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}}$。",
               "vocab": [
                 {
@@ -1034,7 +1034,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P9-S2",
-              "text": "Virtual angular acceleration command is \\nu = \\dot{\\Omega}_{B,des} + K_p(q_{ref} \\ominus q) + K_d(\\Omega_{B,des} - \\Omega_B), computing torque increment \\Delta \\tau_B = J(\\nu - \\dot{\\Omega}_{B,f}).",
+              "text": "Virtual angular acceleration command is $\\boldsymbol{\\nu} = \\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}} + \\boldsymbol{K}_p(\\boldsymbol{q}_{\\text{ref}} \\ominus \\boldsymbol{q}) + \\boldsymbol{K}_d(\\boldsymbol{\\Omega}_{B,\\text{des}} - \\boldsymbol{\\Omega}_B)$, computing torque increment $\\Delta \\boldsymbol{\\tau}_B = \\boldsymbol{J}(\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_{B,f})$.",
               "translation": "虚拟角加速度指令为 $\\boldsymbol{\\nu} = \\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}} + \\boldsymbol{K}_p (\\boldsymbol{q}_{ref} \\ominus \\boldsymbol{q}) + \\boldsymbol{K}_d (\\boldsymbol{\\Omega}_{B,\\text{des}} - \\boldsymbol{\\Omega}_B)$。根据角加速度反馈 $\\dot{\\boldsymbol{\\Omega}}_{B,f}$ 计算机体控制力矩增量 $\\Delta \\boldsymbol{\\tau}_B = \\boldsymbol{J} (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_{B,f})$，合成 $\\boldsymbol{\\tau}_B = \\boldsymbol{\\tau}_{B,f} + \\Delta \\boldsymbol{\\tau}_B$ 并直接驱动电调。",
               "vocab": [
                 {

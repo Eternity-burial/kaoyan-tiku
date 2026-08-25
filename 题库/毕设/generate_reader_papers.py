@@ -169,19 +169,19 @@ paper1_full = {
                         {
                             "sIndex": 1,
                             "id": "P5-S1",
-                            "text": "Let W = {x_W, y_W, z_W} denote the world inertial frame and B = {x_B, y_B, z_B} denote the body-fixed frame.",
+                            "text": "Let $\\mathcal{W} = \{x_W, y_W, z_W\}$ denote the world inertial frame and $\\mathcal{B} = \{x_B, y_B, z_B\}$ denote the body-fixed frame.",
                             "translation": "定义惯性坐标系为 $\\mathcal{W} = \\{x_W, y_W, z_W\\}$，机体坐标系为 $\\mathcal{B} = \\{x_B, y_B, z_B\\}$。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P5-S2",
-                            "text": "The rigid-body quadrotor dynamics are formulated as: \\dot{\\xi} = v, m \\dot{v} = m g_W + R f_B + f_a, \\dot{q} = \\frac{1}{2} q \\otimes [0, \\Omega_B^T]^T, and J \\dot{\\Omega}_B = \\tau_B - \\Omega_B \\times (J \\Omega_B).",
+                            "text": "The rigid-body quadrotor dynamics are formulated as: $\\dot{\\boldsymbol{\\xi}} = \\boldsymbol{v}$, $m \\dot{\\boldsymbol{v}} = m \\boldsymbol{g}_W + \\boldsymbol{R} \\boldsymbol{f}_B + \\boldsymbol{f}_a$, $\\dot{\\boldsymbol{q}} = \\frac{1}{2} \\boldsymbol{q} \\otimes [0, \\boldsymbol{\\Omega}_B^T]^T$, and $\\boldsymbol{J} \\dot{\\boldsymbol{\\Omega}}_B = \\boldsymbol{\\tau}_B - \\boldsymbol{\\Omega}_B \\times (\\boldsymbol{J} \\boldsymbol{\\Omega}_B)$.",
                             "translation": "四旋翼刚体动力学模型由下式描述：$\\dot{\\boldsymbol{\\xi}} = \\boldsymbol{v}$；$m \\dot{\\boldsymbol{v}} = m \\boldsymbol{g}_W + \\boldsymbol{R} \\boldsymbol{f}_B + \\boldsymbol{f}_a$；$\\dot{\\boldsymbol{q}} = \\frac{1}{2} \\boldsymbol{q} \\otimes [0, \\boldsymbol{\\Omega}_B^T]^T$；$\\boldsymbol{J} \\dot{\\boldsymbol{\\Omega}}_B = \\boldsymbol{\\tau}_B - \\boldsymbol{\\Omega}_B \\times (\\boldsymbol{J} \\boldsymbol{\\Omega}_B)$。"
                         },
                         {
                             "sIndex": 3,
                             "id": "P5-S3",
-                            "text": "Here, \\xi is position, v is linear velocity, R in SO(3) is rotation parameterized by quaternion q, J is inertia matrix, \\Omega_B is body angular velocity, f_B = [0, 0, T]^T is total thrust, and \\tau_B is three-axis moment.",
+                            "text": "Here, $\\boldsymbol{\\xi}$ is position, $\\boldsymbol{v}$ is linear velocity, $\\boldsymbol{R} \\in SO(3)$ is rotation parameterized by quaternion $\\boldsymbol{q}$, $\\boldsymbol{J}$ is inertia matrix, $\\boldsymbol{\\Omega}_B$ is body angular velocity, $\\boldsymbol{f}_B = [0, 0, T]^T$ is total thrust, and $\\boldsymbol{\\tau}_B$ is three-axis moment.",
                             "translation": "其中：$\\boldsymbol{\\xi}$ 为世界系位置，$\\boldsymbol{v}$ 为线速度；$m$ 为总质量，$\\boldsymbol{g}_W = [0,0,-g]^T$ 为重力加速度；$\\boldsymbol{R} \\in SO(3)$ 为旋转矩阵，$\\boldsymbol{q}$ 为四元数；$\\boldsymbol{J}$ 为转动惯量矩阵，$\\boldsymbol{\\Omega}_B$ 为角速度；$\\boldsymbol{f}_B = [0, 0, T]^T$ 为总推力，$T = \\sum f_i$；$\\boldsymbol{\\tau}_B$ 为合成控制力矩。"
                         }
                     ]
@@ -194,13 +194,13 @@ paper1_full = {
                         {
                             "sIndex": 1,
                             "id": "P6-S1",
-                            "text": "At high flight speeds, aerodynamic drag f_a cannot be neglected and causes severe lateral sliding in high-speed turns.",
+                            "text": "At high flight speeds, aerodynamic drag $\\boldsymbol{f}_a$ cannot be neglected and causes severe lateral sliding in high-speed turns.",
                             "translation": "在高速飞行时，空气阻力 $\\boldsymbol{f}_a$ 不可忽略。若忽略阻力会导致飞行器在急弯处因向心力不足产生严重的侧向漂移。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P6-S2",
-                            "text": "We adopt a wind-tunnel validated composite drag model: f_a = - R D_v R^T v, where D_v = diag(d_x, d_y, d_z) denotes the diagonal drag coefficients.",
+                            "text": "We adopt a wind-tunnel validated composite drag model: $\\boldsymbol{f}_a = - \\boldsymbol{R} \\boldsymbol{D}_v \\boldsymbol{R}^T \\boldsymbol{v}$, where $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ denotes the diagonal drag coefficients.",
                             "translation": "本文采用经过风洞实验验证的复合阻力模型：$\\boldsymbol{f}_a = - \\boldsymbol{R} \\boldsymbol{D}_v \\boldsymbol{R}^T \\boldsymbol{v}$，其中 $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ 为对角空气阻力系数矩阵，显式包含了转子诱导阻力与机身迎风阻力。"
                         }
                     ]
@@ -231,13 +231,13 @@ paper1_full = {
                         {
                             "sIndex": 1,
                             "id": "P7-S1",
-                            "text": "NMPC discretizes the dynamics into N intervals dt = h/N over horizon [t, t+h] and solves a constrained quadratic cost optimization min \\sum ||x_k - x_{k,r}||_Q^2 + ||u_k - u_{k,r}||_Qu^2.",
+                            "text": "NMPC discretizes the dynamics into $N$ intervals $dt = h/N$ over horizon $[t, t+h]$ and solves a constrained quadratic cost optimization $\\min_{\\boldsymbol{u}} \\sum (\|\\boldsymbol{x}_k - \\boldsymbol{x}_{k,r}\|_{\\boldsymbol{Q}}^2 + \|\\boldsymbol{u}_k - \\boldsymbol{u}_{k,r}\|_{\\boldsymbol{Q}_u}^2)$.",
                             "translation": "NMPC 在有限时域 $[t, t+h]$ 内将系统离散化为 $N$ 个等长步长区间 $dt = h/N$，构建如下受约束的非线性优化命题：$\\min_{\\boldsymbol{u}} \\sum_{k=0}^{N-1} (\\|\\boldsymbol{x}_k - \\boldsymbol{x}_{k,r}\\|_{\\boldsymbol{Q}}^2 + \\|\\boldsymbol{u}_k - \\boldsymbol{u}_{k,r}\\|_{\\boldsymbol{Q}_u}^2) + \\|\\boldsymbol{x}_N - \\boldsymbol{x}_{N,r}\\|_{\\boldsymbol{Q}_N}^2$。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P7-S2",
-                            "text": "Constraints explicitly enforce actuator thrust bounds u_i in [u_min, u_max] and angular velocity bounds \\Omega_B in [\\Omega_min, \\Omega_max].",
+                            "text": "Constraints explicitly enforce actuator thrust bounds $u_i \\in [u_{\\min}, u_{\\max}]$ and angular velocity bounds $\\boldsymbol{\\Omega}_B \\in [\\boldsymbol{\\Omega}_{\\min}, \\boldsymbol{\\Omega}_{\\max}]$.",
                             "translation": "约束条件显式包含了系统动力学状态转移 $\\boldsymbol{x}_{k+1} = f(\\boldsymbol{x}_k, \\boldsymbol{u}_k)$、机体角速度限制 $\\boldsymbol{\\Omega}_B \\in [\\boldsymbol{\\Omega}_{\\min}, \\boldsymbol{\\Omega}_{\\max}]$ 以及各电机推力指令硬约束 $u_i \\in [u_{\\min}, u_{\\max}]$。"
                         },
                         {
@@ -256,13 +256,13 @@ paper1_full = {
                         {
                             "sIndex": 1,
                             "id": "P8-S1",
-                            "text": "DFBC selects position and yaw \\sigma = [x, y, z, \\psi]^T as flat outputs, deriving the desired body z-axis from desired acceleration a_des accounting for aerodynamic drag.",
+                            "text": "DFBC selects position and yaw $\\boldsymbol{\\sigma} = [x, y, z, \\psi]^T$ as flat outputs, deriving the desired body z-axis from desired acceleration $\\boldsymbol{a}_{\\text{des}}$ accounting for aerodynamic drag.",
                             "translation": "四旋翼的平坦输出选取为位置与偏航角 $\\boldsymbol{\\sigma} = [x, y, z, \\psi]^T$。考虑气动阻力后的期望合力加速度为 $\\boldsymbol{a}_{\\text{des}} = \\ddot{\\boldsymbol{\\xi}}_{ref} + \\boldsymbol{K}_p(\\boldsymbol{\\xi}_{ref} - \\boldsymbol{\\xi}) + \\boldsymbol{K}_d(\\dot{\\boldsymbol{\\xi}}_{ref} - \\dot{\\boldsymbol{\\xi}}) - \\boldsymbol{g}_W - \\frac{1}{m}\\boldsymbol{f}_a$，由此解得期望机体 $z_B$ 轴方向 $\\boldsymbol{z}_{B,\\text{des}} = \\boldsymbol{a}_{\\text{des}} / \\|\\boldsymbol{a}_{\\text{des}}\\|$。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P8-S2",
-                            "text": "By taking higher-order derivatives involving trajectory jerk and snap, DFBC algebraically computes feedforward angular velocity \\Omega_{B,des} and acceleration \\dot{\\Omega}_{B,des}.",
+                            "text": "By taking higher-order derivatives involving trajectory jerk and snap, DFBC algebraically computes feedforward angular velocity $\\boldsymbol{\\Omega}_{B,\\text{des}}$ and acceleration $\\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}}$.",
                             "translation": "通过对 $\\boldsymbol{a}_{\\text{des}}$ 进行二阶求导（涉及轨迹加加速度 Jerk 与加加加速度 Snap），可纯解析代数求出期望角速度 $\\boldsymbol{\\Omega}_{B,\\text{des}}$ 与期望角加速度 $\\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}}$。"
                         },
                         {
@@ -287,7 +287,7 @@ paper1_full = {
                         {
                             "sIndex": 2,
                             "id": "P9-S2",
-                            "text": "Virtual angular acceleration command is \\nu = \\dot{\\Omega}_{B,des} + K_p(q_{ref} \\ominus q) + K_d(\\Omega_{B,des} - \\Omega_B), computing torque increment \\Delta \\tau_B = J(\\nu - \\dot{\\Omega}_{B,f}).",
+                            "text": "Virtual angular acceleration command is $\\boldsymbol{\\nu} = \\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}} + \\boldsymbol{K}_p(\\boldsymbol{q}_{\\text{ref}} \\ominus \\boldsymbol{q}) + \\boldsymbol{K}_d(\\boldsymbol{\\Omega}_{B,\\text{des}} - \\boldsymbol{\\Omega}_B)$, computing torque increment $\\Delta \\boldsymbol{\\tau}_B = \\boldsymbol{J}(\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_{B,f})$.",
                             "translation": "虚拟角加速度指令为 $\\boldsymbol{\\nu} = \\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}} + \\boldsymbol{K}_p (\\boldsymbol{q}_{ref} \\ominus \\boldsymbol{q}) + \\boldsymbol{K}_d (\\boldsymbol{\\Omega}_{B,\\text{des}} - \\boldsymbol{\\Omega}_B)$。根据角加速度反馈 $\\dot{\\boldsymbol{\\Omega}}_{B,f}$ 计算机体控制力矩增量 $\\Delta \\boldsymbol{\\tau}_B = \\boldsymbol{J} (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_{B,f})$，合成 $\\boldsymbol{\\tau}_B = \\boldsymbol{\\tau}_{B,f} + \\Delta \\boldsymbol{\\tau}_B$ 并直接驱动电调。"
                         }
                     ]
@@ -525,7 +525,7 @@ paper2_full = {
                         {
                             "sIndex": 3,
                             "id": "P3-S3",
-                            "text": "INDI breaks this bottleneck by utilizing IMU measured angular acceleration dot_Omega_0 as the baseline point, simplifying dynamic inversion into control input increments Delta dot_Omega = G_1 Delta u.",
+                            "text": "INDI breaks this bottleneck by utilizing IMU measured angular acceleration $\\dot{\\boldsymbol{\\Omega}}_0$ as the baseline point, simplifying dynamic inversion into control input increments $\\Delta \\dot{\\boldsymbol{\\Omega}} = \\boldsymbol{G}_1 \\Delta \\boldsymbol{u}$.",
                             "translation": "增量非线性动态逆（INDI）的破局理念：不依赖对未知非线性函数的离线预先计算，而是直接利用 IMU 传感器测得的角加速度 $\\dot{\\boldsymbol{\\Omega}}_0$ 作为基准点，通过泰勒级数展开将动力学逆解简化为控制输入的增量映射 $\\Delta \\dot{\\boldsymbol{\\Omega}} = \\boldsymbol{G}_1 \\Delta \\boldsymbol{u}$。"
                         }
                     ]
@@ -551,13 +551,13 @@ paper2_full = {
                         {
                             "sIndex": 1,
                             "id": "P4-S1",
-                            "text": "Quadrotor rotational dynamics are described by Euler's equation: I_v \\dot{\\Omega} + \\Omega \\times (I_v \\Omega) = M_a(\\Omega, v) + M_c - M_r.",
+                            "text": "Quadrotor rotational dynamics are described by Euler\'s equation: $\\boldsymbol{I}_v \\dot{\\boldsymbol{\\Omega}} + \\boldsymbol{\\Omega} \\times (\\boldsymbol{I}_v \\boldsymbol{\\Omega}) = \\boldsymbol{M}_a(\\boldsymbol{\\Omega}, \\boldsymbol{v}) + \\boldsymbol{M}_c - \\boldsymbol{M}_r$.",
                             "translation": "四旋翼飞行器的转动动力学由欧拉方程给出：$\\boldsymbol{I}_v \\dot{\\boldsymbol{\\Omega}} + \\boldsymbol{\\Omega} \\times (\\boldsymbol{I}_v \\boldsymbol{\\Omega}) = \\boldsymbol{M}_a(\\boldsymbol{\\Omega}, \\boldsymbol{v}) + \\boldsymbol{M}_c - \\boldsymbol{M}_r$。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P4-S2",
-                            "text": "Here, control moment is M_c = M_{c,matrix} \\omega^2, and propeller gyroscopic and acceleration torque is M_r = I_r \\dot{\\omega} + \\Omega \\times I_r \\omega.",
+                            "text": "Here, control moment is $\\boldsymbol{M}_c = \\boldsymbol{M}_{c,\\text{matrix}} \\boldsymbol{\\omega}^2$, and propeller gyroscopic and acceleration torque is $\\boldsymbol{M}_r = \\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}} + \\boldsymbol{\\Omega} \\times \\boldsymbol{I}_r \\boldsymbol{\\omega}$.",
                             "translation": "其中控制力矩为 $\\boldsymbol{M}_c = \\boldsymbol{M}_{c,\\text{matrix}} \\boldsymbol{\\omega}^2$，螺旋桨自旋与加减速反扭矩为 $\\boldsymbol{M}_r = \\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}} + \\boldsymbol{\\Omega} \\times \\boldsymbol{I}_r \\boldsymbol{\\omega}$。"
                         }
                     ]
@@ -570,7 +570,7 @@ paper2_full = {
                         {
                             "sIndex": 1,
                             "id": "P5-S1",
-                            "text": "Applying a first-order Taylor expansion around previous step (\\Omega_0, \\omega_0) and replacing physical model terms with measured \\dot{\\Omega}_0 yields: \\dot{\\Omega} \\approx \\dot{\\Omega}_0 + G_1 diag(\\omega_0)(\\omega - \\omega_0) + G_2(\\dot{\\omega} - \\dot{\\omega}_0).",
+                            "text": "Applying a first-order Taylor expansion around previous step $(\\boldsymbol{\\Omega}_0, \\boldsymbol{\\omega}_0)$ and replacing physical model terms with measured $\\dot{\\boldsymbol{\\Omega}}_0$ yields: $\\dot{\\boldsymbol{\\Omega}} \\approx \\dot{\\boldsymbol{\\Omega}}_0 + \\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_0)(\\boldsymbol{\\omega} - \\boldsymbol{\\omega}_0) + \\boldsymbol{G}_2(\\dot{\\boldsymbol{\\omega}} - \\dot{\\boldsymbol{\\omega}}_0)$.",
                             "translation": "在上一时刻采样点 $(\\boldsymbol{\\Omega}_0, \\boldsymbol{\\omega}_0)$ 附近进行一阶泰勒展开，并利用传感器测量的实际角加速度 $\\dot{\\boldsymbol{\\Omega}}_0$ 替代非线性物理模型项，得到 **INDI 核心增量方程**：$\\dot{\\boldsymbol{\\Omega}} \\approx \\dot{\\boldsymbol{\\Omega}}_0 + \\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_0)(\\boldsymbol{\\omega} - \\boldsymbol{\\omega}_0) + \\boldsymbol{G}_2(\\dot{\\boldsymbol{\\omega}} - \\dot{\\boldsymbol{\\omega}}_0)$。"
                         }
                     ]
@@ -596,13 +596,13 @@ paper2_full = {
                         {
                             "sIndex": 1,
                             "id": "P6-S1",
-                            "text": "Gyro differentiation followed by a second-order Butterworth low-pass filter H(z) creates phase lag, causing \\dot{\\Omega}_f to reflect past motor inputs and inducing severe limit-cycle oscillations.",
+                            "text": "Gyro differentiation followed by a second-order Butterworth low-pass filter $H(z)$ creates phase lag, causing $\\dot{\\boldsymbol{\\Omega}}_f$ to reflect past motor inputs and inducing severe limit-cycle oscillations.",
                             "translation": "陀螺仪差分信号经过二阶巴特沃斯低通滤波器 $H(z)$ 以滤除电机高频震动，这引入了不可忽视的时间滞后；传感器测得的角加速度 $\\dot{\\boldsymbol{\\Omega}}_f$ 实际反映的是过去时刻的电机转速，直接控制会导致回路自激剧烈震荡。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P6-S2",
-                            "text": "To eliminate phase mismatch, we route the actuator command through a matched filter channel \\omega_f, formulating the synchronized virtual control law: \\omega_c = \\omega_f + [G_1 diag(\\omega_f)]^\\dagger (\\nu - \\dot{\\Omega}_f).",
+                            "text": "To eliminate phase mismatch, we route the actuator command through a matched filter channel $\\boldsymbol{\\omega}_f$, formulating the synchronized virtual control law: $\\boldsymbol{\\omega}_c = \\boldsymbol{\\omega}_f + [\\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_f)]^\\dagger (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_f)$.",
                             "translation": "为了消除相位失配引起的自激振荡，论文提出将执行机构控制量引入对称滤波通道：$\\boldsymbol{\\omega}_c = \\boldsymbol{\\omega}_f + [\\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_f)]^\\dagger (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_f)$。该结构在数学上保证了穿越频率处的相位裕度，彻底根除了未补偿 INDI 的极限环振荡。"
                         }
                     ]
@@ -628,13 +628,13 @@ paper2_full = {
                         {
                             "sIndex": 1,
                             "id": "P7-S1",
-                            "text": "To adapt to battery voltage drop and payload variations without manual tuning, an online Normalized Least-Mean-Squares (NLMS) algorithm estimates control effectiveness G_1.",
+                            "text": "To adapt to battery voltage drop and payload variations without manual tuning, an online Normalized Least-Mean-Squares (NLMS) algorithm estimates control effectiveness $\\boldsymbol{G}_1$.",
                             "translation": "为了使控制器摆脱对离线参数测定的依赖并自适应电池电压下降与挂载变化，论文引入了基于归一化最小均方误差（NLMS）的在线自适应辨识算法。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P7-S2",
-                            "text": "The update law is: \\hat{G}_1(k+1) = \\hat{G}_1(k) + \\mu_1 e(k) [diag(\\omega_f) \\Delta \\omega_f]^T / (\\epsilon + ||diag(\\omega_f) \\Delta \\omega_f||^2), requiring minimal computation at 512 Hz.",
+                            "text": "The update law is: $\\hat{\\boldsymbol{G}}_1(k+1) = \\hat{\\boldsymbol{G}}_1(k) + \\boldsymbol{\\mu}_1 \\boldsymbol{e}(k) [\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f]^T / (\\epsilon + \|\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f\|^2)$, requiring minimal computation at 512 Hz.",
                             "translation": "控制效能矩阵更新律为：$\\hat{\\boldsymbol{G}}_1(k+1) = \\hat{\\boldsymbol{G}}_1(k) + \\boldsymbol{\\mu}_1 \\frac{\\boldsymbol{e}(k) [\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f]^T}{\\epsilon + \\|\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f\\|^2}$。该算法计算量极小（仅几条向量点乘），可在机载单片机上以 512 Hz 实时无延迟运行。"
                         }
                     ]
@@ -681,7 +681,7 @@ paper2_full = {
                         {
                             "sIndex": 3,
                             "id": "P8-S3",
-                            "text": "Compensating for rotor angular momentum I_r \\dot{\\omega} reduced yaw doublet rise time by 40%, resolving sluggish yaw response.",
+                            "text": "Compensating for rotor angular momentum $\\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}}$ reduced yaw doublet rise time by 40%, resolving sluggish yaw response.",
                             "translation": "显式补偿转子加速惯量力矩 $\\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}}$ 后，偏航 Doublet 指令的跟踪上升时间缩短了 **40%**，彻底解决了四旋翼“偏航软绵”的固有缺陷。"
                         }
                     ]
@@ -799,19 +799,19 @@ paper3_full = {
                         {
                             "sIndex": 1,
                             "id": "P3-S1",
-                            "text": "Following Fossen's standard equations, the 6-DOF underwater dynamics are: M \\dot{\\nu} + C(\\nu)\\nu + D(\\nu)\\nu + g(\\eta) = \\tau, and \\dot{\\eta} = J(\\eta)\\nu.",
+                            "text": "Following Fossen\'s standard equations, the 6-DOF underwater dynamics are: $\\boldsymbol{M} \\dot{\\boldsymbol{\\nu}} + \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta}) = \\boldsymbol{\\tau}$, and $\\dot{\\boldsymbol{\\eta}} = \\boldsymbol{J}(\\boldsymbol{\\eta})\\boldsymbol{\\nu}$.",
                             "translation": "根据 Fossen 海洋航行器动力学标准理论，6 自由度 AUV 动力学方程表示为：$\\boldsymbol{M}\\dot{\\boldsymbol{\\nu}} + \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta}) = \\boldsymbol{\\tau}$；$\\dot{\\boldsymbol{\\eta}} = \\boldsymbol{J}(\\boldsymbol{\\eta})\\boldsymbol{\\nu}$。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P3-S2",
-                            "text": "Here, M = M_{RB} + M_A combines rigid-body and hydrodynamic added mass, D(\\nu) = D_{lin} + D_{quad}(\\nu) includes quadratic damping, and g(\\eta) represents gravity/buoyancy restoring forces.",
+                            "text": "Here, $\\boldsymbol{M} = \\boldsymbol{M}_{RB} + \\boldsymbol{M}_A$ combines rigid-body and hydrodynamic added mass, $\\boldsymbol{D}(\\boldsymbol{\\nu}) = \\boldsymbol{D}_{lin} + \\boldsymbol{D}_{quad}(\\boldsymbol{\\nu})$ includes quadratic damping, and $\\boldsymbol{g}(\\boldsymbol{\\eta})$ represents gravity/buoyancy restoring forces.",
                             "translation": "其中 $\\boldsymbol{M} = \\boldsymbol{M}_{RB} + \\boldsymbol{M}_A$ 为刚体质量与水动力附加质量之和，$\\boldsymbol{D}(\\boldsymbol{\\nu})$ 包含线性与二次阻尼对角矩阵，$\\boldsymbol{g}(\\boldsymbol{\\eta})$ 为重力与浮力恢复力矩矢量。"
                         },
                         {
                             "sIndex": 3,
                             "id": "P3-S3",
-                            "text": "Model-based Feedback Linearization defines \\tau_{ref} = M a_{ref} + f(\\nu, \\eta), where f(\\nu, \\eta) = C(\\nu)\\nu + D(\\nu)\\nu + g(\\eta); any identification error in f directly corrupts decoupling.",
+                            "text": "Model-based Feedback Linearization defines $\\boldsymbol{\\tau}_{ref} = \\boldsymbol{M} \\boldsymbol{a}_{ref} + \\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta})$, where $\\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta}) = \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta})$; any identification error in $\\boldsymbol{f}$ directly corrupts decoupling.",
                             "translation": "经典基于模型的反馈线性化（FBL）控制律为：$\\boldsymbol{\\tau}_{ref} = \\boldsymbol{M} \\boldsymbol{a}_{ref} + \\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta})$，其中 $\\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta}) = \\boldsymbol{C}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{D}(\\boldsymbol{\\nu})\\boldsymbol{\\nu} + \\boldsymbol{g}(\\boldsymbol{\\eta})$。其本质缺陷在于一旦阻尼或恢复力矩存在微小辨识误差，就会施加错误推力引发持续漂移。"
                         }
                     ]
@@ -837,19 +837,19 @@ paper3_full = {
                         {
                             "sIndex": 1,
                             "id": "P4-S1",
-                            "text": "At high sampling frequencies (50-100 Hz), hydrodynamic changes between consecutive steps are negligible compared to thruster force increments: M \\dot{\\nu} \\approx M \\dot{\\nu}_0 + (\\tau - \\tau_0).",
+                            "text": "At high sampling frequencies (50-100 Hz), hydrodynamic changes between consecutive steps are negligible compared to thruster force increments: $\\boldsymbol{M} \\dot{\\boldsymbol{\\nu}} \\approx \\boldsymbol{M} \\dot{\\boldsymbol{\\nu}}_0 + (\\boldsymbol{\\tau} - \\boldsymbol{\\tau}_0)$.",
                             "translation": "由于控制回路采样频率高（50~100 Hz），在相邻采样间隔内航行器水动力变化相比执行机构推力增量是极小量：$\\boldsymbol{M}\\dot{\\boldsymbol{\\nu}} \\approx \\boldsymbol{M}\\dot{\\boldsymbol{\\nu}}_0 + (\\boldsymbol{\\tau} - \\boldsymbol{\\tau}_0)$。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P4-S2",
-                            "text": "Replacing with filtered acceleration \\dot{\\nu}_f and thruster force \\tau_f yields the core INDI law: \\tau_{ref} = \\tau_f + M(a_{ref} - \\dot{\\nu}_f).",
+                            "text": "Replacing with filtered acceleration $\\dot{\\boldsymbol{\\nu}}_f$ and thruster force $\\boldsymbol{\\tau}_f$ yields the core INDI law: $\\boldsymbol{\\tau}_{ref} = \\boldsymbol{\\tau}_f + \\boldsymbol{M}(\\boldsymbol{a}_{ref} - \\dot{\\boldsymbol{\\nu}}_f)$.",
                             "translation": "用滤波传感器实测加速度 $\\dot{\\boldsymbol{\\nu}}_f$ 和推进器推力 $\\boldsymbol{\\tau}_f$ 替代，推导得出 **水下 INDI 控制律**：$\\boldsymbol{\\tau}_{ref} = \\boldsymbol{\\tau}_f + \\boldsymbol{M} (\\boldsymbol{a}_{ref} - \\dot{\\boldsymbol{\\nu}}_f)$。"
                         },
                         {
                             "sIndex": 3,
                             "id": "P4-S3",
-                            "text": "Crucially, this equation contains zero terms of damping D(\\nu), Coriolis C(\\nu), or restoring g(\\eta), reducing the entire parameter tuning burden to merely the inertia matrix M.",
+                            "text": "Crucially, this equation contains zero terms of damping $\\boldsymbol{D}(\\boldsymbol{\\nu})$, Coriolis $\\boldsymbol{C}(\\boldsymbol{\\nu})$, or restoring $\\boldsymbol{g}(\\boldsymbol{\\eta})$, reducing the entire parameter tuning burden to merely the inertia matrix $\\boldsymbol{M}$.",
                             "translation": "核心优势：整个公式中**完全不包含阻尼 $\\boldsymbol{D}(\\boldsymbol{\\nu})$、科氏力 $\\boldsymbol{C}(\\boldsymbol{\\nu})$ 和恢复力 $\\boldsymbol{g}(\\boldsymbol{\\eta})$！** 将水下建模负担缩减至仅需一个惯性矩阵 $\\boldsymbol{M}$。"
                         }
                     ]
@@ -862,13 +862,13 @@ paper3_full = {
                         {
                             "sIndex": 1,
                             "id": "P5-S1",
-                            "text": "Thruster allocation maps 6-DOF wrench \\tau_{ref} to 8 thruster commands u via weighted Moore-Penrose pseudoinverse: u = B^T (B B^T)^-1 \\tau_{ref}.",
+                            "text": "Thruster allocation maps 6-DOF wrench $\\boldsymbol{\\tau}_{ref}$ to 8 thruster commands $\\boldsymbol{u}$ via weighted Moore-Penrose pseudoinverse: $\\boldsymbol{u} = \\boldsymbol{B}^T (\\boldsymbol{B} \\boldsymbol{B}^T)^{-1} \\boldsymbol{\\tau}_{ref}$.",
                             "translation": "推进器控制分配通过加权 Moore-Penrose 伪逆将 6 自由度力矩指令分配给 8 个推进器：$\\boldsymbol{u} = \\boldsymbol{B}^T (\\boldsymbol{B} \\boldsymbol{B}^T)^{-1} \\boldsymbol{\\tau}_{ref}$。"
                         },
                         {
                             "sIndex": 2,
                             "id": "P5-S2",
-                            "text": "To prevent Gimbal Lock singularity at 90-degree pitch, the outer attitude loop uses an SO(3) Lie Group error formulation: \\omega_{ref} = K_\\Omega \\sum e_i \\times (R_d^T R e_i).",
+                            "text": "To prevent Gimbal Lock singularity at 90-degree pitch, the outer attitude loop uses an SO(3) Lie Group error formulation: $\\boldsymbol{\\omega}_{ref} = \\boldsymbol{K}_\\Omega \\sum \\boldsymbol{e}_i \\times (\\boldsymbol{R}_d^T \\boldsymbol{R} \\boldsymbol{e}_i)$.",
                             "translation": "为了消除 90° 俯仰翻转中的万向节死锁奇异性，姿态外环采用基于李群 $SO(3)$ 旋转矩阵的姿态误差控制律：$\\boldsymbol{\\omega}_{ref}(\\boldsymbol{R}, \\boldsymbol{R}_d) = \\boldsymbol{K}_\\Omega \\sum_{i=1}^3 \\boldsymbol{e}_i \\times (\\boldsymbol{R}_d^T \\boldsymbol{R} \\boldsymbol{e}_i)$。"
                         }
                     ]

@@ -329,6 +329,7 @@
   border-left: 3px solid transparent;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1.85;
+  cursor: pointer;
 }
 
 .sentence-item:hover {
@@ -365,10 +366,12 @@
   display: none;
 }
 
+.passage-pane.show-all-trans .sentence-trans,
+.english-app-layout.show-all-trans .sentence-trans,
 .show-all-trans .sentence-trans,
 .sentence-item.show-trans .sentence-trans {
-  display: block;
-  animation: fadeIn 0.2s ease;
+  display: block !important;
+  animation: fadeIn 0.18s ease;
 }
 
 /* 句子高亮状态 */
@@ -1689,6 +1692,7 @@
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
   line-height: 1.95;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
@@ -1706,12 +1710,21 @@
 }
 
 .english-app-layout.mode-reader-layout .sentence-trans {
+  display: none;
   margin-top: 10px;
   padding-top: 10px;
   font-size: 14px;
   line-height: 1.7;
   color: var(--text-secondary);
   border-top: 1px dashed var(--border-color);
+}
+
+.english-app-layout.mode-reader-layout .passage-pane.show-all-trans .sentence-trans,
+.english-app-layout.mode-reader-layout.show-all-trans .sentence-trans,
+.english-app-layout.mode-reader-layout .show-all-trans .sentence-trans,
+.english-app-layout.mode-reader-layout .sentence-item.show-trans .sentence-trans {
+  display: block !important;
+  animation: fadeIn 0.18s ease;
 }
 
 /* 暗色主题适配 */

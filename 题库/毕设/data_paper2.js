@@ -259,7 +259,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 3,
               "id": "P3-S3",
-              "text": "INDI breaks this bottleneck by utilizing IMU measured angular acceleration dot_Omega_0 as the baseline point, simplifying dynamic inversion into control input increments Delta dot_Omega = G_1 Delta u.",
+              "text": "INDI breaks this bottleneck by utilizing IMU measured angular acceleration $\\dot{\\boldsymbol{\\Omega}}_0$ as the baseline point, simplifying dynamic inversion into control input increments $\\Delta \\dot{\\boldsymbol{\\Omega}} = \\boldsymbol{G}_1 \\Delta \\boldsymbol{u}$.",
               "translation": "增量非线性动态逆（INDI）的破局理念：不依赖对未知非线性函数的离线预先计算，而是直接利用 IMU 传感器测得的角加速度 $\\dot{\\boldsymbol{\\Omega}}_0$ 作为基准点，通过泰勒级数展开将动力学逆解简化为控制输入的增量映射 $\\Delta \\dot{\\boldsymbol{\\Omega}} = \\boldsymbol{G}_1 \\Delta \\boldsymbol{u}$。",
               "vocab": [
                 {
@@ -323,7 +323,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 1,
               "id": "P4-S1",
-              "text": "Quadrotor rotational dynamics are described by Euler's equation: I_v \\dot{\\Omega} + \\Omega \\times (I_v \\Omega) = M_a(\\Omega, v) + M_c - M_r.",
+              "text": "Quadrotor rotational dynamics are described by Euler's equation: $\\boldsymbol{I}_v \\dot{\\boldsymbol{\\Omega}} + \\boldsymbol{\\Omega} \\times (\\boldsymbol{I}_v \\boldsymbol{\\Omega}) = \\boldsymbol{M}_a(\\boldsymbol{\\Omega}, \\boldsymbol{v}) + \\boldsymbol{M}_c - \\boldsymbol{M}_r$.",
               "translation": "四旋翼飞行器的转动动力学由欧拉方程给出：$\\boldsymbol{I}_v \\dot{\\boldsymbol{\\Omega}} + \\boldsymbol{\\Omega} \\times (\\boldsymbol{I}_v \\boldsymbol{\\Omega}) = \\boldsymbol{M}_a(\\boldsymbol{\\Omega}, \\boldsymbol{v}) + \\boldsymbol{M}_c - \\boldsymbol{M}_r$。",
               "vocab": [
                 {
@@ -349,7 +349,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 2,
               "id": "P4-S2",
-              "text": "Here, control moment is M_c = M_{c,matrix} \\omega^2, and propeller gyroscopic and acceleration torque is M_r = I_r \\dot{\\omega} + \\Omega \\times I_r \\omega.",
+              "text": "Here, control moment is $\\boldsymbol{M}_c = \\boldsymbol{M}_{c,\\text{matrix}} \\boldsymbol{\\omega}^2$, and propeller gyroscopic and acceleration torque is $\\boldsymbol{M}_r = \\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}} + \\boldsymbol{\\Omega} \\times \\boldsymbol{I}_r \\boldsymbol{\\omega}$.",
               "translation": "其中控制力矩为 $\\boldsymbol{M}_c = \\boldsymbol{M}_{c,\\text{matrix}} \\boldsymbol{\\omega}^2$，螺旋桨自旋与加减速反扭矩为 $\\boldsymbol{M}_r = \\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}} + \\boldsymbol{\\Omega} \\times \\boldsymbol{I}_r \\boldsymbol{\\omega}$。",
               "vocab": [
                 {
@@ -394,7 +394,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 1,
               "id": "P5-S1",
-              "text": "Applying a first-order Taylor expansion around previous step (\\Omega_0, \\omega_0) and replacing physical model terms with measured \\dot{\\Omega}_0 yields: \\dot{\\Omega} \\approx \\dot{\\Omega}_0 + G_1 diag(\\omega_0)(\\omega - \\omega_0) + G_2(\\dot{\\omega} - \\dot{\\omega}_0).",
+              "text": "Applying a first-order Taylor expansion around previous step $(\\boldsymbol{\\Omega}_0, \\boldsymbol{\\omega}_0)$ and replacing physical model terms with measured $\\dot{\\boldsymbol{\\Omega}}_0$ yields: $\\dot{\\boldsymbol{\\Omega}} \\approx \\dot{\\boldsymbol{\\Omega}}_0 + \\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_0)(\\boldsymbol{\\omega} - \\boldsymbol{\\omega}_0) + \\boldsymbol{G}_2(\\dot{\\boldsymbol{\\omega}} - \\dot{\\boldsymbol{\\omega}}_0)$.",
               "translation": "在上一时刻采样点 $(\\boldsymbol{\\Omega}_0, \\boldsymbol{\\omega}_0)$ 附近进行一阶泰勒展开，并利用传感器测量的实际角加速度 $\\dot{\\boldsymbol{\\Omega}}_0$ 替代非线性物理模型项，得到 **INDI 核心增量方程**：$\\dot{\\boldsymbol{\\Omega}} \\approx \\dot{\\boldsymbol{\\Omega}}_0 + \\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_0)(\\boldsymbol{\\omega} - \\boldsymbol{\\omega}_0) + \\boldsymbol{G}_2(\\dot{\\boldsymbol{\\omega}} - \\dot{\\boldsymbol{\\omega}}_0)$。",
               "vocab": [
                 {
@@ -434,7 +434,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 1,
               "id": "P6-S1",
-              "text": "Gyro differentiation followed by a second-order Butterworth low-pass filter H(z) creates phase lag, causing \\dot{\\Omega}_f to reflect past motor inputs and inducing severe limit-cycle oscillations.",
+              "text": "Gyro differentiation followed by a second-order Butterworth low-pass filter $H(z)$ creates phase lag, causing $\\dot{\\boldsymbol{\\Omega}}_f$ to reflect past motor inputs and inducing severe limit-cycle oscillations.",
               "translation": "陀螺仪差分信号经过二阶巴特沃斯低通滤波器 $H(z)$ 以滤除电机高频震动，这引入了不可忽视的时间滞后；传感器测得的角加速度 $\\dot{\\boldsymbol{\\Omega}}_f$ 实际反映的是过去时刻的电机转速，直接控制会导致回路自激剧烈震荡。",
               "vocab": [
                 {
@@ -484,7 +484,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 2,
               "id": "P6-S2",
-              "text": "To eliminate phase mismatch, we route the actuator command through a matched filter channel \\omega_f, formulating the synchronized virtual control law: \\omega_c = \\omega_f + [G_1 diag(\\omega_f)]^\\dagger (\\nu - \\dot{\\Omega}_f).",
+              "text": "To eliminate phase mismatch, we route the actuator command through a matched filter channel $\\boldsymbol{\\omega}_f$, formulating the synchronized virtual control law: $\\boldsymbol{\\omega}_c = \\boldsymbol{\\omega}_f + [\\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_f)]^\\dagger (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_f)$.",
               "translation": "为了消除相位失配引起的自激振荡，论文提出将执行机构控制量引入对称滤波通道：$\\boldsymbol{\\omega}_c = \\boldsymbol{\\omega}_f + [\\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_f)]^\\dagger (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_f)$。该结构在数学上保证了穿越频率处的相位裕度，彻底根除了未补偿 INDI 的极限环振荡。",
               "vocab": [
                 {
@@ -536,7 +536,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 1,
               "id": "P7-S1",
-              "text": "To adapt to battery voltage drop and payload variations without manual tuning, an online Normalized Least-Mean-Squares (NLMS) algorithm estimates control effectiveness G_1.",
+              "text": "To adapt to battery voltage drop and payload variations without manual tuning, an online Normalized Least-Mean-Squares (NLMS) algorithm estimates control effectiveness $\\boldsymbol{G}_1$.",
               "translation": "为了使控制器摆脱对离线参数测定的依赖并自适应电池电压下降与挂载变化，论文引入了基于归一化最小均方误差（NLMS）的在线自适应辨识算法。",
               "vocab": [
                 {
@@ -568,7 +568,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 2,
               "id": "P7-S2",
-              "text": "The update law is: \\hat{G}_1(k+1) = \\hat{G}_1(k) + \\mu_1 e(k) [diag(\\omega_f) \\Delta \\omega_f]^T / (\\epsilon + ||diag(\\omega_f) \\Delta \\omega_f||^2), requiring minimal computation at 512 Hz.",
+              "text": "The update law is: $\\hat{\\boldsymbol{G}}_1(k+1) = \\hat{\\boldsymbol{G}}_1(k) + \\boldsymbol{\\mu}_1 \\boldsymbol{e}(k) [\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f]^T / (\\epsilon + \\|\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f\\|^2)$, requiring minimal computation at 512 Hz.",
               "translation": "控制效能矩阵更新律为：$\\hat{\\boldsymbol{G}}_1(k+1) = \\hat{\\boldsymbol{G}}_1(k) + \\boldsymbol{\\mu}_1 \\frac{\\boldsymbol{e}(k) [\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f]^T}{\\epsilon + \\|\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f\\|^2}$。该算法计算量极小（仅几条向量点乘），可在机载单片机上以 512 Hz 实时无延迟运行。",
               "vocab": []
             }
@@ -632,7 +632,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 3,
               "id": "P8-S3",
-              "text": "Compensating for rotor angular momentum I_r \\dot{\\omega} reduced yaw doublet rise time by 40%, resolving sluggish yaw response.",
+              "text": "Compensating for rotor angular momentum $\\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}}$ reduced yaw doublet rise time by 40%, resolving sluggish yaw response.",
               "translation": "显式补偿转子加速惯量力矩 $\\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}}$ 后，偏航 Doublet 指令的跟踪上升时间缩短了 **40%**，彻底解决了四旋翼“偏航软绵”的固有缺陷。",
               "vocab": [
                 {

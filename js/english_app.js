@@ -796,17 +796,7 @@
           `;
 
           (p.sentences || []).forEach(s => {
-            let sentenceText = escapeHtml(s.text);
-
-            if (s.vocab && s.vocab.length > 0) {
-              s.vocab.forEach(v => {
-                const regex = new RegExp(`\\b(${escapeRegExp(v.word)})\\b`, 'gi');
-                sentenceText = sentenceText.replace(regex, (match) => {
-                  const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
-                  return `<span class="vocab-word level-${lvl}" data-word="${escapeHtml(v.word)}" data-ipa="${escapeHtml(v.ipa || '')}" data-meaning="${escapeHtml(v.meaning || '')}">${match}</span>`;
-                });
-              });
-            }
+            const sentenceText = renderAnnotatedSentenceText(s.text, s.vocab);
 
             html += `
               <div class="sentence-item" id="sentence-${s.id}" data-id="${s.id}">
@@ -844,6 +834,9 @@
 
       if (dom.passagePane) {
         dom.passagePane.classList.toggle('show-all-trans', !!state.showAllTranslation);
+      }
+      if (dom.layout) {
+        dom.layout.classList.toggle('show-all-trans', !!state.showAllTranslation);
       }
       if (dom.btnToggleTrans) {
         dom.btnToggleTrans.classList.toggle('active', !!state.showAllTranslation);
@@ -896,17 +889,7 @@
       `;
 
       (p.sentences || []).forEach(s => {
-        let sentenceText = escapeHtml(s.text);
-
-        if (s.vocab && s.vocab.length > 0) {
-          s.vocab.forEach(v => {
-            const regex = new RegExp(`\\b(${escapeRegExp(v.word)})\\b`, 'gi');
-            sentenceText = sentenceText.replace(regex, (match) => {
-              const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
-              return `<span class="vocab-word level-${lvl}" data-word="${escapeHtml(v.word)}" data-ipa="${escapeHtml(v.ipa || '')}" data-meaning="${escapeHtml(v.meaning || '')}">${match}</span>`;
-            });
-          });
-        }
+        const sentenceText = renderAnnotatedSentenceText(s.text, s.vocab);
 
         html += `
           <div class="sentence-item ${s.isTopicSentence ? 'is-topic' : ''}" id="sentence-${s.id}" data-id="${s.id}">
@@ -1624,6 +1607,94 @@
 
   function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // 安全渲染带有数学公式与生词高亮的句子（基于非重叠区间与公式保护，彻底杜绝 HTML 属性污染、标签破坏与乱码）
+  function renderAnnotatedSentenceText(rawText, vocabList) {
+    if (!rawText) return '';
+    
+    // 1. 提取并保护所有 LaTeX 数学公式 ($...$, $$...$$, \[...\], \(...\))
+    const mathPlaceholders = [];
+    let safeText = rawText.replace(/(\$\$[\s\S]*?\$\$|\$[^\$]+?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g, (m) => {
+      const idx = mathPlaceholders.length;
+      mathPlaceholders.push(m);
+      return `___MATH_PH_${idx}___`;
+    });
+
+    if (!vocabList || vocabList.length === 0) {
+      safeText = escapeHtml(safeText);
+      return safeText.replace(/___MATH_PH_(\d+)___/g, (m, idx) => mathPlaceholders[parseInt(idx, 10)] || '');
+    }
+
+    // 2. 标记所有数学占位符位置为占用，禁止单词替换命中占位符内部
+    const sortedVocab = [...vocabList].sort((a, b) => (b.word.length - a.word.length));
+    const occupied = new Uint8Array(safeText.length);
+    
+    const phRegex = /___MATH_PH_\d+___/g;
+    let phMatch;
+    while ((phMatch = phRegex.exec(safeText)) !== null) {
+      for (let i = phMatch.index; i < phMatch.index + phMatch[0].length; i++) {
+        occupied[i] = 1;
+      }
+    }
+
+    const matches = [];
+
+    // 3. 寻找所有匹配区间（长词优先），杜绝嵌套与属性破坏
+    sortedVocab.forEach(v => {
+      if (!v.word) return;
+      const wordEsc = escapeRegExp(v.word);
+      const regex = new RegExp(`(?<![a-zA-Z0-9_])(${wordEsc})(?![a-zA-Z0-9_])`, 'gi');
+      let m;
+      while ((m = regex.exec(safeText)) !== null) {
+        const start = m.index;
+        const end = start + m[0].length;
+        
+        let hasOverlap = false;
+        for (let i = start; i < end; i++) {
+          if (occupied[i]) {
+            hasOverlap = true;
+            break;
+          }
+        }
+
+        if (!hasOverlap) {
+          for (let i = start; i < end; i++) occupied[i] = 1;
+          matches.push({
+            start,
+            end,
+            rawText: m[0],
+            vocab: v
+          });
+        }
+      }
+    });
+
+    // 4. 按起始位置升序排列，单趟线性拼接 HTML
+    matches.sort((a, b) => a.start - b.start);
+    
+    let result = '';
+    let lastIdx = 0;
+    matches.forEach(item => {
+      if (item.start > lastIdx) {
+        result += escapeHtml(safeText.slice(lastIdx, item.start));
+      }
+      const v = item.vocab;
+      const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
+      result += `<span class="vocab-word level-${escapeHtml(lvl)}" data-word="${escapeHtml(v.word)}" data-ipa="${escapeHtml(v.ipa || '')}" data-meaning="${escapeHtml(v.meaning || '')}">${escapeHtml(item.rawText)}</span>`;
+      lastIdx = item.end;
+    });
+
+    if (lastIdx < safeText.length) {
+      result += escapeHtml(safeText.slice(lastIdx));
+    }
+
+    // 5. 还原 LaTeX 数学公式
+    result = result.replace(/___MATH_PH_(\d+)___/g, (m, idx) => {
+      return mathPlaceholders[parseInt(idx, 10)] || '';
+    });
+
+    return result;
   }
 
   window.englishApp = {
