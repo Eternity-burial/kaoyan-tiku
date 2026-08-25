@@ -1558,22 +1558,22 @@
       const mathLayout = document.getElementById('mathAppLayout') || document.querySelector('.app-layout');
       const engLayout = document.getElementById('englishAppLayout');
 
-      if (subjectId === 'english') {
+      if (subjectId === 'english' || subjectId === 'bishe' || (subj && subj.type === 'english')) {
         autoSaveNotes();
         if (reviewSession) exitReviewSession();
         saveResume();
-        curSubjectId = 'english';
-        window.curSubjectId = 'english';
+        curSubjectId = subjectId;
+        window.curSubjectId = subjectId;
         curSubject = subj;
-        localStorage.setItem('kaoyan_subject', 'english');
+        localStorage.setItem('kaoyan_subject', subjectId);
         if (mathLayout) mathLayout.style.display = 'none';
         if (engLayout) engLayout.style.display = 'flex';
-        if (window.kyApp && window.kyApp.activate) window.kyApp.activate();
+        if (window.kyApp && window.kyApp.activate) window.kyApp.activate(subjectId);
         closeSubjectPicker();
         return;
       }
 
-      if (curSubjectId === 'english' && window.kyApp && window.kyApp.saveResume) {
+      if ((curSubjectId === 'english' || curSubjectId === 'bishe' || (curSubject && curSubject.type === 'english')) && window.kyApp && window.kyApp.saveResume) {
         window.kyApp.saveResume();
       }
       if (engLayout) engLayout.style.display = 'none';
@@ -5603,11 +5603,11 @@ ${cardsHTML}
     curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'shu1';
     window.curSubjectId = curSubjectId;
     
-    if (curSubjectId === 'english') {
-      curSubject = SUBJECTS.find(function (s) { return s.id === 'english'; });
+    if (curSubjectId === 'english' || curSubjectId === 'bishe') {
+      curSubject = SUBJECTS.find(function (s) { return s.id === curSubjectId; });
       CHAPTERS = [];
       document.addEventListener('DOMContentLoaded', function () {
-        switchSubject('english');
+        switchSubject(curSubjectId);
       });
     } else {
       curSubject = SUBJECTS.find(function (s) { return s.id === curSubjectId; });

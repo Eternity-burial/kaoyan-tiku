@@ -594,5 +594,11 @@
         wbOrder: [{ wb: '2010真题', label: '2010真题' }],
         subjOrder: ['阅读精读'],
         chapters: []
+      },
+      {
+        id: 'bishe', name: '毕设', storageSuffix: 'bishe', type: 'english',
+        wbOrder: [{ wb: '文献精读', label: '文献精读' }],
+        subjOrder: ['前沿控制文献'],
+        chapters: []
       }
     ]

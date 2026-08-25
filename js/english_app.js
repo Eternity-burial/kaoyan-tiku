@@ -9,6 +9,7 @@
 
   // 全局状态
   const state = {
+    currentSubject: 'english', // 'english' (考研英语) | 'bishe' (毕设文献)
     currentYear: '2010',
     currentTextId: 'text1',
     currentQIndex: 21,
@@ -203,10 +204,21 @@
 
   // 所有真题年份清单 (1998 ~ 2026)
   const ALL_ENGLISH_YEARS = Array.from({ length: 29 }, (_, i) => String(1998 + i));
+  const BISHE_PAPERS = [
+    { id: 'paper1', name: '文献 1: 四旋翼敏捷飞行 NMPC vs DFBC (IEEE T-RO 2022)', short: '文献 1', title: '文献 1: 四旋翼敏捷飞行 NMPC vs DFBC' },
+    { id: 'paper2', name: '文献 2: 微型飞行器自适应INDI姿态控制 (AIAA JGCD 2016)', short: '文献 2', title: '文献 2: 微型飞行器自适应INDI' },
+    { id: 'paper3', name: '文献 3: 水下特技作业AUV Cuttlefish姿态控制 (IEEE/DFKI 2022)', short: '文献 3', title: '文献 3: 水下特技作业AUV' }
+  ];
   const loadingYears = new Map();
 
   // 动态异步按需加载指定年份的真题数据 (支持 local file:// 与 http://)
   function loadYearDataAsync(year) {
+    if (state.currentSubject === 'bishe') {
+      if (window.BISHE_DATA && window.BISHE_DATA[year]) {
+        return Promise.resolve(window.BISHE_DATA[year]);
+      }
+      return Promise.resolve({ texts: [] });
+    }
     if (window.ENGLISH_DATA && window.ENGLISH_DATA[year]) {
       return Promise.resolve(window.ENGLISH_DATA[year]);
     }
@@ -230,13 +242,28 @@
     return p;
   }
 
-  // 获取所有支持的真题年份
+  // 获取所有支持的真题年份或文献列表
   function getAvailableYears() {
+    if (state.currentSubject === 'bishe') {
+      return BISHE_PAPERS.map(p => p.id);
+    }
     return ALL_ENGLISH_YEARS;
   }
 
-  // 获取当前选定年份的数据集
+  // 获取当前选定年份/文献的数据集
   function getCurrentDataset() {
+    if (state.currentSubject === 'bishe') {
+      if (!window.BISHE_DATA) return { texts: [] };
+      if (window.BISHE_DATA[state.currentYear]) {
+        return window.BISHE_DATA[state.currentYear];
+      }
+      const pKeys = Object.keys(window.BISHE_DATA);
+      if (pKeys.length > 0) {
+        state.currentYear = pKeys[0];
+        return window.BISHE_DATA[pKeys[0]];
+      }
+      return { texts: [] };
+    }
     if (!window.ENGLISH_DATA) return { texts: [] };
     if (window.ENGLISH_DATA[state.currentYear]) {
       return window.ENGLISH_DATA[state.currentYear];
@@ -262,9 +289,11 @@
     return text.questions.find(q => q.qIndex === state.currentQIndex) || text.questions[0];
   }
 
-  // 状态记忆与恢复 (年份 + 章节 + 题目 + 模式 + 筛选 + 译文显示)
+  // 状态记忆与恢复 (按科目独立持久化)
   function saveResume() {
+    const subjKey = state.currentSubject || 'english';
     const data = {
+      subject: subjKey,
       year: state.currentYear,
       textId: state.currentTextId,
       qIndex: state.currentQIndex,
@@ -279,24 +308,24 @@
     }
 
     try {
-      localStorage.setItem('kaoyan_resume_english', JSON.stringify(data));
-      localStorage.setItem('ky_english_mode', state.mode);
-      // 按年份独立记忆上次停的 Text + 题目（切年份时恢复，而不是每次都回到第1篇第1题）
-      const yearKey = `kaoyan_resume_english_y${state.currentYear}`;
+      localStorage.setItem(`kaoyan_resume_${subjKey}`, JSON.stringify(data));
+      localStorage.setItem(`ky_${subjKey}_mode`, state.mode);
+      const yearKey = `kaoyan_resume_${subjKey}_y${state.currentYear}`;
       localStorage.setItem(yearKey, JSON.stringify({ textId: state.currentTextId, qIndex: state.currentQIndex }));
       let map = {};
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      map['english'] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear, mode: state.mode };
+      map[subjKey] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear, mode: state.mode };
       localStorage.setItem('kaoyan_resume', JSON.stringify(map));
       notifyStorageSync();
     } catch (e) {}
   }
 
   function loadResume() {
+    const subjKey = state.currentSubject || 'english';
     try {
-      const saved = JSON.parse(localStorage.getItem('kaoyan_resume_english'));
+      const saved = JSON.parse(localStorage.getItem(`kaoyan_resume_${subjKey}`));
       if (saved) {
-        if (saved.year && window.ENGLISH_DATA && window.ENGLISH_DATA[saved.year]) {
+        if (saved.year) {
           state.currentYear = saved.year;
         }
         const dataset = getCurrentDataset();
@@ -317,7 +346,12 @@
         if (saved.typeFilter) state.typeFilter = saved.typeFilter;
         if (typeof saved.showAllTranslation === 'boolean') state.showAllTranslation = saved.showAllTranslation;
       } else {
-        const savedMode = localStorage.getItem('ky_english_mode');
+        if (subjKey === 'bishe') {
+          state.currentYear = 'paper1';
+        } else {
+          state.currentYear = '2010';
+        }
+        const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);
         if (savedMode && (savedMode === 'analysis' || savedMode === 'practice')) {
           state.mode = savedMode;
         }
@@ -382,23 +416,41 @@
     }
   }
 
-  // 加载当前年份的掌握度与笔记
+  // 加载当前年份/文献的掌握度与笔记
   function loadYearStorage() {
+    const subjKey = state.currentSubject || 'english';
     try {
-      state.mastery = JSON.parse(localStorage.getItem(`ky_english_mastery_${state.currentYear}`) || '{}');
-      state.notes = JSON.parse(localStorage.getItem(`ky_english_notes_${state.currentYear}`) || '{}');
+      state.mastery = JSON.parse(localStorage.getItem(`ky_${subjKey}_mastery_${state.currentYear}`) || '{}');
+      state.notes = JSON.parse(localStorage.getItem(`ky_${subjKey}_notes_${state.currentYear}`) || '{}');
     } catch (e) {
       state.mastery = {};
       state.notes = {};
     }
   }
 
-
-  // 渲染年份标题下拉面板（与数学题库 title-dropdown 风格一致）
+  // 渲染年份/文献标题下拉面板
   function renderYearSelector() {
     if (!dom.txtYear || !dom.panelYear) return;
-    dom.txtYear.textContent = `${state.currentYear} 年真题`;
+    if (state.currentSubject === 'bishe') {
+      const curP = BISHE_PAPERS.find(p => p.id === state.currentYear) || BISHE_PAPERS[0];
+      dom.txtYear.textContent = curP.name;
 
+      dom.panelYear.innerHTML = '';
+      BISHE_PAPERS.forEach(p => {
+        const btn = document.createElement('button');
+        btn.className = `title-option ${p.id === state.currentYear ? 'active' : ''}`;
+        btn.textContent = p.name;
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          closeYearDropdown();
+          switchYear(p.id);
+        };
+        dom.panelYear.appendChild(btn);
+      });
+      return;
+    }
+
+    dom.txtYear.textContent = `${state.currentYear} 年真题`;
     const years = getAvailableYears();
     dom.panelYear.innerHTML = '';
     years.forEach(y => {
@@ -434,9 +486,10 @@
     if (dom.panelYear) dom.panelYear.classList.remove('open');
   }
 
-  // 切换年份：恢复该年上次停的位置（无记录则从第1篇第1题开始）
+  // 切换年份/文献：恢复该项上次停的位置
   async function switchYear(year) {
-    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) {
+    const isBishe = state.currentSubject === 'bishe';
+    if (!isBishe && (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year])) {
       if (dom.passagePane) {
         dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;">正在加载 ${year} 年真题精读数据...</div>`;
       }
@@ -454,10 +507,9 @@
 
     const dataset = getCurrentDataset();
     if (dataset.texts && dataset.texts.length > 0) {
-      // 尝试恢复该年的上次阅读位置
       let restored = false;
       try {
-        const yearKey = `kaoyan_resume_english_y${year}`;
+        const yearKey = `kaoyan_resume_${state.currentSubject}_y${year}`;
         const saved = JSON.parse(localStorage.getItem(yearKey));
         if (saved) {
           const text = dataset.texts.find(t => t.id === saved.textId);
@@ -472,7 +524,6 @@
           }
         }
       } catch (e) {}
-      // 无记录则默认落在第1篇第1题
       if (!restored) {
         state.currentTextId = dataset.texts[0].id;
         const firstQ = dataset.texts[0].questions;
@@ -490,6 +541,17 @@
     updateSolutionUI();
   }
 
+  // 打开原图全屏预览 (复用 lightbox 弹窗)
+  function openFigureLightbox(src) {
+    if (!src) return;
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    if (lb && img) {
+      img.src = src;
+      lb.classList.add('open');
+    }
+  }
+
   // 初始化应用
   async function init() {
     initDom();
@@ -500,8 +562,7 @@
     loadResume();
     loadSolutionPref();
 
-    // 动态异步载入初始年份数据
-    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear]) {
+    if (state.currentSubject === 'english' && (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear])) {
       if (dom.passagePane) {
         dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${state.currentYear} 年真题精读数据...</div>`;
       }
@@ -524,14 +585,25 @@
     updateModeClass();
   }
 
-  async function activate() {
+  async function activate(subjectId = 'english') {
+    state.currentSubject = subjectId;
     initDom();
+    if (state.currentSubject === 'bishe') {
+      if (!state.currentYear || !state.currentYear.startsWith('paper')) {
+        state.currentYear = 'paper1';
+      }
+    } else {
+      if (!state.currentYear || state.currentYear.startsWith('paper')) {
+        state.currentYear = '2010';
+      }
+    }
+
     if (!state.initialized) {
       await init();
     } else {
       loadResume();
       loadSolutionPref();
-      if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear]) {
+      if (state.currentSubject === 'english' && (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear])) {
         if (dom.passagePane) {
           dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${state.currentYear} 年真题精读数据...</div>`;
         }
@@ -635,6 +707,16 @@
       return;
     }
 
+    let figureHtml = '';
+    if (text.figure && text.figure.image) {
+      figureHtml = `
+        <div class="passage-figure-box">
+          <img src="${escapeHtml(text.figure.image)}" alt="${escapeHtml(text.figure.alt || '')}" onclick="window.kyApp.openFigureLightbox('${escapeHtml(text.figure.image)}')" class="passage-figure-img" title="点击放大查看高清图表">
+          <div class="passage-figure-caption">${escapeHtml(text.figure.caption || '')}</div>
+        </div>
+      `;
+    }
+
     let html = `
       <div class="passage-header-box">
         <span class="passage-topic-tag">${escapeHtml(text.topic)}</span>
@@ -644,6 +726,7 @@
           <strong>【文章主旨精要】</strong> ${escapeHtml(text.overview)}
         </div>
       </div>
+      ${figureHtml}
     `;
 
     (text.paragraphs || []).forEach(p => {
@@ -688,6 +771,20 @@
     });
 
     dom.passagePane.innerHTML = html;
+
+    if (window.renderMathInElement) {
+      try {
+        window.renderMathInElement(dom.passagePane, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false }
+          ],
+          throwOnError: false
+        });
+      } catch (e) {}
+    }
 
     attachPassageEvents();
     if (state.mode === 'analysis') {
@@ -816,6 +913,20 @@
       } else {
         dom.reflectionCard.style.display = 'none';
       }
+    }
+
+    if (window.renderMathInElement && dom.analysisPane) {
+      try {
+        window.renderMathInElement(dom.analysisPane, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false }
+          ],
+          throwOnError: false
+        });
+      } catch (e) {}
     }
   }
 
@@ -1380,6 +1491,7 @@
     toggleStarWord,
     openVocabNotebook,
     closeVocabNotebook,
+    openFigureLightbox,
     get state() { return state; },
     get curDataset() { return getCurrentDataset(); }
   };
