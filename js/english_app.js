@@ -662,32 +662,9 @@
     const dataset = getCurrentDataset();
 
     if (state.currentSubject === 'bishe') {
-      // 毕设文献阅读器：渲染章节快速锚点导航胶囊（紧凑精简）
+      // 毕设文献阅读器：无需顶部碎片化标签
       dom.textTabs.innerHTML = '';
-      if (!dataset.sections || dataset.sections.length === 0) {
-        dom.textTabs.style.display = 'none';
-        return;
-      }
-      dom.textTabs.style.display = 'flex';
-      dataset.sections.forEach(sec => {
-        const btn = document.createElement('button');
-        btn.className = 'section-nav-pill';
-        let label = (sec.chineseTitle || '').replace(/^[一二三四五六七八九十0-9]+[、.：\s]*/, '').replace(/：.*$/, '').trim();
-        if (sec.sectionNumber === '摘要' || !sec.sectionNumber) {
-          label = '摘要';
-        } else {
-          label = `${sec.sectionNumber}. ${label.slice(0, 5)}`;
-        }
-        btn.textContent = label;
-        btn.title = `${sec.sectionNumber} ${sec.chineseTitle}`;
-        btn.onclick = () => {
-          const el = document.getElementById(sec.id);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        };
-        dom.textTabs.appendChild(btn);
-      });
+      dom.textTabs.style.display = 'none';
       return;
     }
 
@@ -769,10 +746,10 @@
       }
 
       let html = `
-        <div class="passage-header-box" style="margin-bottom: 24px;">
+        <div class="passage-header-box" style="margin-bottom: 28px;">
           <span class="passage-topic-tag">${escapeHtml(paper.meta?.journal || '前沿控制顶刊文献精读')}</span>
-          <h1 class="passage-title-en" style="font-size: 24px; line-height: 1.4; margin: 14px 0 8px 0; color: var(--text-primary); font-weight: 800;">${escapeHtml(paper.title)}</h1>
-          <div class="passage-title-zh" style="font-size: 16px; font-weight: 600; color: var(--text-secondary);">${escapeHtml(paper.chineseTitle)}</div>
+          <h1 class="passage-title-en" style="font-size: 23px; line-height: 1.4; margin: 12px 0 8px 0; color: var(--text-primary); font-weight: 800;">${escapeHtml(paper.title)}</h1>
+          <div class="passage-title-zh" style="font-size: 15px; font-weight: 600; color: var(--text-secondary);">${escapeHtml(paper.chineseTitle)}</div>
           
           <div class="paper-meta-banner">
             <div class="paper-meta-row"><span class="paper-meta-label">作者团队:</span> ${escapeHtml(paper.meta?.authors || '')}</div>
@@ -815,13 +792,6 @@
         (sec.paragraphs || []).forEach(p => {
           html += `
             <div class="paragraph-block" id="para-${p.pIndex}">
-              <div class="paragraph-meta">
-                <span class="paragraph-index-badge">¶ 段落 ${p.pIndex}</span>
-                <span class="paragraph-logic-role">${escapeHtml(p.logicRole)}</span>
-              </div>
-              <div class="paragraph-main-idea">
-                <strong>段落要旨：</strong>${escapeHtml(p.mainIdea)}
-              </div>
               <div class="sentence-list">
           `;
 
