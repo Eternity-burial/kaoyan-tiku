@@ -1747,25 +1747,32 @@
       return safeText.replace(/___MATH_PH_(\d+)___/g, (m, idx) => mathPlaceholders[parseInt(idx, 10)] || '');
     }
 
-    // 2. 从 vocabList 中收集所有候选中文词汇
+    // 2. 从 vocabList 中收集所有候选中文词汇（优先使用显式对齐字段 v.zh）
     const candidateTerms = [];
     vocabList.forEach(v => {
-      if (!v.meaning) return;
-      let cleanMeaning = v.meaning.replace(/（[^）]*）|\([^)]*\)/g, '');
-      const parts = cleanMeaning.split(/[,，、;；/ \s]+/);
-      parts.forEach(p => {
-        const cnMatches = p.match(/[\u4e00-\u9fa5]{2,}/g);
-        if (cnMatches) {
-          cnMatches.forEach(term => {
-            if (term.length >= 2) {
-              candidateTerms.push({
-                term,
-                vocab: v
-              });
-            }
-          });
-        }
-      });
+      if (v.zh && v.zh.trim().length >= 1) {
+        candidateTerms.push({
+          term: v.zh.trim(),
+          vocab: v
+        });
+      }
+      if (v.meaning) {
+        let cleanMeaning = v.meaning.replace(/（[^）]*）|\([^)]*\)/g, '');
+        const parts = cleanMeaning.split(/[,，、;；/ \s]+/);
+        parts.forEach(p => {
+          const cnMatches = p.match(/[\u4e00-\u9fa5]{2,}/g);
+          if (cnMatches) {
+            cnMatches.forEach(term => {
+              if (term.length >= 2) {
+                candidateTerms.push({
+                  term,
+                  vocab: v
+                });
+              }
+            });
+          }
+        });
+      }
     });
 
     if (candidateTerms.length === 0) {

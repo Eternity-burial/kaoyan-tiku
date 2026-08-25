@@ -31,67 +31,71 @@ window.BISHE_DATA['paper3'] = {
                   "word": "dynamic inversion",
                   "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
                   "meaning": "动态逆控制",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "动态逆"
                 },
                 {
                   "word": "incremental",
                   "ipa": "/ˌɪŋkrəˈmentl/",
                   "meaning": "增量的，逐拍差分的",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "增量"
                 },
                 {
                   "word": "autonomous",
                   "ipa": "/ɔːˈtɒnəməs/",
                   "meaning": "自主的，独立的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "自主"
                 },
                 {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "非线性"
                 },
                 {
                   "word": "inversion",
                   "ipa": "/ɪnˈvɜːʃn/",
                   "meaning": "逆，动态逆求解",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "动态逆"
                 },
                 {
                   "word": "attitude",
                   "ipa": "/ˈætɪtjuːd/",
                   "meaning": "姿态角 (Roll, Pitch, Yaw)",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "姿态控制"
                 },
                 {
                   "word": "vehicle",
                   "ipa": "ˈviːɪkl",
                   "meaning": "n.车辆,交通工具;媒介,载体",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "航行器"
                 },
                 {
                   "word": "dynamic",
                   "ipa": "/daɪˈnæmɪk/",
                   "meaning": "动态的，动力学的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "动态"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "INDI"
                 },
                 {
                   "word": "auv",
                   "ipa": "/ˌeɪ.juːˈviː/",
                   "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "AUV"
                 }
               ]
             },
@@ -105,73 +109,64 @@ window.BISHE_DATA['paper3'] = {
                   "word": "conventional",
                   "ipa": "/kənˈvenʃənl/",
                   "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "传统的"
                 },
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
                   "meaning": "水动力学的，流体动力学的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "水动力学"
                 },
                 {
                   "word": "depend on",
                   "ipa": "/dɪˈpend ɒn/",
                   "meaning": "取决于；依赖于（常用释义：依靠）",
-                  "level": "purple"
+                  "level": "purple",
+                  "zh": "依赖于"
                 },
                 {
                   "word": "difficult",
                   "ipa": "",
                   "meaning": "adj.困难的，费力的；不友好的，难对付的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "困难"
                 },
                 {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "非线性"
                 },
                 {
                   "word": "subject",
                   "ipa": "/ˈsʌbdʒɪkt/",
                   "meaning": "主题；中心议题（常用释义：学科；对象；臣民）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "受到"
                 },
                 {
                   "word": "system",
                   "ipa": "ˈsɪstəm",
                   "meaning": "n. 体系；系统",
-                  "level": "green"
-                },
-                {
-                  "word": "marine",
-                  "ipa": "",
-                  "meaning": "adj.海的；海产的；海生的；海船的；货船的；海上贸易的",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "系统"
                 },
                 {
                   "word": "exact",
                   "ipa": "ɪɡˈzækt",
                   "meaning": "adj. 精确的；确切的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "精确"
                 },
                 {
                   "word": "model",
                   "ipa": "ˈmɒdl",
                   "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
-                  "level": "green"
-                },
-                {
-                  "word": "find",
-                  "ipa": "faɪnd",
-                  "meaning": "v.找到;发现;发觉",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "模型"
                 }
               ]
             }
@@ -192,67 +187,64 @@ window.BISHE_DATA['paper3'] = {
                   "word": "incorporating",
                   "ipa": "/ɪnˈkɔːpəreɪtɪŋ/",
                   "meaning": "融入，引入",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "引入"
                 },
                 {
                   "word": "acceleration",
                   "ipa": "/əkˌseləˈreɪʃn/",
                   "meaning": "加速度",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "加速度"
                 },
                 {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
-                  "level": "red"
-                },
-                {
-                  "word": "accuracy",
-                  "ipa": "/ˈækjərəsi/",
-                  "meaning": "准确性（常用释义：准确；精确）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "非线性"
                 },
                 {
                   "word": "feedback",
                   "ipa": "/ˈfiːdbæk/",
                   "meaning": "反馈控制",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "加速度反馈"
                 },
                 {
                   "word": "actuator",
                   "ipa": "/ˈæktʃueɪtə/",
                   "meaning": "执行机构，执行器（电机/舵机/推进器）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "执行器"
                 },
                 {
                   "word": "output",
                   "ipa": "ˈaʊtpʊt",
                   "meaning": "n. 产量，输出量",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "输出"
                 },
                 {
                   "word": "system",
                   "ipa": "ˈsɪstəm",
                   "meaning": "n. 体系；系统",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "系统"
                 },
                 {
                   "word": "model",
                   "ipa": "ˈmɒdl",
                   "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "模型"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "a",
-                  "ipa": "细节因果题",
-                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "INDI"
                 }
               ]
             }
@@ -273,37 +265,29 @@ window.BISHE_DATA['paper3'] = {
                   "word": "primarily",
                   "ipa": "/praɪˈmerəli/",
                   "meaning": "主要地；首要地。（常用释义：主要地。）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "主要"
                 },
                 {
                   "word": "existing",
                   "ipa": "/ɪɡˈzɪstɪŋ/",
                   "meaning": "现有的、已经存在的（常用释义：目前存在的）",
-                  "level": "green"
-                },
-                {
-                  "word": "however",
-                  "ipa": "/haʊˈevə/",
-                  "meaning": "然而、不过（常用释义：无论如何）",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "现有的"
                 },
                 {
                   "word": "barely",
                   "ipa": "ˈberli",
                   "meaning": "adv.仅仅；几乎不；刚好",
-                  "level": "green"
-                },
-                {
-                  "word": "marine",
-                  "ipa": "",
-                  "meaning": "adj.海的；海产的；海生的；海船的；货船的；海上贸易的",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "几乎"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "INDI"
                 }
               ]
             },
@@ -317,55 +301,57 @@ window.BISHE_DATA['paper3'] = {
                   "word": "intervention",
                   "ipa": "/ˌɪntəˈvenʃn/",
                   "meaning": "干预作业，水下工程维修",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "干预作业"
                 },
                 {
                   "word": "transitions",
                   "ipa": "/trænˈzɪʃnz/",
                   "meaning": "过渡机动（复数）",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "过渡"
                 },
                 {
                   "word": "cuttlefish",
                   "ipa": "/ˈkʌtlfɪʃ/",
                   "meaning": "墨鱼号（DFKI 研发的水下特技干预 AUV）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "Cuttlefish"
                 },
                 {
                   "word": "pitch-up",
                   "ipa": "/pɪtʃ ʌp/",
                   "meaning": "俯仰上仰机动（90度翻转直立）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "俯仰特技过渡机动"
                 },
                 {
                   "word": "maneuver",
                   "ipa": "/məˈnuːvə/",
                   "meaning": "机动动作，飞行机动",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "过渡机动"
                 },
                 {
                   "word": "vertical",
                   "ipa": "ˈvɜːtɪk(ə)l",
                   "meaning": "adj. 垂直的，纵向",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "垂直"
                 },
                 {
                   "word": "pose",
                   "ipa": "/pəʊz/",
                   "meaning": "位姿 (Position & Orientation)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "垂直干预作业姿态"
                 },
                 {
                   "word": "auv",
                   "ipa": "/ˌeɪ.juːˈviː/",
                   "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
-                  "level": "blue"
-                },
-                {
-                  "word": "a",
-                  "ipa": "细节因果题",
-                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "AUV"
                 }
               ]
             }
@@ -386,73 +372,64 @@ window.BISHE_DATA['paper3'] = {
                   "word": "station keeping",
                   "ipa": "/ˈsteɪʃn ˈkiːpɪŋ/",
                   "meaning": "定点悬停，动力定位保持",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "定点悬停"
                 },
                 {
                   "word": "transitioning",
                   "ipa": "/trænˈzɪʃnɪŋ/",
                   "meaning": "过渡中",
-                  "level": "green"
-                },
-                {
-                  "word": "classical",
-                  "ipa": "ˈklæsɪk(ə)l",
-                  "meaning": "adj. 传统的；古典",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "过渡"
                 },
                 {
                   "word": "compare",
                   "ipa": "",
                   "meaning": "v.比较，对比；把……比作；相比",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "对比"
                 },
                 {
                   "word": "station",
                   "ipa": "",
                   "meaning": "n.火车站；公共汽车站；长途汽车站；站；所；局；电台；社会地位",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "定点悬停"
                 },
                 {
                   "word": "steady",
                   "ipa": "/ˈstedi/",
                   "meaning": "平稳的，稳定的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "平稳性"
                 },
                 {
                   "word": "basin",
                   "ipa": "/ˈbeɪsn/",
                   "meaning": "试验水池，水下试验槽",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "海洋试验水池"
                 },
                 {
                   "word": "phase",
                   "ipa": "feɪz",
                   "meaning": "n.阶段；时期 v.分阶段进行",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "阶段"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "find",
-                  "ipa": "faɪnd",
-                  "meaning": "v.找到;发现;发觉",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "INDI"
                 },
                 {
                   "word": "auv",
                   "ipa": "/ˌeɪ.juːˈviː/",
                   "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
-                  "level": "blue"
-                },
-                {
-                  "word": "a",
-                  "ipa": "细节因果题",
-                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "AUV"
                 }
               ]
             }
@@ -481,61 +458,29 @@ window.BISHE_DATA['paper3'] = {
                   "word": "infrastructures",
                   "ipa": "/ˈɪnfrəstrʌktʃəz/",
                   "meaning": "基础设施（复数）",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "海底基础设施"
                 },
                 {
                   "word": "aquaculture",
                   "ipa": "/ˈækwəkʌltʃə/",
                   "meaning": "水产养殖，深海养殖网箱",
-                  "level": "red"
-                },
-                {
-                  "word": "expansion",
-                  "ipa": "/ɪkˈspænʃn/",
-                  "meaning": "展开，级数展开",
-                  "level": "green"
-                },
-                {
-                  "word": "increase",
-                  "ipa": "ɪnˈkriːs",
-                  "meaning": "v./n. 增加，繁殖",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "水产养殖网箱"
                 },
                 {
                   "word": "offshore",
                   "ipa": "/ˌɒfˈʃɔː/",
                   "meaning": "海上的，离岸工程的",
-                  "level": "green"
-                },
-                {
-                  "word": "notable",
-                  "ipa": "",
-                  "meaning": "adj.显要的，值得注意的；非常成功的，令人尊敬的",
-                  "level": "red"
-                },
-                {
-                  "word": "leading",
-                  "ipa": "ˈliːdɪŋ",
-                  "meaning": "adj.领导的,指导的;第一位的;最主要的",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "海上风电场"
                 },
                 {
                   "word": "subsea",
                   "ipa": "/ˌsʌbˈsiː/",
                   "meaning": "海底的，水下的",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
-                },
-                {
-                  "word": "a",
-                  "ipa": "细节因果题",
-                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "海底基础设施"
                 }
               ]
             }
@@ -553,46 +498,46 @@ window.BISHE_DATA['paper3'] = {
               "translation": "传统作业方式的局限：人工潜水员作业存在巨大的人身安全风险，作业深度受限，且高度依赖气象海况窗口；遥控无人潜水器（ROV）虽能进行深海重载作业，但必须依赖大型专用支持母船与脐带缆绞车系统，运维成本高昂且机动受限。",
               "vocab": [
                 {
-                  "word": "constrained",
-                  "ipa": "/kənˈstreɪnd/",
-                  "meaning": "受约束的",
-                  "level": "red"
-                },
-                {
                   "word": "umbilical",
                   "ipa": "/ʌmˈbɪlɪkl/",
                   "meaning": "脐带缆的（供电与光纤通信绞车缆）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "脐带缆绞车"
                 },
                 {
                   "word": "weather",
                   "ipa": "/ˈweðə/",
                   "meaning": "经受住；渡过（常用释义：天气；使风化）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "气象海况"
                 },
                 {
                   "word": "support",
                   "ipa": "/səˈpɔːt/",
                   "meaning": "资助、维持或运营知识库（常用释义：支持观点；支撑重量；支持物）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "支持"
                 },
                 {
                   "word": "diving",
                   "ipa": "/ˈdaɪvɪŋ/",
                   "meaning": "潜水，俯冲",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "潜水"
                 },
                 {
                   "word": "rovs",
                   "ipa": "/ˌɑːr.oʊˈviːz/",
                   "meaning": "遥控水下无人潜水器（复数）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "ROV"
                 },
                 {
                   "word": "rov",
                   "ipa": "/ˌɑːr.oʊˈviː/",
                   "meaning": "遥控水下无人潜水器 (Remotely Operated Vehicle)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "ROV"
                 }
               ]
             }
@@ -610,64 +555,32 @@ window.BISHE_DATA['paper3'] = {
               "translation": "干预型 AUV（I-AUV）的崛起：配备作业机械臂的新型干预潜水器（如 AUV Cuttlefish）旨在实现全自主作业。",
               "vocab": [
                 {
-                  "word": "infrastructure",
-                  "ipa": "/ˈɪnfrəstrʌktʃə/",
-                  "meaning": "基础设施",
-                  "level": "green"
-                },
-                {
                   "word": "intervention",
                   "ipa": "/ˌɪntəˈvenʃn/",
                   "meaning": "干预作业，水下工程维修",
-                  "level": "red"
-                },
-                {
-                  "word": "interaction",
-                  "ipa": "ˌɪntərˈækʃn",
-                  "meaning": "n. 交互作用；交流",
-                  "level": "green"
-                },
-                {
-                  "word": "facilitate",
-                  "ipa": "/fəˈsɪlɪteɪt/",
-                  "meaning": "促进、使……更容易（常用释义：为某过程提供便利）",
-                  "level": "purple"
+                  "level": "red",
+                  "zh": "干预型"
                 },
                 {
                   "word": "autonomous",
                   "ipa": "/ɔːˈtɒnəməs/",
                   "meaning": "自主的，独立的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "全自主"
                 },
                 {
                   "word": "i-auvs",
                   "ipa": "/aɪ ˌeɪ.juːˈviːz/",
                   "meaning": "水下干预作业型航行器（复数）",
-                  "level": "blue"
-                },
-                {
-                  "word": "subsea",
-                  "ipa": "/ˌsʌbˈsiː/",
-                  "meaning": "海底的，水下的",
-                  "level": "red"
-                },
-                {
-                  "word": "class",
-                  "ipa": "/klɑːs/",
-                  "meaning": "类别；种类（常用释义：班级；阶层；类别）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "I-AUV"
                 },
                 {
                   "word": "auvs",
                   "ipa": "/ˌeɪ.juːˈviːz/",
                   "meaning": "自主水下航行器（复数）",
-                  "level": "blue"
-                },
-                {
-                  "word": "new",
-                  "ipa": "",
-                  "meaning": "adj.新的",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "AUV"
                 }
               ]
             },
@@ -681,91 +594,92 @@ window.BISHE_DATA['paper3'] = {
                   "word": "center of buoyancy",
                   "ipa": "/ˈsentər əv ˈbɔɪənsi/",
                   "meaning": "浮心 (CoB)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "浮心"
                 },
                 {
                   "word": "center of mass",
                   "ipa": "/ˈsentər əv mæs/",
                   "meaning": "质心 (CoM)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "质心"
                 },
                 {
                   "word": "orientations",
                   "ipa": "/ˌɔːriənˈteɪʃnz/",
                   "meaning": "姿态（复数）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "空间姿态变换"
                 },
                 {
                   "word": "cuttlefish",
                   "ipa": "/ˈkʌtlfɪʃ/",
                   "meaning": "墨鱼号（DFKI 研发的水下特技干预 AUV）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "Cuttlefish"
                 },
                 {
                   "word": "hydrobatic",
                   "ipa": "/ˌhaɪdrəʊˈbætɪk/",
                   "meaning": "水下特技机动的（具备 360° 空间任意变姿态能力）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "水下特技机动"
                 },
                 {
                   "word": "thrusters",
                   "ipa": "/ˈθrʌstəz/",
                   "meaning": "推进器（复数）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "8 个推进器"
                 },
                 {
                   "word": "arbitrary",
                   "ipa": "ˈɑːrbɪtreri",
                   "meaning": "adj.任意的；武断的；专横的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "任意"
                 },
                 {
                   "word": "stability",
                   "ipa": "stəˈbɪlɪti",
                   "meaning": "n. 稳定性；稳固",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "稳定性"
                 },
                 {
                   "word": "buoyancy",
                   "ipa": "/ˈbɔɪənsi/",
                   "meaning": "浮力，流体静浮力",
-                  "level": "red"
-                },
-                {
-                  "word": "motion",
-                  "ipa": "ˈməʊʃn",
-                  "meaning": "n.运动，移动；手势，动作；提议，议案 v.打手势，示意",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "静水力稳定性"
                 },
                 {
                   "word": "i-auv",
                   "ipa": "/aɪ ˌeɪ.juːˈviː/",
                   "meaning": "水下干预作业型航行器 (Intervention AUV)",
-                  "level": "blue"
-                },
-                {
-                  "word": "take",
-                  "ipa": "teɪk",
-                  "meaning": "v. 携带，拿",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "水下"
                 },
                 {
                   "word": "auv",
                   "ipa": "/ˌeɪ.juːˈviː/",
                   "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "水下"
                 },
                 {
                   "word": "com",
                   "ipa": "/ˌsiː.oʊˈem/",
                   "meaning": "质心 (Center of Mass)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "质心"
                 },
                 {
                   "word": "cob",
                   "ipa": "/ˌsiː.oʊˈbiː/",
                   "meaning": "浮心 (Center of Buoyancy)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "浮心"
                 }
               ]
             }
@@ -786,79 +700,64 @@ window.BISHE_DATA['paper3'] = {
                   "word": "quadratic damping",
                   "ipa": "/kwɒˈdrætɪk ˈdæmpɪŋ/",
                   "meaning": "二次非线性阻尼（与速度平方成正比）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "二次阻尼"
                 },
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
                   "meaning": "水动力学的，流体动力学的",
-                  "level": "red"
-                },
-                {
-                  "word": "interference",
-                  "ipa": "ˌɪntəˈfɪərəns",
-                  "meaning": "n.(in)干涉,干预;(with)妨碍,打扰",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "流体"
                 },
                 {
                   "word": "transitions",
                   "ipa": "/trænˈzɪʃnz/",
                   "meaning": "过渡机动（复数）",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "翻转"
                 },
                 {
                   "word": "added mass",
                   "ipa": "/ˈædɪd mæs/",
                   "meaning": "水动力附加质量（流体随物体加速附带的等效惯性）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "附加质量"
                 },
                 {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "非线性"
                 },
                 {
                   "word": "quadratic",
                   "ipa": "/kwɒˈdrætɪk/",
                   "meaning": "二次型的，平方的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "二次阻尼"
                 },
                 {
                   "word": "attitude",
                   "ipa": "/ˈætɪtjuːd/",
                   "meaning": "姿态角 (Roll, Pitch, Yaw)",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "姿态"
                 },
                 {
                   "word": "coupling",
                   "ipa": "/ˈkʌplɪŋ/",
                   "meaning": "耦合，相互作用",
-                  "level": "red"
-                },
-                {
-                  "word": "vehicle",
-                  "ipa": "ˈviːɪkl",
-                  "meaning": "n.车辆,交通工具;媒介,载体",
-                  "level": "red"
-                },
-                {
-                  "word": "intense",
-                  "ipa": "",
-                  "meaning": "adj.很大的，十分强烈的；严肃紧张的，激烈的；热情的；认真的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "非线性耦合"
                 },
                 {
                   "word": "damping",
                   "ipa": "/ˈdæmpɪŋ/",
                   "meaning": "阻尼，黏性阻力",
-                  "level": "red"
-                },
-                {
-                  "word": "mutual",
-                  "ipa": "/ˈmjuːtʃuəl/",
-                  "meaning": "共同的；相互的（常用释义：彼此的；共有的）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "阻尼"
                 }
               ]
             },
@@ -872,91 +771,71 @@ window.BISHE_DATA['paper3'] = {
                   "word": "feedback linearization",
                   "ipa": "/ˈfiːdbæk ˌlɪniəraɪˈzeɪʃn/",
                   "meaning": "反馈线性化控制",
-                  "level": "blue"
-                },
-                {
-                  "word": "identification",
-                  "ipa": "aɪdentɪfɪˈkeɪʃ(ə)n",
-                  "meaning": "n. 鉴",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "反馈线性化"
                 },
                 {
                   "word": "conventional",
                   "ipa": "/kənˈvenʃənl/",
                   "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "传统"
                 },
                 {
                   "word": "oscillations",
                   "ipa": "/ˌɒsɪˈleɪʃnz/",
                   "meaning": "振荡，抖动（复数）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "振荡"
                 },
                 {
                   "word": "estimation",
                   "ipa": "/ˌestɪˈmeɪʃn/",
                   "meaning": "估计，参数辨识",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "辨识"
                 },
                 {
                   "word": "parameter",
                   "ipa": "/pəˈræmɪtə/",
                   "meaning": "参数",
-                  "level": "green"
-                },
-                {
-                  "word": "incorrect",
-                  "ipa": "ɪnkəˈrekt",
-                  "meaning": "adj. 不正确的，错",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "参数"
                 },
                 {
                   "word": "feedback",
                   "ipa": "/ˈfiːdbæk/",
                   "meaning": "反馈控制",
-                  "level": "red"
-                },
-                {
-                  "word": "position",
-                  "ipa": "/pəˈzɪʃn/",
-                  "meaning": "位置，空间坐标",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "反馈"
                 },
                 {
                   "word": "require",
                   "ipa": "",
                   "meaning": "v.需要；要求做（某事），规定",
-                  "level": "red"
-                },
-                {
-                  "word": "precise",
-                  "ipa": "prɪˈsaɪs",
-                  "meaning": "adj. 准确,精确的,确切",
-                  "level": "green"
-                },
-                {
-                  "word": "produce",
-                  "ipa": "",
-                  "meaning": "v.生产",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "需要"
                 },
                 {
                   "word": "severe",
                   "ipa": "sɪˈvɪə(r)",
                   "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "严重"
                 },
                 {
                   "word": "model",
                   "ipa": "ˈmɒdl",
                   "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "模型"
                 },
                 {
                   "word": "drift",
                   "ipa": "/drɪft/",
                   "meaning": "漂移，侧向偏差",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "漂移"
                 }
               ]
             }
@@ -977,49 +856,57 @@ window.BISHE_DATA['paper3'] = {
                   "word": "control effectiveness",
                   "ipa": "/kənˈtrəʊl ɪˈfektɪvnəs/",
                   "meaning": "控制效能，控制增益矩阵 G1",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "控制效能"
                 },
                 {
                   "word": "effectiveness",
                   "ipa": "/ɪˈfektɪvnəs/",
                   "meaning": "效能，有效性",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "控制效能"
                 },
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
                   "meaning": "水动力学的，流体动力学的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "水动力学"
                 },
                 {
                   "word": "acceleration",
                   "ipa": "/əkˌseləˈreɪʃn/",
                   "meaning": "加速度",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "加速度"
                 },
                 {
                   "word": "calculate",
                   "ipa": "ˈkælkjuleɪt",
                   "meaning": "v.计算；预测",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "计算"
                 },
                 {
                   "word": "complex",
                   "ipa": "/ˈkɒmpleks/",
                   "meaning": "复杂的，多层次的（常用释义：复杂的；复合的；综合体）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "复杂"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "INDI"
                 },
                 {
                   "word": "imu",
                   "ipa": "/ˌaɪ.emˈjuː/",
                   "meaning": "惯性测量单元 (Inertial Measurement Unit)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "IMU"
                 }
               ]
             },
@@ -1030,28 +917,11 @@ window.BISHE_DATA['paper3'] = {
               "translation": "本文首次将 INDI 拓展至 6 自由度水下航行器的运动与姿态控制，并开源了全部实现方案。",
               "vocab": [
                 {
-                  "word": "implementation",
-                  "ipa": "ˌɪmplɪmenˈteɪʃ(ə)n",
-                  "meaning": "n.实施，执行",
-                  "level": "green"
-                },
-                {
-                  "word": "extension",
-                  "ipa": "ɪkˈstenʃ(ə)n",
-                  "meaning": "n.扩大，延伸",
-                  "level": "green"
-                },
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                },
-                {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "INDI"
                 }
               ]
             }
@@ -1085,49 +955,29 @@ window.BISHE_DATA['paper3'] = {
                   "word": "kinematics",
                   "ipa": "/ˌkɪnəˈmætɪks/",
                   "meaning": "运动学（纯几何与时间关系）",
-                  "level": "red"
-                },
-                {
-                  "word": "standard",
-                  "ipa": "/ˈstændəd/",
-                  "meaning": "通行的；公认权威的（常用释义：标准的；标准；普通规格的）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "运动学"
                 },
                 {
                   "word": "dynamics",
                   "ipa": "/daɪˈnæmɪks/",
                   "meaning": "动力学，动态特性",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "动力学"
                 },
                 {
                   "word": "fossen",
                   "ipa": "/ˈfɒsn/",
                   "meaning": "福森（海洋动力学权威学者）",
-                  "level": "blue"
-                },
-                {
-                  "word": "marine",
-                  "ipa": "",
-                  "meaning": "adj.海的；海产的；海生的；海船的；货船的；海上贸易的",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "Fossen 海洋航行器动力学"
                 },
                 {
                   "word": "motion",
                   "ipa": "ˈməʊʃn",
                   "meaning": "n.运动，移动；手势，动作；提议，议案 v.打手势，示意",
-                  "level": "green"
-                },
-                {
-                  "word": "frame",
-                  "ipa": "freɪm",
-                  "meaning": "n.框架；构架，支架；体格，骨架 v.装框架；作伪证陷害；拟",
-                  "level": "green"
-                },
-                {
-                  "word": "body",
-                  "ipa": "ˈbɒdi",
-                  "meaning": "n.团体,机构",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "运动"
                 }
               ]
             },
@@ -1141,85 +991,85 @@ window.BISHE_DATA['paper3'] = {
                   "word": "coriolis-centripetal",
                   "ipa": "/ˌkɒriˈəʊlɪs senˈtrɪpɪtl/",
                   "meaning": "科氏力与向心力耦合项",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "科氏/向心力"
                 },
                 {
                   "word": "quadratic damping",
                   "ipa": "/kwɒˈdrætɪk ˈdæmpɪŋ/",
                   "meaning": "二次非线性阻尼（与速度平方成正比）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "二次非线性阻尼"
                 },
                 {
                   "word": "euler angles",
                   "ipa": "/ˈɔɪlər ˈæŋɡlz/",
                   "meaning": "欧拉角 (Roll, Pitch, Yaw)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "欧拉角"
                 },
                 {
                   "word": "added mass",
                   "ipa": "/ˈædɪd mæs/",
                   "meaning": "水动力附加质量（流体随物体加速附带的等效惯性）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "水动力附加质量"
                 },
                 {
                   "word": "velocities",
                   "ipa": "/vəˈlɒsətiz/",
                   "meaning": "速度（复数）",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "速度"
                 },
                 {
                   "word": "quadratic",
                   "ipa": "/kwɒˈdrætɪk/",
                   "meaning": "二次型的，平方的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "二次非线性阻尼"
                 },
                 {
                   "word": "restoring",
                   "ipa": "/rɪˈstɔːrɪŋ/",
                   "meaning": "恢复的（如重浮力恢复力矩）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "恢复力矩"
                 },
                 {
                   "word": "position",
                   "ipa": "/pəˈzɪʃn/",
                   "meaning": "位置，空间坐标",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "位置"
                 },
                 {
                   "word": "angular",
                   "ipa": "/ˈæŋɡjələ/",
                   "meaning": "角的，角向的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "角速度"
                 },
                 {
                   "word": "damping",
                   "ipa": "/ˈdæmpɪŋ/",
                   "meaning": "阻尼，黏性阻力",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "阻尼"
                 },
                 {
                   "word": "angles",
                   "ipa": "/ˈæŋɡlz/",
                   "meaning": "角度（复数）",
-                  "level": "green"
-                },
-                {
-                  "word": "thrust",
-                  "ipa": "/θrʌst/",
-                  "meaning": "推力",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "欧拉角"
                 },
                 {
                   "word": "euler",
                   "ipa": "/ˈɔɪlər/",
                   "meaning": "欧拉（数学家名）",
-                  "level": "blue"
-                },
-                {
-                  "word": "body",
-                  "ipa": "ˈbɒdi",
-                  "meaning": "n.团体,机构",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "欧拉"
                 }
               ]
             }
@@ -1240,55 +1090,43 @@ window.BISHE_DATA['paper3'] = {
                   "word": "feedback linearization",
                   "ipa": "/ˈfiːdbæk ˌlɪniəraɪˈzeɪʃn/",
                   "meaning": "反馈线性化控制",
-                  "level": "blue"
-                },
-                {
-                  "word": "acceleration",
-                  "ipa": "/əkˌseləˈreɪʃn/",
-                  "meaning": "加速度",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "反馈线性化"
                 },
                 {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "非线性"
                 },
                 {
                   "word": "feedback",
                   "ipa": "/ˈfiːdbæk/",
                   "meaning": "反馈控制",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "反馈"
                 },
                 {
                   "word": "virtual",
                   "ipa": "ˈvɜːrtʃuəl",
                   "meaning": "adj. 虚拟的；实质上的",
-                  "level": "green"
-                },
-                {
-                  "word": "command",
-                  "ipa": "kəˈmænd",
-                  "meaning": "n./v. 命令",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "虚拟"
                 },
                 {
                   "word": "total",
                   "ipa": "ˈtəʊt(ə)l",
                   "meaning": "adj. 总数的;总括的;完",
-                  "level": "green"
-                },
-                {
-                  "word": "field",
-                  "ipa": "fiːld",
-                  "meaning": "n. 领域；场地；田地 v. 组建 adj. 实地的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "总和"
                 },
                 {
                   "word": "fbl",
                   "ipa": "/ˌef.biːˈel/",
                   "meaning": "反馈线性化 (Feedback Linearization)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "反馈线性化"
                 }
               ]
             },
@@ -1299,76 +1137,32 @@ window.BISHE_DATA['paper3'] = {
               "translation": "本质缺陷：该方法必须实时精确计算 $\\boldsymbol{f}(\\boldsymbol{\\nu}, \\boldsymbol{\\eta})$ 中的每一个参数。一旦阻尼或恢复力矩存在微小辨识误差，系统就无法实现真正的解耦和精确补偿。",
               "vocab": [
                 {
-                  "word": "identification",
-                  "ipa": "aɪdentɪfɪˈkeɪʃ(ə)n",
-                  "meaning": "n. 鉴",
-                  "level": "green"
-                },
-                {
-                  "word": "requirement",
-                  "ipa": "rɪˈkwaɪərmənt",
-                  "meaning": "n. 要求；必要条件",
-                  "level": "green"
-                },
-                {
-                  "word": "discrepancy",
-                  "ipa": "",
-                  "meaning": "n.差异，不符",
-                  "level": "red"
-                },
-                {
                   "word": "decoupling",
                   "ipa": "/diːˈkʌplɪŋ/",
                   "meaning": "解耦，解耦控制",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "解耦"
                 },
                 {
                   "word": "precision",
                   "ipa": "/prɪˈsɪʒən/",
                   "meaning": "精确性；准确性（常用释义：精确；准确；严谨）",
-                  "level": "red"
-                },
-                {
-                  "word": "drawback",
-                  "ipa": "ˈdrɔːbæk",
-                  "meaning": "n.缺点，不利条件",
-                  "level": "green"
-                },
-                {
-                  "word": "buoyancy",
-                  "ipa": "/ˈbɔɪənsi/",
-                  "meaning": "浮力，流体静浮力",
-                  "level": "red"
-                },
-                {
-                  "word": "tracking",
-                  "ipa": "/ˈtrækɪŋ/",
-                  "meaning": "跟踪，追踪",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "精确"
                 },
                 {
                   "word": "damping",
                   "ipa": "/ˈdæmpɪŋ/",
                   "meaning": "阻尼，黏性阻力",
-                  "level": "red"
-                },
-                {
-                  "word": "slight",
-                  "ipa": "slaɪs",
-                  "meaning": "adj. 轻微的，细小的",
-                  "level": "green"
-                },
-                {
-                  "word": "fatal",
-                  "ipa": "ˈfeɪt(ə)l",
-                  "meaning": "adj.致命的；导致失败的，灾难性的",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "阻尼"
                 },
                 {
                   "word": "exact",
                   "ipa": "ɪɡˈzækt",
                   "meaning": "adj. 精确的；确切的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "精确"
                 }
               ]
             }
@@ -1389,55 +1183,29 @@ window.BISHE_DATA['paper3'] = {
                   "word": "taylor series",
                   "ipa": "/ˈteɪlər ˈsɪəriːz/",
                   "meaning": "泰勒级数展开",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "一阶泰勒级数展开"
                 },
                 {
                   "word": "expansion",
                   "ipa": "/ɪkˈspænʃn/",
                   "meaning": "展开，级数展开",
-                  "level": "green"
-                },
-                {
-                  "word": "previous",
-                  "ipa": "ˈpriːviəs",
-                  "meaning": "adj.先前的,以前的",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "级数展开"
                 },
                 {
                   "word": "taylor",
                   "ipa": "/ˈteɪlər/",
                   "meaning": "泰勒（数学家名）",
-                  "level": "blue"
-                },
-                {
-                  "word": "around",
-                  "ipa": "əˈraʊnd",
-                  "meaning": "adv.存在着",
-                  "level": "red"
-                },
-                {
-                  "word": "sample",
-                  "ipa": "/ˈsɑːmpəl/",
-                  "meaning": "样本（常用释义：样品；样本；抽样）",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "泰勒"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "step",
-                  "ipa": "",
-                  "meaning": "v. 踏，踩",
-                  "level": "green"
-                },
-                {
-                  "word": "a",
-                  "ipa": "细节因果题",
-                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "INDI"
                 }
               ]
             },
@@ -1451,19 +1219,15 @@ window.BISHE_DATA['paper3'] = {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
                   "meaning": "水动力学的，流体动力学的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "流体动力学"
                 },
                 {
                   "word": "negligible",
                   "ipa": "",
                   "meaning": "adj.可以忽略不计的；微不足道的；不重要的；不值一提的",
-                  "level": "red"
-                },
-                {
-                  "word": "thruster",
-                  "ipa": "/ˈθrʌstə/",
-                  "meaning": "推进器（水下无刷推进电机）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "可以"
                 }
               ]
             },
@@ -1477,37 +1241,36 @@ window.BISHE_DATA['paper3'] = {
                   "word": "acceleration",
                   "ipa": "/əkˌseləˈreɪʃn/",
                   "meaning": "加速度",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "加速度"
                 },
                 {
                   "word": "filtered",
                   "ipa": "/ˈfɪltəd/",
                   "meaning": "已滤波的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "滤波"
                 },
                 {
                   "word": "thruster",
                   "ipa": "/ˈθrʌstə/",
                   "meaning": "推进器（水下无刷推进电机）",
-                  "level": "red"
-                },
-                {
-                  "word": "compact",
-                  "ipa": "kəmˈpækt",
-                  "meaning": "adj.小型的；紧凑的；紧密的；矮小而健壮的 n.带镜小粉",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "推进器"
                 },
                 {
                   "word": "output",
                   "ipa": "ˈaʊtpʊt",
                   "meaning": "n. 产量，输出量",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "输出"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "INDI"
                 }
               ]
             },
@@ -1521,43 +1284,29 @@ window.BISHE_DATA['paper3'] = {
                   "word": "automatically",
                   "ipa": "ˌɔːtəˈmætɪkli",
                   "meaning": "adv.自动地；自然地；无意识地",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "自动"
                 },
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
                   "meaning": "水动力学的，流体动力学的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "水动力"
                 },
                 {
                   "word": "disturbances",
                   "ipa": "/dɪˈstɜːbənsɪz/",
                   "meaning": "扰动（复数）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "扰动"
                 },
                 {
                   "word": "manipulator",
                   "ipa": "/məˈnɪpjuleɪtə/",
                   "meaning": "机械臂，作业操作手",
-                  "level": "red"
-                },
-                {
-                  "word": "decoupling",
-                  "ipa": "/diːˈkʌplɪŋ/",
-                  "meaning": "解耦，解耦控制",
-                  "level": "blue"
-                },
-                {
-                  "word": "rejecting",
-                  "ipa": "/rɪˈdʒektɪŋ/",
-                  "meaning": "抑制中",
-                  "level": "green"
-                },
-                {
-                  "word": "total",
-                  "ipa": "ˈtəʊt(ə)l",
-                  "meaning": "adj. 总数的;总括的;完",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "机械臂"
                 }
               ]
             }
@@ -1578,37 +1327,29 @@ window.BISHE_DATA['paper3'] = {
                   "word": "thruster allocation",
                   "ipa": "/ˈθrʌstə ˌæləˈkeɪʃn/",
                   "meaning": "推进器控制分配矩阵",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "推进器控制分配"
                 },
                 {
                   "word": "allocation",
                   "ipa": "/ˌæləˈkeɪʃn/",
                   "meaning": "分配，控制分配",
-                  "level": "blue"
-                },
-                {
-                  "word": "individual",
-                  "ipa": "/ˌɪndɪˈvɪdʒuəl/",
-                  "meaning": "个体的；个体（常用释义：个人；个别的）",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "控制分配"
                 },
                 {
                   "word": "thruster",
                   "ipa": "/ˈθrʌstə/",
                   "meaning": "推进器（水下无刷推进电机）",
-                  "level": "red"
-                },
-                {
-                  "word": "command",
-                  "ipa": "kəˈmænd",
-                  "meaning": "n./v. 命令",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "推进器"
                 },
                 {
                   "word": "thrust",
                   "ipa": "/θrʌst/",
                   "meaning": "推力",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "推力"
                 }
               ]
             },
@@ -1622,19 +1363,15 @@ window.BISHE_DATA['paper3'] = {
                   "word": "pseudo-inverse",
                   "ipa": "/ˈsjuːdəʊ ɪnˌvɜːs/",
                   "meaning": "伪逆矩阵 (Moore-Penrose 广义逆)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "加权 Moore-Penrose 伪逆"
                 },
                 {
                   "word": "moore-penrose",
                   "ipa": "/mɔː ˈpenrəʊz/",
                   "meaning": "摩尔-彭罗斯广义逆矩阵",
-                  "level": "blue"
-                },
-                {
-                  "word": "thruster",
-                  "ipa": "/ˈθrʌstə/",
-                  "meaning": "推进器（水下无刷推进电机）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "Moore-Penrose"
                 }
               ]
             }
@@ -1655,55 +1392,50 @@ window.BISHE_DATA['paper3'] = {
                   "word": "singularities",
                   "ipa": "/ˌsɪŋɡjʊˈlærɪtiz/",
                   "meaning": "奇异点（复数）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "奇异性"
                 },
                 {
                   "word": "gimbal lock",
                   "ipa": "/ˈɡɪmbl lɒk/",
                   "meaning": "万向节死锁（欧拉角在俯仰 90 度处的奇异性）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "万向节死锁"
                 },
                 {
                   "word": "synthesized",
                   "ipa": "/ˈsɪnθəsaɪzd/",
                   "meaning": "已综合设计的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "采用"
                 },
                 {
                   "word": "outer-loop",
                   "ipa": "/ˈaʊtə luːp/",
                   "meaning": "外环控制器（位置/航迹规划）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "外环"
                 },
                 {
                   "word": "lie group",
                   "ipa": "/liː ɡruːp/",
                   "meaning": "李群 (如 SO(3), SE(3))",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "李群"
                 },
                 {
                   "word": "attitude",
                   "ipa": "/ˈætɪtjuːd/",
                   "meaning": "姿态角 (Roll, Pitch, Yaw)",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "姿态"
                 },
                 {
                   "word": "pitch",
                   "ipa": "/pɪtʃ/",
                   "meaning": "俯仰角 (Pitch)",
-                  "level": "blue"
-                },
-                {
-                  "word": "agile",
-                  "ipa": "/ˈædʒaɪl/",
-                  "meaning": "敏捷的，高机动性的",
-                  "level": "red"
-                },
-                {
-                  "word": "outer",
-                  "ipa": "",
-                  "meaning": "adj.外面的，外部的；远离中心的，外围的；客观外界的，非主观的；更远",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "俯仰"
                 }
               ]
             },
@@ -1717,31 +1449,22 @@ window.BISHE_DATA['paper3'] = {
                   "word": "attitude",
                   "ipa": "/ˈætɪtjuːd/",
                   "meaning": "姿态角 (Roll, Pitch, Yaw)",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "姿态"
                 },
                 {
                   "word": "rotation",
                   "ipa": "/rəʊˈteɪʃn/",
                   "meaning": "旋转",
-                  "level": "green"
-                },
-                {
-                  "word": "standard",
-                  "ipa": "/ˈstændəd/",
-                  "meaning": "通行的；公认权威的（常用释义：标准的；标准；普通规格的）",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "旋转"
                 },
                 {
                   "word": "diagonal",
                   "ipa": "/daɪˈæɡənl/",
                   "meaning": "对角的，对角矩阵的",
-                  "level": "green"
-                },
-                {
-                  "word": "basis",
-                  "ipa": "ˈbeɪsɪs",
-                  "meaning": "n. 基础；原因，缘由，",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "对角"
                 }
               ]
             }
@@ -1772,82 +1495,60 @@ window.BISHE_DATA['paper3'] = {
               "translation": "试验平台：AUV Cuttlefish（长 2.8 m，宽 2.0 m，高 0.8 m），内置军工级高精度光纤陀螺惯导系统（PHINS Compact C3）；试验环境：DFKI 室内海洋试验水池（长 24 m、宽 18 m、水深 8 m）。",
               "vocab": [
                 {
-                  "word": "experimental",
-                  "ipa": "/ɪkˌsperɪˈmentl/",
-                  "meaning": "实验的，实证的",
-                  "level": "green"
-                },
-                {
                   "word": "fiber-optic",
                   "ipa": "/ˈfaɪbər ˈɒptɪk/",
                   "meaning": "光纤的，光纤陀螺的",
-                  "level": "blue"
-                },
-                {
-                  "word": "validation",
-                  "ipa": "/ˌvælɪˈdeɪʃn/",
-                  "meaning": "验证，证实",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "光纤陀螺惯导"
                 },
                 {
                   "word": "cuttlefish",
                   "ipa": "/ˈkʌtlfɪʃ/",
                   "meaning": "墨鱼号（DFKI 研发的水下特技干预 AUV）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "AUV Cuttlefish"
                 },
                 {
                   "word": "saltwater",
                   "ipa": "/ˈsɔːltwɔːtə/",
                   "meaning": "海水，盐水水池",
-                  "level": "green"
-                },
-                {
-                  "word": "compact",
-                  "ipa": "kəmˈpækt",
-                  "meaning": "adj.小型的；紧凑的；紧密的；矮小而健壮的 n.带镜小粉",
-                  "level": "green"
-                },
-                {
-                  "word": "inside",
-                  "ipa": "",
-                  "meaning": "n.内部，内侧；（尤指）胃；里道，内圈；（靠近路边的）慢车道",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "水池"
                 },
                 {
                   "word": "indoor",
                   "ipa": "",
                   "meaning": "adj.室内的，户内的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "室内"
                 },
                 {
                   "word": "basin",
                   "ipa": "/ˈbeɪsn/",
                   "meaning": "试验水池，水下试验槽",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "海洋试验水池"
                 },
                 {
                   "word": "gyro",
                   "ipa": "/ˈdʒaɪrəʊ/",
                   "meaning": "陀螺仪，角速度传感器",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "光纤陀螺"
                 },
                 {
                   "word": "auv",
                   "ipa": "/ˌeɪ.juːˈviː/",
                   "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "AUV"
                 },
                 {
                   "word": "ins",
                   "ipa": "/ˌaɪ.enˈes/",
                   "meaning": "惯性导航系统 (Inertial Navigation System)",
-                  "level": "blue"
-                },
-                {
-                  "word": "a",
-                  "ipa": "细节因果题",
-                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "惯导系统"
                 }
               ]
             },
@@ -1858,34 +1559,18 @@ window.BISHE_DATA['paper3'] = {
               "translation": "水动力参数辨识：记录 57 分钟实测航行数据，分别辨识出两套模型供 FBL 控制器使用：1. 线性阻尼模型（Linear Drag FBL）；2. 二次非线性阻尼模型（Quadratic Drag FBL）。",
               "vocab": [
                 {
-                  "word": "benchmarking",
-                  "ipa": "/ˈbentʃmɑːkɪŋ/",
-                  "meaning": "基准对比中",
-                  "level": "blue"
-                },
-                {
                   "word": "quadratic",
                   "ipa": "/kwɒˈdrætɪk/",
                   "meaning": "二次型的，平方的",
-                  "level": "green"
-                },
-                {
-                  "word": "drag",
-                  "ipa": "/dræɡ/",
-                  "meaning": "阻力，空气阻力",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "二次非线性阻尼"
                 },
                 {
                   "word": "fbl",
                   "ipa": "/ˌef.biːˈel/",
                   "meaning": "反馈线性化 (Feedback Linearization)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "FBL"
                 }
               ]
             }
@@ -1903,46 +1588,39 @@ window.BISHE_DATA['paper3'] = {
               "translation": "试验 1（90° 俯仰特技过渡机动）：AUV 在 5 秒内从水平巡航姿态快速俯仰翻转 90° 进入垂直直立姿态，并在直立姿态稳定保持 300 秒。",
               "vocab": [
                 {
-                  "word": "experiment",
-                  "ipa": "/ɪkˈsperɪmənt/",
-                  "meaning": "实验",
-                  "level": "green"
-                },
-                {
                   "word": "pitch-up",
                   "ipa": "/pɪtʃ ʌp/",
                   "meaning": "俯仰上仰机动（90度翻转直立）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "俯仰特技过渡机动"
                 },
                 {
                   "word": "maneuver",
                   "ipa": "/məˈnuːvə/",
                   "meaning": "机动动作，飞行机动",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "过渡机动"
                 },
                 {
                   "word": "vertical",
                   "ipa": "ˈvɜːtɪk(ə)l",
                   "meaning": "adj. 垂直的，纵向",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "垂直直立"
                 },
                 {
                   "word": "stance",
                   "ipa": "/stɑːns/",
                   "meaning": "姿态，站立姿态",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "垂直直立姿态"
                 },
                 {
                   "word": "auv",
                   "ipa": "/ˌeɪ.juːˈviː/",
                   "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
-                  "level": "blue"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "AUV"
                 }
               ]
             },
@@ -1956,49 +1634,36 @@ window.BISHE_DATA['paper3'] = {
                   "word": "steady-state",
                   "ipa": "/ˈstedi steɪt/",
                   "meaning": "稳态的，平衡状态的",
-                  "level": "blue"
-                },
-                {
-                  "word": "dramatically",
-                  "ipa": "/drəˈmætɪkli/",
-                  "meaning": "显著地；大幅度地（常用释义：戏剧性地；显著地）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "稳态姿态"
                 },
                 {
                   "word": "quadratic",
                   "ipa": "/kwɒˈdrætɪk/",
                   "meaning": "二次型的，平方的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "二次阻尼"
                 },
                 {
                   "word": "attitude",
                   "ipa": "/ˈætɪtjuːd/",
                   "meaning": "姿态角 (Roll, Pitch, Yaw)",
-                  "level": "red"
-                },
-                {
-                  "word": "superior",
-                  "ipa": "/suːˈpɪəriə/",
-                  "meaning": "更优秀的，更高超的（常用释义：优越的；上级的；有优越感的）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "姿态角"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "INDI"
                 },
                 {
                   "word": "fbl",
                   "ipa": "/ˌef.biːˈel/",
                   "meaning": "反馈线性化 (Feedback Linearization)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "FBL"
                 }
               ]
             }
@@ -2016,64 +1681,46 @@ window.BISHE_DATA['paper3'] = {
               "translation": "机动过程速度跟踪 RMSE 对比：前进线速度 Surge RMSE 为 0.39 mm/s（FBL 为 0.55/1.04）；侧移线速度 Sway 为 0.12 mm/s（FBL 为 0.34/0.64）；横滚角速度 Roll 为 0.022 deg/s（FBL 为 0.043/0.063，稳定性提升近 3 倍）；俯仰与偏航均表现优异。",
               "vocab": [
                 {
-                  "word": "improvement",
-                  "ipa": "ɪmˈpruːvmənt",
-                  "meaning": "n.改善；改进之处",
-                  "level": "green"
-                },
-                {
-                  "word": "throughout",
-                  "ipa": "/θruːˈaʊt/",
-                  "meaning": "遍及；贯穿整个……（常用释义：all through；in every part of）",
-                  "level": "red"
-                },
-                {
                   "word": "maneuver",
                   "ipa": "/məˈnuːvə/",
                   "meaning": "机动动作，飞行机动",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "机动"
                 },
                 {
                   "word": "velocity",
                   "ipa": "/vəˈlɒsəti/",
                   "meaning": "速度，线速度",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "线速度"
                 },
                 {
                   "word": "surge",
                   "ipa": "/sɜːdʒ/",
                   "meaning": "纵荡，前进线速度 (Surge)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "前进线速度 Surge"
                 },
                 {
                   "word": "rmse",
                   "ipa": "/ˌɑːr.em.esˈiː/",
                   "meaning": "均方根误差 (Root Mean Square Error)",
-                  "level": "blue"
-                },
-                {
-                  "word": "indi",
-                  "ipa": "/ˈɪndi/",
-                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "RMSE"
                 },
                 {
                   "word": "sway",
                   "ipa": "/sweɪ/",
                   "meaning": "横荡，侧移线速度 (Sway)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "侧移线速度 Sway"
                 },
                 {
                   "word": "roll",
                   "ipa": "/rəʊl/",
                   "meaning": "横滚角 (Roll)",
-                  "level": "blue"
-                },
-                {
-                  "word": "rate",
-                  "ipa": "reɪt",
-                  "meaning": "n.速率;等级;价格,费用 v.估价;评级,评价",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "横滚"
                 }
               ]
             },
@@ -2087,85 +1734,64 @@ window.BISHE_DATA['paper3'] = {
                   "word": "quadratic damping",
                   "ipa": "/kwɒˈdrætɪk ˈdæmpɪŋ/",
                   "meaning": "二次非线性阻尼（与速度平方成正比）",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "二次非线性阻尼"
                 },
                 {
                   "word": "transitions",
                   "ipa": "/trænˈzɪʃnz/",
                   "meaning": "过渡机动（复数）",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "过渡"
                 },
                 {
                   "word": "transition",
                   "ipa": "/trænˈzɪʃn/",
                   "meaning": "过渡，姿态翻转过渡",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "过渡"
                 },
                 {
                   "word": "quadratic",
                   "ipa": "/kwɒˈdrætɪk/",
                   "meaning": "二次型的，平方的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "二次非线性阻尼"
                 },
                 {
                   "word": "turbulent",
                   "ipa": "ˈtɜrbjələnt",
                   "meaning": "adj.狂暴的,骚动的",
-                  "level": "red"
-                },
-                {
-                  "word": "difficult",
-                  "ipa": "",
-                  "meaning": "adj.困难的，费力的；不友好的，难对付的",
-                  "level": "red"
-                },
-                {
-                  "word": "precisely",
-                  "ipa": "prɪˈsaɪsli",
-                  "meaning": "adv. 精确地",
-                  "level": "green"
-                },
-                {
-                  "word": "excessive",
-                  "ipa": "ɪkˈsesɪv",
-                  "meaning": "adj.过度的，过多的",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "湍流"
                 },
                 {
                   "word": "physical",
                   "ipa": "ˈfɪzɪk(ə)l",
                   "meaning": "adj.物理的；身体的；物质的 n.体检",
-                  "level": "green"
-                },
-                {
-                  "word": "identify",
-                  "ipa": "/aɪˈdentɪfaɪ/",
-                  "meaning": "确认；识别（常用释义：识别；确认；认出；认同）",
-                  "level": "red"
-                },
-                {
-                  "word": "tracking",
-                  "ipa": "/ˈtrækɪŋ/",
-                  "meaning": "跟踪，追踪",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "物理"
                 },
                 {
                   "word": "damping",
                   "ipa": "/ˈdæmpɪŋ/",
                   "meaning": "阻尼，黏性阻力",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "阻尼"
                 },
                 {
                   "word": "model",
                   "ipa": "ˈmɒdl",
                   "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "模型"
                 },
                 {
                   "word": "fbl",
                   "ipa": "/ˌef.biːˈel/",
                   "meaning": "反馈线性化 (Feedback Linearization)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "FBL"
                 }
               ]
             }
@@ -2186,43 +1812,29 @@ window.BISHE_DATA['paper3'] = {
                   "word": "station keeping",
                   "ipa": "/ˈsteɪʃn ˈkiːpɪŋ/",
                   "meaning": "定点悬停，动力定位保持",
-                  "level": "blue"
-                },
-                {
-                  "word": "experiment",
-                  "ipa": "/ɪkˈsperɪmənt/",
-                  "meaning": "实验",
-                  "level": "green"
+                  "level": "blue",
+                  "zh": "悬停"
                 },
                 {
                   "word": "vertical",
                   "ipa": "ˈvɜːtɪk(ə)l",
                   "meaning": "adj. 垂直的，纵向",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "垂直直立"
                 },
                 {
                   "word": "station",
                   "ipa": "",
                   "meaning": "n.火车站；公共汽车站；长途汽车站；站；所；局；电台；社会地位",
-                  "level": "red"
-                },
-                {
-                  "word": "stance",
-                  "ipa": "/stɑːns/",
-                  "meaning": "姿态，站立姿态",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "悬停"
                 },
                 {
                   "word": "drift",
                   "ipa": "/drɪft/",
                   "meaning": "漂移，侧向偏差",
-                  "level": "red"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "漂移"
                 }
               ]
             },
@@ -2233,64 +1845,46 @@ window.BISHE_DATA['paper3'] = {
               "translation": "INDI 在 $x$ 轴与 $y$ 轴的空间位置漂移小于 0.1 m（几乎完全锁定在原地）；线性阻尼 FBL 累计漂移达 1.5 m；二次阻尼 FBL 累计漂移超过 2.5 m。",
               "vocab": [
                 {
-                  "word": "constrained",
-                  "ipa": "/kənˈstreɪnd/",
-                  "meaning": "受约束的",
-                  "level": "red"
-                },
-                {
                   "word": "virtually",
                   "ipa": "ˈvɜːrtʃuəli",
                   "meaning": "adv. 几乎；实际上",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "几乎"
                 },
                 {
                   "word": "quadratic",
                   "ipa": "/kwɒˈdrætɪk/",
                   "meaning": "二次型的，平方的",
-                  "level": "green"
-                },
-                {
-                  "word": "whereas",
-                  "ipa": "ˌwerˈæz",
-                  "meaning": "conj.（表示对比）但是，然而；鉴于",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "二次阻尼"
                 },
                 {
                   "word": "drifted",
                   "ipa": "/ˈdrɪftɪd/",
                   "meaning": "已漂移的",
-                  "level": "red"
-                },
-                {
-                  "word": "total",
-                  "ipa": "ˈtəʊt(ə)l",
-                  "meaning": "adj. 总数的;总括的;完",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "漂移"
                 },
                 {
                   "word": "drift",
                   "ipa": "/drɪft/",
                   "meaning": "漂移，侧向偏差",
-                  "level": "red"
-                },
-                {
-                  "word": "place",
-                  "ipa": "",
-                  "meaning": "v.放置",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "漂移"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "INDI"
                 },
                 {
                   "word": "fbl",
                   "ipa": "/ˌef.biːˈel/",
                   "meaning": "反馈线性化 (Feedback Linearization)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "FBL"
                 }
               ]
             },
@@ -2304,67 +1898,64 @@ window.BISHE_DATA['paper3'] = {
                   "word": "consumption",
                   "ipa": "kənˈsəmpʃn",
                   "meaning": "n. 消费；消耗",
-                  "level": "green"
-                },
-                {
-                  "word": "expenditure",
-                  "ipa": "ɪkˈspendɪtʃər",
-                  "meaning": "n. 支出；消费",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "连续功耗"
                 },
                 {
                   "word": "continuous",
                   "ipa": "kənˈtɪnjuəs",
                   "meaning": "adj. 连续的；不断的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "连续"
                 },
                 {
                   "word": "quadratic",
                   "ipa": "/kwɒˈdrætɪk/",
                   "meaning": "二次型的，平方的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "二次"
                 },
                 {
                   "word": "energy",
                   "ipa": "ˈɛnərdʒi",
                   "meaning": "n. 能量；精力；活力",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "能耗"
                 },
                 {
                   "word": "power",
                   "ipa": "",
                   "meaning": "n. 力量，权力；v.推动，驱动",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "功耗"
                 },
                 {
                   "word": "drift",
                   "ipa": "/drɪft/",
                   "meaning": "漂移，侧向偏差",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "漂移"
                 },
                 {
                   "word": "extra",
                   "ipa": "ˈɛkstrə",
                   "meaning": "adj.额外的,附加的 n.附加物,额外的东西",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "额外"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "for",
-                  "ipa": "",
-                  "meaning": "v.寻找;探索;渴望;盼望",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "INDI"
                 },
                 {
                   "word": "fbl",
                   "ipa": "/ˌef.biːˈel/",
                   "meaning": "反馈线性化 (Feedback Linearization)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "FBL"
                 }
               ]
             }
@@ -2393,97 +1984,78 @@ window.BISHE_DATA['paper3'] = {
                   "word": "feedback linearization",
                   "ipa": "/ˈfiːdbæk ˌlɪniəraɪˈzeɪʃn/",
                   "meaning": "反馈线性化控制",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "反馈线性化"
                 },
                 {
                   "word": "station keeping",
                   "ipa": "/ˈsteɪʃn ˈkiːpɪŋ/",
                   "meaning": "定点悬停，动力定位保持",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "定点悬停"
                 },
                 {
                   "word": "breakthrough",
                   "ipa": "/ˈbreɪkθruː/",
                   "meaning": "突破，重大技术进展",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "开创性验证"
                 },
                 {
                   "word": "significant",
                   "ipa": "sɪɡˈnɪfɪkənt",
                   "meaning": "adj.重要的；显著的；意味深长的",
-                  "level": "green"
-                },
-                {
-                  "word": "performance",
-                  "ipa": "pəˈfɔːm",
-                  "meaning": "n. 演出，表演",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "显著"
                 },
                 {
                   "word": "validation",
                   "ipa": "/ˌvælɪˈdeɪʃn/",
                   "meaning": "验证，证实",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "开创性验证"
                 },
                 {
                   "word": "successful",
                   "ipa": "səkˈsesfʊl",
                   "meaning": "adj. 成功的,有",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "成功"
                 },
                 {
                   "word": "maneuvers",
                   "ipa": "/məˈnuːvəz/",
                   "meaning": "机动（复数）",
-                  "level": "red"
-                },
-                {
-                  "word": "physical",
-                  "ipa": "ˈfɪzɪk(ə)l",
-                  "meaning": "adj.物理的；身体的；物质的 n.体检",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "机动"
                 },
                 {
                   "word": "feedback",
                   "ipa": "/ˈfiːdbæk/",
                   "meaning": "反馈控制",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "反馈"
                 },
                 {
                   "word": "station",
                   "ipa": "",
                   "meaning": "n.火车站；公共汽车站；长途汽车站；站；所；局；电台；社会地位",
-                  "level": "red"
-                },
-                {
-                  "word": "marine",
-                  "ipa": "",
-                  "meaning": "adj.海的；海产的；海生的；海船的；货船的；海上贸易的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "定点悬停"
                 },
                 {
                   "word": "agile",
                   "ipa": "/ˈædʒaɪl/",
                   "meaning": "敏捷的，高机动性的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "机动"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "work",
-                  "ipa": "wɜ:rk",
-                  "meaning": "n.工作(量);作品;[pl.]工厂 v.工作;运转",
-                  "level": "red"
-                },
-                {
-                  "word": "a",
-                  "ipa": "细节因果题",
-                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
-                  "level": "red"
+                  "level": "blue",
+                  "zh": "INDI"
                 }
               ]
             },
@@ -2497,61 +2069,50 @@ window.BISHE_DATA['paper3'] = {
                   "word": "conventional",
                   "ipa": "/kənˈvenʃənl/",
                   "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "传统"
                 },
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
                   "meaning": "水动力学的，流体动力学的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "流体动力学"
                 },
                 {
                   "word": "drastically",
                   "ipa": "ˈdræstɪkəli",
                   "meaning": "adv. 彻底地；激烈地",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "大幅"
                 },
                 {
                   "word": "thruster",
                   "ipa": "/ˈθrʌstə/",
                   "meaning": "推进器（水下无刷推进电机）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "推进器"
                 },
                 {
                   "word": "minimal",
                   "ipa": "ˈmɪnɪm(ə)l",
                   "meaning": "adj.极小的，极少的",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "极小化"
                 },
                 {
                   "word": "burden",
                   "ipa": "ˈbɜːrdn",
                   "meaning": "n.负担；重担 v.烦扰，使负重担",
-                  "level": "green"
-                },
-                {
-                  "word": "unlike",
-                  "ipa": "",
-                  "meaning": "prep.不像，和……不同；不是……的个性；与……不同",
-                  "level": "red"
-                },
-                {
-                  "word": "solely",
-                  "ipa": "ˈsəʊlli",
-                  "meaning": "adv. 单独地；唯一地",
-                  "level": "green"
-                },
-                {
-                  "word": "total",
-                  "ipa": "ˈtəʊt(ə)l",
-                  "meaning": "adj. 总数的;总括的;完",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "建模负担"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "INDI"
                 }
               ]
             },
@@ -2565,91 +2126,78 @@ window.BISHE_DATA['paper3'] = {
                   "word": "fault-tolerant",
                   "ipa": "/fɔːlt ˈtɒlərənt/",
                   "meaning": "容错的，具备容错控制能力的",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "推力故障容错"
                 },
                 {
                   "word": "reconfigurable",
                   "ipa": "/ˌriːkənˈfɪɡjərəbl/",
                   "meaning": "可重构的，自重构控制的",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "重构控制"
                 },
                 {
                   "word": "acceleration",
                   "ipa": "/əkˌseləˈreɪʃn/",
                   "meaning": "加速度",
-                  "level": "green"
-                },
-                {
-                  "word": "inherently",
-                  "ipa": "/ɪnˈherəntli/",
-                  "meaning": "本质上地；内在地（常用释义：固有地；天生地）",
-                  "level": "red"
+                  "level": "green",
+                  "zh": "加速度"
                 },
                 {
                   "word": "tolerance",
                   "ipa": "ˈtɑːlərəns",
                   "meaning": "n.忍受，容忍；忍耐力；公差",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "容错"
                 },
                 {
                   "word": "thrusters",
                   "ipa": "/ˈθrʌstəz/",
                   "meaning": "推进器（复数）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "推进器"
                 },
                 {
                   "word": "diagnosis",
                   "ipa": "/ˌdaɪəɡˈnəʊsɪs/",
                   "meaning": "诊断结果；疾病诊断（常用释义：诊断；判断）",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "故障诊断模块"
                 },
                 {
                   "word": "adaptive",
                   "ipa": "/əˈdæptɪv/",
                   "meaning": "自适应的",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "自适应"
                 },
                 {
                   "word": "feedback",
                   "ipa": "/ˈfiːdbæk/",
                   "meaning": "反馈控制",
-                  "level": "red"
-                },
-                {
-                  "word": "explicit",
-                  "ipa": "ɪkˈsplɪsɪt",
-                  "meaning": "adj.详述的,明确的;坦率的;显然的",
-                  "level": "red"
-                },
-                {
-                  "word": "outlook",
-                  "ipa": "",
-                  "meaning": "n.看法，态度；前景，展望；景色，风光；瞭望处",
-                  "level": "red"
-                },
-                {
-                  "word": "degrade",
-                  "ipa": "dɪˈɡreɪd",
-                  "meaning": "v.侮辱，贬低；降低（尤指质量）；降解",
-                  "level": "green"
+                  "level": "red",
+                  "zh": "加速度反馈"
                 },
                 {
                   "word": "direct",
                   "ipa": "/dəˈrekt/",
                   "meaning": "引导；掌控；使朝某方向发展（常用释义：adj. 直接的；v. 指挥、指导、管理）",
-                  "level": "red"
+                  "level": "red",
+                  "zh": "直接"
                 },
                 {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
+                  "level": "blue",
+                  "zh": "INDI"
                 },
                 {
                   "word": "weed",
                   "ipa": "wiːd",
                   "meaning": "n. 杂草 vt. 除草",
-                  "level": "green"
+                  "level": "green",
+                  "zh": "水草"
                 }
               ]
             }
