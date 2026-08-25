@@ -1572,20 +1572,72 @@
     }
 
     /* ===== 题号网格（右侧栏） ===== */
+    .qnav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 8px;
+    }
+    .qnav-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
     .qnav-label {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--text);
-      margin: 0 0 6px;
+      margin: 0;
       font-weight: 700;
       letter-spacing: 0.02em;
+    }
+    .qnav-stat {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .qnav-collapse-all-btn {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .qnav-collapse-all-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-alpha);
     }
 
     .qnav {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 5px;
       width: 100%;
       margin: 0;
+      max-height: 270px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 3px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(128,128,128,0.25) transparent;
+      scroll-behavior: smooth;
+    }
+    .qnav::-webkit-scrollbar {
+      width: 4px;
+    }
+    .qnav::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .qnav::-webkit-scrollbar-thumb {
+      background: rgba(128,128,128,0.25);
+      border-radius: 2px;
+    }
+    .qnav::-webkit-scrollbar-thumb:hover {
+      background: rgba(128,128,128,0.45);
     }
 
     .qnav button {
@@ -1749,16 +1801,62 @@
       font-size: 13px;
     }
 
-    /* ===== 分区标题与空占位 ===== */
+    /* ===== 分区手风琴标题与空占位 ===== */
     .section-header {
       grid-column: 1 / -1;
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--primary);
-      font-weight: bold;
+      font-weight: 700;
       margin-top: 8px;
-      margin-bottom: 2px;
-      padding: 2px 4px;
+      margin-bottom: 4px;
+      padding: 4px 8px;
+      background: var(--primary-alpha);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
     }
+    .section-header:hover {
+      background: rgba(102, 8, 116, 0.14);
+      border-color: var(--primary);
+    }
+    .section-header .sec-header-left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .section-header .sec-arrow {
+      font-size: 10.5px;
+      color: var(--primary);
+      transition: transform 0.15s ease;
+    }
+    .section-header .sec-title-text {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .section-header .sec-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+      background: var(--input-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .section-header.collapsed {
+      margin-bottom: 2px;
+      opacity: 0.85;
+      background: var(--input-bg);
+    }
+    .section-header.collapsed:hover {
+      opacity: 1;
+      background: var(--primary-alpha);
+    }
+
     .section-empty {
       grid-column: 1 / -1;
       font-size: 12px;

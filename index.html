@@ -439,7 +439,13 @@
         <div class="review-queue" id="reviewQueue"></div>
       </div>
       <div id="qnavContainer" class="qnav-container">
-        <div class="qnav-label">题号</div>
+        <div class="qnav-header" id="qnavHeader">
+          <div class="qnav-title-wrap">
+            <span class="qnav-label">题号</span>
+            <span class="qnav-stat" id="qnavStat"></span>
+          </div>
+          <button type="button" class="qnav-collapse-all-btn" id="btnToggleAllSections" title="折叠/展开所有分区">全部折叠</button>
+        </div>
         <div class="qnav" id="qnav"></div>
       </div>
       <div class="math-symbol-palette" id="mathSymbolPalette">

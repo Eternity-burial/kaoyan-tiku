@@ -1852,6 +1852,10 @@
     }
 
     // ===== 渲染题号网格 =====
+    // ===== 题号分区手风琴折叠状态存储 =====
+    const collapsedSections = new Set();
+
+    // ===== 渲染题号网格 =====
     function renderNav() {
       const nav = document.getElementById('qnav');
       nav.innerHTML = '';
@@ -1864,6 +1868,12 @@
       // 预计算筛中索引集合，renderNav 内多处使用，避免重复调用 getFilteredIndices()。
       // 「全部」筛选下无需构建集合（所有组均可见）。
       const filteredSet = isAllFilterActive() ? null : new Set(getFilteredIndices());
+
+      // 更新题号区顶部当前进度摘要 (如 "共 68 题 · 当前 第 14 题")
+      const qnavStat = document.getElementById('qnavStat');
+      if (qnavStat) {
+        qnavStat.textContent = '共 ' + labels.length + ' 题 · 当前 第 ' + (current + 1) + ' 题';
+      }
 
       function appendBadges(btn, i) {
         const labels = ch.labels;
@@ -1918,6 +1928,14 @@
         return partOrder.indexOf(a.label) - partOrder.indexOf(b.label);
       });
 
+      // 当前题所在的分区必须保持自动展开，绝不折叠
+      const curPartLabel = partOfIdx(current);
+      const curSecKey = (curSubjectId || 'default') + '::' + currentChapter + '::' + curPartLabel;
+      collapsedSections.delete(curSecKey);
+
+      // 收集当前章节中有题目的非当前分区 keys（用于一键全部折叠/展开）
+      const validOtherSecKeys = [];
+
       parts.forEach(function(part) {
         // 收集该分区的 subGroups
         var secGroups = [];
@@ -1930,11 +1948,46 @@
         // 该分区无题则跳过（如36讲无习题、某些章节无例题）
         if (secGroups.length === 0) return;
 
-        // 分区标题
+        const secKey = (curSubjectId || 'default') + '::' + currentChapter + '::' + part.label;
+        if (part.label !== curPartLabel) {
+          validOtherSecKeys.push(secKey);
+        }
+
+        // 计算该分区已完成题数与总题数
+        let totalSecQuestions = 0;
+        let completedSecQuestions = 0;
+        secGroups.forEach(function(g) {
+          for (var k = 0; k < g.count; k++) {
+            totalSecQuestions++;
+            if (statuses[g.startIdx + k]) completedSecQuestions++;
+          }
+        });
+
+        const isCollapsed = collapsedSections.has(secKey);
+
+        // 分区手风琴标题
         var secTitle = document.createElement('div');
-        secTitle.className = 'section-header';
-        secTitle.textContent = part.label;
+        secTitle.className = 'section-header' + (isCollapsed ? ' collapsed' : '');
+        secTitle.title = isCollapsed ? '点击展开本分区题号' : '点击收起本分区题号';
+        secTitle.innerHTML = '<div class="sec-header-left">' +
+          '<span class="sec-arrow">' + (isCollapsed ? '▸' : '▾') + '</span>' +
+          '<span class="sec-title-text">' + part.label + '</span>' +
+          '</div>' +
+          '<span class="sec-badge">' + completedSecQuestions + '/' + totalSecQuestions + '</span>';
+
+        secTitle.onclick = function(e) {
+          e.stopPropagation();
+          if (collapsedSections.has(secKey)) {
+            collapsedSections.delete(secKey);
+          } else {
+            collapsedSections.add(secKey);
+          }
+          renderNav();
+        };
         nav.appendChild(secTitle);
+
+        // 若被折叠，不渲染下方题号按钮
+        if (isCollapsed) return;
 
         secGroups.forEach(function(g) {
           // 插入题型二级子标题（如 选择题 / 填空题 / 证明题）
@@ -2012,10 +2065,45 @@
         });
       });
 
+      // 更新「全部折叠/展开」按钮状态
+      const btnToggleAll = document.getElementById('btnToggleAllSections');
+      if (btnToggleAll) {
+        if (validOtherSecKeys.length === 0) {
+          btnToggleAll.style.display = 'none';
+        } else {
+          btnToggleAll.style.display = '';
+          const allOthersCollapsed = validOtherSecKeys.every(function(k) { return collapsedSections.has(k); });
+          if (allOthersCollapsed) {
+            btnToggleAll.textContent = '全部展开';
+            btnToggleAll.title = '展开所有题号分区';
+          } else {
+            btnToggleAll.textContent = '全部折叠';
+            btnToggleAll.title = '折叠其他题号分区，仅保留当前分区';
+          }
+          btnToggleAll.onclick = function(e) {
+            e.stopPropagation();
+            if (allOthersCollapsed) {
+              validOtherSecKeys.forEach(function(k) { collapsedSections.delete(k); });
+            } else {
+              validOtherSecKeys.forEach(function(k) { collapsedSections.add(k); });
+            }
+            renderNav();
+          };
+        }
+      }
+
       // 构建视觉行映射（W/S 导航用）
       buildVisualRows(nav);
 
       renderSubSelectBar(curGroup);
+
+      // 自动平滑滚动聚焦到当前题号按钮（保证当前题始终在可视窗口内部，免去手动查找）
+      const activeBtn = nav.querySelector('button.active, button.has-subs.active');
+      if (activeBtn) {
+        requestAnimationFrame(function() {
+          activeBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        });
+      }
     }
 
     // ===== 根据 DOM 构建视觉行映射 =====
