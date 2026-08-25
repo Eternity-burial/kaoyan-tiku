@@ -3231,6 +3231,22 @@
       });
     }
 
+    // ===== 右侧常用数学符号工具盘折叠与切换 =====
+    function toggleMathSymbolPalette(forceOpen) {
+      const panel = document.getElementById('mathSymbolPalette');
+      if (!panel) return;
+      if (forceOpen === true) {
+        panel.classList.remove('collapsed');
+      } else if (forceOpen === false) {
+        panel.classList.add('collapsed');
+      } else {
+        panel.classList.toggle('collapsed');
+      }
+      if (!panel.classList.contains('collapsed')) {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
     // ===== 右侧常用数学符号工具盘初始化 =====
     function initMathSymbolPalette() {
       const grid = document.getElementById('paletteGrid');
@@ -3269,7 +3285,7 @@
 
       if (header && panel) {
         header.addEventListener('click', function(e) {
-          panel.classList.toggle('collapsed');
+          toggleMathSymbolPalette();
         });
       }
 
@@ -5373,8 +5389,9 @@ ${cardsHTML}
         case 'v': toggleDashboard(); break;
         case 'b': toggleWrongBook(); break;
         case 'm': toggleSm2Panel(); break;
-        // 切换科目与主题与试卷暗化与侧栏折叠
-        case '[': toggleLeftSidebar(); break;
+        // 切换科目与主题与试卷暗化与侧栏/符号盘折叠
+        case 'i': toggleLeftSidebar(); break;
+        case 'p': toggleMathSymbolPalette(); break;
         case 'g': openSubjectPicker(); break;
         case 'y': toggleTheme(); break;
         case 'u': toggleImageDarkFilter(); break;
