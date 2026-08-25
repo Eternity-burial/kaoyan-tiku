@@ -1174,9 +1174,25 @@
 [data-theme="dark"] .btn-back-home:hover,
 [data-theme="dark"] .toggle-btn:hover,
 [data-theme="dark"] .theme-toggle-btn:hover {
-  background: #2b2d38 !important;
-  border-color: var(--primary) !important;
-  color: var(--primary-light) !important;
+  background: rgba(207, 111, 232, 0.14) !important;
+  border-color: #cf6fe8 !important;
+  color: #cf6fe8 !important;
+  box-shadow: 0 0 10px rgba(207, 111, 232, 0.25) !important;
+}
+
+[data-theme="dark"] #engTrigYear {
+  background: rgba(30, 31, 38, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #e2e2e8 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] #engTrigYear:hover,
+[data-theme="dark"] #engTrigYear.open {
+  border-color: #cf6fe8 !important;
+  color: #cf6fe8 !important;
+  box-shadow: 0 0 12px rgba(207, 111, 232, 0.3) !important;
 }
 
 [data-theme="dark"] .text-tabs,
@@ -1197,8 +1213,10 @@
 
 [data-theme="dark"] .text-tab.active,
 [data-theme="dark"] .mode-btn.active {
-  background: var(--primary) !important;
+  background: linear-gradient(145deg, #8a2b9c, #660874) !important;
   color: #ffffff !important;
+  border: 1px solid #cf6fe8 !important;
+  box-shadow: 0 2px 10px rgba(207, 111, 232, 0.35) !important;
 }
 
 /* 左栏：文章阅读区 */
