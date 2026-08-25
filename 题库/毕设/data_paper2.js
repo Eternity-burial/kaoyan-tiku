@@ -28,9 +28,63 @@ window.BISHE_DATA['paper2'] = {
               "translation": "增量非线性动态逆（Incremental Nonlinear Dynamic Inversion, INDI）是一种基于传感器的非线性控制方法，它有望在不需要被控对象精确数学模型的前提下实现高性能非线性控制。",
               "vocab": [
                 {
+                  "word": "dynamic inversion",
+                  "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+                  "meaning": "动态逆控制",
+                  "level": "blue"
+                },
+                {
+                  "word": "incremental",
+                  "ipa": "/ˌɪŋkrəˈmentl/",
+                  "meaning": "增量的，逐拍差分的",
+                  "level": "blue"
+                },
+                {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
+                  "level": "red"
+                },
+                {
+                  "word": "inversion",
+                  "ipa": "/ɪnˈvɜːʃn/",
+                  "meaning": "逆，动态逆求解",
+                  "level": "blue"
+                },
+                {
+                  "word": "approach",
+                  "ipa": "/əˈprəʊtʃ/",
+                  "meaning": "研究方法；路径（常用释义：方法；接近；着手处理）",
+                  "level": "red"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "/daɪˈnæmɪk/",
+                  "meaning": "动态的，动力学的",
+                  "level": "red"
+                },
+                {
+                  "word": "provide",
+                  "ipa": "",
+                  "meaning": "v.提供，供给；配备，准备好；规定；供养，提",
+                  "level": "red"
+                },
+                {
+                  "word": "vehicle",
+                  "ipa": "ˈviːɪkl",
+                  "meaning": "n.车辆,交通工具;媒介,载体",
+                  "level": "red"
+                },
+                {
+                  "word": "model",
+                  "ipa": "ˈmɒdl",
+                  "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
+                  "level": "green"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
                   "level": "red"
                 }
               ]
@@ -48,9 +102,99 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "dynamic inversion",
+                  "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+                  "meaning": "动态逆控制",
+                  "level": "blue"
+                },
+                {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能，有效性",
+                  "level": "green"
+                },
+                {
+                  "word": "accelerations",
+                  "ipa": "/əkˌseləˈreɪʃnz/",
+                  "meaning": "加速度（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "incremental",
+                  "ipa": "/ˌɪŋkrəˈmentl/",
+                  "meaning": "增量的，逐拍差分的",
+                  "level": "blue"
+                },
+                {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
+                  "level": "red"
+                },
+                {
+                  "word": "inversion",
+                  "ipa": "/ɪnˈvɜːʃn/",
+                  "meaning": "逆，动态逆求解",
+                  "level": "blue"
+                },
+                {
+                  "word": "estimates",
+                  "ipa": "/ˈestɪmeɪts/",
+                  "meaning": "估计值（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "attitude",
+                  "ipa": "/ˈætɪtjuːd/",
+                  "meaning": "姿态角 (Roll, Pitch, Yaw)",
+                  "level": "red"
+                },
+                {
+                  "word": "context",
+                  "ipa": "ˈkɒntekst",
+                  "meaning": "n. 环境；上下文",
+                  "level": "green"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "/daɪˈnæmɪk/",
+                  "meaning": "动态的，动力学的",
+                  "level": "red"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "replace",
+                  "ipa": "",
+                  "meaning": "v.取代；替换；更换， 赔还；把……放回原处",
+                  "level": "red"
+                },
+                {
+                  "word": "model",
+                  "ipa": "ˈmɒdl",
+                  "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
+                  "level": "green"
+                },
+                {
+                  "word": "rest",
+                  "ipa": "rɛst",
+                  "meaning": "n. 休息；剩余部分 vi. 休息；依赖",
+                  "level": "green"
+                },
+                {
+                  "word": "air",
+                  "ipa": "eə",
+                  "meaning": "n.感觉;印象;神态",
+                  "level": "red"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
                   "level": "red"
                 }
               ]
@@ -75,21 +219,75 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "dynamic inversion",
+                  "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+                  "meaning": "动态逆控制",
+                  "level": "blue"
+                },
+                {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能，有效性",
+                  "level": "green"
+                },
+                {
+                  "word": "incremental",
+                  "ipa": "/ˌɪŋkrəˈmentl/",
+                  "meaning": "增量的，逐拍差分的",
+                  "level": "blue"
+                },
+                {
+                  "word": "deal with",
+                  "ipa": "/diːl wɪð/",
+                  "meaning": "处理，应对；涉及（常用释义：handle; cope with; address）",
+                  "level": "purple"
+                },
+                {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
                   "level": "red"
                 },
                 {
+                  "word": "inversion",
+                  "ipa": "/ɪnˈvɜːʃn/",
+                  "meaning": "逆，动态逆求解",
+                  "level": "blue"
+                },
+                {
                   "word": "actuator",
                   "ipa": "/ˈæktʃueɪtə/",
-                  "meaning": "执行机构，执行器（电机/电调/舵机/推进器）",
+                  "meaning": "执行机构，执行器（电机/舵机/推进器）",
                   "level": "red"
                 },
                 {
-                  "word": "delays",
-                  "ipa": "/dɪˈleɪz/",
-                  "meaning": "延迟（复数）",
+                  "word": "changing",
+                  "ipa": "ˈtʃeɪndʒɪŋ",
+                  "meaning": "adj.变化中的，改变中的",
+                  "level": "red"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "/daɪˈnæmɪk/",
+                  "meaning": "动态的，动力学的",
+                  "level": "red"
+                },
+                {
+                  "word": "major",
+                  "ipa": "/ˈmeɪdʒə/",
+                  "meaning": "主要的；大型的（常用释义：主要的；重大的；主修专业）",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
                   "level": "red"
                 }
               ]
@@ -106,7 +304,14 @@ window.BISHE_DATA['paper2'] = {
               "id": "P3-S1",
               "text": "The main contributions of this article are:",
               "translation": "本文的主要理论与工程贡献包含以下四点：",
-              "vocab": []
+              "vocab": [
+                {
+                  "word": "article",
+                  "ipa": "ˈɑːrtɪkəl",
+                  "meaning": "n. 文章；物品；冠词 v.见习",
+                  "level": "green"
+                }
+              ]
             },
             {
               "sIndex": 2,
@@ -115,15 +320,57 @@ window.BISHE_DATA['paper2'] = {
               "translation": "1) 提出了能够精确补偿从角速率差分推导角加速度时所引入滤波延迟的时序同步控制律；",
               "vocab": [
                 {
+                  "word": "accelerations",
+                  "ipa": "/əkˌseləˈreɪʃnz/",
+                  "meaning": "加速度（复数）",
+                  "level": "green"
+                },
+                {
                   "word": "angular rate",
                   "ipa": "/ˈæŋɡjələ reɪt/",
                   "meaning": "角速率，角速度",
                   "level": "blue"
                 },
                 {
-                  "word": "delays",
-                  "ipa": "/dɪˈleɪz/",
-                  "meaning": "延迟（复数）",
+                  "word": "proposed",
+                  "ipa": "prəˈpoʊzd",
+                  "meaning": "adj. 被提议的 v.提议",
+                  "level": "green"
+                },
+                {
+                  "word": "account",
+                  "ipa": "əˈkaʊnt",
+                  "meaning": "n.账户；客户；网络账号；描述；账目；账单；赊购；解释；",
+                  "level": "green"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "method",
+                  "ipa": "ˈmeθəd",
+                  "meaning": "n. 方法，办法",
+                  "level": "green"
+                },
+                {
+                  "word": "take",
+                  "ipa": "teɪk",
+                  "meaning": "v. 携带，拿",
+                  "level": "green"
+                },
+                {
+                  "word": "rate",
+                  "ipa": "reɪt",
+                  "meaning": "n.速率;等级;价格,费用 v.估价;评级,评价",
+                  "level": "red"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
                   "level": "red"
                 }
               ]
@@ -141,9 +388,33 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "dynamic inversion",
+                  "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+                  "meaning": "动态逆控制",
+                  "level": "blue"
+                },
+                {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能，有效性",
+                  "level": "green"
+                },
+                {
+                  "word": "introduction",
+                  "ipa": "",
+                  "meaning": "n.介绍，引见；初次经历，首次体验；序言，引言；导读，入门指导；前奏；介",
+                  "level": "red"
+                },
+                {
+                  "word": "incremental",
+                  "ipa": "/ˌɪŋkrəˈmentl/",
+                  "meaning": "增量的，逐拍差分的",
+                  "level": "blue"
+                },
+                {
                   "word": "estimation",
                   "ipa": "/ˌestɪˈmeɪʃn/",
-                  "meaning": "估计，辨识",
+                  "meaning": "估计，参数辨识",
                   "level": "green"
                 },
                 {
@@ -153,9 +424,51 @@ window.BISHE_DATA['paper2'] = {
                   "level": "red"
                 },
                 {
+                  "word": "inversion",
+                  "ipa": "/ɪnˈvɜːʃn/",
+                  "meaning": "逆，动态逆求解",
+                  "level": "blue"
+                },
+                {
+                  "word": "parameter",
+                  "ipa": "/pəˈræmɪtə/",
+                  "meaning": "参数",
+                  "level": "green"
+                },
+                {
                   "word": "adaptive",
                   "ipa": "/əˈdæptɪv/",
-                  "meaning": "自适应的，可在线调整的",
+                  "meaning": "自适应的",
+                  "level": "red"
+                },
+                {
+                  "word": "estimate",
+                  "ipa": "/ˈestɪmeɪt/",
+                  "meaning": "估计，辨识",
+                  "level": "green"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "/daɪˈnæmɪk/",
+                  "meaning": "动态的，动力学的",
+                  "level": "red"
+                },
+                {
+                  "word": "online",
+                  "ipa": "/ˌɒnˈlaɪn/",
+                  "meaning": "可通过互联网访问的；在线（常用释义：在线的；联网地）",
+                  "level": "red"
+                },
+                {
+                  "word": "manual",
+                  "ipa": "",
+                  "meaning": "n.手册；说明书；指南",
+                  "level": "red"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
                   "level": "red"
                 }
               ]
@@ -167,10 +480,34 @@ window.BISHE_DATA['paper2'] = {
               "translation": "3) 在姿态控制律中显式计入了螺旋桨旋转角动量与瞬态加减速自旋力矩，显著增强了四旋翼偏航轴的响应带宽；",
               "vocab": [
                 {
+                  "word": "incorporation",
+                  "ipa": "/ɪnˌkɔːpəˈreɪʃn/",
+                  "meaning": "融入，结合",
+                  "level": "red"
+                },
+                {
+                  "word": "propellers",
+                  "ipa": "/prəˈpeləz/",
+                  "meaning": "螺旋桨（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "momentum",
+                  "ipa": "moʊˈmɛntəm",
+                  "meaning": "n. 动力；势头",
+                  "level": "green"
+                },
+                {
                   "word": "tracking",
                   "ipa": "/ˈtrækɪŋ/",
                   "meaning": "跟踪，追踪",
                   "level": "red"
+                },
+                {
+                  "word": "yaw",
+                  "ipa": "/jɔː/",
+                  "meaning": "偏航角 (Yaw)",
+                  "level": "blue"
                 }
               ]
             },
@@ -189,7 +526,25 @@ window.BISHE_DATA['paper2'] = {
                 {
                   "word": "adaptiveness",
                   "ipa": "/əˈdæptɪvnəs/",
-                  "meaning": "自适应能力",
+                  "meaning": "自适应性",
+                  "level": "red"
+                },
+                {
+                  "word": "experiments",
+                  "ipa": "/ɪkˈsperɪmənts/",
+                  "meaning": "实验（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "performance",
+                  "ipa": "pəˈfɔːm",
+                  "meaning": "n. 演出，表演",
+                  "level": "green"
+                },
+                {
+                  "word": "disturbance",
+                  "ipa": "/dɪˈstɜːbəns/",
+                  "meaning": "扰动，外界风扰",
                   "level": "red"
                 },
                 {
@@ -201,7 +556,31 @@ window.BISHE_DATA['paper2'] = {
                 {
                   "word": "rejection",
                   "ipa": "/rɪˈdʒekʃn/",
-                  "meaning": "抑制，抗扰能力 (Disturbance Rejection)",
+                  "meaning": "抑制，抗扰能力",
+                  "level": "red"
+                },
+                {
+                  "word": "bumper",
+                  "ipa": "/ˈbʌmpə/",
+                  "meaning": "防撞圈",
+                  "level": "green"
+                },
+                {
+                  "word": "bebop",
+                  "ipa": "/ˈbiːbɒp/",
+                  "meaning": "Bebop（Parrot 出品的微型四旋翼机型）",
+                  "level": "blue"
+                },
+                {
+                  "word": "step",
+                  "ipa": "",
+                  "meaning": "v. 踏，踩",
+                  "level": "green"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
                   "level": "red"
                 }
               ]
@@ -226,7 +605,20 @@ window.BISHE_DATA['paper2'] = {
               "id": "P4-S1",
               "text": "The key variables and system parameters are defined as follows.",
               "translation": "本文核心物理参数与动力学变量定义如下：",
-              "vocab": []
+              "vocab": [
+                {
+                  "word": "parameters",
+                  "ipa": "/pəˈræmɪtəz/",
+                  "meaning": "参数（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "system",
+                  "ipa": "ˈsɪstəm",
+                  "meaning": "n. 体系；系统",
+                  "level": "green"
+                }
+              ]
             },
             {
               "sIndex": 2,
@@ -235,16 +627,40 @@ window.BISHE_DATA['paper2'] = {
               "translation": "$b, l$：飞行器宽度与长度 $(m)$；$\\boldsymbol{I}_v, \\boldsymbol{I}_r$：飞行器转动惯量矩阵与转子转动惯量矩阵 $(kg \\cdot m^2)$；$k_1, k_2$：旋翼推力常数与力矩常数；",
               "vocab": [
                 {
+                  "word": "moment of inertia",
+                  "ipa": "/ˈməʊmənt əv ɪˈnɜːʃə/",
+                  "meaning": "转动惯量",
+                  "level": "blue"
+                },
+                {
+                  "word": "vehicle",
+                  "ipa": "ˈviːɪkl",
+                  "meaning": "n.车辆,交通工具;媒介,载体",
+                  "level": "red"
+                },
+                {
                   "word": "inertia",
                   "ipa": "/ɪˈnɜːʃə/",
-                  "meaning": "惯量，转动惯量",
+                  "meaning": "惯量，惯性",
                   "level": "red"
+                },
+                {
+                  "word": "moment",
+                  "ipa": "ˈməʊmənt",
+                  "meaning": "n. 片刻，瞬间",
+                  "level": "green"
                 },
                 {
                   "word": "thrust",
                   "ipa": "/θrʌst/",
                   "meaning": "推力",
                   "level": "red"
+                },
+                {
+                  "word": "rotor",
+                  "ipa": "/ˈrəʊtə/",
+                  "meaning": "旋翼，转子",
+                  "level": "blue"
                 }
               ]
             },
@@ -255,6 +671,12 @@ window.BISHE_DATA['paper2'] = {
               "translation": "$\\boldsymbol{M}_a$：作用在机体上的气动力矩矢量；$\\boldsymbol{M}_c$：执行机构产生的控制力矩矢量；$\\boldsymbol{M}_r$：螺旋桨加减速反作用陀螺力矩矢量 $(N \\cdot m)$；",
               "vocab": [
                 {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
                   "word": "aerodynamic",
                   "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
                   "meaning": "空气动力学的，气动的",
@@ -263,8 +685,20 @@ window.BISHE_DATA['paper2'] = {
                 {
                   "word": "gyroscopic",
                   "ipa": "/ˌdʒaɪrəˈskɒpɪk/",
-                  "meaning": "陀螺效应的，反作用力矩的",
+                  "meaning": "陀螺效应的，反作用陀螺力矩的",
                   "level": "red"
+                },
+                {
+                  "word": "moment",
+                  "ipa": "ˈməʊmənt",
+                  "meaning": "n. 片刻，瞬间",
+                  "level": "green"
+                },
+                {
+                  "word": "rotor",
+                  "ipa": "/ˈrəʊtə/",
+                  "meaning": "旋翼，转子",
+                  "level": "blue"
                 }
               ]
             },
@@ -285,6 +719,48 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˈæŋɡjələ reɪt/",
                   "meaning": "角速率，角速度",
                   "level": "blue"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "motor",
+                  "ipa": "/ˈməʊtə/",
+                  "meaning": "电动机，电机",
+                  "level": "green"
+                },
+                {
+                  "word": "speed",
+                  "ipa": "spiːd",
+                  "meaning": "n. 速度 v.（使）加速",
+                  "level": "green"
+                },
+                {
+                  "word": "input",
+                  "ipa": "ˈɪnˌpʊt",
+                  "meaning": "n./v.输入",
+                  "level": "red"
+                },
+                {
+                  "word": "body",
+                  "ipa": "ˈbɒdi",
+                  "meaning": "n.团体,机构",
+                  "level": "red"
+                },
+                {
+                  "word": "rate",
+                  "ipa": "reɪt",
+                  "meaning": "n.速率;等级;价格,费用 v.估价;评级,评价",
+                  "level": "red"
                 }
               ]
             },
@@ -307,10 +783,46 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能，有效性",
+                  "level": "green"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "virtual",
+                  "ipa": "ˈvɜːrtʃuəl",
+                  "meaning": "adj. 虚拟的；实质上的",
+                  "level": "green"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
                   "word": "inertia",
                   "ipa": "/ɪˈnɜːʃə/",
-                  "meaning": "惯量，转动惯量",
+                  "meaning": "惯量，惯性",
                   "level": "red"
+                },
+                {
+                  "word": "input",
+                  "ipa": "ˈɪnˌpʊt",
+                  "meaning": "n./v.输入",
+                  "level": "red"
+                },
+                {
+                  "word": "rotor",
+                  "ipa": "/ˈrəʊtə/",
+                  "meaning": "旋翼，转子",
+                  "level": "blue"
                 }
               ]
             }
@@ -336,10 +848,34 @@ window.BISHE_DATA['paper2'] = {
               "translation": "微型飞行器（MAV）由于尺寸小、重量轻、惯量极低，在飞行过程中极其容易受到阵风紊流以及突发外界扰动的影响。",
               "vocab": [
                 {
+                  "word": "vulnerable to",
+                  "ipa": "/ˈvʌlnərəbl tə/",
+                  "meaning": "易受……影响的（常用释义：脆弱的；易受伤害的）",
+                  "level": "purple"
+                },
+                {
+                  "word": "particularly",
+                  "ipa": "/pəˈtɪkjələli/",
+                  "meaning": "尤其，特别（常用释义：especially; notably）",
+                  "level": "red"
+                },
+                {
+                  "word": "vulnerable",
+                  "ipa": "/ˈvʌlnərəbl/",
+                  "meaning": "易受伤害的，脆弱的（常用释义：likely to be hurt or affected）",
+                  "level": "red"
+                },
+                {
                   "word": "mavs",
                   "ipa": "/ˈem.eɪ.viːz/",
                   "meaning": "微型飞行器（复数）",
                   "level": "blue"
+                },
+                {
+                  "word": "air",
+                  "ipa": "eə",
+                  "meaning": "n.感觉;印象;神态",
+                  "level": "red"
                 }
               ]
             },
@@ -350,10 +886,64 @@ window.BISHE_DATA['paper2'] = {
               "translation": "传统的线性 PID 控制器需要在线性工作点附近精细整定增益，难以在全飞行包线和未知扰动下保持一致的高性能。",
               "vocab": [
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
+                  "word": "traditional",
+                  "ipa": "trəˈdɪʃən(ə)l",
+                  "meaning": "adj.传统的",
+                  "level": "red"
+                },
+                {
+                  "word": "performance",
+                  "ipa": "pəˈfɔːm",
+                  "meaning": "n. 演出，表演",
                   "level": "green"
+                },
+                {
+                  "word": "consistent",
+                  "ipa": "kənˈsɪstənt",
+                  "meaning": "adj.一贯的；持续的；固守的；一致的",
+                  "level": "green"
+                },
+                {
+                  "word": "specific",
+                  "ipa": "/spəˈsɪfɪk/",
+                  "meaning": "特定的；具体的（常用释义：明确的；特有的）",
+                  "level": "red"
+                },
+                {
+                  "word": "struggle",
+                  "ipa": "ˈstrʌɡl",
+                  "meaning": "n. 斗争；v. 奋斗；挣扎",
+                  "level": "green"
+                },
+                {
+                  "word": "maintain",
+                  "ipa": "/meɪnˈteɪn/",
+                  "meaning": "维持；保持（常用释义：维持；维修；坚称；供养）",
+                  "level": "red"
+                },
+                {
+                  "word": "envelope",
+                  "ipa": "ˈenvələʊp",
+                  "meaning": "n. 信封",
+                  "level": "green"
+                },
+                {
+                  "word": "require",
+                  "ipa": "",
+                  "meaning": "v.需要；要求做（某事），规定",
+                  "level": "red"
+                },
+                {
+                  "word": "around",
+                  "ipa": "əˈraʊnd",
+                  "meaning": "adv.存在着",
+                  "level": "red"
+                },
+                {
+                  "word": "pid",
+                  "ipa": "/ˌpiː.aɪˈdiː/",
+                  "meaning": "比例-积分-微分控制器 (Proportional-Integral-Derivative)",
+                  "level": "blue"
                 }
               ]
             },
@@ -364,10 +954,28 @@ window.BISHE_DATA['paper2'] = {
               "translation": "传统的非线性动态逆（NDI）虽然在理论上能完全解耦非线性系统，但其严重依赖高度精确的刚体动力学模型与气动力模型。对于低成本 MAV 而言，气动阻尼、地面效应和旋翼间气流干扰等参数极难精确测定。",
               "vocab": [
                 {
+                  "word": "dynamic inversion",
+                  "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+                  "meaning": "动态逆控制",
+                  "level": "blue"
+                },
+                {
                   "word": "aerodynamics",
                   "ipa": "/ˌeərəʊdaɪˈnæmɪks/",
                   "meaning": "空气动力学",
                   "level": "red"
+                },
+                {
+                  "word": "notoriously",
+                  "ipa": "/nəʊˈtɔːriəsli/",
+                  "meaning": "众所周知地（尤指出了名地困难）",
+                  "level": "red"
+                },
+                {
+                  "word": "classical",
+                  "ipa": "ˈklæsɪk(ə)l",
+                  "meaning": "adj. 传统的；古典",
+                  "level": "green"
                 },
                 {
                   "word": "nonlinear",
@@ -376,9 +984,57 @@ window.BISHE_DATA['paper2'] = {
                   "level": "red"
                 },
                 {
+                  "word": "inversion",
+                  "ipa": "/ɪnˈvɜːʃn/",
+                  "meaning": "逆，动态逆求解",
+                  "level": "blue"
+                },
+                {
+                  "word": "difficult",
+                  "ipa": "",
+                  "meaning": "adj.困难的，费力的；不友好的，难对付的",
+                  "level": "red"
+                },
+                {
+                  "word": "dynamics",
+                  "ipa": "/daɪˈnæmɪks/",
+                  "meaning": "动力学，动态特性",
+                  "level": "red"
+                },
+                {
+                  "word": "identify",
+                  "ipa": "/aɪˈdentɪfaɪ/",
+                  "meaning": "确认；识别（常用释义：识别；确认；认出；认同）",
+                  "level": "red"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "/daɪˈnæmɪk/",
+                  "meaning": "动态的，动力学的",
+                  "level": "red"
+                },
+                {
+                  "word": "precise",
+                  "ipa": "prɪˈsaɪs",
+                  "meaning": "adj. 准确,精确的,确切",
+                  "level": "green"
+                },
+                {
+                  "word": "motor",
+                  "ipa": "/ˈməʊtə/",
+                  "meaning": "电动机，电机",
+                  "level": "green"
+                },
+                {
                   "word": "mavs",
                   "ipa": "/ˈem.eɪ.viːz/",
                   "meaning": "微型飞行器（复数）",
+                  "level": "blue"
+                },
+                {
+                  "word": "ndi",
+                  "ipa": "/ˌen.diːˈaɪ/",
+                  "meaning": "非线性动态逆 (Nonlinear Dynamic Inversion)",
                   "level": "blue"
                 }
               ]
@@ -407,6 +1063,84 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˈteɪlər ɪkˈspænʃn/",
                   "meaning": "泰勒一阶展开",
                   "level": "blue"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "incremental",
+                  "ipa": "/ˌɪŋkrəˈmentl/",
+                  "meaning": "增量的，逐拍差分的",
+                  "level": "blue"
+                },
+                {
+                  "word": "circumvents",
+                  "ipa": "/ˌsɜːkəmˈvents/",
+                  "meaning": "规避（第三人称单数）",
+                  "level": "red"
+                },
+                {
+                  "word": "dependency",
+                  "ipa": "dɪˈpendənsi",
+                  "meaning": "n.依赖性",
+                  "level": "red"
+                },
+                {
+                  "word": "expansion",
+                  "ipa": "/ɪkˈspænʃn/",
+                  "meaning": "展开，级数展开",
+                  "level": "green"
+                },
+                {
+                  "word": "dynamics",
+                  "ipa": "/daɪˈnæmɪks/",
+                  "meaning": "动力学，动态特性",
+                  "level": "red"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "direct",
+                  "ipa": "/dəˈrekt/",
+                  "meaning": "引导；掌控；使朝某方向发展（常用释义：adj. 直接的；v. 指挥、指导、管理）",
+                  "level": "red"
+                },
+                {
+                  "word": "taylor",
+                  "ipa": "/ˈteɪlər/",
+                  "meaning": "泰勒（数学家名）",
+                  "level": "blue"
+                },
+                {
+                  "word": "model",
+                  "ipa": "ˈmɒdl",
+                  "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
+                  "level": "green"
+                },
+                {
+                  "word": "ndi",
+                  "ipa": "/ˌen.diːˈaɪ/",
+                  "meaning": "非线性动态逆 (Nonlinear Dynamic Inversion)",
+                  "level": "blue"
+                },
+                {
+                  "word": "imu",
+                  "ipa": "/ˌaɪ.emˈjuː/",
+                  "meaning": "惯性测量单元 (Inertial Measurement Unit)",
+                  "level": "blue"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             },
@@ -417,22 +1151,88 @@ window.BISHE_DATA['paper2'] = {
               "translation": "然而，在 MAV 上实现 INDI 面临两个长期困扰学界的难题：1. 传感器滤波延迟与振荡：角加速度需要对陀螺仪原始信号进行数值差分并经过二阶低通滤波以滤除电机高频震动，这引入了不可忽视的时间滞后，直接控制会导致回路自激剧烈震荡；",
               "vocab": [
                 {
+                  "word": "differentiation",
+                  "ipa": "/ˌdɪfəˌrenʃiˈeɪʃn/",
+                  "meaning": "微分，数值求导",
+                  "level": "green"
+                },
+                {
                   "word": "oscillations",
                   "ipa": "/ˌɒsɪˈleɪʃnz/",
-                  "meaning": "振荡，抖动",
+                  "meaning": "振荡，抖动（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "substantial",
+                  "ipa": "/səbˈstænʃl/",
+                  "meaning": "相当大的；显著的（常用释义：大量的；重大的；实质性的）",
                   "level": "red"
                 },
                 {
                   "word": "limit-cycle",
                   "ipa": "/ˈlɪmɪt saɪkl/",
-                  "meaning": "极限环振荡（自激震荡）",
+                  "meaning": "极限环振荡（闭环自激震荡）",
                   "level": "red"
                 },
                 {
-                  "word": "phase lag",
-                  "ipa": "/feɪz læɡ/",
-                  "meaning": "相位滞后",
+                  "word": "numerical",
+                  "ipa": "nuːˈmɛrɪkəl",
+                  "meaning": "adj. 数字的；数值的",
+                  "level": "green"
+                },
+                {
+                  "word": "filtering",
+                  "ipa": "/ˈfɪltərɪŋ/",
+                  "meaning": "滤波处理",
+                  "level": "green"
+                },
+                {
+                  "word": "introduce",
+                  "ipa": "",
+                  "meaning": "v.介绍，引见；使初次了解，使尝试；做开场白，主持；实施，推行；首次引入（某",
                   "level": "red"
+                },
+                {
+                  "word": "critical",
+                  "ipa": "ˈkrɪtɪk(ə)l",
+                  "meaning": "adj.批评的；关键的；严重的；病重的；评论性的；临界的",
+                  "level": "green"
+                },
+                {
+                  "word": "low-pass",
+                  "ipa": "/ləʊ pɑːs/",
+                  "meaning": "低通的",
+                  "level": "blue"
+                },
+                {
+                  "word": "however",
+                  "ipa": "/haʊˈevə/",
+                  "meaning": "然而、不过（常用释义：无论如何）",
+                  "level": "red"
+                },
+                {
+                  "word": "hurdles",
+                  "ipa": "/ˈhɜːdlz/",
+                  "meaning": "障碍，技术难题（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "phase",
+                  "ipa": "feɪz",
+                  "meaning": "n.阶段；时期 v.分阶段进行",
+                  "level": "green"
+                },
+                {
+                  "word": "gyro",
+                  "ipa": "/ˈdʒaɪrəʊ/",
+                  "meaning": "陀螺仪，角速度传感器",
+                  "level": "blue"
+                },
+                {
+                  "word": "lag",
+                  "ipa": "læɡ",
+                  "meaning": "n. 落后 v. 落后；缓慢移动",
+                  "level": "green"
                 }
               ]
             },
@@ -447,6 +1247,42 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/kənˈtrəʊl ɪˈfektɪvnəs/",
                   "meaning": "控制效能，控制增益矩阵 G1",
                   "level": "blue"
+                },
+                {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能，有效性",
+                  "level": "green"
+                },
+                {
+                  "word": "continuously",
+                  "ipa": "kənˈtɪnjuəsli",
+                  "meaning": "adv. 连续不断地",
+                  "level": "green"
+                },
+                {
+                  "word": "battery",
+                  "ipa": "ˈbætərɪ",
+                  "meaning": "n. 电池",
+                  "level": "green"
+                },
+                {
+                  "word": "drifts",
+                  "ipa": "/drɪfts/",
+                  "meaning": "漂移（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "prop",
+                  "ipa": "/prɒp/",
+                  "meaning": "桨叶，螺旋桨",
+                  "level": "blue"
+                },
+                {
+                  "word": "due",
+                  "ipa": "/djuː/",
+                  "meaning": "应有的；适当的（常用释义：到期的；预定的；由于）",
+                  "level": "red"
                 }
               ]
             }
@@ -477,10 +1313,34 @@ window.BISHE_DATA['paper2'] = {
               "translation": "四旋翼飞行器的转动动力学由欧拉方程给出：$\\boldsymbol{I}_v \\dot{\\boldsymbol{\\Omega}} + \\boldsymbol{\\Omega} \\times (\\boldsymbol{I}_v \\boldsymbol{\\Omega}) = \\boldsymbol{M}_a(\\boldsymbol{\\Omega}, \\boldsymbol{v}) + \\boldsymbol{M}_c - \\boldsymbol{M}_r$。",
               "vocab": [
                 {
+                  "word": "rotational",
+                  "ipa": "/rəʊˈteɪʃənl/",
+                  "meaning": "转动的，旋转的",
+                  "level": "green"
+                },
+                {
                   "word": "quadrotor",
                   "ipa": "/ˈkwɒdrəʊtə/",
                   "meaning": "四旋翼飞行器，四轴无人机",
                   "level": "red"
+                },
+                {
+                  "word": "dynamics",
+                  "ipa": "/daɪˈnæmɪks/",
+                  "meaning": "动力学，动态特性",
+                  "level": "red"
+                },
+                {
+                  "word": "equation",
+                  "ipa": "ɪˈkweɪʒn",
+                  "meaning": "n. 方程式；等式",
+                  "level": "green"
+                },
+                {
+                  "word": "euler",
+                  "ipa": "/ˈɔɪlər/",
+                  "meaning": "欧拉（数学家名）",
+                  "level": "blue"
                 }
               ]
             },
@@ -491,10 +1351,28 @@ window.BISHE_DATA['paper2'] = {
               "translation": "其中控制力矩为 $\\boldsymbol{M}_c = \\boldsymbol{M}_{c,\\text{matrix}} \\boldsymbol{\\omega}^2$，螺旋桨自旋与加减速反扭矩为 $\\boldsymbol{M}_r = \\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}} + \\boldsymbol{\\Omega} \\times \\boldsymbol{I}_r \\boldsymbol{\\omega}$。",
               "vocab": [
                 {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
                   "word": "gyroscopic",
                   "ipa": "/ˌdʒaɪrəˈskɒpɪk/",
-                  "meaning": "陀螺效应的，反作用力矩的",
+                  "meaning": "陀螺效应的，反作用陀螺力矩的",
                   "level": "red"
+                },
+                {
+                  "word": "propeller",
+                  "ipa": "/prəˈpelə/",
+                  "meaning": "螺旋桨，桨叶",
+                  "level": "red"
+                },
+                {
+                  "word": "moment",
+                  "ipa": "ˈməʊmənt",
+                  "meaning": "n. 片刻，瞬间",
+                  "level": "green"
                 },
                 {
                   "word": "torque",
@@ -515,6 +1393,24 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˈæŋɡjələ əkˌseləˈreɪʃn/",
                   "meaning": "角加速度",
                   "level": "blue"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "total",
+                  "ipa": "ˈtəʊt(ə)l",
+                  "meaning": "adj. 总数的;总括的;完",
+                  "level": "green"
                 }
               ]
             }
@@ -538,16 +1434,64 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "expansion",
+                  "ipa": "/ɪkˈspænʃn/",
+                  "meaning": "展开，级数展开",
+                  "level": "green"
+                },
+                {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
                   "level": "red"
                 },
                 {
+                  "word": "previous",
+                  "ipa": "ˈpriːviəs",
+                  "meaning": "adj.先前的,以前的",
+                  "level": "red"
+                },
+                {
+                  "word": "equation",
+                  "ipa": "ɪˈkweɪʒn",
+                  "meaning": "n. 方程式；等式",
+                  "level": "green"
+                },
+                {
+                  "word": "taylor",
+                  "ipa": "/ˈteɪlər/",
+                  "meaning": "泰勒（数学家名）",
+                  "level": "blue"
+                },
+                {
+                  "word": "around",
+                  "ipa": "əˈraʊnd",
+                  "meaning": "adv.存在着",
+                  "level": "red"
+                },
+                {
+                  "word": "sample",
+                  "ipa": "/ˈsɑːmpəl/",
+                  "meaning": "样本（常用释义：样品；样本；抽样）",
+                  "level": "green"
+                },
+                {
+                  "word": "core",
+                  "ipa": "/kɔː/",
+                  "meaning": "核心的、主要的（常用释义：核心；果核）",
+                  "level": "green"
+                },
+                {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
                   "level": "blue"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             }
@@ -584,10 +1528,58 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "differentiation",
+                  "ipa": "/ˌdɪfəˌrenʃiˈeɪʃn/",
+                  "meaning": "微分，数值求导",
+                  "level": "green"
+                },
+                {
                   "word": "butterworth",
                   "ipa": "/ˈbʌtəwɜːθ/",
-                  "meaning": "巴特沃斯滤波器",
+                  "meaning": "巴特沃斯低通滤波器",
                   "level": "blue"
+                },
+                {
+                  "word": "low-pass",
+                  "ipa": "/ləʊ pɑːs/",
+                  "meaning": "低通的",
+                  "level": "blue"
+                },
+                {
+                  "word": "filters",
+                  "ipa": "/ˈfɪltəz/",
+                  "meaning": "滤波器（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "filter",
+                  "ipa": "/ˈfɪltə/",
+                  "meaning": "滤波器",
+                  "level": "green"
+                },
+                {
+                  "word": "motor",
+                  "ipa": "/ˈməʊtə/",
+                  "meaning": "电动机，电机",
+                  "level": "green"
+                },
+                {
+                  "word": "esc",
+                  "ipa": "/ˌiː.esˈsiː/",
+                  "meaning": "电子调速器，电调 (Electronic Speed Controller)",
+                  "level": "blue"
+                },
+                {
+                  "word": "lag",
+                  "ipa": "læɡ",
+                  "meaning": "n. 落后 v. 落后；缓慢移动",
+                  "level": "green"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             },
@@ -604,9 +1596,81 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
-                  "word": "phase lag",
-                  "ipa": "/feɪz læɡ/",
-                  "meaning": "相位滞后",
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "rotational",
+                  "ipa": "/rəʊˈteɪʃənl/",
+                  "meaning": "转动的，旋转的",
+                  "level": "green"
+                },
+                {
+                  "word": "mismatch",
+                  "ipa": "ˌmɪsˈmætʃ",
+                  "meaning": "n. 不匹配；不协调",
+                  "level": "green"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "leading",
+                  "ipa": "ˈliːdɪŋ",
+                  "meaning": "adj.领导的,指导的;第一位的;最主要的",
+                  "level": "red"
+                },
+                {
+                  "word": "filter",
+                  "ipa": "/ˈfɪltə/",
+                  "meaning": "滤波器",
+                  "level": "green"
+                },
+                {
+                  "word": "severe",
+                  "ipa": "sɪˈvɪə(r)",
+                  "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
+                  "level": "red"
+                },
+                {
+                  "word": "motor",
+                  "ipa": "/ˈməʊtə/",
+                  "meaning": "电动机，电机",
+                  "level": "green"
+                },
+                {
+                  "word": "speed",
+                  "ipa": "spiːd",
+                  "meaning": "n. 速度 v.（使）加速",
+                  "level": "green"
+                },
+                {
+                  "word": "phase",
+                  "ipa": "feɪz",
+                  "meaning": "n.阶段；时期 v.分阶段进行",
+                  "level": "green"
+                },
+                {
+                  "word": "due",
+                  "ipa": "/djuː/",
+                  "meaning": "应有的；适当的（常用释义：到期的；预定的；由于）",
+                  "level": "red"
+                },
+                {
+                  "word": "lag",
+                  "ipa": "læɡ",
+                  "meaning": "n. 落后 v. 落后；缓慢移动",
+                  "level": "green"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
                   "level": "red"
                 }
               ]
@@ -625,9 +1689,57 @@ window.BISHE_DATA['paper2'] = {
               "translation": "为了消除相位失配引起的自激振荡，论文提出将执行机构控制量引入对称滤波通道：推导出时序同步虚拟控制律 $\\boldsymbol{\\omega}_c$。",
               "vocab": [
                 {
+                  "word": "eliminate",
+                  "ipa": "/ɪˈlɪmɪneɪt/",
+                  "meaning": "消除；取消（常用释义：消除；淘汰；排除）",
+                  "level": "red"
+                },
+                {
+                  "word": "identical",
+                  "ipa": "",
+                  "meaning": "adj.完全相同的；同一的；同卵的；恒等的",
+                  "level": "red"
+                },
+                {
+                  "word": "mismatch",
+                  "ipa": "ˌmɪsˈmætʃ",
+                  "meaning": "n. 不匹配；不协调",
+                  "level": "green"
+                },
+                {
                   "word": "actuator",
                   "ipa": "/ˈæktʃueɪtə/",
-                  "meaning": "执行机构，执行器（电机/电调/舵机/推进器）",
+                  "meaning": "执行机构，执行器（电机/舵机/推进器）",
+                  "level": "red"
+                },
+                {
+                  "word": "command",
+                  "ipa": "kəˈmænd",
+                  "meaning": "n./v. 命令",
+                  "level": "green"
+                },
+                {
+                  "word": "channel",
+                  "ipa": "/ˈtʃænəl/",
+                  "meaning": "出版渠道、途径（常用释义：频道；海峡；水道）",
+                  "level": "red"
+                },
+                {
+                  "word": "filter",
+                  "ipa": "/ˈfɪltə/",
+                  "meaning": "滤波器",
+                  "level": "green"
+                },
+                {
+                  "word": "phase",
+                  "ipa": "feɪz",
+                  "meaning": "n.阶段；时期 v.分阶段进行",
+                  "level": "green"
+                },
+                {
+                  "word": "route",
+                  "ipa": "",
+                  "meaning": "n.路线；路途；常规路线，固定线路；途径；渠道",
                   "level": "red"
                 }
               ]
@@ -649,6 +1761,66 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ləʊ pɑːs ˈfɪltə/",
                   "meaning": "低通滤波器",
                   "level": "blue"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "filtered",
+                  "ipa": "/ˈfɪltəd/",
+                  "meaning": "已滤波的",
+                  "level": "green"
+                },
+                {
+                  "word": "low-pass",
+                  "ipa": "/ləʊ pɑːs/",
+                  "meaning": "低通的",
+                  "level": "blue"
+                },
+                {
+                  "word": "command",
+                  "ipa": "kəˈmænd",
+                  "meaning": "n./v. 命令",
+                  "level": "green"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "filter",
+                  "ipa": "/ˈfɪltə/",
+                  "meaning": "滤波器",
+                  "level": "green"
+                },
+                {
+                  "word": "motor",
+                  "ipa": "/ˈməʊtə/",
+                  "meaning": "电动机，电机",
+                  "level": "green"
+                },
+                {
+                  "word": "speed",
+                  "ipa": "spiːd",
+                  "meaning": "n. 速度 v.（使）加速",
+                  "level": "green"
+                },
+                {
+                  "word": "exact",
+                  "ipa": "ɪɡˈzækt",
+                  "meaning": "adj. 精确的；确切的",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
                 }
               ]
             },
@@ -659,16 +1831,58 @@ window.BISHE_DATA['paper2'] = {
               "translation": "该结构在数学上保证了开环传递函数在穿越频率处的相位裕度，彻底根除了未补偿 INDI 的极限环振荡。",
               "vocab": [
                 {
+                  "word": "phase margin",
+                  "ipa": "/feɪz ˈmɑːdʒɪn/",
+                  "meaning": "相位裕度",
+                  "level": "blue"
+                },
+                {
                   "word": "oscillations",
                   "ipa": "/ˌɒsɪˈleɪʃnz/",
-                  "meaning": "振荡，抖动",
+                  "meaning": "振荡，抖动（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "eradicating",
+                  "ipa": "/ɪˈrædɪkeɪtɪŋ/",
+                  "meaning": "根除中",
                   "level": "red"
                 },
                 {
                   "word": "limit-cycle",
                   "ipa": "/ˈlɪmɪt saɪkl/",
-                  "meaning": "极限环振荡（自激震荡）",
+                  "meaning": "极限环振荡（闭环自激震荡）",
                   "level": "red"
+                },
+                {
+                  "word": "crossover",
+                  "ipa": "/ˈkrɒsəʊvə/",
+                  "meaning": "穿越频率 (Crossover Frequency)",
+                  "level": "blue"
+                },
+                {
+                  "word": "adequate",
+                  "ipa": "/ˈædɪkwət/",
+                  "meaning": "足够的；充分的（常用释义：合格的；尚可的）",
+                  "level": "red"
+                },
+                {
+                  "word": "margin",
+                  "ipa": "/ˈmɑːdʒɪn/",
+                  "meaning": "裕度（如相位裕度/幅值裕度）",
+                  "level": "green"
+                },
+                {
+                  "word": "around",
+                  "ipa": "əˈraʊnd",
+                  "meaning": "adv.存在着",
+                  "level": "red"
+                },
+                {
+                  "word": "phase",
+                  "ipa": "feɪz",
+                  "meaning": "n.阶段；时期 v.分阶段进行",
+                  "level": "green"
                 }
               ]
             }
@@ -705,9 +1919,63 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "identification",
+                  "ipa": "aɪdentɪfɪˈkeɪʃ(ə)n",
+                  "meaning": "n. 鉴",
+                  "level": "green"
+                },
+                {
+                  "word": "incorporated",
+                  "ipa": "/ɪnˈkɔːpəreɪtɪd/",
+                  "meaning": "已融入的",
+                  "level": "red"
+                },
+                {
+                  "word": "normalized",
+                  "ipa": "/ˈnɔːməlaɪzd/",
+                  "meaning": "归一化的",
+                  "level": "green"
+                },
+                {
+                  "word": "parameter",
+                  "ipa": "/pəˈræmɪtə/",
+                  "meaning": "参数",
+                  "level": "green"
+                },
+                {
+                  "word": "estimator",
+                  "ipa": "/ˈestɪmeɪtə/",
+                  "meaning": "估计器，辨识器",
+                  "level": "green"
+                },
+                {
+                  "word": "liberate",
+                  "ipa": "",
+                  "meaning": "v.解放，解救；使自由，使摆脱约束；偷窃；释放",
+                  "level": "red"
+                },
+                {
                   "word": "adaptive",
                   "ipa": "/əˈdæptɪv/",
-                  "meaning": "自适应的，可在线调整的",
+                  "meaning": "自适应的",
+                  "level": "red"
+                },
+                {
+                  "word": "offline",
+                  "ipa": "ˌɔːfˈlaɪn",
+                  "meaning": "adj. 离线的；断开连接的",
+                  "level": "green"
+                },
+                {
+                  "word": "online",
+                  "ipa": "/ˌɒnˈlaɪn/",
+                  "meaning": "可通过互联网访问的；在线（常用释义：在线的；联网地）",
+                  "level": "red"
+                },
+                {
+                  "word": "mean",
+                  "ipa": "mi:n",
+                  "meaning": "v.表示……的意思 adj.卑鄙的;平均的 n.平均值",
                   "level": "red"
                 },
                 {
@@ -729,6 +1997,30 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˈæŋɡjələ əkˌseləˈreɪʃn/",
                   "meaning": "角加速度",
                   "level": "blue"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "prediction",
+                  "ipa": "/prɪˈdɪkʃn/",
+                  "meaning": "预测，时域预测",
+                  "level": "green"
+                },
+                {
+                  "word": "filtered",
+                  "ipa": "/ˈfɪltəd/",
+                  "meaning": "已滤波的",
+                  "level": "green"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
                 }
               ]
             },
@@ -737,7 +2029,26 @@ window.BISHE_DATA['paper2'] = {
               "id": "P11-S3",
               "text": "The parameter adaptation update law is $\\hat{\\boldsymbol{G}}_1(k+1) = \\hat{\\boldsymbol{G}}_1(k) + \\boldsymbol{\\mu}_1 \\frac{\\boldsymbol{e}(k) [\\text{diag}(\\boldsymbol{\\omega}_f(k-1)) \\Delta \\boldsymbol{\\omega}_f(k)]^T}{\\epsilon + \\|\\text{diag}(\\boldsymbol{\\omega}_f(k-1)) \\Delta \\boldsymbol{\\omega}_f(k)\\|^2}$, where $\\boldsymbol{\\mu}_1$ is adaptation gain and $\\epsilon > 0$ prevents division by zero.",
               "translation": "控制效能矩阵 $\\hat{\\boldsymbol{G}}_1$ 的在线更新律利用归一化梯度递推，其中 $\\boldsymbol{\\mu}_1$ 为对角自适应学习率矩阵，$\\epsilon > 0$ 为防止除以零的正则化微小正数。",
-              "vocab": []
+              "vocab": [
+                {
+                  "word": "adaptation",
+                  "ipa": "/ˌædæpˈteɪʃn/",
+                  "meaning": "自适应过程，在线更新",
+                  "level": "red"
+                },
+                {
+                  "word": "parameter",
+                  "ipa": "/pəˈræmɪtə/",
+                  "meaning": "参数",
+                  "level": "green"
+                },
+                {
+                  "word": "division",
+                  "ipa": "dɪˈvɪʒ(ə)n",
+                  "meaning": "n. （算术用语）除",
+                  "level": "green"
+                }
+              ]
             },
             {
               "sIndex": 4,
@@ -750,6 +2061,18 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˌkɒmpjuˈteɪʃənl/",
                   "meaning": "计算上的，计算开销的",
                   "level": "green"
+                },
+                {
+                  "word": "executing",
+                  "ipa": "/ˈeksɪkjuːtɪŋ/",
+                  "meaning": "执行中",
+                  "level": "green"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             }
@@ -775,16 +2098,40 @@ window.BISHE_DATA['paper2'] = {
               "translation": "实验平台：Parrot Bebop 四旋翼无人机，质量约 $400\\text{ g}$；飞控软件：开源飞控架构 Paparazzi，控制频率运行在 $512\\text{ Hz}$。",
               "vocab": [
                 {
+                  "word": "experiments",
+                  "ipa": "/ɪkˈsperɪmənts/",
+                  "meaning": "实验（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "validated",
+                  "ipa": "/ˈvælɪdeɪtɪd/",
+                  "meaning": "经过实验验证的",
+                  "level": "green"
+                },
+                {
                   "word": "quadrotor",
                   "ipa": "/ˈkwɒdrəʊtə/",
                   "meaning": "四旋翼飞行器，四轴无人机",
                   "level": "red"
                 },
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
-                  "level": "green"
+                  "word": "paparazzi",
+                  "ipa": "/ˌpæpəˈrætsi/",
+                  "meaning": "Paparazzi 开源自主无人机飞控系统",
+                  "level": "blue"
+                },
+                {
+                  "word": "bebop",
+                  "ipa": "/ˈbiːbɒp/",
+                  "meaning": "Bebop（Parrot 出品的微型四旋翼机型）",
+                  "level": "blue"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             }
@@ -802,16 +2149,76 @@ window.BISHE_DATA['paper2'] = {
               "translation": "试验 1（延迟滤波补偿消融）：未开启滤波补偿时，无人机在起飞离地瞬间即发生剧烈的高频发散抖振（振荡频率约 $12\\text{ Hz}$），无法安全飞行；",
               "vocab": [
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
+                  "word": "compensation",
+                  "ipa": "ˌkɑmpənˈseɪʃən",
+                  "meaning": "n.补偿(或赔偿)的款物;补偿,赔偿",
+                  "level": "red"
+                },
+                {
+                  "word": "experienced",
+                  "ipa": "/ɪkˈspɪəriənst/",
+                  "meaning": "有经验的；经历过的（常用释义：有经验的；经历，遭受）",
+                  "level": "red"
+                },
+                {
+                  "word": "oscillation",
+                  "ipa": "/ˌɒsɪˈleɪʃn/",
+                  "meaning": "振荡，抖动",
+                  "level": "red"
+                },
+                {
+                  "word": "immediately",
+                  "ipa": "ɪˈmiːdiətli",
+                  "meaning": "adv.立即,立刻;直接地",
+                  "level": "red"
+                },
+                {
+                  "word": "experiment",
+                  "ipa": "/ɪkˈsperɪmənt/",
+                  "meaning": "实验",
                   "level": "green"
                 },
                 {
-                  "word": "delay",
-                  "ipa": "/dɪˈleɪ/",
-                  "meaning": "时钟延迟，时间滞后",
+                  "word": "divergence",
+                  "ipa": "/daɪˈvɜːdʒəns/",
+                  "meaning": "发散，失稳发散",
                   "level": "red"
+                },
+                {
+                  "word": "maintain",
+                  "ipa": "/meɪnˈteɪn/",
+                  "meaning": "维持；保持（常用释义：维持；维修；坚称；供养）",
+                  "level": "red"
+                },
+                {
+                  "word": "vehicle",
+                  "ipa": "ˈviːɪkl",
+                  "meaning": "n.车辆,交通工具;媒介,载体",
+                  "level": "red"
+                },
+                {
+                  "word": "violent",
+                  "ipa": "ˈvaɪələnt",
+                  "meaning": "adj. 暴力的",
+                  "level": "green"
+                },
+                {
+                  "word": "filter",
+                  "ipa": "/ˈfɪltə/",
+                  "meaning": "滤波器",
+                  "level": "green"
+                },
+                {
+                  "word": "unable",
+                  "ipa": "",
+                  "meaning": "adj.不能胜任的，不会的",
+                  "level": "red"
+                },
+                {
+                  "word": "delay",
+                  "ipa": "dɪˈleɪ",
+                  "meaning": "n./v.延迟；延期；耽搁",
+                  "level": "green"
                 }
               ]
             },
@@ -822,9 +2229,27 @@ window.BISHE_DATA['paper2'] = {
               "translation": "开启滤波补偿后：姿态跟踪极其平稳，阶跃响应干净利落，无任何超调与震荡。",
               "vocab": [
                 {
+                  "word": "exceptionally",
+                  "ipa": "ɪkˈs ɛpʃənəlɪ",
+                  "meaning": "adv. 例外地;异常地;特殊地",
+                  "level": "red"
+                },
+                {
+                  "word": "compensation",
+                  "ipa": "ˌkɑmpənˈseɪʃən",
+                  "meaning": "n.补偿(或赔偿)的款物;补偿,赔偿",
+                  "level": "red"
+                },
+                {
                   "word": "oscillations",
                   "ipa": "/ˌɒsɪˈleɪʃnz/",
-                  "meaning": "振荡，抖动",
+                  "meaning": "振荡，抖动（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "attitude",
+                  "ipa": "/ˈætɪtjuːd/",
+                  "meaning": "姿态角 (Roll, Pitch, Yaw)",
                   "level": "red"
                 },
                 {
@@ -832,6 +2257,30 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˈtrækɪŋ/",
                   "meaning": "跟踪，追踪",
                   "level": "red"
+                },
+                {
+                  "word": "smooth",
+                  "ipa": "smuð",
+                  "meaning": "n.平滑部分；v.",
+                  "level": "green"
+                },
+                {
+                  "word": "absent",
+                  "ipa": "ˈæbsənt",
+                  "meaning": "adj. 缺席，不在",
+                  "level": "green"
+                },
+                {
+                  "word": "sharp",
+                  "ipa": "ʃɑːp",
+                  "meaning": "adj.锋利的;轮廓分明的;急转的 adv.(指时刻)正",
+                  "level": "red"
+                },
+                {
+                  "word": "step",
+                  "ipa": "",
+                  "meaning": "v. 踏，踩",
+                  "level": "green"
                 }
               ]
             }
@@ -849,10 +2298,40 @@ window.BISHE_DATA['paper2'] = {
               "translation": "试验 2（突加载荷阶跃扰动抑制）：在无人机悬停时，通过细线悬挂的 50g 额外重物在空中突然释放（相当于瞬间阶跃卸载）：",
               "vocab": [
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
+                  "word": "disturbance",
+                  "ipa": "/dɪˈstɜːbəns/",
+                  "meaning": "扰动，外界风扰",
+                  "level": "red"
+                },
+                {
+                  "word": "experiment",
+                  "ipa": "/ɪkˈsperɪmənt/",
+                  "meaning": "实验",
                   "level": "green"
+                },
+                {
+                  "word": "suddenly",
+                  "ipa": "ˈsʌd(ə)nli",
+                  "meaning": "adv.突然地",
+                  "level": "red"
+                },
+                {
+                  "word": "abrupt",
+                  "ipa": "əˈbrʌpt",
+                  "meaning": "adj.突然的；陡峭的；粗鲁的",
+                  "level": "green"
+                },
+                {
+                  "word": "step",
+                  "ipa": "",
+                  "meaning": "v. 踏，踩",
+                  "level": "green"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             },
@@ -861,7 +2340,50 @@ window.BISHE_DATA['paper2'] = {
               "id": "P14-S2",
               "text": "Under classic PID control, pitch angle underwent a massive $15^\\circ$ spike and took 1.5 seconds to fully recover balance.",
               "translation": "经典 PID 控制器：俯仰角出现高达 $15^\\circ$ 的剧烈突跳，耗时 1.5 秒才完全恢复平衡；",
-              "vocab": []
+              "vocab": [
+                {
+                  "word": "massive",
+                  "ipa": "ˈmæsɪv",
+                  "meaning": "adj.结实的；非常严重的；大量的，大规模的",
+                  "level": "green"
+                },
+                {
+                  "word": "balance",
+                  "ipa": "ˈbæləns",
+                  "meaning": "n. 平衡",
+                  "level": "green"
+                },
+                {
+                  "word": "pitch",
+                  "ipa": "/pɪtʃ/",
+                  "meaning": "俯仰角 (Pitch)",
+                  "level": "blue"
+                },
+                {
+                  "word": "angle",
+                  "ipa": "/ˈæŋɡl/",
+                  "meaning": "角度",
+                  "level": "green"
+                },
+                {
+                  "word": "spike",
+                  "ipa": "/spaɪk/",
+                  "meaning": "突跳，尖峰波动",
+                  "level": "green"
+                },
+                {
+                  "word": "pid",
+                  "ipa": "/ˌpiː.aɪˈdiː/",
+                  "meaning": "比例-积分-微分控制器 (Proportional-Integral-Derivative)",
+                  "level": "blue"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
+                }
+              ]
             },
             {
               "sIndex": 3,
@@ -870,10 +2392,52 @@ window.BISHE_DATA['paper2'] = {
               "translation": "A-INDI 控制器：姿态波动峰值小于 $4^\\circ$，仅耗时 0.3 秒即完全重置回水平（抗扰恢复速度比 PID 快 5 倍）。",
               "vocab": [
                 {
+                  "word": "fluctuation",
+                  "ipa": "/ˌflʌktʃuˈeɪʃn/",
+                  "meaning": "波动，摆动",
+                  "level": "green"
+                },
+                {
+                  "word": "constrained",
+                  "ipa": "/kənˈstreɪnd/",
+                  "meaning": "受约束的",
+                  "level": "red"
+                },
+                {
+                  "word": "disturbance",
+                  "ipa": "/dɪˈstɜːbəns/",
+                  "meaning": "扰动，外界风扰",
+                  "level": "red"
+                },
+                {
+                  "word": "attitude",
+                  "ipa": "/ˈætɪtjuːd/",
+                  "meaning": "姿态角 (Roll, Pitch, Yaw)",
+                  "level": "red"
+                },
+                {
+                  "word": "recovery",
+                  "ipa": "/rɪˈkʌvəri/",
+                  "meaning": "恢复；灾后恢复（常用释义：恢复；复原）",
+                  "level": "green"
+                },
+                {
                   "word": "a-indi",
                   "ipa": "/eɪ ˈɪndi/",
                   "meaning": "自适应增量非线性动态逆 (Adaptive INDI)",
                   "level": "blue"
+                },
+                {
+                  "word": "pid",
+                  "ipa": "/ˌpiː.aɪˈdiː/",
+                  "meaning": "比例-积分-微分控制器 (Proportional-Integral-Derivative)",
+                  "level": "blue"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             }
@@ -897,16 +2461,40 @@ window.BISHE_DATA['paper2'] = {
                   "level": "red"
                 },
                 {
-                  "word": "inertia",
-                  "ipa": "/ɪˈnɜːʃə/",
-                  "meaning": "惯量，转动惯量",
+                  "word": "experiment",
+                  "ipa": "/ɪkˈsperɪmənt/",
+                  "meaning": "实验",
+                  "level": "green"
+                },
+                {
+                  "word": "propeller",
+                  "ipa": "/prəˈpelə/",
+                  "meaning": "螺旋桨，桨叶",
                   "level": "red"
                 },
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
+                  "word": "dramatic",
+                  "ipa": "/drəˈmætɪk/",
+                  "meaning": "重大而突然的（常用释义：戏剧性的；显著的）",
+                  "level": "red"
+                },
+                {
+                  "word": "bumpers",
+                  "ipa": "/ˈbʌmpəz/",
+                  "meaning": "防撞保护圈，机臂保护罩",
                   "level": "green"
+                },
+                {
+                  "word": "inertia",
+                  "ipa": "/ɪˈnɜːʃə/",
+                  "meaning": "惯量，惯性",
+                  "level": "red"
+                },
+                {
+                  "word": "rotor",
+                  "ipa": "/ˈrəʊtə/",
+                  "meaning": "旋翼，转子",
+                  "level": "blue"
                 }
               ]
             },
@@ -916,6 +2504,60 @@ window.BISHE_DATA['paper2'] = {
               "text": "Experimental telemetry confirms that A-INDI automatically converged parameter estimates $\\hat{\\boldsymbol{G}}_1$ from default initialization to true physical effectiveness within 2 to 3 seconds, keeping pilot handling feel completely unchanged.",
               "translation": "实验曲线显示，自适应 A-INDI 在无人机起飞后 2~3 秒内，$\\hat{\\boldsymbol{G}}_1$ 估计参数迅速从初始默认值自适应收敛至真实物理效能值；在防撞套拆除后再次迅速自适应收敛，飞行员完全感受不到飞行手感的变化。",
               "vocab": [
+                {
+                  "word": "automatically",
+                  "ipa": "ˌɔːtəˈmætɪkli",
+                  "meaning": "adv.自动地；自然地；无意识地",
+                  "level": "green"
+                },
+                {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能，有效性",
+                  "level": "green"
+                },
+                {
+                  "word": "experimental",
+                  "ipa": "/ɪkˌsperɪˈmentl/",
+                  "meaning": "实验的，实证的",
+                  "level": "green"
+                },
+                {
+                  "word": "telemetry",
+                  "ipa": "/təˈlemətri/",
+                  "meaning": "遥测数据，实测回传数据",
+                  "level": "green"
+                },
+                {
+                  "word": "converged",
+                  "ipa": "/kənˈvɜːdʒd/",
+                  "meaning": "已收敛的",
+                  "level": "red"
+                },
+                {
+                  "word": "parameter",
+                  "ipa": "/pəˈræmɪtə/",
+                  "meaning": "参数",
+                  "level": "green"
+                },
+                {
+                  "word": "estimates",
+                  "ipa": "/ˈestɪmeɪts/",
+                  "meaning": "估计值（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "physical",
+                  "ipa": "ˈfɪzɪk(ə)l",
+                  "meaning": "adj.物理的；身体的；物质的 n.体检",
+                  "level": "green"
+                },
+                {
+                  "word": "default",
+                  "ipa": "dɪˈfɔlt",
+                  "meaning": "n. 违约；默认 v. 默认；拖欠",
+                  "level": "green"
+                },
                 {
                   "word": "a-indi",
                   "ipa": "/eɪ ˈɪndi/",
@@ -938,10 +2580,52 @@ window.BISHE_DATA['paper2'] = {
               "translation": "试验 4（计入转子角动量偏航提升）：传统四旋翼在偏航方向因为仅依靠电机反扭矩差动，响应极为迟缓；",
               "vocab": [
                 {
+                  "word": "traditional",
+                  "ipa": "trəˈdɪʃən(ə)l",
+                  "meaning": "adj.传统的",
+                  "level": "red"
+                },
+                {
+                  "word": "experiment",
+                  "ipa": "/ɪkˈsperɪmənt/",
+                  "meaning": "实验",
+                  "level": "green"
+                },
+                {
                   "word": "quadrotors",
                   "ipa": "/ˈkwɒdrəʊtəz/",
                   "meaning": "四旋翼飞行器（复数）",
                   "level": "red"
+                },
+                {
+                  "word": "sluggish",
+                  "ipa": "/ˈslʌɡɪʃ/",
+                  "meaning": "迟缓的，反应软绵的",
+                  "level": "red"
+                },
+                {
+                  "word": "torques",
+                  "ipa": "/tɔːks/",
+                  "meaning": "力矩（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "suffer",
+                  "ipa": "",
+                  "meaning": "v.受苦，受折磨；经受，遭受（坏事）；变差",
+                  "level": "red"
+                },
+                {
+                  "word": "motor",
+                  "ipa": "/ˈməʊtə/",
+                  "meaning": "电动机，电机",
+                  "level": "green"
+                },
+                {
+                  "word": "yaw",
+                  "ipa": "/jɔː/",
+                  "meaning": "偏航角 (Yaw)",
+                  "level": "blue"
                 }
               ]
             },
@@ -952,10 +2636,94 @@ window.BISHE_DATA['paper2'] = {
               "translation": "在显式补偿转子加速惯量力矩 $\\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}}$ 后，Doublet 偏航角指令的跟踪上升时间缩短了 40%，彻底解决了四旋翼“偏航软绵”的固有缺陷。",
               "vocab": [
                 {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "explicitly",
+                  "ipa": "/ɪkˈsplɪsɪtli/",
+                  "meaning": "明确地、明白无误地（常用释义：直截了当地）",
+                  "level": "red"
+                },
+                {
+                  "word": "rise time",
+                  "ipa": "/raɪz taɪm/",
+                  "meaning": "上升时间",
+                  "level": "blue"
+                },
+                {
+                  "word": "notorious",
+                  "ipa": "/nəʊˈtɔːriəs/",
+                  "meaning": "臭名昭著的，声名狼藉的",
+                  "level": "red"
+                },
+                {
+                  "word": "momentum",
+                  "ipa": "moʊˈmɛntəm",
+                  "meaning": "n. 动力；势头",
+                  "level": "green"
+                },
+                {
+                  "word": "sluggish",
+                  "ipa": "/ˈslʌɡɪʃ/",
+                  "meaning": "迟缓的，反应软绵的",
+                  "level": "red"
+                },
+                {
+                  "word": "angular",
+                  "ipa": "/ˈæŋɡjələ/",
+                  "meaning": "角的，角向的",
+                  "level": "green"
+                },
+                {
+                  "word": "doublet",
+                  "ipa": "/ˈdʌblət/",
+                  "meaning": "双向脉冲激励信号 (Doublet Step)",
+                  "level": "blue"
+                },
+                {
+                  "word": "command",
+                  "ipa": "kəˈmænd",
+                  "meaning": "n./v. 命令",
+                  "level": "green"
+                },
+                {
+                  "word": "reduced",
+                  "ipa": "/rɪˈdjuːst/",
+                  "meaning": "已降低的",
+                  "level": "green"
+                },
+                {
                   "word": "torque",
                   "ipa": "/tɔːk/",
                   "meaning": "力矩，转矩",
                   "level": "red"
+                },
+                {
+                  "word": "rotor",
+                  "ipa": "/ˈrəʊtə/",
+                  "meaning": "旋翼，转子",
+                  "level": "blue"
+                },
+                {
+                  "word": "step",
+                  "ipa": "",
+                  "meaning": "v. 踏，踩",
+                  "level": "green"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "yaw",
+                  "ipa": "/jɔː/",
+                  "meaning": "偏航角 (Yaw)",
+                  "level": "blue"
                 }
               ]
             }
@@ -981,9 +2749,39 @@ window.BISHE_DATA['paper2'] = {
               "translation": "1. A-INDI 是极具前景的微型飞行器姿态控制前沿理论。通过传感器加速度反馈替代了复杂物理模型，同时通过时钟对齐滤波消除了测量延迟引起的震荡失稳；",
               "vocab": [
                 {
+                  "word": "limit-cycles",
+                  "ipa": "/ˈlɪmɪt saɪklz/",
+                  "meaning": "极限环（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "filtering",
+                  "ipa": "/ˈfɪltərɪŋ/",
+                  "meaning": "滤波处理",
+                  "level": "green"
+                },
+                {
+                  "word": "physical",
+                  "ipa": "ˈfɪzɪk(ə)l",
+                  "meaning": "adj.物理的；身体的；物质的 n.体检",
+                  "level": "green"
+                },
+                {
                   "word": "feedback",
                   "ipa": "/ˈfiːdbæk/",
                   "meaning": "反馈控制",
+                  "level": "red"
+                },
+                {
+                  "word": "complex",
+                  "ipa": "/ˈkɒmpleks/",
+                  "meaning": "复杂的，多层次的（常用释义：复杂的；复合的；综合体）",
                   "level": "red"
                 },
                 {
@@ -993,10 +2791,34 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "direct",
+                  "ipa": "/dəˈrekt/",
+                  "meaning": "引导；掌控；使朝某方向发展（常用释义：adj. 直接的；v. 指挥、指导、管理）",
+                  "level": "red"
+                },
+                {
                   "word": "mavs",
                   "ipa": "/ˈem.eɪ.viːz/",
                   "meaning": "微型飞行器（复数）",
                   "level": "blue"
+                },
+                {
+                  "word": "for",
+                  "ipa": "",
+                  "meaning": "v.寻找;探索;渴望;盼望",
+                  "level": "red"
+                },
+                {
+                  "word": "via",
+                  "ipa": "ˈvaɪə",
+                  "meaning": "prep.经由；通过，借助于（某种手段或人）",
+                  "level": "green"
+                },
+                {
+                  "word": "a",
+                  "ipa": "细节因果题",
+                  "meaning": "Washington 开始相信 all men were created equal，因此释放奴隶源自道德考虑。（常用释义：B 只是触发道德认识的经历背景；C、D 无原文依据。）",
+                  "level": "red"
                 }
               ]
             },
@@ -1006,6 +2828,54 @@ window.BISHE_DATA['paper2'] = {
               "text": "2. Onboard real-time NLMS adaptation tracks motor effectiveness degradation, battery voltage decline, and physical payload shifts with zero tuning overhead.",
               "translation": "2. 机载在线 NLMS 自适应辨识能够实时追踪电机效率衰减、电池压降与载荷变化；",
               "vocab": [
+                {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能，有效性",
+                  "level": "green"
+                },
+                {
+                  "word": "degradation",
+                  "ipa": "ˌdeɡrəˈdeɪʃ(ə)n",
+                  "meaning": "n.降级；退化；落魄",
+                  "level": "green"
+                },
+                {
+                  "word": "adaptation",
+                  "ipa": "/ˌædæpˈteɪʃn/",
+                  "meaning": "自适应过程，在线更新",
+                  "level": "red"
+                },
+                {
+                  "word": "physical",
+                  "ipa": "ˈfɪzɪk(ə)l",
+                  "meaning": "adj.物理的；身体的；物质的 n.体检",
+                  "level": "green"
+                },
+                {
+                  "word": "overhead",
+                  "ipa": "/ˈəʊvəhed/",
+                  "meaning": "开销，额外算力消耗",
+                  "level": "green"
+                },
+                {
+                  "word": "battery",
+                  "ipa": "ˈbætərɪ",
+                  "meaning": "n. 电池",
+                  "level": "green"
+                },
+                {
+                  "word": "decline",
+                  "ipa": "/dɪˈklaɪn/",
+                  "meaning": "拒绝、不接受论文（常用释义：下降；衰退；婉言拒绝）",
+                  "level": "red"
+                },
+                {
+                  "word": "motor",
+                  "ipa": "/ˈməʊtə/",
+                  "meaning": "电动机，电机",
+                  "level": "green"
+                },
                 {
                   "word": "nlms",
                   "ipa": "/ˌen.el.emˈes/",
@@ -1027,15 +2897,69 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
+                  "word": "survivability",
+                  "ipa": "/səˌvaɪvəˈbɪləti/",
+                  "meaning": "生存能力，抗毁容错度",
+                  "level": "red"
+                },
+                {
+                  "word": "conventional",
+                  "ipa": "/kənˈvenʃənl/",
+                  "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
+                  "level": "red"
+                },
+                {
+                  "word": "disturbance",
+                  "ipa": "/dɪˈstɜːbəns/",
+                  "meaning": "扰动，外界风扰",
+                  "level": "red"
+                },
+                {
+                  "word": "drastically",
+                  "ipa": "ˈdræstɪkəli",
+                  "meaning": "adv. 彻底地；激烈地",
+                  "level": "green"
+                },
+                {
                   "word": "rejection",
                   "ipa": "/rɪˈdʒekʃn/",
-                  "meaning": "抑制，抗扰能力 (Disturbance Rejection)",
+                  "meaning": "抑制，抗扰能力",
                   "level": "red"
+                },
+                {
+                  "word": "external",
+                  "ipa": "ɪkˈstɜːrn(ə)l",
+                  "meaning": "adj.外部的；外面的；对外的；外来的",
+                  "level": "green"
                 },
                 {
                   "word": "a-indi",
                   "ipa": "/eɪ ˈɪndi/",
                   "meaning": "自适应增量非线性动态逆 (Adaptive INDI)",
+                  "level": "blue"
+                },
+                {
+                  "word": "abrupt",
+                  "ipa": "əˈbrʌpt",
+                  "meaning": "adj.突然的；陡峭的；粗鲁的",
+                  "level": "green"
+                },
+                {
+                  "word": "weight",
+                  "ipa": "weɪt",
+                  "meaning": "n. 重，重量",
+                  "level": "green"
+                },
+                {
+                  "word": "pid",
+                  "ipa": "/ˌpiː.aɪˈdiː/",
+                  "meaning": "比例-积分-微分控制器 (Proportional-Integral-Derivative)",
+                  "level": "blue"
+                },
+                {
+                  "word": "ndi",
+                  "ipa": "/ˌen.diːˈaɪ/",
+                  "meaning": "非线性动态逆 (Nonlinear Dynamic Inversion)",
                   "level": "blue"
                 },
                 {
