@@ -3365,7 +3365,7 @@
       } else {
         panel.classList.toggle('collapsed');
       }
-      if (!panel.classList.contains('collapsed')) {
+      if (!panel.classList.contains('collapsed') && !sidebarCollapsed) {
         panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }

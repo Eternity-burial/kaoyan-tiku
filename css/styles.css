@@ -230,8 +230,7 @@
     }
 
     /* ===== 双侧栏折叠状态（I 键收起两侧栏进入沉浸模式） ===== */
-    .app-layout.sidebar-collapsed .sidebar-left,
-    .app-layout.sidebar-collapsed .sidebar-right {
+    .app-layout.sidebar-collapsed .sidebar-left {
       flex: 0 0 0 !important;
       max-width: 0 !important;
       padding: 0 !important;
@@ -239,6 +238,53 @@
       opacity: 0 !important;
       pointer-events: none !important;
       overflow: hidden !important;
+    }
+
+    .app-layout.sidebar-collapsed .sidebar-right {
+      flex: 0 0 0 !important;
+      max-width: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: visible !important;
+    }
+
+    /* 侧栏收起时隐藏非符号盘常规模块 */
+    .app-layout.sidebar-collapsed .sidebar-right > *:not(.math-symbol-palette) {
+      display: none !important;
+    }
+
+    /* 侧栏收起时处于收拢态的符号盘彻底隐藏 */
+    .app-layout.sidebar-collapsed .sidebar-right .math-symbol-palette.collapsed {
+      display: none !important;
+    }
+
+    /* 侧栏收起且正在编辑笔记时，符号工具盘自动悬浮于右上方展现 */
+    .app-layout.sidebar-collapsed .sidebar-right .math-symbol-palette:not(.collapsed) {
+      position: fixed !important;
+      top: 18px !important;
+      right: 24px !important;
+      width: 330px !important;
+      max-width: calc(100vw - 48px) !important;
+      z-index: 1000 !important;
+      pointer-events: auto !important;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--primary-alpha) !important;
+      background: var(--card-bg, rgba(255, 255, 255, 0.95)) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border: 1px solid var(--border-glow, var(--primary)) !important;
+      border-radius: var(--radius-md) !important;
+      animation: paletteSlideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    @keyframes paletteSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-16px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* 强制侧栏所有子模块外边距归零 */
