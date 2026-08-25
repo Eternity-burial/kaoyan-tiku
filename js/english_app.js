@@ -662,7 +662,7 @@
     const dataset = getCurrentDataset();
 
     if (state.currentSubject === 'bishe') {
-      // 毕设文献阅读器：渲染章节快速锚点导航胶囊
+      // 毕设文献阅读器：渲染章节快速锚点导航胶囊（紧凑精简）
       dom.textTabs.innerHTML = '';
       if (!dataset.sections || dataset.sections.length === 0) {
         dom.textTabs.style.display = 'none';
@@ -672,10 +672,19 @@
       dataset.sections.forEach(sec => {
         const btn = document.createElement('button');
         btn.className = 'section-nav-pill';
-        btn.textContent = `${sec.sectionNumber}. ${sec.chineseTitle}`;
+        let label = (sec.chineseTitle || '').replace(/^[一二三四五六七八九十0-9]+[、.：\s]*/, '').replace(/：.*$/, '').trim();
+        if (sec.sectionNumber === '摘要' || !sec.sectionNumber) {
+          label = '摘要';
+        } else {
+          label = `${sec.sectionNumber}. ${label.slice(0, 5)}`;
+        }
+        btn.textContent = label;
+        btn.title = `${sec.sectionNumber} ${sec.chineseTitle}`;
         btn.onclick = () => {
           const el = document.getElementById(sec.id);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         };
         dom.textTabs.appendChild(btn);
       });
