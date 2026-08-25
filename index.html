@@ -420,74 +420,80 @@
 
   <div class="shortcut-overlay" id="shortcutOverlay">
     <div class="shortcut-modal" id="shortcutModal">
-      <h2>快捷键帮助</h2>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">导航</div>
-        <div class="shortcut-row"><span class="key"><kbd>A</kbd> / <kbd>&larr;</kbd></span><span class="desc">上一题</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>D</kbd> / <kbd>&rarr;</kbd></span><span class="desc">下一题</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>W</kbd> / <kbd>&uarr;</kbd></span><span class="desc">上一行</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>S</kbd> / <kbd>&darr;</kbd></span><span class="desc">下一行</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Q</kbd></span><span class="desc">上一章 / 复习中：上一复习题</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>E</kbd></span><span class="desc">下一章 / 复习中：下一复习题</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>F</kbd></span><span class="desc">进入/退出小题选择模式</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>滚轮左右推</kbd></span><span class="desc">上一题/下一题（同 A/D，常规状态）</span></div>
+      <div class="shortcut-modal-header">
+        <div class="shortcut-header-left">
+          <h2 class="shortcut-modal-title">快捷键指南</h2>
+          <span class="shortcut-modal-sub">全局高效键盘操作矩阵</span>
+        </div>
+        <button type="button" class="shortcut-modal-close" id="btnShortcutModalClose" title="关闭 (Esc)">✕</button>
       </div>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">掌握度（5 级）</div>
-        <div class="shortcut-row"><span class="key"><kbd>Z</kbd></span><span class="desc">熟练（lv5 完美）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Z</kbd>+<kbd>X</kbd></span><span class="desc">较熟练（lv4 正确但犹豫）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>X</kbd></span><span class="desc">模糊（lv3 思路对但卡壳）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>X</kbd>+<kbd>C</kbd></span><span class="desc">困难（lv2 大部分忘记）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>C</kbd></span><span class="desc">不会（lv1 全忘）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Ctrl</kbd>+<kbd>Z</kbd></span><span class="desc">撤销最近一次标记</span></div>
+      <div class="shortcut-grid">
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">导航</div>
+          <div class="shortcut-row"><span class="desc">上一题</span><span class="key"><kbd>A</kbd> / <kbd>&larr;</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">下一题</span><span class="key"><kbd>D</kbd> / <kbd>&rarr;</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">上一行</span><span class="key"><kbd>W</kbd> / <kbd>&uarr;</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">下一行</span><span class="key"><kbd>S</kbd> / <kbd>&darr;</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">上一章 / 复习中上一题</span><span class="key"><kbd>Q</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">下一章 / 复习中下一题</span><span class="key"><kbd>E</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">小题选择模式</span><span class="key"><kbd>F</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">滚轮左右推切题</span><span class="key"><kbd>左右推</kbd></span></div>
+        </div>
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">掌握度（5 级）</div>
+          <div class="shortcut-row"><span class="desc">熟练（lv5 完美）</span><span class="key"><kbd>Z</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">较熟练（lv4 正确但犹豫）</span><span class="key"><kbd>Z</kbd>+<kbd>X</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">模糊（lv3 思路对但卡壳）</span><span class="key"><kbd>X</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">困难（lv2 大部分忘记）</span><span class="key"><kbd>X</kbd>+<kbd>C</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">不会（lv1 全忘）</span><span class="key"><kbd>C</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">撤销最近一次标记</span><span class="key"><kbd>Ctrl</kbd>+<kbd>Z</kbd></span></div>
+        </div>
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">解析</div>
+          <div class="shortcut-row"><span class="desc">显示/隐藏解析</span><span class="key"><kbd>Space</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">切换默认解析显示状态</span><span class="key"><kbd>Shift</kbd>+<kbd>Space</kbd></span></div>
+        </div>
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">图片质量</div>
+          <div class="shortcut-row"><span class="desc">标记/取消题目图不达标</span><span class="key"><kbd>R</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">标记/取消解析图不达标</span><span class="key"><kbd>T</kbd></span></div>
+        </div>
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">筛选（Shift 组合键）</div>
+          <div class="shortcut-row"><span class="desc">全部题目</span><span class="key"><kbd>Shift</kbd>+<kbd>A</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">熟练（lv5+lv4）</span><span class="key"><kbd>Shift</kbd>+<kbd>Z</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">模糊（lv3+lv2）</span><span class="key"><kbd>Shift</kbd>+<kbd>X</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">不会（lv1）</span><span class="key"><kbd>Shift</kbd>+<kbd>C</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">带笔记</span><span class="key"><kbd>Shift</kbd>+<kbd>N</kbd></span></div>
+        </div>
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">面板 & 复习</div>
+          <div class="shortcut-row"><span class="desc">全局进度看板</span><span class="key"><kbd>V</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">错题本</span><span class="key"><kbd>B</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">间隔重复复习面板</span><span class="key"><kbd>M</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">切换科目</span><span class="key"><kbd>G</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">切换主题（明亮 / 暗夜）</span><span class="key"><kbd>Y</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">切换试卷暗化（关 / 开）</span><span class="key"><kbd>U</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">关闭面板 / 退出复习</span><span class="key"><kbd>Esc</kbd></span></div>
+        </div>
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">标注（灯箱内）</div>
+          <div class="shortcut-row"><span class="desc">进入/退出标注模式</span><span class="key"><kbd>Alt</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">缩放图片（光标处）</span><span class="key"><kbd>滚轮</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">调节画笔粗细</span><span class="key"><kbd>右键</kbd>+<kbd>滚轮</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">切换工具</span><span class="key"><kbd>Tab</kbd> / <kbd>左右推</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">直线锁定水平或竖直</span><span class="key"><kbd>Shift</kbd>+<kbd>拖动</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">显示/隐藏标注工具栏</span><span class="key"><kbd>Space</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">灯箱放大/缩小/复位</span><span class="key"><kbd>+</kbd> / <kbd>-</kbd> / <kbd>0</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">退出标注 / 关闭灯箱</span><span class="key"><kbd>Esc</kbd></span></div>
+        </div>
+        <div class="shortcut-group">
+          <div class="shortcut-group-title">其他</div>
+          <div class="shortcut-row"><span class="desc">编辑笔记</span><span class="key"><kbd>N</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">打开/关闭此帮助</span><span class="key"><kbd>H</kbd></span></div>
+        </div>
       </div>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">解析</div>
-        <div class="shortcut-row"><span class="key"><kbd>Space</kbd></span><span class="desc">显示/隐藏解析</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>Space</kbd></span><span class="desc">切换默认解析显示状态</span></div>
-      </div>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">图片质量</div>
-        <div class="shortcut-row"><span class="key"><kbd>R</kbd></span><span class="desc">标记/取消题目图不达标</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>T</kbd></span><span class="desc">标记/取消解析图不达标</span></div>
-      </div>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">筛选（Shift 组合键）</div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>A</kbd></span><span class="desc">全部</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>Z</kbd></span><span class="desc">熟练（lv5+lv4）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>X</kbd></span><span class="desc">模糊（lv3+lv2）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>C</kbd></span><span class="desc">不会（lv1）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>N</kbd></span><span class="desc">带笔记</span></div>
-      </div>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">面板 & 复习</div>
-        <div class="shortcut-row"><span class="key"><kbd>V</kbd></span><span class="desc">全局进度</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>B</kbd></span><span class="desc">错题本</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>M</kbd></span><span class="desc">间隔重复复习面板</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>G</kbd></span><span class="desc">切换科目</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Y</kbd></span><span class="desc">切换主题（明亮 / 暗夜）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>U</kbd></span><span class="desc">切换试卷暗化（关 / 开）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Esc</kbd></span><span class="desc">关闭面板 / 退出复习</span></div>
-      </div>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">标注（灯箱内）</div>
-        <div class="shortcut-row"><span class="key"><kbd>Alt</kbd></span><span class="desc">进入/退出标注</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>滚轮</kbd></span><span class="desc">缩放图片（光标处）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>右键</kbd> + <kbd>滚轮</kbd></span><span class="desc">调节画笔粗细</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>滚轮左右推</kbd></span><span class="desc">切换工具</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Shift</kbd> + <kbd>拖动</kbd></span><span class="desc">直线锁定水平或竖直</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Space</kbd></span><span class="desc">显示/隐藏标注工具栏</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Tab</kbd></span><span class="desc">切换工具（矩形→直线→高亮→画笔）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>Esc</kbd></span><span class="desc">退出标注 / 关闭灯箱</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>+</kbd>/<kbd>-</kbd>/<kbd>0</kbd></span><span class="desc">灯箱放大/缩小/复位（查看模式）</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>其它</kbd></span><span class="desc">灯箱打开时屏蔽切题/改状态快捷键</span></div>
-      </div>
-      <div class="shortcut-group">
-        <div class="shortcut-group-title">其他</div>
-        <div class="shortcut-row"><span class="key"><kbd>N</kbd></span><span class="desc">编辑笔记</span></div>
-        <div class="shortcut-row"><span class="key"><kbd>H</kbd></span><span class="desc">打开/关闭此帮助</span></div>
-      </div>
-      <div class="shortcut-close-hint">按 Esc 或点击背景关闭</div>
+      <div class="shortcut-close-hint">按 <kbd>Esc</kbd> 或 <kbd>H</kbd> 或点击背景关闭</div>
     </div>
   </div>
 

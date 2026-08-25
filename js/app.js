@@ -2817,11 +2817,19 @@
       // 灯箱双击关闭
       lbImg.addEventListener('dblclick', closeLightbox);
 
-      // 快捷键帮助：点击背景关闭
+      // 快捷键帮助：点击背景或关闭按钮关闭
       const scOverlay = document.getElementById('shortcutOverlay');
-      scOverlay.addEventListener('click', function(e) {
-        if (e.target === scOverlay) toggleShortcutHelp();
-      });
+      if (scOverlay) {
+        scOverlay.addEventListener('click', function(e) {
+          if (e.target === scOverlay) toggleShortcutHelp();
+        });
+      }
+      const scCloseBtn = document.getElementById('btnShortcutModalClose');
+      if (scCloseBtn) {
+        scCloseBtn.addEventListener('click', function() {
+          toggleShortcutHelp();
+        });
+      }
     });
 
     // ===== 图片标注（marker.js 3）：矢量数据持久化 =====
