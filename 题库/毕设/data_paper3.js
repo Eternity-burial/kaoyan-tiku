@@ -70,13 +70,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "姿态控制"
                 },
                 {
-                  "word": "vehicle",
-                  "ipa": "ˈviːɪkl",
-                  "meaning": "n.车辆,交通工具;媒介,载体",
-                  "level": "red",
-                  "zh": "航行器"
-                },
-                {
                   "word": "dynamic",
                   "ipa": "/daɪˈnæmɪk/",
                   "meaning": "动态的，动力学的",
@@ -120,20 +113,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "水动力学"
                 },
                 {
-                  "word": "depend on",
-                  "ipa": "/dɪˈpend ɒn/",
-                  "meaning": "取决于；依赖于（常用释义：依靠）",
-                  "level": "purple",
-                  "zh": "依赖于"
-                },
-                {
-                  "word": "difficult",
-                  "ipa": "",
-                  "meaning": "adj.困难的，费力的；不友好的，难对付的",
-                  "level": "red",
-                  "zh": "困难"
-                },
-                {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
@@ -141,25 +120,11 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "非线性"
                 },
                 {
-                  "word": "subject",
-                  "ipa": "/ˈsʌbdʒɪkt/",
-                  "meaning": "主题；中心议题（常用释义：学科；对象；臣民）",
-                  "level": "red",
-                  "zh": "受到"
-                },
-                {
                   "word": "system",
                   "ipa": "ˈsɪstəm",
                   "meaning": "n. 体系；系统",
                   "level": "green",
                   "zh": "系统"
-                },
-                {
-                  "word": "exact",
-                  "ipa": "ɪɡˈzækt",
-                  "meaning": "adj. 精确的；确切的",
-                  "level": "green",
-                  "zh": "精确"
                 },
                 {
                   "word": "model",
@@ -219,13 +184,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "执行器"
                 },
                 {
-                  "word": "output",
-                  "ipa": "ˈaʊtpʊt",
-                  "meaning": "n. 产量，输出量",
-                  "level": "green",
-                  "zh": "输出"
-                },
-                {
                   "word": "system",
                   "ipa": "ˈsɪstəm",
                   "meaning": "n. 体系；系统",
@@ -262,25 +220,11 @@ window.BISHE_DATA['paper3'] = {
               "translation": "现有的 INDI 控制研究主要集中在无人机（UAV）领域，而在海洋机器人领域的应用几乎处于空白。",
               "vocab": [
                 {
-                  "word": "primarily",
-                  "ipa": "/praɪˈmerəli/",
-                  "meaning": "主要地；首要地。（常用释义：主要地。）",
-                  "level": "red",
-                  "zh": "主要"
-                },
-                {
                   "word": "existing",
                   "ipa": "/ɪɡˈzɪstɪŋ/",
                   "meaning": "现有的、已经存在的（常用释义：目前存在的）",
                   "level": "green",
                   "zh": "现有的"
-                },
-                {
-                  "word": "barely",
-                  "ipa": "ˈberli",
-                  "meaning": "adv.仅仅；几乎不；刚好",
-                  "level": "green",
-                  "zh": "几乎"
                 },
                 {
                   "word": "indi",
@@ -376,25 +320,11 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "定点悬停"
                 },
                 {
-                  "word": "transitioning",
-                  "ipa": "/trænˈzɪʃnɪŋ/",
-                  "meaning": "过渡中",
-                  "level": "green",
-                  "zh": "过渡"
-                },
-                {
                   "word": "compare",
                   "ipa": "",
                   "meaning": "v.比较，对比；把……比作；相比",
                   "level": "red",
                   "zh": "对比"
-                },
-                {
-                  "word": "station",
-                  "ipa": "",
-                  "meaning": "n.火车站；公共汽车站；长途汽车站；站；所；局；电台；社会地位",
-                  "level": "red",
-                  "zh": "定点悬停"
                 },
                 {
                   "word": "steady",
@@ -505,20 +435,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "脐带缆绞车"
                 },
                 {
-                  "word": "weather",
-                  "ipa": "/ˈweðə/",
-                  "meaning": "经受住；渡过（常用释义：天气；使风化）",
-                  "level": "red",
-                  "zh": "气象海况"
-                },
-                {
-                  "word": "support",
-                  "ipa": "/səˈpɔːt/",
-                  "meaning": "资助、维持或运营知识库（常用释义：支持观点；支撑重量；支持物）",
-                  "level": "red",
-                  "zh": "支持"
-                },
-                {
                   "word": "diving",
                   "ipa": "/ˈdaɪvɪŋ/",
                   "meaning": "潜水，俯冲",
@@ -591,20 +507,6 @@ window.BISHE_DATA['paper3'] = {
               "translation": "Cuttlefish 配备 8 个推进器与双机械臂，具备水下特技机动能力（Hydrobatics），能够在水体中实现任意 360° 空间姿态变换，从而深入复杂水下钢结构狭窄空间作业；此外还能主动调节质心（CoM）与浮心（CoB）位置满足静水力稳定性。",
               "vocab": [
                 {
-                  "word": "center of buoyancy",
-                  "ipa": "/ˈsentər əv ˈbɔɪənsi/",
-                  "meaning": "浮心 (CoB)",
-                  "level": "blue",
-                  "zh": "浮心"
-                },
-                {
-                  "word": "center of mass",
-                  "ipa": "/ˈsentər əv mæs/",
-                  "meaning": "质心 (CoM)",
-                  "level": "blue",
-                  "zh": "质心"
-                },
-                {
                   "word": "orientations",
                   "ipa": "/ˌɔːriənˈteɪʃnz/",
                   "meaning": "姿态（复数）",
@@ -633,13 +535,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "8 个推进器"
                 },
                 {
-                  "word": "arbitrary",
-                  "ipa": "ˈɑːrbɪtreri",
-                  "meaning": "adj.任意的；武断的；专横的",
-                  "level": "green",
-                  "zh": "任意"
-                },
-                {
                   "word": "stability",
                   "ipa": "stəˈbɪlɪti",
                   "meaning": "n. 稳定性；稳固",
@@ -652,20 +547,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "浮力，流体静浮力",
                   "level": "red",
                   "zh": "静水力稳定性"
-                },
-                {
-                  "word": "i-auv",
-                  "ipa": "/aɪ ˌeɪ.juːˈviː/",
-                  "meaning": "水下干预作业型航行器 (Intervention AUV)",
-                  "level": "blue",
-                  "zh": "水下"
-                },
-                {
-                  "word": "auv",
-                  "ipa": "/ˌeɪ.juːˈviː/",
-                  "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
-                  "level": "blue",
-                  "zh": "水下"
                 },
                 {
                   "word": "com",
@@ -702,13 +583,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "二次非线性阻尼（与速度平方成正比）",
                   "level": "blue",
                   "zh": "二次阻尼"
-                },
-                {
-                  "word": "hydrodynamic",
-                  "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
-                  "meaning": "水动力学的，流体动力学的",
-                  "level": "red",
-                  "zh": "流体"
                 },
                 {
                   "word": "transitions",
@@ -775,13 +649,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "反馈线性化"
                 },
                 {
-                  "word": "conventional",
-                  "ipa": "/kənˈvenʃənl/",
-                  "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
-                  "level": "red",
-                  "zh": "传统"
-                },
-                {
                   "word": "oscillations",
                   "ipa": "/ˌɒsɪˈleɪʃnz/",
                   "meaning": "振荡，抖动（复数）",
@@ -815,13 +682,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "v.需要；要求做（某事），规定",
                   "level": "red",
                   "zh": "需要"
-                },
-                {
-                  "word": "severe",
-                  "ipa": "sɪˈvɪə(r)",
-                  "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
-                  "level": "red",
-                  "zh": "严重"
                 },
                 {
                   "word": "model",
@@ -1108,20 +968,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "反馈"
                 },
                 {
-                  "word": "virtual",
-                  "ipa": "ˈvɜːrtʃuəl",
-                  "meaning": "adj. 虚拟的；实质上的",
-                  "level": "green",
-                  "zh": "虚拟"
-                },
-                {
-                  "word": "total",
-                  "ipa": "ˈtəʊt(ə)l",
-                  "meaning": "adj. 总数的;总括的;完",
-                  "level": "green",
-                  "zh": "总和"
-                },
-                {
                   "word": "fbl",
                   "ipa": "/ˌef.biːˈel/",
                   "meaning": "反馈线性化 (Feedback Linearization)",
@@ -1144,25 +990,11 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "解耦"
                 },
                 {
-                  "word": "precision",
-                  "ipa": "/prɪˈsɪʒən/",
-                  "meaning": "精确性；准确性（常用释义：精确；准确；严谨）",
-                  "level": "red",
-                  "zh": "精确"
-                },
-                {
                   "word": "damping",
                   "ipa": "/ˈdæmpɪŋ/",
                   "meaning": "阻尼，黏性阻力",
                   "level": "red",
                   "zh": "阻尼"
-                },
-                {
-                  "word": "exact",
-                  "ipa": "ɪɡˈzækt",
-                  "meaning": "adj. 精确的；确切的",
-                  "level": "green",
-                  "zh": "精确"
                 }
               ]
             }
@@ -1191,7 +1023,7 @@ window.BISHE_DATA['paper3'] = {
                   "ipa": "/ɪkˈspænʃn/",
                   "meaning": "展开，级数展开",
                   "level": "green",
-                  "zh": "级数展开"
+                  "zh": "展开"
                 },
                 {
                   "word": "taylor",
@@ -1221,13 +1053,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "水动力学的，流体动力学的",
                   "level": "red",
                   "zh": "流体动力学"
-                },
-                {
-                  "word": "negligible",
-                  "ipa": "",
-                  "meaning": "adj.可以忽略不计的；微不足道的；不重要的；不值一提的",
-                  "level": "red",
-                  "zh": "可以"
                 }
               ]
             },
@@ -1259,13 +1084,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "推进器"
                 },
                 {
-                  "word": "output",
-                  "ipa": "ˈaʊtpʊt",
-                  "meaning": "n. 产量，输出量",
-                  "level": "green",
-                  "zh": "输出"
-                },
-                {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
@@ -1280,13 +1098,6 @@ window.BISHE_DATA['paper3'] = {
               "text": "Crucially, this control law completely eliminates the terms $\\boldsymbol{D}(\\boldsymbol{\\nu})$, $\\boldsymbol{C}(\\boldsymbol{\\nu})$, and $\\boldsymbol{g}(\\boldsymbol{\\eta})$ from calculation, requiring only total mass matrix $\\boldsymbol{M}$ to achieve full 6-DOF decoupling while automatically rejecting manipulator hydrodynamic disturbances.",
               "translation": "核心优势总结：1. 彻底免除阻尼与科氏力建模：整个公式中完全不包含 $\\boldsymbol{D}(\\boldsymbol{\\nu})$、$\\boldsymbol{C}(\\boldsymbol{\\nu})$ 和 $\\boldsymbol{g}(\\boldsymbol{\\eta})$；2. 参数极简：仅需配置惯性矩阵 $\\boldsymbol{M}$；3. 抗未建模扰动极强：机械臂运动引起的水动力突变会被加速度计在下一拍立即捕捉并自动增量抵消。",
               "vocab": [
-                {
-                  "word": "automatically",
-                  "ipa": "ˌɔːtəˈmætɪkli",
-                  "meaning": "adv.自动地；自然地；无意识地",
-                  "level": "green",
-                  "zh": "自动"
-                },
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
@@ -1403,13 +1214,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "万向节死锁"
                 },
                 {
-                  "word": "synthesized",
-                  "ipa": "/ˈsɪnθəsaɪzd/",
-                  "meaning": "已综合设计的",
-                  "level": "red",
-                  "zh": "采用"
-                },
-                {
                   "word": "outer-loop",
                   "ipa": "/ˈaʊtə luːp/",
                   "meaning": "外环控制器（位置/航迹规划）",
@@ -1507,20 +1311,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "墨鱼号（DFKI 研发的水下特技干预 AUV）",
                   "level": "blue",
                   "zh": "AUV Cuttlefish"
-                },
-                {
-                  "word": "saltwater",
-                  "ipa": "/ˈsɔːltwɔːtə/",
-                  "meaning": "海水，盐水水池",
-                  "level": "green",
-                  "zh": "水池"
-                },
-                {
-                  "word": "indoor",
-                  "ipa": "",
-                  "meaning": "adj.室内的，户内的",
-                  "level": "red",
-                  "zh": "室内"
                 },
                 {
                   "word": "basin",
@@ -1759,20 +1549,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "二次非线性阻尼"
                 },
                 {
-                  "word": "turbulent",
-                  "ipa": "ˈtɜrbjələnt",
-                  "meaning": "adj.狂暴的,骚动的",
-                  "level": "red",
-                  "zh": "湍流"
-                },
-                {
-                  "word": "physical",
-                  "ipa": "ˈfɪzɪk(ə)l",
-                  "meaning": "adj.物理的；身体的；物质的 n.体检",
-                  "level": "green",
-                  "zh": "物理"
-                },
-                {
                   "word": "damping",
                   "ipa": "/ˈdæmpɪŋ/",
                   "meaning": "阻尼，黏性阻力",
@@ -1823,13 +1599,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "垂直直立"
                 },
                 {
-                  "word": "station",
-                  "ipa": "",
-                  "meaning": "n.火车站；公共汽车站；长途汽车站；站；所；局；电台；社会地位",
-                  "level": "red",
-                  "zh": "悬停"
-                },
-                {
                   "word": "drift",
                   "ipa": "/drɪft/",
                   "meaning": "漂移，侧向偏差",
@@ -1857,13 +1626,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "二次型的，平方的",
                   "level": "green",
                   "zh": "二次阻尼"
-                },
-                {
-                  "word": "drifted",
-                  "ipa": "/ˈdrɪftɪd/",
-                  "meaning": "已漂移的",
-                  "level": "red",
-                  "zh": "漂移"
                 },
                 {
                   "word": "drift",
@@ -1902,20 +1664,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "连续功耗"
                 },
                 {
-                  "word": "continuous",
-                  "ipa": "kənˈtɪnjuəs",
-                  "meaning": "adj. 连续的；不断的",
-                  "level": "green",
-                  "zh": "连续"
-                },
-                {
-                  "word": "quadratic",
-                  "ipa": "/kwɒˈdrætɪk/",
-                  "meaning": "二次型的，平方的",
-                  "level": "green",
-                  "zh": "二次"
-                },
-                {
                   "word": "energy",
                   "ipa": "ˈɛnərdʒi",
                   "meaning": "n. 能量；精力；活力",
@@ -1935,13 +1683,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "漂移，侧向偏差",
                   "level": "red",
                   "zh": "漂移"
-                },
-                {
-                  "word": "extra",
-                  "ipa": "ˈɛkstrə",
-                  "meaning": "adj.额外的,附加的 n.附加物,额外的东西",
-                  "level": "red",
-                  "zh": "额外"
                 },
                 {
                   "word": "indi",
@@ -2002,25 +1743,11 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "开创性验证"
                 },
                 {
-                  "word": "significant",
-                  "ipa": "sɪɡˈnɪfɪkənt",
-                  "meaning": "adj.重要的；显著的；意味深长的",
-                  "level": "green",
-                  "zh": "显著"
-                },
-                {
                   "word": "validation",
                   "ipa": "/ˌvælɪˈdeɪʃn/",
                   "meaning": "验证，证实",
                   "level": "green",
                   "zh": "开创性验证"
-                },
-                {
-                  "word": "successful",
-                  "ipa": "səkˈsesfʊl",
-                  "meaning": "adj. 成功的,有",
-                  "level": "green",
-                  "zh": "成功"
                 },
                 {
                   "word": "maneuvers",
@@ -2037,20 +1764,6 @@ window.BISHE_DATA['paper3'] = {
                   "zh": "反馈"
                 },
                 {
-                  "word": "station",
-                  "ipa": "",
-                  "meaning": "n.火车站；公共汽车站；长途汽车站；站；所；局；电台；社会地位",
-                  "level": "red",
-                  "zh": "定点悬停"
-                },
-                {
-                  "word": "agile",
-                  "ipa": "/ˈædʒaɪl/",
-                  "meaning": "敏捷的，高机动性的",
-                  "level": "red",
-                  "zh": "机动"
-                },
-                {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
@@ -2065,13 +1778,6 @@ window.BISHE_DATA['paper3'] = {
               "text": "2. Minimal Modeling Burden: Unlike conventional controllers requiring dozens of hydrodynamic coefficients, INDI relies solely on total mass matrix $\\boldsymbol{M}$ and thruster configuration $\\boldsymbol{B}$, drastically slashing commissioning time.",
               "translation": "2. 极小化建模负担：传统水下控制需要辨识数十个复杂流体动力学系数，而 INDI 仅需一个惯性矩阵 $\\boldsymbol{M}$ 和推进器配置矩阵 $\\boldsymbol{B}$，大幅缩短了水下机器人的控制调试周期。",
               "vocab": [
-                {
-                  "word": "conventional",
-                  "ipa": "/kənˈvenʃənl/",
-                  "meaning": "传统的；常规的（常用释义：按惯例的；普通的）",
-                  "level": "red",
-                  "zh": "传统"
-                },
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
@@ -2142,13 +1848,6 @@ window.BISHE_DATA['paper3'] = {
                   "meaning": "加速度",
                   "level": "green",
                   "zh": "加速度"
-                },
-                {
-                  "word": "tolerance",
-                  "ipa": "ˈtɑːlərəns",
-                  "meaning": "n.忍受，容忍；忍耐力；公差",
-                  "level": "green",
-                  "zh": "容错"
                 },
                 {
                   "word": "thrusters",

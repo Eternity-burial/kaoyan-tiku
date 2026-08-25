@@ -71,13 +71,6 @@ window.BISHE_DATA['paper1'] = {
               "translation": "然而，在极限敏捷飞行中，由于高度非线性动力学、复杂的空气动力学效应以及执行机构物理约束的共同耦合作用，高精度轨迹跟踪面临极大挑战。",
               "vocab": [
                 {
-                  "word": "challenging",
-                  "ipa": "ˈtʃælɪndʒɪŋ",
-                  "meaning": "adj.具有挑战",
-                  "level": "green",
-                  "zh": "挑战"
-                },
-                {
                   "word": "aerodynamic",
                   "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
                   "meaning": "空气动力学的，气动的",
@@ -182,13 +175,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "v.比较，对比；把……比作；相比",
                   "level": "red",
                   "zh": "对比"
-                },
-                {
-                  "word": "variety",
-                  "ipa": "vəˈraɪətɪ",
-                  "meaning": "n. 种种，种类",
-                  "level": "green",
-                  "zh": "各种"
                 },
                 {
                   "word": "agile",
@@ -305,13 +291,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "轨迹"
                 },
                 {
-                  "word": "superiority",
-                  "ipa": "suːˌpɪəriˈɒrəti",
-                  "meaning": "n.优越；优越感",
-                  "level": "green",
-                  "zh": "显著优势"
-                },
-                {
                   "word": "convergence",
                   "ipa": "/kənˈvɜːdʒəns/",
                   "meaning": "收敛，收敛性",
@@ -324,13 +303,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "不可行的（超出物理极限）",
                   "level": "red",
                   "zh": "动态不可行"
-                },
-                {
-                  "word": "numerical",
-                  "ipa": "nuːˈmɛrɪkəl",
-                  "meaning": "adj. 数字的；数值的",
-                  "level": "green",
-                  "zh": "数值"
                 },
                 {
                   "word": "tracking",
@@ -709,13 +681,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "轨迹"
                 },
                 {
-                  "word": "high-speed",
-                  "ipa": "/haɪ spiːd/",
-                  "meaning": "高速的",
-                  "level": "green",
-                  "zh": "高速"
-                },
-                {
                   "word": "cluttered",
                   "ipa": "/ˈklʌtəd/",
                   "meaning": "拥挤杂乱的，存在密集障碍物的",
@@ -764,13 +729,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "驱动，执行机构作用",
                   "level": "red",
                   "zh": "执行机构"
-                },
-                {
-                  "word": "struggle",
-                  "ipa": "ˈstrʌɡl",
-                  "meaning": "n. 斗争；v. 奋斗；挣扎",
-                  "level": "green",
-                  "zh": "难以"
                 },
                 {
                   "word": "dynamics",
@@ -831,32 +789,11 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "叶片挥舞阻力"
                 },
                 {
-                  "word": "substantial",
-                  "ipa": "/səbˈstænʃl/",
-                  "meaning": "相当大的；显著的（常用释义：大量的；重大的；实质性的）",
-                  "level": "red",
-                  "zh": "显著"
-                },
-                {
-                  "word": "high-speed",
-                  "ipa": "/haɪ spiːd/",
-                  "meaning": "高速的",
-                  "level": "green",
-                  "zh": "高速"
-                },
-                {
                   "word": "flapping",
                   "ipa": "/ˈflæpɪŋ/",
                   "meaning": "叶片挥舞，桨叶摆动",
                   "level": "blue",
                   "zh": "叶片挥舞"
-                },
-                {
-                  "word": "severe",
-                  "ipa": "sɪˈvɪə(r)",
-                  "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
-                  "level": "red",
-                  "zh": "严重"
                 },
                 {
                   "word": "rotor",
@@ -900,13 +837,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "执行机构，执行器（电机/舵机/推进器）",
                   "level": "red",
                   "zh": "电机"
-                },
-                {
-                  "word": "maximum",
-                  "ipa": "ˈmæksɪməm",
-                  "meaning": "adj./n. 最大量",
-                  "level": "green",
-                  "zh": "最大"
                 },
                 {
                   "word": "thrust",
@@ -978,20 +908,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "adj.不同的，有区别的；清楚的，明显的；确切的",
                   "level": "red",
                   "zh": "代表性"
-                },
-                {
-                  "word": "nmpc",
-                  "ipa": "/ˌen.em.piːˈsiː/",
-                  "meaning": "非线性模型预测控制 (Nonlinear MPC)",
-                  "level": "blue",
-                  "zh": "控制"
-                },
-                {
-                  "word": "dfbc",
-                  "ipa": "/ˌdiː.ef.biːˈsiː/",
-                  "meaning": "微分平坦控制器 (Differential-Flatness-Based Control)",
-                  "level": "blue",
-                  "zh": "控制"
                 }
               ]
             },
@@ -1037,13 +953,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "大有裨益"
                 },
                 {
-                  "word": "high-speed",
-                  "ipa": "/haɪ spiːd/",
-                  "meaning": "高速的",
-                  "level": "green",
-                  "zh": "高速"
-                },
-                {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
@@ -1056,13 +965,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "n. 注意，关心",
                   "level": "green",
                   "zh": "广泛关注"
-                },
-                {
-                  "word": "quadrotor",
-                  "ipa": "/ˈkwɒdrəʊtə/",
-                  "meaning": "四旋翼飞行器，四轴无人机",
-                  "level": "red",
-                  "zh": "行器"
                 },
                 {
                   "word": "advances",
@@ -1084,13 +986,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "擅长，在……表现卓越",
                   "level": "red",
                   "zh": "特别擅长"
-                },
-                {
-                  "word": "nature",
-                  "ipa": "/ˈneɪtʃə/",
-                  "meaning": "本性，固有特性",
-                  "level": "green",
-                  "zh": "特性"
                 },
                 {
                   "word": "model",
@@ -1134,13 +1029,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "苛刻的，耗费算力的",
                   "level": "red",
                   "zh": "极其庞大"
-                },
-                {
-                  "word": "ultra-low",
-                  "ipa": "ˈʌltrə loʊ",
-                  "meaning": "adj. 极低的",
-                  "level": "green",
-                  "zh": "极低"
                 },
                 {
                   "word": "however",
@@ -1191,15 +1079,7 @@ window.BISHE_DATA['paper1'] = {
               "id": "P8-S1",
               "text": "This paper delivers three primary contributions to the robotics literature.",
               "translation": "本文的主要学术贡献包括以下三点：",
-              "vocab": [
-                {
-                  "word": "primary",
-                  "ipa": "/ˈpraɪməri/",
-                  "meaning": "主要的；基本的（常用释义：首要的；初级的；初选的）",
-                  "level": "red",
-                  "zh": "主要"
-                }
-              ]
+              "vocab": []
             },
             {
               "sIndex": 2,
@@ -1300,13 +1180,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "提出"
                 },
                 {
-                  "word": "feedback",
-                  "ipa": "/ˈfiːdbæk/",
-                  "meaning": "反馈控制",
-                  "level": "red",
-                  "zh": "控制"
-                },
-                {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
@@ -1398,10 +1271,161 @@ window.BISHE_DATA['paper1'] = {
       ]
     },
     {
-      "id": "sec-prelim",
+      "id": "sec-related",
       "sectionNumber": "二",
-      "title": "II. SYSTEM DYNAMICS & AERODYNAMIC DRAG (PRELIMINARIES)",
-      "chineseTitle": "二、系统动力学与气动阻力建模 (III. PRELIMINARIES)",
+      "title": "II. RELATED WORK",
+      "chineseTitle": "二、相关工作 (II. RELATED WORK)",
+      "paragraphs": [
+        {
+          "pIndex": 9,
+          "logicRole": "四旋翼敏捷控制与轨迹生成发展沿革",
+          "mainIdea": "回顾四旋翼从传统线性 PID、级联几何控制、微分平坦前馈控制到现代非线性 MPC 的演进脉络，指出缺乏极端速度下的系统实证对比。",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P9-S1",
+              "text": "Early quadrotor flight control relied on cascaded linear PID or geometric control on $SE(3)$, which performs well near hover but degrades during aggressive maneuvers.",
+              "translation": "早期的四旋翼飞行控制主要依赖级联线性 PID 或李群 $SE(3)$ 上的几何控制，这类控制器在悬停附近表现优异，但在激进极限机动下性能显著退化。",
+              "vocab": [
+                {
+                  "word": "aggressive",
+                  "ipa": "/əˈɡresɪv/",
+                  "meaning": "激进的，高极限机动的",
+                  "level": "red",
+                  "zh": "激进"
+                },
+                {
+                  "word": "quadrotor",
+                  "ipa": "/ˈkwɒdrəʊtə/",
+                  "meaning": "四旋翼飞行器，四轴无人机",
+                  "level": "red",
+                  "zh": "四旋翼"
+                },
+                {
+                  "word": "maneuvers",
+                  "ipa": "/məˈnuːvəz/",
+                  "meaning": "机动（复数）",
+                  "level": "red",
+                  "zh": "极限机动"
+                },
+                {
+                  "word": "cascaded",
+                  "ipa": "/kæˈskeɪdɪd/",
+                  "meaning": "级联的（外环级联内环）",
+                  "level": "blue",
+                  "zh": "级联"
+                },
+                {
+                  "word": "pid",
+                  "ipa": "/ˌpiː.aɪˈdiː/",
+                  "meaning": "比例-积分-微分控制器 (Proportional-Integral-Derivative)",
+                  "level": "blue",
+                  "zh": "PID"
+                }
+              ]
+            },
+            {
+              "sIndex": 2,
+              "id": "P9-S2",
+              "text": "Differential flatness has been widely adopted for polynomial trajectory generation and Feedforward control, enabling aggressive aerobatic flips and high-speed cornering.",
+              "translation": "微分平坦性被广泛用于多项式轨迹生成与前馈控制，使得四旋翼能够完成激进的特技翻滚与高速转弯。",
+              "vocab": [
+                {
+                  "word": "differential flatness",
+                  "ipa": "/ˌdɪfəˈrenʃl ˈflætnəs/",
+                  "meaning": "微分平坦性（状态可用平坦输出及其导数代数表示）",
+                  "level": "blue",
+                  "zh": "微分平坦"
+                },
+                {
+                  "word": "feedforward",
+                  "ipa": "/ˈfiːdfɔːwəd/",
+                  "meaning": "前馈控制",
+                  "level": "red",
+                  "zh": "前馈控制"
+                },
+                {
+                  "word": "trajectory",
+                  "ipa": "/trəˈdʒektəri/",
+                  "meaning": "轨迹，航迹",
+                  "level": "red",
+                  "zh": "轨迹"
+                },
+                {
+                  "word": "generation",
+                  "ipa": "/ˌdʒenəˈreɪʃn/",
+                  "meaning": "生成，产生",
+                  "level": "green",
+                  "zh": "生成"
+                },
+                {
+                  "word": "aggressive",
+                  "ipa": "/əˈɡresɪv/",
+                  "meaning": "激进的，高极限机动的",
+                  "level": "red",
+                  "zh": "激进"
+                },
+                {
+                  "word": "cornering",
+                  "ipa": "/ˈkɔːnərɪŋ/",
+                  "meaning": "弯道过弯，转向机动",
+                  "level": "green",
+                  "zh": "高速转弯"
+                },
+                {
+                  "word": "flatness",
+                  "ipa": "/ˈflætnəs/",
+                  "meaning": "平坦性（系统状态可由输出及其高阶导数代数表示）",
+                  "level": "blue",
+                  "zh": "微分平坦"
+                }
+              ]
+            },
+            {
+              "sIndex": 3,
+              "id": "P9-S3",
+              "text": "With increasing onboard compute power, NMPC has emerged as a promising approach capable of explicitly incorporating state and input constraints within a receding horizon.",
+              "translation": "随着机载计算能力的提升，NMPC 成为极具前景的控制流派，能够在滚动预测时域内显式处理系统状态与执行器输入约束。",
+              "vocab": [
+                {
+                  "word": "constraints",
+                  "ipa": "/kənˈstreɪnts/",
+                  "meaning": "约束条件（硬约束/软约束）",
+                  "level": "red",
+                  "zh": "约束"
+                },
+                {
+                  "word": "horizon",
+                  "ipa": "/həˈraɪzn/",
+                  "meaning": "时域，预测时域 (Prediction Horizon)",
+                  "level": "red",
+                  "zh": "预测时域"
+                },
+                {
+                  "word": "input",
+                  "ipa": "ˈɪnˌpʊt",
+                  "meaning": "n./v.输入",
+                  "level": "red",
+                  "zh": "输入"
+                },
+                {
+                  "word": "nmpc",
+                  "ipa": "/ˌen.em.piːˈsiː/",
+                  "meaning": "非线性模型预测控制 (Nonlinear MPC)",
+                  "level": "blue",
+                  "zh": "NMPC"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-prelim",
+      "sectionNumber": "三",
+      "title": "III. SYSTEM DYNAMICS & AERODYNAMIC DRAG (PRELIMINARIES)",
+      "chineseTitle": "三、系统动力学与气动阻力建模 (III. PRELIMINARIES)",
       "figure": {
         "image": "题库/毕设/images/paper1_fig1_quadrotor_nmpc_dfbc.png",
         "caption": "Fig. 1: 四旋翼飞行器坐标系定义、NMPC 滚动预测与 DFBC 几何平坦控制系统整体架构图 (IEEE T-RO 2022)",
@@ -1409,13 +1433,13 @@ window.BISHE_DATA['paper1'] = {
       },
       "paragraphs": [
         {
-          "pIndex": 9,
+          "pIndex": 10,
           "logicRole": "四旋翼 6-DOF 刚体动力学方程",
           "mainIdea": "在世界坐标系与机体坐标系下，由位置微分、牛顿第二定律、四元数运动学及欧拉转动动力学构成完备刚体模型。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P9-S1",
+              "id": "P10-S1",
               "text": "Let world inertial frame be $\\mathcal{W} = \\{x_W, y_W, z_W\\}$ and body-fixed frame be $\\mathcal{B} = \\{x_B, y_B, z_B\\}$.",
               "translation": "定义惯性坐标系为 $\\mathcal{W} = \\{x_W, y_W, z_W\\}$，机体坐标系为 $\\mathcal{B} = \\{x_B, y_B, z_B\\}$。",
               "vocab": [
@@ -1430,7 +1454,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P9-S2",
+              "id": "P10-S2",
               "text": "Quadrotor 6-DOF rigid-body dynamics are governed by translational kinematics $\\dot{\\boldsymbol{\\xi}} = \\boldsymbol{v}$ and Newton's second law: $m \\dot{\\boldsymbol{v}} = m \\boldsymbol{g}_W + \\boldsymbol{R} \\boldsymbol{f}_B + \\boldsymbol{f}_a$.",
               "translation": "四旋翼刚体动力学由线速度运动学 $\\dot{\\boldsymbol{\\xi}} = \\boldsymbol{v}$ 与牛顿第二定律描述：$m \\dot{\\boldsymbol{v}} = m \\boldsymbol{g}_W + \\boldsymbol{R} \\boldsymbol{f}_B + \\boldsymbol{f}_a$。",
               "vocab": [
@@ -1473,7 +1497,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P9-S3",
+              "id": "P10-S3",
               "text": "Attitude kinematics and rotational dynamics are expressed as $\\dot{\\boldsymbol{q}} = \\frac{1}{2} \\boldsymbol{q} \\otimes \\begin{bmatrix} 0 \\\\ \\boldsymbol{\\Omega}_B \\end{bmatrix}$ and $\\boldsymbol{J} \\dot{\\boldsymbol{\\Omega}}_B = \\boldsymbol{\\tau}_B - \\boldsymbol{\\Omega}_B \\times (\\boldsymbol{J} \\boldsymbol{\\Omega}_B)$.",
               "translation": "姿态四元数运动学与欧拉转动方程为：$\\dot{\\boldsymbol{q}} = \\frac{1}{2} \\boldsymbol{q} \\otimes \\begin{bmatrix} 0 \\\\ \\boldsymbol{\\Omega}_B \\end{bmatrix}$ 以及 $\\boldsymbol{J} \\dot{\\boldsymbol{\\Omega}}_B = \\boldsymbol{\\tau}_B - \\boldsymbol{\\Omega}_B \\times (\\boldsymbol{J} \\boldsymbol{\\Omega}_B)$。",
               "vocab": [
@@ -1503,13 +1527,13 @@ window.BISHE_DATA['paper1'] = {
           ]
         },
         {
-          "pIndex": 10,
+          "pIndex": 11,
           "logicRole": "系统状态与力矩参数物理定义",
           "mainIdea": "定义位置 xi、线速度 v、质量 m、重力 gW、姿态四元数 q、旋转矩阵 R、转动惯量 J、总推力 fB 及三轴控制力矩 tauB。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P10-S1",
+              "id": "P11-S1",
               "text": "Here, $\\boldsymbol{\\xi} = [x, y, z]^T$ denotes position in world frame, $\\boldsymbol{v}$ is linear velocity, $m$ is mass, and $\\boldsymbol{g}_W = [0, 0, -g]^T$ is gravity.",
               "translation": "其中 $\\boldsymbol{\\xi} = [x, y, z]^T$ 为世界系位置，$\\boldsymbol{v} = [\\dot{x}, \\dot{y}, \\dot{z}]^T$ 为线速度，$m$ 为总质量，$\\boldsymbol{g}_W = [0, 0, -g]^T$ 为重力加速度矢量；",
               "vocab": [
@@ -1531,7 +1555,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P10-S2",
+              "id": "P11-S2",
               "text": "The rotation matrix $\\boldsymbol{R} \\in SO(3)$ maps body coordinates to world coordinates parameterized by unit quaternion $\\boldsymbol{q} = [q_w, q_x, q_y, q_z]^T$.",
               "translation": "$\\boldsymbol{R} \\in SO(3)$ 为从机体系到世界系的旋转矩阵，$\\boldsymbol{q} = [q_w, q_x, q_y, q_z]^T$ 为姿态四元数；",
               "vocab": [
@@ -1553,7 +1577,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P10-S3",
+              "id": "P11-S3",
               "text": "Total collective thrust is $\\boldsymbol{f}_B = [0, 0, T]^T$ with $T = \\sum_{i=1}^4 f_i$, and $\\boldsymbol{\\tau}_B = [\\tau_x, \\tau_y, \\tau_z]^T$ represents body torques generated by 4 rotors.",
               "translation": "$\\boldsymbol{f}_B = [0, 0, T]^T$ 为 4 个转子产生的机体总推力（$T = \\sum_{i=1}^4 f_i$），$\\boldsymbol{\\tau}_B = [\\tau_x, \\tau_y, \\tau_z]^T$ 为转子合成的三轴控制力矩。",
               "vocab": [
@@ -1562,7 +1586,7 @@ window.BISHE_DATA['paper1'] = {
                   "ipa": "/tɔːks/",
                   "meaning": "力矩（复数）",
                   "level": "red",
-                  "zh": "力矩"
+                  "zh": "三轴控制力矩"
                 },
                 {
                   "word": "thrust",
@@ -1577,26 +1601,19 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "转子（复数）",
                   "level": "blue",
                   "zh": "转子"
-                },
-                {
-                  "word": "total",
-                  "ipa": "ˈtəʊt(ə)l",
-                  "meaning": "adj. 总数的;总括的;完",
-                  "level": "green",
-                  "zh": "总推力"
                 }
               ]
             }
           ]
         },
         {
-          "pIndex": 11,
+          "pIndex": 12,
           "logicRole": "空气动力学复合阻力模型",
           "mainIdea": "在高速飞行中空气阻力显著；采用风洞验证的对角复合阻力矩阵显式补偿转子诱导阻力与迎风阻力。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P11-S1",
+              "id": "P12-S1",
               "text": "At high flight speeds exceeding 10 m/s, aerodynamic drag force $\\boldsymbol{f}_a$ cannot be neglected.",
               "translation": "在高速飞行（超过 10 m/s）时，空气阻力 $\\boldsymbol{f}_a$ 不可忽略。",
               "vocab": [
@@ -1606,13 +1623,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "空气动力学阻力",
                   "level": "blue",
                   "zh": "空气阻力"
-                },
-                {
-                  "word": "aerodynamic",
-                  "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
-                  "meaning": "空气动力学的，气动的",
-                  "level": "red",
-                  "zh": "空气"
                 },
                 {
                   "word": "drag",
@@ -1625,7 +1635,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P11-S2",
+              "id": "P12-S2",
               "text": "We adopt a wind-tunnel validated diagonal lumped drag model: $\\boldsymbol{f}_a = - \\boldsymbol{R} \\boldsymbol{D}_v \\boldsymbol{R}^T \\boldsymbol{v}$.",
               "translation": "本文采用经过风洞实验验证的复合阻力模型：$\\boldsymbol{f}_a = - \\boldsymbol{R} \\boldsymbol{D}_v \\boldsymbol{R}^T \\boldsymbol{v}$。",
               "vocab": [
@@ -1675,7 +1685,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P11-S3",
+              "id": "P12-S3",
               "text": "The matrix $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ encompasses both rotor blade flapping drag and fuselage parasitic drag.",
               "translation": "其中 $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ 为对角空气阻力系数矩阵，显式包含了转子叶片挥舞阻力与机身迎风阻力。",
               "vocab": [
@@ -1743,9 +1753,9 @@ window.BISHE_DATA['paper1'] = {
     },
     {
       "id": "sec-methods",
-      "sectionNumber": "三",
-      "title": "III. CONTROL METHODOLOGY DESIGN",
-      "chineseTitle": "三、控制方法设计 (IV. METHODOLOGIES)",
+      "sectionNumber": "四",
+      "title": "IV. CONTROL METHODOLOGIES",
+      "chineseTitle": "四、控制方法设计 (IV. METHODOLOGIES)",
       "figure": {
         "image": "题库/毕设/images/paper1_fig3_indi_inner_loop.png",
         "caption": "Fig. 3: 级联 500 Hz 增量非线性动态逆 (INDI) 角加速度内环与电机推力分配控制框图 (IEEE T-RO 2022)",
@@ -1753,13 +1763,13 @@ window.BISHE_DATA['paper1'] = {
       },
       "paragraphs": [
         {
-          "pIndex": 12,
+          "pIndex": 13,
           "logicRole": "NMPC 有限预测时域优化命题构建",
           "mainIdea": "NMPC 构建二次型跟踪代价函数，在有限时域内利用 acados 和 SQP-RTI 快速求解带推力硬约束的最优控制序列。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P12-S1",
+              "id": "P13-S1",
               "text": "NMPC discretizes a prediction horizon $\\tau \\in [t, t+h]$ into $N$ shooting nodes and solves a constrained nonlinear optimal control problem: $\\min_{\\boldsymbol{u}} \\sum_{k=0}^{N-1} ( \\|\\boldsymbol{x}_k - \\boldsymbol{x}_{k,r}\\|_{\\boldsymbol{Q}}^2 + \\|\\boldsymbol{u}_k - \\boldsymbol{u}_{k,r}\\|_{\\boldsymbol{Q}_u}^2 ) + \\|\\boldsymbol{x}_N - \\boldsymbol{x}_{N,r}\\|_{\\boldsymbol{Q}_N}^2$.",
               "translation": "NMPC 在有限时域 $\\tau \\in [t, t + h]$ 内将系统离散化为 $N$ 个等长步长区间，构建受约束的非线性二次优化命题。",
               "vocab": [
@@ -1783,13 +1793,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "受约束的",
                   "level": "red",
                   "zh": "受约束"
-                },
-                {
-                  "word": "prediction",
-                  "ipa": "/prɪˈdɪkʃn/",
-                  "meaning": "预测，时域预测",
-                  "level": "green",
-                  "zh": "时域"
                 },
                 {
                   "word": "nonlinear",
@@ -1816,7 +1819,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P12-S2",
+              "id": "P13-S2",
               "text": "Constraints enforce state transition $\\boldsymbol{x}_{k+1} = f(\\boldsymbol{x}_k, \\boldsymbol{u}_k)$, body rates $\\boldsymbol{\\Omega}_B \\in [\\boldsymbol{\\Omega}_{\\min}, \\boldsymbol{\\Omega}_{\\max}]$, and individual motor thrusts $u_i \\in [u_{\\min}, u_{\\max}]$.",
               "translation": "约束条件包含状态转移方程、机体角速度上下界 $\\boldsymbol{\\Omega}_B \\in [\\boldsymbol{\\Omega}_{\\min}, \\boldsymbol{\\Omega}_{\\max}]$ 以及各电机独立推力硬约束 $u_i \\in [u_{\\min}, u_{\\max}]$。",
               "vocab": [
@@ -1835,13 +1838,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "推力"
                 },
                 {
-                  "word": "state",
-                  "ipa": "/steɪt/",
-                  "meaning": "正式陈述；说明（常用释义：状态；州；国家；陈述）",
-                  "level": "red",
-                  "zh": "状态"
-                },
-                {
                   "word": "motor",
                   "ipa": "/ˈməʊtə/",
                   "meaning": "电动机，电机",
@@ -1852,7 +1848,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P12-S3",
+              "id": "P13-S3",
               "text": "Real-time execution is realized via the high-performance C++ code generation tool acados utilizing the Sequential Quadratic Programming Real-Time Iteration (SQP-RTI) scheme.",
               "translation": "求解器采用高效率 C++ 代码生成框架 acados，结合序列二次规划（SQP-RTI）算法在几毫秒内实时求解。",
               "vocab": [
@@ -1878,13 +1874,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "RTI"
                 },
                 {
-                  "word": "code generation",
-                  "ipa": "/kəʊd ˌdʒenəˈreɪʃn/",
-                  "meaning": "自动代码生成",
-                  "level": "blue",
-                  "zh": "代码"
-                },
-                {
                   "word": "programming",
                   "ipa": "/ˈprəʊɡræmɪŋ/",
                   "meaning": "规划（数学规划）；编程",
@@ -1897,13 +1886,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "生成，产生",
                   "level": "green",
                   "zh": "生成"
-                },
-                {
-                  "word": "quadratic",
-                  "ipa": "/kwɒˈdrætɪk/",
-                  "meaning": "二次型的，平方的",
-                  "level": "green",
-                  "zh": "二次"
                 },
                 {
                   "word": "sqp-rti",
@@ -1931,13 +1913,13 @@ window.BISHE_DATA['paper1'] = {
           ]
         },
         {
-          "pIndex": 13,
+          "pIndex": 14,
           "logicRole": "改进型 DFBC 几何前馈与高阶导数解析",
           "mainIdea": "选取平坦输出为位置与偏航角；由期望合力加速度解析机体 z 轴方向，二阶求导计算加加速度 Jerk 与角速度前馈。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P13-S1",
+              "id": "P14-S1",
               "text": "DFBC chooses flat outputs as $\\boldsymbol{\\sigma} = [x, y, z, \\psi]^T$. The desired net acceleration including aerodynamic drag is $\\boldsymbol{a}_{\\text{des}} = \\ddot{\\boldsymbol{\\xi}}_{ref} + \\boldsymbol{K}_p (\\boldsymbol{\\xi}_{ref} - \\boldsymbol{\\xi}) + \\boldsymbol{K}_d (\\dot{\\boldsymbol{\\xi}}_{ref} - \\dot{\\boldsymbol{\\xi}}) - \\boldsymbol{g}_W - \\frac{1}{m}\\boldsymbol{f}_a$.",
               "translation": "四旋翼的平坦输出选取为位置与偏航角 $\\boldsymbol{\\sigma} = [x, y, z, \\psi]^T$。考虑气动阻力后的期望合力加速度矢量为 $\\boldsymbol{a}_{\\text{des}}$。",
               "vocab": [
@@ -1963,13 +1945,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "气动"
                 },
                 {
-                  "word": "dfbc",
-                  "ipa": "/ˌdiː.ef.biːˈsiː/",
-                  "meaning": "微分平坦控制器 (Differential-Flatness-Based Control)",
-                  "level": "blue",
-                  "zh": "平坦"
-                },
-                {
                   "word": "flat",
                   "ipa": "/flæt/",
                   "meaning": "平坦的（微分平坦输出）",
@@ -1987,14 +1962,14 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P13-S2",
+              "id": "P14-S2",
               "text": "The desired body $z_B$ axis is analytically computed as $\\boldsymbol{z}_{B,\\text{des}} = \\frac{\\boldsymbol{a}_{\\text{des}}}{\\|\\boldsymbol{a}_{\\text{des}}\\|}$.",
               "translation": "由此解得期望机体 $z_B$ 轴方向：$\\boldsymbol{z}_{B,\\text{des}} = \\frac{\\boldsymbol{a}_{\\text{des}}}{\\|\\boldsymbol{a}_{\\text{des}}\\|}$。",
               "vocab": []
             },
             {
               "sIndex": 3,
-              "id": "P13-S3",
+              "id": "P14-S3",
               "text": "Differentiating $\\boldsymbol{a}_{\\text{des}}$ twice yields trajectory jerk and snap, resolving desired body rates $\\boldsymbol{\\Omega}_{B,\\text{des}}$ and angular accelerations $\\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}}$ without numerical optimization.",
               "translation": "通过对 $\\boldsymbol{a}_{\\text{des}}$ 进行二阶求导（涉及轨迹加加速度 Jerk 与加加加速度 Snap），可解析求出期望角速度 $\\boldsymbol{\\Omega}_{B,\\text{des}}$ 与期望角加速度 $\\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}}$。",
               "vocab": [
@@ -2044,7 +2019,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 4,
-              "id": "P13-S4",
+              "id": "P14-S4",
               "text": "A lightweight quadratic programming (QP) control allocator resolves motor thrust saturation while strictly prioritizing attitude torque over collective thrust.",
               "translation": "当合力需求超出单电机推力极限时，采用小型 QP 求解器在优先保证姿态控制力矩的前提下等比例缩减总推力。",
               "vocab": [
@@ -2102,13 +2077,13 @@ window.BISHE_DATA['paper1'] = {
           ]
         },
         {
-          "pIndex": 14,
+          "pIndex": 15,
           "logicRole": "级联 500 Hz INDI 姿态增量内环设计",
           "mainIdea": "为隔绝惯量不确定性与风扰，级联 500 Hz INDI 内环；通过角加速度反馈直接递推力矩增量驱动电调。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P14-S1",
+              "id": "P15-S1",
               "text": "To isolate inertia uncertainties and aerodynamic disturbances, both NMPC and DFBC are cascaded with a 500 Hz sensor-based INDI inner-loop.",
               "translation": "为隔绝转动惯量不确定性、未建模力矩与外部阵风扰动，NMPC 与 DFBC 的底层均级联了高频（500 Hz）INDI 姿态内环。",
               "vocab": [
@@ -2165,7 +2140,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P14-S2",
+              "id": "P15-S2",
               "text": "Virtual angular acceleration command is $\\boldsymbol{\\nu} = \\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}} + \\boldsymbol{K}_p (\\boldsymbol{q}_{ref} \\ominus \\boldsymbol{q}) + \\boldsymbol{K}_d (\\boldsymbol{\\Omega}_{B,\\text{des}} - \\boldsymbol{\\Omega}_B)$.",
               "translation": "虚拟角加速度指令为 $\\boldsymbol{\\nu} = \\dot{\\boldsymbol{\\Omega}}_{B,\\text{des}} + \\boldsymbol{K}_p (\\boldsymbol{q}_{ref} \\ominus \\boldsymbol{q}) + \\boldsymbol{K}_d (\\boldsymbol{\\Omega}_{B,\\text{des}} - \\boldsymbol{\\Omega}_B)$。",
               "vocab": [
@@ -2184,13 +2159,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "加速度"
                 },
                 {
-                  "word": "virtual",
-                  "ipa": "ˈvɜːrtʃuəl",
-                  "meaning": "adj. 虚拟的；实质上的",
-                  "level": "green",
-                  "zh": "虚拟"
-                },
-                {
                   "word": "angular",
                   "ipa": "/ˈæŋɡjələ/",
                   "meaning": "角的，角向的",
@@ -2201,7 +2169,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P14-S3",
+              "id": "P15-S3",
               "text": "Control torque increment is computed from filtered angular acceleration feedback $\\dot{\\boldsymbol{\\Omega}}_{B,f}$ as $\\Delta \\boldsymbol{\\tau}_B = \\boldsymbol{J} (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_{B,f})$, synthesizing $\\boldsymbol{\\tau}_B = \\boldsymbol{\\tau}_{B,f} + \\Delta \\boldsymbol{\\tau}_B$ directly to motor ESCs.",
               "translation": "根据角加速度反馈 $\\dot{\\boldsymbol{\\Omega}}_{B,f}$ 计算机体控制力矩增量 $\\Delta \\boldsymbol{\\tau}_B = \\boldsymbol{J} (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_{B,f})$，合成 $\\boldsymbol{\\tau}_B = \\boldsymbol{\\tau}_{B,f} + \\Delta \\boldsymbol{\\tau}_B$ 并直接驱动电调。",
               "vocab": [
@@ -2234,13 +2202,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "加速度反馈"
                 },
                 {
-                  "word": "directly",
-                  "ipa": "/dəˈrektli/",
-                  "meaning": "直接地（常用释义：径直；正好）",
-                  "level": "red",
-                  "zh": "直接"
-                },
-                {
                   "word": "angular",
                   "ipa": "/ˈæŋɡjələ/",
                   "meaning": "角的，角向的",
@@ -2269,9 +2230,9 @@ window.BISHE_DATA['paper1'] = {
     },
     {
       "id": "sec-sim",
-      "sectionNumber": "四",
-      "title": "IV. SIMULATION BENCHMARKS & ABLATION STUDIES",
-      "chineseTitle": "四、仿真实验与消融对比 (VI. SIMULATION EXPERIMENTS)",
+      "sectionNumber": "五",
+      "title": "V. SIMULATION EXPERIMENTS & ABLATION STUDIES",
+      "chineseTitle": "五、仿真实验与消融对比 (VI. SIMULATION EXPERIMENTS)",
       "figure": {
         "image": "题库/毕设/images/paper1_fig7_tracking_curves.png",
         "caption": "Fig. 7: 72 km/h 极速赛道下 NMPC+INDI 与 DFBC+INDI 轨迹跟踪与推力饱和对比曲线 (IEEE T-RO 2022)",
@@ -2279,13 +2240,13 @@ window.BISHE_DATA['paper1'] = {
       },
       "paragraphs": [
         {
-          "pIndex": 15,
+          "pIndex": 16,
           "logicRole": "4 种典型极限测试轨迹设计",
           "mainIdea": "设计专业穿越机赛道 Race Track A/B/C、3D 空间 Figure-8 航迹以及包含 360 度特技滚转与回环动作。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P15-S1",
+              "id": "P16-S1",
               "text": "Simulation evaluation encompasses 4 highly challenging agile trajectory benchmarks.",
               "translation": "测试包含了 4 种典型极限航迹：",
               "vocab": [
@@ -2321,7 +2282,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P15-S2",
+              "id": "P16-S2",
               "text": "1. Professional drone racing tracks (Race Track A / B / C) featuring hairpin turns and high-speed dives up to 20 m/s.",
               "translation": "1. 专业穿越机竞速赛道（Race Track A / B / C），包含急转发卡弯、俯冲跃升等动作，最高速度达 20 m/s；",
               "vocab": [
@@ -2340,13 +2301,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "穿越机竞速"
                 },
                 {
-                  "word": "high-speed",
-                  "ipa": "/haɪ spiːd/",
-                  "meaning": "高速的",
-                  "level": "green",
-                  "zh": "高速"
-                },
-                {
                   "word": "hairpin",
                   "ipa": "/ˈheəpɪn/",
                   "meaning": "发卡弯（极急剧的急转弯道）",
@@ -2361,13 +2315,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "竞速"
                 },
                 {
-                  "word": "track",
-                  "ipa": "/træk/",
-                  "meaning": "轨迹；路径（常用释义：轨道；小路；痕迹；发展路线）",
-                  "level": "red",
-                  "zh": "赛道"
-                },
-                {
                   "word": "dives",
                   "ipa": "/daɪvz/",
                   "meaning": "俯冲（复数）",
@@ -2378,14 +2325,14 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P15-S3",
+              "id": "P16-S3",
               "text": "2. Spatial 3D Figure-8 trajectories with rapid altitude and attitude transitions.",
               "translation": "2. 空间 3D 立体“8”字飞行（3D Figure-8）；",
               "vocab": []
             },
             {
               "sIndex": 4,
-              "id": "P15-S4",
+              "id": "P16-S4",
               "text": "3. Aerobatic looping and barrel rolls containing full 360-degree attitude rotations.",
               "translation": "3. 包含 360° 滚转与俯冲回环的极限特技动作（Looping & Barrel Roll）。",
               "vocab": [
@@ -2408,13 +2355,13 @@ window.BISHE_DATA['paper1'] = {
           ]
         },
         {
-          "pIndex": 16,
+          "pIndex": 17,
           "logicRole": "可行与不可行轨迹跟踪对比数据",
           "mainIdea": "在动态可行轨迹下两者精度相当；在动态不可行轨迹下 NMPC 误差显著降低 48%~62%。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P16-S1",
+              "id": "P17-S1",
               "text": "On dynamically feasible trajectories, NMPC+INDI achieves position RMSE of $0.14 \\pm 0.05\\text{ m}$, while DFBC+INDI achieves $0.15 \\pm 0.06\\text{ m}$, exhibiting nearly identical tracking accuracy.",
               "translation": "在动态可行轨迹（Dynamically Feasible）下：NMPC+INDI 位置跟踪 RMSE 为 $0.14 \\pm 0.05\\text{ m}$，DFBC+INDI 为 $0.15 \\pm 0.06\\text{ m}$，两者精度几乎完全一致。",
               "vocab": [
@@ -2424,13 +2371,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "轨迹，航迹（复数）",
                   "level": "red",
                   "zh": "轨迹"
-                },
-                {
-                  "word": "identical",
-                  "ipa": "",
-                  "meaning": "adj.完全相同的；同一的；同卵的；恒等的",
-                  "level": "red",
-                  "zh": "完全"
                 },
                 {
                   "word": "feasible",
@@ -2485,7 +2425,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P16-S2",
+              "id": "P17-S2",
               "text": "On dynamically infeasible trajectories where rotor thrust limits are exceeded, NMPC+INDI maintains position RMSE of $0.38\\text{ m}$ and heading error of $3.2^\\circ$, whereas DFBC+INDI degrades to $0.73\\text{ m}$ and $8.5^\\circ$.",
               "translation": "在动态不可行轨迹（Dynamically Infeasible，电机推力饱和）下：NMPC+INDI 位置 RMSE 为 0.38 m，航向误差 3.2°；DFBC+INDI 位置 RMSE 为 0.73 m，航向误差 8.5°。",
               "vocab": [
@@ -2570,7 +2510,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P16-S3",
+              "id": "P17-S3",
               "text": "NMPC achieves a 48% reduction in position error and a 62% reduction in heading error because its multi-step predictive horizon proactively decelerates before sharp turns to avoid severe saturation breakdown.",
               "translation": "结论：NMPC 位置误差比 DFBC 低 48%，航向误差低 62%。因为 NMPC 具有未来多步预测能力，能提前减速过弯避免剧烈饱和崩溃。",
               "vocab": [
@@ -2603,20 +2543,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "航向"
                 },
                 {
-                  "word": "horizon",
-                  "ipa": "/həˈraɪzn/",
-                  "meaning": "时域，预测时域 (Prediction Horizon)",
-                  "level": "red",
-                  "zh": "预测"
-                },
-                {
-                  "word": "severe",
-                  "ipa": "sɪˈvɪə(r)",
-                  "meaning": "adj.严厉的;剧烈的,严重的,严峻的,艰难的",
-                  "level": "red",
-                  "zh": "剧烈"
-                },
-                {
                   "word": "nmpc",
                   "ipa": "/ˌen.em.piːˈsiː/",
                   "meaning": "非线性模型预测控制 (Nonlinear MPC)",
@@ -2628,13 +2554,13 @@ window.BISHE_DATA['paper1'] = {
           ]
         },
         {
-          "pIndex": 17,
+          "pIndex": 18,
           "logicRole": "INDI 内环与空气动力学阻力消融分析",
           "mainIdea": "消融实验表明 INDI 使误差降低 78%；关闭阻力模型会导致高速转弯出现超 1.2 m 侧向漂移。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P17-S1",
+              "id": "P18-S1",
               "text": "In ablation tests, replacing the INDI inner-loop with a standard PID controller increases position RMSE from $0.18\\text{ m}$ to $0.82\\text{ m}$, proving that INDI reduces tracking error by over 78% while eliminating attitude oscillations.",
               "translation": "消融实验：采用经典 PID 内环时，轨迹跟踪 RMSE 为 0.82 m；引入 INDI 内环后，跟踪误差直接降至 0.18 m（误差降低 78%），且完全消除了高速转弯时的姿态低频抖动。",
               "vocab": [
@@ -2705,7 +2631,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P17-S2",
+              "id": "P18-S2",
               "text": "Disabling aerodynamic drag feedforward at speeds $> 12\\text{ m/s}$ results in insufficient centripetal force and lateral cornering drift exceeding $1.2\\text{ m}$, which converges back to $< 0.2\\text{ m}$ once drag is compensated.",
               "translation": "消融实验：在速度大于 12 m/s 时，关闭阻力前馈会导致向心力不足，弯道最大侧向漂移超 1.2 m；引入阻力模型后漂移收敛至 0.2 m 以内。",
               "vocab": [
@@ -2715,13 +2641,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "空气动力学阻力",
                   "level": "blue",
                   "zh": "阻力"
-                },
-                {
-                  "word": "insufficient",
-                  "ipa": "ˌɪnsəˈfɪʃənt",
-                  "meaning": "adj. 不充分的；不足的",
-                  "level": "green",
-                  "zh": "不足"
                 },
                 {
                   "word": "feedforward",
@@ -2773,18 +2692,18 @@ window.BISHE_DATA['paper1'] = {
     },
     {
       "id": "sec-real",
-      "sectionNumber": "五",
-      "title": "V. REAL-WORLD VICON FLIGHT EXPERIMENTS",
-      "chineseTitle": "五、大型动捕实机极限飞行实验 (VII. REAL-WORLD EXPERIMENTS)",
+      "sectionNumber": "六",
+      "title": "VI. REAL-WORLD VICON FLIGHT EXPERIMENTS",
+      "chineseTitle": "六、大型动捕实机极限飞行实验 (VII. REAL-WORLD EXPERIMENTS)",
       "paragraphs": [
         {
-          "pIndex": 18,
+          "pIndex": 19,
           "logicRole": "实机实验平台与极限飞测配置",
           "mainIdea": "苏黎世大学 30x30x8m 动捕大厅，定制 0.75kg、推重比 4.5:1 穿越机，实飞达到 72 km/h 与 5g 极限指标。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P18-S1",
+              "id": "P19-S1",
               "text": "Real-world flight experiments were conducted in the University of Zurich $30\\text{ m} \\times 30\\text{ m} \\times 8\\text{ m}$ high-precision Vicon motion capture hall.",
               "translation": "实验场地：苏黎世大学 $30\\text{ m} \\times 30\\text{ m} \\times 8\\text{ m}$ 大型高精度 Vicon 动作捕捉飞行大厅；",
               "vocab": [
@@ -2820,7 +2739,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P18-S2",
+              "id": "P19-S2",
               "text": "The test vehicle is a custom racing quadrotor weighing $0.75\\text{ kg}$ with a peak thrust-to-weight ratio of 4.5:1, powered by onboard Jetson and STM32 processing units.",
               "translation": "测试无人机：定制竞速四旋翼，重量 0.75 kg，推重比高达 4.5:1，机载 Jetson / STM32 高性能嵌入式平台；",
               "vocab": [
@@ -2846,13 +2765,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "四旋翼"
                 },
                 {
-                  "word": "vehicle",
-                  "ipa": "ˈviːɪkl",
-                  "meaning": "n.车辆,交通工具;媒介,载体",
-                  "level": "red",
-                  "zh": "无人机"
-                },
-                {
                   "word": "racing",
                   "ipa": "/ˈreɪsɪŋ/",
                   "meaning": "竞速的，赛车/赛机的",
@@ -2863,7 +2775,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P18-S3",
+              "id": "P19-S3",
               "text": "The vehicle successfully reached peak flight velocities of 20 m/s (72 km/h) and centripetal accelerations up to 5g ($49\\text{ m/s}^2$).",
               "translation": "实飞最高速度达到 20 m/s (72 km/h)，向心加速度峰值达 5g ($49\\text{ m/s}^2$)。",
               "vocab": [
@@ -2893,13 +2805,13 @@ window.BISHE_DATA['paper1'] = {
           ]
         },
         {
-          "pIndex": 19,
+          "pIndex": 20,
           "logicRole": "实飞数据验证与计算耗时对比",
           "mainIdea": "实飞数据印证仿真结论：DFBC 单步仅耗时 0.05 ms（快 50-100 倍），NMPC 耗时 2.5~4.5 ms；撤除 INDI 均出现发散。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P19-S1",
+              "id": "P20-S1",
               "text": "Both NMPC+INDI and DFBC+INDI completed the 72 km/h extreme race track with remarkable trajectory overlap.",
               "translation": "NMPC+INDI 与 DFBC+INDI 均成功以 72 km/h 极速刷圈，轨迹重合度极高；",
               "vocab": [
@@ -2949,30 +2861,16 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P19-S2",
+              "id": "P20-S2",
               "text": "DFBC requires an execution time of only 0.05 ms per step, whereas NMPC requires 2.5 to 4.5 ms per step, confirming a 50-to-100-fold computational speedup for DFBC.",
               "translation": "DFBC 单步耗时仅 0.05 ms，而 NMPC 单步耗时 2.5 ~ 4.5 ms，证实 DFBC 运算速度快 50~100 倍；",
               "vocab": [
-                {
-                  "word": "execution",
-                  "ipa": "/ˌeksɪˈkjuːʃn/",
-                  "meaning": "执行，运算执行",
-                  "level": "green",
-                  "zh": "运算"
-                },
                 {
                   "word": "dfbc",
                   "ipa": "/ˌdiː.ef.biːˈsiː/",
                   "meaning": "微分平坦控制器 (Differential-Flatness-Based Control)",
                   "level": "blue",
                   "zh": "DFBC"
-                },
-                {
-                  "word": "step",
-                  "ipa": "",
-                  "meaning": "v. 踏，踩",
-                  "level": "green",
-                  "zh": "单步"
                 },
                 {
                   "word": "nmpc",
@@ -2985,7 +2883,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P19-S3",
+              "id": "P20-S3",
               "text": "Removing the INDI inner-loop during real flights caused both controllers to diverge in high-speed hairpin turns, validating sensor feedback as an indispensable foundation for agile flight.",
               "translation": "实飞中撤除 INDI 后，两者均在高速发卡弯出现明显发散趋势，充分证实了传感器反馈驱动的增量内环对于极限飞行的必要性。",
               "vocab": [
@@ -3002,13 +2900,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "内环控制器（角速度/力矩控制）",
                   "level": "blue",
                   "zh": "内环"
-                },
-                {
-                  "word": "high-speed",
-                  "ipa": "/haɪ spiːd/",
-                  "meaning": "高速的",
-                  "level": "green",
-                  "zh": "高速"
                 },
                 {
                   "word": "feedback",
@@ -3053,18 +2944,18 @@ window.BISHE_DATA['paper1'] = {
     },
     {
       "id": "sec-discuss",
-      "sectionNumber": "六",
-      "title": "VI. DISCUSSION & ENGINEERING GUIDELINES",
-      "chineseTitle": "六、综合对比与工程选型指南 (VIII. DISCUSSION & CONCLUSION)",
+      "sectionNumber": "七",
+      "title": "VII. DISCUSSION & ENGINEERING GUIDELINES",
+      "chineseTitle": "七、综合对比与工程选型指南 (VIII. DISCUSSION)",
       "paragraphs": [
         {
-          "pIndex": 20,
+          "pIndex": 21,
           "logicRole": "全维度综合对比矩阵",
           "mainIdea": "综合对比表格：可行轨迹精度、不可行轨迹表现、单拍计算开销、实现复杂度与执行器硬约束支持。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P20-S1",
+              "id": "P21-S1",
               "text": "We summarize the quantitative comparison across five core evaluation metrics between NMPC and DFBC.",
               "translation": "本文从五个核心维度总结 NMPC+INDI 与 DFBC+INDI 的量化评估矩阵：",
               "vocab": [
@@ -3074,13 +2965,6 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "评估；评价（常用释义：评价；估计；评估）",
                   "level": "red",
                   "zh": "评估"
-                },
-                {
-                  "word": "core",
-                  "ipa": "/kɔː/",
-                  "meaning": "核心的、主要的（常用释义：核心；果核）",
-                  "level": "green",
-                  "zh": "核心"
                 },
                 {
                   "word": "nmpc",
@@ -3100,7 +2984,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P20-S2",
+              "id": "P21-S2",
               "text": "1. Normal Feasible Trajectories: Both controllers exhibit identical top-tier accuracy ($RMSE \\approx 0.15\\text{ m}$).",
               "translation": "1. 正常可行轨迹精度：两者并无差异，均达到极高精度（RMSE 约 0.15 m）；",
               "vocab": [
@@ -3117,19 +3001,12 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "可行的（在物理约束范围内）",
                   "level": "green",
                   "zh": "可行"
-                },
-                {
-                  "word": "normal",
-                  "ipa": "ˈnɔːrml",
-                  "meaning": "adj. 正常的；标准的",
-                  "level": "green",
-                  "zh": "正常"
                 }
               ]
             },
             {
               "sIndex": 3,
-              "id": "P20-S3",
+              "id": "P21-S3",
               "text": "2. Over-Limit Infeasible Trajectories: NMPC is decisively superior with 48% to 62% lower error, whereas DFBC suffers single-point overshoot.",
               "translation": "2. 超限不可行轨迹表现：NMPC 极其优异（误差低 48~62%），而 DFBC 容易发生单点过冲；",
               "vocab": [
@@ -3155,13 +3032,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "单点过冲"
                 },
                 {
-                  "word": "superior",
-                  "ipa": "/suːˈpɪəriə/",
-                  "meaning": "更优秀的，更高超的（常用释义：优越的；上级的；有优越感的）",
-                  "level": "red",
-                  "zh": "优异"
-                },
-                {
                   "word": "nmpc",
                   "ipa": "/ˌen.em.piːˈsiː/",
                   "meaning": "非线性模型预测控制 (Nonlinear MPC)",
@@ -3179,7 +3049,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 4,
-              "id": "P20-S4",
+              "id": "P21-S4",
               "text": "3. Computational Time: DFBC computes in $0.02 \\sim 0.06\\text{ ms}$ (50-100x faster) versus $1.5 \\sim 5.0\\text{ ms}$ for NMPC.",
               "translation": "3. 单拍计算时间：DFBC 仅需 0.02~0.06 ms（快 50-100 倍），而 NMPC 需 1.5~5.0 ms；",
               "vocab": [
@@ -3208,24 +3078,10 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 5,
-              "id": "P20-S5",
+              "id": "P21-S5",
               "text": "4. Implementation Complexity: DFBC relies on pure algebraic calculus, whereas NMPC requires complex nonlinear solver parameterization.",
               "translation": "4. 数学与实现复杂度：DFBC 为纯解析代数运算极易调试，而 NMPC 需配置非线性求解器与求解边界；",
               "vocab": [
-                {
-                  "word": "parameterization",
-                  "ipa": "/pəˌræmɪtəraɪˈzeɪʃn/",
-                  "meaning": "参数化配置",
-                  "level": "green",
-                  "zh": "配置"
-                },
-                {
-                  "word": "complexity",
-                  "ipa": "/kəmˈpleksəti/",
-                  "meaning": "复杂性（常用释义：复杂程度）",
-                  "level": "green",
-                  "zh": "复杂"
-                },
                 {
                   "word": "algebraic",
                   "ipa": "/ˌældʒɪˈbreɪɪk/",
@@ -3265,7 +3121,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 6,
-              "id": "P20-S6",
+              "id": "P21-S6",
               "text": "5. Hard Constraints: NMPC natively enforces multi-step state and input bounds, whereas DFBC relies on single-step QP allocation.",
               "translation": "5. 执行器硬约束支持：NMPC 原生显式支持多步时域平滑约束，DFBC 依赖单拍 QP 分配器。",
               "vocab": [
@@ -3309,13 +3165,13 @@ window.BISHE_DATA['paper1'] = {
           ]
         },
         {
-          "pIndex": 21,
+          "pIndex": 22,
           "logicRole": "工程落地三大选型结论",
           "mainIdea": "高质量规划首选 DFBC+INDI（高性价比），极限边界首选 NMPC，INDI+气动阻力是所有高速控制器的通用基石。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P21-S1",
+              "id": "P22-S1",
               "text": "First, for applications with smooth, dynamically feasible trajectory planners, DFBC+INDI provides the optimal trade-off by achieving NMPC-level accuracy at negligible computational cost.",
               "translation": "第一，对于具备高质量规划器、轨迹满足动力学可行性的场景，DFBC+INDI 是性价比最高的黄金组合，以极低算力实现媲美 NMPC 的顶级跟踪精度；",
               "vocab": [
@@ -3358,7 +3214,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 2,
-              "id": "P21-S2",
+              "id": "P22-S2",
               "text": "Second, for highly dynamic missions with unpredictable trajectory mutations or operating on actuator boundaries, NMPC is the only viable choice that proactively avoids saturation breakdown.",
               "translation": "第二，对于环境高度动态、轨迹频繁突变或执行器工作在饱和边缘的极限机动，NMPC 是唯一能够前瞻性规避饱和的控制方案；",
               "vocab": [
@@ -3391,13 +3247,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "动态"
                 },
                 {
-                  "word": "viable",
-                  "ipa": "",
-                  "meaning": "adj.能独立发展的；能独立生存的；可行的",
-                  "level": "green",
-                  "zh": "唯一能够"
-                },
-                {
                   "word": "nmpc",
                   "ipa": "/ˌen.em.piːˈsiː/",
                   "meaning": "非线性模型预测控制 (Nonlinear MPC)",
@@ -3408,7 +3257,7 @@ window.BISHE_DATA['paper1'] = {
             },
             {
               "sIndex": 3,
-              "id": "P21-S3",
+              "id": "P22-S3",
               "text": "Third, the combination of an INDI attitude inner-loop and aerodynamic drag compensation constitutes the universal cornerstone for all high-speed agile flight controllers.",
               "translation": "第三，“INDI 姿态内环 + 空气动力学阻力补偿” 是所有高速敏捷飞行控制器的必备核心基石。",
               "vocab": [
@@ -3448,20 +3297,6 @@ window.BISHE_DATA['paper1'] = {
                   "zh": "姿态内环"
                 },
                 {
-                  "word": "high-speed",
-                  "ipa": "/haɪ spiːd/",
-                  "meaning": "高速的",
-                  "level": "green",
-                  "zh": "高速"
-                },
-                {
-                  "word": "universal",
-                  "ipa": "ˌjuːnɪˈvɜːrs(ə)l",
-                  "meaning": "adj.普遍的；通用的；全体的",
-                  "level": "green",
-                  "zh": "必备"
-                },
-                {
                   "word": "attitude",
                   "ipa": "/ˈætɪtjuːd/",
                   "meaning": "姿态角 (Roll, Pitch, Yaw)",
@@ -3474,6 +3309,241 @@ window.BISHE_DATA['paper1'] = {
                   "meaning": "adj.第三的",
                   "level": "red",
                   "zh": "第三"
+                },
+                {
+                  "word": "agile",
+                  "ipa": "/ˈædʒaɪl/",
+                  "meaning": "敏捷的，高机动性的",
+                  "level": "red",
+                  "zh": "敏捷"
+                },
+                {
+                  "word": "indi",
+                  "ipa": "/ˈɪndi/",
+                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
+                  "level": "blue",
+                  "zh": "INDI"
+                },
+                {
+                  "word": "drag",
+                  "ipa": "/dræɡ/",
+                  "meaning": "阻力，空气阻力",
+                  "level": "red",
+                  "zh": "阻力"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-conclusion",
+      "sectionNumber": "八",
+      "title": "VIII. CONCLUSION",
+      "chineseTitle": "八、全文结论 (IX. CONCLUSION)",
+      "paragraphs": [
+        {
+          "pIndex": 23,
+          "logicRole": "全文核心结论总结",
+          "mainIdea": "本文完成了 72 km/h 极速下 NMPC 与 DFBC 的全方位实证对比，系统阐明了两者在精度、计算延迟与约束处理上的权衡边界，为高速自主飞行提供了普适的设计准则。",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P23-S1",
+              "text": "This article presented a comprehensive comparative study between NMPC and DFBC for agile quadrotor flight up to 20 m/s (72 km/h).",
+              "translation": "本文系统呈现了针对四旋翼飞行器在高达 20 m/s (72 km/h) 敏捷飞行下，非线性模型预测控制（NMPC）与微分平坦控制（DFBC）的全方位系统对比研究。",
+              "vocab": [
+                {
+                  "word": "quadrotor",
+                  "ipa": "/ˈkwɒdrəʊtə/",
+                  "meaning": "四旋翼飞行器，四轴无人机",
+                  "level": "red",
+                  "zh": "四旋翼飞行器"
+                },
+                {
+                  "word": "agile",
+                  "ipa": "/ˈædʒaɪl/",
+                  "meaning": "敏捷的，高机动性的",
+                  "level": "red",
+                  "zh": "敏捷"
+                },
+                {
+                  "word": "nmpc",
+                  "ipa": "/ˌen.em.piːˈsiː/",
+                  "meaning": "非线性模型预测控制 (Nonlinear MPC)",
+                  "level": "blue",
+                  "zh": "NMPC"
+                },
+                {
+                  "word": "dfbc",
+                  "ipa": "/ˌdiː.ef.biːˈsiː/",
+                  "meaning": "微分平坦控制器 (Differential-Flatness-Based Control)",
+                  "level": "blue",
+                  "zh": "DFBC"
+                }
+              ]
+            },
+            {
+              "sIndex": 2,
+              "id": "P23-S2",
+              "text": "Our findings provide clear engineering guidelines for controller selection: DFBC excels in low computational overhead for feasible trajectories, while NMPC provides superior tracking and safety margin when operating near actuator saturation.",
+              "translation": "研究结论为工程实践提供了明确的选型准则：DFBC 在可行轨迹下以极低算力开销表现卓越，而 NMPC 则在执行机构处于饱和边缘时提供无可替代的跟踪性能与安全裕度。",
+              "vocab": [
+                {
+                  "word": "computational",
+                  "ipa": "/ˌkɒmpjuˈteɪʃənl/",
+                  "meaning": "计算上的，计算开销的",
+                  "level": "green",
+                  "zh": "算力"
+                },
+                {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red",
+                  "zh": "轨迹"
+                },
+                {
+                  "word": "saturation",
+                  "ipa": "/ˌsætʃəˈreɪʃn/",
+                  "meaning": "饱和（推力饱和/转速饱和/输出饱和）",
+                  "level": "red",
+                  "zh": "饱和"
+                },
+                {
+                  "word": "overhead",
+                  "ipa": "/ˈəʊvəhed/",
+                  "meaning": "开销，额外算力消耗",
+                  "level": "green",
+                  "zh": "开销"
+                },
+                {
+                  "word": "feasible",
+                  "ipa": "/ˈfiːzəbl/",
+                  "meaning": "可行的（在物理约束范围内）",
+                  "level": "green",
+                  "zh": "可行"
+                },
+                {
+                  "word": "tracking",
+                  "ipa": "/ˈtrækɪŋ/",
+                  "meaning": "跟踪，追踪",
+                  "level": "red",
+                  "zh": "跟踪"
+                },
+                {
+                  "word": "actuator",
+                  "ipa": "/ˈæktʃueɪtə/",
+                  "meaning": "执行机构，执行器（电机/舵机/推进器）",
+                  "level": "red",
+                  "zh": "执行机构"
+                },
+                {
+                  "word": "provide",
+                  "ipa": "",
+                  "meaning": "v.提供，供给；配备，准备好；规定；供养，提",
+                  "level": "red",
+                  "zh": "提供"
+                },
+                {
+                  "word": "excels",
+                  "ipa": "/ɪkˈselz/",
+                  "meaning": "擅长，在……表现卓越",
+                  "level": "red",
+                  "zh": "表现卓越"
+                },
+                {
+                  "word": "margin",
+                  "ipa": "/ˈmɑːdʒɪn/",
+                  "meaning": "裕度（如相位裕度/幅值裕度）",
+                  "level": "green",
+                  "zh": "裕度"
+                },
+                {
+                  "word": "dfbc",
+                  "ipa": "/ˌdiː.ef.biːˈsiː/",
+                  "meaning": "微分平坦控制器 (Differential-Flatness-Based Control)",
+                  "level": "blue",
+                  "zh": "DFBC"
+                },
+                {
+                  "word": "nmpc",
+                  "ipa": "/ˌen.em.piːˈsiː/",
+                  "meaning": "非线性模型预测控制 (Nonlinear MPC)",
+                  "level": "blue",
+                  "zh": "NMPC"
+                }
+              ]
+            },
+            {
+              "sIndex": 3,
+              "id": "P23-S3",
+              "text": "Crucially, incorporating an INDI inner-loop and aerodynamic drag model reduces tracking errors by more than 78% across both frameworks, serving as an indispensable foundation for extreme agile flight.",
+              "translation": "最关键的是，引入 INDI 内环与空气动力学阻力模型使两种框架的轨迹跟踪误差均降低 78% 以上，为未来极端敏捷自主飞行构筑了不可或缺的底层基石。",
+              "vocab": [
+                {
+                  "word": "aerodynamic drag",
+                  "ipa": "/ˌeərəʊdaɪˈnæmɪk dræɡ/",
+                  "meaning": "空气动力学阻力",
+                  "level": "blue",
+                  "zh": "空气动力学阻力"
+                },
+                {
+                  "word": "incorporating",
+                  "ipa": "/ɪnˈkɔːpəreɪtɪŋ/",
+                  "meaning": "融入，引入",
+                  "level": "red",
+                  "zh": "引入"
+                },
+                {
+                  "word": "aerodynamic",
+                  "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
+                  "meaning": "空气动力学的，气动的",
+                  "level": "red",
+                  "zh": "空气动力学"
+                },
+                {
+                  "word": "drag model",
+                  "ipa": "/dræɡ ˈmɒdl/",
+                  "meaning": "阻力模型",
+                  "level": "blue",
+                  "zh": "阻力模型"
+                },
+                {
+                  "word": "inner-loop",
+                  "ipa": "/ˈɪnə luːp/",
+                  "meaning": "内环控制器（角速度/力矩控制）",
+                  "level": "blue",
+                  "zh": "内环"
+                },
+                {
+                  "word": "frameworks",
+                  "ipa": "/ˈfreɪmwɜːks/",
+                  "meaning": "框架（复数）",
+                  "level": "green",
+                  "zh": "框架"
+                },
+                {
+                  "word": "tracking",
+                  "ipa": "/ˈtrækɪŋ/",
+                  "meaning": "跟踪，追踪",
+                  "level": "red",
+                  "zh": "跟踪"
+                },
+                {
+                  "word": "reduces",
+                  "ipa": "/rɪˈdjuːsɪz/",
+                  "meaning": "降低（第三人称单数）",
+                  "level": "green",
+                  "zh": "降低"
+                },
+                {
+                  "word": "model",
+                  "ipa": "ˈmɒdl",
+                  "meaning": "n. 模型；典型；模特儿 vt. 模拟；塑造",
+                  "level": "green",
+                  "zh": "模型"
                 },
                 {
                   "word": "agile",
