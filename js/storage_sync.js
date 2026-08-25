@@ -382,7 +382,7 @@
       if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : '待激活';
       if (btnLink) {
         btnLink.style.display = 'inline-flex';
-        btnLink.textContent = '⚡ 激活文件权限';
+        btnLink.textContent = '激活文件权限';
       }
       if (btnUnlink) btnUnlink.style.display = 'inline-flex';
     } else {
@@ -391,7 +391,7 @@
       if (fileNameEl) fileNameEl.textContent = '仅存于浏览器缓存';
       if (btnLink) {
         btnLink.style.display = 'inline-flex';
-        btnLink.textContent = '🔗 关联本地文件';
+        btnLink.textContent = '关联本地文件';
       }
       if (btnUnlink) btnUnlink.style.display = 'none';
     }

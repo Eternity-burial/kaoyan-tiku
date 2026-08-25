@@ -364,7 +364,7 @@
 
   function updateSolutionUI() {
     if (dom.txtToggleSol) {
-      dom.txtToggleSol.textContent = state.showSolution ? '💡 解析: 显示' : '💡 解析: 隐藏';
+      dom.txtToggleSol.textContent = state.showSolution ? '解析: 显示' : '解析: 隐藏';
     }
     if (dom.btnToggleSol) {
       dom.btnToggleSol.classList.toggle('active', state.showSolution);
@@ -438,13 +438,13 @@
   async function switchYear(year) {
     if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) {
       if (dom.passagePane) {
-        dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${year} 年真题精读数据...</div>`;
+        dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;">正在加载 ${year} 年真题精读数据...</div>`;
       }
       try {
         await loadYearDataAsync(year);
       } catch (err) {
         if (dom.passagePane) {
-          dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#dc2626;text-align:center;"><div style="font-size:28px;margin-bottom:12px;">⚠️</div>加载 ${year} 年真题失败，请检查题库文件是否存在</div>`;
+          dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#dc2626;text-align:center;">加载 ${year} 年真题失败，请检查题库文件是否存在</div>`;
         }
         return;
       }
@@ -849,7 +849,7 @@
         if (opt.refSentences && opt.refSentences.length > 0) {
           locateBtnHtml = opt.refSentences.map(sid => `
             <button class="btn-locate-sentence" onclick="event.stopPropagation(); window.kyApp.locateSentence('${sid}', '${opt.isCorrect ? 'target' : 'distractor'}')">
-              🎯 定位原文 ${sid}
+              定位原文 ${sid}
             </button>
           `).join(' ');
         }
@@ -941,7 +941,7 @@
       guideHtml = `
         <div class="guide-accordion">
           <div class="guide-summary" onclick="document.getElementById('guideBody').style.display = document.getElementById('guideBody').style.display === 'none' ? 'block' : 'none'">
-            <span>💡 考研命题人避坑指南与名师复盘</span>
+            <span>考研命题人避坑指南与名师复盘</span>
             <span style="font-size:10px;">▾</span>
           </div>
           <div class="guide-body" id="guideBody" style="display:none;">
@@ -954,7 +954,7 @@
 
     dom.reflectionCard.innerHTML = `
       <div class="reflection-title">
-        <span>✍️ 我的做题思考与错因复盘</span>
+        <span>我的做题思考与错因复盘</span>
         <span style="font-size:11px;color:#94a3b8;">自动按年份同步存储</span>
       </div>
 

@@ -3891,7 +3891,7 @@ ${cardsHTML}
       var tag = '';
       if (label === 'due') tag = '<span class="sm2-due-tag">今日到期</span>';
       else if (label === 'overdue') tag = '<span class="sm2-overdue-tag">已逾期 ' + overdueDays + ' 天</span>';
-      else if (label === 'mastered') tag = '<span style="color:#F5A623;font-weight:600">⭐ 已掌握</span>';
+      else if (label === 'mastered') tag = '<span style="color:#F5A623;font-weight:600">已掌握</span>';
       bar.innerHTML = '<span>EF: ' + (rec.ef ? rec.ef.toFixed(2) : '2.50') + '</span>' +
         '<span>间隔: ' + rec.interval + '天</span>' +
         '<span>复习次数: ' + rec.reps + '</span>' +
@@ -4301,7 +4301,7 @@ ${cardsHTML}
           startAllBtn.style.opacity = '0.6';
           startAllBtn.style.cursor = 'default';
         } else {
-          startAllBtn.textContent = '🚀 开始复习冲刺 (' + limitDesc + ' · 共 ' + allDueCount + ' 题待复习)';
+          startAllBtn.textContent = '开始复习冲刺 (' + limitDesc + ' · 共 ' + allDueCount + ' 题待复习)';
           startAllBtn.disabled = false;
           startAllBtn.style.opacity = '';
           startAllBtn.style.cursor = '';
@@ -4333,7 +4333,7 @@ ${cardsHTML}
             var allDueCount = (parseInt(document.querySelector('#sm2CardDue .sm2-stat-num').textContent, 10) || 0) +
                               (parseInt(document.querySelector('#sm2CardOverdue .sm2-stat-num').textContent, 10) || 0);
             var limitDesc = (selectedSm2Batch > 0 && allDueCount > selectedSm2Batch) ? (selectedSm2Batch + ' 题') : '全部';
-            startAllBtn.textContent = '🚀 开始复习冲刺 (' + limitDesc + ' · 共 ' + allDueCount + ' 题待复习)';
+            startAllBtn.textContent = '开始复习冲刺 (' + limitDesc + ' · 共 ' + allDueCount + ' 题待复习)';
           }
         };
       });
@@ -4495,9 +4495,9 @@ ${cardsHTML}
         var modeLabel = { smart: '智能', overdue: '抢险', random: '随机', sequential: '顺序' }[reviewSession.mode] || '';
         if (reviewSession.done) {
           var ungraded = reviewSession.queue.filter(function(it) { return it.status !== 'graded'; }).length;
-          panelTitle.textContent = '📋 还有 ' + ungraded + ' 题未评级';
+          panelTitle.textContent = '还有 ' + ungraded + ' 题未评级';
         } else {
-          panelTitle.textContent = '📋 冲刺复习 ' + cur + '/' + total + ' · ' + modeLabel;
+          panelTitle.textContent = '冲刺复习 ' + cur + '/' + total + ' · ' + modeLabel;
         }
         panelTitle.style.display = '';
         document.querySelectorAll('#chapterTitleBar .title-dropdown .title-arrow').forEach(function(a) { a.style.display = 'none'; });

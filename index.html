@@ -300,7 +300,7 @@
             <div class="db-trend-card" id="dbTrendCard">
               <div class="db-trend-header">
                 <div class="db-trend-title">
-                  <span class="trend-title-main">📊 近 14 天推进趋势</span>
+                  <span class="trend-title-main">近 14 天推进趋势</span>
                   <span class="trend-subtitle">每日刷题与复习强度分析</span>
                 </div>
                 <div class="db-trend-stats" id="dbTrendStats">
@@ -347,11 +347,10 @@
             <!-- 复习策略与批次容量控制面板 -->
             <div class="sm2-config-panel">
               <div class="sm2-config-group">
-                <div class="sm2-config-title">🎯 复习策略模式</div>
+                <div class="sm2-config-title">复习策略模式</div>
                 <div class="sm2-mode-grid">
                   <label class="sm2-strategy-card active">
                     <input type="radio" name="sm2mode" value="smart" checked>
-                    <div class="strategy-icon">🧠</div>
                     <div class="strategy-info">
                       <span class="strategy-name">智能优先级</span>
                       <span class="strategy-desc">逾期度 × 错题率 × 薄弱度加权推荐</span>
@@ -359,7 +358,6 @@
                   </label>
                   <label class="sm2-strategy-card">
                     <input type="radio" name="sm2mode" value="overdue">
-                    <div class="strategy-icon">🔥</div>
                     <div class="strategy-info">
                       <span class="strategy-name">艾宾浩斯抢险</span>
                       <span class="strategy-desc">仅逾期题目 · 按逾期严重天数降序攻坚</span>
@@ -367,7 +365,6 @@
                   </label>
                   <label class="sm2-strategy-card">
                     <input type="radio" name="sm2mode" value="random">
-                    <div class="strategy-icon">🎲</div>
                     <div class="strategy-info">
                       <span class="strategy-name">随机穿插</span>
                       <span class="strategy-desc">跨学科彻底混洗 · 模拟考场真实情境</span>
@@ -375,7 +372,6 @@
                   </label>
                   <label class="sm2-strategy-card">
                     <input type="radio" name="sm2mode" value="sequential">
-                    <div class="strategy-icon">📖</div>
                     <div class="strategy-info">
                       <span class="strategy-name">章节顺序</span>
                       <span class="strategy-desc">按教材讲次与题号逐题递进复习</span>
@@ -385,7 +381,7 @@
               </div>
 
               <div class="sm2-config-group sm2-batch-group">
-                <div class="sm2-config-title">⏱️ 冲刺组容量（番茄负荷分流）</div>
+                <div class="sm2-config-title">冲刺组容量（番茄负荷分流）</div>
                 <div class="sm2-batch-pills" id="sm2BatchPills">
                   <button type="button" class="sm2-batch-btn" data-batch="20">20 题冲刺</button>
                   <button type="button" class="sm2-batch-btn active" data-batch="30">30 题标准</button>
@@ -395,7 +391,7 @@
               </div>
 
               <div class="sm2-action-row">
-                <button id="btnSm2StartAll" class="gel-btn btn-status proficient sm2-start-main-btn">🚀 开始智能复习冲刺</button>
+                <button id="btnSm2StartAll" class="gel-btn btn-status proficient sm2-start-main-btn">开始智能复习冲刺</button>
               </div>
             </div>
           </div>
@@ -499,7 +495,7 @@
   <div class="review-summary-overlay" id="reviewSummaryOverlay" style="display:none">
     <div class="review-summary-modal" id="reviewSummaryModal">
       <div class="summary-header">
-        <div class="summary-badge">🎉 冲刺达成</div>
+        <div class="summary-badge">冲刺达成</div>
         <h2 class="summary-title">本轮复习圆满完成！</h2>
         <p class="summary-subtitle" id="summaryTimeText">温故而知新，距离考研上岸又近一步。</p>
       </div>
@@ -532,7 +528,7 @@
 
       <div class="summary-actions">
         <button class="summary-btn btn-sec" id="btnSummaryExit">完成并退出</button>
-        <button class="summary-btn btn-pri" id="btnSummaryNext">🚀 再来一组冲刺</button>
+        <button class="summary-btn btn-pri" id="btnSummaryNext">再来一组冲刺</button>
       </div>
     </div>
   </div>
