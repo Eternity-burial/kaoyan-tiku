@@ -24,7 +24,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "In this paper, we propose a novel attitude control approach based on Incremental Nonlinear Dynamic Inversion (INDI) for Autonomous Underwater Vehicles (AUVs).",
+              "text": "In this paper, we present an attitude control scheme for an autonomous underwater vehicle (AUV), which is based on incremental nonlinear dynamic inversion (INDI).",
               "translation": "在本文中，我们提出了一种基于增量非线性动态逆（Incremental Nonlinear Dynamic Inversion, INDI）的自主水下航行器（AUV）姿态控制方案。",
               "vocab": [
                 {
@@ -38,19 +38,31 @@ window.BISHE_DATA['paper3'] = {
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
                   "level": "blue"
+                },
+                {
+                  "word": "auv",
+                  "ipa": "/ˌeɪ.juːˈviː/",
+                  "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
+                  "level": "blue"
                 }
               ]
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "Traditional model-based controllers rely heavily on precise mathematical descriptions of hydrodynamic effects, which are notoriously difficult to capture accurately in marine environments.",
+              "text": "Conventional model-based controllers depend on an exact model of the controlled system, which is difficult to find, especially for marine vehicles subject to highly nonlinear hydrodynamic effects.",
               "translation": "传统的基于模型的控制器严重依赖于受控系统的精确数学模型，然而对于受到高度非线性水动力学效应影响的水下航行器而言，建立精确模型极其困难。",
               "vocab": [
                 {
                   "word": "hydrodynamic",
                   "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
                   "meaning": "水动力学的，流体动力学的",
+                  "level": "red"
+                },
+                {
+                  "word": "nonlinear",
+                  "ipa": "/ˌnɒnˈlɪniər/",
+                  "meaning": "非线性的（输出与输入不成正比）",
                   "level": "red"
                 }
               ]
@@ -65,13 +77,13 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "INDI overcomes this limitation by incorporating high-rate accelerometer feedback and actuator measurements to perform incremental local linearization, thereby substituting sensor measurement accuracy for complex hydrodynamic model accuracy.",
+              "text": "INDI trades off model accuracy with sensor accuracy by incorporating acceleration feedback and actuator output feedback to linearize a nonlinear system incrementally.",
               "translation": "INDI 通过引入高频加速度反馈与执行器输出反馈，对非线性系统进行逐拍增量局部线性化，从而实现了“用传感器测量精度换取动力学模型精度”。",
               "vocab": [
                 {
-                  "word": "hydrodynamic",
-                  "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
-                  "meaning": "水动力学的，流体动力学的",
+                  "word": "nonlinear",
+                  "ipa": "/ˌnɒnˈlɪniər/",
+                  "meaning": "非线性的（输出与输入不成正比）",
                   "level": "red"
                 },
                 {
@@ -104,7 +116,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "While existing INDI research is predominantly focused on aerial drones, its application to marine robotics remains virtually unexplored.",
+              "text": "Existing research primarily focuses on studying INDI on unmanned aerial vehicles; however, there is barely any research on controlling marine vehicles using INDI.",
               "translation": "现有的 INDI 控制研究主要集中在无人机（UAV）领域，而在海洋机器人领域的应用几乎处于空白。",
               "vocab": [
                 {
@@ -118,15 +130,9 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "We investigate the highly demanding 90-degree pitch-up transition maneuver on the dual-arm hydrobatic intervention AUV 'Cuttlefish' as it shifts rapidly from horizontal cruising to vertical intervention posture.",
+              "text": "The control task we are performing is a 90 degrees pitch-up maneuver, where the dual-arm intervention AUV Cuttlefish transitions from a horizontal traveling pose to a vertical intervention pose.",
               "translation": "本文针对具有极高挑战性的 90° 俯仰特技过渡机动（Pitch-up Maneuver）开展研究——双臂水下干预作业型 AUV “Cuttlefish” 从水平巡航姿态快速切换到垂直干预作业姿态。",
               "vocab": [
-                {
-                  "word": "hydrobatic",
-                  "ipa": "/ˌhaɪdrəʊˈbætɪk/",
-                  "meaning": "水下特技机动的（具备 360° 空间任意变姿态能力）",
-                  "level": "red"
-                },
                 {
                   "word": "pitch-up",
                   "ipa": "/pɪtʃ ʌp/",
@@ -157,8 +163,8 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P4-S1",
-              "text": "Rigorous water tank experiments in the DFKI RIC testing basin demonstrate that INDI significantly outperforms conventional Feedback Linearization (FBL) during both large-angle transitions and prolonged station keeping.",
-              "translation": "我们在德国 DFKI RIC 的大型海洋试验水池中，将 INDI 与经典的基于模型反馈线性化（Feedback Linearization, FBL）控制方案进行了严格的实机对比测试。",
+              "text": "We compare INDI to a classical model-based control scheme in the maritime test basin at DFKI RIC, Germany, and we find that INDI keeps the AUV much more steady both in the transitioning phase as well as in the station keeping phase.",
+              "translation": "我们在德国 DFKI RIC 的大型海洋试验水池中，将 INDI 与经典的基于模型控制方案进行了严格的实机对比测试，结果表明 INDI 无论是在大角度动态过渡阶段还是在长时间定点悬停阶段都能使 AUV 保持显著更优的平稳性。",
               "vocab": [
                 {
                   "word": "station keeping",
@@ -167,41 +173,15 @@ window.BISHE_DATA['paper3'] = {
                   "level": "blue"
                 },
                 {
-                  "word": "feedback",
-                  "ipa": "/ˈfiːdbæk/",
-                  "meaning": "反馈控制",
-                  "level": "red"
-                },
-                {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
                   "level": "blue"
                 },
                 {
-                  "word": "fbl",
-                  "ipa": "/ˌef.biːˈel/",
-                  "meaning": "反馈线性化 (Feedback Linearization)",
-                  "level": "blue"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "Experimental results confirm that INDI maintains substantially smoother attitude trajectories and incurs far less spatial position drift than model-dependent controllers.",
-              "translation": "试验结果表明，无论是在大角度动态过渡机动阶段还是在长时间定点悬停阶段，INDI 都能使 AUV 保持显著更优的平稳性，且空间漂移量远小于模型依赖型控制器。",
-              "vocab": [
-                {
-                  "word": "drift",
-                  "ipa": "/drɪft/",
-                  "meaning": "漂移，位置偏差",
-                  "level": "red"
-                },
-                {
-                  "word": "indi",
-                  "ipa": "/ˈɪndi/",
-                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
+                  "word": "auv",
+                  "ipa": "/ˌeɪ.juːˈviː/",
+                  "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
                   "level": "blue"
                 }
               ]
@@ -224,7 +204,7 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P5-S1",
-              "text": "With the rapid expansion of the marine 'blue economy', subsea infrastructure such as aquaculture cages, offshore wind turbine jackets, and underwater substations demands efficient autonomous intervention.",
+              "text": "With the expansion of the blue economy, there has been a notable increase in subsea infrastructures, including aquaculture installations and offshore wind farms, leading to a growing need for automated subsea operations.",
               "translation": "随着海洋“蓝色经济”的蓬勃发展，海底基础设施（如现代化水产养殖网箱、海上风电场导管架及水下变电站）建设规模迅速扩大，导致对水下无人化自主运维作业的需求日益迫切。",
               "vocab": []
             }
@@ -238,14 +218,20 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P6-S1",
-              "text": "Traditional intervention methods suffer severe operational constraints: human diver operations carry high safety risks and depth limits, while Remotely Operated Vehicles (ROVs) demand dedicated support vessels and umbilical winches with immense logistical costs.",
+              "text": "Human diving operations face many dangers, weather dependencies, and restricted depths, while Remotely Operated Vehicles (ROVs) demand large support vessels with umbilical cables, making ROV operations expensive and logistically constrained.",
               "translation": "传统作业方式的局限：人工潜水员作业存在巨大的人身安全风险，作业深度受限，且高度依赖气象海况窗口；遥控无人潜水器（ROV）虽能进行深海重载作业，但必须依赖大型专用支持母船与脐带缆绞车系统，运维成本高昂且机动受限。",
               "vocab": [
                 {
-                  "word": "constraints",
-                  "ipa": "/kənˈstreɪnts/",
-                  "meaning": "约束条件（硬约束/软约束）",
-                  "level": "red"
+                  "word": "rovs",
+                  "ipa": "/ˌɑːr.oʊˈviːz/",
+                  "meaning": "遥控水下无人潜水器（复数）",
+                  "level": "blue"
+                },
+                {
+                  "word": "rov",
+                  "ipa": "/ˌɑːr.oʊˈviː/",
+                  "meaning": "遥控水下无人潜水器 (Remotely Operated Vehicle)",
+                  "level": "blue"
                 }
               ]
             }
@@ -259,21 +245,52 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 1,
               "id": "P7-S1",
-              "text": "Next-generation Intervention AUVs (I-AUVs) like Cuttlefish aim for full autonomy.",
+              "text": "The new class of intervention AUVs (I-AUVs) aims to facilitate autonomous interaction with subsea infrastructure.",
               "translation": "干预型 AUV（I-AUV）的崛起：配备作业机械臂的新型干预潜水器（如 AUV Cuttlefish）旨在实现全自主作业。",
-              "vocab": []
+              "vocab": [
+                {
+                  "word": "i-auvs",
+                  "ipa": "/aɪ ˌeɪ.juːˈviːz/",
+                  "meaning": "水下干预作业型航行器（复数）",
+                  "level": "blue"
+                },
+                {
+                  "word": "auvs",
+                  "ipa": "/ˌeɪ.juːˈviːz/",
+                  "meaning": "自主水下航行器（复数）",
+                  "level": "blue"
+                }
+              ]
             },
             {
               "sIndex": 2,
               "id": "P7-S2",
-              "text": "Equipped with 8 thrusters and dual manipulators, Cuttlefish possesses 'Hydrobatics' capabilities, enabling arbitrary 360-degree spatial attitude transitions to access tight subsea structural geometries while actively shifting its center of mass (CoM) and center of buoyancy (CoB).",
+              "text": "The AUV Cuttlefish is an I-AUV equipped with two arms and hydrobatic motion capabilities: using its eight thrusters, it can take on arbitrary 360-degree orientations in the water column while actively shifting its center of mass (CoM) and center of buoyancy (CoB) to achieve desired task stability.",
               "translation": "Cuttlefish 配备 8 个推进器与双机械臂，具备水下特技机动能力（Hydrobatics），能够在水体中实现任意 360° 空间姿态变换，从而深入复杂水下钢结构狭窄空间作业；此外还能主动调节质心（CoM）与浮心（CoB）位置满足静水力稳定性。",
               "vocab": [
                 {
-                  "word": "hydrobatics",
-                  "ipa": "/ˌhaɪdrəʊˈbætɪks/",
-                  "meaning": "水下特技机动学",
+                  "word": "hydrobatic",
+                  "ipa": "/ˌhaɪdrəʊˈbætɪk/",
+                  "meaning": "水下特技机动的（具备 360° 空间任意变姿态能力）",
                   "level": "red"
+                },
+                {
+                  "word": "thrusters",
+                  "ipa": "/ˈθrʌstəz/",
+                  "meaning": "推进器（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "i-auv",
+                  "ipa": "/aɪ ˌeɪ.juːˈviː/",
+                  "meaning": "水下干预作业型航行器 (Intervention AUV)",
+                  "level": "blue"
+                },
+                {
+                  "word": "auv",
+                  "ipa": "/ˌeɪ.juːˈviː/",
+                  "meaning": "自主水下航行器 (Autonomous Underwater Vehicle)",
+                  "level": "blue"
                 }
               ]
             }
@@ -325,8 +342,8 @@ window.BISHE_DATA['paper3'] = {
             {
               "sIndex": 2,
               "id": "P8-S2",
-              "text": "Conventional model-based methods (e.g., Feedback Linearization, Sliding Mode Control) require precise parameter identification; small parameter estimation mismatches produce incorrect model cancellation forces, inducing severe oscillations or persistent position drift.",
-              "translation": "传统基于模型的方法（如反馈线性化 FBL、滑模控制等）需要对上述参数进行精密辨识；若辨识出的阻尼偏大或偏小，模型补偿项就会反向施加错误推力，引发严重振荡或持续漂移。",
+              "text": "Conventional model-based methods (e.g., Feedback Linearization) require precise parameter identification; small parameter estimation mismatches produce incorrect model cancellation forces, inducing severe oscillations or persistent position drift.",
+              "translation": "传统基于模型的方法（如反馈线性化 FBL）需要对上述参数进行精密辨识；若辨识出的阻尼偏大或偏小，模型补偿项就会反向施加错误推力，引发严重振荡或持续漂移。",
               "vocab": [
                 {
                   "word": "oscillations",
@@ -1053,6 +1070,12 @@ window.BISHE_DATA['paper3'] = {
                   "ipa": "/fɔːlt ˈtɒlərənt/",
                   "meaning": "容错的，具备容错控制能力的",
                   "level": "blue"
+                },
+                {
+                  "word": "thrusters",
+                  "ipa": "/ˈθrʌstəz/",
+                  "meaning": "推进器（复数）",
+                  "level": "red"
                 },
                 {
                   "word": "adaptive",

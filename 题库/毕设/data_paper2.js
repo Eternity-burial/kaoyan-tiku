@@ -24,7 +24,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "Incremental Nonlinear Dynamic Inversion (INDI) is a sensor-based nonlinear control approach that achieves high performance without requiring an accurate physical model of the vehicle.",
+              "text": "Incremental nonlinear dynamic inversion is a sensor-based control approach that promises to provide high-performance nonlinear control without requiring a detailed model of the controlled vehicle.",
               "translation": "增量非线性动态逆（Incremental Nonlinear Dynamic Inversion, INDI）是一种基于传感器的非线性控制方法，它有望在不需要被控对象精确数学模型的前提下实现高性能非线性控制。",
               "vocab": [
                 {
@@ -32,20 +32,14 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
                   "level": "red"
-                },
-                {
-                  "word": "indi",
-                  "ipa": "/ˈɪndi/",
-                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
                 }
               ]
             },
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "In micro air vehicle (MAV) attitude control, INDI relies solely on a control effectiveness model, replacing all remaining dynamics with real-time angular acceleration sensor measurements.",
-              "translation": "在微型飞行器（MAV）姿态控制领域，INDI 仅依赖控制效能模型，而利用角加速度的实时传感器测量值来替代传统模型中的其余物理项。",
+              "text": "In the context of attitude control of micro air vehicles, incremental nonlinear dynamic inversion only uses a control effectiveness model and uses estimates of the angular accelerations to replace the rest of the model.",
+              "translation": "在微型飞行器（MAV）姿态控制领域，INDI 仅依赖控制效能模型，而利用角加速度的实时传感器估计值来替代传统模型中的其余物理项。",
               "vocab": [
                 {
                   "word": "control effectiveness",
@@ -54,22 +48,10 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
-                  "word": "angular acceleration",
-                  "ipa": "/ˈæŋɡjələ əkˌseləˈreɪʃn/",
-                  "meaning": "角加速度",
-                  "level": "blue"
-                },
-                {
-                  "word": "indi",
-                  "ipa": "/ˈɪndi/",
-                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "mav",
-                  "ipa": "/ˈem.eɪ.viː/",
-                  "meaning": "微型飞行器 (Micro Air Vehicle)",
-                  "level": "blue"
+                  "word": "nonlinear",
+                  "ipa": "/ˌnɒnˈlɪniər/",
+                  "meaning": "非线性的（输出与输入不成正比）",
+                  "level": "red"
                 }
               ]
             }
@@ -78,47 +60,13 @@ window.BISHE_DATA['paper2'] = {
         {
           "pIndex": 2,
           "logicRole": "工程落地两大核心技术挑战",
-          "mainIdea": "针对实际工程中传感器滤波时间滞后引起自激震荡、以及飞行中控制效能矩阵时变漂移两大瓶颈给出完备方案。",
+          "mainIdea": "针对实际工程中测量与执行器延迟滞后、以及飞行中控制效能矩阵时变漂移两大瓶颈给出完备方案。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "This paper addresses two fundamental engineering challenges when applying INDI in practice.",
-              "translation": "本文针对 INDI 控制在实际工程应用中的两大核心挑战给出了完备的解决方案：",
-              "vocab": [
-                {
-                  "word": "indi",
-                  "ipa": "/ˈɪndi/",
-                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "First, sensor filtering and actuator dynamics introduce significant time delays and phase lags that can cause severe limit-cycle instability.",
-              "translation": "1. 如何处理传感器测量与执行器动力学引入的时钟延迟与滤波相位滞后；",
-              "vocab": [
-                {
-                  "word": "limit-cycle",
-                  "ipa": "/ˈlɪmɪt saɪkl/",
-                  "meaning": "极限环振荡（自激震荡）",
-                  "level": "red"
-                },
-                {
-                  "word": "actuator",
-                  "ipa": "/ˈæktʃueɪtə/",
-                  "meaning": "执行机构，执行器（电机/电调/舵机/推进器）",
-                  "level": "red"
-                }
-              ]
-            },
-            {
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "Second, the control effectiveness matrix undergoes unpredictable, time-varying changes during actual flight.",
-              "translation": "2. 如何应对飞行过程中控制效能矩阵的时变不确定性。",
+              "text": "This paper provides solutions for two major challenges of incremental nonlinear dynamic inversion control: how to deal with measurement and actuator delays, and how to deal with a changing control effectiveness.",
+              "translation": "本文针对 INDI 控制在实际工程应用中的两大核心挑战给出了完备的解决方案：1. 如何处理测量与执行器动力学引入的时钟延迟与滤波相位滞后；2. 如何应对飞行过程中控制效能矩阵的时变不确定性。",
               "vocab": [
                 {
                   "word": "control effectiveness",
@@ -127,10 +75,22 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
-                  "level": "green"
+                  "word": "nonlinear",
+                  "ipa": "/ˌnɒnˈlɪniər/",
+                  "meaning": "非线性的（输出与输入不成正比）",
+                  "level": "red"
+                },
+                {
+                  "word": "actuator",
+                  "ipa": "/ˈæktʃueɪtə/",
+                  "meaning": "执行机构，执行器（电机/电调/舵机/推进器）",
+                  "level": "red"
+                },
+                {
+                  "word": "delays",
+                  "ipa": "/dɪˈleɪz/",
+                  "meaning": "延迟（复数）",
+                  "level": "red"
                 }
               ]
             }
@@ -144,35 +104,35 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "The primary theoretical and experimental contributions of this work are fourfold.",
+              "text": "The main contributions of this article are:",
               "translation": "本文的主要理论与工程贡献包含以下四点：",
               "vocab": []
             },
             {
               "sIndex": 2,
               "id": "P3-S2",
-              "text": "1. A synchronized virtual control law is formulated that explicitly accounts for angular acceleration low-pass filter delays.",
-              "translation": "1. 提出了能够精确补偿角加速度低通滤波延迟的时序同步虚拟控制律；",
+              "text": "1) A proposed method to correctly take into account the delays occurring when deriving angular accelerations from angular rate measurements;",
+              "translation": "1) 提出了能够精确补偿从角速率差分推导角加速度时所引入滤波延迟的时序同步控制律；",
               "vocab": [
                 {
-                  "word": "angular acceleration",
-                  "ipa": "/ˈæŋɡjələ əkˌseləˈreɪʃn/",
-                  "meaning": "角加速度",
+                  "word": "angular rate",
+                  "ipa": "/ˈæŋɡjələ reɪt/",
+                  "meaning": "角速率，角速度",
                   "level": "blue"
                 },
                 {
-                  "word": "low-pass filter",
-                  "ipa": "/ləʊ pɑːs ˈfɪltə/",
-                  "meaning": "低通滤波器",
-                  "level": "blue"
+                  "word": "delays",
+                  "ipa": "/dɪˈleɪz/",
+                  "meaning": "延迟（复数）",
+                  "level": "red"
                 }
               ]
             },
             {
               "sIndex": 3,
               "id": "P3-S3",
-              "text": "2. An Adaptive INDI (A-INDI) architecture is proposed utilizing a Normalized Least Mean Squares (NLMS) filter to estimate control effectiveness online.",
-              "translation": "2. 提出了自适应增量非线性动态逆（Adaptive INDI, A-INDI）架构，利用机载归一化最小均方误差（NLMS）滤波器在线实时辨识控制效能参数，彻底免除了人工离线建模；",
+              "text": "2) The introduction of adaptive incremental nonlinear dynamic inversion, which can estimate the control effectiveness online, eliminating the need for manual parameter estimation or tuning;",
+              "translation": "2) 提出了自适应增量非线性动态逆（Adaptive INDI, A-INDI）架构，利用在线自适应算法实时辨识控制效能参数，彻底免除了人工离线建模或增益整定；",
               "vocab": [
                 {
                   "word": "control effectiveness",
@@ -181,63 +141,57 @@ window.BISHE_DATA['paper2'] = {
                   "level": "blue"
                 },
                 {
-                  "word": "least mean squares",
-                  "ipa": "/liːst miːn skweəz/",
-                  "meaning": "最小均方算法",
-                  "level": "blue"
+                  "word": "estimation",
+                  "ipa": "/ˌestɪˈmeɪʃn/",
+                  "meaning": "估计，辨识",
+                  "level": "green"
+                },
+                {
+                  "word": "nonlinear",
+                  "ipa": "/ˌnɒnˈlɪniər/",
+                  "meaning": "非线性的（输出与输入不成正比）",
+                  "level": "red"
                 },
                 {
                   "word": "adaptive",
                   "ipa": "/əˈdæptɪv/",
                   "meaning": "自适应的，可在线调整的",
                   "level": "red"
-                },
-                {
-                  "word": "a-indi",
-                  "ipa": "/eɪ ˈɪndi/",
-                  "meaning": "自适应增量非线性动态逆 (Adaptive INDI)",
-                  "level": "blue"
-                },
-                {
-                  "word": "indi",
-                  "ipa": "/ˈɪndi/",
-                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
-                  "level": "blue"
-                },
-                {
-                  "word": "nlms",
-                  "ipa": "/ˌen.el.emˈes/",
-                  "meaning": "归一化最小均方误差算法 (Normalized LMS)",
-                  "level": "blue"
                 }
               ]
             },
             {
               "sIndex": 4,
               "id": "P3-S4",
-              "text": "3. Propeller angular momentum and transient gyroscopic torques are explicitly integrated into the control law, significantly improving yaw response bandwidth.",
-              "translation": "3. 在姿态控制律中显式计入了螺旋桨旋转角动量与瞬态加减速自旋力矩，极大提升了四旋翼偏航轴（Yaw）的控制响应速度与抗扰带宽；",
+              "text": "3) The incorporation of the momentum of the propellers in the controller, significantly enhancing yaw tracking response;",
+              "translation": "3) 在姿态控制律中显式计入了螺旋桨旋转角动量与瞬态加减速自旋力矩，显著增强了四旋翼偏航轴的响应带宽；",
               "vocab": [
                 {
-                  "word": "gyroscopic",
-                  "ipa": "/ˌdʒaɪrəˈskɒpɪk/",
-                  "meaning": "陀螺效应的，反作用力矩的",
+                  "word": "tracking",
+                  "ipa": "/ˈtrækɪŋ/",
+                  "meaning": "跟踪，追踪",
                   "level": "red"
-                },
-                {
-                  "word": "bandwidth",
-                  "ipa": "/ˈbændwɪdθ/",
-                  "meaning": "带宽（频域响应宽度）",
-                  "level": "green"
                 }
               ]
             },
             {
               "sIndex": 5,
               "id": "P3-S5",
-              "text": "4. Extensive real-world flight experiments on a Parrot Bebop quadrotor under step load drops and bumper alterations validate superior disturbance rejection and robust adaptation.",
-              "translation": "4. 通过 Parrot Bebop 四旋翼无人机的大量实飞实验（包括突加载荷抛掷、加减防撞保护套自适应等）充分验证了该方法卓越的抗扰性、鲁棒性与自适应能力。",
+              "text": "4) Real-world experiments on a Parrot Bebop quadrotor showing high performance, disturbance rejection under step load drops, and adaptiveness under bumper alterations.",
+              "translation": "4) 通过 Parrot Bebop 四旋翼无人机的大量实飞实验（包括突加载荷抛掷、加减防撞保护套自适应等）充分验证了该方法卓越的抗扰性、鲁棒性与自适应能力。",
               "vocab": [
+                {
+                  "word": "disturbance rejection",
+                  "ipa": "/dɪˈstɜːbəns rɪˈdʒekʃn/",
+                  "meaning": "扰动抑制能力",
+                  "level": "blue"
+                },
+                {
+                  "word": "adaptiveness",
+                  "ipa": "/əˈdæptɪvnəs/",
+                  "meaning": "自适应能力",
+                  "level": "red"
+                },
                 {
                   "word": "quadrotor",
                   "ipa": "/ˈkwɒdrəʊtə/",
@@ -249,12 +203,6 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/rɪˈdʒekʃn/",
                   "meaning": "抑制，抗扰能力 (Disturbance Rejection)",
                   "level": "red"
-                },
-                {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
-                  "level": "green"
                 }
               ]
             }
@@ -283,7 +231,7 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 2,
               "id": "P4-S2",
-              "text": "$b, l$: vehicle width and length $(m)$; $\\boldsymbol{I}_v, \\boldsymbol{I}_r$: vehicle inertia and rotor inertia matrices $(kg \\cdot m^2)$; $k_1, k_2$: rotor thrust and drag constants.",
+              "text": "$b, l$: width and length of the vehicle $(m)$; $\\boldsymbol{I}_v, \\boldsymbol{I}_r$: moment of inertia matrices of the vehicle and rotor $(kg \\cdot m^2)$; $k_1, k_2$: rotor thrust and moment constants.",
               "translation": "$b, l$：飞行器宽度与长度 $(m)$；$\\boldsymbol{I}_v, \\boldsymbol{I}_r$：飞行器转动惯量矩阵与转子转动惯量矩阵 $(kg \\cdot m^2)$；$k_1, k_2$：旋翼推力常数与力矩常数；",
               "vocab": [
                 {
@@ -323,13 +271,19 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 4,
               "id": "P4-S4",
-              "text": "$T_s$: controller sampling period $(s)$; $\\boldsymbol{u} = [\\omega_1, \\omega_2, \\omega_3, \\omega_4]^T$: motor speed vector $(rad/s)$; $\\boldsymbol{\\Omega} = [p, q, r]^T$: body angular rate vector $(rad/s)$; $\\dot{\\boldsymbol{\\Omega}}$: angular acceleration $(rad/s^2)$.",
+              "text": "$T_s$: controller sampling period $(s)$; $\\boldsymbol{u} = [\\omega_1, \\omega_2, \\omega_3, \\omega_4]^T$: motor speed input vector $(rad/s)$; $\\boldsymbol{\\Omega} = [p, q, r]^T$: body angular rate vector $(rad/s)$; $\\dot{\\boldsymbol{\\Omega}}$: angular acceleration $(rad/s^2)$.",
               "translation": "$T_s$：控制器采样时间周期 $(s)$；$\\boldsymbol{u} = [\\omega_1, \\omega_2, \\omega_3, \\omega_4]^T$：电机转速输入向量 $(rad/s)$；$\\boldsymbol{\\Omega} = [p, q, r]^T$：机体三轴角速度向量 $(rad/s)$；$\\dot{\\boldsymbol{\\Omega}}$：机体三轴角加速度向量 $(rad/s^2)$；",
               "vocab": [
                 {
                   "word": "angular acceleration",
                   "ipa": "/ˈæŋɡjələ əkˌseləˈreɪʃn/",
                   "meaning": "角加速度",
+                  "level": "blue"
+                },
+                {
+                  "word": "angular rate",
+                  "ipa": "/ˈæŋɡjələ reɪt/",
+                  "meaning": "角速率，角速度",
                   "level": "blue"
                 }
               ]
@@ -378,14 +332,14 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 1,
               "id": "P5-S1",
-              "text": "Micro Air Vehicles (MAVs) are extremely sensitive to wind shear, atmospheric turbulence, and ground effect disturbances due to their compact size, lightweight structure, and low moments of inertia.",
-              "translation": "微型飞行器（MAV）由于尺寸小、重量轻、惯量极低，在飞行过程中极其容易受到风切变、阵风紊流以及地面效应等剧烈扰动的影响。",
+              "text": "Micro air vehicles (MAVs) have increased in popularity as their applications have diversified, but their small size makes them particularly vulnerable to wind gusts and turbulence.",
+              "translation": "微型飞行器（MAV）由于尺寸小、重量轻、惯量极低，在飞行过程中极其容易受到阵风紊流以及突发外界扰动的影响。",
               "vocab": [
                 {
-                  "word": "inertia",
-                  "ipa": "/ɪˈnɜːʃə/",
-                  "meaning": "惯量，转动惯量",
-                  "level": "red"
+                  "word": "mavs",
+                  "ipa": "/ˈem.eɪ.viːz/",
+                  "meaning": "微型飞行器（复数）",
+                  "level": "blue"
                 }
               ]
             },
@@ -420,6 +374,12 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/ˌnɒnˈlɪniər/",
                   "meaning": "非线性的（输出与输入不成正比）",
                   "level": "red"
+                },
+                {
+                  "word": "mavs",
+                  "ipa": "/ˈem.eɪ.viːz/",
+                  "meaning": "微型飞行器（复数）",
+                  "level": "blue"
                 }
               ]
             }
@@ -976,7 +936,14 @@ window.BISHE_DATA['paper2'] = {
               "id": "P16-S1",
               "text": "Experiment 4: Traditional quadrotors suffer sluggish yaw response because yaw relies purely on small motor differential reaction torques.",
               "translation": "试验 4（计入转子角动量偏航提升）：传统四旋翼在偏航方向因为仅依靠电机反扭矩差动，响应极为迟缓；",
-              "vocab": []
+              "vocab": [
+                {
+                  "word": "quadrotors",
+                  "ipa": "/ˈkwɒdrəʊtəz/",
+                  "meaning": "四旋翼飞行器（复数）",
+                  "level": "red"
+                }
+              ]
             },
             {
               "sIndex": 2,
@@ -1024,6 +991,12 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/eɪ ˈɪndi/",
                   "meaning": "自适应增量非线性动态逆 (Adaptive INDI)",
                   "level": "blue"
+                },
+                {
+                  "word": "mavs",
+                  "ipa": "/ˈem.eɪ.viːz/",
+                  "meaning": "微型飞行器（复数）",
+                  "level": "blue"
                 }
               ]
             },
@@ -1047,6 +1020,12 @@ window.BISHE_DATA['paper2'] = {
               "text": "3. Compared with classic PID and conventional model-based NDI, A-INDI delivers unmatched disturbance rejection under abrupt external wind and weight shocks, drastically boosting MAV survivability.",
               "translation": "3. 相比传统 PID 与基于模型的非线性控制，A-INDI 具有超强的突发外扰抑制能力，大幅提升了无人机在恶劣复杂环境下的生存能力。",
               "vocab": [
+                {
+                  "word": "disturbance rejection",
+                  "ipa": "/dɪˈstɜːbəns rɪˈdʒekʃn/",
+                  "meaning": "扰动抑制能力",
+                  "level": "blue"
+                },
                 {
                   "word": "rejection",
                   "ipa": "/rɪˈdʒekʃn/",

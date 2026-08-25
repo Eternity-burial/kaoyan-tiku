@@ -19,30 +19,24 @@ window.BISHE_DATA['paper1'] = {
         {
           "pIndex": 1,
           "logicRole": "研究背景与高精度轨迹跟踪挑战",
-          "mainIdea": "在复杂环境中实现安全导航需要高精度轨迹跟踪；极限敏捷飞行面临强非线性、气动效应与执行器物理约束三重耦合挑战。",
+          "mainIdea": "在复杂环境中实现安全导航需要高精度轨迹跟踪；极限敏捷飞行面临强非线性动力学、复杂气动效应与执行机构物理约束三重挑战。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "Accurate trajectory tracking is paramount for quadrotors navigating complex, cluttered environments at the limit of their performance.",
-              "translation": "在复杂受限环境中实现安全导航，四旋翼无人机的高精度轨迹跟踪控制至关重要。",
+              "text": "Accurate trajectory-tracking control for quadrotors is essential for safe navigation in cluttered environments.",
+              "translation": "在复杂受限环境中实现安全自主导航，四旋翼无人机的高精度轨迹跟踪控制至关重要。",
               "vocab": [
                 {
-                  "word": "trajectory tracking",
+                  "word": "trajectory-tracking",
                   "ipa": "/trəˈdʒektəri ˈtrækɪŋ/",
-                  "meaning": "轨迹跟踪控制",
+                  "meaning": "轨迹跟踪的",
                   "level": "blue"
                 },
                 {
-                  "word": "trajectory",
-                  "ipa": "/trəˈdʒektəri/",
-                  "meaning": "轨迹，航迹",
-                  "level": "red"
-                },
-                {
-                  "word": "tracking",
-                  "ipa": "/ˈtrækɪŋ/",
-                  "meaning": "跟踪，追踪",
+                  "word": "quadrotors",
+                  "ipa": "/ˈkwɒdrəʊtəz/",
+                  "meaning": "四旋翼飞行器（复数）",
                   "level": "red"
                 }
               ]
@@ -50,7 +44,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P1-S2",
-              "text": "However, agile flight pushes the vehicle into operating regimes characterized by highly nonlinear dynamics, significant aerodynamic effects, and severe actuator saturation.",
+              "text": "However, this is challenging in agile flights due to nonlinear dynamics, complex aerodynamic effects, and actuation constraints.",
               "translation": "然而，在极限敏捷飞行中，由于高度非线性动力学、复杂的空气动力学效应以及执行机构物理约束的共同耦合作用，高精度轨迹跟踪面临极大挑战。",
               "vocab": [
                 {
@@ -60,9 +54,9 @@ window.BISHE_DATA['paper1'] = {
                   "level": "red"
                 },
                 {
-                  "word": "saturation",
-                  "ipa": "/ˌsætʃəˈreɪʃn/",
-                  "meaning": "饱和（推力饱和/转速饱和/输出饱和）",
+                  "word": "constraints",
+                  "ipa": "/kənˈstreɪnts/",
+                  "meaning": "约束条件（硬约束/软约束）",
                   "level": "red"
                 },
                 {
@@ -72,16 +66,10 @@ window.BISHE_DATA['paper1'] = {
                   "level": "red"
                 },
                 {
-                  "word": "actuator",
-                  "ipa": "/ˈæktʃueɪtə/",
-                  "meaning": "执行机构，执行器（电机/电调/舵机/推进器）",
+                  "word": "actuation",
+                  "ipa": "/ˌæktʃuˈeɪʃn/",
+                  "meaning": "驱动，执行机构驱动",
                   "level": "red"
-                },
-                {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
-                  "level": "green"
                 },
                 {
                   "word": "agile",
@@ -96,26 +84,14 @@ window.BISHE_DATA['paper1'] = {
         {
           "pIndex": 2,
           "logicRole": "研究方法与两大前沿框架同台对比",
-          "mainIdea": "在高达 20 m/s 速度与 5g 加速度极限机动下，系统性实证对比 NMPC 与 DFBC 两大主流控制框架。",
+          "mainIdea": "在高达 20 m/s (72 km/h) 速度与 5g 加速度极限机动下，系统性实证对比 NMPC 与 DFBC 两大主流控制框架。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "In this paper, we present a systematic empirical comparison between two state-of-the-art control paradigms: Nonlinear Model Predictive Control (NMPC) and Differential-Flatness-Based Control (DFBC).",
-              "translation": "在本文中，我们经验性地系统对比了当今两大主流前沿控制框架：非线性模型预测控制器（NMPC）与基于微分平坦的控制器（DFBC）。",
+              "text": "In this article, we empirically compare two state-of-the-art control frameworks: the nonlinear-model-predictive controller (NMPC) and the differential-flatness-based controller (DFBC), by tracking a wide variety of agile trajectories at speeds up to 20 m/s (i.e., 72 km/h).",
+              "translation": "在本文中，我们经验性地系统对比了当今两大主流前沿控制框架：非线性模型预测控制器（NMPC）与基于微分平坦的控制器（DFBC），通过在高达 20 m/s（即 72 km/h）的飞行速度下跟踪各种极限敏捷轨迹。",
               "vocab": [
-                {
-                  "word": "differential-flatness-based control",
-                  "ipa": "/ˌdɪfəˈrenʃl ˈflætnəs beɪst kənˈtrəʊl/",
-                  "meaning": "基于微分平坦的控制器 (DFBC)",
-                  "level": "blue"
-                },
-                {
-                  "word": "model predictive control",
-                  "ipa": "/ˈmɒdl prɪˈdɪktɪv kənˈtrəʊl/",
-                  "meaning": "模型预测控制 (MPC)",
-                  "level": "blue"
-                },
                 {
                   "word": "state-of-the-art",
                   "ipa": "/steɪt əv ði ɑːt/",
@@ -123,9 +99,33 @@ window.BISHE_DATA['paper1'] = {
                   "level": "blue"
                 },
                 {
-                  "word": "nonlinear",
-                  "ipa": "/ˌnɒnˈlɪniər/",
-                  "meaning": "非线性的（输出与输入不成正比）",
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "empirically",
+                  "ipa": "/ɪmˈpɪrɪkli/",
+                  "meaning": "实证地，通过实验系统地",
+                  "level": "green"
+                },
+                {
+                  "word": "frameworks",
+                  "ipa": "/ˈfreɪmwɜːks/",
+                  "meaning": "框架（复数）",
+                  "level": "green"
+                },
+                {
+                  "word": "tracking",
+                  "ipa": "/ˈtrækɪŋ/",
+                  "meaning": "跟踪，追踪",
+                  "level": "red"
+                },
+                {
+                  "word": "agile",
+                  "ipa": "/ˈædʒaɪl/",
+                  "meaning": "敏捷的，高机动性的",
                   "level": "red"
                 },
                 {
@@ -145,19 +145,19 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "Both frameworks are systematically benchmarked at speeds up to 20 m/s (72 km/h) and accelerations up to 5g across aggressive flight trajectories in high-fidelity simulation and real-world flight tests.",
-              "translation": "通过在高达 20 m/s（即 72 km/h）的飞行速度和高达 5g 的加速度下跟踪各种极限敏捷轨迹，从高保真物理仿真到真实世界大型动作捕捉系统飞行实验展开全方位定量评估。",
+              "text": "The comparisons are performed in both simulation and real-world environments to systematically evaluate both methods from the aspect of tracking accuracy, robustness, and computational efficiency.",
+              "translation": "对比评估在物理仿真与真实世界飞行实验中全方位展开，从跟踪精度、鲁棒性与计算效率等维度对两种方法进行系统性评估。",
               "vocab": [
                 {
-                  "word": "high-fidelity",
-                  "ipa": "/haɪ fɪˈdeləti/",
-                  "meaning": "高保真的",
+                  "word": "computational efficiency",
+                  "ipa": "/ˌkɒmpjuˈteɪʃənl ɪˈfɪʃnsi/",
+                  "meaning": "计算效率",
                   "level": "blue"
                 },
                 {
-                  "word": "frameworks",
-                  "ipa": "/ˈfreɪmwɜːks/",
-                  "meaning": "框架（复数）",
+                  "word": "computational",
+                  "ipa": "/ˌkɒmpjuˈteɪʃənl/",
+                  "meaning": "计算上的，计算开销的",
                   "level": "green"
                 },
                 {
@@ -167,10 +167,16 @@ window.BISHE_DATA['paper1'] = {
                   "level": "green"
                 },
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
-                  "level": "green"
+                  "word": "robustness",
+                  "ipa": "/rəʊˈbʌstnəs/",
+                  "meaning": "鲁棒性，抗扰稳健性",
+                  "level": "red"
+                },
+                {
+                  "word": "tracking",
+                  "ipa": "/ˈtrækɪŋ/",
+                  "meaning": "跟踪，追踪",
+                  "level": "red"
                 }
               ]
             }
@@ -179,19 +185,25 @@ window.BISHE_DATA['paper1'] = {
         {
           "pIndex": 3,
           "logicRole": "动态不可行轨迹对比结论",
-          "mainIdea": "在跟踪超出电机推力限制的激进不可行轨迹时，NMPC 展现出显著前瞻优势，误差降低 48%~62%。",
+          "mainIdea": "在跟踪超出单电机推力极限的动态不可行轨迹时，NMPC 展现出显著前瞻优势，代价是更高的计算耗时与数值收敛风险。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P3-S1",
-              "text": "Our results demonstrate that when tracking dynamically infeasible trajectories that violate single-rotor thrust limits, NMPC achieves a 48% reduction in position error and a 62% reduction in heading error over DFBC.",
-              "translation": "研究表明：在跟踪动态不可行轨迹（即超出单电机最大推力限制的激进轨迹）时，NMPC 展现出显著优势，其位置跟踪误差降低 48%，航向误差降低 62%。",
+              "text": "We show the superiority of NMPC in tracking dynamically infeasible trajectories, at the cost of higher computation time and risk of numerical convergence issues.",
+              "translation": "研究表明：在跟踪超出单电机最大推力极限的动态不可行轨迹时，NMPC 展现出显著优势，但其代价是更高的计算耗时以及潜在的数值求解收敛风险。",
               "vocab": [
                 {
                   "word": "dynamically infeasible",
                   "ipa": "/daɪˈnæmɪkli ɪnˈfiːzəbl/",
                   "meaning": "动态不可行的（超出电机最大推力/速度极限）",
                   "level": "blue"
+                },
+                {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
                 },
                 {
                   "word": "infeasible",
@@ -206,36 +218,10 @@ window.BISHE_DATA['paper1'] = {
                   "level": "red"
                 },
                 {
-                  "word": "thrust",
-                  "ipa": "/θrʌst/",
-                  "meaning": "推力",
-                  "level": "red"
-                },
-                {
                   "word": "nmpc",
                   "ipa": "/ˌen.em.piːˈsiː/",
                   "meaning": "非线性模型预测控制 (Nonlinear MPC)",
                   "level": "blue"
-                },
-                {
-                  "word": "dfbc",
-                  "ipa": "/ˌdiː.ef.biːˈsiː/",
-                  "meaning": "微分平坦控制器 (Differential-Flatness-Based Control)",
-                  "level": "blue"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "This performance comes at the expense of higher computational complexity and potential numerical convergence risks in real-time execution.",
-              "translation": "但其代价是更高的计算耗时以及潜在的数值求解收敛风险。",
-              "vocab": [
-                {
-                  "word": "computational",
-                  "ipa": "/ˌkɒmpjuˈteɪʃənl/",
-                  "meaning": "计算上的，计算开销的",
-                  "level": "green"
                 }
               ]
             }
@@ -244,20 +230,14 @@ window.BISHE_DATA['paper1'] = {
         {
           "pIndex": 4,
           "logicRole": "INDI内环与气动阻力模型的决定性作用",
-          "mainIdea": "引入增量非线性动态逆 (INDI) 内环与显式空气动力学阻力模型至关重要，实飞误差降低 78% 以上。",
+          "mainIdea": "引入增量非线性动态逆 (INDI) 内环与显式空气动力学阻力模型至关重要，实飞实验中将两者跟踪误差降低 78% 以上。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P4-S1",
-              "text": "Crucially, we show that augmenting both controllers with a sensor-based Incremental Nonlinear Dynamic Inversion (INDI) angular acceleration inner-loop and an aerodynamic drag model is decisive.",
-              "translation": "对于两种控制方法，引入基于增量非线性动态逆（INDI）的角速度内环控制器以及显式建模空气动力学阻力（Aerodynamic Drag Model）均至关重要。",
+              "text": "For both methods, we also quantitatively study the effect of adding an inner-loop controller using the incremental nonlinear dynamic inversion (INDI) method, and the effect of adding an aerodynamic drag model.",
+              "translation": "对于两种控制方法，我们均定量研究了引入基于增量非线性动态逆（INDI）的角加速度内环控制器以及加入显式空气动力学阻力模型的影响。",
               "vocab": [
-                {
-                  "word": "angular acceleration",
-                  "ipa": "/ˈæŋɡjələ əkˌseləˈreɪʃn/",
-                  "meaning": "角加速度",
-                  "level": "blue"
-                },
                 {
                   "word": "aerodynamic",
                   "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
@@ -277,6 +257,12 @@ window.BISHE_DATA['paper1'] = {
                   "level": "red"
                 },
                 {
+                  "word": "study",
+                  "ipa": "/ˈstʌdi/",
+                  "meaning": "研究",
+                  "level": "green"
+                },
+                {
                   "word": "indi",
                   "ipa": "/ˈɪndi/",
                   "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
@@ -287,14 +273,32 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P4-S2",
-              "text": "In real-world flights, the cascaded INDI inner-loop reduces overall tracking error by more than 78% for both control frameworks.",
-              "translation": "实飞实验表明，加入 INDI 内环可使 NMPC 与 DFBC 的轨迹跟踪误差降低 78% 以上。",
+              "text": "Our real-world experiments, performed in one of the world's largest motion capture systems, demonstrate more than 78% tracking error reduction of both NMPC and DFBC, indicating the necessity of using an inner-loop controller and aerodynamic drag model for agile trajectory tracking.",
+              "translation": "在苏黎世大学全球最大的动作捕捉系统之一中进行的真实飞行实验表明：引入 INDI 内环与气动阻力模型使 NMPC 与 DFBC 的跟踪误差降低了 78% 以上，证实了两者对于高速敏捷轨迹跟踪的绝对必要性。",
               "vocab": [
                 {
-                  "word": "frameworks",
-                  "ipa": "/ˈfreɪmwɜːks/",
-                  "meaning": "框架（复数）",
-                  "level": "green"
+                  "word": "trajectory tracking",
+                  "ipa": "/trəˈdʒektəri ˈtrækɪŋ/",
+                  "meaning": "轨迹跟踪控制",
+                  "level": "blue"
+                },
+                {
+                  "word": "motion capture",
+                  "ipa": "/ˈməʊʃn ˈkæptʃə/",
+                  "meaning": "动作捕捉系统 (OptiTrack/Vicon)",
+                  "level": "blue"
+                },
+                {
+                  "word": "aerodynamic",
+                  "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
+                  "meaning": "空气动力学的，气动的",
+                  "level": "red"
+                },
+                {
+                  "word": "trajectory",
+                  "ipa": "/trəˈdʒektəri/",
+                  "meaning": "轨迹，航迹",
+                  "level": "red"
                 },
                 {
                   "word": "inner-loop",
@@ -309,15 +313,21 @@ window.BISHE_DATA['paper1'] = {
                   "level": "red"
                 },
                 {
-                  "word": "cascaded",
-                  "ipa": "/kæˈskeɪdɪd/",
-                  "meaning": "级联的（如外环位置级联内环姿态）",
+                  "word": "agile",
+                  "ipa": "/ˈædʒaɪl/",
+                  "meaning": "敏捷的，高机动性的",
+                  "level": "red"
+                },
+                {
+                  "word": "nmpc",
+                  "ipa": "/ˌen.em.piːˈsiː/",
+                  "meaning": "非线性模型预测控制 (Nonlinear MPC)",
                   "level": "blue"
                 },
                 {
-                  "word": "indi",
-                  "ipa": "/ˈɪndi/",
-                  "meaning": "增量非线性动态逆 (Incremental Nonlinear Dynamic Inversion)",
+                  "word": "dfbc",
+                  "ipa": "/ˌdiː.ef.biːˈsiː/",
+                  "meaning": "微分平坦控制器 (Differential-Flatness-Based Control)",
                   "level": "blue"
                 }
               ]
@@ -340,13 +350,31 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 1,
               "id": "P5-S1",
-              "text": "Quadrotor unmanned aerial vehicles possess exceptional maneuverability that is vital for time-critical missions.",
-              "translation": "四旋翼飞行器具有极高的机动敏捷性，充分发挥其敏捷性能对于时间敏感型任务至关重要。",
+              "text": "Quadrotors are extremely agile. Exploiting their agility is crucial for time-critical missions, such as search and rescue, monitoring, exploration, aerial delivery, drone racing, reconnaissance, and even flying cars.",
+              "translation": "四旋翼飞行器具有极高的机动敏捷性。充分发挥其敏捷性能对于时间敏感型任务至关重要，例如水下/空中搜救、监测、自主探索、无人机物流、竞速穿越机（Drone Racing）、侦察乃至飞行汽车。",
               "vocab": [
                 {
-                  "word": "quadrotor",
-                  "ipa": "/ˈkwɒdrəʊtə/",
-                  "meaning": "四旋翼飞行器，四轴无人机",
+                  "word": "drone racing",
+                  "ipa": "/drəʊn ˈreɪsɪŋ/",
+                  "meaning": "穿越机竞速，无人机竞速",
+                  "level": "blue"
+                },
+                {
+                  "word": "quadrotors",
+                  "ipa": "/ˈkwɒdrəʊtəz/",
+                  "meaning": "四旋翼飞行器（复数）",
+                  "level": "red"
+                },
+                {
+                  "word": "agility",
+                  "ipa": "/əˈdʒɪləti/",
+                  "meaning": "机动性，敏捷度",
+                  "level": "red"
+                },
+                {
+                  "word": "agile",
+                  "ipa": "/ˈædʒaɪl/",
+                  "meaning": "敏捷的，高机动性的",
                   "level": "red"
                 }
               ]
@@ -354,14 +382,20 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P5-S2",
-              "text": "These applications include search and rescue in disaster zones, structural pipeline inspection, autonomous cave exploration, autonomous drone racing, and high-speed aerial delivery.",
-              "translation": "例如水下/空中搜救、管道勘测、自主探索、无人机竞速（Drone Racing）以及空中物流运输。",
+              "text": "An accurate trajectory-tracking controller is required to safely execute high-speed trajectories in cluttered environments.",
+              "translation": "要在复杂受限环境中安全执行高速机动航迹，必须配备高精度的轨迹跟踪控制器。",
               "vocab": [
                 {
-                  "word": "drone racing",
-                  "ipa": "/drəʊn ˈreɪsɪŋ/",
-                  "meaning": "穿越机竞速，无人机竞速",
+                  "word": "trajectory-tracking",
+                  "ipa": "/trəˈdʒektəri ˈtrækɪŋ/",
+                  "meaning": "轨迹跟踪的",
                   "level": "blue"
+                },
+                {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
                 }
               ]
             }
@@ -369,20 +403,32 @@ window.BISHE_DATA['paper1'] = {
         },
         {
           "pIndex": 6,
-          "logicRole": "极限敏捷机动的三大核心控制瓶颈",
+          "logicRole": "极限敏捷飞行的三大核心控制瓶颈",
           "mainIdea": "三大核心瓶颈：强非线性动力学耦合、高速气动阻力效应、执行器物理推力与转速饱和约束。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P6-S1",
-              "text": "Operating at the physical limits of agile flight introduces three profound control bottlenecks.",
-              "translation": "在敏捷极限机动中，控制系统面临三大核心瓶颈：",
+              "text": "However, most approaches struggle to handle joint effects in agile flights, such as nonlinear dynamics, aerodynamic effects, and actuation limits.",
+              "translation": "然而，现有大多数控制方法难以同时应对敏捷飞行中的复合效应，包括高度非线性动力学、空气动力学效应以及执行机构输出极限。",
               "vocab": [
                 {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行",
-                  "level": "green"
+                  "word": "aerodynamic",
+                  "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
+                  "meaning": "空气动力学的，气动的",
+                  "level": "red"
+                },
+                {
+                  "word": "nonlinear",
+                  "ipa": "/ˌnɒnˈlɪniər/",
+                  "meaning": "非线性的（输出与输入不成正比）",
+                  "level": "red"
+                },
+                {
+                  "word": "actuation",
+                  "ipa": "/ˌæktʃuˈeɪʃn/",
+                  "meaning": "驱动，执行机构驱动",
+                  "level": "red"
                 },
                 {
                   "word": "agile",
@@ -395,34 +441,21 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P6-S2",
-              "text": "First, strong gyroscopic and kinematic coupling invalidates small-angle linearization assumptions during large-attitude maneuvers.",
-              "translation": "第一，强非线性与强耦合动力学：大角度机动时姿态与平移完全耦合，小角度线性化假设彻底失效；",
-              "vocab": [
-                {
-                  "word": "gyroscopic",
-                  "ipa": "/ˌdʒaɪrəˈskɒpɪk/",
-                  "meaning": "陀螺效应的，反作用力矩的",
-                  "level": "red"
-                }
-              ]
+              "text": "First, large-attitude maneuvers invalidate small-angle linearization assumptions during rapid position-attitude coupling.",
+              "translation": "第一，在大角度快速翻转机动中，位置与姿态强烈耦合，经典小角度线性化假设彻底失效；",
+              "vocab": []
             },
             {
               "sIndex": 3,
               "id": "P6-S3",
-              "text": "Second, blade rotor drag and body drag induce substantial aerodynamic forces that cause severe centrifugal outward drift in high-speed turns if neglected.",
-              "translation": "第二，空气动力学复杂性：高速飞行时转子叶片挥舞阻力与机身迎风阻力显著增大，若忽略阻力会导致飞行器在弯道产生严重离心外洗滑动；",
+              "text": "Second, rotor blade flapping drag and body drag induce substantial aerodynamic forces that cause severe lateral drift in high-speed turns if neglected.",
+              "translation": "第二，高速飞行时旋翼叶片挥舞阻力与机身迎风阻力显著增大，若忽略阻力会导致飞行器在弯道产生严重离心外侧漂移；",
               "vocab": [
                 {
                   "word": "aerodynamic",
                   "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
                   "meaning": "空气动力学的，气动的",
                   "level": "red"
-                },
-                {
-                  "word": "rotor drag",
-                  "ipa": "/ˈrəʊtə dræɡ/",
-                  "meaning": "旋翼叶片挥舞阻力",
-                  "level": "blue"
                 },
                 {
                   "word": "body drag",
@@ -442,7 +475,7 @@ window.BISHE_DATA['paper1'] = {
               "sIndex": 4,
               "id": "P6-S4",
               "text": "Third, strict actuator constraints on maximum motor rotational speed, thrust limits, and body rate limits must never be violated.",
-              "translation": "第三，执行机构饱和约束：电调与电机的最大转速、推力上限以及姿态角速率限制极其严格。",
+              "translation": "第三，电调与电机的最大转速、推力上限以及姿态角速率等物理硬约束极其严苛。",
               "vocab": [
                 {
                   "word": "constraints",
@@ -475,7 +508,7 @@ window.BISHE_DATA['paper1'] = {
               "sIndex": 1,
               "id": "P7-S1",
               "text": "To overcome these challenges, the robotics community has pursued two distinct control philosophies: NMPC and DFBC.",
-              "translation": "为了解决上述问题，学术界形成了两大代表性控制流派：",
+              "translation": "为了解决上述难题，机器人学术界形成了两大代表性控制流派：",
               "vocab": [
                 {
                   "word": "nmpc",
@@ -494,13 +527,31 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 2,
               "id": "P7-S2",
-              "text": "NMPC solves a constrained receding-horizon optimal control problem online, naturally accommodating multi-input multi-output constraints and state boundaries.",
-              "translation": "NMPC 利用受控对象动力学模型在有限预测时域内进行在线滚动时域最优控制求解，天然支持多输入多输出（MIMO）显式硬约束；",
+              "text": "Recently, nonlinear model predictive control (NMPC) has drawn much attention for quadrotor control thanks to advances in hardware and algorithmic efficiency; NMPC particularly excels in handling control limits, and its predictive nature is beneficial for high-speed tracking.",
+              "translation": "近年来，得益于计算硬件与高效算法的发展，非线性模型预测控制（NMPC）受到广泛关注；NMPC 特别擅长显式处理执行器约束，其前瞻预测特性对于高速跟踪大有裨益。",
               "vocab": [
                 {
-                  "word": "constraints",
-                  "ipa": "/kənˈstreɪnts/",
-                  "meaning": "约束条件（硬约束/软约束）",
+                  "word": "model predictive control",
+                  "ipa": "/ˈmɒdl prɪˈdɪktɪv kənˈtrəʊl/",
+                  "meaning": "模型预测控制 (MPC)",
+                  "level": "blue"
+                },
+                {
+                  "word": "quadrotor",
+                  "ipa": "/ˈkwɒdrəʊtə/",
+                  "meaning": "四旋翼飞行器，四轴无人机",
+                  "level": "red"
+                },
+                {
+                  "word": "nonlinear",
+                  "ipa": "/ˌnɒnˈlɪniər/",
+                  "meaning": "非线性的（输出与输入不成正比）",
+                  "level": "red"
+                },
+                {
+                  "word": "tracking",
+                  "ipa": "/ˈtrækɪŋ/",
+                  "meaning": "跟踪，追踪",
                   "level": "red"
                 },
                 {
@@ -514,26 +565,20 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 3,
               "id": "P7-S3",
-              "text": "DFBC exploits the differential flatness of quadrotor dynamics, algebraically mapping flat outputs and their high-order derivatives to control inputs for ultra-low computational latency.",
-              "translation": "DFBC 利用四旋翼系统的微分平坦特性，将高维非线性微分方程代数映射为平坦输出及其高阶导数，实现超低延迟的解析前馈控制。",
+              "text": "However, NMPC is computationally extremely demanding compared to the state-of-the-art non-predictive method: the differential-flatness-based controller (DFBC), which maps flat outputs algebraically to control inputs with ultra-low latency.",
+              "translation": "然而，相比当今顶尖的非预测控制方法——基于微分平坦的控制器（DFBC），NMPC 的计算开销极其庞大；DFBC 利用四旋翼的微分平坦特性，将平坦输出及其高阶导数代数映射为控制指令，计算延迟极低。",
               "vocab": [
                 {
-                  "word": "differential flatness",
-                  "ipa": "/ˌdɪfəˈrenʃl ˈflætnəs/",
-                  "meaning": "微分平坦性（状态与控制量可用平坦输出及其导数代数表示）",
+                  "word": "state-of-the-art",
+                  "ipa": "/steɪt əv ði ɑːt/",
+                  "meaning": "业界最顶尖的，前沿的",
                   "level": "blue"
                 },
                 {
-                  "word": "computational",
-                  "ipa": "/ˌkɒmpjuˈteɪʃənl/",
-                  "meaning": "计算上的，计算开销的",
-                  "level": "green"
-                },
-                {
-                  "word": "quadrotor",
-                  "ipa": "/ˈkwɒdrəʊtə/",
-                  "meaning": "四旋翼飞行器，四轴无人机",
-                  "level": "red"
+                  "word": "nmpc",
+                  "ipa": "/ˌen.em.piːˈsiː/",
+                  "meaning": "非线性模型预测控制 (Nonlinear MPC)",
+                  "level": "blue"
                 },
                 {
                   "word": "dfbc",
@@ -553,7 +598,7 @@ window.BISHE_DATA['paper1'] = {
             {
               "sIndex": 1,
               "id": "P8-S1",
-              "text": "This paper delivers three primary contributions to the field of autonomous aerial robotics.",
+              "text": "This paper delivers three primary contributions to the robotics literature.",
               "translation": "本文的主要学术贡献包括以下三点：",
               "vocab": []
             },
@@ -587,7 +632,7 @@ window.BISHE_DATA['paper1'] = {
               "sIndex": 3,
               "id": "P8-S3",
               "text": "2. We formulate a unified control architecture integrating sensor-based INDI inner-loop acceleration feedback with aerodynamic drag compensation.",
-              "translation": "2. 提出将增量非线性动态逆（INDI）与空气动力学阻力模型统一融入 NMPC 和 DFBC 控制架构；",
+              "translation": "2. 提出将增量非线性动态逆（INDI）内环与空气动力学阻力模型统一融入 NMPC 和 DFBC 控制架构；",
               "vocab": [
                 {
                   "word": "aerodynamic",
@@ -628,6 +673,12 @@ window.BISHE_DATA['paper1'] = {
                   "level": "green"
                 },
                 {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
+                },
+                {
                   "word": "saturation",
                   "ipa": "/ˌsætʃəˈreɪʃn/",
                   "meaning": "饱和（推力饱和/转速饱和/输出饱和）",
@@ -649,6 +700,12 @@ window.BISHE_DATA['paper1'] = {
                   "word": "actuator",
                   "ipa": "/ˈæktʃueɪtə/",
                   "meaning": "执行机构，执行器（电机/电调/舵机/推进器）",
+                  "level": "red"
+                },
+                {
+                  "word": "delays",
+                  "ipa": "/dɪˈleɪz/",
+                  "meaning": "延迟（复数）",
                   "level": "red"
                 }
               ]
@@ -760,7 +817,7 @@ window.BISHE_DATA['paper1'] = {
               "sIndex": 1,
               "id": "P11-S1",
               "text": "At high flight speeds exceeding 10 m/s, aerodynamic drag force $\\boldsymbol{f}_a$ cannot be neglected.",
-              "translation": "在高速飞行时，空气阻力 $\\boldsymbol{f}_a$ 不可忽略。",
+              "translation": "在高速飞行（超过 10 m/s）时，空气阻力 $\\boldsymbol{f}_a$ 不可忽略。",
               "vocab": [
                 {
                   "word": "aerodynamic",
@@ -787,7 +844,7 @@ window.BISHE_DATA['paper1'] = {
               "sIndex": 3,
               "id": "P11-S3",
               "text": "The matrix $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ encompasses both rotor blade flapping drag and fuselage parasitic drag.",
-              "translation": "其中 $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ 为对角空气阻力系数矩阵，显式包含了转子诱导阻力与机身迎风阻力。",
+              "translation": "其中 $\\boldsymbol{D}_v = \\text{diag}(d_x, d_y, d_z)$ 为对角空气阻力系数矩阵，显式包含了转子叶片挥舞阻力与机身迎风阻力。",
               "vocab": []
             }
           ]
@@ -1106,7 +1163,14 @@ window.BISHE_DATA['paper1'] = {
               "id": "P15-S3",
               "text": "2. Spatial 3D Figure-8 trajectories with rapid altitude and attitude transitions.",
               "translation": "2. 空间 3D 立体“8”字飞行（3D Figure-8）；",
-              "vocab": []
+              "vocab": [
+                {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
+                }
+              ]
             },
             {
               "sIndex": 4,
@@ -1128,6 +1192,12 @@ window.BISHE_DATA['paper1'] = {
               "text": "On dynamically feasible trajectories, NMPC+INDI achieves position RMSE of $0.14 \\pm 0.05\\text{ m}$, while DFBC+INDI achieves $0.15 \\pm 0.06\\text{ m}$, exhibiting nearly identical tracking accuracy.",
               "translation": "在动态可行轨迹（Dynamically Feasible）下：NMPC+INDI 位置跟踪 RMSE 为 $0.14 \\pm 0.05\\text{ m}$，DFBC+INDI 为 $0.15 \\pm 0.06\\text{ m}$，两者精度几乎完全一致。",
               "vocab": [
+                {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
+                },
                 {
                   "word": "tracking",
                   "ipa": "/ˈtrækɪŋ/",
@@ -1171,6 +1241,12 @@ window.BISHE_DATA['paper1'] = {
                   "ipa": "/daɪˈnæmɪkli ɪnˈfiːzəbl/",
                   "meaning": "动态不可行的（超出电机最大推力/速度极限）",
                   "level": "blue"
+                },
+                {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
                 },
                 {
                   "word": "infeasible",
@@ -1521,6 +1597,12 @@ window.BISHE_DATA['paper1'] = {
               "translation": "1. 正常可行轨迹精度：两者并无差异，均达到极高精度（RMSE 约 0.15 m）；",
               "vocab": [
                 {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
+                },
+                {
                   "word": "rmse",
                   "ipa": "/ˌɑːr.em.esˈiː/",
                   "meaning": "均方根误差 (Root Mean Square Error)",
@@ -1534,6 +1616,12 @@ window.BISHE_DATA['paper1'] = {
               "text": "2. Over-Limit Infeasible Trajectories: NMPC is decisively superior with 48% to 62% lower error, whereas DFBC suffers single-point overshoot.",
               "translation": "2. 超限不可行轨迹表现：NMPC 极其优异（误差低 48~62%），而 DFBC 容易发生单点过冲；",
               "vocab": [
+                {
+                  "word": "trajectories",
+                  "ipa": "/trəˈdʒektəriz/",
+                  "meaning": "轨迹，航迹（复数）",
+                  "level": "red"
+                },
                 {
                   "word": "infeasible",
                   "ipa": "/ɪnˈfiːzəbl/",
