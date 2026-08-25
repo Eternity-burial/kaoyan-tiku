@@ -801,12 +801,13 @@
 
           (p.sentences || []).forEach(s => {
             const sentenceText = renderAnnotatedSentenceText(s.text, s.vocab);
+            const sentenceTrans = renderAnnotatedTranslation(s.translation, s.vocab);
 
             html += `
               <div class="sentence-item" id="sentence-${s.id}" data-id="${s.id}">
                 <span class="sentence-id-tag">[${s.id}]</span>
                 <span class="sentence-text">${sentenceText} </span>
-                <div class="sentence-trans">${escapeHtml(s.translation || '')}</div>
+                <div class="sentence-trans">${sentenceTrans}</div>
               </div>
             `;
           });
@@ -894,12 +895,13 @@
 
       (p.sentences || []).forEach(s => {
         const sentenceText = renderAnnotatedSentenceText(s.text, s.vocab);
+        const sentenceTrans = renderAnnotatedTranslation(s.translation, s.vocab);
 
         html += `
           <div class="sentence-item ${s.isTopicSentence ? 'is-topic' : ''}" id="sentence-${s.id}" data-id="${s.id}">
             <span class="sentence-id-tag">[${s.id}]</span>
             <span class="sentence-text">${sentenceText} </span>
-            <div class="sentence-trans">${escapeHtml(s.translation || '')}</div>
+            <div class="sentence-trans">${sentenceTrans}</div>
           </div>
         `;
       });
@@ -1721,6 +1723,120 @@
     }
 
     // 5. 还原 LaTeX 数学公式
+    result = result.replace(/___MATH_PH_(\d+)___/g, (m, idx) => {
+      return mathPlaceholders[parseInt(idx, 10)] || '';
+    });
+
+    return result;
+  }
+
+  // 安全渲染带有数学公式与中文生词高亮的译文（基于非重叠区间与公式保护）
+  function renderAnnotatedTranslation(rawTrans, vocabList) {
+    if (!rawTrans) return '';
+    
+    // 1. 提取并保护所有 LaTeX 数学公式 ($...$, $$...$$, \[...\], \(...\))
+    const mathPlaceholders = [];
+    let safeText = rawTrans.replace(/(\$\$[\s\S]*?\$\$|\$[^\$]+?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g, (m) => {
+      const idx = mathPlaceholders.length;
+      mathPlaceholders.push(m);
+      return `___MATH_PH_${idx}___`;
+    });
+
+    if (!vocabList || vocabList.length === 0) {
+      safeText = escapeHtml(safeText);
+      return safeText.replace(/___MATH_PH_(\d+)___/g, (m, idx) => mathPlaceholders[parseInt(idx, 10)] || '');
+    }
+
+    // 2. 从 vocabList 中收集所有候选中文词汇
+    const candidateTerms = [];
+    vocabList.forEach(v => {
+      if (!v.meaning) return;
+      let cleanMeaning = v.meaning.replace(/（[^）]*）|\([^)]*\)/g, '');
+      const parts = cleanMeaning.split(/[,，、;；/ \s]+/);
+      parts.forEach(p => {
+        const cnMatches = p.match(/[\u4e00-\u9fa5]{2,}/g);
+        if (cnMatches) {
+          cnMatches.forEach(term => {
+            if (term.length >= 2) {
+              candidateTerms.push({
+                term,
+                vocab: v
+              });
+            }
+          });
+        }
+      });
+    });
+
+    if (candidateTerms.length === 0) {
+      safeText = escapeHtml(safeText);
+      return safeText.replace(/___MATH_PH_(\d+)___/g, (m, idx) => mathPlaceholders[parseInt(idx, 10)] || '');
+    }
+
+    // 按词长降序排列（长词优先匹配）
+    candidateTerms.sort((a, b) => b.term.length - a.term.length);
+
+    // 3. 标记所有数学占位符位置为占用
+    const occupied = new Uint8Array(safeText.length);
+    const phRegex = /___MATH_PH_\d+___/g;
+    let phMatch;
+    while ((phMatch = phRegex.exec(safeText)) !== null) {
+      for (let i = phMatch.index; i < phMatch.index + phMatch[0].length; i++) {
+        occupied[i] = 1;
+      }
+    }
+
+    const matches = [];
+
+    // 4. 寻找所有匹配区间（长词优先），杜绝嵌套
+    candidateTerms.forEach(item => {
+      const termEsc = escapeRegExp(item.term);
+      const regex = new RegExp(termEsc, 'g');
+      let m;
+      while ((m = regex.exec(safeText)) !== null) {
+        const start = m.index;
+        const end = start + m[0].length;
+        
+        let hasOverlap = false;
+        for (let i = start; i < end; i++) {
+          if (occupied[i]) {
+            hasOverlap = true;
+            break;
+          }
+        }
+
+        if (!hasOverlap) {
+          for (let i = start; i < end; i++) occupied[i] = 1;
+          matches.push({
+            start,
+            end,
+            rawText: m[0],
+            vocab: item.vocab
+          });
+        }
+      }
+    });
+
+    // 5. 按起始位置升序排列，单趟拼接 HTML
+    matches.sort((a, b) => a.start - b.start);
+    
+    let result = '';
+    let lastIdx = 0;
+    matches.forEach(item => {
+      if (item.start > lastIdx) {
+        result += escapeHtml(safeText.slice(lastIdx, item.start));
+      }
+      const v = item.vocab;
+      const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
+      result += `<span class="vocab-word trans-vocab-word level-${escapeHtml(lvl)}" data-word="${escapeHtml(v.word)}" data-ipa="${escapeHtml(v.ipa || '')}" data-meaning="${escapeHtml(v.meaning || '')}">${escapeHtml(item.rawText)}</span>`;
+      lastIdx = item.end;
+    });
+
+    if (lastIdx < safeText.length) {
+      result += escapeHtml(safeText.slice(lastIdx));
+    }
+
+    // 6. 还原 LaTeX 数学公式
     result = result.replace(/___MATH_PH_(\d+)___/g, (m, idx) => {
       return mathPlaceholders[parseInt(idx, 10)] || '';
     });
