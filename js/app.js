@@ -3764,23 +3764,58 @@ ${cardsHTML}
 
     var selectedSm2Batch = 30; // 默认单次冲刺 30 题
 
-    // ===== SM-2+ 考研强化间隔重复复习算法 =====
-    function calcSM2Plus(record, score) {
+    // ===== 记忆留存率算法 (基于 FSRS / 负幂律遗忘曲线) =====
+    function calcRetrievability(record, now) {
+      if (!record || !record.lastReview || !record.interval) return 1.0;
+      var curStudyDay = getStudyDayIndex(now || Date.now());
+      var lastStudyDay = record.lastStudyDay !== undefined ? record.lastStudyDay : getStudyDayIndex(record.lastReview);
+      var elapsed = Math.max(0, curStudyDay - lastStudyDay);
+      var stability = Math.max(1, record.interval);
+      // R(t) = (1 + 0.19 * (elapsed / stability))^(-1)
+      var retrievability = Math.pow(1 + 0.19 * (elapsed / stability), -1);
+      return Math.max(0.0, Math.min(1.0, retrievability));
+    }
+
+    // ===== SM-2+ 强化间隔重复算法（提取努力 + 历史遗忘阻尼 + 连击复苏） =====
+    function calcSM2Plus(record, score, customNow) {
       if (!record) record = { ef: 2.5, interval: 1, reps: 0, nextReview: 0, lastReview: 0, history: [] };
-      var now = Date.now();
+      var now = customNow || Date.now();
       var curStudyDay = getStudyDayIndex(now);
       var ef = record.ef !== undefined ? record.ef : 2.5;
       var interval = record.interval || 1;
       var reps = record.reps || 0;
       var hist = record.history ? record.history.slice() : [];
 
-      // 1. 简易度因子 (EF) 变化映射
+      // 1. 真实流逝学习日与预测留存率
+      var lastStudyDay = record.lastStudyDay !== undefined ? record.lastStudyDay : (record.lastReview ? getStudyDayIndex(record.lastReview) : curStudyDay);
+      var elapsedDays = Math.max(0, curStudyDay - lastStudyDay);
+      var curR = calcRetrievability(record, now);
+
+      // 2. 统计历史遗忘频次（Lapse Count）
+      var lapseCount = 0;
+      hist.forEach(function(h) { if (h.score <= 2) lapseCount++; });
+
+      // 3. 提取努力效应（Retrieval Effort Effect / 逾期奖励与提前平抑）
+      var effortFactor = 1.0;
+      if (score >= 4 && record.lastReview > 0) {
+        if (elapsedDays >= interval) {
+          // 逾期回忆成功：难度越大，记忆提取巩固越深
+          effortFactor = 1.0 + Math.min(1.5, ((elapsedDays - interval) / Math.max(1, interval)) * 0.6);
+        } else {
+          // 提前复习：平抑过快膨胀
+          effortFactor = 0.5 + 0.5 * (elapsedDays / Math.max(1, interval));
+        }
+      }
+
+      // 4. 历史遗忘阻尼（Lapse Damping）
+      var lapseDamping = Math.max(0.70, Math.pow(0.94, lapseCount));
+
+      // 5. 简易度因子 (EF) 变化映射
       var deltaMap = { 5: 0.15, 4: 0.02, 3: -0.10, 2: -0.18, 1: -0.25 };
       var delta = deltaMap[score] !== undefined ? deltaMap[score] : 0;
       ef = Math.max(1.3, Math.min(3.2, ef + delta));
 
-      // 2. 突破 EF 地狱的「连击复苏加速（Recovery Boost）」
-      // 若处于薄弱区 (ef <= 1.6) 且最近连续 2 次复习均良好 (score >= 4)，给予额外 +0.15 奖励
+      // 6. 突破 EF 地狱的「连击复苏加速（Recovery Boost）」
       if (ef <= 1.6 && hist.length >= 1) {
         var lastScore = hist[hist.length - 1].score;
         if (score >= 4 && lastScore >= 4) {
@@ -3788,39 +3823,47 @@ ${cardsHTML}
         }
       }
 
-      // 3. 间隔天数 (Interval) 与重复次数 (Reps) 梯度衰减计算
+      // 7. 间隔天数 (Interval) 与重复次数 (Reps) 计算
       if (score === 5) {
         // 熟练：高效拉长复习间隔
         if (reps === 0) interval = 1;
-        else if (reps === 1) interval = 6;
-        else interval = Math.max(interval + 1, Math.round(interval * ef * 1.15));
+        else if (reps === 1) interval = Math.max(2, Math.round(6 * effortFactor));
+        else interval = Math.max(interval + 1, Math.round(interval * ef * 1.18 * effortFactor * lapseDamping));
         reps++;
       } else if (score === 4) {
         // 较熟练：标准稳定递增
         if (reps === 0) interval = 1;
-        else if (reps === 1) interval = 5;
-        else interval = Math.max(interval + 1, Math.round(interval * ef));
+        else if (reps === 1) interval = Math.max(2, Math.round(5 * effortFactor));
+        else interval = Math.max(interval + 1, Math.round(interval * ef * effortFactor * lapseDamping));
         reps++;
       } else if (score === 3) {
-        // 模糊：梯度平滑降阶，保留部分记忆成果（不粗暴置 0）
+        // 模糊：平滑衰减，保留部分记忆成果
         reps = Math.max(1, reps - 1);
         interval = Math.max(2, Math.round(interval * 0.5));
       } else if (score === 2) {
-        // 困难：次日复习强化
+        // 困难：次日强化
         reps = 0;
         interval = 1;
       } else {
-        // 不会 (1)：彻底重置
+        // 不会：重置
         reps = 0;
         interval = 1;
       }
 
-      // 4. 到期时间戳（对齐考研学习日清晨 04:00）
+      // 8. 到期时间戳（对齐考研学习日清晨 04:00）
       var dueStudyDay = curStudyDay + interval;
       var dueDayDate = new Date(dueStudyDay * 24 * 3600 * 1000);
       var nextReview = new Date(dueDayDate.getUTCFullYear(), dueDayDate.getUTCMonth(), dueDayDate.getUTCDate(), 4, 0, 0, 0).getTime();
 
-      hist.push({ date: now, score: score, ef: parseFloat(ef.toFixed(2)), interval: interval, studyDay: curStudyDay });
+      hist.push({
+        date: now,
+        score: score,
+        ef: parseFloat(ef.toFixed(2)),
+        interval: interval,
+        elapsedDays: elapsedDays,
+        retrievability: parseFloat(curR.toFixed(3)),
+        studyDay: curStudyDay
+      });
 
       return {
         ef: parseFloat(ef.toFixed(2)),
@@ -3831,6 +3874,19 @@ ${cardsHTML}
         lastStudyDay: curStudyDay,
         history: hist
       };
+    }
+
+    // 从纯历史事件序列全量回放重构最新的记忆状态（自愈与一致性引擎）
+    function replayHistory(historyLogs) {
+      if (!Array.isArray(historyLogs) || historyLogs.length === 0) return null;
+      var sorted = historyLogs.slice().sort(function(a, b) { return (a.date || 0) - (b.date || 0); });
+      var state = null;
+      sorted.forEach(function(evt) {
+        var score = evt.score || 3;
+        var evtDate = evt.date || Date.now();
+        state = calcSM2Plus(state, score, evtDate);
+      });
+      return state;
     }
 
     // 保持 calcSM2 兼容旧调用与测试
@@ -3888,13 +3944,24 @@ ${cardsHTML}
       var dd = dueDate.getFullYear() + '-' + String(dueDate.getMonth()+1).padStart(2,'0') + '-' + String(dueDate.getDate()).padStart(2,'0');
       var label = getSm2Label(rec);
       var overdueDays = getSm2OverdueDays(rec);
+      var retrievability = Math.round(calcRetrievability(rec) * 100);
+
+      var lapseCount = 0;
+      if (rec.history && Array.isArray(rec.history)) {
+        rec.history.forEach(function(h) { if (h.score <= 2) lapseCount++; });
+      }
+
       var tag = '';
       if (label === 'due') tag = '<span class="sm2-due-tag">今日到期</span>';
       else if (label === 'overdue') tag = '<span class="sm2-overdue-tag">已逾期 ' + overdueDays + ' 天</span>';
       else if (label === 'mastered') tag = '<span style="color:#F5A623;font-weight:600">已掌握</span>';
+
+      var rColor = retrievability >= 85 ? 'var(--lv5-dark, #2e7d32)' : (retrievability >= 60 ? 'var(--uncertain-dark, #f59e0b)' : 'var(--unfamiliar, #dc2626)');
+
       bar.innerHTML = '<span>EF: ' + (rec.ef ? rec.ef.toFixed(2) : '2.50') + '</span>' +
         '<span>间隔: ' + rec.interval + '天</span>' +
-        '<span>复习次数: ' + rec.reps + '</span>' +
+        '<span>留存率: <b style="color:' + rColor + '">' + retrievability + '%</b></span>' +
+        '<span>复习: ' + rec.reps + '次' + (lapseCount > 0 ? ' (' + lapseCount + '错)' : '') + '</span>' +
         (rec.lastReview ? '<span>上次: ' + new Date(rec.lastReview).toLocaleDateString('zh-CN') + '</span>' : '') +
         '<span>下次: ' + dd + '</span>' + tag;
     }
