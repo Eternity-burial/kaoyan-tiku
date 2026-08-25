@@ -2462,6 +2462,251 @@
     }
 
     // 编辑时右侧实时预览（防抖）
+    // ===== 考研数学常用 LaTeX 符号盘与自动补全词典 =====
+    const MATH_PALETTE_DATA = {
+      calc: [
+        { label: 'lim(∞)', code: '\\lim_{x \\to \\infty} |', render: 'lim_{x→∞}' },
+        { label: 'lim(0)', code: '\\lim_{x \\to 0} |', render: 'lim_{x→0}' },
+        { label: '分式', code: '\\frac{|}{}', render: 'a/b' },
+        { label: '导数', code: '\\frac{\\mathrm{d}|}{\\mathrm{d}x}', render: 'dy/dx' },
+        { label: '偏导', code: '\\frac{\\partial |}{\\partial x}', render: '∂/∂x' },
+        { label: '定积分', code: '\\int_{|}^{} \\,dx', render: '∫_a^b' },
+        { label: '二重积分', code: '\\iint_{D} | \\,dxdy', render: '∬_D' },
+        { label: '三重积分', code: '\\iiint_{\\Omega} | \\,dxdydz', render: '∭_Ω' },
+        { label: '自然常数', code: '\\mathrm{e}^{|}', render: 'e^x' },
+        { label: '无穷大', code: '\\infty', render: '∞' },
+        { label: '微分 dy', code: '\\mathrm{d}y', render: 'dy' },
+        { label: '微分 dx', code: '\\mathrm{d}x', render: 'dx' }
+      ],
+      algebra: [
+        { label: '求和', code: '\\sum_{i=1}^{n} |', render: '∑' },
+        { label: '连乘', code: '\\prod_{i=1}^{n} |', render: '∏' },
+        { label: '根号', code: '\\sqrt{|}', render: '√x' },
+        { label: 'n次根号', code: '\\sqrt[n]{|}', render: 'ⁿ√x' },
+        { label: '正负号', code: '\\pm ', render: '±' },
+        { label: '不等于', code: '\\ne ', render: '≠' },
+        { label: '约等于', code: '\\approx ', render: '≈' },
+        { label: '恒等于', code: '\\equiv ', render: '≡' },
+        { label: '小于等于', code: '\\le ', render: '≤' },
+        { label: '大于等于', code: '\\ge ', render: '≥' },
+        { label: '自然对数', code: '\\ln(|)', render: 'ln(x)' },
+        { label: '绝对值', code: '| |', render: '|x|' }
+      ],
+      greek: [
+        { label: 'α (alpha)', code: '\\alpha', render: 'α' },
+        { label: 'β (beta)', code: '\\beta', render: 'β' },
+        { label: 'γ (gamma)', code: '\\gamma', render: 'γ' },
+        { label: 'δ (delta)', code: '\\delta', render: 'δ' },
+        { label: 'λ (lambda)', code: '\\lambda', render: 'λ' },
+        { label: 'θ (theta)', code: '\\theta', render: 'θ' },
+        { label: 'σ (sigma)', code: '\\sigma', render: 'σ' },
+        { label: 'ξ (xi)', code: '\\xi', render: 'ξ' },
+        { label: 'η (eta)', code: '\\eta', render: 'η' },
+        { label: 'ω (omega)', code: '\\omega', render: 'ω' },
+        { label: 'Δ (Delta)', code: '\\Delta', render: 'Δ' },
+        { label: 'Λ (Lambda)', code: '\\Lambda', render: 'Λ' }
+      ],
+      linalg: [
+        { label: '圆括号矩阵', code: '\\begin{pmatrix} | & \\\\ & \\end{pmatrix}', render: '(矩阵)' },
+        { label: '方括号矩阵', code: '\\begin{bmatrix} | & \\\\ & \\end{bmatrix}', render: '[矩阵]' },
+        { label: '行列式', code: '\\begin{vmatrix} | & \\\\ & \\end{vmatrix}', render: '|行列式|' },
+        { label: '向量 A', code: '\\boldsymbol{A}', render: 'A' },
+        { label: '转置 A^T', code: 'A^{\\mathrm{T}}', render: 'Aᵀ' },
+        { label: '逆阵 A⁻¹', code: 'A^{-1}', render: 'A⁻¹' },
+        { label: '伴随阵 A*', code: 'A^{*}', render: 'A*' },
+        { label: '矩阵秩 r(A)', code: 'r(A)', render: 'r(A)' },
+        { label: '行列式 det', code: '|A|', render: '|A|' },
+        { label: '特征多项式', code: '|\\lambda E - A|', render: '|λE-A|' }
+      ],
+      templates: [
+        { label: '1^∞ 型极限', code: '1^\\infty \\text{型: } \\lim_{x \\to |} [1+f(x)]^{\\frac{1}{f(x)} \\cdot f(x)g(x)} = \\mathrm{e}^{\\lim f(x)g(x)}', render: '1^∞极限' },
+        { label: '常用等价无穷小', code: '\\sin x \\sim x, \\; \\ln(1+x) \\sim x, \\; \\mathrm{e}^x - 1 \\sim x, \\; 1-\\cos x \\sim \\frac{1}{2}x^2', render: '等价无穷小' },
+        { label: 'e^x 泰勒展开', code: '\\mathrm{e}^x = 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + o(x^3)', render: 'e^x展开' },
+        { label: 'cos x 泰勒展开', code: '\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} + o(x^4)', render: 'cos展开' },
+        { label: 'sin x 泰勒展开', code: '\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} + o(x^5)', render: 'sin展开' },
+        { label: '重点标注块', code: '> **重点提示**：|', render: '重点引用' }
+      ]
+    };
+
+    const AUTOCOMPLETE_DICT = [
+      { key: 'lim', insert: '\\lim_{x \\to \\infty} |', desc: '极限(趋于无穷)', preview: 'lim_{x→∞}' },
+      { key: 'lim0', insert: '\\lim_{x \\to 0} |', desc: '极限(趋于0)', preview: 'lim_{x→0}' },
+      { key: 'frac', insert: '\\frac{|}{}', desc: '分式', preview: 'a/b' },
+      { key: 'sqrt', insert: '\\sqrt{|}', desc: '平方根', preview: '√' },
+      { key: 'cbrt', insert: '\\sqrt[3]{|}', desc: '立方根', preview: '∛' },
+      { key: 'int', insert: '\\int_{|}^{} \\,dx', desc: '定积分', preview: '∫' },
+      { key: 'iint', insert: '\\iint_{D} | \\,dxdy', desc: '二重积分', preview: '∬' },
+      { key: 'iiint', insert: '\\iiint_{\\Omega} | \\,dxdydz', desc: '三重积分', preview: '∭' },
+      { key: 'sum', insert: '\\sum_{i=1}^{n} |', desc: '求和', preview: '∑' },
+      { key: 'prod', insert: '\\prod_{i=1}^{n} |', desc: '连乘', preview: '∏' },
+      { key: 'partial', insert: '\\frac{\\partial |}{\\partial x}', desc: '偏导数', preview: '∂/∂x' },
+      { key: 'matrix', insert: '\\begin{pmatrix} | & \\\\ & \\end{pmatrix}', desc: '常用矩阵', preview: '(矩阵)' },
+      { key: 'pmatrix', insert: '\\begin{pmatrix} | & \\\\ & \\end{pmatrix}', desc: '圆括号矩阵', preview: '(矩阵)' },
+      { key: 'bmatrix', insert: '\\begin{bmatrix} | & \\\\ & \\end{bmatrix}', desc: '方括号矩阵', preview: '[矩阵]' },
+      { key: 'vmatrix', insert: '\\begin{vmatrix} | & \\\\ & \\end{vmatrix}', desc: '行列式', preview: '|行列式|' },
+      { key: 'alpha', insert: '\\alpha', desc: '阿尔法', preview: 'α' },
+      { key: 'beta', insert: '\\beta', desc: '贝塔', preview: 'β' },
+      { key: 'gamma', insert: '\\gamma', desc: '伽马', preview: 'γ' },
+      { key: 'delta', insert: '\\delta', desc: '德尔塔', preview: 'δ' },
+      { key: 'lambda', insert: '\\lambda', desc: '兰姆达', preview: 'λ' },
+      { key: 'theta', insert: '\\theta', desc: '西塔', preview: 'θ' },
+      { key: 'sigma', insert: '\\sigma', desc: '西格玛', preview: 'σ' },
+      { key: 'xi', insert: '\\xi', desc: '克西', preview: 'ξ' },
+      { key: 'eta', insert: '\\eta', desc: '艾塔', preview: 'η' },
+      { key: 'omega', insert: '\\omega', desc: '欧米伽', preview: 'ω' },
+      { key: 'Delta', insert: '\\Delta', desc: '大写德尔塔', preview: 'Δ' },
+      { key: 'Lambda', insert: '\\Lambda', desc: '对角阵', preview: 'Λ' },
+      { key: 'infty', insert: '\\infty', desc: '无穷大', preview: '∞' },
+      { key: 'to', insert: '\\to ', desc: '趋近于', preview: '→' },
+      { key: 'ne', insert: '\\ne ', desc: '不等于', preview: '≠' },
+      { key: 'le', insert: '\\le ', desc: '小于等于', preview: '≤' },
+      { key: 'ge', insert: '\\ge ', desc: '大于等于', preview: '≥' },
+      { key: 'approx', insert: '\\approx ', desc: '约等于', preview: '≈' },
+      { key: 'equiv', insert: '\\equiv ', desc: '恒等于', preview: '≡' },
+      { key: 'sim', insert: '\\sim ', desc: '等价无穷小', preview: '~' },
+      { key: 'pm', insert: '\\pm ', desc: '正负号', preview: '±' },
+      { key: 'in', insert: '\\in ', desc: '属于', preview: '∈' },
+      { key: 'notin', insert: '\\notin ', desc: '不属于', preview: '∉' },
+      { key: 'subset', insert: '\\subset ', desc: '子集', preview: '⊂' },
+      { key: 'cup', insert: '\\cup ', desc: '并集', preview: '∪' },
+      { key: 'cap', insert: '\\cap ', desc: '交集', preview: '∩' },
+      { key: 'forall', insert: '\\forall ', desc: '任意', preview: '∀' },
+      { key: 'exists', insert: '\\exists ', desc: '存在', preview: '∃' },
+      { key: 'because', insert: '\\because ', desc: '因为', preview: '∵' },
+      { key: 'therefore', insert: '\\therefore ', desc: '所以', preview: '∴' },
+      { key: 'Rightarrow', insert: '\\Rightarrow ', desc: '推出', preview: '⇒' },
+      { key: 'Leftrightarrow', insert: '\\Leftrightarrow ', desc: '等价于', preview: '⇔' },
+      { key: 'ln', insert: '\\ln(|)', desc: '自然对数', preview: 'ln' },
+      { key: 'sin', insert: '\\sin(|)', desc: '正弦', preview: 'sin' },
+      { key: 'cos', insert: '\\cos(|)', desc: '余弦', preview: 'cos' },
+      { key: 'tan', insert: '\\tan(|)', desc: '正切', preview: 'tan' },
+      { key: 'arctan', insert: '\\arctan(|)', desc: '反正切', preview: 'arctan' },
+      { key: 'arcsin', insert: '\\arcsin(|)', desc: '反正弦', preview: 'arcsin' },
+      { key: 'arccos', insert: '\\arccos(|)', desc: '反余弦', preview: 'arccos' }
+    ];
+
+    // 将 LaTeX 片段安全插入当前笔记输入框
+    function insertSnippetIntoNotes(snippet) {
+      const duo = document.getElementById('notesDuo');
+      if (!duo || duo.style.display === 'none') {
+        enterEditMode();
+      }
+      const textarea = document.getElementById('notesTextarea');
+      if (!textarea) return;
+
+      const start = textarea.selectionStart !== undefined ? textarea.selectionStart : textarea.value.length;
+      const end = textarea.selectionEnd !== undefined ? textarea.selectionEnd : start;
+      const val = textarea.value;
+      const selected = val.substring(start, end);
+
+      let insertText = snippet;
+      let targetCursor = start + snippet.length;
+
+      if (snippet.indexOf('|') !== -1) {
+        if (selected) {
+          insertText = snippet.replace('|', selected);
+          targetCursor = start + insertText.length;
+        } else {
+          const pipeIdx = snippet.indexOf('|');
+          insertText = snippet.replace('|', '');
+          targetCursor = start + pipeIdx;
+        }
+      }
+
+      textarea.value = val.substring(0, start) + insertText + val.substring(end);
+      textarea.selectionStart = targetCursor;
+      textarea.selectionEnd = targetCursor;
+      textarea.focus();
+      notesDirty = true;
+      updateNotesPreview();
+    }
+
+    // 智能括号与美元符号配对/包裹辅助
+    function wrapOrInsertPair(textarea, openChar, closeChar) {
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const val = textarea.value;
+      if (start !== end) {
+        const sel = val.substring(start, end);
+        textarea.value = val.substring(0, start) + openChar + sel + closeChar + val.substring(end);
+        textarea.selectionStart = start + openChar.length;
+        textarea.selectionEnd = end + openChar.length;
+      } else {
+        textarea.value = val.substring(0, start) + openChar + closeChar + val.substring(end);
+        textarea.selectionStart = start + openChar.length;
+        textarea.selectionEnd = start + openChar.length;
+      }
+      notesDirty = true;
+      updateNotesPreview();
+    }
+
+    // 自动补全状态管理
+    let acVisible = false;
+    let acItems = [];
+    let acActiveIndex = 0;
+    let acQueryStart = -1;
+
+    function showAcPopup() {
+      acVisible = true;
+      const popup = document.getElementById('notesAutocompletePopup');
+      if (!popup) return;
+      popup.style.display = 'flex';
+      renderAcPopup();
+    }
+
+    function hideAcPopup() {
+      acVisible = false;
+      const popup = document.getElementById('notesAutocompletePopup');
+      if (popup) popup.style.display = 'none';
+    }
+
+    function renderAcPopup() {
+      const popup = document.getElementById('notesAutocompletePopup');
+      if (!popup || !acVisible) return;
+      popup.innerHTML = '';
+      acItems.slice(0, 10).forEach(function(item, idx) {
+        const el = document.createElement('div');
+        el.className = 'n-ac-item' + (idx === acActiveIndex ? ' active' : '');
+        el.innerHTML = '<div class="n-ac-left">' +
+          '<span class="n-ac-label">\\' + item.key + '</span>' +
+          '<span class="n-ac-desc">' + item.desc + '</span>' +
+          '</div>' +
+          '<span class="n-ac-preview">' + (item.preview || '') + '</span>';
+        el.addEventListener('mousedown', function(e) {
+          e.preventDefault(); // 防止失去焦点
+          applyAutocomplete(item);
+        });
+        popup.appendChild(el);
+      });
+      const activeEl = popup.children[acActiveIndex];
+      if (activeEl && activeEl.scrollIntoView) {
+        activeEl.scrollIntoView({ block: 'nearest' });
+      }
+    }
+
+    function applyAutocomplete(item) {
+      const textarea = document.getElementById('notesTextarea');
+      if (!textarea || acQueryStart === -1) return;
+      const val = textarea.value;
+      const before = val.substring(0, acQueryStart);
+      const after = val.substring(textarea.selectionStart);
+      let insertText = item.insert;
+      let targetCursor = acQueryStart + insertText.length;
+      if (insertText.indexOf('|') !== -1) {
+        const pipeIdx = insertText.indexOf('|');
+        insertText = insertText.replace('|', '');
+        targetCursor = acQueryStart + pipeIdx;
+      }
+      textarea.value = before + insertText + after;
+      textarea.selectionStart = targetCursor;
+      textarea.selectionEnd = targetCursor;
+      textarea.focus();
+      hideAcPopup();
+      notesDirty = true;
+      updateNotesPreview();
+    }
+
+    // 编辑时右侧实时预览（防抖）
     var notesPreviewTimer = null;
     function updateNotesPreview() {
       clearTimeout(notesPreviewTimer);
@@ -2484,6 +2729,7 @@
       document.getElementById('btnNoteSave').style.display = 'none';
       document.getElementById('btnNoteCancel').style.display = 'none';
       document.getElementById('btnNoteDelete').style.display = hasNote ? '' : 'none';
+      hideAcPopup();
     }
 
     // ===== 题号右上角「有笔记 / 有标注」提示（右侧导航角标） =====
@@ -2517,13 +2763,104 @@
       notesDirty = false; // 进入编辑时重置（初始值即已保存内容）
       updateNotesPreview();
 
-      // 实时预览（防抖）+ 标记未保存改动
+      // 实时预览（防抖）+ 自动补全触发 + 标记未保存改动
       textarea.oninput = function() {
         notesDirty = true;
         updateNotesPreview();
+
+        const pos = textarea.selectionStart;
+        const val = textarea.value;
+        const before = val.substring(0, pos);
+        const m = before.match(/\\([a-zA-Z0-9]*)$/);
+        if (m) {
+          const query = m[1].toLowerCase();
+          acQueryStart = before.length - m[0].length;
+          const matches = AUTOCOMPLETE_DICT.filter(function(item) {
+            return item.key.toLowerCase().indexOf(query) === 0 || item.desc.indexOf(query) !== -1;
+          });
+          if (matches.length > 0) {
+            acItems = matches;
+            acActiveIndex = 0;
+            showAcPopup();
+          } else {
+            hideAcPopup();
+          }
+        } else {
+          hideAcPopup();
+        }
       };
-      // Enter 保存，Shift+Enter 换行
+
+      // 快捷键、成对闭合与自动补全拦截
       textarea.onkeydown = function(e) {
+        if (acVisible) {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            acActiveIndex = (acActiveIndex + 1) % Math.min(acItems.length, 10);
+            renderAcPopup();
+            return;
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            acActiveIndex = (acActiveIndex - 1 + Math.min(acItems.length, 10)) % Math.min(acItems.length, 10);
+            renderAcPopup();
+            return;
+          } else if (e.key === 'Tab' || e.key === 'Enter') {
+            e.preventDefault();
+            applyAutocomplete(acItems[acActiveIndex]);
+            return;
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            hideAcPopup();
+            return;
+          }
+        }
+
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const val = textarea.value;
+
+        // 跳过已存在的右括号/美元符号
+        if (start === end && (e.key === '$' || e.key === '}' || e.key === ')' || e.key === ']') && val[start] === e.key) {
+          e.preventDefault();
+          textarea.selectionStart = start + 1;
+          textarea.selectionEnd = start + 1;
+          return;
+        }
+
+        // 成对自动闭合
+        if (e.key === '$') {
+          e.preventDefault();
+          wrapOrInsertPair(textarea, '$', '$');
+          return;
+        } else if (e.key === '{') {
+          e.preventDefault();
+          wrapOrInsertPair(textarea, '{', '}');
+          return;
+        } else if (e.key === '(') {
+          e.preventDefault();
+          wrapOrInsertPair(textarea, '(', ')');
+          return;
+        } else if (e.key === '[') {
+          e.preventDefault();
+          wrapOrInsertPair(textarea, '[', ']');
+          return;
+        } else if (e.key === 'Backspace' && start === end && start > 0) {
+          const prevChar = val[start - 1];
+          const nextChar = val[start];
+          if ((prevChar === '$' && nextChar === '$') ||
+              (prevChar === '{' && nextChar === '}') ||
+              (prevChar === '(' && nextChar === ')') ||
+              (prevChar === '[' && nextChar === ']')) {
+            e.preventDefault();
+            textarea.value = val.substring(0, start - 1) + val.substring(start + 1);
+            textarea.selectionStart = start - 1;
+            textarea.selectionEnd = start - 1;
+            notesDirty = true;
+            updateNotesPreview();
+            return;
+          }
+        }
+
+        // Enter 保存，Shift+Enter 换行
         if (e.key === 'Enter' && !e.shiftKey) {
           e.preventDefault();
           saveNote();
@@ -2542,6 +2879,7 @@
       }
       saveNotes();
       notesDirty = false;
+      hideAcPopup();
       renderNotes(); // 保存后回到查看模式（渲染结果）
       renderNav();
     }
@@ -2556,6 +2894,7 @@
 
     function cancelNoteEdit() {
       notesDirty = false; // 用户主动放弃编辑，丢弃未保存内容
+      hideAcPopup();
       renderNotes(); // 取消后回到查看模式（渲染结果）
     }
 
@@ -2834,7 +3173,108 @@
           toggleShortcutHelp();
         });
       }
+      // 侧栏折叠、笔记快捷工具栏与常用数学符号盘初始化
+      initSidebarCollapse();
+      initNotesQuickToolbar();
+      initMathSymbolPalette();
     });
+
+    // ===== 侧栏折叠与自适应逻辑 =====
+    let sidebarCollapsed = false;
+    try {
+      sidebarCollapsed = localStorage.getItem('sidebar_collapsed') === 'true';
+    } catch (e) {}
+
+    function setSidebarCollapsed(collapsed) {
+      sidebarCollapsed = !!collapsed;
+      const layout = document.getElementById('mathAppLayout');
+      if (layout) layout.classList.toggle('sidebar-collapsed', sidebarCollapsed);
+      const floatBtn = document.getElementById('btnFloatingExpandSidebar');
+      if (floatBtn) floatBtn.style.display = sidebarCollapsed ? 'inline-flex' : 'none';
+      try {
+        localStorage.setItem('sidebar_collapsed', sidebarCollapsed ? 'true' : 'false');
+      } catch (e) {}
+    }
+
+    function toggleLeftSidebar() {
+      setSidebarCollapsed(!sidebarCollapsed);
+    }
+
+    function initSidebarCollapse() {
+      const btnCollapse = document.getElementById('btnCollapseSidebar');
+      if (btnCollapse) {
+        btnCollapse.addEventListener('click', function() {
+          setSidebarCollapsed(true);
+        });
+      }
+      const btnExpand = document.getElementById('btnFloatingExpandSidebar');
+      if (btnExpand) {
+        btnExpand.addEventListener('click', function() {
+          setSidebarCollapsed(false);
+        });
+      }
+      setSidebarCollapsed(sidebarCollapsed);
+    }
+
+    // ===== 笔记快速插入工具栏初始化 =====
+    function initNotesQuickToolbar() {
+      const bar = document.getElementById('notesQuickToolbar');
+      if (!bar) return;
+      bar.addEventListener('click', function(e) {
+        const btn = e.target.closest('.nqt-btn');
+        if (!btn) return;
+        const snippet = btn.dataset.insert;
+        if (snippet) {
+          e.preventDefault();
+          insertSnippetIntoNotes(snippet);
+        }
+      });
+    }
+
+    // ===== 右侧常用数学符号工具盘初始化 =====
+    function initMathSymbolPalette() {
+      const grid = document.getElementById('paletteGrid');
+      const tabs = document.querySelectorAll('.palette-tab');
+      const header = document.getElementById('paletteHeader');
+      const panel = document.getElementById('mathSymbolPalette');
+      let currentTab = 'calc';
+
+      function renderGrid(tabKey) {
+        if (!grid) return;
+        grid.innerHTML = '';
+        const list = MATH_PALETTE_DATA[tabKey] || [];
+        list.forEach(function(item) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'palette-item';
+          btn.title = item.code.replace(/\|/g, '');
+          btn.innerHTML = '<span class="palette-item-render">' + item.render + '</span>' +
+                          '<span class="palette-item-code">' + item.label + '</span>';
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            insertSnippetIntoNotes(item.code);
+          });
+          grid.appendChild(btn);
+        });
+      }
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          tabs.forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          currentTab = tab.dataset.tab;
+          renderGrid(currentTab);
+        });
+      });
+
+      if (header && panel) {
+        header.addEventListener('click', function(e) {
+          panel.classList.toggle('collapsed');
+        });
+      }
+
+      renderGrid(currentTab);
+    }
 
     // ===== 图片标注（marker.js 3）：矢量数据持久化 =====
     var imgAnnotations = {}; // key: 图片 src，value: markerArea.getState() 的矢量 JSON
@@ -4933,7 +5373,8 @@ ${cardsHTML}
         case 'v': toggleDashboard(); break;
         case 'b': toggleWrongBook(); break;
         case 'm': toggleSm2Panel(); break;
-        // 切换科目与主题与试卷暗化
+        // 切换科目与主题与试卷暗化与侧栏折叠
+        case '[': toggleLeftSidebar(); break;
         case 'g': openSubjectPicker(); break;
         case 'y': toggleTheme(); break;
         case 'u': toggleImageDarkFilter(); break;

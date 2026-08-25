@@ -8,11 +8,22 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/english.css">
 </head>
-<body>
+  <button type="button" class="floating-sidebar-toggle" id="btnFloatingExpandSidebar" title="展开左侧栏 ( [ )" style="display:none">
+    <span class="fst-icon">◨</span>
+    <span class="fst-text">侧栏</span>
+    <kbd class="fst-key">[</kbd>
+  </button>
 
   <div class="app-layout" id="mathAppLayout">
 
-    <div class="sidebar-left">
+    <div class="sidebar-left" id="sidebarLeft">
+      <div class="sidebar-top-bar">
+        <button type="button" class="sidebar-collapse-btn" id="btnCollapseSidebar" title="收起左侧栏 ( [ )">
+          <span class="sc-icon">◧</span>
+          <span class="sc-text">收起侧栏</span>
+          <kbd>[</kbd>
+        </button>
+      </div>
 
       <!-- 考研倒计时侧栏挂件 -->
       <div class="kaoyan-countdown-sidebar" id="sidebarCountdown">
@@ -244,7 +255,24 @@
             </div>
           </div>
           <div class="notes-duo" id="notesDuo" style="display:none">
-            <textarea class="notes-textarea" id="notesTextarea" placeholder="支持 Markdown 与 $LaTeX$ 公式，Enter 保存 / Shift+Enter 换行"></textarea>
+            <div class="notes-editor-wrap">
+              <div class="notes-quick-toolbar" id="notesQuickToolbar">
+                <button type="button" class="nqt-btn" data-insert="$$|$$" title="公式块 ($$)">$$</button>
+                <button type="button" class="nqt-btn" data-insert="\frac{|}{}" title="分式 (\frac)">分式</button>
+                <button type="button" class="nqt-btn" data-insert="\lim_{x \to \infty} |" title="极限 (\lim)">极限</button>
+                <button type="button" class="nqt-btn" data-insert="\int_{|}^{} \,dx" title="积分 (\int)">积分</button>
+                <button type="button" class="nqt-btn" data-insert="\sum_{i=1}^{n} |" title="求和 (\sum)">求和</button>
+                <button type="button" class="nqt-btn" data-insert="\sqrt{|}" title="根号 (\sqrt)">根号</button>
+                <button type="button" class="nqt-btn" data-insert="\begin{pmatrix} | & \\ & \end{pmatrix}" title="矩阵 (pmatrix)">矩阵</button>
+                <button type="button" class="nqt-btn" data-insert="\begin{vmatrix} | & \\ & \end{vmatrix}" title="行列式 (vmatrix)">行列式</button>
+                <button type="button" class="nqt-btn" data-insert="\alpha" title="阿尔法 (\alpha)">$\alpha$</button>
+                <button type="button" class="nqt-btn" data-insert="\infty" title="无穷大 (\infty)">$\infty$</button>
+                <button type="button" class="nqt-btn" data-insert="\partial" title="偏导 (\partial)">$\partial$</button>
+                <button type="button" class="nqt-btn" data-insert="**|**" title="粗体文字">加粗</button>
+              </div>
+              <textarea class="notes-textarea" id="notesTextarea" placeholder="支持 Markdown 与 $LaTeX$ 公式，输入 \ 智能自动补全，Enter 保存 / Shift+Enter 换行"></textarea>
+              <div class="notes-autocomplete-popup" id="notesAutocompletePopup" style="display:none"></div>
+            </div>
             <div class="notes-render notes-preview" id="notesPreview"></div>
           </div>
           <div class="notes-render" id="notesRender"></div>
@@ -414,6 +442,27 @@
         <div class="qnav-label">题号</div>
         <div class="qnav" id="qnav"></div>
       </div>
+      <div class="math-symbol-palette" id="mathSymbolPalette">
+        <div class="palette-header" id="paletteHeader">
+          <div class="palette-title">
+            <span class="palette-title-text">常用符号代码</span>
+            <span class="palette-subtitle">点击即插光标处</span>
+          </div>
+          <button type="button" class="palette-collapse-toggle" id="btnPaletteToggle" title="折叠/展开符号盘">▾</button>
+        </div>
+        <div class="palette-body" id="paletteBody">
+          <div class="palette-tabs" id="paletteTabs">
+            <button type="button" class="palette-tab active" data-tab="calc">微积分</button>
+            <button type="button" class="palette-tab" data-tab="algebra">代数/根式</button>
+            <button type="button" class="palette-tab" data-tab="greek">希腊</button>
+            <button type="button" class="palette-tab" data-tab="linalg">线代</button>
+            <button type="button" class="palette-tab" data-tab="templates">高频模板</button>
+          </div>
+          <div class="palette-grid" id="paletteGrid">
+            <!-- 由 JS 动态渲染各分类符号卡片 -->
+          </div>
+        </div>
+      </div>
     </div>
 
   </div><!-- .app-layout -->
@@ -468,6 +517,7 @@
         </div>
         <div class="shortcut-group">
           <div class="shortcut-group-title">面板 & 复习</div>
+          <div class="shortcut-row"><span class="desc">收起/展开左侧栏</span><span class="key"><kbd>[</kbd></span></div>
           <div class="shortcut-row"><span class="desc">全局进度看板</span><span class="key"><kbd>V</kbd></span></div>
           <div class="shortcut-row"><span class="desc">错题本</span><span class="key"><kbd>B</kbd></span></div>
           <div class="shortcut-row"><span class="desc">间隔重复复习面板</span><span class="key"><kbd>M</kbd></span></div>
