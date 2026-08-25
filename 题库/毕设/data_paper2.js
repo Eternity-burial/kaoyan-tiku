@@ -1,39 +1,53 @@
 /**
- * 毕设文献精读 · 文献2：微型飞行器姿态控制的自适应增量非线性动态逆 (AIAA JGCD 2016)
+ * 毕设文献阅读器 · 文献2：微型飞行器姿态控制的自适应增量非线性动态逆 (AIAA JGCD 2016)
  */
 
 window.BISHE_DATA = window.BISHE_DATA || {};
 window.BISHE_DATA['paper2'] = {
-  "year": "paper2",
+  "id": "paper2",
   "subject": "毕设",
-  "title": "文献2: 微型飞行器姿态控制的自适应增量非线性动态逆 (AIAA JGCD 2016)",
-  "texts": [
+  "title": "Adaptive Incremental Nonlinear Dynamic Inversion for Attitude Control of Micro Air Vehicles",
+  "chineseTitle": "微型飞行器姿态控制的自适应增量非线性动态逆（A-INDI）",
+  "meta": {
+    "authors": "Ewoud J. J. Smeur, Qiping Chu (楚启平), Guido C. H. E. de Croon",
+    "institution": "荷兰代尔夫特理工大学航空航天工程学院控制与仿真系 / MAVLab（Delft University of Technology）",
+    "journal": "AIAA Journal of Guidance, Control, and Dynamics (JGCD), Vol. 39, No. 3, 2016",
+    "links": [
+      {
+        "label": "DOI: 10.2514/1.G001490",
+        "url": "https://doi.org/10.2514/1.G001490"
+      }
+    ]
+  },
+  "sections": [
     {
-      "id": "text1",
-      "number": 1,
-      "title": "I. Abstract & Introduction: Sensor-Based Control Paradigm",
-      "chineseTitle": "第1章：摘要与引言 · 基于传感器的控制范式与两大工程难题",
-      "topic": "自适应控制 / 传感器增量动态逆",
-      "overview": "选自荷兰代尔夫特理工大学 MAVLab 发表在《AIAA Journal of Guidance, Control, and Dynamics (JGCD 2016)》的权威文献。针对微型飞行器（MAV）提出自适应增量非线性动态逆（A-INDI），彻底解决传感器滤波延迟自激振荡与控制效能时变漂移难题。",
+      "id": "sec-abstract",
+      "sectionNumber": "摘要",
+      "title": "Abstract",
+      "chineseTitle": "论文摘要",
       "figure": {
         "image": "题库/毕设/images/paper2_fig6_bebop_drone.png",
-        "caption": "Fig. 6: 荷兰代尔夫特理工大学实验飞行器 Parrot Bebop 四旋翼无人机与突加悬挂载荷装置 (AIAA JGCD 2016)",
+        "caption": "Fig. 6: 荷兰代尔夫特理工大学 MAVLab 实验飞行器 Parrot Bebop 四旋翼无人机与突加悬挂载荷装置 (AIAA JGCD 2016)",
         "alt": "Fig. 6: Bebop drone with payload"
       },
       "paragraphs": [
         {
           "pIndex": 1,
-          "logicRole": "核心思想 · INDI 无模型控制原理",
-          "mainIdea": "INDI 仅依赖控制效能模型，利用传感器角加速度测量值替代复杂的动力学物理模型项。",
+          "logicRole": "研究背景与 INDI 核心理念",
+          "mainIdea": "增量非线性动态逆（INDI）利用传感器角加速度实测替代复杂物理模型项，摆脱对被控对象精确建模的依赖。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P1-S1",
-              "text": "Incremental Nonlinear Dynamic Inversion (INDI) is a sensor-based nonlinear control approach that achieves high performance without requiring an accurate physical model.",
-              "translation": "增量非线性动态逆（Incremental Nonlinear Dynamic Inversion, INDI）是一种基于传感器的非线性控制方法，它在不需要被控对象精确数学模型的前提下实现高性能非线性控制。",
-              "isTopicSentence": true,
-              "isKeyEvidence": false,
+              "text": "Incremental Nonlinear Dynamic Inversion (INDI) is a sensor-based nonlinear control approach that promises high performance without requiring an accurate physical model.",
+              "translation": "增量非线性动态逆（Incremental Nonlinear Dynamic Inversion, INDI）是一种基于传感器的非线性控制方法，它有望在不需要被控对象精确数学模型的前提下实现高性能非线性控制。",
               "vocab": [
+                {
+                  "word": "dynamic inversion",
+                  "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+                  "meaning": "动态逆（非线性系统逆解解耦）",
+                  "level": "red"
+                },
                 {
                   "word": "incremental",
                   "ipa": "/ˌɪŋkrəˈmentl/",
@@ -43,20 +57,20 @@ window.BISHE_DATA['paper2'] = {
                 {
                   "word": "nonlinear",
                   "ipa": "/ˌnɒnˈlɪniər/",
-                  "meaning": "非线性的（系统输出与输入不成正比）",
+                  "meaning": "非线性的（输出与输入不成正比）",
                   "level": "red"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "/daɪˈnæmɪk/",
+                  "meaning": "动态的，动力学的",
+                  "level": "green"
                 },
                 {
                   "word": "inversion",
                   "ipa": "/ɪnˈvɜːʃn/",
                   "meaning": "求逆，动态逆",
                   "level": "red"
-                },
-                {
-                  "word": "sensor-based",
-                  "ipa": "/ˈsensə beɪst/",
-                  "meaning": "基于传感器的",
-                  "level": "green"
                 }
               ]
             },
@@ -64,33 +78,19 @@ window.BISHE_DATA['paper2'] = {
               "sIndex": 2,
               "id": "P1-S2",
               "text": "In MAV attitude control, INDI relies only on the control effectiveness model, replacing the remaining physical terms with real-time sensor measurements of angular acceleration.",
-              "translation": "在微型飞行器（MAV）姿态控制中，INDI 仅依赖控制效能模型，而利用角加速度的实时传感器测量值来替代传统模型中的其余复杂物理项。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
+              "translation": "在微型飞行器（MAV）姿态控制领域，INDI 仅依赖控制效能模型，而利用角加速度的实时传感器测量值来替代传统模型中的其余物理项。",
               "vocab": [
                 {
                   "word": "attitude",
                   "ipa": "/ˈætɪtjuːd/",
-                  "meaning": "姿态（俯仰、横滚、偏航）",
+                  "meaning": "姿态（横滚、俯仰、偏航）",
                   "level": "red"
                 },
                 {
                   "word": "effectiveness",
                   "ipa": "/ɪˈfektɪvnəs/",
-                  "meaning": "效能（如控制效能矩阵 G）",
+                  "meaning": "效能（控制效能矩阵 G）",
                   "level": "red"
-                },
-                {
-                  "word": "real-time",
-                  "ipa": "/ˈrɪəl taɪm/",
-                  "meaning": "实时的",
-                  "level": "green"
-                },
-                {
-                  "word": "angular",
-                  "ipa": "/ˈæŋɡjələ/",
-                  "meaning": "角的，旋转的",
-                  "level": "green"
                 },
                 {
                   "word": "acceleration",
@@ -104,28 +104,32 @@ window.BISHE_DATA['paper2'] = {
         },
         {
           "pIndex": 2,
-          "logicRole": "工程瓶颈 · 滤波延迟失稳与参数时变挑战",
-          "mainIdea": "MAV 应用 INDI 面临两大瓶颈：滤波相位滞后引起的自激振荡，以及控制效能矩阵的时变不确定性。",
+          "logicRole": "两大核心工程难题与解决方案",
+          "mainIdea": "提出时序同步控制律补偿滤波滞后振荡，提出机载 NLMS 自适应算法在线估计时变控制效能矩阵 G1。",
           "sentences": [
             {
               "sIndex": 1,
               "id": "P2-S1",
-              "text": "This paper addresses two fundamental challenges in applying INDI: sensor and actuator filtering delays leading to severe phase lag, and time-varying control effectiveness.",
-              "translation": "本文系统解决了 INDI 在实际应用中的两大核心挑战：传感器滤波与执行器响应引入的时钟延迟与滤波相位滞后，以及飞行过程中控制效能矩阵的时变不确定性。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
+              "text": "This paper resolves two fundamental challenges: handling clock delays and phase lag from sensor and actuator filtering, and adapting to time-varying control effectiveness.",
+              "translation": "本文针对 INDI 控制在实际工程应用中的两大核心挑战给出了完备的解决方案：1. 如何处理传感器测量与执行器动力学引入的时钟延迟与滤波相位滞后；2. 如何应对飞行过程中控制效能矩阵的时变不确定性。",
               "vocab": [
                 {
                   "word": "phase lag",
                   "ipa": "/feɪz læɡ/",
-                  "meaning": "相位滞后（低通滤波引入的时序延迟）",
+                  "meaning": "相位滞后",
                   "level": "red"
                 },
                 {
                   "word": "actuator",
                   "ipa": "/ˈæktʃueɪtə/",
-                  "meaning": "执行机构，执行器（电机/舵机）",
+                  "meaning": "执行机构，执行器（电机/电调/舵机）",
                   "level": "red"
+                },
+                {
+                  "word": "filtering",
+                  "ipa": "/ˈfɪltərɪŋ/",
+                  "meaning": "滤波",
+                  "level": "green"
                 },
                 {
                   "word": "time-varying",
@@ -136,7 +140,7 @@ window.BISHE_DATA['paper2'] = {
                 {
                   "word": "effectiveness",
                   "ipa": "/ɪˈfektɪvnəs/",
-                  "meaning": "效能（如控制效能矩阵 G）",
+                  "meaning": "效能（控制效能矩阵 G）",
                   "level": "red"
                 }
               ]
@@ -144,21 +148,31 @@ window.BISHE_DATA['paper2'] = {
             {
               "sIndex": 2,
               "id": "P2-S2",
-              "text": "We propose a synchronized virtual control law to compensate for low-pass filter delays and an online Normalized Least-Mean-Squares (NLMS) algorithm for adaptive parameter estimation.",
-              "translation": "我们提出了能够精确补偿低通滤波延迟的**时序同步虚拟控制律**，并引入机载**归一化最小均方误差（NLMS）**自适应算法实时辨识控制效能参数。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
+              "text": "Contributions include a synchronized virtual control law for delay compensation, an online Normalized Least-Mean-Squares (NLMS) adaptive parameter estimator, and accounting for rotor angular momentum.",
+              "translation": "主要贡献包括：1. 提出了能够精确补偿角加速度低通滤波延迟的时序同步虚拟控制律；2. 提出了自适应增量非线性动态逆（A-INDI）架构，利用机载 NLMS 滤波器在线实时辨识控制效能参数；3. 显式计入螺旋桨旋转角动量与加减速自旋力矩；4. 通过 Parrot Bebop 实飞实验充分验证了卓越的抗扰自适应能力。",
               "vocab": [
+                {
+                  "word": "angular momentum",
+                  "ipa": "/ˈæŋɡjələ məˈmentəm/",
+                  "meaning": "角动量（旋转动量）",
+                  "level": "blue"
+                },
                 {
                   "word": "synchronized",
                   "ipa": "/ˈsɪŋkrənaɪzd/",
-                  "meaning": "时序同步的，通道对齐的",
+                  "meaning": "时序同步的，对齐的",
                   "level": "green"
                 },
                 {
                   "word": "virtual",
                   "ipa": "/ˈvɜːtʃuəl/",
-                  "meaning": "虚拟的（如虚拟控制量 nu）",
+                  "meaning": "虚拟的（如虚拟控制输入量 nu）",
+                  "level": "red"
+                },
+                {
+                  "word": "compensation",
+                  "ipa": "/ˌkɒmpenˈseɪʃn/",
+                  "meaning": "补偿",
                   "level": "red"
                 },
                 {
@@ -176,126 +190,184 @@ window.BISHE_DATA['paper2'] = {
                 {
                   "word": "adaptive",
                   "ipa": "/əˈdæptɪv/",
-                  "meaning": "自适应的（参数在线估计）",
+                  "meaning": "自适应的（参数在线估计与自调谐）",
+                  "level": "red"
+                },
+                {
+                  "word": "rotor",
+                  "ipa": "/ˈrəʊtə/",
+                  "meaning": "转子，旋翼",
+                  "level": "green"
+                },
+                {
+                  "word": "momentum",
+                  "ipa": "/məˈmentəm/",
+                  "meaning": "动量",
+                  "level": "green"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-intro",
+      "sectionNumber": "一",
+      "title": "I. INTRODUCTION",
+      "chineseTitle": "一、引言与研究动机",
+      "paragraphs": [
+        {
+          "pIndex": 3,
+          "logicRole": "MAV 抗扰瓶颈与传统方法局限",
+          "mainIdea": "微型飞行器极易受突发阵风扰动，线性 PID 难以全包线保持性能，传统 NDI 则严重依赖难以测定的气动阻尼模型。",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P3-S1",
+              "text": "Micro Air Vehicles (MAVs), due to small size and low inertia, are highly vulnerable to wind gusts, turbulence, and ground effects.",
+              "translation": "微型飞行器（MAV）由于尺寸小、重量轻、惯量极低，在飞行过程中极其容易受到风切变、阵风紊流以及地面效应等剧烈扰动的影响。",
+              "vocab": [
+                {
+                  "word": "inertia",
+                  "ipa": "/ɪˈnɜːʃə/",
+                  "meaning": "转动惯量，惯性",
+                  "level": "green"
+                }
+              ]
+            },
+            {
+              "sIndex": 2,
+              "id": "P3-S2",
+              "text": "Traditional PID controllers require tedious gain tuning around operating points, while traditional NDI relies heavily on accurate aerodynamic and damping models.",
+              "translation": "传统的线性 PID 控制器需要在线性工作点附近精细整定增益，难以在全飞行包线和未知扰动下保持一致的高性能；传统的非线性动态逆（NDI）虽然能理论解耦，但严重依赖极难精确测定的气动阻尼和旋翼干扰模型。",
+              "vocab": [
+                {
+                  "word": "aerodynamic",
+                  "ipa": "/ˌeərəʊdaɪˈnæmɪk/",
+                  "meaning": "空气动力学的，气动的",
+                  "level": "red"
+                },
+                {
+                  "word": "damping",
+                  "ipa": "/ˈdæmpɪŋ/",
+                  "meaning": "阻尼（线性与二次非线性水阻）",
+                  "level": "red"
+                }
+              ]
+            },
+            {
+              "sIndex": 3,
+              "id": "P3-S3",
+              "text": "INDI breaks this bottleneck by utilizing IMU measured angular acceleration dot_Omega_0 as the baseline point, simplifying dynamic inversion into control input increments Delta dot_Omega = G_1 Delta u.",
+              "translation": "增量非线性动态逆（INDI）的破局理念：不依赖对未知非线性函数的离线预先计算，而是直接利用 IMU 传感器测得的角加速度 $\\dot{\\boldsymbol{\\Omega}}_0$ 作为基准点，通过泰勒级数展开将动力学逆解简化为控制输入的增量映射 $\\Delta \\dot{\\boldsymbol{\\Omega}} = \\boldsymbol{G}_1 \\Delta \\boldsymbol{u}$。",
+              "vocab": [
+                {
+                  "word": "dynamic inversion",
+                  "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+                  "meaning": "动态逆（非线性系统逆解解耦）",
+                  "level": "red"
+                },
+                {
+                  "word": "bottleneck",
+                  "ipa": "/ˈbɒtlnek/",
+                  "meaning": "瓶颈，核心限制",
+                  "level": "green"
+                },
+                {
+                  "word": "imu",
+                  "ipa": "/ˌaɪ em ˈjuː/",
+                  "meaning": "惯性测量单元 (IMU)",
+                  "level": "blue"
+                },
+                {
+                  "word": "acceleration",
+                  "ipa": "/əkˌseləˈreɪʃn/",
+                  "meaning": "加速度",
+                  "level": "green"
+                },
+                {
+                  "word": "dynamic",
+                  "ipa": "/daɪˈnæmɪk/",
+                  "meaning": "动态的，动力学的",
+                  "level": "green"
+                },
+                {
+                  "word": "inversion",
+                  "ipa": "/ɪnˈvɜːʃn/",
+                  "meaning": "求逆，动态逆",
                   "level": "red"
                 }
               ]
             }
           ]
         }
-      ],
-      "questions": [
-        {
-          "qIndex": 1,
-          "type": "核心概念",
-          "tangchiModel": "控制理论本质解构",
-          "stem": "What distinguishes INDI from traditional Model-Based Nonlinear Dynamic Inversion (NDI)?",
-          "stemKeywords": [
-            "INDI",
-            "NDI",
-            "sensor-based",
-            "angular acceleration measurement"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P1-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "INDI requires an extremely precise aerodynamic CFD model of rotor damping.",
-              "isCorrect": false,
-              "distractorType": "正反倒置",
-              "analysis": "INDI 的初衷正是摆脱对精确流体气动 CFD 模型的依赖。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "INDI replaces complex physical model terms with IMU angular acceleration sensor measurements, needing only the control effectiveness model.",
-              "isCorrect": true,
-              "distractorType": "正确项 · 核心提炼",
-              "analysis": "对应 P1-S2：INDI 仅需控制效能矩阵 G，其余未建模力和力矩均由当前拍传感器实测角加速度增量直接替代抵消。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "INDI cannot be implemented on microprocessors due to high computation.",
-              "isCorrect": false,
-              "distractorType": "曲解文意",
-              "analysis": "INDI 仅为简单的矩阵解析乘加运算，能在单片机上以 500Hz 极速运行。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "INDI operates exclusively in the frequency domain without time-domain state feedback.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "INDI 是经典的时域逐拍状态/传感器增量控制律。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            }
-          ],
-          "officialAnswer": "B",
-          "presetReflection": {
-            "trapAnalysis": "NDI（模型依赖）vs INDI（传感器反馈依赖）是现代非线性控制的最关键分水岭。",
-            "methodSummary": "牢记口诀：'用传感器测量精度换取物理建模精度'。"
-          }
-        }
       ]
     },
     {
-      "id": "text2",
-      "number": 2,
-      "title": "II. Quadrotor Dynamics & Incremental NDI Formulation",
-      "chineseTitle": "第2章：四旋翼转动动力学与增量动态逆展开",
-      "topic": "动力学方程 / 泰勒展开与增量形式",
-      "overview": "从欧拉转动方程出发，显式计入电机控制力矩 Mc、旋翼加减速自旋力矩 Mr，在上一时刻采样点附近进行一阶泰勒展开，推导经典 INDI 增量核心控制方程。",
+      "id": "sec-dynamics",
+      "sectionNumber": "二",
+      "title": "II. QUADROTOR DYNAMICS & INCREMENTAL FORMULATION",
+      "chineseTitle": "二、四旋翼动力学模型与增量形式展开",
       "figure": {
         "image": "题库/毕设/images/paper2_fig2_indi_diagram.png",
-        "caption": "Fig. 2: 基于角加速度反馈与执行器状态反馈的标准 INDI 控制回路框图 (AIAA JGCD 2016)",
+        "caption": "Fig. 2: 基于角加速度传感器反馈与电机转速状态反馈的标准 INDI 控制回路框图 (AIAA JGCD 2016)",
         "alt": "Fig. 2: Block diagram of INDI"
       },
       "paragraphs": [
         {
-          "pIndex": 1,
-          "logicRole": "公式推导 · 刚体转动动力学与电机力矩展开",
-          "mainIdea": "四旋翼姿态动力学包含控制力矩、气动力矩与螺旋桨自旋加减速反作用陀螺力矩。",
+          "pIndex": 4,
+          "logicRole": "欧拉转动方程与力矩分解",
+          "mainIdea": "四旋翼转动动力学包含电机控制力矩 Mc、气动力矩 Ma 与螺旋桨自旋加减速反作用陀螺力矩 Mr。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P1-S1",
-              "text": "The rotational dynamics of the quadrotor are given by Euler's equation: I_v \\dot{\\Omega} + \\Omega \\times (I_v \\Omega) = M_a + M_c - M_r.",
+              "id": "P4-S1",
+              "text": "Quadrotor rotational dynamics are described by Euler's equation: I_v \\dot{\\Omega} + \\Omega \\times (I_v \\Omega) = M_a(\\Omega, v) + M_c - M_r.",
               "translation": "四旋翼飞行器的转动动力学由欧拉方程给出：$\\boldsymbol{I}_v \\dot{\\boldsymbol{\\Omega}} + \\boldsymbol{\\Omega} \\times (\\boldsymbol{I}_v \\boldsymbol{\\Omega}) = \\boldsymbol{M}_a(\\boldsymbol{\\Omega}, \\boldsymbol{v}) + \\boldsymbol{M}_c - \\boldsymbol{M}_r$。",
-              "isTopicSentence": true,
-              "isKeyEvidence": false,
               "vocab": [
                 {
                   "word": "quadrotor",
                   "ipa": "/ˈkwɒdrəʊtə/",
                   "meaning": "四旋翼无人机",
                   "level": "red"
+                },
+                {
+                  "word": "dynamics",
+                  "ipa": "/daɪˈnæmɪks/",
+                  "meaning": "动力学（受力与运动响应）",
+                  "level": "red"
+                },
+                {
+                  "word": "euler",
+                  "ipa": "/ˈɔɪlər/",
+                  "meaning": "欧拉（如欧拉方程、欧拉角）",
+                  "level": "green"
                 }
               ]
             },
             {
               "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Here, M_c represents the control moments generated by rotor thrusts, and M_r = I_r \\dot{\\omega} + \\Omega \\times I_r \\omega denotes the propeller gyroscopic and acceleration torque.",
-              "translation": "其中 $\\boldsymbol{M}_c$ 为旋翼产生的控制力矩，$\\boldsymbol{M}_r = \\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}} + \\boldsymbol{\\Omega} \\times \\boldsymbol{I}_r \\boldsymbol{\\omega}$ 为螺旋桨自旋与加减速反作用陀螺力矩。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
+              "id": "P4-S2",
+              "text": "Here, control moment is M_c = M_{c,matrix} \\omega^2, and propeller gyroscopic and acceleration torque is M_r = I_r \\dot{\\omega} + \\Omega \\times I_r \\omega.",
+              "translation": "其中控制力矩为 $\\boldsymbol{M}_c = \\boldsymbol{M}_{c,\\text{matrix}} \\boldsymbol{\\omega}^2$，螺旋桨自旋与加减速反扭矩为 $\\boldsymbol{M}_r = \\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}} + \\boldsymbol{\\Omega} \\times \\boldsymbol{I}_r \\boldsymbol{\\omega}$。",
               "vocab": [
                 {
-                  "word": "rotor",
-                  "ipa": "/ˈrəʊtə/",
-                  "meaning": "旋翼，螺旋桨",
+                  "word": "matrix",
+                  "ipa": "/ˈmeɪtrɪks/",
+                  "meaning": "矩阵",
+                  "level": "green"
+                },
+                {
+                  "word": "propeller",
+                  "ipa": "/prəˈpelə/",
+                  "meaning": "螺旋桨",
+                  "level": "green"
+                },
+                {
+                  "word": "gyroscopic",
+                  "ipa": "/ˌdʒaɪrəˈskɒpɪk/",
+                  "meaning": "陀螺效应的，陀螺力矩的",
                   "level": "green"
                 },
                 {
@@ -303,293 +375,153 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/əkˌseləˈreɪʃn/",
                   "meaning": "加速度",
                   "level": "green"
+                },
+                {
+                  "word": "torque",
+                  "ipa": "/tɔːk/",
+                  "meaning": "力矩，转矩",
+                  "level": "red"
                 }
               ]
             }
           ]
         },
         {
-          "pIndex": 2,
-          "logicRole": "公式推导 · 泰勒展开推导 INDI 核心增量方程",
-          "mainIdea": "在上一采样点进行一阶泰勒展开，用实测角加速度替换非线性项，得到增量线性方程。",
+          "pIndex": 5,
+          "logicRole": "泰勒展开推导 INDI 核心增量方程",
+          "mainIdea": "在上一时刻采样点展开，用传感器实测角加速度替换物理模型项，得出增量控制方程。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Applying a first-order Taylor series expansion around the previous time step (\\Omega_0, \\omega_0) yields the fundamental INDI incremental equation: \\dot{\\Omega} \\approx \\dot{\\Omega}_0 + G_1 diag(\\omega_0)(\\omega - \\omega_0).",
-              "translation": "在上一时刻采样点 $(\\boldsymbol{\\Omega}_0, \\boldsymbol{\\omega}_0)$ 附近进行一阶泰勒展开，并利用实测角加速度 $\\dot{\\boldsymbol{\\Omega}}_0$ 替代非线性物理模型项，得到 **INDI 核心增量方程**：$\\dot{\\boldsymbol{\\Omega}} \\approx \\dot{\\boldsymbol{\\Omega}}_0 + \\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_0)(\\boldsymbol{\\omega} - \\boldsymbol{\\omega}_0)$。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
+              "id": "P5-S1",
+              "text": "Applying a first-order Taylor expansion around previous step (\\Omega_0, \\omega_0) and replacing physical model terms with measured \\dot{\\Omega}_0 yields: \\dot{\\Omega} \\approx \\dot{\\Omega}_0 + G_1 diag(\\omega_0)(\\omega - \\omega_0) + G_2(\\dot{\\omega} - \\dot{\\omega}_0).",
+              "translation": "在上一时刻采样点 $(\\boldsymbol{\\Omega}_0, \\boldsymbol{\\omega}_0)$ 附近进行一阶泰勒展开，并利用传感器测量的实际角加速度 $\\dot{\\boldsymbol{\\Omega}}_0$ 替代非线性物理模型项，得到 **INDI 核心增量方程**：$\\dot{\\boldsymbol{\\Omega}} \\approx \\dot{\\boldsymbol{\\Omega}}_0 + \\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_0)(\\boldsymbol{\\omega} - \\boldsymbol{\\omega}_0) + \\boldsymbol{G}_2(\\dot{\\boldsymbol{\\omega}} - \\dot{\\boldsymbol{\\omega}}_0)$。",
               "vocab": [
                 {
-                  "word": "incremental",
-                  "ipa": "/ˌɪŋkrəˈmentl/",
-                  "meaning": "增量的（基于传感器逐拍差分）",
-                  "level": "red"
+                  "word": "taylor expansion",
+                  "ipa": "/ˈteɪlə ɪkˈspænʃn/",
+                  "meaning": "泰勒展开",
+                  "level": "blue"
+                },
+                {
+                  "word": "taylor",
+                  "ipa": "/ˈteɪlə/",
+                  "meaning": "泰勒（级数展开）",
+                  "level": "green"
                 }
               ]
             }
           ]
         }
-      ],
-      "questions": [
-        {
-          "qIndex": 2,
-          "type": "细节题",
-          "tangchiModel": "数学推导与物理项分析",
-          "stem": "In the derivation of INDI, what replaces the complex unknown nonlinear aerodynamic moments M_a?",
-          "stemKeywords": [
-            "M_a",
-            "Taylor expansion",
-            "sensor angular acceleration",
-            "dot_Omega_0"
-          ],
-          "targetSentences": [
-            "P2-S1"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "An offline neural network trained on wind tunnel datasets.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "文中未采用离线神经网络。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "The real-time sensor measurement of angular acceleration dot_Omega_0 from the IMU.",
-              "isCorrect": true,
-              "distractorType": "正确项 · 原文推导",
-              "analysis": "对应 P2-S1：泰勒展开基准点直接使用传感器上一时刻实测角加速度 dot_Omega_0，包含了所有作用在机体上的实际外力矩效果。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "A linear damper model with constant damping coefficients.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "线性阻尼属于传统模型，INDI 并不需要设定常数阻尼项。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "The collective vertical thrust command.",
-              "isCorrect": false,
-              "distractorType": "概念混淆",
-              "analysis": "总推力指令是控制输入的一部分，不能替代气动力矩。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            }
-          ],
-          "officialAnswer": "B",
-          "presetReflection": {
-            "trapAnalysis": "理解 INDI 的核心即：通过传感器实测上一拍的实际加速度输出，间接获知了所有外部未建模力矩的总和。",
-            "methodSummary": "泰勒级数增量化是化简强非线性系统的精妙数学工具。"
-          }
-        }
       ]
     },
     {
-      "id": "text3",
-      "number": 3,
-      "title": "III. Sensor/Actuator Delay & Synchronized Filter Compensation",
-      "chineseTitle": "第3章：时序滤波延迟分析与同步补偿控制律设计",
-      "topic": "延迟补偿 / 巴特沃斯滤波与时序对齐",
-      "overview": "深入研究陀螺仪二阶巴特沃斯低通滤波器与电机电调惯性环节引入的时间滞后，提出对称滤波通道控制律，彻底根除未补偿 INDI 引起的自激极限环剧烈振荡。",
+      "id": "sec-delay",
+      "sectionNumber": "三",
+      "title": "III. SENSOR DELAY & FILTER COMPENSATION",
+      "chineseTitle": "三、时序滤波延迟分析与同步补偿设计",
       "figure": {
         "image": "题库/毕设/images/paper2_fig5_filter_compensation.png",
         "caption": "Fig. 5: 消除相位滞后与极限环振荡的时序对称低通滤波补偿结构控制框图 (AIAA JGCD 2016)",
-        "alt": "Fig. 5: Filter delay compensation"
+        "alt": "Fig. 5: Filter delay compensation block diagram"
       },
       "paragraphs": [
         {
-          "pIndex": 1,
-          "logicRole": "问题机理 · 滤波滞后引发的回路自激振荡",
-          "mainIdea": "陀螺仪信号滤波去噪引入了显著时间滞后，直接输入增量控制律会导致系统在穿越频率处失稳。",
+          "pIndex": 6,
+          "logicRole": "滤波相位滞后机理与对称同步控制律",
+          "mainIdea": "角加速度低通滤波引入严重相位滞后导致极限环振荡；提出将执行机构指令输入对称滤波通道以消除相位失配。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P1-S1",
-              "text": "Angular acceleration is obtained by differentiating gyro signals followed by a second-order Butterworth low-pass filter H(z) to suppress high-frequency motor vibrations.",
-              "translation": "角加速度通过对陀螺仪信号进行数值差分并经过二阶巴特沃斯低通滤波器 $H(z)$ 滤波以滤除电机高频震动。",
-              "isTopicSentence": true,
-              "isKeyEvidence": false,
+              "id": "P6-S1",
+              "text": "Gyro differentiation followed by a second-order Butterworth low-pass filter H(z) creates phase lag, causing \\dot{\\Omega}_f to reflect past motor inputs and inducing severe limit-cycle oscillations.",
+              "translation": "陀螺仪差分信号经过二阶巴特沃斯低通滤波器 $H(z)$ 以滤除电机高频震动，这引入了不可忽视的时间滞后；传感器测得的角加速度 $\\dot{\\boldsymbol{\\Omega}}_f$ 实际反映的是过去时刻的电机转速，直接控制会导致回路自激剧烈震荡。",
               "vocab": [
                 {
-                  "word": "angular",
-                  "ipa": "/ˈæŋɡjələ/",
-                  "meaning": "角的，旋转的",
-                  "level": "green"
+                  "word": "phase lag",
+                  "ipa": "/feɪz læɡ/",
+                  "meaning": "相位滞后",
+                  "level": "red"
                 },
                 {
-                  "word": "acceleration",
-                  "ipa": "/əkˌseləˈreɪʃn/",
-                  "meaning": "加速度",
-                  "level": "green"
+                  "word": "low-pass filter",
+                  "ipa": "/ləʊ pɑːs ˈfɪltə/",
+                  "meaning": "低通滤波器",
+                  "level": "blue"
                 },
                 {
                   "word": "gyro",
                   "ipa": "/ˈdʒaɪrəʊ/",
-                  "meaning": "陀螺力矩",
+                  "meaning": "陀螺仪",
                   "level": "green"
                 },
                 {
                   "word": "butterworth",
                   "ipa": "/ˈbʌtəwɜːθ/",
-                  "meaning": "巴特沃斯低通滤波器",
+                  "meaning": "巴特沃斯（低通滤波器）",
                   "level": "green"
+                },
+                {
+                  "word": "filter",
+                  "ipa": "/ˈfɪltə/",
+                  "meaning": "滤波器，滤波",
+                  "level": "green"
+                },
+                {
+                  "word": "limit-cycle",
+                  "ipa": "/ˈlɪmɪt saɪkl/",
+                  "meaning": "极限环（自激非线性振荡）",
+                  "level": "red"
+                },
+                {
+                  "word": "oscillations",
+                  "ipa": "/ˌɒsɪˈleɪʃnz/",
+                  "meaning": "振荡",
+                  "level": "red"
                 }
               ]
             },
             {
               "sIndex": 2,
-              "id": "P1-S2",
-              "text": "This filtering delay causes the measured angular acceleration \\dot{\\Omega}_f to reflect past actuator inputs, leading to severe limit-cycle oscillations if uncompensated.",
-              "translation": "然而，滤波延迟导致传感器测得的角加速度 $\\dot{\\boldsymbol{\\Omega}}_f$ 实际反映的是过去时刻的电机转速，若不加补偿会直接导致闭环回路发生严重的自激极限环振荡。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "vocab": [
-                {
-                  "word": "angular",
-                  "ipa": "/ˈæŋɡjələ/",
-                  "meaning": "角的，旋转的",
-                  "level": "green"
-                },
-                {
-                  "word": "acceleration",
-                  "ipa": "/əkˌseləˈreɪʃn/",
-                  "meaning": "加速度",
-                  "level": "green"
-                },
-                {
-                  "word": "actuator",
-                  "ipa": "/ˈæktʃueɪtə/",
-                  "meaning": "执行机构，执行器（电机/舵机）",
-                  "level": "red"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "logicRole": "解决方案 · 对称时钟同步虚拟控制律推导",
-          "mainIdea": "将电机控制量引入相同的滤波通道 omega_f，使控制输入与传感器测量在时序上完全对齐。",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "To eliminate the phase mismatch, we introduce actuator command into a matching filter channel \\omega_f, deriving the synchronized control law.",
-              "translation": "为了消除相位失配，论文提出将执行机构控制量引入对称滤波通道 $\\boldsymbol{\\omega}_f$，推导出时序同步控制律。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
+              "id": "P6-S2",
+              "text": "To eliminate phase mismatch, we route the actuator command through a matched filter channel \\omega_f, formulating the synchronized virtual control law: \\omega_c = \\omega_f + [G_1 diag(\\omega_f)]^\\dagger (\\nu - \\dot{\\Omega}_f).",
+              "translation": "为了消除相位失配引起的自激振荡，论文提出将执行机构控制量引入对称滤波通道：$\\boldsymbol{\\omega}_c = \\boldsymbol{\\omega}_f + [\\boldsymbol{G}_1 \\text{diag}(\\boldsymbol{\\omega}_f)]^\\dagger (\\boldsymbol{\\nu} - \\dot{\\boldsymbol{\\Omega}}_f)$。该结构在数学上保证了穿越频率处的相位裕度，彻底根除了未补偿 INDI 的极限环振荡。",
               "vocab": [
                 {
                   "word": "actuator",
                   "ipa": "/ˈæktʃueɪtə/",
-                  "meaning": "执行机构，执行器（电机/舵机）",
+                  "meaning": "执行机构，执行器（电机/电调/舵机）",
                   "level": "red"
+                },
+                {
+                  "word": "filter",
+                  "ipa": "/ˈfɪltə/",
+                  "meaning": "滤波器，滤波",
+                  "level": "green"
                 },
                 {
                   "word": "synchronized",
                   "ipa": "/ˈsɪŋkrənaɪzd/",
-                  "meaning": "时序同步的，通道对齐的",
+                  "meaning": "时序同步的，对齐的",
                   "level": "green"
+                },
+                {
+                  "word": "virtual",
+                  "ipa": "/ˈvɜːtʃuəl/",
+                  "meaning": "虚拟的（如虚拟控制输入量 nu）",
+                  "level": "red"
                 }
               ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "This structure mathematically preserves phase margin at crossover frequency, completely eradicating uncompensated oscillations.",
-              "translation": "该结构在数学上保证了开环传递函数在穿越频率处的相位裕度，彻底根除了未补偿 INDI 的极限环高频抖振。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "vocab": []
             }
           ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 3,
-          "type": "推断题",
-          "tangchiModel": "频域与时序同步分析",
-          "stem": "Why does an uncompensated INDI controller cause limit-cycle oscillation on real MAV hardware?",
-          "stemKeywords": [
-            "limit-cycle oscillation",
-            "phase lag",
-            "Butterworth filter",
-            "uncompensated INDI"
-          ],
-          "targetSentences": [
-            "P1-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "Because the low-pass filter H(z) introduces phase lag, causing the measured angular acceleration to lag behind current actuator commands.",
-              "isCorrect": true,
-              "distractorType": "正确项 · 机理解析",
-              "analysis": "对应 P1-S2：低通滤波器去噪的同时引入了相位滞后，传感器测量值反映的是历史过去的电机状态，若与当前拍指令直接相减会引发高频自激振荡。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Because the battery voltage is too high for the electronic speed controllers.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "电池电压不是滤波延迟振荡的机理根源。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Because the quadrotor inertia matrix J is assumed to be zero.",
-              "isCorrect": false,
-              "distractorType": "荒谬项",
-              "analysis": "转动惯量 J 是非零正定矩阵。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Because INDI ignores propeller rotation direction.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "旋翼旋转方向已包含在控制矩阵符号中。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            }
-          ],
-          "officialAnswer": "A",
-          "presetReflection": {
-            "trapAnalysis": "控制理论中的经典法则：传感器端加了多大的滤波滞后，指令通道就必须对称补偿同等时序。",
-            "methodSummary": "对称时钟对齐（Symmetric Filter Compensation）是工程上解决滤波相位滞后的标杆技巧。"
-          }
         }
       ]
     },
     {
-      "id": "text4",
-      "number": 4,
-      "title": "IV. Adaptive Online Parameter Estimation (A-INDI)",
-      "chineseTitle": "第4章：自适应参数在线辨识算法 (A-INDI)",
-      "topic": "自适应辨识 / 归一化最小均方误差 (NLMS)",
-      "overview": "引入基于归一化最小均方误差（NLMS）的在线自适应辨识律，实时估计时变控制效能矩阵 G1，免除人工离线建模，适应电池降压与挂载突变。",
+      "id": "sec-adaptation",
+      "sectionNumber": "四",
+      "title": "IV. ADAPTIVE ONLINE PARAMETER ESTIMATION (A-INDI)",
+      "chineseTitle": "四、自适应参数在线辨识算法 (A-INDI)",
       "figure": {
         "image": "题库/毕设/images/paper2_fig18_19_adaptation_curves.png",
         "caption": "Fig. 18 & 19: 自适应 A-INDI 算法在飞行中实时追踪控制效能参数 G1 变化的收敛曲线 (AIAA JGCD 2016)",
@@ -597,18 +529,22 @@ window.BISHE_DATA['paper2'] = {
       },
       "paragraphs": [
         {
-          "pIndex": 1,
-          "logicRole": "算法推导 · NLMS 在线自适应递推公式",
-          "mainIdea": "根据角加速度预测误差，以极小的计算开销实时修正控制效能估计矩阵 G1。",
+          "pIndex": 7,
+          "logicRole": "NLMS 在线自适应递推更新律",
+          "mainIdea": "基于归一化最小均方误差（NLMS）在线更新控制效能矩阵 G1，仅几条向量点乘即可在机载 512 Hz 实时运行。",
           "sentences": [
             {
               "sIndex": 1,
-              "id": "P1-S1",
-              "text": "To eliminate the need for manual offline calibration, an online Normalized Least-Mean-Squares (NLMS) algorithm is implemented.",
-              "translation": "为了使控制器彻底摆脱对离线人工参数测定的依赖，论文引入了基于**归一化最小均方误差（NLMS）**的在线自适应辨识算法。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
+              "id": "P7-S1",
+              "text": "To adapt to battery voltage drop and payload variations without manual tuning, an online Normalized Least-Mean-Squares (NLMS) algorithm estimates control effectiveness G_1.",
+              "translation": "为了使控制器摆脱对离线参数测定的依赖并自适应电池电压下降与挂载变化，论文引入了基于归一化最小均方误差（NLMS）的在线自适应辨识算法。",
               "vocab": [
+                {
+                  "word": "payload",
+                  "ipa": "/ˈpeɪləʊd/",
+                  "meaning": "有效载荷，外挂重物",
+                  "level": "green"
+                },
                 {
                   "word": "normalized",
                   "ipa": "/ˈnɔːməlaɪzd/",
@@ -620,188 +556,84 @@ window.BISHE_DATA['paper2'] = {
                   "ipa": "/liːst miːn skweəz/",
                   "meaning": "最小均方误差 (LMS/NLMS)",
                   "level": "blue"
+                },
+                {
+                  "word": "effectiveness",
+                  "ipa": "/ɪˈfektɪvnəs/",
+                  "meaning": "效能（控制效能矩阵 G）",
+                  "level": "red"
                 }
               ]
             },
             {
               "sIndex": 2,
-              "id": "P1-S2",
-              "text": "The control effectiveness estimate G_1 is updated per step based on prediction error e(k) = \\dot{\\Omega}_f(k) - \\dot{\\Omega}_{f,pred}(k).",
-              "translation": "控制效能矩阵 $\\hat{\\boldsymbol{G}}_1$ 在每个控制周期根据滤波角加速度预测误差 $\\boldsymbol{e}(k) = \\dot{\\boldsymbol{\\Omega}}_f(k) - \\dot{\\boldsymbol{\\Omega}}_{f,\\text{pred}}(k)$ 进行在线递推更新。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
+              "id": "P7-S2",
+              "text": "The update law is: \\hat{G}_1(k+1) = \\hat{G}_1(k) + \\mu_1 e(k) [diag(\\omega_f) \\Delta \\omega_f]^T / (\\epsilon + ||diag(\\omega_f) \\Delta \\omega_f||^2), requiring minimal computation at 512 Hz.",
+              "translation": "控制效能矩阵更新律为：$\\hat{\\boldsymbol{G}}_1(k+1) = \\hat{\\boldsymbol{G}}_1(k) + \\boldsymbol{\\mu}_1 \\frac{\\boldsymbol{e}(k) [\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f]^T}{\\epsilon + \\|\\text{diag}(\\boldsymbol{\\omega}_f) \\Delta \\boldsymbol{\\omega}_f\\|^2}$。该算法计算量极小（仅几条向量点乘），可在机载单片机上以 512 Hz 实时无延迟运行。",
+              "vocab": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-experiments",
+      "sectionNumber": "五",
+      "title": "V. REAL FLIGHT EXPERIMENTS & STEP DISTURBANCE REJECTION",
+      "chineseTitle": "五、实机飞行实验：阶跃扰动抑制与防撞圈自适应",
+      "figures": [
+        {
+          "image": "题库/毕设/images/paper2_fig8_9_step_response.png",
+          "caption": "Fig. 8 & 9: 50g 突加重物瞬间断线释放时的俯仰角阶跃扰动响应曲线对比（A-INDI 恢复时间比经典 PID 快 5 倍） (AIAA JGCD 2016)"
+        },
+        {
+          "image": "题库/毕设/images/paper2_fig15_pid_step_response.png",
+          "caption": "Fig. 15: 经典 PID 在阶跃扰动下的姿态超调与振荡衰减过程"
+        },
+        {
+          "image": "题库/毕设/images/paper2_fig26_yaw_doublet.png",
+          "caption": "Fig. 26: 显式计入转子角动量力矩后，四旋翼偏航 (Yaw) Doublet 响应上升时间缩短 40%"
+        }
+      ],
+      "paragraphs": [
+        {
+          "pIndex": 8,
+          "logicRole": "飞行试验与阶跃扰动定量对比",
+          "mainIdea": "Parrot Bebop 实飞证明：50g 突加负载断线释放时 A-INDI 恢复仅需 0.3s (快 5 倍)；防撞圈拆装 2~3s 内自适应收敛；偏航响应提速 40%。",
+          "sentences": [
+            {
+              "sIndex": 1,
+              "id": "P8-S1",
+              "text": "In a sudden 50g attached weight release test during hover, classical PID exhibited a 15-degree pitch jump taking 1.5 s to recover, while A-INDI limited deviation to under 4 degrees and recovered in 0.3 s (5 times faster).",
+              "translation": "在 50g 额外重物突然释放（瞬间阶跃卸载）试验中：经典 PID 俯仰角出现高达 15° 的剧烈突跳，耗时 **1.5 秒** 才恢复平衡；A-INDI 姿态波动峰值小于 4°，仅耗时 **0.3 秒** 即完全重置回水平（**抗扰恢复速度比 PID 快 5 倍**）。",
               "vocab": [
                 {
-                  "word": "effectiveness",
-                  "ipa": "/ɪˈfektɪvnəs/",
-                  "meaning": "效能（如控制效能矩阵 G）",
+                  "word": "pitch",
+                  "ipa": "/pɪtʃ/",
+                  "meaning": "俯仰角 (Pitch, y轴旋转)",
                   "level": "red"
+                }
+              ]
+            },
+            {
+              "sIndex": 2,
+              "id": "P8-S2",
+              "text": "During in-flight propeller bumper mounting/dismounting, G_1 estimates converged to true physical values within 2-3 seconds without pilot notice.",
+              "translation": "在飞行过程中加装/拆卸防撞保护圈试验中，自适应 A-INDI 在 **2~3 秒内** 参数迅速从初始值自适应收敛至真实物理效能值，飞行手感保持完全一致。",
+              "vocab": [
+                {
+                  "word": "propeller",
+                  "ipa": "/prəˈpelə/",
+                  "meaning": "螺旋桨",
+                  "level": "green"
                 }
               ]
             },
             {
               "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Because NLMS involves only simple vector dot products, it runs effortlessly at 512 Hz on low-cost onboard microcontrollers.",
-              "translation": "由于 NLMS 仅涉及简单的向量点乘与除法运算，它可以在低成本机载单片机上以 512 Hz 实时无延迟运行。",
-              "isTopicSentence": false,
-              "isKeyEvidence": false,
-              "vocab": []
-            }
-          ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 4,
-          "type": "算法特性",
-          "tangchiModel": "机载算法算力开销剖析",
-          "stem": "What is the primary advantage of choosing NLMS over complex recursive least squares for onboard MAV parameter adaptation?",
-          "stemKeywords": [
-            "NLMS",
-            "onboard microcontrollers",
-            "vector dot products",
-            "512 Hz"
-          ],
-          "targetSentences": [
-            "P1-S3"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "It requires only simple vector operations, running effortlessly at 512 Hz with minimal computational burden.",
-              "isCorrect": true,
-              "distractorType": "正确项 · 同义提炼",
-              "analysis": "对应 P1-S3：NLMS 避免了高阶矩阵求逆，计算量仅几条点乘，极度适合资源受限的微型飞控单片机。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "It guarantees zero tracking error even under total sensor blackout.",
-              "isCorrect": false,
-              "distractorType": "过度推理",
-              "analysis": "传感器断电时任何自适应算法均无法工作。",
-              "refSentences": [
-                "P1-S3"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "It transforms the nonlinear Euler equations into linear time-invariant forms.",
-              "isCorrect": false,
-              "distractorType": "概念混淆",
-              "analysis": "NLMS 是参数估计器，不改变被控对象的非线性物理本质。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "It eliminates the need for gyro differentiation entirely.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "预测误差仍然需要与陀螺仪差分加速度做对比更新。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            }
-          ],
-          "officialAnswer": "A",
-          "presetReflection": {
-            "trapAnalysis": "自适应算法的工程选型关键看算力性价比：NLMS（复杂度 O(N)）vs RLS（复杂度 O(N^2)）。",
-            "methodSummary": "微型嵌入式飞控（512 Hz）首选极简稳定的 NLMS 归一化自适应律。"
-          }
-        }
-      ]
-    },
-    {
-      "id": "text5",
-      "number": 5,
-      "title": "V. Real Flight Experiments: Step Disturbance & Bumpers Adaptation",
-      "chineseTitle": "第5章：实机飞行实验 · 突加负载抗扰与防撞圈拆装自适应",
-      "topic": "飞行实验 / 阶跃卸载抗扰与转子动量补偿",
-      "overview": "在开源 Paparazzi 飞控的 Parrot Bebop 四旋翼上进行 50g 突加挂载阶跃释放、机身防撞圈拆装参数自适应收敛，以及计入转子自旋动量力矩的偏航性能大幅提升验证。",
-      "figure": {
-        "image": "题库/毕设/images/paper2_fig8_9_step_response.png",
-        "caption": "Fig. 8 & 9: 50g 突加重物瞬间断线释放时的俯仰角阶跃扰动响应曲线对比（A-INDI 恢复时间比经典 PID 快 5 倍） (AIAA JGCD 2016)",
-        "alt": "Fig. 8-9: Step disturbance response"
-      },
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "logicRole": "实验对比 · 突加 50g 负载断线阶跃扰动抑制",
-          "mainIdea": "在空中突然释放 50g 负载时，A-INDI 恢复时间仅 0.3 秒，抗扰恢复速度比经典 PID 快 5 倍。",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "In a step disturbance test where a 50g attached weight was suddenly dropped during hover, classical PID exhibited a 15-degree pitch jump taking 1.5 s to recover.",
-              "translation": "在阶跃扰动试验中，悬停时通过细线悬挂的 50g 额外重物在空中被突然释放（相当于瞬间阶跃卸载），经典 PID 出现了高达 15° 的俯仰角剧烈突跳，耗时 **1.5 秒** 才恢复平衡。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
-              "vocab": [
-                {
-                  "word": "disturbance",
-                  "ipa": "/dɪˈstɜːbəns/",
-                  "meaning": "外部扰动，突加负载",
-                  "level": "red"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "In contrast, A-INDI limited the attitude deviation to under 4 degrees and stabilized within 0.3 s (5 times faster than PID).",
-              "translation": "相比之下，A-INDI 将姿态波动峰值限制在 **4° 以内**，仅耗时 **0.3 秒** 即完全重置回水平（**抗扰恢复速度比 PID 快 5 倍**）。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "vocab": [
-                {
-                  "word": "attitude",
-                  "ipa": "/ˈætɪtjuːd/",
-                  "meaning": "姿态（俯仰、横滚、偏航）",
-                  "level": "red"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "logicRole": "实验对比 · 防撞圈自适应收敛与偏航角动量补偿",
-          "mainIdea": "加装防撞保护圈后参数在 2~3 秒内自适应收敛；显式补偿转子惯量力矩使偏航上升时间缩短 40%。",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "When mounting or removing propeller protective bumpers in flight, the online adaptation converged to true control effectiveness within 2 to 3 seconds.",
-              "translation": "在飞行过程中为机身加装或拆卸螺旋桨防撞保护圈时，在线自适应算法在 **2 到 3 秒内** 迅速从初始默认值收敛至真实物理效能值。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
-              "vocab": [
-                {
-                  "word": "flight",
-                  "ipa": "/flaɪt/",
-                  "meaning": "飞行，航行",
-                  "level": "green"
-                },
-                {
-                  "word": "effectiveness",
-                  "ipa": "/ɪˈfektɪvnəs/",
-                  "meaning": "效能（如控制效能矩阵 G）",
-                  "level": "red"
-                }
-              ]
-            },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Furthermore, accounting for rotor angular momentum I_r \\dot{\\omega} shortened yaw doublet rise time by 40%, overcoming traditional sluggish quadrotor yaw response.",
-              "translation": "此外，显式计入并补偿转子自旋角动量力矩 $\\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}}$ 使偏航 Doublet 指令的跟踪上升时间缩短了 **40%**，彻底解决了四旋翼偏航响应迟缓的固有缺陷。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
+              "id": "P8-S3",
+              "text": "Compensating for rotor angular momentum I_r \\dot{\\omega} reduced yaw doublet rise time by 40%, resolving sluggish yaw response.",
+              "translation": "显式补偿转子加速惯量力矩 $\\boldsymbol{I}_r \\dot{\\boldsymbol{\\omega}}$ 后，偏航 Doublet 指令的跟踪上升时间缩短了 **40%**，彻底解决了四旋翼“偏航软绵”的固有缺陷。",
               "vocab": [
                 {
                   "word": "angular momentum",
@@ -812,97 +644,30 @@ window.BISHE_DATA['paper2'] = {
                 {
                   "word": "rotor",
                   "ipa": "/ˈrəʊtə/",
-                  "meaning": "旋翼，螺旋桨",
+                  "meaning": "转子，旋翼",
                   "level": "green"
                 },
                 {
-                  "word": "angular",
-                  "ipa": "/ˈæŋɡjələ/",
-                  "meaning": "角的，旋转的",
+                  "word": "momentum",
+                  "ipa": "/məˈmentəm/",
+                  "meaning": "动量",
                   "level": "green"
+                },
+                {
+                  "word": "yaw",
+                  "ipa": "/jɔː/",
+                  "meaning": "偏航角 (Yaw, z轴旋转)",
+                  "level": "red"
                 },
                 {
                   "word": "doublet",
                   "ipa": "/ˈdʌblɪt/",
-                  "meaning": "方波双向激励响应",
+                  "meaning": "双向方波脉冲激励",
                   "level": "green"
-                },
-                {
-                  "word": "quadrotor",
-                  "ipa": "/ˈkwɒdrəʊtə/",
-                  "meaning": "四旋翼无人机",
-                  "level": "red"
                 }
               ]
             }
           ]
-        }
-      ],
-      "questions": [
-        {
-          "qIndex": 5,
-          "type": "实验数据",
-          "tangchiModel": "抗扰能力定量评估",
-          "stem": "How much faster did A-INDI recover from the 50g sudden payload drop compared to classical PID?",
-          "stemKeywords": [
-            "50g payload drop",
-            "recover faster",
-            "0.3s vs 1.5s",
-            "5 times faster"
-          ],
-          "targetSentences": [
-            "P1-S1",
-            "P1-S2"
-          ],
-          "options": [
-            {
-              "key": "A",
-              "text": "2 times faster.",
-              "isCorrect": false,
-              "distractorType": "数值偏差",
-              "analysis": "数值错误，文中实测为 0.3s vs 1.5s（5倍）。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "5 times faster (0.3 s vs 1.5 s).",
-              "isCorrect": true,
-              "distractorType": "正确项 · 数据精准匹配",
-              "analysis": "对应 P1-S1 与 P1-S2：PID 耗时 1.5s 且超调 15°，A-INDI 耗时 0.3s 且超调 <4°，抗扰恢复速度快 5 倍。",
-              "refSentences": [
-                "P1-S1",
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "10 times faster.",
-              "isCorrect": false,
-              "distractorType": "数值夸大",
-              "analysis": "夸大实验数据。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Both controllers had identical recovery times.",
-              "isCorrect": false,
-              "distractorType": "事实相反",
-              "analysis": "两者表现具有决定性差异。",
-              "refSentences": [
-                "P1-S1",
-                "P1-S2"
-              ]
-            }
-          ],
-          "officialAnswer": "B",
-          "presetReflection": {
-            "trapAnalysis": "精准提取实验数据对比：PID（15° / 1.5s）vs A-INDI（4° / 0.3s）。",
-            "methodSummary": "INDI 针对突发外力扰动具有单拍增量抵消特性，因此阶跃抗扰性能极度优越。"
-          }
         }
       ]
     }

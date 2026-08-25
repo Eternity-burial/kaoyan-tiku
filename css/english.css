@@ -1515,3 +1515,152 @@
 [data-theme="dark"] .passage-figure-caption {
   color: #94a3b8 !important;
 }
+
+/* ================= 纯文献阅读器模式 (Reader Layout) ================= */
+.english-app-layout.mode-reader-layout .english-workbench {
+  display: block !important;
+  overflow-y: auto !important;
+}
+
+.english-app-layout.mode-reader-layout .passage-pane {
+  width: 100% !important;
+  max-width: 1060px !important;
+  margin: 0 auto !important;
+  border-right: none !important;
+  padding: 32px 48px 120px 48px !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.english-app-layout.mode-reader-layout .analysis-pane {
+  display: none !important;
+}
+
+.paper-meta-banner {
+  margin-top: 14px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.paper-meta-row {
+  margin-bottom: 5px;
+}
+.paper-meta-row:last-child {
+  margin-bottom: 0;
+}
+.paper-meta-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-right: 6px;
+}
+.paper-link-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: rgba(102, 8, 116, 0.08);
+  color: var(--primary-color);
+  border: 1px solid rgba(102, 8, 116, 0.2);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+  margin-right: 8px;
+  transition: all 0.15s ease;
+}
+.paper-link-tag:hover {
+  background: rgba(102, 8, 116, 0.15);
+  border-color: var(--primary-color);
+}
+
+.reader-section-block {
+  margin-top: 40px;
+}
+
+.reader-section-header {
+  margin: 36px 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.section-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 28px;
+  padding: 0 10px;
+  background: var(--primary-color);
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.section-en-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.section-zh-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+/* 章节快速导航胶囊 */
+.section-nav-pill {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.section-nav-pill:hover {
+  background: rgba(102, 8, 116, 0.1);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .paper-meta-banner {
+  background: #1a1b22 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .paper-link-tag {
+  background: rgba(200, 100, 240, 0.12) !important;
+  color: #e094ff !important;
+  border-color: rgba(200, 100, 240, 0.25) !important;
+}
+
+[data-theme="dark"] .section-nav-pill {
+  background: #1a1b22 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .section-nav-pill:hover {
+  background: rgba(200, 100, 240, 0.18) !important;
+  color: #e094ff !important;
+  border-color: rgba(200, 100, 240, 0.35) !important;
+}

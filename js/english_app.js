@@ -623,6 +623,24 @@
   }
   function updateModeClass() {
     if (!dom.layout) return;
+    if (state.currentSubject === 'bishe') {
+      dom.layout.classList.add('mode-reader-layout');
+      dom.layout.classList.remove('mode-practice-active');
+      if (dom.btnPracticeMode) dom.btnPracticeMode.style.display = 'none';
+      if (dom.btnAnalysisMode) dom.btnAnalysisMode.style.display = 'none';
+      if (dom.btnToggleSol) dom.btnToggleSol.style.display = 'none';
+      if (dom.typeFilterBar) dom.typeFilterBar.style.display = 'none';
+      if (dom.questionPills) dom.questionPills.style.display = 'none';
+      if (dom.btnToggleTrans) dom.btnToggleTrans.style.display = 'inline-flex';
+      return;
+    }
+
+    dom.layout.classList.remove('mode-reader-layout');
+    if (dom.btnPracticeMode) dom.btnPracticeMode.style.display = 'inline-flex';
+    if (dom.btnAnalysisMode) dom.btnAnalysisMode.style.display = 'inline-flex';
+    if (dom.typeFilterBar) dom.typeFilterBar.style.display = 'flex';
+    if (dom.questionPills) dom.questionPills.style.display = 'flex';
+
     if (state.mode === 'practice') {
       dom.layout.classList.add('mode-practice-active');
       if (dom.btnPracticeMode) dom.btnPracticeMode.classList.add('active');
@@ -638,12 +656,34 @@
     }
   }
 
-  // 渲染 Text 切换标签
+  // 渲染顶部章节/快速导航标签
   function renderTextTabs() {
     if (!dom.textTabs) return;
     const dataset = getCurrentDataset();
-    if (!dataset.texts) return;
 
+    if (state.currentSubject === 'bishe') {
+      // 毕设文献阅读器：渲染章节快速锚点导航胶囊
+      dom.textTabs.innerHTML = '';
+      if (!dataset.sections || dataset.sections.length === 0) {
+        dom.textTabs.style.display = 'none';
+        return;
+      }
+      dom.textTabs.style.display = 'flex';
+      dataset.sections.forEach(sec => {
+        const btn = document.createElement('button');
+        btn.className = 'section-nav-pill';
+        btn.textContent = `${sec.sectionNumber}. ${sec.chineseTitle}`;
+        btn.onclick = () => {
+          const el = document.getElementById(sec.id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+        dom.textTabs.appendChild(btn);
+      });
+      return;
+    }
+
+    if (!dataset.texts) return;
+    dom.textTabs.style.display = 'flex';
     dom.textTabs.innerHTML = '';
     dataset.texts.forEach(t => {
       const btn = document.createElement('button');
@@ -658,6 +698,11 @@
   // 渲染题型筛选条
   function renderTypeFilter() {
     if (!dom.typeFilterBar) return;
+    if (state.currentSubject === 'bishe') {
+      dom.typeFilterBar.style.display = 'none';
+      return;
+    }
+    dom.typeFilterBar.style.display = 'flex';
     const types = ['all', '细节题', '推断题', '例证题', '主旨题', '态度题', '词义题'];
     dom.typeFilterBar.innerHTML = '';
     types.forEach(t => {
@@ -698,9 +743,138 @@
     renderQuestion();
   }
 
-  // 渲染左侧文章
+  // 渲染文章主体（支持英语真题分篇精读 与 毕设文献全量流式阅读器）
   function renderPassage() {
     if (!dom.passagePane) return;
+
+    if (state.currentSubject === 'bishe') {
+      const paper = getCurrentDataset();
+      if (!paper || !paper.sections) {
+        dom.passagePane.innerHTML = '<div style="padding:48px 20px;color:#94a3b8;text-align:center;font-size:15px;">暂无文献数据</div>';
+        return;
+      }
+
+      let linksHtml = '';
+      if (paper.meta && paper.meta.links) {
+        linksHtml = paper.meta.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" class="paper-link-tag">🔗 ${escapeHtml(l.label)}</a>`).join('');
+      }
+
+      let html = `
+        <div class="passage-header-box" style="margin-bottom: 24px;">
+          <span class="passage-topic-tag">${escapeHtml(paper.meta?.journal || '前沿控制顶刊文献精读')}</span>
+          <h1 class="passage-title-en" style="font-size: 24px; line-height: 1.4; margin: 14px 0 8px 0; color: var(--text-primary); font-weight: 800;">${escapeHtml(paper.title)}</h1>
+          <div class="passage-title-zh" style="font-size: 16px; font-weight: 600; color: var(--text-secondary);">${escapeHtml(paper.chineseTitle)}</div>
+          
+          <div class="paper-meta-banner">
+            <div class="paper-meta-row"><span class="paper-meta-label">作者团队:</span> ${escapeHtml(paper.meta?.authors || '')}</div>
+            <div class="paper-meta-row"><span class="paper-meta-label">研究机构:</span> ${escapeHtml(paper.meta?.institution || '')}</div>
+            <div class="paper-meta-row"><span class="paper-meta-label">发表出处:</span> ${escapeHtml(paper.meta?.journal || '')}</div>
+            ${linksHtml ? `<div class="paper-meta-row" style="margin-top:8px;">${linksHtml}</div>` : ''}
+          </div>
+        </div>
+      `;
+
+      paper.sections.forEach(sec => {
+        html += `
+          <div class="reader-section-block" id="${sec.id}">
+            <div class="reader-section-header">
+              <span class="section-num-badge">${sec.sectionNumber}</span>
+              <span class="section-en-title">${escapeHtml(sec.title)}</span>
+              <span class="section-zh-title">${escapeHtml(sec.chineseTitle)}</span>
+            </div>
+        `;
+
+        if (sec.figure) {
+          html += `
+            <div class="passage-figure-box">
+              <img src="${escapeHtml(sec.figure.image)}" alt="${escapeHtml(sec.figure.alt || '')}" onclick="window.kyApp.openFigureLightbox('${escapeHtml(sec.figure.image)}')" class="passage-figure-img" title="点击放大查看高清图表">
+              <div class="passage-figure-caption">${escapeHtml(sec.figure.caption || '')}</div>
+            </div>
+          `;
+        }
+        if (sec.figures && Array.isArray(sec.figures)) {
+          sec.figures.forEach(fig => {
+            html += `
+              <div class="passage-figure-box">
+                <img src="${escapeHtml(fig.image)}" alt="${escapeHtml(fig.alt || '')}" onclick="window.kyApp.openFigureLightbox('${escapeHtml(fig.image)}')" class="passage-figure-img" title="点击放大查看高清图表">
+                <div class="passage-figure-caption">${escapeHtml(fig.caption || '')}</div>
+              </div>
+            `;
+          });
+        }
+
+        (sec.paragraphs || []).forEach(p => {
+          html += `
+            <div class="paragraph-block" id="para-${p.pIndex}">
+              <div class="paragraph-meta">
+                <span class="paragraph-index-badge">¶ 段落 ${p.pIndex}</span>
+                <span class="paragraph-logic-role">${escapeHtml(p.logicRole)}</span>
+              </div>
+              <div class="paragraph-main-idea">
+                <strong>段落要旨：</strong>${escapeHtml(p.mainIdea)}
+              </div>
+              <div class="sentence-list">
+          `;
+
+          (p.sentences || []).forEach(s => {
+            let sentenceText = escapeHtml(s.text);
+
+            if (s.vocab && s.vocab.length > 0) {
+              s.vocab.forEach(v => {
+                const regex = new RegExp(`\\b(${escapeRegExp(v.word)})\\b`, 'gi');
+                sentenceText = sentenceText.replace(regex, (match) => {
+                  const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
+                  return `<span class="vocab-word level-${lvl}" data-word="${escapeHtml(v.word)}" data-ipa="${escapeHtml(v.ipa || '')}" data-meaning="${escapeHtml(v.meaning || '')}">${match}</span>`;
+                });
+              });
+            }
+
+            html += `
+              <div class="sentence-item" id="sentence-${s.id}" data-id="${s.id}">
+                <span class="sentence-id-tag">[${s.id}]</span>
+                <span class="sentence-text">${sentenceText} </span>
+                <div class="sentence-trans">${escapeHtml(s.translation || '')}</div>
+              </div>
+            `;
+          });
+
+          html += `
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+      });
+
+      dom.passagePane.innerHTML = html;
+
+      if (window.renderMathInElement) {
+        try {
+          window.renderMathInElement(dom.passagePane, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false },
+              { left: '\\[', right: '\\]', display: true },
+              { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: false
+          });
+        } catch (e) {}
+      }
+
+      if (dom.passagePane) {
+        dom.passagePane.classList.toggle('show-all-trans', !!state.showAllTranslation);
+      }
+      if (dom.btnToggleTrans) {
+        dom.btnToggleTrans.classList.toggle('active', !!state.showAllTranslation);
+      }
+
+      attachPassageEvents();
+      return;
+    }
+
+    // 考研英语真题单篇精读渲染
     const text = getCurrentText();
     if (!text) {
       dom.passagePane.innerHTML = '<div style="padding:20px;color:#94a3b8;text-align:center;">暂无文章数据</div>';

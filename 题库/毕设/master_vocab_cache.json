@@ -1,10 +1,4 @@
 {
-  "high-precision": {
-    "word": "high-precision",
-    "ipa": "/haɪ prɪˈsɪʒn/",
-    "meaning": "高精度的",
-    "level": "green"
-  },
   "trajectory": {
     "word": "trajectory",
     "ipa": "/trəˈdʒektəri/",
@@ -20,37 +14,37 @@
   "crucial": {
     "word": "crucial",
     "ipa": "/ˈkruːʃl/",
-    "meaning": "至关重要的，关键的",
+    "meaning": "至关重要的",
     "level": "green"
   },
   "agile": {
     "word": "agile",
     "ipa": "/ˈædʒaɪl/",
-    "meaning": "敏捷的，极限机动的",
+    "meaning": "敏捷的，高机动的",
     "level": "red"
-  },
-  "navigation": {
-    "word": "navigation",
-    "ipa": "/ˌnævɪˈɡeɪʃn/",
-    "meaning": "导航，航行",
-    "level": "green"
   },
   "constrained": {
     "word": "constrained",
     "ipa": "/kənˈstreɪnd/",
-    "meaning": "受约束的，受限制的",
+    "meaning": "受约束的",
     "level": "red"
   },
   "flight": {
     "word": "flight",
     "ipa": "/flaɪt/",
-    "meaning": "飞行，航行",
+    "meaning": "飞行",
     "level": "green"
   },
   "nonlinear": {
     "word": "nonlinear",
     "ipa": "/ˌnɒnˈlɪniər/",
-    "meaning": "非线性的（系统输出与输入不成正比）",
+    "meaning": "非线性的（输出与输入不成正比）",
+    "level": "red"
+  },
+  "dynamics": {
+    "word": "dynamics",
+    "ipa": "/daɪˈnæmɪks/",
+    "meaning": "动力学（受力与运动响应）",
     "level": "red"
   },
   "aerodynamic": {
@@ -62,26 +56,44 @@
   "actuator": {
     "word": "actuator",
     "ipa": "/ˈæktʃueɪtə/",
-    "meaning": "执行机构，执行器（电机/舵机）",
+    "meaning": "执行机构，执行器（电机/电调/舵机）",
     "level": "red"
   },
   "constraints": {
     "word": "constraints",
     "ipa": "/kənˈstreɪnts/",
-    "meaning": "约束条件（如推力上限、电调饱和）",
+    "meaning": "约束条件（硬约束/软约束）",
     "level": "red"
+  },
+  "model predictive control": {
+    "word": "model predictive control",
+    "ipa": "/ˈmɒdl prɪˈdɪktɪv kənˈtrəʊl/",
+    "meaning": "模型预测控制 (MPC)",
+    "level": "blue"
+  },
+  "empirically": {
+    "word": "empirically",
+    "ipa": "/ɪmˈpɪrɪkli/",
+    "meaning": "实证地，通过实验系统地",
+    "level": "green"
   },
   "state-of-the-art": {
     "word": "state-of-the-art",
     "ipa": "/steɪt əv ði ɑːt/",
-    "meaning": "当前最前沿的，业界顶尖的",
+    "meaning": "业界最顶尖的，前沿的",
     "level": "blue"
+  },
+  "frameworks": {
+    "word": "frameworks",
+    "ipa": "/ˈfreɪmwɜːks/",
+    "meaning": "框架（复数）",
+    "level": "green"
   },
   "predictive": {
     "word": "predictive",
     "ipa": "/prɪˈdɪktɪv/",
-    "meaning": "预测的",
-    "level": "green"
+    "meaning": "预测的（如模型预测控制 MPC）",
+    "level": "red"
   },
   "high-fidelity": {
     "word": "high-fidelity",
@@ -92,25 +104,67 @@
   "simulation": {
     "word": "simulation",
     "ipa": "/ˌsɪmjuˈleɪʃn/",
-    "meaning": "仿真，模拟",
+    "meaning": "物理仿真，模拟",
     "level": "green"
   },
-  "accelerations": {
-    "word": "accelerations",
-    "ipa": "/əkˌseləˈreɪʃnz/",
-    "meaning": "加速度",
+  "experiments": {
+    "word": "experiments",
+    "ipa": "/ɪkˈsperɪmənts/",
+    "meaning": "实验",
     "level": "green"
+  },
+  "accuracy": {
+    "word": "accuracy",
+    "ipa": "/ˈækjərəsi/",
+    "meaning": "精度，准确度",
+    "level": "green"
+  },
+  "robustness": {
+    "word": "robustness",
+    "ipa": "/rəʊˈbʌstnəs/",
+    "meaning": "鲁棒性，抗扰稳健性",
+    "level": "red"
+  },
+  "computational": {
+    "word": "computational",
+    "ipa": "/ˌkɒmpjuˈteɪʃənl/",
+    "meaning": "计算的，算力的",
+    "level": "green"
+  },
+  "constraint": {
+    "word": "constraint",
+    "ipa": "/kənˈstreɪnt/",
+    "meaning": "约束",
+    "level": "red"
   },
   "infeasible": {
     "word": "infeasible",
     "ipa": "/ɪnˈfiːzəbl/",
-    "meaning": "不可行的（超出物理极限的激进轨迹）",
+    "meaning": "不可行的（超出物理推力限制）",
+    "level": "red"
+  },
+  "trajectories": {
+    "word": "trajectories",
+    "ipa": "/trəˈdʒektəriz/",
+    "meaning": "轨迹（复数）",
+    "level": "red"
+  },
+  "actuators": {
+    "word": "actuators",
+    "ipa": "/ˈæktʃueɪtəz/",
+    "meaning": "执行器",
     "level": "red"
   },
   "heading": {
     "word": "heading",
     "ipa": "/ˈhedɪŋ/",
-    "meaning": "航向角，偏航姿态",
+    "meaning": "航向角，偏航角",
+    "level": "red"
+  },
+  "dynamic inversion": {
+    "word": "dynamic inversion",
+    "ipa": "/daɪˈnæmɪk ɪnˈvɜːʃn/",
+    "meaning": "动态逆（非线性系统逆解解耦）",
     "level": "red"
   },
   "incremental": {
@@ -118,6 +172,12 @@
     "ipa": "/ˌɪŋkrəˈmentl/",
     "meaning": "增量的（基于传感器逐拍差分）",
     "level": "red"
+  },
+  "dynamic": {
+    "word": "dynamic",
+    "ipa": "/daɪˈnæmɪk/",
+    "meaning": "动态的，动力学的",
+    "level": "green"
   },
   "inversion": {
     "word": "inversion",
@@ -131,47 +191,23 @@
     "meaning": "内环（高频角速度/角加速度环）",
     "level": "red"
   },
-  "controller": {
-    "word": "controller",
-    "ipa": "/kənˈtrəʊlə/",
-    "meaning": "控制器",
-    "level": "green"
-  },
   "drag": {
     "word": "drag",
     "ipa": "/dræɡ/",
-    "meaning": "阻力（转子阻力与机身阻力）",
+    "meaning": "阻力（空气阻力/流体阻力）",
     "level": "red"
+  },
+  "indispensable": {
+    "word": "indispensable",
+    "ipa": "/ˌɪndɪˈspensəbl/",
+    "meaning": "必不可少的，不可或缺的",
+    "level": "green"
   },
   "quadrotor": {
     "word": "quadrotor",
     "ipa": "/ˈkwɒdrəʊtə/",
     "meaning": "四旋翼无人机",
     "level": "red"
-  },
-  "matrix": {
-    "word": "matrix",
-    "ipa": "/ˈmeɪtrɪks/",
-    "meaning": "矩阵",
-    "level": "green"
-  },
-  "quaternion": {
-    "word": "quaternion",
-    "ipa": "/kwəˈtɜːniən/",
-    "meaning": "四元数（无奇异性姿态表示）",
-    "level": "red"
-  },
-  "inertia": {
-    "word": "inertia",
-    "ipa": "/ɪˈnɜːʃə/",
-    "meaning": "转动惯量，惯量矩阵 J",
-    "level": "green"
-  },
-  "rotor": {
-    "word": "rotor",
-    "ipa": "/ˈrəʊtə/",
-    "meaning": "旋翼，螺旋桨",
-    "level": "green"
   },
   "centrifugal": {
     "word": "centrifugal",
@@ -182,61 +218,37 @@
   "drift": {
     "word": "drift",
     "ipa": "/drɪft/",
-    "meaning": "空间漂移量",
+    "meaning": "空间位置漂移量",
+    "level": "red"
+  },
+  "saturation": {
+    "word": "saturation",
+    "ipa": "/ˌsætʃəˈreɪʃn/",
+    "meaning": "饱和（如推力达到硬件极限）",
+    "level": "red"
+  },
+  "differential flatness": {
+    "word": "differential flatness",
+    "ipa": "/ˌdɪfəˈrenʃl ˈflætnəs/",
+    "meaning": "微分平坦性",
     "level": "red"
   },
   "horizon": {
     "word": "horizon",
     "ipa": "/həˈraɪzn/",
-    "meaning": "时域，预测时域",
+    "meaning": "时域，预测时域 (Horizon)",
     "level": "green"
   },
-  "optimization": {
-    "word": "optimization",
-    "ipa": "/ˌɒptɪmaɪˈzeɪʃn/",
-    "meaning": "优化求解",
+  "differential": {
+    "word": "differential",
+    "ipa": "/ˌdɪfəˈrenʃl/",
+    "meaning": "微分的，差分的",
     "level": "green"
   },
-  "sequential": {
-    "word": "sequential",
-    "ipa": "/sɪˈkwenʃl/",
-    "meaning": "序列的",
-    "level": "green"
-  },
-  "quadratic": {
-    "word": "quadratic",
-    "ipa": "/kwɒˈdrætɪk/",
-    "meaning": "二次型的（二次规划 QP）",
-    "level": "green"
-  },
-  "programming": {
-    "word": "programming",
-    "ipa": "/ˈprəʊɡræmɪŋ/",
-    "meaning": "规划（SQP 求解器）",
-    "level": "green"
-  },
-  "real-time": {
-    "word": "real-time",
-    "ipa": "/ˈrɪəl taɪm/",
-    "meaning": "实时的",
-    "level": "green"
-  },
-  "iteration": {
-    "word": "iteration",
-    "ipa": "/ˌɪtəˈreɪʃn/",
-    "meaning": "迭代求解",
-    "level": "green"
-  },
-  "jerk": {
-    "word": "jerk",
-    "ipa": "/dʒɜːk/",
-    "meaning": "加加速度（轨迹三阶导数）",
-    "level": "green"
-  },
-  "snap": {
-    "word": "snap",
-    "ipa": "/snæp/",
-    "meaning": "加加加速度（轨迹四阶导数）",
+  "flatness": {
+    "word": "flatness",
+    "ipa": "/ˈflætnəs/",
+    "meaning": "平坦性",
     "level": "green"
   },
   "feedforward": {
@@ -245,46 +257,16 @@
     "meaning": "前馈控制",
     "level": "red"
   },
-  "angular": {
-    "word": "angular",
-    "ipa": "/ˈæŋɡjələ/",
-    "meaning": "角的，旋转的",
+  "benchmark": {
+    "word": "benchmark",
+    "ipa": "/ˈbentʃmɑːk/",
+    "meaning": "基准对比，同台测试",
     "level": "green"
   },
-  "velocity": {
-    "word": "velocity",
-    "ipa": "/vəˈlɒsəti/",
-    "meaning": "速度（线速度/角速度）",
-    "level": "green"
-  },
-  "acceleration": {
-    "word": "acceleration",
-    "ipa": "/əkˌseləˈreɪʃn/",
-    "meaning": "加速度",
-    "level": "green"
-  },
-  "attitude": {
-    "word": "attitude",
-    "ipa": "/ˈætɪtjuːd/",
-    "meaning": "姿态（俯仰、横滚、偏航）",
-    "level": "red"
-  },
-  "feasible": {
-    "word": "feasible",
-    "ipa": "/ˈfiːzəbl/",
-    "meaning": "物理可行的",
-    "level": "green"
-  },
-  "saturation": {
-    "word": "saturation",
-    "ipa": "/ˌsætʃəˈreɪʃn/",
-    "meaning": "饱和（推力达到物理上限）",
-    "level": "red"
-  },
-  "accuracy": {
-    "word": "accuracy",
-    "ipa": "/ˈækjərəsi/",
-    "meaning": "精度，准确性",
+  "cascaded": {
+    "word": "cascaded",
+    "ipa": "/kæˈskeɪdɪd/",
+    "meaning": "级联的，串级的",
     "level": "green"
   },
   "compensation": {
@@ -293,23 +275,185 @@
     "meaning": "补偿",
     "level": "red"
   },
-  "sensor-based": {
-    "word": "sensor-based",
-    "ipa": "/ˈsensə beɪst/",
-    "meaning": "基于传感器的",
+  "feasible": {
+    "word": "feasible",
+    "ipa": "/ˈfiːzəbl/",
+    "meaning": "物理可行的",
     "level": "green"
+  },
+  "uncertainties": {
+    "word": "uncertainties",
+    "ipa": "/ʌnˈsɜːtntiz/",
+    "meaning": "不确定性",
+    "level": "red"
+  },
+  "inertial": {
+    "word": "inertial",
+    "ipa": "/ɪˈnɜːʃl/",
+    "meaning": "惯性的（如惯性坐标系 W）",
+    "level": "green"
+  },
+  "velocity": {
+    "word": "velocity",
+    "ipa": "/vəˈlɒsəti/",
+    "meaning": "速度（矢量）",
+    "level": "green"
+  },
+  "quaternion": {
+    "word": "quaternion",
+    "ipa": "/kwəˈtɜːniən/",
+    "meaning": "四元数（无奇异性姿态表示法）",
+    "level": "red"
+  },
+  "inertia": {
+    "word": "inertia",
+    "ipa": "/ɪˈnɜːʃə/",
+    "meaning": "转动惯量，惯性",
+    "level": "green"
+  },
+  "matrix": {
+    "word": "matrix",
+    "ipa": "/ˈmeɪtrɪks/",
+    "meaning": "矩阵",
+    "level": "green"
+  },
+  "thrust": {
+    "word": "thrust",
+    "ipa": "/θrʌst/",
+    "meaning": "推力，升力",
+    "level": "red"
+  },
+  "diagonal": {
+    "word": "diagonal",
+    "ipa": "/daɪˈæɡənl/",
+    "meaning": "对角的（如对角阻力矩阵）",
+    "level": "green"
+  },
+  "optimization": {
+    "word": "optimization",
+    "ipa": "/ˌɒptɪmaɪˈzeɪʃn/",
+    "meaning": "优化求解",
+    "level": "green"
+  },
+  "quadratic programming": {
+    "word": "quadratic programming",
+    "ipa": "/kwɒˈdrætɪk ˈprəʊɡræmɪŋ/",
+    "meaning": "二次规划 (QP)",
+    "level": "blue"
+  },
+  "sequential quadratic programming": {
+    "word": "sequential quadratic programming",
+    "ipa": "/sɪˈkwenʃl kwɒˈdrætɪk ˈprəʊɡræmɪŋ/",
+    "meaning": "序列二次规划 (SQP)",
+    "level": "blue"
+  },
+  "framework": {
+    "word": "framework",
+    "ipa": "/ˈfreɪmwɜːk/",
+    "meaning": "控制框架，体系",
+    "level": "green"
+  },
+  "yaw": {
+    "word": "yaw",
+    "ipa": "/jɔː/",
+    "meaning": "偏航角 (Yaw, z轴旋转)",
+    "level": "red"
+  },
+  "acceleration": {
+    "word": "acceleration",
+    "ipa": "/əkˌseləˈreɪʃn/",
+    "meaning": "加速度",
+    "level": "green"
+  },
+  "jerk": {
+    "word": "jerk",
+    "ipa": "/dʒɜːk/",
+    "meaning": "加加速度（加速度导数，轨迹三阶导）",
+    "level": "green"
+  },
+  "snap": {
+    "word": "snap",
+    "ipa": "/snæp/",
+    "meaning": "加加加速度（轨迹四阶导数）",
+    "level": "green"
+  },
+  "allocator": {
+    "word": "allocator",
+    "ipa": "/ˈæləkeɪtə/",
+    "meaning": "控制分配器",
+    "level": "red"
+  },
+  "attitude": {
+    "word": "attitude",
+    "ipa": "/ˈætɪtjuːd/",
+    "meaning": "姿态（横滚、俯仰、偏航）",
+    "level": "red"
+  },
+  "torque": {
+    "word": "torque",
+    "ipa": "/tɔːk/",
+    "meaning": "力矩，转矩",
+    "level": "red"
+  },
+  "disturbances": {
+    "word": "disturbances",
+    "ipa": "/dɪˈstɜːbənsɪz/",
+    "meaning": "扰动（复数）",
+    "level": "red"
+  },
+  "virtual": {
+    "word": "virtual",
+    "ipa": "/ˈvɜːtʃuəl/",
+    "meaning": "虚拟的（如虚拟控制输入量 nu）",
+    "level": "red"
+  },
+  "rmse": {
+    "word": "rmse",
+    "ipa": "/ˌɑːr em es ˈiː/",
+    "meaning": "均方根误差 (RMSE)",
+    "level": "blue"
+  },
+  "oscillation": {
+    "word": "oscillation",
+    "ipa": "/ˌɒsɪˈleɪʃn/",
+    "meaning": "振荡，抖振",
+    "level": "red"
+  },
+  "thrust-to-weight": {
+    "word": "thrust-to-weight",
+    "ipa": "/θrʌst tuː weɪt/",
+    "meaning": "推重比 (如 4.5:1)",
+    "level": "blue"
+  },
+  "cost-effective": {
+    "word": "cost-effective",
+    "ipa": "/kɒst ɪˈfektɪv/",
+    "meaning": "高性价比的，低开销高效的",
+    "level": "green"
+  },
+  "cornerstone": {
+    "word": "cornerstone",
+    "ipa": "/ˈkɔːnəstəʊn/",
+    "meaning": "奠基石，核心支柱",
+    "level": "blue"
   },
   "effectiveness": {
     "word": "effectiveness",
     "ipa": "/ɪˈfektɪvnəs/",
-    "meaning": "效能（如控制效能矩阵 G）",
+    "meaning": "效能（控制效能矩阵 G）",
     "level": "red"
   },
   "phase lag": {
     "word": "phase lag",
     "ipa": "/feɪz læɡ/",
-    "meaning": "相位滞后（低通滤波引入的时序延迟）",
+    "meaning": "相位滞后",
     "level": "red"
+  },
+  "filtering": {
+    "word": "filtering",
+    "ipa": "/ˈfɪltərɪŋ/",
+    "meaning": "滤波",
+    "level": "green"
   },
   "time-varying": {
     "word": "time-varying",
@@ -317,17 +461,17 @@
     "meaning": "时变的",
     "level": "red"
   },
+  "angular momentum": {
+    "word": "angular momentum",
+    "ipa": "/ˈæŋɡjələ məˈmentəm/",
+    "meaning": "角动量（旋转动量）",
+    "level": "blue"
+  },
   "synchronized": {
     "word": "synchronized",
     "ipa": "/ˈsɪŋkrənaɪzd/",
-    "meaning": "时序同步的，通道对齐的",
+    "meaning": "时序同步的，对齐的",
     "level": "green"
-  },
-  "virtual": {
-    "word": "virtual",
-    "ipa": "/ˈvɜːtʃuəl/",
-    "meaning": "虚拟的（如虚拟控制量 nu）",
-    "level": "red"
   },
   "normalized": {
     "word": "normalized",
@@ -344,44 +488,122 @@
   "adaptive": {
     "word": "adaptive",
     "ipa": "/əˈdæptɪv/",
-    "meaning": "自适应的（参数在线估计）",
+    "meaning": "自适应的（参数在线估计与自调谐）",
     "level": "red"
+  },
+  "rotor": {
+    "word": "rotor",
+    "ipa": "/ˈrəʊtə/",
+    "meaning": "转子，旋翼",
+    "level": "green"
+  },
+  "momentum": {
+    "word": "momentum",
+    "ipa": "/məˈmentəm/",
+    "meaning": "动量",
+    "level": "green"
+  },
+  "damping": {
+    "word": "damping",
+    "ipa": "/ˈdæmpɪŋ/",
+    "meaning": "阻尼（线性与二次非线性水阻）",
+    "level": "red"
+  },
+  "bottleneck": {
+    "word": "bottleneck",
+    "ipa": "/ˈbɒtlnek/",
+    "meaning": "瓶颈，核心限制",
+    "level": "green"
+  },
+  "imu": {
+    "word": "imu",
+    "ipa": "/ˌaɪ em ˈjuː/",
+    "meaning": "惯性测量单元 (IMU)",
+    "level": "blue"
+  },
+  "euler": {
+    "word": "euler",
+    "ipa": "/ˈɔɪlər/",
+    "meaning": "欧拉（如欧拉方程、欧拉角）",
+    "level": "green"
+  },
+  "propeller": {
+    "word": "propeller",
+    "ipa": "/prəˈpelə/",
+    "meaning": "螺旋桨",
+    "level": "green"
+  },
+  "gyroscopic": {
+    "word": "gyroscopic",
+    "ipa": "/ˌdʒaɪrəˈskɒpɪk/",
+    "meaning": "陀螺效应的，陀螺力矩的",
+    "level": "green"
+  },
+  "taylor expansion": {
+    "word": "taylor expansion",
+    "ipa": "/ˈteɪlə ɪkˈspænʃn/",
+    "meaning": "泰勒展开",
+    "level": "blue"
+  },
+  "taylor": {
+    "word": "taylor",
+    "ipa": "/ˈteɪlə/",
+    "meaning": "泰勒（级数展开）",
+    "level": "green"
+  },
+  "low-pass filter": {
+    "word": "low-pass filter",
+    "ipa": "/ləʊ pɑːs ˈfɪltə/",
+    "meaning": "低通滤波器",
+    "level": "blue"
   },
   "gyro": {
     "word": "gyro",
     "ipa": "/ˈdʒaɪrəʊ/",
-    "meaning": "陀螺力矩",
+    "meaning": "陀螺仪",
     "level": "green"
   },
   "butterworth": {
     "word": "butterworth",
     "ipa": "/ˈbʌtəwɜːθ/",
-    "meaning": "巴特沃斯低通滤波器",
+    "meaning": "巴特沃斯（低通滤波器）",
     "level": "green"
   },
-  "disturbance": {
-    "word": "disturbance",
-    "ipa": "/dɪˈstɜːbəns/",
-    "meaning": "外部扰动，突加负载",
+  "filter": {
+    "word": "filter",
+    "ipa": "/ˈfɪltə/",
+    "meaning": "滤波器，滤波",
+    "level": "green"
+  },
+  "limit-cycle": {
+    "word": "limit-cycle",
+    "ipa": "/ˈlɪmɪt saɪkl/",
+    "meaning": "极限环（自激非线性振荡）",
     "level": "red"
   },
-  "angular momentum": {
-    "word": "angular momentum",
-    "ipa": "/ˈæŋɡjələ məˈmentəm/",
-    "meaning": "角动量（旋转动量）",
-    "level": "blue"
+  "oscillations": {
+    "word": "oscillations",
+    "ipa": "/ˌɒsɪˈleɪʃnz/",
+    "meaning": "振荡",
+    "level": "red"
+  },
+  "payload": {
+    "word": "payload",
+    "ipa": "/ˈpeɪləʊd/",
+    "meaning": "有效载荷，外挂重物",
+    "level": "green"
+  },
+  "pitch": {
+    "word": "pitch",
+    "ipa": "/pɪtʃ/",
+    "meaning": "俯仰角 (Pitch, y轴旋转)",
+    "level": "red"
   },
   "doublet": {
     "word": "doublet",
     "ipa": "/ˈdʌblɪt/",
-    "meaning": "方波双向激励响应",
+    "meaning": "双向方波脉冲激励",
     "level": "green"
-  },
-  "intervention": {
-    "word": "intervention",
-    "ipa": "/ˌɪntəˈvenʃn/",
-    "meaning": "水下干预作业（机械臂装配/抓取）",
-    "level": "red"
   },
   "underwater": {
     "word": "underwater",
@@ -389,34 +611,16 @@
     "meaning": "水下的",
     "level": "green"
   },
-  "hydrobatic": {
-    "word": "hydrobatic",
-    "ipa": "/ˌhaɪdrəʊˈbætɪk/",
-    "meaning": "水下特技机动的（360°全维空间姿态翻转）",
+  "hydrodynamic": {
+    "word": "hydrodynamic",
+    "ipa": "/ˌhaɪdrəʊdaɪˈnæmɪk/",
+    "meaning": "水动力学的，流体动力学的",
     "level": "red"
   },
-  "added mass": {
-    "word": "added mass",
-    "ipa": "/ˈædɪd mæs/",
-    "meaning": "附加质量（流体附随运动惯性）",
-    "level": "red"
-  },
-  "damping": {
-    "word": "damping",
-    "ipa": "/ˈdæmpɪŋ/",
-    "meaning": "阻尼（水流线性与二次非线性阻尼）",
-    "level": "red"
-  },
-  "buoyancy": {
-    "word": "buoyancy",
-    "ipa": "/ˈbɔɪənsi/",
-    "meaning": "浮力",
-    "level": "green"
-  },
-  "restoring": {
-    "word": "restoring",
-    "ipa": "/rɪˈstɔːrɪŋ/",
-    "meaning": "恢复力（重力与浮力静水力平衡）",
+  "feedback": {
+    "word": "feedback",
+    "ipa": "/ˈfiːdbæk/",
+    "meaning": "反馈控制",
     "level": "green"
   },
   "feedback linearization": {
@@ -425,40 +629,130 @@
     "meaning": "反馈线性化 (FBL)",
     "level": "blue"
   },
-  "feedback": {
-    "word": "feedback",
-    "ipa": "/ˈfiːdbæk/",
-    "meaning": "反馈控制",
+  "basin": {
+    "word": "basin",
+    "ipa": "/ˈbeɪsn/",
+    "meaning": "试验水池，水箱",
+    "level": "green"
+  },
+  "pitch-up": {
+    "word": "pitch-up",
+    "ipa": "/pɪtʃ ʌp/",
+    "meaning": "大角度仰头翻转机动（90度垂直）",
+    "level": "blue"
+  },
+  "maneuver": {
+    "word": "maneuver",
+    "ipa": "/məˈnuːvə/",
+    "meaning": "机动动作，特技飞行",
+    "level": "red"
+  },
+  "intervention": {
+    "word": "intervention",
+    "ipa": "/ˌɪntəˈvenʃn/",
+    "meaning": "水下干预作业（机械臂装配）",
+    "level": "red"
+  },
+  "linearization": {
+    "word": "linearization",
+    "ipa": "/ˌlɪniəraɪˈzeɪʃn/",
+    "meaning": "线性化",
+    "level": "green"
+  },
+  "subsea": {
+    "word": "subsea",
+    "ipa": "/ˈsʌbsiː/",
+    "meaning": "海底的，深海的",
+    "level": "green"
+  },
+  "auv": {
+    "word": "auv",
+    "ipa": "/ˌeɪ juː ˈviː/",
+    "meaning": "自主水下航行器 (AUV)",
+    "level": "blue"
+  },
+  "cuttlefish": {
+    "word": "cuttlefish",
+    "ipa": "/ˈkʌtlfɪʃ/",
+    "meaning": "墨鱼号（DFKI 双臂特技 AUV 名称）",
+    "level": "blue"
+  },
+  "thrusters": {
+    "word": "thrusters",
+    "ipa": "/ˈθrʌstəz/",
+    "meaning": "推进器（复数）",
+    "level": "red"
+  },
+  "hydrobatic": {
+    "word": "hydrobatic",
+    "ipa": "/ˌhaɪdrəʊˈbætɪk/",
+    "meaning": "水下特技机动的（360度空间翻转）",
+    "level": "red"
+  },
+  "added mass": {
+    "word": "added mass",
+    "ipa": "/ˈædɪd mæs/",
+    "meaning": "水动力附加质量（随体水体惯性）",
+    "level": "red"
+  },
+  "dof": {
+    "word": "dof",
+    "ipa": "/diː əʊ ef/",
+    "meaning": "自由度 (Degree of Freedom)",
+    "level": "blue"
+  },
+  "buoyancy": {
+    "word": "buoyancy",
+    "ipa": "/ˈbɔɪənsi/",
+    "meaning": "浮力，静水力",
+    "level": "green"
+  },
+  "restoring": {
+    "word": "restoring",
+    "ipa": "/rɪˈstɔːrɪŋ/",
+    "meaning": "恢复力（重浮力平衡矩）",
     "level": "green"
   },
   "identification": {
     "word": "identification",
     "ipa": "/aɪˌdentɪfɪˈkeɪʃn/",
-    "meaning": "辨识，参数在线辨识",
+    "meaning": "辨识，参数辨识",
     "level": "red"
   },
   "decoupling": {
     "word": "decoupling",
     "ipa": "/diːˈkʌplɪŋ/",
-    "meaning": "解耦，多通道独立控制",
+    "meaning": "解耦",
     "level": "red"
+  },
+  "negligible": {
+    "word": "negligible",
+    "ipa": "/ˈneɡlɪdʒəbl/",
+    "meaning": "微不足道的，可忽略的",
+    "level": "green"
   },
   "thruster": {
     "word": "thruster",
     "ipa": "/ˈθrʌstə/",
-    "meaning": "推进器（水下多推进器阵列）",
+    "meaning": "水下推进器",
     "level": "red"
   },
   "coriolis": {
     "word": "coriolis",
     "ipa": "/ˌkɒriˈəʊlɪs/",
-    "meaning": "科里奥利力与向心力",
+    "meaning": "科氏力，科里奥利力",
     "level": "red"
   },
   "allocation": {
     "word": "allocation",
     "ipa": "/ˌæləˈkeɪʃn/",
-    "meaning": "控制分配（力矩分配矩阵）",
+    "meaning": "控制分配",
+    "level": "red"
+  },
+  "wrench": {
+    "word": "wrench",
+    "ipa": "/rentʃ/",
+    "meaning": "广义力与力矩矢量 (Wrench)",
     "level": "red"
   },
   "pseudoinverse": {
@@ -467,34 +761,52 @@
     "meaning": "伪逆矩阵（Moore-Penrose 逆）",
     "level": "red"
   },
+  "lie group": {
+    "word": "lie group",
+    "ipa": "/liː ɡruːp/",
+    "meaning": "李群",
+    "level": "blue"
+  },
+  "gimbal lock": {
+    "word": "gimbal lock",
+    "ipa": "/ˈɡɪmbl lɒk/",
+    "meaning": "万向节死锁（欧拉角俯仰 90 度奇异性）",
+    "level": "red"
+  },
   "singularity": {
     "word": "singularity",
     "ipa": "/ˌsɪŋɡjəˈlærəti/",
-    "meaning": "奇异性（万向节死锁）",
+    "meaning": "奇异性，奇异点",
     "level": "red"
   },
-  "pitch-up": {
-    "word": "pitch-up",
-    "ipa": "/pɪtʃ ʌp/",
-    "meaning": "大角度仰头过渡机动（90°直立）",
-    "level": "blue"
+  "formulation": {
+    "word": "formulation",
+    "ipa": "/ˌfɔːmjuˈleɪʃn/",
+    "meaning": "数学公式表达，命题构建",
+    "level": "green"
   },
-  "maneuver": {
-    "word": "maneuver",
-    "ipa": "/məˈnuːvə/",
-    "meaning": "特技机动动作",
-    "level": "red"
+  "transitional": {
+    "word": "transitional",
+    "ipa": "/trænˈzɪʃənl/",
+    "meaning": "过渡的（层流向湍流过渡）",
+    "level": "green"
+  },
+  "regime": {
+    "word": "regime",
+    "ipa": "/reɪˈʒiːm/",
+    "meaning": "工况，流动区域（如湍流区）",
+    "level": "green"
   },
   "station keeping": {
     "word": "station keeping",
     "ipa": "/ˈsteɪʃn ˈkiːpɪŋ/",
-    "meaning": "定点悬停，位置保持",
+    "meaning": "定点悬停，位置锁定",
     "level": "blue"
   },
   "fault-tolerant": {
     "word": "fault-tolerant",
     "ipa": "/fɔːlt ˈtɒlərənt/",
-    "meaning": "容错控制（推进器损坏自适应）",
+    "meaning": "容错的（执行器失效重构）",
     "level": "red"
   }
 }
