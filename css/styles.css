@@ -209,8 +209,8 @@
       border: 1px solid var(--gel-border, var(--border));
       border-radius: var(--radius-pill);
       cursor: pointer;
-      font-size: 13.5px;
-      font-weight: 500;
+      font-size: 14.5px;
+      font-weight: 600;
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
       box-shadow: var(--shadow-sm),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -238,12 +238,12 @@
 
     .gel-btn .func-name {
       color: var(--primary);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .gel-btn .key {
       color: #9CA3AF;
-      font-size: 12px;
+      font-size: 12.5px;
     }
 
     /* 解析按钮 */
@@ -277,7 +277,7 @@
     }
 
     /* 掌握度按钮（5 级） */
-    .gel-btn.btn-status { min-width: 56px; }
+    .gel-btn.btn-status { min-width: 58px; }
 
     .gel-btn.btn-status[data-status="proficient"] .func-name { color: var(--lv5); }
     .gel-btn.btn-status[data-status="familiar"]   .func-name { color: var(--lv4); }
@@ -338,7 +338,7 @@
 
     #statsBlock .chapter-label,
     .qnav-label {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text);
       margin-bottom: 6px;
       font-weight: 700;
@@ -352,8 +352,8 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-pill);
       cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 14.5px;
+      font-weight: 600;
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
       box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.7);
       transition: all 0.2s ease;
@@ -371,7 +371,7 @@
 
     .sol-default-btn .sol-key {
       display: block;
-      font-size: 11px;
+      font-size: 11.5px;
       color: #aaa;
       margin-top: 2px;
     }
@@ -485,7 +485,7 @@
     .seg-digit[data-val="9"] .seg-g { fill: var(--seg-on); filter: drop-shadow(0 0 2px var(--seg-glow)); }
 
     .clock-date {
-      font-size: 10.5px;
+      font-size: 11.5px;
       font-weight: 600;
       color: var(--text-muted);
       margin-top: 4px;
@@ -515,7 +515,7 @@
     }
 
     .filter-toolbar .filter-label {
-      font-size: 12px;
+      font-size: 12.5px;
       color: var(--text-muted);
       font-weight: 700;
     }
@@ -532,7 +532,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       cursor: pointer;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
       box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -561,7 +561,7 @@
     }
 
     .filter-btn .filter-key {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-light);
       line-height: 1;
       margin-top: 0;
@@ -624,7 +624,7 @@
     }
 
     .filter-btn .filter-count {
-      font-size: 11px;
+      font-size: 11.5px;
       margin-left: 2px;
       opacity: 0.75;
     }
@@ -649,7 +649,7 @@
     }
 
     .export-section .export-label {
-      font-size: 12px;
+      font-size: 12.5px;
       color: var(--text-muted);
       font-weight: 700;
     }
@@ -665,7 +665,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       cursor: pointer;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
       box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -711,7 +711,7 @@
       margin: 2px 0 16px;
       color: var(--text);
       font-weight: bold;
-      font-size: clamp(17px, 1.8vw, 21px);
+      font-size: clamp(18px, 1.9vw, 22px);
       line-height: 1.4;
       letter-spacing: 0.02em;
       text-align: center;
@@ -2517,10 +2517,10 @@
     .q-label {
       width: 100%;
       text-align: left;
-      font-size: 17px;
-      font-weight: bold;
+      font-size: 18.5px;
+      font-weight: 800;
       color: var(--primary);
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       letter-spacing: 0.5px;
     }
     [data-theme="dark"] .q-label {
@@ -2536,13 +2536,14 @@
     }
 
     .sub-select-bar .sub-sel-btn {
-      min-height: 26px;
-      padding: 3px 10px;
+      min-height: 28px;
+      padding: 4px 12px;
       border: 1px solid var(--border);
       border-radius: var(--radius-pill);
       background: linear-gradient(180deg, var(--gel-top) 0%, var(--gel-bot) 100%);
       cursor: pointer;
-      font-size: 13px;
+      font-size: 13.5px;
+      font-weight: 600;
       color: var(--text);
       box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.7);
       transition: all 0.15s;
@@ -2994,13 +2995,13 @@
 
     .q-label {
       color: var(--primary);
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 18.5px;
+      font-weight: 800;
     }
 
     .mastery-label {
       color: var(--text-muted);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.04em;
     }
@@ -3201,14 +3202,14 @@
     }
 
     .notes-title {
-      font-size: 13px;
-      font-weight: 500;
-      color: #555b6c;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-secondary);
     }
 
     .notes-duo {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 8px;
     }
 
@@ -3216,13 +3217,13 @@
       flex: 1;
       width: 100%;
       min-width: 0;
-      min-height: 80px;
-      padding: 10px 12px;
+      min-height: 90px;
+      padding: 12px 14px;
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       font-family: inherit;
-      font-size: 14.5px;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.85;
       color: var(--text);
       background: var(--input-bg);
       resize: vertical;
@@ -3236,22 +3237,22 @@
     }
 
     .notes-render {
-      padding: 10px 12px;
+      padding: 12px 14px;
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       background: var(--input-bg);
-      font-size: 14.5px;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.85;
       color: var(--text);
       word-break: break-word;
-      min-height: 40px;
+      min-height: 44px;
       overflow-wrap: break-word;
     }
 
     .notes-preview {
       flex: 1;
       min-width: 0;
-      max-height: 300px;
+      max-height: 320px;
       overflow-y: auto;
     }
 
@@ -3261,6 +3262,18 @@
       font-style: italic;
     }
 
+    /* ===== 笔记 KaTeX 数学公式舒适度排版 ===== */
+    .notes-render .katex {
+      font-size: 1.15em;
+    }
+    .notes-render .katex-display {
+      margin: 0.8em 0;
+      font-size: 1.22em;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 4px 0;
+    }
+
     /* ===== 笔记 Markdown 排版 ===== */
     .notes-render h1, .notes-render h2, .notes-render h3, .notes-render h4 {
       margin: 0.6em 0 0.35em;
@@ -3268,58 +3281,68 @@
       color: var(--primary);
       font-weight: 700;
     }
-    .notes-render h1 { font-size: 1.5em; border-bottom: 1px solid rgba(102, 8, 116, 0.15); padding-bottom: 0.2em; }
-    .notes-render h2 { font-size: 1.3em; }
-    .notes-render h3 { font-size: 1.15em; }
-    .notes-render h4 { font-size: 1.05em; }
-    .notes-render p { margin: 0.35em 0; }
-    .notes-render ul, .notes-render ol { margin: 0.35em 0; padding-left: 1.6em; }
-    .notes-render li { margin: 0.15em 0; }
+    .notes-render h1 { font-size: 1.55em; border-bottom: 1px solid rgba(102, 8, 116, 0.15); padding-bottom: 0.2em; }
+    .notes-render h2 { font-size: 1.35em; }
+    .notes-render h3 { font-size: 1.2em; }
+    .notes-render h4 { font-size: 1.1em; }
+    .notes-render p { margin: 0.4em 0; }
+    .notes-render ul, .notes-render ol { margin: 0.4em 0; padding-left: 1.6em; }
+    .notes-render li { margin: 0.2em 0; }
     .notes-render blockquote {
-      margin: 0.5em 0;
-      padding: 0.2em 1em;
-      border-left: 3px solid rgba(102, 8, 116, 0.35);
-      color: #666;
-      background: rgba(102, 8, 116, 0.04);
+      margin: 0.6em 0;
+      padding: 0.3em 1.1em;
+      border-left: 3px solid rgba(102, 8, 116, 0.4);
+      color: var(--text-secondary);
+      background: var(--primary-alpha);
       border-radius: 0 6px 6px 0;
     }
     .notes-render code {
       font-family: Consolas, "Courier New", monospace;
-      font-size: 0.88em;
+      font-size: 0.92em;
       background: rgba(102, 8, 116, 0.08);
       border-radius: 4px;
-      padding: 1px 5px;
+      padding: 2px 6px;
       color: #8a2b9c;
     }
+    [data-theme="dark"] .notes-render code {
+      color: #cf6fe8;
+      background: rgba(207, 111, 232, 0.15);
+    }
     .notes-render pre {
-      margin: 0.5em 0;
-      padding: 10px 12px;
+      margin: 0.6em 0;
+      padding: 12px 14px;
       background: #f1f2f6;
       border: 1px solid rgba(71, 76, 101, 0.12);
       border-radius: 8px;
       overflow-x: auto;
+      font-size: 15px;
+    }
+    [data-theme="dark"] .notes-render pre {
+      background: rgba(20, 21, 26, 0.9);
+      border-color: rgba(255, 255, 255, 0.1);
     }
     .notes-render pre code {
       background: transparent;
       padding: 0;
       color: inherit;
     }
-    .notes-render a { color: var(--primary); text-decoration: none; }
+    .notes-render a { color: var(--primary); text-decoration: none; font-weight: 600; }
     .notes-render a:hover { text-decoration: underline; }
     .notes-render table {
       border-collapse: collapse;
-      margin: 0.5em 0;
+      margin: 0.6em 0;
       max-width: 100%;
       display: block;
       overflow-x: auto;
+      font-size: 15px;
     }
     .notes-render th, .notes-render td {
       border: 1px solid rgba(71, 76, 101, 0.18);
-      padding: 5px 10px;
+      padding: 6px 12px;
     }
     .notes-render th { background: rgba(102, 8, 116, 0.06); font-weight: 700; }
     .notes-render img { max-width: 100%; height: auto; border-radius: 6px; }
-    .notes-render hr { border: none; border-top: 1px solid rgba(71, 76, 101, 0.18); margin: 0.8em 0; }
+    .notes-render hr { border: none; border-top: 1px solid rgba(71, 76, 101, 0.18); margin: 0.9em 0; }
 
     .notes-actions {
       display: flex;
@@ -3583,13 +3606,13 @@
       box-shadow: var(--shadow-sm);
     }
     .countdown-sidebar-label {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--primary);
       letter-spacing: 0.05em;
     }
     .countdown-sidebar-days {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
       color: var(--text);
       line-height: 1.2;
@@ -3597,7 +3620,7 @@
       font-feature-settings: "tnum";
     }
     .countdown-sidebar-sub {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-muted);
     }
 

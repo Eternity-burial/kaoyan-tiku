@@ -2410,7 +2410,11 @@
         // 先抽离 $...$/$$...$$ 公式占位，避免 marked 的 Markdown 转义吞掉 LaTeX 反斜杠（如 \{、\\）
         var mathSpans = [];
         var protectedSrc = src.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$/g, function (m) {
-          mathSpans.push(m);
+          // 优化数学公式排版：自动对极限、求和、最值等算子补全 \limits，确保上下标显示在正下方
+          var processed = m.replace(/\\(lim|sum|prod|max|min|inf|sup)(?!\\limits|\\nolimits)\s*_/g, function(match, op) {
+            return '\\' + op + '\\limits_';
+          });
+          mathSpans.push(processed);
           return '' + (mathSpans.length - 1) + '';
         });
         // breaks:true → 单换行渲染为 <br>，所见即所得（空行仍是段落间距）
