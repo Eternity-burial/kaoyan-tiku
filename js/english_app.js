@@ -340,7 +340,9 @@
             }
           }
         }
-        if (saved.mode && (saved.mode === 'analysis' || saved.mode === 'practice')) {
+        if (subjKey === 'bishe') {
+          state.mode = 'analysis';
+        } else if (saved.mode && (saved.mode === 'analysis' || saved.mode === 'practice')) {
           state.mode = saved.mode;
         }
         if (saved.typeFilter) state.typeFilter = saved.typeFilter;
@@ -348,12 +350,13 @@
       } else {
         if (subjKey === 'bishe') {
           state.currentYear = 'paper1';
+          state.mode = 'analysis';
         } else {
           state.currentYear = '2010';
-        }
-        const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);
-        if (savedMode && (savedMode === 'analysis' || savedMode === 'practice')) {
-          state.mode = savedMode;
+          const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);
+          if (savedMode && (savedMode === 'analysis' || savedMode === 'practice')) {
+            state.mode = savedMode;
+          }
         }
       }
     } catch (e) {}
@@ -624,6 +627,7 @@
   function updateModeClass() {
     if (!dom.layout) return;
     if (state.currentSubject === 'bishe') {
+      state.mode = 'analysis';
       dom.layout.classList.add('mode-reader-layout');
       dom.layout.classList.remove('mode-practice-active');
       if (dom.btnPracticeMode) dom.btnPracticeMode.style.display = 'none';
@@ -1313,68 +1317,79 @@
     }
   }
 
-  // 文章区域事件绑定
+  // 文章区域事件绑定（采用事件委托，完全不受 Math/KaTeX 动态节点替换影响）
   let popoverHideTimer = null;
   let isVocabPinned = false;
   let pinnedWordEl = null;
 
   function attachPassageEvents() {
     if (!dom.passagePane) return;
-    dom.passagePane.querySelectorAll('.vocab-word').forEach(vEl => {
-      // 鼠标悬停进入
-      vEl.addEventListener('mouseenter', (e) => {
-        if (state.mode === 'practice') return;
-        if (isVocabPinned) return; // 处于点击常驻锁定时，不随鼠标划过切换
-        clearTimeout(popoverHideTimer);
-        const word = vEl.dataset.word;
-        const ipa = vEl.dataset.ipa;
-        const meaning = vEl.dataset.meaning;
-        showVocabPopover(vEl, word, ipa, meaning);
-      });
-
-      // 鼠标移出：给予 400ms 缓冲并结合悬浮桥接，鼠标可自由滑入浮窗
-      vEl.addEventListener('mouseleave', () => {
-        if (isVocabPinned) return;
-        clearTimeout(popoverHideTimer);
-        popoverHideTimer = setTimeout(() => {
-          hideVocabPopover();
-        }, 400);
-      });
-
-      // 点击单词：永久常驻锁定（Pin），无需小心翼翼保持鼠标位置
-      vEl.addEventListener('click', (e) => {
-        if (state.mode === 'practice') return;
+    
+    // 清除旧的直接事件绑定，改用事件委托挂载在 passagePane 上
+    dom.passagePane.onclick = (e) => {
+      // 1. 点击生词：永久常驻锁定释义卡片
+      const vEl = e.target.closest('.vocab-word');
+      if (vEl) {
+        if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
         e.stopPropagation();
         const word = vEl.dataset.word;
         const ipa = vEl.dataset.ipa;
         const meaning = vEl.dataset.meaning;
 
         if (isVocabPinned && pinnedWordEl === vEl) {
-          // 再次点击同一单词：解锁并关闭
           isVocabPinned = false;
           pinnedWordEl = null;
           hideVocabPopover();
         } else {
-          // 锁定到当前单词
           isVocabPinned = true;
           pinnedWordEl = vEl;
           clearTimeout(popoverHideTimer);
           showVocabPopover(vEl, word, ipa, meaning, true);
         }
-      });
-    });
+        return;
+      }
 
-    dom.passagePane.querySelectorAll('.sentence-item').forEach(sEl => {
-      sEl.addEventListener('click', (e) => {
-        if (state.mode === 'practice') return;
-        if (e.target.closest('.vocab-word')) return;
+      // 2. 点击句子：切换单句译文显隐
+      const sEl = e.target.closest('.sentence-item');
+      if (sEl) {
+        if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
         sEl.classList.toggle('show-trans');
-      });
-    });
+        return;
+      }
+    };
+
+    // 鼠标划入生词：即时浮现释义
+    dom.passagePane.onmouseover = (e) => {
+      if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
+      if (isVocabPinned) return;
+      const vEl = e.target.closest('.vocab-word');
+      if (vEl) {
+        clearTimeout(popoverHideTimer);
+        const word = vEl.dataset.word;
+        const ipa = vEl.dataset.ipa;
+        const meaning = vEl.dataset.meaning;
+        showVocabPopover(vEl, word, ipa, meaning, false);
+      }
+    };
+
+    // 鼠标划出生词：延迟消失（支持无缝滑入浮窗内部）
+    dom.passagePane.onmouseout = (e) => {
+      if (isVocabPinned) return;
+      const vEl = e.target.closest('.vocab-word');
+      if (vEl && (!e.relatedTarget || !vEl.contains(e.relatedTarget))) {
+        clearTimeout(popoverHideTimer);
+        popoverHideTimer = setTimeout(() => {
+          hideVocabPopover();
+        }, 400);
+      }
+    };
   }
 
   // 显示词汇气泡（支持点击常驻锁定与真人发音/收藏）
   function showVocabPopover(anchorEl, word, ipa, meaning, isPinned = false) {
+    if (!dom.vocabPopover) {
+      dom.vocabPopover = document.getElementById('engVocabPopover');
+    }
     if (!dom.vocabPopover) return;
     const pop = dom.vocabPopover;
     const starred = isWordStarred(word);
@@ -1384,15 +1399,15 @@
       <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
         <div>
           <span class="popover-word">${escapeHtml(word)}</span>
-          <span class="popover-ipa">[${escapeHtml(ipa)}]</span>
+          ${ipa ? `<span class="popover-ipa">[${escapeHtml(ipa)}]</span>` : ''}
         </div>
         <div style="display:flex;align-items:center;gap:4px;">
           <button class="popover-btn" title="英音真人发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(word)}', 1)">英音</button>
           <button class="popover-btn" title="美音真人发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(word)}', 2)">美音</button>
-          <button class="popover-btn ${starred ? 'starred' : ''}" id="btnStarPop_${escapeHtml(word)}" title="收藏至生词本" onclick="window.kyApp.toggleStarWord('${escapeHtml(word)}', {ipa: '${escapeHtml(ipa)}', meaning: '${escapeHtml(meaning)}'}); const b = document.getElementById('btnStarPop_${escapeHtml(word)}'); if(b){ b.classList.toggle('starred'); b.textContent = b.classList.contains('starred') ? '已收藏' : '收藏'; }">${starred ? '已收藏' : '收藏'}</button>
+          <button class="popover-btn ${starred ? 'starred' : ''}" id="btnStarPop_${escapeHtml(word)}" title="收藏至生词本" onclick="window.kyApp.toggleStarWord('${escapeHtml(word)}', {ipa: '${escapeHtml(ipa || '')}', meaning: '${escapeHtml(meaning || '')}'}); const b = document.getElementById('btnStarPop_${escapeHtml(word)}'); if(b){ b.classList.toggle('starred'); b.textContent = b.classList.contains('starred') ? '已收藏' : '收藏'; }">${starred ? '已收藏' : '收藏'}</button>
         </div>
       </div>
-      <div class="popover-meaning">${escapeHtml(meaning)}</div>
+      <div class="popover-meaning">${escapeHtml(meaning || '暂无释义')}</div>
     `;
     pop.style.display = 'block';
 
@@ -1406,12 +1421,12 @@
     };
 
     const rect = anchorEl.getBoundingClientRect();
-    const popHeight = 110;
+    const popHeight = 120;
     let top = rect.bottom + 6;
     if (top + popHeight > window.innerHeight) {
       top = Math.max(10, rect.top - popHeight - 6);
     }
-    pop.style.left = `${Math.min(window.innerWidth - 330, Math.max(10, rect.left))}px`;
+    pop.style.left = `${Math.min(window.innerWidth - 340, Math.max(10, rect.left))}px`;
     pop.style.top = `${top}px`;
   }
 
@@ -1452,10 +1467,11 @@
 
     if (dom.btnToggleTrans) {
       dom.btnToggleTrans.onclick = () => {
-        if (state.mode === 'practice') return;
+        if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
         state.showAllTranslation = !state.showAllTranslation;
         saveResume();
         if (dom.passagePane) dom.passagePane.classList.toggle('show-all-trans', state.showAllTranslation);
+        if (dom.layout) dom.layout.classList.toggle('show-all-trans', state.showAllTranslation);
         dom.btnToggleTrans.classList.toggle('active', state.showAllTranslation);
       };
     }
@@ -1532,9 +1548,38 @@
   // 键盘快捷键支持
   function setupKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
-      const isEnglish = (window.curSubjectId === 'english') || (dom.layout && dom.layout.style.display !== 'none');
-      if (!isEnglish) return;
+      const isAppActive = (window.curSubjectId === 'english' || window.curSubjectId === 'bishe') || (dom.layout && dom.layout.style.display !== 'none');
+      if (!isAppActive) return;
       if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+
+      // 全局通用快捷键（考研英语与毕设文献通用）
+      if (e.key === 't' || e.key === 'T') {
+        if (dom.btnToggleTrans) dom.btnToggleTrans.click();
+        return;
+      }
+      if (e.key === 'y' || e.key === 'Y') {
+        if (typeof window.toggleTheme === 'function') window.toggleTheme();
+        return;
+      }
+      if (e.key === 'g' || e.key === 'G') {
+        if (typeof window.openSubjectPicker === 'function') window.openSubjectPicker();
+        return;
+      }
+      if (e.key === 'h' || e.key === 'H') {
+        if (dom.btnHelp) dom.btnHelp.click();
+        return;
+      }
+      if (e.key === 'Escape') {
+        closeYearDropdown();
+        closeVocabNotebook();
+        hideVocabPopover();
+        if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
+        if (dom.modalHelp) dom.modalHelp.classList.remove('active');
+        return;
+      }
+
+      // 纯文献阅读模式无题目交互
+      if (state.currentSubject === 'bishe') return;
 
       const q = getCurrentQuestion();
       if (!q) return;
@@ -1563,26 +1608,12 @@
       else if (e.key === 'z' || e.key === 'Z') { setMastery(q.qIndex, 'proficient'); }
       else if (e.key === 'x' || e.key === 'X') { setMastery(q.qIndex, 'vague'); }
       else if (e.key === 'c' || e.key === 'C') { setMastery(q.qIndex, 'wrong'); }
-      else if (e.key === 't' || e.key === 'T') { if (dom.btnToggleTrans) dom.btnToggleTrans.click(); }
       else if (e.key === 'm' || e.key === 'M') {
         if (state.mode === 'analysis' && dom.btnPracticeMode) dom.btnPracticeMode.click();
         else if (dom.btnAnalysisMode) dom.btnAnalysisMode.click();
       }
-      else if (e.key === 'g' || e.key === 'G') {
-        if (typeof window.openSubjectPicker === 'function') window.openSubjectPicker();
-      }
-      else if (e.key === 'y' || e.key === 'Y') {
-        if (typeof window.toggleTheme === 'function') window.toggleTheme();
-      }
       else if (e.key === 'u' || e.key === 'U') {
         if (typeof window.toggleImageDarkFilter === 'function') window.toggleImageDarkFilter();
-      }
-      else if (e.key === 'h' || e.key === 'H') { if (dom.btnHelp) dom.btnHelp.click(); }
-      else if (e.key === 'Escape') {
-        closeYearDropdown();
-        closeVocabNotebook();
-        if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
-        if (dom.modalHelp) dom.modalHelp.classList.remove('active');
       }
       else if (e.key === 'Enter' && state.mode === 'practice') {
         submitPracticeAnswer();
