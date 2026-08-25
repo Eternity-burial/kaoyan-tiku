@@ -2467,6 +2467,7 @@
       renderStats();
       renderNav();
       renderSm2InfoBar();
+      updateHeaderProgressTag();
       saveResume(); // 记住当前停的章节/题目/小题模式，刷新或切科目前保留
       document.getElementById('questionImg').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
@@ -2806,6 +2807,7 @@
     }
 
     // 查看模式：渲染结果常驻显示在「笔记」下方
+    // 查看模式：渲染结果常驻显示在「笔记」下方
     function renderNotes() {
       const hasNote = notesData[notesKeyFor(current)];
       const duo = document.getElementById('notesDuo');
@@ -2818,6 +2820,7 @@
       document.getElementById('btnNoteCancel').style.display = 'none';
       document.getElementById('btnNoteDelete').style.display = hasNote ? '' : 'none';
       hideAcPopup();
+      toggleMathSymbolPalette(false); // 结束编辑自动收起符号工具盘
     }
 
     // ===== 题号右上角「有笔记 / 有标注」提示（右侧导航角标） =====
@@ -2850,6 +2853,7 @@
       textarea.focus();
       notesDirty = false; // 进入编辑时重置（初始值即已保存内容）
       updateNotesPreview();
+      toggleMathSymbolPalette(true); // 进入编辑自动展开常用符号代码工具盘
 
       // 实时预览（防抖）+ 自动补全触发 + 标记未保存改动
       textarea.oninput = function() {
@@ -3267,7 +3271,7 @@
       initMathSymbolPalette();
     });
 
-    // ===== 侧栏折叠与自适应逻辑 =====
+    // ===== 侧栏折叠与自适应逻辑（I 键收起两侧栏进入沉浸模式） =====
     let sidebarCollapsed = false;
     try {
       sidebarCollapsed = localStorage.getItem('sidebar_collapsed') === 'true';
@@ -3282,10 +3286,41 @@
       try {
         localStorage.setItem('sidebar_collapsed', sidebarCollapsed ? 'true' : 'false');
       } catch (e) {}
+      updateHeaderProgressTag();
     }
 
     function toggleLeftSidebar() {
       setSidebarCollapsed(!sidebarCollapsed);
+    }
+
+    // 侧栏收起时在上方书名/章节信息栏展现当前题目与分区进度（不显示符号代码）
+    function updateHeaderProgressTag() {
+      const tag = document.getElementById('headerProgressTag');
+      if (!tag) return;
+      const ch = getChapter();
+      if (!ch || !ch.labels || !sidebarCollapsed) {
+        tag.style.display = 'none';
+        return;
+      }
+
+      const partLabel = partOfIdx(current) || '题目';
+      ensureGroups(ch);
+      const g = ch.groupForIdx[current];
+      let qDisplay = (ch.displayLabels && ch.displayLabels[current]) ? ch.displayLabels[current] : (g && g.parentLabel ? g.parentLabel : ch.labels[current]);
+
+      // 计算当前分区完成情况
+      let secTotal = 0, secDone = 0;
+      for (let i = 0; i < ch.labels.length; i++) {
+        if (partOfIdx(i) === partLabel) {
+          secTotal++;
+          if (statuses[i]) secDone++;
+        }
+      }
+
+      tag.innerHTML = '<span class="hpt-part">[' + partLabel + ']</span>' +
+                      '<span class="hpt-q">' + qDisplay + '</span>' +
+                      '<span class="hpt-stat">本区 ' + secDone + '/' + secTotal + ' · 全章 ' + (current + 1) + '/' + ch.labels.length + '</span>';
+      tag.style.display = 'inline-flex';
     }
 
     function initSidebarCollapse() {
@@ -3342,6 +3377,11 @@
       const header = document.getElementById('paletteHeader');
       const panel = document.getElementById('mathSymbolPalette');
       let currentTab = 'calc';
+
+      // 默认初始收起状态，进入笔记编辑时自动展开
+      if (panel) {
+        panel.classList.add('collapsed');
+      }
 
       function renderGrid(tabKey) {
         if (!grid) return;
