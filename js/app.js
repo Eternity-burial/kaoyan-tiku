@@ -1930,7 +1930,7 @@
 
       // 当前题所在的分区必须保持自动展开，绝不折叠
       const curPartLabel = partOfIdx(current);
-      const curSecKey = (curSubjectId || 'default') + '::' + currentChapter + '::' + curPartLabel;
+      const curSecKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + curPartLabel;
       collapsedSections.delete(curSecKey);
 
       // 收集当前章节中有题目的非当前分区 keys（用于一键全部折叠/展开）
@@ -1948,7 +1948,7 @@
         // 该分区无题则跳过（如36讲无习题、某些章节无例题）
         if (secGroups.length === 0) return;
 
-        const secKey = (curSubjectId || 'default') + '::' + currentChapter + '::' + part.label;
+        const secKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + part.label;
         if (part.label !== curPartLabel) {
           validOtherSecKeys.push(secKey);
         }
