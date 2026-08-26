@@ -3198,8 +3198,30 @@
         if (!lbAnnotMode) return;
         const ma = lbMarkerArea;
         if (!ma) return;
-        // 工具栏 / 标注按钮 / 关闭按钮上的点击不拦截
-        if (e.target.closest && e.target.closest('#annotToolbar, #lightboxAnnotate, #lightboxClose')) return;
+        // 工具栏 / 预设色板 / 标注按钮 / 关闭按钮等控件上的点击不拦截
+        if (e.target.closest && e.target.closest('#annotToolbar, #annotPalette, #lightboxAnnotate, #lightboxClose, .annot-palette, .annot-toolbar, .at-btn, .at-swatch, .at-color-swatch, .at-width-wrap, .at-width-step, .annot-palette-custom')) return;
+        if (e.composedPath) {
+          const path = e.composedPath();
+          const hitControl = path.some(function (el) {
+            return el && (
+              el.id === 'annotToolbar' ||
+              el.id === 'annotPalette' ||
+              el.id === 'lightboxAnnotate' ||
+              el.id === 'lightboxClose' ||
+              (el.classList && (
+                el.classList.contains('annot-palette') ||
+                el.classList.contains('annot-toolbar') ||
+                el.classList.contains('at-btn') ||
+                el.classList.contains('at-swatch') ||
+                el.classList.contains('at-color-swatch') ||
+                el.classList.contains('at-width-wrap') ||
+                el.classList.contains('at-width-step') ||
+                el.classList.contains('annot-palette-custom')
+              ))
+            );
+          });
+          if (hitControl) return;
+        }
         // 判断是否点在图内：标记编辑区（canvas-container）内的图片/控件算图内，其余算背景
         let insideImage = false;
         try {
@@ -3676,29 +3698,35 @@
     // 工具栏事件绑定（DOMContentLoaded 后调用）
     function bindAnnotToolbar() {
       const tb = document.getElementById('annotToolbar');
-      if (!tb) return;
-      tb.addEventListener('click', function (e) {
-        const btn = e.target.closest('.at-btn, .at-width-step');
-        if (!btn) return;
-        const action = btn.dataset.action;
-        const tool = btn.dataset.tool;
-        if (action === 'undo')        { doUndo(); return; }
-        if (action === 'redo')        { doRedo(); return; }
-        if (action === 'save')        { saveAnnotationFromArea(); return; }
-        if (action === 'cancel')      { closeAnnotator(); return; }
-        if (action === 'width-minus') { adjustAnnotWidth(-1); return; }
-        if (action === 'width-plus')  { adjustAnnotWidth(1); return; }
-        if (tool && ANNOT_TOOLS.indexOf(tool) >= 0) { selectAnnotTool(tool); }
-      });
+      if (tb) {
+        tb.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const btn = e.target.closest('.at-btn, .at-width-step');
+          if (!btn) return;
+          const action = btn.dataset.action;
+          const tool = btn.dataset.tool;
+          if (action === 'undo')        { doUndo(); return; }
+          if (action === 'redo')        { doRedo(); return; }
+          if (action === 'save')        { saveAnnotationFromArea(); return; }
+          if (action === 'cancel')      { closeAnnotator(); return; }
+          if (action === 'width-minus') { adjustAnnotWidth(-1); return; }
+          if (action === 'width-plus')  { adjustAnnotWidth(1); return; }
+          if (tool && ANNOT_TOOLS.indexOf(tool) >= 0) { selectAnnotTool(tool); }
+        });
+      }
 
       // 粗细滑块实时应用（同步到当前工具的记忆值）
-      document.getElementById('annotWidth').addEventListener('input', function (e) {
-        lbAnnotWidth = parseInt(e.target.value, 10) || 1;
-        const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
-        if (s) s.width = lbAnnotWidth;
-        updateAnnotWidthUI();
-        if (lbMarkerArea) applyAnnotStyle();
-      });
+      const widthInput = document.getElementById('annotWidth');
+      if (widthInput) {
+        widthInput.addEventListener('click', function (e) { e.stopPropagation(); });
+        widthInput.addEventListener('input', function (e) {
+          lbAnnotWidth = parseInt(e.target.value, 10) || 1;
+          const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
+          if (s) s.width = lbAnnotWidth;
+          updateAnnotWidthUI();
+          if (lbMarkerArea) applyAnnotStyle();
+        });
+      }
 
       // 颜色按钮：开关预设色板
       const colorBtn = document.getElementById('annotColorSwatch');
@@ -3709,14 +3737,21 @@
 
       // 色板：预设色点击
       const pal = document.getElementById('annotPalette');
-      if (pal) pal.addEventListener('click', function (e) {
-        const s = e.target.closest('.at-swatch');
-        if (s) { setAnnotColor(s.dataset.color); toggleAnnotPalette(false); return; }
-      });
+      if (pal) {
+        pal.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const s = e.target.closest('.at-swatch');
+          if (s) { setAnnotColor(s.dataset.color); toggleAnnotPalette(false); return; }
+        });
+      }
 
       // 色板：自定义色
       const custom = document.getElementById('annotColorCustom');
-      if (custom) custom.addEventListener('input', function (e) { setAnnotColor(e.target.value); });
+      if (custom) {
+        custom.addEventListener('click', function (e) { e.stopPropagation(); });
+        custom.addEventListener('input', function (e) { setAnnotColor(e.target.value); });
+        custom.addEventListener('change', function (e) { setAnnotColor(e.target.value); });
+      }
 
       // 点击工具栏外部关闭色板
       document.addEventListener('click', function (e) {
