@@ -103,7 +103,7 @@
       if (!k) continue;
       // 收集题库相关键
       if (
-        /^(ch|m\d+).*_(status|qbad|sbad|notes)$/.test(k) ||
+        /^(ch|m\d+).*_(status|qbad|sbad|book_mismatch|notes)$/.test(k) ||
         /^sm2_/.test(k) ||
         /^annot_/.test(k) ||
         /^ky_english_/.test(k) ||

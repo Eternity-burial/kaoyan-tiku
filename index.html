@@ -222,6 +222,8 @@
               class="key">R</span></button>
           <button id="btnSBad" class="gel-btn btn-sbad-toggle"><span class="func-name">解析图不达标</span><span
               class="key">T</span></button>
+          <button id="btnBookMismatch" class="gel-btn btn-mismatch-toggle"><span class="func-name">与实书不符</span><span
+              class="key">R+T</span></button>
         </div>
         <div class="sm2-info-bar" id="sm2InfoBar" style="display:none"></div>
         <div id="reviewControls" style="display:none">
@@ -230,6 +232,7 @@
           <button id="btnReviewNext">下一题</button>
         </div>
         <div class="img-bad-warning" id="qBadWarning">题目图质量不达标</div>
+        <div class="img-bad-warning mismatch-warn" id="bookMismatchWarning">与实书不符（存在排版或题目差异）</div>
         <div class="q-label" id="qLabel"></div>
         <div class="sub-select-bar" id="subSelectBar" style="display:none"></div>
         <div class="annot-wrapper" id="qAnnotWrap">
@@ -511,9 +514,10 @@
           <div class="shortcut-row"><span class="desc">切换默认解析显示状态</span><span class="key"><kbd>Shift</kbd>+<kbd>Space</kbd></span></div>
         </div>
         <div class="shortcut-group">
-          <div class="shortcut-group-title">图片质量</div>
+          <div class="shortcut-group-title">图片质量 & 勘误</div>
           <div class="shortcut-row"><span class="desc">标记/取消题目图不达标</span><span class="key"><kbd>R</kbd></span></div>
           <div class="shortcut-row"><span class="desc">标记/取消解析图不达标</span><span class="key"><kbd>T</kbd></span></div>
+          <div class="shortcut-row"><span class="desc">标记/取消与实书不符</span><span class="key"><kbd>R</kbd>+<kbd>T</kbd></span></div>
         </div>
         <div class="shortcut-group">
           <div class="shortcut-group-title">筛选（Shift 组合键）</div>

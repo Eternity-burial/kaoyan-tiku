@@ -31,6 +31,7 @@
     let statuses = {};
     let qBad = {};   // R键：题目图不达标  { idx: true }
     let sBad = {};   // T键：解析图不达标  { idx: true }
+    let bookMismatch = {}; // R+T键：该题与实书不符  { idx: true }
     let currentFilters = new Set(['all']);
     let subMode = false; // F键：小题选择模式（仅当前题组含子题时生效）
     let visualRows = []; // W/S 视觉行映射，每个元素是一个数组包含该行的 group.startIdx
@@ -231,6 +232,15 @@
       saveIndexedObj(sBad,
         function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_sbad', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
+      notifyStorageSync();
+    }
+    function loadBookMismatch() {
+      bookMismatch = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); });
+    }
+    function saveBookMismatch() {
+      saveIndexedObj(bookMismatch,
+        function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch', val); },
+        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); });
       notifyStorageSync();
     }
 
@@ -486,7 +496,7 @@
       current = 0;
       showSolution = defaultShowSolution;
       // 小题模式（F）是全局开关，切章不重置，跨章保持
-      loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
+      loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2();
       // 每次切章先清除错题本返回状态（错题本跳题会在 switchTo 之后重新置位）
       showWrongBookReturnBtn(false);
       // 全局筛选跨章保持：不重置、不按章恢复，仅加载本章数据后定位到第一条筛中题
@@ -1542,7 +1552,7 @@
       currentChapterId = ch.id;
       current = idx;
       // 小题模式（F）是全局开关，切书不重置、跨书保持
-      loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
+      loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2();
       // 若全局筛选激活且恢复的位置被筛掉，跳到第一条筛中题，避免落在不可见题上
       if (!isAllFilterActive()) {
         const filtered = getFilteredIndices();
@@ -1616,7 +1626,7 @@
       }
       wrongBookWb = null; // 无条件重置错题本书籍筛选（书籍列表按科目不同，防跨科目残留）
       closeAllTitlePanels(); // 关闭可能残留的标题下拉面板（切换后重建）
-      loadStatuses(); loadQBad(); loadSBad(); loadNotes();
+      loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes();
       loadSolutionPref(); renderSolDefaultBtn(); updateSolutionUI(); // 解析默认按科目记忆
       renderTitle(); renderStats(); renderNav();
       // 若全局筛选激活且恢复的位置被筛掉，则跳到第一条筛中题，避免落在不可见题上
@@ -1888,11 +1898,12 @@
           if (hasQuestionImagesAnnotated(idx)) groupHasAnnot = true;
           if (groupHasNote && groupHasAnnot) break;
         }
-        if (qBad[i] || sBad[i] || groupHasNote || groupHasAnnot) {
+        if (qBad[i] || sBad[i] || bookMismatch[i] || groupHasNote || groupHasAnnot) {
           const badgeSpan = document.createElement('span');
           badgeSpan.className = 'img-badges';
           if (qBad[i]) { const d = document.createElement('span'); d.className = 'qbad-dot'; d.textContent = 'Q'; badgeSpan.appendChild(d); }
           if (sBad[i]) { const d = document.createElement('span'); d.className = 'sbad-dot'; d.textContent = 'S'; badgeSpan.appendChild(d); }
+          if (bookMismatch[i]) { const d = document.createElement('span'); d.className = 'mismatch-dot'; d.textContent = '书'; badgeSpan.appendChild(d); }
           if (groupHasNote) { const d = document.createElement('span'); d.className = 'note-dot'; d.textContent = '●'; badgeSpan.appendChild(d); }
           if (groupHasAnnot) { const d = document.createElement('span'); d.className = 'annot-dot'; d.textContent = '●'; badgeSpan.appendChild(d); }
           btn.appendChild(badgeSpan);
@@ -2462,7 +2473,7 @@
         qLabelText = labels[current];
       }
       document.getElementById('qLabel').textContent = qLabelText;
-      updateStatusBtns(); updateQBadBtn(); updateSBadBtn(); updateImgBadWarnings();
+      updateStatusBtns(); updateQBadBtn(); updateSBadBtn(); updateBookMismatchBtn(); updateImgBadWarnings();
       renderNotes();
       renderStats();
       renderNav();
@@ -2472,14 +2483,23 @@
       document.getElementById('questionImg').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // ===== 题目图/解析图不达标 =====
-    function updateQBadBtn() { document.getElementById('btnQBad').classList.toggle('marked', !!qBad[current]); }
-    function updateSBadBtn() { document.getElementById('btnSBad').classList.toggle('marked', !!sBad[current]); }
+    // ===== 题目图/解析图不达标 & 与实书不符 =====
+    function updateQBadBtn() { const btn = document.getElementById('btnQBad'); if (btn) btn.classList.toggle('marked', !!qBad[current]); }
+    function updateSBadBtn() { const btn = document.getElementById('btnSBad'); if (btn) btn.classList.toggle('marked', !!sBad[current]); }
+    function updateBookMismatchBtn() { const btn = document.getElementById('btnBookMismatch'); if (btn) btn.classList.toggle('marked', !!bookMismatch[current]); }
 
     function updateImgBadWarnings() {
-      document.getElementById('qBadWarning').classList.toggle('show', !!qBad[current]);
-      document.getElementById('sBadWarning').classList.toggle('show', !!sBad[current]);
-      document.getElementById('questionImg').classList.toggle('qbad-border', !!qBad[current]);
+      const qWarn = document.getElementById('qBadWarning');
+      if (qWarn) qWarn.classList.toggle('show', !!qBad[current]);
+      const sWarn = document.getElementById('sBadWarning');
+      if (sWarn) sWarn.classList.toggle('show', !!sBad[current]);
+      const mWarn = document.getElementById('bookMismatchWarning');
+      if (mWarn) mWarn.classList.toggle('show', !!bookMismatch[current]);
+      const qImg = document.getElementById('questionImg');
+      if (qImg) {
+        qImg.classList.toggle('qbad-border', !!qBad[current]);
+        qImg.classList.toggle('mismatch-border', !!bookMismatch[current]);
+      }
       document.querySelectorAll('#solutionImgs .solution-img').forEach(img => {
         img.classList.toggle('sbad-border', !!sBad[current]);
       });
@@ -3016,6 +3036,32 @@
 
     function toggleQBad() { qBad[current] = !qBad[current]; if (!qBad[current]) delete qBad[current]; saveQBad(); updateQBadBtn(); updateImgBadWarnings(); renderNav(); }
     function toggleSBad() { sBad[current] = !sBad[current]; if (!sBad[current]) delete sBad[current]; saveSBad(); updateSBadBtn(); updateImgBadWarnings(); renderNav(); }
+    function toggleBookMismatch() { bookMismatch[current] = !bookMismatch[current]; if (!bookMismatch[current]) delete bookMismatch[current]; saveBookMismatch(); updateBookMismatchBtn(); updateImgBadWarnings(); renderNav(); }
+
+    // ===== 组合键检测（R/T 图质量与实书不符标记） =====
+    let rtComboState = { r: false, t: false, timer: null };
+    function resetRtCombo() {
+      rtComboState.r = false; rtComboState.t = false;
+      if (rtComboState.timer) { clearTimeout(rtComboState.timer); rtComboState.timer = null; }
+    }
+    function handleBadKey(key) {
+      var ch = key.toLowerCase();
+      if (ch !== 'r' && ch !== 't') { resetRtCombo(); return; }
+      rtComboState[ch] = true;
+      if (rtComboState.timer) { clearTimeout(rtComboState.timer); rtComboState.timer = null; }
+      // 检测组合键（顺序无关）：R + T → 该题与实书不符
+      if (rtComboState.r && rtComboState.t) {
+        toggleBookMismatch();
+        resetRtCombo();
+        return;
+      }
+      // 未形成组合，等待 120ms 后按单键触发
+      rtComboState.timer = setTimeout(function() {
+        if (rtComboState.r) { toggleQBad(); }
+        else if (rtComboState.t) { toggleSBad(); }
+        resetRtCombo();
+      }, 120);
+    }
 
     // ===== 组合键检测（Z/X/C 5级打标） =====
     let comboState = { z: false, x: false, c: false, timer: null };
@@ -4116,6 +4162,8 @@
     });
     document.getElementById('btnQBad').onclick = toggleQBad;
     document.getElementById('btnSBad').onclick = toggleSBad;
+    const btnMismatch = document.getElementById('btnBookMismatch');
+    if (btnMismatch) btnMismatch.onclick = toggleBookMismatch;
 
     // 笔记按钮事件
     document.getElementById('btnNoteEdit').onclick = enterEditMode;
@@ -5537,6 +5585,8 @@ ${cardsHTML}
 
       // 非 Z/X/C 键按下时，打断待处理的组合超时（避免导航/面板等操作后意外改标记）
       if (key !== 'z' && key !== 'x' && key !== 'c') resetCombo();
+      // 非 R/T 键按下时，打断待处理的 R+T 组合超时
+      if (key !== 'r' && key !== 't') resetRtCombo();
 
       switch (key) {
         // 上一题 / 下一题（题组级 / 子题级，见 navPrev / navNext）
@@ -5554,9 +5604,8 @@ ${cardsHTML}
         // 章节切换（复习中 Q/E = 上一/下一复习题）
         case 'q': if (reviewSession) reviewPrev(); else gotoPrevChapter(); break;
         case 'e': if (reviewSession) reviewNext(); else gotoNextChapter(); break;
-        // 图片质量标记
-        case 'r': toggleQBad(); break;
-        case 't': toggleSBad(); break;
+        // 图片质量与实书不符标记（R / T / R+T 组合键）
+        case 'r': case 't': e.preventDefault(); handleBadKey(key); break;
         // 笔记与帮助
         case 'n': e.preventDefault(); focusNotes(); break;
         case 'h': toggleShortcutHelp(); break;
@@ -5674,7 +5723,7 @@ ${cardsHTML}
       }
 
       loadGlobalFilters(); loadSolutionPref(); // 恢复筛选状态与解析默认（解析默认按科目）
-      loadStatuses(); loadQBad(); loadSBad(); loadNotes(); loadSm2();
+      loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2();
       // 若恢复的筛选状态激活且当前题被筛掉，跳到第一条筛中题，避免落在不可见题上
       if (!isAllFilterActive()) {
         const filtered = getFilteredIndices();
@@ -5704,6 +5753,7 @@ ${cardsHTML}
     window.loadStatuses = loadStatuses;
     window.loadQBad = loadQBad;
     window.loadSBad = loadSBad;
+    window.loadBookMismatch = loadBookMismatch;
     window.loadNotes = loadNotes;
     window.loadAnnotations = loadAnnotations;
     window.loadSm2 = loadSm2;
