@@ -2554,11 +2554,15 @@
     // ===== 考研数学常用 LaTeX 符号盘与自动补全词典 =====
     const MATH_PALETTE_DATA = {
       calc: [
+        { label: "一阶导 f'(x)", code: "f'(x)", render: "f'(x)" },
+        { label: "二阶导 f''(x)", code: "f''(x)", render: "f''(x)" },
+        { label: "n阶导 fⁿ(x)", code: "f^{(n)}(x)", render: "fⁿ(x)" },
+        { label: "导数值 f'(x₀)", code: "f'(x_0)", render: "f'(x₀)" },
         { label: 'lim(∞)', code: '\\lim_{x \\to \\infty} |', render: 'lim_{x→∞}' },
         { label: 'lim(0)', code: '\\lim_{x \\to 0} |', render: 'lim_{x→0}' },
         { label: '分式', code: '\\frac{|}{}', render: 'a/b' },
-        { label: '导数', code: '\\frac{\\mathrm{d}|}{\\mathrm{d}x}', render: 'dy/dx' },
-        { label: '偏导', code: '\\frac{\\partial |}{\\partial x}', render: '∂/∂x' },
+        { label: '导数 dy/dx', code: '\\frac{\\mathrm{d}y}{\\mathrm{d}x}', render: 'dy/dx' },
+        { label: '偏导 ∂f/∂x', code: '\\frac{\\partial f}{\\partial x}', render: '∂f/∂x' },
         { label: '定积分', code: '\\int_{|}^{} \\,dx', render: '∫_a^b' },
         { label: '二重积分', code: '\\iint_{D} | \\,dxdy', render: '∬_D' },
         { label: '三重积分', code: '\\iiint_{\\Omega} | \\,dxdydz', render: '∭_Ω' },
@@ -2618,6 +2622,14 @@
     };
 
     const AUTOCOMPLETE_DICT = [
+      { key: 'fp', insert: "f'(x)", desc: "一阶导数 f'(x)", preview: "f'(x)" },
+      { key: 'fprime', insert: "f'(x)", desc: "一阶导数 f'(x)", preview: "f'(x)" },
+      { key: 'fpp', insert: "f''(x)", desc: "二阶导数 f''(x)", preview: "f''(x)" },
+      { key: 'fn', insert: "f^{(n)}(x)", desc: "n阶导数 fⁿ(x)", preview: "fⁿ(x)" },
+      { key: 'f0', insert: "f'(x_0)", desc: "导数值 f'(x₀)", preview: "f'(x₀)" },
+      { key: 'fx', insert: "f(x)", desc: "函数 f(x)", preview: "f(x)" },
+      { key: 'gx', insert: "g(x)", desc: "函数 g(x)", preview: "g(x)" },
+      { key: 'df', insert: "\\frac{\\mathrm{d}f}{\\mathrm{d}x}", desc: "全导数 df/dx", preview: "df/dx" },
       { key: 'lim', insert: '\\lim_{x \\to \\infty} |', desc: '极限(趋于无穷)', preview: 'lim_{x→∞}' },
       { key: 'lim0', insert: '\\lim_{x \\to 0} |', desc: '极限(趋于0)', preview: 'lim_{x→0}' },
       { key: 'frac', insert: '\\frac{|}{}', desc: '分式', preview: 'a/b' },
