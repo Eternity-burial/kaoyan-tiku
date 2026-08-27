@@ -51,6 +51,10 @@
         if (ch.wb === '李范全书') return '习题';
         return '1000题';
       }
+      if (ch && ch.wb === '老姚高数' && ch.sections) {
+        const s = ch.sections.find(function (sec) { return idx >= sec.start && idx < sec.start + sec.count; });
+        if (s) return s.type;
+      }
       return classifyLabel(ch ? ch.labels[idx] : '');
     }
     // 笔记命名空间键：避免「30讲例1-1」与「1000题1-1」笔记键冲突。
@@ -299,6 +303,22 @@
       srcIds.forEach(function (cid) {
         let o = {};
         try { o = JSON.parse(localStorage.getItem(cid + '_' + curSubject.storageSuffix + '_notes')) || {}; } catch (e) { o = {}; }
+        // 自动迁移旧标签格式的笔记（例如将 1-1 / 2-1 迁移到 1.1-1 / 2.1-1）
+        const targetCh = chapterById(cid);
+        if (targetCh && targetCh.imgLabels) {
+          let migrated = false;
+          for (let i = 0; i < targetCh.labels.length; i++) {
+            const newLabel = targetCh.labels[i];
+            const oldLabel = targetCh.imgLabels[i];
+            if (oldLabel && newLabel !== oldLabel && o[oldLabel] !== undefined && o[newLabel] === undefined) {
+              o[newLabel] = o[oldLabel];
+              migrated = true;
+            }
+          }
+          if (migrated) {
+            try { localStorage.setItem(cid + '_' + curSubject.storageSuffix + '_notes', JSON.stringify(o)); } catch (e) {}
+          }
+        }
         for (var k in o) { if (Object.prototype.hasOwnProperty.call(o, k)) notesData[cid + '::' + k] = o[k]; }
       });
     }
@@ -695,12 +715,23 @@
     // 合并章节：李范全书为 例题 → 习题；30讲/36讲为 例题 → 习题 → 1000题；其余章节用科目 partOrder
     function getPartOrder() {
       const ch = getChapter();
+      if (ch && ch.wb === '老姚高数' && ch.sections) return ch.sections.map(function (s) { return s.type; });
       if (ch && ch.wb === '李范全书') return ['例题', '习题'];
       if (ch && ch.q1000Total) return ['例题', '习题', '1000题'];
       return curSubject ? curSubject.partOrder : ['例题', '习题'];
     }
 
     function classifyLabel(label) {
+      const ch = getChapter();
+      if (ch && ch.wb === '老姚高数' && ch.sections) {
+        const idx = ch.labels.indexOf(label);
+        if (idx >= 0) {
+          const s = ch.sections.find(function(sec) { return idx >= sec.start && idx < sec.start + sec.count; });
+          if (s && s.exampleCount !== undefined) {
+            return (idx < s.start + s.exampleCount) ? '例题' : '习题';
+          }
+        }
+      }
       return curSubject ? curSubject.classifyLabel(label) : (label.startsWith('例') ? '例题' : '习题');
     }
 
@@ -2000,9 +2031,26 @@
         // 若被折叠，不渲染下方题号按钮
         if (isCollapsed) return;
 
+        var curSubType = null;
         secGroups.forEach(function(g) {
-          // 插入题型二级子标题（如 选择题 / 填空题 / 证明题）
-          if (ch.sections) {
+          // 插入题型二级子标题（老姚高数在小节内分 例题 / 习题；其余书籍按 sections 题型）
+          if (ch.wb === '老姚高数' && ch.sections) {
+            var s = ch.sections.find(function(sec) { return g.startIdx >= sec.start && g.startIdx < sec.start + sec.count; });
+            var rawLabel = ch.labels[g.startIdx] || '';
+            var subType;
+            if (s && s.exampleCount !== undefined) {
+              subType = (g.startIdx < s.start + s.exampleCount) ? '例题' : '习题';
+            } else {
+              subType = /例/.test(rawLabel) ? '例题' : '习题';
+            }
+            if (subType !== curSubType) {
+              curSubType = subType;
+              var subTitle = document.createElement('div');
+              subTitle.className = 'subsection-header';
+              subTitle.textContent = subType;
+              nav.appendChild(subTitle);
+            }
+          } else if (ch.sections) {
             var matchingSec = ch.sections.find(function(s) { return s.start === g.startIdx; });
             if (matchingSec) {
               var subTitle = document.createElement('div');
