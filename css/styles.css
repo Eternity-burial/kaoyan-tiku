@@ -3704,11 +3704,22 @@
       font-size: 1.15em;
     }
     .notes-render .katex-display {
-      margin: 0.8em 0;
-      font-size: 1.22em;
+      margin: 0.7em 0;
+      font-size: 1.18em;
       overflow-x: auto;
       overflow-y: hidden;
-      padding: 4px 0;
+      padding: 6px 4px;
+      text-align: center;
+    }
+    .notes-render .katex-display::-webkit-scrollbar {
+      height: 4px;
+    }
+    .notes-render .katex-display::-webkit-scrollbar-thumb {
+      background: rgba(102, 8, 116, 0.25);
+      border-radius: 2px;
+    }
+    [data-theme="dark"] .notes-render .katex-display::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     /* ===== 笔记 Markdown 排版 ===== */
