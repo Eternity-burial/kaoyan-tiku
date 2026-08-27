@@ -2523,31 +2523,6 @@
           var processed = m.replace(/\\(lim|sum|prod|max|min|inf|sup)(?!\\limits|\\nolimits)\s*_/g, function(match, op) {
             return '\\' + op + '\\limits_';
           });
-
-          // 如果是 $$ 块且包含多行分步计算（= 或 + 换行），且没有显式 aligned 环境，自动整合成 aligned 优美排版
-          if (processed.startsWith('$$') && processed.endsWith('$$')) {
-            var inner = processed.slice(2, -2).trim();
-            if (inner.includes('\n') && !/\\begin\{(aligned|matrix|bmatrix|pmatrix|vmatrix|cases|array)\}/.test(inner)) {
-              var lines = inner.split('\n').map(function(l) { return l.trim(); }).filter(Boolean);
-              var hasSteps = lines.some(function(l, idx) {
-                return idx > 0 && (/^[=+\-~<>]|\\approx|\\sim|\\le|\\ge|\\ne|\\equiv/.test(l) || l.startsWith('\\\\'));
-              });
-              if (hasSteps) {
-                var alignedLines = lines.map(function(l, idx) {
-                  var lineStr = l;
-                  if (/^[=+\-~<>]|\\approx|\\sim|\\le|\\ge|\\ne|\\equiv/.test(lineStr)) {
-                    if (!lineStr.startsWith('&')) lineStr = '&' + lineStr;
-                  }
-                  if (idx < lines.length - 1 && !lineStr.endsWith('\\\\')) {
-                    lineStr += ' \\\\';
-                  }
-                  return lineStr;
-                });
-                processed = '$$\\begin{aligned}\n' + alignedLines.join('\n') + '\n\\end{aligned}$$';
-              }
-            }
-          }
-
           mathSpans.push(processed);
           return '' + (mathSpans.length - 1) + '';
         });
