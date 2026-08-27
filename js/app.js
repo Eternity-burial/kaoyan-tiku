@@ -303,22 +303,6 @@
       srcIds.forEach(function (cid) {
         let o = {};
         try { o = JSON.parse(localStorage.getItem(cid + '_' + curSubject.storageSuffix + '_notes')) || {}; } catch (e) { o = {}; }
-        // 自动迁移旧标签格式的笔记（例如将 1-1 / 2-1 迁移到 1.1-1 / 2.1-1）
-        const targetCh = chapterById(cid);
-        if (targetCh && targetCh.imgLabels) {
-          let migrated = false;
-          for (let i = 0; i < targetCh.labels.length; i++) {
-            const newLabel = targetCh.labels[i];
-            const oldLabel = targetCh.imgLabels[i];
-            if (oldLabel && newLabel !== oldLabel && o[oldLabel] !== undefined && o[newLabel] === undefined) {
-              o[newLabel] = o[oldLabel];
-              migrated = true;
-            }
-          }
-          if (migrated) {
-            try { localStorage.setItem(cid + '_' + curSubject.storageSuffix + '_notes', JSON.stringify(o)); } catch (e) {}
-          }
-        }
         for (var k in o) { if (Object.prototype.hasOwnProperty.call(o, k)) notesData[cid + '::' + k] = o[k]; }
       });
     }
