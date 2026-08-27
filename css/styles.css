@@ -3674,12 +3674,12 @@
     }
 
     .notes-render {
-      padding: 12px 14px;
+      padding: 14px 16px;
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       background: var(--input-bg);
       font-size: 16px;
-      line-height: 1.85;
+      line-height: 1.95;
       color: var(--text);
       word-break: break-word;
       min-height: 44px;
@@ -3699,17 +3699,23 @@
       font-style: italic;
     }
 
-    /* ===== 笔记 KaTeX 数学公式舒适度排版 ===== */
+    /* ===== 笔记 KaTeX 数学公式舒适度与自适应排版 ===== */
     .notes-render .katex {
-      font-size: 1.15em;
+      font-size: 1.12em;
+      line-height: normal;
+      white-space: normal;
+    }
+    .notes-render .katex .mfrac {
+      vertical-align: middle;
     }
     .notes-render .katex-display {
-      margin: 0.7em 0;
-      font-size: 1.18em;
+      margin: 0.8em 0;
+      font-size: 1.2em;
       overflow-x: auto;
       overflow-y: hidden;
-      padding: 6px 4px;
+      padding: 8px 4px;
       text-align: center;
+      line-height: normal;
     }
     .notes-render .katex-display::-webkit-scrollbar {
       height: 4px;
@@ -3722,7 +3728,7 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-    /* ===== 笔记 Markdown 排版 ===== */
+    /* ===== 笔记 Markdown 排版与公式行高自适应 ===== */
     .notes-render h1, .notes-render h2, .notes-render h3, .notes-render h4 {
       margin: 0.6em 0 0.35em;
       line-height: 1.35;
@@ -3733,9 +3739,15 @@
     .notes-render h2 { font-size: 1.35em; }
     .notes-render h3 { font-size: 1.2em; }
     .notes-render h4 { font-size: 1.1em; }
-    .notes-render p { margin: 0.4em 0; }
+    .notes-render p { margin: 0.45em 0; line-height: inherit; }
     .notes-render ul, .notes-render ol { margin: 0.4em 0; padding-left: 1.6em; }
     .notes-render li { margin: 0.2em 0; }
+    /* 含有 KaTeX 数学公式的段落/列表自适应舒展行高，彻底避免繁分式/上下标切边或挤压 */
+    .notes-render p:has(.katex),
+    .notes-render li:has(.katex),
+    .notes-render blockquote:has(.katex) {
+      line-height: 2.2;
+    }
     .notes-render blockquote {
       margin: 0.6em 0;
       padding: 0.3em 1.1em;
