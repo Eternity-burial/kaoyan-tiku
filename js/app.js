@@ -712,7 +712,7 @@
         if (idx >= 0) {
           const s = ch.sections.find(function(sec) { return idx >= sec.start && idx < sec.start + sec.count; });
           if (s && s.exampleCount !== undefined) {
-            return (idx < s.start + s.exampleCount) ? '例题' : '习题';
+            return (idx < s.start + s.exampleCount) ? '例题' : '补充练习';
           }
         }
       }
@@ -2023,9 +2023,9 @@
             var rawLabel = ch.labels[g.startIdx] || '';
             var subType;
             if (s && s.exampleCount !== undefined) {
-              subType = (g.startIdx < s.start + s.exampleCount) ? '例题' : '习题';
+              subType = (g.startIdx < s.start + s.exampleCount) ? '例题' : '补充练习';
             } else {
-              subType = /例/.test(rawLabel) ? '例题' : '习题';
+              subType = /例/.test(rawLabel) ? '例题' : '补充练习';
             }
             if (subType !== curSubType) {
               curSubType = subType;
