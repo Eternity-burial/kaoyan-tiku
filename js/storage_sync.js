@@ -101,15 +101,14 @@
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
       if (!k) continue;
-      // 收集题库相关键
+      // 精确收集题库相关活跃键（掌握度/错图/实书不符/笔记/SM-2/图片标注/英语/全局状态）
       if (
-        /^(ch|m\d+).*_(status|qbad|sbad|book_mismatch|notes)$/.test(k) ||
+        /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$/.test(k) ||
         /^sm2_/.test(k) ||
         /^annot_/.test(k) ||
         /^ky_english_/.test(k) ||
-        /^kaoyan_/.test(k) ||
-        /^(shu1|822|english)_ui_/.test(k) ||
-        /^__bak822r_/.test(k)
+        /^kaoyan_(?:resume|study_log|ui_filters|subject|theme|review_session)$/.test(k) ||
+        /^(?:shu1|822|english)_ui_/.test(k)
       ) {
         dump[k] = localStorage.getItem(k);
       }
