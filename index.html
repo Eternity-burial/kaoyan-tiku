@@ -820,7 +820,7 @@
       </div>
 
       <div class="related-modal-body">
-        <!-- 模块一：当前题目所属主题 -->
+        <!-- 模块一：考点主题归类 -->
         <div class="rm-section">
           <div class="rm-sec-header">
             <span class="rm-sec-title">当前题目归属的考点主题</span>
@@ -831,9 +831,9 @@
 
           <!-- 加入已有考点主题 -->
           <div class="rm-available-topics-wrap" id="rmAvailableTopicsWrap">
-            <span class="rm-picker-label">加入已有考点主题：</span>
+            <span class="rm-picker-label">加入全库已有考点主题：</span>
             <div class="rm-available-topics" id="rmAvailableTopics">
-              <!-- 动态渲染全库已有主题供一键点击加入 -->
+              <!-- 动态渲染全库已有主题供一键点击加入与删除 -->
             </div>
           </div>
 
@@ -843,42 +843,36 @@
           </div>
         </div>
 
-        <!-- 模块二：关联其他同类题目 -->
-        <div class="rm-section">
+        <!-- 模块二：可视化跨书关联选题区 -->
+        <div class="rm-section rm-section-main">
           <div class="rm-sec-header">
-            <span class="rm-sec-title">关联其他题目到当前同类主题</span>
+            <span class="rm-sec-title">关联同类题目</span>
             <div class="rm-tabs" id="rmTabs">
-              <button type="button" class="rm-tab-btn active" data-tab="recent">最近浏览</button>
-              <button type="button" class="rm-tab-btn" data-tab="picker">跨书级联选择</button>
+              <button type="button" class="rm-tab-btn active" data-tab="picker">跨书可视化选题</button>
+              <button type="button" class="rm-tab-btn" data-tab="recent">最近浏览</button>
               <button type="button" class="rm-tab-btn" data-tab="search">搜索题号</button>
             </div>
           </div>
 
-          <!-- Tab 1: 最近浏览 -->
-          <div class="rm-tab-pane active" id="rmTabRecent">
-            <div class="rm-recent-list" id="rmRecentList"></div>
+          <!-- Tab 1: 跨书可视化选题器 -->
+          <div class="rm-tab-pane active" id="rmTabPicker">
+            <!-- 书籍选择栏 -->
+            <div class="rm-books-bar" id="rmBooksBar"></div>
+            <!-- 章节选择栏 -->
+            <div class="rm-chapters-bar" id="rmChaptersBar"></div>
+            <!-- 题目可视化网格（包含题干图预览） -->
+            <div class="rm-q-grid-wrap">
+              <div class="rm-q-grid-header">
+                <span class="rm-q-grid-title" id="rmQGridTitle">题目列表（点击卡片预览题干）</span>
+                <span class="rm-q-grid-hint">选定章节后实时展开所有题干图，点击「+ 关联」一键加入同类题</span>
+              </div>
+              <div class="rm-q-grid" id="rmQuestionsGrid"></div>
+            </div>
           </div>
 
-          <!-- Tab 2: 跨书级联选择器 -->
-          <div class="rm-tab-pane" id="rmTabPicker" style="display:none">
-            <div class="rm-picker-grid">
-              <div class="rm-picker-col">
-                <label class="rm-picker-label">1. 选择科目与书籍</label>
-                <select class="rm-select" id="selRelatedBook"></select>
-              </div>
-              <div class="rm-picker-col">
-                <label class="rm-picker-label">2. 选择章节</label>
-                <select class="rm-select" id="selRelatedChapter"></select>
-              </div>
-              <div class="rm-picker-col">
-                <label class="rm-picker-label">3. 选择题目</label>
-                <select class="rm-select" id="selRelatedQuestion"></select>
-              </div>
-            </div>
-            <div class="rm-picker-action-row">
-              <input type="text" class="rm-input" id="inputPickerNote" placeholder="可选：关联备注 (如: 乘积高阶导公式对比)">
-              <button type="button" class="gel-btn btn-primary" id="btnAddPickerQuestion">+ 关联选中的题目</button>
-            </div>
+          <!-- Tab 2: 最近浏览 -->
+          <div class="rm-tab-pane" id="rmTabRecent" style="display:none">
+            <div class="rm-recent-list" id="rmRecentList"></div>
           </div>
 
           <!-- Tab 3: 搜索题号 -->
