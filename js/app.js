@@ -2503,6 +2503,8 @@
       document.getElementById('qLabel').textContent = qLabelText;
       updateStatusBtns(); updateQBadBtn(); updateSBadBtn(); updateBookMismatchBtn(); updateImgBadWarnings();
       renderNotes();
+      recordRecentQuestion(getCurrentQid());
+      renderRelatedQuestions();
       renderStats();
       renderNav();
       renderSm2InfoBar();
@@ -2595,6 +2597,594 @@
         if (!hit) continue;
         if (last < txt.length) frag.appendChild(document.createTextNode(txt.substring(last)));
         node.parentNode.replaceChild(frag, node);
+      }
+    }
+
+    // HTML 转义安全工具函数
+    function escapeHtml(str) {
+      if (str === undefined || str === null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // ===== 同类题与跨书双向关联管理系统 =====
+    var relatedTopics = {};
+    var recentQuestionsHistory = [];
+    var jumpReturnStack = [];
+    var relatedModalOpen = false;
+
+    // 1. QID 编解码与元数据工具
+    function getQid(subjId, chId, idx) {
+      return (subjId || curSubjectId) + '::' + (chId || currentChapterId) + '::' + idx;
+    }
+
+    function getCurrentQid() {
+      return getQid(curSubjectId, currentChapterId, current);
+    }
+
+    function parseQid(qid) {
+      if (!qid || typeof qid !== 'string') return null;
+      var parts = qid.split('::');
+      if (parts.length < 3) return null;
+      return {
+        subjectId: parts[0],
+        chapterId: parts[1],
+        idx: parseInt(parts[2], 10)
+      };
+    }
+
+    function getQuestionMeta(qid) {
+      var parsed = parseQid(qid);
+      if (!parsed || isNaN(parsed.idx)) return null;
+
+      var subj = SUBJECTS.find(function(s) { return s.id === parsed.subjectId; });
+      if (!subj) return null;
+
+      var ch = subj.chapters ? subj.chapters.find(function(c) { return c.id === parsed.chapterId; }) : null;
+      if (!ch) return null;
+
+      var label = (ch.labels && ch.labels[parsed.idx]) ? ch.labels[parsed.idx] : '#' + (parsed.idx + 1);
+
+      // 读取该题当前掌握度状态
+      var status = null;
+      try {
+        var statusKey = ch.id + '_' + subj.storageSuffix + '_status';
+        var statusObj = JSON.parse(localStorage.getItem(statusKey) || '{}');
+        status = statusObj[parsed.idx] || null;
+      } catch (e) {}
+
+      var book = ch.wb || subj.name || '题库';
+      var chShort = ch.short || ch.name;
+      var displayTitle = book + ' · ' + chShort + ' ' + label;
+
+      return {
+        qid: qid,
+        subjectId: parsed.subjectId,
+        subjectName: subj.name,
+        chapterId: parsed.chapterId,
+        chapterName: ch.name,
+        chapterShort: chShort,
+        bookName: book,
+        idx: parsed.idx,
+        label: label,
+        status: status,
+        displayTitle: displayTitle
+      };
+    }
+
+    // 2. 同类题数据存储与主题管理
+    function loadRelatedTopics() {
+      try {
+        relatedTopics = JSON.parse(localStorage.getItem('kaoyan_related_topics') || '{}');
+      } catch (e) {
+        relatedTopics = {};
+      }
+    }
+
+    function saveRelatedTopics() {
+      localStorage.setItem('kaoyan_related_topics', JSON.stringify(relatedTopics));
+      notifyStorageSync();
+    }
+
+    function getTopicsForQid(qid) {
+      var list = [];
+      for (var tid in relatedTopics) {
+        if (!Object.prototype.hasOwnProperty.call(relatedTopics, tid)) continue;
+        var t = relatedTopics[tid];
+        if (t && t.members && t.members.some(function(m) { return m.qid === qid; })) {
+          list.push(t);
+        }
+      }
+      return list;
+    }
+
+    function getRelatedQuestionsForQid(qid) {
+      var relatedMap = {};
+      var myTopics = getTopicsForQid(qid);
+
+      myTopics.forEach(function(t) {
+        if (!t.members) return;
+        t.members.forEach(function(m) {
+          if (m.qid !== qid) {
+            if (!relatedMap[m.qid]) {
+              relatedMap[m.qid] = {
+                qid: m.qid,
+                topics: [t.name],
+                notes: m.note ? [m.note] : []
+              };
+            } else {
+              var item = relatedMap[m.qid];
+              if (item.topics.indexOf(t.name) === -1) item.topics.push(t.name);
+              if (m.note && item.notes.indexOf(m.note) === -1) item.notes.push(m.note);
+            }
+          }
+        });
+      });
+
+      var list = [];
+      for (var k in relatedMap) {
+        if (Object.prototype.hasOwnProperty.call(relatedMap, k)) {
+          var meta = getQuestionMeta(k);
+          if (meta) {
+            meta.topics = relatedMap[k].topics;
+            meta.note = relatedMap[k].notes.join('；');
+            list.push(meta);
+          }
+        }
+      }
+
+      return {
+        topics: myTopics,
+        relatedQuestions: list
+      };
+    }
+
+    function createRelatedTopic(name, currentQid, note) {
+      if (!name || !name.trim()) return null;
+      var tid = 'topic_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
+      var newTopic = {
+        id: tid,
+        name: name.trim(),
+        createTime: Date.now(),
+        members: currentQid ? [{ qid: currentQid, note: note || '' }] : []
+      };
+      relatedTopics[tid] = newTopic;
+      saveRelatedTopics();
+      return newTopic;
+    }
+
+    function addQuestionToTopic(topicId, qid, note) {
+      var t = relatedTopics[topicId];
+      if (!t) return false;
+      if (!t.members) t.members = [];
+      var existing = t.members.find(function(m) { return m.qid === qid; });
+      if (!existing) {
+        t.members.push({ qid: qid, note: note || '' });
+      } else if (note) {
+        existing.note = note;
+      }
+      saveRelatedTopics();
+      return true;
+    }
+
+    function removeQuestionFromTopic(topicId, qid) {
+      var t = relatedTopics[topicId];
+      if (!t || !t.members) return false;
+      t.members = t.members.filter(function(m) { return m.qid !== qid; });
+      if (t.members.length === 0) {
+        delete relatedTopics[topicId];
+      }
+      saveRelatedTopics();
+      return true;
+    }
+
+    function recordRecentQuestion(qid) {
+      if (!qid) return;
+      recentQuestionsHistory = recentQuestionsHistory.filter(function(q) { return q !== qid; });
+      recentQuestionsHistory.unshift(qid);
+      if (recentQuestionsHistory.length > 10) recentQuestionsHistory.pop();
+    }
+
+    // 3. 渲染主界面同类题卡片栏
+    function renderRelatedQuestions() {
+      var curQid = getCurrentQid();
+      var data = getRelatedQuestionsForQid(curQid);
+      var wrap = document.getElementById('relatedTopicsWrap');
+      var list = document.getElementById('relatedCardsList');
+      if (!wrap || !list) return;
+
+      // 渲染主题胶囊
+      if (data.topics.length > 0) {
+        wrap.innerHTML = data.topics.map(function(t) {
+          return '<span class="related-topic-pill" title="考点：' + escapeHtml(t.name) + '">' + escapeHtml(t.name) + '</span>';
+        }).join('');
+      } else {
+        wrap.innerHTML = '';
+      }
+
+      // 渲染同类题卡片
+      if (data.relatedQuestions.length > 0) {
+        list.innerHTML = data.relatedQuestions.map(function(q) {
+          var dotClass = q.status ? ' ' + q.status : '';
+          var noteHtml = q.note ? '<span class="rc-note" title="' + escapeHtml(q.note) + '">' + escapeHtml(q.note) + '</span>' : '';
+          return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '" title="点击跳转至：' + escapeHtml(q.displayTitle) + '">' +
+            '<span class="rc-icon">📖</span>' +
+            '<div class="rc-body">' +
+              '<div class="rc-main-row">' +
+                '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
+                '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
+                '<span class="rc-dot' + dotClass + '"></span>' +
+              '</div>' +
+              noteHtml +
+            '</div>' +
+          '</div>';
+        }).join('');
+
+        list.querySelectorAll('.related-card').forEach(function(card) {
+          card.onclick = function() {
+            var targetQid = this.dataset.qid;
+            if (targetQid) jumpToQid(targetQid, true);
+          };
+        });
+      } else {
+        list.innerHTML = '<span class="related-empty-hint">暂无关联同类题，点击右侧「+ 关联同类题」可跨书归类</span>';
+      }
+    }
+
+    // 4. 跨书/跨章无缝跳转与返回栈管理
+    function jumpToQid(targetQid, pushStack) {
+      var target = parseQid(targetQid);
+      if (!target) return;
+      autoSaveNotes();
+
+      if (pushStack) {
+        var curQid = getCurrentQid();
+        var curMeta = getQuestionMeta(curQid);
+        jumpReturnStack.push({ qid: curQid, meta: curMeta });
+      }
+
+      if (target.subjectId !== curSubjectId) {
+        switchSubject(target.subjectId);
+      }
+      if (target.chapterId !== currentChapterId) {
+        switchChapter(target.chapterId);
+      }
+      switchTo(target.idx);
+      updateJumpReturnBar();
+    }
+
+    function returnToPreviousQuestion() {
+      if (jumpReturnStack.length === 0) return;
+      var prev = jumpReturnStack.pop();
+      if (prev && prev.qid) {
+        jumpToQid(prev.qid, false);
+      }
+      updateJumpReturnBar();
+    }
+
+    function closeJumpReturnBar() {
+      jumpReturnStack = [];
+      updateJumpReturnBar();
+    }
+
+    function updateJumpReturnBar() {
+      var bar = document.getElementById('jumpReturnBar');
+      var txt = document.getElementById('jumpBackText');
+      if (!bar) return;
+      if (jumpReturnStack.length > 0) {
+        var top = jumpReturnStack[jumpReturnStack.length - 1];
+        var title = top.meta ? top.meta.displayTitle : top.qid;
+        if (txt) txt.textContent = '返回原题：' + title;
+        bar.style.display = 'flex';
+      } else {
+        bar.style.display = 'none';
+      }
+    }
+
+    // 5. 同类题弹窗交互
+    function openRelatedModal() {
+      relatedModalOpen = true;
+      var modal = document.getElementById('relatedModal');
+      if (!modal) return;
+      var curQid = getCurrentQid();
+      var curMeta = getQuestionMeta(curQid);
+      var curText = document.getElementById('relatedModalCurQText');
+      if (curText && curMeta) {
+        curText.textContent = '当前题目：' + curMeta.displayTitle;
+      }
+      renderRelatedModalTopics();
+      renderRelatedModalRecent();
+      initRelatedBookCascadePicker();
+      modal.style.display = 'flex';
+    }
+
+    function closeRelatedModal() {
+      relatedModalOpen = false;
+      var modal = document.getElementById('relatedModal');
+      if (modal) modal.style.display = 'none';
+      renderRelatedQuestions();
+    }
+
+    function renderRelatedModalTopics() {
+      var curQid = getCurrentQid();
+      var myTopics = getTopicsForQid(curQid);
+      var container = document.getElementById('rmCurrentTopics');
+      if (!container) return;
+
+      if (myTopics.length > 0) {
+        container.innerHTML = myTopics.map(function(t) {
+          return '<span class="rm-topic-tag">' +
+            '<span>' + escapeHtml(t.name) + '</span>' +
+            '<button type="button" class="rm-topic-del" data-tid="' + escapeHtml(t.id) + '" title="将当前题目移出该主题">✕</button>' +
+          '</span>';
+        }).join('');
+
+        container.querySelectorAll('.rm-topic-del').forEach(function(btn) {
+          btn.onclick = function() {
+            var tid = this.dataset.tid;
+            if (tid) {
+              removeQuestionFromTopic(tid, curQid);
+              renderRelatedModalTopics();
+              renderRelatedQuestions();
+            }
+          };
+        });
+      } else {
+        container.innerHTML = '<span class="related-empty-hint">当前题目尚未归入任何同类题考点主题，可在下方新建主题</span>';
+      }
+    }
+
+    function renderRelatedModalRecent() {
+      var list = document.getElementById('rmRecentList');
+      if (!list) return;
+      var curQid = getCurrentQid();
+      var candidates = recentQuestionsHistory.filter(function(q) { return q !== curQid; });
+      var myTopics = getTopicsForQid(curQid);
+
+      if (candidates.length === 0) {
+        list.innerHTML = '<span class="related-empty-hint">暂无最近浏览的其他题目</span>';
+        return;
+      }
+
+      list.innerHTML = candidates.map(function(qid) {
+        var meta = getQuestionMeta(qid);
+        if (!meta) return '';
+        var alreadyIn = myTopics.some(function(t) {
+          return t.members && t.members.some(function(m) { return m.qid === qid; });
+        });
+        return '<div class="rm-item-row">' +
+          '<div class="rm-item-info">' +
+            '<span class="rm-item-book">' + escapeHtml(meta.bookName) + '</span>' +
+            '<span class="rm-item-title">' + escapeHtml(meta.chapterShort + ' ' + meta.label) + '</span>' +
+          '</div>' +
+          (alreadyIn ?
+            '<span style="font-size:12px; color:#10b981; font-weight:600">已关联 ✔</span>' :
+            '<button type="button" class="gel-btn btn-sm" data-link-qid="' + escapeHtml(qid) + '">+ 关联到当前题</button>'
+          ) +
+        '</div>';
+      }).join('');
+
+      list.querySelectorAll('button[data-link-qid]').forEach(function(btn) {
+        btn.onclick = function() {
+          var targetQid = this.dataset.linkQid;
+          ensureAndLinkTargetQuestion(targetQid);
+        };
+      });
+    }
+
+    function initRelatedBookCascadePicker() {
+      var selBook = document.getElementById('selRelatedBook');
+      var selCh = document.getElementById('selRelatedChapter');
+      var selQ = document.getElementById('selRelatedQuestion');
+      if (!selBook || !selCh || !selQ) return;
+
+      // 提取全库书籍（按科目分组）
+      var books = [];
+      SUBJECTS.forEach(function(s) {
+        if (!s.chapters || s.chapters.length === 0) return;
+        var wbMap = {};
+        s.chapters.forEach(function(c) {
+          var wb = c.wb || s.name;
+          if (!wbMap[wb]) {
+            wbMap[wb] = true;
+            books.push({ subjectId: s.id, subjectName: s.name, bookName: wb, chapter: c });
+          }
+        });
+      });
+
+      selBook.innerHTML = books.map(function(b, idx) {
+        return '<option value="' + idx + '">' + escapeHtml(b.subjectName + ' · ' + b.bookName) + '</option>';
+      }).join('');
+
+      function updateChapterOptions() {
+        var bIdx = parseInt(selBook.value, 10);
+        var chosenBook = books[bIdx];
+        if (!chosenBook) return;
+        var s = SUBJECTS.find(function(sub) { return sub.id === chosenBook.subjectId; });
+        var chs = s ? s.chapters.filter(function(c) { return (c.wb || s.name) === chosenBook.bookName; }) : [];
+
+        selCh.innerHTML = chs.map(function(c) {
+          return '<option value="' + c.id + '">' + escapeHtml(c.short || c.name) + ' (' + c.total + '题)</option>';
+        }).join('');
+        updateQuestionOptions();
+      }
+
+      function updateQuestionOptions() {
+        var bIdx = parseInt(selBook.value, 10);
+        var chosenBook = books[bIdx];
+        if (!chosenBook) return;
+        var s = SUBJECTS.find(function(sub) { return sub.id === chosenBook.subjectId; });
+        var chId = selCh.value;
+        var ch = s ? s.chapters.find(function(c) { return c.id === chId; }) : null;
+        if (!ch || !ch.labels) {
+          selQ.innerHTML = '<option value="">无题目</option>';
+          return;
+        }
+        selQ.innerHTML = ch.labels.map(function(l, i) {
+          return '<option value="' + i + '">' + escapeHtml(l) + '</option>';
+        }).join('');
+      }
+
+      selBook.onchange = updateChapterOptions;
+      selCh.onchange = updateQuestionOptions;
+      updateChapterOptions();
+    }
+
+    function ensureAndLinkTargetQuestion(targetQid, note) {
+      var curQid = getCurrentQid();
+      var myTopics = getTopicsForQid(curQid);
+      var topic = null;
+
+      if (myTopics.length > 0) {
+        topic = myTopics[0];
+      } else {
+        var curMeta = getQuestionMeta(curQid);
+        var autoName = (curMeta ? curMeta.displayTitle : '同类题考点') + ' 同类题组';
+        topic = createRelatedTopic(autoName, curQid);
+      }
+
+      addQuestionToTopic(topic.id, curQid);
+      addQuestionToTopic(topic.id, targetQid, note || '');
+      renderRelatedModalTopics();
+      renderRelatedModalRecent();
+      renderRelatedQuestions();
+    }
+
+    function initRelatedModal() {
+      var btnOpen = document.getElementById('btnOpenRelatedModal');
+      if (btnOpen) btnOpen.onclick = openRelatedModal;
+      var btnClose = document.getElementById('btnCloseRelatedModal');
+      if (btnClose) btnClose.onclick = closeRelatedModal;
+      var btnDone = document.getElementById('btnDoneRelatedModal');
+      if (btnDone) btnDone.onclick = closeRelatedModal;
+
+      var btnJumpBack = document.getElementById('btnJumpBack');
+      if (btnJumpBack) btnJumpBack.onclick = returnToPreviousQuestion;
+      var btnJumpClose = document.getElementById('btnJumpClose');
+      if (btnJumpClose) btnJumpClose.onclick = closeJumpReturnBar;
+
+      // 新建主题按钮
+      var btnCreate = document.getElementById('btnCreateTopic');
+      var inputName = document.getElementById('inputNewTopicName');
+      if (btnCreate && inputName) {
+        var doCreate = function() {
+          var name = inputName.value.trim();
+          if (!name) { alert('请输入考点主题名称'); return; }
+          createRelatedTopic(name, getCurrentQid());
+          inputName.value = '';
+          renderRelatedModalTopics();
+          renderRelatedQuestions();
+        };
+        btnCreate.onclick = doCreate;
+        inputName.onkeydown = function(e) {
+          if (e.key === 'Enter') { e.preventDefault(); doCreate(); }
+        };
+      }
+
+      // Tab 切换
+      var tabs = document.querySelectorAll('.rm-tab-btn');
+      tabs.forEach(function(btn) {
+        btn.onclick = function() {
+          tabs.forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          var tabKey = this.dataset.tab;
+          var pRecent = document.getElementById('rmTabRecent');
+          var pPicker = document.getElementById('rmTabPicker');
+          var pSearch = document.getElementById('rmTabSearch');
+          if (pRecent) pRecent.style.display = (tabKey === 'recent') ? 'block' : 'none';
+          if (pPicker) pPicker.style.display = (tabKey === 'picker') ? 'block' : 'none';
+          if (pSearch) pSearch.style.display = (tabKey === 'search') ? 'block' : 'none';
+        };
+      });
+
+      // 级联选择添加按钮
+      var btnAddPicker = document.getElementById('btnAddPickerQuestion');
+      if (btnAddPicker) {
+        btnAddPicker.onclick = function() {
+          var selBook = document.getElementById('selRelatedBook');
+          var selCh = document.getElementById('selRelatedChapter');
+          var selQ = document.getElementById('selRelatedQuestion');
+          var noteInput = document.getElementById('inputPickerNote');
+          if (!selBook || !selCh || !selQ) return;
+
+          var chId = selCh.value;
+          var qIdx = parseInt(selQ.value, 10);
+          if (isNaN(qIdx)) { alert('请选择有效题目'); return; }
+
+          var sId = curSubjectId;
+          var foundSubj = SUBJECTS.find(function(s) {
+            return s.chapters && s.chapters.some(function(c) { return c.id === chId; });
+          });
+          if (foundSubj) sId = foundSubj.id;
+
+          var targetQid = getQid(sId, chId, qIdx);
+          var note = noteInput ? noteInput.value.trim() : '';
+          ensureAndLinkTargetQuestion(targetQid, note);
+          if (noteInput) noteInput.value = '';
+          alert('已成功关联题目！');
+        };
+      }
+
+      // 搜索题号
+      var searchInput = document.getElementById('inputRelatedSearch');
+      var searchResults = document.getElementById('rmSearchResults');
+      if (searchInput && searchResults) {
+        searchInput.oninput = function() {
+          var q = this.value.trim().toLowerCase();
+          if (!q) { searchResults.innerHTML = ''; return; }
+          var curQid = getCurrentQid();
+          var matches = [];
+
+          SUBJECTS.forEach(function(s) {
+            if (!s.chapters) return;
+            s.chapters.forEach(function(c) {
+              if (!c.labels) return;
+              c.labels.forEach(function(l, idx) {
+                var qid = getQid(s.id, c.id, idx);
+                if (qid === curQid) return;
+                var fullStr = ((c.wb || s.name) + ' ' + (c.short || c.name) + ' ' + l).toLowerCase();
+                if (fullStr.indexOf(q) !== -1 || l.toLowerCase().indexOf(q) !== -1) {
+                  matches.push(qid);
+                }
+              });
+            });
+          });
+
+          if (matches.length === 0) {
+            searchResults.innerHTML = '<span class="related-empty-hint">未找到匹配的题目</span>';
+            return;
+          }
+
+          var myTopics = getTopicsForQid(curQid);
+          searchResults.innerHTML = matches.slice(0, 15).map(function(qid) {
+            var meta = getQuestionMeta(qid);
+            if (!meta) return '';
+            var alreadyIn = myTopics.some(function(t) {
+              return t.members && t.members.some(function(m) { return m.qid === qid; });
+            });
+            return '<div class="rm-item-row">' +
+              '<div class="rm-item-info">' +
+                '<span class="rm-item-book">' + escapeHtml(meta.bookName) + '</span>' +
+                '<span class="rm-item-title">' + escapeHtml(meta.chapterShort + ' ' + meta.label) + '</span>' +
+              '</div>' +
+              (alreadyIn ?
+                '<span style="font-size:12px; color:#10b981; font-weight:600">已关联 ✔</span>' :
+                '<button type="button" class="gel-btn btn-sm" data-search-qid="' + escapeHtml(qid) + '">+ 关联此题</button>'
+              ) +
+            '</div>';
+          }).join('');
+
+          searchResults.querySelectorAll('button[data-search-qid]').forEach(function(btn) {
+            btn.onclick = function() {
+              var targetQid = this.dataset.searchQid;
+              ensureAndLinkTargetQuestion(targetQid);
+            };
+          });
+        };
       }
     }
 
@@ -5421,6 +6011,9 @@ ${cardsHTML}
       if (subjectPickerOpen) {
         // 科目选择弹窗：放行 G（切换）、Esc（关闭）、Y（主题）、U（暗化）
         if (key !== 'g' && key !== 'escape' && key !== 'y' && key !== 'u') return;
+      } else if (relatedModalOpen) {
+        // 同类题弹窗：放行 L（切换）、Esc（关闭）、Y（主题）、U（暗化）
+        if (key !== 'l' && key !== 'escape' && key !== 'y' && key !== 'u') return;
       } else if (dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) {
         const panelKeys = ['h', 'escape', 'g', 'y', 'u'];
         if (dashboardOpen || wrongBookOpen) panelKeys.push('v', 'b');
@@ -5499,6 +6092,8 @@ ${cardsHTML}
         case 'v': toggleDashboard(); break;
         case 'b': toggleWrongBook(); break;
         case 'm': toggleSm2Panel(); break;
+        // 同类题关联面板
+        case 'l': if (relatedModalOpen) closeRelatedModal(); else openRelatedModal(); break;
         // 切换科目与主题与试卷暗化与侧栏/符号盘折叠
         case 'i': toggleLeftSidebar(); break;
         case 'p': toggleMathSymbolPalette(); break;
@@ -5508,6 +6103,7 @@ ${cardsHTML}
         // 灯箱快捷键
         // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
         case 'escape':
+          if (relatedModalOpen) { closeRelatedModal(); return; }
           if (sm2PanelOpen) { closeSm2Panel(); return; }
           if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
           if (subjectPickerOpen) { closeSubjectPicker(); return; }
@@ -5606,7 +6202,7 @@ ${cardsHTML}
       }
 
       loadGlobalFilters(); loadSolutionPref(); // 恢复筛选状态与解析默认（解析默认按科目）
-      loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2();
+      loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2(); loadRelatedTopics();
       // 若恢复的筛选状态激活且当前题被筛掉，跳到第一条筛中题，避免落在不可见题上
       if (!isAllFilterActive()) {
         const filtered = getFilteredIndices();
@@ -5622,6 +6218,7 @@ ${cardsHTML}
     document.addEventListener('DOMContentLoaded', function () {
       applyTheme(localStorage.getItem('kaoyan_theme') || 'light');
       renderCountdown();
+      initRelatedModal();
 
       var btnTheme = document.getElementById('btnToggleTheme');
       if (btnTheme) btnTheme.onclick = toggleTheme;
@@ -5640,6 +6237,11 @@ ${cardsHTML}
     window.loadNotes = loadNotes;
     window.loadAnnotations = loadAnnotations;
     window.loadSm2 = loadSm2;
+    window.loadRelatedTopics = loadRelatedTopics;
+    window.renderRelatedQuestions = renderRelatedQuestions;
+    window.openRelatedModal = openRelatedModal;
+    window.closeRelatedModal = closeRelatedModal;
+    window.jumpToQid = jumpToQid;
     window.loadGlobalFilters = loadGlobalFilters;
     window.loadSolutionPref = loadSolutionPref;
     window.renderStats = renderStats;

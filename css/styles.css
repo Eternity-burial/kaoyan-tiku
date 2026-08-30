@@ -4522,3 +4522,489 @@
       padding: 60px 20px;
       color: var(--text-muted);
     }
+
+    /* ===== 同类题与跨书跳转系统 ===== */
+    /* 1. 跨书跳转对比悬浮返回条 */
+    .jump-return-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 14px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, rgba(102, 8, 116, 0.12), rgba(138, 43, 226, 0.08));
+      border: 1px solid rgba(138, 43, 226, 0.35);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 14px rgba(102, 8, 116, 0.08);
+      animation: jumpSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes jumpSlideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btn-jump-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #7c3aed, #9333ea);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+      transition: all 0.18s;
+    }
+    .btn-jump-back:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.5);
+    }
+    .jump-back-arrow { font-size: 15px; font-weight: 900; }
+    .btn-jump-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 15px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .btn-jump-close:hover {
+      color: var(--danger);
+      background: rgba(239, 68, 68, 0.12);
+    }
+
+    /* 2. 同类题展示区 */
+    .related-section {
+      width: 100%;
+      border-top: 1px dashed rgba(71, 76, 101, 0.14);
+      padding-top: 12px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    .related-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .related-header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .related-badge-icon {
+      font-size: 14px;
+    }
+    .related-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .related-topics-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .related-topic-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #7c3aed;
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      border-radius: 12px;
+    }
+    [data-theme="dark"] .related-topic-pill {
+      color: #c084fc;
+      background: rgba(192, 132, 252, 0.15);
+      border-color: rgba(192, 132, 252, 0.3);
+    }
+    .btn-related-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .btn-related-action:hover {
+      border-color: var(--primary);
+      background: var(--primary-alpha);
+    }
+    .related-shortcut-key {
+      display: inline-block;
+      padding: 1px 4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: rgba(0, 0, 0, 0.06);
+      border-radius: 3px;
+      border: 1px solid var(--border);
+    }
+    [data-theme="dark"] .related-shortcut-key {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* 3. 同类题卡片列表 */
+    .related-cards-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .related-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+    .related-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 8, 116, 0.12);
+      background: var(--hover-bg);
+    }
+    .rc-icon {
+      font-size: 14px;
+    }
+    .rc-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .rc-main-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .rc-book {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 1px 5px;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 3px;
+    }
+    [data-theme="dark"] .rc-book {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .rc-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .rc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+    .rc-dot.proficient { background: var(--mastery-proficient, #10b981); }
+    .rc-dot.familiar   { background: var(--mastery-familiar, #3b82f6); }
+    .rc-dot.vague      { background: var(--mastery-vague, #f59e0b); }
+    .rc-dot.rusty      { background: var(--mastery-rusty, #f97316); }
+    .rc-dot.wrong      { background: var(--mastery-wrong, #ef4444); }
+
+    .rc-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      max-width: 220px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .related-empty-hint {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 4px 0;
+    }
+
+    /* 4. 同类题管理模态框 */
+    .related-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 16px;
+      animation: rmFadeIn 0.2s ease-out;
+    }
+    @keyframes rmFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .related-modal-card {
+      width: 100%;
+      max-width: 680px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md, 12px);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+    }
+    .related-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--glass-bg);
+    }
+    .related-modal-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+    .related-modal-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 3px;
+      display: block;
+    }
+    .related-modal-close {
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .related-modal-close:hover {
+      color: var(--danger);
+      background: rgba(239, 68, 68, 0.1);
+    }
+    .related-modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .rm-section {
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .rm-sec-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .rm-sec-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .rm-current-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+      min-height: 28px;
+    }
+    .rm-topic-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+      border-radius: 14px;
+      box-shadow: 0 2px 6px rgba(124, 58, 237, 0.25);
+    }
+    .rm-topic-del {
+      background: rgba(0, 0, 0, 0.2);
+      border: none;
+      color: #fff;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .rm-topic-del:hover {
+      background: #ef4444;
+    }
+    .rm-create-topic-row {
+      display: flex;
+      gap: 8px;
+    }
+    .rm-input {
+      flex: 1;
+      padding: 7px 12px;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+    .rm-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary-alpha);
+    }
+    .rm-tabs {
+      display: flex;
+      gap: 4px;
+    }
+    .rm-tab-btn {
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .rm-tab-btn.active {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .rm-tab-pane {
+      margin-top: 8px;
+    }
+    .rm-recent-list, .rm-search-results {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .rm-item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 10px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .rm-item-row:hover {
+      border-color: var(--primary);
+      background: var(--hover-bg);
+    }
+    .rm-item-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+    .rm-item-book {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 1px 5px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .rm-item-book {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .rm-item-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .rm-picker-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .rm-picker-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .rm-picker-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .rm-select {
+      padding: 6px 8px;
+      font-size: 12.5px;
+      color: var(--text);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+    }
+    .rm-select:focus {
+      border-color: var(--primary);
+    }
+    .rm-picker-action-row {
+      display: flex;
+      gap: 8px;
+    }
+    .related-modal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--glass-bg);
+      gap: 12px;
+    }
+    .rm-tip-text {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      flex: 1;
+    }
