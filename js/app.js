@@ -2098,7 +2098,7 @@
 
           btn.onclick = function() {
             // 点击侧栏定位到该题组第一个可见题；小题模式（F 全局开关）不重置，跨章/跨题保持
-            if (visIdx.length > 0) { switchTo(visIdx[0]); }
+            if (visIdx.length > 0) { switchTo(visIdx[0], false); }
           };
           nav.appendChild(btn);
         });
@@ -2233,7 +2233,7 @@
         btn.onclick = function () {
           if (!isFiltered(i)) return;
           subMode = true;
-          switchTo(i);
+          switchTo(i, false);
         };
         bar.appendChild(btn);
       }
@@ -2471,7 +2471,8 @@
       }
     }
 
-    function updateNavActive() {
+    function updateNavActive(scroll) {
+      if (scroll === undefined) scroll = true;
       const nav = document.getElementById('qnav');
       if (!nav) return;
       const ch = getChapter();
@@ -2488,18 +2489,27 @@
       }
 
       const allBtns = nav.querySelectorAll('button[data-group-start]');
-      let found = false;
+      let activeBtn = null;
       allBtns.forEach(function(btn) {
         const start = parseInt(btn.getAttribute('data-group-start'), 10);
-        const isActive = (start === targetStart);
+        const inGroup = (start === targetStart);
+        const isParent = btn.classList.contains('has-subs');
+        const isActive = inGroup && (!isParent || !subMode);
         btn.classList.toggle('active', isActive);
-        if (isActive) {
-          found = true;
-          btn.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+
+        if (isParent) {
+          btn.querySelectorAll('.sub-bar').forEach(function(bar, k) {
+            const subIdx = start + k;
+            bar.classList.toggle('active-sub', inGroup && subMode && subIdx === current);
+          });
+        }
+
+        if (inGroup) {
+          activeBtn = btn;
         }
       });
 
-      if (!found) {
+      if (!activeBtn) {
         renderNav();
       } else {
         const qnavStat = document.getElementById('qnavStat');
@@ -2507,10 +2517,14 @@
           qnavStat.textContent = '共 ' + ch.labels.length + ' 题 · 当前 第 ' + (current + 1) + ' 题';
         }
         renderSubSelectBar(curGroup);
+        if (scroll && activeBtn) {
+          activeBtn.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+        }
       }
     }
 
-    function switchTo(idx) {
+    function switchTo(idx, scrollNav) {
+      if (scrollNav === undefined) scrollNav = true;
       autoSaveNotes(); // 切题前保存未提交的笔记（当前仍是旧题，saveNote 用 current 定位正确）
       current = idx;
       showSolution = defaultShowSolution;
@@ -2545,7 +2559,7 @@
       recordRecentQuestion(getCurrentQid());
       renderRelatedQuestions();
       renderStats();
-      updateNavActive();
+      updateNavActive(scrollNav);
       renderSm2InfoBar();
       updateHeaderProgressTag();
       saveResume(); // 记住当前停的章节/题目/小题模式，刷新或切科目前保留
@@ -2656,8 +2670,14 @@
     var relatedModalOpen = false;
 
     // 1. QID 编解码与元数据工具
+    function normalizeSubjectId(sid) {
+      if (sid === 'math') return 'shu1';
+      return sid || 'shu1';
+    }
+
     function getQid(subjId, chId, idx) {
-      return (subjId || curSubjectId) + '::' + (chId || currentChapterId) + '::' + idx;
+      var sid = normalizeSubjectId(subjId || curSubjectId || 'shu1');
+      return sid + '::' + (chId || currentChapterId) + '::' + idx;
     }
 
     function getCurrentQid() {
@@ -2668,10 +2688,13 @@
       if (!qid || typeof qid !== 'string') return null;
       var parts = qid.split('::');
       if (parts.length < 3) return null;
+      var sid = normalizeSubjectId(parts[0]);
+      var idx = parseInt(parts[2], 10);
       return {
-        subjectId: parts[0],
+        subjectId: sid,
         chapterId: parts[1],
-        idx: parseInt(parts[2], 10)
+        idx: idx,
+        qIdx: idx
       };
     }
 
@@ -2687,12 +2710,17 @@
 
       var label = (ch.labels && ch.labels[parsed.idx]) ? ch.labels[parsed.idx] : '#' + (parsed.idx + 1);
 
-      // 读取该题当前掌握度状态
+      // 读取该题当前掌握度状态 (兼容 statusKey)
       var status = null;
       try {
-        var statusKey = ch.id + '_' + subj.storageSuffix + '_status';
+        var statusKey = 'kaoyan_' + subj.id + '_' + ch.id + '_statuses';
         var statusObj = JSON.parse(localStorage.getItem(statusKey) || '{}');
         status = statusObj[parsed.idx] || null;
+        if (!status) {
+          var oldStatusKey = ch.id + '_' + subj.storageSuffix + '_status';
+          var oldStatusObj = JSON.parse(localStorage.getItem(oldStatusKey) || '{}');
+          status = oldStatusObj[parsed.idx] || null;
+        }
       } catch (e) {}
 
       var book = ch.wb || subj.name || '题库';
@@ -2700,7 +2728,7 @@
       var displayTitle = book + ' · ' + chShort + ' ' + label;
 
       return {
-        qid: qid,
+        qid: getQid(parsed.subjectId, parsed.chapterId, parsed.idx),
         subjectId: parsed.subjectId,
         subjectName: subj.name,
         chapterId: parsed.chapterId,
@@ -2708,6 +2736,7 @@
         chapterShort: chShort,
         bookName: book,
         idx: parsed.idx,
+        qIdx: parsed.idx,
         label: label,
         status: status,
         displayTitle: displayTitle
@@ -2718,6 +2747,17 @@
     function loadRelatedTopics() {
       try {
         relatedTopics = JSON.parse(localStorage.getItem('kaoyan_related_topics') || '{}');
+        for (var tid in relatedTopics) {
+          var t = relatedTopics[tid];
+          if (t && t.members && Array.isArray(t.members)) {
+            t.members.forEach(function(m) {
+              if (m && m.qid) {
+                var p = parseQid(m.qid);
+                if (p) m.qid = getQid(p.subjectId, p.chapterId, p.idx);
+              }
+            });
+          }
+        }
       } catch (e) {
         relatedTopics = {};
       }
@@ -2729,11 +2769,20 @@
     }
 
     function getTopicsForQid(qid) {
+      if (!qid) return [];
+      var targetParsed = parseQid(qid);
+      if (!targetParsed) return [];
+      var targetNormalized = getQid(targetParsed.subjectId, targetParsed.chapterId, targetParsed.idx);
+
       var list = [];
       for (var tid in relatedTopics) {
         if (!Object.prototype.hasOwnProperty.call(relatedTopics, tid)) continue;
         var t = relatedTopics[tid];
-        if (t && t.members && t.members.some(function(m) { return m.qid === qid; })) {
+        if (t && t.members && t.members.some(function(m) {
+          var mParsed = parseQid(m.qid);
+          if (!mParsed) return false;
+          return getQid(mParsed.subjectId, mParsed.chapterId, mParsed.idx) === targetNormalized;
+        })) {
           list.push(t);
         }
       }
@@ -3165,14 +3214,6 @@
       setupModalPanelToggle('trigModalWb', 'panelModalWb');
       setupModalPanelToggle('trigModalSubj', 'panelModalSubj');
       setupModalPanelToggle('trigModalChapter', 'panelModalChapter');
-
-      document.addEventListener('click', function(e) {
-        if (!relatedModalOpen) return;
-        var bar = document.getElementById('rmTitleBar');
-        if (bar && !bar.contains(e.target)) {
-          closeAllModalTitlePanels();
-        }
-      });
 
       renderModalTitleBar();
       renderModalNav();
@@ -3759,6 +3800,14 @@
           });
         };
       }
+
+      document.addEventListener('click', function(e) {
+        if (!relatedModalOpen) return;
+        var bar = document.getElementById('rmTitleBar');
+        if (bar && !bar.contains(e.target)) {
+          closeAllModalTitlePanels();
+        }
+      });
     }
 
     // 编辑时右侧实时预览（防抖）

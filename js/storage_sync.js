@@ -166,6 +166,8 @@
     if (typeof window.updateFilterCounts === 'function') window.updateFilterCounts();
     if (typeof window.renderSm2InfoBar === 'function') window.renderSm2InfoBar();
     if (typeof window.renderCountdown === 'function') window.renderCountdown();
+    if (typeof window.loadRelatedTopics === 'function') window.loadRelatedTopics();
+    if (typeof window.renderRelatedQuestions === 'function') window.renderRelatedQuestions();
     if (typeof window.applyTheme === 'function') window.applyTheme(localStorage.getItem('kaoyan_theme') || 'light');
 
     // 重新载入英语状态
