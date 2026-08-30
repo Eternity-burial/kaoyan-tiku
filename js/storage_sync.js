@@ -133,7 +133,18 @@
         if (Object.prototype.hasOwnProperty.call(dump, k)) {
           if (dump[k] !== null && dump[k] !== undefined) {
             try {
-              localStorage.setItem(k, dump[k]);
+              let targetKey = k;
+              let targetVal = dump[k];
+              if (k.startsWith('sm2_shu1_')) {
+                targetKey = 'sm2_math_' + k.substring(9);
+                localStorage.removeItem(k);
+              } else if (k === 'shu1_ui_solution') {
+                targetKey = 'math_ui_solution';
+                localStorage.removeItem(k);
+              } else if (k === 'kaoyan_subject' && targetVal === 'shu1') {
+                targetVal = 'math';
+              }
+              localStorage.setItem(targetKey, targetVal);
             } catch (e) {}
           }
         }

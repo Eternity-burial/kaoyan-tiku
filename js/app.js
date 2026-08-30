@@ -273,7 +273,17 @@
 
     function loadSolutionPref() {
       var v = null;
-      try { v = JSON.parse(localStorage.getItem(uiSolutionStorageKey())); } catch (e) { v = null; }
+      try {
+        var raw = localStorage.getItem(uiSolutionStorageKey());
+        if (!raw && curSubjectId === 'math') {
+          raw = localStorage.getItem('shu1_ui_solution');
+          if (raw) {
+            localStorage.setItem('math_ui_solution', raw);
+            localStorage.removeItem('shu1_ui_solution');
+          }
+        }
+        v = JSON.parse(raw);
+      } catch (e) { v = null; }
       if (v && typeof v.def === 'boolean') defaultShowSolution = v.def;
       else defaultShowSolution = true;
       if (v && typeof v.show === 'boolean') showSolution = v.show;
@@ -1532,7 +1542,16 @@
     function loadResume(subjectId) {
       var map = {};
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
+      if (subjectId === 'shu1') subjectId = 'math';
       var r = map[subjectId];
+      if (!r && subjectId === 'math') {
+        r = map['shu1'];
+        if (r) {
+          map['math'] = r;
+          delete map['shu1'];
+          try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
+        }
+      }
       if (!r || !r.ch) return null;
       var subj = SUBJECTS.find(function (s) { return s.id === subjectId; });
       if (!subj) return null;
@@ -1553,7 +1572,17 @@
     function applyResumeBook(wb) {
       var map = {};
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      var r = map[curSubjectId + '::' + wb];
+      var key = curSubjectId + '::' + wb;
+      var r = map[key];
+      if (!r && curSubjectId === 'math') {
+        var oldKey = 'shu1::' + wb;
+        r = map[oldKey];
+        if (r) {
+          map[key] = r;
+          delete map[oldKey];
+          try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
+        }
+      }
       if (!r || !r.ch) return false;
       var ch = CHAPTERS.find(function (c) { return c.id === r.ch; });
       if (!ch || ch.total === 0 || ch.wb !== wb) return false;
@@ -5494,13 +5523,28 @@ ${cardsHTML}
     // SM-2 存储键：sm2_<subjectId>_<chapterId>（含科目 ID 避免数学/822 的 ch1 冲突）
     function sm2Key(ch) { return 'sm2_' + curSubjectId + '_' + ch.id; }
 
+    function getSm2Item(key) {
+      var val = localStorage.getItem(key);
+      if (!val && key.startsWith('sm2_math_')) {
+        var oldKey = 'sm2_shu1_' + key.substring(9);
+        val = localStorage.getItem(oldKey);
+        if (val) {
+          try {
+            localStorage.setItem(key, val);
+            localStorage.removeItem(oldKey);
+          } catch (e) {}
+        }
+      }
+      return val;
+    }
+
     function loadSm2() {
       const ch = getChapter(); if (!ch) return;
       sm2 = {};
       const srcs = statusSources();
       srcs.forEach(function(src) {
         let obj;
-        try { obj = JSON.parse(localStorage.getItem(sm2Key(src.ch)) || '{}'); } catch(e) { obj = {}; }
+        try { obj = JSON.parse(getSm2Item(sm2Key(src.ch)) || '{}'); } catch(e) { obj = {}; }
         var len = src.len;
         for (var i = 0; i < len; i++) {
           if (obj[i]) sm2[src.offset + i] = obj[i];
@@ -5531,7 +5575,7 @@ ${cardsHTML}
       var out = {};
       statusSources(ch).forEach(function(src) {
         var obj;
-        try { obj = JSON.parse(localStorage.getItem(sm2Key(src.ch)) || '{}'); } catch (e) { obj = {}; }
+        try { obj = JSON.parse(getSm2Item(sm2Key(src.ch)) || '{}'); } catch (e) { obj = {}; }
         for (var i = 0; i < src.len; i++) {
           if (obj[i]) out[src.offset + i] = obj[i];
         }
@@ -6851,7 +6895,93 @@ ${cardsHTML}
       }
     }, { passive: false });
 
+    // ===== 历史 shu1 数据向 math 规范自动平滑迁移 =====
+    function migrateHistoricalShu1Data() {
+      try {
+        // 1. 迁移 sm2_shu1_ch* -> sm2_math_ch*
+        var keysToMigrate = [];
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (k && k.startsWith('sm2_shu1_')) {
+            keysToMigrate.push(k);
+          }
+        }
+        keysToMigrate.forEach(function(oldKey) {
+          var newKey = 'sm2_math_' + oldKey.substring(9);
+          var val = localStorage.getItem(oldKey);
+          if (val && !localStorage.getItem(newKey)) {
+            localStorage.setItem(newKey, val);
+          }
+          localStorage.removeItem(oldKey);
+        });
+
+        // 2. 迁移 shu1_ui_solution -> math_ui_solution
+        var oldSol = localStorage.getItem('shu1_ui_solution');
+        if (oldSol !== null) {
+          if (!localStorage.getItem('math_ui_solution')) {
+            localStorage.setItem('math_ui_solution', oldSol);
+          }
+          localStorage.removeItem('shu1_ui_solution');
+        }
+
+        // 3. 迁移 kaoyan_subject
+        if (localStorage.getItem('kaoyan_subject') === 'shu1') {
+          localStorage.setItem('kaoyan_subject', 'math');
+        }
+
+        // 4. 迁移 kaoyan_resume 内的 shu1 与 shu1:: 键
+        var resumeRaw = localStorage.getItem('kaoyan_resume');
+        if (resumeRaw && resumeRaw.indexOf('shu1') !== -1) {
+          try {
+            var resumeObj = JSON.parse(resumeRaw);
+            var changed = false;
+            for (var rk in resumeObj) {
+              if (rk === 'shu1') {
+                if (!resumeObj['math']) resumeObj['math'] = resumeObj['shu1'];
+                delete resumeObj['shu1'];
+                changed = true;
+              } else if (rk.startsWith('shu1::')) {
+                var newRk = 'math::' + rk.substring(6);
+                if (!resumeObj[newRk]) resumeObj[newRk] = resumeObj[rk];
+                delete resumeObj[rk];
+                changed = true;
+              }
+            }
+            if (changed) {
+              localStorage.setItem('kaoyan_resume', JSON.stringify(resumeObj));
+            }
+          } catch (e) {}
+        }
+
+        // 5. 迁移 kaoyan_related_topics 中的 shu1:: QID
+        var topicsRaw = localStorage.getItem('kaoyan_related_topics');
+        if (topicsRaw && topicsRaw.indexOf('shu1::') !== -1) {
+          try {
+            var topicsObj = JSON.parse(topicsRaw);
+            var tChanged = false;
+            for (var tid in topicsObj) {
+              var top = topicsObj[tid];
+              if (top && top.members && Array.isArray(top.members)) {
+                top.members.forEach(function(m) {
+                  if (m && m.qid && m.qid.startsWith('shu1::')) {
+                    m.qid = 'math::' + m.qid.substring(6);
+                    tChanged = true;
+                  }
+                });
+              }
+            }
+            if (tChanged) {
+              localStorage.setItem('kaoyan_related_topics', JSON.stringify(topicsObj));
+            }
+          } catch (e) {}
+        }
+      } catch (e) {
+        console.warn('migrateHistoricalShu1Data warning:', e);
+      }
+    }
+
     // ===== 初始化 =====
+    migrateHistoricalShu1Data();
     // 读取 URL 参数或上次选择的科目（默认数学），加载其章节数组
     var urlParams = new URLSearchParams(window.location.search);
     var urlSubj = urlParams.get('subj');
