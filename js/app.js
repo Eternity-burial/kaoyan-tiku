@@ -6854,6 +6854,7 @@ ${cardsHTML}
     // ===== 初始化 =====
     // 读取 URL 参数或上次选择的科目（默认数学），加载其章节数组
     var urlParams = new URLSearchParams(window.location.search);
+    var urlSubj = urlParams.get('subj');
     var rawSaved = (urlSubj && (urlSubj === 'shu1' || SUBJECTS.some(function (s) { return s.id === urlSubj; }))) ? urlSubj : localStorage.getItem('kaoyan_subject');
     var savedSubject = (rawSaved === 'shu1') ? 'math' : rawSaved;
     curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'math';
