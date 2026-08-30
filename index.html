@@ -256,23 +256,6 @@
           <div class="solution-imgs" id="solutionImgs"></div>
         </div>
 
-        <!-- 同类题跨书关联栏 -->
-        <div class="related-section" id="relatedSection">
-          <div class="related-header">
-            <div class="related-header-left">
-              <span class="related-badge-icon">🏷️</span>
-              <span class="related-title">同类题</span>
-              <div class="related-topics-wrap" id="relatedTopicsWrap"></div>
-            </div>
-            <button type="button" class="btn-related-action" id="btnOpenRelatedModal" title="管理同类题关联 (快捷键 L)">
-              <span class="related-action-icon">+</span>
-              <span class="related-action-text">关联同类题</span>
-              <span class="related-shortcut-key">L</span>
-            </button>
-          </div>
-          <div class="related-cards-list" id="relatedCardsList"></div>
-        </div>
-
         <div class="notes-section" id="notesSection">
           <div class="notes-header">
             <span class="notes-title">笔记</span>
@@ -307,6 +290,22 @@
             <div class="notes-render notes-preview" id="notesPreview"></div>
           </div>
           <div class="notes-render" id="notesRender"></div>
+        </div>
+
+        <!-- 同类题跨书关联栏（位于笔记下方） -->
+        <div class="related-section" id="relatedSection">
+          <div class="related-header">
+            <div class="related-header-left">
+              <span class="related-title">同类题</span>
+              <div class="related-topics-wrap" id="relatedTopicsWrap"></div>
+            </div>
+            <button type="button" class="btn-related-action" id="btnOpenRelatedModal" title="管理同类题关联 (快捷键 L)">
+              <span class="related-action-icon">+</span>
+              <span class="related-action-text">关联同类题</span>
+              <span class="related-shortcut-key">L</span>
+            </button>
+          </div>
+          <div class="related-cards-list" id="relatedCardsList"></div>
         </div>
         </div><!-- #mainAreaContent -->
         <div class="dashboard-panel" id="dashboardPanel" style="display:none">
@@ -814,7 +813,7 @@
     <div class="related-modal-card">
       <div class="related-modal-header">
         <div class="related-modal-title-wrap">
-          <h2 class="related-modal-title">🔗 关联同类题与考点归类</h2>
+          <h2 class="related-modal-title">关联同类题与考点归类</h2>
           <span class="related-modal-subtitle" id="relatedModalCurQText">当前题目：-</span>
         </div>
         <button type="button" class="related-modal-close" id="btnCloseRelatedModal" title="关闭 (Esc)">✕</button>
@@ -824,11 +823,20 @@
         <!-- 模块一：当前题目所属主题 -->
         <div class="rm-section">
           <div class="rm-sec-header">
-            <span class="rm-sec-title">📌 当前题目归属的考点主题</span>
+            <span class="rm-sec-title">当前题目归属的考点主题</span>
           </div>
           <div class="rm-current-topics" id="rmCurrentTopics">
             <!-- 动态渲染已加入的主题 -->
           </div>
+
+          <!-- 加入已有考点主题 -->
+          <div class="rm-available-topics-wrap" id="rmAvailableTopicsWrap">
+            <span class="rm-picker-label">加入已有考点主题：</span>
+            <div class="rm-available-topics" id="rmAvailableTopics">
+              <!-- 动态渲染全库已有主题供一键点击加入 -->
+            </div>
+          </div>
+
           <div class="rm-create-topic-row">
             <input type="text" class="rm-input" id="inputNewTopicName" placeholder="新建考点主题 (如: 高阶导数莱布尼茨公式 / 辅助函数构造)" maxlength="40">
             <button type="button" class="gel-btn btn-primary" id="btnCreateTopic">创建并归类</button>
@@ -838,7 +846,7 @@
         <!-- 模块二：关联其他同类题目 -->
         <div class="rm-section">
           <div class="rm-sec-header">
-            <span class="rm-sec-title">🎯 关联其他题目到当前同类主题</span>
+            <span class="rm-sec-title">关联其他题目到当前同类主题</span>
             <div class="rm-tabs" id="rmTabs">
               <button type="button" class="rm-tab-btn active" data-tab="recent">最近浏览</button>
               <button type="button" class="rm-tab-btn" data-tab="picker">跨书级联选择</button>
@@ -884,7 +892,7 @@
       </div>
 
       <div class="related-modal-footer">
-        <span class="rm-tip-text">💡 提示：加入同一主题的题目会自动互相双向关联，做题时点击题卡即可一键跨书/跨章跳转</span>
+        <span class="rm-tip-text">提示：加入同一主题的题目会自动互相双向关联，做题时点击题卡即可一键跨书/跨章跳转</span>
         <button type="button" class="gel-btn" id="btnDoneRelatedModal">完成</button>
       </div>
     </div>

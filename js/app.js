@@ -2812,7 +2812,6 @@
           var dotClass = q.status ? ' ' + q.status : '';
           var noteHtml = q.note ? '<span class="rc-note" title="' + escapeHtml(q.note) + '">' + escapeHtml(q.note) + '</span>' : '';
           return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '" title="点击跳转至：' + escapeHtml(q.displayTitle) + '">' +
-            '<span class="rc-icon">📖</span>' +
             '<div class="rc-body">' +
               '<div class="rc-main-row">' +
                 '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
@@ -2915,6 +2914,7 @@
       var container = document.getElementById('rmCurrentTopics');
       if (!container) return;
 
+      // 1. 渲染当前题已加入的主题
       if (myTopics.length > 0) {
         container.innerHTML = myTopics.map(function(t) {
           return '<span class="rm-topic-tag">' +
@@ -2934,7 +2934,53 @@
           };
         });
       } else {
-        container.innerHTML = '<span class="related-empty-hint">当前题目尚未归入任何同类题考点主题，可在下方新建主题</span>';
+        container.innerHTML = '<span class="related-empty-hint">当前题目尚未归入任何同类题考点主题</span>';
+      }
+
+      // 2. 渲染全库已有考点主题（支持点击直接加入）
+      var availContainer = document.getElementById('rmAvailableTopics');
+      var availWrap = document.getElementById('rmAvailableTopicsWrap');
+      if (availContainer) {
+        var myTopicIds = myTopics.map(function(t) { return t.id; });
+        var otherTopics = [];
+        for (var tid in relatedTopics) {
+          if (!Object.prototype.hasOwnProperty.call(relatedTopics, tid)) continue;
+          if (myTopicIds.indexOf(tid) === -1) {
+            otherTopics.push(relatedTopics[tid]);
+          }
+        }
+
+        if (otherTopics.length > 0) {
+          if (availWrap) availWrap.style.display = 'block';
+          availContainer.innerHTML = otherTopics.map(function(t) {
+            var count = (t.members ? t.members.length : 0);
+            return '<button type="button" class="rm-avail-tag" data-add-tid="' + escapeHtml(t.id) + '" title="点击将当前题目加入此主题">' +
+              '<span>+ ' + escapeHtml(t.name) + '</span>' +
+              '<span class="rm-avail-count">(' + count + '题)</span>' +
+            '</button>';
+          }).join('');
+
+          availContainer.querySelectorAll('button[data-add-tid]').forEach(function(btn) {
+            btn.onclick = function() {
+              var targetTid = this.dataset.addTid;
+              if (targetTid) {
+                addQuestionToTopic(targetTid, curQid);
+                renderRelatedModalTopics();
+                renderRelatedQuestions();
+              }
+            };
+          });
+        } else {
+          if (availWrap) {
+            var totalCount = Object.keys(relatedTopics).length;
+            if (totalCount === 0) {
+              availWrap.style.display = 'none';
+            } else {
+              availWrap.style.display = 'block';
+              availContainer.innerHTML = '<span class="related-empty-hint">已加入所有已有考点主题</span>';
+            }
+          }
+        }
       }
     }
 
@@ -2962,7 +3008,7 @@
             '<span class="rm-item-title">' + escapeHtml(meta.chapterShort + ' ' + meta.label) + '</span>' +
           '</div>' +
           (alreadyIn ?
-            '<span style="font-size:12px; color:#10b981; font-weight:600">已关联 ✔</span>' :
+            '<span style="font-size:12px; color:#10b981; font-weight:600">已关联</span>' :
             '<button type="button" class="gel-btn btn-sm" data-link-qid="' + escapeHtml(qid) + '">+ 关联到当前题</button>'
           ) +
         '</div>';
@@ -3172,7 +3218,7 @@
                 '<span class="rm-item-title">' + escapeHtml(meta.chapterShort + ' ' + meta.label) + '</span>' +
               '</div>' +
               (alreadyIn ?
-                '<span style="font-size:12px; color:#10b981; font-weight:600">已关联 ✔</span>' :
+                '<span style="font-size:12px; color:#10b981; font-weight:600">已关联</span>' :
                 '<button type="button" class="gel-btn btn-sm" data-search-qid="' + escapeHtml(qid) + '">+ 关联此题</button>'
               ) +
             '</div>';

@@ -4872,6 +4872,41 @@
     .rm-topic-del:hover {
       background: #ef4444;
     }
+    .rm-available-topics-wrap {
+      margin-bottom: 12px;
+    }
+    .rm-available-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+    .rm-avail-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .rm-avail-tag:hover {
+      border-color: var(--primary);
+      background: var(--primary-alpha);
+      transform: translateY(-1px);
+    }
+    .rm-avail-count {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
     .rm-create-topic-row {
       display: flex;
       gap: 8px;
