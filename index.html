@@ -820,103 +820,105 @@
       </div>
 
       <div class="related-modal-body">
-        <!-- 模块一：考点主题归类 -->
-        <div class="rm-section rm-section-topics">
-          <div class="rm-sec-header">
-            <span class="rm-sec-title">当前题目归属的考点主题</span>
-          </div>
-          <div class="rm-current-topics" id="rmCurrentTopics">
-            <!-- 动态渲染已加入的主题 -->
-          </div>
+        <!-- 上方区域：左侧主题归类，右侧跨书查题与5列题号并排展示 -->
+        <div class="rm-top-split">
+          <!-- 上方左侧：考点主题归类 -->
+          <div class="rm-section rm-section-topics">
+            <div class="rm-sec-header">
+              <span class="rm-sec-title">当前题目的考点归属</span>
+            </div>
+            <div class="rm-current-topics" id="rmCurrentTopics">
+              <!-- 动态渲染已加入的主题 -->
+            </div>
 
-          <!-- 加入已有考点主题 -->
-          <div class="rm-available-topics-wrap" id="rmAvailableTopicsWrap">
-            <span class="rm-picker-label">加入全库已有考点主题：</span>
-            <div class="rm-available-topics" id="rmAvailableTopics">
-              <!-- 动态渲染全库已有主题供一键点击加入与删除 -->
+            <!-- 加入全库已有考点主题 -->
+            <div class="rm-available-topics-wrap" id="rmAvailableTopicsWrap">
+              <span class="rm-picker-label">加入全库已有考点：</span>
+              <div class="rm-available-topics" id="rmAvailableTopics">
+                <!-- 动态渲染全库已有主题供一键点击加入与删除 -->
+              </div>
+            </div>
+
+            <div class="rm-create-topic-row">
+              <input type="text" class="rm-input" id="inputNewTopicName" placeholder="新建考点主题 (如: 莱布尼茨公式)" maxlength="40">
+              <button type="button" class="gel-btn btn-primary" id="btnCreateTopic">创建并归类</button>
             </div>
           </div>
 
-          <div class="rm-create-topic-row">
-            <input type="text" class="rm-input" id="inputNewTopicName" placeholder="新建考点主题 (如: 高阶导数莱布尼茨公式 / 辅助函数构造)" maxlength="40">
-            <button type="button" class="gel-btn btn-primary" id="btnCreateTopic">创建并归类</button>
+          <!-- 上方右侧：跨书查题与题号定位（固定5列） -->
+          <div class="rm-section rm-section-navcol">
+            <div class="rm-sec-header">
+              <span class="rm-sec-title">跨书查题与题号定位</span>
+              <div class="rm-tabs" id="rmTabs">
+                <button type="button" class="rm-tab-btn active" data-tab="picker">做题浏览</button>
+                <button type="button" class="rm-tab-btn" data-tab="recent">最近</button>
+                <button type="button" class="rm-tab-btn" data-tab="search">搜索</button>
+              </div>
+            </div>
+
+            <!-- Tab 1: 跨书题目浏览器（三级下拉 + 5列题号） -->
+            <div class="rm-tab-pane active" id="rmTabPicker">
+              <div class="rm-title-bar" id="rmTitleBar">
+                <div class="title-dropdown" id="ddModalWb">
+                  <button type="button" class="title-trigger" id="trigModalWb">
+                    <span class="title-trigger-text" id="txtModalWb">书籍</span>
+                    <span class="title-arrow">▾</span>
+                  </button>
+                  <div class="title-panel" id="panelModalWb"></div>
+                </div>
+                <div class="title-dropdown" id="ddModalSubj">
+                  <button type="button" class="title-trigger" id="trigModalSubj">
+                    <span class="title-trigger-text" id="txtModalSubj">学科</span>
+                    <span class="title-arrow">▾</span>
+                  </button>
+                  <div class="title-panel" id="panelModalSubj"></div>
+                </div>
+                <div class="title-dropdown" id="ddModalChapter">
+                  <button type="button" class="title-trigger" id="trigModalChapter">
+                    <span class="title-trigger-text" id="txtModalChapter">章节</span>
+                    <span class="title-arrow">▾</span>
+                  </button>
+                  <div class="title-panel" id="panelModalChapter"></div>
+                </div>
+                <div class="rm-progress-badge" id="rmProgressBadge">共 0 题</div>
+              </div>
+
+              <!-- 结构化分区题号区（固定5列） -->
+              <div class="rm-nav-section" id="rmNavSection"></div>
+            </div>
+
+            <!-- Tab 2: 最近浏览 -->
+            <div class="rm-tab-pane" id="rmTabRecent" style="display:none">
+              <div class="rm-recent-list" id="rmRecentList"></div>
+            </div>
+
+            <!-- Tab 3: 搜索题号 -->
+            <div class="rm-tab-pane" id="rmTabSearch" style="display:none">
+              <div class="rm-search-row">
+                <input type="text" class="rm-input" id="inputRelatedSearch" placeholder="输入题号标签搜索 (如: 4.2-15、例1-8)...">
+              </div>
+              <div class="rm-search-results" id="rmSearchResults"></div>
+            </div>
           </div>
         </div>
 
-        <!-- 模块二：可视化跨书关联查题工作台 -->
-        <div class="rm-section rm-section-main">
-          <div class="rm-sec-header">
-            <span class="rm-sec-title">跨书查题与关联工作台</span>
-            <div class="rm-tabs" id="rmTabs">
-              <button type="button" class="rm-tab-btn active" data-tab="picker">跨书做题浏览</button>
-              <button type="button" class="rm-tab-btn" data-tab="recent">最近浏览</button>
-              <button type="button" class="rm-tab-btn" data-tab="search">搜索题号</button>
+        <!-- 下方展开区域：全宽高清题目与解析卡片 -->
+        <div class="rm-viewer-panel" id="rmViewerPanel">
+          <div class="rm-viewer-header">
+            <div class="rm-viewer-qtitle" id="rmViewerQTitle">正在加载题目...</div>
+            <div class="rm-viewer-actions">
+              <button type="button" class="gel-btn btn-sm" id="rmBtnToggleSol">显示解析 <span class="key">Space</span></button>
+              <button type="button" class="gel-btn btn-sm btn-primary" id="rmBtnLinkCurrent">+ 关联此题到考点</button>
             </div>
           </div>
-
-          <!-- Tab 1: 跨书题目浏览器（仿照主页面三级下拉与全宽展开大图） -->
-          <div class="rm-tab-pane active" id="rmTabPicker">
-            <!-- 顶部选择栏：仿照主页面的书籍、学科、章节下拉选择栏 -->
-            <div class="rm-title-bar" id="rmTitleBar">
-              <div class="title-dropdown" id="ddModalWb">
-                <button type="button" class="title-trigger" id="trigModalWb">
-                  <span class="title-trigger-text" id="txtModalWb">书籍</span>
-                  <span class="title-arrow">▾</span>
-                </button>
-                <div class="title-panel" id="panelModalWb"></div>
-              </div>
-              <div class="title-dropdown" id="ddModalSubj">
-                <button type="button" class="title-trigger" id="trigModalSubj">
-                  <span class="title-trigger-text" id="txtModalSubj">学科</span>
-                  <span class="title-arrow">▾</span>
-                </button>
-                <div class="title-panel" id="panelModalSubj"></div>
-              </div>
-              <div class="title-dropdown" id="ddModalChapter">
-                <button type="button" class="title-trigger" id="trigModalChapter">
-                  <span class="title-trigger-text" id="txtModalChapter">章节</span>
-                  <span class="title-arrow">▾</span>
-                </button>
-                <div class="title-panel" id="panelModalChapter"></div>
-              </div>
-              <div class="rm-progress-badge" id="rmProgressBadge">共 0 题 · 当前 第 1 题</div>
+          <div class="rm-viewer-body" id="rmViewerBody">
+            <div class="rm-q-img-wrap">
+              <img id="rmViewerQImg" class="rm-viewer-img" src="" alt="题目">
             </div>
-
-            <!-- 中间：结构化分区的题号导航区 -->
-            <div class="rm-nav-section" id="rmNavSection"></div>
-
-            <!-- 下方展开：全宽高清题目与解析卡片 -->
-            <div class="rm-viewer-panel" id="rmViewerPanel">
-              <div class="rm-viewer-header">
-                <div class="rm-viewer-qtitle" id="rmViewerQTitle">正在加载题目...</div>
-                <div class="rm-viewer-actions">
-                  <button type="button" class="gel-btn btn-sm" id="rmBtnToggleSol">显示解析 <span class="key">Space</span></button>
-                  <button type="button" class="gel-btn btn-sm btn-primary" id="rmBtnLinkCurrent">+ 关联此题到考点</button>
-                </div>
-              </div>
-              <div class="rm-viewer-body" id="rmViewerBody">
-                <div class="rm-q-img-wrap">
-                  <img id="rmViewerQImg" class="rm-viewer-img" src="" alt="题目">
-                </div>
-                <div class="rm-sol-area" id="rmViewerSolArea" style="display:none">
-                  <div class="rm-sol-divider"><span>答案与解析</span></div>
-                  <div class="rm-sol-imgs" id="rmViewerSolImgs"></div>
-                </div>
-              </div>
+            <div class="rm-sol-area" id="rmViewerSolArea" style="display:none">
+              <div class="rm-sol-divider"><span>答案与解析</span></div>
+              <div class="rm-sol-imgs" id="rmViewerSolImgs"></div>
             </div>
-          </div>
-
-          <!-- Tab 2: 最近浏览 -->
-          <div class="rm-tab-pane" id="rmTabRecent" style="display:none">
-            <div class="rm-recent-list" id="rmRecentList"></div>
-          </div>
-
-          <!-- Tab 3: 搜索题号 -->
-          <div class="rm-tab-pane" id="rmTabSearch" style="display:none">
-            <div class="rm-search-row">
-              <input type="text" class="rm-input" id="inputRelatedSearch" placeholder="输入题号标签搜索 (如: 2-49、例1-8、4-13)...">
-            </div>
-            <div class="rm-search-results" id="rmSearchResults"></div>
           </div>
         </div>
       </div>

@@ -2471,6 +2471,45 @@
       }
     }
 
+    function updateNavActive() {
+      const nav = document.getElementById('qnav');
+      if (!nav) return;
+      const ch = getChapter();
+      const curGroup = ch.groupForIdx ? ch.groupForIdx[current] : null;
+      const targetStart = curGroup ? curGroup.startIdx : current;
+
+      // 检查当前题所在分区是否被折叠，若是则必须展开重新渲染
+      const curPartLabel = partOfIdx(current);
+      const curSecKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + curPartLabel;
+      if (collapsedSections.has(curSecKey)) {
+        collapsedSections.delete(curSecKey);
+        renderNav();
+        return;
+      }
+
+      const allBtns = nav.querySelectorAll('button[data-group-start]');
+      let found = false;
+      allBtns.forEach(function(btn) {
+        const start = parseInt(btn.getAttribute('data-group-start'), 10);
+        const isActive = (start === targetStart);
+        btn.classList.toggle('active', isActive);
+        if (isActive) {
+          found = true;
+          btn.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+        }
+      });
+
+      if (!found) {
+        renderNav();
+      } else {
+        const qnavStat = document.getElementById('qnavStat');
+        if (qnavStat && ch.labels) {
+          qnavStat.textContent = '共 ' + ch.labels.length + ' 题 · 当前 第 ' + (current + 1) + ' 题';
+        }
+        renderSubSelectBar(curGroup);
+      }
+    }
+
     function switchTo(idx) {
       autoSaveNotes(); // 切题前保存未提交的笔记（当前仍是旧题，saveNote 用 current 定位正确）
       current = idx;
@@ -2506,11 +2545,10 @@
       recordRecentQuestion(getCurrentQid());
       renderRelatedQuestions();
       renderStats();
-      renderNav();
+      updateNavActive();
       renderSm2InfoBar();
       updateHeaderProgressTag();
       saveResume(); // 记住当前停的章节/题目/小题模式，刷新或切科目前保留
-      document.getElementById('questionImg').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     // ===== 题目图/解析图不达标 & 与实书不符 =====
@@ -2644,7 +2682,7 @@
       var subj = SUBJECTS.find(function(s) { return s.id === parsed.subjectId; });
       if (!subj) return null;
 
-      var ch = subj.chapters ? subj.chapters.find(function(c) { return c.id === parsed.chapterId; }) : null;
+      const ch = subj.chapters ? subj.chapters.find(function(c) { return c.id === parsed.chapterId; }) : null;
       if (!ch) return null;
 
       var label = (ch.labels && ch.labels[parsed.idx]) ? ch.labels[parsed.idx] : '#' + (parsed.idx + 1);
@@ -2971,7 +3009,7 @@
     }
 
     // 7. 同类题弹窗交互与跨书做题浏览工作台（仿照主页面三级下拉与全宽展开）
-    var pickerSubjectId = 'math';
+    var pickerSubjectId = 'shu1';
     var pickerWb = '';
     var pickerSubj = '';
     var pickerChapterId = '';
@@ -3116,7 +3154,7 @@
 
     // 8. 跨书题目浏览器（仿照主页面三级下拉与全宽展开）
     function initVisualQuestionPicker() {
-      pickerSubjectId = curSubjectId;
+      pickerSubjectId = curSubjectId || 'shu1';
       var curCh = getChapter();
       pickerWb = curCh ? (curCh.wb || curSubject.name) : '基础30讲';
       pickerSubj = curCh ? (curCh.subj || '高数') : '高数';
@@ -3157,7 +3195,7 @@
               subjectId: s.id,
               subjectName: s.name,
               wb: wb,
-              label: (s.id === 'math' ? getWbLabel(wb) : wb)
+              label: (s.id === 'shu1' || s.id === 'math' ? getWbLabel(wb) : wb)
             };
             if (s.id === curSubjectId) curBooks.push(item);
             else otherBooks.push(item);
@@ -3431,7 +3469,7 @@
       var qImgSrc = s.getImgPath(ch, label) + '_question.png';
       var solImgSrc = s.getImgPath(ch, label) + '_solution.png';
 
-      var bookDisplayName = (s.id === 'math' ? getWbLabel(pickerWb) : pickerWb);
+      var bookDisplayName = (s.id === 'shu1' || s.id === 'math' ? getWbLabel(pickerWb) : pickerWb);
       qTitleEl.textContent = bookDisplayName + ' · ' + (ch.short || ch.name) + ' · ' + label + (isCurrent ? ' (当前做题)' : '');
       qImgEl.style.display = 'block';
       qImgEl.src = qImgSrc;
@@ -3488,8 +3526,8 @@
     }
 
     function modalPickerUpQ() {
-      if (pickerQIdx - 6 >= 0) {
-        pickerQIdx -= 6;
+      if (pickerQIdx - 5 >= 0) {
+        pickerQIdx -= 5;
       } else {
         pickerQIdx = 0;
       }
@@ -3501,8 +3539,8 @@
       var s = SUBJECTS.find(function(sub) { return sub.id === pickerSubjectId; }) || curSubject;
       var ch = s ? s.chapters.find(function(c) { return c.id === pickerChapterId; }) : null;
       if (ch) {
-        if (pickerQIdx + 6 < ch.total) {
-          pickerQIdx += 6;
+        if (pickerQIdx + 5 < ch.total) {
+          pickerQIdx += 5;
         } else {
           pickerQIdx = ch.total - 1;
         }
