@@ -2931,7 +2931,7 @@
         wrap.innerHTML = '';
       }
 
-      // 渲染同类题单列大图卡片（竖向排列，支持展开解析与跨书跳转）
+      // 渲染同类题单列大图卡片（竖向排列，支持展开解析、大图查看与跨书跳转）
       if (data.relatedQuestions.length > 0) {
         list.innerHTML = data.relatedQuestions.map(function(q) {
           var dotClass = q.status ? ' ' + q.status : '';
@@ -2954,14 +2954,15 @@
                 '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
                 '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
                 '<span class="rc-dot' + dotClass + '" title="状态: ' + escapeHtml(statusText) + '"></span>' +
-                (statusText ? '<span style="font-size:12px;color:var(--text-muted)">' + escapeHtml(statusText) + '</span>' : '') +
+                (statusText ? '<span style="font-size:11.5px;color:var(--text-muted);font-weight:600">' + escapeHtml(statusText) + '</span>' : '') +
               '</div>' +
               '<div class="rc-head-actions">' +
-                '<button type="button" class="rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
-                '<button type="button" class="rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题 →</button>' +
+                '<button type="button" class="gel-btn btn-sm rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
+                '<button type="button" class="gel-btn btn-sm btn-primary rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题 →</button>' +
+                '<button type="button" class="gel-btn btn-sm btn-danger rc-btn-unlink" data-unlink-qid="' + escapeHtml(q.qid) + '" title="移出与当前题目的关联">移出</button>' +
               '</div>' +
             '</div>' +
-            '<div class="rc-img-box">' +
+            '<div class="rc-img-box" title="点击放大查看">' +
               (qImgSrc ? '<img src="' + escapeHtml(qImgSrc) + '" loading="lazy" alt="' + escapeHtml(q.label) + '">' : '<span style="font-size:12px;color:var(--text-muted)">题目图片</span>') +
             '</div>' +
             '<div class="rc-sol-box" id="rcSolBox_' + safeId + '" style="display:none">' +
@@ -2995,15 +2996,38 @@
           };
         });
 
+        list.querySelectorAll('button.rc-btn-unlink').forEach(function(btn) {
+          btn.onclick = function(e) {
+            e.stopPropagation();
+            var targetQid = this.dataset.unlinkQid;
+            var curQid = getCurrentQid();
+            var myTopics = getTopicsForQid(curQid);
+            myTopics.forEach(function(t) {
+              removeQuestionFromTopic(t.id, targetQid);
+            });
+            renderRelatedQuestions();
+            if (relatedModalOpen) renderModalWorkbench();
+          };
+        });
+
+        list.querySelectorAll('.rc-img-box img, .rc-sol-box img').forEach(function(img) {
+          img.onclick = function(e) {
+            e.stopPropagation();
+            if (this.src && !this.src.endsWith('/')) {
+              openLightbox(this.src);
+            }
+          };
+        });
+
         list.querySelectorAll('.related-card').forEach(function(card) {
           card.onclick = function(e) {
-            if (e.target.closest('button')) return;
+            if (e.target.closest('button') || e.target.closest('img')) return;
             var targetQid = this.dataset.qid;
             if (targetQid) jumpToQid(targetQid, true);
           };
         });
       } else {
-        list.innerHTML = '<span class="related-empty-hint">暂无关联同类题，点击右侧「+ 关联同类题」可跨书归类</span>';
+        list.innerHTML = '<div class="related-empty-hint">暂无关联同类题，可点击右侧「关联同类题 (L)」随时进行跨书归类与考点关联</div>';
       }
     }
 
@@ -3090,7 +3114,7 @@
       saveRelatedTopics();
       renderRelatedModalTopics();
       renderRelatedQuestions();
-      if (typeof renderPickerQuestions === 'function') renderPickerQuestions();
+      if (typeof renderModalWorkbench === 'function') renderModalWorkbench();
       return true;
     }
 
@@ -3748,12 +3772,21 @@
       if (btnCreate && inputName) {
         var doCreate = function() {
           var name = inputName.value.trim();
-          if (!name) { alert('请输入考点主题名称'); return; }
+          if (!name) {
+            inputName.focus();
+            if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+              window.storageSync.showToast('请输入考点主题名称', 'warning');
+            }
+            return;
+          }
           createRelatedTopic(name, getCurrentQid());
           inputName.value = '';
           renderRelatedModalTopics();
           renderRelatedQuestions();
           renderModalWorkbench();
+          if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+            window.storageSync.showToast('已创建考点主题：“' + name + '”', 'success');
+          }
         };
         btnCreate.onclick = doCreate;
         inputName.onkeydown = function(e) {
