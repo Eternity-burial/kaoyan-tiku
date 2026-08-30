@@ -218,11 +218,22 @@
     }
   }
 
-  // ===== 5. 自动同步调度器 (防抖) =====
+  // ===== 5. 自动同步调度器 (防抖与即时落盘) =====
+  async function flushSave() {
+    if (isApplyingData || !currentFileHandle) return;
+    if (saveDebounceTimer) {
+      clearTimeout(saveDebounceTimer);
+      saveDebounceTimer = null;
+    }
+    const data = collectAllData();
+    return await writeToFile(data);
+  }
+
   function scheduleSave() {
     if (isApplyingData) return; // 正在应用导入数据时不反向写
     clearTimeout(saveDebounceTimer);
     saveDebounceTimer = setTimeout(async () => {
+      saveDebounceTimer = null;
       if (!currentFileHandle) return;
       const data = collectAllData();
       await writeToFile(data);
@@ -486,6 +497,7 @@
   window.storageSync = {
     init,
     scheduleSave,
+    flushSave,
     linkLocalFile,
     createAndLinkNewFile,
     unlinkLocalFile,
@@ -501,6 +513,19 @@
       return syncStatus === 'linked' || syncStatus === 'saving';
     }
   };
+
+  // 页面关闭或切换后台时，立即刷盘未完成的防抖写任务
+  window.addEventListener('beforeunload', () => {
+    if (saveDebounceTimer && currentFileHandle) {
+      flushSave();
+    }
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden' && saveDebounceTimer && currentFileHandle) {
+      flushSave();
+    }
+  });
 
   document.addEventListener('DOMContentLoaded', () => {
     init();

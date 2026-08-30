@@ -216,7 +216,7 @@
     }
     function saveStatuses() {
       saveIndexedObj(statuses,
-        function (ch, val) { localStorage.setItem(chapterStatusKey(ch), val); },
+        function (ch, val) { safeLSSet(chapterStatusKey(ch), val); },
         function (ch) { localStorage.removeItem(chapterStatusKey(ch)); });
       notifyStorageSync();
     }
@@ -225,7 +225,7 @@
     }
     function saveQBad() {
       saveIndexedObj(qBad,
-        function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_qbad', val); },
+        function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_qbad', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); });
       notifyStorageSync();
     }
@@ -234,7 +234,7 @@
     }
     function saveSBad() {
       saveIndexedObj(sBad,
-        function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_sbad', val); },
+        function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_sbad', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
       notifyStorageSync();
     }
@@ -243,7 +243,7 @@
     }
     function saveBookMismatch() {
       saveIndexedObj(bookMismatch,
-        function (ch, val) { localStorage.setItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch', val); },
+        function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); });
       notifyStorageSync();
     }
@@ -329,7 +329,7 @@
         }
         const key = cid + '_' + curSubject.storageSuffix + '_notes';
         const keys = Object.keys(part);
-        if (keys.length > 0) localStorage.setItem(key, JSON.stringify(part));
+        if (keys.length > 0) safeLSSet(key, JSON.stringify(part));
         else localStorage.removeItem(key); // 空源不写、清残留空对象
       });
       notifyStorageSync();
@@ -3031,21 +3031,9 @@
       // 跳转到同类题时，页面与工作台自动平滑滚动到最上方
       requestAnimationFrame(function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        var appScrolls = [
-          document.documentElement,
-          document.body,
-          document.querySelector('.main-content'),
-          document.querySelector('.viewer-panel'),
-          document.getElementById('questionImg')
-        ];
-        appScrolls.forEach(function(el) {
-          if (el && typeof el.scrollTo === 'function') {
-            el.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        });
-        var qImg = document.getElementById('questionImg');
-        if (qImg) {
-          qImg.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        var mainArea = document.getElementById('mainArea') || document.querySelector('.main-content');
+        if (mainArea && typeof mainArea.scrollTo === 'function') {
+          mainArea.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
     }
@@ -4228,6 +4216,12 @@
             hideAcPopup();
             return;
           }
+        }
+
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          cancelNoteEdit();
+          return;
         }
 
         const start = textarea.selectionStart;
@@ -5562,7 +5556,7 @@ ${cardsHTML}
           if (sm2[src.offset + i]) out[i] = sm2[src.offset + i];
         }
         if (Object.keys(out).length > 0) {
-          localStorage.setItem(sm2Key(src.ch), JSON.stringify(out));
+          safeLSSet(sm2Key(src.ch), JSON.stringify(out));
         } else {
           localStorage.removeItem(sm2Key(src.ch));
         }
@@ -5591,7 +5585,7 @@ ${cardsHTML}
           if (merged[src.offset + i]) out[i] = merged[src.offset + i];
         }
         if (Object.keys(out).length > 0) {
-          localStorage.setItem(sm2Key(src.ch), JSON.stringify(out));
+          safeLSSet(sm2Key(src.ch), JSON.stringify(out));
         } else {
           localStorage.removeItem(sm2Key(src.ch));
         }
@@ -6324,7 +6318,9 @@ ${cardsHTML}
       var raw = null;
       try { raw = JSON.parse(localStorage.getItem('kaoyan_review_session')) || null; } catch (e) { raw = null; }
       if (!raw || !Array.isArray(raw.queue) || raw.queue.length === 0) return null;
-      if (raw.subjectId && raw.subjectId !== curSubjectId) return null;
+      var sessSubj = normalizeSubjectId(raw.subjectId || 'math');
+      if (sessSubj !== curSubjectId) return null;
+      raw.subjectId = sessSubj;
       return raw;
     }
 
@@ -6642,7 +6638,15 @@ ${cardsHTML}
         return;
       }
       commitReviewResults();
-      clearReviewSession();
+      var hasUngraded = reviewSession.queue && reviewSession.queue.some(function(it) { return it.status !== 'graded'; });
+      if (hasUngraded) {
+        saveReviewSession();
+        if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+          window.storageSync.showToast('已暂停并保存复习进度，可随时在「间隔复习 (M)」中续接', 'info');
+        }
+      } else {
+        clearReviewSession();
+      }
       var originCh = reviewSession.originChapter;
       var originIdx = reviewSession.originIdx;
       reviewSession = null;
@@ -6972,6 +6976,18 @@ ${cardsHTML}
             }
             if (tChanged) {
               localStorage.setItem('kaoyan_related_topics', JSON.stringify(topicsObj));
+            }
+          } catch (e) {}
+        }
+
+        // 6. 迁移 kaoyan_review_session 中的 subjectId
+        var sessionRaw = localStorage.getItem('kaoyan_review_session');
+        if (sessionRaw && sessionRaw.indexOf('shu1') !== -1) {
+          try {
+            var sessionObj = JSON.parse(sessionRaw);
+            if (sessionObj && sessionObj.subjectId === 'shu1') {
+              sessionObj.subjectId = 'math';
+              localStorage.setItem('kaoyan_review_session', JSON.stringify(sessionObj));
             }
           } catch (e) {}
         }
