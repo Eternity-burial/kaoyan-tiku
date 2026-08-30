@@ -4661,12 +4661,13 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
-    /* 3. 同类题图文卡片列表（在主页面直接展示题目图片） */
+    /* 3. 同类题图文卡片列表（在主页面竖向单列大图排列，支持折叠查看解析） */
     .related-cards-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 12px;
-      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 8px;
+      width: 100%;
     }
     .related-card {
       display: flex;
@@ -4674,49 +4675,46 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 10px 12px;
-      cursor: pointer;
-      text-decoration: none;
+      padding: 14px 16px;
       transition: all 0.18s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      gap: 12px;
+      width: 100%;
     }
     .related-card:hover {
       border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(121, 26, 136, 0.15);
+      box-shadow: 0 6px 20px rgba(121, 26, 136, 0.12);
     }
     .rc-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 6px;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
     }
     .rc-head-left {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       min-width: 0;
+      flex-wrap: wrap;
     }
     .rc-book {
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 600;
-      color: var(--text-muted);
-      padding: 1px 5px;
-      background: rgba(0, 0, 0, 0.05);
-      border-radius: 3px;
+      color: var(--primary);
+      padding: 2px 8px;
+      background: var(--primary-alpha);
+      border-radius: 4px;
       white-space: nowrap;
     }
-    [data-theme="dark"] .rc-book {
-      background: rgba(255, 255, 255, 0.08);
-    }
     .rc-label {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--text);
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     .rc-dot {
       width: 8px;
@@ -4731,49 +4729,114 @@
     .rc-dot.rusty      { background: var(--mastery-rusty, #f97316); }
     .rc-dot.wrong      { background: var(--mastery-wrong, #ef4444); }
 
+    .rc-head-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rc-btn-sol, .rc-btn-jump {
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .rc-btn-sol:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--hover-bg);
+    }
+    .rc-btn-sol.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .rc-btn-jump {
+      background: linear-gradient(145deg, var(--primary-light), var(--primary));
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px var(--primary-alpha);
+    }
+    .rc-btn-jump:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px var(--primary-alpha);
+    }
+
     .rc-img-box {
       width: 100%;
-      height: 140px;
+      min-height: 90px;
       background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
     }
     [data-theme="dark"] .rc-img-box {
       background: #1c1d24;
     }
     .rc-img-box img {
       max-width: 100%;
-      max-height: 100%;
+      max-height: 480px;
       object-fit: contain;
-      transition: transform 0.2s;
+      display: block;
     }
-    .related-card:hover .rc-img-box img {
-      transform: scale(1.04);
+
+    .rc-sol-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
     }
+    [data-theme="dark"] .rc-sol-box {
+      background: #1c1d24;
+    }
+    .rc-sol-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--primary);
+      border-top: 1.5px dashed var(--primary);
+      padding-top: 8px;
+    }
+    .rc-sol-box img {
+      max-width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+      display: block;
+    }
+
     .rc-foot {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 6px;
+      gap: 8px;
       margin-top: 2px;
     }
     .rc-note {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--text-muted);
-      max-width: 180px;
-      white-space: nowrap;
+      background: var(--input-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .rc-jump-btn {
-      font-size: 11.5px;
-      color: var(--primary);
-      font-weight: 700;
       white-space: nowrap;
     }
     .related-empty-hint {
@@ -5054,19 +5117,45 @@
       white-space: nowrap;
     }
 
-    /* 中间：全宽展开的题号导航区 */
+    /* 中间：结构化分区的题号导航区 */
     .rm-nav-section {
-      max-height: 125px;
-      min-height: 48px;
+      max-height: 165px;
+      min-height: 52px;
       overflow-y: auto;
       background: var(--input-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 6px 8px;
+      padding: 8px 12px;
       margin-bottom: 10px;
       flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
-    .rm-nav-grid {
+    .rm-nav-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .rm-sec-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 2px 2px 4px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .rm-sec-pill {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .rm-sec-count {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .rm-sec-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
       gap: 6px;

@@ -2789,7 +2789,17 @@
       if (recentQuestionsHistory.length > 10) recentQuestionsHistory.pop();
     }
 
-    // 3. 渲染主界面同类题卡片栏（直接渲染题目图片）
+    // 3. 渲染主界面同类题卡片栏（竖向单列大图排列，支持折叠查看解析）
+    function getSolImgPathForQid(qid) {
+      var target = parseQid(qid);
+      if (!target) return '';
+      var s = SUBJECTS.find(function(sub) { return sub.id === target.subjectId; });
+      if (!s || !s.chapters) return '';
+      var ch = s.chapters.find(function(c) { return c.id === target.chapterId; });
+      if (!ch || !ch.labels || target.qIdx >= ch.labels.length) return '';
+      return s.getImgPath(ch, ch.labels[target.qIdx]) + '_solution.png';
+    }
+
     function renderRelatedQuestions() {
       var curQid = getCurrentQid();
       var data = getRelatedQuestionsForQid(curQid);
@@ -2806,32 +2816,73 @@
         wrap.innerHTML = '';
       }
 
-      // 渲染同类题卡片（直接展示题目图片）
+      // 渲染同类题单列大图卡片（竖向排列，支持展开解析与跨书跳转）
       if (data.relatedQuestions.length > 0) {
         list.innerHTML = data.relatedQuestions.map(function(q) {
           var dotClass = q.status ? ' ' + q.status : '';
-          var noteHtml = q.note ? '<span class="rc-note" title="' + escapeHtml(q.note) + '">' + escapeHtml(q.note) + '</span>' : '<span class="rc-note"></span>';
-          var imgSrc = getImgPathForQid(q.qid);
-          return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '" title="点击跳转至：' + escapeHtml(q.displayTitle) + '">' +
+          var statusNameMap = {
+            proficient: '熟练',
+            familiar: '较熟练',
+            vague: '模糊',
+            rusty: '困难',
+            wrong: '不会'
+          };
+          var statusText = q.status ? (statusNameMap[q.status] || '') : '未做';
+          var noteHtml = q.note ? '<span class="rc-note" title="' + escapeHtml(q.note) + '">笔记: ' + escapeHtml(q.note) + '</span>' : '';
+          var qImgSrc = getImgPathForQid(q.qid);
+          var solImgSrc = getSolImgPathForQid(q.qid);
+          var safeId = q.qid.replace(/[^a-zA-Z0-9_]/g, '_');
+
+          return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '">' +
             '<div class="rc-head">' +
               '<div class="rc-head-left">' +
                 '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
                 '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
+                '<span class="rc-dot' + dotClass + '" title="状态: ' + escapeHtml(statusText) + '"></span>' +
+                (statusText ? '<span style="font-size:12px;color:var(--text-muted)">' + escapeHtml(statusText) + '</span>' : '') +
               '</div>' +
-              '<span class="rc-dot' + dotClass + '"></span>' +
+              '<div class="rc-head-actions">' +
+                '<button type="button" class="rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
+                '<button type="button" class="rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题 →</button>' +
+              '</div>' +
             '</div>' +
             '<div class="rc-img-box">' +
-              (imgSrc ? '<img src="' + escapeHtml(imgSrc) + '" loading="lazy" alt="' + escapeHtml(q.label) + '">' : '<span style="font-size:12px;color:var(--text-muted)">题目图片</span>') +
+              (qImgSrc ? '<img src="' + escapeHtml(qImgSrc) + '" loading="lazy" alt="' + escapeHtml(q.label) + '">' : '<span style="font-size:12px;color:var(--text-muted)">题目图片</span>') +
             '</div>' +
-            '<div class="rc-foot">' +
-              noteHtml +
-              '<span class="rc-jump-btn">点击跨书跳转 →</span>' +
+            '<div class="rc-sol-box" id="rcSolBox_' + safeId + '" style="display:none">' +
+              '<div class="rc-sol-divider"><span>答案与解析</span></div>' +
+              (solImgSrc ? '<img src="' + escapeHtml(solImgSrc) + '" loading="lazy" alt="解析" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size:12px;color:var(--text-muted);text-align:center;padding:8px 0\\\'>暂无解析图片</span>\';">' : '<span style="font-size:12px;color:var(--text-muted)">暂无解析图片</span>') +
             '</div>' +
+            (noteHtml ? '<div class="rc-foot">' + noteHtml + '</div>' : '') +
           '</div>';
         }).join('');
 
+        list.querySelectorAll('button.rc-btn-sol').forEach(function(btn) {
+          btn.onclick = function(e) {
+            e.stopPropagation();
+            var qid = this.dataset.solQid;
+            var safeId = qid.replace(/[^a-zA-Z0-9_]/g, '_');
+            var box = document.getElementById('rcSolBox_' + safeId);
+            if (box) {
+              var isShown = box.style.display !== 'none';
+              box.style.display = isShown ? 'none' : 'flex';
+              this.textContent = isShown ? '显示解析' : '隐藏解析';
+              this.classList.toggle('active', !isShown);
+            }
+          };
+        });
+
+        list.querySelectorAll('button.rc-btn-jump').forEach(function(btn) {
+          btn.onclick = function(e) {
+            e.stopPropagation();
+            var targetQid = this.dataset.jumpQid;
+            if (targetQid) jumpToQid(targetQid, true);
+          };
+        });
+
         list.querySelectorAll('.related-card').forEach(function(card) {
-          card.onclick = function() {
+          card.onclick = function(e) {
+            if (e.target.closest('button')) return;
             var targetQid = this.dataset.qid;
             if (targetQid) jumpToQid(targetQid, true);
           };
@@ -3245,15 +3296,54 @@
       }
     }
 
+    function getChapterSectionsForModal(s, ch) {
+      if (!ch || !ch.labels || ch.labels.length === 0) return [];
+
+      if (ch.wb === '老姚高数' && ch.sections && ch.sections.length > 0) {
+        return ch.sections.map(function(sec) {
+          var indices = [];
+          for (var i = sec.start; i < sec.start + sec.count && i < ch.total; i++) {
+            indices.push(i);
+          }
+          return { title: sec.type, indices: indices };
+        });
+      }
+
+      if (ch.sections && ch.sections.length > 0) {
+        return ch.sections.map(function(sec) {
+          var indices = [];
+          for (var i = sec.start; i < sec.start + sec.count && i < ch.total; i++) {
+            indices.push(i);
+          }
+          return { title: sec.type, indices: indices };
+        });
+      }
+
+      // 默认按分类划分（例题、习题、1000题）
+      var parts = [];
+      var curPart = null;
+      for (var i = 0; i < ch.labels.length; i++) {
+        var label = ch.labels[i];
+        var cat = (s.classifyLabel ? s.classifyLabel(label) : (label.startsWith('例') ? '例题' : '习题'));
+        if (!curPart || curPart.title !== cat) {
+          curPart = { title: cat, indices: [i] };
+          parts.push(curPart);
+        } else {
+          curPart.indices.push(i);
+        }
+      }
+      return parts;
+    }
+
     function renderModalNav() {
-      var navGrid = document.getElementById('rmNavGrid');
+      var navSection = document.getElementById('rmNavSection');
       var badge = document.getElementById('rmProgressBadge');
-      if (!navGrid) return;
+      if (!navSection) return;
 
       var s = SUBJECTS.find(function(sub) { return sub.id === pickerSubjectId; }) || curSubject;
       var ch = s ? s.chapters.find(function(c) { return c.id === pickerChapterId; }) : null;
       if (!ch || !ch.labels || ch.labels.length === 0) {
-        navGrid.innerHTML = '<span class="related-empty-hint">该章节暂无题目</span>';
+        navSection.innerHTML = '<span class="related-empty-hint">该章节暂无题目</span>';
         if (badge) badge.textContent = '共 0 题';
         return;
       }
@@ -3269,25 +3359,34 @@
       var statuses = {};
       try { statuses = JSON.parse(localStorage.getItem(statusKey) || '{}'); } catch(e) {}
 
-      var navBtnsHtml = [];
-      for (var i = 0; i < ch.total; i++) {
-        var btnLabel = (ch.displayLabels && ch.displayLabels[i]) ? ch.displayLabels[i] : ch.labels[i];
-        var qid_i = getQid(s.id, ch.id, i);
-        var inTopics = myTopics.some(function(t) {
-          return t.members && t.members.some(function(m) { return m.qid === qid_i; });
-        });
-        var isActive = (i === pickerQIdx);
-        var st = statuses[i] || '';
-        var cls = 'rm-nav-btn' + (isActive ? ' active' : '') + (st ? ' ' + st : '') + (inTopics ? ' linked' : '');
-        navBtnsHtml.push(
-          '<button type="button" class="' + cls + '" data-qidx="' + i + '" title="' + escapeHtml(btnLabel) + (inTopics ? ' [已关联]' : '') + '">' +
+      var sections = getChapterSectionsForModal(s, ch);
+      var html = sections.map(function(sec) {
+        var btnsHtml = sec.indices.map(function(i) {
+          var btnLabel = (ch.displayLabels && ch.displayLabels[i]) ? ch.displayLabels[i] : ch.labels[i];
+          var qid_i = getQid(s.id, ch.id, i);
+          var inTopics = myTopics.some(function(t) {
+            return t.members && t.members.some(function(m) { return m.qid === qid_i; });
+          });
+          var isActive = (i === pickerQIdx);
+          var st = statuses[i] || '';
+          var cls = 'rm-nav-btn' + (isActive ? ' active' : '') + (st ? ' ' + st : '') + (inTopics ? ' linked' : '');
+          return '<button type="button" class="' + cls + '" data-qidx="' + i + '" title="' + escapeHtml(btnLabel) + (inTopics ? ' [已关联]' : '') + '">' +
             escapeHtml(btnLabel) +
-          '</button>'
-        );
-      }
-      navGrid.innerHTML = navBtnsHtml.join('');
+          '</button>';
+        }).join('');
 
-      navGrid.querySelectorAll('button[data-qidx]').forEach(function(btn) {
+        return '<div class="rm-nav-group">' +
+          '<div class="rm-sec-title-row">' +
+            '<span class="rm-sec-pill">' + escapeHtml(sec.title) + '</span>' +
+            '<span class="rm-sec-count">' + sec.indices.length + ' 题</span>' +
+          '</div>' +
+          '<div class="rm-sec-grid">' + btnsHtml + '</div>' +
+        '</div>';
+      }).join('');
+
+      navSection.innerHTML = html;
+
+      navSection.querySelectorAll('button[data-qidx]').forEach(function(btn) {
         btn.onclick = function() {
           pickerQIdx = parseInt(this.dataset.qidx, 10);
           renderModalNav();
@@ -3295,7 +3394,7 @@
         };
       });
 
-      var curActiveBtn = navGrid.querySelector('button.active');
+      var curActiveBtn = navSection.querySelector('button.active');
       if (curActiveBtn) {
         curActiveBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       }
