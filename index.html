@@ -821,7 +821,7 @@
 
       <div class="related-modal-body">
         <!-- 模块一：考点主题归类 -->
-        <div class="rm-section">
+        <div class="rm-section rm-section-topics">
           <div class="rm-sec-header">
             <span class="rm-sec-title">当前题目归属的考点主题</span>
           </div>
@@ -843,30 +843,61 @@
           </div>
         </div>
 
-        <!-- 模块二：可视化跨书关联选题区 -->
+        <!-- 模块二：可视化跨书关联查题工作台 -->
         <div class="rm-section rm-section-main">
           <div class="rm-sec-header">
-            <span class="rm-sec-title">关联同类题目</span>
+            <span class="rm-sec-title">跨书查题与关联工作台</span>
             <div class="rm-tabs" id="rmTabs">
-              <button type="button" class="rm-tab-btn active" data-tab="picker">跨书可视化选题</button>
+              <button type="button" class="rm-tab-btn active" data-tab="picker">跨书做题浏览</button>
               <button type="button" class="rm-tab-btn" data-tab="recent">最近浏览</button>
               <button type="button" class="rm-tab-btn" data-tab="search">搜索题号</button>
             </div>
           </div>
 
-          <!-- Tab 1: 跨书可视化选题器 -->
+          <!-- Tab 1: 跨书题目浏览器（主页面做题式双栏布局） -->
           <div class="rm-tab-pane active" id="rmTabPicker">
-            <!-- 书籍选择栏 -->
-            <div class="rm-books-bar" id="rmBooksBar"></div>
-            <!-- 章节选择栏 -->
-            <div class="rm-chapters-bar" id="rmChaptersBar"></div>
-            <!-- 题目可视化网格（包含题干图预览） -->
-            <div class="rm-q-grid-wrap">
-              <div class="rm-q-grid-header">
-                <span class="rm-q-grid-title" id="rmQGridTitle">题目列表（点击卡片预览题干）</span>
-                <span class="rm-q-grid-hint">选定章节后实时展开所有题干图，点击「+ 关联」一键加入同类题</span>
+            <!-- 顶部选择栏：书籍胶囊栏与章节下拉选择 -->
+            <div class="rm-picker-topbar">
+              <div class="rm-books-bar" id="rmBooksBar"></div>
+              <div class="rm-ch-selector-wrap">
+                <span class="rm-ch-label">章节：</span>
+                <select class="rm-select" id="rmChapterSelect"></select>
               </div>
-              <div class="rm-q-grid" id="rmQuestionsGrid"></div>
+            </div>
+
+            <!-- 做题工作台双栏布局：左侧题目与解析，右侧题号导航 -->
+            <div class="rm-workbench-body">
+              <!-- 左侧：题目展示与解析折叠区 -->
+              <div class="rm-viewer-panel">
+                <div class="rm-viewer-header">
+                  <div class="rm-viewer-qtitle" id="rmViewerQTitle">正在加载题目...</div>
+                  <div class="rm-viewer-actions">
+                    <button type="button" class="gel-btn btn-sm" id="rmBtnToggleSol">显示解析 <span class="key">Space</span></button>
+                    <button type="button" class="gel-btn btn-sm btn-primary" id="rmBtnLinkCurrent">+ 关联此题到考点</button>
+                  </div>
+                </div>
+                <div class="rm-viewer-scroll" id="rmViewerScroll">
+                  <div class="rm-q-img-wrap">
+                    <img id="rmViewerQImg" class="rm-viewer-img" src="" alt="题目">
+                  </div>
+                  <div class="rm-sol-area" id="rmViewerSolArea" style="display:none">
+                    <div class="rm-sol-divider"><span>答案与解析</span></div>
+                    <div class="rm-sol-imgs" id="rmViewerSolImgs"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右侧：题号导航区 -->
+              <div class="rm-nav-panel">
+                <div class="rm-nav-header">
+                  <span class="rm-nav-title">题号列表</span>
+                  <span class="rm-nav-count" id="rmNavCount">0 题</span>
+                </div>
+                <div class="rm-nav-grid" id="rmNavGrid"></div>
+                <div class="rm-nav-footer">
+                  <span class="rm-nav-hint">键盘 A/D 切题，Space 切换解析</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -886,7 +917,7 @@
       </div>
 
       <div class="related-modal-footer">
-        <span class="rm-tip-text">提示：加入同一主题的题目会自动互相双向关联，做题时点击题卡即可一键跨书/跨章跳转</span>
+        <span class="rm-tip-text">提示：在工作台中可随时查看各书题干与解析，按 A/D 切题，点击「+ 关联此题」一键绑定同类题</span>
         <button type="button" class="gel-btn" id="btnDoneRelatedModal">完成</button>
       </div>
     </div>

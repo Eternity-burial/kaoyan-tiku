@@ -1,9 +1,9 @@
     /* ===== Quiet Liquid 核心设计令牌 (苹果 Liquid Glass 质感 + 原版 5 级掌握度色板) ===== */
     :root {
-      --primary: #660874;
-      --primary-dark: #4d0659;
-      --primary-light: #8a2b9c;
-      --primary-alpha: rgba(102, 8, 116, 0.22);
+      --primary: #791a88;
+      --primary-dark: #5e0d6c;
+      --primary-light: #9c27b0;
+      --primary-alpha: rgba(121, 26, 136, 0.18);
       --bg: #eef2f7;
       --main-bg: rgba(255, 255, 255, 0.55);
       --card-bg: rgba(255, 255, 255, 0.66);
@@ -51,18 +51,18 @@
       --radius-pill: 12px;
 
       /* 8 字数码管时钟色彩 */
-      --seg-on: #660874;
+      --seg-on: #791a88;
       --seg-off: rgba(71, 76, 101, 0.08);
-      --seg-glow: rgba(102, 8, 116, 0.25);
+      --seg-glow: rgba(121, 26, 136, 0.25);
       --seg-bg: rgba(255, 255, 255, 0.65);
     }
 
     /* 沉浸暗夜模式 Liquid Dark Glass（紫色直接使用明亮清华紫） */
     [data-theme="dark"] {
-      --primary: #660874;
-      --primary-dark: #4d0659;
-      --primary-light: #8a2b9c;
-      --primary-alpha: rgba(102, 8, 116, 0.22);
+      --primary: #9b28b0;
+      --primary-dark: #791a88;
+      --primary-light: #ba4ecf;
+      --primary-alpha: rgba(155, 40, 176, 0.25);
 
       --bg: #141518;
       --main-bg: rgba(26, 27, 33, 0.72);
@@ -4583,16 +4583,16 @@
     .related-section {
       width: 100%;
       border-top: 1px dashed rgba(71, 76, 101, 0.14);
-      padding-top: 12px;
-      margin-top: 8px;
-      margin-bottom: 8px;
+      padding-top: 14px;
+      margin-top: 10px;
+      margin-bottom: 12px;
     }
     .related-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       flex-wrap: wrap;
     }
     .related-header-left {
@@ -4601,11 +4601,8 @@
       gap: 8px;
       flex-wrap: wrap;
     }
-    .related-badge-icon {
-      font-size: 14px;
-    }
     .related-title {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--text-secondary);
     }
@@ -4619,18 +4616,18 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      padding: 2px 8px;
+      padding: 3px 10px;
       font-size: 11.5px;
       font-weight: 600;
-      color: #7c3aed;
-      background: rgba(124, 58, 237, 0.1);
-      border: 1px solid rgba(124, 58, 237, 0.25);
+      color: #791a88;
+      background: rgba(121, 26, 136, 0.1);
+      border: 1px solid rgba(121, 26, 136, 0.25);
       border-radius: 12px;
     }
     [data-theme="dark"] .related-topic-pill {
-      color: #c084fc;
-      background: rgba(192, 132, 252, 0.15);
-      border-color: rgba(192, 132, 252, 0.3);
+      color: #d88fed;
+      background: rgba(216, 143, 237, 0.15);
+      border-color: rgba(216, 143, 237, 0.3);
     }
     .btn-related-action {
       display: inline-flex;
@@ -4664,51 +4661,51 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
-    /* 3. 同类题卡片列表 */
+    /* 3. 同类题图文卡片列表（在主页面直接展示题目图片） */
     .related-cards-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 6px;
     }
     .related-card {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
+      display: flex;
+      flex-direction: column;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
+      padding: 10px 12px;
       cursor: pointer;
       text-decoration: none;
       transition: all 0.18s ease;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      gap: 8px;
     }
     .related-card:hover {
       border-color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 8, 116, 0.12);
-      background: var(--hover-bg);
+      box-shadow: 0 6px 18px rgba(121, 26, 136, 0.15);
     }
-    .rc-icon {
-      font-size: 14px;
-    }
-    .rc-body {
+    .rc-head {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
     }
-    .rc-main-row {
+    .rc-head-left {
       display: flex;
       align-items: center;
       gap: 6px;
+      min-width: 0;
     }
     .rc-book {
       font-size: 11px;
       font-weight: 600;
       color: var(--text-muted);
       padding: 1px 5px;
-      background: rgba(0, 0, 0, 0.04);
+      background: rgba(0, 0, 0, 0.05);
       border-radius: 3px;
+      white-space: nowrap;
     }
     [data-theme="dark"] .rc-book {
       background: rgba(255, 255, 255, 0.08);
@@ -4717,12 +4714,16 @@
       font-size: 13px;
       font-weight: 700;
       color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .rc-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #94a3b8;
+      flex-shrink: 0;
     }
     .rc-dot.proficient { background: var(--mastery-proficient, #10b981); }
     .rc-dot.familiar   { background: var(--mastery-familiar, #3b82f6); }
@@ -4730,40 +4731,59 @@
     .rc-dot.rusty      { background: var(--mastery-rusty, #f97316); }
     .rc-dot.wrong      { background: var(--mastery-wrong, #ef4444); }
 
+    .rc-img-box {
+      width: 100%;
+      height: 140px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+    [data-theme="dark"] .rc-img-box {
+      background: #1c1d24;
+    }
+    .rc-img-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.2s;
+    }
+    .related-card:hover .rc-img-box img {
+      transform: scale(1.04);
+    }
+    .rc-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 2px;
+    }
     .rc-note {
       font-size: 11px;
       color: var(--text-muted);
-      max-width: 220px;
+      max-width: 180px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    .rc-jump-btn {
+      font-size: 11.5px;
+      color: var(--primary);
+      font-weight: 700;
+      white-space: nowrap;
     }
     .related-empty-hint {
       font-size: 12.5px;
       color: var(--text-muted);
       font-style: italic;
-      padding: 4px 0;
+      padding: 8px 0;
     }
 
-    /* 4. 同类题管理模态框 */
-    .related-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      padding: 16px;
-      animation: rmFadeIn 0.2s ease-out;
-    }
-    @keyframes rmFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    /* 4. 同类题管理模态框（大尺寸 Liquid Glass 可视化图文工作台） */
+    /* 4. 同类题管理模态框（大尺寸 Liquid Glass 做题式工作台） */
     .related-modal-backdrop {
       position: fixed;
       inset: 0;
@@ -4782,10 +4802,10 @@
       to { opacity: 1; transform: scale(1); }
     }
     .related-modal-card {
-      width: 95vw;
-      max-width: 1060px;
-      height: 88vh;
-      max-height: 890px;
+      width: 96vw;
+      max-width: 1140px;
+      height: 90vh;
+      max-height: 920px;
       display: flex;
       flex-direction: column;
       background: var(--card-bg);
@@ -4798,7 +4818,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 20px;
+      padding: 12px 20px;
       border-bottom: 1px solid var(--border);
       background: var(--glass-bg);
     }
@@ -4832,30 +4852,30 @@
       flex: 1;
       min-height: 0;
       overflow-y: auto;
-      padding: 14px 20px;
+      padding: 12px 20px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
     .rm-section {
       background: var(--input-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 12px 14px;
+      padding: 10px 14px;
     }
     .rm-section-main {
       flex: 1;
       min-height: 0;
       display: flex;
       flex-direction: column;
-      padding: 14px 16px;
+      padding: 12px 14px;
     }
     .rm-sec-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       flex-wrap: wrap;
     }
     .rm-sec-title {
@@ -4878,9 +4898,9 @@
       font-size: 12px;
       font-weight: 600;
       color: #fff;
-      background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+      background: linear-gradient(135deg, #791a88, #9a2cb0);
       border-radius: 14px;
-      box-shadow: 0 2px 6px rgba(124, 58, 237, 0.25);
+      box-shadow: 0 2px 6px rgba(121, 26, 136, 0.25);
     }
     .rm-topic-del {
       background: rgba(0, 0, 0, 0.25);
@@ -4900,14 +4920,14 @@
       background: #ef4444;
     }
     .rm-available-topics-wrap {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .rm-available-topics {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 6px;
-      max-height: 90px;
+      margin-top: 4px;
+      max-height: 80px;
       overflow-y: auto;
     }
     .rm-avail-tag-wrap {
@@ -4924,7 +4944,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     }
     .rm-avail-btn {
-      padding: 4px 10px;
+      padding: 3px 8px;
       font-size: 12px;
       font-weight: 600;
       color: var(--primary);
@@ -4933,7 +4953,7 @@
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
     .rm-avail-btn:hover {
       background: var(--primary-alpha);
@@ -4944,7 +4964,7 @@
       font-weight: normal;
     }
     .rm-topic-trash-btn {
-      padding: 4px 8px;
+      padding: 3px 6px;
       font-size: 11px;
       color: var(--text-muted);
       background: none;
@@ -4963,7 +4983,7 @@
     }
     .rm-input {
       flex: 1;
-      padding: 7px 12px;
+      padding: 6px 12px;
       font-size: 13px;
       color: var(--text);
       background: var(--card-bg);
@@ -4995,33 +5015,41 @@
       color: #fff;
       background: var(--primary);
       border-color: var(--primary);
-      box-shadow: 0 2px 6px rgba(102, 8, 116, 0.2);
+      box-shadow: 0 2px 6px rgba(121, 26, 136, 0.25);
     }
     .rm-tab-pane {
       flex: 1;
       min-height: 0;
       display: flex;
       flex-direction: column;
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
-    /* 5. 跨书可视化选择器 */
+    /* 5. 跨书题目浏览器（做题式双栏工作台） */
+    .rm-picker-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
     .rm-books-bar {
       display: flex;
       gap: 6px;
       overflow-x: auto;
-      padding-bottom: 6px;
-      margin-bottom: 8px;
-      flex-shrink: 0;
+      flex: 1;
+      padding-bottom: 2px;
     }
     .rm-book-chip {
-      padding: 5px 12px;
+      padding: 4px 10px;
       font-size: 12px;
       font-weight: 600;
       color: var(--text-secondary);
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 14px;
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.18s;
@@ -5035,150 +5063,213 @@
       color: #fff;
       background: var(--primary);
       border-color: var(--primary);
-      box-shadow: 0 2px 8px rgba(102, 8, 116, 0.25);
+      box-shadow: 0 2px 8px rgba(121, 26, 136, 0.25);
     }
-    .rm-chapters-bar {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      max-height: 90px;
-      overflow-y: auto;
-      padding: 6px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 10px;
-      flex-shrink: 0;
-    }
-    .rm-chapter-chip {
-      padding: 4px 10px;
-      font-size: 12px;
-      color: var(--text);
-      background: var(--input-bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.15s;
-      white-space: nowrap;
-    }
-    .rm-chapter-chip:hover {
-      border-color: var(--primary);
-      background: var(--hover-bg);
-    }
-    .rm-chapter-chip.active {
-      color: var(--primary);
-      background: var(--primary-alpha);
-      border-color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* 6. 题目可视化网格与图文缩略卡片 */
-    .rm-q-grid-wrap {
-      flex: 1;
-      min-height: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .rm-q-grid-header {
+    .rm-ch-selector-wrap {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
+      gap: 6px;
       flex-shrink: 0;
     }
-    .rm-q-grid-title {
-      font-size: 13px;
+    .rm-ch-label {
+      font-size: 12px;
       font-weight: 700;
       color: var(--text-secondary);
     }
-    .rm-q-grid-hint {
+    .rm-select {
+      padding: 5px 8px;
+      font-size: 12px;
+      color: var(--text);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      max-width: 260px;
+    }
+    .rm-select:focus {
+      border-color: var(--primary);
+    }
+
+    .rm-workbench-body {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      gap: 12px;
+    }
+    .rm-viewer-panel {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .rm-viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      background: var(--input-bg);
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .rm-viewer-qtitle {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .rm-viewer-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rm-viewer-scroll {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .rm-q-img-wrap {
+      display: flex;
+      justify-content: center;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    [data-theme="dark"] .rm-q-img-wrap {
+      background: #1c1d24;
+    }
+    .rm-viewer-img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .rm-sol-area {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .rm-sol-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      border-top: 1px dashed var(--primary);
+      padding-top: 8px;
+    }
+    .rm-sol-imgs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    [data-theme="dark"] .rm-sol-imgs {
+      background: #1c1d24;
+    }
+    .rm-sol-imgs img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .rm-nav-panel {
+      width: 250px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .rm-nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .rm-nav-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .rm-nav-count {
       font-size: 11.5px;
       color: var(--text-muted);
     }
-    .rm-q-grid {
+    .rm-nav-grid {
       flex: 1;
       min-height: 0;
       overflow-y: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 12px;
-      padding: 4px;
-    }
-    .rm-q-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: all 0.18s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    }
-    .rm-q-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(102, 8, 116, 0.15);
-    }
-    .rm-qc-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 10px;
-      background: var(--input-bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .rm-qc-label {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .rm-qc-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #94a3b8;
-    }
-    .rm-qc-dot.proficient { background: var(--mastery-proficient, #10b981); }
-    .rm-qc-dot.familiar   { background: var(--mastery-familiar, #3b82f6); }
-    .rm-qc-dot.vague      { background: var(--mastery-vague, #f59e0b); }
-    .rm-qc-dot.rusty      { background: var(--mastery-rusty, #f97316); }
-    .rm-qc-dot.wrong      { background: var(--mastery-wrong, #ef4444); }
-
-    .rm-qc-img-box {
-      height: 120px;
-      background: #ffffff;
-      padding: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      cursor: zoom-in;
-    }
-    [data-theme="dark"] .rm-qc-img-box {
-      background: #1c1d24;
-    }
-    .rm-qc-img-box img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: transform 0.2s;
-    }
-    .rm-qc-img-box:hover img {
-      transform: scale(1.08);
-    }
-    .rm-qc-foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 10px;
-      border-top: 1px solid var(--border);
-      background: var(--card-bg);
+      grid-template-columns: repeat(4, 1fr);
       gap: 6px;
+      padding: 2px;
     }
-    .rm-qc-linked-badge {
-      font-size: 11.5px;
+    .rm-nav-btn {
+      padding: 6px 2px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .rm-nav-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--hover-bg);
+    }
+    .rm-nav-btn.active {
+      background: linear-gradient(135deg, #791a88, #5d076a) !important;
+      color: #fff !important;
+      border-color: #791a88 !important;
       font-weight: 700;
-      color: #10b981;
+      box-shadow: 0 2px 6px rgba(121, 26, 136, 0.35);
+    }
+    .rm-nav-btn.linked {
+      border-color: #10b981;
+    }
+    .rm-nav-btn.linked::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+    .rm-nav-footer {
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .rm-nav-hint {
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
     .rm-recent-list, .rm-search-results {
@@ -5211,8 +5302,8 @@
       min-width: 0;
     }
     .rm-item-thumb {
-      width: 48px;
-      height: 36px;
+      width: 52px;
+      height: 40px;
       object-fit: contain;
       background: #fff;
       border: 1px solid var(--border);
@@ -5245,7 +5336,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 20px;
+      padding: 10px 20px;
       border-top: 1px solid var(--border);
       background: var(--glass-bg);
       gap: 12px;
