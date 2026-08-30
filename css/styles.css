@@ -1896,6 +1896,14 @@
       font-size: 13px;
     }
 
+    .related-dot {
+      /* 高辨识度电光品红/霓虹粉，区别于笔记黄、标注蓝、熟练绿/模糊橙/不会红 */
+      color: #ff007f;
+      font-weight: bold;
+      font-size: 13px;
+      text-shadow: 0 0 4px rgba(255, 0, 127, 0.7);
+    }
+
     /* ===== 分区手风琴标题与空占位 ===== */
     .section-header {
       grid-column: 1 / -1;
@@ -4723,11 +4731,11 @@
       background: #94a3b8;
       flex-shrink: 0;
     }
-    .rc-dot.proficient { background: var(--mastery-proficient, #10b981); }
-    .rc-dot.familiar   { background: var(--mastery-familiar, #3b82f6); }
-    .rc-dot.vague      { background: var(--mastery-vague, #f59e0b); }
-    .rc-dot.rusty      { background: var(--mastery-rusty, #f97316); }
-    .rc-dot.wrong      { background: var(--mastery-wrong, #ef4444); }
+    .rc-dot.proficient { background: var(--lv5); box-shadow: 0 0 5px var(--lv5-alpha); }
+    .rc-dot.familiar   { background: var(--lv4); box-shadow: 0 0 5px var(--lv4-alpha); }
+    .rc-dot.vague      { background: var(--lv3); box-shadow: 0 0 5px var(--lv3-alpha); }
+    .rc-dot.rusty      { background: var(--lv2); box-shadow: 0 0 5px var(--lv2-alpha); }
+    .rc-dot.wrong      { background: var(--lv1); box-shadow: 0 0 5px var(--lv1-alpha); }
 
     .rc-head-actions {
       display: flex;

@@ -18,7 +18,7 @@
 
     // ===== 章节数据（已移至 js/chapters.js）=====
 
-    let curSubjectId = 'shu1';
+    let curSubjectId = 'math';
     window.curSubjectId = curSubjectId;
     let curSubject = SUBJECTS[0];
     let CHAPTERS = curSubject.chapters;   // 当前科目章节数组（原 const 改 let，切换科目时重赋值）
@@ -1898,8 +1898,8 @@
 
       function appendBadges(btn, i) {
         const labels = ch.labels;
-        // 该题组内任一题有笔记或有图片标注，就在题号右上角亮提示圆点
-        let groupHasNote = false, groupHasAnnot = false;
+        // 该题组内任一题有笔记、有图片标注或有关联同类题，就在题号右上角亮提示圆点
+        let groupHasNote = false, groupHasAnnot = false, groupHasRelated = false;
         const g0 = ch.groupForIdx[i];
         const start = g0 ? g0.startIdx : i;
         const count = g0 ? g0.count : 1;
@@ -1907,16 +1907,19 @@
           const idx = start + k;
           if (notesData[notesKeyFor(idx)]) groupHasNote = true;
           if (hasQuestionImagesAnnotated(idx)) groupHasAnnot = true;
-          if (groupHasNote && groupHasAnnot) break;
+          const qid = getQid(curSubjectId, currentChapterId, idx);
+          if (getTopicsForQid(qid).length > 0) groupHasRelated = true;
+          if (groupHasNote && groupHasAnnot && groupHasRelated) break;
         }
-        if (qBad[i] || sBad[i] || bookMismatch[i] || groupHasNote || groupHasAnnot) {
+        if (qBad[i] || sBad[i] || bookMismatch[i] || groupHasNote || groupHasAnnot || groupHasRelated) {
           const badgeSpan = document.createElement('span');
           badgeSpan.className = 'img-badges';
           if (qBad[i]) { const d = document.createElement('span'); d.className = 'qbad-dot'; d.textContent = 'Q'; badgeSpan.appendChild(d); }
           if (sBad[i]) { const d = document.createElement('span'); d.className = 'sbad-dot'; d.textContent = 'S'; badgeSpan.appendChild(d); }
           if (bookMismatch[i]) { const d = document.createElement('span'); d.className = 'mismatch-dot'; d.textContent = '书'; badgeSpan.appendChild(d); }
-          if (groupHasNote) { const d = document.createElement('span'); d.className = 'note-dot'; d.textContent = '●'; badgeSpan.appendChild(d); }
-          if (groupHasAnnot) { const d = document.createElement('span'); d.className = 'annot-dot'; d.textContent = '●'; badgeSpan.appendChild(d); }
+          if (groupHasNote) { const d = document.createElement('span'); d.className = 'note-dot'; d.textContent = '●'; d.title = '有笔记'; badgeSpan.appendChild(d); }
+          if (groupHasAnnot) { const d = document.createElement('span'); d.className = 'annot-dot'; d.textContent = '●'; d.title = '有图片标注'; badgeSpan.appendChild(d); }
+          if (groupHasRelated) { const d = document.createElement('span'); d.className = 'related-dot'; d.textContent = '●'; d.title = '有关联同类题'; badgeSpan.appendChild(d); }
           btn.appendChild(badgeSpan);
         }
       }
@@ -2671,12 +2674,12 @@
 
     // 1. QID 编解码与元数据工具
     function normalizeSubjectId(sid) {
-      if (sid === 'math') return 'shu1';
-      return sid || 'shu1';
+      if (sid === 'shu1') return 'math';
+      return sid || 'math';
     }
 
     function getQid(subjId, chId, idx) {
-      var sid = normalizeSubjectId(subjId || curSubjectId || 'shu1');
+      var sid = normalizeSubjectId(subjId || curSubjectId || 'math');
       return sid + '::' + (chId || currentChapterId) + '::' + idx;
     }
 
@@ -2713,14 +2716,9 @@
       // 读取该题当前掌握度状态 (兼容 statusKey)
       var status = null;
       try {
-        var statusKey = 'kaoyan_' + subj.id + '_' + ch.id + '_statuses';
+        var statusKey = ch.id + '_' + subj.storageSuffix + '_status';
         var statusObj = JSON.parse(localStorage.getItem(statusKey) || '{}');
         status = statusObj[parsed.idx] || null;
-        if (!status) {
-          var oldStatusKey = ch.id + '_' + subj.storageSuffix + '_status';
-          var oldStatusObj = JSON.parse(localStorage.getItem(oldStatusKey) || '{}');
-          status = oldStatusObj[parsed.idx] || null;
-        }
       } catch (e) {}
 
       var book = ch.wb || subj.name || '题库';
@@ -2766,6 +2764,7 @@
     function saveRelatedTopics() {
       localStorage.setItem('kaoyan_related_topics', JSON.stringify(relatedTopics));
       notifyStorageSync();
+      renderNav();
     }
 
     function getTopicsForQid(qid) {
@@ -2999,6 +2998,27 @@
       }
       switchTo(target.idx);
       updateJumpReturnBar();
+
+      // 跳转到同类题时，页面与工作台自动平滑滚动到最上方
+      requestAnimationFrame(function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        var appScrolls = [
+          document.documentElement,
+          document.body,
+          document.querySelector('.main-content'),
+          document.querySelector('.viewer-panel'),
+          document.getElementById('questionImg')
+        ];
+        appScrolls.forEach(function(el) {
+          if (el && typeof el.scrollTo === 'function') {
+            el.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+        var qImg = document.getElementById('questionImg');
+        if (qImg) {
+          qImg.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        }
+      });
     }
 
     function returnToPreviousQuestion() {
@@ -3058,7 +3078,7 @@
     }
 
     // 7. 同类题弹窗交互与跨书做题浏览工作台（仿照主页面三级下拉与全宽展开）
-    var pickerSubjectId = 'shu1';
+    var pickerSubjectId = 'math';
     var pickerWb = '';
     var pickerSubj = '';
     var pickerChapterId = '';
@@ -3203,7 +3223,7 @@
 
     // 8. 跨书题目浏览器（仿照主页面三级下拉与全宽展开）
     function initVisualQuestionPicker() {
-      pickerSubjectId = curSubjectId || 'shu1';
+      pickerSubjectId = curSubjectId || 'math';
       var curCh = getChapter();
       pickerWb = curCh ? (curCh.wb || curSubject.name) : '基础30讲';
       pickerSubj = curCh ? (curCh.subj || '高数') : '高数';
@@ -3236,7 +3256,7 @@
               subjectId: s.id,
               subjectName: s.name,
               wb: wb,
-              label: (s.id === 'shu1' || s.id === 'math' ? getWbLabel(wb) : wb)
+              label: (s.id === 'math' ? getWbLabel(wb) : wb)
             };
             if (s.id === curSubjectId) curBooks.push(item);
             else otherBooks.push(item);
@@ -3510,7 +3530,7 @@
       var qImgSrc = s.getImgPath(ch, label) + '_question.png';
       var solImgSrc = s.getImgPath(ch, label) + '_solution.png';
 
-      var bookDisplayName = (s.id === 'shu1' || s.id === 'math' ? getWbLabel(pickerWb) : pickerWb);
+      var bookDisplayName = (s.id === 'math' ? getWbLabel(pickerWb) : pickerWb);
       qTitleEl.textContent = bookDisplayName + ' · ' + (ch.short || ch.name) + ' · ' + label + (isCurrent ? ' (当前做题)' : '');
       qImgEl.style.display = 'block';
       qImgEl.src = qImgSrc;
@@ -6834,9 +6854,9 @@ ${cardsHTML}
     // ===== 初始化 =====
     // 读取 URL 参数或上次选择的科目（默认数学），加载其章节数组
     var urlParams = new URLSearchParams(window.location.search);
-    var urlSubj = urlParams.get('subj');
-    var savedSubject = (urlSubj && SUBJECTS.some(function (s) { return s.id === urlSubj; })) ? urlSubj : localStorage.getItem('kaoyan_subject');
-    curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'shu1';
+    var rawSaved = (urlSubj && (urlSubj === 'shu1' || SUBJECTS.some(function (s) { return s.id === urlSubj; }))) ? urlSubj : localStorage.getItem('kaoyan_subject');
+    var savedSubject = (rawSaved === 'shu1') ? 'math' : rawSaved;
+    curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'math';
     window.curSubjectId = curSubjectId;
     
     if (curSubjectId === 'english' || curSubjectId === 'bishe') {

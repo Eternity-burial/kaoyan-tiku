@@ -513,7 +513,7 @@
     // ===== 科目（subject）数据模型：数学 + 822 控制工程基础 =====
     const SUBJECTS = [
       {
-        id: 'shu1', name: '数学', storageSuffix: 's1', initChapterId: 'ch1', navCols: 5,
+        id: 'math', name: '数学', storageSuffix: 's1', initChapterId: 'ch1', navCols: 5,
         partOrder: ['例题', '习题'],
         wbOrder: [
           { wb: '基础30讲', label: '基础30讲' },
