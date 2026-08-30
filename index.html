@@ -854,48 +854,55 @@
             </div>
           </div>
 
-          <!-- Tab 1: 跨书题目浏览器（主页面做题式双栏布局） -->
+          <!-- Tab 1: 跨书题目浏览器（仿照主页面三级下拉与全宽展开大图） -->
           <div class="rm-tab-pane active" id="rmTabPicker">
-            <!-- 顶部选择栏：书籍胶囊栏与章节下拉选择 -->
-            <div class="rm-picker-topbar">
-              <div class="rm-books-bar" id="rmBooksBar"></div>
-              <div class="rm-ch-selector-wrap">
-                <span class="rm-ch-label">章节：</span>
-                <select class="rm-select" id="rmChapterSelect"></select>
+            <!-- 顶部选择栏：仿照主页面的书籍、学科、章节下拉选择栏 -->
+            <div class="rm-title-bar" id="rmTitleBar">
+              <div class="title-dropdown" id="ddModalWb">
+                <button type="button" class="title-trigger" id="trigModalWb">
+                  <span class="title-trigger-text" id="txtModalWb">书籍</span>
+                  <span class="title-arrow">▾</span>
+                </button>
+                <div class="title-panel" id="panelModalWb"></div>
               </div>
+              <div class="title-dropdown" id="ddModalSubj">
+                <button type="button" class="title-trigger" id="trigModalSubj">
+                  <span class="title-trigger-text" id="txtModalSubj">学科</span>
+                  <span class="title-arrow">▾</span>
+                </button>
+                <div class="title-panel" id="panelModalSubj"></div>
+              </div>
+              <div class="title-dropdown" id="ddModalChapter">
+                <button type="button" class="title-trigger" id="trigModalChapter">
+                  <span class="title-trigger-text" id="txtModalChapter">章节</span>
+                  <span class="title-arrow">▾</span>
+                </button>
+                <div class="title-panel" id="panelModalChapter"></div>
+              </div>
+              <div class="rm-progress-badge" id="rmProgressBadge">共 0 题 · 当前 第 1 题</div>
             </div>
 
-            <!-- 做题工作台双栏布局：左侧题目与解析，右侧题号导航 -->
-            <div class="rm-workbench-body">
-              <!-- 左侧：题目展示与解析折叠区 -->
-              <div class="rm-viewer-panel">
-                <div class="rm-viewer-header">
-                  <div class="rm-viewer-qtitle" id="rmViewerQTitle">正在加载题目...</div>
-                  <div class="rm-viewer-actions">
-                    <button type="button" class="gel-btn btn-sm" id="rmBtnToggleSol">显示解析 <span class="key">Space</span></button>
-                    <button type="button" class="gel-btn btn-sm btn-primary" id="rmBtnLinkCurrent">+ 关联此题到考点</button>
-                  </div>
-                </div>
-                <div class="rm-viewer-scroll" id="rmViewerScroll">
-                  <div class="rm-q-img-wrap">
-                    <img id="rmViewerQImg" class="rm-viewer-img" src="" alt="题目">
-                  </div>
-                  <div class="rm-sol-area" id="rmViewerSolArea" style="display:none">
-                    <div class="rm-sol-divider"><span>答案与解析</span></div>
-                    <div class="rm-sol-imgs" id="rmViewerSolImgs"></div>
-                  </div>
+            <!-- 中间：全宽展开的题号导航区 -->
+            <div class="rm-nav-section" id="rmNavSection">
+              <div class="rm-nav-grid" id="rmNavGrid"></div>
+            </div>
+
+            <!-- 下方展开：全宽高清题目与解析卡片 -->
+            <div class="rm-viewer-panel" id="rmViewerPanel">
+              <div class="rm-viewer-header">
+                <div class="rm-viewer-qtitle" id="rmViewerQTitle">正在加载题目...</div>
+                <div class="rm-viewer-actions">
+                  <button type="button" class="gel-btn btn-sm" id="rmBtnToggleSol">显示解析 <span class="key">Space</span></button>
+                  <button type="button" class="gel-btn btn-sm btn-primary" id="rmBtnLinkCurrent">+ 关联此题到考点</button>
                 </div>
               </div>
-
-              <!-- 右侧：题号导航区 -->
-              <div class="rm-nav-panel">
-                <div class="rm-nav-header">
-                  <span class="rm-nav-title">题号列表</span>
-                  <span class="rm-nav-count" id="rmNavCount">0 题</span>
+              <div class="rm-viewer-body" id="rmViewerBody">
+                <div class="rm-q-img-wrap">
+                  <img id="rmViewerQImg" class="rm-viewer-img" src="" alt="题目">
                 </div>
-                <div class="rm-nav-grid" id="rmNavGrid"></div>
-                <div class="rm-nav-footer">
-                  <span class="rm-nav-hint">键盘 A/D 切题，Space 切换解析</span>
+                <div class="rm-sol-area" id="rmViewerSolArea" style="display:none">
+                  <div class="rm-sol-divider"><span>答案与解析</span></div>
+                  <div class="rm-sol-imgs" id="rmViewerSolImgs"></div>
                 </div>
               </div>
             </div>
