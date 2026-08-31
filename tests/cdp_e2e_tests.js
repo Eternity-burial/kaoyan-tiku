@@ -288,6 +288,38 @@ async function run() {
   if (modalLayoutCheck.hasSubtipText) throw new Error('未删除"点击 ✕ 移出"提示文字');
   if (!modalLayoutCheck.noNavOverflow) throw new Error('题号网格溢出并遮挡了下方题目查看器');
 
+  // 测试在 L 模态框内点击题目图唤起灯箱大图，并验证灯箱显示层级（z-index）高于模态框
+  console.log('  测试 L 模态框内唤起灯箱及层级置顶...');
+  const lbCheck = await evaluate(ws, `
+    (() => {
+      const qImg = document.getElementById('rmViewerQImg');
+      if (qImg) qImg.click();
+
+      const lb = document.getElementById('lightbox');
+      const modal = document.getElementById('relatedModal');
+      const lbStyle = window.getComputedStyle(lb);
+      const modalStyle = window.getComputedStyle(modal);
+      const isLbShown = lb.classList.contains('show');
+      const lbZ = parseInt(lbStyle.zIndex, 10);
+      const modalZ = parseInt(modalStyle.zIndex, 10);
+      const isAboveModal = lbZ > modalZ;
+
+      // 关闭灯箱
+      closeLightbox();
+
+      return {
+        isLbShown,
+        lbZ,
+        modalZ,
+        isAboveModal
+      };
+    })()
+  `);
+  console.log('  灯箱唤起成功:', lbCheck.isLbShown, '灯箱层级 (z-index):', lbCheck.lbZ, '模态框层级 (z-index):', lbCheck.modalZ, '灯箱高于模态框:', lbCheck.isAboveModal);
+  if (!lbCheck.isLbShown) throw new Error('在 L 模态框内点击题目图未能唤起灯箱');
+  if (!lbCheck.isAboveModal) throw new Error(`灯箱层级 (${lbCheck.lbZ}) 未能高于模态框层级 (${lbCheck.modalZ})`);
+  await sleep(200);
+
   // 测试点击遮罩层背景关闭弹窗
   await evaluate(ws, `
     (function() {

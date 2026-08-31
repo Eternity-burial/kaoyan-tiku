@@ -2614,7 +2614,7 @@
       pointer-events: none;
     }
 
-    /* ===== 灯箱（全屏模态） ===== */
+    /* ===== 灯箱（全屏模态，全局最高显示层级，确保在任何弹窗/面板之上置顶） ===== */
     .lightbox-overlay {
       position: fixed;
       top: 0;
@@ -2622,7 +2622,7 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.93);
-      z-index: 9999;
+      z-index: 20000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2671,7 +2671,7 @@
       align-items: center;
       justify-content: center;
       transition: background 0.2s;
-      z-index: 10000;
+      z-index: 20002;
       line-height: 1;
     }
 
@@ -2685,7 +2685,7 @@
       align-items: center;
       justify-content: center;
       pointer-events: none;
-      z-index: 9999;
+      z-index: 20001;
     }
     .lightbox-annot-overlay markerjs-viewer,
     .lightbox-annot-overlay .markerjs-viewer,
@@ -2714,7 +2714,7 @@
       align-items: center;
       justify-content: center;
       transition: background 0.2s;
-      z-index: 10000;
+      z-index: 20002;
       line-height: 1;
     }
     .lightbox-annotate:hover {
@@ -2740,6 +2740,7 @@
       font-size: 13px;
       pointer-events: none;
       letter-spacing: 0.5px;
+      z-index: 20002;
     }
 
     /* marker.js 宿主需固定 flex：否则其内联 display 被清除后回退 block 会导致布局塌缩 */
@@ -2761,7 +2762,7 @@
       border: 1px solid rgba(255, 255, 255, 0.10);
       border-radius: 10px;
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 0 0 0.5px rgba(255,255,255,0.06);
-      z-index: 10002;
+      z-index: 20005;
       max-width: 98vw;
       flex-wrap: nowrap;          /* 核心：绝不换行，保持单排 */
       white-space: nowrap;
@@ -2882,7 +2883,7 @@
       bottom: 62px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 10003;
+      z-index: 20006;
       background: rgba(32, 34, 44, 0.97);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
