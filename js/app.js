@@ -5280,16 +5280,42 @@
     // ===== 撤销最近一次掌握度标记 =====
     var undoStack = [];
     function pushUndo(idx, prevStatus) {
-      undoStack.push({ idx: idx, prevStatus: prevStatus || '' });
+      undoStack.push({
+        idx: idx,
+        prevStatus: prevStatus || '',
+        chapterId: currentChapterId,
+        subjectId: curSubjectId
+      });
       if (undoStack.length > 50) undoStack.shift();
     }
     function undoLastMark() {
       if (undoStack.length === 0) return;
       var act = undoStack.pop();
+      if (!act) return;
+
+      // 若撤销操作属于其他科目或章节，先切换回对应上下文
+      if (act.subjectId && act.subjectId !== curSubjectId) {
+        switchSubject(act.subjectId);
+      }
+      if (act.chapterId && act.chapterId !== currentChapterId) {
+        switchChapter(act.chapterId);
+      }
       switchTo(act.idx);
-      if (act.prevStatus) { statuses[act.idx] = act.prevStatus; }
-      else { delete statuses[act.idx]; }
-      saveStatuses(); updateStatusBtns(); renderStats(); renderNav(); updateFilterCounts();
+
+      const scoreMap = { proficient: 5, familiar: 4, vague: 3, rusty: 2, wrong: 1 };
+      if (act.prevStatus) {
+        statuses[act.idx] = act.prevStatus;
+        rebaselineSm2(act.idx, scoreMap[act.prevStatus]);
+      } else {
+        delete statuses[act.idx];
+        rebaselineSm2(act.idx, 0);
+      }
+
+      saveStatuses();
+      updateStatusBtns();
+      renderStats();
+      renderNav();
+      updateFilterCounts();
       renderSm2InfoBar();
     }
 
@@ -7542,7 +7568,7 @@ ${cardsHTML}
       // 标注模式下吃掉全部按键（Snipaste 式：避免切题/改状态等全局快捷键误触发）。
       // 需在 INPUT 判断之前：标注工具栏含 range 输入（粗细滑块），焦点在其上时 Alt 退出仍须生效。
       if (lbAnnotMode) { handleAnnotKeydown(e); return; }
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
       const key = e.key.toLowerCase();
       const isShift = e.shiftKey;
 
@@ -7701,6 +7727,12 @@ ${cardsHTML}
         // 灯箱快捷键
         // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
         case 'escape':
+          var quickPop = document.getElementById('quickTopicPopover');
+          if (quickPop && quickPop.style.display !== 'none') {
+            closeQuickTopicPopover();
+            return;
+          }
+          if (topicRenameModalOpen) { closeRenameTopicModal(); return; }
           if (relatedModalOpen) { closeRelatedModal(); return; }
           if (sm2PanelOpen) { closeSm2Panel(); return; }
           if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
@@ -7727,8 +7759,8 @@ ${cardsHTML}
     let _wDir = null, _wAccum = 0, _wLocked = false, _wTimer = null, _wIsMouse = false;
     document.addEventListener('wheel', function (e) {
       if (lbAnnotMode) return;
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-      if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen) return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+      if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen || relatedModalOpen || topicRenameModalOpen) return;
       if (document.getElementById('lightbox').classList.contains('show')) return;
 
       const dx = e.deltaX || 0, dy = e.deltaY || 0;
