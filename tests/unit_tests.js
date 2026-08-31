@@ -412,6 +412,99 @@ test('QID 编解码 (getQid & parseQid)', () => {
   assert.strictEqual(parseQid(null), null);
 });
 
+// 5. 跨章节与跨科目撤销栈 (Undo Stack) 机制测试
+console.log('\n--- 5. 跨章节撤销 (Undo Stack) 与状态回滚 ---');
+
+test('跨章节撤销: 正确记录 chapterId 与 subjectId 并支持准确回退', () => {
+  const undoStack = [];
+  function pushUndoMock(idx, prevStatus, chId, subjId) {
+    undoStack.push({ idx: idx, prevStatus: prevStatus || '', chapterId: chId, subjectId: subjId });
+    if (undoStack.length > 50) undoStack.shift();
+  }
+
+  // 模拟在 ch1 做题 -> 记录 undo -> 切换到 ch2 做题 -> 记录 undo
+  pushUndoMock(0, '', 'ch1', 'math'); // ch1 题目 0 从未做变成熟练
+  pushUndoMock(5, 'wrong', 'ch2', 'math'); // ch2 题目 5 从不会变成熟练
+
+  assert.strictEqual(undoStack.length, 2);
+  const top = undoStack.pop();
+  assert.strictEqual(top.chapterId, 'ch2');
+  assert.strictEqual(top.idx, 5);
+  assert.strictEqual(top.prevStatus, 'wrong');
+
+  const second = undoStack.pop();
+  assert.strictEqual(second.chapterId, 'ch1');
+  assert.strictEqual(second.idx, 0);
+  assert.strictEqual(second.prevStatus, '');
+});
+
+// 6. 英语生词安全与特殊字符防护
+console.log('\n--- 6. 英语生词本与特殊字符转义防护 ---');
+
+test('包含英文单引号、撇号与 HTML 实体的内容能够被安全转义', () => {
+  const wordWithApos = "don't";
+  const defWithApos = "adj. 自己的 (one's own), 不受影响的 <immune>";
+  const escapedWord = escapeHtml(wordWithApos);
+  const escapedDef = escapeHtml(defWithApos);
+
+  assert.strictEqual(escapedWord, 'don&#39;t');
+  assert.ok(!escapedDef.includes('<') && !escapedDef.includes('>'));
+  assert.ok(escapedDef.includes('one&#39;s own'));
+  assert.ok(escapedDef.includes('&lt;immune&gt;'));
+});
+
+// 7. 考点主题管理与关联映射
+console.log('\n--- 7. 考点主题数据结构与关联映射 ---');
+
+test('考点主题创建、关联题目与解除关联数据模型测试', () => {
+  const topicsMap = {};
+  
+  function addTopic(id, name) {
+    if (!topicsMap[id]) {
+      topicsMap[id] = { id: id, name: name, questions: [] };
+    }
+  }
+
+  function linkQuestion(topicId, qid) {
+    if (topicsMap[topicId] && !topicsMap[topicId].questions.includes(qid)) {
+      topicsMap[topicId].questions.push(qid);
+    }
+  }
+
+  function unlinkQuestion(topicId, qid) {
+    if (topicsMap[topicId]) {
+      topicsMap[topicId].questions = topicsMap[topicId].questions.filter(q => q !== qid);
+    }
+  }
+
+  addTopic('topic_taylor', '泰勒公式 $\\lim_{x \\to 0}\\frac{\\sin x}{x}$');
+  assert.ok(topicsMap['topic_taylor']);
+  assert.strictEqual(topicsMap['topic_taylor'].name, '泰勒公式 $\\lim_{x \\to 0}\\frac{\\sin x}{x}$');
+
+  linkQuestion('topic_taylor', 'math::ch1::0');
+  linkQuestion('topic_taylor', 'math::ch31::2');
+  assert.strictEqual(topicsMap['topic_taylor'].questions.length, 2);
+
+  // 幂等性测试
+  linkQuestion('topic_taylor', 'math::ch1::0');
+  assert.strictEqual(topicsMap['topic_taylor'].questions.length, 2);
+
+  unlinkQuestion('topic_taylor', 'math::ch1::0');
+  assert.strictEqual(topicsMap['topic_taylor'].questions.length, 1);
+  assert.strictEqual(topicsMap['topic_taylor'].questions[0], 'math::ch31::2');
+});
+
+// 8. .gitignore 凭据防护校验
+console.log('\n--- 8. .gitignore 凭据过滤规则完整性 ---');
+
+test('.gitignore 规则覆盖各类敏感 token、session 和私钥文件', () => {
+  const gitignoreContent = fs.readFileSync(path.join(__dirname, '../.gitignore'), 'utf8');
+  assert.ok(gitignoreContent.includes('*token*'), '.gitignore must contain *token*');
+  assert.ok(gitignoreContent.includes('*session*'), '.gitignore must contain *session*');
+  assert.ok(gitignoreContent.includes('*.key'), '.gitignore must contain *.key');
+  assert.ok(gitignoreContent.includes('*.env*'), '.gitignore must contain *.env*');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');

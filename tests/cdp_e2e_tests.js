@@ -301,8 +301,8 @@ async function run() {
   console.log('  点击遮罩层背景关闭弹窗成功:', modalClosedByBackdrop);
   if (!modalClosedByBackdrop) throw new Error('点击模态框遮罩层未能成功关闭弹窗');
 
-  // 7. 测试科目切换 (Math -> 822 -> English)
-  console.log('[8/8] 测试科目切换 (Math -> 822 -> English)...');
+  // 7. 测试科目切换 (Math -> 822 -> English) 与英语生词本安全交互
+  console.log('[8/9] 测试科目切换 (Math -> 822 -> English) 与生词本安全...');
   
   // 切换到 822
   await evaluate(ws, 'switchSubject("822")');
@@ -318,9 +318,68 @@ async function run() {
   console.log('  英语界面显示状态:', isEngVisible);
   if (!isEngVisible) throw new Error('英语界面未显示');
 
-  // 切换回 Math
+  // 测试英语生词本：收藏含有单引号的词汇并验证安全渲染
+  console.log('  测试生词本收藏特殊字符词汇 (如 don\'t)...');
+  await evaluate(ws, `
+    (() => {
+      window.kyApp.toggleStarWord("don't", { ipa: "dəʊnt", meaning: "aux. 不，别 (do not 的缩写)" });
+      window.kyApp.openVocabNotebook();
+    })()
+  `);
+  await sleep(400);
+
+  const vocabCheck = await evaluate(ws, `
+    (() => {
+      const modal = document.getElementById('engModalVocabBook');
+      const isVisible = modal && modal.style.display !== 'none';
+      const cards = document.querySelectorAll('#vocabGrid .vocab-card');
+      const hasWord = Array.from(cards).some(c => c.textContent.includes("don't"));
+      
+      // 测试点击移除
+      const unstarBtn = document.querySelector('#vocabGrid .vocab-unstar-btn');
+      if (unstarBtn) unstarBtn.click();
+
+      // 关闭生词本弹窗
+      window.kyApp.closeVocabNotebook();
+      return { isVisible, cardCount: cards.length, hasWord };
+    })()
+  `);
+  console.log('  生词本可见:', vocabCheck.isVisible, '卡片数量:', vocabCheck.cardCount, '正确包含特殊字符词汇:', vocabCheck.hasWord);
+  if (!vocabCheck.hasWord) throw new Error('生词本特殊字符词汇渲染失败');
+
+  // 8. 切换回 Math 并测试跨章节安全撤销
+  console.log('[9/9] 测试跨章节 Ctrl+Z 撤销与状态回滚...');
   await evaluate(ws, 'switchSubject("math")');
   await sleep(500);
+
+  const undoCheck = await evaluate(ws, `
+    (() => {
+      // 1. 在 ch1 的题 0 打标为熟练 (Z)
+      switchChapter('ch1');
+      switchTo(0);
+      setStatus('proficient');
+      const status1Before = statuses[0];
+
+      // 2. 切换到 ch2 的题 0
+      switchChapter('ch2');
+      switchTo(0);
+      const ch2Before = currentChapterId;
+
+      // 3. 触发 Ctrl+Z 撤销
+      undoLastMark();
+
+      return {
+        status1Before,
+        curChAfterUndo: currentChapterId,
+        curIdxAfterUndo: current,
+        status1AfterUndo: statuses[0] || 'unmarked'
+      };
+    })()
+  `);
+  console.log('  撤销前状态:', undoCheck.status1Before, '撤销后回到章节:', undoCheck.curChAfterUndo, '题号:', undoCheck.curIdxAfterUndo, '撤销后状态:', undoCheck.status1AfterUndo);
+  if (undoCheck.curChAfterUndo !== 'ch1' || undoCheck.status1AfterUndo !== 'unmarked') {
+    throw new Error('跨章节撤销失败，未正确回退至 ch1 原始未打标状态');
+  }
 
   // 响应式布局与移动端视图测试
   console.log('  测试响应式移动端视口 (390x844)...');
