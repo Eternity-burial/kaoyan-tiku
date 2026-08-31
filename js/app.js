@@ -493,12 +493,15 @@
     }
 
     // ===== 图片路径（按当前科目的 getImgPath） =====
-        function getImgPath(idx) {
+    function getImgPath(idx) {
       const ch = getChapter();
+      if (!ch || !ch.labels || idx < 0 || idx >= ch.labels.length) return '';
       // 合并章节的 1000题 段：路径路由到 1000题 伴章（标签与目录均为 pb_ 前缀）
       if (ch.q1000Total && idx >= ch.ownTotal) {
         const qc = chapterById(ch.q1000Id);
-        return curSubject.getImgPath(qc, qc.labels[idx - ch.ownTotal]);
+        if (qc && qc.labels && (idx - ch.ownTotal) < qc.labels.length) {
+          return curSubject.getImgPath(qc, qc.labels[idx - ch.ownTotal]);
+        }
       }
       return curSubject.getImgPath(ch, ch.labels[idx]);
     }
@@ -1276,8 +1279,10 @@
     function renderDashboardOverview() {
       showDashboardBackBtn(false);
       renderCountdown();
-      document.getElementById('dbOverview').style.display = '';
-      document.getElementById('dbDetail').style.display = 'none';
+      var dbO = document.getElementById('dbOverview');
+      if (dbO) dbO.style.display = '';
+      var dbD = document.getElementById('dbDetail');
+      if (dbD) dbD.style.display = 'none';
 
       // 1. 计算并渲染全学科总掌握度与指标
       var stats = getSubjectOverallStats();
@@ -2596,17 +2601,19 @@
     function switchTo(idx, scrollNav) {
       if (scrollNav === undefined) scrollNav = true;
       autoSaveNotes(); // 切题前保存未提交的笔记（当前仍是旧题，saveNote 用 current 定位正确）
-      current = idx;
-      showSolution = defaultShowSolution;
       const ch = getChapter();
-      const base = getImgPath(idx);
-      document.getElementById('questionImg').src = base + '_question.png';
+      if (!ch || !ch.labels || ch.labels.length === 0) return;
+      current = Math.max(0, Math.min(idx, ch.labels.length - 1));
+      showSolution = defaultShowSolution;
+      const base = getImgPath(current);
+      const qImg = document.getElementById('questionImg');
+      if (qImg) qImg.src = base ? (base + '_question.png') : '';
       setSolutionImages(base);
       renderQuestionAnnotations(); // 叠加已保存的图片标注（切题即见）
       updateSolutionUI();
       // 更新题号标签
       ensureGroups(ch);
-      const g = ch.groupForIdx[current];
+      const g = ch.groupForIdx ? ch.groupForIdx[current] : null;
       const labels = ch.labels;
       let qLabelText;
       const secInfo = ch.sections ? ch.sections.find(function(s) { return current >= s.start && current < s.start + s.count; }) : null;
@@ -2614,7 +2621,7 @@
       const desc = ch.itemDescs && ch.itemDescs[current];
       if (desc) {
         qLabelText = (secInfo ? secInfo.type + ' · ' : '') + desc;
-      } else if (secInfo && ch.displayLabels) {
+      } else if (secInfo && ch.displayLabels && ch.displayLabels[current] !== undefined) {
         qLabelText = secInfo.type + (isK ? ' · ' : ' 第') + ch.displayLabels[current] + (isK ? '' : '题');
       } else if (subMode) {
         qLabelText = labels[current];
@@ -2623,7 +2630,8 @@
       } else {
         qLabelText = labels[current];
       }
-      document.getElementById('qLabel').textContent = qLabelText;
+      const qLabelEl = document.getElementById('qLabel');
+      if (qLabelEl) qLabelEl.textContent = qLabelText || '';
       updateStatusBtns(); updateQBadBtn(); updateSBadBtn(); updateBookMismatchBtn(); updateImgBadWarnings();
       renderNotes();
       recordRecentQuestion(getCurrentQid());
@@ -2760,6 +2768,7 @@
       if (parts.length < 3) return null;
       var sid = normalizeSubjectId(parts[0]);
       var idx = parseInt(parts[2], 10);
+      if (isNaN(idx) || idx < 0) return null;
       return {
         subjectId: sid,
         chapterId: parts[1],
@@ -2949,7 +2958,7 @@
       var s = SUBJECTS.find(function(sub) { return sub.id === target.subjectId; });
       if (!s || !s.chapters) return '';
       var ch = s.chapters.find(function(c) { return c.id === target.chapterId; });
-      if (!ch || !ch.labels || target.qIdx >= ch.labels.length) return '';
+      if (!ch || !ch.labels || target.qIdx < 0 || target.qIdx >= ch.labels.length) return '';
       return s.getImgPath(ch, ch.labels[target.qIdx]) + '_solution.png';
     }
 
@@ -3019,7 +3028,7 @@
             '</div>' +
             '<div class="rc-sol-box" id="rcSolBox_' + safeId + '" style="display:none">' +
               '<div class="rc-sol-divider"><span>答案与解析</span></div>' +
-              (solImgSrc ? '<img src="' + escapeHtml(solImgSrc) + '" class="' + imgFilterClass + '" loading="lazy" alt="解析" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size:12px;color:var(--text-muted);text-align:center;padding:8px 0\\\'>暂无解析图片</span>\';">' : '<span style="font-size:12px;color:var(--text-muted)">暂无解析图片</span>') +
+              (solImgSrc ? '<img src="' + escapeHtml(solImgSrc) + '" class="' + imgFilterClass + '" loading="lazy" alt="解析" onerror="this.style.display=\'none\';var sp=document.createElement(\'span\');sp.style.cssText=\'font-size:12px;color:var(--text-muted);text-align:center;padding:8px 0\';sp.textContent=\'暂无解析图片\';this.replaceWith(sp);">' : '<span style="font-size:12px;color:var(--text-muted)">暂无解析图片</span>') +
             '</div>' +
             (noteHtml ? '<div class="rc-foot">' + noteHtml + '</div>' : '') +
           '</div>';
@@ -3784,7 +3793,7 @@
 
       if (solImgsEl) {
         var imgFilterClass = isDarkFilter ? ' class="dark-filter"' : '';
-        solImgsEl.innerHTML = '<img src="' + escapeHtml(solImgSrc) + '"' + imgFilterClass + ' alt="解析" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size:12px;color:var(--text-muted)\\\'>暂无解析图片</span>\';">';
+        solImgsEl.innerHTML = '<img src="' + escapeHtml(solImgSrc) + '"' + imgFilterClass + ' alt="解析" onerror="this.style.display=\'none\';var sp=document.createElement(\'span\');sp.style.cssText=\'font-size:12px;color:var(--text-muted)\';sp.textContent=\'暂无解析图片\';this.replaceWith(sp);">';
       }
       if (solAreaEl) {
         solAreaEl.style.display = pickerSolShown ? 'flex' : 'none';
@@ -5759,6 +5768,8 @@
     document.getElementById('btnDashboard').onclick = toggleDashboard;
     document.getElementById('btnWrongBook').onclick = toggleWrongBook;
     document.getElementById('btnShortcutHelp').onclick = toggleShortcutHelp;
+    const btnSm2Sidebar = document.getElementById('btnSm2PanelSidebar');
+    if (btnSm2Sidebar) btnSm2Sidebar.onclick = toggleSm2Panel;
     ['Proficient', 'Familiar', 'Vague', 'Rusty', 'Wrong'].forEach(s => {
       document.getElementById('btn' + s).onclick = function () { setStatus(s.toLowerCase()); };
     });
@@ -5787,6 +5798,7 @@
     // ===== 错题导出 =====
     function exportQuestions(statusFilter) {
       const ch = getChapter();
+      if (!ch) return;
       const items = [];
       for (let i = 0; i < ch.total; i++) {
         if (statuses[i] === statusFilter) {
@@ -5803,11 +5815,15 @@
         // 导出窗口是 about:blank，相对路径无法解析；转成绝对路径（file:// 或 http(s)://）
         let abs = item.qImg;
         try { abs = new URL(item.qImg, window.location.href).href; } catch (e) {}
-        return `<div class="card"><h3>${idx + 1}. ${item.label}</h3><img src="${abs}" alt="题目" onerror="this.style.display='none'"></div>`;
+        return `<div class="card"><h3>${idx + 1}. ${escapeHtml(item.label)}</h3><img src="${escapeHtml(abs)}" alt="题目" onerror="this.style.display='none'"></div>`;
       }).join('');
 
       const w = window.open('', '_blank', 'width=900,height=700');
-      w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${ch.name} — ${statusLabel}题</title>
+      if (!w) {
+        alert('导出窗口被浏览器拦截，请允许弹出窗口后重试。');
+        return;
+      }
+      w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${escapeHtml(ch.name)} — ${statusLabel}题</title>
 <style>
 body{font-family:"Microsoft YaHei",sans-serif;background:#fff;padding:20px;color:#333}
 h1{font-size:20px;text-align:center;margin-bottom:4px}
@@ -5817,7 +5833,7 @@ h1{font-size:20px;text-align:center;margin-bottom:4px}
 .card img{max-width:100%;display:block;margin:8px 0}
 @media print{body{padding:0}.card{border:none;border-bottom:1px dashed #ccc;border-radius:0;margin-bottom:12px;padding:12px 0}}
 </style></head><body>
-<h1>${ch.name}</h1>
+<h1>${escapeHtml(ch.name)}</h1>
 <div class="subtitle">${statusLabel}题 · 共 ${items.length} 题</div>
 ${cardsHTML}
 <script>window.onload=function(){window.print()}<\/script>
@@ -5944,10 +5960,13 @@ ${cardsHTML}
       if (!record) record = { ef: 2.5, interval: 1, reps: 0, nextReview: 0, lastReview: 0, history: [] };
       var now = customNow || Date.now();
       var curStudyDay = getStudyDayIndex(now);
-      var ef = record.ef !== undefined ? record.ef : 2.5;
-      var interval = record.interval || 1;
-      var reps = record.reps || 0;
-      var hist = record.history ? record.history.slice() : [];
+      var ef = (typeof record.ef === 'number' && !isNaN(record.ef)) ? record.ef : 2.5;
+      var interval = (typeof record.interval === 'number' && !isNaN(record.interval) && record.interval >= 1) ? record.interval : 1;
+      var reps = (typeof record.reps === 'number' && !isNaN(record.reps) && record.reps >= 0) ? record.reps : 0;
+      var hist = Array.isArray(record.history) ? record.history.slice() : [];
+
+      score = parseInt(score, 10);
+      if (isNaN(score) || score < 1 || score > 5) score = 3;
 
       // 1. 真实流逝学习日与预测留存率
       var lastStudyDay = record.lastStudyDay !== undefined ? record.lastStudyDay : (record.lastReview ? getStudyDayIndex(record.lastReview) : curStudyDay);
