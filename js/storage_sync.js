@@ -101,14 +101,14 @@
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
       if (!k) continue;
-      // 精确收集题库相关活跃键（掌握度/错图/实书不符/笔记/SM-2/图片标注/英语/毕设/暗化滤镜/全局状态）
+      // 精确收集题库相关活跃键（掌握度/错图/实书不符/笔记/SM-2/图片标注/英语/暗化滤镜/全局状态）
       if (
         /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$/.test(k) ||
         /^sm2_/.test(k) ||
         /^annot_/.test(k) ||
-        /^ky_(?:english|bishe)_/.test(k) ||
+        /^ky_english_/.test(k) ||
         /^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics)/.test(k) ||
-        /^(?:math|shu1|822|english|bishe)_ui_/.test(k)
+        /^(?:math|shu1|822|english)_ui_/.test(k)
       ) {
         dump[k] = localStorage.getItem(k);
       }
@@ -116,7 +116,7 @@
 
     return {
       version: 1,
-      appName: '考研题库 (Math + 822 + English + Bishe)',
+      appName: '考研题库 (Math + 822 + English)',
       lastSaved: new Date().toISOString(),
       timestamp: Date.now(),
       data: dump

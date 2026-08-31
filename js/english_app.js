@@ -9,7 +9,7 @@
 
   // 全局状态
   const state = {
-    currentSubject: 'english', // 'english' (考研英语) | 'bishe' (毕设文献)
+    currentSubject: 'english',
     currentYear: '2010',
     currentTextId: 'text1',
     currentQIndex: 21,
@@ -204,21 +204,11 @@
 
   // 所有真题年份清单 (1998 ~ 2026)
   const ALL_ENGLISH_YEARS = Array.from({ length: 29 }, (_, i) => String(1998 + i));
-  const BISHE_PAPERS = [
-    { id: 'paper1', name: '文献 1: 四旋翼敏捷飞行 NMPC vs DFBC (IEEE T-RO 2022)', short: '文献 1', title: '文献 1: 四旋翼敏捷飞行 NMPC vs DFBC' },
-    { id: 'paper2', name: '文献 2: 微型飞行器自适应INDI姿态控制 (AIAA JGCD 2016)', short: '文献 2', title: '文献 2: 微型飞行器自适应INDI' },
-    { id: 'paper3', name: '文献 3: 水下特技作业AUV Cuttlefish姿态控制 (IEEE/DFKI 2022)', short: '文献 3', title: '文献 3: 水下特技作业AUV' }
-  ];
+
   const loadingYears = new Map();
 
   // 动态异步按需加载指定年份的真题数据 (支持 local file:// 与 http://)
   function loadYearDataAsync(year) {
-    if (state.currentSubject === 'bishe') {
-      if (window.BISHE_DATA && window.BISHE_DATA[year]) {
-        return Promise.resolve(window.BISHE_DATA[year]);
-      }
-      return Promise.resolve({ texts: [] });
-    }
     if (window.ENGLISH_DATA && window.ENGLISH_DATA[year]) {
       return Promise.resolve(window.ENGLISH_DATA[year]);
     }
@@ -244,26 +234,11 @@
 
   // 获取所有支持的真题年份或文献列表
   function getAvailableYears() {
-    if (state.currentSubject === 'bishe') {
-      return BISHE_PAPERS.map(p => p.id);
-    }
     return ALL_ENGLISH_YEARS;
   }
 
   // 获取当前选定年份/文献的数据集
   function getCurrentDataset() {
-    if (state.currentSubject === 'bishe') {
-      if (!window.BISHE_DATA) return { texts: [] };
-      if (window.BISHE_DATA[state.currentYear]) {
-        return window.BISHE_DATA[state.currentYear];
-      }
-      const pKeys = Object.keys(window.BISHE_DATA);
-      if (pKeys.length > 0) {
-        state.currentYear = pKeys[0];
-        return window.BISHE_DATA[pKeys[0]];
-      }
-      return { texts: [] };
-    }
     if (!window.ENGLISH_DATA) return { texts: [] };
     if (window.ENGLISH_DATA[state.currentYear]) {
       return window.ENGLISH_DATA[state.currentYear];
@@ -340,23 +315,16 @@
             }
           }
         }
-        if (subjKey === 'bishe') {
-          state.mode = 'analysis';
-        } else if (saved.mode && (saved.mode === 'analysis' || saved.mode === 'practice')) {
+        if (saved.mode && (saved.mode === 'analysis' || saved.mode === 'practice')) {
           state.mode = saved.mode;
         }
         if (saved.typeFilter) state.typeFilter = saved.typeFilter;
         if (typeof saved.showAllTranslation === 'boolean') state.showAllTranslation = saved.showAllTranslation;
       } else {
-        if (subjKey === 'bishe') {
-          state.currentYear = 'paper1';
-          state.mode = 'analysis';
-        } else {
-          state.currentYear = '2010';
-          const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);
-          if (savedMode && (savedMode === 'analysis' || savedMode === 'practice')) {
-            state.mode = savedMode;
-          }
+        state.currentYear = '2010';
+        const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);
+        if (savedMode && (savedMode === 'analysis' || savedMode === 'practice')) {
+          state.mode = savedMode;
         }
       }
     } catch (e) {}
@@ -434,25 +402,6 @@
   // 渲染年份/文献标题下拉面板
   function renderYearSelector() {
     if (!dom.txtYear || !dom.panelYear) return;
-    if (state.currentSubject === 'bishe') {
-      const curP = BISHE_PAPERS.find(p => p.id === state.currentYear) || BISHE_PAPERS[0];
-      dom.txtYear.textContent = curP.name;
-
-      dom.panelYear.innerHTML = '';
-      BISHE_PAPERS.forEach(p => {
-        const btn = document.createElement('button');
-        btn.className = `title-option ${p.id === state.currentYear ? 'active' : ''}`;
-        btn.textContent = p.name;
-        btn.onclick = (e) => {
-          e.stopPropagation();
-          closeYearDropdown();
-          switchYear(p.id);
-        };
-        dom.panelYear.appendChild(btn);
-      });
-      return;
-    }
-
     dom.txtYear.textContent = `${state.currentYear} 年真题`;
     const years = getAvailableYears();
     dom.panelYear.innerHTML = '';
@@ -491,8 +440,7 @@
 
   // 切换年份/文献：恢复该项上次停的位置
   async function switchYear(year) {
-    const isBishe = state.currentSubject === 'bishe';
-    if (!isBishe && (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year])) {
+    if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) {
       if (dom.passagePane) {
         dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;">正在加载 ${year} 年真题精读数据...</div>`;
       }
@@ -591,14 +539,8 @@
   async function activate(subjectId = 'english') {
     state.currentSubject = subjectId;
     initDom();
-    if (state.currentSubject === 'bishe') {
-      if (!state.currentYear || !state.currentYear.startsWith('paper')) {
-        state.currentYear = 'paper1';
-      }
-    } else {
-      if (!state.currentYear || state.currentYear.startsWith('paper')) {
-        state.currentYear = '2010';
-      }
+    if (!state.currentYear || state.currentYear.startsWith('paper')) {
+      state.currentYear = '2010';
     }
 
     if (!state.initialized) {
@@ -626,19 +568,6 @@
   }
   function updateModeClass() {
     if (!dom.layout) return;
-    if (state.currentSubject === 'bishe') {
-      state.mode = 'analysis';
-      dom.layout.classList.add('mode-reader-layout');
-      dom.layout.classList.remove('mode-practice-active');
-      if (dom.btnPracticeMode) dom.btnPracticeMode.style.display = 'none';
-      if (dom.btnAnalysisMode) dom.btnAnalysisMode.style.display = 'none';
-      if (dom.btnToggleSol) dom.btnToggleSol.style.display = 'none';
-      if (dom.typeFilterBar) dom.typeFilterBar.style.display = 'none';
-      if (dom.questionPills) dom.questionPills.style.display = 'none';
-      if (dom.btnToggleTrans) dom.btnToggleTrans.style.display = 'inline-flex';
-      return;
-    }
-
     dom.layout.classList.remove('mode-reader-layout');
     if (dom.btnPracticeMode) dom.btnPracticeMode.style.display = 'inline-flex';
     if (dom.btnAnalysisMode) dom.btnAnalysisMode.style.display = 'inline-flex';
@@ -665,12 +594,7 @@
     if (!dom.textTabs) return;
     const dataset = getCurrentDataset();
 
-    if (state.currentSubject === 'bishe') {
-      // 毕设文献阅读器：无需顶部碎片化标签
-      dom.textTabs.innerHTML = '';
-      dom.textTabs.style.display = 'none';
-      return;
-    }
+
 
     if (!dataset.texts) return;
     dom.textTabs.style.display = 'flex';
@@ -688,10 +612,7 @@
   // 渲染题型筛选条
   function renderTypeFilter() {
     if (!dom.typeFilterBar) return;
-    if (state.currentSubject === 'bishe') {
-      dom.typeFilterBar.style.display = 'none';
-      return;
-    }
+
     dom.typeFilterBar.style.display = 'flex';
     const types = ['all', '细节题', '推断题', '例证题', '主旨题', '态度题', '词义题'];
     dom.typeFilterBar.innerHTML = '';
@@ -1332,7 +1253,7 @@
       // 1. 点击生词：永久常驻锁定释义卡片
       const vEl = e.target.closest('.vocab-word');
       if (vEl) {
-        if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
+        if (state.mode === 'practice') return;
         e.stopPropagation();
         const word = vEl.dataset.word;
         const ipa = vEl.dataset.ipa;
@@ -1354,7 +1275,7 @@
       // 2. 点击句子：切换单句译文显隐
       const sEl = e.target.closest('.sentence-item');
       if (sEl) {
-        if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
+        if (state.mode === 'practice') return;
         sEl.classList.toggle('show-trans');
         return;
       }
@@ -1362,7 +1283,7 @@
 
     // 鼠标划入生词：即时浮现释义
     dom.passagePane.onmouseover = (e) => {
-      if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
+      if (state.mode === 'practice') return;
       if (isVocabPinned) return;
       const vEl = e.target.closest('.vocab-word');
       if (vEl) {
@@ -1469,7 +1390,7 @@
 
     if (dom.btnToggleTrans) {
       dom.btnToggleTrans.onclick = () => {
-        if (state.currentSubject !== 'bishe' && state.mode === 'practice') return;
+        if (state.mode === 'practice') return;
         state.showAllTranslation = !state.showAllTranslation;
         saveResume();
         if (dom.passagePane) dom.passagePane.classList.toggle('show-all-trans', state.showAllTranslation);
@@ -1550,11 +1471,11 @@
   // 键盘快捷键支持
   function setupKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
-      const isAppActive = (window.curSubjectId === 'english' || window.curSubjectId === 'bishe') || (dom.layout && dom.layout.style.display !== 'none');
+      const isAppActive = window.curSubjectId === 'english' || (dom.layout && dom.layout.style.display !== 'none');
       if (!isAppActive) return;
       if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
 
-      // 全局通用快捷键（考研英语与毕设文献通用）
+      // 全局通用快捷键（考研英语）
       if (e.key === 't' || e.key === 'T') {
         if (dom.btnToggleTrans) dom.btnToggleTrans.click();
         return;
@@ -1581,7 +1502,7 @@
       }
 
       // 纯文献阅读模式无题目交互
-      if (state.currentSubject === 'bishe') return;
+      
 
       const q = getCurrentQuestion();
       if (!q) return;
