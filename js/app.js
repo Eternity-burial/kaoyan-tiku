@@ -4069,7 +4069,7 @@
           var inCurGroup = (curGroup === g);
           var cls = 'nav-btn';
           if (isK) cls += ' is-knowledge';
-          if (inCurGroup) cls += ' active';
+          if (inCurGroup && !g.isParent) cls += ' active';
 
           var groupLinked = false;
           for (var k = 0; k < g.count; k++) {
