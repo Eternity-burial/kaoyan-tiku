@@ -2168,12 +2168,30 @@
 
       renderSubSelectBar(curGroup);
 
-      // 自动平滑滚动聚焦到当前题号按钮（保证当前题始终在可视窗口内部，免去手动查找）
+      // 自动平滑滚动聚焦到当前题号按钮（将其尽量居中定位在右侧栏可视窗口中）
       const activeBtn = nav.querySelector('button.active, button.has-subs.active');
       if (activeBtn) {
         requestAnimationFrame(function() {
-          activeBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          scrollActiveBtnToCenter(activeBtn, true);
         });
+      }
+    }
+
+    // 将右侧栏当前激活的题号按钮居中定位在侧边栏滚动视口内
+    function scrollActiveBtnToCenter(activeBtn, smooth) {
+      if (!activeBtn) return;
+      var container = document.querySelector('.sidebar-right');
+      if (container) {
+        var cRect = container.getBoundingClientRect();
+        var bRect = activeBtn.getBoundingClientRect();
+        var delta = (bRect.top + bRect.height / 2) - (cRect.top + cRect.height / 2);
+        if (Math.abs(delta) > 5) {
+          container.scrollBy({ top: delta, behavior: smooth ? 'smooth' : 'auto' });
+          return;
+        }
+      }
+      if (typeof activeBtn.scrollIntoView === 'function') {
+        activeBtn.scrollIntoView({ block: 'center', inline: 'nearest', behavior: smooth ? 'smooth' : 'auto' });
       }
     }
 
@@ -2550,7 +2568,7 @@
         }
         renderSubSelectBar(curGroup);
         if (scroll && activeBtn) {
-          activeBtn.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+          scrollActiveBtnToCenter(activeBtn, true);
         }
       }
     }
@@ -2922,11 +2940,22 @@
       var list = document.getElementById('relatedCardsList');
       if (!wrap || !list) return;
 
-      // 渲染主题胶囊
+      // 渲染主题胶囊（支持 LaTeX 数学公式与右键重命名）
       if (data.topics.length > 0) {
         wrap.innerHTML = data.topics.map(function(t) {
-          return '<span class="related-topic-pill" title="考点：' + escapeHtml(t.name) + '">' + escapeHtml(t.name) + '</span>';
+          return '<span class="related-topic-pill" data-tid="' + escapeHtml(t.id) + '" title="考点：' + escapeHtml(t.name) + '（右键可重命名）">' +
+            renderTopicTextHtml(t.name) +
+          '</span>';
         }).join('');
+
+        wrap.querySelectorAll('.related-topic-pill').forEach(function(el) {
+          el.oncontextmenu = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var tid = this.dataset.tid;
+            if (tid) renameRelatedTopic(tid);
+          };
+        });
       } else {
         wrap.innerHTML = '';
       }
@@ -2959,7 +2988,7 @@
               '<div class="rc-head-actions">' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
                 '<button type="button" class="gel-btn btn-sm btn-primary rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题 →</button>' +
-                '<button type="button" class="gel-btn btn-sm btn-danger rc-btn-unlink" data-unlink-qid="' + escapeHtml(q.qid) + '" title="移出与当前题目的关联">移出</button>' +
+                '<button type="button" class="gel-btn btn-sm rc-btn-unlink" data-unlink-qid="' + escapeHtml(q.qid) + '" title="移出与当前题目的关联">移出</button>' +
               '</div>' +
             '</div>' +
             '<div class="rc-img-box" title="点击放大查看">' +
@@ -3103,7 +3132,54 @@
       return subj.getImgPath(ch, label) + '_question.png';
     }
 
-    // 6. 主题彻底删除
+    // 6. 考点主题名称渲染（支持 $LaTeX$ 公式）与重命名管理
+    function renderTopicTextHtml(text) {
+      if (!text) return '';
+      if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function' && text.indexOf('$') !== -1) {
+        try {
+          var rendered = text.replace(/\$([^$]+)\$/g, function(match, tex) {
+            try {
+              return katex.renderToString(tex, { throwOnError: false, displayMode: false });
+            } catch(e) {
+              return escapeHtml(match);
+            }
+          });
+          return (typeof DOMPurify !== 'undefined' && typeof DOMPurify.sanitize === 'function') ? DOMPurify.sanitize(rendered) : rendered;
+        } catch(e) {}
+      }
+      return escapeHtml(text);
+    }
+
+    // 考点主题重命名（支持右键触发）
+    function renameRelatedTopic(topicId, newName) {
+      var t = relatedTopics[topicId];
+      if (!t) return false;
+      if (typeof newName === 'undefined') {
+        newName = prompt('重命名考点主题（支持 $LaTeX$ 公式）：', t.name);
+      }
+      if (newName === null) return false;
+      newName = newName.trim();
+      if (!newName) {
+        if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+          window.storageSync.showToast('考点主题名称不能为空', 'warning');
+        }
+        return false;
+      }
+      if (newName === t.name) return true;
+      var oldName = t.name;
+      t.name = newName;
+      saveRelatedTopics();
+      renderRelatedModalTopics();
+      renderRelatedQuestions();
+      if (typeof renderModalNav === 'function') renderModalNav();
+      if (typeof renderModalViewer === 'function') renderModalViewer();
+      if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+        window.storageSync.showToast('已重命名考点：“' + oldName + '” → “' + newName + '”', 'success');
+      }
+      return true;
+    }
+
+    // 主题彻底删除
     function deleteRelatedTopic(topicId) {
       var t = relatedTopics[topicId];
       if (!t) return false;
@@ -3145,7 +3221,8 @@
     function closeRelatedModal() {
       relatedModalOpen = false;
       var modal = document.getElementById('relatedModal');
-      if (modal) modal.style.display = 'none';
+      if (!modal) return;
+      modal.style.display = 'none';
       closeAllModalTitlePanels();
       renderRelatedQuestions();
     }
@@ -3178,17 +3255,18 @@
       var container = document.getElementById('rmCurrentTopics');
       if (!container) return;
 
-      // 1. 渲染当前题已加入的主题（单 ✕ 图标移出，移除冗余汉字「删」）
+      // 1. 渲染当前题已加入的主题（单 ✕ 图标移出，支持右键重命名）
       if (myTopics.length > 0) {
         container.innerHTML = myTopics.map(function(t) {
-          return '<span class="rm-topic-tag">' +
-            '<span>' + escapeHtml(t.name) + '</span>' +
+          return '<span class="rm-topic-tag" data-tid="' + escapeHtml(t.id) + '" title="右键可重命名考点主题">' +
+            '<span>' + renderTopicTextHtml(t.name) + '</span>' +
             '<button type="button" class="rm-topic-del" data-tid="' + escapeHtml(t.id) + '" title="将当前题目移出该考点">✕</button>' +
           '</span>';
         }).join('');
 
         container.querySelectorAll('button[data-tid]').forEach(function(btn) {
-          btn.onclick = function() {
+          btn.onclick = function(e) {
+            e.stopPropagation();
             var tid = this.dataset.tid;
             if (tid) {
               removeQuestionFromTopic(tid, curQid);
@@ -3199,11 +3277,21 @@
             }
           };
         });
+
+        container.querySelectorAll('.rm-topic-tag').forEach(function(tag) {
+          tag.oncontextmenu = function(e) {
+            if (e.target.closest('button.rm-topic-del')) return;
+            e.preventDefault();
+            e.stopPropagation();
+            var tid = this.dataset.tid;
+            if (tid) renameRelatedTopic(tid);
+          };
+        });
       } else {
         container.innerHTML = '<span class="related-empty-hint">当前题目尚未归入任何考点主题</span>';
       }
 
-      // 2. 渲染全库已有考点主题（支持点击直接加入与彻底删除）
+      // 2. 渲染全库已有考点主题（支持点击直接加入、右键重命名与彻底删除）
       var availContainer = document.getElementById('rmAvailableTopics');
       var availWrap = document.getElementById('rmAvailableTopicsWrap');
       if (availContainer) {
@@ -3220,9 +3308,9 @@
           if (availWrap) availWrap.style.display = 'block';
           availContainer.innerHTML = otherTopics.map(function(t) {
             var count = (t.members ? t.members.length : 0);
-            return '<div class="rm-avail-tag-wrap">' +
+            return '<div class="rm-avail-tag-wrap" data-tid="' + escapeHtml(t.id) + '" title="右键可重命名考点主题">' +
               '<button type="button" class="rm-avail-btn" data-add-tid="' + escapeHtml(t.id) + '" title="点击将当前题目加入此考点">' +
-                '<span>+ ' + escapeHtml(t.name) + '</span>' +
+                '<span>+ ' + renderTopicTextHtml(t.name) + '</span>' +
                 '<span class="rm-avail-count">(' + count + '题)</span>' +
               '</button>' +
               '<button type="button" class="rm-topic-trash-btn" data-trash-tid="' + escapeHtml(t.id) + '" title="彻底删除此考点主题">✕</button>' +
@@ -3230,7 +3318,8 @@
           }).join('');
 
           availContainer.querySelectorAll('button[data-add-tid]').forEach(function(btn) {
-            btn.onclick = function() {
+            btn.onclick = function(e) {
+              e.stopPropagation();
               var targetTid = this.dataset.addTid;
               if (targetTid) {
                 addQuestionToTopic(targetTid, curQid);
@@ -3243,9 +3332,20 @@
           });
 
           availContainer.querySelectorAll('button[data-trash-tid]').forEach(function(btn) {
-            btn.onclick = function() {
+            btn.onclick = function(e) {
+              e.stopPropagation();
               var targetTid = this.dataset.trashTid;
               if (targetTid) deleteRelatedTopic(targetTid);
+            };
+          });
+
+          availContainer.querySelectorAll('.rm-avail-tag-wrap').forEach(function(tag) {
+            tag.oncontextmenu = function(e) {
+              if (e.target.closest('button.rm-topic-trash-btn')) return;
+              e.preventDefault();
+              e.stopPropagation();
+              var tid = this.dataset.tid;
+              if (tid) renameRelatedTopic(tid);
             };
           });
         } else {
@@ -3595,7 +3695,7 @@
         } else if (isLinked) {
           btnLinkCurrent.textContent = '已关联（点击移出）';
           btnLinkCurrent.disabled = false;
-          btnLinkCurrent.className = 'gel-btn btn-sm btn-danger';
+          btnLinkCurrent.className = 'gel-btn btn-sm btn-linked-action';
         } else {
           btnLinkCurrent.textContent = '+ 关联此题到考点';
           btnLinkCurrent.disabled = false;
