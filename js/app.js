@@ -45,8 +45,8 @@
 
     // ===== 合并章节（1000题/李范习题并入）辅助 =====
     // 当前索引所属分区：idx 落在合并章节的伴章段 → 30讲/36讲为 '1000题'，李范全书为 '习题'；否则按标签分类
-    function partOfIdx(idx) {
-      const ch = getChapter();
+    function partOfIdx(idx, targetCh) {
+      const ch = targetCh || getChapter();
       if (ch && ch.q1000Total && idx >= ch.ownTotal) {
         if (ch.wb === '李范全书') return '习题';
         return '1000题';
@@ -55,7 +55,7 @@
         const s = ch.sections.find(function (sec) { return idx >= sec.start && idx < sec.start + sec.count; });
         if (s) return s.type;
       }
-      return classifyLabel(ch ? ch.labels[idx] : '');
+      return (curSubject && curSubject.classifyLabel) ? curSubject.classifyLabel(ch ? ch.labels[idx] : '') : classifyLabel(ch ? ch.labels[idx] : '');
     }
     // 笔记命名空间键：避免「30讲例1-1」与「1000题1-1」笔记键冲突。
     // 返回 '<源章节id>::<标签>'，源章节 = 1000题伴章（1000段）或本章（自身段）。
@@ -714,12 +714,13 @@
 
     // ===== 自动分区：从 label 推断所属类别（按当前科目） =====
     // 合并章节：李范全书为 例题 → 习题；30讲/36讲为 例题 → 习题 → 1000题；其余章节用科目 partOrder
-    function getPartOrder() {
-      const ch = getChapter();
-      if (ch && ch.wb === '老姚高数' && ch.sections) return ch.sections.map(function (s) { return s.type; });
+    function getPartOrder(targetCh, targetSubj) {
+      const ch = targetCh || getChapter();
+      const s = targetSubj || curSubject;
+      if (ch && ch.wb === '老姚高数' && ch.sections) return ch.sections.map(function (sec) { return sec.type; });
       if (ch && ch.wb === '李范全书') return ['例题', '习题'];
       if (ch && ch.q1000Total) return ['例题', '习题', '1000题'];
-      return curSubject ? curSubject.partOrder : ['例题', '习题'];
+      return (s && s.partOrder) ? s.partOrder : ['例题', '习题'];
     }
 
     function classifyLabel(label) {
@@ -3873,62 +3874,77 @@
     var modalCollapsedSections = new Set();
 
     function renderModalNav() {
-      var navSection = document.getElementById('rmNavSection');
+      var nav = document.getElementById('rmNavSection');
       var badge = document.getElementById('rmProgressBadge');
-      if (!navSection) return;
+      if (!nav) return;
+      nav.innerHTML = '';
 
       var s = SUBJECTS.find(function(sub) { return sub.id === pickerSubjectId; }) || curSubject;
       var ch = s ? s.chapters.find(function(c) { return c.id === pickerChapterId; }) : null;
       if (!ch || !ch.labels || ch.labels.length === 0) {
-        navSection.innerHTML = '<span class="related-empty-hint">该章节暂无题目</span>';
+        nav.innerHTML = '<span class="related-empty-hint" style="grid-column:1/-1;">该章节暂无题目</span>';
         if (badge) badge.textContent = '共 0 题';
         return;
       }
 
       ensureGroups(ch);
+      const cols = 5;
+      nav.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+
       pickerQIdx = Math.max(0, Math.min(pickerQIdx, ch.total - 1));
       if (badge) {
         badge.textContent = '共 ' + ch.total + ' 题 · 当前 第 ' + (pickerQIdx + 1) + ' 题';
       }
 
-      var curQid = getCurrentQid();
-      var myTopics = getTopicsForQid(curQid);
+      const labels = ch.labels;
+      const curGroup = ch.groupForIdx ? ch.groupForIdx[pickerQIdx] : null;
+      const curQid = getCurrentQid();
+      const myTopics = getTopicsForQid(curQid);
 
-      var statusKey = chapterStatusKey(ch);
-      var qBadKey = ch.id + '_' + s.storageSuffix + '_qbad';
-      var sBadKey = ch.id + '_' + s.storageSuffix + '_sbad';
-      var mismatchKey = ch.id + '_' + s.storageSuffix + '_book_mismatch';
-      var notesKey = ch.id + '_' + s.storageSuffix + '_notes';
+      const chData = getChapterStorageData(s, ch);
+      const statuses = chData.statuses;
+      const qBad = chData.qBad;
+      const sBad = chData.sBad;
+      const bookMismatch = chData.bookMismatch;
 
-      var chStatuses = {};
-      var chQBad = {};
-      var chSBad = {};
-      var chMismatch = {};
-      var chNotes = {};
-      try { chStatuses = JSON.parse(localStorage.getItem(statusKey) || '{}'); } catch(e) {}
-      try { chQBad = JSON.parse(localStorage.getItem(qBadKey) || '{}'); } catch(e) {}
-      try { chSBad = JSON.parse(localStorage.getItem(sBadKey) || '{}'); } catch(e) {}
-      try { chMismatch = JSON.parse(localStorage.getItem(mismatchKey) || '{}'); } catch(e) {}
-      try { chNotes = JSON.parse(localStorage.getItem(notesKey) || '{}'); } catch(e) {}
-
-      var cols = ch.cols || 5;
-      navSection.style.setProperty('--rm-cols', cols);
+      function appendBadges(btn, i) {
+        let groupHasNote = false, groupHasAnnot = false, groupHasRelated = false;
+        const g0 = ch.groupForIdx[i];
+        const start = g0 ? g0.startIdx : i;
+        const count = g0 ? g0.count : 1;
+        for (var k = 0; k < count; k++) {
+          const idx = start + k;
+          if (chData.hasNote(idx)) groupHasNote = true;
+          if (chData.hasAnnot(idx)) groupHasAnnot = true;
+          const qid = getQid(s.id, ch.id, idx);
+          if (getTopicsForQid(qid).length > 0) groupHasRelated = true;
+          if (groupHasNote && groupHasAnnot && groupHasRelated) break;
+        }
+        if (qBad[i] || sBad[i] || bookMismatch[i] || groupHasNote || groupHasAnnot || groupHasRelated) {
+          const badgeSpan = document.createElement('span');
+          badgeSpan.className = 'img-badges';
+          if (qBad[i]) { const d = document.createElement('span'); d.className = 'badge-text qbad-dot'; d.textContent = 'Q'; badgeSpan.appendChild(d); }
+          if (sBad[i]) { const d = document.createElement('span'); d.className = 'badge-text sbad-dot'; d.textContent = 'S'; badgeSpan.appendChild(d); }
+          if (bookMismatch[i]) { const d = document.createElement('span'); d.className = 'badge-text mismatch-dot'; d.textContent = '书'; badgeSpan.appendChild(d); }
+          if (groupHasNote) { const d = document.createElement('span'); d.className = 'badge-dot note-dot'; d.title = '有笔记'; badgeSpan.appendChild(d); }
+          if (groupHasAnnot) { const d = document.createElement('span'); d.className = 'badge-dot annot-dot'; d.title = '有图片标注'; badgeSpan.appendChild(d); }
+          if (groupHasRelated) { const d = document.createElement('span'); d.className = 'badge-dot related-dot'; d.title = '有关联同类题'; badgeSpan.appendChild(d); }
+          btn.appendChild(badgeSpan);
+        }
+      }
 
       var parts = [];
       var curPart = null;
-      var partOrder = (s.partOrder || ['例题', '习题', '1000题']);
-      for (var i = 0; i < ch.labels.length; i++) {
-        var cat = (s.classifyLabel ? s.classifyLabel(ch.labels[i]) : (ch.labels[i].startsWith('例') ? '例题' : '习题'));
-        if (ch.q1000Id && ch.ownTotal && i >= ch.ownTotal) {
-          cat = '1000题';
-        }
+      var partOrder = getPartOrder(ch, s);
+      for (var i = 0; i < labels.length; i++) {
+        var cat = partOfIdx(i, ch);
         if (!curPart || curPart.label !== cat) {
           if (curPart) curPart.endIdx = i;
           curPart = { label: cat, startIdx: i, endIdx: -1 };
           parts.push(curPart);
         }
       }
-      if (curPart) curPart.endIdx = ch.labels.length;
+      if (curPart) curPart.endIdx = labels.length;
 
       parts.sort(function(a, b) {
         var ia = partOrder.indexOf(a.label);
@@ -3936,15 +3952,9 @@
         return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
       });
 
-      var curPickerGroup = ch.groupForIdx ? ch.groupForIdx[pickerQIdx] : null;
-      var curPartLabel = curPickerGroup ? (s.classifyLabel ? s.classifyLabel(ch.labels[curPickerGroup.startIdx]) : '例题') : '例题';
-      if (ch.q1000Id && ch.ownTotal && pickerQIdx >= ch.ownTotal) {
-        curPartLabel = '1000题';
-      }
-      var curSecKey = s.id + '::' + ch.id + '::' + curPartLabel;
+      const curPartLabel = partOfIdx(pickerQIdx, ch);
+      const curSecKey = (s.id || 'default') + '::' + ch.id + '::' + curPartLabel;
       modalCollapsedSections.delete(curSecKey);
-
-      navSection.innerHTML = '';
 
       parts.forEach(function(part) {
         var secGroups = [];
@@ -3953,17 +3963,18 @@
             secGroups.push(g);
           }
         });
+
         if (secGroups.length === 0) return;
 
-        var secKey = s.id + '::' + ch.id + '::' + part.label;
-        var isCollapsed = modalCollapsedSections.has(secKey);
+        const secKey = (s.id || 'default') + '::' + ch.id + '::' + part.label;
+        const isCollapsed = modalCollapsedSections.has(secKey);
 
-        var totalSecQuestions = 0;
-        var completedSecQuestions = 0;
+        let totalSecQuestions = 0;
+        let completedSecQuestions = 0;
         secGroups.forEach(function(g) {
           for (var k = 0; k < g.count; k++) {
             totalSecQuestions++;
-            if (chStatuses[g.startIdx + k]) completedSecQuestions++;
+            if (statuses[g.startIdx + k]) completedSecQuestions++;
           }
         });
 
@@ -3985,13 +3996,9 @@
           }
           renderModalNav();
         };
-        navSection.appendChild(secTitle);
+        nav.appendChild(secTitle);
 
         if (isCollapsed) return;
-
-        var gridWrap = document.createElement('div');
-        gridWrap.className = 'rm-sec-grid';
-        gridWrap.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
 
         var curSubType = null;
         secGroups.forEach(function(g) {
@@ -4009,7 +4016,7 @@
               var subTitle = document.createElement('div');
               subTitle.className = 'subsection-header';
               subTitle.textContent = subType;
-              navSection.appendChild(subTitle);
+              nav.appendChild(subTitle);
             }
           } else if (ch.sections) {
             var matchingSec = ch.sections.find(function(sc) { return sc.start === g.startIdx; });
@@ -4017,7 +4024,7 @@
               var subTitle = document.createElement('div');
               subTitle.className = 'subsection-header';
               subTitle.textContent = matchingSec.type;
-              navSection.appendChild(subTitle);
+              nav.appendChild(subTitle);
             }
           }
 
@@ -4027,8 +4034,6 @@
           var desc = ch.itemDescs && ch.itemDescs[g.startIdx];
 
           var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'rm-nav-btn';
           btn.setAttribute('data-group-start', g.startIdx);
           if (desc) {
             btn.title = (secInfo ? secInfo.type + ' · ' : '') + desc;
@@ -4038,9 +4043,10 @@
             btn.title = g.parentLabel;
           }
 
-          var inCurGroup = (curPickerGroup === g);
-          if (isK) btn.classList.add('is-knowledge');
-          if (inCurGroup) btn.classList.add('active');
+          var inCurGroup = (curGroup === g);
+          var cls = 'nav-btn';
+          if (isK) cls += ' is-knowledge';
+          if (inCurGroup) cls += ' active';
 
           var groupLinked = false;
           for (var k = 0; k < g.count; k++) {
@@ -4052,55 +4058,40 @@
               break;
             }
           }
-          if (groupLinked) btn.classList.add('linked');
+          if (groupLinked) cls += ' linked';
 
           if (g.isParent) {
-            btn.classList.add('has-subs');
+            cls += ' has-subs';
             var anyStatus = false;
             for (var k = 0; k < g.count; k++) {
+              if (statuses[g.startIdx + k]) { anyStatus = true; break; }
+            }
+            if (anyStatus) cls += ' has-color';
+            btn.className = cls.trim();
+
+            for (var k = 0; k < g.count; k++) {
               var idx = g.startIdx + k;
-              var st = chStatuses[idx];
-              if (st) anyStatus = true;
               var bar = document.createElement('span');
               bar.className = 'sub-bar';
+              var st = statuses[idx];
               if (st) bar.classList.add(st);
               if (inCurGroup && idx === pickerQIdx) bar.classList.add('active-sub');
               bar.style.width = (100 / g.count) + '%';
               bar.style.left = (k * 100 / g.count) + '%';
               btn.appendChild(bar);
             }
-            if (anyStatus) btn.classList.add('has-color');
+
             var textSpan = document.createElement('span');
             textSpan.className = 'btn-text';
             textSpan.textContent = dispLabel;
             btn.appendChild(textSpan);
           } else {
-            var singleSt = chStatuses[g.startIdx];
-            if (singleSt) btn.classList.add(singleSt);
+            cls += ' ' + (statuses[g.startIdx] ? getStatusClass(g.startIdx) || statuses[g.startIdx] : '');
+            btn.className = cls.trim();
             btn.textContent = dispLabel;
           }
 
-          var groupHasNote = false, groupHasRelated = false;
-          for (var k = 0; k < g.count; k++) {
-            var idx = g.startIdx + k;
-            if (chNotes[idx]) groupHasNote = true;
-            var qid_k = getQid(s.id, ch.id, idx);
-            if (getTopicsForQid(qid_k).length > 0) groupHasRelated = true;
-          }
-          var hasQBad = chQBad[g.startIdx];
-          var hasSBad = chSBad[g.startIdx];
-          var hasMismatch = chMismatch[g.startIdx];
-
-          if (hasQBad || hasSBad || hasMismatch || groupHasNote || groupHasRelated) {
-            var badgeSpan = document.createElement('span');
-            badgeSpan.className = 'img-badges';
-            if (hasQBad) { var d = document.createElement('span'); d.className = 'badge-text qbad-dot'; d.textContent = 'Q'; badgeSpan.appendChild(d); }
-            if (hasSBad) { var d = document.createElement('span'); d.className = 'badge-text sbad-dot'; d.textContent = 'S'; badgeSpan.appendChild(d); }
-            if (hasMismatch) { var d = document.createElement('span'); d.className = 'badge-text mismatch-dot'; d.textContent = '书'; badgeSpan.appendChild(d); }
-            if (groupHasNote) { var d = document.createElement('span'); d.className = 'badge-dot note-dot'; d.title = '有笔记'; badgeSpan.appendChild(d); }
-            if (groupHasRelated) { var d = document.createElement('span'); d.className = 'badge-dot related-dot'; d.title = '有关联考点'; badgeSpan.appendChild(d); }
-            btn.appendChild(badgeSpan);
-          }
+          appendBadges(btn, g.startIdx);
 
           btn.onclick = function() {
             pickerQIdx = g.startIdx;
@@ -4108,13 +4099,11 @@
             renderModalViewer();
           };
 
-          gridWrap.appendChild(btn);
+          nav.appendChild(btn);
         });
-
-        navSection.appendChild(gridWrap);
       });
 
-      var curActiveBtn = navSection.querySelector('button.active');
+      var curActiveBtn = nav.querySelector('button.active');
       if (curActiveBtn) {
         curActiveBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       }
@@ -7845,6 +7834,7 @@ ${cardsHTML}
     window.renderRelatedQuestions = renderRelatedQuestions;
     window.openRelatedModal = openRelatedModal;
     window.closeRelatedModal = closeRelatedModal;
+    window.switchChapter = switchChapter;
     window.jumpToQid = jumpToQid;
     window.loadGlobalFilters = loadGlobalFilters;
     window.loadSolutionPref = loadSolutionPref;

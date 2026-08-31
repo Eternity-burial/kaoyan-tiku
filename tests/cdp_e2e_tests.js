@@ -193,17 +193,28 @@ async function run() {
   console.log('  删除考点后胶囊数量:', topicCountAfterDel);
   if (topicCountAfterDel !== 0) throw new Error('考点删除失败');
 
-  // 6. 测试 L 快捷键打开模态框、布局无重叠与题号对齐
+  // 6. 测试 L 快捷键打开模态框、布局无重叠与题号对齐 (含老姚高数小节与5列网格)
   console.log('[7/8] 测试 L 面板 (考点管理与跨书题号网格)...');
-  await evaluate(ws, `openRelatedModal()`);
+  await evaluate(ws, `
+    (() => {
+      // 切换到老姚高数章节测试复杂小节排版
+      const laoyaoCh = SUBJECTS.find(s => s.id === 'math').chapters.find(c => c.wb === '老姚高数' && c.sections);
+      if (laoyaoCh) {
+        switchChapter(laoyaoCh.id);
+      }
+      openRelatedModal();
+    })()
+  `);
   await sleep(400);
 
   const modalLayoutCheck = await evaluate(ws, `
     (() => {
       const modal = document.getElementById('relatedModal');
       const isVisible = modal && modal.style.display !== 'none';
-      const navBtns = document.querySelectorAll('#rmNavSection .rm-nav-btn').length;
-      const secHeaders = document.querySelectorAll('#rmNavSection .section-header').length;
+      const navSection = document.getElementById('rmNavSection');
+      const navBtns = navSection.querySelectorAll('button[data-group-start]').length;
+      const secHeaders = navSection.querySelectorAll('.section-header').length;
+      const subHeaders = navSection.querySelectorAll('.subsection-header').length;
       const boxCurrent = document.querySelector('.rm-box-current').getBoundingClientRect();
       const boxAvail = document.querySelector('.rm-box-available').getBoundingClientRect();
       const boxCreate = document.querySelector('.rm-box-create').getBoundingClientRect();
@@ -211,18 +222,40 @@ async function run() {
       // 检查垂直排列无重叠: boxCurrent.bottom <= boxAvail.top, boxAvail.bottom <= boxCreate.top
       const noOverlap = (boxCurrent.bottom <= boxAvail.top + 2) && (boxAvail.bottom <= boxCreate.top + 2);
 
+      // 检查是否有连续堆叠的 subsection-header (不能多个 subsection-header 挨在一起而中间没有题目)
+      const children = Array.from(navSection.children);
+      let consecutiveSubheaders = 0;
+      for (let i = 0; i < children.length - 1; i++) {
+        if (children[i].classList.contains('subsection-header') && children[i+1].classList.contains('subsection-header')) {
+          consecutiveSubheaders++;
+        }
+      }
+
+      // 检查每行是否为 5 列 (通过第一行 5 个按钮的 top 坐标一致性检查)
+      const buttons = Array.from(navSection.querySelectorAll('button[data-group-start]')).slice(0, 5);
+      let is5Cols = buttons.length === 5;
+      if (is5Cols) {
+        const top0 = buttons[0].getBoundingClientRect().top;
+        is5Cols = buttons.every(b => Math.abs(b.getBoundingClientRect().top - top0) < 3);
+      }
+
       return {
         isVisible,
         navBtns,
         secHeaders,
-        noOverlap
+        subHeaders,
+        noOverlap,
+        consecutiveSubheaders,
+        is5Cols
       };
     })()
   `);
-  console.log('  L面板可见:', modalLayoutCheck.isVisible, '题号按钮数:', modalLayoutCheck.navBtns, '分区标题数:', modalLayoutCheck.secHeaders, '左侧卡片无重叠:', modalLayoutCheck.noOverlap);
+  console.log('  L面板可见:', modalLayoutCheck.isVisible, '题号按钮数:', modalLayoutCheck.navBtns, '分区数:', modalLayoutCheck.secHeaders, '小节数:', modalLayoutCheck.subHeaders, '左侧无重叠:', modalLayoutCheck.noOverlap, '小节无连堆错误:', modalLayoutCheck.consecutiveSubheaders === 0, '严格5列排布:', modalLayoutCheck.is5Cols);
   if (!modalLayoutCheck.isVisible) throw new Error('L面板未能正常打开');
   if (modalLayoutCheck.navBtns === 0) throw new Error('L面板题号网格渲染失败');
   if (!modalLayoutCheck.noOverlap) throw new Error('L面板左侧卡片出现重叠');
+  if (modalLayoutCheck.consecutiveSubheaders > 0) throw new Error('L面板小节标题异常堆叠');
+  if (!modalLayoutCheck.is5Cols) throw new Error('L面板未正确排为 5 列网格');
 
   await evaluate(ws, `closeRelatedModal()`);
   await sleep(300);
