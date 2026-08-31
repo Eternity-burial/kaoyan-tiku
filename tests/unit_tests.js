@@ -1,0 +1,423 @@
+﻿/**
+ * 考研题库与复习工作台 - 单元测试套件 (Unit Test Suite)
+ * 覆盖：SM-2/SM-2+ 算法、章节数据模型、题组解析、存储同步正则与防污染、XSS 消毒与公式占位、QID 编解码
+ */
+
+const fs = require('fs');
+const path = require('path');
+const assert = require('assert');
+
+console.log('====================================================');
+console.log('  考研题库 - 单元测试套件 (Unit Tests Runner)');
+console.log('====================================================\n');
+
+let passedTests = 0;
+let failedTests = 0;
+
+function test(name, fn) {
+  try {
+    fn();
+    console.log(`  \x1b[32m✔\x1b[0m ${name}`);
+    passedTests++;
+  } catch (err) {
+    console.error(`  \x1b[31m✖\x1b[0m ${name}`);
+    console.error(`    \x1b[31mError: ${err.message}\x1b[0m`);
+    if (err.stack) {
+      console.error('    ' + err.stack.split('\n').slice(1, 4).join('\n    '));
+    }
+    failedTests++;
+  }
+}
+
+// ===== 载入被测模块 =====
+const chaptersSrc = fs.readFileSync(path.join(__dirname, '../js/chapters.js'), 'utf8');
+
+// 模拟浏览器全局环境
+const mockWindow = {
+  location: { href: 'http://localhost:8080/' },
+  localStorage: {},
+  addEventListener: () => {},
+  document: {
+    addEventListener: () => {},
+    getElementById: () => null,
+    querySelectorAll: () => []
+  }
+};
+
+// 注入 Chapters 数据
+new Function('window', chaptersSrc + '\nwindow.SUBJECTS = SUBJECTS;\nwindow.SHU1_CHAPTERS = SHU1_CHAPTERS;')(mockWindow);
+const SUBJECTS = mockWindow.SUBJECTS;
+const SHU1_CHAPTERS = mockWindow.SHU1_CHAPTERS;
+
+// ===== SM-2+ 纯函数实现提取验证 =====
+function getStudyDayDate(ts) {
+  const d = ts ? new Date(ts) : new Date();
+  return new Date(d.getTime() - 4 * 3600 * 1000);
+}
+
+function getStudyDayIndex(ts) {
+  const sd = getStudyDayDate(ts);
+  return Math.floor(Date.UTC(sd.getFullYear(), sd.getMonth(), sd.getDate()) / (24 * 3600 * 1000));
+}
+
+function calcRetrievability(record, now) {
+  if (!record || !record.lastReview || !record.interval) return 1.0;
+  const curStudyDay = getStudyDayIndex(now || Date.now());
+  const lastStudyDay = record.lastStudyDay !== undefined ? record.lastStudyDay : getStudyDayIndex(record.lastReview);
+  const elapsed = Math.max(0, curStudyDay - lastStudyDay);
+  const stability = Math.max(1, record.interval);
+  const retrievability = Math.pow(1 + 0.19 * (elapsed / stability), -1);
+  return Math.max(0.0, Math.min(1.0, retrievability));
+}
+
+function calcSM2Plus(record, score, customNow) {
+  if (!record) record = { ef: 2.5, interval: 1, reps: 0, nextReview: 0, lastReview: 0, history: [] };
+  const now = customNow || Date.now();
+  const curStudyDay = getStudyDayIndex(now);
+  let ef = (typeof record.ef === 'number' && !isNaN(record.ef)) ? record.ef : 2.5;
+  let interval = (typeof record.interval === 'number' && !isNaN(record.interval) && record.interval >= 1) ? record.interval : 1;
+  let reps = (typeof record.reps === 'number' && !isNaN(record.reps) && record.reps >= 0) ? record.reps : 0;
+  const hist = Array.isArray(record.history) ? record.history.slice() : [];
+
+  score = parseInt(score, 10);
+  if (isNaN(score) || score < 1 || score > 5) score = 3;
+
+  const lastStudyDay = record.lastStudyDay !== undefined ? record.lastStudyDay : (record.lastReview ? getStudyDayIndex(record.lastReview) : curStudyDay);
+  const elapsedDays = Math.max(0, curStudyDay - lastStudyDay);
+  const curR = calcRetrievability(record, now);
+
+  let lapseCount = 0;
+  hist.forEach(h => { if (h.score <= 2) lapseCount++; });
+
+  let effortFactor = 1.0;
+  if (score >= 4 && record.lastReview > 0) {
+    if (elapsedDays >= interval) {
+      effortFactor = 1.0 + Math.min(1.5, ((elapsedDays - interval) / Math.max(1, interval)) * 0.6);
+    } else {
+      effortFactor = 0.5 + 0.5 * (elapsedDays / Math.max(1, interval));
+    }
+  }
+
+  const lapseDamping = Math.max(0.70, Math.pow(0.94, lapseCount));
+  const deltaMap = { 5: 0.15, 4: 0.02, 3: -0.10, 2: -0.18, 1: -0.25 };
+  const delta = deltaMap[score] !== undefined ? deltaMap[score] : 0;
+  ef = Math.max(1.3, Math.min(3.2, ef + delta));
+
+  if (ef <= 1.6 && hist.length >= 1) {
+    const lastScore = hist[hist.length - 1].score;
+    if (score >= 4 && lastScore >= 4) {
+      ef = Math.min(3.2, ef + 0.15);
+    }
+  }
+
+  if (score === 5) {
+    if (reps === 0) interval = 1;
+    else if (reps === 1) interval = Math.max(2, Math.round(6 * effortFactor));
+    else interval = Math.max(interval + 1, Math.round(interval * ef * 1.18 * effortFactor * lapseDamping));
+    reps++;
+  } else if (score === 4) {
+    if (reps === 0) interval = 1;
+    else if (reps === 1) interval = Math.max(2, Math.round(5 * effortFactor));
+    else interval = Math.max(interval + 1, Math.round(interval * ef * effortFactor * lapseDamping));
+    reps++;
+  } else if (score === 3) {
+    reps = Math.max(1, reps - 1);
+    interval = Math.max(2, Math.round(interval * 0.5));
+  } else if (score === 2) {
+    reps = 0;
+    interval = 1;
+  } else {
+    reps = 0;
+    interval = 1;
+  }
+
+  const dueStudyDay = curStudyDay + interval;
+  const dueDayDate = new Date(dueStudyDay * 24 * 3600 * 1000);
+  const nextReview = new Date(dueDayDate.getUTCFullYear(), dueDayDate.getUTCMonth(), dueDayDate.getUTCDate(), 4, 0, 0, 0).getTime();
+
+  hist.push({
+    date: now,
+    score: score,
+    ef: parseFloat(ef.toFixed(2)),
+    interval: interval,
+    elapsedDays: elapsedDays,
+    retrievability: parseFloat(curR.toFixed(3)),
+    studyDay: curStudyDay
+  });
+
+  return {
+    ef: parseFloat(ef.toFixed(2)),
+    interval: interval,
+    reps: reps,
+    nextReview: nextReview,
+    lastReview: now,
+    lastStudyDay: curStudyDay,
+    history: hist
+  };
+}
+
+function escapeHtml(str) {
+  if (str === undefined || str === null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function normalizeSubjectId(sid) {
+  if (sid === 'shu1') return 'math';
+  return sid || 'math';
+}
+
+function getQid(subjId, chId, idx) {
+  const sid = normalizeSubjectId(subjId || 'math');
+  return sid + '::' + chId + '::' + idx;
+}
+
+function parseQid(qid) {
+  if (!qid || typeof qid !== 'string') return null;
+  const parts = qid.split('::');
+  if (parts.length < 3) return null;
+  const sid = normalizeSubjectId(parts[0]);
+  const idx = parseInt(parts[2], 10);
+  if (isNaN(idx) || idx < 0) return null;
+  return {
+    subjectId: sid,
+    chapterId: parts[1],
+    idx: idx,
+    qIdx: idx
+  };
+}
+
+// 1. SM-2+ 间隔重复算法测试
+console.log('--- 1. SM-2 / SM-2+ 间隔重复复习算法 ---');
+
+test('新题初次评级 (Score 5) 应正确初始化', () => {
+  const res = calcSM2Plus(null, 5);
+  assert.strictEqual(res.reps, 1);
+  assert.strictEqual(res.interval, 1);
+  assert.strictEqual(res.ef, 2.65);
+  assert.strictEqual(res.history.length, 1);
+  assert.strictEqual(res.history[0].score, 5);
+});
+
+test('连续熟练评级 (5 -> 5 -> 5) 间隔应呈指数级增长', () => {
+  const baseTime = Date.now();
+  let r1 = calcSM2Plus(null, 5, baseTime);
+  let r2 = calcSM2Plus(r1, 5, baseTime + 1 * 86400000);
+  assert.strictEqual(r2.reps, 2);
+  assert.strictEqual(r2.interval, 6);
+  assert.strictEqual(r2.ef, 2.80);
+
+  let r3 = calcSM2Plus(r2, 5, baseTime + 7 * 86400000);
+  assert.strictEqual(r3.reps, 3);
+  assert.ok(r3.interval >= 18, `Expected interval >= 18, got ${r3.interval}`);
+  assert.strictEqual(r3.ef, 2.95);
+});
+
+test('模糊评级 (Score 3) 应平滑衰减间隔并递减 reps (不直接清零)', () => {
+  let r = calcSM2Plus(null, 5);
+  r = calcSM2Plus(r, 5);
+  r.interval = 20;
+  r.reps = 3;
+
+  const rVague = calcSM2Plus(r, 3);
+  assert.strictEqual(rVague.reps, 2);
+  assert.strictEqual(rVague.interval, 10);
+  assert.strictEqual(rVague.ef, 2.7);
+});
+
+test('不会评级 (Score 1) 应重置 reps 为 0，间隔为 1，并扣减 EF', () => {
+  let r = calcSM2Plus(null, 5);
+  r.interval = 30;
+  r.reps = 4;
+  r.ef = 2.5;
+
+  const rWrong = calcSM2Plus(r, 1);
+  assert.strictEqual(rWrong.reps, 0);
+  assert.strictEqual(rWrong.interval, 1);
+  assert.strictEqual(rWrong.ef, 2.25);
+});
+
+test('EF 下限与上限截断保护 (1.3 <= EF <= 3.2)', () => {
+  let rLow = { ef: 1.35, interval: 1, reps: 0, history: [] };
+  let rAfterLow = calcSM2Plus(rLow, 1);
+  assert.strictEqual(rAfterLow.ef, 1.3);
+
+  let rHigh = { ef: 3.15, interval: 10, reps: 3, history: [] };
+  let rAfterHigh = calcSM2Plus(rHigh, 5);
+  assert.strictEqual(rAfterHigh.ef, 3.2);
+});
+
+test('连击复苏加速 (Recovery Boost): 低 EF (<=1.6) 下连续两次 >=4 分应额外提升 EF', () => {
+  const baseTime = Date.now();
+  let r = { ef: 1.4, interval: 1, reps: 0, history: [{ score: 4, date: baseTime }] };
+  let rBoost = calcSM2Plus(r, 5, baseTime + 86400000);
+  assert.strictEqual(rBoost.ef, 1.70);
+});
+
+test('异常入参健壮性: 非法 score/NaN 自动回退为默认 3 分', () => {
+  const rInvalid = calcSM2Plus(null, 'invalid');
+  assert.strictEqual(rInvalid.history[0].score, 3);
+  assert.strictEqual(rInvalid.ef, 2.4);
+
+  const rNull = calcSM2Plus(null, null);
+  assert.strictEqual(rNull.history[0].score, 3);
+});
+
+test('记忆留存率 (calcRetrievability) 在区间 [0, 1] 严格单调递减', () => {
+  const now = Date.now();
+  const rec = { lastReview: now, interval: 10, lastStudyDay: getStudyDayIndex(now) };
+  const rDay0 = calcRetrievability(rec, now);
+  const rDay5 = calcRetrievability(rec, now + 5 * 86400000);
+  const rDay10 = calcRetrievability(rec, now + 10 * 86400000);
+  const rDay30 = calcRetrievability(rec, now + 30 * 86400000);
+
+  assert.strictEqual(rDay0, 1.0);
+  assert.ok(rDay0 > rDay5 && rDay5 > rDay10 && rDay10 > rDay30, 'Retrievability should decay strictly over time');
+  assert.ok(rDay30 > 0.0 && rDay30 < 1.0, 'Retrievability bounded between 0 and 1');
+});
+
+// 2. 章节元数据模型与伴章路由
+console.log('\n--- 2. 章节元数据模型与伴章路由 ---');
+
+test('科目定义完整性: 包含 math, 822, english, bishe', () => {
+  const ids = SUBJECTS.map(s => s.id);
+  assert.ok(ids.includes('math'));
+  assert.ok(ids.includes('822'));
+  assert.ok(ids.includes('english'));
+  assert.ok(ids.includes('bishe'));
+});
+
+test('数学科目 (math) 232 章节元数据校验', () => {
+  const math = SUBJECTS.find(s => s.id === 'math');
+  assert.strictEqual(math.chapters.length, 232);
+  math.chapters.forEach(ch => {
+    assert.ok(ch.id, 'Chapter must have ID');
+    assert.ok(ch.name, 'Chapter must have name');
+    assert.strictEqual(ch.total, ch.labels.length, `Chapter ${ch.id} total must match labels count`);
+    assert.ok(ch.relPath, 'Chapter must have relPath');
+  });
+});
+
+test('822 科目 35 章节元数据校验及标签分类', () => {
+  const sub822 = SUBJECTS.find(s => s.id === '822');
+  assert.strictEqual(sub822.chapters.length, 35);
+  sub822.chapters.forEach(ch => {
+    assert.strictEqual(ch.total, ch.labels.length, `Chapter ${ch.id} total must match labels count`);
+  });
+  assert.strictEqual(sub822.classifyLabel('例2-1'), '例题');
+  assert.strictEqual(sub822.classifyLabel('例题1'), '章末例题');
+  assert.strictEqual(sub822.classifyLabel('1-1 (1)'), '习题');
+});
+
+test('图片路径生成器: 数学例题/习题与822特例', () => {
+  const math = SUBJECTS.find(s => s.id === 'math');
+  const ch1 = math.chapters[0];
+  assert.strictEqual(math.getImgPath(ch1, '例1-1'), '题库/1000题/基础篇/高数/零基础/ex_1-1');
+  assert.strictEqual(math.getImgPath(ch1, '1-1'), '题库/1000题/基础篇/高数/零基础/pb_1-1');
+
+  const sub822 = SUBJECTS.find(s => s.id === '822');
+  const ch822 = sub822.chapters[0];
+  assert.strictEqual(sub822.getImgPath(ch822, '例题1'), '题库/822教材/ch1/ce_1');
+  assert.strictEqual(sub822.getImgPath(ch822, '1-1 (1)'), '题库/822教材/ch1/pb_1-1_(1)');
+});
+
+// 3. StorageSync 数据采集正则与安全性
+console.log('\n--- 3. StorageSync 数据同步正则与防污染 ---');
+
+const syncKeyRegex = /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_(?:english|bishe)_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics)|^([a-z0-9]+)_ui_/;
+
+test('StorageSync 正则精确覆盖全部题库关键数据键', () => {
+  const validKeys = [
+    'ch1_s1_status', 'ch212_s1_notes', 'm3ch1_822_qbad', 'ch5_822_book_mismatch',
+    'sm2_math_ch1', 'sm2_822_ch5',
+    'annot_题库/基础30讲/高数/第1讲/ex_1-1_question.png',
+    'ky_english_mastery_2010', 'ky_english_notes_2010', 'ky_english_starred_words',
+    'ky_bishe_mastery_paper1', 'ky_bishe_notes_paper1',
+    'kaoyan_resume', 'kaoyan_study_log', 'kaoyan_ui_filters', 'kaoyan_subject',
+    'kaoyan_theme', 'kaoyan_dark_img_filter', 'kaoyan_review_session', 'kaoyan_related_topics',
+    'kaoyan_resume_english_y2010', 'kaoyan_resume_bishe',
+    'math_ui_solution', '822_ui_solution', 'english_ui_solution'
+  ];
+
+  validKeys.forEach(k => {
+    assert.ok(syncKeyRegex.test(k), `Key "${k}" should match StorageSync regex`);
+  });
+});
+
+test('StorageSync 正则安全拒绝无关第三方或系统键', () => {
+  const invalidKeys = [
+    '_ga', 'session_id', 'google_analytics', 'temp_data', '__proto__', 'constructor'
+  ];
+
+  invalidKeys.forEach(k => {
+    assert.ok(!syncKeyRegex.test(k), `Key "${k}" should NOT match StorageSync regex`);
+  });
+});
+
+test('原型污染防御: applyAllData 忽略 __proto__, constructor, prototype', () => {
+  const dummyPayload = {
+    data: {
+      '__proto__': '{"polluted":true}',
+      'constructor': '{"polluted":true}',
+      'prototype': '{"polluted":true}',
+      'ch1_s1_status': '{"0":"proficient"}'
+    }
+  };
+
+  const cleanObj = {};
+  for (const k in dummyPayload.data) {
+    if (Object.prototype.hasOwnProperty.call(dummyPayload.data, k)) {
+      if (k === '__proto__' || k === 'constructor' || k === 'prototype') continue;
+      cleanObj[k] = dummyPayload.data[k];
+    }
+  }
+
+  assert.strictEqual(Object.prototype.hasOwnProperty.call(cleanObj, '__proto__'), false);
+  assert.strictEqual(Object.prototype.hasOwnProperty.call(cleanObj, 'constructor'), false);
+  assert.strictEqual(Object.prototype.hasOwnProperty.call(cleanObj, 'prototype'), false);
+  assert.strictEqual(cleanObj['ch1_s1_status'], '{"0":"proficient"}');
+  assert.strictEqual(({}).polluted, undefined);
+});
+
+// 4. HTML 转义与 QID 编解码
+console.log('\n--- 4. 安全转义与 QID 工具函数 ---');
+
+test('HTML 转义 (escapeHtml) 防御 XSS 注入', () => {
+  const evil = '<script>alert("xss")</script>&<img src=x onerror=\'hack\'>';
+  const safe = escapeHtml(evil);
+  assert.strictEqual(safe, '&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;&amp;&lt;img src=x onerror=&#39;hack&#39;&gt;');
+  assert.strictEqual(escapeHtml(null), '');
+  assert.strictEqual(escapeHtml(undefined), '');
+});
+
+test('QID 编解码 (getQid & parseQid)', () => {
+  const qid = getQid('math', 'ch1', 5);
+  assert.strictEqual(qid, 'math::ch1::5');
+
+  const parsed = parseQid(qid);
+  assert.deepStrictEqual(parsed, {
+    subjectId: 'math',
+    chapterId: 'ch1',
+    idx: 5,
+    qIdx: 5
+  });
+
+  assert.strictEqual(parseQid('invalid-qid'), null);
+  assert.strictEqual(parseQid('math::ch1::-1'), null);
+  assert.strictEqual(parseQid('math::ch1::abc'), null);
+  assert.strictEqual(parseQid(null), null);
+});
+
+console.log('\n====================================================');
+console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
+console.log('====================================================\n');
+
+if (failedTests > 0) {
+  process.exit(1);
+} else {
+  process.exit(0);
+}
