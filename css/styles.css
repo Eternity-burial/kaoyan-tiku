@@ -1956,29 +1956,35 @@
     }
 
     .badge-dot {
-      width: 6px;
-      height: 6px;
+      width: 6.5px;
+      height: 6.5px;
       border-radius: 50%;
       display: inline-block;
       flex-shrink: 0;
+      border: 1px solid rgba(0, 0, 0, 0.45);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+    [data-theme="dark"] .badge-dot {
+      border-color: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
     }
 
-    /* 亮黄：笔记标记 */
+    /* 1. 笔记标记：电光青 (在绿、黄、橙、红 5 级底色上均具备极致冷暖对比，告别原亮黄与 Lv3 撞色问题) */
     .badge-dot.note-dot {
-      background: #fff200;
-      box-shadow: 0 0 3px rgba(255, 242, 0, 0.85);
+      background: #00e5ff;
+      box-shadow: 0 0 3px rgba(0, 229, 255, 0.9);
     }
 
-    /* 亮蓝：图片标注标记 */
+    /* 2. 图片标注标记：电光品红 (与绿、黄、橙互补反差强烈，与红底冷暖鲜明) */
     .badge-dot.annot-dot {
-      background: #1e90ff;
-      box-shadow: 0 0 3px rgba(30, 144, 255, 0.85);
+      background: #ff2d87;
+      box-shadow: 0 0 3px rgba(255, 45, 135, 0.9);
     }
 
-    /* 电光粉：关联同类题标记 */
+    /* 3. 关联同类题标记：耀眼纯白 (在红、橙、黄、绿、紫全色阶底色上对比度达 100% 极限) */
     .badge-dot.related-dot {
-      background: #ff007f;
-      box-shadow: 0 0 3px rgba(255, 0, 127, 0.85);
+      background: #ffffff;
+      box-shadow: 0 0 3px rgba(255, 255, 255, 0.95);
     }
 
     .badge-text {
