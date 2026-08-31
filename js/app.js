@@ -7775,7 +7775,7 @@ ${cardsHTML}
             }
           } catch (e) {}
         }
-
+      } catch (e) {
         console.warn('migrateHistoricalShu1Data warning:', e);
       }
     }
