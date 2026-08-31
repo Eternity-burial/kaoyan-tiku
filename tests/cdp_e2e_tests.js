@@ -118,6 +118,14 @@ async function run() {
   await sendCDP(ws, 'Page.enable');
   await sendCDP(ws, 'DOM.enable');
 
+  // 设置标准桌面视口 (1440x900)
+  await sendCDP(ws, 'Emulation.setDeviceMetricsOverride', {
+    width: 1440,
+    height: 900,
+    deviceScaleFactor: 1,
+    mobile: false
+  });
+
   console.log('[4/7] 验证页面加载与初始 DOM 状态...');
   await sleep(1500);
 
@@ -366,10 +374,21 @@ async function run() {
   console.log('  点击遮罩层背景关闭弹窗成功:', modalClosedByBackdrop);
   if (!modalClosedByBackdrop) throw new Error('点击模态框遮罩层未能成功关闭弹窗');
 
-  // 验证主页面右侧栏题号区高度已提升为 1.5 倍 (405px)
-  const qnavMaxHeight = await evaluate(ws, `window.getComputedStyle(document.getElementById('qnav')).maxHeight`);
-  console.log('  主页面右侧栏题号区 max-height (1.5倍):', qnavMaxHeight);
-  if (qnavMaxHeight !== '405px') throw new Error('主页面题号区高度未正确设置为 405px (当前为 ' + qnavMaxHeight + ')');
+  // 验证主页面右侧栏题号区高度已在未展开符号栏时提升至视口最大值 (calc(100vh - 290px))
+  const qnavMaxHeight = await evaluate(ws, `
+    (() => {
+      const q = document.getElementById('qnav');
+      const style = window.getComputedStyle(q);
+      const val = parseFloat(style.maxHeight);
+      return {
+        computedMaxHeight: style.maxHeight,
+        val: val,
+        isMaximized: val >= 450
+      };
+    })()
+  `);
+  console.log('  主页面右侧栏题号区最大自适应高度检查:', qnavMaxHeight);
+  if (!qnavMaxHeight.isMaximized) throw new Error('主页面题号区未能在不展开符号栏时达到最大高度 (当前为 ' + qnavMaxHeight.computedMaxHeight + ')');
 
   // 7. 测试科目切换 (Math -> 822 -> English) 与英语生词本安全交互
   console.log('[8/9] 测试科目切换 (Math -> 822 -> English) 与生词本安全...');
