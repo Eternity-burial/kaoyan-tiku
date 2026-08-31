@@ -1794,7 +1794,7 @@
       gap: 5px;
       width: 100%;
       margin: 0;
-      max-height: 270px;
+      max-height: 405px;
       overflow-y: auto;
       overflow-x: hidden;
       padding-right: 3px;
@@ -5622,13 +5622,6 @@
       color: var(--primary);
       transform: translateY(-1px);
     }
-    .rm-nav-section button.active {
-      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
-      color: #ffffff !important;
-      border-color: var(--primary) !important;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(102, 8, 116, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
-    }
     .rm-nav-section button.proficient {
       background: linear-gradient(180deg, var(--lv5) 0%, var(--lv5-dark) 100%) !important;
       color: #fff !important;
@@ -5665,6 +5658,21 @@
       color: #fff !important;
       border-color: var(--primary) !important;
     }
+
+    /* 当前激活做题按钮（无论是否已标记掌握度状态，均统一强制使用高质感紫色） */
+    .rm-nav-section button.active,
+    .rm-nav-section button.active.proficient,
+    .rm-nav-section button.active.familiar,
+    .rm-nav-section button.active.vague,
+    .rm-nav-section button.active.rusty,
+    .rm-nav-section button.active.wrong {
+      background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+      color: #ffffff !important;
+      border-color: var(--primary) !important;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(102, 8, 116, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+    }
+
     .rm-nav-section button.linked {
       outline: 2px solid #10b981 !important;
       outline-offset: -1px;

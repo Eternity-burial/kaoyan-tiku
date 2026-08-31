@@ -2685,9 +2685,9 @@
       if (!src) return '';
       var html;
       try {
-        // 先抽离 $...$/$$...$$ 公式占位，避免 marked 的 Markdown 转义吞掉 LaTeX 反斜杠（如 \{、\\）
+        // 先抽离 $...$/$$...$$/\[...\]/\(... 公式占位，避免 marked 的 Markdown 转义吞掉 LaTeX 反斜杠（如 \{、\\）
         var mathSpans = [];
-        var protectedSrc = src.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$/g, function (m) {
+        var protectedSrc = src.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|\\\[[\s\S]+?\\\]|\\\([^$\n]+?\\\)/g, function (m) {
           // 优化数学公式排版：自动对极限、求和、最值等算子补全 \limits，确保上下标显示在正下方
           var processed = m.replace(/\\(lim|sum|prod|max|min|inf|sup)(?!\\limits|\\nolimits)\s*_/g, function(match, op) {
             return '\\' + op + '\\limits_';
@@ -2706,7 +2706,9 @@
         renderMathInElement(holder, {
           delimiters: [
             { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false }
+            { left: '$', right: '$', display: false },
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false }
           ],
           throwOnError: false
         });
@@ -4069,7 +4071,7 @@
           var inCurGroup = (curGroup === g);
           var cls = 'nav-btn';
           if (isK) cls += ' is-knowledge';
-          if (inCurGroup && !g.isParent) cls += ' active';
+          if (inCurGroup) cls += ' active';
 
           var groupLinked = false;
           for (var k = 0; k < g.count; k++) {
@@ -4101,6 +4103,15 @@
               if (inCurGroup && idx === pickerQIdx) bar.classList.add('active-sub');
               bar.style.width = (100 / g.count) + '%';
               bar.style.left = (k * 100 / g.count) + '%';
+              bar.title = dispLabel + ' (' + (k + 1) + ')';
+              bar.onclick = (function(targetIdx) {
+                return function(e) {
+                  e.stopPropagation();
+                  pickerQIdx = targetIdx;
+                  renderModalNav();
+                  renderModalViewer();
+                };
+              })(idx);
               btn.appendChild(bar);
             }
 
@@ -4109,7 +4120,7 @@
             textSpan.textContent = dispLabel;
             btn.appendChild(textSpan);
           } else {
-            cls += ' ' + (statuses[g.startIdx] ? getStatusClass(g.startIdx) || statuses[g.startIdx] : '');
+            cls += ' ' + (statuses[g.startIdx] || '');
             btn.className = cls.trim();
             btn.textContent = dispLabel;
           }
@@ -4126,9 +4137,10 @@
         });
       });
 
-      var curActiveBtn = nav.querySelector('button.active');
+      var curActiveBtn = nav.querySelector('button.active, button.has-subs.active, .sub-bar.active-sub');
       if (curActiveBtn) {
-        curActiveBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        var targetEl = curActiveBtn.closest('button') || curActiveBtn;
+        targetEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       }
     }
 
