@@ -4157,6 +4157,11 @@
         var src = n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png';
         var img = document.createElement('img');
         img.alt = '解析' + (n > 1 ? ' (' + n + ')' : '');
+        img.title = '点击放大查看高清图 (Alt 开启画笔标注)';
+        img.style.cursor = 'zoom-in';
+        img.onclick = function () {
+          if (this.src && !this.src.endsWith('/')) openLightbox(this.src);
+        };
         if (isDarkFilter) img.classList.add('dark-filter');
         img.onload = function () {
           if (gen !== _modalSolutionImgGen) return;
@@ -4228,6 +4233,11 @@
         qImgEl.style.display = 'block';
         qImgEl.src = qImgSrc;
         qImgEl.alt = label;
+        qImgEl.title = '点击放大查看高清题目 (Alt 开启画笔标注)';
+        qImgEl.style.cursor = 'zoom-in';
+        qImgEl.onclick = function () {
+          if (this.src && !this.src.endsWith('/')) openLightbox(this.src);
+        };
       } else {
         qImgEl.style.display = 'none';
       }
@@ -4343,6 +4353,23 @@
       renderNav();
     }
 
+    function previewQidInModal(qid) {
+      var parsed = parseQid(qid);
+      if (!parsed) return;
+      var s = SUBJECTS.find(function(sub) { return sub.id === parsed.subjectId; });
+      if (!s) return;
+      var ch = s.chapters ? s.chapters.find(function(c) { return c.id === parsed.chapterId; }) : null;
+      if (!ch) return;
+
+      pickerSubjectId = parsed.subjectId;
+      pickerChapterId = parsed.chapterId;
+      pickerQIdx = parsed.qIdx;
+      if (s.id === 'math') {
+        pickerWb = getWbForChapter(ch);
+      }
+      renderModalWorkbench();
+    }
+
     function renderRelatedModalRecent() {
       var list = document.getElementById('rmRecentList');
       if (!list) return;
@@ -4355,6 +4382,9 @@
         return;
       }
 
+      var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+      var imgFilterClass = isDarkFilter ? ' dark-filter' : '';
+
       list.innerHTML = candidates.map(function(qid) {
         var meta = getQuestionMeta(qid);
         if (!meta) return '';
@@ -4362,25 +4392,37 @@
         var alreadyIn = myTopics.some(function(t) {
           return t.members && t.members.some(function(m) { return m.qid === qid; });
         });
-        return '<div class="rm-item-row">' +
+        var dotHtml = meta.status ? '<span class="rm-item-dot ' + escapeHtml(meta.status) + '" title="掌握度: ' + escapeHtml(meta.status) + '"></span>' : '';
+
+        return '<div class="rm-item-row" data-row-qid="' + escapeHtml(qid) + '" title="点击在下方查看器中预览此题">' +
           '<div class="rm-item-info">' +
-            (imgSrc ? '<img src="' + escapeHtml(imgSrc) + '" class="rm-item-thumb" loading="lazy">' : '') +
+            (imgSrc ? '<img src="' + escapeHtml(imgSrc) + '" class="rm-item-thumb' + imgFilterClass + '" loading="lazy" alt="题目">' : '') +
             '<span class="rm-item-book">' + escapeHtml(meta.bookName) + '</span>' +
             '<span class="rm-item-title">' + escapeHtml(meta.chapterShort + ' ' + meta.label) + '</span>' +
+            dotHtml +
           '</div>' +
           (alreadyIn ?
-            '<span style="font-size:12px; color:#10b981; font-weight:600">已关联</span>' :
+            '<span style="font-size:11.5px; color:#10b981; font-weight:700">已关联</span>' :
             '<button type="button" class="gel-btn btn-sm" data-link-qid="' + escapeHtml(qid) + '">+ 关联到当前题</button>'
           ) +
         '</div>';
       }).join('');
 
       list.querySelectorAll('button[data-link-qid]').forEach(function(btn) {
-        btn.onclick = function() {
+        btn.onclick = function(e) {
+          e.stopPropagation();
           var targetQid = this.dataset.linkQid;
           ensureAndLinkTargetQuestion(targetQid);
           renderRelatedModalRecent();
           renderModalWorkbench();
+        };
+      });
+
+      list.querySelectorAll('.rm-item-row').forEach(function(row) {
+        row.onclick = function(e) {
+          if (e.target.closest('button')) return;
+          var qid = this.dataset.rowQid;
+          if (qid) previewQidInModal(qid);
         };
       });
     }
@@ -4664,31 +4706,46 @@
           }
 
           var myTopics = getTopicsForQid(curQid);
-          searchResults.innerHTML = matches.slice(0, 15).map(function(qid) {
+          var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+          var imgFilterClass = isDarkFilter ? ' dark-filter' : '';
+
+          searchResults.innerHTML = matches.slice(0, 20).map(function(qid) {
             var meta = getQuestionMeta(qid);
             if (!meta) return '';
             var imgSrc = getImgPathForQid(qid);
             var alreadyIn = myTopics.some(function(t) {
               return t.members && t.members.some(function(m) { return m.qid === qid; });
             });
-            return '<div class="rm-item-row">' +
+            var dotHtml = meta.status ? '<span class="rm-item-dot ' + escapeHtml(meta.status) + '" title="掌握度: ' + escapeHtml(meta.status) + '"></span>' : '';
+
+            return '<div class="rm-item-row" data-row-qid="' + escapeHtml(qid) + '" title="点击在下方查看器中预览此题">' +
               '<div class="rm-item-info">' +
-                (imgSrc ? '<img src="' + escapeHtml(imgSrc) + '" class="rm-item-thumb" loading="lazy">' : '') +
+                (imgSrc ? '<img src="' + escapeHtml(imgSrc) + '" class="rm-item-thumb' + imgFilterClass + '" loading="lazy" alt="题目">' : '') +
                 '<span class="rm-item-book">' + escapeHtml(meta.bookName) + '</span>' +
                 '<span class="rm-item-title">' + escapeHtml(meta.chapterShort + ' ' + meta.label) + '</span>' +
+                dotHtml +
               '</div>' +
               (alreadyIn ?
-                '<span style="font-size:12px; color:#10b981; font-weight:600">已关联</span>' :
+                '<span style="font-size:11.5px; color:#10b981; font-weight:700">已关联</span>' :
                 '<button type="button" class="gel-btn btn-sm" data-search-qid="' + escapeHtml(qid) + '">+ 关联此题</button>'
               ) +
             '</div>';
           }).join('');
 
           searchResults.querySelectorAll('button[data-search-qid]').forEach(function(btn) {
-            btn.onclick = function() {
+            btn.onclick = function(e) {
+              e.stopPropagation();
               var targetQid = this.dataset.searchQid;
               ensureAndLinkTargetQuestion(targetQid);
               renderModalWorkbench();
+            };
+          });
+
+          searchResults.querySelectorAll('.rm-item-row').forEach(function(row) {
+            row.onclick = function(e) {
+              if (e.target.closest('button')) return;
+              var qid = this.dataset.rowQid;
+              if (qid) previewQidInModal(qid);
             };
           });
         };
