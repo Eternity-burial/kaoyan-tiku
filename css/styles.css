@@ -513,6 +513,9 @@
       color: var(--primary);
       font-weight: 700;
     }
+    [data-theme="dark"] .gel-btn .func-name {
+      color: var(--primary-light);
+    }
 
     .gel-btn .key {
       color: #9CA3AF;
@@ -1830,6 +1833,7 @@
       justify-content: center;
       min-width: 22px;
       position: relative;
+      overflow: visible;
     }
 
     .qnav button:hover {
@@ -1939,52 +1943,73 @@
       box-shadow: 0 0 0 1px var(--primary-dark);
     }
 
-    /* 不达标角标 */
+    /* 题号右上角状态徽标（高对比度实体小圆珠） */
     .qnav button .img-badges {
       position: absolute;
-      top: 1px;
-      right: 2px;
+      top: -3.5px;
+      right: -3.5px;
       display: flex;
-      gap: 1px;
-      font-size: 10px;
+      gap: 2px;
+      align-items: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .badge-dot {
+      width: 6.5px;
+      height: 6.5px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1.5px solid var(--card-bg, #ffffff);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .badge-dot {
+      border-color: #161822;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+    }
+
+    /* 琥珀金：笔记标记 */
+    .badge-dot.note-dot {
+      background: #f59e0b;
+      box-shadow: 0 0 5px rgba(245, 158, 11, 0.95);
+    }
+
+    /* 天际蓝：图片标注标记 */
+    .badge-dot.annot-dot {
+      background: #0284c7;
+      box-shadow: 0 0 5px rgba(2, 132, 199, 0.95);
+    }
+
+    /* 翠绿色：关联同类题标记 */
+    .badge-dot.related-dot {
+      background: #10b981;
+      box-shadow: 0 0 6px rgba(16, 185, 129, 0.95);
+    }
+
+    .badge-text {
+      font-size: 9.5px;
+      font-weight: 800;
       line-height: 1;
+      padding: 0 1.5px;
+      border-radius: 3px;
+      background: var(--card-bg, #fff);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    [data-theme="dark"] .badge-text {
+      background: #161822;
     }
 
     .qbad-dot {
       color: var(--unfamiliar);
-      font-weight: bold;
     }
 
     .sbad-dot {
       color: var(--uncertain-dark);
-      font-weight: bold;
     }
 
     .mismatch-dot {
       color: #d97706;
-      font-weight: bold;
-    }
-
-    .note-dot {
-      /* 亮黄，区别于主色紫（避免与当前题激活紫撞）、标注青、熟练绿/模糊橙/不会红 */
-      color: #fff200;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    .annot-dot {
-      /* 用亮蓝（标注色板 #1e90ff）区分于模糊橙/笔记黄/熟练绿/不会红 */
-      color: #1e90ff;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    .related-dot {
-      /* 高辨识度电光品红/霓虹粉，区别于笔记黄、标注蓝、熟练绿/模糊橙/不会红 */
-      color: #ff007f;
-      font-weight: bold;
-      font-size: 13px;
-      text-shadow: 0 0 4px rgba(255, 0, 127, 0.7);
     }
 
     /* ===== 分区手风琴标题与空占位 ===== */
@@ -4393,6 +4418,11 @@
     body[data-theme="dark"] .question-img.dark-filter,
     body[data-theme="dark"] .solution-img.dark-filter,
     body[data-theme="dark"] .lightbox-img.dark-filter,
+    body[data-theme="dark"] .rc-img-box img.dark-filter,
+    body[data-theme="dark"] .rc-sol-box img.dark-filter,
+    body[data-theme="dark"] #rmViewerQImg.dark-filter,
+    body[data-theme="dark"] #rmViewerSolImgs img.dark-filter,
+    body[data-theme="dark"] img.dark-filter,
     body[data-theme="dark"] mjs-marker-area.dark-filter {
       filter: brightness(0.76) contrast(1.04);
       opacity: 0.92;
@@ -4738,23 +4768,38 @@
       align-items: center;
       gap: 5px;
       padding: 3px 11px;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 600;
-      color: var(--primary);
-      background: var(--primary-alpha);
-      border: 1px solid var(--primary-alpha);
+      color: #6b21a8;
+      background: #f3e8ff;
+      border: 1px solid #d8b4fe;
       border-radius: 14px;
       cursor: context-menu;
       user-select: none;
       transition: all 0.15s ease;
     }
+    [data-theme="dark"] .related-topic-pill {
+      color: #e9d5ff;
+      background: rgba(168, 85, 247, 0.16);
+      border-color: rgba(168, 85, 247, 0.38);
+    }
     .related-topic-pill:hover {
-      border-color: var(--primary);
-      box-shadow: 0 2px 6px var(--primary-alpha);
+      border-color: var(--primary-light);
+      box-shadow: 0 2px 8px var(--primary-alpha);
       transform: translateY(-1px);
     }
     .btn-related-action {
       /* 继承 .gel-btn.btn-sm 体系规范 */
+    }
+
+    .rc-btn-jump {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .rc-btn-jump:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
     }
 
     .rc-btn-unlink {

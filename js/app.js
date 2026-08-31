@@ -484,7 +484,11 @@
       if (qImg) qImg.classList.toggle('dark-filter', enable);
       if (lbImg) lbImg.classList.toggle('dark-filter', enable);
 
-      document.querySelectorAll('.solution-img, #solutionImgs img, .solution-imgs img, #solutionArea img, mjs-marker-area').forEach(function(el) {
+      // 全面覆盖主试卷、主解析、同类题卡片、弹窗做题卡片与标注层
+      document.querySelectorAll(
+        '.question-img, #questionImg, .solution-img, #solutionImgs img, .solution-imgs img, #solutionArea img, ' +
+        '.rc-img-box img, .rc-sol-box img, #rmViewerQImg, #rmViewerSolImgs img, mjs-marker-area'
+      ).forEach(function(el) {
         el.classList.toggle('dark-filter', enable);
       });
     }
@@ -1943,12 +1947,12 @@
         if (qBad[i] || sBad[i] || bookMismatch[i] || groupHasNote || groupHasAnnot || groupHasRelated) {
           const badgeSpan = document.createElement('span');
           badgeSpan.className = 'img-badges';
-          if (qBad[i]) { const d = document.createElement('span'); d.className = 'qbad-dot'; d.textContent = 'Q'; badgeSpan.appendChild(d); }
-          if (sBad[i]) { const d = document.createElement('span'); d.className = 'sbad-dot'; d.textContent = 'S'; badgeSpan.appendChild(d); }
-          if (bookMismatch[i]) { const d = document.createElement('span'); d.className = 'mismatch-dot'; d.textContent = '书'; badgeSpan.appendChild(d); }
-          if (groupHasNote) { const d = document.createElement('span'); d.className = 'note-dot'; d.textContent = '●'; d.title = '有笔记'; badgeSpan.appendChild(d); }
-          if (groupHasAnnot) { const d = document.createElement('span'); d.className = 'annot-dot'; d.textContent = '●'; d.title = '有图片标注'; badgeSpan.appendChild(d); }
-          if (groupHasRelated) { const d = document.createElement('span'); d.className = 'related-dot'; d.textContent = '●'; d.title = '有关联同类题'; badgeSpan.appendChild(d); }
+          if (qBad[i]) { const d = document.createElement('span'); d.className = 'badge-text qbad-dot'; d.textContent = 'Q'; badgeSpan.appendChild(d); }
+          if (sBad[i]) { const d = document.createElement('span'); d.className = 'badge-text sbad-dot'; d.textContent = 'S'; badgeSpan.appendChild(d); }
+          if (bookMismatch[i]) { const d = document.createElement('span'); d.className = 'badge-text mismatch-dot'; d.textContent = '书'; badgeSpan.appendChild(d); }
+          if (groupHasNote) { const d = document.createElement('span'); d.className = 'badge-dot note-dot'; d.title = '有笔记'; badgeSpan.appendChild(d); }
+          if (groupHasAnnot) { const d = document.createElement('span'); d.className = 'badge-dot annot-dot'; d.title = '有图片标注'; badgeSpan.appendChild(d); }
+          if (groupHasRelated) { const d = document.createElement('span'); d.className = 'badge-dot related-dot'; d.title = '有关联同类题'; badgeSpan.appendChild(d); }
           btn.appendChild(badgeSpan);
         }
       }
@@ -2180,18 +2184,34 @@
     // 将右侧栏当前激活的题号按钮居中定位在侧边栏滚动视口内
     function scrollActiveBtnToCenter(activeBtn, smooth) {
       if (!activeBtn) return;
-      var container = document.querySelector('.sidebar-right');
-      if (container) {
-        var cRect = container.getBoundingClientRect();
+      var qnav = document.getElementById('qnav') || activeBtn.closest('.qnav');
+      if (qnav) {
+        var qRect = qnav.getBoundingClientRect();
         var bRect = activeBtn.getBoundingClientRect();
-        var delta = (bRect.top + bRect.height / 2) - (cRect.top + cRect.height / 2);
-        if (Math.abs(delta) > 5) {
-          container.scrollBy({ top: delta, behavior: smooth ? 'smooth' : 'auto' });
-          return;
+        // 计算按钮中心与 #qnav 滚动容器可视中心的垂直偏移差
+        var delta = (bRect.top + bRect.height / 2) - (qRect.top + qRect.height / 2);
+        if (Math.abs(delta) > 2) {
+          if (typeof qnav.scrollBy === 'function') {
+            qnav.scrollBy({ top: delta, behavior: smooth ? 'smooth' : 'auto' });
+          } else {
+            qnav.scrollTop += delta;
+          }
         }
       }
-      if (typeof activeBtn.scrollIntoView === 'function') {
-        activeBtn.scrollIntoView({ block: 'center', inline: 'nearest', behavior: smooth ? 'smooth' : 'auto' });
+      var sidebar = activeBtn.closest('.sidebar-right') || document.querySelector('.sidebar-right');
+      if (sidebar) {
+        var sRect = sidebar.getBoundingClientRect();
+        var bRect2 = activeBtn.getBoundingClientRect();
+        if (bRect2.top < sRect.top + 30 || bRect2.bottom > sRect.bottom - 30) {
+          var deltaSidebar = (bRect2.top + bRect2.height / 2) - (sRect.top + sRect.height / 2);
+          if (Math.abs(deltaSidebar) > 5) {
+            if (typeof sidebar.scrollBy === 'function') {
+              sidebar.scrollBy({ top: deltaSidebar, behavior: smooth ? 'smooth' : 'auto' });
+            } else {
+              sidebar.scrollTop += deltaSidebar;
+            }
+          }
+        }
       }
     }
 
@@ -2962,6 +2982,9 @@
 
       // 渲染同类题单列大图卡片（竖向排列，支持展开解析、大图查看与跨书跳转）
       if (data.relatedQuestions.length > 0) {
+        var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+        var imgFilterClass = isDarkFilter ? ' dark-filter' : '';
+
         list.innerHTML = data.relatedQuestions.map(function(q) {
           var dotClass = q.status ? ' ' + q.status : '';
           var statusNameMap = {
@@ -2987,16 +3010,16 @@
               '</div>' +
               '<div class="rc-head-actions">' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
-                '<button type="button" class="gel-btn btn-sm btn-primary rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题 →</button>' +
+                '<button type="button" class="gel-btn btn-sm rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题 →</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-unlink" data-unlink-qid="' + escapeHtml(q.qid) + '" title="移出与当前题目的关联">移出</button>' +
               '</div>' +
             '</div>' +
             '<div class="rc-img-box" title="点击放大查看">' +
-              (qImgSrc ? '<img src="' + escapeHtml(qImgSrc) + '" loading="lazy" alt="' + escapeHtml(q.label) + '">' : '<span style="font-size:12px;color:var(--text-muted)">题目图片</span>') +
+              (qImgSrc ? '<img src="' + escapeHtml(qImgSrc) + '" class="' + imgFilterClass + '" loading="lazy" alt="' + escapeHtml(q.label) + '">' : '<span style="font-size:12px;color:var(--text-muted)">题目图片</span>') +
             '</div>' +
             '<div class="rc-sol-box" id="rcSolBox_' + safeId + '" style="display:none">' +
               '<div class="rc-sol-divider"><span>答案与解析</span></div>' +
-              (solImgSrc ? '<img src="' + escapeHtml(solImgSrc) + '" loading="lazy" alt="解析" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size:12px;color:var(--text-muted);text-align:center;padding:8px 0\\\'>暂无解析图片</span>\';">' : '<span style="font-size:12px;color:var(--text-muted)">暂无解析图片</span>') +
+              (solImgSrc ? '<img src="' + escapeHtml(solImgSrc) + '" class="' + imgFilterClass + '" loading="lazy" alt="解析" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size:12px;color:var(--text-muted);text-align:center;padding:8px 0\\\'>暂无解析图片</span>\';">' : '<span style="font-size:12px;color:var(--text-muted)">暂无解析图片</span>') +
             '</div>' +
             (noteHtml ? '<div class="rc-foot">' + noteHtml + '</div>' : '') +
           '</div>';
@@ -3677,8 +3700,12 @@
       qImgEl.src = qImgSrc;
       qImgEl.alt = label;
 
+      var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+      qImgEl.classList.toggle('dark-filter', isDarkFilter);
+
       if (solImgsEl) {
-        solImgsEl.innerHTML = '<img src="' + escapeHtml(solImgSrc) + '" alt="解析" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size:12px;color:var(--text-muted)\\\'>暂无解析图片</span>\';">';
+        var imgFilterClass = isDarkFilter ? ' class="dark-filter"' : '';
+        solImgsEl.innerHTML = '<img src="' + escapeHtml(solImgSrc) + '"' + imgFilterClass + ' alt="解析" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size:12px;color:var(--text-muted)\\\'>暂无解析图片</span>\';">';
       }
       if (solAreaEl) {
         solAreaEl.style.display = pickerSolShown ? 'flex' : 'none';
@@ -3699,7 +3726,7 @@
         } else {
           btnLinkCurrent.textContent = '+ 关联此题到考点';
           btnLinkCurrent.disabled = false;
-          btnLinkCurrent.className = 'gel-btn btn-sm btn-primary';
+          btnLinkCurrent.className = 'gel-btn btn-sm';
         }
       }
     }
