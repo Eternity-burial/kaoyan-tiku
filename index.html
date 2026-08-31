@@ -297,13 +297,29 @@
         <div class="related-section" id="relatedSection">
           <div class="related-header">
             <div class="related-header-left">
-              <span class="related-title">同类题</span>
+              <span class="related-title">考点同类题</span>
               <div class="related-topics-wrap" id="relatedTopicsWrap"></div>
+              <button type="button" class="btn-quick-add-topic" id="btnQuickAddTopic" title="快速为当前题目关联或新建考点">+ 关联考点</button>
             </div>
             <button type="button" class="gel-btn btn-sm btn-related-action" id="btnOpenRelatedModal" title="管理同类题与考点关联 (快捷键 L)">
               <span class="func-name">关联同类题</span>
               <span class="key">L</span>
             </button>
+          </div>
+          <!-- 快速关联已有考点/新建考点下拉浮窗 -->
+          <div class="quick-topic-popover" id="quickTopicPopover" style="display:none">
+            <div class="qtp-header">
+              <span class="qtp-title">📌 为当前题关联考点</span>
+              <button type="button" class="qtp-close" id="btnCloseQuickTopic" title="关闭">✕</button>
+            </div>
+            <div class="qtp-search-row">
+              <input type="text" class="qtp-input" id="inputQuickTopicSearch" placeholder="搜索或输入新考点名称..." autocomplete="off">
+              <button type="button" class="gel-btn btn-sm" id="btnQuickCreateTopic">新建并归类</button>
+            </div>
+            <div class="qtp-list" id="quickTopicList"></div>
+            <div class="qtp-footer">
+              <button type="button" class="qtp-manage-link" id="btnQuickOpenLModal">打开完整考点面板 (L) »</button>
+            </div>
           </div>
           <div class="related-cards-list" id="relatedCardsList"></div>
         </div>
@@ -820,28 +836,37 @@
       </div>
 
       <div class="related-modal-body">
-        <!-- 上方区域：左侧主题归类，右侧跨书查题与5列题号并排展示 -->
+        <!-- 上方区域：左侧考点归类与管理，右侧跨书查题与全功能题号区 -->
         <div class="rm-top-split">
-          <!-- 上方左侧：考点主题归类 -->
+          <!-- 上方左侧：考点主题归类与管理（三板块独立布局，无重叠） -->
           <div class="rm-section rm-section-topics">
-            <div class="rm-sec-header">
-              <span class="rm-sec-title">当前题目的考点归属</span>
-            </div>
-            <div class="rm-current-topics" id="rmCurrentTopics">
-              <!-- 动态渲染已加入的主题 -->
+            <!-- 1. 当前题目的考点归属 -->
+            <div class="rm-topic-box rm-box-current">
+              <div class="rm-sec-header">
+                <span class="rm-sec-title">🎯 当前题归属考点</span>
+                <span class="rm-sec-subtip">点击 ✕ 移出</span>
+              </div>
+              <div class="rm-current-topics" id="rmCurrentTopics">
+                <!-- 动态渲染已加入的主题 -->
+              </div>
             </div>
 
-            <!-- 加入全库已有考点主题 -->
-            <div class="rm-available-topics-wrap" id="rmAvailableTopicsWrap">
-              <span class="rm-picker-label">加入全库已有考点：</span>
+            <!-- 2. 全库已有考点库 -->
+            <div class="rm-topic-box rm-box-available" id="rmAvailableTopicsWrap">
+              <div class="rm-sec-header">
+                <span class="rm-sec-title">📚 全库考点库</span>
+                <input type="text" class="rm-filter-input" id="inputFilterTopics" placeholder="过滤考点..." autocomplete="off">
+              </div>
               <div class="rm-available-topics" id="rmAvailableTopics">
                 <!-- 动态渲染全库已有主题供一键点击加入与删除 -->
               </div>
             </div>
 
-            <div class="rm-create-topic-card">
-              <div class="rm-create-topic-header">
-                <span class="rm-picker-label">新建考点主题（支持 Markdown 与 $LaTeX$）：</span>
+            <!-- 3. 新建考点主题卡片 -->
+            <div class="rm-topic-box rm-box-create" id="rmCreateTopicCard">
+              <div class="rm-sec-header">
+                <span class="rm-sec-title">✨ 新建考点主题</span>
+                <span class="rm-sec-subtip">支持 Markdown 与 $LaTeX$</span>
               </div>
               <div class="topic-quick-toolbar" id="rmNewTopicToolbar">
                 <button type="button" class="tqt-btn" data-insert="$$|$$" title="公式块 ($$)">$$</button>
@@ -856,7 +881,7 @@
                 <button type="button" class="tqt-btn" data-insert="**|**" title="粗体文字">加粗</button>
               </div>
               <div class="rm-create-topic-row">
-                <input type="text" class="rm-input" id="inputNewTopicName" placeholder="如: 莱布尼茨公式 $\lim_{x \to 0}\frac{\sin x}{x}$" maxlength="100" autocomplete="off">
+                <input type="text" class="rm-input" id="inputNewTopicName" placeholder="如: 泰勒公式 $\lim_{x \to 0}\frac{\sin x}{x}$" maxlength="100" autocomplete="off">
                 <button type="button" class="gel-btn btn-sm" id="btnCreateTopic">创建并归类</button>
               </div>
               <div class="rm-topic-preview-wrap" id="rmTopicPreviewWrap" style="display:none">
@@ -866,10 +891,10 @@
             </div>
           </div>
 
-          <!-- 上方右侧：跨书查题与题号定位（固定5列） -->
+          <!-- 上方右侧：跨书查题与题号定位（对齐主界面，支持分区折叠、小题色条与角标） -->
           <div class="rm-section rm-section-navcol">
             <div class="rm-sec-header">
-              <span class="rm-sec-title">跨书查题与题号定位</span>
+              <span class="rm-sec-title">📖 跨书查题与题号定位</span>
               <div class="rm-tabs" id="rmTabs">
                 <button type="button" class="rm-tab-btn active" data-tab="picker">做题浏览</button>
                 <button type="button" class="rm-tab-btn" data-tab="recent">最近</button>
@@ -877,7 +902,7 @@
               </div>
             </div>
 
-            <!-- Tab 1: 跨书题目浏览器（三级下拉 + 5列题号） -->
+            <!-- Tab 1: 跨书题目浏览器（三级下拉 + 全功能题号网格） -->
             <div class="rm-tab-pane active" id="rmTabPicker">
               <div class="rm-title-bar" id="rmTitleBar">
                 <div class="title-dropdown" id="ddModalWb">
@@ -904,7 +929,7 @@
                 <div class="rm-progress-badge" id="rmProgressBadge">共 0 题</div>
               </div>
 
-              <!-- 结构化分区题号区（固定5列） -->
+              <!-- 结构化分区题号区（对齐主界面，支持小题色条、状态色彩、角标） -->
               <div class="rm-nav-section" id="rmNavSection"></div>
             </div>
 
