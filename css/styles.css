@@ -5193,11 +5193,56 @@
       color: var(--danger);
       background: rgba(239, 68, 68, 0.15);
     }
+    .rm-create-topic-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: auto;
+      flex-shrink: 0;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .rm-create-topic-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topic-quick-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.5px;
+      padding: 3px 5px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+    }
+    .tqt-btn {
+      padding: 2px 6px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--primary);
+      cursor: pointer;
+      transition: all 0.12s;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      line-height: 1.3;
+    }
+    .tqt-btn:hover {
+      background: var(--primary-alpha);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    [data-theme="dark"] .tqt-btn {
+      color: #c084fc;
+      background: rgba(40, 42, 54, 0.7);
+    }
     .rm-create-topic-row {
       display: flex;
       gap: 8px;
-      margin-top: auto;
-      flex-shrink: 0;
       height: 30px;
     }
     .rm-input {
@@ -5206,7 +5251,7 @@
       padding: 0 10px;
       font-size: 12px;
       color: var(--text);
-      background: var(--card-bg);
+      background: var(--input-bg);
       border: 1px solid var(--border);
       border-radius: 6px;
       outline: none;
@@ -5215,6 +5260,28 @@
     .rm-input:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 2px var(--primary-alpha);
+    }
+    .rm-topic-preview-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      padding: 4px 8px;
+      background: var(--input-bg);
+      border-radius: 5px;
+      border: 1px dashed var(--border);
+    }
+    .rm-topic-preview-label {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .rm-topic-preview {
+      color: var(--text);
+      font-weight: 600;
+      overflow-x: auto;
+      max-height: 48px;
     }
     .rm-tabs {
       display: flex;
@@ -5593,4 +5660,128 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    /* ===== 考点主题重命名弹窗模态框 ===== */
+    .topic-rename-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 14, 26, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10500;
+      padding: 16px;
+      animation: rmFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .topic-rename-card {
+      width: min(560px, 94vw);
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .topic-rename-header {
+      height: 48px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: var(--glass-bg);
+    }
+    .topic-rename-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .topic-rename-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .topic-rename-subtitle {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+    .topic-rename-close {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .topic-rename-close:hover {
+      color: var(--danger);
+      background: rgba(239, 68, 68, 0.12);
+    }
+    .topic-rename-body {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .topic-input-wrap {
+      width: 100%;
+    }
+    .topic-rename-input {
+      width: 100%;
+      height: 38px;
+      padding: 0 12px;
+      font-size: 13.5px;
+      color: var(--text);
+      background: var(--input-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .topic-rename-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-alpha);
+    }
+    .topic-preview-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .topic-preview-label {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .topic-preview-box {
+      min-height: 46px;
+      max-height: 120px;
+      overflow-y: auto;
+      padding: 10px 14px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .topic-preview-box p {
+      margin: 0;
+    }
+    .topic-rename-footer {
+      height: 50px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      background: var(--glass-bg);
     }

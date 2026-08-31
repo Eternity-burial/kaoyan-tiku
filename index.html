@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>考研题库</title>
   <link rel="stylesheet" href="lib/katex/katex.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=202608311536">
-  <link rel="stylesheet" href="css/english.css?v=202608311536">
+  <link rel="stylesheet" href="css/styles.css?v=202608311601">
+  <link rel="stylesheet" href="css/english.css?v=202608311601">
 </head>
 <body>
   <button type="button" class="floating-sidebar-toggle" id="btnFloatingExpandSidebar" title="展开两侧边栏 ( I )" style="display:none">
@@ -839,9 +839,30 @@
               </div>
             </div>
 
-            <div class="rm-create-topic-row">
-              <input type="text" class="rm-input" id="inputNewTopicName" placeholder="新建考点主题 (如: 莱布尼茨公式)" maxlength="40">
-              <button type="button" class="gel-btn btn-sm" id="btnCreateTopic">创建并归类</button>
+            <div class="rm-create-topic-card">
+              <div class="rm-create-topic-header">
+                <span class="rm-picker-label">新建考点主题（支持 Markdown 与 $LaTeX$）：</span>
+              </div>
+              <div class="topic-quick-toolbar" id="rmNewTopicToolbar">
+                <button type="button" class="tqt-btn" data-insert="$$|$$" title="公式块 ($$)">$$</button>
+                <button type="button" class="tqt-btn" data-insert="f'(x)" title="一阶导数 f'(x)">f'(x)</button>
+                <button type="button" class="tqt-btn" data-insert="\frac{|}{}" title="分式 (\frac)">分式</button>
+                <button type="button" class="tqt-btn" data-insert="\lim_{x \to 0} |" title="极限 (\lim)">极限</button>
+                <button type="button" class="tqt-btn" data-insert="\int | \,dx" title="积分 (\int)">积分</button>
+                <button type="button" class="tqt-btn" data-insert="\sum_{i=1}^{n} |" title="求和 (\sum)">求和</button>
+                <button type="button" class="tqt-btn" data-insert="\sqrt{|}" title="根号 (\sqrt)">根号</button>
+                <button type="button" class="tqt-btn" data-insert="\alpha" title="阿尔法 (\alpha)">$\alpha$</button>
+                <button type="button" class="tqt-btn" data-insert="\partial" title="偏导 (\partial)">$\partial$</button>
+                <button type="button" class="tqt-btn" data-insert="**|**" title="粗体文字">加粗</button>
+              </div>
+              <div class="rm-create-topic-row">
+                <input type="text" class="rm-input" id="inputNewTopicName" placeholder="如: 莱布尼茨公式 $\lim_{x \to 0}\frac{\sin x}{x}$" maxlength="100" autocomplete="off">
+                <button type="button" class="gel-btn btn-sm" id="btnCreateTopic">创建并归类</button>
+              </div>
+              <div class="rm-topic-preview-wrap" id="rmTopicPreviewWrap" style="display:none">
+                <span class="rm-topic-preview-label">实时效果：</span>
+                <div class="rm-topic-preview" id="rmTopicPreview"></div>
+              </div>
             </div>
           </div>
 
@@ -930,14 +951,54 @@
     </div>
   </div>
 
+  <!-- 考点主题重命名模态框（统一玻璃质感，完全取代默认 prompt） -->
+  <div class="topic-rename-backdrop" id="topicRenameModal" style="display:none">
+    <div class="topic-rename-card">
+      <div class="topic-rename-header">
+        <div class="topic-rename-title-wrap">
+          <span class="topic-rename-title">✏️ 重命名考点主题</span>
+          <span class="topic-rename-subtitle">支持 Markdown 语法与 $LaTeX$ 数学公式</span>
+        </div>
+        <button type="button" class="topic-rename-close" id="btnCloseRenameTopic" title="关闭 (Esc)">✕</button>
+      </div>
+      <div class="topic-rename-body">
+        <!-- 快捷公式插入工具栏 -->
+        <div class="topic-quick-toolbar" id="renameQuickToolbar">
+          <button type="button" class="tqt-btn" data-insert="$$|$$" title="公式块 ($$)">$$</button>
+          <button type="button" class="tqt-btn" data-insert="f'(x)" title="一阶导数 f'(x)">f'(x)</button>
+          <button type="button" class="tqt-btn" data-insert="\frac{|}{}" title="分式 (\frac)">分式</button>
+          <button type="button" class="tqt-btn" data-insert="\lim_{x \to 0} |" title="极限 (\lim)">极限</button>
+          <button type="button" class="tqt-btn" data-insert="\int | \,dx" title="积分 (\int)">积分</button>
+          <button type="button" class="tqt-btn" data-insert="\sum_{i=1}^{n} |" title="求和 (\sum)">求和</button>
+          <button type="button" class="tqt-btn" data-insert="\sqrt{|}" title="根号 (\sqrt)">根号</button>
+          <button type="button" class="tqt-btn" data-insert="\alpha" title="阿尔法 (\alpha)">$\alpha$</button>
+          <button type="button" class="tqt-btn" data-insert="\partial" title="偏导 (\partial)">$\partial$</button>
+          <button type="button" class="tqt-btn" data-insert="**|**" title="粗体文字">加粗</button>
+        </div>
+        <div class="topic-input-wrap">
+          <input type="text" class="topic-rename-input" id="inputRenameTopicName" placeholder="输入考点主题名称，如：洛必达法则 $\lim_{x \to 0}\frac{f(x)}{g(x)}$" maxlength="100" autocomplete="off">
+        </div>
+        <!-- 实时渲染预览区 -->
+        <div class="topic-preview-wrap">
+          <div class="topic-preview-label">实时渲染效果：</div>
+          <div class="topic-preview-box" id="renameTopicPreview"></div>
+        </div>
+      </div>
+      <div class="topic-rename-footer">
+        <button type="button" class="gel-btn btn-sm btn-sec" id="btnCancelRenameTopic">取消 <span class="key">Esc</span></button>
+        <button type="button" class="gel-btn btn-sm" id="btnConfirmRenameTopic">确定保存 <span class="key">Enter</span></button>
+      </div>
+    </div>
+  </div>
+
   <!-- 本地离线库：Markdown（marked）+ LaTeX（KaTeX）+ 消毒（DOMPurify）+ 图片标注（marker.js 3） -->
   <script src="lib/dompurify/purify.min.js"></script>
   <script src="lib/marked/marked.umd.min.js"></script>
   <script src="lib/katex/katex.min.js"></script>
   <script src="lib/katex/contrib/auto-render.min.js"></script>
   <script src="lib/markerjs3/markerjs3.umd.js"></script>
-  <script src="js/storage_sync.js?v=202608311536"></script>
-  <script src="js/chapters.js?v=202608311536"></script>
+  <script src="js/storage_sync.js?v=202608311601"></script>
+  <script src="js/chapters.js?v=202608311601"></script>
   <script src="题库/英语/data_1998.js"></script>
   <script src="题库/英语/data_1999.js"></script>
   <script src="题库/英语/data_2000.js"></script>
@@ -967,7 +1028,7 @@
   <script src="题库/英语/data_2024.js"></script>
   <script src="题库/英语/data_2025.js"></script>
   <script src="题库/英语/data_2026.js"></script>
-  <script src="js/english_app.js?v=202608311536"></script>
-  <script src="js/app.js?v=202608311536"></script>
+  <script src="js/english_app.js?v=202608311601"></script>
+  <script src="js/app.js?v=202608311601"></script>
 </body>
 </html>

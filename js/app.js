@@ -3156,51 +3156,125 @@
       return subj.getImgPath(ch, label) + '_question.png';
     }
 
-    // 6. 考点主题名称渲染（支持 $LaTeX$ 公式）与重命名管理
+    // 6. 考点主题名称渲染（完整支持 Markdown 语法与 $LaTeX$ / $$LaTeX$$ 数学公式，与笔记引擎 100% 统一）
     function renderTopicTextHtml(text) {
       if (!text) return '';
-      if (typeof katex !== 'undefined' && typeof katex.renderToString === 'function' && text.indexOf('$') !== -1) {
-        try {
-          var rendered = text.replace(/\$([^$]+)\$/g, function(match, tex) {
-            try {
-              return katex.renderToString(tex, { throwOnError: false, displayMode: false });
-            } catch(e) {
-              return escapeHtml(match);
-            }
-          });
-          return (typeof DOMPurify !== 'undefined' && typeof DOMPurify.sanitize === 'function') ? DOMPurify.sanitize(rendered) : rendered;
-        } catch(e) {}
-      }
+      try {
+        var html = renderNotesMarkdown(text);
+        if (typeof html === 'string') {
+          html = html.trim();
+          // 如果为单段落，剥离外层 <p>...</p> 以便在按钮、胶囊徽标等行内元素中原生流式展示
+          if (html.startsWith('<p>') && html.endsWith('</p>') && html.indexOf('<p>', 3) === -1) {
+            html = html.substring(3, html.length - 4);
+          }
+          return html;
+        }
+      } catch(e) {}
       return escapeHtml(text);
     }
 
-    // 考点主题重命名（支持右键触发）
-    function renameRelatedTopic(topicId, newName) {
+    // 辅助：向通用输入框插入 LaTeX 代码片段并定位光标
+    function insertSnippetIntoField(inputEl, snippet, onUpdate) {
+      if (!inputEl) return;
+      var start = inputEl.selectionStart !== undefined ? inputEl.selectionStart : inputEl.value.length;
+      var end = inputEl.selectionEnd !== undefined ? inputEl.selectionEnd : start;
+      var val = inputEl.value;
+      var selected = val.substring(start, end);
+      var insertText = snippet;
+      var targetCursor = start + snippet.length;
+
+      if (snippet.indexOf('|') !== -1) {
+        if (selected) {
+          insertText = snippet.replace('|', selected);
+          targetCursor = start + insertText.length;
+        } else {
+          var pipeIdx = snippet.indexOf('|');
+          insertText = snippet.replace('|', '');
+          targetCursor = start + pipeIdx;
+        }
+      }
+
+      inputEl.value = val.substring(0, start) + insertText + val.substring(end);
+      inputEl.selectionStart = targetCursor;
+      inputEl.selectionEnd = targetCursor;
+      inputEl.focus();
+      if (typeof onUpdate === 'function') onUpdate(inputEl.value);
+    }
+
+    // 考点主题重命名弹窗控制（抛弃原生 prompt，统一现代玻璃质感与实时公式预览）
+    var activeRenameTopicId = null;
+    var topicRenameModalOpen = false;
+
+    function openRenameTopicModal(topicId) {
       var t = relatedTopics[topicId];
       if (!t) return false;
-      if (typeof newName === 'undefined') {
-        newName = prompt('重命名考点主题（支持 $LaTeX$ 公式）：', t.name);
-      }
-      if (newName === null) return false;
-      newName = newName.trim();
+      activeRenameTopicId = topicId;
+      topicRenameModalOpen = true;
+      var modal = document.getElementById('topicRenameModal');
+      var input = document.getElementById('inputRenameTopicName');
+      var preview = document.getElementById('renameTopicPreview');
+      if (!modal || !input) return false;
+      input.value = t.name || '';
+      if (preview) preview.innerHTML = renderTopicTextHtml(input.value) || '<span style="color:var(--text-muted)">（暂无输入内容）</span>';
+      modal.style.display = 'flex';
+      setTimeout(function() {
+        input.focus();
+        input.select();
+      }, 50);
+      return true;
+    }
+
+    function closeRenameTopicModal() {
+      topicRenameModalOpen = false;
+      activeRenameTopicId = null;
+      var modal = document.getElementById('topicRenameModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function submitRenameTopic() {
+      if (!activeRenameTopicId) return false;
+      var t = relatedTopics[activeRenameTopicId];
+      if (!t) { closeRenameTopicModal(); return false; }
+      var input = document.getElementById('inputRenameTopicName');
+      if (!input) return false;
+      var newName = input.value.trim();
       if (!newName) {
         if (window.storageSync && typeof window.storageSync.showToast === 'function') {
           window.storageSync.showToast('考点主题名称不能为空', 'warning');
         }
         return false;
       }
-      if (newName === t.name) return true;
+      if (newName === t.name) {
+        closeRenameTopicModal();
+        return true;
+      }
       var oldName = t.name;
       t.name = newName;
       saveRelatedTopics();
       renderRelatedModalTopics();
       renderRelatedQuestions();
+      renderNav();
       if (typeof renderModalNav === 'function') renderModalNav();
       if (typeof renderModalViewer === 'function') renderModalViewer();
       if (window.storageSync && typeof window.storageSync.showToast === 'function') {
         window.storageSync.showToast('已重命名考点：“' + oldName + '” → “' + newName + '”', 'success');
       }
+      closeRenameTopicModal();
       return true;
+    }
+
+    function renameRelatedTopic(topicId, newName) {
+      if (typeof newName !== 'undefined') {
+        var t = relatedTopics[topicId];
+        if (!t) return false;
+        t.name = newName.trim();
+        saveRelatedTopics();
+        renderRelatedModalTopics();
+        renderRelatedQuestions();
+        renderNav();
+        return true;
+      }
+      return openRenameTopicModal(topicId);
     }
 
     // 主题彻底删除
@@ -3900,9 +3974,44 @@
       var btnJumpClose = document.getElementById('btnJumpClose');
       if (btnJumpClose) btnJumpClose.onclick = closeJumpReturnBar;
 
-      // 新建主题按钮
+      // 新建主题按钮、实时公式预览与快捷输入工具栏
       var btnCreate = document.getElementById('btnCreateTopic');
       var inputName = document.getElementById('inputNewTopicName');
+      var newPreviewWrap = document.getElementById('rmTopicPreviewWrap');
+      var newPreviewEl = document.getElementById('rmTopicPreview');
+      var newToolbar = document.getElementById('rmNewTopicToolbar');
+
+      var updateNewPreview = function() {
+        if (!inputName || !newPreviewEl) return;
+        var val = inputName.value.trim();
+        if (val) {
+          if (newPreviewWrap) newPreviewWrap.style.display = 'flex';
+          newPreviewEl.innerHTML = renderTopicTextHtml(val);
+        } else {
+          if (newPreviewWrap) newPreviewWrap.style.display = 'none';
+          newPreviewEl.innerHTML = '';
+        }
+      };
+
+      if (inputName) {
+        inputName.addEventListener('input', updateNewPreview);
+        inputName.onkeydown = function(e) {
+          if (e.key === 'Enter') { e.preventDefault(); doCreate(); }
+        };
+      }
+
+      if (newToolbar && inputName) {
+        newToolbar.addEventListener('click', function(e) {
+          var btn = e.target.closest('.tqt-btn');
+          if (!btn) return;
+          var snippet = btn.dataset.insert;
+          if (snippet) {
+            e.preventDefault();
+            insertSnippetIntoField(inputName, snippet, updateNewPreview);
+          }
+        });
+      }
+
       if (btnCreate && inputName) {
         var doCreate = function() {
           var name = inputName.value.trim();
@@ -3915,17 +4024,57 @@
           }
           createRelatedTopic(name, getCurrentQid());
           inputName.value = '';
+          updateNewPreview();
           renderRelatedModalTopics();
           renderRelatedQuestions();
+          renderNav();
           renderModalWorkbench();
           if (window.storageSync && typeof window.storageSync.showToast === 'function') {
             window.storageSync.showToast('已创建考点主题：“' + name + '”', 'success');
           }
         };
         btnCreate.onclick = doCreate;
-        inputName.onkeydown = function(e) {
-          if (e.key === 'Enter') { e.preventDefault(); doCreate(); }
-        };
+      }
+
+      // 考点重命名模态框控件绑定
+      var btnCloseRename = document.getElementById('btnCloseRenameTopic');
+      if (btnCloseRename) btnCloseRename.onclick = closeRenameTopicModal;
+      var btnCancelRename = document.getElementById('btnCancelRenameTopic');
+      if (btnCancelRename) btnCancelRename.onclick = closeRenameTopicModal;
+      var btnConfirmRename = document.getElementById('btnConfirmRenameTopic');
+      if (btnConfirmRename) btnConfirmRename.onclick = submitRenameTopic;
+
+      var inputRename = document.getElementById('inputRenameTopicName');
+      var previewRename = document.getElementById('renameTopicPreview');
+      var updateRenamePreview = function() {
+        if (!inputRename || !previewRename) return;
+        var val = inputRename.value.trim();
+        previewRename.innerHTML = val ? renderTopicTextHtml(val) : '<span style="color:var(--text-muted)">（暂无输入内容）</span>';
+      };
+      if (inputRename) {
+        inputRename.addEventListener('input', updateRenamePreview);
+        inputRename.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            submitRenameTopic();
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeRenameTopicModal();
+          }
+        });
+      }
+
+      var renameToolbar = document.getElementById('renameQuickToolbar');
+      if (renameToolbar && inputRename) {
+        renameToolbar.addEventListener('click', function(e) {
+          var btn = e.target.closest('.tqt-btn');
+          if (!btn) return;
+          var snippet = btn.dataset.insert;
+          if (snippet) {
+            e.preventDefault();
+            insertSnippetIntoField(inputRename, snippet, updateRenamePreview);
+          }
+        });
       }
 
       // Tab 切换
@@ -6865,7 +7014,13 @@ ${cardsHTML}
       // 系统全局控制键（Y 主题切换 / U 试卷暗化 / G 科目切换 / H 快捷键帮助 / Esc 关闭）：
       // 具备最高全局优先级，在任何面板（全局进度 V / 错题本 B / 间隔复习 M / 科目选择 G）打开时均可随时响应！
       // 题目级操作键（A/D/W/S/Z/X/C 等）在面板打开时予以拦截，避免在面板下静默操作隐藏题目。
-      if (subjectPickerOpen) {
+      if (topicRenameModalOpen) {
+        if (key === 'escape') {
+          e.preventDefault();
+          closeRenameTopicModal();
+        }
+        return;
+      } else if (subjectPickerOpen) {
         // 科目选择弹窗：放行 G（切换）、Esc（关闭）、Y（主题）、U（暗化）
         if (key !== 'g' && key !== 'escape' && key !== 'y' && key !== 'u') return;
       } else if (relatedModalOpen) {
