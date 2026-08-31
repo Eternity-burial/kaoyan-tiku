@@ -7831,6 +7831,8 @@ ${cardsHTML}
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
       if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen || relatedModalOpen || topicRenameModalOpen) return;
       if (document.getElementById('lightbox').classList.contains('show')) return;
+      // 侧栏与悬浮面板滚轮隔离：在左侧栏、右侧栏、题号区、符号盘或任何弹窗内部滑动时，绝不触发中央切题手势
+      if (e.target.closest && e.target.closest('.sidebar-right, .sidebar-left, .qnav-container, .qnav, .math-symbol-palette, .chapter-selector, .filter-toolbar, .export-section, .related-modal-card, .quick-topic-popover, #mathSymbolPalette, .review-summary-modal')) return;
 
       const dx = e.deltaX || 0, dy = e.deltaY || 0;
       const absDX = Math.abs(dx), absDY = Math.abs(dy);

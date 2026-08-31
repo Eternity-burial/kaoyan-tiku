@@ -181,6 +181,8 @@
       max-height: calc(100vh - 40px);
       overflow-y: auto;
       overflow-x: hidden;
+      overscroll-behavior: contain;
+      isolation: isolate;
       scrollbar-width: thin;
       scrollbar-color: rgba(128,128,128,0.2) transparent;
       display: flex;
@@ -310,6 +312,7 @@
     .main-content {
       flex: 1;
       min-width: 0;
+      isolation: isolate;
       transition: max-width 0.25s ease;
     }
 
@@ -362,6 +365,8 @@
       max-height: calc(100vh - 40px);
       overflow-y: auto;
       overflow-x: hidden;
+      overscroll-behavior: contain;
+      isolation: isolate;
       scrollbar-width: thin;
       scrollbar-color: rgba(128,128,128,0.2) transparent;
       display: flex;
@@ -1814,6 +1819,8 @@
       max-height: calc(100vh - 290px);
       overflow-y: auto;
       overflow-x: hidden;
+      overscroll-behavior: contain;
+      isolation: isolate;
       padding-right: 3px;
       scrollbar-width: thin;
       scrollbar-color: rgba(128,128,128,0.25) transparent;
