@@ -2055,12 +2055,15 @@
 
         var curSubType = null;
         secGroups.forEach(function(g) {
-          // 插入题型二级子标题（老姚高数在小节内分 例题 / 习题；其余书籍按 sections 题型）
+          // 插入题型二级子标题（老姚高数在小节内分 subSections 或 例题 / 补充练习；其余书籍按 sections 题型）
           if (ch.wb === '老姚高数' && ch.sections) {
             var s = ch.sections.find(function(sec) { return g.startIdx >= sec.start && g.startIdx < sec.start + sec.count; });
             var rawLabel = ch.labels[g.startIdx] || '';
             var subType;
-            if (s && s.exampleCount !== undefined) {
+            if (s && s.subSections) {
+              var sub = s.subSections.find(function(ss) { return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count; });
+              subType = sub ? sub.type : ((g.startIdx < s.start + (s.exampleCount || 0)) ? '例题' : '补充练习');
+            } else if (s && s.exampleCount !== undefined) {
               subType = (g.startIdx < s.start + s.exampleCount) ? '例题' : '补充练习';
             } else {
               subType = /例/.test(rawLabel) ? '例题' : '补充练习';
@@ -2092,7 +2095,12 @@
           if (desc) {
             btn.title = (secInfo ? secInfo.type + ' · ' : '') + desc;
           } else if (secInfo) {
-            btn.title = secInfo.type + (isK ? ' · ' : ' 第') + dispLabel + (isK ? '' : '题') + ' (' + g.parentLabel + ')';
+            var subSecTitle = '';
+            if (secInfo.subSections) {
+              var matchedSub = secInfo.subSections.find(function(ss) { return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count; });
+              if (matchedSub) subSecTitle = ' · ' + matchedSub.type;
+            }
+            btn.title = secInfo.type + subSecTitle + (isK ? ' · ' : ' 第') + dispLabel + (isK ? '' : '题') + ' (' + g.parentLabel + ')';
           } else {
             btn.title = g.parentLabel;
           }
@@ -4006,7 +4014,10 @@
             var sc = ch.sections.find(function(sec) { return g.startIdx >= sec.start && g.startIdx < sec.start + sec.count; });
             var rawLabel = ch.labels[g.startIdx] || '';
             var subType;
-            if (sc && sc.exampleCount !== undefined) {
+            if (sc && sc.subSections) {
+              var sub = sc.subSections.find(function(ss) { return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count; });
+              subType = sub ? sub.type : ((g.startIdx < sc.start + (sc.exampleCount || 0)) ? '例题' : '补充练习');
+            } else if (sc && sc.exampleCount !== undefined) {
               subType = (g.startIdx < sc.start + sc.exampleCount) ? '例题' : '补充练习';
             } else {
               subType = /例/.test(rawLabel) ? '例题' : '补充练习';
@@ -4038,7 +4049,12 @@
           if (desc) {
             btn.title = (secInfo ? secInfo.type + ' · ' : '') + desc;
           } else if (secInfo) {
-            btn.title = secInfo.type + (isK ? ' · ' : ' 第') + dispLabel + (isK ? '' : '题') + ' (' + g.parentLabel + ')';
+            var subSecTitle = '';
+            if (secInfo.subSections) {
+              var matchedSub = secInfo.subSections.find(function(ss) { return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count; });
+              if (matchedSub) subSecTitle = ' · ' + matchedSub.type;
+            }
+            btn.title = secInfo.type + subSecTitle + (isK ? ' · ' : ' 第') + dispLabel + (isK ? '' : '题') + ' (' + g.parentLabel + ')';
           } else {
             btn.title = g.parentLabel;
           }
