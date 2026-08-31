@@ -649,7 +649,7 @@
     // 只列「浏览章节」：排除 wb==='1000题' 的章节（1000题 已并入 30讲/36讲 题目区，
     // 其章节仅作为数据源/统计单元；第0讲已改 wb='基础30讲' 会正常列出）。
     function fillChapterPanel(wb, subj, activeId) {
-      var chs = CHAPTERS.filter(function(c) { return c.wb === wb && c.subj === subj && c.wb !== '1000题'; });
+      var chs = CHAPTERS.filter(function(c) { return c.wb === wb && c.subj === subj && c.wb !== '1000题' && c.wb !== '李范习题'; });
       fillPanel('panelChapter', chs, 'id', 'short', activeId, function(ch) {
         document.getElementById('txtChapter').textContent = ch.short;
         switchChapter(ch.id);
@@ -1607,7 +1607,7 @@
         const filtered = getFilteredIndices();
         if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
       }
-      renderTitle(); switchTo(current); updateFilterCounts();
+      renderTitle(); renderNav(); switchTo(current); updateFilterCounts();
       return true;
     }
     function switchSubject(subjectId) {
