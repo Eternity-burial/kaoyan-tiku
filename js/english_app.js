@@ -515,7 +515,7 @@
 
     if (state.currentSubject === 'english' && (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear])) {
       if (dom.passagePane) {
-        dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${state.currentYear} 年真题精读数据...</div>`;
+        dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;">正在加载 ${state.currentYear} 年真题精读数据...</div>`;
       }
       try {
         await loadYearDataAsync(state.currentYear);
@@ -550,7 +550,7 @@
       loadSolutionPref();
       if (state.currentSubject === 'english' && (!window.ENGLISH_DATA || !window.ENGLISH_DATA[state.currentYear])) {
         if (dom.passagePane) {
-          dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;"><div style="font-size:28px;margin-bottom:12px;">⏳</div>正在加载 ${state.currentYear} 年真题精读数据...</div>`;
+          dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;">正在加载 ${state.currentYear} 年真题精读数据...</div>`;
         }
         try {
           await loadYearDataAsync(state.currentYear);

@@ -3804,6 +3804,72 @@
       return parts;
     }
 
+    // 获取指定科目与章节的全部存储数据（状态、错图、实书不符、笔记、图片标注）
+    function getChapterStorageData(s, ch) {
+      var srcs = [{ ch: ch, offset: 0, len: ch.ownTotal || ch.total }];
+      if (ch.q1000Total && ch.q1000Id) {
+        var companion = s.chapters.find(function(c) { return c.id === ch.q1000Id; });
+        if (companion) {
+          srcs.push({ ch: companion, offset: ch.ownTotal, len: ch.q1000Total });
+        }
+      }
+
+      var statuses = {};
+      var qBad = {};
+      var sBad = {};
+      var bookMismatch = {};
+
+      srcs.forEach(function(src) {
+        var stKey = chapterStatusKey(src.ch);
+        var qbKey = src.ch.id + '_' + s.storageSuffix + '_qbad';
+        var sbKey = src.ch.id + '_' + s.storageSuffix + '_sbad';
+        var bmKey = src.ch.id + '_' + s.storageSuffix + '_book_mismatch';
+
+        var oSt = {}, oQb = {}, oSb = {}, oBm = {};
+        try { oSt = JSON.parse(localStorage.getItem(stKey) || '{}'); } catch(e) {}
+        try { oQb = JSON.parse(localStorage.getItem(qbKey) || '{}'); } catch(e) {}
+        try { oSb = JSON.parse(localStorage.getItem(sbKey) || '{}'); } catch(e) {}
+        try { oBm = JSON.parse(localStorage.getItem(bmKey) || '{}'); } catch(e) {}
+
+        for (var k = 0; k < src.len; k++) {
+          if (oSt[k] !== undefined) statuses[src.offset + k] = oSt[k];
+          if (oQb[k]) qBad[src.offset + k] = true;
+          if (oSb[k]) sBad[src.offset + k] = true;
+          if (oBm[k]) bookMismatch[src.offset + k] = true;
+        }
+      });
+
+      var notesMap = {};
+      srcs.forEach(function(src) {
+        var cid = src.ch.id;
+        var nKey = cid + '_' + s.storageSuffix + '_notes';
+        var oN = {};
+        try { oN = JSON.parse(localStorage.getItem(nKey) || '{}'); } catch(e) {}
+        for (var k in oN) {
+          if (Object.prototype.hasOwnProperty.call(oN, k)) {
+            notesMap[cid + '::' + k] = oN[k];
+          }
+        }
+      });
+
+      return {
+        statuses: statuses,
+        qBad: qBad,
+        sBad: sBad,
+        bookMismatch: bookMismatch,
+        hasNote: function(idx) {
+          var label = ch.labels[idx];
+          var cid = (ch.q1000Total && idx >= ch.ownTotal) ? ch.q1000Id : ch.id;
+          return !!notesMap[cid + '::' + label];
+        },
+        hasAnnot: function(idx) {
+          var path = s.getImgPath(ch, ch.labels[idx]);
+          var base = normalizeAnnotSrc(path);
+          return Object.keys(imgAnnotations).some(function(k) { return k.indexOf(base) === 0; });
+        }
+      };
+    }
+
     var modalCollapsedSections = new Set();
 
     function renderModalNav() {
