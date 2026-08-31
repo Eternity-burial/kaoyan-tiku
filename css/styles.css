@@ -5226,7 +5226,7 @@
       overflow: hidden;
     }
     
-    /* 上方两栏并排容器 (高度扩充至 380px，彻底告别重叠) */
+    /* 上方两栏并排容器 (高度 380px，严格限制子项内部滚动，防止越界遮挡) */
     .rm-top-split {
       display: flex;
       gap: 16px;
@@ -5234,34 +5234,37 @@
       min-height: 340px;
       max-height: 420px;
       flex-shrink: 0;
-      overflow: visible;
       position: relative;
       z-index: 100;
     }
     .rm-section-topics {
       flex: 1.05;
       min-width: 0;
+      height: 100%;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       background: var(--input-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 12px 14px;
-      overflow-y: auto;
-      gap: 12px;
+      gap: 10px;
+      overflow: hidden;
     }
     .rm-section-navcol {
       flex: 1.15;
       min-width: 0;
+      height: 100%;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       background: var(--input-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 12px 14px;
-      overflow: visible;
       position: relative;
       gap: 8px;
+      overflow: visible;
     }
     .rm-topic-box {
       display: flex;
@@ -5422,7 +5425,7 @@
       color: var(--danger);
       background: rgba(239, 68, 68, 0.15);
     }
-    .topic-quick-toolbar {.topic-quick-toolbar {
+    .topic-quick-toolbar {
       display: flex;
       flex-wrap: wrap;
       gap: 4px;
@@ -5491,6 +5494,7 @@
     .rm-tab-pane {
       flex: 1;
       min-height: 0;
+      height: calc(100% - 36px);
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -5539,11 +5543,14 @@
       margin-left: auto;
       white-space: nowrap;
     }
-    /* 模态框题号导航区：对齐主界面 qnav 体系与分区 (CSS Grid 5列排布) */
+    /* 模态框题号导航区：严格内部滚动，禁止向外溢出遮挡底部 */
     .rm-nav-section {
-      flex: 1;
-      min-height: 0;
-      overflow-y: auto;
+      flex: 1 1 0 !important;
+      min-height: 0 !important;
+      max-height: 285px !important;
+      height: 285px !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -5774,7 +5781,7 @@
       display: block;
     }
 
-    .related-modal-footer {.related-modal-footer {.related-modal-footer {
+    .related-modal-footer {
       height: 44px;
       padding: 0 20px;
       display: flex;

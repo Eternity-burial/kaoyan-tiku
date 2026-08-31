@@ -4415,12 +4415,32 @@
       var btnDone = document.getElementById('btnDoneRelatedModal');
       if (btnDone) btnDone.onclick = closeRelatedModal;
 
+      // 点击模态框外部遮罩层直接关闭
+      var modal = document.getElementById('relatedModal');
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeRelatedModal();
+          }
+        });
+      }
+
       // 主页面快速关联考点浮层绑定
       var btnQuickAdd = document.getElementById('btnQuickAddTopic');
       if (btnQuickAdd) btnQuickAdd.onclick = function(e) {
         e.stopPropagation();
         toggleQuickTopicPopover();
       };
+      // 点击非浮层区域自动关闭快速关联考点浮层
+      document.addEventListener('click', function(e) {
+        var pop = document.getElementById('quickTopicPopover');
+        if (pop && pop.style.display !== 'none') {
+          var btnQuick = document.getElementById('btnQuickAddTopic');
+          if (!pop.contains(e.target) && (!btnQuick || !btnQuick.contains(e.target))) {
+            pop.style.display = 'none';
+          }
+        }
+      });
       var btnCloseQuick = document.getElementById('btnCloseQuickTopic');
       if (btnCloseQuick) btnCloseQuick.onclick = function(e) {
         e.stopPropagation();

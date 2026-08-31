@@ -244,6 +244,15 @@ async function run() {
       const viewerImg = document.getElementById('rmViewerQImg');
       const hasViewerImg = viewerImg && viewerImg.style.display !== 'none' && !!viewerImg.src;
 
+      // 检查提示文字已删除
+      const hasSubtipText = document.getElementById('relatedModal').innerText.indexOf('点击 ✕ 移出') !== -1;
+
+      // 检查右侧题号网格是否被严格约束在 top-split 内部 (绝不能溢出遮挡下方的题目与解析区域)
+      const topSplitRect = document.querySelector('.rm-top-split').getBoundingClientRect();
+      const navSectionRect = navSection.getBoundingClientRect();
+      const viewerPanelRect = document.querySelector('.rm-viewer-panel').getBoundingClientRect();
+      const noNavOverflow = (navSectionRect.bottom <= topSplitRect.bottom + 5) && (viewerPanelRect.top >= topSplitRect.bottom - 5);
+
       return {
         isVisible,
         navBtns,
@@ -253,20 +262,44 @@ async function run() {
         consecutiveSubheaders,
         is5Cols,
         viewerTitle,
-        hasViewerImg
+        hasViewerImg,
+        hasSubtipText,
+        noNavOverflow,
+        debugRects: {
+          topSplitBottom: topSplitRect.bottom,
+          navSectionBottom: navSectionRect.bottom,
+          viewerPanelTop: viewerPanelRect.top,
+          navSectionMaxHeight: window.getComputedStyle(navSection).maxHeight,
+          navSectionHeight: window.getComputedStyle(navSection).height,
+          navSectionOverflowY: window.getComputedStyle(navSection).overflowY,
+          parentHeight: window.getComputedStyle(navSection.parentElement).height,
+          parentClass: navSection.parentElement.className
+        }
       };
     })()
   `);
-  console.log('  L面板可见:', modalLayoutCheck.isVisible, '题号按钮数:', modalLayoutCheck.navBtns, '分区数:', modalLayoutCheck.secHeaders, '小节数:', modalLayoutCheck.subHeaders, '左侧无重叠:', modalLayoutCheck.noOverlap, '小节无连堆错误:', modalLayoutCheck.consecutiveSubheaders === 0, '严格5列排布:', modalLayoutCheck.is5Cols, '当前题标题:', modalLayoutCheck.viewerTitle, '当前题图已加载:', modalLayoutCheck.hasViewerImg);
+  console.log('  L面板可见:', modalLayoutCheck.isVisible, '题号按钮数:', modalLayoutCheck.navBtns, '分区数:', modalLayoutCheck.secHeaders, '小节数:', modalLayoutCheck.subHeaders, '左侧无重叠:', modalLayoutCheck.noOverlap, '小节无连堆错误:', modalLayoutCheck.consecutiveSubheaders === 0, '严格5列排布:', modalLayoutCheck.is5Cols, '当前题标题:', modalLayoutCheck.viewerTitle, '当前题图已加载:', modalLayoutCheck.hasViewerImg, '无遮挡底部溢出:', modalLayoutCheck.noNavOverflow, '已删除点击移出文字:', !modalLayoutCheck.hasSubtipText, 'Rects:', modalLayoutCheck.debugRects);
   if (!modalLayoutCheck.isVisible) throw new Error('L面板未能正常打开');
   if (modalLayoutCheck.navBtns === 0) throw new Error('L面板题号网格渲染失败');
   if (!modalLayoutCheck.noOverlap) throw new Error('L面板左侧卡片出现重叠');
   if (modalLayoutCheck.consecutiveSubheaders > 0) throw new Error('L面板小节标题异常堆叠');
   if (!modalLayoutCheck.is5Cols) throw new Error('L面板未正确排为 5 列网格');
   if (!modalLayoutCheck.hasViewerImg) throw new Error('L面板底部题目图未正确显示');
+  if (modalLayoutCheck.hasSubtipText) throw new Error('未删除"点击 ✕ 移出"提示文字');
+  if (!modalLayoutCheck.noNavOverflow) throw new Error('题号网格溢出并遮挡了下方题目查看器');
 
-  await evaluate(ws, `closeRelatedModal()`);
+  // 测试点击遮罩层背景关闭弹窗
+  await evaluate(ws, `
+    (function() {
+      const modal = document.getElementById('relatedModal');
+      const event = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
+      modal.dispatchEvent(event);
+    })()
+  `);
   await sleep(300);
+  const modalClosedByBackdrop = await evaluate(ws, `document.getElementById('relatedModal').style.display === 'none'`);
+  console.log('  点击遮罩层背景关闭弹窗成功:', modalClosedByBackdrop);
+  if (!modalClosedByBackdrop) throw new Error('点击模态框遮罩层未能成功关闭弹窗');
 
   // 7. 测试科目切换 (Math -> 822 -> English)
   console.log('[8/8] 测试科目切换 (Math -> 822 -> English)...');
