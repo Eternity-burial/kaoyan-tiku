@@ -5363,35 +5363,66 @@
       gap: 6px;
       overflow-y: auto;
       flex: 1;
-      padding: 2px 0;
+      padding: 4px 2px;
+      align-content: flex-start;
     }
-    .rm-topic-btn {
+    .rm-avail-tag-wrap {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 3px 8px;
-      font-size: 11.5px;
+      background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--gel-top);
-      color: var(--text);
-      cursor: pointer;
+      border-radius: 14px;
+      overflow: hidden;
       transition: all 0.15s ease;
+      height: 26px;
+      box-shadow: var(--shadow-sm);
       user-select: none;
     }
-    .rm-topic-btn:hover {
+    .rm-avail-tag-wrap:hover {
       border-color: var(--primary);
-      color: var(--primary);
-      background: var(--primary-alpha);
+      box-shadow: 0 2px 8px var(--primary-alpha);
       transform: translateY(-1px);
     }
-    .rm-topic-btn.active {
-      border-color: #10b981;
-      background: rgba(16, 185, 129, 0.12);
-      color: #10b981;
+    .rm-avail-btn {
+      padding: 3px 9px;
+      font-size: 11.5px;
       font-weight: 600;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.12s;
     }
-    .topic-quick-toolbar {
+    .rm-avail-btn:hover {
+      background: var(--primary-alpha);
+    }
+    .rm-avail-count {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .rm-topic-trash-btn {
+      padding: 0 8px;
+      height: 100%;
+      font-size: 10px;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      border-left: 1px solid var(--border);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.12s;
+    }
+    .rm-topic-trash-btn:hover {
+      color: var(--danger);
+      background: rgba(239, 68, 68, 0.15);
+    }
+    .topic-quick-toolbar {.topic-quick-toolbar {
       display: flex;
       flex-wrap: wrap;
       gap: 4px;
