@@ -3432,12 +3432,19 @@
       var curMeta = getQuestionMeta(curQid);
       var curText = document.getElementById('relatedModalCurQText');
       if (curText && curMeta) {
-        curText.textContent = '当前题目：' + curMeta.displayTitle;
+        curText.textContent = '当前做题：' + curMeta.displayTitle;
       }
       renderRelatedModalTopics();
       initVisualQuestionPicker();
       renderRelatedModalRecent();
       modal.style.display = 'flex';
+      setTimeout(function() {
+        var navSection = document.getElementById('rmNavSection');
+        if (navSection) {
+          var curBtn = navSection.querySelector('button.active');
+          if (curBtn) curBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+      }, 50);
     }
 
     function closeRelatedModal() {
@@ -4125,6 +4132,50 @@
       }
     }
 
+    // 跨学科跨书籍跨伴章精准图片路径基址解析（与主页面 getImgPath 100% 对齐）
+    function getImgBaseForSubjectChapterIdx(s, ch, idx) {
+      if (!s || !ch || !ch.labels || idx < 0 || idx >= ch.labels.length) return '';
+      if (ch.q1000Total && ch.q1000Id && idx >= ch.ownTotal) {
+        var qc = s.chapters ? s.chapters.find(function(c) { return c.id === ch.q1000Id; }) : null;
+        if (qc && qc.labels && (idx - ch.ownTotal) < qc.labels.length) {
+          return s.getImgPath(qc, qc.labels[idx - ch.ownTotal]);
+        }
+      }
+      return s.getImgPath(ch, ch.labels[idx]);
+    }
+
+    var _modalSolutionImgGen = 0;
+    function setModalSolutionImages(base, container, isDarkFilter) {
+      if (!container) return;
+      container.innerHTML = '';
+      if (!base) {
+        container.innerHTML = '<span style="font-size:12px;color:var(--text-muted);padding:8px;text-align:center;">暂无解析路径</span>';
+        return;
+      }
+      var gen = ++_modalSolutionImgGen;
+      function tryAdd(n) {
+        var src = n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png';
+        var img = document.createElement('img');
+        img.alt = '解析' + (n > 1 ? ' (' + n + ')' : '');
+        if (isDarkFilter) img.classList.add('dark-filter');
+        img.onload = function () {
+          if (gen !== _modalSolutionImgGen) return;
+          container.appendChild(img);
+          tryAdd(n + 1);
+        };
+        img.onerror = function () {
+          if (gen === _modalSolutionImgGen && n === 1 && container.children.length === 0) {
+            var ph = document.createElement('span');
+            ph.style.cssText = 'font-size:12px;color:var(--text-muted);padding:8px;text-align:center;';
+            ph.textContent = '暂无解析图片';
+            container.appendChild(ph);
+          }
+        };
+        img.src = src;
+      }
+      tryAdd(1);
+    }
+
     function renderModalViewer() {
       var qTitleEl = document.getElementById('rmViewerQTitle');
       var qImgEl = document.getElementById('rmViewerQImg');
@@ -4144,6 +4195,7 @@
       }
 
       pickerQIdx = Math.max(0, Math.min(pickerQIdx, ch.total - 1));
+      ensureGroups(ch);
       var label = ch.labels[pickerQIdx];
       var targetQid = getQid(s.id, ch.id, pickerQIdx);
       var curQid = getCurrentQid();
@@ -4153,22 +4205,38 @@
         return t.members && t.members.some(function(m) { return m.qid === targetQid; });
       });
 
-      var qImgSrc = s.getImgPath(ch, label) + '_question.png';
-      var solImgSrc = s.getImgPath(ch, label) + '_solution.png';
+      var base = getImgBaseForSubjectChapterIdx(s, ch, pickerQIdx);
+      var qImgSrc = base ? base + '_question.png' : '';
 
-      var bookDisplayName = (s.id === 'math' ? getWbLabel(pickerWb) : pickerWb);
-      qTitleEl.textContent = bookDisplayName + ' · ' + (ch.short || ch.name) + ' · ' + label + (isCurrent ? ' (当前做题)' : '');
-      qImgEl.style.display = 'block';
-      qImgEl.src = qImgSrc;
-      qImgEl.alt = label;
+      var g = ch.groupForIdx ? ch.groupForIdx[pickerQIdx] : null;
+      var secInfo = ch.sections ? ch.sections.find(function(sec) { return pickerQIdx >= sec.start && pickerQIdx < sec.start + sec.count; }) : null;
+      var isK = ch.isKnowledge && ch.isKnowledge[pickerQIdx];
+      var desc = ch.itemDescs && ch.itemDescs[pickerQIdx];
+      var qLabelText = '';
+      if (desc) {
+        qLabelText = (secInfo ? secInfo.type + ' · ' : '') + desc;
+      } else if (secInfo && ch.displayLabels && ch.displayLabels[pickerQIdx] !== undefined) {
+        qLabelText = secInfo.type + (isK ? ' · ' : ' 第') + ch.displayLabels[pickerQIdx] + (isK ? '' : '题');
+      } else {
+        qLabelText = label;
+      }
+
+      var bookDisplayName = (s.id === 'math' ? getWbLabel(pickerWb) : (ch.wb || s.name));
+      qTitleEl.textContent = bookDisplayName + ' · ' + (ch.short || ch.name) + ' · ' + qLabelText + (isCurrent ? ' (当前做题)' : '');
+
+      if (qImgSrc) {
+        qImgEl.style.display = 'block';
+        qImgEl.src = qImgSrc;
+        qImgEl.alt = label;
+      } else {
+        qImgEl.style.display = 'none';
+      }
 
       var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
       qImgEl.classList.toggle('dark-filter', isDarkFilter);
 
-      if (solImgsEl) {
-        var imgFilterClass = isDarkFilter ? ' class="dark-filter"' : '';
-        solImgsEl.innerHTML = '<img src="' + escapeHtml(solImgSrc) + '"' + imgFilterClass + ' alt="解析" onerror="this.style.display=\'none\';var sp=document.createElement(\'span\');sp.style.cssText=\'font-size:12px;color:var(--text-muted)\';sp.textContent=\'暂无解析图片\';this.replaceWith(sp);">';
-      }
+      setModalSolutionImages(base, solImgsEl, isDarkFilter);
+
       if (solAreaEl) {
         solAreaEl.style.display = pickerSolShown ? 'flex' : 'none';
       }

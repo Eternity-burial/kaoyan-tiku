@@ -239,6 +239,11 @@ async function run() {
         is5Cols = buttons.every(b => Math.abs(b.getBoundingClientRect().top - top0) < 3);
       }
 
+      // 检查当前题目与题图渲染
+      const viewerTitle = document.getElementById('rmViewerQTitle') ? document.getElementById('rmViewerQTitle').textContent : '';
+      const viewerImg = document.getElementById('rmViewerQImg');
+      const hasViewerImg = viewerImg && viewerImg.style.display !== 'none' && !!viewerImg.src;
+
       return {
         isVisible,
         navBtns,
@@ -246,16 +251,19 @@ async function run() {
         subHeaders,
         noOverlap,
         consecutiveSubheaders,
-        is5Cols
+        is5Cols,
+        viewerTitle,
+        hasViewerImg
       };
     })()
   `);
-  console.log('  L面板可见:', modalLayoutCheck.isVisible, '题号按钮数:', modalLayoutCheck.navBtns, '分区数:', modalLayoutCheck.secHeaders, '小节数:', modalLayoutCheck.subHeaders, '左侧无重叠:', modalLayoutCheck.noOverlap, '小节无连堆错误:', modalLayoutCheck.consecutiveSubheaders === 0, '严格5列排布:', modalLayoutCheck.is5Cols);
+  console.log('  L面板可见:', modalLayoutCheck.isVisible, '题号按钮数:', modalLayoutCheck.navBtns, '分区数:', modalLayoutCheck.secHeaders, '小节数:', modalLayoutCheck.subHeaders, '左侧无重叠:', modalLayoutCheck.noOverlap, '小节无连堆错误:', modalLayoutCheck.consecutiveSubheaders === 0, '严格5列排布:', modalLayoutCheck.is5Cols, '当前题标题:', modalLayoutCheck.viewerTitle, '当前题图已加载:', modalLayoutCheck.hasViewerImg);
   if (!modalLayoutCheck.isVisible) throw new Error('L面板未能正常打开');
   if (modalLayoutCheck.navBtns === 0) throw new Error('L面板题号网格渲染失败');
   if (!modalLayoutCheck.noOverlap) throw new Error('L面板左侧卡片出现重叠');
   if (modalLayoutCheck.consecutiveSubheaders > 0) throw new Error('L面板小节标题异常堆叠');
   if (!modalLayoutCheck.is5Cols) throw new Error('L面板未正确排为 5 列网格');
+  if (!modalLayoutCheck.hasViewerImg) throw new Error('L面板底部题目图未正确显示');
 
   await evaluate(ws, `closeRelatedModal()`);
   await sleep(300);
