@@ -164,8 +164,71 @@ async function run() {
   `);
   await sleep(300);
 
-  // 5. 测试科目切换
-  console.log('[6/7] 测试科目切换 (Math -> 822 -> English -> Bishe)...');
+  // 5. 测试主页面考点快速添加与即时删除
+  console.log('[6/8] 测试主页面考点快速关联与删除交互...');
+  await evaluate(ws, `
+    (() => {
+      // 点击快速关联考点按钮
+      document.getElementById('btnQuickAddTopic').click();
+      const input = document.getElementById('inputQuickTopicSearch');
+      input.value = '洛必达求极限 $\\\\lim_{x \\\\to 0}\\\\frac{\\\\sin x}{x}$';
+      document.getElementById('btnQuickCreateTopic').click();
+    })()
+  `);
+  await sleep(400);
+
+  const topicCountAfterAdd = await evaluate(ws, `document.querySelectorAll('#relatedTopicsWrap .related-topic-pill').length`);
+  console.log('  添加考点后胶囊数量:', topicCountAfterAdd);
+  if (topicCountAfterAdd === 0) throw new Error('考点未成功添加');
+
+  // 测试点击 ✕ 即时删除
+  await evaluate(ws, `
+    (() => {
+      const delBtn = document.querySelector('#relatedTopicsWrap .topic-pill-remove');
+      if (delBtn) delBtn.click();
+    })()
+  `);
+  await sleep(300);
+  const topicCountAfterDel = await evaluate(ws, `document.querySelectorAll('#relatedTopicsWrap .related-topic-pill').length`);
+  console.log('  删除考点后胶囊数量:', topicCountAfterDel);
+  if (topicCountAfterDel !== 0) throw new Error('考点删除失败');
+
+  // 6. 测试 L 快捷键打开模态框、布局无重叠与题号对齐
+  console.log('[7/8] 测试 L 面板 (考点管理与跨书题号网格)...');
+  await evaluate(ws, `openRelatedModal()`);
+  await sleep(400);
+
+  const modalLayoutCheck = await evaluate(ws, `
+    (() => {
+      const modal = document.getElementById('relatedModal');
+      const isVisible = modal && modal.style.display !== 'none';
+      const navBtns = document.querySelectorAll('#rmNavSection .rm-nav-btn').length;
+      const secHeaders = document.querySelectorAll('#rmNavSection .section-header').length;
+      const boxCurrent = document.querySelector('.rm-box-current').getBoundingClientRect();
+      const boxAvail = document.querySelector('.rm-box-available').getBoundingClientRect();
+      const boxCreate = document.querySelector('.rm-box-create').getBoundingClientRect();
+      
+      // 检查垂直排列无重叠: boxCurrent.bottom <= boxAvail.top, boxAvail.bottom <= boxCreate.top
+      const noOverlap = (boxCurrent.bottom <= boxAvail.top + 2) && (boxAvail.bottom <= boxCreate.top + 2);
+
+      return {
+        isVisible,
+        navBtns,
+        secHeaders,
+        noOverlap
+      };
+    })()
+  `);
+  console.log('  L面板可见:', modalLayoutCheck.isVisible, '题号按钮数:', modalLayoutCheck.navBtns, '分区标题数:', modalLayoutCheck.secHeaders, '左侧卡片无重叠:', modalLayoutCheck.noOverlap);
+  if (!modalLayoutCheck.isVisible) throw new Error('L面板未能正常打开');
+  if (modalLayoutCheck.navBtns === 0) throw new Error('L面板题号网格渲染失败');
+  if (!modalLayoutCheck.noOverlap) throw new Error('L面板左侧卡片出现重叠');
+
+  await evaluate(ws, `closeRelatedModal()`);
+  await sleep(300);
+
+  // 7. 测试科目切换 (Math -> 822 -> English)
+  console.log('[8/8] 测试科目切换 (Math -> 822 -> English)...');
   
   // 切换到 822
   await evaluate(ws, 'switchSubject("822")');
@@ -185,8 +248,8 @@ async function run() {
   await evaluate(ws, 'switchSubject("math")');
   await sleep(500);
 
-  // 6. 响应式布局与移动端视图测试
-  console.log('[7/7] 测试响应式移动端视口 (390x844)...');
+  // 响应式布局与移动端视图测试
+  console.log('  测试响应式移动端视口 (390x844)...');
   await sendCDP(ws, 'Emulation.setDeviceMetricsOverride', {
     width: 390,
     height: 844,

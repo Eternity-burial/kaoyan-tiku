@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 考研题库与复习工作台 - 单元测试套件 (Unit Test Suite)
  * 覆盖：SM-2/SM-2+ 算法、章节数据模型、题组解析、存储同步正则与防污染、XSS 消毒与公式占位、QID 编解码
  */
@@ -283,12 +283,12 @@ test('记忆留存率 (calcRetrievability) 在区间 [0, 1] 严格单调递减',
 // 2. 章节元数据模型与伴章路由
 console.log('\n--- 2. 章节元数据模型与伴章路由 ---');
 
-test('科目定义完整性: 包含 math, 822, english, bishe', () => {
+test('科目定义完整性: 包含 math, 822, english', () => {
   const ids = SUBJECTS.map(s => s.id);
   assert.ok(ids.includes('math'));
   assert.ok(ids.includes('822'));
   assert.ok(ids.includes('english'));
-  assert.ok(ids.includes('bishe'));
+  assert.strictEqual(ids.length, 3);
 });
 
 test('数学科目 (math) 232 章节元数据校验', () => {
