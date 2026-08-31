@@ -7775,6 +7775,74 @@ ${cardsHTML}
             }
           } catch (e) {}
         }
+
+        // 7. 迁移老姚高数第5章(ch214) 题目重构与题号/笔记顺延 (5.1-16 柯西不等式插入, 5.2-3 合并, 5.2-5 例题归位)
+        if (localStorage.getItem('ch214_v2_migrated') !== 'true') {
+          // (1) 笔记迁移
+          var notesRaw = localStorage.getItem('ch214_s1_notes');
+          if (notesRaw) {
+            try {
+              var notesObj = JSON.parse(notesRaw);
+              var nChanged = false;
+              if (notesObj['5.1-17'] !== undefined && notesObj['5.1-18'] === undefined) {
+                notesObj['5.1-18'] = notesObj['5.1-17'];
+                delete notesObj['5.1-17'];
+                nChanged = true;
+              }
+              if (notesObj['5.2-10'] !== undefined && notesObj['5.2-9'] === undefined) {
+                notesObj['5.2-9'] = notesObj['5.2-10'];
+                delete notesObj['5.2-10'];
+                nChanged = true;
+              }
+              if (nChanged) {
+                localStorage.setItem('ch214_s1_notes', JSON.stringify(notesObj));
+              }
+            } catch (e) {}
+          }
+
+          // (2) 做题状态迁移
+          var statusRaw = localStorage.getItem('ch214_s1_status');
+          if (statusRaw) {
+            try {
+              var oldSt = JSON.parse(statusRaw);
+              var newSt = {};
+              for (var sk in oldSt) {
+                var ik = parseInt(sk, 10);
+                if (ik >= 0 && ik <= 14) newSt[ik] = oldSt[sk];
+                else if (ik >= 15 && ik <= 23) newSt[ik + 1] = oldSt[sk];
+                else if (ik === 24) newSt[25] = oldSt[sk];
+                else if (ik === 25) newSt[26] = oldSt[sk];
+                else if (ik === 26 || ik === 27) newSt[27] = oldSt[sk];
+                else if (ik >= 28 && ik <= 107) newSt[ik] = oldSt[sk];
+              }
+              localStorage.setItem('ch214_s1_status', JSON.stringify(newSt));
+            } catch (e) {}
+          }
+
+          // (3) SM-2 排期迁移
+          var sm2Raw = localStorage.getItem('sm2_math_ch214');
+          if (sm2Raw) {
+            try {
+              var oldSm = JSON.parse(sm2Raw);
+              var newSm = {};
+              for (var smk in oldSm) {
+                var imk = parseInt(smk, 10);
+                if (imk >= 0 && imk <= 14) newSm[imk] = oldSm[smk];
+                else if (imk >= 15 && imk <= 23) newSm[imk + 1] = oldSm[smk];
+                else if (imk === 24) newSm[25] = oldSm[smk];
+                else if (imk === 25) newSm[26] = oldSm[smk];
+                else if (imk === 26 || imk === 27) newSm[27] = oldSm[smk];
+                else if (imk >= 28 && imk <= 107) newSm[imk] = oldSm[smk];
+              }
+              localStorage.setItem('sm2_math_ch214', JSON.stringify(newSm));
+            } catch (e) {}
+          }
+
+          // (4) 清理原错位标记
+          localStorage.removeItem('ch214_s1_book_mismatch');
+
+          localStorage.setItem('ch214_v2_migrated', 'true');
+        }
       } catch (e) {
         console.warn('migrateHistoricalShu1Data warning:', e);
       }
