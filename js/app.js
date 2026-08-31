@@ -3010,7 +3010,7 @@
               '</div>' +
               '<div class="rc-head-actions">' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
-                '<button type="button" class="gel-btn btn-sm rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题 →</button>' +
+                '<button type="button" class="gel-btn btn-sm rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-unlink" data-unlink-qid="' + escapeHtml(q.qid) + '" title="移出与当前题目的关联">移出</button>' +
               '</div>' +
             '</div>' +
@@ -3333,7 +3333,7 @@
             var count = (t.members ? t.members.length : 0);
             return '<div class="rm-avail-tag-wrap" data-tid="' + escapeHtml(t.id) + '" title="右键可重命名考点主题">' +
               '<button type="button" class="rm-avail-btn" data-add-tid="' + escapeHtml(t.id) + '" title="点击将当前题目加入此考点">' +
-                '<span>+ ' + renderTopicTextHtml(t.name) + '</span>' +
+                '<span>' + renderTopicTextHtml(t.name) + '</span>' +
                 '<span class="rm-avail-count">(' + count + '题)</span>' +
               '</button>' +
               '<button type="button" class="rm-topic-trash-btn" data-trash-tid="' + escapeHtml(t.id) + '" title="彻底删除此考点主题">✕</button>' +
@@ -3720,11 +3720,11 @@
           btnLinkCurrent.disabled = true;
           btnLinkCurrent.className = 'gel-btn btn-sm';
         } else if (isLinked) {
-          btnLinkCurrent.textContent = '已关联（点击移出）';
+          btnLinkCurrent.textContent = '移出关联';
           btnLinkCurrent.disabled = false;
-          btnLinkCurrent.className = 'gel-btn btn-sm btn-linked-action';
+          btnLinkCurrent.className = 'gel-btn btn-sm rc-btn-unlink';
         } else {
-          btnLinkCurrent.textContent = '+ 关联此题到考点';
+          btnLinkCurrent.textContent = '关联此题到考点';
           btnLinkCurrent.disabled = false;
           btnLinkCurrent.className = 'gel-btn btn-sm';
         }

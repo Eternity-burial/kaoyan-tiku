@@ -1943,11 +1943,11 @@
       box-shadow: 0 0 0 1px var(--primary-dark);
     }
 
-    /* 题号右上角状态徽标（高对比度实体小圆珠） */
+    /* 题号右上角状态徽标（向外浮动的高辨识度圆圈标记） */
     .qnav button .img-badges {
       position: absolute;
-      top: -3.5px;
-      right: -3.5px;
+      top: -3px;
+      right: -3px;
       display: flex;
       gap: 2px;
       align-items: center;
@@ -1956,48 +1956,35 @@
     }
 
     .badge-dot {
-      width: 6.5px;
-      height: 6.5px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       display: inline-block;
-      border: 1.5px solid var(--card-bg, #ffffff);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
       flex-shrink: 0;
     }
-    [data-theme="dark"] .badge-dot {
-      border-color: #161822;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
-    }
 
-    /* 琥珀金：笔记标记 */
+    /* 亮黄：笔记标记 */
     .badge-dot.note-dot {
-      background: #f59e0b;
-      box-shadow: 0 0 5px rgba(245, 158, 11, 0.95);
+      background: #fff200;
+      box-shadow: 0 0 3px rgba(255, 242, 0, 0.85);
     }
 
-    /* 天际蓝：图片标注标记 */
+    /* 亮蓝：图片标注标记 */
     .badge-dot.annot-dot {
-      background: #0284c7;
-      box-shadow: 0 0 5px rgba(2, 132, 199, 0.95);
+      background: #1e90ff;
+      box-shadow: 0 0 3px rgba(30, 144, 255, 0.85);
     }
 
-    /* 翠绿色：关联同类题标记 */
+    /* 电光粉：关联同类题标记 */
     .badge-dot.related-dot {
-      background: #10b981;
-      box-shadow: 0 0 6px rgba(16, 185, 129, 0.95);
+      background: #ff007f;
+      box-shadow: 0 0 3px rgba(255, 0, 127, 0.85);
     }
 
     .badge-text {
       font-size: 9.5px;
       font-weight: 800;
       line-height: 1;
-      padding: 0 1.5px;
-      border-radius: 3px;
-      background: var(--card-bg, #fff);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    }
-    [data-theme="dark"] .badge-text {
-      background: #161822;
     }
 
     .qbad-dot {
@@ -4803,17 +4790,13 @@
     }
 
     .rc-btn-unlink {
-      color: var(--text-muted);
-      background: var(--input-bg);
-      border: 1px solid var(--border);
-      font-weight: 500;
-      transition: all 0.15s ease;
+      font-weight: 600;
+      color: var(--text);
     }
     .rc-btn-unlink:hover {
+      border-color: #ef4444 !important;
       color: #ef4444 !important;
-      border-color: rgba(239, 68, 68, 0.45) !important;
-      background: rgba(239, 68, 68, 0.08) !important;
-      box-shadow: 0 1px 4px rgba(239, 68, 68, 0.12);
+      transform: translateY(-1px);
     }
 
     /* 3. 同类题图文卡片列表（在主页面竖向单列大图排列，支持折叠查看解析） */
