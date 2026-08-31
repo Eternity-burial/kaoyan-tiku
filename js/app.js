@@ -140,10 +140,9 @@
       saveGlobalFilters(); // 筛选状态持久化（跨会话记忆）
       const filtered = getFilteredIndices();
       updateFilterCounts();
+      renderNav();
       if (filtered.length > 0 && !isFiltered(current)) {
         switchTo(filtered[0]);
-      } else {
-        renderNav();
       }
     }
 
@@ -3059,6 +3058,7 @@
               removeQuestionFromTopic(t.id, targetQid);
             });
             renderRelatedQuestions();
+            renderNav();
             if (relatedModalOpen) renderModalWorkbench();
           };
         });
@@ -3214,6 +3214,7 @@
       saveRelatedTopics();
       renderRelatedModalTopics();
       renderRelatedQuestions();
+      renderNav();
       if (typeof renderModalWorkbench === 'function') renderModalWorkbench();
       return true;
     }
@@ -3249,6 +3250,7 @@
       modal.style.display = 'none';
       closeAllModalTitlePanels();
       renderRelatedQuestions();
+      renderNav();
     }
 
     function closeAllModalTitlePanels() {
@@ -3296,6 +3298,7 @@
               removeQuestionFromTopic(tid, curQid);
               renderRelatedModalTopics();
               renderRelatedQuestions();
+              renderNav();
               renderModalNav();
               renderModalViewer();
             }
@@ -3349,6 +3352,7 @@
                 addQuestionToTopic(targetTid, curQid);
                 renderRelatedModalTopics();
                 renderRelatedQuestions();
+                renderNav();
                 renderModalNav();
                 renderModalViewer();
               }
@@ -3811,6 +3815,7 @@
       renderModalNav();
       renderModalViewer();
       renderRelatedQuestions();
+      renderNav();
     }
 
     function renderRelatedModalRecent() {
@@ -3873,6 +3878,7 @@
       renderRelatedModalTopics();
       renderRelatedModalRecent();
       renderRelatedQuestions();
+      renderNav();
       renderModalWorkbench();
     }
 
@@ -6841,8 +6847,8 @@ ${cardsHTML}
       const key = e.key.toLowerCase();
       const isShift = e.shiftKey;
 
-      // 英语科目处于激活态时，由 english_app.js 接管做题按键，主系统放行系统级按键（G / Esc / Y / U）
-      if (curSubjectId === 'english') {
+      // 英语或毕设文献科目处于激活态时，由 english_app.js 接管做题按键，主系统放行系统级按键（G / Esc / Y / U）
+      if (curSubjectId === 'english' || curSubjectId === 'bishe' || (curSubject && curSubject.type === 'english')) {
         if (key === 'g') {
           if (subjectPickerOpen) closeSubjectPicker();
           else openSubjectPicker();
