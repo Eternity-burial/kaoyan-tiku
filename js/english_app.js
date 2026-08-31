@@ -165,8 +165,8 @@
             <span class="vocab-word-phonetic">[${escapeHtml(item.ipa)}]</span>
           </div>
           <div style="display:flex;gap:4px;">
-            <button class="popover-btn" title="英音发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(item.word)}', 1)">英音</button>
-            <button class="popover-btn" title="美音发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(item.word)}', 2)">美音</button>
+            <button type="button" class="popover-btn" data-action="pronounce" data-audio-type="1" data-word="${escapeHtml(item.word)}" title="英音发音">英音</button>
+            <button type="button" class="popover-btn" data-action="pronounce" data-audio-type="2" data-word="${escapeHtml(item.word)}" title="美音发音">美音</button>
           </div>
         </div>
         <div class="vocab-word-trans ${vocabBlurMode ? 'blur-mode' : ''}" title="点击显隐释义" onclick="this.classList.toggle('blur-mode')">
@@ -174,10 +174,23 @@
         </div>
         <div class="vocab-card-meta">
           <span>${item.year} 年真题 · ${item.textId || ''}</span>
-          <button class="vocab-unstar-btn" onclick="window.kyApp.toggleStarWord('${escapeHtml(item.word)}', {})">移除</button>
+          <button type="button" class="vocab-unstar-btn" data-action="unstar" data-word="${escapeHtml(item.word)}">移除</button>
         </div>
       </div>
     `).join('');
+
+    grid.onclick = (e) => {
+      const btn = e.target.closest('button[data-action]');
+      if (!btn) return;
+      const action = btn.dataset.action;
+      const word = btn.dataset.word;
+      if (action === 'pronounce') {
+        const type = parseInt(btn.dataset.audioType, 10) || 1;
+        playWordPronunciation(word, type);
+      } else if (action === 'unstar') {
+        toggleStarWord(word, {});
+      }
+    };
   }
 
   function exportStarredWords() {
@@ -698,7 +711,7 @@
         if (sec.figure) {
           html += `
             <div class="passage-figure-box">
-              <img src="${escapeHtml(sec.figure.image)}" alt="${escapeHtml(sec.figure.alt || '')}" onclick="window.kyApp.openFigureLightbox('${escapeHtml(sec.figure.image)}')" class="passage-figure-img" title="点击放大查看高清图表">
+              <img src="${escapeHtml(sec.figure.image)}" alt="${escapeHtml(sec.figure.alt || '')}" onclick="window.kyApp.openFigureLightbox(this.src)" class="passage-figure-img" title="点击放大查看高清图表">
               <div class="passage-figure-caption">${escapeHtml(sec.figure.caption || '')}</div>
             </div>
           `;
@@ -707,7 +720,7 @@
           sec.figures.forEach(fig => {
             html += `
               <div class="passage-figure-box">
-                <img src="${escapeHtml(fig.image)}" alt="${escapeHtml(fig.alt || '')}" onclick="window.kyApp.openFigureLightbox('${escapeHtml(fig.image)}')" class="passage-figure-img" title="点击放大查看高清图表">
+                <img src="${escapeHtml(fig.image)}" alt="${escapeHtml(fig.alt || '')}" onclick="window.kyApp.openFigureLightbox(this.src)" class="passage-figure-img" title="点击放大查看高清图表">
                 <div class="passage-figure-caption">${escapeHtml(fig.caption || '')}</div>
               </div>
             `;
@@ -783,7 +796,7 @@
     if (text.figure && text.figure.image) {
       figureHtml = `
         <div class="passage-figure-box">
-          <img src="${escapeHtml(text.figure.image)}" alt="${escapeHtml(text.figure.alt || '')}" onclick="window.kyApp.openFigureLightbox('${escapeHtml(text.figure.image)}')" class="passage-figure-img" title="点击放大查看高清图表">
+          <img src="${escapeHtml(text.figure.image)}" alt="${escapeHtml(text.figure.alt || '')}" onclick="window.kyApp.openFigureLightbox(this.src)" class="passage-figure-img" title="点击放大查看高清图表">
           <div class="passage-figure-caption">${escapeHtml(text.figure.caption || '')}</div>
         </div>
       `;
@@ -1325,13 +1338,28 @@
           ${ipa ? `<span class="popover-ipa">[${escapeHtml(ipa)}]</span>` : ''}
         </div>
         <div style="display:flex;align-items:center;gap:4px;">
-          <button class="popover-btn" title="英音真人发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(word)}', 1)">英音</button>
-          <button class="popover-btn" title="美音真人发音" onclick="window.kyApp.playWordPronunciation('${escapeHtml(word)}', 2)">美音</button>
-          <button class="popover-btn ${starred ? 'starred' : ''}" id="btnStarPop_${escapeHtml(word)}" title="收藏至生词本" onclick="window.kyApp.toggleStarWord('${escapeHtml(word)}', {ipa: '${escapeHtml(ipa || '')}', meaning: '${escapeHtml(meaning || '')}'}); const b = document.getElementById('btnStarPop_${escapeHtml(word)}'); if(b){ b.classList.toggle('starred'); b.textContent = b.classList.contains('starred') ? '已收藏' : '收藏'; }">${starred ? '已收藏' : '收藏'}</button>
+          <button type="button" class="popover-btn" data-pop-action="pronounce" data-audio-type="1" title="英音真人发音">英音</button>
+          <button type="button" class="popover-btn" data-pop-action="pronounce" data-audio-type="2" title="美音真人发音">美音</button>
+          <button type="button" class="popover-btn ${starred ? 'starred' : ''}" data-pop-action="toggle-star" title="收藏至生词本">${starred ? '已收藏' : '收藏'}</button>
         </div>
       </div>
       <div class="popover-meaning">${escapeHtml(meaning || '暂无释义')}</div>
     `;
+    pop.querySelectorAll('button[data-pop-action]').forEach(b => {
+      b.onclick = (e) => {
+        e.stopPropagation();
+        const action = b.dataset.popAction;
+        if (action === 'pronounce') {
+          const type = parseInt(b.dataset.audioType, 10) || 1;
+          playWordPronunciation(word, type);
+        } else if (action === 'toggle-star') {
+          toggleStarWord(word, { ipa: ipa || '', meaning: meaning || '' });
+          const isNowStarred = isWordStarred(word);
+          b.classList.toggle('starred', isNowStarred);
+          b.textContent = isNowStarred ? '已收藏' : '收藏';
+        }
+      };
+    });
     pop.style.display = 'block';
 
     pop.onmouseenter = () => {
@@ -1431,16 +1459,6 @@
           window.toggleTheme();
         }
       };
-    }
-
-    function setMode(m) {
-      if (m !== 'analysis' && m !== 'practice') return;
-      state.mode = m;
-      saveResume();
-      updateModeClass();
-      renderPassage();
-      renderQuestionPills();
-      renderQuestion();
     }
 
     if (dom.btnPracticeMode) {
@@ -1555,8 +1573,13 @@
   }
 
   function escapeHtml(str) {
-    if (!str) return '';
-    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    if (str === undefined || str === null) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   function escapeRegExp(string) {

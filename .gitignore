@@ -15,5 +15,11 @@ package-lock.json
 __pycache__/
 *.pyc
 data/tokens/
+*token*
+*session*
 *.token
 *.token.txt
+*.key
+*.pem
+*.env*
+
