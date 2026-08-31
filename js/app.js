@@ -531,6 +531,7 @@
           if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
         }
         renderTitle();
+        renderNav();
         switchTo(current);
         return;
       }
@@ -541,7 +542,7 @@
       const filtered = getFilteredIndices();
       target = filtered.length > 0 ? filtered[0] : 0;
       renderTitle();
-      // switchTo 内部已调用 renderStats + renderNav，此处不重复渲染
+      renderNav();
       switchTo(target);
     }
 
