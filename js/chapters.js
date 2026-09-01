@@ -390,8 +390,10 @@
     {
       "type":"6.2 定积分在几何学上的应用","start":2,"count":36,"exampleCount":25,
       "subSections":[
-        {"type":"一. 平面图形的面积","start":2,"count":17},
-        {"type":"二. 体积","start":19,"count":16},
+        {"type":"一. 平面图形的面积","start":2,"count":11},
+        {"type":"补充练习","start":13,"count":6},
+        {"type":"二. 体积","start":19,"count":11},
+        {"type":"补充练习","start":30,"count":5},
         {"type":"三. 平面曲线的弧长","start":35,"count":3}
       ]
     },
