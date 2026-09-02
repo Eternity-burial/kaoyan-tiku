@@ -3130,14 +3130,57 @@
     }
 
     // 3. 渲染主界面同类题卡片栏（竖向单列大图排列，支持手动拖拽调序、一键置顶与查看解析）
-    function getSolImgPathForQid(qid) {
+    function getImgBaseForQid(qid) {
       var target = parseQid(qid);
       if (!target) return '';
       var s = SUBJECTS.find(function(sub) { return sub.id === target.subjectId; });
       if (!s || !s.chapters) return '';
       var ch = s.chapters.find(function(c) { return c.id === target.chapterId; });
       if (!ch || !ch.labels || target.qIdx < 0 || target.qIdx >= ch.labels.length) return '';
-      return s.getImgPath(ch, ch.labels[target.qIdx]) + '_solution.png';
+      return getImgBaseForSubjectChapterIdx(s, ch, target.qIdx);
+    }
+
+    function getImgPathForQid(qid) {
+      var base = getImgBaseForQid(qid);
+      return base ? base + '_question.png' : '';
+    }
+
+    function getSolImgPathForQid(qid) {
+      var base = getImgBaseForQid(qid);
+      return base ? base + '_solution.png' : '';
+    }
+
+    function setRelatedCardSolutionImages(base, container, isDarkFilter) {
+      if (!container) return;
+      container.innerHTML = '';
+      if (!base) {
+        container.innerHTML = '<span style="font-size:12px;color:var(--text-muted);padding:8px 0;text-align:center;display:block;">暂无解析路径</span>';
+        return;
+      }
+      var loadedCount = 0;
+      function tryAdd(n) {
+        var src = n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png';
+        var img = document.createElement('img');
+        img.alt = '解析' + (n > 1 ? ' (' + n + ')' : '');
+        img.title = '点击放大查看高清解析图 (Alt 开启画笔标注)';
+        img.style.cursor = 'zoom-in';
+        if (isDarkFilter) img.classList.add('dark-filter');
+        img.onload = function () {
+          loadedCount++;
+          container.appendChild(img);
+          tryAdd(n + 1);
+        };
+        img.onerror = function () {
+          if (n === 1 && loadedCount === 0 && container.children.length === 0) {
+            var ph = document.createElement('span');
+            ph.style.cssText = 'font-size:12px;color:var(--text-muted);padding:8px 0;text-align:center;display:block;';
+            ph.textContent = '暂无解析图片';
+            container.appendChild(ph);
+          }
+        };
+        img.src = src;
+      }
+      tryAdd(1);
     }
 
     function renderQuickTopicPopover() {
@@ -3289,7 +3332,7 @@
           var statusText = q.status ? (statusNameMap[q.status] || '') : '未做';
           var noteHtml = q.note ? '<span class="rc-note" title="' + escapeHtml(q.note) + '">笔记: ' + escapeHtml(q.note) + '</span>' : '';
           var qImgSrc = getImgPathForQid(q.qid);
-          var solImgSrc = getSolImgPathForQid(q.qid);
+          var imgBase = getImgBaseForQid(q.qid);
           var safeId = q.qid.replace(/[^a-zA-Z0-9_]/g, '_');
           var subTopicsHtml = (q.subTopics && q.subTopics.length > 0) ?
             '<span class="rc-subtopic-tag" title="二级子考点/细分题型">' + escapeHtml(q.subTopics.join(' / ')) + '</span>' : '';
@@ -3314,9 +3357,9 @@
             '<div class="rc-img-box" title="点击放大查看">' +
               (qImgSrc ? '<img src="' + escapeHtml(qImgSrc) + '" class="' + imgFilterClass + '" loading="lazy" alt="' + escapeHtml(q.label) + '">' : '<span style="font-size:12px;color:var(--text-muted)">题目图片</span>') +
             '</div>' +
-            '<div class="rc-sol-box" id="rcSolBox_' + safeId + '" style="display:none">' +
+            '<div class="rc-sol-box" id="rcSolBox_' + safeId + '" style="display:none" data-sol-loaded="false" data-sol-base="' + escapeHtml(imgBase) + '">' +
               '<div class="rc-sol-divider"><span>答案与解析</span></div>' +
-              (solImgSrc ? '<img src="' + escapeHtml(solImgSrc) + '" class="' + imgFilterClass + '" loading="lazy" alt="解析" onerror="this.style.display=\'none\';var sp=document.createElement(\'span\');sp.style.cssText=\'font-size:12px;color:var(--text-muted);text-align:center;padding:8px 0\';sp.textContent=\'暂无解析图片\';this.replaceWith(sp);">' : '<span style="font-size:12px;color:var(--text-muted)">暂无解析图片</span>') +
+              '<div class="rc-sol-imgs" id="rcSolImgs_' + safeId + '"></div>' +
             '</div>' +
             (noteHtml ? '<div class="rc-foot">' + noteHtml + '</div>' : '') +
           '</div>';
@@ -3412,9 +3455,22 @@
             var box = document.getElementById('rcSolBox_' + safeId);
             if (box) {
               var isShown = box.style.display !== 'none';
-              box.style.display = isShown ? 'none' : 'flex';
-              this.textContent = isShown ? '显示解析' : '隐藏解析';
-              this.classList.toggle('active', !isShown);
+              if (!isShown) {
+                if (box.dataset.solLoaded !== 'true') {
+                  var base = box.dataset.solBase || getImgBaseForQid(qid);
+                  var imgsContainer = document.getElementById('rcSolImgs_' + safeId) || box;
+                  var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+                  setRelatedCardSolutionImages(base, imgsContainer, isDarkFilter);
+                  box.dataset.solLoaded = 'true';
+                }
+                box.style.display = 'flex';
+                this.textContent = '隐藏解析';
+                this.classList.add('active');
+              } else {
+                box.style.display = 'none';
+                this.textContent = '显示解析';
+                this.classList.remove('active');
+              }
             }
           };
         });
@@ -3442,11 +3498,21 @@
           };
         });
 
-        list.querySelectorAll('.rc-img-box img, .rc-sol-box img').forEach(function(img) {
+        list.querySelectorAll('.rc-img-box img').forEach(function(img) {
           img.onclick = function(e) {
             e.stopPropagation();
             if (this.src && !this.src.endsWith('/')) {
               openLightbox(this.src);
+            }
+          };
+        });
+
+        list.querySelectorAll('.rc-sol-box').forEach(function(box) {
+          box.onclick = function(e) {
+            var img = e.target.closest('img');
+            if (img && img.src && !img.src.endsWith('/')) {
+              e.stopPropagation();
+              openLightbox(img.src);
             }
           };
         });

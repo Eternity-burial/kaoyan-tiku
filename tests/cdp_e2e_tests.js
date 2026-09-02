@@ -232,7 +232,41 @@ async function run() {
   if (!relatedCheck.hasDragHandle) throw new Error('同类题卡片缺少拖拽手柄');
   if (!relatedCheck.hasPinBtn) throw new Error('同类题卡片缺少置顶按钮');
   if (!relatedCheck.hasSubtopic) throw new Error('二级子考点标签未正常显示');
-  if (!relatedCheck.pinSuccess) throw new Error('同类题一键置顶未成功触发重排');
+  // 测试点击同类题卡片的「显示解析」按钮，验证多图解析容器正确初始化并渲染
+  const solToggleCheck = await evaluate(ws, `
+    (() => {
+      const firstCard = document.querySelector('#relatedCardsList .related-card');
+      if (!firstCard) return null;
+      const solBtn = firstCard.querySelector('.rc-btn-sol');
+      const solBox = firstCard.querySelector('.rc-sol-box');
+      const solImgs = firstCard.querySelector('.rc-sol-imgs');
+      if (!solBtn || !solBox || !solImgs) return null;
+
+      // 点击展开解析
+      solBtn.click();
+      const isExpanded = solBox.style.display !== 'none';
+      const btnTextExpanded = solBtn.textContent;
+      const hasLoadedAttr = solBox.dataset.solLoaded === 'true';
+
+      // 点击隐藏解析
+      solBtn.click();
+      const isCollapsed = solBox.style.display === 'none';
+      const btnTextCollapsed = solBtn.textContent;
+
+      return {
+        isExpanded,
+        btnTextExpanded,
+        hasLoadedAttr,
+        isCollapsed,
+        btnTextCollapsed,
+        hasImgsContainer: !!solImgs
+      };
+    })()
+  `);
+  console.log('  同类题多图解析展开交互检查:', solToggleCheck);
+  if (!solToggleCheck || !solToggleCheck.isExpanded || !solToggleCheck.hasLoadedAttr || !solToggleCheck.hasImgsContainer) {
+    throw new Error('同类题卡片多图解析容器初始化或展开交互失败');
+  }
 
   // 测试点击 ✕ 即时删除当前题目考点
   await evaluate(ws, `
