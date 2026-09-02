@@ -328,7 +328,7 @@ test('图片路径生成器: 数学例题/习题与822特例', () => {
 // 3. StorageSync 数据采集正则与安全性
 console.log('\n--- 3. StorageSync 数据同步正则与防污染 ---');
 
-const syncKeyRegex = /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_(?:english|bishe)_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics)|^([a-z0-9]+)_ui_/;
+const syncKeyRegex = /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_(?:english|bishe)_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)|^([a-z0-9]+)_ui_/;
 
 test('StorageSync 正则精确覆盖全部题库关键数据键', () => {
   const validKeys = [
@@ -338,7 +338,7 @@ test('StorageSync 正则精确覆盖全部题库关键数据键', () => {
     'ky_english_mastery_2010', 'ky_english_notes_2010', 'ky_english_starred_words',
     'ky_bishe_mastery_paper1', 'ky_bishe_notes_paper1',
     'kaoyan_resume', 'kaoyan_study_log', 'kaoyan_ui_filters', 'kaoyan_subject',
-    'kaoyan_theme', 'kaoyan_dark_img_filter', 'kaoyan_review_session', 'kaoyan_related_topics',
+    'kaoyan_theme', 'kaoyan_dark_img_filter', 'kaoyan_review_session', 'kaoyan_related_topics', 'kaoyan_related_affinity',
     'kaoyan_resume_english_y2010', 'kaoyan_resume_bishe',
     'math_ui_solution', '822_ui_solution', 'english_ui_solution'
   ];
@@ -492,6 +492,94 @@ test('考点主题创建、关联题目与解除关联数据模型测试', () =>
   unlinkQuestion('topic_taylor', 'math::ch1::0');
   assert.strictEqual(topicsMap['topic_taylor'].questions.length, 1);
   assert.strictEqual(topicsMap['topic_taylor'].questions[0], 'math::ch31::2');
+});
+
+test('二级子考点格式解析 (大考点/子考点)', () => {
+  function parseTopicAndSubTopic(input) {
+    if (!input || typeof input !== 'string') return { topicName: '', subTopic: '' };
+    var text = input.trim();
+    var splitMatch = text.match(/^(.*?)\s*[\/／\\\|]\s*(.*?)$/);
+    if (splitMatch && splitMatch[1] && splitMatch[2]) {
+      return { topicName: splitMatch[1].trim(), subTopic: splitMatch[2].trim() };
+    }
+    return { topicName: text, subTopic: '' };
+  }
+
+  const res1 = parseTopicAndSubTopic('定积分几何应用 / 旋转体体积');
+  assert.strictEqual(res1.topicName, '定积分几何应用');
+  assert.strictEqual(res1.subTopic, '旋转体体积');
+
+  const res2 = parseTopicAndSubTopic('极限计算／0比0型');
+  assert.strictEqual(res2.topicName, '极限计算');
+  assert.strictEqual(res2.subTopic, '0比0型');
+
+  const res3 = parseTopicAndSubTopic('洛必达法则');
+  assert.strictEqual(res3.topicName, '洛必达法则');
+  assert.strictEqual(res3.subTopic, '');
+});
+
+test('题目对双向亲密度无向 Key 与优先级双向互通排序', () => {
+  function getPairKey(qid1, qid2) {
+    if (!qid1 || !qid2) return '';
+    return qid1 < qid2 ? (qid1 + '::' + qid2) : (qid2 + '::' + qid1);
+  }
+
+  // 无向 Key 一致性检验
+  const k1 = getPairKey('math::ch215::2', 'math::ch215::19');
+  const k2 = getPairKey('math::ch215::19', 'math::ch215::2');
+  assert.strictEqual(k1, k2);
+  assert.strictEqual(k1, 'math::ch215::19::math::ch215::2');
+
+  const affinityStore = {
+    pairs: {},
+    customOrders: {}
+  };
+
+  function updateOrder(curQid, newOrderedQids) {
+    affinityStore.customOrders[curQid] = newOrderedQids.slice();
+    newOrderedQids.forEach((targetQid, idx) => {
+      const pKey = getPairKey(curQid, targetQid);
+      const bonus = Math.max(10, 100 - idx * 15);
+      affinityStore.pairs[pKey] = Math.max((affinityStore.pairs[pKey] || 0), bonus);
+    });
+  }
+
+  function sortQuestions(curQid, list) {
+    const customOrder = affinityStore.customOrders[curQid] || [];
+    return list.slice().sort((a, b) => {
+      let scoreA = 0;
+      let scoreB = 0;
+      const idxA = customOrder.indexOf(a.qid);
+      const idxB = customOrder.indexOf(b.qid);
+      if (idxA !== -1) scoreA += 10000 - idxA * 100;
+      if (idxB !== -1) scoreB += 10000 - idxB * 100;
+
+      const affA = affinityStore.pairs[getPairKey(curQid, a.qid)] || 0;
+      const affB = affinityStore.pairs[getPairKey(curQid, b.qid)] || 0;
+      scoreA += affA * 10;
+      scoreB += affB * 10;
+
+      scoreA += (a.sameSubTopicCount || 0) * 50;
+      scoreB += (b.sameSubTopicCount || 0) * 50;
+
+      return scoreB - scoreA;
+    });
+  }
+
+  const qA = 'math::ch215::2';
+  const qB = 'math::ch215::19';
+  const qC = 'math::ch215::35';
+
+  // 1. 在题目 A 视角下，用户手动将题目 B 拖到了第一位，C 为第二位
+  updateOrder(qA, [qB, qC]);
+  const sortedForA = sortQuestions(qA, [{ qid: qC }, { qid: qB }]);
+  assert.strictEqual(sortedForA[0].qid, qB);
+  assert.strictEqual(sortedForA[1].qid, qC);
+
+  // 2. 验证双向性：当切换到题目 B 视角时，B 视角并没有显式拖拽，但 A 自动因为双向亲密度排在第一位！
+  const sortedForB = sortQuestions(qB, [{ qid: qC }, { qid: qA }]);
+  assert.strictEqual(sortedForB[0].qid, qA);
+  assert.strictEqual(sortedForB[1].qid, qC);
 });
 
 // 8. .gitignore 凭据防护校验

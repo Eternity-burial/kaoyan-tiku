@@ -107,7 +107,7 @@
         /^sm2_/.test(k) ||
         /^annot_/.test(k) ||
         /^ky_english_/.test(k) ||
-        /^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics)/.test(k) ||
+        /^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)/.test(k) ||
         /^(?:math|shu1|822|english)_ui_/.test(k)
       ) {
         dump[k] = localStorage.getItem(k);

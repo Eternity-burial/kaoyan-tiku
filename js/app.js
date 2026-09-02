@@ -2754,6 +2754,7 @@
 
     // ===== 同类题与跨书双向关联管理系统 =====
     var relatedTopics = {};
+    var relatedAffinity = { pairs: {}, customOrders: {} };
     var recentQuestionsHistory = [];
     var jumpReturnStack = [];
     var relatedModalOpen = false;
@@ -2828,7 +2829,36 @@
       };
     }
 
-    // 2. 同类题数据存储与主题管理
+    // 2. 同类题数据存储、主题与双向亲密度排序引擎
+    function getPairKey(qid1, qid2) {
+      if (!qid1 || !qid2) return '';
+      return qid1 < qid2 ? (qid1 + '::' + qid2) : (qid2 + '::' + qid1);
+    }
+
+    function loadRelatedAffinity() {
+      try {
+        var raw = localStorage.getItem('kaoyan_related_affinity');
+        if (raw) {
+          var obj = JSON.parse(raw);
+          relatedAffinity = {
+            pairs: (obj && typeof obj.pairs === 'object' && obj.pairs) ? obj.pairs : {},
+            customOrders: (obj && typeof obj.customOrders === 'object' && obj.customOrders) ? obj.customOrders : {}
+          };
+        } else {
+          relatedAffinity = { pairs: {}, customOrders: {} };
+        }
+      } catch (e) {
+        relatedAffinity = { pairs: {}, customOrders: {} };
+      }
+    }
+
+    function saveRelatedAffinity() {
+      try {
+        localStorage.setItem('kaoyan_related_affinity', JSON.stringify(relatedAffinity));
+        notifyStorageSync();
+      } catch (e) {}
+    }
+
     function loadRelatedTopics() {
       try {
         relatedTopics = JSON.parse(localStorage.getItem('kaoyan_related_topics') || '{}');
@@ -2846,12 +2876,98 @@
       } catch (e) {
         relatedTopics = {};
       }
+      loadRelatedAffinity();
     }
 
     function saveRelatedTopics() {
       localStorage.setItem('kaoyan_related_topics', JSON.stringify(relatedTopics));
       notifyStorageSync();
       renderNav();
+    }
+
+    function parseTopicAndSubTopic(input) {
+      if (!input || typeof input !== 'string') return { topicName: '', subTopic: '' };
+      var text = input.trim();
+      var splitMatch = text.match(/^(.*?)\s*[\/／\\\|]\s*(.*?)$/);
+      if (splitMatch && splitMatch[1] && splitMatch[2]) {
+        return {
+          topicName: splitMatch[1].trim(),
+          subTopic: splitMatch[2].trim()
+        };
+      }
+      return { topicName: text, subTopic: '' };
+    }
+
+    function updateRelatedAffinityOrder(curQid, newOrderedQids) {
+      if (!curQid || !Array.isArray(newOrderedQids)) return;
+      if (!relatedAffinity.customOrders) relatedAffinity.customOrders = {};
+      relatedAffinity.customOrders[curQid] = newOrderedQids.slice();
+
+      if (!relatedAffinity.pairs) relatedAffinity.pairs = {};
+      newOrderedQids.forEach(function(targetQid, idx) {
+        var pKey = getPairKey(curQid, targetQid);
+        if (!pKey) return;
+        // 越靠前，双向亲密度分值越高 (首位 +100，依次递减)
+        var rankBonus = Math.max(10, 100 - idx * 15);
+        relatedAffinity.pairs[pKey] = Math.max((relatedAffinity.pairs[pKey] || 0), rankBonus);
+      });
+
+      saveRelatedAffinity();
+    }
+
+    function pinRelatedQuestion(curQid, targetQid) {
+      if (!curQid || !targetQid) return;
+      var data = getRelatedQuestionsForQid(curQid);
+      var qids = data.relatedQuestions.map(function(q) { return q.qid; });
+      var idx = qids.indexOf(targetQid);
+      if (idx !== -1) {
+        qids.splice(idx, 1);
+        qids.unshift(targetQid);
+      } else {
+        qids.unshift(targetQid);
+      }
+      updateRelatedAffinityOrder(curQid, qids);
+      renderRelatedQuestions();
+      if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+        window.storageSync.showToast('已置顶同类题并同步双向优先级', 'success');
+      }
+    }
+
+    function sortRelatedQuestions(curQid, list) {
+      if (!list || list.length <= 1) return list || [];
+      var customOrder = (relatedAffinity.customOrders && relatedAffinity.customOrders[curQid]) || [];
+
+      return list.slice().sort(function(a, b) {
+        var scoreA = 0;
+        var scoreB = 0;
+
+        // 因子 1：当前题目的显式拖拽顺序 (最高优先级)
+        var idxA = customOrder.indexOf(a.qid);
+        var idxB = customOrder.indexOf(b.qid);
+        if (idxA !== -1) scoreA += 10000 - idxA * 100;
+        if (idxB !== -1) scoreB += 10000 - idxB * 100;
+
+        // 因子 2：题目对双向亲密度权重 (在另一题中将本题前移时产生双向反向加分)
+        var pairKeyA = getPairKey(curQid, a.qid);
+        var pairKeyB = getPairKey(curQid, b.qid);
+        var affA = (relatedAffinity.pairs && relatedAffinity.pairs[pairKeyA]) || 0;
+        var affB = (relatedAffinity.pairs && relatedAffinity.pairs[pairKeyB]) || 0;
+        scoreA += affA * 10;
+        scoreB += affB * 10;
+
+        // 因子 3：同属于相同二级子考点加成 (+50分)
+        scoreA += (a.sameSubTopicCount || 0) * 50;
+        scoreB += (b.sameSubTopicCount || 0) * 50;
+
+        // 因子 4：共同考点数量 (+10分)
+        scoreA += ((a.topics && a.topics.length) || 0) * 10;
+        scoreB += ((b.topics && b.topics.length) || 0) * 10;
+
+        if (scoreB !== scoreA) {
+          return scoreB - scoreA;
+        }
+        return a.qid.localeCompare(b.qid);
+      });
     }
 
     function getTopicsForQid(qid) {
@@ -2879,19 +2995,37 @@
       var relatedMap = {};
       var myTopics = getTopicsForQid(qid);
 
+      // 提取当前题在各考点下的二级子考点映射
+      var mySubTopicsByTopicId = {};
       myTopics.forEach(function(t) {
         if (!t.members) return;
+        var myMem = t.members.find(function(m) { return m.qid === qid; });
+        if (myMem && myMem.subTopic) {
+          mySubTopicsByTopicId[t.id] = myMem.subTopic.trim();
+        }
+      });
+
+      myTopics.forEach(function(t) {
+        if (!t.members) return;
+        var curSub = mySubTopicsByTopicId[t.id] || '';
         t.members.forEach(function(m) {
           if (m.qid !== qid) {
+            var isSameSubTopic = Boolean(curSub && m.subTopic && m.subTopic.trim() === curSub);
+            var subTopicStr = m.subTopic ? m.subTopic.trim() : '';
+
             if (!relatedMap[m.qid]) {
               relatedMap[m.qid] = {
                 qid: m.qid,
                 topics: [t.name],
+                subTopics: subTopicStr ? [subTopicStr] : [],
+                sameSubTopicCount: isSameSubTopic ? 1 : 0,
                 notes: m.note ? [m.note] : []
               };
             } else {
               var item = relatedMap[m.qid];
               if (item.topics.indexOf(t.name) === -1) item.topics.push(t.name);
+              if (subTopicStr && item.subTopics.indexOf(subTopicStr) === -1) item.subTopics.push(subTopicStr);
+              if (isSameSubTopic) item.sameSubTopicCount = (item.sameSubTopicCount || 0) + 1;
               if (m.note && item.notes.indexOf(m.note) === -1) item.notes.push(m.note);
             }
           }
@@ -2904,11 +3038,16 @@
           var meta = getQuestionMeta(k);
           if (meta) {
             meta.topics = relatedMap[k].topics;
+            meta.subTopics = relatedMap[k].subTopics || [];
+            meta.sameSubTopicCount = relatedMap[k].sameSubTopicCount || 0;
             meta.note = relatedMap[k].notes.join('；');
             list.push(meta);
           }
         }
       }
+
+      // 执行智能多因子排序
+      list = sortRelatedQuestions(qid, list);
 
       return {
         topics: myTopics,
@@ -2916,29 +3055,57 @@
       };
     }
 
-    function createRelatedTopic(name, currentQid, note) {
+    function createRelatedTopic(name, currentQid, note, subTopic) {
       if (!name || !name.trim()) return null;
-      var tid = 'topic_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
+      var parsed = parseTopicAndSubTopic(name);
+      var topicName = parsed.topicName;
+      var autoSubTopic = subTopic || parsed.subTopic || '';
+
+      // 检查是否已存在同名大考点
+      var existingTid = null;
+      for (var tid in relatedTopics) {
+        if (relatedTopics[tid] && relatedTopics[tid].name && relatedTopics[tid].name.trim() === topicName) {
+          existingTid = tid;
+          break;
+        }
+      }
+
+      if (existingTid) {
+        if (currentQid) {
+          addQuestionToTopic(existingTid, currentQid, note, autoSubTopic);
+        }
+        return relatedTopics[existingTid];
+      }
+
+      var newTid = 'topic_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
       var newTopic = {
-        id: tid,
-        name: name.trim(),
+        id: newTid,
+        name: topicName,
+        subTopics: autoSubTopic ? [autoSubTopic] : [],
         createTime: Date.now(),
-        members: currentQid ? [{ qid: currentQid, note: note || '' }] : []
+        members: currentQid ? [{ qid: currentQid, note: note || '', subTopic: autoSubTopic }] : []
       };
-      relatedTopics[tid] = newTopic;
+      relatedTopics[newTid] = newTopic;
       saveRelatedTopics();
       return newTopic;
     }
 
-    function addQuestionToTopic(topicId, qid, note) {
+    function addQuestionToTopic(topicId, qid, note, subTopic) {
       var t = relatedTopics[topicId];
       if (!t) return false;
       if (!t.members) t.members = [];
       var existing = t.members.find(function(m) { return m.qid === qid; });
       if (!existing) {
-        t.members.push({ qid: qid, note: note || '' });
-      } else if (note) {
-        existing.note = note;
+        t.members.push({ qid: qid, note: note || '', subTopic: subTopic || '' });
+      } else {
+        if (note !== undefined && note !== null) existing.note = note;
+        if (subTopic !== undefined && subTopic !== null) existing.subTopic = subTopic;
+      }
+      if (subTopic && subTopic.trim()) {
+        if (!t.subTopics) t.subTopics = [];
+        if (t.subTopics.indexOf(subTopic.trim()) === -1) {
+          t.subTopics.push(subTopic.trim());
+        }
       }
       saveRelatedTopics();
       return true;
@@ -2962,7 +3129,7 @@
       if (recentQuestionsHistory.length > 10) recentQuestionsHistory.pop();
     }
 
-    // 3. 渲染主界面同类题卡片栏（竖向单列大图排列，支持折叠查看解析）
+    // 3. 渲染主界面同类题卡片栏（竖向单列大图排列，支持手动拖拽调序、一键置顶与查看解析）
     function getSolImgPathForQid(qid) {
       var target = parseQid(qid);
       if (!target) return '';
@@ -2995,7 +3162,7 @@
 
       if (allTopics.length === 0) {
         listEl.innerHTML = '<div style="padding:12px;font-size:12px;color:var(--text-muted);text-align:center;">' +
-          (query ? '无匹配考点，点击右侧「新建」' : '暂无考点，输入名称后点击「新建」') +
+          (query ? '无匹配考点，点击右侧「新建」' : '暂无考点，输入名称（如“大考点/子考点”）后点击「新建」') +
         '</div>';
         return;
       }
@@ -3105,7 +3272,7 @@
         wrap.innerHTML = '<span style="font-size:12px;color:var(--text-muted);font-style:italic;">未归入考点</span>';
       }
 
-      // 渲染同类题单列大图卡片（竖向排列，支持展开解析、大图查看与跨书跳转）
+      // 渲染同类题单列大图卡片（竖向排列，支持手柄拖拽排序、一键置顶、展开解析与跨书跳转）
       if (data.relatedQuestions.length > 0) {
         var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
         var imgFilterClass = isDarkFilter ? ' dark-filter' : '';
@@ -3124,16 +3291,21 @@
           var qImgSrc = getImgPathForQid(q.qid);
           var solImgSrc = getSolImgPathForQid(q.qid);
           var safeId = q.qid.replace(/[^a-zA-Z0-9_]/g, '_');
+          var subTopicsHtml = (q.subTopics && q.subTopics.length > 0) ?
+            '<span class="rc-subtopic-tag" title="二级子考点/细分题型">' + escapeHtml(q.subTopics.join(' / ')) + '</span>' : '';
 
-          return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '">' +
+          return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '" draggable="true">' +
             '<div class="rc-head">' +
               '<div class="rc-head-left">' +
+                '<span class="rc-drag-handle" title="按住拖拽调整相似度与排序">⠿</span>' +
                 '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
                 '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
+                subTopicsHtml +
                 '<span class="rc-dot' + dotClass + '" title="状态: ' + escapeHtml(statusText) + '"></span>' +
                 (statusText ? '<span style="font-size:11.5px;color:var(--text-muted);font-weight:600">' + escapeHtml(statusText) + '</span>' : '') +
               '</div>' +
               '<div class="rc-head-actions">' +
+                '<button type="button" class="gel-btn btn-sm rc-btn-pin" data-pin-qid="' + escapeHtml(q.qid) + '" title="将此题置顶为最高相似度同类题">🔝 置顶</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-unlink" data-unlink-qid="' + escapeHtml(q.qid) + '" title="移出与当前题目的关联">移出</button>' +
@@ -3149,6 +3321,88 @@
             (noteHtml ? '<div class="rc-foot">' + noteHtml + '</div>' : '') +
           '</div>';
         }).join('');
+
+        // 绑定置顶按钮事件
+        list.querySelectorAll('button.rc-btn-pin').forEach(function(btn) {
+          btn.onclick = function(e) {
+            e.stopPropagation();
+            var targetQid = this.dataset.pinQid;
+            var currentQid = getCurrentQid();
+            if (targetQid && currentQid) {
+              pinRelatedQuestion(currentQid, targetQid);
+            }
+          };
+        });
+
+        // 绑定 HTML5 拖拽重排与双向亲密度同步
+        var draggedCard = null;
+        var draggedQid = null;
+
+        list.querySelectorAll('.related-card').forEach(function(card) {
+          card.addEventListener('dragstart', function(e) {
+            draggedCard = this;
+            draggedQid = this.dataset.qid;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', draggedQid || '');
+            this.classList.add('dragging');
+          });
+
+          card.addEventListener('dragend', function() {
+            this.classList.remove('dragging');
+            list.querySelectorAll('.related-card').forEach(function(c) {
+              c.classList.remove('drag-over-top', 'drag-over-bottom');
+            });
+            draggedCard = null;
+            draggedQid = null;
+          });
+
+          card.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            if (!draggedCard || draggedCard === this) return;
+            e.dataTransfer.dropEffect = 'move';
+            var rect = this.getBoundingClientRect();
+            var relY = e.clientY - rect.top;
+            if (relY < rect.height / 2) {
+              this.classList.add('drag-over-top');
+              this.classList.remove('drag-over-bottom');
+            } else {
+              this.classList.add('drag-over-bottom');
+              this.classList.remove('drag-over-top');
+            }
+          });
+
+          card.addEventListener('dragleave', function() {
+            this.classList.remove('drag-over-top', 'drag-over-bottom');
+          });
+
+          card.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('drag-over-top', 'drag-over-bottom');
+            if (!draggedCard || draggedCard === this) return;
+
+            var rect = this.getBoundingClientRect();
+            var relY = e.clientY - rect.top;
+            var insertBefore = (relY < rect.height / 2);
+
+            if (insertBefore) {
+              list.insertBefore(draggedCard, this);
+            } else {
+              list.insertBefore(draggedCard, this.nextSibling);
+            }
+
+            // 从重排后的 DOM 结构提取新顺序
+            var newQids = [];
+            list.querySelectorAll('.related-card').forEach(function(c) {
+              if (c.dataset.qid) newQids.push(c.dataset.qid);
+            });
+
+            var currentQid = getCurrentQid();
+            updateRelatedAffinityOrder(currentQid, newQids);
+            if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+              window.storageSync.showToast('已更新同类题排序与双向相似度', 'success');
+            }
+          });
+        });
 
         list.querySelectorAll('button.rc-btn-sol').forEach(function(btn) {
           btn.onclick = function(e) {
@@ -3199,7 +3453,7 @@
 
         list.querySelectorAll('.related-card').forEach(function(card) {
           card.onclick = function(e) {
-            if (e.target.closest('button') || e.target.closest('img')) return;
+            if (e.target.closest('button') || e.target.closest('img') || e.target.closest('.rc-drag-handle')) return;
             var targetQid = this.dataset.qid;
             if (targetQid) jumpToQid(targetQid, true);
           };

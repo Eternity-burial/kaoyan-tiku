@@ -172,24 +172,69 @@ async function run() {
   `);
   await sleep(300);
 
-  // 5. 测试主页面考点快速添加与即时删除
-  console.log('[6/8] 测试主页面考点快速关联与删除交互...');
+  // 5. 测试主页面考点快速添加 (含二级子考点)、拖拽手柄、置顶与双向优先级联动
+  console.log('[6/8] 测试主页面考点快速关联 (二级子考点)、同类题置顶与双向优先级联动...');
   await evaluate(ws, `
     (() => {
-      // 点击快速关联考点按钮
+      // 1. 快速创建包含二级子考点的主题：极限计算 / 0比0型
       document.getElementById('btnQuickAddTopic').click();
       const input = document.getElementById('inputQuickTopicSearch');
-      input.value = '洛必达求极限 $\\\\lim_{x \\\\to 0}\\\\frac{\\\\sin x}{x}$';
+      input.value = '极限计算 / 0比0型';
       document.getElementById('btnQuickCreateTopic').click();
+
+      // 2. 模拟把另外两道题目也加入同一考点
+      const curQid = getCurrentQid();
+      const qids = getRelatedQuestionsForQid(curQid);
+      const allTids = Object.keys(relatedTopics);
+      const myTid = allTids[allTids.length - 1];
+      if (myTid) {
+        addQuestionToTopic(myTid, 'math::ch213::20', '基础题', '0比0型');
+        addQuestionToTopic(myTid, 'math::ch213::35', '提高题', '旋转体');
+      }
+      renderRelatedQuestions();
     })()
   `);
   await sleep(400);
 
-  const topicCountAfterAdd = await evaluate(ws, `document.querySelectorAll('#relatedTopicsWrap .related-topic-pill').length`);
-  console.log('  添加考点后胶囊数量:', topicCountAfterAdd);
-  if (topicCountAfterAdd === 0) throw new Error('考点未成功添加');
+  const relatedCheck = await evaluate(ws, `
+    (() => {
+      const pills = document.querySelectorAll('#relatedTopicsWrap .related-topic-pill').length;
+      const cards = document.querySelectorAll('#relatedCardsList .related-card');
+      const hasDragHandle = Array.from(cards).every(c => !!c.querySelector('.rc-drag-handle'));
+      const hasPinBtn = Array.from(cards).every(c => !!c.querySelector('.rc-btn-pin'));
+      const hasSubtopic = !!document.querySelector('#relatedCardsList .rc-subtopic-tag');
+      const firstCardQidBefore = cards.length > 0 ? cards[0].dataset.qid : '';
 
-  // 测试点击 ✕ 即时删除
+      // 模拟点击第二张卡片的置顶按钮
+      let pinSuccess = false;
+      if (cards.length >= 2) {
+        const secondPinBtn = cards[1].querySelector('.rc-btn-pin');
+        if (secondPinBtn) {
+          secondPinBtn.click();
+          const newCards = document.querySelectorAll('#relatedCardsList .related-card');
+          const firstCardQidAfter = newCards.length > 0 ? newCards[0].dataset.qid : '';
+          pinSuccess = (firstCardQidAfter === cards[1].dataset.qid);
+        }
+      }
+
+      return {
+        pills,
+        cardsCount: cards.length,
+        hasDragHandle,
+        hasPinBtn,
+        hasSubtopic,
+        pinSuccess
+      };
+    })()
+  `);
+  console.log('  添加考点后胶囊数:', relatedCheck.pills, '同类题卡片数:', relatedCheck.cardsCount, '拖拽手柄完整:', relatedCheck.hasDragHandle, '置顶按钮完整:', relatedCheck.hasPinBtn, '二级考点标签可见:', relatedCheck.hasSubtopic, '置顶功能验证成功:', relatedCheck.pinSuccess);
+  if (relatedCheck.pills === 0) throw new Error('考点未成功添加');
+  if (!relatedCheck.hasDragHandle) throw new Error('同类题卡片缺少拖拽手柄');
+  if (!relatedCheck.hasPinBtn) throw new Error('同类题卡片缺少置顶按钮');
+  if (!relatedCheck.hasSubtopic) throw new Error('二级子考点标签未正常显示');
+  if (!relatedCheck.pinSuccess) throw new Error('同类题一键置顶未成功触发重排');
+
+  // 测试点击 ✕ 即时删除当前题目考点
   await evaluate(ws, `
     (() => {
       const delBtn = document.querySelector('#relatedTopicsWrap .topic-pill-remove');
