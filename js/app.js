@@ -41,7 +41,23 @@
     }
 
     function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId); }
-    function chapterById(id) { return CHAPTERS.find(c => c.id === id); }
+    function chapterById(id) {
+      if (!id) return null;
+      var found = CHAPTERS.find(function(c) {
+        return c.id === id || c.uid === id || c.legacyId === id;
+      });
+      if (found) return found;
+      if (typeof SUBJECTS !== 'undefined') {
+        for (var s = 0; s < SUBJECTS.length; s++) {
+          var subChs = SUBJECTS[s].chapters || [];
+          var f = subChs.find(function(c) {
+            return c.id === id || c.uid === id || c.legacyId === id;
+          });
+          if (f) return f;
+        }
+      }
+      return null;
+    }
 
     // ===== 合并章节（1000题/李范习题并入）辅助 =====
     // 当前索引所属分区：idx 落在合并章节的伴章段 → 30讲/36讲为 '1000题'，李范全书为 '习题'；否则按标签分类
@@ -181,27 +197,54 @@
       }
       return srcs;
     }
-    // 通用：按「源章节+偏移」拆合（statuses/qBad/sBad 共用）
-    function loadIndexedObj(readRaw) {
+    // 通用：按「源章节+偏移」拆合（statuses/qBad/sBad/bookMismatch 共用）
+    // 业界成熟设计：优先使用物理切图 Slug 与语义标签寻址，向下兼容旧数字索引
+    function loadIndexedObj(readRaw, semanticType) {
       const out = {};
       statusSources().forEach(function (src) {
         let o = {};
-        try { o = JSON.parse(readRaw(src.ch)) || {}; } catch (e) { o = {}; }
+        var raw = readRaw ? readRaw(src.ch) : null;
+        if (!raw && semanticType && src.ch && src.ch.uid) {
+          raw = localStorage.getItem(semanticType + '::' + src.ch.uid);
+        }
+        try { o = JSON.parse(raw) || {}; } catch (e) { o = {}; }
         for (var k = 0; k < src.len; k++) {
-          if (o[k] !== undefined) out[src.offset + k] = o[k];
+          var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(k) : null);
+          var qLabel = (src.ch.labels && src.ch.labels[k]) ? src.ch.labels[k] : null;
+          var val = undefined;
+          if (qSlug && o[qSlug] !== undefined) val = o[qSlug];
+          else if (qLabel && o[qLabel] !== undefined) val = o[qLabel];
+          else if (o[k] !== undefined) val = o[k];
+
+          if (val !== undefined) out[src.offset + k] = val;
         }
       });
       return out;
     }
-    function saveIndexedObj(obj, writeRaw, removeRaw) {
+    function saveIndexedObj(obj, writeRaw, removeRaw, semanticType) {
       statusSources().forEach(function (src) {
         const part = {};
         for (var k = 0; k < src.len; k++) {
-          if (obj[src.offset + k] !== undefined) part[k] = obj[src.offset + k];
+          var val = obj[src.offset + k];
+          if (val !== undefined) {
+            var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(k) : null);
+            if (qSlug) part[qSlug] = val;
+            part[k] = val; // 保持双向兼容
+          }
         }
         const keys = Object.keys(part);
-        if (keys.length > 0) writeRaw(src.ch, JSON.stringify(part));
-        else if (removeRaw) removeRaw(src.ch); // 空源不写、清掉残留空对象，保持存储干净
+        if (keys.length > 0) {
+          var jsonStr = JSON.stringify(part);
+          if (writeRaw) writeRaw(src.ch, jsonStr);
+          if (semanticType && src.ch && src.ch.uid) {
+            safeLSSet(semanticType + '::' + src.ch.uid, jsonStr);
+          }
+        } else {
+          if (removeRaw) removeRaw(src.ch);
+          if (semanticType && src.ch && src.ch.uid) {
+            localStorage.removeItem(semanticType + '::' + src.ch.uid);
+          }
+        }
       });
     }
     function notifyStorageSync() {
@@ -211,39 +254,43 @@
     }
 
     function loadStatuses() {
-      statuses = loadIndexedObj(function (ch) { return localStorage.getItem(chapterStatusKey(ch)); });
+      statuses = loadIndexedObj(function (ch) { return localStorage.getItem(chapterStatusKey(ch)); }, 'status');
     }
     function saveStatuses() {
       saveIndexedObj(statuses,
         function (ch, val) { safeLSSet(chapterStatusKey(ch), val); },
-        function (ch) { localStorage.removeItem(chapterStatusKey(ch)); });
+        function (ch) { localStorage.removeItem(chapterStatusKey(ch)); },
+        'status');
       notifyStorageSync();
     }
     function loadQBad() {
-      qBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); });
+      qBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); }, 'qbad');
     }
     function saveQBad() {
       saveIndexedObj(qBad,
         function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_qbad', val); },
-        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); });
+        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); },
+        'qbad');
       notifyStorageSync();
     }
     function loadSBad() {
-      sBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
+      sBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); }, 'sbad');
     }
     function saveSBad() {
       saveIndexedObj(sBad,
         function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_sbad', val); },
-        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); });
+        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); },
+        'sbad');
       notifyStorageSync();
     }
     function loadBookMismatch() {
-      bookMismatch = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); });
+      bookMismatch = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); }, 'mismatch');
     }
     function saveBookMismatch() {
       saveIndexedObj(bookMismatch,
         function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch', val); },
-        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); });
+        function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); },
+        'mismatch');
       notifyStorageSync();
     }
 
@@ -2767,6 +2814,11 @@
 
     function getQid(subjId, chId, idx) {
       var sid = normalizeSubjectId(subjId || curSubjectId || 'math');
+      var ch = chapterById(chId || currentChapterId);
+      if (ch && ch.uid) {
+        var slug = ch.getQuestionSlug ? ch.getQuestionSlug(idx) : null;
+        if (slug) return ch.uid + '::' + slug;
+      }
       return sid + '::' + (chId || currentChapterId) + '::' + idx;
     }
 
@@ -2777,36 +2829,75 @@
     function parseQid(qid) {
       if (!qid || typeof qid !== 'string') return null;
       var parts = qid.split('::');
-      if (parts.length < 3) return null;
-      var sid = normalizeSubjectId(parts[0]);
-      var idx = parseInt(parts[2], 10);
-      if (isNaN(idx) || idx < 0) return null;
-      return {
-        subjectId: sid,
-        chapterId: parts[1],
-        idx: idx,
-        qIdx: idx
-      };
+      // Format 1: 语义化 Canonical QID: <subjectId>::<book>::<discipline>::<chapterSlug>::<questionSlug> (>= 5 parts)
+      if (parts.length >= 5) {
+        var sid = normalizeSubjectId(parts[0]);
+        var chapterUid = parts.slice(0, 4).join('::');
+        var questionSlug = parts[4];
+        var ch = chapterById(chapterUid);
+        if (ch) {
+          var idx = ch.getIdxBySlug ? ch.getIdxBySlug(questionSlug) : -1;
+          return {
+            subjectId: sid,
+            chapterId: ch.id,
+            chapterUid: ch.uid,
+            idx: idx >= 0 ? idx : 0,
+            qIdx: idx >= 0 ? idx : 0,
+            questionSlug: questionSlug,
+            canonicalQid: ch.uid + '::' + questionSlug,
+            isSemantic: true
+          };
+        }
+      }
+      // Format 2: 传统数字 QID: <subjectId>::<chapterId>::<idxOrSlug> (3 parts)
+      if (parts.length === 3) {
+        var sid = normalizeSubjectId(parts[0]);
+        var cid = parts[1];
+        var ch = chapterById(cid);
+        var idxOrSlug = parts[2];
+        var idx = parseInt(idxOrSlug, 10);
+        if (isNaN(idx) && ch && ch.getIdxBySlug) {
+          idx = ch.getIdxBySlug(idxOrSlug);
+        }
+        var slug = (ch && ch.getQuestionSlug && !isNaN(idx)) ? ch.getQuestionSlug(idx) : idxOrSlug;
+        return {
+          subjectId: sid,
+          chapterId: cid,
+          chapterUid: ch ? ch.uid : null,
+          idx: !isNaN(idx) ? idx : 0,
+          qIdx: !isNaN(idx) ? idx : 0,
+          questionSlug: slug,
+          canonicalQid: (ch && ch.uid && slug) ? (ch.uid + '::' + slug) : qid
+        };
+      }
+      return null;
     }
 
     function getQuestionMeta(qid) {
       var parsed = parseQid(qid);
-      if (!parsed || isNaN(parsed.idx)) return null;
+      if (!parsed) return null;
 
       var subj = SUBJECTS.find(function(s) { return s.id === parsed.subjectId; });
       if (!subj) return null;
 
-      const ch = subj.chapters ? subj.chapters.find(function(c) { return c.id === parsed.chapterId; }) : null;
+      var ch = chapterById(parsed.chapterUid || parsed.chapterId);
       if (!ch) return null;
 
-      var label = (ch.labels && ch.labels[parsed.idx]) ? ch.labels[parsed.idx] : '#' + (parsed.idx + 1);
+      var idx = parsed.idx;
+      var label = (ch.labels && ch.labels[idx]) ? ch.labels[idx] : '#' + (idx + 1);
+      var slug = parsed.questionSlug || (ch.getQuestionSlug ? ch.getQuestionSlug(idx) : null);
 
-      // 读取该题当前掌握度状态 (兼容 statusKey)
+      // 读取该题当前掌握度状态 (兼容 statusKey / semanticKey)
       var status = null;
       try {
         var statusKey = ch.id + '_' + subj.storageSuffix + '_status';
         var statusObj = JSON.parse(localStorage.getItem(statusKey) || '{}');
-        status = statusObj[parsed.idx] || null;
+        if (slug && statusObj[slug] !== undefined) status = statusObj[slug];
+        else if (statusObj[idx] !== undefined) status = statusObj[idx];
+        else if (ch.uid) {
+          var semObj = JSON.parse(localStorage.getItem('status::' + ch.uid) || '{}');
+          status = (slug && semObj[slug] !== undefined) ? semObj[slug] : (semObj[idx] || null);
+        }
       } catch (e) {}
 
       var book = ch.wb || subj.name || '题库';
@@ -2814,16 +2905,18 @@
       var displayTitle = book + ' · ' + chShort + ' ' + label;
 
       return {
-        qid: getQid(parsed.subjectId, parsed.chapterId, parsed.idx),
+        qid: parsed.canonicalQid || (ch.uid && slug ? (ch.uid + '::' + slug) : getQid(parsed.subjectId, ch.id, idx)),
         subjectId: parsed.subjectId,
         subjectName: subj.name,
-        chapterId: parsed.chapterId,
+        chapterId: ch.id,
+        chapterUid: ch.uid,
         chapterName: ch.name,
         chapterShort: chShort,
         bookName: book,
-        idx: parsed.idx,
-        qIdx: parsed.idx,
+        idx: idx,
+        qIdx: idx,
         label: label,
+        slug: slug,
         status: status,
         displayTitle: displayTitle
       };
@@ -3135,9 +3228,11 @@
       if (!target) return '';
       var s = SUBJECTS.find(function(sub) { return sub.id === target.subjectId; });
       if (!s || !s.chapters) return '';
-      var ch = s.chapters.find(function(c) { return c.id === target.chapterId; });
-      if (!ch || !ch.labels || target.qIdx < 0 || target.qIdx >= ch.labels.length) return '';
-      return getImgBaseForSubjectChapterIdx(s, ch, target.qIdx);
+      var ch = chapterById(target.chapterUid || target.chapterId);
+      if (!ch || !ch.labels) return '';
+      var idx = (target.idx >= 0) ? target.idx : (ch.getIdxBySlug ? ch.getIdxBySlug(target.questionSlug) : -1);
+      if (idx < 0 || idx >= ch.labels.length) return '';
+      return getImgBaseForSubjectChapterIdx(s, ch, idx);
     }
 
     function getImgPathForQid(qid) {
@@ -7117,10 +7212,19 @@ ${cardsHTML}
       const srcs = statusSources();
       srcs.forEach(function(src) {
         let obj;
-        try { obj = JSON.parse(getSm2Item(sm2Key(src.ch)) || '{}'); } catch(e) { obj = {}; }
+        var raw = getSm2Item(sm2Key(src.ch));
+        if (!raw && src.ch && src.ch.uid) raw = localStorage.getItem('sm2::' + src.ch.uid);
+        try { obj = JSON.parse(raw || '{}'); } catch(e) { obj = {}; }
         var len = src.len;
         for (var i = 0; i < len; i++) {
-          if (obj[i]) sm2[src.offset + i] = obj[i];
+          var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(i) : null);
+          var qLabel = (src.ch.labels && src.ch.labels[i]) ? src.ch.labels[i] : null;
+          var val = undefined;
+          if (qSlug && obj[qSlug] !== undefined) val = obj[qSlug];
+          else if (qLabel && obj[qLabel] !== undefined) val = obj[qLabel];
+          else if (obj[i] !== undefined) val = obj[i];
+
+          if (val) sm2[src.offset + i] = val;
         }
       });
     }
@@ -7132,12 +7236,20 @@ ${cardsHTML}
         var out = {};
         var len = src.len;
         for (var i = 0; i < len; i++) {
-          if (sm2[src.offset + i]) out[i] = sm2[src.offset + i];
+          var val = sm2[src.offset + i];
+          if (val) {
+            var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(i) : null);
+            if (qSlug) out[qSlug] = val;
+            out[i] = val; // 保持双向兼容
+          }
         }
         if (Object.keys(out).length > 0) {
-          safeLSSet(sm2Key(src.ch), JSON.stringify(out));
+          var jsonStr = JSON.stringify(out);
+          safeLSSet(sm2Key(src.ch), jsonStr);
+          if (src.ch && src.ch.uid) safeLSSet('sm2::' + src.ch.uid, jsonStr);
         } else {
           localStorage.removeItem(sm2Key(src.ch));
+          if (src.ch && src.ch.uid) localStorage.removeItem('sm2::' + src.ch.uid);
         }
       });
       notifyStorageSync();
@@ -7148,9 +7260,18 @@ ${cardsHTML}
       var out = {};
       statusSources(ch).forEach(function(src) {
         var obj;
-        try { obj = JSON.parse(getSm2Item(sm2Key(src.ch)) || '{}'); } catch (e) { obj = {}; }
+        var raw = getSm2Item(sm2Key(src.ch));
+        if (!raw && src.ch && src.ch.uid) raw = localStorage.getItem('sm2::' + src.ch.uid);
+        try { obj = JSON.parse(raw || '{}'); } catch (e) { obj = {}; }
         for (var i = 0; i < src.len; i++) {
-          if (obj[i]) out[src.offset + i] = obj[i];
+          var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(i) : null);
+          var qLabel = (src.ch.labels && src.ch.labels[i]) ? src.ch.labels[i] : null;
+          var val = undefined;
+          if (qSlug && obj[qSlug] !== undefined) val = obj[qSlug];
+          else if (qLabel && obj[qLabel] !== undefined) val = obj[qLabel];
+          else if (obj[i] !== undefined) val = obj[i];
+
+          if (val) out[src.offset + i] = val;
         }
       });
       return out;
@@ -7161,12 +7282,20 @@ ${cardsHTML}
       statusSources(ch).forEach(function(src) {
         var out = {};
         for (var i = 0; i < src.len; i++) {
-          if (merged[src.offset + i]) out[i] = merged[src.offset + i];
+          var val = merged[src.offset + i];
+          if (val) {
+            var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(i) : null);
+            if (qSlug) out[qSlug] = val;
+            out[i] = val;
+          }
         }
         if (Object.keys(out).length > 0) {
-          safeLSSet(sm2Key(src.ch), JSON.stringify(out));
+          var jsonStr = JSON.stringify(out);
+          safeLSSet(sm2Key(src.ch), jsonStr);
+          if (src.ch && src.ch.uid) safeLSSet('sm2::' + src.ch.uid, jsonStr);
         } else {
           localStorage.removeItem(sm2Key(src.ch));
+          if (src.ch && src.ch.uid) localStorage.removeItem('sm2::' + src.ch.uid);
         }
       });
       notifyStorageSync();

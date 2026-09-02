@@ -658,4 +658,84 @@
         subjOrder: ['阅读精读'],
         chapters: []
       }
-    ]
+    ];
+
+    // ===== 全局题目实体与章节语义模型挂载 (Question & Chapter Semantic Domain Initialization) =====
+    (function initializeSemanticDomain() {
+      function getImgKeyForChapter(ch, label) {
+        let raw = String(label).trim();
+        if (ch.wb === '小题300' || ch.wb === '强化240' || ch.wb === '真题分类') {
+          let n = parseInt(raw, 10);
+          return !isNaN(n) ? ('q' + String(n).padStart(3, '0')) : ('q' + raw);
+        }
+        if (raw.startsWith('ex_') || raw.startsWith('pb_') || raw.startsWith('ce_')) {
+          return raw.replace(/\s+/g, '_');
+        }
+        if (raw.startsWith('例题')) {
+          return 'ce_' + raw.replace('例题', '').replace(/\s+/g, '_');
+        }
+        if (raw.startsWith('例')) {
+          return 'ex_' + raw.substring(1).replace(/\s+/g, '_');
+        }
+        return 'pb_' + raw.replace(/\s+/g, '_');
+      }
+
+      function getChapterSlug(ch) {
+        var name = ch.name || '';
+        var short = ch.short || '';
+        var m_st = (name + ' ' + short).match(/自测([一二三四五六七八九十\d]+)/);
+        if (m_st) {
+          var cnMap = {'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9,'十':10};
+          var v = m_st[1];
+          var num = !isNaN(parseInt(v,10)) ? parseInt(v,10) : (cnMap[v] || 1);
+          return 'st' + String(num).padStart(2, '0');
+        }
+        var m_lec = name.match(/第(\d+)讲/);
+        if (m_lec) return 'lec' + String(parseInt(m_lec[1], 10)).padStart(2, '0');
+        var m_ch = name.match(/第(\d+)章/);
+        if (m_ch) return 'ch' + String(parseInt(m_ch[1], 10)).padStart(2, '0');
+        var m_pfx = short.match(/^(\d+)\s/);
+        if (m_pfx) return 'ch' + String(parseInt(m_pfx[1], 10)).padStart(2, '0');
+        return ch.id;
+      }
+
+      SUBJECTS.forEach(function(subj) {
+        if (!subj.chapters) return;
+        subj.chapters.forEach(function(ch) {
+          ch.legacyId = ch.id;
+          ch.book = ch.wb;
+          ch.discipline = ch.subj;
+          ch.chapterSlug = getChapterSlug(ch);
+          ch.uid = subj.id + '::' + ch.wb + '::' + ch.subj + '::' + ch.chapterSlug;
+
+          // 根据索引或标签获取题目稳定的物理 Slug
+          ch.getQuestionSlug = function(idxOrLabel) {
+            var l = (typeof idxOrLabel === 'number') ? (ch.labels && ch.labels[idxOrLabel]) : idxOrLabel;
+            if (!l) return null;
+            return getImgKeyForChapter(ch, l);
+          };
+
+          // 根据 Slug 或 Label 反查在当前 labels 数组中的下标
+          ch.getIdxBySlug = function(slugOrLabel) {
+            if (!slugOrLabel || !ch.labels) return -1;
+            for (var i = 0; i < ch.labels.length; i++) {
+              if (ch.labels[i] === slugOrLabel) return i;
+              if (getImgKeyForChapter(ch, ch.labels[i]) === slugOrLabel) return i;
+            }
+            return -1;
+          };
+
+          // 根据 Slug 反查题目显示标签
+          ch.getLabelBySlug = function(slug) {
+            var idx = ch.getIdxBySlug(slug);
+            return (idx >= 0 && ch.labels) ? ch.labels[idx] : slug;
+          };
+
+          // 获取全局唯一的规范题目 URN
+          ch.getQuestionUID = function(idxOrLabel) {
+            var slug = ch.getQuestionSlug(idxOrLabel);
+            return slug ? (ch.uid + '::' + slug) : null;
+          };
+        });
+      });
+    })();
