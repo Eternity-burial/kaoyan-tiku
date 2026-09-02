@@ -245,12 +245,12 @@
     return p;
   }
 
-  // 获取所有支持的真题年份或文献列表
+  // 获取所有支持的真题年份列表 (1998 ~ 2026)
   function getAvailableYears() {
     return ALL_ENGLISH_YEARS;
   }
 
-  // 获取当前选定年份/文献的数据集
+  // 获取当前选定年份的数据集
   function getCurrentDataset() {
     if (!window.ENGLISH_DATA) return { texts: [] };
     if (window.ENGLISH_DATA[state.currentYear]) {
@@ -400,7 +400,7 @@
     }
   }
 
-  // 加载当前年份/文献的掌握度与笔记
+  // 加载当前年份的掌握度与笔记
   function loadYearStorage() {
     const subjKey = state.currentSubject || 'english';
     try {
@@ -412,7 +412,7 @@
     }
   }
 
-  // 渲染年份/文献标题下拉面板
+  // 渲染年份标题下拉面板
   function renderYearSelector() {
     if (!dom.txtYear || !dom.panelYear) return;
     dom.txtYear.textContent = `${state.currentYear} 年真题`;
@@ -451,7 +451,7 @@
     if (dom.panelYear) dom.panelYear.classList.remove('open');
   }
 
-  // 切换年份/文献：恢复该项上次停的位置
+  // 切换真题年份：恢复该年份上次停的位置
   async function switchYear(year) {
     if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) {
       if (dom.passagePane) {
@@ -667,125 +667,10 @@
     renderQuestion();
   }
 
-  // 渲染文章主体（支持英语真题分篇精读 与 毕设文献全量流式阅读器）
+  // 渲染文章主体（考研英语真题单篇精读）
   function renderPassage() {
     if (!dom.passagePane) return;
 
-    if (state.currentSubject === 'bishe') {
-      const paper = getCurrentDataset();
-      if (!paper || !paper.sections) {
-        dom.passagePane.innerHTML = '<div style="padding:48px 20px;color:#94a3b8;text-align:center;font-size:15px;">暂无文献数据</div>';
-        return;
-      }
-
-      let linksHtml = '';
-      if (paper.meta && paper.meta.links) {
-        linksHtml = paper.meta.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" class="paper-link-tag">${escapeHtml(l.label)}</a>`).join('');
-      }
-
-      let html = `
-        <div class="passage-header-box" style="margin-bottom: 28px;">
-          <span class="passage-topic-tag">${escapeHtml(paper.meta?.journal || '前沿控制顶刊文献精读')}</span>
-          <h1 class="passage-title-en" style="font-size: 23px; line-height: 1.4; margin: 12px 0 8px 0; color: var(--text-primary); font-weight: 800;">${escapeHtml(paper.title)}</h1>
-          <div class="passage-title-zh" style="font-size: 15px; font-weight: 600; color: var(--text-secondary);">${escapeHtml(paper.chineseTitle)}</div>
-          
-          <div class="paper-meta-banner">
-            <div class="paper-meta-row"><span class="paper-meta-label">作者团队:</span> ${escapeHtml(paper.meta?.authors || '')}</div>
-            <div class="paper-meta-row"><span class="paper-meta-label">研究机构:</span> ${escapeHtml(paper.meta?.institution || '')}</div>
-            <div class="paper-meta-row"><span class="paper-meta-label">发表出处:</span> ${escapeHtml(paper.meta?.journal || '')}</div>
-            ${linksHtml ? `<div class="paper-meta-row" style="margin-top:8px;">${linksHtml}</div>` : ''}
-          </div>
-        </div>
-      `;
-
-      paper.sections.forEach(sec => {
-        html += `
-          <div class="reader-section-block" id="${sec.id}">
-            <div class="reader-section-header">
-              <span class="section-num-badge">${sec.sectionNumber}</span>
-              <span class="section-en-title">${escapeHtml(sec.title)}</span>
-              <span class="section-zh-title">${escapeHtml(sec.chineseTitle)}</span>
-            </div>
-        `;
-
-        if (sec.figure) {
-          html += `
-            <div class="passage-figure-box">
-              <img src="${escapeHtml(sec.figure.image)}" alt="${escapeHtml(sec.figure.alt || '')}" onclick="window.kyApp.openFigureLightbox(this.src)" class="passage-figure-img" title="点击放大查看高清图表">
-              <div class="passage-figure-caption">${escapeHtml(sec.figure.caption || '')}</div>
-            </div>
-          `;
-        }
-        if (sec.figures && Array.isArray(sec.figures)) {
-          sec.figures.forEach(fig => {
-            html += `
-              <div class="passage-figure-box">
-                <img src="${escapeHtml(fig.image)}" alt="${escapeHtml(fig.alt || '')}" onclick="window.kyApp.openFigureLightbox(this.src)" class="passage-figure-img" title="点击放大查看高清图表">
-                <div class="passage-figure-caption">${escapeHtml(fig.caption || '')}</div>
-              </div>
-            `;
-          });
-        }
-
-        (sec.paragraphs || []).forEach(p => {
-          html += `
-            <div class="paragraph-block" id="para-${p.pIndex}">
-              <div class="sentence-list">
-          `;
-
-          (p.sentences || []).forEach(s => {
-            const sentenceText = renderAnnotatedSentenceText(s.text, s.vocab);
-            const sentenceTrans = renderAnnotatedTranslation(s.translation, s.vocab);
-
-            html += `
-              <div class="sentence-item" id="sentence-${s.id}" data-id="${s.id}">
-                <span class="sentence-id-tag">[${s.id}]</span>
-                <span class="sentence-text">${sentenceText} </span>
-                <div class="sentence-trans">${sentenceTrans}</div>
-              </div>
-            `;
-          });
-
-          html += `
-              </div>
-            </div>
-          `;
-        });
-
-        html += `</div>`;
-      });
-
-      dom.passagePane.innerHTML = html;
-
-      if (window.renderMathInElement) {
-        try {
-          window.renderMathInElement(dom.passagePane, {
-            delimiters: [
-              { left: '$$', right: '$$', display: true },
-              { left: '$', right: '$', display: false },
-              { left: '\\[', right: '\\]', display: true },
-              { left: '\\(', right: '\\)', display: false }
-            ],
-            throwOnError: false
-          });
-        } catch (e) {}
-      }
-
-      if (dom.passagePane) {
-        dom.passagePane.classList.toggle('show-all-trans', !!state.showAllTranslation);
-      }
-      if (dom.layout) {
-        dom.layout.classList.toggle('show-all-trans', !!state.showAllTranslation);
-      }
-      if (dom.btnToggleTrans) {
-        dom.btnToggleTrans.classList.toggle('active', !!state.showAllTranslation);
-      }
-
-      attachPassageEvents();
-      return;
-    }
-
-    // 考研英语真题单篇精读渲染
     const text = getCurrentText();
     if (!text) {
       dom.passagePane.innerHTML = '<div style="padding:20px;color:#94a3b8;text-align:center;">暂无文章数据</div>';
