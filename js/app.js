@@ -3589,12 +3589,15 @@
       if (!t) return false;
       activeRenameTopicId = topicId;
       topicRenameModalOpen = true;
+      document.body.classList.add('modal-open');
       var modal = document.getElementById('topicRenameModal');
       var input = document.getElementById('inputRenameTopicName');
       var preview = document.getElementById('renameTopicPreview');
       if (!modal || !input) return false;
       input.value = t.name || '';
       if (preview) preview.innerHTML = renderTopicTextHtml(input.value) || '<span style="color:var(--text-muted)">（暂无输入内容）</span>';
+      var clearBtn = document.getElementById('btnClearRenameTopic');
+      if (clearBtn) clearBtn.style.display = input.value ? 'inline-flex' : 'none';
       modal.style.display = 'flex';
       setTimeout(function() {
         input.focus();
@@ -3606,6 +3609,9 @@
     function closeRenameTopicModal() {
       topicRenameModalOpen = false;
       activeRenameTopicId = null;
+      if (!relatedModalOpen) {
+        document.body.classList.remove('modal-open');
+      }
       var modal = document.getElementById('topicRenameModal');
       if (modal) modal.style.display = 'none';
     }
@@ -3682,6 +3688,7 @@
 
     function openRelatedModal() {
       relatedModalOpen = true;
+      document.body.classList.add('modal-open');
       var modal = document.getElementById('relatedModal');
       if (!modal) return;
       var curQid = getCurrentQid();
@@ -3705,6 +3712,9 @@
 
     function closeRelatedModal() {
       relatedModalOpen = false;
+      if (!topicRenameModalOpen) {
+        document.body.classList.remove('modal-open');
+      }
       var modal = document.getElementById('relatedModal');
       if (!modal) return;
       modal.style.display = 'none';
@@ -4808,8 +4818,21 @@
 
       // 模态框左侧全库考点搜索过滤
       var inputFilter = document.getElementById('inputFilterTopics');
+      var btnClearFilter = document.getElementById('btnClearFilterTopics');
       if (inputFilter) {
-        inputFilter.addEventListener('input', renderRelatedModalTopics);
+        inputFilter.addEventListener('input', function() {
+          if (btnClearFilter) btnClearFilter.style.display = this.value ? 'inline-flex' : 'none';
+          renderRelatedModalTopics();
+        });
+        if (btnClearFilter) {
+          btnClearFilter.onclick = function(e) {
+            e.stopPropagation();
+            inputFilter.value = '';
+            btnClearFilter.style.display = 'none';
+            renderRelatedModalTopics();
+            inputFilter.focus();
+          };
+        }
       }
 
       var btnToggleSol = document.getElementById('rmBtnToggleSol');
@@ -4825,6 +4848,7 @@
       // 新建主题按钮、实时公式预览与快捷输入工具栏
       var btnCreate = document.getElementById('btnCreateTopic');
       var inputName = document.getElementById('inputNewTopicName');
+      var btnClearNew = document.getElementById('btnClearNewTopic');
       var newPreviewWrap = document.getElementById('rmTopicPreviewWrap');
       var newPreviewEl = document.getElementById('rmTopicPreview');
       var newToolbar = document.getElementById('rmNewTopicToolbar');
@@ -4832,6 +4856,7 @@
       var updateNewPreview = function() {
         if (!inputName || !newPreviewEl) return;
         var val = inputName.value.trim();
+        if (btnClearNew) btnClearNew.style.display = inputName.value ? 'inline-flex' : 'none';
         if (val) {
           if (newPreviewWrap) newPreviewWrap.style.display = 'flex';
           newPreviewEl.innerHTML = renderTopicTextHtml(val);
@@ -4846,6 +4871,15 @@
         inputName.onkeydown = function(e) {
           if (e.key === 'Enter') { e.preventDefault(); doCreate(); }
         };
+        if (btnClearNew) {
+          btnClearNew.onclick = function(e) {
+            e.stopPropagation();
+            inputName.value = '';
+            btnClearNew.style.display = 'none';
+            updateNewPreview();
+            inputName.focus();
+          };
+        }
       }
 
       if (newToolbar && inputName) {
@@ -4893,10 +4927,12 @@
       if (btnConfirmRename) btnConfirmRename.onclick = submitRenameTopic;
 
       var inputRename = document.getElementById('inputRenameTopicName');
+      var btnClearRename = document.getElementById('btnClearRenameTopic');
       var previewRename = document.getElementById('renameTopicPreview');
       var updateRenamePreview = function() {
         if (!inputRename || !previewRename) return;
         var val = inputRename.value.trim();
+        if (btnClearRename) btnClearRename.style.display = inputRename.value ? 'inline-flex' : 'none';
         previewRename.innerHTML = val ? renderTopicTextHtml(val) : '<span style="color:var(--text-muted)">（暂无输入内容）</span>';
       };
       if (inputRename) {
@@ -4910,6 +4946,15 @@
             closeRenameTopicModal();
           }
         });
+        if (btnClearRename) {
+          btnClearRename.onclick = function(e) {
+            e.stopPropagation();
+            inputRename.value = '';
+            btnClearRename.style.display = 'none';
+            updateRenamePreview();
+            inputRename.focus();
+          };
+        }
       }
 
       var renameToolbar = document.getElementById('renameQuickToolbar');
@@ -4943,10 +4988,12 @@
 
       // 搜索题号
       var searchInput = document.getElementById('inputRelatedSearch');
+      var btnClearSearch = document.getElementById('btnClearRelatedSearch');
       var searchResults = document.getElementById('rmSearchResults');
       if (searchInput && searchResults) {
-        searchInput.oninput = function() {
-          var q = this.value.trim().toLowerCase();
+        var doSearch = function() {
+          var q = searchInput.value.trim().toLowerCase();
+          if (btnClearSearch) btnClearSearch.style.display = searchInput.value ? 'inline-flex' : 'none';
           if (!q) { searchResults.innerHTML = ''; return; }
           var curQid = getCurrentQid();
           var matches = [];
@@ -5015,7 +5062,62 @@
             };
           });
         };
+
+        searchInput.oninput = doSearch;
+        if (btnClearSearch) {
+          btnClearSearch.onclick = function(e) {
+            e.stopPropagation();
+            searchInput.value = '';
+            btnClearSearch.style.display = 'none';
+            doSearch();
+            searchInput.focus();
+          };
+        }
       }
+
+      // ===== L 面板滚轮彻底隔离机制 =====
+      function isolateWheelScroll(element) {
+        if (!element) return;
+        element.addEventListener('wheel', function(e) {
+          var scrollTop = this.scrollTop;
+          var scrollHeight = this.scrollHeight;
+          var height = this.clientHeight;
+          var delta = e.deltaY;
+          var up = delta < 0;
+
+          var prevent = false;
+          if (up && scrollTop <= 0) {
+            prevent = true;
+          } else if (!up && scrollTop + height >= scrollHeight - 1) {
+            prevent = true;
+          }
+
+          if (prevent) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, { passive: false });
+      }
+
+      function setupModalWheelIsolation(backdropEl) {
+        if (!backdropEl) return;
+        backdropEl.addEventListener('wheel', function(e) {
+          if (e.target === backdropEl) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, { passive: false });
+      }
+
+      setupModalWheelIsolation(document.getElementById('relatedModal'));
+      setupModalWheelIsolation(document.getElementById('topicRenameModal'));
+      isolateWheelScroll(document.getElementById('rmNavSection'));
+      isolateWheelScroll(document.getElementById('rmAvailableTopics'));
+      isolateWheelScroll(document.getElementById('rmViewerBody'));
+      isolateWheelScroll(document.getElementById('rmRecentList'));
+      isolateWheelScroll(document.getElementById('rmSearchResults'));
+      isolateWheelScroll(document.getElementById('renameTopicPreview'));
+      isolateWheelScroll(document.getElementById('quickTopicList'));
 
       document.addEventListener('click', function(e) {
         if (!relatedModalOpen) return;

@@ -374,6 +374,53 @@ async function run() {
     throw new Error('L面板在标记掌握度后当前做题按钮未能强制保持紫色高亮');
   }
 
+  // 测试 L 面板现代精致输入框容器、图标与清空按钮交互
+  console.log('  测试 L 面板精致输入框容器与一键清空交互...');
+  const inputUiCheck = await evaluate(ws, `
+    (() => {
+      const hasModalOpenBody = document.body.classList.contains('modal-open');
+      const filterWrap = document.querySelector('.rm-filter-search-wrap');
+      const createInputContainer = document.querySelector('#rmCreateTopicCard .rm-input-container');
+      const createBtn = document.getElementById('btnCreateTopic');
+      const inputNew = document.getElementById('inputNewTopicName');
+      const clearBtnNew = document.getElementById('btnClearNewTopic');
+
+      let clearWorks = false;
+      if (inputNew && clearBtnNew) {
+        inputNew.value = '测试临时输入';
+        inputNew.dispatchEvent(new Event('input', { bubbles: true }));
+        const isClearShown = clearBtnNew.style.display !== 'none';
+        clearBtnNew.click();
+        clearWorks = isClearShown && (inputNew.value === '') && (clearBtnNew.style.display === 'none');
+      }
+
+      // 测试滚轮隔离：向模态框背景与题号区发送 wheel 事件，背景页面 window.scrollY 不受影响
+      const initialScrollY = window.scrollY;
+      const modalBackdrop = document.getElementById('relatedModal');
+      if (modalBackdrop) {
+        modalBackdrop.dispatchEvent(new WheelEvent('wheel', { deltaY: 200, bubbles: true, cancelable: true }));
+      }
+      const scrollYAfter = window.scrollY;
+      const wheelIsolated = (initialScrollY === scrollYAfter) && hasModalOpenBody;
+
+      return {
+        hasModalOpenBody,
+        hasFilterWrap: !!filterWrap,
+        hasCreateInputContainer: !!createInputContainer,
+        hasCreateBtn: !!createBtn && createBtn.classList.contains('rm-btn-create-topic'),
+        clearWorks,
+        wheelIsolated
+      };
+    })()
+  `);
+  console.log('  L面板输入框体系检查:', inputUiCheck);
+  if (!inputUiCheck.hasModalOpenBody) throw new Error('L面板打开时未在 body 上添加 modal-open 类名');
+  if (!inputUiCheck.hasFilterWrap) throw new Error('缺少考点搜索药丸框 .rm-filter-search-wrap');
+  if (!inputUiCheck.hasCreateInputContainer) throw new Error('缺少新建考点输入容器 .rm-input-container');
+  if (!inputUiCheck.hasCreateBtn) throw new Error('新建考点按钮样式升级未能生效');
+  if (!inputUiCheck.clearWorks) throw new Error('输入框一键清空按钮交互失败');
+  if (!inputUiCheck.wheelIsolated) throw new Error('L面板未实现与主页面滚轮的彻底隔离');
+
   // 测试在 L 模态框内点击题目图唤起灯箱大图，并验证灯箱显示层级（z-index）高于模态框
   console.log('  测试 L 模态框内唤起灯箱及层级置顶...');
   const lbCheck = await evaluate(ws, `
