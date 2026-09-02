@@ -680,7 +680,7 @@
 
       let linksHtml = '';
       if (paper.meta && paper.meta.links) {
-        linksHtml = paper.meta.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" class="paper-link-tag">🔗 ${escapeHtml(l.label)}</a>`).join('');
+        linksHtml = paper.meta.links.map(l => `<a href="${escapeHtml(l.url)}" target="_blank" class="paper-link-tag">${escapeHtml(l.label)}</a>`).join('');
       }
 
       let html = `

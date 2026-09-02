@@ -3305,7 +3305,7 @@
                 (statusText ? '<span style="font-size:11.5px;color:var(--text-muted);font-weight:600">' + escapeHtml(statusText) + '</span>' : '') +
               '</div>' +
               '<div class="rc-head-actions">' +
-                '<button type="button" class="gel-btn btn-sm rc-btn-pin" data-pin-qid="' + escapeHtml(q.qid) + '" title="将此题置顶为最高相似度同类题">🔝 置顶</button>' +
+                '<button type="button" class="gel-btn btn-sm rc-btn-pin" data-pin-qid="' + escapeHtml(q.qid) + '" title="将此题置顶为最高相似度同类题">置顶</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-sol" data-sol-qid="' + escapeHtml(q.qid) + '">显示解析</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-jump" data-jump-qid="' + escapeHtml(q.qid) + '">跳转做此题</button>' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-unlink" data-unlink-qid="' + escapeHtml(q.qid) + '" title="移出与当前题目的关联">移出</button>' +
@@ -5350,7 +5350,7 @@
         { label: '高斯公式 (空间)', code: '\\oiint_\\Sigma P\\,\\mathrm{d}y\\mathrm{d}z + Q\\,\\mathrm{d}z\\mathrm{d}x + R\\,\\mathrm{d}x\\mathrm{d}y = \\iiint_\\Omega \\left( \\frac{\\partial P}{\\partial x} + \\frac{\\partial Q}{\\partial y} + \\frac{\\partial R}{\\partial z} \\right) \\mathrm{d}V', render: '高斯公式' },
         { label: '施密特正交化步骤', code: '\\boldsymbol{\\beta}_1 = \\boldsymbol{\\alpha}_1, \\quad \\boldsymbol{\\beta}_2 = \\boldsymbol{\\alpha}_2 - \\frac{(\\boldsymbol{\\alpha}_2, \\boldsymbol{\\beta}_1)}{(\\boldsymbol{\\beta}_1, \\boldsymbol{\\beta}_1)}\\boldsymbol{\\beta}_1', render: '正交化' },
         { label: '重点解析引用块', code: '> **重点解析**：|', render: '重点解析' },
-        { label: '易错警示引用块', code: '> ⚠️ **易错警示**：|', render: '易错警示' }
+        { label: '易错警示引用块', code: '> **易错警示**：|', render: '易错警示' }
       ]
     };
 
