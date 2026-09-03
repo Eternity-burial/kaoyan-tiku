@@ -328,9 +328,9 @@ test('图片路径生成器: 数学例题/习题与822特例', () => {
 // 3. StorageSync 数据采集正则与安全性
 console.log('\n--- 3. StorageSync 数据同步正则与防污染 ---');
 
-const syncKeyRegex = /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_english_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)|^([a-z0-9]+)_ui_|^(?:status|sm2|notes|qbad|sbad|mismatch)::/;
+const syncKeyRegex = /^kaoyan\.(?:q|g|ui)\.|^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_english_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)|^([a-z0-9]+)_ui_|^(?:status|sm2|notes|qbad|sbad|mismatch)::/;
 
-test('StorageSync 正则精确覆盖全部题库关键数据键 (数学、822、英语)', () => {
+test('StorageSync 正则精确覆盖全部题库关键数据键 (数学、822、英语、v3存储)', () => {
   const validKeys = [
     'ch1_s1_status', 'ch212_s1_notes', 'm3ch1_822_qbad', 'ch5_822_book_mismatch',
     'sm2_math_ch1', 'sm2_822_ch5',
@@ -340,7 +340,8 @@ test('StorageSync 正则精确覆盖全部题库关键数据键 (数学、822、
     'kaoyan_resume', 'kaoyan_study_log', 'kaoyan_ui_filters', 'kaoyan_subject',
     'kaoyan_theme', 'kaoyan_dark_img_filter', 'kaoyan_review_session', 'kaoyan_related_topics', 'kaoyan_related_affinity',
     'kaoyan_resume_english_y2010',
-    'math_ui_solution', '822_ui_solution', 'english_ui_solution'
+    'math_ui_solution', '822_ui_solution', 'english_ui_solution',
+    'kaoyan.q.math::基础30讲::高数::lec01', 'kaoyan.g.resume', 'kaoyan.g.filters', 'kaoyan.ui.math'
   ];
 
   validKeys.forEach(k => {
@@ -591,6 +592,242 @@ test('.gitignore 规则覆盖各类敏感 token、session 和私钥文件', () =
   assert.ok(gitignoreContent.includes('*session*'), '.gitignore must contain *session*');
   assert.ok(gitignoreContent.includes('*.key'), '.gitignore must contain *.key');
   assert.ok(gitignoreContent.includes('*.env*'), '.gitignore must contain *.env*');
+});
+
+// ===== 9. StorageV3 核心模块与防漂移架构单元测试 =====
+console.log('\n--- 9. StorageV3: DataValidator / ChapterStore / GlobalStore / UiStore / MigrationRunner / ResumeStore ---');
+
+const storageV3Src = fs.readFileSync(path.join(__dirname, '../js/storage_v3.js'), 'utf8');
+
+function makeMockLS() {
+  const store = {};
+  return {
+    getItem(k) { return store[k] !== undefined ? store[k] : null; },
+    setItem(k, v) { store[k] = String(v); },
+    removeItem(k) { delete store[k]; },
+    get length() { return Object.keys(store).length; },
+    key(i) { return Object.keys(store)[i] || null; },
+    _store: store
+  };
+}
+
+const mockLS3 = makeMockLS();
+const v3Win = { localStorage: mockLS3, StorageV3: null, console: console };
+new Function('window', 'localStorage', storageV3Src)(v3Win, mockLS3);
+const { DataValidator, ChapterStore, GlobalStore, UiStore, MigrationRunner, ResumeStore } = v3Win.StorageV3;
+
+// ── DataValidator ──
+test('DataValidator: 拒绝纯数字 slug（核心防漂移规则）', () => {
+  assert.strictEqual(DataValidator.validateSlug('0'), false);
+  assert.strictEqual(DataValidator.validateSlug('42'), false);
+  assert.strictEqual(DataValidator.validateSlug('999'), false);
+});
+
+test('DataValidator: 接受有效 slug', () => {
+  assert.strictEqual(DataValidator.validateSlug('例1-1'), true);
+  assert.strictEqual(DataValidator.validateSlug('pb_1-1'), true);
+  assert.strictEqual(DataValidator.validateSlug('ex_3-22_(II)'), true);
+});
+
+test('DataValidator: 拒绝空/非字符串/零值 slug', () => {
+  assert.strictEqual(DataValidator.validateSlug(''), false);
+  assert.strictEqual(DataValidator.validateSlug(null), false);
+  assert.strictEqual(DataValidator.validateSlug(undefined), false);
+  assert.strictEqual(DataValidator.validateSlug(0), false);
+});
+
+test('DataValidator: 接受合法掌握度值与拒绝非法值', () => {
+  ['proficient', 'familiar', 'vague', 'rusty', 'wrong', null, undefined, ''].forEach(v => {
+    assert.strictEqual(DataValidator.validateStatus(v), true, 'Should accept: ' + String(v));
+  });
+  assert.strictEqual(DataValidator.validateStatus('good'), false);
+  assert.strictEqual(DataValidator.validateStatus(1), false);
+  assert.strictEqual(DataValidator.validateStatus(true), false);
+});
+
+test('DataValidator: 校验 SM-2 记录格式', () => {
+  assert.strictEqual(DataValidator.validateSm2({ ef: 2.5, interval: 6 }), true);
+  assert.strictEqual(DataValidator.validateSm2({ ef: 'bad' }), false);
+  assert.strictEqual(DataValidator.validateSm2(null), false);
+});
+
+// 通用 mock 章节
+const mockCh3 = {
+  uid: 'math::基础30讲::高数::lec01',
+  id: 'ch1',
+  total: 3, ownTotal: 3,
+  labels: ['例1-1', '例1-2', '例1-3'],
+  getQuestionSlug(i) { return this.labels[i] || null; },
+  getIdxBySlug(slug) { return this.labels.indexOf(slug); }
+};
+
+// ── ChapterStore ──
+test('ChapterStore: 构造校验与空 uid 拒绝', () => {
+  assert.throws(() => new ChapterStore({}), /uid/);
+  assert.throws(() => new ChapterStore(null), /uid/);
+});
+
+test('ChapterStore.load: 纯数字 key 被过滤（核心防漂移）', () => {
+  const ls = makeMockLS();
+  const payload = JSON.stringify({
+    '$v': 3,
+    '$chapterUid': mockCh3.uid,
+    '$saved': '2026-01-01T00:00:00Z',
+    '0': { status: 'wrong' },     // 纯数字——应被过滤
+    '例1-1': { status: 'familiar' }  // slug——应保留
+  });
+  ls.setItem('kaoyan.q.' + mockCh3.uid, payload);
+
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const store = new win.StorageV3.ChapterStore(mockCh3);
+  const res = store.load();
+  assert.ok(!('0' in res), '纯数字 key 应被过滤');
+  assert.ok('例1-1' in res, 'slug key 应保留');
+  assert.strictEqual(res['例1-1'].status, 'familiar');
+});
+
+test('ChapterStore.setQuestion: 原子更新与清空空字段', () => {
+  const ls = makeMockLS();
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const store = new win.StorageV3.ChapterStore(mockCh3);
+
+  store.setQuestion('例1-1', { status: 'proficient', qbad: true });
+  let q = store.getQuestion('例1-1');
+  assert.strictEqual(q.status, 'proficient');
+  assert.strictEqual(q.qbad, true);
+
+  // 更新单个字段，不覆盖已有字段
+  store.setQuestion('例1-1', { notes: '重点题' });
+  q = store.getQuestion('例1-1');
+  assert.strictEqual(q.status, 'proficient');
+  assert.strictEqual(q.qbad, true);
+  assert.strictEqual(q.notes, '重点题');
+
+  // 清理字段
+  store.setQuestion('例1-1', { status: null, qbad: false, notes: '' });
+  q = store.getQuestion('例1-1');
+  assert.deepStrictEqual(q, {});
+});
+
+test('ChapterStore.writeFromMemory & readIntoMemory: 内存与持久化映射', () => {
+  const ls = makeMockLS();
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const store = new win.StorageV3.ChapterStore(mockCh3);
+
+  const memStatuses = { 0: 'proficient', 1: 'vague' };
+  const memSm2 = { 0: { ef: 2.5, interval: 6 } };
+  store.writeFromMemory({ statuses: memStatuses, sm2: memSm2, offset: 0, len: 2 });
+
+  const readBackStatuses = {};
+  const readBackSm2 = {};
+  store.readIntoMemory({ statuses: readBackStatuses, sm2: readBackSm2 }, 0);
+
+  assert.strictEqual(readBackStatuses[0], 'proficient');
+  assert.strictEqual(readBackStatuses[1], 'vague');
+  assert.strictEqual(readBackSm2[0].interval, 6);
+});
+
+// ── GlobalStore & UiStore ──
+test('GlobalStore & UiStore: 键值存取与隔离', () => {
+  const ls = makeMockLS();
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const { GlobalStore, UiStore } = win.StorageV3;
+
+  GlobalStore.set('theme', 'dark');
+  assert.strictEqual(GlobalStore.get('theme'), 'dark');
+  GlobalStore.remove('theme');
+  assert.strictEqual(GlobalStore.get('theme'), null);
+
+  UiStore.set('math', { show: true, def: false });
+  assert.deepStrictEqual(UiStore.get('math'), { show: true, def: false });
+});
+
+// ── MigrationRunner ──
+test('MigrationRunner._extractBySlug: slug 优先于数字（v2→v3升级路径）', () => {
+  const obj = { '例1-1': 'proficient', '例1-2': 'vague', '0': 'wrong', '1': 'rusty' };
+  const result = MigrationRunner._extractBySlug(obj, mockCh3, mockCh3.total);
+  assert.strictEqual(result['例1-1'], 'proficient');
+  assert.strictEqual(result['例1-2'], 'vague');
+  assert.ok(!('0' in result), '不应包含数字索引的结果');
+});
+
+test('MigrationRunner._extractBySlug: 纯数字对象时 fallback（旧数据兼容）', () => {
+  const obj = { '0': 'proficient', '1': 'vague', '2': 'wrong' };
+  const result = MigrationRunner._extractBySlug(obj, mockCh3, mockCh3.total);
+  assert.strictEqual(result['例1-1'], 'proficient');
+  assert.strictEqual(result['例1-2'], 'vague');
+  assert.strictEqual(result['例1-3'], 'wrong');
+});
+
+test('MigrationRunner.runForChapter: 非破坏性增量合并（防覆盖丢失字段）', () => {
+  const ls = makeMockLS();
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const { ChapterStore, MigrationRunner } = win.StorageV3;
+
+  // 模拟：用户在迁移前修改了一道题的状态（仅有 status）
+  const store = new ChapterStore(mockCh3);
+  store.setQuestion('例1-1', { status: 'proficient' });
+
+  // 模拟：旧格式中原本存有 sm2 和 notes
+  ls.setItem('sm2_math_ch1', JSON.stringify({ '例1-1': { ef: 2.6, interval: 10 } }));
+  ls.setItem('ch1_math_notes', JSON.stringify({ '例1-1': '重要考点笔记' }));
+
+  // 执行迁移
+  MigrationRunner.runForChapter(mockCh3, 'math', 'math');
+
+  // 清除内存缓存以从磁盘读回最新合并数据
+  store.invalidate();
+
+  // 验证：已有的 status 依然保留，同时旧的 sm2 和 notes 被完整补充合并进 v3！
+  const q = store.getQuestion('例1-1');
+  assert.strictEqual(q.status, 'proficient', 'v3 已有状态应保留');
+  assert.ok(q.sm2, '缺失的 sm2 应被成功补充迁移');
+  assert.strictEqual(q.sm2.interval, 10);
+  assert.strictEqual(q.notes, '重要考点笔记', '缺失的 notes 应被成功补充迁移');
+});
+
+// ── ResumeStore ──
+test('ResumeStore: slug 优先于 idx（插题后断点不漂移）', () => {
+  // 模拟在 idx=2 处插入了「新题」，原来 idx=2 是「例1-3」，现在 idx=3 才是「例1-3」
+  const ch = Object.assign({}, mockCh3, {
+    labels: ['例1-1', '例1-2', '新题', '例1-3'],
+    total: 4
+  });
+  ch.getIdxBySlug = function(slug) { return this.labels.indexOf(slug); };
+
+  const ls = makeMockLS();
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const { ResumeStore } = win.StorageV3;
+
+  // 模拟以 slug 保存断点
+  ResumeStore.save('math', ch.id, ch, 3, false);
+
+  // 读取断点验证
+  const r = ResumeStore.loadChapter('math', ch.id, ch);
+  assert.ok(r);
+  assert.strictEqual(r.idx, 3, 'slug 解析的 idx 应为 3（插题后位置正确）');
+});
+
+test('ResumeStore: 无 slug 时 fallback 到 idx（旧格式兼容）', () => {
+  const ls = makeMockLS();
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const { ResumeStore } = win.StorageV3;
+
+  // 存旧格式（无 slug 只有 idx）
+  ls.setItem('kaoyan.g.resume', JSON.stringify({
+    'math::ch::ch1': { idx: 1, sub: false }
+  }));
+
+  const r = ResumeStore.loadChapter('math', mockCh3.id, mockCh3);
+  assert.ok(r);
+  assert.strictEqual(r.idx, 1);
 });
 
 console.log('\n====================================================');

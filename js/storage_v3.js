@@ -406,13 +406,11 @@
       if (!ch || !ch.uid) return;
       var store = new ChapterStore(ch);
 
-      // 如果已有 v3 格式，跳过（防止重复迁移覆盖已有 v3 数据）
-      if (store._loadRaw()) return;
-
       var len = ch.ownTotal || ch.total || 0;
       if (len === 0) return;
 
-      var merged = {};
+      var rawExisting = store._loadRaw();
+      var merged = rawExisting ? Object.assign({}, store.load()) : {};
 
       // ── 读 v2 语义键格式（status::<uid> / sm2::<uid> / qbad::<uid> 等）──
       var v2Types = {
@@ -447,38 +445,43 @@
       var notesObj = null;
       try { notesObj = JSON.parse(localStorage.getItem(ch.id + '_' + storageSuffix + '_notes')); } catch (e) {}
 
-      // ── 合并：v2 优先于 v1（v2 是语义键，更可靠）──
+      var changed = !rawExisting;
+
+      // ── 合并：v3 已有优先，其次 v2，最后 v1 ──
       for (var i = 0; i < len; i++) {
         var slug = ch.getQuestionSlug ? ch.getQuestionSlug(i) : null;
         if (!DataValidator.validateSlug(slug)) continue;
 
-        // status：优先 v2
         var statusSlugs = this._extractBySlug(v2Data.status || v1Data.status, ch, len);
         var qbadSlugs   = this._extractBySlug(v2Data.qbad   || v1Data.qbad,   ch, len);
         var sbadSlugs   = this._extractBySlug(v2Data.sbad   || v1Data.sbad,   ch, len);
         var mismatchSlugs = this._extractBySlug(v2Data.mismatch || v1Data.mismatch, ch, len);
         var sm2Slugs    = this._extractBySlug(v2Data.sm2    || v1Data.sm2,    ch, len);
 
-        var entry = {};
-        if (statusSlugs[slug] !== undefined && DataValidator.validateStatus(statusSlugs[slug])) {
-          entry.status = statusSlugs[slug];
-        }
-        if (qbadSlugs[slug]) entry.qbad = true;
-        if (sbadSlugs[slug]) entry.sbad = true;
-        if (mismatchSlugs[slug]) entry.mismatch = true;
-        if (sm2Slugs[slug] && DataValidator.validateSm2(sm2Slugs[slug])) entry.sm2 = sm2Slugs[slug];
+        var existingEntry = merged[slug] || {};
+        var entry = Object.assign({}, existingEntry);
 
-        // notes：v1 key 为 label
-        if (notesObj) {
+        if (entry.status === undefined && statusSlugs[slug] !== undefined && DataValidator.validateStatus(statusSlugs[slug])) {
+          entry.status = statusSlugs[slug];
+          changed = true;
+        }
+        if (!entry.qbad && qbadSlugs[slug]) { entry.qbad = true; changed = true; }
+        if (!entry.sbad && sbadSlugs[slug]) { entry.sbad = true; changed = true; }
+        if (!entry.mismatch && mismatchSlugs[slug]) { entry.mismatch = true; changed = true; }
+        if (!entry.sm2 && sm2Slugs[slug] && DataValidator.validateSm2(sm2Slugs[slug])) { entry.sm2 = sm2Slugs[slug]; changed = true; }
+
+        if (!entry.notes && notesObj) {
           var label = ch.labels && ch.labels[i];
-          if (label && notesObj[label] !== undefined) entry.notes = notesObj[label];
+          if (label && notesObj[label] !== undefined) { entry.notes = notesObj[label]; changed = true; }
         }
 
         if (Object.keys(entry).length > 0) merged[slug] = entry;
       }
 
-      // ── 写入 v3 格式 ──
-      store.save(merged);
+      // ── 写入 v3 格式（仅在有新字段被合并或初次创建时写入）──
+      if (changed && Object.keys(merged).length > 0) {
+        store.save(merged);
+      }
     },
 
     /**
