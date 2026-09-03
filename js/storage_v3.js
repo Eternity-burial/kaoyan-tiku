@@ -577,17 +577,10 @@
   // ─────────────────────────────────────────────────────────────────────────────
   var ResumeStore = {
     _RESUME_KEY: 'kaoyan.g.resume',
-    // 向后兼容：旧 key
-    _LEGACY_KEY: 'kaoyan_resume',
-
     _load: function () {
       try {
-        // 优先读新 key
         var raw = localStorage.getItem(this._RESUME_KEY);
-        if (raw) return JSON.parse(raw) || {};
-        // fallback 到旧 key（读后升级）
-        var legacyRaw = localStorage.getItem(this._LEGACY_KEY);
-        return legacyRaw ? JSON.parse(legacyRaw) || {} : {};
+        return raw ? (JSON.parse(raw) || {}) : {};
       } catch (e) {
         return {};
       }
@@ -700,9 +693,9 @@
   };
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // 暴露全局 API
+  // 暴露全局统一标准 StorageEngine（并保留 StorageV3 别名以保持引用稳定）
   // ─────────────────────────────────────────────────────────────────────────────
-  window.StorageV3 = {
+  window.StorageEngine = window.StorageV3 = {
     ChapterStore: ChapterStore,
     GlobalStore: GlobalStore,
     UiStore: UiStore,

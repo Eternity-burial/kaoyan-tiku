@@ -55,9 +55,11 @@ test('1. 全库 100% 章节具备全局唯一语义 UID (无魔数冲突)', () =
 
 test('2. 题目 Slug 严格对应物理切图命名规范', () => {
   const mathSubj = SUBJECTS.find(s => s.id === 'math');
-  const ch136 = mathSubj.chapters.find(c => c.id === 'ch136');
+  const ch136 = mathSubj.chapters.find(c => c.id === 'math::李范全书::高数::ch03' || c.legacyId === 'ch136');
   assert(ch136, 'ch136 must exist');
   assert.strictEqual(ch136.uid, 'math::李范全书::高数::ch03');
+  assert.strictEqual(ch136.id, 'math::李范全书::高数::ch03');
+  assert.strictEqual(ch136.legacyId, 'ch136');
 
   // 测试例3-14 (I) 与 (II)
   const slug1 = ch136.getQuestionSlug(20);
@@ -78,8 +80,10 @@ test('2. 题目 Slug 严格对应物理切图命名规范', () => {
 
 test('3. 822 科目与小题300题目实体命名验证', () => {
   const subj822 = SUBJECTS.find(s => s.id === '822');
-  const m3ch1 = subj822.chapters.find(c => c.id === 'm3ch1');
+  const m3ch1 = subj822.chapters.find(c => c.id === '822::小题300::控制工程基础::ch01' || c.legacyId === 'm3ch1');
+  assert(m3ch1, 'm3ch1 must exist');
   assert.strictEqual(m3ch1.uid, '822::小题300::控制工程基础::ch01');
+  assert.strictEqual(m3ch1.id, '822::小题300::控制工程基础::ch01');
   assert.strictEqual(m3ch1.getQuestionSlug(0), 'q001');
   assert.strictEqual(m3ch1.getQuestionUID(0), '822::小题300::控制工程基础::ch01::q001');
 });

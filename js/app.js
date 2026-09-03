@@ -24,7 +24,7 @@
     let CHAPTERS = curSubject.chapters;   // 当前科目章节数组（原 const 改 let，切换科目时重赋值）
     function getCurrentSubject() { return curSubject; }
 // ===== 状态变量 (0-based) =====
-    let currentChapterId = 'ch1';
+    let currentChapterId = 'math::基础30讲::高数::lec00';
     let current = 0;
     let showSolution = true;
     let defaultShowSolution = true;
@@ -40,7 +40,7 @@
       return currentFilters.has('all') || currentFilters.size === 0;
     }
 
-    function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId); }
+    function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId || c.uid === currentChapterId || c.legacyId === currentChapterId); }
     function chapterById(id) {
       if (!id) return null;
       var found = CHAPTERS.find(function(c) {
@@ -125,10 +125,6 @@
       for (let k = 0; k < g.count; k++) { const idx = g.startIdx + k; if (filteredSet.has(idx)) out.push(idx); }
       return out;
     }
-    function storageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_status'; }
-    function qBadStorageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_qbad'; }
-    function sBadStorageKey() { return currentChapterId + '_' + curSubject.storageSuffix + '_sbad'; }
-    function chapterStatusKey(ch) { return ch.id + '_' + curSubject.storageSuffix + '_status'; }
     function totalQuestions() { return getChapter().total; }
 
     // ===== 筛选相关 =====
@@ -4352,67 +4348,24 @@
       var bookMismatch = {};
 
       srcs.forEach(function(src) {
-        if (window.StorageV3 && src.ch && src.ch.uid) {
-          var store = new window.StorageV3.ChapterStore(src.ch);
-          if (store._loadRaw()) {
-            store.readIntoMemory({
-              statuses: statuses,
-              qBad: qBad,
-              sBad: sBad,
-              bookMismatch: bookMismatch
-            }, src.offset);
-            return;
-          }
-        }
-
-        var stKey = chapterStatusKey(src.ch);
-        var qbKey = src.ch.id + '_' + s.storageSuffix + '_qbad';
-        var sbKey = src.ch.id + '_' + s.storageSuffix + '_sbad';
-        var bmKey = src.ch.id + '_' + s.storageSuffix + '_book_mismatch';
-
-        var oSt = {}, oQb = {}, oSb = {}, oBm = {};
-        try { oSt = JSON.parse(localStorage.getItem(stKey) || '{}'); } catch(e) {}
-        try { oQb = JSON.parse(localStorage.getItem(qbKey) || '{}'); } catch(e) {}
-        try { oSb = JSON.parse(localStorage.getItem(sbKey) || '{}'); } catch(e) {}
-        try { oBm = JSON.parse(localStorage.getItem(bmKey) || '{}'); } catch(e) {}
-
-        function resolveSrcVal(o, k) {
-          if (!o) return undefined;
-          var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(k) : null);
-          var qLabel = (src.ch.labels && src.ch.labels[k]) ? src.ch.labels[k] : null;
-          if (qSlug && o[qSlug] !== undefined) return o[qSlug];
-          if (qLabel && o[qLabel] !== undefined) return o[qLabel];
-          var hasSem = Object.keys(o).some(function(x) { return !/^\d+$/.test(x); });
-          if (!hasSem && o[k] !== undefined) return o[k];
-          return undefined;
-        }
-
-        for (var k = 0; k < src.len; k++) {
-          var stVal = resolveSrcVal(oSt, k);
-          if (stVal !== undefined) statuses[src.offset + k] = stVal;
-          if (resolveSrcVal(oQb, k)) qBad[src.offset + k] = true;
-          if (resolveSrcVal(oSb, k)) sBad[src.offset + k] = true;
-          if (resolveSrcVal(oBm, k)) bookMismatch[src.offset + k] = true;
+        var engine = window.StorageEngine || window.StorageV3;
+        if (engine && src.ch && src.ch.uid) {
+          var store = new engine.ChapterStore(src.ch);
+          store.readIntoMemory({
+            statuses: statuses,
+            qBad: qBad,
+            sBad: sBad,
+            bookMismatch: bookMismatch
+          }, src.offset);
         }
       });
 
       var notesMap = {};
       srcs.forEach(function(src) {
-        if (window.StorageV3 && src.ch && src.ch.uid) {
-          var store = new window.StorageV3.ChapterStore(src.ch);
-          if (store._loadRaw()) {
-            store.readIntoMemory({ notes: notesMap }, 0);
-            return;
-          }
-        }
-        var cid = src.ch.id;
-        var nKey = cid + '_' + s.storageSuffix + '_notes';
-        var oN = {};
-        try { oN = JSON.parse(localStorage.getItem(nKey) || '{}'); } catch(e) {}
-        for (var k in oN) {
-          if (Object.prototype.hasOwnProperty.call(oN, k)) {
-            notesMap[cid + '::' + k] = oN[k];
-          }
+        var engine = window.StorageEngine || window.StorageV3;
+        if (engine && src.ch && src.ch.uid) {
+          var store = new engine.ChapterStore(src.ch);
+          store.readIntoMemory({ notes: notesMap }, 0);
         }
       });
 

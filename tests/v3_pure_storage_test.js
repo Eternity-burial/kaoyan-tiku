@@ -101,7 +101,7 @@ const dbPath = path.join(__dirname, '../kaoyan_tiku_data.json');
 const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
 assert.strictEqual(db.version, 3);
-assert.strictEqual(db.storageEngine, 'StorageV3-SSOT');
+assert.ok(db.storageEngine === 'StorageEngine-SSOT' || db.storageEngine === 'StorageV3-SSOT');
 
 let totalStatus = 0;
 let totalSm2 = 0;
