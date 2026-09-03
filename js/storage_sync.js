@@ -108,14 +108,15 @@
         /^annot_/.test(k) ||
         /^ky_english_/.test(k) ||
         /^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)/.test(k) ||
-        /^(?:math|shu1|822|english)_ui_/.test(k)
+        /^(?:math|shu1|822|english)_ui_/.test(k) ||
+        /^(?:status|sm2|notes|qbad|sbad|mismatch)::/.test(k)
       ) {
         dump[k] = localStorage.getItem(k);
       }
     }
 
     return {
-      version: 1,
+      version: 2,
       appName: '考研题库 (Math + 822 + English)',
       lastSaved: new Date().toISOString(),
       timestamp: Date.now(),

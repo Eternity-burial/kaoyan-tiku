@@ -328,12 +328,13 @@ test('图片路径生成器: 数学例题/习题与822特例', () => {
 // 3. StorageSync 数据采集正则与安全性
 console.log('\n--- 3. StorageSync 数据同步正则与防污染 ---');
 
-const syncKeyRegex = /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_english_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)|^([a-z0-9]+)_ui_/;
+const syncKeyRegex = /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_english_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)|^([a-z0-9]+)_ui_|^(?:status|sm2|notes|qbad|sbad|mismatch)::/;
 
 test('StorageSync 正则精确覆盖全部题库关键数据键 (数学、822、英语)', () => {
   const validKeys = [
     'ch1_s1_status', 'ch212_s1_notes', 'm3ch1_822_qbad', 'ch5_822_book_mismatch',
     'sm2_math_ch1', 'sm2_822_ch5',
+    'status::math::李范全书::高数::ch03', 'mismatch::math::李范全书::高数::ch03',
     'annot_题库/基础30讲/高数/第1讲/ex_1-1_question.png',
     'ky_english_mastery_2010', 'ky_english_notes_2010', 'ky_english_starred_words',
     'kaoyan_resume', 'kaoyan_study_log', 'kaoyan_ui_filters', 'kaoyan_subject',

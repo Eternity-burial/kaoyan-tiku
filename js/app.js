@@ -208,13 +208,21 @@
           raw = localStorage.getItem(semanticType + '::' + src.ch.uid);
         }
         try { o = JSON.parse(raw) || {}; } catch (e) { o = {}; }
+        var hasSemanticKeys = false;
+        var oKeys = Object.keys(o);
+        for (var ki = 0; ki < oKeys.length; ki++) {
+          if (!/^\d+$/.test(oKeys[ki])) {
+            hasSemanticKeys = true;
+            break;
+          }
+        }
         for (var k = 0; k < src.len; k++) {
           var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(k) : null);
           var qLabel = (src.ch.labels && src.ch.labels[k]) ? src.ch.labels[k] : null;
           var val = undefined;
           if (qSlug && o[qSlug] !== undefined) val = o[qSlug];
           else if (qLabel && o[qLabel] !== undefined) val = o[qLabel];
-          else if (o[k] !== undefined) val = o[k];
+          else if (!hasSemanticKeys && o[k] !== undefined) val = o[k];
 
           if (val !== undefined) out[src.offset + k] = val;
         }
@@ -4274,11 +4282,23 @@
         try { oSb = JSON.parse(localStorage.getItem(sbKey) || '{}'); } catch(e) {}
         try { oBm = JSON.parse(localStorage.getItem(bmKey) || '{}'); } catch(e) {}
 
+        function resolveSrcVal(o, k) {
+          if (!o) return undefined;
+          var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(k) : null);
+          var qLabel = (src.ch.labels && src.ch.labels[k]) ? src.ch.labels[k] : null;
+          if (qSlug && o[qSlug] !== undefined) return o[qSlug];
+          if (qLabel && o[qLabel] !== undefined) return o[qLabel];
+          var hasSem = Object.keys(o).some(function(x) { return !/^\d+$/.test(x); });
+          if (!hasSem && o[k] !== undefined) return o[k];
+          return undefined;
+        }
+
         for (var k = 0; k < src.len; k++) {
-          if (oSt[k] !== undefined) statuses[src.offset + k] = oSt[k];
-          if (oQb[k]) qBad[src.offset + k] = true;
-          if (oSb[k]) sBad[src.offset + k] = true;
-          if (oBm[k]) bookMismatch[src.offset + k] = true;
+          var stVal = resolveSrcVal(oSt, k);
+          if (stVal !== undefined) statuses[src.offset + k] = stVal;
+          if (resolveSrcVal(oQb, k)) qBad[src.offset + k] = true;
+          if (resolveSrcVal(oSb, k)) sBad[src.offset + k] = true;
+          if (resolveSrcVal(oBm, k)) bookMismatch[src.offset + k] = true;
         }
       });
 
