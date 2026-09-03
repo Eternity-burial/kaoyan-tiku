@@ -170,6 +170,9 @@
         </div>
         <div class="sync-filename" id="syncFileName" title="题库默认数据文件">kaoyan_tiku_data.json</div>
 
+        <!-- 原有保留按钮 1：关联本地文件 -->
+        <button id="btnLinkLocalFile" class="sync-btn" title="关联本地数据文件并启用自动实时落盘">关联本地文件</button>
+
         <!-- 核心双向写入控制按钮 -->
         <div class="sync-direction-group">
           <button id="btnSyncLocalToBrowser" class="sync-action-btn btn-sync-in" title="读取题库本地 kaoyan_tiku_data.json，全量写入浏览器缓存并刷新视图">
@@ -180,6 +183,7 @@
           </button>
         </div>
 
+        <!-- 原有保留按钮 2 & 3：导入与导出 -->
         <div class="sync-actions-row">
           <button id="btnSyncImport" class="sync-mini-btn" title="从 JSON 文件恢复数据">导入</button>
           <button id="btnSyncExport" class="sync-mini-btn" title="导出完整数据为 JSON 备份文件">导出</button>

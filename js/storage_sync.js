@@ -510,11 +510,13 @@
     const dot = document.getElementById('syncStatusDot');
     const text = document.getElementById('syncStatusText');
     const fileNameEl = document.getElementById('syncFileName');
+    const btnLink = document.getElementById('btnLinkLocalFile');
 
     if (status === 'linked') {
       if (dot) dot.className = 'sync-dot dot-online';
       if (text) text.textContent = '本地文件已连接';
       if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : 'kaoyan_tiku_data.json';
+      if (btnLink) btnLink.textContent = '重新关联本地文件';
     } else if (status === 'saving') {
       if (dot) dot.className = 'sync-dot dot-saving';
       if (text) text.textContent = '正在写入本地...';
@@ -522,10 +524,12 @@
       if (dot) dot.className = 'sync-dot dot-prompt';
       if (text) text.textContent = '待激活文件权限';
       if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : 'kaoyan_tiku_data.json';
+      if (btnLink) btnLink.textContent = '激活读写权限';
     } else {
       if (dot) dot.className = 'sync-dot dot-offline';
       if (text) text.textContent = '本地未连接';
       if (fileNameEl) fileNameEl.textContent = 'kaoyan_tiku_data.json';
+      if (btnLink) btnLink.textContent = '关联本地文件';
     }
   }
 
@@ -565,6 +569,15 @@
 
   // ===== 8. 初始化与自启动恢复 =====
   async function init() {
+    // 绑定保留按钮 1：关联本地文件
+    const btnLink = document.getElementById('btnLinkLocalFile');
+    if (btnLink) {
+      btnLink.onclick = () => {
+        if (syncStatus === 'prompt') activatePermission();
+        else linkLocalFile();
+      };
+    }
+
     // 绑定双向写入按钮事件
     const btnSyncLocalToBrowser = document.getElementById('btnSyncLocalToBrowser');
     if (btnSyncLocalToBrowser) btnSyncLocalToBrowser.onclick = syncLocalToBrowser;
@@ -572,6 +585,7 @@
     const btnSyncBrowserToLocal = document.getElementById('btnSyncBrowserToLocal');
     if (btnSyncBrowserToLocal) btnSyncBrowserToLocal.onclick = syncBrowserToLocal;
 
+    // 绑定保留按钮 2 & 3：导入与导出
     const btnImp = document.getElementById('btnSyncImport');
     if (btnImp) btnImp.onclick = importManualJson;
 

@@ -126,11 +126,27 @@ for (const k in db.data) {
 }
 
 assert.strictEqual(legacyKeys, 0, '新数据库中不能存在任何非规范历史键');
-assert.strictEqual(totalStatus, 1726, '掌握度状态总数严格守恒 (1726题)');
-assert.strictEqual(totalSm2, 1634, 'SM-2复习记录总数严格守恒 (1634题)');
-assert.strictEqual(totalNotes, 250, '笔记总数严格守恒 (250条)');
+assert.strictEqual(totalStatus, 1732, '掌握度状态总数精确对齐权威数据 (1732题)');
+assert.strictEqual(totalSm2, 1640, 'SM-2复习记录总数精确对齐权威数据 (1640题)');
+assert.strictEqual(totalNotes, 247, '笔记总数精确对齐权威数据 (247条)');
+
+// 验证例3-39各小题内容彼此独立、未被覆盖
+const ch03 = JSON.parse(db.data['kaoyan.q.math::李范全书::高数::ch03']);
+assert.strictEqual(ch03['ex_3-39_(I)'].status, 'proficient');
+assert.strictEqual(ch03['ex_3-39_(I)'].notes, '$(Ⅰ)$过');
+assert.strictEqual(ch03['ex_3-39_(II)'].status, 'vague');
+assert.strictEqual(ch03['ex_3-39_(II)'].notes, '$\\int \\sqrt{a^2-x^2} \\,dx$并不好处理');
+assert.strictEqual(ch03['ex_3-39_(III)'].status, 'rusty');
+assert.strictEqual(ch03['ex_3-39_(III)'].notes, '注意$(a-b)$的范围，换元法很巧妙');
+assert.strictEqual(ch03['ex_3-39_(IV)'].status, 'wrong');
+assert.strictEqual(ch03['ex_3-39_(IV)'].notes, undefined);
+assert.strictEqual(ch03['ex_3-39_(V)'].status, 'wrong');
+assert.strictEqual(ch03['ex_3-39_(V)'].notes, undefined);
+assert.strictEqual(ch03['ex_3-39_(VI)'].status, 'wrong');
+assert.strictEqual(ch03['ex_3-39_(VI)'].notes, undefined);
 
 console.log(`  ✔ 真实数据库包含 ${totalStatus} 题掌握度，${totalSm2} 题 SM-2，${totalNotes} 条笔记，0 旧键残留`);
+console.log('  ✔ 例3-39各小题 (I)~(VI) 独立掌握度、SM-2与笔记断言完全一致，无覆盖');
 
 console.log('\n====================================================');
 console.log('  全部集成与破坏性测试 100% 通过！');
