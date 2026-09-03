@@ -103,6 +103,7 @@
       if (!k) continue;
       // 精确收集题库相关活跃键（掌握度/错图/实书不符/笔记/SM-2/图片标注/英语/暗化滤镜/全局状态）
       if (
+        /^kaoyan\.(?:q|g|ui)\./.test(k) ||         // v3 新格式（首优先）
         /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$/.test(k) ||
         /^sm2_/.test(k) ||
         /^annot_/.test(k) ||

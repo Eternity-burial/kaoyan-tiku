@@ -260,21 +260,65 @@
         window.storageSync.scheduleSave();
       }
     }
+    // ===== V3 存储：ChapterStore 工厂（含合并章节感知）=====
+    function getStoresForCurrentChapter() {
+      if (!window.StorageV3) return null;
+      var srcs = statusSources();
+      return srcs.map(function (src) {
+        return { store: new window.StorageV3.ChapterStore(src.ch), offset: src.offset, len: src.len, ch: src.ch };
+      });
+    }
+
+    // 从 v3 格式加载当前章节数据到内存（statuses/qBad/sBad/bookMismatch）。
+    // 若 v3 数据存在返回 true，否则 false（调用方走旧路径）。
+    function loadAllFromV3() {
+      var stores = getStoresForCurrentChapter();
+      if (!stores) return false;
+      statuses = {};
+      qBad = {};
+      sBad = {};
+      bookMismatch = {};
+      var anyV3 = false;
+      stores.forEach(function (s) {
+        if (s.store._loadRaw()) {
+          anyV3 = true;
+          s.store.readIntoMemory({ statuses: statuses, qBad: qBad, sBad: sBad, bookMismatch: bookMismatch }, s.offset);
+        }
+      });
+      return anyV3;
+    }
+
+    // 将当前内存中某类字段写入 v3（原子合并，不覆盖其他字段）。
+    function writeFieldToV3(fieldObj, fieldName) {
+      var stores = getStoresForCurrentChapter();
+      if (!stores) return;
+      stores.forEach(function (s) {
+        var opts = { offset: s.offset, len: s.len };
+        opts[fieldName] = fieldObj;
+        s.store.writeFromMemory(opts);
+      });
+    }
+
+
 
     function loadStatuses() {
+      if (loadAllFromV3()) return;
       statuses = loadIndexedObj(function (ch) { return localStorage.getItem(chapterStatusKey(ch)); }, 'status');
     }
     function saveStatuses() {
-      saveIndexedObj(statuses,
+      writeFieldToV3(statuses, 'statuses'); // v3 主路径（slug 键，防漂移）
+      saveIndexedObj(statuses,              // 同时保留 v1/v2 双写（迁移窗口期）
         function (ch, val) { safeLSSet(chapterStatusKey(ch), val); },
         function (ch) { localStorage.removeItem(chapterStatusKey(ch)); },
         'status');
       notifyStorageSync();
     }
     function loadQBad() {
+      if (loadAllFromV3()) return;
       qBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); }, 'qbad');
     }
     function saveQBad() {
+      writeFieldToV3(qBad, 'qBad');
       saveIndexedObj(qBad,
         function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_qbad', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_qbad'); },
@@ -282,9 +326,11 @@
       notifyStorageSync();
     }
     function loadSBad() {
+      if (loadAllFromV3()) return;
       sBad = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); }, 'sbad');
     }
     function saveSBad() {
+      writeFieldToV3(sBad, 'sBad');
       saveIndexedObj(sBad,
         function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_sbad', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_sbad'); },
@@ -292,9 +338,11 @@
       notifyStorageSync();
     }
     function loadBookMismatch() {
+      if (loadAllFromV3()) return;
       bookMismatch = loadIndexedObj(function (ch) { return localStorage.getItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); }, 'mismatch');
     }
     function saveBookMismatch() {
+      writeFieldToV3(bookMismatch, 'bookMismatch');
       saveIndexedObj(bookMismatch,
         function (ch, val) { safeLSSet(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch', val); },
         function (ch) { localStorage.removeItem(ch.id + '_' + curSubject.storageSuffix + '_book_mismatch'); },
@@ -359,19 +407,44 @@
       return ch.id;
     }
     function loadNotes() {
-      autoSaveNotes(); // 重建前先保存未提交的编辑内容（覆盖 applyResumeBook 等直接调 loadNotes 的路径）
+      autoSaveNotes(); // 重建前先保存未提交的编辑内容
       const ch = getChapter();
       notesData = {};
+      // 优先从 v3 ChapterStore 读取
+      if (window.StorageV3) {
+        var stores = getStoresForCurrentChapter();
+        if (stores) {
+          stores.forEach(function (s) {
+            s.store.readIntoMemory({ notes: notesData }, s.offset);
+          });
+        }
+      }
+      // fallback: v1 旧格式（v3 数据缺失时）
       const srcIds = [ch.id];
       if (ch.q1000Id) srcIds.push(ch.q1000Id);
       srcIds.forEach(function (cid) {
         let o = {};
         try { o = JSON.parse(localStorage.getItem(cid + '_' + curSubject.storageSuffix + '_notes')) || {}; } catch (e) { o = {}; }
-        for (var k in o) { if (Object.prototype.hasOwnProperty.call(o, k)) notesData[cid + '::' + k] = o[k]; }
+        for (var k in o) {
+          if (Object.prototype.hasOwnProperty.call(o, k)) {
+            var noteKey = cid + '::' + k;
+            if (!notesData[noteKey]) notesData[noteKey] = o[k]; // v3 优先，旧格式不覆盖
+          }
+        }
       });
     }
     function saveNotes() {
       const ch = getChapter();
+      // 写 v3（slug 键，防漂移）
+      if (window.StorageV3) {
+        var stores = getStoresForCurrentChapter();
+        if (stores) {
+          stores.forEach(function (s) {
+            s.store.writeFromMemory({ notes: notesData, offset: s.offset, len: s.len });
+          });
+        }
+      }
+      // 同时保留 v1 双写（迁移窗口期兼容 storage_sync.js 旧格式收集）
       const srcIds = [ch.id];
       if (ch.q1000Id) srcIds.push(ch.q1000Id);
       srcIds.forEach(function (cid) {
@@ -384,7 +457,7 @@
         const key = cid + '_' + curSubject.storageSuffix + '_notes';
         const keys = Object.keys(part);
         if (keys.length > 0) safeLSSet(key, JSON.stringify(part));
-        else localStorage.removeItem(key); // 空源不写、清残留空对象
+        else localStorage.removeItem(key);
       });
       notifyStorageSync();
     }
@@ -1577,32 +1650,43 @@
     //   '<科目id>::<书籍wb>': { ch, idx, sub }             // 切书籍时恢复
     // }
     function saveResume() {
+      if (window.StorageV3) {
+        // v3：断点存 slug，插题后恢复位置不漂移
+        window.StorageV3.ResumeStore.save(curSubjectId, currentChapterId, getChapter(), current, subMode);
+        notifyStorageSync();
+        return;
+      }
+      // fallback: 旧格式
       var map = {};
       try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
       map[curSubjectId] = { ch: currentChapterId, idx: current, sub: !!subMode };
       var wb = getChapter() ? getChapter().wb : '';
       if (wb) map[curSubjectId + '::' + wb] = { ch: currentChapterId, idx: current, sub: !!subMode };
-      // 章节级记忆：切回某章时恢复上次停的题（键含 ch id，无 ch 字段）
       if (currentChapterId) map[curSubjectId + '::ch::' + currentChapterId] = { idx: current, sub: !!subMode };
       try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
       notifyStorageSync();
     }
     // 读取某章的章节级停靠记录（无记录/记录失效返回 null）
     function loadChapterResume(chId) {
-      var map = {};
-      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      var r = map[curSubjectId + '::ch::' + chId];
-      if (!r) return null;
       var ch = CHAPTERS.find(function (c) { return c.id === chId; });
       if (!ch || ch.total === 0) return null;
-      var idx = Math.min(Math.max(0, r.idx || 0), ch.total - 1);
-      var subOk = false;
-      if (r.sub) {
-        ensureGroups(ch);
-        var g = ch.groupForIdx[idx];
-        subOk = !!(g && g.isParent && g.count > 1);
+      if (window.StorageV3) {
+        var r = window.StorageV3.ResumeStore.loadChapter(curSubjectId, chId, ch);
+        if (r) {
+          var subOk = false;
+          if (r.sub) { ensureGroups(ch); var g = ch.groupForIdx[r.idx]; subOk = !!(g && g.isParent && g.count > 1); }
+          return { idx: r.idx, sub: subOk };
+        }
       }
-      return { idx: idx, sub: subOk };
+      // fallback: 旧格式
+      var map = {};
+      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
+      var r2 = map[curSubjectId + '::ch::' + chId];
+      if (!r2) return null;
+      var idx = Math.min(Math.max(0, r2.idx || 0), ch.total - 1);
+      var subOk2 = false;
+      if (r2.sub) { ensureGroups(ch); var g2 = ch.groupForIdx[idx]; subOk2 = !!(g2 && g2.isParent && g2.count > 1); }
+      return { idx: idx, sub: subOk2 };
     }
     function loadResume(subjectId) {
       var map = {};
@@ -7229,12 +7313,28 @@ ${cardsHTML}
     function loadSm2() {
       const ch = getChapter(); if (!ch) return;
       sm2 = {};
+      // 优先从 v3 ChapterStore 读取 sm2
+      if (window.StorageV3) {
+        var stores = getStoresForCurrentChapter();
+        if (stores) {
+          var anyV3Sm2 = false;
+          stores.forEach(function (s) {
+            if (s.store._loadRaw()) {
+              anyV3Sm2 = true;
+              s.store.readIntoMemory({ sm2: sm2 }, s.offset);
+            }
+          });
+          if (anyV3Sm2) return;
+        }
+      }
+      // fallback: v2/v1 格式（slug 优先，数字仅在全纯数字时 fallback）
       const srcs = statusSources();
       srcs.forEach(function(src) {
         let obj;
         var raw = getSm2Item(sm2Key(src.ch));
         if (!raw && src.ch && src.ch.uid) raw = localStorage.getItem('sm2::' + src.ch.uid);
         try { obj = JSON.parse(raw || '{}'); } catch(e) { obj = {}; }
+        var hasSemanticKeys = Object.keys(obj).some(function(x) { return !/^\d+$/.test(x); });
         var len = src.len;
         for (var i = 0; i < len; i++) {
           var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(i) : null);
@@ -7242,7 +7342,7 @@ ${cardsHTML}
           var val = undefined;
           if (qSlug && obj[qSlug] !== undefined) val = obj[qSlug];
           else if (qLabel && obj[qLabel] !== undefined) val = obj[qLabel];
-          else if (obj[i] !== undefined) val = obj[i];
+          else if (!hasSemanticKeys && obj[i] !== undefined) val = obj[i];
 
           if (val) sm2[src.offset + i] = val;
         }
@@ -7251,6 +7351,16 @@ ${cardsHTML}
 
     // ===== SM-2 复习持久化与重置 =====
     function saveSm2() {
+      // 写 v3（slug 键，防漂移）
+      if (window.StorageV3) {
+        var stores = getStoresForCurrentChapter();
+        if (stores) {
+          stores.forEach(function (s) {
+            s.store.writeFromMemory({ sm2: sm2, offset: s.offset, len: s.len });
+          });
+        }
+      }
+      // 同时保留 v1/v2 双写（迁移窗口期）
       const srcs = statusSources();
       srcs.forEach(function(src) {
         var out = {};
@@ -7260,7 +7370,7 @@ ${cardsHTML}
           if (val) {
             var qSlug = (src.ch.getQuestionSlug ? src.ch.getQuestionSlug(i) : null);
             if (qSlug) out[qSlug] = val;
-            out[i] = val; // 保持双向兼容
+            out[i] = val; // 兼容旧格式（迁移窗口期）
           }
         }
         if (Object.keys(out).length > 0) {
