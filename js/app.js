@@ -5404,81 +5404,27 @@
     }
 
 
-    // ===== 图片标注（marker.js 3）：矢量数据持久化 =====
-    var imgAnnotations = {}; // key: 图片 src，value: markerArea.getState() 的矢量 JSON
-    // 统一 key：图片 src 可能来自 img.src（绝对 file:// URL）或 getImgPath 拼出的相对路径。
-    // 灯箱用绝对路径存取、解析图加载用相对路径查询，必须归一化成同一个 key 才能对上。
-    function normalizeAnnotSrc(imgSrc) {
-      try { return new URL(imgSrc, window.location.href).href; } catch (e) { return imgSrc; }
+    // ===== 图片标注（marker.js 3，已拆分至 js/annotator.js） =====
+    var imgAnnotations = (window.ImageAnnotator && window.ImageAnnotator.getAnnotationsMap()) || {};
+    function normalizeAnnotSrc(imgSrc) { return window.ImageAnnotator ? window.ImageAnnotator.normalizeSrc(imgSrc) : imgSrc; }
+    function loadAnnotations() { if (window.ImageAnnotator) window.ImageAnnotator.load(); }
+    function saveAnnotation(imgSrc, state) { if (window.ImageAnnotator) window.ImageAnnotator.save(imgSrc, state); }
+    function getAnnotation(imgSrc) { return window.ImageAnnotator ? window.ImageAnnotator.get(imgSrc) : null; }
+    function clearAnnotation(imgSrc) { if (window.ImageAnnotator) window.ImageAnnotator.clear(imgSrc); }
+    function hasAnnotation(imgSrc) { return window.ImageAnnotator ? window.ImageAnnotator.has(imgSrc) : false; }
+    function hasQuestionImagesAnnotated(idx) {
+      if (window.ImageAnnotator) return window.ImageAnnotator.hasPrefix(getImgPath(idx));
+      return false;
     }
-    function annotKey(imgSrc) { return 'annot_' + normalizeAnnotSrc(imgSrc); }
-    function loadAnnotations() {
-      try {
-        for (var i = 0; i < localStorage.length; i++) {
-          var k = localStorage.key(i);
-          if (k && k.indexOf('annot_') === 0) {
-            try { imgAnnotations[normalizeAnnotSrc(k.substring(6))] = JSON.parse(localStorage.getItem(k)); } catch (e) {}
-          }
-        }
-      } catch (e) {}
-    }
-    function saveAnnotation(imgSrc, state) {
-      imgAnnotations[normalizeAnnotSrc(imgSrc)] = state;
-      safeLSSet(annotKey(imgSrc), JSON.stringify(state)); // 标注 JSON 体积较大，用 safeLSSet 防配额溢出静默丢失
-      notifyStorageSync();
-    }
-    function getAnnotation(imgSrc) { return imgAnnotations[normalizeAnnotSrc(imgSrc)] || null; }
-    function clearAnnotation(imgSrc) {
-      const key = normalizeAnnotSrc(imgSrc);
-      delete imgAnnotations[key];
-      try { localStorage.removeItem('annot_' + key); } catch (e) {}
-      notifyStorageSync();
-    }
-    function hasAnnotation(imgSrc) { return !!getAnnotation(imgSrc); }
-    loadAnnotations();
 
-    // ===== 灯箱标注编辑（marker.js 3 + 自建 Snipaste 风格工具栏） =====
-    var lbCurrentSrc = null;     // 灯箱当前打开的图片 src
-    var lbMarkerArea = null;     // 当前 MarkerArea 实例
-    var lbAnnotMode = false;     // 是否处于标注模式
-    var lbAnnotColor = '#ff0000'; // 当前标注颜色
-    var lbAnnotWidth = 4;        // 当前标注粗细
-    var lbLastAnnotTool = 'FrameMarker';   // 最近一次绘图工具（Tab/右键/横向滚轮用）
-    var lbCurrentAnnotTool = 'FrameMarker'; // 当前激活工具
-    var lbCurrentAnnotEditor = null;       // 当前未注册的绘图编辑器（Shift 锁定时覆写坐标）
-    var lbAnnotShiftWasOn = false;         // 拖动期间是否按住 Shift（释放时再吸一次）
-
-    // 工具按钮 → marker typeName（按工具栏从左到右顺序，横向滚轮/Tab 循环用）
-    var ANNOT_TOOLS = ['FrameMarker', 'LineMarker', 'HighlighterMarker', 'FreehandMarker'];
-
-    // 每个标注工具各自的默认颜色/粗细（Snipaste：不同标注形状分别记忆颜色）。
-    // 切到某工具时载入其记忆值；用户调整后按工具分别保存，不再互相串扰。
-    var ANNOT_TOOL_STYLES = {
-      LineMarker:        { color: '#ff0000', width: 4 },  // 直线：红 4
-      FrameMarker:       { color: '#ff0000', width: 4 },  // 矩形：红 4
-      HighlighterMarker: { color: '#ffff00', width: 20 }, // 高亮：亮黄 20
-      FreehandMarker:    { color: '#ff0000', width: 3 }   // 画笔：红 3
-    };
-
-    // 预设色板（Microsoft Office 标准 20 色，Snipaste 等标注工具调色板底层即此套 RGB）
-    var ANNOT_COLORS = [
-      '#000000', '#7f7f7f', // 黑 / 灰
-      '#880015', '#ed1c24', // 深红 / 红
-      '#ff7f27', '#fff200', // 橙 / 黄
-      '#22b14c', '#1e90ff', // 绿 / 亮蓝
-      '#3f48cc', '#a349a4', // 蓝 / 紫
-      '#ffffff', '#c3c3c3', // 白 / 浅灰
-      '#b97a57', '#ffaec9', // 棕 / 粉
-      '#ffc90e', '#efe4b0', // 明黄 / 米黄
-      '#b5e61d', '#99d9ea', // 黄绿 / 浅青
-      '#7092be', '#c8bfe7'  // 蓝灰 / 浅紫
-    ];
-
+    // 灯箱与标注交互（委托 ImageAnnotator 模块）
+    var lbCurrentSrc = null;
     function openLightbox(src) {
       closeAnnotator();
       const overlay = document.getElementById('lightbox');
       const img = document.getElementById('lightboxImg');
       lbCurrentSrc = src;
+      if (window.ImageAnnotator) window.ImageAnnotator.setCurrentSrc(src);
       img.src = src;
       const enable = (currentTheme === 'dark' && darkImageFilter);
       img.classList.toggle('dark-filter', enable);
@@ -5487,255 +5433,7 @@
       overlay.classList.add('show');
       document.body.style.overflow = 'hidden';
       updateAnnotateBtn();
-      openAnnotator(); // 点击图片默认即进入标注模式
-    }
-
-    function showLightboxAnnotationOverlay() {
-      const lbOverlay = document.getElementById('lightboxAnnotOverlay');
-      if (!lbOverlay || typeof markerjs3 === 'undefined') return;
-      lbOverlay.innerHTML = '';
-      const hasA = hasAnnotation(lbCurrentSrc);
-      if (!lbCurrentSrc || !hasA) { lbOverlay.style.display = 'none'; return; }
-      const img = document.getElementById('lightboxImg');
-      lbOverlay.style.display = '';
-      const apply = function () {
-        const mview = new markerjs3.MarkerView();
-        lbOverlay.appendChild(mview);
-        mview.targetImage = img;
-        mview.show(getAnnotation(lbCurrentSrc));
-        if (mview.shadowRoot) {
-          const st = document.createElement('style');
-          st.textContent = 'img { display: none !important; }';
-          mview.shadowRoot.appendChild(st);
-        }
-      };
-      if (img.complete && img.naturalWidth > 0) apply();
-      else { img.onload = function() { apply(); }; }
-    }
-
-    function updateAnnotateBtn() {
-      const btn = document.getElementById('lightboxAnnotate');
-      if (!btn) return;
-      if (!lbCurrentSrc) { btn.style.display = 'none'; return; }
-      btn.style.display = '';
-      var hasAny = hasAnnotation(lbCurrentSrc);
-      btn.textContent = hasAny ? '标注（已有）' : '标注';
-      btn.classList.toggle('has-annot', hasAny);
-    }
-
-    // 应用当前颜色/粗细到编辑器（新建 marker 时生效）
-    function applyAnnotStyle() {
-      if (!lbMarkerArea) return;
-      const editor = lbMarkerArea.currentMarkerEditor;
-      if (!editor) return;
-      try {
-        if (lbAnnotColor) editor.strokeColor = lbAnnotColor;
-        if (lbAnnotWidth) editor.strokeWidth = lbAnnotWidth;
-      } catch (e) {}
-    }
-
-    // 高亮当前工具按钮
-    function highlightAnnotTool(tool) {
-      document.querySelectorAll('#annotToolbar .at-tool').forEach(function (b) {
-        b.classList.toggle('active', b.dataset.tool === tool);
-      });
-    }
-
-    // 载入某工具的已记忆/默认颜色粗细，并同步到 UI
-    function loadAnnotToolStyle(tool) {
-      const s = ANNOT_TOOL_STYLES[tool];
-      if (!s) return;
-      lbAnnotColor = s.color;
-      lbAnnotWidth = s.width;
-      const w = document.getElementById('annotWidth');
-      if (w) w.value = lbAnnotWidth;
-      updateAnnotWidthUI();
-      updateAnnotColorUI();
-    }
-
-    // 切换标注工具（select → 选择模式；否则 createMarker）
-    // 每次切工具载入该工具记忆的颜色/粗细（Snipaste：按形状记忆颜色），
-    // 因此高亮不再被重置回默认，画笔也不会继承高亮的 20 粗细。
-    function selectAnnotTool(toolName) {
-      if (!lbMarkerArea) return;
-      lbCurrentAnnotTool = toolName;
-      lbLastAnnotTool = toolName;
-      lbCurrentAnnotEditor = null;
-      if (toolName !== 'select') loadAnnotToolStyle(toolName); // 载入该工具记忆值
-      let editor = null;
-      try {
-        if (toolName === 'select') {
-          lbMarkerArea.switchToSelectMode();
-        } else {
-          editor = lbMarkerArea.createMarker(toolName);
-        }
-      } catch (e) {}
-      // 工具就绪后应用颜色/粗细（createMarker 返回当前编辑器）
-      if (editor) {
-        try {
-          if (lbAnnotColor) editor.strokeColor = lbAnnotColor;
-          if (lbAnnotWidth) editor.strokeWidth = lbAnnotWidth;
-        } catch (e) {}
-        lbCurrentAnnotEditor = editor; // 供 Shift 锁定使用
-      }
-      highlightAnnotTool(toolName);
-    }
-
-    function closeAnnotator() {
-      // 销毁 MarkerArea，退出标注模式，回到灯箱查看
-      if (lbMarkerArea) {
-        try { lbMarkerArea.remove(); } catch (e) {}
-        lbMarkerArea = null;
-      }
-      lbAnnotMode = false;
-      const img = document.getElementById('lightboxImg');
-      const overlay = document.getElementById('lightbox');
-      if (img) img.style.display = '';
-      const hint = overlay && overlay.querySelector('.lightbox-hint');
-      if (hint) { hint.style.display = ''; hint.textContent = '滚轮缩放 / 拖拽移动 / 双击或点击背景关闭'; }
-      const tb = document.getElementById('annotToolbar');
-      if (tb) tb.style.display = 'none';
-      // 关闭预设色板
-      const pal = document.getElementById('annotPalette');
-      if (pal) pal.style.display = 'none';
-      updateAnnotateBtn();
-      // 回到查看：刷新灯箱标注叠加
-      if (lbCurrentSrc) showLightboxAnnotationOverlay();
-    }
-
-    function openAnnotator() {
-      if (typeof markerjs3 === 'undefined') { alert('标注组件未加载'); return; }
-      if (!lbCurrentSrc) return;
-      closeAnnotator(); // 清掉残留
-      const img = document.getElementById('lightboxImg');
-      const overlay = document.getElementById('lightbox');
-      // 隐藏原图、标注叠加与提示，注入 MarkerArea
-      img.style.display = 'none';
-      const lbOverlay = document.getElementById('lightboxAnnotOverlay');
-      if (lbOverlay) { lbOverlay.style.display = 'none'; lbOverlay.innerHTML = ''; }
-      const hint = overlay.querySelector('.lightbox-hint');
-      if (hint) hint.style.display = 'none';
-      // 内置滚轮平移已由全局 blockMarkerCanvasWheel 永久屏蔽，直接构造即可
-      let ma;
-      try {
-        ma = new markerjs3.MarkerArea();
-      } catch (e) {
-        ma = null;
-      }
-      lbMarkerArea = ma;
-      ma.targetImage = img; // 复用灯箱中原图引用
-      // 已有标注则恢复
-      const state = getAnnotation(lbCurrentSrc);
-      if (state) {
-        try { ma.restoreState(state); } catch (e) {}
-      }
-      overlay.appendChild(ma);
-      const enable = (currentTheme === 'dark' && darkImageFilter);
-      if (ma) ma.classList.toggle('dark-filter', enable);
-      // 滚轮缩放/右键粗细/横向切工具（capture 拦截，避免冒泡到 overlay 缩放监听）
-      ma.addEventListener('wheel', onAnnotWheel, { passive: false, capture: true });
-      // Shift 锁定：marker.js 的 window pointermove/up 在 appendChild 时已注册且永不移除，
-      // remove+add 让本监听排在 marker.js 之后执行，从而能在其更新 x2/y2 后覆写为水平/竖直
-      window.removeEventListener('pointermove', onAnnotPointerMove);
-      window.addEventListener('pointermove', onAnnotPointerMove);
-      window.removeEventListener('pointerup', onAnnotPointerUp);
-      window.addEventListener('pointerup', onAnnotPointerUp);
-      // 显示工具栏，默认选择矩形（进入即用 FrameMarker）
-      const tb = document.getElementById('annotToolbar');
-      if (tb) {
-        tb.style.display = '';
-        document.getElementById('annotWidth').value = lbAnnotWidth;
-        updateAnnotWidthUI();
-      }
-      buildAnnotPalette(); // 重建预设色板（含高亮当前色）
-      lbAnnotMode = true;
-      selectAnnotTool('FrameMarker'); // 进入即用矩形（内部已初始化 lbCurrentAnnotTool/lbLastAnnotTool）
-      const annotBtn = document.getElementById('lightboxAnnotate');
-      if (annotBtn) {
-        annotBtn.textContent = '退出标注';
-        annotBtn.classList.remove('has-annot');
-      }
-    }
-
-    // 工具栏事件绑定（DOMContentLoaded 后调用）
-    function bindAnnotToolbar() {
-      const tb = document.getElementById('annotToolbar');
-      if (tb) {
-        tb.addEventListener('click', function (e) {
-          e.stopPropagation();
-          const btn = e.target.closest('.at-btn, .at-width-step');
-          if (!btn) return;
-          const action = btn.dataset.action;
-          const tool = btn.dataset.tool;
-          if (action === 'undo')        { doUndo(); return; }
-          if (action === 'redo')        { doRedo(); return; }
-          if (action === 'save')        { saveAnnotationFromArea(); return; }
-          if (action === 'cancel')      { closeAnnotator(); return; }
-          if (action === 'width-minus') { adjustAnnotWidth(-1); return; }
-          if (action === 'width-plus')  { adjustAnnotWidth(1); return; }
-          if (tool && ANNOT_TOOLS.indexOf(tool) >= 0) { selectAnnotTool(tool); }
-        });
-      }
-
-      // 粗细滑块实时应用（同步到当前工具的记忆值）
-      const widthInput = document.getElementById('annotWidth');
-      if (widthInput) {
-        widthInput.addEventListener('click', function (e) { e.stopPropagation(); });
-        widthInput.addEventListener('input', function (e) {
-          lbAnnotWidth = parseInt(e.target.value, 10) || 1;
-          const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
-          if (s) s.width = lbAnnotWidth;
-          updateAnnotWidthUI();
-          if (lbMarkerArea) applyAnnotStyle();
-        });
-      }
-
-      // 颜色按钮：开关预设色板
-      const colorBtn = document.getElementById('annotColorSwatch');
-      if (colorBtn) colorBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        toggleAnnotPalette();
-      });
-
-      // 色板：预设色点击
-      const pal = document.getElementById('annotPalette');
-      if (pal) {
-        pal.addEventListener('click', function (e) {
-          e.stopPropagation();
-          const s = e.target.closest('.at-swatch');
-          if (s) { setAnnotColor(s.dataset.color); toggleAnnotPalette(false); return; }
-        });
-      }
-
-      // 色板：自定义色
-      const custom = document.getElementById('annotColorCustom');
-      if (custom) {
-        custom.addEventListener('click', function (e) { e.stopPropagation(); });
-        custom.addEventListener('input', function (e) { setAnnotColor(e.target.value); });
-        custom.addEventListener('change', function (e) { setAnnotColor(e.target.value); });
-      }
-
-      // 点击工具栏外部关闭色板
-      document.addEventListener('click', function (e) {
-        if (!pal || pal.style.display === 'none') return;
-        if (!e.target.closest('#annotPalette') && !e.target.closest('#annotColorSwatch')) {
-          pal.style.display = 'none';
-        }
-      });
-
-      // 右键结束当前标注编辑（画折线/多边形时）
-      document.getElementById('lightbox').addEventListener('contextmenu', onAnnotContextMenu, true);
-    }
-
-
-    function refreshPageOverlays() {
-      renderQuestionAnnotations();
-      // 解析图标注由 setSolutionImages 在加载时处理；此处重新渲染当前解析图
-      const container = document.getElementById('solutionImgs');
-      if (container) {
-        const base = getImgPath(current);
-        setSolutionImages(base); // 重新探测，触发 hasAnnotation 叠加
-      }
+      openAnnotator();
     }
 
     function closeLightbox() {
@@ -5744,315 +5442,45 @@
       overlay.classList.remove('show');
       document.body.style.overflow = '';
       lbCurrentSrc = null;
+      if (window.ImageAnnotator) window.ImageAnnotator.setCurrentSrc(null);
     }
 
-    // 标注按钮事件（在 DOMContentLoaded 中绑定）
-    document.addEventListener('DOMContentLoaded', function () {
-      const annotBtn = document.getElementById('lightboxAnnotate');
-      if (annotBtn) {
-        annotBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          if (lbAnnotMode) { saveAnnotationFromArea(); }
-          else openAnnotator();
+    function showLightboxAnnotationOverlay() {
+      if (window.ImageAnnotator) window.ImageAnnotator.showOverlay();
+    }
+
+    function updateAnnotateBtn() {
+      if (window.ImageAnnotator) window.ImageAnnotator.updateBtn();
+    }
+
+    function openAnnotator() {
+      if (window.ImageAnnotator) window.ImageAnnotator.open(lbCurrentSrc);
+    }
+
+    function closeAnnotator() {
+      if (window.ImageAnnotator) window.ImageAnnotator.close();
+    }
+
+    function saveAnnotationFromArea() {
+      if (window.ImageAnnotator) {
+        window.ImageAnnotator.saveFromArea({
+          refreshPageOverlays: refreshPageOverlays,
+          renderNav: renderNav
         });
       }
-      // 灯箱内标注叠加容器（注入 HTML 之后在下方补建）
-      const overlay = document.getElementById('lightbox');
-      if (overlay && !document.getElementById('lightboxAnnotOverlay')) {
-        const lbOverlay = document.createElement('div');
-        lbOverlay.className = 'lightbox-annot-overlay';
-        lbOverlay.id = 'lightboxAnnotOverlay';
-        lbOverlay.style.display = 'none';
-        overlay.appendChild(lbOverlay);
-      }
-      bindAnnotToolbar(); // 自建工具栏事件
-      // Shift 锁定监听在 openAnnotator 中「remove+add」以排在 marker.js 之后执行
-    });
-
-    // ===== 标注模式键盘交互（Snipaste 式） =====
-    function handleAnnotKeydown(e) {
-      const key = e.key.toLowerCase();
-
-      // Alt：退出标注（进入/退出标注的快捷键），保存并回到灯箱查看
-      if (e.key === 'Alt') {
-        e.preventDefault();
-        saveAnnotationFromArea();
-        return;
-      }
-
-      if (e.ctrlKey || e.metaKey) {
-        switch (key) {
-          case 'z': e.preventDefault(); e.shiftKey ? doRedo() : doUndo(); break;
-          case 'y': e.preventDefault(); doRedo(); break;
-          case 's': e.preventDefault(); saveAnnotationFromArea(); break;
-        }
-        return; // 其它 Ctrl 组合放行（如 Ctrl+C 复制）
-      }
-      if (e.altKey) return;
-
-      switch (key) {
-        case ' ':        e.preventDefault(); toggleAnnotToolbar(); return; // 空格：显隐工具栏
-        case 'tab':      e.preventDefault(); cycleAnnotTool(); return;     // Tab：在直线/矩形/高亮/画笔间切换
-        case 'escape':   e.preventDefault(); closeAnnotator(); return;     // Esc：退出标注
-        case 'delete':
-        case 'backspace': e.preventDefault(); deleteAnnotSelection(); return;
-      }
-
-      // 工具快捷键：直线/矩形/高亮/画笔
-      const map = { l: 'LineMarker', r: 'FrameMarker', h: 'HighlighterMarker', b: 'FreehandMarker' };
-      if (map[key]) {
-        e.preventDefault();
-        selectAnnotTool(map[key]); // 切工具即载入该工具记忆的颜色/粗细
-      }
     }
 
-    // Tab 在工具栏工具顺序中循环（矩形 → 直线 → 高亮 → 画笔，与 ANNOT_TOOLS 一致）
-    function cycleAnnotTool() {
-      let i = ANNOT_TOOLS.indexOf(lbCurrentAnnotTool);
-      if (i < 0) i = 0;
-      selectAnnotTool(ANNOT_TOOLS[(i + 1) % ANNOT_TOOLS.length]);
-    }
-
-    // 空格显隐工具栏（Snipaste：空格显示/隐藏标注工具条）
-    function toggleAnnotToolbar() {
-      const tb = document.getElementById('annotToolbar');
-      if (!tb) return;
-      const hide = tb.style.display !== 'none';
-      tb.style.display = hide ? 'none' : '';
-      const hint = document.querySelector('#lightbox .lightbox-hint');
-      if (hint) {
-        if (hide) {
-          hint.textContent = '工具栏已隐藏，按空格重新显示';
-          hint.style.display = '';
-        } else {
-          hint.textContent = '滚轮缩放 / 拖拽移动 / 双击或点击背景关闭 · 空格隐藏工具栏';
-          hint.style.display = '';
-        }
-      }
-    }
-
-    // 右键结束当前标注编辑（连续绘制同一工具）
-    function onAnnotContextMenu(e) {
-      if (!lbAnnotMode) return;
-      if (e.target && e.target.closest && e.target.closest('#annotToolbar')) return; // 工具栏上右键不拦截
-      e.preventDefault();
-      finishCurrentAnnot();
-    }
-
-    function finishCurrentAnnot() {
-      if (!lbMarkerArea) return;
-      try {
-        lbMarkerArea.switchToSelectMode(); // 内部 deselect → 收尾当前编辑
-        const t = lbLastAnnotTool;
-        if (t && t !== 'select') {
-          // 重新进入同工具，便于连续绘制
-          selectAnnotTool(t);
-        }
-      } catch (e) {}
-    }
-
-    // Shift 锁定直线为水平或竖直（Snipaste：按住 Shift 画直线）
-    // marker.js 的 onPointerMove/onPointerUp 绑定在 window 上且先于本监听器注册，
-    // 会先按局部坐标更新 marker.x2/y2；此处只做「吸到水平/竖直」的覆写。
-    function snapAnnotToAxis() {
-      if (!lbAnnotMode) return false;
-      const tool = lbCurrentAnnotTool;
-      if (tool !== 'LineMarker') return false;
-      const ed = lbCurrentAnnotEditor;
-      if (!ed || (ed.state !== 'creating' && ed.state !== 'select')) return false;
-      const marker = ed.marker;
-      if (!marker || typeof marker.x1 !== 'number' || typeof marker.y1 !== 'number') return false;
-      const x1 = marker.x1, y1 = marker.y1;
-      const dx = marker.x2 - x1, dy = marker.y2 - y1;
-      try {
-        if (Math.abs(dx) >= Math.abs(dy)) marker.y2 = y1; // 水平锁定
-        else marker.x2 = x1;                              // 竖直锁定
-        marker.adjustVisual();
-        if (ed.adjustControlBox) ed.adjustControlBox();
-      } catch (err) {}
-      return true;
-    }
-    function onAnnotPointerMove(e) {
-      if (e.shiftKey) {
-        lbAnnotShiftWasOn = true;
-        snapAnnotToAxis();
-      } else {
-        lbAnnotShiftWasOn = false;
-      }
-    }
-    // 释放时 marker.js 的 resize 会用末帧坐标覆盖，需再吸一次（需记录 Shift 状态）
-    function onAnnotPointerUp(e) {
-      if (lbAnnotShiftWasOn) {
-        snapAnnotToAxis();
-        lbAnnotShiftWasOn = false;
-      }
-    }
-
-    // 滚轮交互（capture 拦截，阻止冒泡到 overlay 缩放）：
-    //   - 普通滚轮（deltaY）→ 缩放（光标处）
-    //   - 右键按住 + 滚轮 → 调节画笔粗细
-    //   - 横向滚轮（deltaX）→ 切换工具
-    function onAnnotWheel(e) {
-      if (!lbAnnotMode) return;
-      e.preventDefault();
-      e.stopPropagation();
-
-      // 右键按住：调节粗细（Snipaste：右键+滚轮）
-      if (e.buttons === 2 || e.button === 2) {
-        const delta = (e.deltaY < 0) ? 1 : -1;
-        adjustAnnotWidth(delta);
-        return;
-      }
-
-      // 横向滚轮：切换工具（|deltaX| 明显大于 |deltaY| 时判定为横向）
-      const dx = e.deltaX || 0, dy = e.deltaY || 0;
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 1) {
-        cycleAnnotToolByDelta(dx > 0 ? 1 : -1);
-        return;
-      }
-
-      // 普通滚轮：缩放（光标处）
-      zoomAnnotAt(e.clientX, e.clientY, dy < 0 ? 1.15 : 0.87);
-    }
-
-    // 在光标处缩放（保持光标下的图片坐标不漂移）
-    function zoomAnnotAt(cx, cy, factor) {
-      const ma = lbMarkerArea;
-      if (!ma) return;
-      const cc = ma.shadowRoot && ma.shadowRoot.querySelector('.canvas-container');
-      if (!cc) return;
-      const cr = cc.getBoundingClientRect();
-      const Cx = cr.left + cr.width / 2, Cy = cr.top + cr.height / 2;
-      const oldZoom = ma._zoomLevel || 1;
-      const newZoom = Math.min(Math.max(oldZoom * factor, 0.5), 5);
-      if (newZoom === oldZoom) return;
-      const ddx = (cx - Cx - (ma._panX || 0)) / oldZoom;
-      const ddy = (cy - Cy - (ma._panY || 0)) / oldZoom;
-      ma._zoomLevel = newZoom;
-      ma._panX = (ma._panX || 0) + (oldZoom - newZoom) * ddx;
-      ma._panY = (ma._panY || 0) + (oldZoom - newZoom) * ddy;
-      ma.applyTransform();
-      try { ma.adjustEditorsZoom(); } catch (e) {}
-    }
-
-    // 横向滚轮切换工具（在工具栏工具顺序中循环）
-    function cycleAnnotToolByDelta(dir) {
-      let i = ANNOT_TOOLS.indexOf(lbCurrentAnnotTool);
-      if (i < 0) i = ANNOT_TOOLS.indexOf(lbLastAnnotTool);
-      if (i < 0) i = 0;
-      selectAnnotTool(ANNOT_TOOLS[(i + dir + ANNOT_TOOLS.length) % ANNOT_TOOLS.length]);
-    }
-
-    function adjustAnnotWidth(d) {
-      lbAnnotWidth = Math.max(1, Math.min(30, (lbAnnotWidth || 1) + d));
-      const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
-      if (s) s.width = lbAnnotWidth; // 同步到当前工具的记忆值
-      const w = document.getElementById('annotWidth');
-      if (w) w.value = lbAnnotWidth;
-      updateAnnotWidthUI();
-      if (lbMarkerArea) applyAnnotStyle();
-    }
-
-    // 撤销 / 重做 / 删除
-    function doUndo() {
-      if (lbMarkerArea) { try { lbMarkerArea.undo(); } catch (err) {} }
-    }
-    function doRedo() {
-      if (lbMarkerArea) { try { lbMarkerArea.redo(); } catch (err) {} }
-    }
-    function deleteAnnotSelection() {
-      if (lbMarkerArea) { try { lbMarkerArea.deleteSelectedMarkers(); } catch (err) {} }
-    }
-
-    // ===== 颜色 / 粗细 UI =====
-    function buildAnnotPalette() {
-      const wrap = document.getElementById('annotPaletteSwatches');
-      if (!wrap) return;
-      wrap.innerHTML = '';
-      ANNOT_COLORS.forEach(function (c) {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'at-swatch';
-        b.dataset.color = c;
-        b.style.background = c;
-        b.title = c;
-        wrap.appendChild(b);
-      });
-      updateAnnotColorUI();
-    }
-    function toggleAnnotPalette(show) {
-      const p = document.getElementById('annotPalette');
-      if (!p) return;
-      const willShow = (typeof show === 'boolean') ? show : (p.style.display === 'none');
-      p.style.display = willShow ? '' : 'none';
-      if (willShow) updateAnnotColorUI();
-    }
-    function setAnnotColor(hex) {
-      lbAnnotColor = hex;
-      const s = ANNOT_TOOL_STYLES[lbCurrentAnnotTool];
-      if (s) s.color = hex; // 同步到当前工具的记忆值
-      updateAnnotColorUI();
-      if (lbMarkerArea) applyAnnotStyle();
-    }
-    function updateAnnotColorUI() {
-      const dot = document.getElementById('annotColorDot');
-      if (dot) dot.style.background = lbAnnotColor;
-      document.querySelectorAll('#annotPalette .at-swatch').forEach(function (s) {
-        s.classList.toggle('active', String(s.dataset.color || '').toLowerCase() === String(lbAnnotColor).toLowerCase());
-      });
-    }
-    function updateAnnotWidthUI() {
-      const v = document.getElementById('annotWidthVal');
-      if (v) v.textContent = lbAnnotWidth;
-    }
-
-    // 标注区当前是否有有效内容（用于背景点击时判断「直接关灯箱」还是「先保存再退出标注」）。
-    // 需先 switchToSelectMode 收尾未完成图形，再按 saveAnnotationFromArea 相同的规则过滤 0 尺寸图形。
     function annotHasContent() {
-      const ma = lbMarkerArea;
-      if (!ma) return false;
-      try { ma.switchToSelectMode(); } catch (e) {}
-      try {
-        const st = ma.getState();
-        if (st && Array.isArray(st.markers)) {
-          return st.markers.some(function (m) {
-            if (!m) return false;
-            const f = m.frame;
-            if (f && f.width === 0 && f.height === 0) return false;
-            return true;
-          });
-        }
-      } catch (e) {}
-      return false;
+      return window.ImageAnnotator ? window.ImageAnnotator.hasContent() : false;
     }
 
-    // 从当前 MarkerArea 读取并保存（点「保存」按钮时）
-    function saveAnnotationFromArea() {
-      if (!lbCurrentSrc) return;
-      if (lbMarkerArea) {
-        try { lbMarkerArea.switchToSelectMode(); } catch (e) {} // 收尾：finalize 未完成的图形
-        let st;
-        try { st = lbMarkerArea.getState(); } catch (e) {}
-        if (st && Array.isArray(st.markers)) {
-          // 过滤空图形（0 尺寸图形）
-          st.markers = st.markers.filter(function (m) {
-            if (!m) return false;
-            var f = m.frame;
-            if (f && f.width === 0 && f.height === 0) return false;
-            return true;
-          });
-        }
-        // 无有效标注则清理，避免残留空状态
-        if (st && st.markers && st.markers.length === 0) {
-          clearAnnotation(lbCurrentSrc);
-        } else if (st) {
-          saveAnnotation(lbCurrentSrc, st);
-        }
+    function refreshPageOverlays() {
+      renderQuestionAnnotations();
+      const container = document.getElementById('solutionImgs');
+      if (container) {
+        const base = getImgPath(current);
+        setSolutionImages(base);
       }
-      closeAnnotator();
-      updateAnnotateBtn();
-      refreshPageOverlays();
-      renderNav(); // 右侧导航角标同步（标注新增/清除）
     }
 
     // ===== 事件绑定 =====
