@@ -394,6 +394,116 @@
     input.click();
   }
 
+  // ===== 6.5 双向手动同步控制（明确清晰处理本地文件与浏览器 Storage） =====
+  // 按钮 1：将本地 JSON 数据同步到浏览器（覆盖浏览器 Storage 并刷新视图）
+  async function syncLocalToBrowser() {
+    try {
+      let fileData = null;
+      let fileName = '';
+
+      // 1. 若已有句柄，尝试从句柄读取
+      if (currentFileHandle) {
+        let hasPerm = false;
+        try {
+          hasPerm = (await currentFileHandle.queryPermission({ mode: 'read' })) === 'granted';
+          if (!hasPerm) hasPerm = (await currentFileHandle.requestPermission({ mode: 'read' })) === 'granted';
+        } catch (e) {}
+        if (hasPerm) {
+          fileData = await readFromFile(currentFileHandle);
+          fileName = currentFileHandle.name;
+        }
+      }
+
+      // 2. 若无句柄或权限受阻，调出文件选择器选取本地 JSON
+      if (!fileData) {
+        if ('showOpenFilePicker' in window) {
+          const [handle] = await window.showOpenFilePicker({
+            types: [
+              {
+                description: '考研题库数据文件 (*.json)',
+                accept: { 'application/json': ['.json'] }
+              }
+            ],
+            multiple: false
+          });
+          if (!handle) return;
+          currentFileHandle = handle;
+          await idbSaveHandle(handle);
+          fileData = await readFromFile(handle);
+          fileName = handle.name;
+          updateUI('linked');
+        } else {
+          // 降级使用普通文件选择框
+          importManualJson();
+          return;
+        }
+      }
+
+      if (fileData && fileData.data && Object.keys(fileData.data).length > 0) {
+        applyAllData(fileData);
+        const count = Object.keys(fileData.data).length;
+        showToast(`已成功将本地「${fileName}」数据全量载入浏览器（共 ${count} 项）！`, 'success');
+      } else {
+        showToast('未能从本地文件中解析出有效的题库数据', 'warning');
+      }
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error('[StorageSync] 本地同步到浏览器失败', err);
+        showToast('本地同步到浏览器失败: ' + err.message, 'error');
+      }
+    }
+  }
+
+  // 按钮 2：将浏览器当前数据强制写入本地文件（覆盖本地文件）
+  async function syncBrowserToLocal() {
+    try {
+      // 1. 若已有句柄，尝试直接写入
+      if (currentFileHandle) {
+        let hasPerm = false;
+        try {
+          hasPerm = (await currentFileHandle.queryPermission({ mode: 'readwrite' })) === 'granted';
+          if (!hasPerm) hasPerm = (await currentFileHandle.requestPermission({ mode: 'readwrite' })) === 'granted';
+        } catch (e) {}
+        if (hasPerm) {
+          const data = collectAllData();
+          const ok = await writeToFile(data);
+          if (ok) {
+            showToast(`已成功将浏览器全部学习进度写入「${currentFileHandle.name}」！`, 'success');
+            return;
+          }
+        }
+      }
+
+      // 2. 若无句柄或权限失败，调出保存文件选择器
+      if ('showSaveFilePicker' in window) {
+        const handle = await window.showSaveFilePicker({
+          suggestedName: 'kaoyan_tiku_data.json',
+          types: [
+            {
+              description: '考研题库数据文件 (*.json)',
+              accept: { 'application/json': ['.json'] }
+            }
+          ]
+        });
+        if (!handle) return;
+        currentFileHandle = handle;
+        await idbSaveHandle(handle);
+        const data = collectAllData();
+        await writeToFile(data);
+        showToast(`已成功将浏览器进度写入「${handle.name}」并建立同步！`, 'success');
+        updateUI('linked');
+      } else {
+        // 降级导出并下载
+        exportManualJson();
+      }
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error('[StorageSync] 浏览器写入本地失败', err);
+        showToast('浏览器写入本地失败: ' + err.message, 'error');
+      }
+    }
+  }
+
   // ===== 7. UI 与状态更新 =====
   function updateUI(status) {
     syncStatus = status;
@@ -405,29 +515,28 @@
 
     if (status === 'linked') {
       if (dot) dot.className = 'sync-dot dot-online';
-      if (text) text.textContent = '本地实时同步中';
+      if (text) text.textContent = '本地文件已连接';
       if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : '已关联文件';
       if (btnLink) btnLink.style.display = 'none';
       if (btnUnlink) btnUnlink.style.display = 'inline-flex';
     } else if (status === 'saving') {
       if (dot) dot.className = 'sync-dot dot-saving';
-      if (text) text.textContent = '正在保存到磁盘...';
+      if (text) text.textContent = '正在写入本地...';
     } else if (status === 'prompt') {
       if (dot) dot.className = 'sync-dot dot-prompt';
-      if (text) text.textContent = '待激活读写权限';
+      if (text) text.textContent = '待激活文件权限';
       if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : '待激活';
       if (btnLink) {
         btnLink.style.display = 'inline-flex';
-        btnLink.textContent = '激活文件权限';
+        btnLink.textContent = '激活读写权限';
       }
       if (btnUnlink) btnUnlink.style.display = 'inline-flex';
     } else {
       if (dot) dot.className = 'sync-dot dot-offline';
-      if (text) text.textContent = '本地未关联';
+      if (text) text.textContent = '未连接本地文件';
       if (fileNameEl) fileNameEl.textContent = '仅存于浏览器缓存';
       if (btnLink) {
-        btnLink.style.display = 'inline-flex';
-        btnLink.textContent = '关联本地文件';
+        btnLink.style.display = 'none';
       }
       if (btnUnlink) btnUnlink.style.display = 'none';
     }
@@ -469,7 +578,16 @@
 
   // ===== 8. 初始化与自启动恢复 =====
   async function init() {
-    // 绑定侧栏按钮事件
+    // 绑定双向同步按钮事件
+    const btnSyncLocalToBrowser = document.getElementById('btnSyncLocalToBrowser');
+    if (btnSyncLocalToBrowser) btnSyncLocalToBrowser.onclick = syncLocalToBrowser;
+
+    const btnSyncBrowserToLocal = document.getElementById('btnSyncBrowserToLocal');
+    if (btnSyncBrowserToLocal) btnSyncBrowserToLocal.onclick = syncBrowserToLocal;
+
+    const btnRelink = document.getElementById('btnRelinkLocalFile');
+    if (btnRelink) btnRelink.onclick = linkLocalFile;
+
     const btnLink = document.getElementById('btnLinkLocalFile');
     if (btnLink) {
       btnLink.onclick = () => {
@@ -481,8 +599,6 @@
     if (btnUnlink) btnUnlink.onclick = unlinkLocalFile;
     const btnExp = document.getElementById('btnSyncExport');
     if (btnExp) btnExp.onclick = exportManualJson;
-    const btnImp = document.getElementById('btnSyncImport');
-    if (btnImp) btnImp.onclick = importManualJson;
 
     // 检查 IDB 是否有上次记忆的文件句柄
     const savedHandle = await idbGetHandle();
@@ -495,7 +611,6 @@
           const fileData = await readFromFile(savedHandle);
           if (fileData) applyAllData(fileData);
         } else {
-          // 浏览器要求用户手势才能 requestPermission，置为待激活态
           updateUI('prompt');
         }
       } catch (e) {
@@ -511,6 +626,8 @@
     init,
     scheduleSave,
     flushSave,
+    syncLocalToBrowser,
+    syncBrowserToLocal,
     linkLocalFile,
     createAndLinkNewFile,
     unlinkLocalFile,

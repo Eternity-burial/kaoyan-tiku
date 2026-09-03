@@ -169,11 +169,22 @@
           <span class="sync-status-text" id="syncStatusText">本地未关联</span>
         </div>
         <div class="sync-filename" id="syncFileName" title="数据存放路径">仅存于浏览器缓存</div>
-        <button id="btnLinkLocalFile" class="sync-btn">关联本地文件</button>
-        <button id="btnUnlinkFile" class="sync-btn-unlink" style="display:none" title="断开与本地文件的连接">断开连接</button>
+
+        <!-- 明确清晰的双向同步按钮 -->
+        <div class="sync-direction-group">
+          <button id="btnSyncLocalToBrowser" class="sync-action-btn btn-sync-in" title="读取本地 JSON 文件，全量同步载入到浏览器并刷新">
+            <span class="sync-icon">⬇</span> 本地同步到浏览器
+          </button>
+          <button id="btnSyncBrowserToLocal" class="sync-action-btn btn-sync-out" title="将浏览器当前全部做题进度直接写入本地 JSON 文件">
+            <span class="sync-icon">⬆</span> 浏览器写入本地
+          </button>
+        </div>
+
+        <button id="btnLinkLocalFile" class="sync-btn" style="display:none">关联本地文件</button>
         <div class="sync-actions-row">
-          <button id="btnSyncExport" class="sync-mini-btn" title="导出完整数据为 JSON 备份文件">导出备份</button>
-          <button id="btnSyncImport" class="sync-mini-btn" title="从 JSON 文件恢复数据">恢复备份</button>
+          <button id="btnRelinkLocalFile" class="sync-mini-btn" title="关联或切换本地 JSON 存储文件">关联文件</button>
+          <button id="btnUnlinkFile" class="sync-mini-btn sync-btn-unlink" style="display:none" title="断开与本地文件的连接">断开</button>
+          <button id="btnSyncExport" class="sync-mini-btn" title="导出完整数据为 JSON 备份文件">备份</button>
         </div>
       </div>
 
