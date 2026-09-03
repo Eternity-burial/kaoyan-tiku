@@ -8574,110 +8574,12 @@ ${cardsHTML}
       }
     }, { passive: false });
 
-    // ===== 历史 shu1 数据向 math 规范自动平滑迁移 =====
-    function migrateHistoricalShu1Data() {
-      try {
-        // 1. 迁移 sm2_shu1_ch* -> sm2_math_ch*
-        var keysToMigrate = [];
-        for (var i = 0; i < localStorage.length; i++) {
-          var k = localStorage.key(i);
-          if (k && k.startsWith('sm2_shu1_')) {
-            keysToMigrate.push(k);
-          }
-        }
-        keysToMigrate.forEach(function(oldKey) {
-          var newKey = 'sm2_math_' + oldKey.substring(9);
-          var val = localStorage.getItem(oldKey);
-          if (val && !localStorage.getItem(newKey)) {
-            localStorage.setItem(newKey, val);
-          }
-          localStorage.removeItem(oldKey);
-        });
-
-        // 2. 迁移 shu1_ui_solution -> math_ui_solution
-        var oldSol = localStorage.getItem('shu1_ui_solution');
-        if (oldSol !== null) {
-          if (!localStorage.getItem('math_ui_solution')) {
-            localStorage.setItem('math_ui_solution', oldSol);
-          }
-          localStorage.removeItem('shu1_ui_solution');
-        }
-
-        // 3. 迁移 kaoyan_subject
-        if (localStorage.getItem('kaoyan_subject') === 'shu1') {
-          localStorage.setItem('kaoyan_subject', 'math');
-        }
-
-        // 4. 迁移 kaoyan_resume 内的 shu1 与 shu1:: 键
-        var resumeRaw = localStorage.getItem('kaoyan_resume');
-        if (resumeRaw && resumeRaw.indexOf('shu1') !== -1) {
-          try {
-            var resumeObj = JSON.parse(resumeRaw);
-            var changed = false;
-            for (var rk in resumeObj) {
-              if (rk === 'shu1') {
-                if (!resumeObj['math']) resumeObj['math'] = resumeObj['shu1'];
-                delete resumeObj['shu1'];
-                changed = true;
-              } else if (rk.startsWith('shu1::')) {
-                var newRk = 'math::' + rk.substring(6);
-                if (!resumeObj[newRk]) resumeObj[newRk] = resumeObj[rk];
-                delete resumeObj[rk];
-                changed = true;
-              }
-            }
-            if (changed) {
-              localStorage.setItem('kaoyan_resume', JSON.stringify(resumeObj));
-            }
-          } catch (e) {}
-        }
-
-        // 5. 迁移 kaoyan_related_topics 中的 shu1:: QID
-        var topicsRaw = localStorage.getItem('kaoyan_related_topics');
-        if (topicsRaw && topicsRaw.indexOf('shu1::') !== -1) {
-          try {
-            var topicsObj = JSON.parse(topicsRaw);
-            var tChanged = false;
-            for (var tid in topicsObj) {
-              var top = topicsObj[tid];
-              if (top && top.members && Array.isArray(top.members)) {
-                top.members.forEach(function(m) {
-                  if (m && m.qid && m.qid.startsWith('shu1::')) {
-                    m.qid = 'math::' + m.qid.substring(6);
-                    tChanged = true;
-                  }
-                });
-              }
-            }
-            if (tChanged) {
-              localStorage.setItem('kaoyan_related_topics', JSON.stringify(topicsObj));
-            }
-          } catch (e) {}
-        }
-
-        // 6. 迁移 kaoyan_review_session 中的 subjectId
-        var sessionRaw = localStorage.getItem('kaoyan_review_session');
-        if (sessionRaw && sessionRaw.indexOf('shu1') !== -1) {
-          try {
-            var sessionObj = JSON.parse(sessionRaw);
-            if (sessionObj && sessionObj.subjectId === 'shu1') {
-              sessionObj.subjectId = 'math';
-              localStorage.setItem('kaoyan_review_session', JSON.stringify(sessionObj));
-            }
-          } catch (e) {}
-        }
-      } catch (e) {
-        console.warn('migrateHistoricalShu1Data warning:', e);
-      }
-    }
-
     // ===== 初始化 =====
-    migrateHistoricalShu1Data();
     // 读取 URL 参数或上次选择的科目（默认数学），加载其章节数组
     var urlParams = new URLSearchParams(window.location.search);
     var urlSubj = urlParams.get('subj');
-    var rawSaved = (urlSubj && (urlSubj === 'shu1' || SUBJECTS.some(function (s) { return s.id === urlSubj; }))) ? urlSubj : localStorage.getItem('kaoyan_subject');
-    var savedSubject = (rawSaved === 'shu1') ? 'math' : rawSaved;
+    var rawSaved = (urlSubj && SUBJECTS.some(function (s) { return s.id === urlSubj; })) ? urlSubj : localStorage.getItem('kaoyan_subject');
+    var savedSubject = rawSaved || 'math';
     curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'math';
     window.curSubjectId = curSubjectId;
     
