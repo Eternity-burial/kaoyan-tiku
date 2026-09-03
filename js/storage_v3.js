@@ -514,9 +514,11 @@
 
       function processNext() {
         if (done >= total) {
-          // 所有章节处理完毕，写版本号
+          // 所有章节处理完毕，清理所有旧魔数存储键，实现 SSOT 纯净存储
+          self.purgeLegacyKeys();
           try {
             localStorage.setItem(self.STORAGE_VERSION_KEY, String(self.TARGET_VERSION));
+            localStorage.setItem('kaoyan.g.migrated_at', new Date().toISOString());
           } catch (e) {}
           if (onComplete) onComplete(true); // true = 执行了迁移
           return;
@@ -534,6 +536,31 @@
       }
 
       processNext();
+    },
+
+    /**
+     * 彻底清除所有历史旧魔数存储键（不再保留冗余双写与脏数据）
+     */
+    purgeLegacyKeys: function () {
+      var keysToRemove = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (!k) continue;
+        if (
+          /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$/.test(k) ||
+          /^sm2_/.test(k) ||
+          /^(?:status|sm2|notes|qbad|sbad|mismatch)::/.test(k) ||
+          /^(?:kaoyan_resume|kaoyan_ui_filters|shu1_ui_solution)$/.test(k) ||
+          /^(?:math|822|english)_ui_solution$/.test(k)
+        ) {
+          keysToRemove.push(k);
+        }
+      }
+      keysToRemove.forEach(function (k) {
+        try { localStorage.removeItem(k); } catch (e) {}
+      });
+      console.log('[StorageV3] 已彻底清理 ' + keysToRemove.length + ' 个历史旧魔数存储键，实现 SSOT 纯净存储。');
+      return keysToRemove.length;
     }
   };
 

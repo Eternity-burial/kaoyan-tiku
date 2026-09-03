@@ -325,23 +325,27 @@ test('图片路径生成器: 数学例题/习题与822特例', () => {
   assert.strictEqual(sub822.getImgPath(ch822, '1-1 (1)'), '题库/822教材/ch1/pb_1-1_(1)');
 });
 
-// 3. StorageSync 数据采集正则与安全性
+// 3. StorageSync 数据采集正则与安全性（纯净 V3 SSOT）
 console.log('\n--- 3. StorageSync 数据同步正则与防污染 ---');
 
-const syncKeyRegex = /^kaoyan\.(?:q|g|ui)\.|^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$|^sm2_|^annot_|^ky_english_|^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)|^([a-z0-9]+)_ui_|^(?:status|sm2|notes|qbad|sbad|mismatch)::/;
+const syncKeyRegex = /^kaoyan\.(?:q|g|ui)\.|^annot_|^ky_english_|^english_vocab_/;
 
-test('StorageSync 正则精确覆盖全部题库关键数据键 (数学、822、英语、v3存储)', () => {
+test('StorageSync 正则精确覆盖纯净 V3 存储、标注与英语词汇键', () => {
   const validKeys = [
-    'ch1_s1_status', 'ch212_s1_notes', 'm3ch1_822_qbad', 'ch5_822_book_mismatch',
-    'sm2_math_ch1', 'sm2_822_ch5',
-    'status::math::李范全书::高数::ch03', 'mismatch::math::李范全书::高数::ch03',
+    'kaoyan.q.math::基础30讲::高数::lec01',
+    'kaoyan.q.822::小题300::控制工程基础::ch01',
+    'kaoyan.g.resume',
+    'kaoyan.g.filters',
+    'kaoyan.g.study_log',
+    'kaoyan.g.topics',
+    'kaoyan.g.affinity',
+    'kaoyan.ui.math',
+    'kaoyan.ui.822',
+    'kaoyan.ui.english',
     'annot_题库/基础30讲/高数/第1讲/ex_1-1_question.png',
-    'ky_english_mastery_2010', 'ky_english_notes_2010', 'ky_english_starred_words',
-    'kaoyan_resume', 'kaoyan_study_log', 'kaoyan_ui_filters', 'kaoyan_subject',
-    'kaoyan_theme', 'kaoyan_dark_img_filter', 'kaoyan_review_session', 'kaoyan_related_topics', 'kaoyan_related_affinity',
-    'kaoyan_resume_english_y2010',
-    'math_ui_solution', '822_ui_solution', 'english_ui_solution',
-    'kaoyan.q.math::基础30讲::高数::lec01', 'kaoyan.g.resume', 'kaoyan.g.filters', 'kaoyan.ui.math'
+    'ky_english_mastery_2010',
+    'ky_english_notes_2010',
+    'english_vocab_star'
   ];
 
   validKeys.forEach(k => {
@@ -349,12 +353,16 @@ test('StorageSync 正则精确覆盖全部题库关键数据键 (数学、822、
   });
 });
 
-test('StorageSync 正则安全拒绝无关第三方或系统键', () => {
-  const invalidKeys = [
+test('StorageSync 正则彻底拒绝历史旧魔数键与第三方系统键（SSOT 纯净化）', () => {
+  const rejectedKeys = [
+    'ch1_s1_status', 'ch212_s1_notes', 'm3ch1_822_qbad', 'ch5_822_book_mismatch',
+    'sm2_math_ch1', 'sm2_822_ch5',
+    'status::math::李范全书::高数::ch03', 'mismatch::math::李范全书::高数::ch03',
+    'kaoyan_resume', 'kaoyan_ui_filters', 'math_ui_solution',
     '_ga', 'session_id', 'google_analytics', 'temp_data', '__proto__', 'constructor'
   ];
 
-  invalidKeys.forEach(k => {
+  rejectedKeys.forEach(k => {
     assert.ok(!syncKeyRegex.test(k), `Key "${k}" should NOT match StorageSync regex`);
   });
 });
@@ -828,6 +836,29 @@ test('ResumeStore: 无 slug 时 fallback 到 idx（旧格式兼容）', () => {
   const r = ResumeStore.loadChapter('math', mockCh3.id, mockCh3);
   assert.ok(r);
   assert.strictEqual(r.idx, 1);
+});
+
+test('MigrationRunner.purgeLegacyKeys: 清除全部旧魔数存储键实现纯净 SSOT', () => {
+  const ls = makeMockLS();
+  ls.setItem('ch1_s1_status', '{"0":"proficient"}');
+  ls.setItem('sm2_math_ch1', '{"0":{}}');
+  ls.setItem('status::math::ch1', '{}');
+  ls.setItem('kaoyan_resume', '{}');
+  ls.setItem('kaoyan.q.math::lec01', '{"$v":3}');
+  ls.setItem('annot_test', '{}');
+
+  const win = { localStorage: ls, StorageV3: null, console: console };
+  new Function('window', 'localStorage', storageV3Src)(win, ls);
+  const { MigrationRunner } = win.StorageV3;
+
+  const count = MigrationRunner.purgeLegacyKeys();
+  assert.strictEqual(count, 4, '应精确清理4个旧格式键');
+  assert.strictEqual(ls.getItem('ch1_s1_status'), null);
+  assert.strictEqual(ls.getItem('sm2_math_ch1'), null);
+  assert.strictEqual(ls.getItem('status::math::ch1'), null);
+  assert.strictEqual(ls.getItem('kaoyan_resume'), null);
+  assert.ok(ls.getItem('kaoyan.q.math::lec01') !== null, 'V3 键应保留');
+  assert.ok(ls.getItem('annot_test') !== null, '标注键应保留');
 });
 
 console.log('\n====================================================');

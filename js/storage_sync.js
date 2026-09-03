@@ -94,31 +94,28 @@
     return false;
   }
 
-  // ===== 3. 全量数据采集与应用 =====
+  // ===== 3. 全量数据采集与应用（纯净 V3 SSOT） =====
   // 采集所有与题库相关的 localStorage 数据与内存标注
   function collectAllData() {
     const dump = {};
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
       if (!k) continue;
-      // 精确收集题库相关活跃键（掌握度/错图/实书不符/笔记/SM-2/图片标注/英语/暗化滤镜/全局状态）
+      // 纯净 SSOT 采集：只采集 kaoyan.*、annot_* 以及英语数据，坚决不采集任何旧魔数键
       if (
-        /^kaoyan\.(?:q|g|ui)\./.test(k) ||         // v3 新格式（首优先）
-        /^(?:ch|m\d+).*_(?:status|qbad|sbad|book_mismatch|notes)$/.test(k) ||
-        /^sm2_/.test(k) ||
+        /^kaoyan\.(?:q|g|ui)\./.test(k) ||
         /^annot_/.test(k) ||
         /^ky_english_/.test(k) ||
-        /^kaoyan_(?:resume|study_log|ui_filters|subject|theme|dark_img_filter|review_session|related_topics|related_affinity)/.test(k) ||
-        /^(?:math|shu1|822|english)_ui_/.test(k) ||
-        /^(?:status|sm2|notes|qbad|sbad|mismatch)::/.test(k)
+        /^english_vocab_/.test(k)
       ) {
         dump[k] = localStorage.getItem(k);
       }
     }
 
     return {
-      version: 2,
+      version: 3,
       appName: '考研题库 (Math + 822 + English)',
+      storageEngine: 'StorageV3-SSOT',
       lastSaved: new Date().toISOString(),
       timestamp: Date.now(),
       data: dump
@@ -153,8 +150,21 @@
         }
       }
 
-      // 触发应用视图刷新
-      triggerAppRefresh();
+      // 如果导入的数据含有旧格式，触发自动迁移并清理旧键
+      if (window.StorageV3 && window.StorageV3.MigrationRunner) {
+        if (typeof SUBJECTS !== 'undefined') {
+          window.StorageV3.MigrationRunner.runAll(SUBJECTS, null, function () {
+            window.StorageV3.MigrationRunner.purgeLegacyKeys();
+            triggerAppRefresh();
+          });
+        } else {
+          window.StorageV3.MigrationRunner.purgeLegacyKeys();
+          triggerAppRefresh();
+        }
+      } else {
+        triggerAppRefresh();
+      }
+
       return true;
     } finally {
       setTimeout(() => {
