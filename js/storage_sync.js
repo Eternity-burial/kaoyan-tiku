@@ -150,20 +150,7 @@
         }
       }
 
-      // 如果导入的数据含有旧格式，触发自动迁移并清理旧键
-      if (window.StorageV3 && window.StorageV3.MigrationRunner) {
-        if (typeof SUBJECTS !== 'undefined') {
-          window.StorageV3.MigrationRunner.runAll(SUBJECTS, null, function () {
-            window.StorageV3.MigrationRunner.purgeLegacyKeys();
-            triggerAppRefresh();
-          });
-        } else {
-          window.StorageV3.MigrationRunner.purgeLegacyKeys();
-          triggerAppRefresh();
-        }
-      } else {
-        triggerAppRefresh();
-      }
+      triggerAppRefresh();
 
       return true;
     } finally {

@@ -602,10 +602,10 @@ test('.gitignore 规则覆盖各类敏感 token、session 和私钥文件', () =
   assert.ok(gitignoreContent.includes('*.env*'), '.gitignore must contain *.env*');
 });
 
-// ===== 9. StorageV3 核心模块与防漂移架构单元测试 =====
-console.log('\n--- 9. StorageV3: DataValidator / ChapterStore / GlobalStore / UiStore / MigrationRunner / ResumeStore ---');
+// ===== 9. StorageEngine 核心模块与防漂移架构单元测试 =====
+console.log('\n--- 9. StorageEngine: DataValidator / ChapterStore / GlobalStore / UiStore / ResumeStore ---');
 
-const storageV3Src = fs.readFileSync(path.join(__dirname, '../js/storage_v3.js'), 'utf8');
+const storageSrc = fs.readFileSync(path.join(__dirname, '../js/storage.js'), 'utf8');
 
 function makeMockLS() {
   const store = {};
@@ -620,9 +620,9 @@ function makeMockLS() {
 }
 
 const mockLS3 = makeMockLS();
-const v3Win = { localStorage: mockLS3, StorageV3: null, console: console };
-new Function('window', 'localStorage', storageV3Src)(v3Win, mockLS3);
-const { DataValidator, ChapterStore, GlobalStore, UiStore, MigrationRunner, ResumeStore } = v3Win.StorageV3;
+const engWin = { localStorage: mockLS3, StorageEngine: null, console: console };
+new Function('window', 'localStorage', storageSrc)(engWin, mockLS3);
+const { DataValidator, ChapterStore, GlobalStore, UiStore, ResumeStore } = engWin.StorageEngine;
 
 // ── DataValidator ──
 test('DataValidator: 拒绝纯数字 slug（核心防漂移规则）', () => {
@@ -662,7 +662,7 @@ test('DataValidator: 校验 SM-2 记录格式', () => {
 // 通用 mock 章节
 const mockCh3 = {
   uid: 'math::基础30讲::高数::lec01',
-  id: 'ch1',
+  id: 'math::基础30讲::高数::lec01',
   total: 3, ownTotal: 3,
   labels: ['例1-1', '例1-2', '例1-3'],
   getQuestionSlug(i) { return this.labels[i] || null; },
@@ -681,14 +681,14 @@ test('ChapterStore.load: 纯数字 key 被过滤（核心防漂移）', () => {
     '$v': 3,
     '$chapterUid': mockCh3.uid,
     '$saved': '2026-01-01T00:00:00Z',
-    '0': { status: 'wrong' },     // 纯数字——应被过滤
-    '例1-1': { status: 'familiar' }  // slug——应保留
+    '0': { status: 'wrong' },
+    '例1-1': { status: 'familiar' }
   });
   ls.setItem('kaoyan.q.' + mockCh3.uid, payload);
 
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const store = new win.StorageV3.ChapterStore(mockCh3);
+  const win = { localStorage: ls, StorageEngine: null, console: console };
+  new Function('window', 'localStorage', storageSrc)(win, ls);
+  const store = new win.StorageEngine.ChapterStore(mockCh3);
   const res = store.load();
   assert.ok(!('0' in res), '纯数字 key 应被过滤');
   assert.ok('例1-1' in res, 'slug key 应保留');
@@ -697,9 +697,9 @@ test('ChapterStore.load: 纯数字 key 被过滤（核心防漂移）', () => {
 
 test('ChapterStore.setQuestion: 原子更新与清空空字段', () => {
   const ls = makeMockLS();
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const store = new win.StorageV3.ChapterStore(mockCh3);
+  const win = { localStorage: ls, StorageEngine: null, console: console };
+  new Function('window', 'localStorage', storageSrc)(win, ls);
+  const store = new win.StorageEngine.ChapterStore(mockCh3);
 
   store.setQuestion('例1-1', { status: 'proficient', qbad: true });
   let q = store.getQuestion('例1-1');
@@ -721,9 +721,9 @@ test('ChapterStore.setQuestion: 原子更新与清空空字段', () => {
 
 test('ChapterStore.writeFromMemory & readIntoMemory: 内存与持久化映射', () => {
   const ls = makeMockLS();
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const store = new win.StorageV3.ChapterStore(mockCh3);
+  const win = { localStorage: ls, StorageEngine: null, console: console };
+  new Function('window', 'localStorage', storageSrc)(win, ls);
+  const store = new win.StorageEngine.ChapterStore(mockCh3);
 
   const memStatuses = { 0: 'proficient', 1: 'vague' };
   const memSm2 = { 0: { ef: 2.5, interval: 6 } };
@@ -741,9 +741,9 @@ test('ChapterStore.writeFromMemory & readIntoMemory: 内存与持久化映射', 
 // ── GlobalStore & UiStore ──
 test('GlobalStore & UiStore: 键值存取与隔离', () => {
   const ls = makeMockLS();
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const { GlobalStore, UiStore } = win.StorageV3;
+  const win = { localStorage: ls, StorageEngine: null, console: console };
+  new Function('window', 'localStorage', storageSrc)(win, ls);
+  const { GlobalStore, UiStore } = win.StorageEngine;
 
   GlobalStore.set('theme', 'dark');
   assert.strictEqual(GlobalStore.get('theme'), 'dark');
@@ -754,111 +754,28 @@ test('GlobalStore & UiStore: 键值存取与隔离', () => {
   assert.deepStrictEqual(UiStore.get('math'), { show: true, def: false });
 });
 
-// ── MigrationRunner ──
-test('MigrationRunner._extractBySlug: slug 优先于数字（v2→v3升级路径）', () => {
-  const obj = { '例1-1': 'proficient', '例1-2': 'vague', '0': 'wrong', '1': 'rusty' };
-  const result = MigrationRunner._extractBySlug(obj, mockCh3, mockCh3.total);
-  assert.strictEqual(result['例1-1'], 'proficient');
-  assert.strictEqual(result['例1-2'], 'vague');
-  assert.ok(!('0' in result), '不应包含数字索引的结果');
-});
-
-test('MigrationRunner._extractBySlug: 纯数字对象时 fallback（旧数据兼容）', () => {
-  const obj = { '0': 'proficient', '1': 'vague', '2': 'wrong' };
-  const result = MigrationRunner._extractBySlug(obj, mockCh3, mockCh3.total);
-  assert.strictEqual(result['例1-1'], 'proficient');
-  assert.strictEqual(result['例1-2'], 'vague');
-  assert.strictEqual(result['例1-3'], 'wrong');
-});
-
-test('MigrationRunner.runForChapter: 非破坏性增量合并（防覆盖丢失字段）', () => {
-  const ls = makeMockLS();
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const { ChapterStore, MigrationRunner } = win.StorageV3;
-
-  // 模拟：用户在迁移前修改了一道题的状态（仅有 status）
-  const store = new ChapterStore(mockCh3);
-  store.setQuestion('例1-1', { status: 'proficient' });
-
-  // 模拟：旧格式中原本存有 sm2 和 notes
-  ls.setItem('sm2_math_ch1', JSON.stringify({ '例1-1': { ef: 2.6, interval: 10 } }));
-  ls.setItem('ch1_math_notes', JSON.stringify({ '例1-1': '重要考点笔记' }));
-
-  // 执行迁移
-  MigrationRunner.runForChapter(mockCh3, 'math', 'math');
-
-  // 清除内存缓存以从磁盘读回最新合并数据
-  store.invalidate();
-
-  // 验证：已有的 status 依然保留，同时旧的 sm2 和 notes 被完整补充合并进 v3！
-  const q = store.getQuestion('例1-1');
-  assert.strictEqual(q.status, 'proficient', 'v3 已有状态应保留');
-  assert.ok(q.sm2, '缺失的 sm2 应被成功补充迁移');
-  assert.strictEqual(q.sm2.interval, 10);
-  assert.strictEqual(q.notes, '重要考点笔记', '缺失的 notes 应被成功补充迁移');
-});
-
 // ── ResumeStore ──
-test('ResumeStore: slug 优先于 idx（插题后断点不漂移）', () => {
+test('ResumeStore: slug 规范恢复（插题后断点不漂移）', () => {
   // 模拟在 idx=2 处插入了「新题」，原来 idx=2 是「例1-3」，现在 idx=3 才是「例1-3」
   const ch = Object.assign({}, mockCh3, {
     labels: ['例1-1', '例1-2', '新题', '例1-3'],
     total: 4
   });
   ch.getIdxBySlug = function(slug) { return this.labels.indexOf(slug); };
+  ch.getQuestionSlug = function(i) { return this.labels[i]; };
 
   const ls = makeMockLS();
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const { ResumeStore } = win.StorageV3;
+  const win = { localStorage: ls, StorageEngine: null, console: console };
+  new Function('window', 'localStorage', storageSrc)(win, ls);
+  const { ResumeStore } = win.StorageEngine;
 
-  // 模拟以 slug 保存断点
+  // 以 slug 保存断点 (指向例1-3)
   ResumeStore.save('math', ch.id, ch, 3, false);
 
   // 读取断点验证
   const r = ResumeStore.loadChapter('math', ch.id, ch);
   assert.ok(r);
   assert.strictEqual(r.idx, 3, 'slug 解析的 idx 应为 3（插题后位置正确）');
-});
-
-test('ResumeStore: 无 slug 时 fallback 到 idx（旧格式兼容）', () => {
-  const ls = makeMockLS();
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const { ResumeStore } = win.StorageV3;
-
-  // 存旧格式（无 slug 只有 idx）
-  ls.setItem('kaoyan.g.resume', JSON.stringify({
-    'math::ch::ch1': { idx: 1, sub: false }
-  }));
-
-  const r = ResumeStore.loadChapter('math', mockCh3.id, mockCh3);
-  assert.ok(r);
-  assert.strictEqual(r.idx, 1);
-});
-
-test('MigrationRunner.purgeLegacyKeys: 清除全部旧魔数存储键实现纯净 SSOT', () => {
-  const ls = makeMockLS();
-  ls.setItem('ch1_s1_status', '{"0":"proficient"}');
-  ls.setItem('sm2_math_ch1', '{"0":{}}');
-  ls.setItem('status::math::ch1', '{}');
-  ls.setItem('kaoyan_resume', '{}');
-  ls.setItem('kaoyan.q.math::lec01', '{"$v":3}');
-  ls.setItem('annot_test', '{}');
-
-  const win = { localStorage: ls, StorageV3: null, console: console };
-  new Function('window', 'localStorage', storageV3Src)(win, ls);
-  const { MigrationRunner } = win.StorageV3;
-
-  const count = MigrationRunner.purgeLegacyKeys();
-  assert.strictEqual(count, 4, '应精确清理4个旧格式键');
-  assert.strictEqual(ls.getItem('ch1_s1_status'), null);
-  assert.strictEqual(ls.getItem('sm2_math_ch1'), null);
-  assert.strictEqual(ls.getItem('status::math::ch1'), null);
-  assert.strictEqual(ls.getItem('kaoyan_resume'), null);
-  assert.ok(ls.getItem('kaoyan.q.math::lec01') !== null, 'V3 键应保留');
-  assert.ok(ls.getItem('annot_test') !== null, '标注键应保留');
 });
 
 console.log('\n====================================================');

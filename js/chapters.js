@@ -701,14 +701,25 @@
 
       SUBJECTS.forEach(function(subj) {
         if (!subj.chapters) return;
+
+        // 伴章映射：在主键升级前将伴章关联更新至目标规范语义 UID
         subj.chapters.forEach(function(ch) {
-          ch.legacyId = ch.id;
+          if (ch.q1000Id) {
+            var comp = subj.chapters.find(function(c) { return c.id === ch.q1000Id; });
+            if (comp) {
+              ch.q1000Id = subj.id + '::' + comp.wb + '::' + comp.subj + '::' + getChapterSlug(comp);
+            }
+          }
+        });
+
+        subj.chapters.forEach(function(ch) {
           ch.book = ch.wb;
           ch.discipline = ch.subj;
           ch.chapterSlug = getChapterSlug(ch);
           ch.uid = subj.id + '::' + ch.wb + '::' + ch.subj + '::' + ch.chapterSlug;
-          // 优化：彻底消除 ch136、ch1、m4ch8 等魔数碰撞，将章节主键直接统一为唯一的规范语义 UID
+          // 规范统一：主键即规范语义 UID，彻底消灭魔数
           ch.id = ch.uid;
+          delete ch.number;
 
           // 根据索引或标签获取题目稳定的物理 Slug
           ch.getQuestionSlug = function(idxOrLabel) {
@@ -738,14 +749,6 @@
             var slug = ch.getQuestionSlug(idxOrLabel);
             return slug ? (ch.uid + '::' + slug) : null;
           };
-        });
-
-        // 伴章映射升级至语义 UID
-        subj.chapters.forEach(function(ch) {
-          if (ch.q1000Id) {
-            var comp = subj.chapters.find(function(c) { return c.legacyId === ch.q1000Id || c.uid === ch.q1000Id; });
-            if (comp) ch.q1000Id = comp.uid;
-          }
         });
 
         // 科目初始章节绑定至其首个规范章节 UID

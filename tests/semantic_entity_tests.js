@@ -55,37 +55,36 @@ test('1. 全库 100% 章节具备全局唯一语义 UID (无魔数冲突)', () =
 
 test('2. 题目 Slug 严格对应物理切图命名规范', () => {
   const mathSubj = SUBJECTS.find(s => s.id === 'math');
-  const ch136 = mathSubj.chapters.find(c => c.id === 'math::李范全书::高数::ch03' || c.legacyId === 'ch136');
-  assert(ch136, 'ch136 must exist');
-  assert.strictEqual(ch136.uid, 'math::李范全书::高数::ch03');
-  assert.strictEqual(ch136.id, 'math::李范全书::高数::ch03');
-  assert.strictEqual(ch136.legacyId, 'ch136');
+  const chLifan03 = mathSubj.chapters.find(c => c.id === 'math::李范全书::高数::ch03');
+  assert(chLifan03, 'math::李范全书::高数::ch03 must exist');
+  assert.strictEqual(chLifan03.uid, 'math::李范全书::高数::ch03');
+  assert.strictEqual(chLifan03.id, 'math::李范全书::高数::ch03');
 
   // 测试例3-14 (I) 与 (II)
-  const slug1 = ch136.getQuestionSlug(20);
-  const slug2 = ch136.getQuestionSlug(21);
+  const slug1 = chLifan03.getQuestionSlug(20);
+  const slug2 = chLifan03.getQuestionSlug(21);
   assert.strictEqual(slug1, 'ex_3-14_(I)');
   assert.strictEqual(slug2, 'ex_3-14_(II)');
-  assert.strictEqual(ch136.getQuestionUID(20), 'math::李范全书::高数::ch03::ex_3-14_(I)');
+  assert.strictEqual(chLifan03.getQuestionUID(20), 'math::李范全书::高数::ch03::ex_3-14_(I)');
 
   // 测试例3-17
-  assert.strictEqual(ch136.getQuestionSlug(26), 'ex_3-17');
-  assert.strictEqual(ch136.getQuestionUID(26), 'math::李范全书::高数::ch03::ex_3-17');
+  assert.strictEqual(chLifan03.getQuestionSlug(26), 'ex_3-17');
+  assert.strictEqual(chLifan03.getQuestionUID(26), 'math::李范全书::高数::ch03::ex_3-17');
 
   // 反查验证
-  assert.strictEqual(ch136.getIdxBySlug('ex_3-14_(I)'), 20);
-  assert.strictEqual(ch136.getIdxBySlug('ex_3-17'), 26);
-  assert.strictEqual(ch136.getLabelBySlug('ex_3-14_(I)'), '例3-14 (I)');
+  assert.strictEqual(chLifan03.getIdxBySlug('ex_3-14_(I)'), 20);
+  assert.strictEqual(chLifan03.getIdxBySlug('ex_3-17'), 26);
+  assert.strictEqual(chLifan03.getLabelBySlug('ex_3-14_(I)'), '例3-14 (I)');
 });
 
 test('3. 822 科目与小题300题目实体命名验证', () => {
   const subj822 = SUBJECTS.find(s => s.id === '822');
-  const m3ch1 = subj822.chapters.find(c => c.id === '822::小题300::控制工程基础::ch01' || c.legacyId === 'm3ch1');
-  assert(m3ch1, 'm3ch1 must exist');
-  assert.strictEqual(m3ch1.uid, '822::小题300::控制工程基础::ch01');
-  assert.strictEqual(m3ch1.id, '822::小题300::控制工程基础::ch01');
-  assert.strictEqual(m3ch1.getQuestionSlug(0), 'q001');
-  assert.strictEqual(m3ch1.getQuestionUID(0), '822::小题300::控制工程基础::ch01::q001');
+  const ch300_01 = subj822.chapters.find(c => c.id === '822::小题300::控制工程基础::ch01');
+  assert(ch300_01, '822::小题300::控制工程基础::ch01 must exist');
+  assert.strictEqual(ch300_01.uid, '822::小题300::控制工程基础::ch01');
+  assert.strictEqual(ch300_01.id, '822::小题300::控制工程基础::ch01');
+  assert.strictEqual(ch300_01.getQuestionSlug(0), 'q001');
+  assert.strictEqual(ch300_01.getQuestionUID(0), '822::小题300::控制工程基础::ch01::q001');
 });
 
 test('4. 抗错位破坏性测试 (Anti-Drift Resilience Test)', () => {

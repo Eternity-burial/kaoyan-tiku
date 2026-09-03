@@ -40,19 +40,15 @@
       return currentFilters.has('all') || currentFilters.size === 0;
     }
 
-    function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId || c.uid === currentChapterId || c.legacyId === currentChapterId); }
+    function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId); }
     function chapterById(id) {
       if (!id) return null;
-      var found = CHAPTERS.find(function(c) {
-        return c.id === id || c.uid === id || c.legacyId === id;
-      });
+      var found = CHAPTERS.find(function(c) { return c.id === id; });
       if (found) return found;
       if (typeof SUBJECTS !== 'undefined') {
         for (var s = 0; s < SUBJECTS.length; s++) {
           var subChs = SUBJECTS[s].chapters || [];
-          var f = subChs.find(function(c) {
-            return c.id === id || c.uid === id || c.legacyId === id;
-          });
+          var f = subChs.find(function(c) { return c.id === id; });
           if (f) return f;
         }
       }
@@ -256,34 +252,33 @@
         window.storageSync.scheduleSave();
       }
     }
-    // ===== V3 存储：ChapterStore 工厂（含合并章节感知）=====
+    // ===== 存储引擎：ChapterStore 工厂（含伴章感知）=====
     function getStoresForCurrentChapter() {
-      if (!window.StorageV3) return null;
+      if (!window.StorageEngine) return null;
       var srcs = statusSources();
       return srcs.map(function (src) {
-        return { store: new window.StorageV3.ChapterStore(src.ch), offset: src.offset, len: src.len, ch: src.ch };
+        return { store: new window.StorageEngine.ChapterStore(src.ch), offset: src.offset, len: src.len, ch: src.ch };
       });
     }
 
-    // 从 v3 格式加载指定字段到目标内存对象中。
-    // 若 v3 数据存在返回 true，否则 false（调用方走旧路径）。
-    function loadFieldFromV3(targetObj, fieldName) {
+    // 从存储引擎加载指定字段到目标内存对象中。
+    function loadFieldFromStore(targetObj, fieldName) {
       var stores = getStoresForCurrentChapter();
       if (!stores) return false;
-      var anyV3 = false;
+      var loaded = false;
       stores.forEach(function (s) {
         if (s.store._loadRaw()) {
-          anyV3 = true;
+          loaded = true;
           var opts = {};
           opts[fieldName] = targetObj;
           s.store.readIntoMemory(opts, s.offset);
         }
       });
-      return anyV3;
+      return loaded;
     }
 
-    // 将当前内存中某类字段写入 v3（原子合并，不覆盖其他字段）。
-    function writeFieldToV3(fieldObj, fieldName) {
+    // 将当前内存中某类字段写入存储引擎（原子合并，不覆盖其他字段）。
+    function writeFieldToStore(fieldObj, fieldName) {
       var stores = getStoresForCurrentChapter();
       if (!stores) return;
       stores.forEach(function (s) {
@@ -293,15 +288,12 @@
       });
     }
 
-    // 统一获取章节掌握度状态字典 { [idx]: status }（SSOT 直读 v3 ChapterStore，防漂移）
+    // 统一获取章节掌握度状态字典 { [idx]: status }（SSOT 直读 ChapterStore，防漂移）
     function getChapterStatusMap(ch) {
       if (!ch) return {};
       var out = {};
-      if (window.StorageV3 && ch.uid) {
-        var store = new window.StorageV3.ChapterStore(ch);
-        if (!store._loadRaw() && window.StorageV3.MigrationRunner) {
-          window.StorageV3.MigrationRunner.runForChapter(ch, curSubjectId, curSubject ? curSubject.storageSuffix : 's1');
-        }
+      if (window.StorageEngine && ch.uid) {
+        var store = new window.StorageEngine.ChapterStore(ch);
         store.readIntoMemory({ statuses: out }, 0);
         return out;
       }
@@ -310,51 +302,47 @@
 
     function loadStatuses() {
       statuses = {};
-      loadFieldFromV3(statuses, 'statuses');
+      loadFieldFromStore(statuses, 'statuses');
     }
     function saveStatuses() {
-      writeFieldToV3(statuses, 'statuses'); // v3 纯净 SSOT 存储（slug 键，防漂移）
+      writeFieldToStore(statuses, 'statuses');
       notifyStorageSync();
     }
     function loadQBad() {
       qBad = {};
-      loadFieldFromV3(qBad, 'qBad');
+      loadFieldFromStore(qBad, 'qBad');
     }
     function saveQBad() {
-      writeFieldToV3(qBad, 'qBad');
+      writeFieldToStore(qBad, 'qBad');
       notifyStorageSync();
     }
     function loadSBad() {
       sBad = {};
-      loadFieldFromV3(sBad, 'sBad');
+      loadFieldFromStore(sBad, 'sBad');
     }
     function saveSBad() {
-      writeFieldToV3(sBad, 'sBad');
+      writeFieldToStore(sBad, 'sBad');
       notifyStorageSync();
     }
     function loadBookMismatch() {
       bookMismatch = {};
-      loadFieldFromV3(bookMismatch, 'bookMismatch');
+      loadFieldFromStore(bookMismatch, 'bookMismatch');
     }
     function saveBookMismatch() {
-      writeFieldToV3(bookMismatch, 'bookMismatch');
+      writeFieldToStore(bookMismatch, 'bookMismatch');
       notifyStorageSync();
     }
 
-    // ===== 全局 UI 状态持久化（跨会话记忆，SSOT 存储在 kaoyan.g / kaoyan.ui） =====
+    // ===== 全局 UI 状态持久化（跨会话记忆，存储在 kaoyan.g / kaoyan.ui） =====
     function loadGlobalFilters() {
       var saved = null;
-      if (window.StorageV3 && window.StorageV3.GlobalStore) {
-        saved = window.StorageV3.GlobalStore.get('filters');
-      }
-      if (!saved) {
-        try { saved = JSON.parse(localStorage.getItem('kaoyan_ui_filters')); } catch (e) { saved = null; }
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        saved = window.StorageEngine.GlobalStore.get('filters');
       }
       if (!saved || !Array.isArray(saved) || saved.length === 0) {
         currentFilters = new Set(['all']);
         return;
       }
-      // 只保留合法筛选键；「全部」与其他组合互斥
       var valid = ['all', 'proficient', 'vague', 'wrong', 'unmarked'].filter(function (k) { return saved.indexOf(k) !== -1; });
       if (valid.indexOf('all') !== -1) currentFilters = new Set(['all']);
       else if (valid.length > 0) currentFilters = new Set(valid);
@@ -362,23 +350,16 @@
     }
     function saveGlobalFilters() {
       var arr = Array.from(currentFilters);
-      if (window.StorageV3 && window.StorageV3.GlobalStore) {
-        window.StorageV3.GlobalStore.set('filters', arr);
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.set('filters', arr);
       }
       notifyStorageSync();
     }
 
     function loadSolutionPref() {
       var v = null;
-      if (window.StorageV3 && window.StorageV3.UiStore) {
-        v = window.StorageV3.UiStore.get(curSubjectId);
-      }
-      if (!v) {
-        try {
-          var raw = localStorage.getItem(curSubjectId + '_ui_solution');
-          if (!raw && curSubjectId === 'math') raw = localStorage.getItem('shu1_ui_solution');
-          v = JSON.parse(raw);
-        } catch (e) { v = null; }
+      if (window.StorageEngine && window.StorageEngine.UiStore) {
+        v = window.StorageEngine.UiStore.get(curSubjectId);
       }
       if (v && typeof v.def === 'boolean') defaultShowSolution = v.def;
       else defaultShowSolution = true;
@@ -387,38 +368,34 @@
     }
     function saveSolutionPref() {
       var pref = { show: !!showSolution, def: !!defaultShowSolution };
-      if (window.StorageV3 && window.StorageV3.UiStore) {
-        window.StorageV3.UiStore.set(curSubjectId, pref);
+      if (window.StorageEngine && window.StorageEngine.UiStore) {
+        window.StorageEngine.UiStore.set(curSubjectId, pref);
       }
       notifyStorageSync();
     }
 
     // ===== 笔记数据（按书分离：复合键 '<源章节id>::<label>'） =====
     let notesData = {};
-    let notesDirty = false; // 笔记编辑态是否有未保存改动（用于切题/切章/切科目时自动保存）
+    let notesDirty = false;
     function notesSourceId(idx) {
       const ch = getChapter();
       if (ch.q1000Total && idx >= ch.ownTotal) return chapterById(ch.q1000Id).id;
       return ch.id;
     }
     function loadNotes() {
-      autoSaveNotes(); // 重建前先保存未提交的编辑内容
-      const ch = getChapter();
+      autoSaveNotes();
       notesData = {};
-      if (window.StorageV3) {
+      if (window.StorageEngine) {
         var stores = getStoresForCurrentChapter();
         if (stores) {
           stores.forEach(function (s) {
-            if (!s.store._loadRaw() && window.StorageV3.MigrationRunner) {
-              window.StorageV3.MigrationRunner.runForChapter(s.ch, curSubjectId, curSubject.storageSuffix);
-            }
             s.store.readIntoMemory({ notes: notesData }, s.offset);
           });
         }
       }
     }
     function saveNotes() {
-      if (window.StorageV3) {
+      if (window.StorageEngine) {
         var stores = getStoresForCurrentChapter();
         if (stores) {
           stores.forEach(function (s) {
@@ -1613,142 +1590,67 @@
     //   '<科目id>::<书籍wb>': { ch, idx, sub }             // 切书籍时恢复
     // }
     function saveResume() {
-      if (window.StorageV3) {
-        // v3：断点存 slug，插题后恢复位置不漂移
-        window.StorageV3.ResumeStore.save(curSubjectId, currentChapterId, getChapter(), current, subMode);
+      if (window.StorageEngine) {
+        window.StorageEngine.ResumeStore.save(curSubjectId, currentChapterId, getChapter(), current, subMode);
         notifyStorageSync();
-        return;
       }
-      // fallback: 旧格式
-      var map = {};
-      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      map[curSubjectId] = { ch: currentChapterId, idx: current, sub: !!subMode };
-      var wb = getChapter() ? getChapter().wb : '';
-      if (wb) map[curSubjectId + '::' + wb] = { ch: currentChapterId, idx: current, sub: !!subMode };
-      if (currentChapterId) map[curSubjectId + '::ch::' + currentChapterId] = { idx: current, sub: !!subMode };
-      try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
-      notifyStorageSync();
     }
+
     // 读取某章的章节级停靠记录（无记录/记录失效返回 null）
     function loadChapterResume(chId) {
       var ch = CHAPTERS.find(function (c) { return c.id === chId; });
-      if (!ch || ch.total === 0) return null;
-      if (window.StorageV3) {
-        var r = window.StorageV3.ResumeStore.loadChapter(curSubjectId, chId, ch);
-        if (r) {
-          var subOk = false;
-          if (r.sub) { ensureGroups(ch); var g = ch.groupForIdx[r.idx]; subOk = !!(g && g.isParent && g.count > 1); }
-          return { idx: r.idx, sub: subOk };
-        }
-      }
-      // fallback: 旧格式
-      var map = {};
-      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      var r2 = map[curSubjectId + '::ch::' + chId];
-      if (!r2) return null;
-      var idx = Math.min(Math.max(0, r2.idx || 0), ch.total - 1);
-      var subOk2 = false;
-      if (r2.sub) { ensureGroups(ch); var g2 = ch.groupForIdx[idx]; subOk2 = !!(g2 && g2.isParent && g2.count > 1); }
-      return { idx: idx, sub: subOk2 };
-    }
-    function loadResume(subjectId) {
-      if (window.StorageV3) {
-        var normSubjId = (subjectId === 'shu1' ? 'math' : subjectId);
-        var subjV3 = SUBJECTS.find(function (s) { return s.id === normSubjId; });
-        if (subjV3 && subjV3.chapters) {
-          var rV3 = window.StorageV3.ResumeStore.loadSubject(subjectId, subjV3.chapters);
-          if (rV3) {
-            var chV3 = subjV3.chapters.find(function (c) { return c.id === rV3.ch; });
-            if (chV3 && chV3.total > 0) {
-              var subOkV3 = false;
-              if (rV3.sub) {
-                ensureGroups(chV3);
-                var gV3 = chV3.groupForIdx[rV3.idx];
-                subOkV3 = !!(gV3 && gV3.isParent && gV3.count > 1);
-              }
-              return { ch: rV3.ch, idx: rV3.idx, sub: subOkV3 };
-            }
-          }
-        }
-      }
-      // fallback: 旧格式
-      var map = {};
-      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      if (subjectId === 'shu1') subjectId = 'math';
-      var r = map[subjectId];
-      if (!r && subjectId === 'math') {
-        r = map['shu1'];
-        if (r) {
-          map['math'] = r;
-          delete map['shu1'];
-          try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
-        }
-      }
-      if (!r || !r.ch) return null;
-      var subj = SUBJECTS.find(function (s) { return s.id === subjectId; });
-      if (!subj) return null;
-      var ch = subj.chapters.find(function (c) { return c.id === r.ch; });
-      if (!ch || ch.total === 0) return null;
-      var idx = Math.min(Math.max(0, r.idx || 0), ch.total - 1);
-      // 小题模式仅当该题属于含子题的父题组时才恢复，避免无子题时残留
+      if (!ch || ch.total === 0 || !window.StorageEngine) return null;
+      var r = window.StorageEngine.ResumeStore.loadChapter(curSubjectId, chId, ch);
+      if (!r) return null;
       var subOk = false;
       if (r.sub) {
         ensureGroups(ch);
-        var g = ch.groupForIdx[idx];
+        var g = ch.groupForIdx[r.idx];
         subOk = !!(g && g.isParent && g.count > 1);
       }
-      return { ch: r.ch, idx: idx, sub: subOk };
+      return { idx: r.idx, sub: subOk };
     }
+
+    function loadResume(subjectId) {
+      if (!window.StorageEngine) return null;
+      var subj = SUBJECTS.find(function (s) { return s.id === subjectId; });
+      if (!subj || !subj.chapters) return null;
+      var r = window.StorageEngine.ResumeStore.loadSubject(subjectId, subj.chapters);
+      if (!r) return null;
+      var ch = subj.chapters.find(function (c) { return c.id === r.ch; });
+      if (!ch || ch.total === 0) return null;
+      var subOk = false;
+      if (r.sub) {
+        ensureGroups(ch);
+        var g = ch.groupForIdx[r.idx];
+        subOk = !!(g && g.isParent && g.count > 1);
+      }
+      return { ch: r.ch, idx: r.idx, sub: subOk };
+    }
+
     // 切换到某本书时恢复该书停靠位置（切书不回到第1讲第1题）。
     // 返回 true 表示已恢复；false 表示无记录/记录失效，调用方走「第一学科第一章节」。
     function applyResumeBook(wb) {
-      var r = null;
-      var ch = null;
-      if (window.StorageV3) {
-        var rV3 = window.StorageV3.ResumeStore.loadBook(curSubjectId, wb, CHAPTERS);
-        if (rV3) {
-          var chV3 = CHAPTERS.find(function (c) { return c.id === rV3.ch; });
-          if (chV3 && chV3.total > 0 && chV3.wb === wb) {
-            r = rV3;
-            ch = chV3;
-          }
-        }
-      }
-      if (!r) {
-        var map = {};
-        try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-        var key = curSubjectId + '::' + wb;
-        r = map[key];
-        if (!r && curSubjectId === 'math') {
-          var oldKey = 'shu1::' + wb;
-          r = map[oldKey];
-          if (r) {
-            map[key] = r;
-            delete map[oldKey];
-            try { localStorage.setItem('kaoyan_resume', JSON.stringify(map)); } catch (e) {}
-          }
-        }
-        if (!r || !r.ch) return false;
-        ch = CHAPTERS.find(function (c) { return c.id === r.ch; });
-        if (!ch || ch.total === 0 || ch.wb !== wb) return false;
-      }
-      var idx = Math.min(Math.max(0, r.idx || 0), ch.total - 1);
+      if (!window.StorageEngine) return false;
+      var r = window.StorageEngine.ResumeStore.loadBook(curSubjectId, wb, CHAPTERS);
+      if (!r) return false;
+      var ch = CHAPTERS.find(function (c) { return c.id === r.ch; });
+      if (!ch || ch.total === 0 || ch.wb !== wb) return false;
       var subOk = false;
       if (r.sub) {
         ensureGroups(ch);
-        var g = ch.groupForIdx[idx];
+        var g = ch.groupForIdx[r.idx];
         subOk = !!(g && g.isParent && g.count > 1);
       }
       currentChapterId = ch.id;
-      current = idx;
-      // 小题模式（F）是全局开关，切书不重置、跨书保持
+      current = r.idx;
       loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2();
-      // 若全局筛选激活且恢复的位置被筛掉，跳到第一条筛中题，避免落在不可见题上
       if (!isAllFilterActive()) {
         const filtered = getFilteredIndices();
         if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
       }
       renderTitle(); renderNav(); switchTo(current); updateFilterCounts();
+      if (subOk) toggleSubMode(true);
       return true;
     }
     function switchSubject(subjectId) {
@@ -4348,7 +4250,7 @@
       var bookMismatch = {};
 
       srcs.forEach(function(src) {
-        var engine = window.StorageEngine || window.StorageV3;
+        var engine = window.StorageEngine;
         if (engine && src.ch && src.ch.uid) {
           var store = new engine.ChapterStore(src.ch);
           store.readIntoMemory({
@@ -4362,7 +4264,7 @@
 
       var notesMap = {};
       srcs.forEach(function(src) {
-        var engine = window.StorageEngine || window.StorageV3;
+        var engine = window.StorageEngine;
         if (engine && src.ch && src.ch.uid) {
           var store = new engine.ChapterStore(src.ch);
           store.readIntoMemory({ notes: notesMap }, 0);
@@ -7283,13 +7185,10 @@ ${cardsHTML}
     function loadSm2() {
       const ch = getChapter(); if (!ch) return;
       sm2 = {};
-      if (window.StorageV3) {
+      if (window.StorageEngine) {
         var stores = getStoresForCurrentChapter();
         if (stores) {
           stores.forEach(function (s) {
-            if (!s.store._loadRaw() && window.StorageV3.MigrationRunner) {
-              window.StorageV3.MigrationRunner.runForChapter(s.ch, curSubjectId, curSubject.storageSuffix);
-            }
             s.store.readIntoMemory({ sm2: sm2 }, s.offset);
           });
         }
@@ -7298,7 +7197,7 @@ ${cardsHTML}
 
     // ===== SM-2 复习持久化与重置 =====
     function saveSm2() {
-      if (window.StorageV3) {
+      if (window.StorageEngine) {
         var stores = getStoresForCurrentChapter();
         if (stores) {
           stores.forEach(function (s) {
@@ -7313,13 +7212,10 @@ ${cardsHTML}
     function readMergedSm2(ch) {
       var out = {};
       var srcs = statusSources(ch);
-      if (window.StorageV3) {
+      if (window.StorageEngine) {
         srcs.forEach(function(src) {
           if (src.ch && src.ch.uid) {
-            var store = new window.StorageV3.ChapterStore(src.ch);
-            if (!store._loadRaw() && window.StorageV3.MigrationRunner) {
-              window.StorageV3.MigrationRunner.runForChapter(src.ch, curSubjectId, curSubject.storageSuffix);
-            }
+            var store = new window.StorageEngine.ChapterStore(src.ch);
             store.readIntoMemory({ sm2: out }, src.offset);
           }
         });
@@ -7327,13 +7223,13 @@ ${cardsHTML}
       return out;
     }
 
-    // 将「合并后」的 SM-2 写回 own/伴章两块存储键（纯净 V3 SSOT）
+    // 将「合并后」的 SM-2 写回 own/伴章两块存储键（纯净 SSOT）
     function writeMergedSm2(ch, merged) {
       var srcs = statusSources(ch);
-      if (window.StorageV3) {
+      if (window.StorageEngine) {
         srcs.forEach(function(src) {
           if (src.ch && src.ch.uid) {
-            var store = new window.StorageV3.ChapterStore(src.ch);
+            var store = new window.StorageEngine.ChapterStore(src.ch);
             store.writeFromMemory({ sm2: merged, offset: src.offset, len: src.len });
           }
         });
@@ -7343,16 +7239,7 @@ ${cardsHTML}
 
     // 重置所有 SM-2 复习进度
     function resetAllSm2() {
-      var keys = [];
-      for (var i = 0; i < localStorage.length; i++) {
-        var k = localStorage.key(i);
-        if (k && (k.indexOf('sm2_') === 0 || k.indexOf('sm2::') === 0)) {
-          keys.push(k);
-        }
-      }
-      keys.forEach(function(k) { localStorage.removeItem(k); });
-      // 清除 v3 题目对象中的 sm2
-      if (window.StorageV3) {
+      if (window.StorageEngine) {
         for (var j = 0; j < localStorage.length; j++) {
           var k3 = localStorage.key(j);
           if (k3 && k3.indexOf('kaoyan.q.') === 0) {
@@ -8832,29 +8719,6 @@ ${cardsHTML}
       applyTheme(localStorage.getItem('kaoyan_theme') || 'light');
       renderCountdown();
       initRelatedModal();
-
-      // 启动 v3 存储迁移（后台异步逐章节，不阻塞 UI）
-      if (window.StorageV3 && window.StorageV3.MigrationRunner.needsMigration()) {
-        var migTotalChs = 0;
-        if (typeof SUBJECTS !== 'undefined') SUBJECTS.forEach(function(s) { if (s.chapters) migTotalChs += s.chapters.length; });
-        if (migTotalChs > 0) {
-          if (window.storageSync && typeof window.storageSync.showToast === 'function') {
-            window.storageSync.showToast('正在升级存储格式至 v3（首次约需数秒）...', 'info');
-          }
-          window.StorageV3.MigrationRunner.runAll(
-            typeof SUBJECTS !== 'undefined' ? SUBJECTS : [],
-            null,
-            function(didRun) {
-              if (didRun) {
-                console.log('[StorageV3] 全量迁移完成，所有章节已升级至 v3 slug 键格式。');
-                if (window.storageSync && typeof window.storageSync.showToast === 'function') {
-                  window.storageSync.showToast('存储格式已升级至 v3，数据安全性更高', 'success');
-                }
-              }
-            }
-          );
-        }
-      }
 
       var btnTheme = document.getElementById('btnToggleTheme');
       if (btnTheme) btnTheme.onclick = toggleTheme;
