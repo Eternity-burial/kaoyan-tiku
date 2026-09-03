@@ -40,10 +40,10 @@
       return currentFilters.has('all') || currentFilters.size === 0;
     }
 
-    function getChapter() { return CHAPTERS.find(c => c.id === currentChapterId); }
+    function getChapter() { return CHAPTERS.find(function(c) { return c.id === currentChapterId || c.uid === currentChapterId || c.legacyId === currentChapterId; }); }
     function chapterById(id) {
       if (!id) return null;
-      var found = CHAPTERS.find(function(c) { return c.id === id; });
+      var found = CHAPTERS.find(function(c) { return c.id === id || c.uid === id || c.legacyId === id; });
       if (found) return found;
       if (typeof SUBJECTS !== 'undefined') {
         for (var s = 0; s < SUBJECTS.length; s++) {
@@ -2201,7 +2201,8 @@
     function getAffinityPairKey(q1, q2) { return window.TopicManager ? window.TopicManager.getAffinityPairKey(q1, q2) : ''; }
     function getTopicAffinity(q1, q2) { return window.TopicManager ? window.TopicManager.getAffinity(q1, q2) : 0; }
     function recordTopicAffinity(q1, q2, delta) { if (window.TopicManager) window.TopicManager.recordAffinity(q1, q2, delta); }
-    function recordQuestionVisit(qid) { if (window.TopicManager) window.TopicManager.recordVisit(qid); }
+    function recordQuestionVisit(qid) { if (window.TopicManager) window.TopicManager.recordRecentQuestion(qid); }
+    function recordRecentQuestion(qid) { if (window.TopicManager) window.TopicManager.recordRecentQuestion(qid); }
     function parseTopicAndSubTopic(s) { return window.TopicManager ? window.TopicManager.parseTopicAndSubTopic(s) : { topicName: s, subTopic: '' }; }
     function createRelatedTopic(name, qid, note, sub) { return window.TopicManager ? window.TopicManager.createTopic(name, qid, note, sub) : null; }
     function addQuestionToTopic(tid, qid, note, sub) { return window.TopicManager ? window.TopicManager.addQuestion(tid, qid, note, sub) : false; }
@@ -2210,6 +2211,8 @@
     function openRelatedModal() { if (window.TopicManager) window.TopicManager.openModal(); }
     function closeRelatedModal() { if (window.TopicManager) window.TopicManager.closeModal(); }
     function initRelatedModal() { if (window.TopicManager) window.TopicManager.initModal(); }
+    function renderRelatedQuestions() { if (window.TopicManager) window.TopicManager.renderRelatedQuestions(); }
+    function jumpToQid(qid) { if (window.TopicManager) window.TopicManager.jumpToQid(qid); }
     // ===== 考研数学常用 LaTeX 符号盘与自动补全词典（已独立为 js/math_palette.js） =====
     function insertSnippetIntoNotes(snippet) {
       if (window.MathPalette) {

@@ -717,6 +717,7 @@
           ch.discipline = ch.subj;
           ch.chapterSlug = getChapterSlug(ch);
           ch.uid = subj.id + '::' + ch.wb + '::' + ch.subj + '::' + ch.chapterSlug;
+          ch.legacyId = ch.id;
           // 规范统一：主键即规范语义 UID，彻底消灭魔数
           ch.id = ch.uid;
           delete ch.number;

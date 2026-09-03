@@ -300,10 +300,10 @@
 
     loadChapter: function (subjId, chapterId, ch) {
       var map = this._load();
-      var r = map[subjId + '::ch::' + chapterId];
-      if (!r || !r.slug || !ch || ch.total === 0) return null;
+      var r = map[subjId + '::ch::' + chapterId] || (ch && ch.legacyId ? map[subjId + '::ch::' + ch.legacyId] : null);
+      if (!r || !ch || ch.total === 0) return null;
 
-      var idx = (ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : -1;
+      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : (typeof r.idx === 'number' ? r.idx : -1);
       if (idx < 0) return null;
 
       idx = Math.min(Math.max(0, idx), ch.total - 1);
@@ -317,15 +317,18 @@
 
       var ch = null;
       for (var i = 0; i < chapters.length; i++) {
-        if (chapters[i].id === r.ch) { ch = chapters[i]; break; }
+        if (chapters[i].id === r.ch || chapters[i].uid === r.ch || chapters[i].legacyId === r.ch) {
+          ch = chapters[i];
+          break;
+        }
       }
       if (!ch || ch.total === 0) return null;
 
-      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : 0;
+      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : (typeof r.idx === 'number' ? r.idx : 0);
       if (idx < 0) idx = 0;
       idx = Math.min(Math.max(0, idx), ch.total - 1);
 
-      return { ch: r.ch, idx: idx, sub: !!r.sub };
+      return { ch: ch.id, idx: idx, sub: !!r.sub };
     },
 
     loadBook: function (subjId, wb, chapters) {
@@ -336,15 +339,18 @@
 
       var ch = null;
       for (var i = 0; i < chapters.length; i++) {
-        if (chapters[i].id === r.ch && chapters[i].wb === wb) { ch = chapters[i]; break; }
+        if ((chapters[i].id === r.ch || chapters[i].uid === r.ch || chapters[i].legacyId === r.ch) && chapters[i].wb === wb) {
+          ch = chapters[i];
+          break;
+        }
       }
       if (!ch || ch.total === 0) return null;
 
-      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : 0;
+      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : (typeof r.idx === 'number' ? r.idx : 0);
       if (idx < 0) idx = 0;
       idx = Math.min(Math.max(0, idx), ch.total - 1);
 
-      return { ch: r.ch, idx: idx, sub: !!r.sub };
+      return { ch: ch.id, idx: idx, sub: !!r.sub };
     }
   };
 

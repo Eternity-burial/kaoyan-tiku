@@ -2491,6 +2491,11 @@
     }
 
 
+  function formatQidDisplay(qid) {
+    var meta = getQuestionMeta(qid);
+    return meta ? meta.displayTitle : (qid || '');
+  }
+
   // 暴露全局 TopicManager 命名空间
   window.TopicManager = {
     getRelatedTopics: function () { return relatedTopics; },
@@ -2499,8 +2504,11 @@
     saveTopics: saveRelatedTopics,
     loadAffinity: loadRelatedAffinity,
     saveAffinity: saveRelatedAffinity,
-    recordVisit: recordQuestionVisit,
-    getQuestionData: getQuestionRelatedData,
+    recordRecentQuestion: recordRecentQuestion,
+    getTopicsForQid: getTopicsForQid,
+    getRelatedQuestionsForQid: getRelatedQuestionsForQid,
+    renderRelatedQuestions: renderRelatedQuestions,
+    jumpToQid: jumpToQid,
     openModal: openRelatedModal,
     closeModal: closeRelatedModal,
     initModal: initRelatedModal,
@@ -2513,9 +2521,7 @@
     createTopic: createRelatedTopic,
     addQuestion: addQuestionToTopic,
     removeQuestion: removeQuestionFromTopic,
-    getAffinityPairKey: getAffinityPairKey,
-    getAffinity: getTopicAffinity,
-    recordAffinity: recordTopicAffinity,
+    getPairKey: getPairKey,
     parseTopicAndSubTopic: parseTopicAndSubTopic
   };
 
@@ -2528,18 +2534,19 @@
   window.getCurrentQid = getCurrentQid;
   window.parseQid = parseQid;
   window.formatQidDisplay = formatQidDisplay;
-  window.getQuestionRelatedData = getQuestionRelatedData;
-  window.recordQuestionVisit = recordQuestionVisit;
+  window.recordRecentQuestion = recordRecentQuestion;
+  window.renderRelatedQuestions = renderRelatedQuestions;
+  window.jumpToQid = jumpToQid;
   window.openRelatedModal = openRelatedModal;
   window.closeRelatedModal = closeRelatedModal;
   window.initRelatedModal = initRelatedModal;
   window.createRelatedTopic = createRelatedTopic;
   window.addQuestionToTopic = addQuestionToTopic;
   window.removeQuestionFromTopic = removeQuestionFromTopic;
-  window.getTopicAffinity = getTopicAffinity;
-  window.recordTopicAffinity = recordTopicAffinity;
-  window.getAffinityPairKey = getAffinityPairKey;
+  window.getPairKey = getPairKey;
   window.parseTopicAndSubTopic = parseTopicAndSubTopic;
+  window.getTopicsForQid = getTopicsForQid;
+  window.getRelatedQuestionsForQid = getRelatedQuestionsForQid;
 
   try {
     Object.defineProperty(window, 'relatedModalOpen', {
