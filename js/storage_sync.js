@@ -394,12 +394,12 @@
     input.click();
   }
 
-  // ===== 6.5 双向手动同步控制（明确清晰处理本地文件与浏览器 Storage） =====
-  // 按钮 1：将本地 JSON 数据同步到浏览器（覆盖浏览器 Storage 并刷新视图）
+  // ===== 6.5 双向手动控制（明确清晰处理本地文件与浏览器 Storage） =====
+  // 按钮 1：将本地 JSON 数据写入浏览器（覆盖浏览器 Storage 并刷新视图）
   async function syncLocalToBrowser() {
     try {
       let fileData = null;
-      let fileName = '';
+      let fileName = 'kaoyan_tiku_data.json';
 
       // 1. 若已有句柄，尝试从句柄读取
       if (currentFileHandle) {
@@ -414,13 +414,13 @@
         }
       }
 
-      // 2. 若无句柄或权限受阻，调出文件选择器选取本地 JSON
+      // 2. 若无句柄或权限受阻，调出文件选择器选取本地 kaoyan_tiku_data.json
       if (!fileData) {
         if ('showOpenFilePicker' in window) {
           const [handle] = await window.showOpenFilePicker({
             types: [
               {
-                description: '考研题库数据文件 (*.json)',
+                description: '考研题库数据文件 (kaoyan_tiku_data.json)',
                 accept: { 'application/json': ['.json'] }
               }
             ],
@@ -442,19 +442,19 @@
       if (fileData && fileData.data && Object.keys(fileData.data).length > 0) {
         applyAllData(fileData);
         const count = Object.keys(fileData.data).length;
-        showToast(`已成功将本地「${fileName}」数据全量载入浏览器（共 ${count} 项）！`, 'success');
+        showToast(`已成功将本地「${fileName}」数据全量写入浏览器（共 ${count} 项）！`, 'success');
       } else {
         showToast('未能从本地文件中解析出有效的题库数据', 'warning');
       }
     } catch (err) {
       if (err.name !== 'AbortError') {
-        console.error('[StorageSync] 本地同步到浏览器失败', err);
-        showToast('本地同步到浏览器失败: ' + err.message, 'error');
+        console.error('[StorageSync] 本地写入浏览器失败', err);
+        showToast('本地写入浏览器失败: ' + err.message, 'error');
       }
     }
   }
 
-  // 按钮 2：将浏览器当前数据强制写入本地文件（覆盖本地文件）
+  // 按钮 2：将浏览器当前数据直接写入本地文件（覆盖本地 kaoyan_tiku_data.json 文件）
   async function syncBrowserToLocal() {
     try {
       // 1. 若已有句柄，尝试直接写入
@@ -490,7 +490,7 @@
         await idbSaveHandle(handle);
         const data = collectAllData();
         await writeToFile(data);
-        showToast(`已成功将浏览器进度写入「${handle.name}」并建立同步！`, 'success');
+        showToast(`已成功将浏览器进度写入「${handle.name}」！`, 'success');
         updateUI('linked');
       } else {
         // 降级导出并下载
@@ -510,35 +510,22 @@
     const dot = document.getElementById('syncStatusDot');
     const text = document.getElementById('syncStatusText');
     const fileNameEl = document.getElementById('syncFileName');
-    const btnLink = document.getElementById('btnLinkLocalFile');
-    const btnUnlink = document.getElementById('btnUnlinkFile');
 
     if (status === 'linked') {
       if (dot) dot.className = 'sync-dot dot-online';
       if (text) text.textContent = '本地文件已连接';
-      if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : '已关联文件';
-      if (btnLink) btnLink.style.display = 'none';
-      if (btnUnlink) btnUnlink.style.display = 'inline-flex';
+      if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : 'kaoyan_tiku_data.json';
     } else if (status === 'saving') {
       if (dot) dot.className = 'sync-dot dot-saving';
       if (text) text.textContent = '正在写入本地...';
     } else if (status === 'prompt') {
       if (dot) dot.className = 'sync-dot dot-prompt';
       if (text) text.textContent = '待激活文件权限';
-      if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : '待激活';
-      if (btnLink) {
-        btnLink.style.display = 'inline-flex';
-        btnLink.textContent = '激活读写权限';
-      }
-      if (btnUnlink) btnUnlink.style.display = 'inline-flex';
+      if (fileNameEl) fileNameEl.textContent = currentFileHandle ? currentFileHandle.name : 'kaoyan_tiku_data.json';
     } else {
       if (dot) dot.className = 'sync-dot dot-offline';
-      if (text) text.textContent = '未连接本地文件';
-      if (fileNameEl) fileNameEl.textContent = '仅存于浏览器缓存';
-      if (btnLink) {
-        btnLink.style.display = 'none';
-      }
-      if (btnUnlink) btnUnlink.style.display = 'none';
+      if (text) text.textContent = '本地未连接';
+      if (fileNameEl) fileNameEl.textContent = 'kaoyan_tiku_data.json';
     }
   }
 
@@ -578,25 +565,16 @@
 
   // ===== 8. 初始化与自启动恢复 =====
   async function init() {
-    // 绑定双向同步按钮事件
+    // 绑定双向写入按钮事件
     const btnSyncLocalToBrowser = document.getElementById('btnSyncLocalToBrowser');
     if (btnSyncLocalToBrowser) btnSyncLocalToBrowser.onclick = syncLocalToBrowser;
 
     const btnSyncBrowserToLocal = document.getElementById('btnSyncBrowserToLocal');
     if (btnSyncBrowserToLocal) btnSyncBrowserToLocal.onclick = syncBrowserToLocal;
 
-    const btnRelink = document.getElementById('btnRelinkLocalFile');
-    if (btnRelink) btnRelink.onclick = linkLocalFile;
+    const btnImp = document.getElementById('btnSyncImport');
+    if (btnImp) btnImp.onclick = importManualJson;
 
-    const btnLink = document.getElementById('btnLinkLocalFile');
-    if (btnLink) {
-      btnLink.onclick = () => {
-        if (syncStatus === 'prompt') activatePermission();
-        else linkLocalFile();
-      };
-    }
-    const btnUnlink = document.getElementById('btnUnlinkFile');
-    if (btnUnlink) btnUnlink.onclick = unlinkLocalFile;
     const btnExp = document.getElementById('btnSyncExport');
     if (btnExp) btnExp.onclick = exportManualJson;
 
