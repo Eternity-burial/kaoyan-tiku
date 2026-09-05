@@ -19,12 +19,34 @@
 
   // 依赖的全局环境适配
   function getChapters() {
-    return (typeof window.CHAPTERS !== 'undefined' && Array.isArray(window.CHAPTERS)) ? window.CHAPTERS : [];
+    if (typeof window.CHAPTERS !== 'undefined' && Array.isArray(window.CHAPTERS) && window.CHAPTERS.length > 0) {
+      return window.CHAPTERS;
+    }
+    if (typeof CHAPTERS !== 'undefined' && Array.isArray(CHAPTERS) && CHAPTERS.length > 0) {
+      return CHAPTERS;
+    }
+    if (typeof window.curSubject !== 'undefined' && window.curSubject && Array.isArray(window.curSubject.chapters)) {
+      return window.curSubject.chapters;
+    }
+    if (typeof curSubject !== 'undefined' && curSubject && Array.isArray(curSubject.chapters)) {
+      return curSubject.chapters;
+    }
+    var subjectsList = (typeof window.SUBJECTS !== 'undefined') ? window.SUBJECTS : (typeof SUBJECTS !== 'undefined' ? SUBJECTS : null);
+    if (subjectsList && Array.isArray(subjectsList)) {
+      var curSubjId = (typeof window.curSubjectId !== 'undefined') ? window.curSubjectId : (typeof curSubjectId !== 'undefined' ? curSubjectId : 'math');
+      var subj = subjectsList.find(function(s) { return s.id === curSubjId; });
+      if (subj && subj.chapters) return subj.chapters;
+      if (subjectsList[0] && subjectsList[0].chapters) return subjectsList[0].chapters;
+    }
+    return [];
   }
 
   function getChStatusMap(ch) {
     if (typeof window.getChapterStatusMap === 'function') {
       return window.getChapterStatusMap(ch);
+    }
+    if (typeof getChapterStatusMap === 'function') {
+      return getChapterStatusMap(ch);
     }
     if (window.StorageEngine && ch && ch.uid) {
       var store = new window.StorageEngine.ChapterStore(ch);
@@ -146,23 +168,26 @@
       dailyMap[key] = { key: key, label: label, count: 0, date: d };
     }
 
-    // 从 SM-2 历史记录中回填历史做题与复习数据
+    // 从 V3 SSOT 题库数据 (kaoyan.q.*) 及历史 SM-2 记录中回填做题与复习数据
     for (var k = 0; k < localStorage.length; k++) {
       var lk = localStorage.key(k);
-      if (lk && lk.startsWith('sm2_')) {
+      if (lk && (lk.startsWith('kaoyan.q.') || lk.startsWith('sm2_'))) {
         try {
           var data = JSON.parse(localStorage.getItem(lk));
           if (data && typeof data === 'object') {
             Object.values(data).forEach(function (record) {
-              if (record && record.history && Array.isArray(record.history)) {
-                record.history.forEach(function (h) {
-                  if (h.date) {
-                    var dk = getStudyDayKey(h.date);
-                    if (dailyMap[dk]) {
-                      dailyMap[dk].count++;
+              if (record && typeof record === 'object') {
+                var hist = (record.sm2 && Array.isArray(record.sm2.history)) ? record.sm2.history : (Array.isArray(record.history) ? record.history : null);
+                if (hist) {
+                  hist.forEach(function (h) {
+                    if (h && h.date) {
+                      var dk = getStudyDayKey(h.date);
+                      if (dailyMap[dk]) {
+                        dailyMap[dk].count++;
+                      }
                     }
-                  }
-                });
+                  });
+                }
               }
             });
           }
@@ -170,14 +195,19 @@
       }
     }
 
-    // 叠加实时学习打卡日志
+    // 叠加实时学习打卡日志 (通过规范 SSOT 存储引擎 GlobalStore 读取)
     try {
-      var studyLog = JSON.parse(localStorage.getItem('kaoyan_study_log') || '{}');
-      Object.keys(studyLog).forEach(function (dk) {
-        if (dailyMap[dk]) {
-          dailyMap[dk].count = Math.max(dailyMap[dk].count, studyLog[dk].count || 0);
-        }
-      });
+      var studyLog = null;
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        studyLog = window.StorageEngine.GlobalStore.get('study_log');
+      }
+      if (studyLog) {
+        Object.keys(studyLog).forEach(function (dk) {
+          if (dailyMap[dk]) {
+            dailyMap[dk].count = Math.max(dailyMap[dk].count, studyLog[dk].count || 0);
+          }
+        });
+      }
     } catch (e) {}
 
     return Object.values(dailyMap);
@@ -186,10 +216,16 @@
   function recordStudyActivity() {
     var dk = getStudyDayKey(Date.now());
     try {
-      var studyLog = JSON.parse(localStorage.getItem('kaoyan_study_log') || '{}');
+      var studyLog = null;
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        studyLog = window.StorageEngine.GlobalStore.get('study_log');
+      }
+      studyLog = studyLog || {};
       studyLog[dk] = studyLog[dk] || { count: 0 };
       studyLog[dk].count++;
-      localStorage.setItem('kaoyan_study_log', JSON.stringify(studyLog));
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.set('study_log', studyLog);
+      }
       if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
         window.storageSync.scheduleSave();
       }
@@ -498,6 +534,17 @@
     var grid = document.getElementById('dbGrid');
     var html = '';
     var books = (typeof window.getSortedWbs === 'function') ? window.getSortedWbs() : [];
+    if (!books || books.length === 0) {
+      var existingWbs = [];
+      getChapters().forEach(function(c) {
+        var w = c.statsWb || c.wb;
+        if (w && existingWbs.indexOf(w) === -1 && w !== '1000题' && w !== '李范习题') existingWbs.push(w);
+      });
+      books = existingWbs.map(function(w) {
+        var lbl = (typeof window.getWbLabel === 'function') ? window.getWbLabel(w) : w;
+        return { wb: w, label: lbl };
+      });
+    }
     for (var b = 0; b < books.length; b++) {
       var wb = books[b].wb;
       var cid = 'dbCanvas' + b;
@@ -584,6 +631,7 @@
 
   function jumpToChapter(chapterId) {
     dashboardOpen = false;
+    window.dashboardOpen = false;
     showDashboardBackBtn(false);
     var panel = document.getElementById('dashboardPanel');
     if (panel) panel.style.display = 'none';
@@ -612,6 +660,7 @@
       window.toggleWrongBook();
     }
     dashboardOpen = !dashboardOpen;
+    window.dashboardOpen = dashboardOpen;
     var panel = document.getElementById('dashboardPanel');
     var content = document.getElementById('mainAreaContent');
     var btn = document.getElementById('btnDashboard');
@@ -642,6 +691,7 @@
   function closeDashboard() {
     if (!dashboardOpen) return;
     dashboardOpen = false;
+    window.dashboardOpen = false;
     dashboardDetailReturn = false;
     var panel = document.getElementById('dashboardPanel');
     if (panel) panel.style.display = 'none';
@@ -666,7 +716,7 @@
   window.Dashboard = {
     isOpen: function () { return dashboardOpen; },
     isDetailReturn: function () { return dashboardDetailReturn; },
-    setOpen: function (v) { dashboardOpen = !!v; },
+    setOpen: function (v) { dashboardOpen = !!v; window.dashboardOpen = !!v; },
     toggle: toggleDashboard,
     close: closeDashboard,
     renderOverview: renderDashboardOverview,

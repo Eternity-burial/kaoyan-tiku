@@ -21,7 +21,9 @@
     let curSubjectId = 'math';
     window.curSubjectId = curSubjectId;
     let curSubject = SUBJECTS[0];
+    window.curSubject = curSubject;
     let CHAPTERS = curSubject.chapters;   // 当前科目章节数组（原 const 改 let，切换科目时重赋值）
+    window.CHAPTERS = CHAPTERS;
     function getCurrentSubject() { return curSubject; }
 // ===== 状态变量 (0-based) =====
     let currentChapterId = 'math::基础30讲::高数::lec00';
@@ -40,10 +42,10 @@
       return currentFilters.has('all') || currentFilters.size === 0;
     }
 
-    function getChapter() { return CHAPTERS.find(function(c) { return c.id === currentChapterId || c.uid === currentChapterId || c.legacyId === currentChapterId; }); }
+    function getChapter() { return CHAPTERS.find(function(c) { return c.id === currentChapterId; }); }
     function chapterById(id) {
       if (!id) return null;
-      var found = CHAPTERS.find(function(c) { return c.id === id || c.uid === id || c.legacyId === id; });
+      var found = CHAPTERS.find(function(c) { return c.id === id; });
       if (found) return found;
       if (typeof SUBJECTS !== 'undefined') {
         for (var s = 0; s < SUBJECTS.length; s++) {
@@ -73,9 +75,11 @@
     // 返回 '<源章节id>::<标签>'，源章节 = 1000题伴章（1000段）或本章（自身段）。
     function notesKeyFor(idx) {
       const ch = getChapter();
-      const label = ch.labels[idx];
+      if (!ch) return '';
+      const label = (ch.labels && ch.labels[idx]) ? ch.labels[idx] : idx;
       if (ch.q1000Total && idx >= ch.ownTotal) {
-        return chapterById(ch.q1000Id).id + '::' + label;
+        const qc = (ch.q1000Id && typeof chapterById === 'function') ? chapterById(ch.q1000Id) : null;
+        return (qc ? qc.id : ch.id) + '::' + label;
       }
       return ch.id + '::' + label;
     }
@@ -164,12 +168,12 @@
           if (notesData[notesKeyFor(i)] || hasQuestionImagesAnnotated(i)) return true;
         }
         const s = statuses[i] || '';
-        // 合并筛选：熟练 = proficient(lv5) + familiar(lv4)
-        if (currentFilters.has('proficient') && (s === 'proficient' || s === 'familiar')) return true;
-        // 模糊 = vague(lv3) + rusty(lv2)
-        if (currentFilters.has('vague') && (s === 'vague' || s === 'rusty')) return true;
-        // 不会 = wrong(lv1)
-        if (currentFilters.has('wrong') && s === 'wrong') return true;
+        // 熟练 = proficient(lv5)
+        if (currentFilters.has('proficient') && s === 'proficient') return true;
+        // 模糊 = vague(lv3) + familiar(lv4 较熟练)
+        if (currentFilters.has('vague') && (s === 'vague' || s === 'familiar')) return true;
+        // 不会 = wrong(lv1) + rusty(lv2 困难)
+        if (currentFilters.has('wrong') && (s === 'wrong' || s === 'rusty')) return true;
         return false;
       });
     }
@@ -299,6 +303,7 @@
       }
       return out;
     }
+    window.getChapterStatusMap = getChapterStatusMap;
 
     function loadStatuses() {
       statuses = {};
@@ -379,7 +384,11 @@
     let notesDirty = false;
     function notesSourceId(idx) {
       const ch = getChapter();
-      if (ch.q1000Total && idx >= ch.ownTotal) return chapterById(ch.q1000Id).id;
+      if (!ch) return '';
+      if (ch.q1000Total && idx >= ch.ownTotal) {
+        const qc = (ch.q1000Id && typeof chapterById === 'function') ? chapterById(ch.q1000Id) : null;
+        return qc ? qc.id : ch.id;
+      }
       return ch.id;
     }
     function loadNotes() {
@@ -491,8 +500,8 @@
     updateClock();
 
     // ===== 昼夜主题（默认清华紫明亮 / 沉浸暗夜）与试卷暗化 =====
-    var currentTheme = localStorage.getItem('kaoyan_theme') || 'light';
-    var darkImageFilter = localStorage.getItem('kaoyan_dark_img_filter') === '1';
+    let currentTheme = (window.StorageEngine && window.StorageEngine.GlobalStore && window.StorageEngine.GlobalStore.get('theme')) || 'light';
+    let darkImageFilter = (window.StorageEngine && window.StorageEngine.GlobalStore && window.StorageEngine.GlobalStore.get('dark_img_filter')) === '1';
 
     const THEME_NAMES = {
       light: '明亮',
@@ -504,7 +513,9 @@
       currentTheme = theme;
       document.documentElement.setAttribute('data-theme', theme);
       document.body.setAttribute('data-theme', theme);
-      localStorage.setItem('kaoyan_theme', theme);
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.set('theme', theme);
+      }
 
       var btnTheme = document.getElementById('btnToggleTheme');
       var engTxtTheme = document.getElementById('engTxtTheme');
@@ -536,7 +547,9 @@
 
     function toggleImageDarkFilter() {
       darkImageFilter = !darkImageFilter;
-      localStorage.setItem('kaoyan_dark_img_filter', darkImageFilter ? '1' : '0');
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.set('dark_img_filter', darkImageFilter ? '1' : '0');
+      }
       updateImageDarkFilter();
       notifyStorageSync();
     }
@@ -582,9 +595,9 @@
     // ===== 章节切换 =====
     function switchChapter(chapterId) {
       const ch = CHAPTERS.find(c => c.id === chapterId);
-      if (!ch || ch.total === 0) { alert('该章节尚未导入'); return; }
+      if (!ch || ch.total === 0) { console.warn('该章节尚未导入:', chapterId); return; }
       autoSaveNotes(); // 切章前保存未提交的笔记（loadNotes 会重建 notesData）
-      currentChapterId = chapterId;
+      currentChapterId = ch.id;
       current = 0;
       showSolution = defaultShowSolution;
       // 小题模式（F）是全局开关，切章不重置，跨章保持
@@ -732,6 +745,7 @@
 
     function renderTitle() {
       var ch = getChapter();
+      if (!ch) return;
       var wb = ch.wb || '';
       var subj = ch.subj || '';
 
@@ -748,7 +762,45 @@
       // 数学各书有 高数/线代/概率论 三学科，保留学科下拉）
       var ddSubjEl = document.getElementById('ddSubj');
       if (ddSubjEl) ddSubjEl.style.display = getSortedSubjs(wb).length > 1 ? '' : 'none';
+
+      // 错题本书籍筛选下拉栏：在普通学习模式下必须保持隐藏
+      var ddWbWrongbookEl = document.getElementById('ddWbWrongbook');
+      if (ddWbWrongbookEl) ddWbWrongbookEl.style.display = 'none';
     }
+
+    function setPanelTitle(text, wrongbookMode) {
+      var bar = document.getElementById('chapterTitleBar');
+      var panelTitle = document.getElementById('panelTitle');
+      if (!bar || !panelTitle) return;
+      var ddWb = document.getElementById('ddWb');
+      var ddSubj = document.getElementById('ddSubj');
+      var ddChapter = document.getElementById('ddChapter');
+      var ddWbWrongbook = document.getElementById('ddWbWrongbook');
+
+      if (text) {
+        panelTitle.textContent = text;
+        panelTitle.style.display = '';
+        if (ddWb) ddWb.style.display = 'none';
+        if (ddSubj) ddSubj.style.display = 'none';
+        if (ddChapter) ddChapter.style.display = 'none';
+        if (ddWbWrongbook) ddWbWrongbook.style.display = wrongbookMode ? '' : 'none';
+      } else {
+        panelTitle.textContent = '';
+        panelTitle.style.display = 'none';
+        if (ddWb) ddWb.style.display = '';
+        if (ddChapter) ddChapter.style.display = '';
+        // 错题本书籍下拉栏只在错题本模式下显示，返回普通题库时必须强制隐藏
+        if (ddWbWrongbook) ddWbWrongbook.style.display = 'none';
+        // 学科下拉栏恢复：当前书籍仅一个学科时隐藏（如822或老姚高数）
+        if (ddSubj) {
+          var ch = (typeof getChapter === 'function') ? getChapter() : null;
+          var wb = ch ? (ch.wb || '') : '';
+          var subjs = (typeof getSortedSubjs === 'function') ? getSortedSubjs(wb) : [];
+          ddSubj.style.display = subjs.length > 1 ? '' : 'none';
+        }
+      }
+    }
+    window.setPanelTitle = setPanelTitle;
 
     // 面板展开/收起 + 外部点击关闭
     (function () {
@@ -857,8 +909,8 @@
 
 
     // ===== 全局仪表盘（已拆分至 js/dashboard.js） =====
-    var dashboardOpen = false;
-    var dashboardDetailReturn = false;
+    let dashboardOpen = false;
+    let dashboardDetailReturn = false;
 
     function toggleDashboard() {
       if (window.Dashboard) {
@@ -973,6 +1025,8 @@
     // ===== 科目选择模态 =====
     let subjectPickerOpen = false;
     function openSubjectPicker() {
+      if (typeof closeRelatedModal === 'function' && relatedModalOpen) closeRelatedModal();
+      if (typeof closeSm2Panel === 'function' && sm2PanelOpen) closeSm2Panel();
       subjectPickerOpen = true;
       document.getElementById('subjectOverlay').classList.add('show');
     }
@@ -982,9 +1036,9 @@
     }
 
     // ===== 记住上次位置（章节 + 题目 + 小题模式），按科目、再按书籍分别保存 =====
-    // 键 kaoyan_resume = JSON {
-    //   '<科目id>': { ch, idx, sub },                      // 切科目时恢复
-    //   '<科目id>::<书籍wb>': { ch, idx, sub }             // 切书籍时恢复
+    // 键 kaoyan.g.resume = JSON {
+    //   '<科目id>': { ch, slug, sub },                      // 切科目时恢复
+    //   '<科目id>::<书籍wb>': { ch, slug, sub }             // 切书籍时恢复
     // }
     function saveResume() {
       if (window.StorageEngine) {
@@ -999,13 +1053,7 @@
       if (!ch || ch.total === 0 || !window.StorageEngine) return null;
       var r = window.StorageEngine.ResumeStore.loadChapter(curSubjectId, chId, ch);
       if (!r) return null;
-      var subOk = false;
-      if (r.sub) {
-        ensureGroups(ch);
-        var g = ch.groupForIdx[r.idx];
-        subOk = !!(g && g.isParent && g.count > 1);
-      }
-      return { idx: r.idx, sub: subOk };
+      return { idx: r.idx, sub: !!r.sub };
     }
 
     function loadResume(subjectId) {
@@ -1016,13 +1064,7 @@
       if (!r) return null;
       var ch = subj.chapters.find(function (c) { return c.id === r.ch; });
       if (!ch || ch.total === 0) return null;
-      var subOk = false;
-      if (r.sub) {
-        ensureGroups(ch);
-        var g = ch.groupForIdx[r.idx];
-        subOk = !!(g && g.isParent && g.count > 1);
-      }
-      return { ch: r.ch, idx: r.idx, sub: subOk };
+      return { ch: r.ch, idx: r.idx, sub: !!r.sub };
     }
 
     // 切换到某本书时恢复该书停靠位置（切书不回到第1讲第1题）。
@@ -1033,21 +1075,15 @@
       if (!r) return false;
       var ch = CHAPTERS.find(function (c) { return c.id === r.ch; });
       if (!ch || ch.total === 0 || ch.wb !== wb) return false;
-      var subOk = false;
-      if (r.sub) {
-        ensureGroups(ch);
-        var g = ch.groupForIdx[r.idx];
-        subOk = !!(g && g.isParent && g.count > 1);
-      }
       currentChapterId = ch.id;
       current = r.idx;
+      // 小题模式（F）是全局开关，切书不重置、跨书保持
       loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2();
       if (!isAllFilterActive()) {
         const filtered = getFilteredIndices();
         if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
       }
       renderTitle(); renderNav(); switchTo(current); updateFilterCounts();
-      if (subOk) toggleSubMode(true);
       return true;
     }
     function switchSubject(subjectId) {
@@ -1064,7 +1100,12 @@
         curSubjectId = subjectId;
         window.curSubjectId = subjectId;
         curSubject = subj;
-        localStorage.setItem('kaoyan_subject', subjectId);
+        window.curSubject = subj;
+        CHAPTERS = subj.chapters || [];
+        window.CHAPTERS = CHAPTERS;
+        if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+          window.StorageEngine.GlobalStore.set('subject', subjectId);
+        }
         if (mathLayout) mathLayout.style.display = 'none';
         if (engLayout) engLayout.style.display = 'flex';
         if (window.kyApp && window.kyApp.activate) window.kyApp.activate(subjectId);
@@ -1085,7 +1126,9 @@
       curSubjectId = subjectId;
       window.curSubjectId = subjectId;
       curSubject = subj;
+      window.curSubject = subj;
       CHAPTERS = subj.chapters;
+      window.CHAPTERS = CHAPTERS;
       var resume = loadResume(subjectId);
       if (resume) {
         currentChapterId = resume.ch;
@@ -1095,7 +1138,9 @@
         current = 0;
       }
       // 小题模式（F）是全局开关，切科目不重置、跨科目保持
-      localStorage.setItem('kaoyan_subject', subjectId);
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.set('subject', subjectId);
+      }
       // 关闭可能打开的全局进度/错题本面板，避免旧科目 DOM 残留
       if (dashboardOpen) {
         dashboardOpen = false; dashboardDetailReturn = false;
@@ -1458,12 +1503,13 @@
           }
         });
 
-        const isCollapsed = collapsedSections.has(secKey);
+        const isCurrentPart = (part.label === curPartLabel);
+        const isCollapsed = isCurrentPart ? false : collapsedSections.has(secKey);
 
         // 分区手风琴标题
         var secTitle = document.createElement('div');
-        secTitle.className = 'section-header' + (isCollapsed ? ' collapsed' : '');
-        secTitle.title = isCollapsed ? '点击展开本分区题号' : '点击收起本分区题号';
+        secTitle.className = 'section-header' + (isCollapsed ? ' collapsed' : '') + (isCurrentPart ? ' current-locked' : '');
+        secTitle.title = isCurrentPart ? '当前做题分区（保持展开）' : (isCollapsed ? '点击展开本分区题号' : '点击收起本分区题号');
         secTitle.innerHTML = '<div class="sec-header-left">' +
           '<span class="sec-arrow">' + (isCollapsed ? '▸' : '▾') + '</span>' +
           '<span class="sec-title-text">' + part.label + '</span>' +
@@ -1472,6 +1518,7 @@
 
         secTitle.onclick = function(e) {
           e.stopPropagation();
+          if (isCurrentPart) return; // 当前做题分区不可折叠
           if (collapsedSections.has(secKey)) {
             collapsedSections.delete(secKey);
           } else {
@@ -1836,6 +1883,10 @@
       const g = currentGroup();
       if (!g) return;
       subMode = !subMode;
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.set('sub_mode', subMode);
+      }
+      saveResume();
       renderNav();
       renderSubSelectBar(g);
       // 同步更新题号标签
@@ -1986,6 +2037,7 @@
       }
     }
 
+    let lastActivePartLabel = null;
     function updateNavActive(scroll) {
       if (scroll === undefined) scroll = true;
       const nav = document.getElementById('qnav');
@@ -1994,11 +2046,22 @@
       const curGroup = ch.groupForIdx ? ch.groupForIdx[current] : null;
       const targetStart = curGroup ? curGroup.startIdx : current;
 
-      // 检查当前题所在分区是否被折叠，若是则必须展开重新渲染
+      // 检查当前题所在分区：自动展开当前分区，并收起跨小节的上一分区（手风琴单分区聚焦）
       const curPartLabel = partOfIdx(current);
       const curSecKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + curPartLabel;
+      let needRerender = false;
       if (collapsedSections.has(curSecKey)) {
         collapsedSections.delete(curSecKey);
+        needRerender = true;
+      }
+      if (lastActivePartLabel !== null && lastActivePartLabel !== curPartLabel) {
+        const prevSecKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + lastActivePartLabel;
+        collapsedSections.add(prevSecKey);
+        needRerender = true;
+      }
+      lastActivePartLabel = curPartLabel;
+
+      if (needRerender) {
         renderNav();
         return;
       }
@@ -2182,12 +2245,10 @@
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
     }
+    window.escapeHtml = escapeHtml;
 
     // ===== 同类题与跨书双向关联管理系统（已拆分至 js/topics.js） =====
-    var relatedTopics = (window.TopicManager && window.TopicManager.getRelatedTopics()) || {};
-    var relatedAffinity = (window.TopicManager && window.TopicManager.getRelatedAffinity()) || { pairs: {}, customOrders: {} };
-    var relatedModalOpen = (window.TopicManager && window.TopicManager.isModalOpen()) || false;
-    var topicRenameModalOpen = (window.TopicManager && window.TopicManager.isRenameModalOpen()) || false;
+    // 状态通过 window.TopicManager 与 window 上挂载的动态 getter 实时同步，不设静态快照遮蔽变量
 
     function normalizeSubjectId(sid) { return window.TopicManager ? window.TopicManager.normalizeSubjectId(sid) : sid; }
     function getQid(subjId, chId, idx) { return window.TopicManager ? window.TopicManager.getQid(subjId, chId, idx) : ''; }
@@ -2198,21 +2259,21 @@
     function saveRelatedTopics() { if (window.TopicManager) window.TopicManager.saveTopics(); }
     function loadRelatedAffinity() { if (window.TopicManager) window.TopicManager.loadAffinity(); }
     function saveRelatedAffinity() { if (window.TopicManager) window.TopicManager.saveAffinity(); }
-    function getAffinityPairKey(q1, q2) { return window.TopicManager ? window.TopicManager.getAffinityPairKey(q1, q2) : ''; }
-    function getTopicAffinity(q1, q2) { return window.TopicManager ? window.TopicManager.getAffinity(q1, q2) : 0; }
-    function recordTopicAffinity(q1, q2, delta) { if (window.TopicManager) window.TopicManager.recordAffinity(q1, q2, delta); }
+    function getAffinityPairKey(q1, q2) { return window.TopicManager && (window.TopicManager.getAffinityPairKey || window.TopicManager.getPairKey) ? (window.TopicManager.getAffinityPairKey || window.TopicManager.getPairKey)(q1, q2) : ''; }
+    function getTopicAffinity(q1, q2) { return window.TopicManager && (window.TopicManager.getTopicAffinity || window.TopicManager.getAffinity) ? (window.TopicManager.getTopicAffinity || window.TopicManager.getAffinity)(q1, q2) : 0; }
+    function recordTopicAffinity(q1, q2, delta) { if (window.TopicManager && (window.TopicManager.recordTopicAffinity || window.TopicManager.recordAffinity)) (window.TopicManager.recordTopicAffinity || window.TopicManager.recordAffinity)(q1, q2, delta); }
     function recordQuestionVisit(qid) { if (window.TopicManager) window.TopicManager.recordRecentQuestion(qid); }
     function recordRecentQuestion(qid) { if (window.TopicManager) window.TopicManager.recordRecentQuestion(qid); }
     function parseTopicAndSubTopic(s) { return window.TopicManager ? window.TopicManager.parseTopicAndSubTopic(s) : { topicName: s, subTopic: '' }; }
     function createRelatedTopic(name, qid, note, sub) { return window.TopicManager ? window.TopicManager.createTopic(name, qid, note, sub) : null; }
     function addQuestionToTopic(tid, qid, note, sub) { return window.TopicManager ? window.TopicManager.addQuestion(tid, qid, note, sub) : false; }
     function removeQuestionFromTopic(tid, qid) { return window.TopicManager ? window.TopicManager.removeQuestion(tid, qid) : false; }
-    function getQuestionRelatedData(qid) { return window.TopicManager ? window.TopicManager.getQuestionData(qid) : { topics: [], relatedQuestions: [] }; }
+    function getQuestionRelatedData(qid) { return window.TopicManager && (window.TopicManager.getQuestionRelatedData || window.TopicManager.getQuestionData) ? (window.TopicManager.getQuestionRelatedData || window.TopicManager.getQuestionData)(qid) : { topics: [], relatedQuestions: [] }; }
     function openRelatedModal() { if (window.TopicManager) window.TopicManager.openModal(); }
     function closeRelatedModal() { if (window.TopicManager) window.TopicManager.closeModal(); }
     function initRelatedModal() { if (window.TopicManager) window.TopicManager.initModal(); }
     function renderRelatedQuestions() { if (window.TopicManager) window.TopicManager.renderRelatedQuestions(); }
-    function jumpToQid(qid) { if (window.TopicManager) window.TopicManager.jumpToQid(qid); }
+    function jumpToQid(qid, pushStack) { if (window.TopicManager) window.TopicManager.jumpToQid(qid, pushStack); }
     // ===== 考研数学常用 LaTeX 符号盘与自动补全词典（已独立为 js/math_palette.js） =====
     function insertSnippetIntoNotes(snippet) {
       if (window.MathPalette) {
@@ -2315,28 +2376,31 @@
     // 查看模式：渲染结果常驻显示在「笔记」下方
     // 查看模式：渲染结果常驻显示在「笔记」下方
     function renderNotes() {
-      const hasNote = notesData[notesKeyFor(current)];
+      const hasNote = notesData[notesKeyFor(current)] || '';
       const duo = document.getElementById('notesDuo');
       if (duo) duo.style.display = 'none'; // 非编辑态隐藏双栏编辑区
       const render = document.getElementById('notesRender');
-      render.style.display = '';
-      render.innerHTML = renderNotesMarkdown(hasNote || '');
-      document.getElementById('btnNoteEdit').style.display = '';
-      document.getElementById('btnNoteSave').style.display = 'none';
-      document.getElementById('btnNoteCancel').style.display = 'none';
-      document.getElementById('btnNoteDelete').style.display = hasNote ? '' : 'none';
+      if (render) {
+        render.style.display = '';
+        render.innerHTML = renderNotesMarkdown(hasNote);
+      }
+      const textarea = document.getElementById('notesTextarea');
+      if (textarea) textarea.value = hasNote;
+      const preview = document.getElementById('notesPreview');
+      if (preview) preview.innerHTML = renderNotesMarkdown(hasNote);
+
+      var btnEdit = document.getElementById('btnNoteEdit');
+      if (btnEdit) btnEdit.style.display = '';
+      var btnSave = document.getElementById('btnNoteSave');
+      if (btnSave) btnSave.style.display = 'none';
+      var btnCancel = document.getElementById('btnNoteCancel');
+      if (btnCancel) btnCancel.style.display = 'none';
+      var btnDelete = document.getElementById('btnNoteDelete');
+      if (btnDelete) btnDelete.style.display = hasNote ? '' : 'none';
       hideAcPopup();
       toggleMathSymbolPalette(false); // 结束编辑自动收起符号工具盘
     }
 
-    // ===== 题号右上角「有笔记 / 有标注」提示（右侧导航角标） =====
-    // 指定题号 idx 的题目图/解析图是否有标注
-    // 优化：通过 imgAnnotations 索引前缀匹配，避免逐号探测最多 20 张解析图分片的硬编码上限
-    function hasQuestionImagesAnnotated(idx) {
-      const base = normalizeAnnotSrc(getImgPath(idx));
-      // 任何以该题 base 路径为前缀的标注 key 存在，即认为该题有标注
-      return Object.keys(imgAnnotations).some(function(k) { return k.indexOf(base) === 0; });
-    }
     // 有笔记（按当前题号 label）或任一图片有标注 → 右侧导航题号亮提示圆点（见 renderNav/appendBadges）
 
     function enterEditMode() {
@@ -2347,16 +2411,18 @@
       const btnCancel = document.getElementById('btnNoteCancel');
       const btnDelete = document.getElementById('btnNoteDelete');
 
-      const label = getChapter().labels[current];
+      const val = notesData[notesKeyFor(current)] || '';
       const textarea = document.getElementById('notesTextarea');
-      textarea.value = notesData[notesKeyFor(current)] || '';
-      duo.style.display = '';
-      render.style.display = 'none';
-      btnEdit.style.display = 'none';
-      btnSave.style.display = '';
-      btnCancel.style.display = '';
-      btnDelete.style.display = 'none';
-      textarea.focus();
+      if (textarea) textarea.value = val;
+      const preview = document.getElementById('notesPreview');
+      if (preview) preview.innerHTML = renderNotesMarkdown(val);
+      if (duo) duo.style.display = '';
+      if (render) render.style.display = 'none';
+      if (btnEdit) btnEdit.style.display = 'none';
+      if (btnSave) btnSave.style.display = '';
+      if (btnCancel) btnCancel.style.display = '';
+      if (btnDelete) btnDelete.style.display = 'none';
+      if (textarea) textarea.focus();
       notesDirty = false; // 进入编辑时重置（初始值即已保存内容）
       updateNotesPreview();
       toggleMathSymbolPalette(true); // 进入编辑自动展开常用符号代码工具盘
@@ -2625,12 +2691,14 @@
       const score = scoreMap[status];
       if (reviewSession && !togglingOff && score) {
         // 复习会话评级：延迟提交，不即时改 SM-2
-        const item = reviewCurrentItem();
+        const getCurItem = (typeof reviewCurrentItem === 'function') ? reviewCurrentItem : (window.Sm2Review ? window.Sm2Review.reviewCurrentItem : null);
+        const item = getCurItem ? getCurItem() : null;
         const isReviewTarget = item && currentChapterId === item.chapterId && current === item.idx;
         if (isReviewTarget) {
           item.finalScore = score;
           item.status = 'graded';
-          reviewAdvance(1); // 评级后自动进入下一复习题
+          if (typeof reviewAdvance === 'function') reviewAdvance(1);
+          else if (window.Sm2Review && window.Sm2Review.reviewAdvance) window.Sm2Review.reviewAdvance(1);
         } else {
           // A/D/W/S 漂移到相邻题评级：只重定基线，不改复习位置
           rebaselineSm2(current, score);
@@ -2715,9 +2783,9 @@
       const total = ch.total;
       let prof = 0, vag = 0, wr = 0;
       Object.values(statuses).forEach(function(s) {
-        if (s === 'proficient' || s === 'familiar') prof++;
-        else if (s === 'vague' || s === 'rusty') vag++;
-        else if (s === 'wrong') wr++;
+        if (s === 'proficient') prof++;
+        else if (s === 'vague' || s === 'familiar') vag++;
+        else if (s === 'wrong' || s === 'rusty') wr++;
       });
       // 带笔记计数
       let withNoteOrAnnot = 0;
@@ -2789,7 +2857,9 @@
       // mjs-marker-area 铺满灯箱，需在 capture 阶段拦截：命中 marker-area 本身或其后代空白区即视为背景点击。
       overlay.addEventListener('click', function (e) {
         if (!lbAnnotMode) return;
-        const ma = lbMarkerArea;
+        const ma = (typeof lbMarkerArea !== 'undefined' && lbMarkerArea) ||
+                   (window.ImageAnnotator && window.ImageAnnotator.getMarkerArea && window.ImageAnnotator.getMarkerArea()) ||
+                   (typeof window.lbMarkerArea !== 'undefined' && window.lbMarkerArea);
         if (!ma) return;
         // 工具栏 / 预设色板 / 标注按钮 / 关闭按钮等控件上的点击不拦截
         if (e.target.closest && e.target.closest('#annotToolbar, #annotPalette, #lightboxAnnotate, #lightboxClose, .annot-palette, .annot-toolbar, .at-btn, .at-swatch, .at-color-swatch, .at-width-wrap, .at-width-step, .annot-palette-custom')) return;
@@ -2818,8 +2888,7 @@
         // 判断是否点在图内：标记编辑区（canvas-container）内的图片/控件算图内，其余算背景
         let insideImage = false;
         try {
-          const cc = ma.shadowRoot && ma.shadowRoot.querySelector('.canvas-container');
-          const imgEl = cc && cc.querySelector('img');
+          const imgEl = ma._editingTarget || (ma.shadowRoot && ma.shadowRoot.querySelector('.canvas-container img'));
           if (imgEl && imgEl.getBoundingClientRect) {
             const r = imgEl.getBoundingClientRect();
             insideImage = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
@@ -2863,6 +2932,14 @@
         lbDragging = false;
         lbImg.classList.remove('grabbing');
       });
+
+      // 绑定标注工具栏事件与上下文回调（含右键 contextmenu 拦截与画笔调节）
+      if (window.ImageAnnotator && window.ImageAnnotator.bindToolbar) {
+        window.ImageAnnotator.bindToolbar({
+          refreshPageOverlays: refreshPageOverlays,
+          renderNav: renderNav
+        });
+      }
 
       // 灯箱双击关闭
       lbImg.addEventListener('dblclick', closeLightbox);
@@ -3115,8 +3192,6 @@ ${cardsHTML}
 
     // ===== SM-2 间隔重复复习系统 =====
     let sm2 = {};          // { idx: { ef, interval, reps, nextReview, lastReview, history } }
-    let reviewSession = null;  // { queue: [{chapterId, idx}], currentIdx, mode }
-    let sm2PanelOpen = false;
 
     // SM-2 存储键：sm2_<subjectId>_<chapterId>（含科目 ID 避免数学/822 的 ch1 冲突）
     function sm2Key(ch) { return 'sm2_' + curSubjectId + '_' + ch.id; }
@@ -3193,6 +3268,7 @@ ${cardsHTML}
 
     // 重置所有 SM-2 复习进度
     function resetAllSm2() {
+      var clearedCount = 0;
       if (window.StorageEngine) {
         for (var j = 0; j < localStorage.length; j++) {
           var k3 = localStorage.key(j);
@@ -3205,6 +3281,7 @@ ${cardsHTML}
                   if (slug.charAt(0) !== '$' && qdata[slug] && qdata[slug].sm2) {
                     delete qdata[slug].sm2;
                     changed = true;
+                    clearedCount++;
                   }
                 }
                 if (changed) {
@@ -3218,8 +3295,8 @@ ${cardsHTML}
       }
       sm2 = {};
       if (sm2PanelOpen) renderSm2Panel();
-      alert('SM-2 复习进度已重置（' + keys.length + ' 条记录已清除）。');
-      return keys.length;
+      alert('SM-2 复习进度已重置（' + clearedCount + ' 条记录已清除）。');
+      return clearedCount;
     }
 
     // ===== 基于 SM-2+ 算法的间隔重复记忆系统（已拆分至 js/sm2_review.js） =====
@@ -3229,14 +3306,25 @@ ${cardsHTML}
     function getSm2Seed(score) { return window.Sm2Review ? window.Sm2Review.getSm2Seed(score) : null; }
     function getSm2Label(rec) { return window.Sm2Review ? window.Sm2Review.getSm2Label(rec) : ''; }
     function getSm2OverdueDays(rec) { return window.Sm2Review ? window.Sm2Review.getSm2OverdueDays(rec) : 0; }
+    let sm2PanelOpen = false;
     function renderSm2InfoBar() { if (window.Sm2Review) window.Sm2Review.renderInfoBar(current, sm2); }
     function rebaselineSm2(idx, score) { if (window.Sm2Review) window.Sm2Review.rebaseline(idx, score, sm2, saveSm2); }
-    function toggleSm2Panel() { if (window.Sm2Review) window.Sm2Review.togglePanel(); }
-    function closeSm2Panel() { if (window.Sm2Review) window.Sm2Review.closePanel(); }
+    function toggleSm2Panel() {
+      if (window.Sm2Review) {
+        window.Sm2Review.togglePanel();
+        sm2PanelOpen = window.Sm2Review.isPanelOpen();
+      }
+    }
+    function closeSm2Panel() {
+      if (window.Sm2Review) {
+        window.Sm2Review.closePanel();
+        sm2PanelOpen = window.Sm2Review.isPanelOpen();
+      }
+    }
     function renderSm2Panel() { if (window.Sm2Review) window.Sm2Review.renderPanel(); }
     function startReviewChapter(cid) { if (window.Sm2Review) window.Sm2Review.startChapter(cid); }
     function startReviewModule(mod) { if (window.Sm2Review) window.Sm2Review.startModule(mod); }
-    function _startAllReview() { if (window.Sm2Review) window.Sm2Review.startAll(); }
+    function startAllReview() { if (window.Sm2Review) window.Sm2Review.startAll(); }
     function resumeReviewSession() { if (window.Sm2Review) window.Sm2Review.resumeSession(); }
     function gradeCurrentReview(score) { if (window.Sm2Review) window.Sm2Review.gradeCurrent(score); }
     function reviewPrev() { if (window.Sm2Review) window.Sm2Review.reviewPrev(); }
@@ -3267,9 +3355,61 @@ ${cardsHTML}
         return;
       }
 
-      // 系统全局控制键（Y 主题切换 / U 试卷暗化 / G 科目切换 / H 快捷键帮助 / Esc 关闭）：
-      // 具备最高全局优先级，在任何面板（全局进度 V / 错题本 B / 间隔复习 M / 科目选择 G）打开时均可随时响应！
-      // 题目级操作键（A/D/W/S/Z/X/C 等）在面板打开时予以拦截，避免在面板下静默操作隐藏题目。
+      // 1. 灯箱层级拦截（z-index: 20000 顶层视觉独占权）：
+      // 只要灯箱处于打开态，无论其是从主界面、错题本还是从 L 模态框唤起，
+      // 必须优先由灯箱独占拦截（Esc 关闭灯箱、+/=/0 缩放、Alt 进入标注），
+      // 绝对禁止任何按键（如 Esc/Space/A/D/Enter）穿透至底层的 relatedModal 或做题区！
+      const lbEl = document.getElementById('lightbox');
+      const isLbShown = lbEl && lbEl.classList.contains('show');
+      if (isLbShown) {
+        if (e.key === 'Alt' && !e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          openAnnotator();
+          return;
+        }
+        if (key === 'escape') {
+          e.preventDefault();
+          closeLightbox();
+          return;
+        }
+        if (key === '+' || key === '=') {
+          e.preventDefault();
+          lbScale = Math.min(lbScale * 1.2, 5);
+          lbApplyTransform();
+          return;
+        }
+        if (key === '-') {
+          e.preventDefault();
+          lbScale = Math.max(lbScale / 1.2, 0.5);
+          lbApplyTransform();
+          return;
+        }
+        if (key === '0') {
+          e.preventDefault();
+          lbScale = 1; lbTranslateX = 0; lbTranslateY = 0;
+          lbApplyTransform();
+          return;
+        }
+        // 灯箱打开时，吞掉其他全部操作键，彻底杜绝底层状态泄露
+        return;
+      }
+
+      // 2. 复习完成结算战报弹窗独占拦截（z-index: 10005）：
+      if (window.isReviewSummaryOpen && window.isReviewSummaryOpen()) {
+        if (key === 'escape') {
+          e.preventDefault();
+          if (typeof window.closeReviewSummaryModal === 'function') window.closeReviewSummaryModal();
+          return;
+        }
+        if (key === 'enter') {
+          e.preventDefault();
+          if (typeof window.nextReviewSummarySprint === 'function') window.nextReviewSummarySprint();
+          return;
+        }
+        return;
+      }
+
+      // 3. 考点重命名模态弹窗（z-index: 10500）
       if (topicRenameModalOpen) {
         if (key === 'escape') {
           e.preventDefault();
@@ -3277,10 +3417,10 @@ ${cardsHTML}
         }
         return;
       } else if (subjectPickerOpen) {
-        // 科目选择弹窗：放行 G（切换）、Esc（关闭）、Y（主题）、U（暗化）
+        // 4. 科目选择弹窗（z-index: 12000）：放行 G（切换）、Esc（关闭）、Y（主题）、U（暗化）
         if (key !== 'g' && key !== 'escape' && key !== 'y' && key !== 'u') return;
       } else if (relatedModalOpen) {
-        // 同类题做题工作台内部快捷键接管：
+        // 5. 同类题做题工作台内部快捷键接管（z-index: 10000）：
         // A/Left 上一题，D/Right 下一题，W/Up 上排，S/Down 下排，Space 切换解析，Enter 关联/移出，L/Esc 关闭
         if (key === 'a' || key === 'arrowleft') {
           e.preventDefault();
@@ -3405,21 +3545,39 @@ ${cardsHTML}
         case 'y': toggleTheme(); break;
         case 'u': toggleImageDarkFilter(); break;
         // 灯箱快捷键
-        // Esc 关闭顺序：先关面板/灯箱/弹窗，再退复习——避免「复习中打开面板后按 Esc 直接退复习但面板残留」
+        // Esc 严格按照视觉 z-index 倒序层级关闭，坚决杜绝层间穿透泄露
         case 'escape':
+          // 1. 快速关联考点下拉浮层
           var quickPop = document.getElementById('quickTopicPopover');
           if (quickPop && quickPop.style.display !== 'none') {
             closeQuickTopicPopover();
             return;
           }
+          // 2. 考点重命名弹窗 (z-index 10500)
           if (topicRenameModalOpen) { closeRenameTopicModal(); return; }
-          if (relatedModalOpen) { closeRelatedModal(); return; }
-          if (sm2PanelOpen) { closeSm2Panel(); return; }
+          // 3. 复习结算战报弹窗 (z-index 10005)
+          if (window.isReviewSummaryOpen && window.isReviewSummaryOpen()) {
+            if (typeof window.closeReviewSummaryModal === 'function') window.closeReviewSummaryModal();
+            return;
+          }
+          // 4. 灯箱大图 (z-index 20000)
           if (document.getElementById('lightbox').classList.contains('show')) { closeLightbox(); return; }
+          // 5. 科目选择器与快捷键帮助 (z-index 12000)
           if (subjectPickerOpen) { closeSubjectPicker(); return; }
           if (shortcutHelpOpen) { toggleShortcutHelp(); return; }
+          // 6. 同类题关联工作台 (z-index 10000)
+          if (relatedModalOpen) { closeRelatedModal(); return; }
+          // 7. 笔记双栏编辑态（输入框失焦后按 Esc 取消编辑并恢复常驻查看）
+          var notesDuoEl = document.getElementById('notesDuo');
+          if (notesDuoEl && notesDuoEl.style.display !== 'none') {
+            if (typeof cancelNoteEdit === 'function') cancelNoteEdit();
+            return;
+          }
+          // 8. 页面常驻面板（SM-2 队列面板、全局仪表盘、错题本）
+          if (sm2PanelOpen) { closeSm2Panel(); return; }
           if (dashboardOpen) { toggleDashboard(); return; }
           if (wrongBookOpen) { toggleWrongBook(); return; }
+          // 9. 进行中的复习会话 (退出复习并恢复题号断点)
           if (reviewSession) { exitReviewSession(); return; }
           break;
         case '=':
@@ -3440,10 +3598,13 @@ ${cardsHTML}
     document.addEventListener('wheel', function (e) {
       if (lbAnnotMode) return;
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+      // 英语科目下禁止触发数学切题（彻底防止跨学科穿透）
+      if (curSubjectId === 'english' || (curSubject && curSubject.type === 'english')) return;
       if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen || relatedModalOpen || topicRenameModalOpen) return;
+      if (window.isReviewSummaryOpen && window.isReviewSummaryOpen()) return;
       if (document.getElementById('lightbox').classList.contains('show')) return;
       // 侧栏与悬浮面板滚轮隔离：在左侧栏、右侧栏、题号区、符号盘或任何弹窗内部滑动时，绝不触发中央切题手势
-      if (e.target.closest && e.target.closest('.sidebar-right, .sidebar-left, .qnav-container, .qnav, .math-symbol-palette, .chapter-selector, .filter-toolbar, .export-section, .related-modal-card, .quick-topic-popover, #mathSymbolPalette, .review-summary-modal')) return;
+      if (e.target.closest && e.target.closest('.sidebar-right, .sidebar-left, .qnav-container, .qnav, .math-symbol-palette, .chapter-selector, .filter-toolbar, .export-section, .related-modal-card, .quick-topic-popover, #mathSymbolPalette, .review-summary-modal, .review-summary-overlay')) return;
 
       const dx = e.deltaX || 0, dy = e.deltaY || 0;
       const absDX = Math.abs(dx), absDY = Math.abs(dy);
@@ -3489,7 +3650,7 @@ ${cardsHTML}
     // 读取 URL 参数或上次选择的科目（默认数学），加载其章节数组
     var urlParams = new URLSearchParams(window.location.search);
     var urlSubj = urlParams.get('subj');
-    var rawSaved = (urlSubj && SUBJECTS.some(function (s) { return s.id === urlSubj; })) ? urlSubj : localStorage.getItem('kaoyan_subject');
+    var rawSaved = (urlSubj && SUBJECTS.some(function (s) { return s.id === urlSubj; })) ? urlSubj : (window.StorageEngine && window.StorageEngine.GlobalStore ? window.StorageEngine.GlobalStore.get('subject') : null);
     var savedSubject = rawSaved || 'math';
     curSubjectId = (savedSubject && SUBJECTS.some(function (s) { return s.id === savedSubject; })) ? savedSubject : 'math';
     window.curSubjectId = curSubjectId;
@@ -3505,13 +3666,23 @@ ${cardsHTML}
       CHAPTERS = curSubject.chapters;
       // 恢复上次停的章节/题目/小题模式（无记录时从该科目默认章节第 1 题开始）
       var resume = loadResume(curSubjectId);
+      var globalSubMode = (window.StorageEngine && window.StorageEngine.GlobalStore)
+        ? window.StorageEngine.GlobalStore.get('sub_mode')
+        : null;
+      if (globalSubMode !== null && globalSubMode !== undefined) {
+        subMode = !!globalSubMode;
+      } else if (resume && resume.sub !== undefined) {
+        subMode = !!resume.sub;
+      } else {
+        subMode = false;
+      }
+
       if (resume) {
         currentChapterId = resume.ch;
         current = resume.idx;
-        subMode = resume.sub;
       } else {
         currentChapterId = curSubject.initChapterId;
-        current = 0; subMode = false;
+        current = 0;
       }
 
       loadGlobalFilters(); loadSolutionPref(); // 恢复筛选状态与解析默认（解析默认按科目）
@@ -3529,17 +3700,23 @@ ${cardsHTML}
     }
     // DOM 就绪后初始化主题、倒计时与事件绑定
     document.addEventListener('DOMContentLoaded', function () {
-      applyTheme(localStorage.getItem('kaoyan_theme') || 'light');
+      applyTheme(currentTheme || 'light');
       renderCountdown();
       initRelatedModal();
 
       var btnTheme = document.getElementById('btnToggleTheme');
       if (btnTheme) btnTheme.onclick = toggleTheme;
-      var btnFilter = document.getElementById('btnDarkFilter');
-      if (btnFilter) btnFilter.onclick = toggleImageDarkFilter;
-
       // 首次加载（无已选科目）弹出科目选择
       if (!savedSubject) openSubjectPicker();
+
+      // 检查并恢复未完成的复习会话
+      try {
+        if (typeof resumeReviewSession === 'function') {
+          resumeReviewSession();
+        } else if (window.Sm2Review && typeof window.Sm2Review.resumeSession === 'function') {
+          window.Sm2Review.resumeSession();
+        }
+      } catch (e) {}
     });
 
     // 暴露核心刷新与读取方法至 window，供本地同步模块与英语模块触发联动
@@ -3568,7 +3745,57 @@ ${cardsHTML}
     window.applyTheme = applyTheme;
     window.toggleImageDarkFilter = toggleImageDarkFilter;
     window.switchTo = switchTo;
-    window.switchChapter = switchChapter;
     window.openSubjectPicker = openSubjectPicker;
     window.closeSubjectPicker = closeSubjectPicker;
+    window.escapeHtml = escapeHtml;
+    window.autoSaveNotes = autoSaveNotes;
+    window.openLightbox = openLightbox;
+    window.notifyStorageSync = notifyStorageSync;
+    window.ensureGroups = ensureGroups;
+    window.partOfIdx = partOfIdx;
+    window.getPartOrder = getPartOrder;
+    window.getWbLabel = getWbLabel;
+    window.renderNotesMarkdown = renderNotesMarkdown;
+    window.getChapter = getChapter;
+    window.setPanelTitle = setPanelTitle;
+    window.readMergedSm2 = readMergedSm2;
+    window.writeMergedSm2 = writeMergedSm2;
+    window.saveSm2 = saveSm2;
+    window.chapterById = chapterById;
+    window.refreshPageOverlays = refreshPageOverlays;
+    window.renderTitle = renderTitle;
+    window.getSortedWbs = getSortedWbs;
+    window.baseSubject = baseSubject;
+    window.toggleWrongBook = toggleWrongBook;
+    window.toggleDashboard = toggleDashboard;
+    window.switchChapter = switchChapter;
+    window.safeLSSet = safeLSSet;
+    window.toggleSubMode = toggleSubMode;
+
+    function defGlobalProp(name, getter, setter) {
+      try {
+        Object.defineProperty(window, name, {
+          get: getter,
+          set: setter,
+          configurable: true,
+          enumerable: true
+        });
+      } catch (err) {
+        console.error('[GlobalSync] defineProperty failed for ' + name + ':', err);
+      }
+    }
+
+    defGlobalProp('current', function () { return current; }, function (v) { current = v; });
+    defGlobalProp('currentChapterId', function () { return currentChapterId; }, function (v) { currentChapterId = v; });
+    defGlobalProp('currentTheme', function () { return currentTheme; }, function (v) { currentTheme = v; });
+    defGlobalProp('darkImageFilter', function () { return darkImageFilter; }, function (v) { darkImageFilter = !!v; });
+    defGlobalProp('subjectPickerOpen', function () { return subjectPickerOpen; }, function (v) { subjectPickerOpen = !!v; });
+    defGlobalProp('dashboardOpen', function () { return dashboardOpen; }, function (v) { dashboardOpen = !!v; });
+    defGlobalProp('wrongBookOpen', function () { return wrongBookOpen; }, function (v) { wrongBookOpen = !!v; });
+    defGlobalProp('subMode', function () { return subMode; }, function (v) { subMode = !!v; });
+    defGlobalProp('sm2PanelOpen', function () {
+      return (window.Sm2Review && typeof window.Sm2Review.isPanelOpen === 'function')
+        ? window.Sm2Review.isPanelOpen()
+        : sm2PanelOpen;
+    }, function (v) { sm2PanelOpen = !!v; });
   

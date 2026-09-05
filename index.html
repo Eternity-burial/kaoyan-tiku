@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>考研题库</title>
   <link rel="stylesheet" href="lib/katex/katex.min.css">
-  <link rel="stylesheet" href="css/styles.css?v=202608311601">
-  <link rel="stylesheet" href="css/english.css?v=202608311601">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/english.css">
 </head>
 <body>
   <button type="button" class="floating-sidebar-toggle" id="btnFloatingExpandSidebar" title="展开两侧边栏 ( I )" style="display:none">
@@ -413,6 +413,7 @@
           <div class="db-subject-grid" id="wrongBookGrid"></div>
         </div>
         <div class="sm2-panel" id="sm2Panel" style="display:none">
+          <button class="sm2-close-btn" id="btnSm2Close" title="关闭 (Esc / M)">&times;</button>
           <div class="sm2-overview">
             <div class="sm2-stats-row">
               <div class="sm2-stat-card" id="sm2CardDue"><div class="sm2-stat-num">0</div><div class="sm2-stat-label">今日到期</div></div>
@@ -782,6 +783,7 @@
     <button class="lightbox-close" id="lightboxClose">&times;</button>
     <button class="lightbox-annotate" id="lightboxAnnotate">标注</button>
     <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div id="lightboxAnnotOverlay" class="lightbox-annot-overlay" style="display:none"></div>
     <div class="lightbox-hint">滚轮缩放 / 拖拽移动 / 双击或点击背景关闭</div>
     <!-- Snipaste 风格标注工具栏（单排底部居中） -->
     <div class="annot-toolbar" id="annotToolbar" style="display:none">
@@ -1047,8 +1049,8 @@
   <script src="lib/katex/katex.min.js"></script>
   <script src="lib/katex/contrib/auto-render.min.js"></script>
   <script src="lib/markerjs3/markerjs3.umd.js"></script>
-  <script src="js/storage_sync.js?v=202608311601"></script>
-  <script src="js/chapters.js?v=202608311601"></script>
+  <script src="js/storage_sync.js"></script>
+  <script src="js/chapters.js"></script>
   <script src="题库/英语/data_1998.js"></script>
   <script src="题库/英语/data_1999.js"></script>
   <script src="题库/英语/data_2000.js"></script>
@@ -1078,13 +1080,13 @@
   <script src="题库/英语/data_2024.js"></script>
   <script src="题库/英语/data_2025.js"></script>
   <script src="题库/英语/data_2026.js"></script>
-  <script src="js/english_app.js?v=202608311601"></script>
-  <script src="js/storage.js?v=202609031738"></script>
+  <script src="js/english_app.js"></script>
+  <script src="js/storage.js"></script>
   <script src="js/math_palette.js"></script>
   <script src="js/dashboard.js"></script>
   <script src="js/annotator.js"></script>
   <script src="js/sm2_review.js"></script>
   <script src="js/topics.js"></script>
-  <script src="js/app.js?v=202608311601"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

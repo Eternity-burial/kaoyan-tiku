@@ -84,8 +84,19 @@
     if (window.notifyStorageSync) window.notifyStorageSync();
   }
 
+  function normalizeAnnotState(st) {
+    if (!st || !Array.isArray(st.markers)) return st;
+    st.markers.forEach(function (m) {
+      if (m && typeof m.rotationAngle !== 'number') {
+        m.rotationAngle = 0;
+      }
+    });
+    return st;
+  }
+
   function getAnnotation(imgSrc) {
-    return imgAnnotations[normalizeAnnotSrc(imgSrc)] || null;
+    var st = imgAnnotations[normalizeAnnotSrc(imgSrc)] || null;
+    return normalizeAnnotState(st);
   }
 
   function clearAnnotation(imgSrc) {
@@ -110,6 +121,20 @@
 
   function showLightboxAnnotationOverlay() {
     var lbOverlay = document.getElementById('lightboxAnnotOverlay');
+    if (!lbOverlay) {
+      var lb = document.getElementById('lightbox');
+      if (lb) {
+        lbOverlay = document.createElement('div');
+        lbOverlay.id = 'lightboxAnnotOverlay';
+        lbOverlay.className = 'lightbox-annot-overlay';
+        var hint = lb.querySelector('.lightbox-hint');
+        if (hint) {
+          lb.insertBefore(lbOverlay, hint);
+        } else {
+          lb.appendChild(lbOverlay);
+        }
+      }
+    }
     if (!lbOverlay || typeof markerjs3 === 'undefined') return;
     lbOverlay.innerHTML = '';
     var hasA = hasAnnotation(lbCurrentSrc);
@@ -525,7 +550,30 @@
     finishCurrentAnnot();
   }
 
+  function toggleAnnotateMode() {
+    if (lbAnnotMode) {
+      saveAnnotationFromArea(annotToolbarCallbacks);
+    } else {
+      openAnnotator(lbCurrentSrc);
+    }
+  }
+
+  var annotToolbarBound = false;
+  var annotToolbarCallbacks = null;
+
   function bindAnnotToolbar(callbacks) {
+    if (callbacks) annotToolbarCallbacks = callbacks;
+    if (annotToolbarBound) return;
+    annotToolbarBound = true;
+
+    var annotBtn = document.getElementById('lightboxAnnotate');
+    if (annotBtn) {
+      annotBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleAnnotateMode();
+      });
+    }
+
     var tb = document.getElementById('annotToolbar');
     if (tb) {
       tb.addEventListener('click', function (e) {
@@ -536,7 +584,7 @@
         var tool = btn.dataset.tool;
         if (action === 'undo')        { doUndo(); return; }
         if (action === 'redo')        { doRedo(); return; }
-        if (action === 'save')        { saveAnnotationFromArea(callbacks); return; }
+        if (action === 'save')        { saveAnnotationFromArea(annotToolbarCallbacks); return; }
         if (action === 'cancel')      { closeAnnotator(); return; }
         if (action === 'width-minus') { adjustAnnotWidth(-1); return; }
         if (action === 'width-plus')  { adjustAnnotWidth(1); return; }
@@ -632,8 +680,17 @@
     }
   }
 
-  // 初始自动载入标注数据
+  // 初始自动载入标注数据与事件绑定
   loadAnnotations();
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        bindAnnotToolbar();
+      });
+    } else {
+      bindAnnotToolbar();
+    }
+  }
 
   // 暴露全局命名空间
   window.ImageAnnotator = {
@@ -649,6 +706,7 @@
     saveFromArea: saveAnnotationFromArea,
     isAnnotMode: function () { return lbAnnotMode; },
     hasContent: annotHasContent,
+    getMarkerArea: function () { return lbMarkerArea; },
     getCurrentSrc: function () { return lbCurrentSrc; },
     setCurrentSrc: function (s) { lbCurrentSrc = s; },
     getAnnotationsMap: function () { return imgAnnotations; },
@@ -662,7 +720,8 @@
     adjustWidth: adjustAnnotWidth,
     undo: doUndo,
     redo: doRedo,
-    deleteSelection: deleteAnnotSelection
+    deleteSelection: deleteAnnotSelection,
+    toggleAnnotateMode: toggleAnnotateMode
   };
 
   // 全局接口互通别名
@@ -673,6 +732,7 @@
   window.saveAnnotation = saveAnnotation;
   window.imgAnnotations = imgAnnotations;
   window.handleAnnotKeydown = handleAnnotKeydown;
+  window.toggleAnnotateMode = toggleAnnotateMode;
 
   try {
     Object.defineProperty(window, 'lbAnnotMode', {
@@ -680,6 +740,13 @@
       set: function (v) { lbAnnotMode = !!v; },
       configurable: true
     });
-  } catch (e) {}
+    Object.defineProperty(window, 'lbMarkerArea', {
+      get: function () { return lbMarkerArea; },
+      configurable: true
+    });
+  } catch (e) {
+    window.lbAnnotMode = lbAnnotMode;
+    window.lbMarkerArea = lbMarkerArea;
+  }
 
 })();

@@ -4,6 +4,7 @@
  * 键盘快捷键导航、状态评级、笔记与公式渲染、相关题模态框、移动端响应式布局、全局无控制台报错
  */
 
+const fs = require('fs');
 const http = require('http');
 const { spawn, execSync } = require('child_process');
 const WSClient = globalThis.WebSocket;
@@ -38,9 +39,16 @@ function sendCDP(ws, method, params = {}, id = 1) {
   });
 }
 
-function evaluate(ws, expression, id = 2) {
+let cdpSeq = 100;
+function evaluate(ws, expression) {
+  const id = ++cdpSeq;
   return sendCDP(ws, 'Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true }, id)
-    .then(r => r.result ? r.result.value : undefined);
+    .then(r => {
+      if (r && r.exceptionDetails) {
+        console.error('  [CDP Exception]:', r.exceptionDetails.text, (r.exceptionDetails.exception && r.exceptionDetails.exception.description) || '');
+      }
+      return r && r.result ? r.result.value : undefined;
+    });
 }
 
 function getJson(url) {
@@ -60,6 +68,10 @@ async function run() {
   console.log('====================================================');
   console.log('  考研题库 - CDP 浏览器端到端测试 (E2E Test)');
   console.log('====================================================\n');
+
+  // 0. 清理残留进程
+  await cleanup();
+  await sleep(500);
 
   // 1. 启动本地静态服务器
   console.log('[1/7] 启动本地 HTTP 服务器 (端口 8080)...');
@@ -89,8 +101,15 @@ async function run() {
 
   // 3. 连接 CDP WebSocket
   console.log('[3/7] 连接 Chrome CDP WebSocket...');
-  const targets = await getJson(`http://127.0.0.1:${PORT}/json`);
-  const pageTarget = targets.find(t => t.type === 'page');
+  let pageTarget = null;
+  for (let retry = 0; retry < 12; retry++) {
+    try {
+      const targets = await getJson(`http://127.0.0.1:${PORT}/json`);
+      pageTarget = targets && targets.find(t => t.type === 'page' && t.webSocketDebuggerUrl);
+      if (pageTarget) break;
+    } catch (e) {}
+    await sleep(500);
+  }
   if (!pageTarget || !pageTarget.webSocketDebuggerUrl) {
     throw new Error('未找到页面调试目标 WebSocket');
   }
@@ -172,28 +191,75 @@ async function run() {
   `);
   await sleep(300);
 
-  // 5. 测试主页面考点快速添加 (含二级子考点)、拖拽手柄、置顶与双向优先级联动
-  console.log('[6/8] 测试主页面考点快速关联 (二级子考点)、同类题置顶与双向优先级联动...');
+  // 4.1 测试小题模式快捷键 F 切换与全局持久化记忆 (跨章、跨重载保持)
+  console.log('  测试小题模式快捷键 F 切换与全局持久化记忆...');
+  const subModeBefore = await evaluate(ws, 'subMode');
+  await evaluate(ws, `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'f', bubbles: true }))`);
+  await sleep(200);
+  const subModeAfterF = await evaluate(ws, 'subMode');
+  const storedSubMode = await evaluate(ws, `window.StorageEngine.GlobalStore.get('sub_mode')`);
+  console.log('  按 F 前 subMode:', subModeBefore, '按 F 后 subMode:', subModeAfterF, '持久化存储:', storedSubMode);
+  if (!subModeAfterF || !storedSubMode) throw new Error('按 F 键未能成功开启小题模式并持久化');
+
+  // 跨章节切换保持测试
   await evaluate(ws, `
     (() => {
-      // 1. 快速创建包含二级子考点的主题：极限计算 / 0比0型
+      const ch1 = SUBJECTS[0].chapters[0].id;
+      const ch2 = SUBJECTS[0].chapters[1].id;
+      switchChapter(ch2);
+    })()
+  `);
+  await sleep(300);
+  const subModeAfterChSwitch = await evaluate(ws, 'subMode');
+  console.log('  跨章节切换后 subMode 保持开启:', subModeAfterChSwitch);
+  if (!subModeAfterChSwitch) throw new Error('跨章节切换后小题模式未能保持开启 (记忆丢失)');
+
+  // 页面重载保持测试
+  await sendCDP(ws, 'Page.reload');
+  await sleep(1500);
+  const subModeAfterReload = await evaluate(ws, 'subMode');
+  const storedAfterReload = await evaluate(ws, `window.StorageEngine.GlobalStore.get('sub_mode')`);
+  console.log('  页面刷新重载后 subMode 保持开启:', subModeAfterReload, '持久化值:', storedAfterReload);
+  if (!subModeAfterReload || !storedAfterReload) throw new Error('页面重载后小题模式未能保持开启 (记忆丢失)');
+
+  // 再次按 F 关闭小题模式
+  await evaluate(ws, `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'f', bubbles: true }))`);
+  await sleep(200);
+  const subModeAfterSecondF = await evaluate(ws, 'subMode');
+  const storedAfterSecondF = await evaluate(ws, `window.StorageEngine.GlobalStore.get('sub_mode')`);
+  console.log('  再次按 F 后 subMode 关闭:', !subModeAfterSecondF, '持久化值:', storedAfterSecondF);
+  if (subModeAfterSecondF || storedAfterSecondF) throw new Error('再次按 F 键未能成功关闭小题模式并更新持久化存储');
+
+  // 5. 测试主页面考点快速添加 (纯单级考点)、拖拽手柄、置顶与双向优先级联动
+  console.log('[6/8] 测试主页面单级考点快速关联、同类题置顶与双向优先级联动...');
+  const step6Debug = await evaluate(ws, `
+    (() => {
+      // 1. 快速创建纯单级考点主题：极限计算
       document.getElementById('btnQuickAddTopic').click();
       const input = document.getElementById('inputQuickTopicSearch');
-      input.value = '极限计算 / 0比0型';
+      input.value = '极限计算';
       document.getElementById('btnQuickCreateTopic').click();
 
       // 2. 模拟把另外两道题目也加入同一考点
       const curQid = getCurrentQid();
-      const qids = getRelatedQuestionsForQid(curQid);
-      const allTids = Object.keys(relatedTopics);
-      const myTid = allTids[allTids.length - 1];
+      const myTopic = Object.values(relatedTopics).find(t => t && t.name === '极限计算');
+      const myTid = myTopic ? myTopic.id : null;
       if (myTid) {
-        addQuestionToTopic(myTid, 'math::ch213::20', '基础题', '0比0型');
-        addQuestionToTopic(myTid, 'math::ch213::35', '提高题', '旋转体');
+        addQuestionToTopic(myTid, 'math::李范全书::高数::ch01::ex_1-2', '基础题');
+        addQuestionToTopic(myTid, 'math::李范全书::高数::ch01::ex_1-3', '提高题');
       }
       renderRelatedQuestions();
+      const debugData = getRelatedQuestionsForQid(curQid);
+      return {
+        curQid,
+        myTid,
+        myTopicMembers: myTopic ? myTopic.members : null,
+        relCount: debugData ? debugData.relatedQuestions.length : -1,
+        relQuestions: debugData ? debugData.relatedQuestions : null
+      };
     })()
   `);
+  console.log('  [Step6 Debug]:', JSON.stringify(step6Debug));
   await sleep(400);
 
   const relatedCheck = await evaluate(ws, `
@@ -202,7 +268,7 @@ async function run() {
       const cards = document.querySelectorAll('#relatedCardsList .related-card');
       const hasDragHandle = Array.from(cards).every(c => !!c.querySelector('.rc-drag-handle'));
       const hasPinBtn = Array.from(cards).every(c => !!c.querySelector('.rc-btn-pin'));
-      const hasSubtopic = !!document.querySelector('#relatedCardsList .rc-subtopic-tag');
+      const hasSubtopicTag = !!document.querySelector('#relatedCardsList .rc-subtopic-tag');
       const firstCardQidBefore = cards.length > 0 ? cards[0].dataset.qid : '';
 
       // 模拟点击第二张卡片的置顶按钮
@@ -222,16 +288,16 @@ async function run() {
         cardsCount: cards.length,
         hasDragHandle,
         hasPinBtn,
-        hasSubtopic,
+        hasSubtopicTag,
         pinSuccess
       };
     })()
   `);
-  console.log('  添加考点后胶囊数:', relatedCheck.pills, '同类题卡片数:', relatedCheck.cardsCount, '拖拽手柄完整:', relatedCheck.hasDragHandle, '置顶按钮完整:', relatedCheck.hasPinBtn, '二级考点标签可见:', relatedCheck.hasSubtopic, '置顶功能验证成功:', relatedCheck.pinSuccess);
+  console.log('  添加考点后胶囊数:', relatedCheck.pills, '同类题卡片数:', relatedCheck.cardsCount, '拖拽手柄完整:', relatedCheck.hasDragHandle, '置顶按钮完整:', relatedCheck.hasPinBtn, '已移出二级考点标签:', !relatedCheck.hasSubtopicTag, '置顶功能验证成功:', relatedCheck.pinSuccess);
   if (relatedCheck.pills === 0) throw new Error('考点未成功添加');
   if (!relatedCheck.hasDragHandle) throw new Error('同类题卡片缺少拖拽手柄');
   if (!relatedCheck.hasPinBtn) throw new Error('同类题卡片缺少置顶按钮');
-  if (!relatedCheck.hasSubtopic) throw new Error('二级子考点标签未正常显示');
+  if (relatedCheck.hasSubtopicTag) throw new Error('发现残留的二级子考点标签');
   // 测试点击同类题卡片的「显示解析」按钮，验证多图解析容器正确初始化并渲染
   const solToggleCheck = await evaluate(ws, `
     (() => {
@@ -268,11 +334,14 @@ async function run() {
     throw new Error('同类题卡片多图解析容器初始化或展开交互失败');
   }
 
-  // 测试点击 ✕ 即时删除当前题目考点
+  // 测试点击 ✕ 即时删除当前题目考点，并彻底清理测试主题
   await evaluate(ws, `
     (() => {
       const delBtn = document.querySelector('#relatedTopicsWrap .topic-pill-remove');
       if (delBtn) delBtn.click();
+      const allTids = Object.keys(relatedTopics);
+      const testTid = allTids.find(tid => relatedTopics[tid] && relatedTopics[tid].name === '极限计算');
+      if (testTid) deleteRelatedTopic(testTid, true);
     })()
   `);
   await sleep(300);
@@ -471,9 +540,6 @@ async function run() {
       const modalZ = parseInt(modalStyle.zIndex, 10);
       const isAboveModal = lbZ > modalZ;
 
-      // 关闭灯箱
-      closeLightbox();
-
       return {
         isLbShown,
         lbZ,
@@ -487,7 +553,212 @@ async function run() {
   if (!lbCheck.isAboveModal) throw new Error(`灯箱层级 (${lbCheck.lbZ}) 未能高于模态框层级 (${lbCheck.modalZ})`);
   await sleep(200);
 
+  // 重点验证：层级递进 Esc 关闭链（坚决杜绝层间穿透与越级关闭！）
+  // 1. 首次 Esc：退出画板标注态，灯箱大图依然保持显示，底层的 L 模态框必须保持开启
+  console.log('  测试首次 Esc（退出画板模式，灯箱与底层 L 模态框均保持稳定开启）...');
+  const escAnnotResult = await evaluate(ws, `
+    (() => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      const lb = document.getElementById('lightbox');
+      const modal = document.getElementById('relatedModal');
+      return {
+        lbStillShown: lb.classList.contains('show'),
+        modalStillOpen: modal.style.display !== 'none'
+      };
+    })()
+  `);
+  console.log('  首次 Esc 结果: 灯箱保持开启:', escAnnotResult.lbStillShown, 'L模态框保持开启:', escAnnotResult.modalStillOpen);
+  if (!escAnnotResult.lbStillShown) throw new Error('首次 Esc 错误地提前关闭了灯箱');
+  if (!escAnnotResult.modalStillOpen) throw new Error('首次 Esc 穿透关闭了底层的 L 模态框');
+  // 验证在灯箱显示状态下，任何操作按键（Space / A / D / Z 等）均被灯箱顶层独占吞噬，绝不泄露至底层！
+  console.log('  测试灯箱打开态按键独占吞噬 (Space/A/D/Z 不应渗透至底层)...');
+  const lbKeySwallowCheck = await evaluate(ws, `
+    (() => {
+      const curBefore = current;
+      const solBefore = showSolution;
+      // 触发 Space / A / D / Z
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'a', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'd', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'z', bubbles: true }));
+      return {
+        curUnchanged: current === curBefore,
+        solUnchanged: showSolution === solBefore
+      };
+    })()
+  `);
+  console.log('  灯箱按键吞噬结果:', lbKeySwallowCheck);
+  if (!lbKeySwallowCheck.curUnchanged || !lbKeySwallowCheck.solUnchanged) {
+    throw new Error('灯箱打开状态下按键穿透至底层发生题目状态变化');
+  }
+
+  // 2. 第二次 Esc：关闭灯箱大图，底层的 L 模态框必须依然保持开启（零层间泄露！）
+  console.log('  测试第二次 Esc（顶层灯箱完全关闭，底层的 L 模态框依然稳定保留）...');
+  const escLbResult = await evaluate(ws, `
+    (() => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      const lb = document.getElementById('lightbox');
+      const modal = document.getElementById('relatedModal');
+      return {
+        lbClosed: !lb.classList.contains('show'),
+        modalStillOpen: modal.style.display !== 'none'
+      };
+    })()
+  `);
+  console.log('  第二次 Esc 结果: 灯箱关闭:', escLbResult.lbClosed, 'L模态框保持开启:', escLbResult.modalStillOpen);
+  if (!escLbResult.lbClosed) throw new Error('第二次 Esc 未能关闭顶层灯箱');
+  if (!escLbResult.modalStillOpen) throw new Error('第二次 Esc 穿透关闭了底层的 L 模态框（发生层间按键泄露）');
+  await sleep(150);
+
+  // 3. 第三次 Esc：关闭 L 模态框回到主页面
+  console.log('  测试第三次 Esc（关闭 L 模态框回到主工作台）...');
+  await evaluate(ws, `document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))`);
+  await sleep(200);
+  const modalClosedByEsc = await evaluate(ws, `document.getElementById('relatedModal').style.display === 'none'`);
+  console.log('  第三次 Esc 结果: L模态框关闭:', modalClosedByEsc);
+  if (!modalClosedByEsc) throw new Error('第三次 Esc 未能成功关闭 L 模态框');
+
+  // 测试画板标注右键拦截 (contextmenu / finishCurrentAnnot)、右键+滚轮调节画笔粗细与无标注点击背景退出设计
+  console.log('  测试画板右键 contextmenu 拦截、右键+滚轮调粗细与背景退出逻辑...');
+  const annotCheck = await evaluate(ws, `
+    (() => {
+      const qImg = document.getElementById('questionImg');
+      const src = qImg && qImg.src;
+      openLightbox(src);
+      openAnnotator();
+
+      const inAnnot = !!window.lbAnnotMode;
+      const overlay = document.getElementById('lightbox');
+
+      // 1. 验证右键 contextmenu 拦截与默认菜单阻止
+      const cmEvt = new MouseEvent('contextmenu', {
+        bubbles: true,
+        cancelable: true,
+        clientX: 100,
+        clientY: 100
+      });
+      const notPrevented = overlay.dispatchEvent(cmEvt);
+      const cmBlocked = !notPrevented; // defaultPrevented === true
+
+      // 2. 验证右键 + 滚轮调节画笔粗细 (e.buttons === 2)
+      const ma = window.ImageAnnotator.getMarkerArea();
+      const initialWidth = parseInt(document.getElementById('annotWidth').value, 10) || 4;
+      const wheelEvt = new WheelEvent('wheel', {
+        bubbles: true,
+        cancelable: true,
+        deltaY: -100,
+        buttons: 2
+      });
+      if (ma) ma.dispatchEvent(wheelEvt);
+      const newWidth = parseInt(document.getElementById('annotWidth').value, 10);
+      const widthChanged = (newWidth === initialWidth + 1);
+
+      // 3. 验证无标注内容时点击非图片背景区域：直接退出灯箱模式（原设计意图）
+      const clickEvt = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        clientX: 10,
+        clientY: 10
+      });
+      overlay.dispatchEvent(clickEvt);
+      const lbClosedDirectly = !document.getElementById('lightbox').classList.contains('show');
+
+      return {
+        inAnnot,
+        cmBlocked,
+        widthChanged,
+        lbClosedDirectly
+      };
+    })()
+  `);
+  console.log('  画板右键与无标注点击背景退出检查:', annotCheck);
+  if (!annotCheck.inAnnot) throw new Error('未能成功进入标注模式');
+  if (!annotCheck.cmBlocked) throw new Error('画板右键 contextmenu 未能被有效拦截');
+  if (!annotCheck.widthChanged) throw new Error('画板右键+滚轮未能成功调节画笔粗细');
+  if (!annotCheck.lbClosedDirectly) throw new Error('无标注内容时点击背景未能按原设计直接退出灯箱');
+  await sleep(150);
+
+  // 测试图片标注真实持久化与灯箱回显 (#lightboxAnnotOverlay) 及 #lightboxAnnotate 按钮点击
+  console.log('  测试图片标注持久化与灯箱回显 (#lightboxAnnotOverlay) 及标注按钮双向切换...');
+  const annotEchoCheck = await evaluate(ws, `
+    (() => {
+      const qImg = document.getElementById('questionImg');
+      const src = qImg && qImg.src;
+      if (!src) return { error: '未找到题目图片' };
+
+      // 1. 打开灯箱并测试 #lightboxAnnotate 按钮进入与退出双向交互 (P0-2 修复验证)
+      openLightbox(src);
+      const initialInAnnot = !!window.lbAnnotMode;
+      const annotBtn = document.getElementById('lightboxAnnotate');
+      const textBeforeClick = annotBtn ? annotBtn.textContent : '';
+
+      // 点击 #lightboxAnnotate 退出标注态
+      if (annotBtn) annotBtn.click();
+      const exitedByBtn = !window.lbAnnotMode;
+      const textAfterExit = annotBtn ? annotBtn.textContent : '';
+
+      // 再次点击 #lightboxAnnotate 重新进入标注态
+      if (annotBtn) annotBtn.click();
+      const reenteredByBtn = !!window.lbAnnotMode;
+      const textAfterReenter = annotBtn ? annotBtn.textContent : '';
+
+      // 2. 模拟真实 Markerjs3 标注持久化并验证 #lightboxAnnotOverlay 回显 (P0-1 修复验证)
+      const validAnnotState = {
+        version: 3,
+        width: 1000,
+        height: 600,
+        markers: [{
+          left: 80,
+          top: 120,
+          width: 120,
+          height: 40,
+          rotationAngle: 0,
+          visualTransformMatrix: { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 },
+          containerTransformMatrix: { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 },
+          typeName: 'FrameMarker',
+          strokeColor: '#ff0000',
+          strokeWidth: 4,
+          strokeDasharray: '',
+          opacity: 1
+        }]
+      };
+      window.ImageAnnotator.save(src, validAnnotState);
+      window.ImageAnnotator.close();
+      window.ImageAnnotator.showOverlay();
+
+      const overlayEl = document.getElementById('lightboxAnnotOverlay');
+      const hasOverlayEl = !!overlayEl && overlayEl.style.display !== 'none';
+      const hasChildren = overlayEl && overlayEl.children.length > 0;
+
+      // 3. 清理标注数据并关闭灯箱
+      window.ImageAnnotator.clear(src);
+      closeLightbox();
+      const closed = !document.getElementById('lightbox').classList.contains('show');
+
+      return {
+        initialInAnnot,
+        textBeforeClick,
+        exitedByBtn,
+        textAfterExit,
+        reenteredByBtn,
+        textAfterReenter,
+        hasOverlayEl,
+        hasChildren,
+        closed
+      };
+    })()
+  `);
+  console.log('  标注持久化回显与按钮交互检查:', annotEchoCheck);
+  if (!annotEchoCheck.initialInAnnot) throw new Error('打开灯箱未能默认进入标注模式');
+  if (!annotEchoCheck.exitedByBtn) throw new Error('点击 #lightboxAnnotate 按钮未能退出标注模式');
+  if (!annotEchoCheck.reenteredByBtn) throw new Error('再次点击 #lightboxAnnotate 按钮未能重新进入标注模式');
+  if (!annotEchoCheck.hasOverlayEl || !annotEchoCheck.hasChildren) throw new Error('#lightboxAnnotOverlay 未能成功回显已保存的标注');
+  await sleep(150);
+
   // 测试点击遮罩层背景关闭弹窗
+  console.log('  测试重新打开 L 模态框并点击遮罩层背景关闭...');
+  await evaluate(ws, `openRelatedModal()`);
+  await sleep(200);
   await evaluate(ws, `
     (function() {
       const modal = document.getElementById('relatedModal');
@@ -513,8 +784,116 @@ async function run() {
       };
     })()
   `);
-  console.log('  主页面右侧栏题号区最大自适应高度检查:', qnavMaxHeight);
-  if (!qnavMaxHeight.isMaximized) throw new Error('主页面题号区未能在不展开符号栏时达到最大高度 (当前为 ' + qnavMaxHeight.computedMaxHeight + ')');
+
+  // 验证老姚高数第2章 2.1-19 在右侧题号区准确归属为例题，2.1-20 为补充练习
+  console.log('  验证老姚高数 2.1-19 在右侧题号区归属为例题...');
+  const laoyaoSecCheck = await evaluate(ws, `
+    (() => {
+      const ch02 = SUBJECTS.find(s => s.id === 'math').chapters.find(c => c.wb === '老姚高数' && c.name.includes('第2章'));
+      if (!ch02) return null;
+      switchChapter(ch02.id);
+      renderNav();
+
+      const nav = document.getElementById('qnav');
+      const buttons = Array.from(nav.querySelectorAll('button[data-group-start]'));
+      const btn19 = buttons.find(b => b.textContent.includes('2.1-19'));
+      const btn20 = buttons.find(b => b.textContent.includes('2.1-20'));
+
+      function getHeaderAbove(el) {
+        let prev = el.previousElementSibling;
+        while (prev) {
+          if (prev.classList.contains('subsection-header')) return prev.textContent.trim();
+          prev = prev.previousElementSibling;
+        }
+        return '';
+      }
+
+      return {
+        hasBtn19: !!btn19,
+        hasBtn20: !!btn20,
+        header19: btn19 ? getHeaderAbove(btn19) : '',
+        header20: btn20 ? getHeaderAbove(btn20) : '',
+        cls19: classifyLabel('2.1-19'),
+        cls20: classifyLabel('2.1-20')
+      };
+    })()
+  `);
+  console.log('  老姚高数 2.1-19 题号区分类检查:', laoyaoSecCheck);
+  if (!laoyaoSecCheck || laoyaoSecCheck.header19 !== '例题' || laoyaoSecCheck.cls19 !== '例题') {
+    throw new Error('老姚高数 2.1-19 未能在右侧题号区正确显示为「例题」');
+  }
+  if (!laoyaoSecCheck || laoyaoSecCheck.header20 !== '补充练习' || laoyaoSecCheck.cls20 !== '补充练习') {
+    throw new Error('老姚高数 2.1-20 未能在右侧题号区正确显示为「补充练习」');
+  }
+
+  // 测试 V 面板（全局学习进度仪表盘）
+  console.log('  注入真实题库数据集并测试 V 键唤起全局学习进度面板与数据渲染...');
+  const diskData = JSON.parse(fs.readFileSync('kaoyan_tiku_data.json', 'utf8')).data;
+  await evaluate(ws, `
+    ((data) => {
+      localStorage.clear();
+      for (const k in data) {
+        localStorage.setItem(k, data[k]);
+      }
+      if (typeof loadStatuses === 'function') loadStatuses();
+      if (typeof renderNav === 'function') renderNav();
+    })(${JSON.stringify(diskData)})
+  `);
+  await sleep(300);
+
+  await evaluate(ws, `
+    (() => {
+      toggleDashboard();
+    })()
+  `);
+  await sleep(400);
+
+  const dashboardCheck = await evaluate(ws, `
+    (() => {
+      const panel = document.getElementById('dashboardPanel');
+      const isVisible = panel && panel.style.display !== 'none';
+      const pctEl = document.getElementById('dbMasterPct');
+      const pctText = pctEl ? pctEl.textContent : '';
+      const metricDone = document.getElementById('dbMetricDone');
+      const doneText = metricDone ? metricDone.textContent : '';
+      const cards = document.querySelectorAll('#dbGrid .db-donut-card');
+
+      // 再次调用 toggleDashboard 关闭
+      toggleDashboard();
+
+      const expectedOverall = (window.Dashboard && typeof window.Dashboard.getSubjectOverallStats === 'function')
+        ? window.Dashboard.getSubjectOverallStats()
+        : null;
+
+      return {
+        isVisible,
+        pctText,
+        doneText,
+        cardsCount: cards.length,
+        expectedDoneText: expectedOverall ? (expectedOverall.done + ' / ' + expectedOverall.total) : '',
+        expectedPctText: expectedOverall ? (expectedOverall.progressPct + '%') : '',
+        expectedDone: expectedOverall ? expectedOverall.done : 0,
+        expectedTotal: expectedOverall ? expectedOverall.total : 0
+      };
+    })()
+  `);
+  console.log('  V 面板显示状态:', dashboardCheck.isVisible, '总掌握率:', dashboardCheck.pctText, '已做题数:', dashboardCheck.doneText, '书籍卡片数:', dashboardCheck.cardsCount);
+  if (!dashboardCheck.isVisible) throw new Error('V 面板未能正常打开');
+  if (!dashboardCheck.expectedDoneText || dashboardCheck.doneText !== dashboardCheck.expectedDoneText) {
+    throw new Error(`V 面板做题数显示与底层统计不一致: UI 显示 "${dashboardCheck.doneText}", 底层统计 "${dashboardCheck.expectedDoneText}"`);
+  }
+  if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
+    throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
+  }
+  if (dashboardCheck.expectedTotal !== 6313) {
+    throw new Error(`数学科目总题数异常: 期望 6313, 实际 ${dashboardCheck.expectedTotal}`);
+  }
+  if (dashboardCheck.expectedDone < 1700) {
+    throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);
+  }
+  if (!dashboardCheck.cardsCount || dashboardCheck.cardsCount < 7) {
+    throw new Error(`V 面板书籍统计卡片未渲染数据，实际数量: ${dashboardCheck.cardsCount}`);
+  }
 
   // 7. 测试科目切换 (Math -> 822 -> English) 与英语生词本安全交互
   console.log('[8/9] 测试科目切换 (Math -> 822 -> English) 与生词本安全...');
@@ -562,38 +941,465 @@ async function run() {
   console.log('  生词本可见:', vocabCheck.isVisible, '卡片数量:', vocabCheck.cardCount, '正确包含特殊字符词汇:', vocabCheck.hasWord);
   if (!vocabCheck.hasWord) throw new Error('生词本特殊字符词汇渲染失败');
 
-  // 8. 切换回 Math 并测试跨章节安全撤销
+  // 测试考研英语下的滚轮手势隔离（横向滑动绝不穿透导致数学题号漂移）
+  console.log('  测试英语模式滚轮手势隔离 (防止跨学科题目漂移)...');
+  const wheelIsolationCheck = await evaluate(ws, `
+    (() => {
+      const mathIdxBefore = current;
+      // 触发横向滚轮事件
+      document.dispatchEvent(new WheelEvent('wheel', { deltaX: 120, bubbles: true }));
+      return {
+        mathIdxBefore,
+        mathIdxAfter: current,
+        isIsolated: current === mathIdxBefore
+      };
+    })()
+  `);
+  console.log('  英语滚轮手势隔离检查:', wheelIsolationCheck);
+  if (!wheelIsolationCheck.isIsolated) throw new Error('英语模式下手势穿透导致数学题目索引漂移');
+
+  // 测试英语模式下按 Y 键切换主题（单轨调度，确保仅切换一次且不发生双重翻转抵消）
+  console.log('  测试英语模式 Y 键主题单轨翻转 (防双击抵消)...');
+  const themeToggleCheck = await evaluate(ws, `
+    (() => {
+      const t1 = window.currentTheme || document.documentElement.getAttribute('data-theme') || 'light';
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'y', bubbles: true }));
+      const t2 = window.currentTheme || document.documentElement.getAttribute('data-theme') || 'light';
+      // 再按一次翻转回来
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'y', bubbles: true }));
+      const t3 = window.currentTheme || document.documentElement.getAttribute('data-theme') || 'light';
+      return {
+        t1,
+        t2,
+        t3,
+        toggledOnce: t1 !== t2,
+        restored: t1 === t3
+      };
+    })()
+  `);
+  console.log('  英语模式 Y 键主题翻转检查:', themeToggleCheck);
+  if (!themeToggleCheck.toggledOnce) throw new Error('英语模式下 Y 键主题切换失败或发生双重翻转抵消');
+  if (!themeToggleCheck.restored) throw new Error('英语模式下第二次按 Y 键未能还原初始主题');
+
+  // 测试英语科目键盘快捷键 (1-4 选项选择、Q/E 切题导航)
+  console.log('  测试英语科目键盘快捷键 (1-4 选选项与 Q/E 导航)...');
+  const engKeyboardCheck = await evaluate(ws, `
+    (() => {
+      // 切换到模考模式
+      window.kyApp.setMode('practice');
+      const qBefore = window.kyApp.state.currentQIndex;
+      // 按数字键 1 触发选项 A 选择
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '1', bubbles: true }));
+      const pAns = window.kyApp.state.practiceAnswers[qBefore];
+      const optSelected = pAns && pAns.selected === 'A';
+
+      // 按 E 键导航到下一题 (navNext)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'e', bubbles: true }));
+      const qAfterNext = window.kyApp.state.currentQIndex;
+      const nextWorked = qAfterNext !== qBefore;
+
+      // 按 Q 键返回上一题 (navPrev)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'q', bubbles: true }));
+      const qAfterPrev = window.kyApp.state.currentQIndex;
+      const prevWorked = qAfterPrev === qBefore;
+
+      return {
+        optSelected,
+        nextWorked,
+        prevWorked
+      };
+    })()
+  `);
+  console.log('  英语键盘做题与导航检查:', engKeyboardCheck);
+  if (!engKeyboardCheck.optSelected) throw new Error('英语模式下数字键 1 选选项失败 (selectOption 异常)');
+  if (!engKeyboardCheck.nextWorked || !engKeyboardCheck.prevWorked) throw new Error('英语模式下 E/Q 导航切题失败');
+
+  // 8. 切换回 Math 并测试跨章节安全撤销与战报弹窗
   console.log('[9/9] 测试跨章节 Ctrl+Z 撤销与状态回滚...');
   await evaluate(ws, 'switchSubject("math")');
   await sleep(500);
 
-  const undoCheck = await evaluate(ws, `
+  // 测试错题本打开与 setPanelTitle 标题栏恢复
+  console.log('  测试错题本打开、标题渲染与切科目安全...');
+  const wrongBookCheck = await evaluate(ws, `
     (() => {
-      // 1. 在 ch1 的题 0 打标为熟练 (Z)
-      switchChapter('ch1');
-      switchTo(0);
-      setStatus('proficient');
-      const status1Before = statuses[0];
+      // 触发打开错题本 (按 B)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'b', bubbles: true }));
+      const panel = document.getElementById('wrongBookPanel');
+      const pTitle = document.getElementById('panelTitle');
+      const isOpen = panel && panel.style.display !== 'none';
+      const titleText = pTitle ? pTitle.textContent : '';
 
-      // 2. 切换到 ch2 的题 0
-      switchChapter('ch2');
-      switchTo(0);
-      const ch2Before = currentChapterId;
-
-      // 3. 触发 Ctrl+Z 撤销
-      undoLastMark();
+      // 关闭错题本 (按 B)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'b', bubbles: true }));
+      const isClosed = panel && panel.style.display === 'none';
+      const ddWb = document.getElementById('ddWb');
+      const ddChapter = document.getElementById('ddChapter');
+      const ddWbWrongbook = document.getElementById('ddWbWrongbook');
 
       return {
-        status1Before,
-        curChAfterUndo: currentChapterId,
-        curIdxAfterUndo: current,
-        status1AfterUndo: statuses[0] || 'unmarked'
+        isOpen,
+        titleText,
+        isClosed,
+        ddWbVisible: ddWb ? ddWb.style.display !== 'none' : false,
+        ddChapterVisible: ddChapter ? ddChapter.style.display !== 'none' : false,
+        ddWbWrongbookHidden: ddWbWrongbook ? ddWbWrongbook.style.display === 'none' : true
       };
     })()
   `);
-  console.log('  撤销前状态:', undoCheck.status1Before, '撤销后回到章节:', undoCheck.curChAfterUndo, '题号:', undoCheck.curIdxAfterUndo, '撤销后状态:', undoCheck.status1AfterUndo);
-  if (undoCheck.curChAfterUndo !== 'ch1' || undoCheck.status1AfterUndo !== 'unmarked') {
-    throw new Error('跨章节撤销失败，未正确回退至 ch1 原始未打标状态');
+  console.log('  错题本与 setPanelTitle 检查:', wrongBookCheck);
+  if (!wrongBookCheck.isOpen) throw new Error('未能成功打开错题本面板');
+  if (wrongBookCheck.titleText !== '错题本') throw new Error('错题本模式下 setPanelTitle 未能正确设置标题');
+  if (!wrongBookCheck.isClosed) throw new Error('按 B 键未能成功关闭错题本');
+  if (!wrongBookCheck.ddWbWrongbookHidden) throw new Error('关闭错题本后 ddWbWrongbook 未能隐藏（下拉栏泄漏）');
+  if (!wrongBookCheck.ddWbVisible || !wrongBookCheck.ddChapterVisible) throw new Error('关闭错题本后主标题栏下拉未能正确恢复');
+
+  // 测试按 M 打开 SM-2 面板，验证无 dayLabels 崩溃、已掌握卡片渲染与 #btnSm2Close 按钮关闭
+  console.log('  测试按 M 打开 SM-2 复习面板、已掌握卡片渲染与 #btnSm2Close 关闭交互...');
+  const sm2PanelCheck = await evaluate(ws, `
+    (() => {
+      // 按 M 打开 SM-2 面板
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'm', bubbles: true }));
+      const panel = document.getElementById('sm2Panel');
+      const isOpen = panel && panel.style.display !== 'none';
+      const projBars = document.getElementById('sm2ProjectionBars');
+      const hasBars = projBars && projBars.children.length === 7;
+      const chapterList = document.getElementById('sm2Chapters');
+      const hasList = chapterList && chapterList.children.length > 0;
+
+      // 验证 #sm2CardMastered 数值渲染 (P2-1 修复验证)
+      const elMastered = document.querySelector('#sm2CardMastered .sm2-stat-num');
+      const masteredText = elMastered ? elMastered.textContent.trim() : '';
+      const hasMasteredStat = elMastered && masteredText !== '';
+
+      // 验证通过 #btnSm2Close 按钮点击关闭 (P1-1 修复验证)
+      const btnClose = document.getElementById('btnSm2Close');
+      const hasBtnClose = !!btnClose;
+      if (btnClose) btnClose.click();
+      const isClosedByBtn = panel && panel.style.display === 'none';
+
+      // 重新按 M 打开并按 M 关闭，验证键盘快捷键闭环
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'm', bubbles: true }));
+      const isReopened = panel && panel.style.display !== 'none';
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'm', bubbles: true }));
+      const isClosedByM = panel && panel.style.display === 'none';
+
+      return {
+        isOpen,
+        hasBars,
+        hasList,
+        hasMasteredStat,
+        masteredText,
+        hasBtnClose,
+        isClosedByBtn,
+        isReopened,
+        isClosedByM
+      };
+    })()
+  `);
+  console.log('  SM-2 面板、已掌握统计与关闭按钮检查:', sm2PanelCheck);
+  if (!sm2PanelCheck.isOpen) throw new Error('按 M 键未能成功打开 SM-2 面板');
+  if (!sm2PanelCheck.hasBars) throw new Error('SM-2 预测柱状图未能正常渲染 (dayLabels 异常)');
+  if (!sm2PanelCheck.hasList) throw new Error('SM-2 章节模块列表未能正常渲染');
+  if (!sm2PanelCheck.hasMasteredStat) throw new Error('#sm2CardMastered 已掌握统计卡片未渲染数值');
+  if (!sm2PanelCheck.hasBtnClose) throw new Error('SM-2 复习面板缺少 #btnSm2Close 关闭按钮');
+  if (!sm2PanelCheck.isClosedByBtn) throw new Error('点击 #btnSm2Close 关闭按钮未能成功关闭 SM-2 面板');
+  if (!sm2PanelCheck.isReopened || !sm2PanelCheck.isClosedByM) throw new Error('按 M 键未能正常再次打开并关闭 SM-2 面板');
+
+  // 验证 9 个 window 全局状态符号 descriptor 与 getter/setter 契约 (P0-3 修复验证)
+  console.log('  测试 9 个 window 全局状态符号 (current, currentChapterId, currentTheme, darkImageFilter, subjectPickerOpen, dashboardOpen, wrongBookOpen, sm2PanelOpen, subMode) 动态同步契约...');
+  const globalPropsCheck = await evaluate(ws, `
+    (() => {
+      const props = [
+        'current',
+        'currentChapterId',
+        'currentTheme',
+        'darkImageFilter',
+        'subjectPickerOpen',
+        'dashboardOpen',
+        'wrongBookOpen',
+        'sm2PanelOpen',
+        'subMode'
+      ];
+      const results = {};
+      for (const p of props) {
+        const desc = Object.getOwnPropertyDescriptor(window, p);
+        results[p] = {
+          hasDesc: !!desc,
+          hasGetter: desc ? typeof desc.get === 'function' : false,
+          hasSetter: desc ? typeof desc.set === 'function' : false,
+          valDefined: window[p] !== undefined
+        };
+      }
+      return results;
+    })()
+  `);
+  console.log('  全局状态属性契约检查:', globalPropsCheck);
+  for (const p in globalPropsCheck) {
+    const item = globalPropsCheck[p];
+    if (!item.hasDesc || !item.hasGetter || !item.hasSetter) {
+      throw new Error('全局状态符号 window.' + p + ' 缺少有效的 getter/setter 描述符，状态同步未生效');
+    }
+    if (!item.valDefined) {
+      throw new Error('全局状态符号 window.' + p + ' 读取值为 undefined');
+    }
+  }
+
+  // 测试复习会话统一数据源 (window.reviewSession) 与复习键盘链路 (E 不跳章、Z 推进队列、Esc 退出)
+  console.log('  测试复习会话状态同步、E/Z 队列推进与 Esc 退出...');
+  const reviewSessionCheck = await evaluate(ws, `
+    (() => {
+      // 启动当前章节复习
+      window.Sm2Review.startChapter(currentChapterId);
+      const hasSession = !!window.reviewSession;
+      const originIdx = window.reviewSession ? window.reviewSession.currentIdx : -1;
+      const originCh = currentChapterId;
+
+      // 按 E 键推进复习队列，必须在队列内前进，绝不能跳出当前章节
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'e', bubbles: true }));
+      const chAfterE = currentChapterId;
+      const noChapterLeak = (chAfterE === originCh);
+
+      // 按 Z 键评级，必须推进队列且不污染题目常规掌握度
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'z', bubbles: true }));
+      const sessionAfterZ = window.reviewSession;
+      const queueAdvanced = sessionAfterZ && sessionAfterZ.currentIdx > originIdx;
+
+      // 按 Esc 退出复习
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      const sessionCleared = !window.reviewSession;
+
+      // 验证已持久化保存到 kaoyan.g.review_session
+      const savedRaw = window.StorageEngine ? window.StorageEngine.GlobalStore.get('review_session') : null;
+      const hasSavedSession = !!savedRaw;
+
+      // 验证再次进入自动从断点恢复
+      if (window.Sm2Review && typeof window.Sm2Review.resumeSession === 'function') {
+        window.Sm2Review.resumeSession();
+      }
+      const restoredSession = !!window.reviewSession;
+
+      // 再次退出并清理
+      if (typeof window.exitReviewSession === 'function') {
+        window.exitReviewSession();
+      }
+
+      return {
+        hasSession,
+        noChapterLeak,
+        queueAdvanced,
+        sessionCleared,
+        hasSavedSession,
+        restoredSession
+      };
+    })()
+  `);
+  console.log('  复习会话单源状态与键盘链路检查:', reviewSessionCheck);
+  if (!reviewSessionCheck.hasSession) throw new Error('未能成功建立并同步复习会话状态');
+  if (!reviewSessionCheck.noChapterLeak) throw new Error('复习会话中按 E 键发生跨章泄漏');
+  if (!reviewSessionCheck.queueAdvanced) throw new Error('复习会话中按 Z 键未能成功推进队列');
+  if (!reviewSessionCheck.sessionCleared) throw new Error('按 Esc 未能成功退出复习会话');
+  if (!reviewSessionCheck.hasSavedSession) throw new Error('Esc 退出时复习进度未能持久化至 kaoyan.g.review_session');
+  if (!reviewSessionCheck.restoredSession) throw new Error('未能从 kaoyan.g.review_session 成功断点续接复习会话');
+
+  // 测试复习完成结算战报弹窗 (reviewSummaryOverlay) 按键与遮罩隔离
+  console.log('  测试复习战报结算弹窗 Esc 与独占隔离...');
+  const summaryModalCheck = await evaluate(ws, `
+    (() => {
+      const modal = document.getElementById('reviewSummaryOverlay');
+      if (window.Sm2Review && typeof window.Sm2Review.showSummaryModal === 'function') {
+        window.Sm2Review.showSummaryModal({ queue: [{ finalScore: 5 }], startTime: Date.now() });
+      } else if (typeof window.showReviewSummaryModal === 'function') {
+        window.showReviewSummaryModal({ queue: [{ finalScore: 5 }], startTime: Date.now() });
+      }
+      const isOpenBefore = typeof window.isReviewSummaryOpen === 'function' && window.isReviewSummaryOpen();
+
+      // 验证战报开启时，做题按键 (1~5/Z/X/C/A/D) 与滚轮完全被战报吞噬
+      const curBefore = current;
+      const statusBefore = statuses[current];
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '1', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'z', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'a', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'd', bubbles: true }));
+      document.dispatchEvent(new WheelEvent('wheel', { deltaX: 100, bubbles: true }));
+      const isSwallowed = (current === curBefore) && (statuses[current] === statusBefore);
+
+      // 按 Esc 关闭战报
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      const isOpenAfter = typeof window.isReviewSummaryOpen === 'function' && window.isReviewSummaryOpen();
+      const isDisplayNone = modal ? modal.style.display === 'none' : true;
+      return {
+        isOpenBefore,
+        isOpenAfter,
+        isDisplayNone,
+        isSwallowed
+      };
+    })()
+  `);
+  console.log('  复习战报弹窗 Esc 隔离与按键吞噬检查:', summaryModalCheck);
+  if (!summaryModalCheck.isOpenBefore) throw new Error('复习战报未能正常打开或未标记 open 状态');
+  if (!summaryModalCheck.isSwallowed) throw new Error('复习战报打开时未阻断底层题目打标/切题');
+  if (summaryModalCheck.isOpenAfter || !summaryModalCheck.isDisplayNone) throw new Error('按下 Esc 未能成功关闭复习战报弹窗');
+
+  // 测试科目选择弹窗按键阻断与 Esc 关闭
+  console.log('  测试科目选择器 G 键唤起与 Esc 级联关闭...');
+  const pickerCheck = await evaluate(ws, `
+    (() => {
+      openSubjectPicker();
+      const isOpen = document.getElementById('subjectOverlay').classList.contains('show');
+      const curBefore = current;
+      // 触发 A / D 切题键，必须被科目选择器拦截
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'a', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'd', bubbles: true }));
+      const isBlocked = (current === curBefore);
+      // 按 Esc 关闭科目选择器
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      const isClosed = !document.getElementById('subjectOverlay').classList.contains('show');
+      return { isOpen, isBlocked, isClosed };
+    })()
+  `);
+  console.log('  科目选择器检查:', pickerCheck);
+  if (!pickerCheck.isOpen || !pickerCheck.isBlocked || !pickerCheck.isClosed) {
+    throw new Error('科目选择器按键隔离或 Esc 关闭交互失败');
+  }
+
+  // 测试双栏笔记在失焦态按 Esc 取消编辑
+  console.log('  测试双栏笔记失焦后 Esc 取消编辑...');
+  const notesEscCheck = await evaluate(ws, `
+    (() => {
+      focusNotes(); // 进入编辑态
+      const duo = document.getElementById('notesDuo');
+      const isEditingBefore = duo && duo.style.display !== 'none';
+      if (document.activeElement) document.activeElement.blur(); // 模拟失焦
+      // 按 Esc 取消编辑
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      const isEditingAfter = duo && duo.style.display !== 'none';
+      return { isEditingBefore, isEditingAfter };
+    })()
+  `);
+  console.log('  笔记失焦 Esc 取消编辑检查:', notesEscCheck);
+  if (!notesEscCheck.isEditingBefore || notesEscCheck.isEditingAfter) {
+    throw new Error('双栏笔记失焦后按下 Esc 未能成功取消编辑');
+  }
+
+  // 测试双栏笔记与常驻渲染区三位一体回显 (P1-2 修复验证: notesRender, notesTextarea, notesPreview)
+  console.log('  测试笔记渲染区、输入框与预览区三位一体回显与数据同步...');
+  const notesTriadCheck = await evaluate(ws, `
+    (() => {
+      const testContent = '## 考点总结测试\\n- 极限运算法则: $\\\\lim_{x \\\\to 0} \\\\frac{\\\\sin x}{x} = 1$';
+      const key = notesKeyFor(current);
+      const originalNote = notesData[key];
+
+      // 1. 设置笔记数据并调用 renderNotes (查看态回显)
+      notesData[key] = testContent;
+      renderNotes();
+      const renderEl = document.getElementById('notesRender');
+      const renderHasContent = renderEl && renderEl.innerHTML.includes('考点总结测试');
+
+      // 2. 调用 enterEditMode (编辑态三位一体回显)
+      enterEditMode();
+      const textareaEl = document.getElementById('notesTextarea');
+      const previewEl = document.getElementById('notesPreview');
+      const textareaSynced = textareaEl && textareaEl.value === testContent;
+      const previewSynced = previewEl && previewEl.innerHTML.includes('考点总结测试');
+
+      // 3. 恢复现场并清理测试数据
+      if (originalNote) {
+        notesData[key] = originalNote;
+      } else {
+        delete notesData[key];
+      }
+      renderNotes();
+
+      return {
+        renderHasContent,
+        textareaSynced,
+        previewSynced
+      };
+    })()
+  `);
+  console.log('  笔记三位一体同步检查:', notesTriadCheck);
+  if (!notesTriadCheck.renderHasContent) throw new Error('renderNotes 未能将笔记内容渲染至 #notesRender');
+  if (!notesTriadCheck.textareaSynced) throw new Error('enterEditMode 未能将笔记同步至 #notesTextarea.value');
+  if (!notesTriadCheck.previewSynced) throw new Error('enterEditMode 未能将笔记即时渲染至 #notesPreview');
+
+  // 测试题号栏分区手风琴折叠与当前做题分区锁定
+  console.log('  测试题号栏分区锁定、全部折叠只留当前分区、跨小节自动聚焦...');
+  const accordionCheck = await evaluate(ws, `
+    (() => {
+      // 1. 验证当前分区锁定不可折叠
+      const curHeader = document.querySelector('#qnav .section-header.current-locked');
+      const hasLockedHeader = !!curHeader;
+      
+      // 点击当前锁定分区，断言其依然保持展开，绝不折叠
+      if (curHeader) curHeader.click();
+      const stillOpenAfterClick = curHeader && !curHeader.classList.contains('collapsed');
+
+      // 2. 测试「全部折叠/全部展开」按钮
+      const toggleAllBtn = document.getElementById('btnToggleAllSections');
+      const btnTextBefore = toggleAllBtn ? toggleAllBtn.textContent : '';
+      
+      // 若当前为「全部折叠」则点击收起其它分区；若已是「全部展开」，说明手风琴已自动将其它分区折叠
+      if (btnTextBefore === '全部折叠') {
+        toggleAllBtn.click();
+      }
+      const allHeaders = Array.from(document.querySelectorAll('#qnav .section-header'));
+      const otherHeaders = allHeaders.filter(h => !h.classList.contains('current-locked'));
+      const othersCollapsed = otherHeaders.length === 0 || otherHeaders.every(h => h.classList.contains('collapsed'));
+      const curStillOpen = curHeader && !curHeader.classList.contains('collapsed');
+
+      // 再次点击「全部展开」验证展开逻辑
+      if (toggleAllBtn && toggleAllBtn.textContent === '全部展开') {
+        toggleAllBtn.click();
+      }
+      const allHeadersExpanded = Array.from(document.querySelectorAll('#qnav .section-header')).every(h => !h.classList.contains('collapsed'));
+
+      return {
+        hasLockedHeader,
+        stillOpenAfterClick,
+        othersCollapsed,
+        curStillOpen,
+        allHeadersExpanded
+      };
+    })()
+  `);
+  console.log('  分区手风琴与当前分区锁定检查:', accordionCheck);
+  if (!accordionCheck.hasLockedHeader) throw new Error('当前做题分区未标记 current-locked 锁定类');
+  if (!accordionCheck.stillOpenAfterClick) throw new Error('点击当前分区标题导致其被异常折叠（违反当前做题分区锁定规范）');
+  if (!accordionCheck.othersCollapsed || !accordionCheck.curStillOpen) throw new Error('全部折叠时未能保持当前分区展开且其它分区折叠');
+
+  const undoCheck = await evaluate(ws, `
+    (() => {
+      const ch1Uid = 'math::基础30讲::高数::lec01';
+      const ch2Uid = 'math::基础30讲::高数::lec02';
+
+      // 1. 在第1讲记录当前题 0 的原始状态，并打标为不同状态
+      switchChapter(ch1Uid);
+      switchTo(0);
+      const originalStatus = statuses[0] || 'unmarked';
+      const targetStatus = originalStatus === 'wrong' ? 'proficient' : 'wrong';
+      setStatus(targetStatus);
+
+      // 2. 切换到第2讲的题 0
+      switchChapter(ch2Uid);
+      switchTo(0);
+
+      // 3. 触发 Ctrl+Z 撤销，断言跨章节回到第1讲题 0 且状态精准回滚至 originalStatus
+      undoLastMark();
+
+      return {
+        ch1Uid,
+        originalStatus,
+        targetStatus,
+        curChAfterUndo: currentChapterId,
+        curIdxAfterUndo: current,
+        statusAfterUndo: statuses[0] || 'unmarked'
+      };
+    })()
+  `);
+  const isCh1 = undoCheck.curChAfterUndo === undoCheck.ch1Uid;
+  if (!isCh1 || undoCheck.statusAfterUndo !== undoCheck.originalStatus) {
+    throw new Error(`跨章节撤销失败: 期望回滚至原始状态 "${undoCheck.originalStatus}", 实际为 "${undoCheck.statusAfterUndo}"`);
   }
 
   // 响应式布局与移动端视图测试
@@ -642,12 +1448,17 @@ async function cleanup() {
     try {
       execSync(`taskkill /F /PID ${chromeProcess.pid} /T`, { stdio: 'ignore' });
     } catch (e) {}
+    chromeProcess = null;
   }
   if (httpProcess && httpProcess.pid) {
     try {
       execSync(`taskkill /F /PID ${httpProcess.pid} /T`, { stdio: 'ignore' });
     } catch (e) {}
+    httpProcess = null;
   }
+  try {
+    execSync(`powershell -Command "(Get-NetTCPConnection -LocalPort 9225 -ErrorAction SilentlyContinue).OwningProcess | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }"`, { stdio: 'ignore' });
+  } catch (e) {}
 }
 
 run()

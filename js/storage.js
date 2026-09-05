@@ -71,7 +71,8 @@
     get: function (name) {
       try {
         var raw = localStorage.getItem(this._key(name));
-        return raw ? JSON.parse(raw) : null;
+        if (raw) return JSON.parse(raw);
+        return null;
       } catch (e) {
         return null;
       }
@@ -95,7 +96,8 @@
     get: function (subjectId) {
       try {
         var raw = localStorage.getItem(this._key(subjectId));
-        return raw ? JSON.parse(raw) : null;
+        if (raw) return JSON.parse(raw);
+        return null;
       } catch (e) {
         return null;
       }
@@ -206,30 +208,58 @@
         if (!DataValidator.validateSlug(slug)) continue;
 
         var memIdx = offset + i;
-        var entry = {};
+        var q = Object.assign({}, data[slug] || {});
 
-        if (opts.statuses && opts.statuses[memIdx] !== undefined) {
-          if (DataValidator.validateStatus(opts.statuses[memIdx])) {
-            entry.status = opts.statuses[memIdx];
+        if (opts.statuses) {
+          var s = opts.statuses[memIdx];
+          if (s !== undefined && s !== null && s !== '' && DataValidator.validateStatus(s)) {
+            q.status = s;
+          } else {
+            delete q.status;
           }
         }
-        if (opts.qBad && opts.qBad[memIdx]) entry.qbad = true;
-        if (opts.sBad && opts.sBad[memIdx]) entry.sbad = true;
-        if (opts.bookMismatch && opts.bookMismatch[memIdx]) entry.mismatch = true;
-        if (opts.sm2 && opts.sm2[memIdx]) {
-          if (DataValidator.validateSm2(opts.sm2[memIdx])) entry.sm2 = opts.sm2[memIdx];
+
+        if (opts.qBad) {
+          if (opts.qBad[memIdx]) q.qbad = true;
+          else delete q.qbad;
+        }
+
+        if (opts.sBad) {
+          if (opts.sBad[memIdx]) q.sbad = true;
+          else delete q.sbad;
+        }
+
+        if (opts.bookMismatch) {
+          if (opts.bookMismatch[memIdx]) q.mismatch = true;
+          else delete q.mismatch;
+        }
+
+        if (opts.sm2) {
+          var sm = opts.sm2[memIdx];
+          if (sm && DataValidator.validateSm2(sm)) {
+            q.sm2 = sm;
+          } else {
+            delete q.sm2;
+          }
         }
 
         if (opts.notes) {
           var label = ch.labels && ch.labels[i];
           var noteKey = ch.id + '::' + label;
-          if (label && opts.notes[noteKey] !== undefined) {
-            entry.notes = opts.notes[noteKey];
+          if (label) {
+            var n = opts.notes[noteKey];
+            if (n !== undefined && n !== null && n !== '') {
+              q.notes = n;
+            } else {
+              delete q.notes;
+            }
           }
         }
 
-        if (Object.keys(entry).length > 0) {
-          data[slug] = Object.assign({}, data[slug] || {}, entry);
+        if (Object.keys(q).length > 0) {
+          data[slug] = q;
+        } else {
+          delete data[slug];
         }
       }
 
@@ -273,7 +303,8 @@
     _load: function () {
       try {
         var raw = localStorage.getItem(this._RESUME_KEY);
-        return raw ? (JSON.parse(raw) || {}) : {};
+        if (raw) return JSON.parse(raw) || {};
+        return {};
       } catch (e) {
         return {};
       }
@@ -300,7 +331,7 @@
 
     loadChapter: function (subjId, chapterId, ch) {
       var map = this._load();
-      var r = map[subjId + '::ch::' + chapterId] || (ch && ch.legacyId ? map[subjId + '::ch::' + ch.legacyId] : null);
+      var r = map[subjId + '::ch::' + chapterId];
       if (!r || !ch || ch.total === 0) return null;
 
       var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : (typeof r.idx === 'number' ? r.idx : -1);
@@ -317,7 +348,7 @@
 
       var ch = null;
       for (var i = 0; i < chapters.length; i++) {
-        if (chapters[i].id === r.ch || chapters[i].uid === r.ch || chapters[i].legacyId === r.ch) {
+        if (chapters[i].id === r.ch) {
           ch = chapters[i];
           break;
         }
@@ -339,7 +370,7 @@
 
       var ch = null;
       for (var i = 0; i < chapters.length; i++) {
-        if ((chapters[i].id === r.ch || chapters[i].uid === r.ch || chapters[i].legacyId === r.ch) && chapters[i].wb === wb) {
+        if (chapters[i].id === r.ch && chapters[i].wb === wb) {
           ch = chapters[i];
           break;
         }

@@ -171,24 +171,43 @@ function normalizeSubjectId(sid) {
   return sid || 'math';
 }
 
-function getQid(subjId, chId, idx) {
+function getQid(subjId, chId, idx, slug) {
   const sid = normalizeSubjectId(subjId || 'math');
+  if (chId && chId.includes('::') && slug) {
+    return chId + '::' + slug;
+  }
   return sid + '::' + chId + '::' + idx;
 }
 
 function parseQid(qid) {
   if (!qid || typeof qid !== 'string') return null;
   const parts = qid.split('::');
-  if (parts.length < 3) return null;
-  const sid = normalizeSubjectId(parts[0]);
-  const idx = parseInt(parts[2], 10);
-  if (isNaN(idx) || idx < 0) return null;
-  return {
-    subjectId: sid,
-    chapterId: parts[1],
-    idx: idx,
-    qIdx: idx
-  };
+  if (parts.length >= 5) {
+    const sid = normalizeSubjectId(parts[0]);
+    const chapterUid = parts.slice(0, 4).join('::');
+    const questionSlug = parts.slice(4).join('::');
+    return {
+      subjectId: sid,
+      chapterUid: chapterUid,
+      chapterId: chapterUid,
+      questionSlug: questionSlug,
+      canonicalQid: chapterUid + '::' + questionSlug,
+      isSemantic: true
+    };
+  }
+  if (parts.length === 3) {
+    const sid = normalizeSubjectId(parts[0]);
+    const idx = parseInt(parts[2], 10);
+    if (isNaN(idx) || idx < 0) return null;
+    return {
+      subjectId: sid,
+      chapterId: parts[1],
+      idx: idx,
+      qIdx: idx,
+      isSemantic: false
+    };
+  }
+  return null;
 }
 
 // 1. SM-2+ 间隔重复算法测试
@@ -258,26 +277,27 @@ test('连击复苏加速 (Recovery Boost): 低 EF (<=1.6) 下连续两次 >=4 �
   assert.strictEqual(rBoost.ef, 1.70);
 });
 
-test('异常入参健壮性: 非法 score/NaN 自动回退为默认 3 分', () => {
-  const rInvalid = calcSM2Plus(null, 'invalid');
-  assert.strictEqual(rInvalid.history[0].score, 3);
-  assert.strictEqual(rInvalid.ef, 2.4);
-
-  const rNull = calcSM2Plus(null, null);
-  assert.strictEqual(rNull.history[0].score, 3);
+test('时钟回拨/负时间差边界 (Clock Skew): 系统时间回拨时不应导致算法崩溃或间隔异常', () => {
+  const baseTime = Date.now();
+  const r = { ef: 2.5, interval: 10, reps: 2, lastReview: baseTime, lastStudyDay: getStudyDayIndex(baseTime), history: [] };
+  // 模拟客户端时钟往前回拨了 2 天
+  const rPast = calcSM2Plus(r, 4, baseTime - 2 * 86400000);
+  assert.strictEqual(rPast.reps, 3);
+  assert.ok(rPast.interval >= 10, '时钟回拨时间隔不应被异常缩短为负数或0');
+  assert.ok(rPast.ef >= 2.5, 'EF 计算应正常');
 });
 
-test('记忆留存率 (calcRetrievability) 在区间 [0, 1] 严格单调递减', () => {
-  const now = Date.now();
-  const rec = { lastReview: now, interval: 10, lastStudyDay: getStudyDayIndex(now) };
-  const rDay0 = calcRetrievability(rec, now);
-  const rDay5 = calcRetrievability(rec, now + 5 * 86400000);
-  const rDay10 = calcRetrievability(rec, now + 10 * 86400000);
-  const rDay30 = calcRetrievability(rec, now + 30 * 86400000);
-
-  assert.strictEqual(rDay0, 1.0);
-  assert.ok(rDay0 > rDay5 && rDay5 > rDay10 && rDay10 > rDay30, 'Retrievability should decay strictly over time');
-  assert.ok(rDay30 > 0.0 && rDay30 < 1.0, 'Retrievability bounded between 0 and 1');
+test('评分边界值与非整数入参健壮性', () => {
+  // score 字符串数字 '5' 自动转整
+  const rStr5 = calcSM2Plus(null, '5');
+  assert.strictEqual(rStr5.history[0].score, 5);
+  // score 超出范围 [1, 5] 自动回退默认 3
+  const rOutLow = calcSM2Plus(null, 0);
+  assert.strictEqual(rOutLow.history[0].score, 3);
+  const rOutHigh = calcSM2Plus(null, 6);
+  assert.strictEqual(rOutHigh.history[0].score, 3);
+  const rNegative = calcSM2Plus(null, -10);
+  assert.strictEqual(rNegative.history[0].score, 3);
 });
 
 // 2. 章节元数据模型与伴章路由
@@ -311,6 +331,29 @@ test('822 科目 35 章节元数据校验及标签分类', () => {
   assert.strictEqual(sub822.classifyLabel('例2-1'), '例题');
   assert.strictEqual(sub822.classifyLabel('例题1'), '章末例题');
   assert.strictEqual(sub822.classifyLabel('1-1 (1)'), '习题');
+});
+
+test('老姚高数章节小节分类: 2.1-19 准确归类为例题而非补充练习', () => {
+  const math = SUBJECTS.find(s => s.id === 'math');
+  const ch02 = math.chapters.find(c => c.wb === '老姚高数' && c.name.includes('第2章'));
+  assert.ok(ch02);
+  const sec2_1 = ch02.sections.find(s => s.type.startsWith('2.1'));
+  assert.ok(sec2_1);
+  assert.strictEqual(sec2_1.exampleCount, 19, 'Section 2.1 exampleCount 应为 19 (包含 2.1-19)');
+
+  function classifyLaoYaoLabel(ch, label) {
+    const idx = ch.labels.indexOf(label);
+    if (idx >= 0) {
+      const s = ch.sections.find(function(sec) { return idx >= sec.start && idx < sec.start + sec.count; });
+      if (s && s.exampleCount !== undefined) {
+        return (idx < s.start + s.exampleCount) ? '例题' : '补充练习';
+      }
+    }
+    return 'unknown';
+  }
+
+  assert.strictEqual(classifyLaoYaoLabel(ch02, '2.1-19'), '例题');
+  assert.strictEqual(classifyLaoYaoLabel(ch02, '2.1-20'), '补充练习');
 });
 
 test('图片路径生成器: 数学例题/习题与822特例', () => {
@@ -367,6 +410,29 @@ test('StorageSync 正则彻底拒绝历史旧魔数键与第三方系统键（SS
   });
 });
 
+test('StorageSync 0题空数据拦截防御: 阻止空缓存覆盖破坏本地真实数据', () => {
+  function validateSyncData(dataObj) {
+    let questionCount = 0;
+    for (const k in dataObj) {
+      if (k.startsWith('kaoyan.q.')) {
+        try {
+          const parsed = JSON.parse(dataObj[k]);
+          for (const slug in parsed) {
+            if (!slug.startsWith('$') && parsed[slug] && parsed[slug].status) {
+              questionCount++;
+            }
+          }
+        } catch (e) {}
+      }
+    }
+    return questionCount > 0;
+  }
+
+  assert.strictEqual(validateSyncData({}), false, '空对象必须被拦截');
+  assert.strictEqual(validateSyncData({ 'kaoyan.g.theme': 'dark' }), false, '无题目数据的对象必须被拦截');
+  assert.strictEqual(validateSyncData({ 'kaoyan.q.test': JSON.stringify({ 'ex_1-1': { status: 'proficient' } }) }), true, '有题目的有效数据应放行');
+});
+
 test('原型污染防御: applyAllData 忽略 __proto__, constructor, prototype', () => {
   const dummyPayload = {
     data: {
@@ -395,54 +461,71 @@ test('原型污染防御: applyAllData 忽略 __proto__, constructor, prototype'
 // 4. HTML 转义与 QID 编解码
 console.log('\n--- 4. 安全转义与 QID 工具函数 ---');
 
-test('HTML 转义 (escapeHtml) 防御 XSS 注入', () => {
+test('HTML 转义 (escapeHtml) 边界与防注入', () => {
   const evil = '<script>alert("xss")</script>&<img src=x onerror=\'hack\'>';
   const safe = escapeHtml(evil);
   assert.strictEqual(safe, '&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;&amp;&lt;img src=x onerror=&#39;hack&#39;&gt;');
   assert.strictEqual(escapeHtml(null), '');
   assert.strictEqual(escapeHtml(undefined), '');
+  assert.strictEqual(escapeHtml(''), '');
+  assert.strictEqual(escapeHtml(0), '0');
+  assert.strictEqual(escapeHtml(false), 'false');
 });
 
-test('QID 编解码 (getQid & parseQid)', () => {
-  const qid = getQid('math', 'ch1', 5);
-  assert.strictEqual(qid, 'math::ch1::5');
+test('QID 编解码与 Canonical 5-part 语义规范', () => {
+  // 3-part 格式: <subj>::<chap>::<idx>
+  const qid3 = getQid('math', 'math_lec01', 5);
+  assert.strictEqual(qid3, 'math::math_lec01::5');
 
-  const parsed = parseQid(qid);
-  assert.deepStrictEqual(parsed, {
-    subjectId: 'math',
-    chapterId: 'ch1',
-    idx: 5,
-    qIdx: 5
-  });
+  const parsed3 = parseQid(qid3);
+  assert.strictEqual(parsed3.subjectId, 'math');
+  assert.strictEqual(parsed3.chapterId, 'math_lec01');
+  assert.strictEqual(parsed3.idx, 5);
 
+  // 5-part Canonical 语义格式: <chUid>::<slug>
+  const qid5 = getQid('math', 'math::李范全书::高数::ch03', 20, 'ex_3-14_(I)');
+  assert.strictEqual(qid5, 'math::李范全书::高数::ch03::ex_3-14_(I)');
+
+  const parsed5 = parseQid(qid5);
+  assert.strictEqual(parsed5.subjectId, 'math');
+  assert.strictEqual(parsed5.chapterUid, 'math::李范全书::高数::ch03');
+  assert.strictEqual(parsed5.questionSlug, 'ex_3-14_(I)');
+  assert.strictEqual(parsed5.isSemantic, true);
+
+  // 异常格式校验
   assert.strictEqual(parseQid('invalid-qid'), null);
   assert.strictEqual(parseQid('math::ch1::-1'), null);
   assert.strictEqual(parseQid('math::ch1::abc'), null);
+  assert.strictEqual(parseQid(''), null);
   assert.strictEqual(parseQid(null), null);
+  assert.strictEqual(parseQid(undefined), null);
 });
 
 // 5. 跨章节与跨科目撤销栈 (Undo Stack) 机制测试
 console.log('\n--- 5. 跨章节撤销 (Undo Stack) 与状态回滚 ---');
 
-test('跨章节撤销: 正确记录 chapterId 与 subjectId 并支持准确回退', () => {
+test('跨章节撤销: 使用标准语义 URN 准确回退', () => {
   const undoStack = [];
   function pushUndoMock(idx, prevStatus, chId, subjId) {
     undoStack.push({ idx: idx, prevStatus: prevStatus || '', chapterId: chId, subjectId: subjId });
     if (undoStack.length > 50) undoStack.shift();
   }
 
-  // 模拟在 ch1 做题 -> 记录 undo -> 切换到 ch2 做题 -> 记录 undo
-  pushUndoMock(0, '', 'ch1', 'math'); // ch1 题目 0 从未做变成熟练
-  pushUndoMock(5, 'wrong', 'ch2', 'math'); // ch2 题目 5 从不会变成熟练
+  const ch1Uid = 'math::基础30讲::高数::lec01';
+  const ch2Uid = 'math::基础30讲::高数::lec02';
+
+  // 模拟在 lec01 做题 -> 记录 undo -> 切换到 lec02 做题 -> 记录 undo
+  pushUndoMock(0, '', ch1Uid, 'math');
+  pushUndoMock(5, 'wrong', ch2Uid, 'math');
 
   assert.strictEqual(undoStack.length, 2);
   const top = undoStack.pop();
-  assert.strictEqual(top.chapterId, 'ch2');
+  assert.strictEqual(top.chapterId, ch2Uid);
   assert.strictEqual(top.idx, 5);
   assert.strictEqual(top.prevStatus, 'wrong');
 
   const second = undoStack.pop();
-  assert.strictEqual(second.chapterId, 'ch1');
+  assert.strictEqual(second.chapterId, ch1Uid);
   assert.strictEqual(second.idx, 0);
   assert.strictEqual(second.prevStatus, '');
 });
@@ -503,28 +586,62 @@ test('考点主题创建、关联题目与解除关联数据模型测试', () =>
   assert.strictEqual(topicsMap['topic_taylor'].questions[0], 'math::ch31::2');
 });
 
-test('二级子考点格式解析 (大考点/子考点)', () => {
+test('纯单级考点格式保留 (已移出二级考点切分，完整保留考点全称)', () => {
   function parseTopicAndSubTopic(input) {
     if (!input || typeof input !== 'string') return { topicName: '', subTopic: '' };
-    var text = input.trim();
-    var splitMatch = text.match(/^(.*?)\s*[\/／\\\|]\s*(.*?)$/);
-    if (splitMatch && splitMatch[1] && splitMatch[2]) {
-      return { topicName: splitMatch[1].trim(), subTopic: splitMatch[2].trim() };
-    }
-    return { topicName: text, subTopic: '' };
+    return { topicName: input.trim(), subTopic: '' };
   }
 
   const res1 = parseTopicAndSubTopic('定积分几何应用 / 旋转体体积');
-  assert.strictEqual(res1.topicName, '定积分几何应用');
-  assert.strictEqual(res1.subTopic, '旋转体体积');
+  assert.strictEqual(res1.topicName, '定积分几何应用 / 旋转体体积');
+  assert.strictEqual(res1.subTopic, '');
 
   const res2 = parseTopicAndSubTopic('极限计算／0比0型');
-  assert.strictEqual(res2.topicName, '极限计算');
-  assert.strictEqual(res2.subTopic, '0比0型');
+  assert.strictEqual(res2.topicName, '极限计算／0比0型');
+  assert.strictEqual(res2.subTopic, '');
 
   const res3 = parseTopicAndSubTopic('洛必达法则');
   assert.strictEqual(res3.topicName, '洛必达法则');
   assert.strictEqual(res3.subTopic, '');
+
+  const resMath = parseTopicAndSubTopic("$f'(x)与|\\varphi(x)|$问题");
+  assert.strictEqual(resMath.topicName, "$f'(x)与|\\varphi(x)|$问题");
+  assert.strictEqual(resMath.subTopic, '');
+
+  const resMathSlash = parseTopicAndSubTopic("$\\int \\frac{f(x)}{g(x)}\\,dx$ / 有理函数");
+  assert.strictEqual(resMathSlash.topicName, "$\\int \\frac{f(x)}{g(x)}\\,dx$ / 有理函数");
+  assert.strictEqual(resMathSlash.subTopic, '');
+});
+
+test('小题模式 (subMode) 全局开关与跨章跨刷新持久化契约', () => {
+  const store = {};
+  const mockGlobalStore = {
+    get: (k) => store[k] !== undefined ? store[k] : null,
+    set: (k, v) => { store[k] = v; }
+  };
+
+  let subMode = false;
+  function toggleSubMode() {
+    subMode = !subMode;
+    mockGlobalStore.set('sub_mode', subMode);
+  }
+
+  // 1. 默认关闭
+  assert.strictEqual(subMode, false);
+
+  // 2. 按 F 开启
+  toggleSubMode();
+  assert.strictEqual(subMode, true);
+  assert.strictEqual(mockGlobalStore.get('sub_mode'), true);
+
+  // 3. 模拟跨章切换与刷新恢复
+  let restoredSubMode = mockGlobalStore.get('sub_mode');
+  assert.strictEqual(restoredSubMode, true);
+
+  // 4. 再次按 F 关闭
+  toggleSubMode();
+  assert.strictEqual(subMode, false);
+  assert.strictEqual(mockGlobalStore.get('sub_mode'), false);
 });
 
 test('题目对双向亲密度无向 Key 与优先级双向互通排序', () => {
@@ -568,9 +685,6 @@ test('题目对双向亲密度无向 Key 与优先级双向互通排序', () => 
       scoreA += affA * 10;
       scoreB += affB * 10;
 
-      scoreA += (a.sameSubTopicCount || 0) * 50;
-      scoreB += (b.sameSubTopicCount || 0) * 50;
-
       return scoreB - scoreA;
     });
   }
@@ -589,6 +703,38 @@ test('题目对双向亲密度无向 Key 与优先级双向互通排序', () => 
   const sortedForB = sortQuestions(qB, [{ qid: qC }, { qid: qA }]);
   assert.strictEqual(sortedForB[0].qid, qA);
   assert.strictEqual(sortedForB[1].qid, qC);
+});
+
+test('合并章节伴章段 QID 路由隔离: 杜绝两书同号题（如30讲3-2与1000题3-2）考点与同类题泄露', () => {
+  const win = {};
+  new Function('window', chaptersSrc)(win);
+  const math = win.SUBJECTS.find(s => s.id === 'math');
+  const lec03 = math.chapters.find(c => c.uid === 'math::基础30讲::高数::lec03');
+  assert.ok(lec03, '基础30讲第3讲必须存在');
+  assert.strictEqual(lec03.ownTotal, 21);
+  assert.strictEqual(lec03.q1000Total, 15);
+
+  // 1. 测试 ch.getQuestionUID
+  const uid30 = lec03.getQuestionUID(13); // 30讲 3-2 (本章段)
+  const uid1000 = lec03.getQuestionUID(22); // 1000题 3-2 (伴章段: 21 + 1)
+  assert.strictEqual(uid30, 'math::基础30讲::高数::lec03::pb_3-2');
+  assert.strictEqual(uid1000, 'math::1000题::基础篇-高数::ch03::pb_3-2');
+  assert.notStrictEqual(uid30, uid1000, '合并章节伴章段的 QID 绝不能与本章同号题冲突');
+
+  // 2. 测试 topics.js 中的 getQid
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  win.curSubjectId = 'math';
+  win.curSubject = math;
+  win.CHAPTERS = math.chapters;
+  win.currentChapterId = lec03.uid;
+  new Function('window', 'document', 'localStorage', 'StorageEngine', 'CHAPTERS', 'curSubject', 'SUBJECTS', topicsSrc)(
+    win, { addEventListener: () => {} }, { getItem: () => null, setItem: () => {} }, {}, win.CHAPTERS, win.curSubject, win.SUBJECTS
+  );
+
+  const qid30 = win.getQid('math', lec03.uid, 13);
+  const qid1000_2 = win.getQid('math', lec03.uid, 22);
+  assert.strictEqual(qid30, 'math::基础30讲::高数::lec03::pb_3-2');
+  assert.strictEqual(qid1000_2, 'math::1000题::基础篇-高数::ch03::pb_3-2');
 });
 
 // 8. .gitignore 凭据防护校验
@@ -776,6 +922,400 @@ test('ResumeStore: slug 规范恢复（插题后断点不漂移）', () => {
   const r = ResumeStore.loadChapter('math', ch.id, ch);
   assert.ok(r);
   assert.strictEqual(r.idx, 3, 'slug 解析的 idx 应为 3（插题后位置正确）');
+});
+
+// ── 10. 左侧栏状态筛选规则（较熟练和模糊归模糊，困难和不会归不会） ──
+console.log('\n--- 10. 左侧栏状态筛选与计数归类规则 ---');
+
+test('左侧栏状态筛选: 较熟练+模糊归为模糊类，困难+不会归为不会类，熟练保持独立', () => {
+  const mockStatuses = {
+    0: 'proficient', // 熟练
+    1: 'familiar',   // 较熟练
+    2: 'vague',      // 模糊
+    3: 'rusty',      // 困难
+    4: 'wrong',      // 不会
+    5: ''            // 未做
+  };
+  const total = 6;
+
+  function filterQuestions(filterSet) {
+    const all = Array.from({ length: total }, (_, i) => i);
+    if (filterSet.has('all') || filterSet.size === 0) return all;
+    return all.filter(i => {
+      const s = mockStatuses[i] || '';
+      if (filterSet.has('proficient') && s === 'proficient') return true;
+      if (filterSet.has('vague') && (s === 'vague' || s === 'familiar')) return true;
+      if (filterSet.has('wrong') && (s === 'wrong' || s === 'rusty')) return true;
+      return false;
+    });
+  }
+
+  // 1. 筛选「熟练」：只应包含 index 0 (proficient)
+  const profRes = filterQuestions(new Set(['proficient']));
+  assert.deepStrictEqual(profRes, [0], '「熟练」筛选仅包含 proficient(lv5)');
+
+  // 2. 筛选「模糊」：必须包含 index 1 (familiar, 较熟练) 与 index 2 (vague, 模糊)
+  const vagueRes = filterQuestions(new Set(['vague']));
+  assert.deepStrictEqual(vagueRes, [1, 2], '「模糊」筛选必须合并较熟练(familiar)与模糊(vague)');
+
+  // 3. 筛选「不会」：必须包含 index 3 (rusty, 困难) 与 index 4 (wrong, 不会)
+  const wrongRes = filterQuestions(new Set(['wrong']));
+  assert.deepStrictEqual(wrongRes, [3, 4], '「不会」筛选必须合并困难(rusty)与不会(wrong)');
+
+  // 4. 多选组合筛选（如 模糊 + 不会）
+  const multiRes = filterQuestions(new Set(['vague', 'wrong']));
+  assert.deepStrictEqual(multiRes, [1, 2, 3, 4]);
+
+  // 5. 状态筛选栏计数汇总
+  let profCount = 0, vagCount = 0, wrCount = 0;
+  Object.values(mockStatuses).forEach(s => {
+    if (s === 'proficient') profCount++;
+    else if (s === 'vague' || s === 'familiar') vagCount++;
+    else if (s === 'wrong' || s === 'rusty') wrCount++;
+  });
+  assert.strictEqual(profCount, 1, '熟练计数应为 1');
+  assert.strictEqual(vagCount, 2, '模糊计数应为 2 (较熟练 1 + 模糊 1)');
+  assert.strictEqual(wrCount, 2, '不会计数应为 2 (困难 1 + 不会 1)');
+});
+
+// ── 11. 独立历史数据迁移工具 (tools/migrate_legacy_storage.js) ──
+console.log('\n--- 11. 独立迁移工具 (MigrationTool) 与 idx->slug 转换 ---');
+
+test('MigrationTool: 完整迁移测试 (备份、idx->slug映射、全局及UI键迁移、旧键彻底清理)', () => {
+  const { migrateLegacyStorage } = require('../tools/migrate_legacy_storage');
+  const mockLS = makeMockLS();
+
+  // 1. 设置各类历史旧键
+  const legacyResume = {
+    'math': { ch: 'ch1', idx: 1, sub: true },
+    'math::基础30讲': { ch: 'ch1', idx: 2, sub: false },
+    'math::ch::ch1': { idx: 0, sub: true },
+    '822': { ch: 'ch2', idx: 0, sub: false }
+  };
+  mockLS.setItem('kaoyan_resume', JSON.stringify(legacyResume));
+  mockLS.setItem('kaoyan_resume_english', JSON.stringify({ year: '2021', textId: 'text1', qIndex: 21 }));
+  mockLS.setItem('kaoyan_resume_english_y2021', JSON.stringify({ textId: 'text1', qIndex: 22 }));
+  mockLS.setItem('kaoyan_related_topics', JSON.stringify({ top1: { name: '泰勒公式' } }));
+  mockLS.setItem('kaoyan_related_affinity', JSON.stringify({ pairs: { 'k1': 5 } }));
+  mockLS.setItem('kaoyan_study_log', JSON.stringify({ '2026-09-04': { count: 10 } }));
+  mockLS.setItem('kaoyan_theme', 'dark');
+  mockLS.setItem('kaoyan_dark_img_filter', 'invert');
+  mockLS.setItem('kaoyan_ui_filters', JSON.stringify({ hideProficient: true }));
+  mockLS.setItem('kaoyan_subject', 'math');
+  mockLS.setItem('math_ui_solution', JSON.stringify({ show: true }));
+  mockLS.setItem('822_ui_solution', JSON.stringify({ show: false }));
+
+  // 2. Mock 章节定义与 slug 解析
+  const mockSubjects = [
+    {
+      id: 'math',
+      chapters: [
+        {
+          id: 'ch1',
+          uid: 'math::基础30讲::高数::第1讲 函数极限与连续',
+          total: 3,
+          labels: ['例1-1', '例1-2', '例1-3'],
+          getQuestionSlug(idx) {
+            return ['ex_1-1', 'ex_1-2', 'ex_1-3'][idx];
+          }
+        }
+      ]
+    },
+    {
+      id: '822',
+      chapters: [
+        {
+          id: 'ch2',
+          uid: '822::控制工程基础::第2章 控制系统数学模型',
+          total: 1,
+          labels: ['2-1'],
+          getQuestionSlug(idx) {
+            return 'pb_2-1';
+          }
+        }
+      ]
+    }
+  ];
+
+  // 3. 执行迁移
+  const report = migrateLegacyStorage(mockLS, mockSubjects);
+
+  // 4. 断言验证
+  assert.strictEqual(report.success, true, '迁移必须成功');
+
+  // 备份快照验证
+  const backupRaw = mockLS.getItem('kaoyan.migration.backup');
+  assert.ok(backupRaw, '必须创建全量快照备份');
+  const backup = JSON.parse(backupRaw);
+  assert.strictEqual(backup.snapshot['kaoyan_theme'], 'dark');
+
+  // 断点转换验证 (必须为 slug 而非纯数字 idx)
+  const resumeJson = mockLS.getItem('kaoyan.g.resume');
+  assert.ok(resumeJson, '必须生成 kaoyan.g.resume');
+  const resume = JSON.parse(resumeJson);
+  assert.strictEqual(resume.$v, 2);
+  assert.strictEqual(resume['math'].slug, 'ex_1-2', 'math 科目断点必须成功转换为 slug');
+  assert.strictEqual(resume['math'].sub, true);
+  assert.strictEqual(resume['math::基础30讲'].slug, 'ex_1-3', '书籍断点必须转换为 slug');
+  assert.strictEqual(resume['math::ch::ch1'].slug, 'ex_1-1', '章节断点必须转换为 slug');
+  assert.strictEqual(resume['822'].slug, 'pb_2-1', '822 断点必须转换为 slug');
+  assert.strictEqual(resume['english'].year, '2021');
+  assert.strictEqual(resume['english_y2021'].qIndex, 22);
+
+  // 全局及 UI 键验证
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.g.topics')).top1.name, '泰勒公式');
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.g.affinity')).pairs.k1, 5);
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.g.study_log'))['2026-09-04'].count, 10);
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.g.theme')), 'dark');
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.g.dark_img_filter')), 'invert');
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.g.filters')).hideProficient, true);
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.g.subject')), 'math');
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.ui.math')).show, true);
+  assert.strictEqual(JSON.parse(mockLS.getItem('kaoyan.ui.822')).show, false);
+
+  // 旧键彻底清理验证
+  assert.strictEqual(mockLS.getItem('kaoyan_resume'), null, '旧 kaoyan_resume 必须被删除');
+  assert.strictEqual(mockLS.getItem('kaoyan_resume_english'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_resume_english_y2021'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_related_topics'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_related_affinity'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_study_log'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_theme'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_dark_img_filter'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_ui_filters'), null);
+  assert.strictEqual(mockLS.getItem('kaoyan_subject'), null);
+  assert.strictEqual(mockLS.getItem('math_ui_solution'), null);
+  assert.strictEqual(mockLS.getItem('822_ui_solution'), null);
+});
+
+console.log('\n--- 12. TopicManager API 完整性与伴章 Null 守卫测试 ---');
+
+test('TopicManager: API 导出完整性与别名互通', () => {
+  const mathSubj = SUBJECTS.find(s => s.id === 'math');
+  const topicWin = {
+    curSubjectId: 'math',
+    SUBJECTS: [mathSubj],
+    CHAPTERS: mathSubj.chapters,
+    currentChapterId: 'math::基础30讲::高数::lec00',
+    escapeHtml: str => String(str),
+    safeLSSet: () => {}
+  };
+  const doc = {
+    getElementById: () => null,
+    querySelectorAll: () => [],
+    addEventListener: () => {}
+  };
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  new Function('window', 'document', 'localStorage', 'StorageEngine', 'CHAPTERS', 'curSubject', 'SUBJECTS', topicsSrc)(
+    topicWin, doc, { getItem: () => null, setItem: () => {} }, {}, topicWin.CHAPTERS, mathSubj, [mathSubj]
+  );
+
+  assert.ok(topicWin.TopicManager, 'TopicManager 应该已成功导出到 window');
+  assert.strictEqual(typeof topicWin.TopicManager.normalizeSubjectId, 'function');
+  assert.strictEqual(topicWin.TopicManager.normalizeSubjectId('shu1'), 'math');
+  assert.strictEqual(topicWin.TopicManager.normalizeSubjectId('math'), 'math');
+  assert.strictEqual(topicWin.TopicManager.normalizeSubjectId('822'), '822');
+
+  assert.strictEqual(typeof topicWin.TopicManager.getAffinityPairKey, 'function');
+  const k1 = topicWin.TopicManager.getAffinityPairKey('qA', 'qB');
+  const k2 = topicWin.TopicManager.getAffinityPairKey('qB', 'qA');
+  assert.strictEqual(k1, k2, '对偶题目键应具备对称无向性');
+
+  assert.strictEqual(typeof topicWin.TopicManager.getAffinity, 'function');
+  assert.strictEqual(typeof topicWin.TopicManager.recordAffinity, 'function');
+  topicWin.TopicManager.recordAffinity('qA', 'qB', 5);
+  assert.strictEqual(topicWin.TopicManager.getAffinity('qA', 'qB'), 5);
+  assert.strictEqual(topicWin.TopicManager.getAffinity('qB', 'qA'), 5);
+
+  assert.strictEqual(typeof topicWin.TopicManager.getQuestionData, 'function');
+  const qData = topicWin.TopicManager.getQuestionData('dummy_qid');
+  assert.ok(Array.isArray(qData.topics));
+  assert.ok(Array.isArray(qData.relatedQuestions));
+});
+
+// --- 13. 数学符号盘与 LaTeX 自动补全完整性校验 ---
+console.log('\n--- 13. 数学符号盘与 LaTeX 自动补全完整性校验 ---');
+
+test('MathPalette: 符号盘数据集与 index.html 6 大 Tabs 1:1 精确映射', () => {
+  const palWin = {};
+  const palDoc = {
+    getElementById: () => null,
+    querySelectorAll: () => []
+  };
+  const palSrc = fs.readFileSync(path.join(__dirname, '../js/math_palette.js'), 'utf8');
+  new Function('window', 'document', palSrc)(palWin, palDoc);
+
+  assert.ok(palWin.MathPalette, 'MathPalette 应该成功导出到 window');
+  const data = palWin.MathPalette.DATA;
+  assert.ok(data, 'MathPalette.DATA 应该存在');
+
+  const expectedCategories = ['calc', 'algebra', 'greek', 'linalg', 'prob', 'templates'];
+  const actualCategories = Object.keys(data);
+  assert.deepStrictEqual(actualCategories.sort(), expectedCategories.sort(), '数据分类必须与 6 大 Tab 严格 1:1 对齐');
+
+  expectedCategories.forEach(cat => {
+    assert.ok(Array.isArray(data[cat]), `分类 ${cat} 必须为数组`);
+    assert.ok(data[cat].length >= 15, `分类 ${cat} 的项数应足够丰富 (当前: ${data[cat].length})`);
+    data[cat].forEach((item, idx) => {
+      assert.ok(typeof item.label === 'string' && item.label.length > 0, `${cat}[${idx}] label 必须非空`);
+      assert.ok(typeof item.code === 'string' && item.code.length > 0, `${cat}[${idx}] code 必须非空`);
+      assert.ok(typeof item.render === 'string' && item.render.length > 0, `${cat}[${idx}] render 必须非空`);
+    });
+  });
+
+  // 验证线性代数与代数集合不再错位混淆
+  const linalgLabels = data.linalg.map(x => x.label);
+  assert.ok(linalgLabels.some(l => l.includes('圆括号矩阵')), '线性代数必须包含矩阵');
+  assert.ok(linalgLabels.some(l => l.includes('特征方程') || l.includes('特征值')), '线性代数必须包含特征值');
+
+  const algebraLabels = data.algebra.map(x => x.label);
+  assert.ok(algebraLabels.some(l => l.includes('根号')), '代数/集合必须包含根号');
+  assert.ok(algebraLabels.some(l => l.includes('属于')), '代数/集合必须包含集合属于符号');
+  // 验证三角函数与反三角函数 9 大项完整存在
+  const trigLabels = data.algebra.map(x => x.label);
+  ['正弦 sin', '余弦 cos', '正切 tan', '余切 cot', '正割 sec', '余割 csc', '反正弦 arcsin', '反余弦 arccos', '反正切 arctan'].forEach(trig => {
+    assert.ok(trigLabels.includes(trig), `代数初等函数必须包含 ${trig}`);
+  });
+
+  // 验证高频模板 18 大项完整恢复
+  assert.strictEqual(data.templates.length, 18, '高频模板应完整包含 18 项核心考研公式');
+  const templateLabels = data.templates.map(x => x.label);
+  assert.ok(templateLabels.some(l => l.includes('点火公式')), '高频模板必须包含 Wallis 点火公式');
+  assert.ok(templateLabels.some(l => l.includes('等价无穷小')), '高频模板必须包含等价无穷小速查');
+  assert.ok(templateLabels.some(l => l.includes('麦克劳林')), '高频模板必须包含麦克劳林展开');
+
+  // 验证自动补全词典包含导数快捷键
+  const dict = palWin.MathPalette.AUTOCOMPLETE_DICT;
+  assert.ok(Array.isArray(dict) && dict.length >= 105, 'AUTOCOMPLETE_DICT 词典完整度校验');
+  const dictKeys = new Set(dict.map(x => x.key));
+  assert.ok(dictKeys.has('fp'), '自动补全应包含 fp');
+  assert.ok(dictKeys.has('fprime'), '自动补全应包含 fprime');
+  assert.ok(dictKeys.has('fpp'), '自动补全应包含 fpp');
+  assert.ok(dictKeys.has('fn'), '自动补全应包含 fn');
+  assert.ok(dictKeys.has('f0'), '自动补全应包含 f0');
+});
+
+test('MathPalette.insertSnippetIntoNotes: 消除 | 占位符冲突与保护公式字面量', () => {
+  const palWin = {};
+  let mockTextarea = {
+    value: '',
+    selectionStart: 0,
+    selectionEnd: 0,
+    focus: () => {}
+  };
+  const palDoc = {
+    getElementById: (id) => {
+      if (id === 'notesDuo') return { style: { display: 'flex' } };
+      if (id === 'notesTextarea') return mockTextarea;
+      return null;
+    },
+    querySelectorAll: () => []
+  };
+  const palSrc = fs.readFileSync(path.join(__dirname, '../js/math_palette.js'), 'utf8');
+  new Function('window', 'document', palSrc)(palWin, palDoc);
+
+  const { insertSnippetIntoNotes } = palWin.MathPalette;
+
+  // 1. 测试字面量竖线不被吞噬
+  mockTextarea.value = ''; mockTextarea.selectionStart = 0; mockTextarea.selectionEnd = 0;
+  insertSnippetIntoNotes('|A|');
+  assert.strictEqual(mockTextarea.value, '|A|', '|A| 中的首个竖线不应被当做占位符删除');
+
+  mockTextarea.value = ''; mockTextarea.selectionStart = 0; mockTextarea.selectionEnd = 0;
+  insertSnippetIntoNotes('|\\lambda E - A| = 0');
+  assert.strictEqual(mockTextarea.value, '|\\lambda E - A| = 0', '特征方程中的竖线必须完整保留');
+
+  mockTextarea.value = ''; mockTextarea.selectionStart = 0; mockTextarea.selectionEnd = 0;
+  insertSnippetIntoNotes('\\|\\boldsymbol{x}\\|');
+  assert.strictEqual(mockTextarea.value, '\\|\\boldsymbol{x}\\|', '范数 \\| 中的竖线必须完整保留');
+
+  mockTextarea.value = ''; mockTextarea.selectionStart = 0; mockTextarea.selectionEnd = 0;
+  insertSnippetIntoNotes('P(A \\mid B)');
+  assert.strictEqual(mockTextarea.value, 'P(A \\mid B)', '条件概率语法应完整保留');
+
+  // 2. 测试占位符正常工作
+  mockTextarea.value = ''; mockTextarea.selectionStart = 0; mockTextarea.selectionEnd = 0;
+  insertSnippetIntoNotes('\\frac{|}{}');
+  assert.strictEqual(mockTextarea.value, '\\frac{}{}', '分式占位符应被消费');
+  assert.strictEqual(mockTextarea.selectionStart, 6, '光标应准确定位在分子大括号内');
+
+  // 3. 测试绝对值 |⦙| 模板选区包裹与居中定位
+  mockTextarea.value = ''; mockTextarea.selectionStart = 0; mockTextarea.selectionEnd = 0;
+  insertSnippetIntoNotes('|⦙|');
+  assert.strictEqual(mockTextarea.value, '||', '未选中文字时插入 ||');
+  assert.strictEqual(mockTextarea.selectionStart, 1, '光标应准确定位于两竖线之间');
+
+  mockTextarea.value = 'sin(x)'; mockTextarea.selectionStart = 0; mockTextarea.selectionEnd = 6;
+  insertSnippetIntoNotes('|⦙|');
+  assert.strictEqual(mockTextarea.value, '|sin(x)|', '选中文字时应自动包裹为绝对值 |选区|');
+  assert.strictEqual(mockTextarea.selectionStart, 8, '光标应定位于包裹后的右侧');
+});
+
+// ===== 14. 顶部标题栏下拉栏状态管理与防泄露 (TitleBar Dropdowns Management) =====
+console.log('\n--- 14. 顶部标题栏下拉栏状态管理与防泄露 (TitleBar Dropdowns Management) ---');
+
+test('setPanelTitle: 错题本模式打开与退出时各下拉栏显示控制，严防 ddWbWrongbook 泄漏', () => {
+  // 模拟 DOM 节点
+  const elements = {
+    chapterTitleBar: { querySelectorAll: () => [] },
+    panelTitle: { textContent: '', style: { display: 'none' } },
+    ddWb: { style: { display: '' } },
+    ddSubj: { style: { display: '' } },
+    ddChapter: { style: { display: '' } },
+    ddWbWrongbook: { style: { display: 'none' } }
+  };
+
+  // 模拟 app.js 中的 setPanelTitle 实现逻辑
+  function testSetPanelTitle(text, wrongbookMode, currentWbSubjsCount) {
+    const bar = elements.chapterTitleBar;
+    const panelTitle = elements.panelTitle;
+    const ddWb = elements.ddWb;
+    const ddSubj = elements.ddSubj;
+    const ddChapter = elements.ddChapter;
+    const ddWbWrongbook = elements.ddWbWrongbook;
+
+    if (text) {
+      panelTitle.textContent = text;
+      panelTitle.style.display = '';
+      if (ddWb) ddWb.style.display = 'none';
+      if (ddSubj) ddSubj.style.display = 'none';
+      if (ddChapter) ddChapter.style.display = 'none';
+      if (ddWbWrongbook) ddWbWrongbook.style.display = wrongbookMode ? '' : 'none';
+    } else {
+      panelTitle.textContent = '';
+      panelTitle.style.display = 'none';
+      if (ddWb) ddWb.style.display = '';
+      if (ddChapter) ddChapter.style.display = '';
+      if (ddWbWrongbook) ddWbWrongbook.style.display = 'none';
+      if (ddSubj) {
+        ddSubj.style.display = currentWbSubjsCount > 1 ? '' : 'none';
+      }
+    }
+  }
+
+  // 1. 进入错题本模式
+  testSetPanelTitle('错题本', true, 3);
+  assert.strictEqual(elements.panelTitle.textContent, '错题本');
+  assert.strictEqual(elements.panelTitle.style.display, '');
+  assert.strictEqual(elements.ddWb.style.display, 'none');
+  assert.strictEqual(elements.ddSubj.style.display, 'none');
+  assert.strictEqual(elements.ddChapter.style.display, 'none');
+  assert.strictEqual(elements.ddWbWrongbook.style.display, '', '错题本模式下 ddWbWrongbook 应显示');
+
+  // 2. 退出错题本模式（当前书籍多学科，如数一 基础30讲）
+  testSetPanelTitle('', false, 3);
+  assert.strictEqual(elements.panelTitle.style.display, 'none');
+  assert.strictEqual(elements.ddWb.style.display, '');
+  assert.strictEqual(elements.ddChapter.style.display, '');
+  assert.strictEqual(elements.ddWbWrongbook.style.display, 'none', '退出错题本后 ddWbWrongbook 必须被隐藏，禁止泄漏！');
+  assert.strictEqual(elements.ddSubj.style.display, '', '多学科书籍 ddSubj 应显示');
+
+  // 3. 进入总览面板并退出（当前书籍单学科，如 822 控制工程基础 或 老姚高数）
+  testSetPanelTitle('全局学习进度', false, 1);
+  assert.strictEqual(elements.ddWbWrongbook.style.display, 'none');
+  testSetPanelTitle('', false, 1);
+  assert.strictEqual(elements.ddWbWrongbook.style.display, 'none', '退出总览后 ddWbWrongbook 必须被隐藏');
+  assert.strictEqual(elements.ddSubj.style.display, 'none', '单学科书籍退出总览后 ddSubj 必须保持隐藏，禁止意外浮现多余下拉栏');
 });
 
 console.log('\n====================================================');

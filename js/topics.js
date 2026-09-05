@@ -17,6 +17,28 @@
     var recentQuestionsHistory = [];
     var jumpReturnStack = [];
     var relatedModalOpen = false;
+    var topicRenameModalOpen = false;
+
+    // 安全 HTML 转义函数
+    var escapeHtml = (typeof window.escapeHtml === 'function') ? window.escapeHtml : function(str) {
+      if (str === undefined || str === null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    };
+
+    function getWbForChapter(ch) {
+      if (!ch) return '';
+      return ch.wb || ch.book || '';
+    }
+
+    function closeQuickTopicPopover() {
+      var pop = document.getElementById('quickTopicPopover');
+      if (pop) pop.style.display = 'none';
+    }
 
     // 1. QID 编解码与元数据工具
     function normalizeSubjectId(sid) {
@@ -24,18 +46,52 @@
       return sid || 'math';
     }
 
-    function getQid(subjId, chId, idx) {
-      var sid = normalizeSubjectId(subjId || curSubjectId || 'math');
-      var ch = chapterById(chId || currentChapterId);
-      if (ch && ch.uid) {
-        var slug = ch.getQuestionSlug ? ch.getQuestionSlug(idx) : null;
-        if (slug) return ch.uid + '::' + slug;
+    function chapterById(id) {
+      if (!id) return null;
+      if (typeof window !== 'undefined' && typeof window.chapterById === 'function') {
+        return window.chapterById(id);
       }
-      return sid + '::' + (chId || currentChapterId) + '::' + idx;
+      var list = (typeof window !== 'undefined' && window.SUBJECTS) ? window.SUBJECTS : (typeof SUBJECTS !== 'undefined' ? SUBJECTS : []);
+      for (var i = 0; i < list.length; i++) {
+        var sub = list[i];
+        if (sub && sub.chapters) {
+          for (var j = 0; j < sub.chapters.length; j++) {
+            var c = sub.chapters[j];
+            if (c.id === id || c.uid === id) return c;
+          }
+        }
+      }
+      return null;
+    }
+
+    function getQid(subjId, chId, idx) {
+      var sid = normalizeSubjectId(subjId || (typeof curSubjectId !== 'undefined' ? curSubjectId : (typeof window !== 'undefined' ? window.curSubjectId : 'math')));
+      var effectiveChId = chId || (typeof currentChapterId !== 'undefined' ? currentChapterId : (typeof window !== 'undefined' ? window.currentChapterId : ''));
+      var effectiveIdx = (typeof idx !== 'undefined') ? idx : (typeof current !== 'undefined' ? current : (typeof window !== 'undefined' ? window.current : 0));
+      var ch = chapterById(effectiveChId);
+      if (ch) {
+        // 伴章路由：若属于合并章节中的伴章段（如 1000 题），生成其真实所属书籍的规范 QID
+        if (ch.q1000Total && effectiveIdx >= ch.ownTotal && ch.q1000Id) {
+          var qc = chapterById(ch.q1000Id);
+          if (qc && qc.uid) {
+            var q1000Idx = effectiveIdx - ch.ownTotal;
+            var qSlug = qc.getQuestionSlug ? qc.getQuestionSlug(q1000Idx) : null;
+            if (qSlug) return qc.uid + '::' + qSlug;
+          }
+        }
+        if (ch.uid) {
+          var slug = ch.getQuestionSlug ? ch.getQuestionSlug(effectiveIdx) : null;
+          if (slug) return ch.uid + '::' + slug;
+        }
+      }
+      return sid + '::' + effectiveChId + '::' + effectiveIdx;
     }
 
     function getCurrentQid() {
-      return getQid(curSubjectId, currentChapterId, current);
+      var sid = (typeof curSubjectId !== 'undefined') ? curSubjectId : ((typeof window !== 'undefined' && window.curSubjectId) ? window.curSubjectId : 'math');
+      var cid = (typeof currentChapterId !== 'undefined') ? currentChapterId : ((typeof window !== 'undefined' && window.currentChapterId) ? window.currentChapterId : '');
+      var cIdx = (typeof current !== 'undefined') ? current : ((typeof window !== 'undefined' && typeof window.current !== 'undefined') ? window.current : 0);
+      return getQid(sid, cid, cIdx);
     }
 
     function parseQid(qid) {
@@ -99,16 +155,17 @@
       var label = (ch.labels && ch.labels[idx]) ? ch.labels[idx] : '#' + (idx + 1);
       var slug = parsed.questionSlug || (ch.getQuestionSlug ? ch.getQuestionSlug(idx) : null);
 
-      // 读取该题当前掌握度状态 (兼容 statusKey / semanticKey)
+      // 读取该题当前掌握度状态与真实做题笔记 (通过规范 SSOT 存储引擎 ChapterStore 读取)
       var status = null;
+      var questionNote = null;
       try {
-        var statusKey = ch.id + '_' + subj.storageSuffix + '_status';
-        var statusObj = JSON.parse(localStorage.getItem(statusKey) || '{}');
-        if (slug && statusObj[slug] !== undefined) status = statusObj[slug];
-        else if (statusObj[idx] !== undefined) status = statusObj[idx];
-        else if (ch.uid) {
-          var semObj = JSON.parse(localStorage.getItem('status::' + ch.uid) || '{}');
-          status = (slug && semObj[slug] !== undefined) ? semObj[slug] : (semObj[idx] || null);
+        if (window.StorageEngine && window.StorageEngine.ChapterStore && ch && ch.uid && slug) {
+          var store = new window.StorageEngine.ChapterStore(ch);
+          var qData = store.getQuestion(slug);
+          if (qData) {
+            if (qData.status) status = qData.status;
+            if (qData.notes) questionNote = qData.notes;
+          }
         }
       } catch (e) {}
 
@@ -130,6 +187,7 @@
         label: label,
         slug: slug,
         status: status,
+        questionNote: questionNote,
         displayTitle: displayTitle
       };
     }
@@ -142,9 +200,11 @@
 
     function loadRelatedAffinity() {
       try {
-        var raw = localStorage.getItem('kaoyan_related_affinity');
-        if (raw) {
-          var obj = JSON.parse(raw);
+        var obj = null;
+        if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+          obj = window.StorageEngine.GlobalStore.get('affinity');
+        }
+        if (obj) {
           relatedAffinity = {
             pairs: (obj && typeof obj.pairs === 'object' && obj.pairs) ? obj.pairs : {},
             customOrders: (obj && typeof obj.customOrders === 'object' && obj.customOrders) ? obj.customOrders : {}
@@ -159,21 +219,27 @@
 
     function saveRelatedAffinity() {
       try {
-        localStorage.setItem('kaoyan_related_affinity', JSON.stringify(relatedAffinity));
+        if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+          window.StorageEngine.GlobalStore.set('affinity', relatedAffinity);
+        }
         notifyStorageSync();
       } catch (e) {}
     }
 
     function loadRelatedTopics() {
       try {
-        relatedTopics = JSON.parse(localStorage.getItem('kaoyan_related_topics') || '{}');
+        var rawObj = null;
+        if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+          rawObj = window.StorageEngine.GlobalStore.get('topics');
+        }
+        relatedTopics = rawObj || {};
         for (var tid in relatedTopics) {
           var t = relatedTopics[tid];
           if (t && t.members && Array.isArray(t.members)) {
             t.members.forEach(function(m) {
               if (m && m.qid) {
                 var p = parseQid(m.qid);
-                if (p) m.qid = getQid(p.subjectId, p.chapterId, p.idx);
+                if (p) m.qid = p.canonicalQid || getQid(p.subjectId, p.chapterId, p.idx);
               }
             });
           }
@@ -185,22 +251,16 @@
     }
 
     function saveRelatedTopics() {
-      localStorage.setItem('kaoyan_related_topics', JSON.stringify(relatedTopics));
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.set('topics', relatedTopics);
+      }
       notifyStorageSync();
       renderNav();
     }
 
     function parseTopicAndSubTopic(input) {
       if (!input || typeof input !== 'string') return { topicName: '', subTopic: '' };
-      var text = input.trim();
-      var splitMatch = text.match(/^(.*?)\s*[\/／\\\|]\s*(.*?)$/);
-      if (splitMatch && splitMatch[1] && splitMatch[2]) {
-        return {
-          topicName: splitMatch[1].trim(),
-          subTopic: splitMatch[2].trim()
-        };
-      }
-      return { topicName: text, subTopic: '' };
+      return { topicName: input.trim(), subTopic: '' };
     }
 
     function updateRelatedAffinityOrder(curQid, newOrderedQids) {
@@ -260,11 +320,7 @@
         scoreA += affA * 10;
         scoreB += affB * 10;
 
-        // 因子 3：同属于相同二级子考点加成 (+50分)
-        scoreA += (a.sameSubTopicCount || 0) * 50;
-        scoreB += (b.sameSubTopicCount || 0) * 50;
-
-        // 因子 4：共同考点数量 (+10分)
+        // 因子 3：共同考点数量 (+10分)
         scoreA += ((a.topics && a.topics.length) || 0) * 10;
         scoreB += ((b.topics && b.topics.length) || 0) * 10;
 
@@ -300,37 +356,24 @@
       var relatedMap = {};
       var myTopics = getTopicsForQid(qid);
 
-      // 提取当前题在各考点下的二级子考点映射
-      var mySubTopicsByTopicId = {};
-      myTopics.forEach(function(t) {
-        if (!t.members) return;
-        var myMem = t.members.find(function(m) { return m.qid === qid; });
-        if (myMem && myMem.subTopic) {
-          mySubTopicsByTopicId[t.id] = myMem.subTopic.trim();
-        }
-      });
+      var targetParsed = parseQid(qid);
+      var targetNorm = targetParsed ? (targetParsed.canonicalQid || getQid(targetParsed.subjectId, targetParsed.chapterId, targetParsed.idx)) : qid;
 
       myTopics.forEach(function(t) {
         if (!t.members) return;
-        var curSub = mySubTopicsByTopicId[t.id] || '';
         t.members.forEach(function(m) {
-          if (m.qid !== qid) {
-            var isSameSubTopic = Boolean(curSub && m.subTopic && m.subTopic.trim() === curSub);
-            var subTopicStr = m.subTopic ? m.subTopic.trim() : '';
-
+          var mParsed = parseQid(m.qid);
+          var mNorm = mParsed ? (mParsed.canonicalQid || getQid(mParsed.subjectId, mParsed.chapterId, mParsed.idx)) : m.qid;
+          if (mNorm !== targetNorm) {
             if (!relatedMap[m.qid]) {
               relatedMap[m.qid] = {
                 qid: m.qid,
                 topics: [t.name],
-                subTopics: subTopicStr ? [subTopicStr] : [],
-                sameSubTopicCount: isSameSubTopic ? 1 : 0,
                 notes: m.note ? [m.note] : []
               };
             } else {
               var item = relatedMap[m.qid];
               if (item.topics.indexOf(t.name) === -1) item.topics.push(t.name);
-              if (subTopicStr && item.subTopics.indexOf(subTopicStr) === -1) item.subTopics.push(subTopicStr);
-              if (isSameSubTopic) item.sameSubTopicCount = (item.sameSubTopicCount || 0) + 1;
               if (m.note && item.notes.indexOf(m.note) === -1) item.notes.push(m.note);
             }
           }
@@ -343,9 +386,7 @@
           var meta = getQuestionMeta(k);
           if (meta) {
             meta.topics = relatedMap[k].topics;
-            meta.subTopics = relatedMap[k].subTopics || [];
-            meta.sameSubTopicCount = relatedMap[k].sameSubTopicCount || 0;
-            meta.note = relatedMap[k].notes.join('；');
+            meta.note = relatedMap[k].notes.join('；') || meta.questionNote || '';
             list.push(meta);
           }
         }
@@ -360,13 +401,11 @@
       };
     }
 
-    function createRelatedTopic(name, currentQid, note, subTopic) {
+    function createRelatedTopic(name, currentQid, note) {
       if (!name || !name.trim()) return null;
-      var parsed = parseTopicAndSubTopic(name);
-      var topicName = parsed.topicName;
-      var autoSubTopic = subTopic || parsed.subTopic || '';
+      var topicName = name.trim();
 
-      // 检查是否已存在同名大考点
+      // 检查是否已存在同名考点
       var existingTid = null;
       for (var tid in relatedTopics) {
         if (relatedTopics[tid] && relatedTopics[tid].name && relatedTopics[tid].name.trim() === topicName) {
@@ -377,7 +416,7 @@
 
       if (existingTid) {
         if (currentQid) {
-          addQuestionToTopic(existingTid, currentQid, note, autoSubTopic);
+          addQuestionToTopic(existingTid, currentQid, note);
         }
         return relatedTopics[existingTid];
       }
@@ -386,31 +425,23 @@
       var newTopic = {
         id: newTid,
         name: topicName,
-        subTopics: autoSubTopic ? [autoSubTopic] : [],
         createTime: Date.now(),
-        members: currentQid ? [{ qid: currentQid, note: note || '', subTopic: autoSubTopic }] : []
+        members: currentQid ? [{ qid: currentQid, note: note || '' }] : []
       };
       relatedTopics[newTid] = newTopic;
       saveRelatedTopics();
       return newTopic;
     }
 
-    function addQuestionToTopic(topicId, qid, note, subTopic) {
+    function addQuestionToTopic(topicId, qid, note) {
       var t = relatedTopics[topicId];
       if (!t) return false;
       if (!t.members) t.members = [];
       var existing = t.members.find(function(m) { return m.qid === qid; });
       if (!existing) {
-        t.members.push({ qid: qid, note: note || '', subTopic: subTopic || '' });
+        t.members.push({ qid: qid, note: note || '' });
       } else {
         if (note !== undefined && note !== null) existing.note = note;
-        if (subTopic !== undefined && subTopic !== null) existing.subTopic = subTopic;
-      }
-      if (subTopic && subTopic.trim()) {
-        if (!t.subTopics) t.subTopics = [];
-        if (t.subTopics.indexOf(subTopic.trim()) === -1) {
-          t.subTopics.push(subTopic.trim());
-        }
       }
       saveRelatedTopics();
       return true;
@@ -512,7 +543,7 @@
 
       if (allTopics.length === 0) {
         listEl.innerHTML = '<div style="padding:12px;font-size:12px;color:var(--text-muted);text-align:center;">' +
-          (query ? '无匹配考点，点击右侧「新建」' : '暂无考点，输入名称（如“大考点/子考点”）后点击「新建」') +
+          (query ? '无匹配考点，点击右侧「新建」' : '暂无考点，输入名称（如“极限计算”）后点击「新建」') +
         '</div>';
         return;
       }
@@ -637,20 +668,17 @@
             wrong: '不会'
           };
           var statusText = q.status ? (statusNameMap[q.status] || '') : '未做';
-          var noteHtml = q.note ? '<span class="rc-note" title="' + escapeHtml(q.note) + '">笔记: ' + escapeHtml(q.note) + '</span>' : '';
+          var noteText = q.note || q.questionNote || '';
+          var noteHtml = noteText ? '<span class="rc-note" title="' + escapeHtml(noteText) + '">笔记: ' + renderTopicTextHtml(noteText) + '</span>' : '';
           var qImgSrc = getImgPathForQid(q.qid);
           var imgBase = getImgBaseForQid(q.qid);
           var safeId = q.qid.replace(/[^a-zA-Z0-9_]/g, '_');
-          var subTopicsHtml = (q.subTopics && q.subTopics.length > 0) ?
-            '<span class="rc-subtopic-tag" title="二级子考点/细分题型">' + escapeHtml(q.subTopics.join(' / ')) + '</span>' : '';
-
           return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '" draggable="true">' +
             '<div class="rc-head">' +
               '<div class="rc-head-left">' +
                 '<span class="rc-drag-handle" title="按住拖拽调整相似度与排序">⠿</span>' +
                 '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
                 '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
-                subTopicsHtml +
                 '<span class="rc-dot' + dotClass + '" title="状态: ' + escapeHtml(statusText) + '"></span>' +
                 (statusText ? '<span style="font-size:11.5px;color:var(--text-muted);font-weight:600">' + escapeHtml(statusText) + '</span>' : '') +
               '</div>' +
@@ -671,6 +699,20 @@
             (noteHtml ? '<div class="rc-foot">' + noteHtml + '</div>' : '') +
           '</div>';
         }).join('');
+
+        if (window.renderMathInElement) {
+          try {
+            window.renderMathInElement(list, {
+              delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\[', right: '\\]', display: true },
+                { left: '\\(', right: '\\)', display: false }
+              ],
+              throwOnError: false
+            });
+          } catch (e) {}
+        }
 
         // 绑定置顶按钮事件
         list.querySelectorAll('button.rc-btn-pin').forEach(function(btn) {
@@ -851,10 +893,16 @@
       if (target.subjectId !== curSubjectId) {
         switchSubject(target.subjectId);
       }
-      if (target.chapterId !== currentChapterId) {
-        switchChapter(target.chapterId);
+      var curCh = (typeof getChapter === 'function') ? getChapter() : chapterById(currentChapterId);
+      if (curCh && curCh.q1000Total && curCh.q1000Id === target.chapterId) {
+        // 当前正处于合并章节中，且目标题属于当前章节挂载的伴章：直接定位到伴章题号，无需切章
+        switchTo(curCh.ownTotal + target.idx);
+      } else {
+        if (target.chapterId !== currentChapterId) {
+          switchChapter(target.chapterId);
+        }
+        switchTo(target.idx);
       }
-      switchTo(target.idx);
       updateJumpReturnBar();
 
       // 跳转到同类题时，页面与工作台自动平滑滚动到最上方
@@ -893,19 +941,6 @@
       } else {
         bar.style.display = 'none';
       }
-    }
-
-    // 5. 题目题干图片路径提取辅助方法
-    function getImgPathForQid(qid) {
-      var parsed = parseQid(qid);
-      if (!parsed || isNaN(parsed.idx)) return '';
-      var subj = SUBJECTS.find(function(s) { return s.id === parsed.subjectId; });
-      if (!subj || !subj.getImgPath) return '';
-      var ch = subj.chapters ? subj.chapters.find(function(c) { return c.id === parsed.chapterId; }) : null;
-      if (!ch || !ch.labels) return '';
-      var label = ch.labels[parsed.idx];
-      if (!label) return '';
-      return subj.getImgPath(ch, label) + '_question.png';
     }
 
     // 6. 考点主题名称渲染（完整支持 Markdown 语法与 $LaTeX$ / $$LaTeX$$ 数学公式，与笔记引擎 100% 统一）
@@ -1036,10 +1071,10 @@
     }
 
     // 主题彻底删除
-    function deleteRelatedTopic(topicId) {
+    function deleteRelatedTopic(topicId, skipConfirm) {
       var t = relatedTopics[topicId];
       if (!t) return false;
-      if (!confirm('确定要彻底删除考点主题“' + t.name + '”吗？\n该操作将清除此主题下所有题目的关联。')) {
+      if (!skipConfirm && typeof confirm === 'function' && !confirm('确定要彻底删除考点主题“' + t.name + '”吗？\n该操作将清除此主题下所有题目的关联。')) {
         return false;
       }
       delete relatedTopics[topicId];
@@ -2522,12 +2557,63 @@
     addQuestion: addQuestionToTopic,
     removeQuestion: removeQuestionFromTopic,
     getPairKey: getPairKey,
-    parseTopicAndSubTopic: parseTopicAndSubTopic
+    getAffinityPairKey: getPairKey,
+    normalizeSubjectId: normalizeSubjectId,
+    getAffinity: function (q1, q2) {
+      var pKey = getPairKey(q1, q2);
+      return (relatedAffinity.pairs && relatedAffinity.pairs[pKey]) || 0;
+    },
+    getTopicAffinity: function (q1, q2) {
+      var pKey = getPairKey(q1, q2);
+      return (relatedAffinity.pairs && relatedAffinity.pairs[pKey]) || 0;
+    },
+    recordAffinity: function (q1, q2, delta) {
+      var pKey = getPairKey(q1, q2);
+      if (!relatedAffinity.pairs) relatedAffinity.pairs = {};
+      relatedAffinity.pairs[pKey] = ((relatedAffinity.pairs[pKey] || 0) + (delta || 1));
+      saveRelatedAffinity();
+    },
+    recordTopicAffinity: function (q1, q2, delta) {
+      var pKey = getPairKey(q1, q2);
+      if (!relatedAffinity.pairs) relatedAffinity.pairs = {};
+      relatedAffinity.pairs[pKey] = ((relatedAffinity.pairs[pKey] || 0) + (delta || 1));
+      saveRelatedAffinity();
+    },
+    getQuestionData: function (qid) {
+      var res = getRelatedQuestionsForQid(qid);
+      return res || { topics: [], relatedQuestions: [] };
+    },
+    getQuestionRelatedData: function (qid) {
+      var res = getRelatedQuestionsForQid(qid);
+      return res || { topics: [], relatedQuestions: [] };
+    },
+    parseTopicAndSubTopic: parseTopicAndSubTopic,
+    modalPickerPrevQ: modalPickerPrevQ,
+    modalPickerNextQ: modalPickerNextQ,
+    modalPickerUpQ: modalPickerUpQ,
+    modalPickerDownQ: modalPickerDownQ,
+    toggleModalPickerSol: toggleModalPickerSol,
+    toggleModalPickerLinkCurrent: toggleModalPickerLinkCurrent,
+    closeRenameTopicModal: closeRenameTopicModal,
+    closeQuickTopicPopover: closeQuickTopicPopover
   };
 
-  // 全局接口互通别名
-  window.relatedTopics = relatedTopics;
-  window.relatedAffinity = relatedAffinity;
+  // 全局接口互通别名（动态 Getter/Setter 保证多模块读写强一致）
+  try {
+    Object.defineProperty(window, 'relatedTopics', {
+      get: function () { return relatedTopics; },
+      set: function (v) { relatedTopics = v || {}; },
+      configurable: true
+    });
+    Object.defineProperty(window, 'relatedAffinity', {
+      get: function () { return relatedAffinity; },
+      set: function (v) { relatedAffinity = v || { pairs: {}, customOrders: {} }; },
+      configurable: true
+    });
+  } catch (e) {
+    window.relatedTopics = relatedTopics;
+    window.relatedAffinity = relatedAffinity;
+  }
   window.loadRelatedTopics = loadRelatedTopics;
   window.saveRelatedTopics = saveRelatedTopics;
   window.getQid = getQid;
@@ -2541,12 +2627,21 @@
   window.closeRelatedModal = closeRelatedModal;
   window.initRelatedModal = initRelatedModal;
   window.createRelatedTopic = createRelatedTopic;
+  window.deleteRelatedTopic = deleteRelatedTopic;
   window.addQuestionToTopic = addQuestionToTopic;
   window.removeQuestionFromTopic = removeQuestionFromTopic;
   window.getPairKey = getPairKey;
   window.parseTopicAndSubTopic = parseTopicAndSubTopic;
   window.getTopicsForQid = getTopicsForQid;
   window.getRelatedQuestionsForQid = getRelatedQuestionsForQid;
+  window.modalPickerPrevQ = modalPickerPrevQ;
+  window.modalPickerNextQ = modalPickerNextQ;
+  window.modalPickerUpQ = modalPickerUpQ;
+  window.modalPickerDownQ = modalPickerDownQ;
+  window.toggleModalPickerSol = toggleModalPickerSol;
+  window.toggleModalPickerLinkCurrent = toggleModalPickerLinkCurrent;
+  window.closeRenameTopicModal = closeRenameTopicModal;
+  window.closeQuickTopicPopover = closeQuickTopicPopover;
 
   try {
     Object.defineProperty(window, 'relatedModalOpen', {

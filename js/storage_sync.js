@@ -101,14 +101,33 @@
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
       if (!k) continue;
-      // 纯净 SSOT 采集：只采集 kaoyan.*、annot_* 以及英语数据，坚决不采集任何旧魔数键
+      // 纯净 SSOT 采集：采集 kaoyan.*、annot_* 以及英语数据
       if (
         /^kaoyan\.(?:q|g|ui)\./.test(k) ||
         /^annot_/.test(k) ||
-        /^ky_english_/.test(k) ||
-        /^english_vocab_/.test(k)
+        /^ky_english_/.test(k)
       ) {
         dump[k] = localStorage.getItem(k);
+      }
+    }
+
+    // 确保 kaoyan.g.* 核心全局键与 UI 偏好在采集时处于最新状态并统一格式
+    if (typeof window !== 'undefined' && window.StorageEngine) {
+      if (window.StorageEngine.GlobalStore) {
+        ['topics', 'affinity', 'study_log', 'theme', 'dark_img_filter', 'filters', 'resume', 'subject', 'sub_mode'].forEach(name => {
+          const val = window.StorageEngine.GlobalStore.get(name);
+          if (val !== null && val !== undefined) {
+            dump['kaoyan.g.' + name] = JSON.stringify(val);
+          }
+        });
+      }
+      if (window.StorageEngine.UiStore) {
+        ['math', '822', 'english'].forEach(sid => {
+          const val = window.StorageEngine.UiStore.get(sid);
+          if (val !== null && val !== undefined) {
+            dump['kaoyan.ui.' + sid] = JSON.stringify(val);
+          }
+        });
       }
     }
 
@@ -128,23 +147,13 @@
     isApplyingData = true;
     try {
       const dump = payload.data;
+
       for (const k in dump) {
         if (Object.prototype.hasOwnProperty.call(dump, k)) {
           if (k === '__proto__' || k === 'constructor' || k === 'prototype') continue;
           if (dump[k] !== null && dump[k] !== undefined) {
             try {
-              let targetKey = k;
-              let targetVal = dump[k];
-              if (k.startsWith('sm2_shu1_')) {
-                targetKey = 'sm2_math_' + k.substring(9);
-                localStorage.removeItem(k);
-              } else if (k === 'shu1_ui_solution') {
-                targetKey = 'math_ui_solution';
-                localStorage.removeItem(k);
-              } else if (k === 'kaoyan_subject' && targetVal === 'shu1') {
-                targetVal = 'math';
-              }
-              localStorage.setItem(targetKey, targetVal);
+              localStorage.setItem(k, dump[k]);
             } catch (e) {}
           }
         }
@@ -174,12 +183,23 @@
     if (typeof window.renderStats === 'function') window.renderStats();
     if (typeof window.renderNav === 'function') window.renderNav();
     if (typeof window.renderNotes === 'function') window.renderNotes();
+    if (typeof window.switchTo === 'function' && typeof window.current !== 'undefined') {
+      window.switchTo(window.current);
+    } else if (typeof window.switchTo === 'function') {
+      window.switchTo(0);
+    }
     if (typeof window.updateFilterCounts === 'function') window.updateFilterCounts();
     if (typeof window.renderSm2InfoBar === 'function') window.renderSm2InfoBar();
     if (typeof window.renderCountdown === 'function') window.renderCountdown();
     if (typeof window.loadRelatedTopics === 'function') window.loadRelatedTopics();
     if (typeof window.renderRelatedQuestions === 'function') window.renderRelatedQuestions();
-    if (typeof window.applyTheme === 'function') window.applyTheme(localStorage.getItem('kaoyan_theme') || 'light');
+    if (typeof window.applyTheme === 'function') {
+      const curT = (window.StorageEngine && window.StorageEngine.GlobalStore && window.StorageEngine.GlobalStore.get('theme')) || 'light';
+      window.applyTheme(curT);
+    }
+    if (typeof window.renderDashboardOverview === 'function' && window.dashboardOpen) {
+      window.renderDashboardOverview();
+    }
 
     // 重新载入英语状态
     if (window.englishApp && typeof window.englishApp.activate === 'function') {
@@ -444,6 +464,12 @@
   // 按钮 2：将浏览器当前数据直接写入本地文件（覆盖本地 kaoyan_tiku_data.json 文件）
   async function syncBrowserToLocal() {
     try {
+      const data = collectAllData();
+      const qCount = Object.keys(data.data || {}).filter(k => k.startsWith('kaoyan.q.')).length;
+      if (qCount === 0) {
+        const confirmed = window.confirm('警告：检测到浏览器当前没有题目学习进度数据（0 题）。继续写入将清空覆盖本地文件中的全部题目！是否确定覆盖？');
+        if (!confirmed) return;
+      }
       // 1. 若已有句柄，尝试直接写入
       if (currentFileHandle) {
         let hasPerm = false;
@@ -452,7 +478,6 @@
           if (!hasPerm) hasPerm = (await currentFileHandle.requestPermission({ mode: 'readwrite' })) === 'granted';
         } catch (e) {}
         if (hasPerm) {
-          const data = collectAllData();
           const ok = await writeToFile(data);
           if (ok) {
             showToast(`已成功将浏览器全部学习进度写入「${currentFileHandle.name}」！`, 'success');

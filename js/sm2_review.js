@@ -24,6 +24,7 @@
   'use strict';
 
   var sm2PanelOpen = false;
+  window.sm2PanelOpen = false;
   var reviewSession = null;
   var selectedSm2Batch = 20;
 
@@ -223,8 +224,23 @@
     return String(subj || '').replace(/^(基础篇|强化篇)[-—]/, '');
   }
 
+  function getChapters() {
+    if (typeof window.CHAPTERS !== 'undefined' && Array.isArray(window.CHAPTERS) && window.CHAPTERS.length > 0) {
+      return window.CHAPTERS;
+    }
+    if (typeof window.curSubject !== 'undefined' && window.curSubject && Array.isArray(window.curSubject.chapters)) {
+      return window.curSubject.chapters;
+    }
+    if (typeof window.SUBJECTS !== 'undefined' && Array.isArray(window.SUBJECTS)) {
+      var curSubjId = window.curSubjectId || 'math';
+      var subj = window.SUBJECTS.find(function(s) { return s.id === curSubjId; });
+      if (subj && subj.chapters) return subj.chapters;
+    }
+    return [];
+  }
+
   function reviewChapters() {
-    var chapters = (typeof window.CHAPTERS !== 'undefined' && Array.isArray(window.CHAPTERS)) ? window.CHAPTERS : [];
+    var chapters = getChapters();
     return chapters.filter(function (c) { return c.wb !== '1000题' && c.total > 0; });
   }
 
@@ -322,8 +338,7 @@
 
     var curStudyDay = getStudyDayIndex(Date.now());
     var dayCounts = [0, 0, 0, 0, 0, 0, 0];
-    var dayLabels = ['今天', '明天', '后天', '第4天', '第5天', '第6天', '第7天'];
-    var chapters = (typeof window.CHAPTERS !== 'undefined' && Array.isArray(window.CHAPTERS)) ? window.CHAPTERS : [];
+    var chapters = getChapters();
 
     if (chapters.length > 0) {
       chapters.forEach(function (ch) {
@@ -347,6 +362,7 @@
     var maxCount = Math.max.apply(null, dayCounts);
     if (maxCount === 0) maxCount = 1;
 
+    var dayLabels = ['今天', '明天', '后天', '第4天', '第5天', '第6天', '第7天'];
     var html = '';
     for (var d = 0; d < 7; d++) {
       var count = dayCounts[d];
@@ -374,7 +390,7 @@
     var todayReviewedCount = 0;
     var todayStudyDay = getStudyDayIndex(Date.now());
     var studyDaysSet = {};
-    var chapters = (typeof window.CHAPTERS !== 'undefined' && Array.isArray(window.CHAPTERS)) ? window.CHAPTERS : [];
+    var chapters = getChapters();
 
     chapters.forEach(function (ch) {
       var sm2Obj = (typeof window.readMergedSm2 === 'function') ? window.readMergedSm2(ch) : {};
@@ -563,10 +579,13 @@
     if (elStreak) elStreak.textContent = stats.streak + '天';
     var elMastered = document.querySelector('#sm2CardMastered .sm2-stat-num');
     if (elMastered) elMastered.textContent = allMastered;
+    try {
+      renderSm2Projection();
+    } catch (e) {
+      console.error('[Sm2Review] renderSm2Projection error:', e);
+    }
 
-    renderSm2Projection();
-
-    var list = document.getElementById('sm2ChapterList');
+    var list = document.getElementById('sm2Chapters') || document.getElementById('sm2ChapterList');
     if (list) {
       if (moduleHtmls.length === 0) {
         list.innerHTML = '<div class="sm2-empty-state"><div class="sm2-empty-icon">✓</div><div class="sm2-empty-text">当前暂无到期复习题目</div></div>';
@@ -581,7 +600,11 @@
   // ===== 专属复习会话管理 =====
   function saveReviewSession() {
     if (!reviewSession) {
-      localStorage.removeItem('sm2_review_session');
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        window.StorageEngine.GlobalStore.remove('review_session');
+      } else {
+        localStorage.removeItem('kaoyan.g.review_session');
+      }
       return;
     }
     var persist = {
@@ -595,12 +618,20 @@
       done: reviewSession.done,
       startTime: reviewSession.startTime
     };
-    localStorage.setItem('sm2_review_session', JSON.stringify(persist));
+    if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+      window.StorageEngine.GlobalStore.set('review_session', persist);
+    } else {
+      localStorage.setItem('kaoyan.g.review_session', JSON.stringify(persist));
+    }
   }
 
   function loadReviewSession() {
     try {
-      var raw = localStorage.getItem('sm2_review_session');
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        var obj = window.StorageEngine.GlobalStore.get('review_session');
+        if (obj) return obj;
+      }
+      var raw = localStorage.getItem('kaoyan.g.review_session');
       return raw ? JSON.parse(raw) : null;
     } catch (e) {
       return null;
@@ -609,7 +640,11 @@
 
   function clearReviewSession() {
     reviewSession = null;
-    localStorage.removeItem('sm2_review_session');
+    if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+      window.StorageEngine.GlobalStore.remove('review_session');
+    } else {
+      localStorage.removeItem('kaoyan.g.review_session');
+    }
   }
 
   function startReviewSession(queue, mode) {
@@ -815,12 +850,11 @@
       startTime: reviewSession.startTime || Date.now(),
       mode: reviewSession.mode
     };
+    var originCh = reviewSession.originChapter || (typeof window.currentChapterId !== 'undefined' ? window.currentChapterId : '');
+    var originIdx = (typeof reviewSession.originIdx === 'number') ? reviewSession.originIdx : (typeof window.current !== 'undefined' ? window.current : 0);
+
     commitReviewResults();
     clearReviewSession();
-
-    var originCh = reviewSession.originChapter;
-    var originIdx = reviewSession.originIdx;
-    reviewSession = null;
 
     var statsBlock = document.getElementById('statsBlock');
     if (statsBlock) statsBlock.style.display = '';
@@ -838,6 +872,10 @@
 
     showReviewSummaryModal(sessionCopy, originCh, originIdx);
   }
+
+  var reviewSummaryModalOpen = false;
+  var _summaryExitFn = null;
+  var _summaryNextFn = null;
 
   function showReviewSummaryModal(sessionData, originCh, originIdx) {
     var modal = document.getElementById('reviewSummaryOverlay');
@@ -874,15 +912,24 @@
     var bp2 = document.getElementById('bpRus');  if (bp2) bp2.textContent = scores[2] || 0;
     var bp1 = document.getElementById('bpWrg');  if (bp1) bp1.textContent = scores[1] || 0;
 
+    reviewSummaryModalOpen = true;
     modal.style.display = 'flex';
 
     var btnExit = document.getElementById('btnSummaryExit');
     var btnNext = document.getElementById('btnSummaryNext');
 
     function cleanupModal() {
+      reviewSummaryModalOpen = false;
       modal.style.display = 'none';
+      modal.removeEventListener('click', onBackdropClick);
       if (btnExit) btnExit.removeEventListener('click', onExit);
       if (btnNext) btnNext.removeEventListener('click', onNext);
+      _summaryExitFn = null;
+      _summaryNextFn = null;
+    }
+
+    function onBackdropClick(e) {
+      if (e.target === modal) onExit();
     }
 
     function onExit() {
@@ -895,6 +942,10 @@
       startAllReview();
     }
 
+    _summaryExitFn = onExit;
+    _summaryNextFn = onNext;
+
+    modal.addEventListener('click', onBackdropClick);
     if (btnExit) btnExit.addEventListener('click', onExit);
     if (btnNext) btnNext.addEventListener('click', onNext);
   }
@@ -902,12 +953,12 @@
   function restoreReviewOrigin(originCh, originIdx) {
     if (originCh && originCh !== window.currentChapterId) {
       if (typeof window.switchChapter === 'function') window.switchChapter(originCh);
-      window.current = originIdx;
-      if (typeof window.switchTo === 'function') window.switchTo(window.current);
+      if (typeof originIdx === 'number' && typeof window.switchTo === 'function') {
+        window.switchTo(originIdx);
+      }
     } else {
-      if (originIdx !== undefined && originIdx !== null && originCh) {
-        window.current = originIdx;
-        if (typeof window.switchTo === 'function') window.switchTo(window.current);
+      if (typeof originIdx === 'number' && typeof window.switchTo === 'function') {
+        window.switchTo(originIdx);
       } else if (typeof window.renderTitle === 'function') {
         window.renderTitle();
       }
@@ -926,17 +977,18 @@
     }
     commitReviewResults();
     var hasUngraded = reviewSession.queue && reviewSession.queue.some(function (it) { return it.status !== 'graded'; });
+    var originCh = reviewSession.originChapter || (typeof window.currentChapterId !== 'undefined' ? window.currentChapterId : '');
+    var originIdx = (typeof reviewSession.originIdx === 'number') ? reviewSession.originIdx : (typeof window.current !== 'undefined' ? window.current : 0);
+
     if (hasUngraded) {
       saveReviewSession();
       if (window.storageSync && typeof window.storageSync.showToast === 'function') {
         window.storageSync.showToast('已暂停并保存复习进度，可随时在「间隔复习 (M)」中续接', 'info');
       }
+      reviewSession = null;
     } else {
       clearReviewSession();
     }
-    var originCh = reviewSession.originChapter;
-    var originIdx = reviewSession.originIdx;
-    reviewSession = null;
 
     var sBlock = document.getElementById('statsBlock');
     if (sBlock) sBlock.style.display = '';
@@ -1038,13 +1090,19 @@
       saveReviewSession();
     },
     gradeCurrent: gradeCurrentReview,
+    reviewCurrentItem: reviewCurrentItem,
+    reviewAdvance: reviewAdvance,
     reviewPrev: reviewPrev,
     reviewNext: reviewNext,
     reviewJump: reviewJump,
     reviewSkip: reviewSkip,
     exitSession: exitReviewSession,
     getSession: function () { return reviewSession; },
-    collectDueItems: collectDueItems
+    collectDueItems: collectDueItems,
+    showSummaryModal: showReviewSummaryModal,
+    isSummaryModalOpen: function () { return reviewSummaryModalOpen; },
+    closeSummaryModal: function () { if (typeof _summaryExitFn === 'function') _summaryExitFn(); },
+    nextSummarySprint: function () { if (typeof _summaryNextFn === 'function') _summaryNextFn(); }
   };
 
   // 全局接口互通别名
@@ -1059,9 +1117,27 @@
   window.renderSm2Panel = renderSm2Panel;
   window.startReviewChapter = startReviewChapter;
   window.startReviewModule = startReviewModule;
-  window._startAllReview = startAllReview;
+  window.startAllReview = startAllReview;
   window.resumeReviewSession = window.Sm2Review.resumeSession;
   window.exitReviewSession = exitReviewSession;
   window.gradeCurrentReview = gradeCurrentReview;
+  window.reviewCurrentItem = reviewCurrentItem;
+  window.reviewAdvance = reviewAdvance;
+  window.reviewPrev = reviewPrev;
+  window.reviewNext = reviewNext;
+  window.showReviewSummaryModal = showReviewSummaryModal;
+  window.isReviewSummaryOpen = function () { return reviewSummaryModalOpen; };
+  window.closeReviewSummaryModal = function () { if (typeof _summaryExitFn === 'function') _summaryExitFn(); };
+  window.nextReviewSummarySprint = function () { if (typeof _summaryNextFn === 'function') _summaryNextFn(); };
+
+  try {
+    Object.defineProperty(window, 'reviewSession', {
+      get: function () { return reviewSession; },
+      set: function (v) { reviewSession = v; },
+      configurable: true
+    });
+  } catch (e) {
+    window.reviewSession = reviewSession;
+  }
 
 })();

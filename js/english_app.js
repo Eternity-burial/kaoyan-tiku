@@ -296,22 +296,31 @@
     }
 
     try {
-      localStorage.setItem(`kaoyan_resume_${subjKey}`, JSON.stringify(data));
-      localStorage.setItem(`ky_${subjKey}_mode`, state.mode);
-      const yearKey = `kaoyan_resume_${subjKey}_y${state.currentYear}`;
-      localStorage.setItem(yearKey, JSON.stringify({ textId: state.currentTextId, qIndex: state.currentQIndex }));
-      let map = {};
-      try { map = JSON.parse(localStorage.getItem('kaoyan_resume')) || {}; } catch (e) { map = {}; }
-      map[subjKey] = { ch: state.currentTextId, idx: state.currentQIndex, year: state.currentYear, mode: state.mode };
-      localStorage.setItem('kaoyan_resume', JSON.stringify(map));
+      const entry = {
+        year: state.currentYear,
+        textId: state.currentTextId,
+        qIndex: state.currentQIndex,
+        mode: state.mode,
+        typeFilter: state.typeFilter,
+        showAllTranslation: !!state.showAllTranslation
+      };
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        let resumeMap = window.StorageEngine.GlobalStore.get('resume') || {};
+        resumeMap.english = entry;
+        resumeMap[`english_y${state.currentYear}`] = { textId: state.currentTextId, qIndex: state.currentQIndex };
+        window.StorageEngine.GlobalStore.set('resume', resumeMap);
+      }
       notifyStorageSync();
     } catch (e) {}
   }
 
   function loadResume() {
-    const subjKey = state.currentSubject || 'english';
     try {
-      const saved = JSON.parse(localStorage.getItem(`kaoyan_resume_${subjKey}`));
+      let saved = null;
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        const resumeMap = window.StorageEngine.GlobalStore.get('resume') || {};
+        saved = resumeMap.english;
+      }
       if (saved) {
         if (saved.year) {
           state.currentYear = saved.year;
@@ -343,10 +352,16 @@
     } catch (e) {}
   }
 
-  // 解析显示偏好存储与读取 (按科目独立记忆)
+  // 解析显示偏好存储与读取 (通过 StorageEngine.UiStore)
   function loadSolutionPref() {
     try {
-      const v = JSON.parse(localStorage.getItem('english_ui_solution'));
+      let v = null;
+      if (window.StorageEngine && window.StorageEngine.UiStore) {
+        v = window.StorageEngine.UiStore.get('english');
+      }
+      if (!v) {
+        v = JSON.parse(localStorage.getItem('english_ui_solution'));
+      }
       if (v && typeof v.def === 'boolean') state.defaultShowSolution = v.def;
       else state.defaultShowSolution = true;
       if (v && typeof v.show === 'boolean') state.showSolution = v.show;
@@ -359,10 +374,14 @@
 
   function saveSolutionPref() {
     try {
-      localStorage.setItem('english_ui_solution', JSON.stringify({
+      const val = {
         show: !!state.showSolution,
         def: !!state.defaultShowSolution
-      }));
+      };
+      if (window.StorageEngine && window.StorageEngine.UiStore) {
+        window.StorageEngine.UiStore.set('english', val);
+      }
+      try { localStorage.removeItem('english_ui_solution'); } catch (e) {}
       notifyStorageSync();
     } catch (e) {}
   }
@@ -473,18 +492,20 @@
     if (dataset.texts && dataset.texts.length > 0) {
       let restored = false;
       try {
-        const yearKey = `kaoyan_resume_${state.currentSubject}_y${year}`;
-        const saved = JSON.parse(localStorage.getItem(yearKey));
-        if (saved) {
-          const text = dataset.texts.find(t => t.id === saved.textId);
-          if (text) {
-            state.currentTextId = text.id;
-            if (text.questions && text.questions.some(q => q.qIndex === saved.qIndex)) {
-              state.currentQIndex = saved.qIndex;
-            } else if (text.questions && text.questions.length > 0) {
-              state.currentQIndex = text.questions[0].qIndex;
+        if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+          const resumeMap = window.StorageEngine.GlobalStore.get('resume') || {};
+          const saved = resumeMap[`english_y${year}`];
+          if (saved) {
+            const text = dataset.texts.find(t => t.id === saved.textId);
+            if (text) {
+              state.currentTextId = text.id;
+              if (text.questions && text.questions.some(q => q.qIndex === saved.qIndex)) {
+                state.currentQIndex = saved.qIndex;
+              } else if (text.questions && text.questions.length > 0) {
+                state.currentQIndex = text.questions[0].qIndex;
+              }
+              restored = true;
             }
-            restored = true;
           }
         }
       } catch (e) {}
@@ -1068,8 +1089,8 @@
       window.recordStudyActivity();
     }
     // 仅在首次标记（原本无熟练度）时才自动跳到下一题
-    if (!togglingOff && !had && state.currentQIndex < 4) {
-      switchQuestion(1);
+    if (!togglingOff && !had) {
+      navNext();
     }
   }
 
@@ -1371,6 +1392,14 @@
     }
   }
 
+  // 供键盘与外部调用的选项选择
+  function selectOption(qIndex, key) {
+    if (qIndex != null && qIndex !== state.currentQIndex) {
+      switchQuestion(qIndex);
+    }
+    onOptionClick(key);
+  }
+
   // 键盘快捷键支持
   function setupKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
@@ -1378,17 +1407,26 @@
       if (!isAppActive) return;
       if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
 
-      // 全局通用快捷键（考研英语）
+      // 弹窗激活态安全拦截（生词本自测 / 英语帮助 / 科目选择器）：
+      // 弹窗处于打开状态时，独占响应 Esc 关闭，彻底阻止题目做题快捷键（1~4、Space、Q/E、Z/X/C、T、M）向底层泄露
+      const isModalOpen = (dom.modalVocabBook && dom.modalVocabBook.classList.contains('show')) ||
+                          (dom.modalHelp && dom.modalHelp.classList.contains('active')) ||
+                          !!window.subjectPickerOpen;
+      if (isModalOpen) {
+        if (e.key === 'Escape') {
+          closeYearDropdown();
+          closeVocabNotebook();
+          hideVocabPopover();
+          if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
+          if (dom.modalHelp) dom.modalHelp.classList.remove('active');
+        }
+        return;
+      }
+
+      // 全局通用快捷键（考研英语专属控制）
+      // 注：Y (主题切换) 与 G (科目切换) 已由主系统 app.js 单轨处理，此处不再重复监听，消除双重翻转抵消 Bug
       if (e.key === 't' || e.key === 'T') {
         if (dom.btnToggleTrans) dom.btnToggleTrans.click();
-        return;
-      }
-      if (e.key === 'y' || e.key === 'Y') {
-        if (typeof window.toggleTheme === 'function') window.toggleTheme();
-        return;
-      }
-      if (e.key === 'g' || e.key === 'G') {
-        if (typeof window.openSubjectPicker === 'function') window.openSubjectPicker();
         return;
       }
       if (e.key === 'h' || e.key === 'H') {
@@ -1403,9 +1441,6 @@
         if (dom.modalHelp) dom.modalHelp.classList.remove('active');
         return;
       }
-
-      // 纯文献阅读模式无题目交互
-      
 
       const q = getCurrentQuestion();
       if (!q) return;
@@ -1429,8 +1464,8 @@
         const opt = optionKeys[parseInt(e.key) - 1];
         if (opt) selectOption(q.qIndex, opt);
       }
-      else if (e.key === 'q' || e.key === 'Q' || e.key === 'ArrowLeft') { switchQuestion(-1); }
-      else if (e.key === 'e' || e.key === 'E' || e.key === 'ArrowRight') { switchQuestion(1); }
+      else if (e.key === 'q' || e.key === 'Q' || e.key === 'ArrowLeft') { navPrev(); }
+      else if (e.key === 'e' || e.key === 'E' || e.key === 'ArrowRight') { navNext(); }
       else if (e.key === 'z' || e.key === 'Z') { setMastery(q.qIndex, 'proficient'); }
       else if (e.key === 'x' || e.key === 'X') { setMastery(q.qIndex, 'vague'); }
       else if (e.key === 'c' || e.key === 'C') { setMastery(q.qIndex, 'wrong'); }
@@ -1698,7 +1733,11 @@
     toggleStarWord,
     openVocabNotebook,
     closeVocabNotebook,
+    selectOption,
+    navPrev,
+    navNext,
     openFigureLightbox,
+    renderQuestion,
     get state() { return state; },
     get curDataset() { return getCurrentDataset(); }
   };

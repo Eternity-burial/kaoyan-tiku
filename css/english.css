@@ -1467,3 +1467,15 @@
   border-bottom-color: rgba(255, 255, 255, 0.06) !important;
 }
 
+.passage-figure-box {
+  margin: 16px 0;
+  text-align: center;
+}
+.passage-figure-box img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  cursor: zoom-in;
+}
+
+

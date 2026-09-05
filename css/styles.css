@@ -2121,7 +2121,35 @@
     .sm2-info-bar .sm2-overdue-tag { color: #D32F2F; font-weight: 600; }
 
     /* ===== SM-2 复习面板 ===== */
-    .sm2-panel { padding: 16px; }
+    .sm2-panel {
+      position: relative;
+      padding: 16px;
+    }
+    .sm2-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border-radius: 50%;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      z-index: 10;
+      box-shadow: var(--shadow-sm);
+    }
+    .sm2-close-btn:hover {
+      background: var(--bg-hover, rgba(0, 0, 0, 0.08));
+      color: var(--text-main);
+      transform: scale(1.05);
+    }
     .sm2-stats-row {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -4056,10 +4084,10 @@
       color: #cbd5e1;
     }
 
-    /* 快捷键帮助模态 (Liquid Glass & Modern Keycap Layout) */
+    /* 快捷键帮助与系统科目选择模态 (系统顶层统一 Glass 体系) */
     .shortcut-overlay {
       position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15, 18, 28, 0.45); z-index: 9999;
+      background: rgba(15, 18, 28, 0.45); z-index: 12000;
       display: flex; align-items: center; justify-content: center;
       opacity: 0; pointer-events: none; transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
@@ -4362,11 +4390,14 @@
     }
     .palette-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 4px;
       max-height: 240px;
       overflow-y: auto;
       padding-right: 2px;
+    }
+    .palette-grid.template-mode {
+      grid-template-columns: 1fr;
     }
     .palette-item {
       display: flex;
@@ -4379,6 +4410,7 @@
       cursor: pointer;
       transition: all 0.12s ease;
       text-align: left;
+      min-width: 0;
     }
     .palette-item:hover {
       border-color: var(--primary);
@@ -4391,6 +4423,9 @@
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
     }
     .palette-item-code {
       font-family: ui-monospace, monospace;
@@ -4399,8 +4434,30 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 65px;
+      max-width: 70px;
       text-align: right;
+      min-width: 0;
+      flex-shrink: 0;
+    }
+    .palette-item.palette-item-template {
+      padding: 6px 10px;
+    }
+    .palette-item.palette-item-template .palette-item-render {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      max-width: 100px;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .palette-item.palette-item-template .palette-item-render {
+      color: #c084fc;
+    }
+    .palette-item.palette-item-template .palette-item-code {
+      max-width: none;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: right;
+      flex-shrink: 1;
     }
 
     /* ===== 考研倒计时挂件 & 卡片 ===== */
@@ -4635,7 +4692,7 @@
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.5);
-      z-index: 9999;
+      z-index: 10001;
       display: flex;
       align-items: center;
       justify-content: center;
