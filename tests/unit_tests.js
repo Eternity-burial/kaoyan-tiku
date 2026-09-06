@@ -978,6 +978,51 @@ test('左侧栏状态筛选: 较熟练+模糊归为模糊类，困难+不会归�
   assert.strictEqual(wrCount, 2, '不会计数应为 2 (困难 1 + 不会 1)');
 });
 
+test('左侧栏状态筛选: 「带标注」(unmarked) 必须包含文字笔记、图片标注与关联同类题', () => {
+  const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+  assert(indexHtml.includes('带标注 <span class="filter-count"></span>'), '左侧栏筛选按钮文本必须为「带标注」');
+  assert(indexHtml.includes('<span class="desc">带标注</span><span class="key"><kbd>Shift</kbd>+<kbd>N</kbd></span>'), '快捷键帮助中的描述必须为「带标注」');
+
+  // 模拟题库数据：共 6 道题
+  // index 0: 纯文字笔记
+  // index 1: 纯图片标注
+  // index 2: 纯同类题关联 (有 topic)
+  // index 3: 笔记 + 同类题关联复合标注
+  // index 4: 无任何标注
+  // index 5: 无任何标注
+  const mockNotesData = { 'ch1::1-1': '重要极限公式笔记', 'ch1::1-4': '复合笔记' };
+  const mockAnnotSet = new Set(['ch1::1-2']); // index 1 有图片标注
+  const mockTopicsData = {
+    t1: { id: 't1', members: [{ qid: 'math::ch1::1-3' }, { qid: 'math::ch1::1-4' }] }
+  };
+
+  function mockHasQuestionMarked(idx) {
+    const noteKey = 'ch1::1-' + (idx + 1);
+    if (mockNotesData[noteKey]) return true;
+    if (mockAnnotSet.has(noteKey)) return true;
+    const qid = 'math::ch1::1-' + (idx + 1);
+    for (const tid in mockTopicsData) {
+      if (mockTopicsData[tid].members.some(m => m.qid === qid)) return true;
+    }
+    return false;
+  }
+
+  const total = 6;
+  const filteredIndices = [];
+  let withMarkedCount = 0;
+  for (let i = 0; i < total; i++) {
+    if (mockHasQuestionMarked(i)) {
+      filteredIndices.push(i);
+      withMarkedCount++;
+    }
+  }
+
+  assert.deepStrictEqual(filteredIndices, [0, 1, 2, 3], '带标注筛选必须准确捕获笔记、图片标注及同类题关联题目');
+  assert.strictEqual(withMarkedCount, 4, '带标注计数应为 4（不重复计数复合标注题）');
+  assert.strictEqual(mockHasQuestionMarked(4), false, '无标注题目不得命中');
+  assert.strictEqual(mockHasQuestionMarked(5), false, '无标注题目不得命中');
+});
+
 // ── 11. 独立历史数据迁移工具 (tools/migrate_legacy_storage.js) ──
 console.log('\n--- 11. 独立迁移工具 (MigrationTool) 与 idx->slug 转换 ---');
 

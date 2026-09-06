@@ -158,14 +158,26 @@
       }
     }
 
+    // 检查题目是否具有标注（文字笔记、图片标注、或关联考点/同类题）
+    function hasQuestionMarked(idx) {
+      if (notesData[notesKeyFor(idx)]) return true;
+      if (typeof hasQuestionImagesAnnotated === 'function' && hasQuestionImagesAnnotated(idx)) return true;
+      var qid = (typeof getQid === 'function') ? getQid(curSubjectId, currentChapterId, idx) : '';
+      if (qid) {
+        var fn = (typeof getTopicsForQid === 'function') ? getTopicsForQid : (window.TopicManager && window.TopicManager.getTopicsForQid);
+        if (typeof fn === 'function' && fn(qid).length > 0) return true;
+      }
+      return false;
+    }
+
     function getFilteredIndices() {
       const ch = getChapter();
       const all = Array.from({ length: ch.total }, function(_, i) { return i; });
       if (isAllFilterActive()) return all;
       return all.filter(function(i) {
-        // 带笔记
+        // 带标注（含文字笔记、图片标注、关联同类题）
         if (currentFilters.has('unmarked')) {
-          if (notesData[notesKeyFor(i)] || hasQuestionImagesAnnotated(i)) return true;
+          if (hasQuestionMarked(i)) return true;
         }
         const s = statuses[i] || '';
         // 熟练 = proficient(lv5)
@@ -1671,6 +1683,7 @@
           scrollActiveBtnToCenter(activeBtn, true);
         });
       }
+      updateFilterCounts();
     }
 
     // 将右侧栏当前激活的题号按钮居中定位在侧边栏滚动视口内
@@ -2787,10 +2800,10 @@
         else if (s === 'vague' || s === 'familiar') vag++;
         else if (s === 'wrong' || s === 'rusty') wr++;
       });
-      // 带笔记计数
-      let withNoteOrAnnot = 0;
+      // 带标注计数（含文字笔记、图片标注、关联同类题）
+      let withMarked = 0;
       for (let i = 0; i < total; i++) {
-        if (notesData[notesKeyFor(i)] || hasQuestionImagesAnnotated(i)) withNoteOrAnnot++;
+        if (hasQuestionMarked(i)) withMarked++;
       }
       const setCount = function(filter, val) {
         const el = document.querySelector('.filter-btn[data-filter="' + filter + '"] .filter-count');
@@ -2800,7 +2813,7 @@
       setCount('proficient', prof);
       setCount('vague', vag);
       setCount('wrong', wr);
-      setCount('unmarked', withNoteOrAnnot);
+      setCount('unmarked', withMarked);
     }
 
     // ===== 灯箱（图片点击全屏） =====

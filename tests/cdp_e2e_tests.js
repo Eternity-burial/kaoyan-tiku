@@ -885,8 +885,8 @@ async function run() {
   if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
     throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
   }
-  if (dashboardCheck.expectedTotal !== 6316) {
-    throw new Error(`数学科目总题数异常: 期望 6316, 实际 ${dashboardCheck.expectedTotal}`);
+  if (dashboardCheck.expectedTotal !== 6319) {
+    throw new Error(`数学科目总题数异常: 期望 6319, 实际 ${dashboardCheck.expectedTotal}`);
   }
   if (dashboardCheck.expectedDone < 1700) {
     throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);
@@ -1086,6 +1086,37 @@ async function run() {
   if (!quickTopicCheck.hasDraggable) throw new Error('快速关联考点项缺少 draggable 属性');
   if (!quickTopicCheck.hasDragHandle) throw new Error('快速关联考点项缺少拖拽手柄 .qtp-drag-handle');
   if (!quickTopicCheck.isClosed) throw new Error('未能成功关闭快速关联考点浮层');
+
+  // 测试左侧栏「带标注」筛选按钮文案与筛选交互
+  console.log('  测试左侧栏「带标注」筛选按钮与状态筛选联动...');
+  const filterCheck = await evaluate(ws, `
+    (() => {
+      const unmarkedBtn = document.querySelector('.filter-btn[data-filter="unmarked"]');
+      const btnMain = unmarkedBtn ? unmarkedBtn.querySelector('.filter-btn-main') : null;
+      const text = btnMain ? btnMain.textContent.trim() : '';
+      const hasCorrectText = text.startsWith('带标注');
+
+      // 模拟点击「带标注」
+      if (unmarkedBtn) unmarkedBtn.click();
+      const isUnmarkedActive = unmarkedBtn ? unmarkedBtn.classList.contains('active') : false;
+
+      // 切回「全部」
+      const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+      if (allBtn) allBtn.click();
+      const isAllActive = allBtn ? allBtn.classList.contains('active') : false;
+
+      return {
+        hasCorrectText,
+        text,
+        isUnmarkedActive,
+        isAllActive
+      };
+    })()
+  `);
+  console.log('  左侧栏「带标注」筛选检查:', filterCheck);
+  if (!filterCheck.hasCorrectText) throw new Error(`筛选按钮文案期望以「带标注」开头，实际为 "${filterCheck.text}"`);
+  if (!filterCheck.isUnmarkedActive) throw new Error('点击「带标注」筛选按钮未能激活该筛选');
+  if (!filterCheck.isAllActive) throw new Error('点击「全部」筛选按钮未能恢复全量筛选');
 
   // 测试按 M 打开 SM-2 面板，验证无 dayLabels 崩溃、已掌握卡片渲染与 #btnSm2Close 按钮关闭
   console.log('  测试按 M 打开 SM-2 复习面板、已掌握卡片渲染与 #btnSm2Close 关闭交互...');

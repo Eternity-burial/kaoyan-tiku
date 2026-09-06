@@ -881,7 +881,7 @@
       color: rgba(255, 255, 255, 0.7);
     }
 
-    /* 各筛选按钮独立颜色（5 级掌握度 + 带笔记灰） */
+    /* 各筛选按钮独立颜色（5 级掌握度 + 带标注灰） */
     .filter-btn[data-filter="proficient"].active {
       background: linear-gradient(180deg, var(--lv5) 0%, var(--lv5-dark) 100%);
       border-color: var(--lv5);
