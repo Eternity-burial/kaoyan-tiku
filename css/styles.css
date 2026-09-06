@@ -5075,6 +5075,7 @@
       cursor: pointer;
       transition: all 0.12s;
       font-size: 12px;
+      position: relative;
     }
     .qtp-item:hover {
       background: var(--primary-alpha);
@@ -5085,6 +5086,41 @@
       border-color: #10b981;
       color: #10b981;
       font-weight: 600;
+    }
+    .qtp-drag-handle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      font-size: 11px;
+      color: var(--text-muted);
+      cursor: grab;
+      user-select: none;
+      opacity: 0.45;
+      transition: opacity 0.15s, color 0.15s;
+      flex-shrink: 0;
+      margin-right: 2px;
+    }
+    .qtp-item:hover .qtp-drag-handle {
+      opacity: 1;
+      color: var(--primary);
+    }
+    .qtp-drag-handle:active {
+      cursor: grabbing;
+    }
+    .qtp-item.dragging {
+      opacity: 0.4;
+      border: 1px dashed var(--primary) !important;
+      background: var(--primary-alpha) !important;
+    }
+    .qtp-item.drag-over-top {
+      border-top: 2px solid var(--primary) !important;
+      transform: translateY(1px);
+    }
+    .qtp-item.drag-over-bottom {
+      border-bottom: 2px solid var(--primary) !important;
+      transform: translateY(-1px);
     }
     .qtp-item-left {
       display: flex;

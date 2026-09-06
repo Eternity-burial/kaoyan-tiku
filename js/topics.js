@@ -331,6 +331,22 @@
       });
     }
 
+    // 考点排序辅助函数：未设定 order 默认按创建时间 createTime 降序（最新优先），有 order 严格按数值型 order 升序
+    function sortTopicsList(list) {
+      if (!Array.isArray(list)) return [];
+      return list.slice().sort(function(a, b) {
+        var hasOrderA = (a && typeof a.order === 'number');
+        var hasOrderB = (b && typeof b.order === 'number');
+        if (hasOrderA && hasOrderB) return a.order - b.order;
+        if (!hasOrderA && hasOrderB) return -1;
+        if (hasOrderA && !hasOrderB) return 1;
+        var timeA = (a && a.createTime) || 0;
+        var timeB = (b && b.createTime) || 0;
+        if (timeA !== timeB) return timeB - timeA;
+        return (a && a.name ? a.name : '').localeCompare(b && b.name ? b.name : '', 'zh-Hans-CN');
+      });
+    }
+
     function getTopicsForQid(qid) {
       if (!qid) return [];
       var targetParsed = parseQid(qid);
@@ -349,7 +365,7 @@
           list.push(t);
         }
       }
-      return list;
+      return sortTopicsList(list);
     }
 
     function getRelatedQuestionsForQid(qid) {
@@ -541,6 +557,9 @@
         }
       }
 
+      // 按自定义 order 与创建时间排序
+      allTopics = sortTopicsList(allTopics);
+
       if (allTopics.length === 0) {
         listEl.innerHTML = '<div style="padding:12px;font-size:12px;color:var(--text-muted);text-align:center;">' +
           (query ? '无匹配考点，点击右侧「新建」' : '暂无考点，输入名称（如“极限计算”）后点击「新建」') +
@@ -548,20 +567,30 @@
         return;
       }
 
+      var canDrag = !query; // 仅在未搜索过滤状态下允许拖拽，防止打乱未筛出的全量顺序
       listEl.innerHTML = allTopics.map(function(t) {
         var isLinked = myTopicIds.indexOf(t.id) !== -1;
         var count = (t.members ? t.members.length : 0);
-        return '<div class="qtp-item' + (isLinked ? ' linked' : '') + '" data-tid="' + escapeHtml(t.id) + '">' +
+        return '<div class="qtp-item' + (isLinked ? ' linked' : '') + '" data-tid="' + escapeHtml(t.id) + '"' +
+          (canDrag ? ' draggable="true"' : ' draggable="false" title="搜索过滤时不支持排序，清空搜索后可拖拽排序"') + '>' +
           '<div class="qtp-item-left">' +
-            '<span style="font-weight:bold;margin-right:2px;">' + (isLinked ? '✓' : '+') + '</span>' +
-            '<span>' + renderTopicTextHtml(t.name) + '</span>' +
+            (canDrag ? '<span class="qtp-drag-handle" title="按住拖拽排序">⠿</span>' : '') +
+            '<span class="qtp-status-icon" style="font-weight:bold;margin-right:2px;">' + (isLinked ? '✓' : '+') + '</span>' +
+            '<span class="qtp-name">' + renderTopicTextHtml(t.name) + '</span>' +
           '</div>' +
           '<span class="qtp-item-count">(' + count + '题)</span>' +
         '</div>';
       }).join('');
 
+      var draggedItem = null;
+      var draggedTid = null;
+      var isDragging = false;
+
       listEl.querySelectorAll('.qtp-item').forEach(function(item) {
+        // 点击切换关联（受 isDragging 标志保护，防止拖拽松开时误触发点击）
         item.onclick = function(e) {
+          if (isDragging) return;
+          if (e.target.closest('.qtp-drag-handle')) return;
           e.stopPropagation();
           var tid = this.dataset.tid;
           if (!tid) return;
@@ -582,6 +611,84 @@
           renderQuickTopicPopover();
           if (relatedModalOpen) renderModalWorkbench();
         };
+
+        if (!canDrag) return;
+
+        item.addEventListener('dragstart', function(e) {
+          draggedItem = this;
+          draggedTid = this.dataset.tid;
+          isDragging = true;
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/plain', draggedTid || '');
+          this.classList.add('dragging');
+        });
+
+        item.addEventListener('dragend', function() {
+          this.classList.remove('dragging');
+          listEl.querySelectorAll('.qtp-item').forEach(function(el) {
+            el.classList.remove('drag-over-top', 'drag-over-bottom');
+          });
+          draggedItem = null;
+          draggedTid = null;
+          // 延迟微任务后重置 isDragging，确保 click 事件已被完全拦截
+          setTimeout(function() { isDragging = false; }, 60);
+        });
+
+        item.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+          if (!draggedItem || draggedItem === this) return;
+
+          var rect = this.getBoundingClientRect();
+          var isTop = (e.clientY - rect.top) < (rect.height / 2);
+          if (isTop) {
+            this.classList.add('drag-over-top');
+            this.classList.remove('drag-over-bottom');
+          } else {
+            this.classList.add('drag-over-bottom');
+            this.classList.remove('drag-over-top');
+          }
+        });
+
+        item.addEventListener('dragleave', function() {
+          this.classList.remove('drag-over-top', 'drag-over-bottom');
+        });
+
+        item.addEventListener('drop', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          this.classList.remove('drag-over-top', 'drag-over-bottom');
+          if (!draggedItem || draggedItem === this) return;
+
+          var rect = this.getBoundingClientRect();
+          var isTop = (e.clientY - rect.top) < (rect.height / 2);
+          if (isTop) {
+            listEl.insertBefore(draggedItem, this);
+          } else {
+            listEl.insertBefore(draggedItem, this.nextSibling);
+          }
+
+          // 读取最新 DOM 节点顺序并批量更新各考点 order 属性
+          var items = listEl.querySelectorAll('.qtp-item');
+          var newOrderTids = [];
+          items.forEach(function(el) {
+            if (el.dataset.tid) newOrderTids.push(el.dataset.tid);
+          });
+
+          newOrderTids.forEach(function(tid, idx) {
+            if (relatedTopics[tid]) {
+              relatedTopics[tid].order = idx;
+            }
+          });
+
+          saveRelatedTopics();
+          renderRelatedQuestions();
+          renderNav();
+          if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+            window.storageSync.showToast('考点排序已更新', 'success');
+          }
+          if (relatedModalOpen) renderModalWorkbench();
+        });
       });
     }
 
@@ -1221,6 +1328,7 @@
         }
 
         if (otherTopics.length > 0) {
+          otherTopics = sortTopicsList(otherTopics);
           if (availWrap) availWrap.style.display = 'flex';
           availContainer.innerHTML = otherTopics.map(function(t) {
             var count = (t.members ? t.members.length : 0);
@@ -2595,7 +2703,8 @@
     toggleModalPickerSol: toggleModalPickerSol,
     toggleModalPickerLinkCurrent: toggleModalPickerLinkCurrent,
     closeRenameTopicModal: closeRenameTopicModal,
-    closeQuickTopicPopover: closeQuickTopicPopover
+    closeQuickTopicPopover: closeQuickTopicPopover,
+    sortTopicsList: sortTopicsList
   };
 
   // 全局接口互通别名（动态 Getter/Setter 保证多模块读写强一致）
@@ -2642,6 +2751,7 @@
   window.toggleModalPickerLinkCurrent = toggleModalPickerLinkCurrent;
   window.closeRenameTopicModal = closeRenameTopicModal;
   window.closeQuickTopicPopover = closeQuickTopicPopover;
+  window.sortTopicsList = sortTopicsList;
 
   try {
     Object.defineProperty(window, 'relatedModalOpen', {

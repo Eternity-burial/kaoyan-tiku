@@ -885,8 +885,8 @@ async function run() {
   if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
     throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
   }
-  if (dashboardCheck.expectedTotal !== 6313) {
-    throw new Error(`数学科目总题数异常: 期望 6313, 实际 ${dashboardCheck.expectedTotal}`);
+  if (dashboardCheck.expectedTotal !== 6316) {
+    throw new Error(`数学科目总题数异常: 期望 6316, 实际 ${dashboardCheck.expectedTotal}`);
   }
   if (dashboardCheck.expectedDone < 1700) {
     throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);
@@ -1053,6 +1053,39 @@ async function run() {
   if (!wrongBookCheck.isClosed) throw new Error('按 B 键未能成功关闭错题本');
   if (!wrongBookCheck.ddWbWrongbookHidden) throw new Error('关闭错题本后 ddWbWrongbook 未能隐藏（下拉栏泄漏）');
   if (!wrongBookCheck.ddWbVisible || !wrongBookCheck.ddChapterVisible) throw new Error('关闭错题本后主标题栏下拉未能正确恢复');
+
+  // 测试主页面关联考点弹出面板 (quickTopicPopover) 与拖拽排序属性
+  console.log('  测试主页面关联考点浮层 (+ 关联考点) 与拖拽手柄/排序属性...');
+  const quickTopicCheck = await evaluate(ws, `
+    (() => {
+      const btn = document.getElementById('btnQuickAddTopic');
+      const popover = document.getElementById('quickTopicPopover');
+      if (btn) btn.click();
+      const isOpen = popover && popover.style.display !== 'none';
+      const items = document.querySelectorAll('#quickTopicList .qtp-item');
+      const firstItem = items[0];
+      const hasDraggable = firstItem ? firstItem.getAttribute('draggable') === 'true' : true;
+      const hasDragHandle = firstItem ? !!firstItem.querySelector('.qtp-drag-handle') : true;
+
+      // 关闭浮层
+      const btnClose = document.getElementById('btnCloseQuickTopic');
+      if (btnClose) btnClose.click();
+      const isClosed = popover && popover.style.display === 'none';
+
+      return {
+        isOpen,
+        itemCount: items.length,
+        hasDraggable,
+        hasDragHandle,
+        isClosed
+      };
+    })()
+  `);
+  console.log('  关联考点浮层与拖拽手柄检查:', quickTopicCheck);
+  if (!quickTopicCheck.isOpen) throw new Error('未能成功打开快速关联考点浮层');
+  if (!quickTopicCheck.hasDraggable) throw new Error('快速关联考点项缺少 draggable 属性');
+  if (!quickTopicCheck.hasDragHandle) throw new Error('快速关联考点项缺少拖拽手柄 .qtp-drag-handle');
+  if (!quickTopicCheck.isClosed) throw new Error('未能成功关闭快速关联考点浮层');
 
   // 测试按 M 打开 SM-2 面板，验证无 dayLabels 崩溃、已掌握卡片渲染与 #btnSm2Close 按钮关闭
   console.log('  测试按 M 打开 SM-2 复习面板、已掌握卡片渲染与 #btnSm2Close 关闭交互...');

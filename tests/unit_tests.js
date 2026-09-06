@@ -1318,6 +1318,66 @@ test('setPanelTitle: 错题本模式打开与退出时各下拉栏显示控制�
   assert.strictEqual(elements.ddSubj.style.display, 'none', '单学科书籍退出总览后 ddSubj 必须保持隐藏，禁止意外浮现多余下拉栏');
 });
 
+// ===== 15. 考点主题拖拽排序与优先级持久化 (Topic Drag-and-Drop Sorting) =====
+console.log('\n--- 15. 考点主题拖拽排序与优先级持久化 (Topic Drag-and-Drop Sorting) ---');
+
+test('sortTopicsList: 考点自定义数值 order 排序与 fallback 规则验证', () => {
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  const mockWin = {
+    SUBJECTS: SUBJECTS,
+    document: {
+      addEventListener: () => {},
+      getElementById: () => null,
+      querySelectorAll: () => []
+    },
+    location: { href: 'http://localhost/' }
+  };
+  new Function('window', 'document', topicsSrc)(mockWin, mockWin.document);
+  const sortTopicsList = mockWin.TopicManager.sortTopicsList;
+  assert.strictEqual(typeof sortTopicsList, 'function', 'sortTopicsList 必须导出');
+
+  // 1. 无 order 考点默认按 createTime 降序（最新优先）排序
+  const rawList1 = [
+    { id: 't2', name: '极限运算', createTime: 2000 },
+    { id: 't1', name: '导数定义', createTime: 1000 },
+    { id: 't3', name: '级数审敛', createTime: 3000 }
+  ];
+  const sorted1 = sortTopicsList(rawList1);
+  assert.deepStrictEqual(sorted1.map(t => t.id), ['t3', 't2', 't1'], '无 order 时默认按 createTime 降序排序（最新考点靠前）');
+
+  // 2. 存在显式 order 时，严格按 order 升序优先排序
+  const rawList2 = [
+    { id: 't1', name: '导数定义', createTime: 1000, order: 2 },
+    { id: 't2', name: '极限运算', createTime: 2000, order: 0 },
+    { id: 't3', name: '级数审敛', createTime: 3000, order: 1 }
+  ];
+  const sorted2 = sortTopicsList(rawList2);
+  assert.deepStrictEqual(sorted2.map(t => t.id), ['t2', 't3', 't1'], '显式 order 拥有最高排序优先级');
+
+  // 3. 混合 order：未设定 order 的新考点默认按时间降序排在最前，已有 order 的项按 order 升序紧随其后
+  const rawList3 = [
+    { id: 't_no_order_1', name: '后建考点', createTime: 5000 },
+    { id: 't_order_1', name: '首要考点', order: 0, createTime: 4000 },
+    { id: 't_no_order_0', name: '先建考点', createTime: 2000 },
+    { id: 't_order_2', name: '次要考点', order: 1, createTime: 1000 }
+  ];
+  const sorted3 = sortTopicsList(rawList3);
+  assert.deepStrictEqual(sorted3.map(t => t.id), ['t_no_order_1', 't_no_order_0', 't_order_1', 't_order_2'], '未设定 order 的新考点降序在前，已设定 order 项按 order 排序在后');
+
+  // 4. 模拟拖拽调换位置：把 t3 拖到首位
+  const newOrder = ['t3', 't2', 't1'];
+  const topicMap = {
+    t1: { id: 't1', name: 'A', order: 0 },
+    t2: { id: 't2', name: 'B', order: 1 },
+    t3: { id: 't3', name: 'C', order: 2 }
+  };
+  newOrder.forEach((tid, idx) => {
+    topicMap[tid].order = idx;
+  });
+  const reordered = sortTopicsList(Object.values(topicMap));
+  assert.deepStrictEqual(reordered.map(t => t.id), ['t3', 't2', 't1'], '拖拽重排后更新 order 得到正确序列');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');
