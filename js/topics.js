@@ -247,10 +247,12 @@
       } catch (e) {
         relatedTopics = {};
       }
+      invalidateTopicCache();
       loadRelatedAffinity();
     }
 
     function saveRelatedTopics() {
+      invalidateTopicCache();
       if (window.StorageEngine && window.StorageEngine.GlobalStore) {
         window.StorageEngine.GlobalStore.set('topics', relatedTopics);
       }
@@ -347,25 +349,60 @@
       });
     }
 
+    // ===== 考点主题快速倒排索引与 O(1) 检索缓存 =====
+    var _topicQidCache = null;
+
+    function invalidateTopicCache() {
+      _topicQidCache = null;
+    }
+
+    function getTopicQidIndex() {
+      if (_topicQidCache) return _topicQidCache;
+      var cache = new Map();
+      for (var tid in relatedTopics) {
+        if (!Object.prototype.hasOwnProperty.call(relatedTopics, tid)) continue;
+        var t = relatedTopics[tid];
+        if (t && t.members && Array.isArray(t.members)) {
+          for (var i = 0; i < t.members.length; i++) {
+            var m = t.members[i];
+            if (!m || !m.qid) continue;
+            var p = parseQid(m.qid);
+            if (!p) continue;
+            var norm = getQid(p.subjectId, p.chapterId, p.idx);
+            var list = cache.get(norm);
+            if (!list) {
+              list = [];
+              cache.set(norm, list);
+            }
+            list.push(t);
+          }
+        }
+      }
+      cache.forEach(function(list) {
+        sortTopicsList(list);
+      });
+      _topicQidCache = cache;
+      return cache;
+    }
+
+    function hasTopicsForQid(qid) {
+      if (!qid) return false;
+      var targetParsed = parseQid(qid);
+      if (!targetParsed) return false;
+      var targetNormalized = getQid(targetParsed.subjectId, targetParsed.chapterId, targetParsed.idx);
+      var index = getTopicQidIndex();
+      var list = index.get(targetNormalized);
+      return !!(list && list.length > 0);
+    }
+
     function getTopicsForQid(qid) {
       if (!qid) return [];
       var targetParsed = parseQid(qid);
       if (!targetParsed) return [];
       var targetNormalized = getQid(targetParsed.subjectId, targetParsed.chapterId, targetParsed.idx);
-
-      var list = [];
-      for (var tid in relatedTopics) {
-        if (!Object.prototype.hasOwnProperty.call(relatedTopics, tid)) continue;
-        var t = relatedTopics[tid];
-        if (t && t.members && t.members.some(function(m) {
-          var mParsed = parseQid(m.qid);
-          if (!mParsed) return false;
-          return getQid(mParsed.subjectId, mParsed.chapterId, mParsed.idx) === targetNormalized;
-        })) {
-          list.push(t);
-        }
-      }
-      return sortTopicsList(list);
+      var index = getTopicQidIndex();
+      var list = index.get(targetNormalized);
+      return list ? list.slice() : [];
     }
 
     function getRelatedQuestionsForQid(qid) {
@@ -1051,6 +1088,10 @@
     // 6. 考点主题名称渲染（完整支持 Markdown 语法与 $LaTeX$ / $$LaTeX$$ 数学公式，与笔记引擎 100% 统一）
     function renderTopicTextHtml(text) {
       if (!text) return '';
+      // 纯文本极速直出快道：若无 LaTeX 标记与 Markdown 语法符号，直接 escapeHtml 输出，省去 marked + KaTeX 重型引擎开销
+      if (!text.includes('$') && !text.includes('\\') && !/[*_`~\[\]<>]/.test(text)) {
+        return escapeHtml(text);
+      }
       try {
         var html = renderNotesMarkdown(text);
         if (typeof html === 'string') {
@@ -1178,17 +1219,39 @@
     // 主题彻底删除
     function deleteRelatedTopic(topicId, skipConfirm) {
       var t = relatedTopics[topicId];
-      if (!t) return false;
-      if (!skipConfirm && typeof confirm === 'function' && !confirm('确定要彻底删除考点主题“' + t.name + '”吗？\n该操作将清除此主题下所有题目的关联。')) {
-        return false;
+      if (!t) return Promise.resolve ? Promise.resolve(false) : false;
+
+      function doDelete() {
+        delete relatedTopics[topicId];
+        saveRelatedTopics();
+        renderRelatedModalTopics();
+        renderRelatedQuestions();
+        renderNav();
+        if (typeof renderModalWorkbench === 'function') renderModalWorkbench();
+        if (typeof renderModalNav === 'function') renderModalNav();
+        if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+          window.storageSync.showToast('已彻底删除考点主题“' + t.name + '”', 'info');
+        }
+        return true;
       }
-      delete relatedTopics[topicId];
-      saveRelatedTopics();
-      renderRelatedModalTopics();
-      renderRelatedQuestions();
-      renderNav();
-      if (typeof renderModalWorkbench === 'function') renderModalWorkbench();
-      return true;
+
+      if (skipConfirm) {
+        return doDelete();
+      }
+
+      if (typeof window.showConfirmModal === 'function') {
+        return window.showConfirmModal({
+          title: '彻底删除考点',
+          message: '确定要彻底删除考点主题“' + t.name + '”吗？\n该操作将清除此主题下所有题目的关联。',
+          danger: true,
+          confirmText: '彻底删除',
+          cancelText: '取消',
+          onConfirm: doDelete
+        });
+      } else if (typeof confirm === 'function' && confirm('确定要彻底删除考点主题“' + t.name + '”吗？\n该操作将清除此主题下所有题目的关联。')) {
+        return doDelete();
+      }
+      return false;
     }
 
     // 7. 同类题弹窗交互与跨书做题浏览工作台（仿照主页面三级下拉与全宽展开）
@@ -2706,14 +2769,16 @@
     toggleModalPickerLinkCurrent: toggleModalPickerLinkCurrent,
     closeRenameTopicModal: closeRenameTopicModal,
     closeQuickTopicPopover: closeQuickTopicPopover,
-    sortTopicsList: sortTopicsList
+    sortTopicsList: sortTopicsList,
+    hasTopicsForQid: hasTopicsForQid,
+    invalidateTopicIndex: invalidateTopicCache
   };
 
   // 全局接口互通别名（动态 Getter/Setter 保证多模块读写强一致）
   try {
     Object.defineProperty(window, 'relatedTopics', {
       get: function () { return relatedTopics; },
-      set: function (v) { relatedTopics = v || {}; },
+      set: function (v) { relatedTopics = v || {}; invalidateTopicCache(); },
       configurable: true
     });
     Object.defineProperty(window, 'relatedAffinity', {
@@ -2744,6 +2809,8 @@
   window.getPairKey = getPairKey;
   window.parseTopicAndSubTopic = parseTopicAndSubTopic;
   window.getTopicsForQid = getTopicsForQid;
+  window.hasTopicsForQid = hasTopicsForQid;
+  window.invalidateTopicIndex = invalidateTopicCache;
   window.getRelatedQuestionsForQid = getRelatedQuestionsForQid;
   window.modalPickerPrevQ = modalPickerPrevQ;
   window.modalPickerNextQ = modalPickerNextQ;

@@ -164,6 +164,8 @@
       if (typeof hasQuestionImagesAnnotated === 'function' && hasQuestionImagesAnnotated(idx)) return true;
       var qid = (typeof getQid === 'function') ? getQid(curSubjectId, currentChapterId, idx) : '';
       if (qid) {
+        if (typeof window.hasTopicsForQid === 'function') return window.hasTopicsForQid(qid);
+        if (window.TopicManager && typeof window.TopicManager.hasTopicsForQid === 'function') return window.TopicManager.hasTopicsForQid(qid);
         var fn = (typeof getTopicsForQid === 'function') ? getTopicsForQid : (window.TopicManager && window.TopicManager.getTopicsForQid);
         if (typeof fn === 'function' && fn(qid).length > 0) return true;
       }
@@ -629,6 +631,7 @@
           const filtered = getFilteredIndices();
           if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
         }
+        lastActivePartLabel = partOfIdx(current);
         renderTitle();
         renderNav();
         switchTo(current);
@@ -640,6 +643,7 @@
       let target = 0;
       const filtered = getFilteredIndices();
       target = filtered.length > 0 ? filtered[0] : 0;
+      lastActivePartLabel = partOfIdx(target);
       renderTitle();
       renderNav();
       switchTo(target);
@@ -1034,6 +1038,88 @@
       document.getElementById('shortcutOverlay').classList.toggle('show', shortcutHelpOpen);
     }
 
+    // ===== 全局统一确认模态框 (Quiet Liquid Confirm Modal) =====
+    var confirmModalResolve = null;
+
+    function showConfirmModal(options) {
+      options = options || {};
+      var title = options.title || '操作确认';
+      var message = options.message || '确定要继续吗？';
+      var confirmText = options.confirmText || '确定';
+      var cancelText = options.cancelText || '取消';
+      var isDanger = !!options.danger;
+      var icon = options.icon || (isDanger ? '⚠️' : 'ℹ️');
+
+      var modal = document.getElementById('confirmModal');
+      var card = modal ? modal.querySelector('.confirm-modal-card') : null;
+      var iconEl = document.getElementById('confirmModalIcon');
+      var titleEl = document.getElementById('confirmModalTitle');
+      var msgEl = document.getElementById('confirmModalMessage');
+      var okBtn = document.getElementById('btnConfirmModalOk');
+      var cancelBtn = document.getElementById('btnConfirmModalCancel');
+
+      if (!modal || !okBtn || !cancelBtn) {
+        var res = typeof window.confirm === 'function' ? window.confirm(message) : true;
+        if (res && typeof options.onConfirm === 'function') options.onConfirm();
+        if (!res && typeof options.onCancel === 'function') options.onCancel();
+        return Promise.resolve(res);
+      }
+
+      if (confirmModalResolve) {
+        confirmModalResolve(false);
+        confirmModalResolve = null;
+      }
+
+      if (iconEl) iconEl.textContent = icon;
+      if (titleEl) titleEl.textContent = title;
+      if (msgEl) msgEl.textContent = message;
+
+      okBtn.innerHTML = escapeHtml(confirmText) + ' <span class="key">Enter</span>';
+      cancelBtn.innerHTML = escapeHtml(cancelText) + ' <span class="key">Esc</span>';
+
+      if (card) {
+        card.classList.toggle('is-danger', isDanger);
+      }
+
+      modal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+
+      setTimeout(function () {
+        if (isDanger && cancelBtn) {
+          cancelBtn.focus();
+        } else if (okBtn) {
+          okBtn.focus();
+        }
+      }, 50);
+
+      return new Promise(function (resolve) {
+        confirmModalResolve = resolve;
+      }).then(function (result) {
+        if (result && typeof options.onConfirm === 'function') options.onConfirm();
+        if (!result && typeof options.onCancel === 'function') options.onCancel();
+        return result;
+      });
+    }
+
+    function closeConfirmModal(result) {
+      var modal = document.getElementById('confirmModal');
+      if (modal) modal.style.display = 'none';
+      var hasOtherModal = (document.getElementById('relatedModal') && document.getElementById('relatedModal').style.display !== 'none') ||
+                          (document.getElementById('topicRenameModal') && document.getElementById('topicRenameModal').style.display !== 'none') ||
+                          (document.getElementById('shortcutModal') && document.getElementById('shortcutModal').classList.contains('show'));
+      if (!hasOtherModal) {
+        document.body.classList.remove('modal-open');
+      }
+      if (confirmModalResolve) {
+        var r = confirmModalResolve;
+        confirmModalResolve = null;
+        r(!!result);
+      }
+    }
+
+    window.showConfirmModal = showConfirmModal;
+    window.closeConfirmModal = closeConfirmModal;
+
     // ===== 科目选择模态 =====
     let subjectPickerOpen = false;
     function openSubjectPicker() {
@@ -1197,6 +1283,20 @@
       });
       const so = document.getElementById('subjectOverlay');
       if (so) so.addEventListener('click', function (e) { if (e.target === this) closeSubjectPicker(); });
+
+      // 全局统一确认模态框交互绑定
+      const btnConfirmOk = document.getElementById('btnConfirmModalOk');
+      const btnConfirmCancel = document.getElementById('btnConfirmModalCancel');
+      const btnConfirmClose = document.getElementById('btnConfirmModalClose');
+      const modalConfirm = document.getElementById('confirmModal');
+      if (btnConfirmOk) btnConfirmOk.addEventListener('click', function () { closeConfirmModal(true); });
+      if (btnConfirmCancel) btnConfirmCancel.addEventListener('click', function () { closeConfirmModal(false); });
+      if (btnConfirmClose) btnConfirmClose.addEventListener('click', function () { closeConfirmModal(false); });
+      if (modalConfirm) {
+        modalConfirm.addEventListener('click', function (e) {
+          if (e.target === modalConfirm) closeConfirmModal(false);
+        });
+      }
     });
 
     // 鼠标侧键后退：详情视图/从错题本跳题后，鼠标后退键回总览或错题本
@@ -1435,7 +1535,11 @@
           if (notesData[notesKeyFor(idx)]) groupHasNote = true;
           if (hasQuestionImagesAnnotated(idx)) groupHasAnnot = true;
           const qid = getQid(curSubjectId, currentChapterId, idx);
-          if (getTopicsForQid(qid).length > 0) groupHasRelated = true;
+          if (typeof window.hasTopicsForQid === 'function') {
+            if (window.hasTopicsForQid(qid)) groupHasRelated = true;
+          } else if (getTopicsForQid(qid).length > 0) {
+            groupHasRelated = true;
+          }
           if (groupHasNote && groupHasAnnot && groupHasRelated) break;
         }
         if (qBad[i] || sBad[i] || bookMismatch[i] || groupHasNote || groupHasAnnot || groupHasRelated) {
@@ -1487,6 +1591,7 @@
 
       // 收集当前章节中有题目的非当前分区 keys（用于一键全部折叠/展开）
       const validOtherSecKeys = [];
+      const frag = document.createDocumentFragment();
 
       parts.forEach(function(part) {
         // 收集该分区的 subGroups
@@ -1538,7 +1643,7 @@
           }
           renderNav();
         };
-        nav.appendChild(secTitle);
+        frag.appendChild(secTitle);
 
         // 若被折叠，不渲染下方题号按钮
         if (isCollapsed) return;
@@ -1563,7 +1668,7 @@
               var subTitle = document.createElement('div');
               subTitle.className = 'subsection-header';
               subTitle.textContent = subType;
-              nav.appendChild(subTitle);
+              frag.appendChild(subTitle);
             }
           } else if (ch.sections) {
             var matchingSec = ch.sections.find(function(s) { return s.start === g.startIdx; });
@@ -1571,7 +1676,7 @@
               var subTitle = document.createElement('div');
               subTitle.className = 'subsection-header';
               subTitle.textContent = matchingSec.type;
-              nav.appendChild(subTitle);
+              frag.appendChild(subTitle);
             }
           }
 
@@ -1640,9 +1745,11 @@
             // 点击侧栏定位到该题组第一个可见题；小题模式（F 全局开关）不重置，跨章/跨题保持
             if (visIdx.length > 0) { switchTo(visIdx[0], false); }
           };
-          nav.appendChild(btn);
+          frag.appendChild(btn);
         });
       });
+
+      nav.appendChild(frag);
 
       // 更新「全部折叠/展开」按钮状态
       const btnToggleAll = document.getElementById('btnToggleAllSections');
@@ -3168,7 +3275,12 @@
         }
       }
       if (items.length === 0) {
-        alert(statusFilter === 'vague' ? '当前章节没有标记为"模糊"的题目' : '当前章节没有标记为"不会"的题目');
+        var emptyMsg = (statusFilter === 'vague' ? '当前章节没有标记为"模糊"的题目' : '当前章节没有标记为"不会"的题目');
+        if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+          window.storageSync.showToast(emptyMsg, 'warning');
+        } else {
+          alert(emptyMsg);
+        }
         return;
       }
       const statusLabel = statusFilter === 'vague' ? '模糊' : '不会';
@@ -3182,7 +3294,11 @@
 
       const w = window.open('', '_blank', 'width=900,height=700');
       if (!w) {
-        alert('导出窗口被浏览器拦截，请允许弹出窗口后重试。');
+        if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+          window.storageSync.showToast('导出窗口被浏览器拦截，请允许弹出窗口后重试。', 'error');
+        } else {
+          alert('导出窗口被浏览器拦截，请允许弹出窗口后重试。');
+        }
         return;
       }
       w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${escapeHtml(ch.name)} — ${statusLabel}题</title>
@@ -3308,7 +3424,11 @@ ${cardsHTML}
       }
       sm2 = {};
       if (sm2PanelOpen) renderSm2Panel();
-      alert('SM-2 复习进度已重置（' + clearedCount + ' 条记录已清除）。');
+      if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+        window.storageSync.showToast('SM-2 复习进度已重置（' + clearedCount + ' 条记录已清除）。', 'info');
+      } else {
+        alert('SM-2 复习进度已重置（' + clearedCount + ' 条记录已清除）。');
+      }
       return clearedCount;
     }
 
@@ -3417,6 +3537,24 @@ ${cardsHTML}
         if (key === 'enter') {
           e.preventDefault();
           if (typeof window.nextReviewSummarySprint === 'function') window.nextReviewSummarySprint();
+          return;
+        }
+        return;
+      }
+
+      // 2.5 全局统一确认模态弹窗独占拦截（z-index: 10600）：
+      const confirmModal = document.getElementById('confirmModal');
+      if (confirmModal && confirmModal.style.display !== 'none') {
+        if (key === 'escape') {
+          e.preventDefault();
+          e.stopPropagation();
+          closeConfirmModal(false);
+          return;
+        }
+        if (key === 'enter') {
+          e.preventDefault();
+          e.stopPropagation();
+          closeConfirmModal(true);
           return;
         }
         return;
@@ -3662,13 +3800,6 @@ ${cardsHTML}
         e.preventDefault();
         _suppressNextContextMenu = true;
 
-        if (_rwTimer) clearTimeout(_rwTimer);
-        _rwTimer = setTimeout(function () {
-          _rwAccum = 0;
-          _rwLocked = false;
-          _rwTimer = null;
-        }, 250);
-
         if (_rwLocked) return;
 
         // 取绝对值主导方向的增量（垂直优先或横向）
@@ -3687,6 +3818,11 @@ ${cardsHTML}
           }
           _rwLocked = true;
           _rwAccum = 0;
+          if (_rwTimer) clearTimeout(_rwTimer);
+          _rwTimer = setTimeout(function () {
+            _rwLocked = false;
+            _rwTimer = null;
+          }, 140);
         }
         return;
       }

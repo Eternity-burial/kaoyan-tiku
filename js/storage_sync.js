@@ -467,7 +467,15 @@
       const data = collectAllData();
       const qCount = Object.keys(data.data || {}).filter(k => k.startsWith('kaoyan.q.')).length;
       if (qCount === 0) {
-        const confirmed = window.confirm('警告：检测到浏览器当前没有题目学习进度数据（0 题）。继续写入将清空覆盖本地文件中的全部题目！是否确定覆盖？');
+        const confirmed = typeof window.showConfirmModal === 'function'
+          ? await window.showConfirmModal({
+              title: '覆盖警告',
+              message: '警告：检测到浏览器当前没有题目学习进度数据（0 题）。继续写入将清空覆盖本地文件中的全部题目！是否确定覆盖？',
+              danger: true,
+              confirmText: '确定覆盖',
+              cancelText: '取消'
+            })
+          : (typeof window.confirm === 'function' && window.confirm('警告：检测到浏览器当前没有题目学习进度数据（0 题）。继续写入将清空覆盖本地文件中的全部题目！是否确定覆盖？'));
         if (!confirmed) return;
       }
       // 1. 若已有句柄，尝试直接写入

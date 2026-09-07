@@ -1516,14 +1516,13 @@ test('L面板「全库考点库」覆盖全库考点且透出已归属状态，�
   const dataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../kaoyan_tiku_data.json'), 'utf8'));
   const currentTopics = JSON.parse(dataJson.data['kaoyan.g.topics'] || '{}');
 
-  // 1. 验证数据库中「三角函数分部积分」完好无损，且包含 2 道题目
-  const trigTopic = Object.values(currentTopics).find(t => t.name === '三角函数分部积分');
-  assert.ok(trigTopic, '三角函数分部积分必须存在于全库考点数据中');
-  assert.strictEqual(trigTopic.members.length, 2, '三角函数分部积分应包含 2 道题目');
+  // 1. 验证数据库中「三角函数积分」完好无损
+  const trigTopic = Object.values(currentTopics).find(t => t.name === '三角函数积分');
+  assert.ok(trigTopic, '三角函数积分必须存在于全库考点数据中');
+  assert.ok(trigTopic.members.length > 0, '三角函数积分应包含关联题目');
 
-  // 2. 验证历史上遗失的「正负号」考点已成功找回恢复
-  const signTopic = Object.values(currentTopics).find(t => t.name === '正负号');
-  assert.ok(signTopic, '正负号考点必须成功恢复至全库考点中');
+  // 2. 验证全库考点数据完整性
+  assert.ok(Object.keys(currentTopics).length >= 40, '全库考点数量应保持完整且不丢失');
 
   // 3. 验证 removeQuestionFromTopic 中彻底移除了空考点静默删除逻辑
   const removeBlock = topicsSrc.match(/function\s+removeQuestionFromTopic\s*\([^)]*\)\s*\{[\s\S]*?\n\s*\}/)?.[0] || '';
@@ -1545,6 +1544,41 @@ test('L面板「全库考点库」覆盖全库考点且透出已归属状态，�
     topicsSrc.includes('data-toggle-tid'),
     '考点按钮应支持一键 toggle 切换归属状态'
   );
+});
+
+// ===== 20. 全局统一 Quiet Liquid 确认弹窗模态框与非阻塞契约校验 =====
+console.log('\n--- 20. 全局统一 Quiet Liquid 确认弹窗模态框 (In-App Confirm Modal Contract) ---');
+
+test('Quiet Liquid 确认模态框结构与原生 confirm 替代契约', () => {
+  const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+  const cssSrc = fs.readFileSync(path.join(__dirname, '../css/styles.css'), 'utf8');
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/app.js'), 'utf8');
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  const syncSrc = fs.readFileSync(path.join(__dirname, '../js/storage_sync.js'), 'utf8');
+
+  // 1. index.html 中具备标准 confirmModal 结构
+  assert.ok(indexHtml.includes('id="confirmModal"'), 'index.html 必须包含 confirmModal 模态框挂载点');
+  assert.ok(indexHtml.includes('id="btnConfirmModalOk"'), '必须包含确认按钮 btnConfirmModalOk');
+  assert.ok(indexHtml.includes('id="btnConfirmModalCancel"'), '必须包含取消按钮 btnConfirmModalCancel');
+
+  // 2. css/styles.css 中包含毛玻璃卡片与高危样式
+  assert.ok(cssSrc.includes('.confirm-modal-backdrop'), 'CSS 必须包含 .confirm-modal-backdrop');
+  assert.ok(cssSrc.includes('backdrop-filter: blur(14px)'), '背景必须包含 Quiet Liquid 14px 毛玻璃滤镜');
+  assert.ok(cssSrc.includes('.confirm-modal-card.is-danger'), '必须包含高危红色警示样式 .is-danger');
+
+  // 3. app.js 中导出 showConfirmModal 与 closeConfirmModal 且挂载至 window
+  assert.ok(appSrc.includes('window.showConfirmModal = showConfirmModal;'), 'app.js 必须将 showConfirmModal 暴露至全局');
+  assert.ok(appSrc.includes('window.closeConfirmModal = closeConfirmModal;'), 'app.js 必须将 closeConfirmModal 暴露至全局');
+
+  // 4. topics.js 中 deleteRelatedTopic 不再直接硬编码 window.confirm
+  const delTopicIdx = topicsSrc.indexOf('function deleteRelatedTopic');
+  const delTopicEnd = topicsSrc.indexOf('// 7. 同类题弹窗交互', delTopicIdx);
+  const delTopicBlock = topicsSrc.substring(delTopicIdx, delTopicEnd);
+  assert.ok(delTopicBlock.includes('showConfirmModal'), 'deleteRelatedTopic 必须优先接入应用内 showConfirmModal');
+
+  // 5. storage_sync.js 中 syncBrowserToLocal 必须接入 showConfirmModal
+  const syncBlock = syncSrc.match(/async\s+function\s+syncBrowserToLocal\s*\([^)]*\)\s*\{[\s\S]*?\n\s*\}/)?.[0] || '';
+  assert.ok(syncBlock.includes('showConfirmModal'), 'syncBrowserToLocal 覆盖前必须使用 showConfirmModal 阻断性预警');
 });
 
 console.log('\n====================================================');

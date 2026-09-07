@@ -6607,3 +6607,101 @@
       border-top: 1px solid var(--border);
       background: var(--glass-bg);
     }
+
+    /* ===== 全局统一确认弹窗模态框 (Quiet Liquid Confirm Modal) ===== */
+    .confirm-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 14, 26, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10600;
+      padding: 16px;
+      animation: rmFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .confirm-modal-card {
+      width: min(460px, 94vw);
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalSlideUp 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .confirm-modal-header {
+      height: 48px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: var(--glass-bg);
+    }
+    .confirm-modal-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .confirm-modal-icon {
+      font-size: 16px;
+      line-height: 1;
+    }
+    .confirm-modal-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .confirm-modal-close {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .confirm-modal-close:hover {
+      color: var(--danger);
+      background: rgba(239, 68, 68, 0.12);
+    }
+    .confirm-modal-body {
+      padding: 20px 22px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--text);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .confirm-modal-footer {
+      height: 52px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      border-top: 1px solid var(--border);
+      background: var(--glass-bg);
+    }
+    /* 危险操作态 */
+    .confirm-modal-card.is-danger .confirm-modal-icon {
+      color: #ef4444;
+    }
+    .confirm-modal-card.is-danger .confirm-modal-title {
+      color: #f87171;
+    }
+    .confirm-modal-card.is-danger #btnConfirmModalOk {
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      border-color: rgba(239, 68, 68, 0.5);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+    }
+    .confirm-modal-card.is-danger #btnConfirmModalOk:hover {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      box-shadow: 0 6px 16px rgba(239, 68, 68, 0.45);
+    }
