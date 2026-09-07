@@ -222,7 +222,7 @@
         if (window.StorageEngine && window.StorageEngine.GlobalStore) {
           window.StorageEngine.GlobalStore.set('affinity', relatedAffinity);
         }
-        notifyStorageSync();
+        if (typeof notifyStorageSync === 'function') notifyStorageSync();
       } catch (e) {}
     }
 
@@ -256,8 +256,8 @@
       if (window.StorageEngine && window.StorageEngine.GlobalStore) {
         window.StorageEngine.GlobalStore.set('topics', relatedTopics);
       }
-      notifyStorageSync();
-      renderNav();
+      if (typeof notifyStorageSync === 'function') notifyStorageSync();
+      if (typeof renderNav === 'function') renderNav();
     }
 
     function parseTopicAndSubTopic(input) {
@@ -422,11 +422,24 @@
               relatedMap[m.qid] = {
                 qid: m.qid,
                 topics: [t.name],
+                topicIds: [t.id || ''],
+                topicItems: [{ id: t.id || '', name: t.name }],
                 notes: m.note ? [m.note] : []
               };
             } else {
               var item = relatedMap[m.qid];
-              if (item.topics.indexOf(t.name) === -1) item.topics.push(t.name);
+              if (!item.topicIds) item.topicIds = [];
+              if (!item.topics) item.topics = [];
+              if (!item.topicItems) item.topicItems = [];
+
+              var exists = item.topicItems.some(function(ti) {
+                return (t.id && ti.id === t.id) || ti.name === t.name;
+              });
+              if (!exists) {
+                item.topicIds.push(t.id || '');
+                item.topics.push(t.name);
+                item.topicItems.push({ id: t.id || '', name: t.name });
+              }
               if (m.note && item.notes.indexOf(m.note) === -1) item.notes.push(m.note);
             }
           }
@@ -439,6 +452,8 @@
           var meta = getQuestionMeta(k);
           if (meta) {
             meta.topics = relatedMap[k].topics;
+            meta.topicIds = relatedMap[k].topicIds;
+            meta.topicItems = relatedMap[k].topicItems;
             meta.note = relatedMap[k].notes.join('；') || meta.questionNote || '';
             list.push(meta);
           }
@@ -746,6 +761,12 @@
       }
     }
 
+    function getIsDarkFilter() {
+      var theme = (typeof currentTheme !== 'undefined') ? currentTheme : ((typeof window !== 'undefined' && window.currentTheme) ? window.currentTheme : 'light');
+      var filter = (typeof darkImageFilter !== 'undefined') ? darkImageFilter : ((typeof window !== 'undefined' && window.darkImageFilter) ? window.darkImageFilter : false);
+      return theme === 'dark' && !!filter;
+    }
+
     function renderRelatedQuestions() {
       var curQid = getCurrentQid();
       var data = getRelatedQuestionsForQid(curQid);
@@ -799,7 +820,7 @@
 
       // 渲染同类题单列大图卡片（竖向排列，支持手柄拖拽排序、一键置顶、展开解析与跨书跳转）
       if (data.relatedQuestions.length > 0) {
-        var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+        var isDarkFilter = getIsDarkFilter();
         var imgFilterClass = isDarkFilter ? ' dark-filter' : '';
 
         list.innerHTML = data.relatedQuestions.map(function(q) {
@@ -817,6 +838,21 @@
           var qImgSrc = getImgPathForQid(q.qid);
           var imgBase = getImgBaseForQid(q.qid);
           var safeId = q.qid.replace(/[^a-zA-Z0-9_]/g, '_');
+          var topicsList = (q.topicItems && q.topicItems.length > 0) ? q.topicItems : (q.topics || []).map(function(name, i) {
+            return { id: (q.topicIds && q.topicIds[i]) || '', name: name };
+          });
+          var topicsHtml = '';
+          if (topicsList && topicsList.length > 0) {
+            topicsHtml = '<div class="rc-topics" title="共同考点">' +
+              topicsList.map(function(t) {
+                var tidAttr = t.id ? ' data-tid="' + escapeHtml(t.id) + '"' : '';
+                return '<span class="rc-topic-tag"' + tidAttr + ' title="共同考点：' + escapeHtml(t.name) + '（点击或右键可重命名）">' +
+                  '<span class="rc-topic-icon">🏷️</span>' +
+                  '<span class="rc-topic-name">' + renderTopicTextHtml(t.name) + '</span>' +
+                '</span>';
+              }).join('') +
+            '</div>';
+          }
           return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '" draggable="true">' +
             '<div class="rc-head">' +
               '<div class="rc-head-left">' +
@@ -825,6 +861,7 @@
                 '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
                 '<span class="rc-dot' + dotClass + '" title="状态: ' + escapeHtml(statusText) + '"></span>' +
                 (statusText ? '<span style="font-size:11.5px;color:var(--text-muted);font-weight:600">' + escapeHtml(statusText) + '</span>' : '') +
+                topicsHtml +
               '</div>' +
               '<div class="rc-head-actions">' +
                 '<button type="button" class="gel-btn btn-sm rc-btn-pin" data-pin-qid="' + escapeHtml(q.qid) + '" title="将此题置顶为最高相似度同类题">置顶</button>' +
@@ -952,7 +989,7 @@
                 if (box.dataset.solLoaded !== 'true') {
                   var base = box.dataset.solBase || getImgBaseForQid(qid);
                   var imgsContainer = document.getElementById('rcSolImgs_' + safeId) || box;
-                  var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+                  var isDarkFilter = getIsDarkFilter();
                   setRelatedCardSolutionImages(base, imgsContainer, isDarkFilter);
                   box.dataset.solLoaded = 'true';
                 }
@@ -1010,9 +1047,24 @@
           };
         });
 
+        // 绑定共同考点标签点击与右键重命名事件
+        list.querySelectorAll('.rc-topic-tag').forEach(function(tag) {
+          tag.onclick = function(e) {
+            e.stopPropagation();
+            var tid = this.dataset.tid;
+            if (tid) renameRelatedTopic(tid);
+          };
+          tag.oncontextmenu = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var tid = this.dataset.tid;
+            if (tid) renameRelatedTopic(tid);
+          };
+        });
+
         list.querySelectorAll('.related-card').forEach(function(card) {
           card.onclick = function(e) {
-            if (e.target.closest('button') || e.target.closest('img') || e.target.closest('.rc-drag-handle')) return;
+            if (e.target.closest('button') || e.target.closest('img') || e.target.closest('.rc-drag-handle') || e.target.closest('.rc-topic-tag') || e.target.closest('.rc-topics')) return;
             var targetQid = this.dataset.qid;
             if (targetQid) jumpToQid(targetQid, true);
           };
@@ -2096,7 +2148,7 @@
         qImgEl.style.display = 'none';
       }
 
-      var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+      var isDarkFilter = getIsDarkFilter();
       qImgEl.classList.toggle('dark-filter', isDarkFilter);
 
       setModalSolutionImages(base, solImgsEl, isDarkFilter);
@@ -2236,7 +2288,7 @@
         return;
       }
 
-      var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+      var isDarkFilter = getIsDarkFilter();
       var imgFilterClass = isDarkFilter ? ' dark-filter' : '';
 
       list.innerHTML = candidates.map(function(qid) {
@@ -2616,7 +2668,7 @@
           }
 
           var myTopics = getTopicsForQid(curQid);
-          var isDarkFilter = (currentTheme === 'dark' && darkImageFilter);
+          var isDarkFilter = getIsDarkFilter();
           var imgFilterClass = isDarkFilter ? ' dark-filter' : '';
 
           searchResults.innerHTML = matches.slice(0, 20).map(function(qid) {

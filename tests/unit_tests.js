@@ -705,6 +705,55 @@ test('题目对双向亲密度无向 Key 与优先级双向互通排序', () => 
   assert.strictEqual(sortedForB[1].qid, qC);
 });
 
+test('同类题卡片共同考点渲染契约: 正确透出共同考点标签 (.rc-topic-tag) 与 LaTeX 公式', () => {
+  const win = {};
+  new Function('window', chaptersSrc)(win);
+  const math = win.SUBJECTS.find(s => s.id === 'math');
+  const lec01 = math.chapters[0];
+
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  win.curSubjectId = 'math';
+  win.curSubject = math;
+  win.CHAPTERS = math.chapters;
+  win.currentChapterId = lec01.uid;
+  win.current = 0;
+  win.escapeHtml = str => String(str);
+
+  const mockWrap = { innerHTML: '', querySelectorAll: () => [] };
+  const mockList = { innerHTML: '', querySelectorAll: () => [] };
+  const doc = {
+    getElementById: id => (id === 'relatedTopicsWrap' ? mockWrap : id === 'relatedCardsList' ? mockList : null),
+    querySelectorAll: () => [],
+    addEventListener: () => {}
+  };
+
+  new Function('window', 'document', 'localStorage', 'StorageEngine', 'CHAPTERS', 'curSubject', 'SUBJECTS', topicsSrc)(
+    win, doc, { getItem: () => null, setItem: () => {} }, {}, win.CHAPTERS, win.curSubject, win.SUBJECTS
+  );
+
+  const qid0 = win.getQid('math', lec01.uid, 0);
+  const qid1 = win.getQid('math', lec01.uid, 1);
+
+  // 1. 创建包含 LaTeX 的考点并关联题目 0 与题目 1
+  const t = win.createRelatedTopic('泰勒展开式 $\\lim_{x \\to 0}\\frac{x-\\sin x}{x^3}$', qid0);
+  assert.ok(t);
+  win.addQuestionToTopic(t.id, qid1);
+
+  // 2. 获取题目 0 的同类题数据
+  const relData = win.TopicManager.getQuestionData(qid0);
+  assert.strictEqual(relData.relatedQuestions.length, 1);
+  const relQ = relData.relatedQuestions[0];
+  assert.strictEqual(relQ.qid, qid1);
+  assert.ok(relQ.topics && relQ.topics.includes(t.name), 'relQ 必须包含共同考点名称');
+  assert.ok(relQ.topicItems && relQ.topicItems.some(ti => ti.id === t.id && ti.name === t.name), 'relQ 必须包含共同考点详细对象');
+
+  // 3. 执行同类题渲染并验证生成的 HTML 包含 .rc-topic-tag 共同考点标签
+  win.renderRelatedQuestions();
+  assert.ok(mockList.innerHTML.includes('rc-topic-tag'), '同类题卡片头部必须包含 .rc-topic-tag 标签');
+  assert.ok(mockList.innerHTML.includes('泰勒展开式'), '同类题标签内必须包含共同考点文本');
+  assert.ok(mockList.innerHTML.includes('data-tid="' + t.id + '"'), '考点标签上应携带正确的考点 ID 属性');
+});
+
 test('合并章节伴章段 QID 路由隔离: 杜绝两书同号题（如30讲3-2与1000题3-2）考点与同类题泄露', () => {
   const win = {};
   new Function('window', chaptersSrc)(win);

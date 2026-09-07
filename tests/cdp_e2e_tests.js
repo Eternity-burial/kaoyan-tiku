@@ -307,6 +307,8 @@ async function run() {
       const hasDragHandle = Array.from(cards).every(c => !!c.querySelector('.rc-drag-handle'));
       const hasPinBtn = Array.from(cards).every(c => !!c.querySelector('.rc-btn-pin'));
       const hasSubtopicTag = !!document.querySelector('#relatedCardsList .rc-subtopic-tag');
+      const hasTopicTag = cards.length > 0 && Array.from(cards).every(c => !!c.querySelector('.rc-topic-tag'));
+      const firstCardTopicTagText = cards.length > 0 && cards[0].querySelector('.rc-topic-tag') ? cards[0].querySelector('.rc-topic-tag').textContent : '';
       const firstCardQidBefore = cards.length > 0 ? cards[0].dataset.qid : '';
 
       // 模拟点击第二张卡片的置顶按钮
@@ -327,14 +329,18 @@ async function run() {
         hasDragHandle,
         hasPinBtn,
         hasSubtopicTag,
+        hasTopicTag,
+        firstCardTopicTagText,
         pinSuccess
       };
     })()
   `);
-  console.log('  添加考点后胶囊数:', relatedCheck.pills, '同类题卡片数:', relatedCheck.cardsCount, '拖拽手柄完整:', relatedCheck.hasDragHandle, '置顶按钮完整:', relatedCheck.hasPinBtn, '已移出二级考点标签:', !relatedCheck.hasSubtopicTag, '置顶功能验证成功:', relatedCheck.pinSuccess);
+  console.log('  添加考点后胶囊数:', relatedCheck.pills, '同类题卡片数:', relatedCheck.cardsCount, '拖拽手柄完整:', relatedCheck.hasDragHandle, '置顶按钮完整:', relatedCheck.hasPinBtn, '共同考点标签完整:', relatedCheck.hasTopicTag, '考点标签文本:', relatedCheck.firstCardTopicTagText, '已移出二级考点标签:', !relatedCheck.hasSubtopicTag, '置顶功能验证成功:', relatedCheck.pinSuccess);
   if (relatedCheck.pills === 0) throw new Error('考点未成功添加');
   if (!relatedCheck.hasDragHandle) throw new Error('同类题卡片缺少拖拽手柄');
   if (!relatedCheck.hasPinBtn) throw new Error('同类题卡片缺少置顶按钮');
+  if (!relatedCheck.hasTopicTag) throw new Error('同类题卡片缺少共同考点标签 (.rc-topic-tag)');
+  if (!relatedCheck.firstCardTopicTagText.includes('极限计算')) throw new Error('同类题卡片共同考点文本不匹配');
   if (relatedCheck.hasSubtopicTag) throw new Error('发现残留的二级子考点标签');
   // 测试点击同类题卡片的「显示解析」按钮，验证多图解析容器正确初始化并渲染
   const solToggleCheck = await evaluate(ws, `
