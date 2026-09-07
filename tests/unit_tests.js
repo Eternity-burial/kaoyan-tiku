@@ -1481,6 +1481,33 @@ test('解析按钮显示态与隐藏态 hover 样式隔离，防止 Space 快捷
   assert.ok(stylesSrc.includes('[data-theme="dark"] .gel-btn.btn-toggle.hide:hover .key'), '深色模式应适配隐藏解析 hover 下的 .key');
 });
 
+// ===== 18. 滚轮切题与右键+滚轮切章手势契约校验 =====
+console.log('\n--- 18. 滚轮切题与右键+滚轮切章手势契约校验 (Wheel Gesture & Right-Click Navigation Contract) ---');
+
+test('滚轮切题（A/D）与右键+滚轮切章（Q/E）手势逻辑完整性及右键菜单拦截', () => {
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/app.js'), 'utf8');
+  const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+
+  // 1. 验证快捷键帮助面板已收录「右键+滚轮」切章说明
+  assert.ok(indexHtml.includes('切章 / 复习切题'), 'index.html 快捷键面板必须收录切章/复习切题');
+  assert.ok(indexHtml.includes('<kbd>右键</kbd>+<kbd>滚轮</kbd>'), 'index.html 必须以标准按键标签展示右键+滚轮');
+
+  // 2. 验证右键状态追踪与 contextmenu 屏蔽机制
+  assert.ok(appSrc.includes('_isRightMouseDown'), 'app.js 必须具备右键按下状态追踪');
+  assert.ok(appSrc.includes('_suppressNextContextMenu'), 'app.js 必须具备手势触发后的 contextmenu 屏蔽状态');
+  assert.ok(appSrc.includes("document.addEventListener('contextmenu'"), 'app.js 必须监听 contextmenu 事件以防系统菜单弹出');
+
+  // 3. 验证右键+滚轮手势下精确等效 Q / E
+  assert.ok(appSrc.includes('isRightClick'), 'wheel 监听器必须准确识别右键状态 (e.buttons 或 mousedown 状态)');
+  assert.ok(appSrc.includes('gotoNextChapter()'), '右键向下/向右滚轮必须调用 gotoNextChapter()');
+  assert.ok(appSrc.includes('gotoPrevChapter()'), '右键向上/向左滚轮必须调用 gotoPrevChapter()');
+  assert.ok(appSrc.includes('reviewNext()'), '复习会话中必须准确联动 reviewNext()');
+  assert.ok(appSrc.includes('reviewPrev()'), '复习会话中必须准确联动 reviewPrev()');
+
+  // 4. 验证常规无右键滚轮依然保持 A / D 切题
+  assert.ok(appSrc.includes('navNext()') && appSrc.includes('navPrev()'), '常规横向滚轮必须继续等效 A / D (navPrev / navNext)');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');

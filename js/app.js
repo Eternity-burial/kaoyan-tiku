@@ -3600,18 +3600,53 @@ ${cardsHTML}
       }
     });
 
-    // ===== 横向滚轮切题（常规状态，效果同 A/D 键） =====
-    // 方向锁定策略：手势前几个事件确定主导方向（横/纵），之后互斥屏蔽。
-    // — 锁定为横向：累积 dx，超 30 立即切题并用 lock 防连切，小幅度即可触发
-    // — 锁定为纵向：整段手势忽略（触控板上下滑绝不切题）
-    // — 300ms 无新事件 → 手势结束，全部重置
-    // 触控板 vs 鼠标滚轮方向解耦：单次 |dx|≥50 判为鼠标滚轮（右滚→下一题），
-    // 否则判为触控板（右滑→上一题）。两者语义天然相反。
+    // ===== 滚轮切题与切章手势 =====
+    // 1. 右键 + 滚轮：等效 Q / E（上/下一章，复习中为上/下一复习题）
+    //    支持垂直滚轮 (上滚 Q，下滚 E) 与横向滚轮 (左推 Q，右推 E)，带 250ms 锁防止连续误翻
+    // 2. 常规横向滚轮：等效 A / D（上/下一题）
+    let _isRightMouseDown = false;
+    let _suppressNextContextMenu = false;
+
+    document.addEventListener('mousedown', function (e) {
+      if (e.button === 2) _isRightMouseDown = true;
+    }, true);
+
+    document.addEventListener('mouseup', function (e) {
+      if (e.button === 2) {
+        _isRightMouseDown = false;
+        _rwAccum = 0;
+        _rwLocked = false;
+        if (_rwTimer) { clearTimeout(_rwTimer); _rwTimer = null; }
+        if (_suppressNextContextMenu) {
+          setTimeout(function () { _suppressNextContextMenu = false; }, 200);
+        }
+      }
+    }, true);
+
+    window.addEventListener('blur', function () {
+      _isRightMouseDown = false;
+      _suppressNextContextMenu = false;
+      _rwAccum = 0;
+      _rwLocked = false;
+      if (_rwTimer) { clearTimeout(_rwTimer); _rwTimer = null; }
+    });
+
+    // 拦截右键+滚轮手势触发后的 contextmenu，避免手势结束后弹出系统右键菜单
+    document.addEventListener('contextmenu', function (e) {
+      if (_suppressNextContextMenu) {
+        e.preventDefault();
+        e.stopPropagation();
+        _suppressNextContextMenu = false;
+      }
+    }, true);
+
+    let _rwAccum = 0, _rwLocked = false, _rwTimer = null;
     let _wDir = null, _wAccum = 0, _wLocked = false, _wTimer = null, _wIsMouse = false;
+
     document.addEventListener('wheel', function (e) {
       if (lbAnnotMode) return;
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
-      // 英语科目下禁止触发数学切题（彻底防止跨学科穿透）
+      // 英语科目下禁止触发数学切题与切章（彻底防止跨学科穿透）
       if (curSubjectId === 'english' || (curSubject && curSubject.type === 'english')) return;
       if (subjectPickerOpen || dashboardOpen || wrongBookOpen || shortcutHelpOpen || sm2PanelOpen || relatedModalOpen || topicRenameModalOpen) return;
       if (window.isReviewSummaryOpen && window.isReviewSummaryOpen()) return;
@@ -3620,6 +3655,43 @@ ${cardsHTML}
       if (e.target.closest && e.target.closest('.sidebar-right, .sidebar-left, .qnav-container, .qnav, .math-symbol-palette, .chapter-selector, .filter-toolbar, .export-section, .related-modal-card, .quick-topic-popover, #mathSymbolPalette, .review-summary-modal, .review-summary-overlay')) return;
 
       const dx = e.deltaX || 0, dy = e.deltaY || 0;
+      const isRightClick = ((e.buttons & 2) !== 0) || _isRightMouseDown;
+
+      // ===== 右键 + 滚轮（等效 Q / E 键） =====
+      if (isRightClick) {
+        e.preventDefault();
+        _suppressNextContextMenu = true;
+
+        if (_rwTimer) clearTimeout(_rwTimer);
+        _rwTimer = setTimeout(function () {
+          _rwAccum = 0;
+          _rwLocked = false;
+          _rwTimer = null;
+        }, 250);
+
+        if (_rwLocked) return;
+
+        // 取绝对值主导方向的增量（垂直优先或横向）
+        const delta = Math.abs(dy) >= Math.abs(dx) ? dy : dx;
+        _rwAccum += delta;
+
+        if (Math.abs(_rwAccum) >= 20) {
+          if (_rwAccum > 0) {
+            // 滚轮向下 / 向右：下一章 / 复习中下一题 (E)
+            if (reviewSession) reviewNext();
+            else gotoNextChapter();
+          } else {
+            // 滚轮向上 / 向左：上一章 / 复习中上一题 (Q)
+            if (reviewSession) reviewPrev();
+            else gotoPrevChapter();
+          }
+          _rwLocked = true;
+          _rwAccum = 0;
+        }
+        return;
+      }
+
+      // ===== 常规横向滚轮（等效 A / D 键） =====
       const absDX = Math.abs(dx), absDY = Math.abs(dy);
 
       // 重置计时器：每次新事件都推迟 reset

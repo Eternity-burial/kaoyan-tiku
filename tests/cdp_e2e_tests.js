@@ -191,6 +191,44 @@ async function run() {
   `);
   await sleep(300);
 
+  // 测试右键 + 滚轮切章手势 (等效 Q / E) 与 contextmenu 拦截
+  console.log('  测试右键 + 滚轮切章手势 (等效 Q / E) 与 contextmenu 拦截...');
+  const rightWheelCheck = await evaluate(ws, `
+    (() => {
+      const chBefore = currentChapterId;
+      // 1. 模拟右键按住 + 滚轮向下 (deltaY: 100, buttons: 2) -> 等效 E (下一章)
+      document.dispatchEvent(new MouseEvent('mousedown', { button: 2, bubbles: true }));
+      document.dispatchEvent(new WheelEvent('wheel', { deltaY: 100, buttons: 2, bubbles: true }));
+      const chAfterDown = currentChapterId;
+
+      // 模拟右键松开并触发 contextmenu 事件
+      document.dispatchEvent(new MouseEvent('mouseup', { button: 2, bubbles: true }));
+      let cmDefaultPrevented = false;
+      const cmEvt = new MouseEvent('contextmenu', { button: 2, bubbles: true, cancelable: true });
+      document.dispatchEvent(cmEvt);
+      cmDefaultPrevented = cmEvt.defaultPrevented;
+
+      // 2. 模拟右键按住 + 滚轮向上 (deltaY: -100, buttons: 2) -> 等效 Q (上一章)
+      document.dispatchEvent(new MouseEvent('mousedown', { button: 2, bubbles: true }));
+      document.dispatchEvent(new WheelEvent('wheel', { deltaY: -100, buttons: 2, bubbles: true }));
+      const chAfterUp = currentChapterId;
+      document.dispatchEvent(new MouseEvent('mouseup', { button: 2, bubbles: true }));
+
+      return {
+        chBefore,
+        chAfterDown,
+        chAfterUp,
+        cmDefaultPrevented,
+        nextWorked: chAfterDown !== chBefore,
+        prevWorked: chAfterUp === chBefore
+      };
+    })()
+  `);
+  console.log('  右键+滚轮切章测试结果:', rightWheelCheck);
+  if (!rightWheelCheck.nextWorked || !rightWheelCheck.prevWorked || !rightWheelCheck.cmDefaultPrevented) {
+    throw new Error('右键+滚轮切章或 contextmenu 拦截校验失败: ' + JSON.stringify(rightWheelCheck));
+  }
+
   // 4.1 测试小题模式快捷键 F 切换与全局持久化记忆 (跨章、跨重载保持)
   console.log('  测试小题模式快捷键 F 切换与全局持久化记忆...');
   const subModeBefore = await evaluate(ws, 'subMode');
