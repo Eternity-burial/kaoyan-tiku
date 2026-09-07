@@ -1238,6 +1238,7 @@ test('MathPalette: 符号盘数据集与 index.html 6 大 Tabs 1:1 精确映射'
   assert.ok(dictKeys.has('fpp'), '自动补全应包含 fpp');
   assert.ok(dictKeys.has('fn'), '自动补全应包含 fn');
   assert.ok(dictKeys.has('f0'), '自动补全应包含 f0');
+  assert.ok(dictKeys.has('cdot'), '自动补全应包含 \\cdot 点乘号');
 });
 
 test('MathPalette.insertSnippetIntoNotes: 消除 | 占位符冲突与保护公式字面量', () => {
