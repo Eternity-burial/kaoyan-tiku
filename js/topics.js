@@ -847,7 +847,6 @@
               topicsList.map(function(t) {
                 var tidAttr = t.id ? ' data-tid="' + escapeHtml(t.id) + '"' : '';
                 return '<span class="rc-topic-tag"' + tidAttr + ' title="共同考点：' + escapeHtml(t.name) + '（点击或右键可重命名）">' +
-                  '<span class="rc-topic-icon">🏷️</span>' +
                   '<span class="rc-topic-name">' + renderTopicTextHtml(t.name) + '</span>' +
                 '</span>';
               }).join('') +
@@ -856,11 +855,13 @@
           return '<div class="related-card" data-qid="' + escapeHtml(q.qid) + '" draggable="true">' +
             '<div class="rc-head">' +
               '<div class="rc-head-left">' +
-                '<span class="rc-drag-handle" title="按住拖拽调整相似度与排序">⠿</span>' +
-                '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
-                '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
-                '<span class="rc-dot' + dotClass + '" title="状态: ' + escapeHtml(statusText) + '"></span>' +
-                (statusText ? '<span style="font-size:11.5px;color:var(--text-muted);font-weight:600">' + escapeHtml(statusText) + '</span>' : '') +
+                '<div class="rc-meta">' +
+                  '<span class="rc-drag-handle" title="按住拖拽调整相似度与排序">⠿</span>' +
+                  '<span class="rc-book">' + escapeHtml(q.bookName) + '</span>' +
+                  '<span class="rc-label">' + escapeHtml(q.chapterShort + ' ' + q.label) + '</span>' +
+                  '<span class="rc-dot' + dotClass + '" title="状态: ' + escapeHtml(statusText) + '"></span>' +
+                  (statusText ? '<span class="rc-status-text">' + escapeHtml(statusText) + '</span>' : '') +
+                '</div>' +
                 topicsHtml +
               '</div>' +
               '<div class="rc-head-actions">' +
@@ -1019,12 +1020,36 @@
             var targetQid = this.dataset.unlinkQid;
             var curQid = getCurrentQid();
             var myTopics = getTopicsForQid(curQid);
-            myTopics.forEach(function(t) {
-              removeQuestionFromTopic(t.id, targetQid);
-            });
-            renderRelatedQuestions();
-            renderNav();
-            if (relatedModalOpen) renderModalWorkbench();
+            var topicNames = myTopics.map(function(t) { return t.name; }).join('、');
+            var qMeta = getQuestionMeta(targetQid);
+            var qTitle = qMeta ? (qMeta.bookName + ' ' + qMeta.chapterShort + ' ' + qMeta.label) : targetQid;
+
+            function doUnlink() {
+              myTopics.forEach(function(t) {
+                removeQuestionFromTopic(t.id, targetQid);
+              });
+              if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+                window.storageSync.showToast('已将该同类题移出共同考点', 'info');
+              }
+              renderRelatedQuestions();
+              renderNav();
+              if (relatedModalOpen) renderModalWorkbench();
+            }
+
+            if (typeof window.showConfirmModal === 'function') {
+              window.showConfirmModal({
+                title: '移出同类题关联',
+                icon: '🔗',
+                message: '确定要将「' + qTitle + '」从当前题目的共同考点（' + (topicNames || '考点') + '）中移出吗？\n\n移出后该题将不再作为此题的同类题展示。',
+                confirmText: '确认移出',
+                cancelText: '取消',
+                danger: true
+              }).then(function(confirmed) {
+                if (confirmed) doUnlink();
+              });
+            } else {
+              doUnlink();
+            }
           };
         });
 

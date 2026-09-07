@@ -5321,19 +5321,35 @@
 
     .rc-head {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 12px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
     .rc-head-left {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 8px;
       min-width: 0;
+      flex: 1 1 auto;
       flex-wrap: wrap;
+      row-gap: 6px;
+    }
+    .rc-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      min-width: 0;
+      white-space: nowrap;
+    }
+    .rc-status-text {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+      white-space: nowrap;
     }
     .rc-book {
       font-size: 11.5px;
@@ -5420,12 +5436,6 @@
       color: #f3e8ff;
       box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
     }
-    .rc-topic-icon {
-      font-size: 11px;
-      opacity: 0.85;
-      flex-shrink: 0;
-      line-height: 1;
-    }
     .rc-topic-name {
       display: inline-flex;
       align-items: center;
@@ -5438,6 +5448,10 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-shrink: 0;
+      margin-left: auto;
+      white-space: nowrap;
+      padding-top: 1px;
     }
     .rc-btn-pin {
       font-weight: 600;
