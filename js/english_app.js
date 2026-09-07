@@ -758,7 +758,9 @@
 
     dom.passagePane.innerHTML = html;
 
-    if (window.renderMathInElement) {
+    if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.renderMathInElement === 'function') {
+      window.MarkdownLatexEngine.renderMathInElement(dom.passagePane);
+    } else if (window.renderMathInElement) {
       try {
         window.renderMathInElement(dom.passagePane, {
           delimiters: [
@@ -901,18 +903,22 @@
       }
     }
 
-    if (window.renderMathInElement && dom.analysisPane) {
-      try {
-        window.renderMathInElement(dom.analysisPane, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\[', right: '\\]', display: true },
-            { left: '\\(', right: '\\)', display: false }
-          ],
-          throwOnError: false
-        });
-      } catch (e) {}
+    if (dom.analysisPane) {
+      if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.renderMathInElement === 'function') {
+        window.MarkdownLatexEngine.renderMathInElement(dom.analysisPane);
+      } else if (window.renderMathInElement) {
+        try {
+          window.renderMathInElement(dom.analysisPane, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false },
+              { left: '\\[', right: '\\]', display: true },
+              { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: false
+          });
+        } catch (e) {}
+      }
     }
   }
 

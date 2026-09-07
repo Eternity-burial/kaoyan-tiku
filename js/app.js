@@ -2206,75 +2206,19 @@
       });
     }
 
-    // ===== 笔记渲染 =====
-    // Markdown + LaTeX 渲染：marked 转 HTML → DOMPurify 消毒 → auto-render 渲染 KaTeX → 再次消毒
-    // 两次消毒：marked 默认放行内联 HTML（防 <img onerror> 等注入）；KaTeX \href 可能生成链接（防 javascript: 链接）
-    function sanitizeNotesHtml(html) {
-      if (typeof DOMPurify === 'undefined') return String(html).replace(/<[^>]*>/g, ''); // 无 DOMPurify 时兜底去标签
-      return DOMPurify.sanitize(html, { ADD_ATTR: ['target'] });
-    }
+    // ===== 笔记渲染（统一委托至 MarkdownLatexEngine 基础引擎） =====
     function renderNotesMarkdown(src) {
-      if (!src) return '';
-      var html;
-      try {
-        // 先抽离 $...$/$$...$$/\[...\]/\(... 公式占位，避免 marked 的 Markdown 转义吞掉 LaTeX 反斜杠（如 \{、\\）
-        var mathSpans = [];
-        var protectedSrc = src.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|\\\[[\s\S]+?\\\]|\\\([^$\n]+?\\\)/g, function (m) {
-          // 优化数学公式排版：自动对极限、求和、最值等算子补全 \limits，确保上下标显示在正下方
-          var processed = m.replace(/\\(lim|sum|prod|max|min|inf|sup)(?!\\limits|\\nolimits)\s*_/g, function(match, op) {
-            return '\\' + op + '\\limits_';
-          });
-          mathSpans.push(processed);
-          return '' + (mathSpans.length - 1) + '';
-        });
-        // breaks:true → 单换行渲染为 <br>，所见即所得（空行仍是段落间距）
-        var md = marked.parse(protectedSrc, { breaks: true });
-        html = sanitizeNotesHtml(md);
-      } catch (e) { html = String(src).replace(/</g, '&lt;'); }
-      var holder = document.createElement('div');
-      holder.innerHTML = html;
-      restoreMathPlaceholders(holder, mathSpans); // 在 DOM 中还原公式为纯文本，避免消毒器二次破坏
-      try {
-        renderMathInElement(holder, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\[', right: '\\]', display: true },
-            { left: '\\(', right: '\\)', display: false }
-          ],
-          throwOnError: false
-        });
-      } catch (e) {}
-      return sanitizeNotesHtml(holder.innerHTML);
-    }
-
-    // 把 N 占位符还原为原始 LaTeX 文本（text node，不经 HTML 解析）
-    function restoreMathPlaceholders(root, spans) {
-      if (!spans.length || !root) return;
-      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-      var nodes = [];
-      while (walker.nextNode()) nodes.push(walker.currentNode);
-      for (var i = 0; i < nodes.length; i++) {
-        var node = nodes[i];
-        var txt = node.nodeValue || '';
-        if (txt.indexOf('') === -1) continue;
-        var frag = document.createDocumentFragment();
-        var re = /([0-9]+)/g, m, last = 0, hit = false;
-        while ((m = re.exec(txt)) !== null) {
-          if (m.index > last) frag.appendChild(document.createTextNode(txt.substring(last, m.index)));
-          var idx = parseInt(m[1], 10);
-          if (spans[idx] !== undefined) frag.appendChild(document.createTextNode(spans[idx]));
-          last = m.index + m[0].length;
-          hit = true;
-        }
-        if (!hit) continue;
-        if (last < txt.length) frag.appendChild(document.createTextNode(txt.substring(last)));
-        node.parentNode.replaceChild(frag, node);
+      if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.renderBlock === 'function') {
+        return window.MarkdownLatexEngine.renderBlock(src);
       }
+      return escapeHtml(src);
     }
 
-    // HTML 转义安全工具函数
+    // HTML 转义安全工具函数（优先使用基础引擎标准实现）
     function escapeHtml(str) {
+      if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.escapeHtml === 'function') {
+        return window.MarkdownLatexEngine.escapeHtml(str);
+      }
       if (str === undefined || str === null) return '';
       return String(str)
         .replace(/&/g, '&amp;')
@@ -2400,7 +2344,7 @@
       updateNotesPreview();
     }
 
-    // 编辑时右侧实时预览（防抖）
+    // 编辑时右侧实时预览（40ms 低延迟防抖）
     var notesPreviewTimer = null;
     function updateNotesPreview() {
       clearTimeout(notesPreviewTimer);
@@ -2408,7 +2352,7 @@
         var preview = document.getElementById('notesPreview');
         var textarea = document.getElementById('notesTextarea');
         if (preview) preview.innerHTML = renderNotesMarkdown(textarea ? textarea.value : '');
-      }, 200);
+      }, 40);
     }
 
     // 查看模式：渲染结果常驻显示在「笔记」下方

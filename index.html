@@ -329,6 +329,10 @@
               <input type="text" class="qtp-input" id="inputQuickTopicSearch" placeholder="搜索或输入新考点名称..." autocomplete="off">
               <button type="button" class="gel-btn btn-sm" id="btnQuickCreateTopic">新建并归类</button>
             </div>
+            <div class="qtp-preview-row" id="quickTopicPreviewRow" style="display:none">
+              <span class="qtp-preview-label">预览：</span>
+              <span class="qtp-preview-content" id="quickTopicPreview"></span>
+            </div>
             <div class="qtp-list" id="quickTopicList"></div>
             <div class="qtp-footer">
               <button type="button" class="qtp-manage-link" id="btnQuickOpenLModal">打开完整考点面板 (L) »</button>
@@ -1070,6 +1074,7 @@
   <script src="lib/katex/katex.min.js"></script>
   <script src="lib/katex/contrib/auto-render.min.js"></script>
   <script src="lib/markerjs3/markerjs3.umd.js"></script>
+  <script src="js/markdown_latex.js"></script>
   <script src="js/confirm_modal.js"></script>
   <script src="js/storage_sync.js"></script>
   <script src="js/chapters.js"></script>

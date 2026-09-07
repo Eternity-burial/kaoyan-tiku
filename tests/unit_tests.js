@@ -1630,6 +1630,111 @@ test('全库彻底根除原生 alert/confirm 并为本地文件存储授权增�
   });
 });
 
+console.log('\n--- 22. 统一 Markdown 与 LaTeX 基础排版引擎契约 (MarkdownLatexEngine Contract) ---');
+
+test('MarkdownLatexEngine: 基础引擎完整性、行内与块级排版、公式算子补齐与安全快道', () => {
+  const engine = require('../js/markdown_latex.js');
+  assert.ok(engine, 'MarkdownLatexEngine 必须成功加载');
+  assert.strictEqual(typeof engine.render, 'function', '必须导出 render');
+  assert.strictEqual(typeof engine.renderInline, 'function', '必须导出 renderInline');
+  assert.strictEqual(typeof engine.renderBlock, 'function', '必须导出 renderBlock');
+  assert.strictEqual(typeof engine.escapeHtml, 'function', '必须导出 escapeHtml');
+  assert.strictEqual(typeof engine.isPlainString, 'function', '必须导出 isPlainString');
+  assert.strictEqual(typeof engine.insertSnippet, 'function', '必须导出 insertSnippet');
+  assert.strictEqual(typeof engine.wrapSelection, 'function', '必须导出 wrapSelection');
+  assert.strictEqual(typeof engine.bindLivePreview, 'function', '必须导出 bindLivePreview');
+  assert.strictEqual(typeof engine.optimizeMathOperators, 'function', '必须导出 optimizeMathOperators');
+
+  // 1. 纯文本极速快道判断
+  assert.strictEqual(engine.isPlainString('导数与微分'), true, '中文纯文本应命中快道');
+  assert.strictEqual(engine.isPlainString('Limits & Continuity'), true, '英文普通文本应命中快道');
+  assert.strictEqual(engine.isPlainString('$\\lim_{x \\to 0}$'), false, '包含美元公式标记不得命中快道');
+  assert.strictEqual(engine.isPlainString('\\frac{a}{b}'), false, '包含反斜杠不得命中快道');
+  assert.strictEqual(engine.isPlainString('**加粗重点**'), false, '包含 Markdown 标记不得命中快道');
+
+  // 2. HTML 转义安全验证
+  assert.strictEqual(engine.escapeHtml('<script>alert("xss")</script>'), '&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;', 'XSS 标签应被转义');
+  assert.strictEqual(engine.escapeHtml("a & b 'c'"), 'a &amp; b &#39;c&#39;', '特殊字符应被转义');
+
+  // 3. 数学算子 \limits 智能补齐
+  const optLim = engine.optimizeMathOperators('\\lim_{x \\to 0} f(x)');
+  assert.strictEqual(optLim, '\\lim\\limits_{x \\to 0} f(x)', '\\lim 应自动补全 \\limits_');
+  const optSum = engine.optimizeMathOperators('\\sum_{n=1}^{\\infty} a_n');
+  assert.strictEqual(optSum, '\\sum\\limits_{n=1}^{\\infty} a_n', '\\sum 应自动补全 \\limits_');
+  const optMax = engine.optimizeMathOperators('\\max_{x \\in [a,b]} f(x)');
+  assert.strictEqual(optMax, '\\max\\limits_{x \\in [a,b]} f(x)', '\\max 应自动补全 \\limits_');
+
+  // 4. 通用输入框光标占位符解析与代码片段插入
+  const mockInput = {
+    value: '',
+    selectionStart: 0,
+    selectionEnd: 0,
+    focus: () => {}
+  };
+
+  // 空选区插入分式
+  mockInput.value = ''; mockInput.selectionStart = 0; mockInput.selectionEnd = 0;
+  engine.insertSnippet(mockInput, '\\frac{|}{}');
+  assert.strictEqual(mockInput.value, '\\frac{}{}', '分式占位符 | 应被移除');
+  assert.strictEqual(mockInput.selectionStart, 6, '光标应准确定位在分子大括号内');
+
+  // 带选区插入平方根
+  mockInput.value = 'sin(x)'; mockInput.selectionStart = 0; mockInput.selectionEnd = 6;
+  engine.insertSnippet(mockInput, '\\sqrt{|}');
+  assert.strictEqual(mockInput.value, '\\sqrt{sin(x)}', '选中文本应自动填入占位符位置');
+  assert.strictEqual(mockInput.selectionStart, 13, '光标应正确定位在插入片段末尾');
+
+  // 字面量竖线保护
+  mockInput.value = ''; mockInput.selectionStart = 0; mockInput.selectionEnd = 0;
+  engine.insertSnippet(mockInput, '|A|');
+  assert.strictEqual(mockInput.value, '|A|', '字面量绝对值 |A| 不应被当成占位符');
+
+  mockInput.value = ''; mockInput.selectionStart = 0; mockInput.selectionEnd = 0;
+  engine.insertSnippet(mockInput, '\\|\\boldsymbol{x}\\|');
+  assert.strictEqual(mockInput.value, '\\|\\boldsymbol{x}\\|', '范数双竖线不应被当成占位符');
+
+  // 5. 选区包裹成对符号
+  mockInput.value = 'x + y'; mockInput.selectionStart = 0; mockInput.selectionEnd = 5;
+  engine.wrapSelection(mockInput, '$', '$');
+  assert.strictEqual(mockInput.value, '$x + y$', 'wrapSelection 必须正确为选区添加首尾包裹符号');
+  assert.strictEqual(mockInput.selectionStart, 1);
+  assert.strictEqual(mockInput.selectionEnd, 6);
+});
+
+test('全站考点与笔记 Markdown/LaTeX 架构统一与无缝时序加载契约', () => {
+  const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/app.js'), 'utf8');
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  const paletteSrc = fs.readFileSync(path.join(__dirname, '../js/math_palette.js'), 'utf8');
+
+  // 1. index.html 加载时序：markdown_latex.js 必须在 marked/katex 之后，且在业务模块 topics/app 之前
+  const katexIdx = indexHtml.indexOf('src="lib/katex/contrib/auto-render.min.js"');
+  const engineIdx = indexHtml.indexOf('src="js/markdown_latex.js"');
+  const topicsIdx = indexHtml.indexOf('src="js/topics.js"');
+  const appIdx = indexHtml.indexOf('src="js/app.js"');
+
+  assert.ok(katexIdx !== -1, 'index.html 必须载入 auto-render.min.js');
+  assert.ok(engineIdx !== -1, 'index.html 必须载入 js/markdown_latex.js');
+  assert.ok(engineIdx > katexIdx, 'markdown_latex.js 必须在 katex auto-render 之后载入');
+  assert.ok(engineIdx < topicsIdx, 'markdown_latex.js 必须在 topics.js 之前载入，彻底避免时序未定义隐患');
+  assert.ok(engineIdx < appIdx, 'markdown_latex.js 必须在 app.js 之前载入');
+
+  // 2. index.html 快速考点浮层包含实时预览挂载点
+  assert.ok(indexHtml.includes('id="quickTopicPreviewRow"'), '快速考点浮层必须包含 quickTopicPreviewRow 预览容器');
+  assert.ok(indexHtml.includes('id="quickTopicPreview"'), '必须包含 quickTopicPreview 渲染节点');
+
+  // 3. app.js 中 renderNotesMarkdown 接入 MarkdownLatexEngine
+  assert.ok(appSrc.includes('MarkdownLatexEngine.renderBlock'), 'app.js 必须将 renderNotesMarkdown 委托给 MarkdownLatexEngine.renderBlock');
+
+  // 4. topics.js 中 renderTopicTextHtml 接入 MarkdownLatexEngine
+  assert.ok(topicsSrc.includes('MarkdownLatexEngine.renderInline'), 'topics.js 必须将 renderTopicTextHtml 委托给 MarkdownLatexEngine.renderInline');
+  assert.ok(topicsSrc.includes('MarkdownLatexEngine.insertSnippet'), 'topics.js 辅助插入函数必须委托给 MarkdownLatexEngine.insertSnippet');
+
+  // 5. math_palette.js 升级为支持考点输入框并接入 MarkdownLatexEngine
+  assert.ok(paletteSrc.includes('getActiveTargetInput'), 'math_palette.js 必须具备自适应获取当前焦点输入框的能力');
+  assert.ok(paletteSrc.includes('MarkdownLatexEngine.insertSnippet') || paletteSrc.includes('engine.insertSnippet'), 'math_palette.js 必须接入通用 insertSnippet');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');

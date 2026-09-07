@@ -5114,6 +5114,31 @@
     .qtp-input:focus {
       border-color: var(--primary);
     }
+    .qtp-preview-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      background: var(--bg-hover, rgba(0, 0, 0, 0.03));
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      font-size: 12px;
+      min-height: 26px;
+    }
+    .qtp-preview-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+    .qtp-preview-content {
+      color: var(--primary);
+      font-weight: 500;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .qtp-preview-content .katex {
+      font-size: 1.05em;
+    }
     .qtp-list {
       display: flex;
       flex-direction: column;

@@ -736,6 +736,8 @@
       } else {
         pop.style.display = 'flex';
         var searchInput = document.getElementById('inputQuickTopicSearch');
+        var quickPreviewRow = document.getElementById('quickTopicPreviewRow');
+        if (quickPreviewRow) quickPreviewRow.style.display = 'none';
         if (searchInput) {
           searchInput.value = '';
           searchInput.focus();
@@ -1087,28 +1089,36 @@
 
     // 6. 考点主题名称渲染（完整支持 Markdown 语法与 $LaTeX$ / $$LaTeX$$ 数学公式，与笔记引擎 100% 统一）
     function renderTopicTextHtml(text) {
+      if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.renderInline === 'function') {
+        return window.MarkdownLatexEngine.renderInline(text);
+      }
       if (!text) return '';
       // 纯文本极速直出快道：若无 LaTeX 标记与 Markdown 语法符号，直接 escapeHtml 输出，省去 marked + KaTeX 重型引擎开销
       if (!text.includes('$') && !text.includes('\\') && !/[*_`~\[\]<>]/.test(text)) {
         return escapeHtml(text);
       }
       try {
-        var html = renderNotesMarkdown(text);
-        if (typeof html === 'string') {
-          html = html.trim();
-          // 如果为单段落，剥离外层 <p>...</p> 以便在按钮、胶囊徽标等行内元素中原生流式展示
-          if (html.startsWith('<p>') && html.endsWith('</p>') && html.indexOf('<p>', 3) === -1) {
-            html = html.substring(3, html.length - 4);
+        if (typeof renderNotesMarkdown === 'function') {
+          var html = renderNotesMarkdown(text);
+          if (typeof html === 'string') {
+            html = html.trim();
+            // 如果为单段落，剥离外层 <p>...</p> 以便在按钮、胶囊徽标等行内元素中原生流式展示
+            if (html.startsWith('<p>') && html.endsWith('</p>') && html.indexOf('<p>', 3) === -1) {
+              html = html.substring(3, html.length - 4);
+            }
+            return html;
           }
-          return html;
         }
       } catch(e) {}
       return escapeHtml(text);
     }
 
-    // 辅助：向通用输入框插入 LaTeX 代码片段并定位光标
+    // 辅助：向通用输入框插入 LaTeX 代码片段并定位光标（统一委托至 MarkdownLatexEngine）
     function insertSnippetIntoField(inputEl, snippet, onUpdate) {
       if (!inputEl) return;
+      if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.insertSnippet === 'function') {
+        return window.MarkdownLatexEngine.insertSnippet(inputEl, snippet, onUpdate);
+      }
       var start = inputEl.selectionStart !== undefined ? inputEl.selectionStart : inputEl.value.length;
       var end = inputEl.selectionEnd !== undefined ? inputEl.selectionEnd : start;
       var val = inputEl.value;
@@ -2334,8 +2344,26 @@
         if (pop) pop.style.display = 'none';
       };
       var inputQuickSearch = document.getElementById('inputQuickTopicSearch');
+      var quickPreviewRow = document.getElementById('quickTopicPreviewRow');
+      var quickPreviewContent = document.getElementById('quickTopicPreview');
+      var updateQuickPreview = function() {
+        if (!inputQuickSearch) return;
+        var val = inputQuickSearch.value.trim();
+        if (quickPreviewRow && quickPreviewContent) {
+          if (val && (val.includes('$') || val.includes('\\') || /[*_`~\[\]<>]/.test(val))) {
+            quickPreviewRow.style.display = 'flex';
+            quickPreviewContent.innerHTML = renderTopicTextHtml(val);
+          } else {
+            quickPreviewRow.style.display = 'none';
+            quickPreviewContent.innerHTML = '';
+          }
+        }
+      };
       if (inputQuickSearch) {
-        inputQuickSearch.addEventListener('input', renderQuickTopicPopover);
+        inputQuickSearch.addEventListener('input', function() {
+          renderQuickTopicPopover();
+          updateQuickPreview();
+        });
         inputQuickSearch.onkeydown = function(e) {
           if (e.key === 'Enter') {
             e.preventDefault();
@@ -2355,6 +2383,7 @@
           }
           createRelatedTopic(name, getCurrentQid());
           if (inputQuickSearch) inputQuickSearch.value = '';
+          updateQuickPreview();
           renderRelatedQuestions();
           renderNav();
           renderQuickTopicPopover();

@@ -417,18 +417,61 @@
     return !isNorm && !isArraySpec && !isLiteralBar;
   }
 
+  function getActiveTargetInput() {
+    if (typeof document === 'undefined') return null;
+    // 检查考点重命名弹窗
+    var renameModal = document.getElementById('topicRenameModal');
+    if (renameModal && renameModal.style.display !== 'none') {
+      var renameInput = document.getElementById('inputRenameTopicName');
+      if (renameInput) return renameInput;
+    }
+    // 检查快速考点浮层
+    var quickPop = document.getElementById('quickTopicPopover');
+    if (quickPop && quickPop.style.display !== 'none') {
+      var quickInput = document.getElementById('inputQuickTopicSearch');
+      if (quickInput) return quickInput;
+    }
+    // 检查当前具有焦点的输入框
+    var active = document.activeElement;
+    if (active && (active.id === 'inputNewTopicName' || active.id === 'inputRenameTopicName' || active.id === 'inputQuickTopicSearch')) {
+      return active;
+    }
+    return document.getElementById('notesTextarea');
+  }
+
   function insertSnippetIntoNotes(snippet, callbacks) {
     var cb = callbacks || {};
-    var duo = document.getElementById('notesDuo');
-    if (!duo || duo.style.display === 'none') {
-      if (typeof cb.enterEditMode === 'function') cb.enterEditMode();
-    }
-    var textarea = document.getElementById('notesTextarea');
-    if (!textarea) return;
+    var target = getActiveTargetInput();
 
-    var start = textarea.selectionStart !== undefined ? textarea.selectionStart : textarea.value.length;
-    var end = textarea.selectionEnd !== undefined ? textarea.selectionEnd : start;
-    var val = textarea.value;
+    // 如果靶向的是笔记输入框，确保双栏编辑态已展开
+    if (!target || target.id === 'notesTextarea') {
+      var duo = typeof document !== 'undefined' ? document.getElementById('notesDuo') : null;
+      if (!duo || duo.style.display === 'none') {
+        if (typeof cb.enterEditMode === 'function') cb.enterEditMode();
+      }
+      if (!target && typeof document !== 'undefined') target = document.getElementById('notesTextarea');
+    }
+
+    if (!target) return;
+
+    var engine = (typeof MarkdownLatexEngine !== 'undefined' ? MarkdownLatexEngine :
+                 ((typeof window !== 'undefined' && window.MarkdownLatexEngine) ? window.MarkdownLatexEngine : null));
+
+    if (engine && typeof engine.insertSnippet === 'function') {
+      engine.insertSnippet(target, snippet, function () {
+        if (target.id === 'notesTextarea') {
+          if (typeof cb.onDirty === 'function') cb.onDirty();
+          if (typeof cb.updateNotesPreview === 'function') cb.updateNotesPreview();
+        } else {
+          try { target.dispatchEvent(new Event('input', { bubbles: true })); } catch (e) {}
+        }
+      });
+      return;
+    }
+
+    var start = target.selectionStart !== undefined ? target.selectionStart : target.value.length;
+    var end = target.selectionEnd !== undefined ? target.selectionEnd : start;
+    var val = target.value;
     var selected = val.substring(start, end);
 
     var insertText = snippet;
@@ -452,18 +495,33 @@
       }
     }
 
-    textarea.value = val.substring(0, start) + insertText + val.substring(end);
-    textarea.selectionStart = targetCursor;
-    textarea.selectionEnd = targetCursor;
-    textarea.focus();
+    target.value = val.substring(0, start) + insertText + val.substring(end);
+    target.selectionStart = targetCursor;
+    target.selectionEnd = targetCursor;
+    if (typeof target.focus === 'function') target.focus();
 
-    if (typeof cb.onDirty === 'function') cb.onDirty();
-    if (typeof cb.updateNotesPreview === 'function') cb.updateNotesPreview();
+    if (target.id === 'notesTextarea') {
+      if (typeof cb.onDirty === 'function') cb.onDirty();
+      if (typeof cb.updateNotesPreview === 'function') cb.updateNotesPreview();
+    } else {
+      try { target.dispatchEvent(new Event('input', { bubbles: true })); } catch (e) {}
+    }
   }
 
   // 智能括号与美元符号成对闭合或包裹选区
   function wrapOrInsertPair(textarea, openChar, closeChar, callbacks) {
     var cb = callbacks || {};
+    var engine = (typeof MarkdownLatexEngine !== 'undefined' ? MarkdownLatexEngine :
+                 ((typeof window !== 'undefined' && window.MarkdownLatexEngine) ? window.MarkdownLatexEngine : null));
+
+    if (engine && typeof engine.wrapSelection === 'function') {
+      engine.wrapSelection(textarea, openChar, closeChar, function () {
+        if (typeof cb.onDirty === 'function') cb.onDirty();
+        if (typeof cb.updateNotesPreview === 'function') cb.updateNotesPreview();
+      });
+      return;
+    }
+
     var start = textarea.selectionStart;
     var end = textarea.selectionEnd;
     var val = textarea.value;
