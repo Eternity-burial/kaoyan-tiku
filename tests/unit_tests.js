@@ -1423,6 +1423,30 @@ test('sortTopicsList: 考点自定义数值 order 排序与 fallback 规则验�
   assert.deepStrictEqual(reordered.map(t => t.id), ['t3', 't2', 't1'], '拖拽重排后更新 order 得到正确序列');
 });
 
+// ===== 16. 跳转做此题返回条与返回键主题色校验 =====
+console.log('\n--- 16. 跳转做此题返回条与返回键主题色校验 (Jump Return Bar Theme) ---');
+
+test('跳转做此题返回键 (.btn-jump-back) 与返回条样式严格采用清华紫主色系', () => {
+  const stylesSrc = fs.readFileSync(path.join(__dirname, '../css/styles.css'), 'utf8');
+
+  // 1. 确保 .btn-jump-back 采用清华紫渐变 (#8a2b9c -> #660874)
+  assert.ok(stylesSrc.includes('linear-gradient(135deg, #8a2b9c 0%, #660874 100%)'), '.btn-jump-back 应采用清华紫渐变 #8a2b9c -> #660874');
+
+  // 2. 确保不再包含过亮刺眼的荧光亮紫 (#7c3aed)
+  const jumpBackBlock = stylesSrc.match(/\.btn-jump-back\s*\{[^}]+\}/)?.[0] || '';
+  assert.ok(!jumpBackBlock.includes('#7c3aed'), '.btn-jump-back 不应再含有过亮的 #7c3aed');
+  assert.ok(!jumpBackBlock.includes('#9333ea'), '.btn-jump-back 不应再含有过亮的 #9333ea');
+
+  // 3. 确保返回条 .jump-return-bar 容器背景与边框同样采用清华紫色系 rgba(102, 8, 116, ...)
+  const jumpBarBlock = stylesSrc.match(/\.jump-return-bar\s*\{[^}]+\}/)?.[0] || '';
+  assert.ok(jumpBarBlock.includes('102, 8, 116'), '.jump-return-bar 容器应采用清华紫 (102, 8, 116) 色系');
+  assert.ok(!jumpBarBlock.includes('138, 43, 226'), '.jump-return-bar 不应含有过亮荧光紫 rgba(138, 43, 226)');
+
+  // 4. 确保暗黑模式适配
+  assert.ok(stylesSrc.includes('[data-theme="dark"] .btn-jump-back'), '应包含暗黑模式下 .btn-jump-back 的适配');
+  assert.ok(stylesSrc.includes('[data-theme="dark"] .jump-return-bar'), '应包含暗黑模式下 .jump-return-bar 的适配');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');
@@ -1432,3 +1456,4 @@ if (failedTests > 0) {
 } else {
   process.exit(0);
 }
+

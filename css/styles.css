@@ -4815,8 +4815,8 @@
       gap: 12px;
       padding: 10px 16px;
       margin-bottom: 14px;
-      background: linear-gradient(135deg, rgba(102, 8, 116, 0.12), rgba(138, 43, 226, 0.08));
-      border: 1px solid rgba(138, 43, 226, 0.35);
+      background: linear-gradient(135deg, rgba(102, 8, 116, 0.10), rgba(121, 26, 136, 0.05));
+      border: 1px solid rgba(102, 8, 116, 0.25);
       border-radius: var(--radius-md, 10px);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -4836,16 +4836,36 @@
       font-size: 13px;
       font-weight: 700;
       color: #fff;
-      background: linear-gradient(135deg, #7c3aed, #9333ea);
-      border: none;
+      background: linear-gradient(135deg, #8a2b9c 0%, #660874 100%);
+      border: 1px solid #5c0768;
       border-radius: 6px;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
-      transition: all 0.18s;
+      box-shadow: 0 2px 8px rgba(102, 8, 116, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      transition: all 0.18s ease;
     }
     .btn-jump-back:hover {
+      background: linear-gradient(135deg, #9a35ad 0%, #760986 100%);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.5);
+      box-shadow: 0 4px 14px rgba(102, 8, 116, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+    .btn-jump-back:active {
+      transform: translateY(0);
+      background: linear-gradient(135deg, #660874 0%, #52055e 100%);
+      box-shadow: 0 1px 4px rgba(102, 8, 116, 0.3);
+    }
+    [data-theme="dark"] .jump-return-bar {
+      background: linear-gradient(135deg, rgba(102, 8, 116, 0.22), rgba(94, 13, 108, 0.16));
+      border-color: rgba(168, 85, 247, 0.28);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    [data-theme="dark"] .btn-jump-back {
+      background: linear-gradient(135deg, #791a88 0%, #5e0d6c 100%);
+      border-color: rgba(168, 85, 247, 0.45);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+    [data-theme="dark"] .btn-jump-back:hover {
+      background: linear-gradient(135deg, #8a2b9c 0%, #660874 100%);
+      box-shadow: 0 4px 14px rgba(102, 8, 116, 0.45);
     }
     .jump-back-arrow { font-size: 15px; font-weight: 900; }
     .btn-jump-close {
