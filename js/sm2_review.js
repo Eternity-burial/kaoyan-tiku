@@ -649,10 +649,10 @@
 
   function startReviewSession(queue, mode) {
     if (!queue || queue.length === 0) {
-      if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+      if (typeof window.showToast === 'function') {
+        window.showToast('当前没有待复习的题目', 'info');
+      } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
         window.storageSync.showToast('当前没有待复习的题目', 'info');
-      } else {
-        alert('当前没有待复习的题目');
       }
       return;
     }

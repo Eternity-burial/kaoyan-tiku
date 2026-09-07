@@ -1039,86 +1039,18 @@
     }
 
     // ===== 全局统一确认模态框 (Quiet Liquid Confirm Modal) =====
-    var confirmModalResolve = null;
-
-    function showConfirmModal(options) {
-      options = options || {};
-      var title = options.title || '操作确认';
-      var message = options.message || '确定要继续吗？';
-      var confirmText = options.confirmText || '确定';
-      var cancelText = options.cancelText || '取消';
-      var isDanger = !!options.danger;
-      var icon = options.icon || (isDanger ? '⚠️' : 'ℹ️');
-
-      var modal = document.getElementById('confirmModal');
-      var card = modal ? modal.querySelector('.confirm-modal-card') : null;
-      var iconEl = document.getElementById('confirmModalIcon');
-      var titleEl = document.getElementById('confirmModalTitle');
-      var msgEl = document.getElementById('confirmModalMessage');
-      var okBtn = document.getElementById('btnConfirmModalOk');
-      var cancelBtn = document.getElementById('btnConfirmModalCancel');
-
-      if (!modal || !okBtn || !cancelBtn) {
-        var res = typeof window.confirm === 'function' ? window.confirm(message) : true;
-        if (res && typeof options.onConfirm === 'function') options.onConfirm();
-        if (!res && typeof options.onCancel === 'function') options.onCancel();
-        return Promise.resolve(res);
+    var showConfirmModal = function (options) {
+      if (typeof window.showConfirmModal === 'function') {
+        return window.showConfirmModal(options);
       }
+      return Promise.resolve(true);
+    };
 
-      if (confirmModalResolve) {
-        confirmModalResolve(false);
-        confirmModalResolve = null;
+    var closeConfirmModal = function (result) {
+      if (typeof window.closeConfirmModal === 'function') {
+        return window.closeConfirmModal(result);
       }
-
-      if (iconEl) iconEl.textContent = icon;
-      if (titleEl) titleEl.textContent = title;
-      if (msgEl) msgEl.textContent = message;
-
-      okBtn.innerHTML = escapeHtml(confirmText) + ' <span class="key">Enter</span>';
-      cancelBtn.innerHTML = escapeHtml(cancelText) + ' <span class="key">Esc</span>';
-
-      if (card) {
-        card.classList.toggle('is-danger', isDanger);
-      }
-
-      modal.style.display = 'flex';
-      document.body.classList.add('modal-open');
-
-      setTimeout(function () {
-        if (isDanger && cancelBtn) {
-          cancelBtn.focus();
-        } else if (okBtn) {
-          okBtn.focus();
-        }
-      }, 50);
-
-      return new Promise(function (resolve) {
-        confirmModalResolve = resolve;
-      }).then(function (result) {
-        if (result && typeof options.onConfirm === 'function') options.onConfirm();
-        if (!result && typeof options.onCancel === 'function') options.onCancel();
-        return result;
-      });
-    }
-
-    function closeConfirmModal(result) {
-      var modal = document.getElementById('confirmModal');
-      if (modal) modal.style.display = 'none';
-      var hasOtherModal = (document.getElementById('relatedModal') && document.getElementById('relatedModal').style.display !== 'none') ||
-                          (document.getElementById('topicRenameModal') && document.getElementById('topicRenameModal').style.display !== 'none') ||
-                          (document.getElementById('shortcutModal') && document.getElementById('shortcutModal').classList.contains('show'));
-      if (!hasOtherModal) {
-        document.body.classList.remove('modal-open');
-      }
-      if (confirmModalResolve) {
-        var r = confirmModalResolve;
-        confirmModalResolve = null;
-        r(!!result);
-      }
-    }
-
-    window.showConfirmModal = showConfirmModal;
-    window.closeConfirmModal = closeConfirmModal;
+    };
 
     // ===== 科目选择模态 =====
     let subjectPickerOpen = false;
@@ -1283,20 +1215,6 @@
       });
       const so = document.getElementById('subjectOverlay');
       if (so) so.addEventListener('click', function (e) { if (e.target === this) closeSubjectPicker(); });
-
-      // 全局统一确认模态框交互绑定
-      const btnConfirmOk = document.getElementById('btnConfirmModalOk');
-      const btnConfirmCancel = document.getElementById('btnConfirmModalCancel');
-      const btnConfirmClose = document.getElementById('btnConfirmModalClose');
-      const modalConfirm = document.getElementById('confirmModal');
-      if (btnConfirmOk) btnConfirmOk.addEventListener('click', function () { closeConfirmModal(true); });
-      if (btnConfirmCancel) btnConfirmCancel.addEventListener('click', function () { closeConfirmModal(false); });
-      if (btnConfirmClose) btnConfirmClose.addEventListener('click', function () { closeConfirmModal(false); });
-      if (modalConfirm) {
-        modalConfirm.addEventListener('click', function (e) {
-          if (e.target === modalConfirm) closeConfirmModal(false);
-        });
-      }
     });
 
     // 鼠标侧键后退：详情视图/从错题本跳题后，鼠标后退键回总览或错题本
@@ -3276,10 +3194,10 @@
       }
       if (items.length === 0) {
         var emptyMsg = (statusFilter === 'vague' ? '当前章节没有标记为"模糊"的题目' : '当前章节没有标记为"不会"的题目');
-        if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+        if (typeof window.showToast === 'function') {
+          window.showToast(emptyMsg, 'warning');
+        } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
           window.storageSync.showToast(emptyMsg, 'warning');
-        } else {
-          alert(emptyMsg);
         }
         return;
       }
@@ -3294,10 +3212,10 @@
 
       const w = window.open('', '_blank', 'width=900,height=700');
       if (!w) {
-        if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+        if (typeof window.showToast === 'function') {
+          window.showToast('导出窗口被浏览器拦截，请允许弹出窗口后重试。', 'error');
+        } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
           window.storageSync.showToast('导出窗口被浏览器拦截，请允许弹出窗口后重试。', 'error');
-        } else {
-          alert('导出窗口被浏览器拦截，请允许弹出窗口后重试。');
         }
         return;
       }
@@ -3424,10 +3342,10 @@ ${cardsHTML}
       }
       sm2 = {};
       if (sm2PanelOpen) renderSm2Panel();
-      if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+      if (typeof window.showToast === 'function') {
+        window.showToast('SM-2 复习进度已重置（' + clearedCount + ' 条记录已清除）。', 'info');
+      } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
         window.storageSync.showToast('SM-2 复习进度已重置（' + clearedCount + ' 条记录已清除）。', 'info');
-      } else {
-        alert('SM-2 复习进度已重置（' + clearedCount + ' 条记录已清除）。');
       }
       return clearedCount;
     }

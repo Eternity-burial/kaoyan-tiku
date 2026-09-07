@@ -196,7 +196,11 @@
   function exportStarredWords() {
     const list = Object.values(starredWords);
     if (list.length === 0) {
-      alert('生词本为空，无需导出');
+      if (typeof window.showToast === 'function') {
+        window.showToast('生词本为空，无需导出', 'info');
+      } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+        window.storageSync.showToast('生词本为空，无需导出', 'info');
+      }
       return;
     }
     let md = `# 考研英语真题生词本 (共 ${list.length} 词)\n\n| 单词 | 音标 | 考研释义 | 真题出处 |\n| :--- | :--- | :--- | :--- |\n`;
@@ -1009,7 +1013,11 @@
     if (!q) return;
     const pAns = state.practiceAnswers[q.qIndex];
     if (!pAns || !pAns.selected) {
-      alert('请先选择一个选项！');
+      if (typeof window.showToast === 'function') {
+        window.showToast('请先选择一个选项！', 'warning');
+      } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+        window.storageSync.showToast('请先选择一个选项！', 'warning');
+      }
       return;
     }
     pAns.submitted = true;

@@ -1566,9 +1566,12 @@ test('Quiet Liquid 确认模态框结构与原生 confirm 替代契约', () => {
   assert.ok(cssSrc.includes('backdrop-filter: blur(14px)'), '背景必须包含 Quiet Liquid 14px 毛玻璃滤镜');
   assert.ok(cssSrc.includes('.confirm-modal-card.is-danger'), '必须包含高危红色警示样式 .is-danger');
 
-  // 3. app.js 中导出 showConfirmModal 与 closeConfirmModal 且挂载至 window
-  assert.ok(appSrc.includes('window.showConfirmModal = showConfirmModal;'), 'app.js 必须将 showConfirmModal 暴露至全局');
-  assert.ok(appSrc.includes('window.closeConfirmModal = closeConfirmModal;'), 'app.js 必须将 closeConfirmModal 暴露至全局');
+  // 3. confirm_modal.js 与 app.js 导出并挂载全局
+  const modalJsSrc = fs.readFileSync(path.join(__dirname, '../js/confirm_modal.js'), 'utf8');
+  assert.ok(modalJsSrc.includes('window.showConfirmModal = showConfirmModal;'), 'confirm_modal.js 必须将 showConfirmModal 暴露至全局');
+  assert.ok(modalJsSrc.includes('window.closeConfirmModal = closeConfirmModal;'), 'confirm_modal.js 必须将 closeConfirmModal 暴露至全局');
+  assert.ok(modalJsSrc.includes('window.alert = function'), 'confirm_modal.js 必须防御性拦截并替换 window.alert');
+  assert.ok(modalJsSrc.includes('window.confirm = function'), 'confirm_modal.js 必须防御性拦截并替换 window.confirm');
 
   // 4. topics.js 中 deleteRelatedTopic 不再直接硬编码 window.confirm
   const delTopicIdx = topicsSrc.indexOf('function deleteRelatedTopic');
@@ -1579,6 +1582,52 @@ test('Quiet Liquid 确认模态框结构与原生 confirm 替代契约', () => {
   // 5. storage_sync.js 中 syncBrowserToLocal 必须接入 showConfirmModal
   const syncBlock = syncSrc.match(/async\s+function\s+syncBrowserToLocal\s*\([^)]*\)\s*\{[\s\S]*?\n\s*\}/)?.[0] || '';
   assert.ok(syncBlock.includes('showConfirmModal'), 'syncBrowserToLocal 覆盖前必须使用 showConfirmModal 阻断性预警');
+});
+
+console.log('\n--- 21. 全库零原生弹窗与存储权限意图引导契约 (Zero Native Dialogs & Permission Guidance Contract) ---');
+
+test('全库彻底根除原生 alert/confirm 并为本地文件存储授权增加 Quiet Liquid 前置意图引导', () => {
+  const syncSrc = fs.readFileSync(path.join(__dirname, '../js/storage_sync.js'), 'utf8');
+  const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+
+  // 1. index.html 中 confirm_modal.js 优先于 storage_sync.js 引入
+  const modalIdx = indexHtml.indexOf('src="js/confirm_modal.js"');
+  const syncIdx = indexHtml.indexOf('src="js/storage_sync.js"');
+  assert.ok(modalIdx !== -1, 'index.html 必须载入 js/confirm_modal.js');
+  assert.ok(syncIdx !== -1, 'index.html 必须载入 js/storage_sync.js');
+  assert.ok(modalIdx < syncIdx, 'confirm_modal.js 必须早于 storage_sync.js 载入，确保所有下游模块可用');
+
+  // 2. storage_sync.js verifyPermission 接入 showConfirmModal
+  const vStart = syncSrc.indexOf('async function verifyPermission');
+  const vEnd = syncSrc.indexOf('// ===== 3. 全量数据采集', vStart);
+  const verifyBlock = syncSrc.substring(vStart, vEnd !== -1 ? vEnd : vStart + 800);
+  assert.ok(verifyBlock.includes('showConfirmModal'), 'verifyPermission 申请权限前必须展示应用内 Quiet Liquid 说明，消除突兀感');
+  assert.ok(verifyBlock.includes('requestPermission'), 'verifyPermission 在确认后申请底层系统授权');
+
+  // 3. 业务代码中无遗漏的 alert 或 confirm 调用
+  const checkFiles = [
+    '../js/annotator.js',
+    '../js/english_app.js',
+    '../js/sm2_review.js',
+    '../js/app.js',
+    '../js/topics.js',
+    '../js/storage_sync.js'
+  ];
+  checkFiles.forEach(rel => {
+    const code = fs.readFileSync(path.join(__dirname, rel), 'utf8');
+    const lines = code.split('\n');
+    lines.forEach((line, idx) => {
+      // 允许注释或安全覆写，严禁直接调用原生 alert(...) 或 confirm(...)
+      const trimmed = line.trim();
+      if (trimmed.startsWith('//') || trimmed.startsWith('*')) return;
+      if (/\balert\s*\([^)]*\)/.test(trimmed)) {
+        assert.fail(`${rel}:${idx + 1} 仍遗留原生 alert 调用: ${trimmed}`);
+      }
+      if (/\bconfirm\s*\([^)]*\)/.test(trimmed) && !trimmed.includes('showConfirmModal') && !trimmed.includes('closeConfirmModal')) {
+        assert.fail(`${rel}:${idx + 1} 仍遗留原生 confirm 调用: ${trimmed}`);
+      }
+    });
+  });
 });
 
 console.log('\n====================================================');

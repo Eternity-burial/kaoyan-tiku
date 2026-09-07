@@ -250,10 +250,10 @@
   function openAnnotator(src) {
     if (src) lbCurrentSrc = src;
     if (typeof markerjs3 === 'undefined') {
-      if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+      if (typeof window.showToast === 'function') {
+        window.showToast('标注组件未加载', 'warning');
+      } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
         window.storageSync.showToast('标注组件未加载', 'warning');
-      } else {
-        alert('标注组件未加载');
       }
       return;
     }

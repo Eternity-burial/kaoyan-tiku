@@ -1248,10 +1248,8 @@
           cancelText: '取消',
           onConfirm: doDelete
         });
-      } else if (typeof confirm === 'function' && confirm('确定要彻底删除考点主题“' + t.name + '”吗？\n该操作将清除此主题下所有题目的关联。')) {
-        return doDelete();
       }
-      return false;
+      return doDelete();
     }
 
     // 7. 同类题弹窗交互与跨书做题浏览工作台（仿照主页面三级下拉与全宽展开）
