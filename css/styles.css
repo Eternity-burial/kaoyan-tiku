@@ -5878,6 +5878,34 @@
       color: var(--text-muted);
       font-weight: 500;
     }
+    .rm-avail-tag-wrap.linked {
+      background: rgba(56, 158, 13, 0.1);
+      border-color: rgba(56, 158, 13, 0.38);
+    }
+    .rm-avail-tag-wrap.linked:hover {
+      border-color: var(--mastered);
+      box-shadow: 0 2px 8px rgba(56, 158, 13, 0.25);
+    }
+    .rm-avail-tag-wrap.linked .rm-avail-btn {
+      color: var(--mastered-dark, #1b5e20);
+    }
+    .rm-avail-tag-wrap.linked .rm-avail-btn:hover {
+      background: rgba(56, 158, 13, 0.15);
+    }
+    .rm-avail-tag-wrap.linked .rm-avail-count {
+      color: var(--mastered);
+      font-weight: 600;
+    }
+    [data-theme="dark"] .rm-avail-tag-wrap.linked {
+      background: rgba(56, 158, 13, 0.2);
+      border-color: rgba(56, 158, 13, 0.45);
+    }
+    [data-theme="dark"] .rm-avail-tag-wrap.linked .rm-avail-btn {
+      color: #81c784;
+    }
+    [data-theme="dark"] .rm-avail-tag-wrap.linked .rm-avail-count {
+      color: #a5d6a7;
+    }
     .rm-topic-trash-btn {
       padding: 0 8px;
       height: 100%;

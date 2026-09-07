@@ -1508,6 +1508,45 @@ test('滚轮切题（A/D）与右键+滚轮切章（Q/E）手势逻辑完整性�
   assert.ok(appSrc.includes('navNext()') && appSrc.includes('navPrev()'), '常规横向滚轮必须继续等效 A / D (navPrev / navNext)');
 });
 
+// ===== 19. L面板全库考点检索完整性与已归属状态透出校验 =====
+console.log('\n--- 19. L面板全库考点检索完整性与已归属状态透出校验 (Available Topics Full Library Search) ---');
+
+test('L面板「全库考点库」覆盖全库考点且透出已归属状态，空考点绝不静默删除', () => {
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  const dataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../kaoyan_tiku_data.json'), 'utf8'));
+  const currentTopics = JSON.parse(dataJson.data['kaoyan.g.topics'] || '{}');
+
+  // 1. 验证数据库中「三角函数分部积分」完好无损，且包含 2 道题目
+  const trigTopic = Object.values(currentTopics).find(t => t.name === '三角函数分部积分');
+  assert.ok(trigTopic, '三角函数分部积分必须存在于全库考点数据中');
+  assert.strictEqual(trigTopic.members.length, 2, '三角函数分部积分应包含 2 道题目');
+
+  // 2. 验证历史上遗失的「正负号」考点已成功找回恢复
+  const signTopic = Object.values(currentTopics).find(t => t.name === '正负号');
+  assert.ok(signTopic, '正负号考点必须成功恢复至全库考点中');
+
+  // 3. 验证 removeQuestionFromTopic 中彻底移除了空考点静默删除逻辑
+  const removeBlock = topicsSrc.match(/function\s+removeQuestionFromTopic\s*\([^)]*\)\s*\{[\s\S]*?\n\s*\}/)?.[0] || '';
+  assert.ok(
+    !removeBlock.includes('delete relatedTopics['),
+    'removeQuestionFromTopic 绝不能因题目清零而静默销毁考点！'
+  );
+
+  // 4. 验证 renderRelatedModalTopics 下「全库考点库」不再排他过滤当前题考点，且支持搜索全部考点
+  assert.ok(
+    topicsSrc.includes('allTopicsList.map'),
+    'renderRelatedModalTopics 必须基于全量考点列表 allTopicsList 渲染'
+  );
+  assert.ok(
+    topicsSrc.includes('(已归入 · '),
+    '已归属当前题目的考点必须透出 (已归入 · N题) 标识'
+  );
+  assert.ok(
+    topicsSrc.includes('data-toggle-tid'),
+    '考点按钮应支持一键 toggle 切换归属状态'
+  );
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');

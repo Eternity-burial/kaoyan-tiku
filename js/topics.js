@@ -467,9 +467,7 @@
       var t = relatedTopics[topicId];
       if (!t || !t.members) return false;
       t.members = t.members.filter(function(m) { return m.qid !== qid; });
-      if (t.members.length === 0) {
-        delete relatedTopics[topicId];
-      }
+      // 保持考点实体持久存在，严禁因题目清零而静默销毁考点！只有用户在考点上明确点击垃圾桶并确认才彻底删除
       saveRelatedTopics();
       return true;
     }
@@ -1316,38 +1314,42 @@
 
       if (availContainer) {
         var myTopicIds = myTopics.map(function(t) { return t.id; });
-        var otherTopics = [];
+        var allTopicsList = [];
         for (var tid in relatedTopics) {
           if (!Object.prototype.hasOwnProperty.call(relatedTopics, tid)) continue;
-          if (myTopicIds.indexOf(tid) === -1) {
-            var tObj = relatedTopics[tid];
-            if (!filterVal || tObj.name.toLowerCase().indexOf(filterVal) !== -1) {
-              otherTopics.push(tObj);
-            }
+          var tObj = relatedTopics[tid];
+          if (!filterVal || tObj.name.toLowerCase().indexOf(filterVal) !== -1) {
+            allTopicsList.push(tObj);
           }
         }
 
-        if (otherTopics.length > 0) {
-          otherTopics = sortTopicsList(otherTopics);
+        if (allTopicsList.length > 0) {
+          allTopicsList = sortTopicsList(allTopicsList);
           if (availWrap) availWrap.style.display = 'flex';
-          availContainer.innerHTML = otherTopics.map(function(t) {
+          availContainer.innerHTML = allTopicsList.map(function(t) {
+            var isLinked = myTopicIds.indexOf(t.id) !== -1;
             var count = (t.members ? t.members.length : 0);
-            return '<div class="rm-avail-tag-wrap" data-tid="' + escapeHtml(t.id) + '">' +
-              '<button type="button" class="rm-avail-btn" data-add-tid="' + escapeHtml(t.id) + '" title="点击将当前题目加入此考点">' +
-                '<span style="font-size:12px;font-weight:bold;margin-right:2px;">+</span>' +
+            return '<div class="rm-avail-tag-wrap' + (isLinked ? ' linked' : '') + '" data-tid="' + escapeHtml(t.id) + '">' +
+              '<button type="button" class="rm-avail-btn' + (isLinked ? ' linked' : '') + '" data-toggle-tid="' + escapeHtml(t.id) + '" title="' + (isLinked ? '当前题已归入此考点（点击移出）' : '点击将当前题目加入此考点') + '">' +
+                '<span style="font-size:12px;font-weight:bold;margin-right:2px;' + (isLinked ? 'color:var(--mastered);' : '') + '">' + (isLinked ? '✓' : '+') + '</span>' +
                 '<span>' + renderTopicTextHtml(t.name) + '</span>' +
-                '<span class="rm-avail-count">(' + count + '题)</span>' +
+                '<span class="rm-avail-count">' + (isLinked ? '(已归入 · ' + count + '题)' : '(' + count + '题)') + '</span>' +
               '</button>' +
               '<button type="button" class="rm-topic-trash-btn" data-trash-tid="' + escapeHtml(t.id) + '" title="彻底删除此考点主题">✕</button>' +
             '</div>';
           }).join('');
 
-          availContainer.querySelectorAll('button[data-add-tid]').forEach(function(btn) {
+          availContainer.querySelectorAll('button[data-toggle-tid]').forEach(function(btn) {
             btn.onclick = function(e) {
               e.stopPropagation();
-              var targetTid = this.dataset.addTid;
+              var targetTid = this.dataset.toggleTid;
               if (targetTid) {
-                addQuestionToTopic(targetTid, curQid);
+                var isLinked = myTopicIds.indexOf(targetTid) !== -1;
+                if (isLinked) {
+                  removeQuestionFromTopic(targetTid, curQid);
+                } else {
+                  addQuestionToTopic(targetTid, curQid);
+                }
                 renderRelatedModalTopics();
                 renderRelatedQuestions();
                 renderNav();
@@ -1382,7 +1384,7 @@
             } else if (filterVal) {
               availContainer.innerHTML = '<span class="related-empty-hint">未找到匹配的考点</span>';
             } else {
-              availContainer.innerHTML = '<span class="related-empty-hint">当前题已加入全库所有考点</span>';
+              availContainer.innerHTML = '<span class="related-empty-hint">暂无考点</span>';
             }
           }
         }
