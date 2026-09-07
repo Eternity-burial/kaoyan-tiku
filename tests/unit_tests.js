@@ -1447,6 +1447,40 @@ test('跳转做此题返回键 (.btn-jump-back) 与返回条样式严格采用�
   assert.ok(stylesSrc.includes('[data-theme="dark"] .jump-return-bar'), '应包含暗黑模式下 .jump-return-bar 的适配');
 });
 
+// ===== 17. 解析按钮交互状态样式与快捷键对比度隔离校验 =====
+console.log('\n--- 17. 解析按钮交互状态样式与快捷键对比度隔离校验 (BtnToggle Hover & Key Style Isolation) ---');
+
+test('解析按钮显示态与隐藏态 hover 样式隔离，防止 Space 快捷键变白隐形', () => {
+  const stylesSrc = fs.readFileSync(path.join(__dirname, '../css/styles.css'), 'utf8');
+
+  // 1. 确保显示解析态使用 :not(.hide):hover，避免样式泄露到隐藏解析态
+  assert.ok(stylesSrc.includes('.gel-btn.btn-toggle:not(.hide):hover'), '必须使用 :not(.hide):hover 进行状态样式精确隔离');
+  assert.ok(stylesSrc.includes('.gel-btn.btn-toggle:not(.hide):hover .key'), '必须独立定义未展开状态下的 hover key 颜色');
+
+  // 2. 确保隐藏解析态 (.gel-btn.btn-toggle.hide:hover) 显式声明 .key 颜色，且绝不使用白色
+  const hideHoverBlock = stylesSrc.match(/\.gel-btn\.btn-toggle\.hide:hover\s*\{[^}]+\}/)?.[0] || '';
+  const hideHoverKeyBlock = stylesSrc.match(/\.gel-btn\.btn-toggle\.hide:hover\s+\.key\s*\{[^}]+\}/)?.[0] || '';
+
+  assert.ok(hideHoverKeyBlock.length > 0, '.gel-btn.btn-toggle.hide:hover .key 必须有显式规则');
+  assert.ok(
+    !hideHoverKeyBlock.includes('#fff') && !hideHoverKeyBlock.includes('rgba(255, 255, 255'),
+    '在浅色果冻背景下，.hide:hover .key 绝不能设置为白色'
+  );
+  assert.ok(
+    hideHoverKeyBlock.includes('var(--primary-light') || hideHoverKeyBlock.includes('#9c27b0'),
+    '.hide:hover .key 应使用紫色保持清晰对比度'
+  );
+
+  // 3. 隐藏解析态 hover 时文字高亮为主色调 var(--primary)
+  const hideHoverFuncNameBlock = stylesSrc.match(/\.gel-btn\.btn-toggle\.hide:hover\s+\.func-name\s*\{[^}]+\}/)?.[0] || '';
+  assert.ok(hideHoverFuncNameBlock.includes('var(--primary)'), '隐藏解析态 hover 时 .func-name 应高亮为 var(--primary)');
+
+  // 4. 确保深色模式下同样对两种状态进行了 hover 适配
+  assert.ok(stylesSrc.includes('[data-theme="dark"] .gel-btn.btn-toggle:not(.hide):hover'), '深色模式应适配显示解析 hover');
+  assert.ok(stylesSrc.includes('[data-theme="dark"] .gel-btn.btn-toggle.hide:hover'), '深色模式应适配隐藏解析 hover');
+  assert.ok(stylesSrc.includes('[data-theme="dark"] .gel-btn.btn-toggle.hide:hover .key'), '深色模式应适配隐藏解析 hover 下的 .key');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');
