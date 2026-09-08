@@ -85,22 +85,6 @@
       if ((await handle.queryPermission(opts)) === 'granted') {
         return true;
       }
-      // 在调起浏览器底层系统权限弹窗前，先展示应用内 Quiet Liquid 说明，彻底消除未预期网页默认弹窗感
-      if (typeof window.showConfirmModal === 'function') {
-        const actionDesc = readWrite ? '读写（秒级实时落盘）' : '读取';
-        const confirmed = await window.showConfirmModal({
-          title: '本地数据文件读写授权',
-          icon: '💾',
-          message: `考研题库需要获得本地文件「${handle.name || 'kaoyan_tiku_data.json'}」的${actionDesc}权限，以实现做题进度的自动实时安全落盘。\n\n点击“立即授权”后，浏览器将弹出系统安全询问，请选择“允许 / 查看并修改文件”以完成连接。`,
-          confirmText: '立即授权',
-          cancelText: '暂不授权',
-          danger: false
-        });
-        if (!confirmed) {
-          if (typeof showToast === 'function') showToast('已取消本地文件存储授权', 'info');
-          return false;
-        }
-      }
       if ((await handle.requestPermission(opts)) === 'granted') {
         return true;
       }

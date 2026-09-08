@@ -1039,18 +1039,7 @@
     }
 
     // ===== 全局统一确认模态框 (Quiet Liquid Confirm Modal) =====
-    var showConfirmModal = function (options) {
-      if (typeof window.showConfirmModal === 'function') {
-        return window.showConfirmModal(options);
-      }
-      return Promise.resolve(true);
-    };
-
-    var closeConfirmModal = function (result) {
-      if (typeof window.closeConfirmModal === 'function') {
-        return window.closeConfirmModal(result);
-      }
-    };
+    // 注：全局 window.showConfirmModal 与 window.closeConfirmModal 已由 confirm_modal.js 顶层定义，严禁在全局作用域重复 var 声明导致递归爆栈
 
     // ===== 科目选择模态 =====
     let subjectPickerOpen = false;
@@ -3410,13 +3399,13 @@ ${cardsHTML}
         if (key === 'escape') {
           e.preventDefault();
           e.stopPropagation();
-          closeConfirmModal(false);
+          if (typeof window.closeConfirmModal === 'function') window.closeConfirmModal(false);
           return;
         }
         if (key === 'enter') {
           e.preventDefault();
           e.stopPropagation();
-          closeConfirmModal(true);
+          if (typeof window.closeConfirmModal === 'function') window.closeConfirmModal(true);
           return;
         }
         return;
@@ -3523,6 +3512,15 @@ ${cardsHTML}
       if (key !== 'z' && key !== 'x' && key !== 'c') resetCombo();
       // 非 R/T 键按下时，打断待处理的 R+T 组合超时
       if (key !== 'r' && key !== 't') resetRtCombo();
+
+      // 掌握度数字快捷键（数字 1-5 对应熟练到不会：1熟练, 2较熟练, 3模糊, 4困难, 5不会，支持主键盘与小键盘）
+      if (!isShift) {
+        if (key === '1' || e.code === 'Digit1' || e.code === 'Numpad1') { e.preventDefault(); setStatus('proficient'); return; }
+        if (key === '2' || e.code === 'Digit2' || e.code === 'Numpad2') { e.preventDefault(); setStatus('familiar'); return; }
+        if (key === '3' || e.code === 'Digit3' || e.code === 'Numpad3') { e.preventDefault(); setStatus('vague'); return; }
+        if (key === '4' || e.code === 'Digit4' || e.code === 'Numpad4') { e.preventDefault(); setStatus('rusty'); return; }
+        if (key === '5' || e.code === 'Digit5' || e.code === 'Numpad5') { e.preventDefault(); setStatus('wrong'); return; }
+      }
 
       switch (key) {
         // 上一题 / 下一题（题组级 / 子题级，见 navPrev / navNext）

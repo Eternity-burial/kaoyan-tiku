@@ -183,12 +183,61 @@ async function run() {
   const nextLabel = await evaluate(ws, 'document.getElementById("qLabel").textContent');
   console.log('  切题后题目标签:', nextLabel);
 
-  // 评级测试: 模拟 Z (熟练)
-  await evaluate(ws, `
+  // 评级测试: 模拟数字键 1 (熟练), 2 (较熟练), 3 (模糊), 4 (困难), 5 (不会)
+  console.log('  测试数字键 1-5 掌握度快捷键与输入框防误触...');
+  const numKeyResults = await evaluate(ws, `
     (() => {
-      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'z' }));
+      const results = {};
+      // 1 -> proficient (初次标记未做题会自动跳下一题)
+      const i1 = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '1' }));
+      results.k1 = statuses[i1];
+
+      // 2 -> familiar
+      const i2 = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '2' }));
+      results.k2 = statuses[i2];
+
+      // 3 -> vague
+      const i3 = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '3' }));
+      results.k3 = statuses[i3];
+
+      // 4 -> rusty
+      const i4 = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '4' }));
+      results.k4 = statuses[i4];
+
+      // 5 -> wrong
+      const i5 = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '5' }));
+      results.k5 = statuses[i5];
+
+      // 切回已做题 i5，测试原地直接改标（已有标记时不会自动切题）
+      navPrev();
+      const ratedIdx = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: '3' })); // 在原题由 5 (wrong) 改标为 3 (vague)
+      results.inPlaceRating = (statuses[ratedIdx] === 'vague' && current === ratedIdx);
+
+      // 测试输入框聚焦防误触: 输入框聚焦时按 1 不应触发掌握度修改
+      const noteEl = document.getElementById('notesTextarea') || document.querySelector('input');
+      if (noteEl) {
+        noteEl.focus();
+        noteEl.dispatchEvent(new KeyboardEvent('keydown', { key: '1', bubbles: true }));
+        results.inputFocusProtected = (statuses[ratedIdx] === 'vague');
+        noteEl.blur();
+      } else {
+        results.inputFocusProtected = true;
+      }
+      return results;
     })()
   `);
+  console.log('  数字键 1-5 掌握度测试结果:', numKeyResults);
+  if (numKeyResults.k1 !== 'proficient' || numKeyResults.k2 !== 'familiar' ||
+      numKeyResults.k3 !== 'vague' || numKeyResults.k4 !== 'rusty' ||
+      numKeyResults.k5 !== 'wrong' || !numKeyResults.inPlaceRating || !numKeyResults.inputFocusProtected) {
+    throw new Error('数字键 1-5 掌握度快捷键测试失败: ' + JSON.stringify(numKeyResults));
+  }
   await sleep(300);
 
   // 测试右键 + 滚轮切章手势 (等效 Q / E) 与 contextmenu 拦截
@@ -567,6 +616,58 @@ async function run() {
   if (!inputUiCheck.hasCreateBtn) throw new Error('新建考点按钮样式升级未能生效');
   if (!inputUiCheck.clearWorks) throw new Error('输入框一键清空按钮交互失败');
   if (!inputUiCheck.wheelIsolated) throw new Error('L面板未实现与主页面滚轮的彻底隔离');
+
+  // 测试 L 面板考点删除与 Quiet Liquid 确认模态框
+  console.log('  测试 L 面板考点删除与 Quiet Liquid 确认模态框交互...');
+  const topicDeleteCheck = await evaluate(ws, `
+    (async () => {
+      const input = document.getElementById('inputNewTopicName');
+      const createBtn = document.getElementById('btnCreateTopic');
+      input.value = 'CDP测试考点删除';
+      createBtn.click();
+
+      // 获取全库列表中刚创建考点的删除按钮
+      const trashBtns = document.querySelectorAll('#rmAvailableTopics .rm-topic-trash-btn');
+      let targetBtn = null;
+      trashBtns.forEach(btn => {
+        if (btn.parentElement && btn.parentElement.textContent.indexOf('CDP测试考点删除') !== -1) {
+          targetBtn = btn;
+        }
+      });
+      if (!targetBtn) return { created: false };
+
+      // 点击删除按钮唤起确认模态框
+      targetBtn.click();
+      const confirmModal = document.getElementById('confirmModal');
+      const isConfirmShown = confirmModal && confirmModal.style.display === 'flex';
+      const confirmZ = confirmModal ? parseInt(window.getComputedStyle(confirmModal).zIndex, 10) : 0;
+      const modalZ = parseInt(window.getComputedStyle(document.getElementById('relatedModal')).zIndex, 10);
+      const title = document.getElementById('confirmModalTitle')?.textContent;
+
+      // 点击确认删除按钮
+      const okBtn = document.getElementById('btnConfirmModalOk');
+      if (okBtn) okBtn.click();
+
+      // 等待微任务与渲染队列执行完成
+      await new Promise(r => setTimeout(r, 80));
+
+      const isStillInAvail = document.getElementById('rmAvailableTopics').innerHTML.indexOf('CDP测试考点删除') !== -1;
+      const confirmClosed = confirmModal.style.display === 'none';
+
+      return {
+        created: true,
+        isConfirmShown,
+        higherZ: confirmZ > modalZ,
+        title,
+        deleted: !isStillInAvail,
+        confirmClosed
+      };
+    })()
+  `);
+  console.log('  L面板考点删除测试结果:', topicDeleteCheck);
+  if (!topicDeleteCheck.created || !topicDeleteCheck.isConfirmShown || !topicDeleteCheck.higherZ || !topicDeleteCheck.deleted || !topicDeleteCheck.confirmClosed) {
+    throw new Error('L面板考点彻底删除或确认模态框流程校验失败: ' + JSON.stringify(topicDeleteCheck));
+  }
 
   // 测试在 L 模态框内点击题目图唤起灯箱大图，并验证灯箱显示层级（z-index）高于模态框
   console.log('  测试 L 模态框内唤起灯箱及层级置顶...');

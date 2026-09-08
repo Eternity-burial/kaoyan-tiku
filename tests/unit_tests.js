@@ -1634,9 +1634,8 @@ test('Quiet Liquid 确认模态框结构与原生 confirm 替代契约', () => {
   assert.ok(syncBlock.includes('showConfirmModal'), 'syncBrowserToLocal 覆盖前必须使用 showConfirmModal 阻断性预警');
 });
 
-console.log('\n--- 21. 全库零原生弹窗与存储权限意图引导契约 (Zero Native Dialogs & Permission Guidance Contract) ---');
-
-test('全库彻底根除原生 alert/confirm 并为本地文件存储授权增加 Quiet Liquid 前置意图引导', () => {
+console.log('\n--- 21. 全库零原生弹窗与存储权限浏览器原生契约 ---');
+test('21. 全库零原生弹窗与存储权限浏览器原生契约', () => {
   const syncSrc = fs.readFileSync(path.join(__dirname, '../js/storage_sync.js'), 'utf8');
   const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
 
@@ -1647,12 +1646,12 @@ test('全库彻底根除原生 alert/confirm 并为本地文件存储授权增�
   assert.ok(syncIdx !== -1, 'index.html 必须载入 js/storage_sync.js');
   assert.ok(modalIdx < syncIdx, 'confirm_modal.js 必须早于 storage_sync.js 载入，确保所有下游模块可用');
 
-  // 2. storage_sync.js verifyPermission 接入 showConfirmModal
+  // 2. storage_sync.js verifyPermission 直接采用浏览器原生 requestPermission 授权
   const vStart = syncSrc.indexOf('async function verifyPermission');
   const vEnd = syncSrc.indexOf('// ===== 3. 全量数据采集', vStart);
   const verifyBlock = syncSrc.substring(vStart, vEnd !== -1 ? vEnd : vStart + 800);
-  assert.ok(verifyBlock.includes('showConfirmModal'), 'verifyPermission 申请权限前必须展示应用内 Quiet Liquid 说明，消除突兀感');
-  assert.ok(verifyBlock.includes('requestPermission'), 'verifyPermission 在确认后申请底层系统授权');
+  assert.ok(verifyBlock.includes('requestPermission'), 'verifyPermission 直接调用底层浏览器原生 requestPermission 申请文件授权');
+  assert.ok(!verifyBlock.includes('showConfirmModal'), 'verifyPermission 遵循浏览器原生授权行为，严禁添加自定义前置弹窗拦截');
 
   // 3. 业务代码中无遗漏的 alert 或 confirm 调用
   const checkFiles = [
@@ -1783,6 +1782,37 @@ test('全站考点与笔记 Markdown/LaTeX 架构统一与无缝时序加载契�
   // 5. math_palette.js 升级为支持考点输入框并接入 MarkdownLatexEngine
   assert.ok(paletteSrc.includes('getActiveTargetInput'), 'math_palette.js 必须具备自适应获取当前焦点输入框的能力');
   assert.ok(paletteSrc.includes('MarkdownLatexEngine.insertSnippet') || paletteSrc.includes('engine.insertSnippet'), 'math_palette.js 必须接入通用 insertSnippet');
+});
+
+console.log('\n--- 23. 数字键 1-5 掌握度快捷键与考点删除/存储权限契约 ---');
+test('23. 数字键 1-5 掌握度快捷键与考点删除/存储权限契约', () => {
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/app.js'), 'utf8');
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  const syncSrc = fs.readFileSync(path.join(__dirname, '../js/storage_sync.js'), 'utf8');
+  const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+
+  // 1. 数字键 1-5 映射掌握度 (1: proficient, 2: familiar, 3: vague, 4: rusty, 5: wrong)
+  assert.ok(appSrc.includes("key === '1'") && appSrc.includes("setStatus('proficient')"), '数字键 1 必须绑定熟练 (proficient)');
+  assert.ok(appSrc.includes("key === '2'") && appSrc.includes("setStatus('familiar')"), '数字键 2 必须绑定较熟练 (familiar)');
+  assert.ok(appSrc.includes("key === '3'") && appSrc.includes("setStatus('vague')"), '数字键 3 必须绑定模糊 (vague)');
+  assert.ok(appSrc.includes("key === '4'") && appSrc.includes("setStatus('rusty')"), '数字键 4 必须绑定困难 (rusty)');
+  assert.ok(appSrc.includes("key === '5'") && appSrc.includes("setStatus('wrong')"), '数字键 5 必须绑定不会 (wrong)');
+
+  // 2. 严防全局变量递归爆栈：app.js 不应重新声明 var showConfirmModal / var closeConfirmModal
+  assert.ok(!/var\s+showConfirmModal\s*=/.test(appSrc), 'app.js 严禁在全局声明 var showConfirmModal 导致递归爆栈');
+  assert.ok(!/var\s+closeConfirmModal\s*=/.test(appSrc), 'app.js 严禁在全局声明 var closeConfirmModal 导致递归爆栈');
+
+  // 3. L 面板考点删除必须调用 showConfirmModal 且按键具有正确 data-trash-tid 绑定
+  assert.ok(topicsSrc.includes('deleteRelatedTopic'), 'topics.js 必须导出 deleteRelatedTopic');
+  assert.ok(topicsSrc.includes('rm-topic-trash-btn'), 'L面板全库考点必须渲染 rm-topic-trash-btn 删除按钮');
+
+  // 4. index.html 掌握状态按钮与帮助栏展示 1-5
+  assert.ok(indexHtml.includes('<span class="key">1</span>'), '熟练按钮必须展示数字键 1');
+  assert.ok(indexHtml.includes('<span class="key">5</span>'), '不会按钮必须展示数字键 5');
+  assert.ok(indexHtml.includes('<kbd>1</kbd> / <kbd>Z</kbd>'), '快捷键帮助弹窗必须展示 1 / Z');
+
+  // 5. storage_sync.js verifyPermission 遵循浏览器原生授权行为，无任何自定义前置弹窗拦截
+  assert.ok(!syncSrc.includes('// 在调起浏览器底层系统权限弹窗前，先展示应用内 Quiet Liquid 说明'), '存储权限必须恢复浏览器原生行为，无任何多余拦截说明');
 });
 
 console.log('\n====================================================');

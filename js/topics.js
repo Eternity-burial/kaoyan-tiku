@@ -1427,6 +1427,9 @@
             var tid = this.dataset.delTid;
             if (tid) {
               removeQuestionFromTopic(tid, curQid);
+              if (window.storageSync && typeof window.storageSync.showToast === 'function') {
+                window.storageSync.showToast('已将当前题目移出考点', 'info');
+              }
               renderRelatedModalTopics();
               renderRelatedQuestions();
               renderNav();
