@@ -317,6 +317,98 @@ async function run() {
   console.log('  再次按 F 后 subMode 关闭:', !subModeAfterSecondF, '持久化值:', storedAfterSecondF);
   if (subModeAfterSecondF || storedAfterSecondF) throw new Error('再次按 F 键未能成功关闭小题模式并更新持久化存储');
 
+  // 测试伴章题目 (基础30讲 第10讲 1000题 10-8) 页面刷新断点恢复、Slug 唯一性与左上角母章书名坚守
+  console.log('  测试伴章题目 (1000题 10-8) 页面刷新断点恢复与左上角母章书名坚守...');
+  const companionRefreshCheck = await evaluate(ws, `
+    (() => {
+      // 1. 切换到 基础30讲 第10讲
+      switchChapter('math::基础30讲::高数::lec10');
+      const ch = getChapter();
+      // 找到 1000题 10-8 所在题号 (ownTotal + 7, idx 30)
+      const q1000Idx = ch.ownTotal + 7;
+      switchTo(q1000Idx);
+      const curQidBefore = getCurrentQid();
+      const txtWbBefore = document.getElementById('txtWb').textContent.trim();
+      const labelBefore = ch.labels[current];
+      const isCompanionBefore = current >= ch.ownTotal;
+      return {
+        curQidBefore,
+        txtWbBefore,
+        labelBefore,
+        isCompanionBefore,
+        currentBefore: current,
+        ownTotal: ch.ownTotal,
+        total: ch.total
+      };
+    })()
+  `);
+  console.log('  伴章刷新前状态:', companionRefreshCheck);
+  if (!companionRefreshCheck.isCompanionBefore || companionRefreshCheck.currentBefore !== 30) {
+    throw new Error(`伴章题目定位失败: 当前题号 ${companionRefreshCheck.currentBefore}`);
+  }
+  if (companionRefreshCheck.txtWbBefore !== '基础30讲') {
+    throw new Error(`左上角书名未显示为母章「基础30讲」，实际显示: ${companionRefreshCheck.txtWbBefore}`);
+  }
+
+  // 触发页面 F5 刷新
+  await sendCDP(ws, 'Page.reload');
+  await sleep(1500);
+
+  const companionReloadCheck = await evaluate(ws, `
+    (() => {
+      const ch = getChapter();
+      const txtWbAfter = document.getElementById('txtWb').textContent.trim();
+      const labelAfter = ch.labels[current];
+      const isCompanionAfter = current >= ch.ownTotal;
+      const curQidAfter = getCurrentQid();
+      return {
+        currentChapterId,
+        txtWbAfter,
+        labelAfter,
+        isCompanionAfter,
+        currentAfter: current,
+        curQidAfter
+      };
+    })()
+  `);
+  console.log('  伴章刷新后状态:', companionReloadCheck);
+  if (companionReloadCheck.txtWbAfter !== '基础30讲') {
+    throw new Error(`F5 刷新后左上角书名错误穿透显示为「${companionReloadCheck.txtWbAfter}」，期望为「基础30讲」`);
+  }
+  if (companionReloadCheck.currentAfter !== 30) {
+    throw new Error(`F5 刷新后伴章题号漂移！期望 30 (1000题 10-8)，实际漂移到 ${companionReloadCheck.currentAfter} (${companionReloadCheck.labelAfter})`);
+  }
+  if (!companionReloadCheck.isCompanionAfter) {
+    throw new Error('F5 刷新后误回弹至母章自身习题，未能保持在 1000 题伴章段');
+  }
+
+  // 测试跨章跳转到伴章题目：自动路由重定向至母章，绝不使当前书籍变为 1000 题
+  console.log('  测试跨章 jumpToQid 跳转至伴章题目 (自动路由至母章)...');
+  const jumpCompanionCheck = await evaluate(ws, `
+    (() => {
+      // 先切到无关章节：基础30讲 第1讲
+      switchChapter('math::基础30讲::高数::lec01');
+      // 模拟跳转做此题：目标为 1000 题第 10 章 10-8
+      jumpToQid('math::1000题::基础篇-高数::ch10::pb_10-8');
+      const ch = getChapter();
+      const txtWb = document.getElementById('txtWb').textContent.trim();
+      return {
+        chapterId: currentChapterId,
+        currentIdx: current,
+        txtWb,
+        isCompanion: current >= ch.ownTotal,
+        label: ch.labels[current]
+      };
+    })()
+  `);
+  console.log('  跨章跳转伴章检查:', jumpCompanionCheck);
+  if (jumpCompanionCheck.txtWb !== '基础30讲') {
+    throw new Error(`跨章跳转后左上角书名异常变为「${jumpCompanionCheck.txtWb}」，期望为「基础30讲」`);
+  }
+  if (jumpCompanionCheck.currentIdx !== 30) {
+    throw new Error(`跨章跳转后题号定位错误: 期望 30，实际 ${jumpCompanionCheck.currentIdx}`);
+  }
+
   // 5. 测试主页面考点快速添加 (纯单级考点)、拖拽手柄、置顶与双向优先级联动
   console.log('[6/8] 测试主页面单级考点快速关联、同类题置顶与双向优先级联动...');
   const step6Debug = await evaluate(ws, `
@@ -1030,8 +1122,8 @@ async function run() {
   if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
     throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
   }
-  if (dashboardCheck.expectedTotal !== 6319) {
-    throw new Error(`数学科目总题数异常: 期望 6319, 实际 ${dashboardCheck.expectedTotal}`);
+  if (dashboardCheck.expectedTotal !== 6342) {
+    throw new Error(`数学科目总题数异常: 期望 6342, 实际 ${dashboardCheck.expectedTotal}`);
   }
   if (dashboardCheck.expectedDone < 1700) {
     throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);

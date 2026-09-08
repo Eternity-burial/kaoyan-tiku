@@ -723,7 +723,20 @@
 
           // 根据索引或标签获取题目稳定的物理 Slug
           ch.getQuestionSlug = function(idxOrLabel) {
-            var l = (typeof idxOrLabel === 'number') ? (ch.labels && ch.labels[idxOrLabel]) : idxOrLabel;
+            var isIdx = (typeof idxOrLabel === 'number');
+            // 伴章路由：若属于合并章节中的伴章段（如 1000 题或李范习题），生成携带伴章前缀的唯一 Slug，严防与自身习题重名冲突
+            if (isIdx && ch.q1000Total && idxOrLabel >= ch.ownTotal && ch.q1000Id) {
+              var qc = findChapterById(ch.q1000Id);
+              if (qc) {
+                var q1000Idx = idxOrLabel - ch.ownTotal;
+                var qSlug = qc.getQuestionSlug ? qc.getQuestionSlug(q1000Idx) : null;
+                if (qSlug) {
+                  var pfx = (ch.wb === '李范全书') ? 'lfxiti::' : 'q1000::';
+                  return pfx + qSlug;
+                }
+              }
+            }
+            var l = isIdx ? (ch.labels && ch.labels[idxOrLabel]) : idxOrLabel;
             if (!l) return null;
             return getImgKeyForChapter(ch, l);
           };
@@ -731,10 +744,44 @@
           // 根据 Slug 或 Label 反查在当前 labels 数组中的下标
           ch.getIdxBySlug = function(slugOrLabel) {
             if (!slugOrLabel || !ch.labels) return -1;
-            for (var i = 0; i < ch.labels.length; i++) {
+
+            // 1. 伴章前缀与伴章 QID/UID 智能匹配（如 'q1000::pb_10-8' 或 'lfxiti::pb_3-1'）
+            if (ch.q1000Total && ch.q1000Id && typeof slugOrLabel === 'string') {
+              var isCompPrefix = slugOrLabel.startsWith('q1000::') || slugOrLabel.startsWith('lfxiti::') || slugOrLabel.startsWith('comp::');
+              if (isCompPrefix) {
+                var rawSlug = slugOrLabel.substring(slugOrLabel.indexOf('::') + 2);
+                var qc = findChapterById(ch.q1000Id);
+                if (qc && qc.getIdxBySlug) {
+                  var qIdx = qc.getIdxBySlug(rawSlug);
+                  if (qIdx >= 0 && qIdx < ch.q1000Total) {
+                    return ch.ownTotal + qIdx;
+                  }
+                }
+              }
+              // 兼容可能传入规范伴章 URN/QID（如 'math::1000题::基础篇-高数::ch10::pb_10-8'）
+              var qc2 = findChapterById(ch.q1000Id);
+              if (qc2 && (slugOrLabel.indexOf(qc2.uid) !== -1 || slugOrLabel.indexOf(qc2.id) !== -1)) {
+                var lastPart = slugOrLabel.split('::').pop();
+                var qIdx2 = qc2.getIdxBySlug ? qc2.getIdxBySlug(lastPart) : -1;
+                if (qIdx2 >= 0 && qIdx2 < ch.q1000Total) {
+                  return ch.ownTotal + qIdx2;
+                }
+              }
+            }
+
+            // 2. 本章自身题目反查（优先在 ownTotal 范围内匹配，避免误命中断章中的重复标签）
+            var ownLimit = (ch.q1000Total && typeof ch.ownTotal === 'number') ? ch.ownTotal : ch.labels.length;
+            for (var i = 0; i < ownLimit; i++) {
               if (ch.labels[i] === slugOrLabel) return i;
               if (getImgKeyForChapter(ch, ch.labels[i]) === slugOrLabel) return i;
             }
+
+            // 3. 兜底在伴章段查找（若自身段未找到且未携带前缀）
+            for (var j = ownLimit; j < ch.labels.length; j++) {
+              if (ch.labels[j] === slugOrLabel) return j;
+              if (getImgKeyForChapter(ch, ch.labels[j]) === slugOrLabel) return j;
+            }
+
             return -1;
           };
 

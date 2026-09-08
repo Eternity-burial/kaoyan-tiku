@@ -608,7 +608,24 @@
 
     // ===== 章节切换 =====
     function switchChapter(chapterId) {
-      const ch = CHAPTERS.find(c => c.id === chapterId);
+      // 核心安全重定向：1000题或李范习题为并入母章的数据源伴章，绝不可作为独立章节打开，自动重定向至母章
+      const allChs = (curSubject && curSubject.chapters) ? curSubject.chapters : CHAPTERS;
+      const hostCh = allChs.find(function(c) {
+        if (!c) return false;
+        if (c.q1000Id === chapterId || c.lfxitiId === chapterId) return true;
+        var qc = (typeof chapterById === 'function') ? (chapterById(c.q1000Id) || chapterById(c.lfxitiId)) : null;
+        if (qc && (qc.id === chapterId || qc.uid === chapterId)) return true;
+        return false;
+      });
+      if (hostCh) {
+        switchChapter(hostCh.id);
+        if (typeof hostCh.ownTotal === 'number') {
+          switchTo(hostCh.ownTotal);
+        }
+        return;
+      }
+
+      const ch = CHAPTERS.find(c => c.id === chapterId || c.uid === chapterId);
       if (!ch || ch.total === 0) { console.warn('该章节尚未导入:', chapterId); return; }
       autoSaveNotes(); // 切章前保存未提交的笔记（loadNotes 会重建 notesData）
       currentChapterId = ch.id;
@@ -764,6 +781,12 @@
       if (!ch) return;
       var wb = ch.wb || '';
       var subj = ch.subj || '';
+
+      // 防穿透映射：若当前章节为伴章，书籍显示名必须映射为其所属母章书名（基础30讲/强化36讲/李范全书）
+      if (wb === '1000题' || wb === '李范习题') {
+        var host = CHAPTERS.find(function(c) { return c.q1000Id === ch.id || c.lfxitiId === ch.id; });
+        if (host && host.wb) wb = host.wb;
+      }
 
       var wbLabel = getWbLabel(wb); // 按当前科目的 wbOrder 映射显示名
       document.getElementById('txtWb').textContent = wbLabel;
@@ -1150,8 +1173,14 @@
       window.CHAPTERS = CHAPTERS;
       var resume = loadResume(subjectId);
       if (resume) {
-        currentChapterId = resume.ch;
-        current = resume.idx;
+        var hostCh = subj.chapters.find(function(c) { return c.q1000Id === resume.ch; });
+        if (hostCh) {
+          currentChapterId = hostCh.id;
+          current = Math.min((hostCh.total || 1) - 1, (hostCh.ownTotal || 0) + (resume.idx || 0));
+        } else {
+          currentChapterId = resume.ch;
+          current = resume.idx;
+        }
       } else {
         currentChapterId = subj.initChapterId;
         current = 0;
@@ -3759,8 +3788,14 @@ ${cardsHTML}
       }
 
       if (resume) {
-        currentChapterId = resume.ch;
-        current = resume.idx;
+        var hostCh = curSubject.chapters.find(function(c) { return c.q1000Id === resume.ch; });
+        if (hostCh) {
+          currentChapterId = hostCh.id;
+          current = Math.min((hostCh.total || 1) - 1, (hostCh.ownTotal || 0) + (resume.idx || 0));
+        } else {
+          currentChapterId = resume.ch;
+          current = resume.idx;
+        }
       } else {
         currentChapterId = curSubject.initChapterId;
         current = 0;

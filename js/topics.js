@@ -1139,16 +1139,43 @@
       if (target.subjectId !== curSubjectId) {
         switchSubject(target.subjectId);
       }
-      var curCh = (typeof getChapter === 'function') ? getChapter() : chapterById(currentChapterId);
-      if (curCh && curCh.q1000Total && curCh.q1000Id === target.chapterId) {
-        // 当前正处于合并章节中，且目标题属于当前章节挂载的伴章：直接定位到伴章题号，无需切章
-        switchTo(curCh.ownTotal + target.idx);
-      } else {
-        if (target.chapterId !== currentChapterId) {
-          switchChapter(target.chapterId);
-        }
-        switchTo(target.idx);
+      var targetChapterId = target.chapterId;
+      var targetIdx = target.idx;
+
+      // 伴章智能路由：若目标题目属于伴章（1000题或李范习题），必须自动路由到挂载它的母章（基础30讲/强化36讲/李范全书）
+      var allChs = (typeof CHAPTERS !== 'undefined' && CHAPTERS && CHAPTERS.length > 0)
+        ? CHAPTERS
+        : ((typeof window !== 'undefined' && window.CHAPTERS) ? window.CHAPTERS : []);
+      if (!allChs || allChs.length === 0) {
+        var curSub = (typeof curSubject !== 'undefined' && curSubject)
+          ? curSubject
+          : ((typeof window !== 'undefined' && window.curSubject) ? window.curSubject : null);
+        if (curSub && curSub.chapters) allChs = curSub.chapters;
       }
+
+      var hostCh = null;
+      if (allChs && allChs.length > 0) {
+        for (var hi = 0; hi < allChs.length; hi++) {
+          if (allChs[hi].q1000Id === targetChapterId) {
+            hostCh = allChs[hi];
+            break;
+          }
+        }
+      }
+
+      if (hostCh) {
+        targetChapterId = hostCh.id;
+        targetIdx = (hostCh.ownTotal || 0) + target.idx;
+      }
+
+      var curChId = (typeof currentChapterId !== 'undefined')
+        ? currentChapterId
+        : ((typeof window !== 'undefined' && window.currentChapterId) ? window.currentChapterId : '');
+
+      if (targetChapterId !== curChId) {
+        switchChapter(targetChapterId);
+      }
+      switchTo(targetIdx);
       updateJumpReturnBar();
 
       // 跳转到同类题时，页面与工作台自动平滑滚动到最上方

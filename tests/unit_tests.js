@@ -1827,6 +1827,88 @@ test('23. 数字键 1-5 掌握度快捷键与考点删除/存储权限契约', (
   assert.ok(!syncSrc.includes('// 在调起浏览器底层系统权限弹窗前，先展示应用内 Quiet Liquid 说明'), '存储权限必须恢复浏览器原生行为，无任何多余拦截说明');
 });
 
+console.log('\n--- 24. 伴章题目 Slug 唯一性、断点恢复隔离与伴章切章重定向契约 ---');
+test('24. 伴章题目 Slug 唯一性、断点恢复隔离与伴章切章重定向契约', () => {
+  const win = {};
+  new Function('window', chaptersSrc)(win);
+  const math = win.SUBJECTS.find(s => s.id === 'math');
+  const lec10 = math.chapters.find(c => c.uid === 'math::基础30讲::高数::lec10');
+  assert.ok(lec10, '基础30讲第10讲必须存在');
+
+  // 1. 验证合并章节题目 Slug 唯一性与隔离
+  // 30讲 习题 10-8 (ownTotal 范围内，idx=21)
+  const ownSlug = lec10.getQuestionSlug(21);
+  assert.strictEqual(ownSlug, 'pb_10-8', '30讲习题10-8 slug 应为 pb_10-8');
+
+  // 1000题 10-8 (伴章段，idx=30)
+  const compSlug = lec10.getQuestionSlug(30);
+  assert.strictEqual(compSlug, 'q1000::pb_10-8', '1000题10-8 slug 必须携带伴章前缀 q1000::pb_10-8，严防重名');
+
+  // 2. 验证 getIdxBySlug 双向隔离与精确命中
+  assert.strictEqual(lec10.getIdxBySlug('pb_10-8'), 21, 'pb_10-8 必须精准解析为 30讲习题 10-8 (idx=21)');
+  assert.strictEqual(lec10.getIdxBySlug('q1000::pb_10-8'), 30, 'q1000::pb_10-8 必须精准解析为 1000题 10-8 (idx=30)');
+  assert.strictEqual(lec10.getIdxBySlug('10-8'), 21, '无前缀 10-8 优先在自身习题中命中 (idx=21)');
+
+  // 3. 验证李范全书与李范习题伴章隔离
+  const lfCh = math.chapters.find(c => c.wb === '李范全书' && c.q1000Id);
+  assert.ok(lfCh, '李范全书合并章节必须存在');
+  assert.strictEqual(lfCh.getQuestionSlug(0), 'ex_1-1');
+  assert.strictEqual(lfCh.getQuestionSlug(lfCh.ownTotal), 'lfxiti::pb_1-1', '李范习题应携带 lfxiti:: 前缀');
+  assert.strictEqual(lfCh.getIdxBySlug('ex_1-1'), 0);
+  assert.strictEqual(lfCh.getIdxBySlug('lfxiti::pb_1-1'), lfCh.ownTotal);
+
+  // 4. 验证 ResumeStore 对伴章题目的断点保存与刷新恢复（彻底避免 F5 刷新跳到自身习题）
+  const lsData = {};
+  const mockLS = {
+    getItem: k => (lsData[k] || null),
+    setItem: (k, v) => { lsData[k] = String(v); },
+    removeItem: k => { delete lsData[k]; }
+  };
+  const storeWin = { localStorage: mockLS, console: console };
+  const storageSrc = fs.readFileSync(path.join(__dirname, '../js/storage.js'), 'utf8');
+  new Function('window', 'localStorage', storageSrc)(storeWin, mockLS);
+  const { ResumeStore } = storeWin.StorageEngine;
+
+  // 保存当前在 1000题 10-8 (idx=30)
+  ResumeStore.save('math', lec10.id, lec10, 30, true);
+  const loadedSubj = ResumeStore.loadSubject('math', math.chapters);
+  assert.ok(loadedSubj);
+  assert.strictEqual(loadedSubj.ch, lec10.id);
+  assert.strictEqual(loadedSubj.idx, 30, 'F5 刷新恢复断点必须精准停在 1000题 10-8 (idx=30)，绝不可跳至 21');
+
+  const loadedCh = ResumeStore.loadChapter('math', lec10.id, lec10);
+  assert.ok(loadedCh);
+  assert.strictEqual(loadedCh.idx, 30, '章节停靠记录恢复也必须精准停在 1000题 10-8 (idx=30)');
+
+  // 保存当前在 30讲 习题 10-8 (idx=21)
+  ResumeStore.save('math', lec10.id, lec10, 21, true);
+  const loadedSubj2 = ResumeStore.loadSubject('math', math.chapters);
+  assert.strictEqual(loadedSubj2.idx, 21, '30讲习题10-8 (idx=21) 应精准恢复为 21');
+
+  // 5. 验证历史旧伴章记录自愈防漂移（如历史上错误保存了 1000题 章节 UID）
+  mockLS.setItem('kaoyan.g.resume', JSON.stringify({
+    math: { ch: 'math::1000题::基础篇-高数::ch10', slug: 'pb_10-8', sub: true }
+  }));
+  const healed = ResumeStore.loadSubject('math', math.chapters);
+  assert.ok(healed);
+  assert.strictEqual(healed.ch, lec10.id, '历史 1000题 断点记录应自动重定向为母章 基础30讲');
+  assert.strictEqual(healed.idx, 30, '历史 1000题 pb_10-8 记录应自愈为母章中对应伴章题号 (idx=30)');
+
+  // 6. 验证 app.js 与 topics.js 路由防穿透代码契约
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/app.js'), 'utf8');
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+
+  // jumpToQid 包含伴章 hostCh 路由
+  assert.ok(topicsSrc.includes('hostCh.q1000Id === targetChapterId') || topicsSrc.includes('allChs[hi].q1000Id === targetChapterId'), 'topics.js jumpToQid 必须包含伴章寻找母章的重定向路由');
+  assert.ok(topicsSrc.includes('targetIdx = (hostCh.ownTotal || 0) + target.idx'), 'topics.js jumpToQid 必须计算 hostCh.ownTotal 偏移');
+
+  // switchChapter 包含伴章自动重定向至母章防御
+  assert.ok(appSrc.includes('c.q1000Id === chapterId') && appSrc.includes('switchChapter(hostCh.id)'), 'app.js switchChapter 必须拦截伴章独立打开并重定向至母章');
+
+  // renderTitle 包含伴章书名防穿透映射
+  assert.ok(appSrc.includes("if (wb === '1000题' || wb === '李范习题')"), 'app.js renderTitle 必须具备伴章书名防穿透映射');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');

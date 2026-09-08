@@ -317,14 +317,32 @@
 
     save: function (subjId, chapterId, ch, idx, subMode) {
       var map = this._load();
+      // 伴章自愈：若外部传入的是伴章（如 1000题 或 李范习题），自动重定向为母章与题号偏移
+      var host = null;
+      if (ch && !ch.q1000Total && typeof window !== 'undefined' && window.SUBJECTS) {
+        var subObj = window.SUBJECTS.find(function(s) { return s.id === subjId; });
+        if (subObj && subObj.chapters) {
+          host = subObj.chapters.find(function(c) { return c.q1000Id === chapterId; });
+        }
+      }
+      if (host) {
+        chapterId = host.id;
+        idx = (host.ownTotal || 0) + idx;
+        ch = host;
+      }
+
       var slug = (ch && ch.getQuestionSlug) ? ch.getQuestionSlug(idx) : null;
       var wb = ch ? ch.wb : '';
 
-      var entry = { ch: chapterId, sub: !!subMode, slug: slug };
+      var entry = { ch: chapterId, sub: !!subMode, slug: slug, idx: idx };
 
       map[subjId] = entry;
       if (wb) map[subjId + '::' + wb] = entry;
-      map[subjId + '::ch::' + chapterId] = { sub: !!subMode, slug: slug };
+      map[subjId + '::ch::' + chapterId] = { sub: !!subMode, slug: slug, idx: idx };
+
+      // 清理历史伴章残留键
+      delete map[subjId + '::1000题'];
+      delete map[subjId + '::李范习题'];
 
       this._save(map);
     },
@@ -334,7 +352,10 @@
       var r = map[subjId + '::ch::' + chapterId];
       if (!r || !ch || ch.total === 0) return null;
 
-      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : (typeof r.idx === 'number' ? r.idx : -1);
+      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : -1;
+      if (idx < 0 && typeof r.idx === 'number') {
+        idx = r.idx;
+      }
       if (idx < 0) return null;
 
       idx = Math.min(Math.max(0, idx), ch.total - 1);
@@ -355,7 +376,25 @@
       }
       if (!ch || ch.total === 0) return null;
 
-      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : (typeof r.idx === 'number' ? r.idx : 0);
+      // 伴章自愈：若历史断点保存的是 1000 题或李范习题伴章，自动重定向至母章
+      if (ch && !ch.q1000Total) {
+        var host = chapters.find(function (c) { return c.q1000Id === ch.id; });
+        if (host) {
+          var origSlug = r.slug;
+          var qIdx = (origSlug && ch.getIdxBySlug) ? ch.getIdxBySlug(origSlug) : (typeof r.idx === 'number' ? r.idx : 0);
+          if (qIdx < 0) qIdx = 0;
+          return {
+            ch: host.id,
+            idx: Math.min(host.total - 1, (host.ownTotal || 0) + qIdx),
+            sub: !!r.sub
+          };
+        }
+      }
+
+      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : -1;
+      if (idx < 0 && typeof r.idx === 'number') {
+        idx = r.idx;
+      }
       if (idx < 0) idx = 0;
       idx = Math.min(Math.max(0, idx), ch.total - 1);
 
@@ -364,6 +403,10 @@
 
     loadBook: function (subjId, wb, chapters) {
       var map = this._load();
+      // 若请求 1000题 或 李范习题，自动映射至母章书名
+      if (wb === '1000题') wb = '基础30讲';
+      if (wb === '李范习题') wb = '李范全书';
+
       var key = subjId + '::' + wb;
       var r = map[key];
       if (!r || !r.ch) return null;
@@ -377,7 +420,10 @@
       }
       if (!ch || ch.total === 0) return null;
 
-      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : (typeof r.idx === 'number' ? r.idx : 0);
+      var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : -1;
+      if (idx < 0 && typeof r.idx === 'number') {
+        idx = r.idx;
+      }
       if (idx < 0) idx = 0;
       idx = Math.min(Math.max(0, idx), ch.total - 1);
 
