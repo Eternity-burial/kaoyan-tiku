@@ -734,24 +734,36 @@ test('同类题卡片共同考点渲染契约: 正确透出共同考点标签 (.
   const qid0 = win.getQid('math', lec01.uid, 0);
   const qid1 = win.getQid('math', lec01.uid, 1);
 
-  // 1. 创建包含 LaTeX 的考点并关联题目 0 与题目 1
+  // 1. 创建包含 LaTeX 的考点并关联题目 0 与题目 1（共同考点）
   const t = win.createRelatedTopic('泰勒展开式 $\\lim_{x \\to 0}\\frac{x-\\sin x}{x^3}$', qid0);
   assert.ok(t);
   win.addQuestionToTopic(t.id, qid1);
+
+  // 1.1 为同类题题目 1 关联其独有的第二考点（非共同考点）
+  const tExclusive = win.createRelatedTopic('等价无穷小代换 $\\sin x \\sim x$', qid1);
+  assert.ok(tExclusive);
 
   // 2. 获取题目 0 的同类题数据
   const relData = win.TopicManager.getQuestionData(qid0);
   assert.strictEqual(relData.relatedQuestions.length, 1);
   const relQ = relData.relatedQuestions[0];
   assert.strictEqual(relQ.qid, qid1);
-  assert.ok(relQ.topics && relQ.topics.includes(t.name), 'relQ 必须包含共同考点名称');
-  assert.ok(relQ.topicItems && relQ.topicItems.some(ti => ti.id === t.id && ti.name === t.name), 'relQ 必须包含共同考点详细对象');
+  // 验证同类题全量包含所属全部考点，且共同考点优先排在首位
+  assert.strictEqual(relQ.topics.length, 2, 'relQ 必须包含该题归属的全部 2 个考点');
+  assert.strictEqual(relQ.topics[0], t.name, '共同考点应排在首位');
+  assert.strictEqual(relQ.topics[1], tExclusive.name, '非共同考点应排在后面');
+  assert.deepStrictEqual(relQ.commonTopicIds, [t.id], 'commonTopicIds 必须精准记录共同考点 ID');
+  assert.strictEqual(relQ.topicItems[0].isCommon, true, '首个考点项 isCommon 应为 true');
+  assert.strictEqual(relQ.topicItems[1].isCommon, false, '独有考点项 isCommon 应为 false');
 
-  // 3. 执行同类题渲染并验证生成的 HTML 包含 .rc-topic-tag 共同考点标签
+  // 3. 执行同类题渲染并验证生成的 HTML 包含所属考点、高亮共同考点与常规考点标签
   win.renderRelatedQuestions();
-  assert.ok(mockList.innerHTML.includes('rc-topic-tag'), '同类题卡片头部必须包含 .rc-topic-tag 标签');
-  assert.ok(mockList.innerHTML.includes('泰勒展开式'), '同类题标签内必须包含共同考点文本');
-  assert.ok(mockList.innerHTML.includes('data-tid="' + t.id + '"'), '考点标签上应携带正确的考点 ID 属性');
+  assert.ok(mockList.innerHTML.includes('rc-topics" title="所属考点"'), '外层容器标题应更新为 所属考点');
+  assert.ok(mockList.innerHTML.includes('rc-topic-tag is-common'), '共同考点标签必须包含 .is-common 类名');
+  assert.ok(mockList.innerHTML.includes('title="共同考点：泰勒展开式'), '共同考点 tooltip 应提示 共同考点：');
+  assert.ok(mockList.innerHTML.includes('title="考点：等价无穷小代换'), '非共同考点 tooltip 应提示 考点：');
+  assert.ok(mockList.innerHTML.includes('data-tid="' + t.id + '"'), '共同考点标签上应携带正确的考点 ID 属性');
+  assert.ok(mockList.innerHTML.includes('data-tid="' + tExclusive.id + '"'), '独有考点标签上也应携带正确的考点 ID 属性');
 });
 
 test('合并章节伴章段 QID 路由隔离: 杜绝两书同号题（如30讲3-2与1000题3-2）考点与同类题泄露', () => {

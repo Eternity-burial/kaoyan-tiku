@@ -5418,10 +5418,21 @@
       cursor: pointer;
       line-height: 1.35;
     }
+    .rc-topic-tag:not(.is-common) {
+      background: var(--card-bg, #ffffff);
+      border-color: var(--border, #e2e8f0);
+      color: var(--text-muted, #64748b);
+      font-weight: 500;
+    }
     [data-theme="dark"] .rc-topic-tag {
       color: #e9d5ff;
       background: rgba(168, 85, 247, 0.16);
       border-color: rgba(168, 85, 247, 0.38);
+    }
+    [data-theme="dark"] .rc-topic-tag:not(.is-common) {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-muted, #94a3b8);
     }
     .rc-topic-tag:hover {
       background: #ede9fe;
@@ -5430,11 +5441,23 @@
       box-shadow: 0 2px 8px rgba(168, 85, 247, 0.22);
       transform: translateY(-1px);
     }
+    .rc-topic-tag:not(.is-common):hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      color: var(--text-main, #1e293b);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
     [data-theme="dark"] .rc-topic-tag:hover {
       background: rgba(168, 85, 247, 0.28);
       border-color: rgba(192, 132, 252, 0.6);
       color: #f3e8ff;
       box-shadow: 0 2px 8px rgba(168, 85, 247, 0.3);
+    }
+    [data-theme="dark"] .rc-topic-tag:not(.is-common):hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #f8fafc;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
     .rc-topic-name {
       display: inline-flex;

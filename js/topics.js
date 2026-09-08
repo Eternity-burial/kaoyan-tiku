@@ -323,8 +323,10 @@
         scoreB += affB * 10;
 
         // 因子 3：共同考点数量 (+10分)
-        scoreA += ((a.topics && a.topics.length) || 0) * 10;
-        scoreB += ((b.topics && b.topics.length) || 0) * 10;
+        var commonCountA = (a.commonTopicIds && a.commonTopicIds.length) || (a.commonTopics && a.commonTopics.length) || ((a.topics && a.topics.length) || 0);
+        var commonCountB = (b.commonTopicIds && b.commonTopicIds.length) || (b.commonTopics && b.commonTopics.length) || ((b.topics && b.topics.length) || 0);
+        scoreA += commonCountA * 10;
+        scoreB += commonCountB * 10;
 
         if (scoreB !== scoreA) {
           return scoreB - scoreA;
@@ -451,9 +453,28 @@
         if (Object.prototype.hasOwnProperty.call(relatedMap, k)) {
           var meta = getQuestionMeta(k);
           if (meta) {
-            meta.topics = relatedMap[k].topics;
-            meta.topicIds = relatedMap[k].topicIds;
-            meta.topicItems = relatedMap[k].topicItems;
+            // 获取该同类题所归属的所有考点（包含共同考点与其它考点）
+            var allTopicsForQ = getTopicsForQid(k);
+            var commonIds = relatedMap[k].topicIds || [];
+            if (allTopicsForQ && allTopicsForQ.length > 0) {
+              // 共同考点排在前面，其他考点排在后面
+              allTopicsForQ.sort(function(a, b) {
+                var aIsCommon = commonIds.indexOf(a.id) !== -1 ? 1 : 0;
+                var bIsCommon = commonIds.indexOf(b.id) !== -1 ? 1 : 0;
+                return bIsCommon - aIsCommon;
+              });
+              meta.topics = allTopicsForQ.map(function(t) { return t.name; });
+              meta.topicIds = allTopicsForQ.map(function(t) { return t.id; });
+              meta.topicItems = allTopicsForQ.map(function(t) {
+                return { id: t.id || '', name: t.name, isCommon: commonIds.indexOf(t.id) !== -1 };
+              });
+            } else {
+              meta.topics = relatedMap[k].topics;
+              meta.topicIds = relatedMap[k].topicIds;
+              meta.topicItems = relatedMap[k].topicItems;
+            }
+            meta.commonTopicIds = commonIds;
+            meta.commonTopics = relatedMap[k].topics;
             meta.note = relatedMap[k].notes.join('；') || meta.questionNote || '';
             list.push(meta);
           }
@@ -843,10 +864,14 @@
           });
           var topicsHtml = '';
           if (topicsList && topicsList.length > 0) {
-            topicsHtml = '<div class="rc-topics" title="共同考点">' +
+            var commonTopicIds = q.commonTopicIds || [];
+            topicsHtml = '<div class="rc-topics" title="所属考点">' +
               topicsList.map(function(t) {
+                var isCommon = (typeof t.isCommon === 'boolean') ? t.isCommon : (commonTopicIds.indexOf(t.id) !== -1);
                 var tidAttr = t.id ? ' data-tid="' + escapeHtml(t.id) + '"' : '';
-                return '<span class="rc-topic-tag"' + tidAttr + ' title="共同考点：' + escapeHtml(t.name) + '（点击或右键可重命名）">' +
+                var commonClass = isCommon ? ' is-common' : '';
+                var titlePrefix = isCommon ? '共同考点：' : '考点：';
+                return '<span class="rc-topic-tag' + commonClass + '"' + tidAttr + ' title="' + titlePrefix + escapeHtml(t.name) + '（点击或右键可重命名）">' +
                   '<span class="rc-topic-name">' + renderTopicTextHtml(t.name) + '</span>' +
                 '</span>';
               }).join('') +
