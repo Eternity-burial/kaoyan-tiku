@@ -1669,6 +1669,50 @@ async function run() {
   if (!accordionCheck.stillOpenAfterClick) throw new Error('点击当前分区标题导致其被异常折叠（违反当前做题分区锁定规范）');
   if (!accordionCheck.othersCollapsed || !accordionCheck.curStillOpen) throw new Error('全部折叠时未能保持当前分区展开且其它分区折叠');
 
+  // 测试强化36讲下「全部展开」状态下跨分区切题（例题 <-> 1000题）绝不自动折叠
+  console.log('  测试强化36讲展开态下跨分区切题保持全展开 (绝不自动重新折叠)...');
+  const expandPersistenceCheck = await evaluate(ws, `
+    (() => {
+      // 1. 切到强化36讲高数第1讲
+      switchChapter('math::强化36讲::高数::lec01');
+      // 2. 确保全部展开
+      const toggleAllBtn = document.getElementById('btnToggleAllSections');
+      if (toggleAllBtn && toggleAllBtn.textContent === '全部展开') {
+        toggleAllBtn.click();
+      }
+      const ch = getChapter();
+      const exIdx = 0; // 36讲 例1-1
+      const q1000Idx = (ch.ownTotal || 15); // 1000题 第一题
+      
+      // 先切到例题
+      switchTo(exIdx);
+      const headersBefore = Array.from(document.querySelectorAll('#qnav .section-header'));
+      const allOpenBefore = headersBefore.every(h => !h.classList.contains('collapsed'));
+
+      // 切到 1000 题
+      switchTo(q1000Idx);
+      const headersAfter1000 = Array.from(document.querySelectorAll('#qnav .section-header'));
+      const allOpenAfter1000 = headersAfter1000.every(h => !h.classList.contains('collapsed'));
+
+      // 再切回例题
+      switchTo(exIdx);
+      const headersBackToEx = Array.from(document.querySelectorAll('#qnav .section-header'));
+      const allOpenBackToEx = headersBackToEx.every(h => !h.classList.contains('collapsed'));
+
+      return {
+        allOpenBefore,
+        allOpenAfter1000,
+        allOpenBackToEx,
+        curPartAfter1000: partOfIdx(q1000Idx),
+        curPartBackToEx: partOfIdx(exIdx)
+      };
+    })()
+  `);
+  console.log('  展开态跨分区切题保持检查:', expandPersistenceCheck);
+  if (!expandPersistenceCheck.allOpenBefore || !expandPersistenceCheck.allOpenAfter1000 || !expandPersistenceCheck.allOpenBackToEx) {
+    throw new Error('展开状态下跨分区做题 (例题 <-> 1000题) 异常触发了自动折叠！' + JSON.stringify(expandPersistenceCheck));
+  }
+
   const undoCheck = await evaluate(ws, `
     (() => {
       const ch1Uid = 'math::基础30讲::高数::lec01';

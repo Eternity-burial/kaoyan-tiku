@@ -630,6 +630,7 @@
       autoSaveNotes(); // 切章前保存未提交的笔记（loadNotes 会重建 notesData）
       currentChapterId = ch.id;
       current = 0;
+      isAccordionMode = false;
       showSolution = defaultShowSolution;
       // 小题模式（F）是全局开关，切章不重置，跨章保持
       loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes(); loadSm2();
@@ -1439,6 +1440,7 @@
 
     // ===== 题号分区手风琴折叠状态存储与题号网格渲染 =====
     const collapsedSections = new Set();
+    let isAccordionMode = false; // 手风琴单分区聚焦模式（默认 false：保持展开；仅当用户主动点击「全部折叠」时开启）
 
     function renderNav() {
       const nav = document.getElementById('qnav');
@@ -1574,6 +1576,7 @@
           if (isCurrentPart) return; // 当前做题分区不可折叠
           if (collapsedSections.has(secKey)) {
             collapsedSections.delete(secKey);
+            isAccordionMode = false; // 用户主动展开分区，退出强制手风琴聚焦折叠
           } else {
             collapsedSections.add(secKey);
           }
@@ -1705,8 +1708,10 @@
           btnToggleAll.onclick = function(e) {
             e.stopPropagation();
             if (allOthersCollapsed) {
+              isAccordionMode = false; // 用户点击全部展开，退出手风琴折叠模式
               validOtherSecKeys.forEach(function(k) { collapsedSections.delete(k); });
             } else {
+              isAccordionMode = true; // 用户点击全部折叠，进入手风琴单分区聚焦模式
               validOtherSecKeys.forEach(function(k) { collapsedSections.add(k); });
             }
             renderNav();
@@ -2102,7 +2107,7 @@
       const curGroup = ch.groupForIdx ? ch.groupForIdx[current] : null;
       const targetStart = curGroup ? curGroup.startIdx : current;
 
-      // 检查当前题所在分区：自动展开当前分区，并收起跨小节的上一分区（手风琴单分区聚焦）
+      // 检查当前题所在分区：自动展开当前做题分区
       const curPartLabel = partOfIdx(current);
       const curSecKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + curPartLabel;
       let needRerender = false;
@@ -2110,7 +2115,8 @@
         collapsedSections.delete(curSecKey);
         needRerender = true;
       }
-      if (lastActivePartLabel !== null && lastActivePartLabel !== curPartLabel) {
+      // 仅当用户主动开启了「全部折叠」（手风琴聚焦模式）时，跨分区切题才自动收起上一分区；展开模式下保持全开绝不折叠
+      if (isAccordionMode && lastActivePartLabel !== null && lastActivePartLabel !== curPartLabel) {
         const prevSecKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + lastActivePartLabel;
         collapsedSections.add(prevSecKey);
         needRerender = true;
