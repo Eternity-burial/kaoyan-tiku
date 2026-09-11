@@ -1122,14 +1122,64 @@ async function run() {
   if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
     throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
   }
-  if (dashboardCheck.expectedTotal !== 6342) {
-    throw new Error(`数学科目总题数异常: 期望 6342, 实际 ${dashboardCheck.expectedTotal}`);
+  if (dashboardCheck.expectedTotal !== 7750) {
+    throw new Error(`数学科目总题数异常: 期望 7750 (含李林880 1408题), 实际 ${dashboardCheck.expectedTotal}`);
   }
   if (dashboardCheck.expectedDone < 1700) {
     throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);
   }
-  if (!dashboardCheck.cardsCount || dashboardCheck.cardsCount < 7) {
+  if (!dashboardCheck.cardsCount || dashboardCheck.cardsCount < 8) {
     throw new Error(`V 面板书籍统计卡片未渲染数据，实际数量: ${dashboardCheck.cardsCount}`);
+  }
+
+  // 验证李林880右侧题号栏手风琴难度分区、题型小节与切题加载
+  console.log('  验证李林880右侧栏手风琴难度分区、题型小节与题目解析渲染...');
+  const test880Result = await evaluate(ws, `
+    (() => {
+      const prevChId = currentChapterId;
+      const ch880_01 = SUBJECTS.find(s => s.id === 'math').chapters.find(c => c.wb === '880' && c.name.includes('第1章'));
+      if (!ch880_01) return { error: '未找到880第1章' };
+      switchChapter(ch880_01.id);
+      renderNav();
+
+      const txtWb = document.getElementById('txtWb').textContent.trim();
+      const nav = document.getElementById('qnav');
+      const secHeaders = Array.from(nav.querySelectorAll('.section-header')).map(h => h.querySelector('.sec-title-text') ? h.querySelector('.sec-title-text').textContent.trim() : '');
+      const subHeaders = Array.from(nav.querySelectorAll('.subsection-header')).map(h => h.textContent.trim());
+      const firstBtn = nav.querySelector('button[data-group-start]');
+      const btnText = firstBtn ? firstBtn.textContent.trim() : '';
+      const btnTitle = firstBtn ? firstBtn.title : '';
+
+      // 验证第1题图片
+      const qImg = document.getElementById('questionImg');
+      const qSrc = qImg ? qImg.src : '';
+
+      // 恢复切章前的状态
+      switchChapter(prevChId);
+      renderNav();
+
+      return {
+        txtWb,
+        hasCh: true,
+        secHeaders,
+        subHeaders,
+        btnText,
+        btnTitle,
+        qSrc
+      };
+    })()
+  `);
+  console.log('  李林880题号栏与切片检查结果:', test880Result);
+  if (test880Result.error) throw new Error(test880Result.error);
+  if (test880Result.txtWb !== '880') throw new Error(`书名栏未正确显示为 880, 实际: ${test880Result.txtWb}`);
+  if (!test880Result.secHeaders.includes('基础题')) throw new Error('880未能渲染「基础题」手风琴分区');
+  if (!test880Result.subHeaders.includes('选择题')) throw new Error('880未能渲染「选择题」二级题型小节');
+  if (test880Result.btnText !== '1') throw new Error(`880第1题按钮应展示为纯净题号数字 "1", 实际: "${test880Result.btnText}"`);
+  if (!test880Result.btnTitle.includes('基础题') || !test880Result.btnTitle.includes('基选1')) {
+    throw new Error(`880悬浮提示应包含完整层级信息，实际: ${test880Result.btnTitle}`);
+  }
+  if (!decodeURIComponent(test880Result.qSrc).includes('pb_01_基础_选择_01_question.png')) {
+    throw new Error(`880题目图片路径不匹配，实际: ${test880Result.qSrc}`);
   }
 
   // 7. 测试科目切换 (Math -> 822 -> English) 与英语生词本安全交互

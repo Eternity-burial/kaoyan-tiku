@@ -311,15 +311,50 @@ test('科目定义完整性: 包含 math, 822, english', () => {
   assert.strictEqual(ids.length, 3);
 });
 
-test('数学科目 (math) 232 章节元数据校验', () => {
+test('数学科目 (math) 255 章节元数据校验 (含李林880全23章)', () => {
   const math = SUBJECTS.find(s => s.id === 'math');
-  assert.strictEqual(math.chapters.length, 232);
+  assert.strictEqual(math.chapters.length, 255);
   math.chapters.forEach(ch => {
     assert.ok(ch.id, 'Chapter must have ID');
     assert.ok(ch.name, 'Chapter must have name');
     assert.strictEqual(ch.total, ch.labels.length, `Chapter ${ch.id} total must match labels count`);
     assert.ok(ch.relPath, 'Chapter must have relPath');
   });
+});
+
+test('李林880 题库结构、分类题型手风琴与图片路径校验', () => {
+  const math = SUBJECTS.find(s => s.id === 'math');
+  const ch880 = math.chapters.filter(c => c.wb === '880');
+  assert.strictEqual(ch880.length, 23, '880必须包含全部23章');
+
+  const total880Questions = ch880.reduce((acc, c) => acc + c.total, 0);
+  assert.strictEqual(total880Questions, 1408, '880全书叶子题目总数应严格为1408题');
+
+  // 学科分布校验
+  const gaoshu = ch880.filter(c => c.subj === '高数');
+  const xiandai = ch880.filter(c => c.subj === '线代');
+  const gailv = ch880.filter(c => c.subj === '概率论');
+  assert.strictEqual(gaoshu.length, 9, '高数应为9章');
+  assert.strictEqual(xiandai.length, 6, '线代应为6章');
+  assert.strictEqual(gailv.length, 8, '概率论应为8章');
+
+  // 第1章 细节校验
+  const ch1 = ch880.find(c => c.name.includes('第1章'));
+  assert.ok(ch1, '第1章存在');
+  assert.strictEqual(ch1.total, 75);
+  assert.strictEqual(ch1.parts.length, 3, '第1章应包含基础题、综合题、拓展题3个大分区');
+  assert.strictEqual(ch1.parts[0].type, '基础题');
+  assert.strictEqual(ch1.parts[1].type, '综合题');
+  assert.strictEqual(ch1.parts[2].type, '拓展题');
+
+  // 题目路径校验
+  const imgPath0 = math.getImgPath(ch1, ch1.labels[0]);
+  assert.strictEqual(imgPath0, '题库/880/高数/第1章 函数、极限、连续/pb_01_基础_选择_01');
+
+  // 区分标签与大分区映射校验
+  assert.strictEqual(math.classifyLabel(ch1.labels[0], ch1), '基础题');
+  assert.strictEqual(math.classifyLabel(ch1.labels[35], ch1), '综合题');
+  assert.strictEqual(math.classifyLabel(ch1.labels[73], ch1), '拓展题');
 });
 
 test('822 科目 35 章节元数据校验及标签分类', () => {

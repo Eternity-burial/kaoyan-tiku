@@ -1,0 +1,100 @@
+第21章《数理统计的基本概念》切分交付自检报告
+
+源PDF：第21章 数理统计的基本概念.pdf
+物理页数：11
+正式切片画布宽：1536px
+正式切片格式：PNG Truecolor RGB / 8 bpc / 3 channels
+题目逻辑资产：23
+题目PNG：23
+解析PNG：29
+PNG总数：52
+跨页题干无缝拼接：1 题
+跨页解析分图：6 题
+PNG原图总字节数：12,467,498
+
+分组计数：
+基础-选择：3
+基础-填空：5
+基础-解答：2
+综合-选择：7
+综合-填空：2
+综合-解答：4
+拓展：0（源PDF中未出现独立“拓展题”板块，未虚构题目）
+
+关键硬约束检查：
+[PASS] 题目图仅取自物理页 P01-P03；解析图仅取自 P04-P11。
+[PASS] 23/23 题目图齐全，29 张解析图齐全，共 52 张 PNG。
+[PASS] 无任何 *_question_2.png 碎片；跨页题干已拼为单一 *_question.png。
+[PASS] 全部正式PNG width=1536px。
+[PASS] 全部正式PNG为 PIL RGB；PNG IHDR bit_depth=8、color_type=2（24位真彩色），无 L/1/P 模式。
+[PASS] 未使用灰度化、二值化、调色板量化、JPEG/WebP 输出或有损压缩。
+[PASS] 相邻不同题目的源裁切区间无重叠；题/解物理页域严格隔离。
+[PASS] logical_map.csv 为 UTF-8 with BOM，含题目/解析物理页码及精确 1536px 渲染坐标。
+[PASS] 页面已按绿色页眉水平线检测并找平；最大残余检测倾角=0.000000°。
+
+页面找平角度：
+P01: detected=-0.188348°, residual=+0.000000°
+P02: detected=+0.187240°, residual=+0.000000°
+P03: detected=-0.113833°, residual=+0.000000°
+P04: detected=+0.268812°, residual=+0.000000°
+P05: detected=-0.307007°, residual=+0.000000°
+P06: detected=+0.076701°, residual=+0.000000°
+P07: detected=-0.115206°, residual=+0.000000°
+P08: detected=+0.000000°, residual=+0.000000°
+P09: detected=+0.000000°, residual=+0.000000°
+P10: detected=+0.307007°, residual=+0.000000°
+P11: detected=-0.306187°, residual=+0.000000°
+
+SHA-256（正式PNG）：
+pb_21_基础_填空_01_question.png  3dd09b94440c6dad9d1dbc361be6142d24c0de2a03ea0342701a2886c7197cf7
+pb_21_基础_填空_01_solution_1.png  4e6673baf55a1d20aa86a764142eda03dcec6fa82aed295448cfccf6a7c7c446
+pb_21_基础_填空_01_solution_2.png  70702043ab647f554c3db46567c7b92600bfc61c98d159601dd5c625e4753b3d
+pb_21_基础_填空_02_question.png  e943753c29a5937e820c747cee0c99c62748893a0016ae8b4d356b4826119fbc
+pb_21_基础_填空_02_solution.png  f40187c6fdd6d5934d5e460d4e4fe20212dac012a0b313788503539b81ecea1a
+pb_21_基础_填空_03_question.png  c16888724480f5b994014b653f5d2770411933eaa764dc1da63de1b455a08bf3
+pb_21_基础_填空_03_solution.png  cf817b861e091c59b9e463a025020c8aac84d9f5a70338e0b996f3ba291ac982
+pb_21_基础_填空_04_question.png  3f3d1a9005a7f1c994b52a82c95eee7dd5f2f979155398b9fb50841c30a82a19
+pb_21_基础_填空_04_solution.png  c36d88efea3201da8c453b27ee9c278e648d68b0c84e1a7f54595cdde219c628
+pb_21_基础_填空_05_question.png  e650f78bf26c4615d72fb974b8fbb87bd8bd01ae07b84fb350913f36526d8cbe
+pb_21_基础_填空_05_solution.png  c40f6966c8ef3ffe07847455ba1e564d3cba4a46f117313a5b09a4e436ecfd55
+pb_21_基础_解答_01_question.png  33e2cbe19f0929787a9fc7e8e860239ce7b3b85e7640f630774c7da22feccd6f
+pb_21_基础_解答_01_solution_1.png  a1a61ac788913a5a39e4df96fbbbfabc96c6661da19973b135fabda319040472
+pb_21_基础_解答_01_solution_2.png  1c7ceddc535dc3aaf21fc71eb9cd0452dab9dc4eaf3b0590db09c1cad4360459
+pb_21_基础_解答_02_question.png  f24e0f4a07eb6be364ade6142303f098b86e6a500f6680650c33002a2583bbcd
+pb_21_基础_解答_02_solution.png  e40adaa8a6749765a5f58297bcffc4b8e369932da5e4736690d6e2bb911a5ab1
+pb_21_基础_选择_01_question.png  8bc4da706d304a33923f57ff9a39d0bd6fd84f64c8a6fa6963f7a7f2c97382f8
+pb_21_基础_选择_01_solution.png  fdf329c77f12eb8be74576bc09ce34702a9ba69549ca60fb63404248004407e7
+pb_21_基础_选择_02_question.png  583dc7e289b69c309b8b51f2a1d85c45be205417f25914b05c83c4d2fe2088b2
+pb_21_基础_选择_02_solution.png  91c7af6439010f99bd682e14dc7d82eaca94cf0c1635b4cd8ffca292188a95c4
+pb_21_基础_选择_03_question.png  964cdf178406e5f5bacada84c9b74e9ad991891396bf36e90388922bf85dae3e
+pb_21_基础_选择_03_solution.png  d4568d359c8e9c05c907b1bb65812b038d3a17fd15ce6cc6a3490baa48a786a1
+pb_21_综合_填空_01_question.png  bec6b5014cd476a338a3925285b03b39e7754b6570e04bc9029f027e3aabfd51
+pb_21_综合_填空_01_solution_1.png  b3e9fccbf17ecc4e8694c042f0d64621bd6cd1b24903f8983c29d08a08fc5467
+pb_21_综合_填空_01_solution_2.png  277d584c5810961d6aeedcadaf5ee30af014bbd6b7f76e7f9ddc728c7748d489
+pb_21_综合_填空_02_question.png  bc7a1391c3678c6f191f6fe0e59f0f60ba910fd21e5f03ac9a24a6a536dd4c65
+pb_21_综合_填空_02_solution.png  cbd31e8315097f48fa595b06d41d5220cc69520529d69306667b028ea2e333cd
+pb_21_综合_解答_01_question.png  19590e351acd019358d058045e2dc5b0dbb905997f2c82bc8c39f42f64f6ef24
+pb_21_综合_解答_01_solution.png  11f90b9f06f6e1f5f0a629b05c38dd717184bb88446da696bb6d62ef2c152842
+pb_21_综合_解答_02_question.png  ad2e9a3c8ea256ad29db8cfbec212633ca31bc9179bf34e4e643d5f31c06dec8
+pb_21_综合_解答_02_solution_1.png  5de46fb68d81029c0638f534a08ed5c378a056246bc3005e9b18469203f62a32
+pb_21_综合_解答_02_solution_2.png  ed1a4111353338a046eb7b2626fc53c53f96998df3d8af5670984796068f7caa
+pb_21_综合_解答_03_question.png  b59ab3c01b50cc8d4c37ca9a1c6dba2f70ff805c99a608d27f32872ee16406bc
+pb_21_综合_解答_03_solution.png  bf9b26f70126b77120ec52f4c122a2bcfad40d0a356ace7d2f821820ddfb5480
+pb_21_综合_解答_04_question.png  0362ad5f628519063ca6589e28fead4fa65a556a2d942f2b4e8c061726118026
+pb_21_综合_解答_04_solution_1.png  a534dabfa0b94e63f8083a5e76f7c44abe755114cfb61101289d043c5ec93adc
+pb_21_综合_解答_04_solution_2.png  c9bf4d26cc448cb600e43ee9e22c120f489f5f375f21b41d2d9a7468261ababb
+pb_21_综合_选择_01_question.png  563d564264121ebc7eb30bdb447d2f8af903a9fa996dda70289ee23f5a59d4b1
+pb_21_综合_选择_01_solution.png  f2de888ec8ec563d0473cfdba99e3f4f51a1bc400ade3dc67044d7d516bcdcea
+pb_21_综合_选择_02_question.png  2a6c812d260821eb2cc85dca166deddcce6867a8b7c2efe801fbf045e01ccada
+pb_21_综合_选择_02_solution_1.png  9f129fc175573142903ba5dcc2a4cc62f4ef2faf12445920babf4d170ca2e47b
+pb_21_综合_选择_02_solution_2.png  fb179b757fe704cec062d1e20b95d213a9bbb9c662edf5b1c3fb8f1acfbdd4ed
+pb_21_综合_选择_03_question.png  1a8d5548e2e1f1a9b900d4b758572a0b15c1cdba633473c7c8a63207b3ace69a
+pb_21_综合_选择_03_solution.png  5dfdda8a5977356deb42eb9bddd455278f6c5dae38dfa401119fb52ab091e15b
+pb_21_综合_选择_04_question.png  2e787d7d4398928a09fa85a5a1aea7a604a01e9d3f67f67e1dcfea1c28f775ec
+pb_21_综合_选择_04_solution.png  22eed022131abaf97c4eba47c038783c00cc41a9b3988795ff500cafe55b8bd0
+pb_21_综合_选择_05_question.png  c2a480f5a62dd8783b55acc0bc567278e6c356d4cca3c37fba918231b1985fb2
+pb_21_综合_选择_05_solution.png  ffc45c328fd5f5d42cd186977c16d8ab68b67038fc01f3f5f950d484fabb465e
+pb_21_综合_选择_06_question.png  94cbb0b5ac5101f4db9b33137b758eb6ba73796e888eed30beae5271f01f467b
+pb_21_综合_选择_06_solution.png  4473a6a509137b3f1ce3df92ba5a3cc5738368e954741f81a782cd3632e0f5ac
+pb_21_综合_选择_07_question.png  81463d20e23eb5ce4357dafb6b9ff7a5e58e0d108b4b080e4f408867307af504
+pb_21_综合_选择_07_solution.png  3be62c0b0095dcfa353f163f9cfa4cbc2190dedff8eb4e6f1cf7fc2bbc9b390b

@@ -61,6 +61,10 @@
     // 当前索引所属分区：idx 落在合并章节的伴章段 → 30讲/36讲为 '1000题'，李范全书为 '习题'；否则按标签分类
     function partOfIdx(idx, targetCh) {
       const ch = targetCh || getChapter();
+      if (ch && ch.parts) {
+        const p = ch.parts.find(function (pt) { return idx >= pt.start && idx < pt.start + pt.count; });
+        if (p) return p.type;
+      }
       if (ch && ch.q1000Total && idx >= ch.ownTotal) {
         if (ch.wb === '李范全书') return '习题';
         return '1000题';
@@ -69,7 +73,7 @@
         const s = ch.sections.find(function (sec) { return idx >= sec.start && idx < sec.start + sec.count; });
         if (s) return s.type;
       }
-      return (curSubject && curSubject.classifyLabel) ? curSubject.classifyLabel(ch ? ch.labels[idx] : '') : classifyLabel(ch ? ch.labels[idx] : '');
+      return (curSubject && curSubject.classifyLabel) ? curSubject.classifyLabel(ch ? ch.labels[idx] : '', ch) : classifyLabel(ch ? ch.labels[idx] : '');
     }
     // 笔记命名空间键：避免「30讲例1-1」与「1000题1-1」笔记键冲突。
     // 返回 '<源章节id>::<标签>'，源章节 = 1000题伴章（1000段）或本章（自身段）。
@@ -881,6 +885,7 @@
     function getPartOrder(targetCh, targetSubj) {
       const ch = targetCh || getChapter();
       const s = targetSubj || curSubject;
+      if (ch && ch.parts) return ch.parts.map(function (p) { return p.type; });
       if (ch && ch.wb === '老姚高数' && ch.sections) return ch.sections.map(function (sec) { return sec.type; });
       if (ch && ch.wb === '李范全书') return ['例题', '习题'];
       if (ch && ch.q1000Total) return ['例题', '习题', '1000题'];
@@ -889,6 +894,13 @@
 
     function classifyLabel(label) {
       const ch = getChapter();
+      if (ch && ch.parts) {
+        const idx = ch.labels ? ch.labels.indexOf(label) : -1;
+        if (idx >= 0) {
+          const p = ch.parts.find(function (pt) { return idx >= pt.start && idx < pt.start + pt.count; });
+          if (p) return p.type;
+        }
+      }
       if (ch && ch.wb === '老姚高数' && ch.sections) {
         const idx = ch.labels.indexOf(label);
         if (idx >= 0) {
@@ -898,7 +910,7 @@
           }
         }
       }
-      return curSubject ? curSubject.classifyLabel(label) : (label.startsWith('例') ? '例题' : '习题');
+      return curSubject ? curSubject.classifyLabel(label, ch) : (label.startsWith('例') ? '例题' : '习题');
     }
 
     // ===== 渲染章节统计面板 =====
@@ -1627,7 +1639,9 @@
           var btn = document.createElement('button');
           btn.setAttribute('data-group-start', g.startIdx);
           if (desc) {
-            btn.title = (secInfo ? secInfo.type + ' · ' : '') + desc;
+            var pfx = (secInfo && !desc.includes(secInfo.type)) ? (secInfo.type + ' · ') : '';
+            var sfx = (g.parentLabel && !desc.includes(g.parentLabel)) ? (' (' + g.parentLabel + ')') : '';
+            btn.title = pfx + desc + sfx;
           } else if (secInfo) {
             var subSecTitle = '';
             if (secInfo.subSections) {
@@ -1992,8 +2006,13 @@
       if (!container) return;
       container.innerHTML = '';
       const gen = ++_solutionImgGen;
-      function tryAdd(n) {
-        const src = n === 1 ? base + '_solution.png' : base + '_solution_' + n + '.png';
+      function tryAdd(n, altAttempt) {
+        let src;
+        if (n === 1) {
+          src = altAttempt ? (base + '_solution_1.png') : (base + '_solution.png');
+        } else {
+          src = base + '_solution_' + n + '.png';
+        }
         const img = document.createElement('img');
         img.className = 'solution-img';
         img.alt = '解析' + (n > 1 ? '（' + n + '）' : '');
@@ -2012,11 +2031,17 @@
           img.classList.toggle('dark-filter', (currentTheme === 'dark' && darkImageFilter));
           // 若该图有标注，加载完成后叠加显示
           if (hasAnnotation(src)) renderImageAnnotation(src, img, overlay);
-          tryAdd(n + 1); // 加载成功则继续探测下一张
+          tryAdd(n + 1, false); // 加载成功则继续探测下一张
         };
         img.onerror = function () {
-          // 未找到该分片，停止探测；若第 1 张（_solution.png）就缺失且尚无任何分片加载成功，给出占位提示
-          if (gen === _solutionImgGen && n === 1 && container.children.length === 0) {
+          if (gen !== _solutionImgGen) return;
+          // 若第 1 张 (_solution.png) 缺失，尝试备用命名 _solution_1.png
+          if (n === 1 && !altAttempt) {
+            tryAdd(1, true);
+            return;
+          }
+          // 未找到该分片，停止探测；若尚无任何分片加载成功，给出占位提示
+          if (n === 1 && container.children.length === 0) {
             const ph = document.createElement('div');
             ph.className = 'section-empty';
             ph.style.textAlign = 'center';
@@ -2027,7 +2052,7 @@
         };
         img.src = src;
       }
-      tryAdd(1);
+      tryAdd(1, false);
     }
 
     // ===== 普通浏览标注叠加（切题即见） =====

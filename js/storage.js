@@ -194,7 +194,18 @@
     getQuestion: function (slug) {
       if (!DataValidator.validateSlug(slug)) return {};
       var data = this.load();
-      return data[slug] || {};
+      if (data[slug]) return data[slug];
+      if (this.ch && this.ch.labels) {
+        for (var i = 0; i < this.ch.labels.length; i++) {
+          var s = this.ch.getQuestionSlug ? this.ch.getQuestionSlug(i) : null;
+          if (s === slug) {
+            var legacy = 'pb_' + String(this.ch.labels[i]).trim().replace(/\s+/g, '_');
+            if (data[legacy]) return data[legacy];
+            break;
+          }
+        }
+      }
+      return {};
     },
 
     writeFromMemory: function (opts) {
@@ -208,7 +219,8 @@
         if (!DataValidator.validateSlug(slug)) continue;
 
         var memIdx = offset + i;
-        var q = Object.assign({}, data[slug] || {});
+        var legacySlug = (ch.labels && ch.labels[i]) ? ('pb_' + String(ch.labels[i]).trim().replace(/\s+/g, '_')) : null;
+        var q = Object.assign({}, (legacySlug && data[legacySlug]) || {}, data[slug] || {});
 
         if (opts.statuses) {
           var s = opts.statuses[memIdx];
@@ -261,6 +273,9 @@
         } else {
           delete data[slug];
         }
+        if (legacySlug && legacySlug !== slug && data[legacySlug]) {
+          delete data[legacySlug];
+        }
       }
 
       return this.save(data);
@@ -276,6 +291,10 @@
         var slug = ch.getQuestionSlug ? ch.getQuestionSlug(i) : null;
         if (!slug) continue;
         var q = data[slug];
+        if (!q && ch.labels && ch.labels[i]) {
+          var legacySlug = 'pb_' + String(ch.labels[i]).trim().replace(/\s+/g, '_');
+          if (data[legacySlug]) q = data[legacySlug];
+        }
         if (!q) continue;
 
         var memIdx = offset + i;

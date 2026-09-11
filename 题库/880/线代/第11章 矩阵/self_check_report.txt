@@ -1,0 +1,45 @@
+第11章《矩阵》全量逐题切分自检报告
+
+源 PDF: 第11章 矩阵.pdf
+源物理页数: 17
+逻辑题目总数: 47
+试题 PNG: 47
+解析 PNG: 53（6 道跨页解析各增加 1 个解析分片）
+PNG 总数: 100
+
+题解物理隔离: PASS
+- 所有 question 均仅来自 P01-P04（试题部分）
+- 所有 solution 均仅来自 P05-P17（解析部分）
+
+文件命名: PASS
+- category 仅使用 基础/综合/拓展
+- type 仅使用 选择/填空/解答
+- 无任何 _question_2.png 碎片
+- 跨页试题“综合-选择-07”已垂直拼接为单一 question.png
+- 跨页解析按 _solution_1.png / _solution_2.png 规范保存
+
+图像技术参数: PASS
+- 全部标准无损 PNG
+- 全部 RGB 3 通道、8 bpc（24 位真彩色）
+- 全部 width = 1536 px
+- 未执行灰度化、二值化、调色板量化、JPG/WebP 转换、降噪或锐化
+- PNG 仅使用无损 DEFLATE 编码
+
+版面与切分: PASS
+- 全宽保留源页横向版面位置，不做内容水平居中
+- 按题目/解析物理纵向边界分割
+- 墨迹行检测后保留安全留白
+- 同页题块 refined bbox 无重叠
+
+水平找平: PASS
+- Hough 基线检测后按检测倾角执行微旋转纠偏
+- 最大残余检测倾角: 0.0764°
+- 详细逐页角度见 deskew_log.csv
+
+定位清册: PASS
+- logical_map.csv 使用 UTF-8 with BOM
+- 含源物理页码与 deskew1536 坐标 bbox
+- 跨页 bbox 以分号串联各物理页区域
+
+校验和:
+- checksums_sha256.csv 记录全部 100 张 PNG 的字节数与 SHA-256

@@ -1,0 +1,47 @@
+第19章《随机变量的数字特征》切分自检报告
+================================================
+源PDF物理页数: 23
+试题源页范围: P01-P05
+解析源页范围: P06-P23
+顶层题目数: 46
+逻辑资产行数: 62
+question PNG数: 62
+solution PNG数: 75
+PNG总数: 137
+跨页题干原生垂直拼接数: 3
+全图宽度: 1536px（逐文件验证）
+PNG像素格式: RGB / 8 bits per channel / PNG color type 2（逐文件IHDR验证）
+检测到明显非灰度彩色像素的PNG数: 135/137
+图片保存: PNG无损；未量化、未转灰度/调色板、未JPEG/WebP、未缩放
+题解物理隔离: PASS（question仅P01-P05；solution仅P06-P23）
+命名规范: PASS
+引用完整性: PASS
+编号连续性: PASS
+禁止_question_2: PASS
+缺失=0；题解源区串区=0；宽度偏差=0；非RGB=0；PNG非8bit真彩=0
+logical_map.csv SHA-256: 8707192a2bb5ffa5e804bf6a8a45e7a3d6e6cc75ff2b08649677f2ee19819ba1
+
+页面水平找平（仅在角度检测改善显著时执行；正值为实际逆向旋转修正角）:
+P01: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.000%
+P02: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.000%
+P03: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.001%
+P04: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.101%
+P05: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.000%
+P06: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.212%
+P07: estimated_skew=+0.27°, correction=-0.27°, score_gain=1.153%
+P08: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.014%
+P09: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.020%
+P10: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.000%
+P11: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.000%
+P12: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.000%
+P13: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.000%
+P14: estimated_skew=+0.00°, correction=-0.00°, score_gain=0.026%
+P15: estimated_skew=+0.44°, correction=-0.44°, score_gain=11.332%
+P16: estimated_skew=-0.35°, correction=+0.35°, score_gain=5.915%
+P17: estimated_skew=+0.21°, correction=-0.21°, score_gain=1.063%
+P18: estimated_skew=-0.15°, correction=+0.15°, score_gain=0.590%
+P19: estimated_skew=+0.57°, correction=-0.57°, score_gain=9.834%
+P20: estimated_skew=-0.53°, correction=+0.53°, score_gain=10.193%
+P21: estimated_skew=+0.55°, correction=-0.55°, score_gain=6.876%
+P22: estimated_skew=-0.54°, correction=+0.54°, score_gain=8.004%
+P23: estimated_skew=+0.29°, correction=-0.29°, score_gain=3.884%
