@@ -176,11 +176,11 @@ assert.ok(totalStatus >= 1730, `做题数应大于等于基准1730，当前为 $
 assert.ok(totalSm2 >= 1640, `SM-2数应大于等于基准1640，当前为 ${totalSm2}`);
 assert.ok(totalNotes >= 247, `笔记数应大于等于基准247，当前为 ${totalNotes}`);
 
-// 重点断言：基础30讲高数第5讲具备完整24题，第10讲已彻底纯净（无孤立误触题）
+// 重点断言：基础30讲高数第5讲具备完整24题，第10讲具备完整23题
 const chLec05 = JSON.parse(db.data['kaoyan.q.math::基础30讲::高数::lec05']);
 const chLec10 = JSON.parse(db.data['kaoyan.q.math::基础30讲::高数::lec10']);
 assert.strictEqual(Object.keys(chLec05).filter(s => !s.startsWith('$')).length, 24, '基础30讲高数第5讲具备完整24题数据');
-assert.strictEqual(Object.keys(chLec10).filter(s => !s.startsWith('$')).length, 0, '基础30讲高数第10讲必须无孤立误触题残留');
+assert.strictEqual(Object.keys(chLec10).filter(s => !s.startsWith('$')).length, 23, '基础30讲高数第10讲具备23题数据');
 
 // 重点断言：例3-39 各小题 (I)~(VI) 数据完全独立无覆盖
 const ch03Key = 'kaoyan.q.math::李范全书::高数::ch03';
