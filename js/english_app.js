@@ -36,6 +36,7 @@
       panelYear: document.getElementById('engPanelYear'),
       passagePane: document.getElementById('engPassagePane'),
       analysisPane: document.getElementById('engAnalysisPane'),
+      questionToolbar: document.querySelector('#engAnalysisPane .question-toolbar'),
       textTabs: document.getElementById('engTextTabs'),
       typeFilterBar: document.getElementById('engTypeFilterBar'),
       questionPills: document.getElementById('engQuestionPills'),
@@ -221,6 +222,8 @@
 
   // 所有真题年份清单 (1998 ~ 2026)
   const ALL_ENGLISH_YEARS = Array.from({ length: 29 }, (_, i) => String(1998 + i));
+  // 核心适配真题年份清单 (2007 ~ 2015)
+  const ADAPTED_YEARS = ['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'];
 
   const loadingYears = new Map();
 
@@ -254,25 +257,180 @@
     return ALL_ENGLISH_YEARS;
   }
 
+  // 标准题型映射表（兼容王晶婷 6 大题型体系）
+  const STANDARD_TYPE_MAP = {
+    'DETAIL': '细节题',
+    'INFERENCE': '推断题',
+    'EXEMPLIFICATION': '例证题',
+    'EXAMPLE': '例证题',
+    'MAIN_IDEA': '主旨题',
+    'MAIN': '主旨题',
+    'ATTITUDE': '态度题',
+    'VOCAB': '词义题',
+    'VOCABULARY': '词义题'
+  };
+
+  // 标准干扰项分类映射表（王晶婷 8 大干扰项特征体系）
+  const DISTRACTOR_TYPE_MAP = {
+    'UNFOUNDED': '无中生有',
+    'ATTRIBUTION_ERROR': '张冠李戴',
+    'EXTREME_ABSOLUTE': '夸大/绝对化',
+    'CONTRADICTION': '正反混淆',
+    'CAUSALITY_INVERSION': '因果倒置',
+    'SCOPE_DISTORTION': '以偏概全',
+    'CONCEPT_DISTORTION': '偷换概念',
+    'LITERAL_TRAP': '望文生义',
+    'NONE': '正确项'
+  };
+
+  // 标准题型智能收敛归一化（将历年细分子题型统一归入王晶婷 6 大标准题型）
+  function mapToStandardType(typeStr) {
+    if (!typeStr) return '细节题';
+    if (STANDARD_TYPE_MAP[typeStr]) return STANDARD_TYPE_MAP[typeStr];
+    if (typeStr.includes('推断') || typeStr.includes('推理')) return '推断题';
+    if (typeStr.includes('例证') || typeStr.includes('修辞') || typeStr.includes('论据')) return '例证题';
+    if (typeStr.includes('主旨') || typeStr.includes('标题') || typeStr.includes('结构') || typeStr.includes('概括') || typeStr.includes('设问')) return '主旨题';
+    if (typeStr.includes('态度') || typeStr.includes('情感') || typeStr.includes('观点')) return '态度题';
+    if (typeStr.includes('词义') || typeStr.includes('词句') || typeStr.includes('指代')) return '词义题';
+    if (typeStr.includes('细节') || typeStr.includes('事实') || typeStr.includes('原因') || typeStr.includes('目的') || typeStr.includes('条件') || typeStr.includes('功能')) return '细节题';
+    return '细节题';
+  }
+
+  // 结构化长难句语法精析格式化工具
+  function formatSyntaxAnalysis(syntax) {
+    if (!syntax) return '';
+    if (typeof syntax === 'string') return escapeHtml(syntax);
+    if (typeof syntax === 'object') {
+      const parts = [];
+      if (syntax.structureType) {
+        parts.push(`<strong>【句型】</strong>${escapeHtml(syntax.structureType)}`);
+      }
+      if (syntax.mainClause) {
+        parts.push(`<strong>【主干】</strong>${escapeHtml(syntax.mainClause)}`);
+      }
+      if (syntax.subordinateClauses && syntax.subordinateClauses.length > 0) {
+        const subStr = Array.isArray(syntax.subordinateClauses)
+          ? syntax.subordinateClauses.join('；')
+          : syntax.subordinateClauses;
+        parts.push(`<strong>【修饰从句】</strong>${escapeHtml(subStr)}`);
+      }
+      if (syntax.corePattern) {
+        parts.push(`<strong>【核心句型】</strong><code>${escapeHtml(syntax.corePattern)}</code>`);
+      }
+      return parts.join(' &nbsp;|&nbsp; ');
+    }
+    return '';
+  }
+
+  // 篇章数据弹性归一化 (无缝兼容 1998~2026 全年份与多代重构数据结构)
+  function normalizeText(t, idx) {
+    if (!t) return null;
+    if (t._normalized) return t;
+
+    const textNum = t.number || t.textIndex || (idx + 1);
+    t.number = textNum;
+
+    // 确保标准 id 存在 (如 text1, text2...)，同时保留原 id 别名用于外部定位兼容
+    const originalId = t.id;
+    if (!t.id || !t.id.startsWith('text')) {
+      t.aliasId = originalId;
+      t.id = 'text' + textNum;
+    }
+
+    t.title = t.title || t.englishTitle || (`Reading Comprehension Text ${textNum}`);
+    t.chineseTitle = t.chineseTitle || '';
+    t.topic = t.topic || (t.topicDomain ? (t.subTopic ? `${t.topicDomain} · ${t.subTopic}` : t.topicDomain) : (t.domainKnowledge && t.domainKnowledge.domain)) || '真题精读';
+    t.overview = t.overview || (t.domainKnowledge && t.domainKnowledge.coreThesis) || (t.macroStructure && t.macroStructure.coreThesis) || (t.backgroundKnowledgeCapsule && t.backgroundKnowledgeCapsule.coreTopic) || '';
+
+    // 段落挂载双轨对齐
+    const rawParas = t.paragraphs || (t.textAnalysis && t.textAnalysis.paragraphs) || [];
+    t.paragraphs = rawParas;
+
+    // 规范化全文词汇表 (若有)
+    if (t.vocabulary && Array.isArray(t.vocabulary)) {
+      t.vocabulary.forEach(v => {
+        v.meaning = v.meaning || v.contextMeaning || v.examMeaning || '';
+        if (!v.level) {
+          v.level = v.isInObstacleList ? 'red' : 'green';
+        }
+      });
+    }
+
+    // 规范化各段落与句子
+    t.paragraphs.forEach((p, pIdx) => {
+      const pIndex = p.pIndex || p.paraIndex || (pIdx + 1);
+      p.pIndex = pIndex;
+      p.logicRole = p.logicRole || '';
+      p.mainIdea = p.mainIdea || p.paraMainIdea || '';
+      p.sentences = p.sentences || [];
+
+      p.sentences.forEach((s, sIdx) => {
+        const sIndex = s.sIndex || s.sentenceIndex || (sIdx + 1);
+        s.sIndex = sIndex;
+        s.id = `P${pIndex}-S${sIndex}`;
+        s.text = s.text || s.en || s.english || '';
+        s.translation = s.translation || s.zh || s.chinese || '';
+        s.syntaxAnalysis = s.syntaxAnalysis || s.syntax || s.grammarAnalysis || null;
+        s.vocab = s.vocab || [];
+      });
+    });
+
+    // 规范化题目与选项
+    t.questions = t.questions || [];
+    t.questions.forEach((q, qIdx) => {
+      if (!q.qIndex) {
+        q.qIndex = 21 + (textNum - 1) * 5 + qIdx;
+      }
+      q.stem = q.stem || q.questionText || '';
+      const rawType = q.type || q.standardType || q.typeDisplayName;
+      q.typeDisplayName = q.typeDisplayName || q.type || STANDARD_TYPE_MAP[q.standardType] || '细节题';
+      q.type = mapToStandardType(rawType);
+      q.tangchiModel = q.tangchiModel || (q.standardType ? '唐迟真题方法论' : '唐迟解题模型');
+      q.stemKeywords = q.stemKeywords || [];
+      q.targetSentences = q.targetSentences || [];
+      q.options = q.options || [];
+
+      q.options.forEach(opt => {
+        opt.text = opt.text || '';
+        opt.distractorType = opt.distractorDisplayName || DISTRACTOR_TYPE_MAP[opt.distractorType] || opt.distractorType || (opt.isCorrect ? '正确项' : '干扰项');
+        opt.analysis = opt.analysis || opt.reason || opt.translation || '';
+        opt.refSentences = opt.refSentences || [];
+      });
+
+      if (!q.presetReflection && q.explanation) {
+        q.presetReflection = {
+          trapAnalysis: q.explanation.distractorAnalysis || q.explanation.trapAnalysis || q.explanation.summary || '',
+          methodSummary: q.explanation.method || q.explanation.methodSummary || ''
+        };
+      }
+    });
+
+    t._normalized = true;
+    return t;
+  }
+
   // 获取当前选定年份的数据集
   function getCurrentDataset() {
     if (!window.ENGLISH_DATA) return { texts: [] };
-    if (window.ENGLISH_DATA[state.currentYear]) {
-      return window.ENGLISH_DATA[state.currentYear];
+    let data = window.ENGLISH_DATA[state.currentYear];
+    if (!data) {
+      const years = Object.keys(window.ENGLISH_DATA);
+      if (years.length > 0) {
+        state.currentYear = years[0];
+        data = window.ENGLISH_DATA[years[0]];
+      }
     }
-    const years = Object.keys(window.ENGLISH_DATA);
-    if (years.length > 0) {
-      state.currentYear = years[0];
-      return window.ENGLISH_DATA[years[0]];
+    if (data && data.texts) {
+      data.texts.forEach((t, idx) => normalizeText(t, idx));
     }
-    return { texts: [] };
+    return data || { texts: [] };
   }
 
   // 获取当前 Text 与 Question 数据
   function getCurrentText() {
     const dataset = getCurrentDataset();
     if (!dataset.texts || dataset.texts.length === 0) return null;
-    return dataset.texts.find(t => t.id === state.currentTextId) || dataset.texts[0];
+    return dataset.texts.find(t => t.id === state.currentTextId || t.aliasId === state.currentTextId) || dataset.texts[0];
   }
 
   function getCurrentQuestion() {
@@ -423,16 +581,38 @@
     }
   }
 
-  // 加载当前年份的掌握度与笔记
+  // 加载当前年份的掌握度、笔记与做题作答
   function loadYearStorage() {
     const subjKey = state.currentSubject || 'english';
     try {
       state.mastery = JSON.parse(localStorage.getItem(`ky_${subjKey}_mastery_${state.currentYear}`) || '{}');
       state.notes = JSON.parse(localStorage.getItem(`ky_${subjKey}_notes_${state.currentYear}`) || '{}');
+      state.practiceAnswers = JSON.parse(localStorage.getItem(`ky_${subjKey}_practice_${state.currentYear}`) || '{}');
     } catch (e) {
       state.mastery = {};
       state.notes = {};
+      state.practiceAnswers = {};
     }
+  }
+
+  function savePracticeStorage() {
+    const subjKey = state.currentSubject || 'english';
+    try {
+      localStorage.setItem(`ky_${subjKey}_practice_${state.currentYear}`, JSON.stringify(state.practiceAnswers));
+      if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+        window.storageSync.scheduleSave();
+      }
+    } catch (e) {}
+  }
+
+  function saveMasteryStorage() {
+    const subjKey = state.currentSubject || 'english';
+    try {
+      localStorage.setItem(`ky_${subjKey}_mastery_${state.currentYear}`, JSON.stringify(state.mastery));
+      if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+        window.storageSync.scheduleSave();
+      }
+    } catch (e) {}
   }
 
   // 渲染年份标题下拉面板
@@ -500,7 +680,7 @@
           const resumeMap = window.StorageEngine.GlobalStore.get('resume') || {};
           const saved = resumeMap[`english_y${year}`];
           if (saved) {
-            const text = dataset.texts.find(t => t.id === saved.textId);
+            const text = dataset.texts.find(t => t.id === saved.textId || t.aliasId === saved.textId);
             if (text) {
               state.currentTextId = text.id;
               if (text.questions && text.questions.some(q => q.qIndex === saved.qIndex)) {
@@ -631,17 +811,15 @@
   function renderTextTabs() {
     if (!dom.textTabs) return;
     const dataset = getCurrentDataset();
-
-
-
     if (!dataset.texts) return;
     dom.textTabs.style.display = 'flex';
     dom.textTabs.innerHTML = '';
     dataset.texts.forEach(t => {
       const btn = document.createElement('button');
-      btn.className = `text-tab ${t.id === state.currentTextId ? 'active' : ''}`;
+      const isActive = (t.id === state.currentTextId || t.aliasId === state.currentTextId);
+      btn.className = `text-tab ${isActive ? 'active' : ''}`;
       btn.textContent = `Text ${t.number}`;
-      btn.title = t.chineseTitle;
+      btn.title = t.chineseTitle || '';
       btn.onclick = () => switchText(t.id);
       dom.textTabs.appendChild(btn);
     });
@@ -669,14 +847,20 @@
 
   // 切换 Text（篇章）
   function switchText(textId, targetQIndex = null) {
-    state.currentTextId = textId;
+    const dataset = getCurrentDataset();
+    const targetText = dataset.texts && dataset.texts.find(t => t.id === textId || t.aliasId === textId);
+    if (targetText) {
+      state.currentTextId = targetText.id;
+    } else {
+      state.currentTextId = textId;
+    }
     const text = getCurrentText();
     if (!text) return;
     
-    const dataset = getCurrentDataset();
     if (dom.textTabs && dataset.texts) {
       dom.textTabs.querySelectorAll('.text-tab').forEach((tab, i) => {
-        tab.classList.toggle('active', dataset.texts[i] && dataset.texts[i].id === textId);
+        const item = dataset.texts[i];
+        tab.classList.toggle('active', item && (item.id === state.currentTextId || item.aliasId === state.currentTextId));
       });
     }
 
@@ -738,14 +922,29 @@
       `;
 
       (p.sentences || []).forEach(s => {
-        const sentenceText = renderAnnotatedSentenceText(s.text, s.vocab);
-        const sentenceTrans = renderAnnotatedTranslation(s.translation, s.vocab);
+        const vList = (s.vocab && s.vocab.length > 0) ? s.vocab : (text.vocabulary || text.vocab || []);
+        const sentenceText = renderAnnotatedSentenceText(s.text, vList);
+        const sentenceTrans = renderAnnotatedTranslation(s.translation, vList);
+
+        let syntaxHtml = '';
+        if (s.syntaxAnalysis) {
+          const formattedSyntax = formatSyntaxAnalysis(s.syntaxAnalysis);
+          if (formattedSyntax) {
+            syntaxHtml = `
+              <div class="sentence-syntax">
+                <span class="syntax-badge">📐 语法解析</span>
+                <span class="syntax-content">${formattedSyntax}</span>
+              </div>
+            `;
+          }
+        }
 
         html += `
           <div class="sentence-item ${s.isTopicSentence ? 'is-topic' : ''}" id="sentence-${s.id}" data-id="${s.id}">
             <span class="sentence-id-tag">[${s.id}]</span>
             <span class="sentence-text">${sentenceText} </span>
             <div class="sentence-trans">${sentenceTrans}</div>
+            ${syntaxHtml}
           </div>
         `;
       });
@@ -780,37 +979,106 @@
     }
   }
 
-  // 渲染题目切换胶囊
+  // 获取当前篇章做题作答状态 (5 题)
+  function getCurrentTextPracticeStatus() {
+    const text = getCurrentText();
+    if (!text || !text.questions) return { total: 0, answered: 0, allAnswered: false, allSubmitted: false, questions: [] };
+    const questions = text.questions;
+    let answered = 0;
+    let allSubmitted = questions.length > 0;
+    questions.forEach(q => {
+      const p = state.practiceAnswers[q.qIndex];
+      if (p && p.selected) answered++;
+      if (!p || !p.submitted) allSubmitted = false;
+    });
+    return {
+      total: questions.length,
+      answered,
+      allAnswered: answered === questions.length && questions.length > 0,
+      allSubmitted,
+      questions
+    };
+  }
+
+  // 渲染题目切换胶囊与工具栏
   function renderQuestionPills() {
     if (!dom.questionPills) return;
     const text = getCurrentText();
     if (!text || !text.questions) return;
     dom.questionPills.innerHTML = '';
 
+    const isPractice = (state.mode === 'practice');
+
     text.questions.forEach(q => {
-      if (state.mode === 'analysis' && state.typeFilter !== 'all' && q.type !== state.typeFilter) {
+      if (!isPractice && state.typeFilter !== 'all' && q.type !== state.typeFilter) {
         return;
       }
 
       const pill = document.createElement('div');
-      const masteryState = state.mastery[q.qIndex] || 'unmarked';
-      pill.className = `q-pill ${q.qIndex === state.currentQIndex ? 'active' : ''} status-${masteryState}`;
-      pill.innerHTML = `
-        <span class="q-num">${q.qIndex}</span>
-        <span class="q-state-dot"></span>
-      `;
-      pill.title = `第${q.qIndex}题 (${q.type})`;
+      if (isPractice) {
+        const pAns = state.practiceAnswers[q.qIndex] || {};
+        let pillClass = `q-pill ${q.qIndex === state.currentQIndex ? 'active' : ''}`;
+        if (pAns.selected) pillClass += ' is-answered';
+        if (pAns.submitted) {
+          pillClass += ` is-submitted ${pAns.isCorrect ? 'is-correct' : 'is-wrong'}`;
+        }
+        pill.className = pillClass;
+        const choiceText = pAns.selected ? `<span class="q-pill-choice">: ${escapeHtml(pAns.selected)}</span>` : '';
+        pill.innerHTML = `<span class="q-num">${q.qIndex}</span>${choiceText}`;
+        pill.title = `第${q.qIndex}题 (${q.type})${pAns.selected ? ` - 已选 ${pAns.selected}` : ' - 未作答'}`;
+      } else {
+        const masteryState = state.mastery[q.qIndex] || 'unmarked';
+        pill.className = `q-pill ${q.qIndex === state.currentQIndex ? 'active' : ''} status-${masteryState}`;
+        pill.innerHTML = `
+          <span class="q-num">${q.qIndex}</span>
+          <span class="q-state-dot"></span>
+        `;
+        pill.title = `第${q.qIndex}题 (${q.type})`;
+      }
+
       pill.onclick = () => switchQuestion(q.qIndex);
       dom.questionPills.appendChild(pill);
     });
+
+    // 模考做题模式工具栏右侧状态区 (进度、整篇提交、快捷键提示)
+    const toolbar = dom.questionToolbar || (dom.analysisPane ? dom.analysisPane.querySelector('.question-toolbar') : null);
+    if (toolbar) {
+      let rightBox = toolbar.querySelector('.practice-toolbar-right');
+      if (isPractice) {
+        if (!rightBox) {
+          rightBox = document.createElement('div');
+          rightBox.className = 'practice-toolbar-right';
+          toolbar.appendChild(rightBox);
+        }
+        const status = getCurrentTextPracticeStatus();
+        let badgeHtml = '';
+        if (status.allSubmitted) {
+          badgeHtml = '<span class="practice-progress-badge all-answered">已交卷判分</span>';
+        } else if (status.allAnswered) {
+          badgeHtml = '<span class="practice-progress-badge all-answered">5/5 题已完成 · 按 Enter 提交</span>';
+        } else {
+          badgeHtml = `<span class="practice-progress-badge">已答 ${status.answered}/${status.total} 题</span>`;
+        }
+
+        rightBox.innerHTML = `
+          ${badgeHtml}
+          <button class="practice-submit-btn ${status.allSubmitted ? 'disabled' : ''}" id="btnPracticeSubmitWhole" ${status.allSubmitted ? 'disabled' : ''} onclick="window.kyApp.handlePracticeEnter()">
+            ${status.allSubmitted ? '已交卷' : '整篇提交 (Enter)'}
+          </button>
+          <span class="practice-shortcut-hint" title="A/D 切换小题 · 1-4 选择选项 · W/S 切换篇章 · Q/E 切换年份">A/D题 · 1-4选 · W/S篇 · Q/E年</span>
+        `;
+      } else if (rightBox) {
+        rightBox.remove();
+      }
+    }
   }
 
   // 切换题目 (跨篇章自动同步与位置保存)
   function switchQuestion(qIndex) {
     const dataset = getCurrentDataset();
     if (dataset.texts) {
-      const parentText = dataset.texts.find(t => t.questions.some(q => q.qIndex === qIndex));
-      if (parentText && parentText.id !== state.currentTextId) {
+      const parentText = dataset.texts.find(t => t.questions && t.questions.some(q => q.qIndex === qIndex));
+      if (parentText && parentText.id !== state.currentTextId && parentText.aliasId !== state.currentTextId) {
         switchText(parentText.id, qIndex);
         return;
       }
@@ -823,6 +1091,7 @@
     updateSolutionUI();
   }
 
+  // 小题切换: A (上一题) / D (下一题)
   function navPrev() {
     const text = getCurrentText();
     const dataset = getCurrentDataset();
@@ -832,7 +1101,7 @@
     if (curIdx > 0) {
       switchQuestion(text.questions[curIdx - 1].qIndex);
     } else {
-      const textIdx = dataset.texts.findIndex(t => t.id === state.currentTextId);
+      const textIdx = dataset.texts.findIndex(t => t.id === state.currentTextId || t.aliasId === state.currentTextId);
       if (textIdx > 0) {
         const prevText = dataset.texts[textIdx - 1];
         switchText(prevText.id, prevText.questions[prevText.questions.length - 1].qIndex);
@@ -849,11 +1118,182 @@
     if (curIdx < text.questions.length - 1) {
       switchQuestion(text.questions[curIdx + 1].qIndex);
     } else {
-      const textIdx = dataset.texts.findIndex(t => t.id === state.currentTextId);
+      const textIdx = dataset.texts.findIndex(t => t.id === state.currentTextId || t.aliasId === state.currentTextId);
       if (textIdx < dataset.texts.length - 1) {
         const nextText = dataset.texts[textIdx + 1];
         switchText(nextText.id, nextText.questions[0].qIndex);
       }
+    }
+  }
+
+  // 篇章切换: W (上一篇) / S (下一篇)
+  function navPrevText() {
+    const dataset = getCurrentDataset();
+    if (!dataset.texts || dataset.texts.length === 0) return;
+    const curIdx = dataset.texts.findIndex(t => t.id === state.currentTextId || t.aliasId === state.currentTextId);
+    if (curIdx > 0) {
+      switchText(dataset.texts[curIdx - 1].id);
+    } else {
+      if (typeof window.showToast === 'function') {
+        window.showToast('已是当前年份第一篇 (Text 1)', 'info');
+      }
+    }
+  }
+
+  function navNextText() {
+    const dataset = getCurrentDataset();
+    if (!dataset.texts || dataset.texts.length === 0) return;
+    const curIdx = dataset.texts.findIndex(t => t.id === state.currentTextId || t.aliasId === state.currentTextId);
+    if (curIdx >= 0 && curIdx < dataset.texts.length - 1) {
+      switchText(dataset.texts[curIdx + 1].id);
+    } else {
+      if (typeof window.showToast === 'function') {
+        window.showToast(`已是当前年份最后一篇 (Text ${dataset.texts.length})`, 'info');
+      }
+    }
+  }
+
+  // 年份切换: Q (上一年) / E (下一年) (仅适配 2007~2015 年真题)
+  function navPrevYear() {
+    const curY = String(state.currentYear);
+    let idx = ADAPTED_YEARS.indexOf(curY);
+    if (idx === -1) {
+      switchYear('2010');
+      return;
+    }
+    if (idx > 0) {
+      switchYear(ADAPTED_YEARS[idx - 1]);
+    } else {
+      if (typeof window.showToast === 'function') {
+        window.showToast('已是首年真题 (2007 年)', 'info');
+      }
+    }
+  }
+
+  function navNextYear() {
+    const curY = String(state.currentYear);
+    let idx = ADAPTED_YEARS.indexOf(curY);
+    if (idx === -1) {
+      switchYear('2010');
+      return;
+    }
+    if (idx < ADAPTED_YEARS.length - 1) {
+      switchYear(ADAPTED_YEARS[idx + 1]);
+    } else {
+      if (typeof window.showToast === 'function') {
+        window.showToast('已是末年真题 (2015 年)', 'info');
+      }
+    }
+  }
+
+  // 模考做题模式：Enter 触发整篇提交与二重确认弹窗
+  function handlePracticeEnter() {
+    const confirmModal = document.getElementById('confirmModal');
+    if (confirmModal && confirmModal.style.display !== 'none') {
+      if (typeof window.closeConfirmModal === 'function') {
+        window.closeConfirmModal(true);
+      }
+      return;
+    }
+
+    const status = getCurrentTextPracticeStatus();
+    if (status.allSubmitted) {
+      const text = getCurrentText();
+      const num = text ? text.number : '';
+      if (typeof window.showToast === 'function') {
+        window.showToast(`Text ${num} 答卷已提交！如需重测请在精读模式复盘。`, 'info');
+      }
+      return;
+    }
+
+    if (!status.allAnswered) {
+      const msg = `当前篇章还有未作答题目 (已完成 ${status.answered}/${status.total} 题)，请完成全部 5 道题后再按 Enter 提交！`;
+      if (typeof window.showToast === 'function') {
+        window.showToast(msg, 'warning');
+      }
+      return;
+    }
+
+    openPracticeSubmitModal();
+  }
+
+  // 唤起提交确认弹窗 (二重回车确认)
+  function openPracticeSubmitModal() {
+    const text = getCurrentText();
+    if (!text) return;
+    const status = getCurrentTextPracticeStatus();
+
+    let pillsHtml = '<div class="practice-confirm-summary">';
+    status.questions.forEach(q => {
+      const p = state.practiceAnswers[q.qIndex] || {};
+      pillsHtml += `
+        <div class="practice-confirm-pill">
+          <span class="pill-q">第${q.qIndex}题:</span>
+          <span>${escapeHtml(p.selected || '-')}</span>
+        </div>
+      `;
+    });
+    pillsHtml += '</div>';
+
+    const htmlContent = `
+      <div style="text-align:center;">
+        <div style="font-size:15px;font-weight:700;color:var(--text-color);margin-bottom:6px;">
+          ${state.currentYear} 年 Text ${text.number} 模考交卷确认
+        </div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">
+          您已完成本篇全部 ${status.total} 道题目，各题所选答案如下：
+        </div>
+        ${pillsHtml}
+        <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:10px;">
+          确认后将正式交卷判分并同步计入题库数据库 (再按 Enter 确认交卷，Esc 取消)。
+        </div>
+      </div>
+    `;
+
+    if (typeof window.showConfirmModal === 'function') {
+      window.showConfirmModal({
+        title: '提交整篇答卷确认',
+        html: htmlContent,
+        confirmText: '确认交卷',
+        cancelText: '检查修改',
+        onConfirm: () => {
+          submitWholeTextPractice();
+        }
+      });
+    } else {
+      submitWholeTextPractice();
+    }
+  }
+
+  // 正式交卷：判分、存入 localStorage 并写入 kaoyan_tiku_data.json
+  function submitWholeTextPractice() {
+    const text = getCurrentText();
+    if (!text || !text.questions) return;
+
+    let correctCount = 0;
+    text.questions.forEach(q => {
+      if (!state.practiceAnswers[q.qIndex]) {
+        state.practiceAnswers[q.qIndex] = {};
+      }
+      const p = state.practiceAnswers[q.qIndex];
+      p.submitted = true;
+      const isCorrect = (p.selected === q.officialAnswer);
+      p.isCorrect = isCorrect;
+      if (isCorrect) correctCount++;
+      state.mastery[q.qIndex] = isCorrect ? 'proficient' : 'wrong';
+    });
+
+    savePracticeStorage();
+    saveMasteryStorage();
+
+    renderPassage();
+    renderQuestionPills();
+    renderQuestion();
+
+    const total = text.questions.length;
+    const msg = `Text ${text.number} 答卷已成功提交！答对 ${correctCount}/${total} 题，数据已成功计入题库。`;
+    if (typeof window.showToast === 'function') {
+      window.showToast(msg, 'success');
     }
   }
 
@@ -978,16 +1418,6 @@
       dom.optionsList.appendChild(card);
     });
 
-    if (isPractice && !pAns.submitted) {
-      const submitBox = document.createElement('div');
-      submitBox.style.marginTop = '12px';
-      submitBox.innerHTML = `
-        <button class="toggle-btn" style="width:100%;height:40px;justify-content:center;background:var(--primary);color:#fff;border:none;font-weight:700;font-size:14px;box-shadow:0 2px 8px rgba(102,8,116,0.3);" onclick="window.kyApp.submitPracticeAnswer()">
-          提交本题答案 (Enter)
-        </button>
-      `;
-      dom.optionsList.appendChild(submitBox);
-    }
   }
 
   // 选项点击事件
@@ -1002,7 +1432,10 @@
         state.practiceAnswers[q.qIndex] = {};
       }
       state.practiceAnswers[q.qIndex].selected = key;
+      state.practiceAnswers[q.qIndex].submitted = false;
+      savePracticeStorage();
       renderOptions(q, false);
+      renderQuestionPills();
     } else {
       const opt = q.options.find(o => o.key === key);
       if (opt && opt.refSentences && opt.refSentences.length > 0) {
@@ -1013,26 +1446,9 @@
     }
   }
 
-  // 提交做题答案
+  // 提交做题答案 (兼容转发至整篇提交与二重确认流程)
   function submitPracticeAnswer() {
-    const q = getCurrentQuestion();
-    if (!q) return;
-    const pAns = state.practiceAnswers[q.qIndex];
-    if (!pAns || !pAns.selected) {
-      if (typeof window.showToast === 'function') {
-        window.showToast('请先选择一个选项！', 'warning');
-      } else if (window.storageSync && typeof window.storageSync.showToast === 'function') {
-        window.storageSync.showToast('请先选择一个选项！', 'warning');
-      }
-      return;
-    }
-    pAns.submitted = true;
-    
-    const isCorrect = pAns.selected === q.officialAnswer;
-    setMastery(q.qIndex, isCorrect ? 'proficient' : 'wrong');
-
-    renderQuestion();
-    highlightCurrentQuestionGrounding();
+    handlePracticeEnter();
   }
 
   // 渲染复盘手记
@@ -1421,8 +1837,24 @@
       if (!isAppActive) return;
       if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
 
+      // 0. 模考交卷确认弹窗激活态安全拦截（二重回车确认与 Esc 撤销）：
+      const confirmModal = document.getElementById('confirmModal');
+      if (confirmModal && confirmModal.style.display !== 'none') {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (typeof window.closeConfirmModal === 'function') window.closeConfirmModal(true);
+          return;
+        }
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          if (typeof window.closeConfirmModal === 'function') window.closeConfirmModal(false);
+          return;
+        }
+        return; // 弹窗处于打开状态时，独占响应
+      }
+
       // 弹窗激活态安全拦截（生词本自测 / 英语帮助 / 科目选择器）：
-      // 弹窗处于打开状态时，独占响应 Esc 关闭，彻底阻止题目做题快捷键（1~4、Space、Q/E、Z/X/C、T、M）向底层泄露
+      // 弹窗处于打开状态时，独占响应 Esc 关闭，彻底阻止题目做题快捷键向底层泄露
       const isModalOpen = (dom.modalVocabBook && dom.modalVocabBook.classList.contains('show')) ||
                           (dom.modalHelp && dom.modalHelp.classList.contains('active')) ||
                           !!window.subjectPickerOpen;
@@ -1473,25 +1905,68 @@
         return;
       }
 
+      const keyLow = e.key.toLowerCase();
+
+      // 年份切换: Q (上一年) / E (下一年) (仅适配 2007~2015 年真题)
+      if (keyLow === 'q') {
+        e.preventDefault();
+        navPrevYear();
+        return;
+      }
+      if (keyLow === 'e') {
+        e.preventDefault();
+        navNextYear();
+        return;
+      }
+
+      // 篇章切换: W (上一篇) / S (下一篇)
+      if (keyLow === 'w') {
+        e.preventDefault();
+        navPrevText();
+        return;
+      }
+      if (keyLow === 's') {
+        e.preventDefault();
+        navNextText();
+        return;
+      }
+
+      // 小题切换: A (上一题) / D (下一题) 或方向键
+      if (keyLow === 'a' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        navPrev();
+        return;
+      }
+      if (keyLow === 'd' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        navNext();
+        return;
+      }
+
+      // 选项选择: 1 / 2 / 3 / 4 -> A / B / C / D
       if (['1', '2', '3', '4'].includes(e.key)) {
         const optionKeys = ['A', 'B', 'C', 'D'];
-        const opt = optionKeys[parseInt(e.key) - 1];
+        const opt = optionKeys[parseInt(e.key, 10) - 1];
         if (opt) selectOption(q.qIndex, opt);
+        return;
       }
-      else if (e.key === 'q' || e.key === 'Q' || e.key === 'ArrowLeft') { navPrev(); }
-      else if (e.key === 'e' || e.key === 'E' || e.key === 'ArrowRight') { navNext(); }
-      else if (e.key === 'z' || e.key === 'Z') { setMastery(q.qIndex, 'proficient'); }
-      else if (e.key === 'x' || e.key === 'X') { setMastery(q.qIndex, 'vague'); }
-      else if (e.key === 'c' || e.key === 'C') { setMastery(q.qIndex, 'wrong'); }
-      else if (e.key === 'm' || e.key === 'M') {
+
+      // 做题模式下的 Enter 整篇提交与二重确认
+      if (e.key === 'Enter' && state.mode === 'practice') {
+        e.preventDefault();
+        handlePracticeEnter();
+        return;
+      }
+
+      if (keyLow === 'z') { setMastery(q.qIndex, 'proficient'); }
+      else if (keyLow === 'x') { setMastery(q.qIndex, 'vague'); }
+      else if (keyLow === 'c') { setMastery(q.qIndex, 'wrong'); }
+      else if (keyLow === 'm') {
         if (state.mode === 'analysis' && dom.btnPracticeMode) dom.btnPracticeMode.click();
         else if (dom.btnAnalysisMode) dom.btnAnalysisMode.click();
       }
-      else if (e.key === 'u' || e.key === 'U') {
+      else if (keyLow === 'u') {
         if (typeof window.toggleImageDarkFilter === 'function') window.toggleImageDarkFilter();
-      }
-      else if (e.key === 'Enter' && state.mode === 'practice') {
-        submitPracticeAnswer();
       }
     });
   }
@@ -1750,6 +2225,15 @@
     selectOption,
     navPrev,
     navNext,
+    navPrevText,
+    navNextText,
+    navPrevYear,
+    navNextYear,
+    handlePracticeEnter,
+    submitWholeTextPractice,
+    openPracticeSubmitModal,
+    getCurrentTextPracticeStatus,
+    ADAPTED_YEARS,
     openFigureLightbox,
     renderQuestion,
     get state() { return state; },

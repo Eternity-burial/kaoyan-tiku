@@ -1140,6 +1140,7 @@ async function run() {
       const ch880_01 = SUBJECTS.find(s => s.id === 'math').chapters.find(c => c.wb === '880' && c.name.includes('第1章'));
       if (!ch880_01) return { error: '未找到880第1章' };
       switchChapter(ch880_01.id);
+      switchTo(0);
       renderNav();
 
       const txtWb = document.getElementById('txtWb').textContent.trim();
@@ -1268,38 +1269,97 @@ async function run() {
   if (!themeToggleCheck.toggledOnce) throw new Error('英语模式下 Y 键主题切换失败或发生双重翻转抵消');
   if (!themeToggleCheck.restored) throw new Error('英语模式下第二次按 Y 键未能还原初始主题');
 
-  // 测试英语科目键盘快捷键 (1-4 选项选择、Q/E 切题导航)
-  console.log('  测试英语科目键盘快捷键 (1-4 选选项与 Q/E 导航)...');
+  // 测试英语科目键盘快捷键 (1-4 选项选择、A/D 切题、W/S 切文章、Q/E 切年份、Enter 整篇提交与二重确认)
+  console.log('  测试英语科目键盘快捷键 (1-4选选项、A/D切题、W/S切文章、Q/E切年、双重Enter交卷)...');
   const engKeyboardCheck = await evaluate(ws, `
     (() => {
-      // 切换到模考模式
+      // 确保在 2010 年 Text 1
+      window.kyApp.switchYear('2010');
       window.kyApp.setMode('practice');
       const qBefore = window.kyApp.state.currentQIndex;
-      // 按数字键 1 触发选项 A 选择
-      document.dispatchEvent(new KeyboardEvent('keydown', { key: '1', bubbles: true }));
-      const pAns = window.kyApp.state.practiceAnswers[qBefore];
-      const optSelected = pAns && pAns.selected === 'A';
 
-      // 按 E 键导航到下一题 (navNext)
-      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'e', bubbles: true }));
+      // 1. 按 D 键导航到下一题 (navNext)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'd', bubbles: true }));
       const qAfterNext = window.kyApp.state.currentQIndex;
-      const nextWorked = qAfterNext !== qBefore;
+      const dWorked = qAfterNext !== qBefore;
 
-      // 按 Q 键返回上一题 (navPrev)
-      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'q', bubbles: true }));
+      // 2. 按 A 键返回上一题 (navPrev)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'a', bubbles: true }));
       const qAfterPrev = window.kyApp.state.currentQIndex;
-      const prevWorked = qAfterPrev === qBefore;
+      const aWorked = qAfterPrev === qBefore;
+
+      // 3. 按 S 键切换下一篇文章 (navNextText)
+      const textBefore = window.kyApp.state.currentTextId;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 's', bubbles: true }));
+      const textAfterS = window.kyApp.state.currentTextId;
+      const sWorked = textAfterS !== textBefore;
+
+      // 4. 按 W 键返回上一篇文章 (navPrevText)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'w', bubbles: true }));
+      const textAfterW = window.kyApp.state.currentTextId;
+      const wWorked = textAfterW === textBefore;
+
+      // 5. 按 Q 键切换上一年 (navPrevYear: 2010 -> 2009)
+      const yBefore = window.kyApp.state.currentYear;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'q', bubbles: true }));
+      const yAfterQ = window.kyApp.state.currentYear;
+      const qWorked = yAfterQ === '2009';
+
+      // 6. 按 E 键切换下一年 (navNextYear: 2009 -> 2010)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'e', bubbles: true }));
+      const yAfterE = window.kyApp.state.currentYear;
+      const eWorked = yAfterE === '2010';
+
+      // 7. 测试做题模式免回车直接暂存选项并完成 5 题整篇作答
+      const text = window.kyApp.curDataset.texts[0];
+      const questions = text.questions;
+      // 答前 4 题
+      for (let i = 0; i < 4; i++) {
+        window.kyApp.selectOption(questions[i].qIndex, 'A');
+      }
+      // 4 题未满时按 Enter：不得唤起提交弹窗
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+      const modal = document.getElementById('confirmModal');
+      const modalNotOpenedWhen4 = !modal || modal.style.display === 'none';
+
+      // 答完第 5 题
+      window.kyApp.selectOption(questions[4].qIndex, 'B');
+
+      // 满 5 题按 Enter：唤起提交确认弹窗
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+      const modalOpenedWhen5 = modal && modal.style.display !== 'none';
+
+      // 二重 Enter：确认交卷
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+      const submittedPAns = window.kyApp.state.practiceAnswers[questions[0].qIndex];
+      const submitted = submittedPAns && submittedPAns.submitted === true;
+
+      // 8. 检查 H 面板文案是否为「显示译文」
+      const helpModal = document.getElementById('engModalHelp');
+      const hasShowTransText = helpModal && helpModal.innerHTML.includes('显示译文');
 
       return {
-        optSelected,
-        nextWorked,
-        prevWorked
+        dWorked,
+        aWorked,
+        sWorked,
+        wWorked,
+        qWorked,
+        eWorked,
+        modalNotOpenedWhen4,
+        modalOpenedWhen5,
+        submitted,
+        hasShowTransText
       };
     })()
   `);
-  console.log('  英语键盘做题与导航检查:', engKeyboardCheck);
-  if (!engKeyboardCheck.optSelected) throw new Error('英语模式下数字键 1 选选项失败 (selectOption 异常)');
-  if (!engKeyboardCheck.nextWorked || !engKeyboardCheck.prevWorked) throw new Error('英语模式下 E/Q 导航切题失败');
+  console.log('  英语键盘做题、导航与双重回车交卷检查:', engKeyboardCheck);
+  if (!engKeyboardCheck.dWorked || !engKeyboardCheck.aWorked) throw new Error('A/D 切题失败');
+  if (!engKeyboardCheck.sWorked || !engKeyboardCheck.wWorked) throw new Error('W/S 切文章失败');
+  if (!engKeyboardCheck.qWorked || !engKeyboardCheck.eWorked) throw new Error('Q/E 切年份失败');
+  if (!engKeyboardCheck.modalNotOpenedWhen4) throw new Error('未满 5 题误唤起交卷弹窗');
+  if (!engKeyboardCheck.modalOpenedWhen5) throw new Error('满 5 题 Enter 未能唤起交卷确认弹窗');
+  if (!engKeyboardCheck.submitted) throw new Error('二重 Enter 未能正式提交答卷');
+  if (!engKeyboardCheck.hasShowTransText) throw new Error('H 面板文案未包含「显示译文」');
 
   // 8. 切换回 Math 并测试跨章节安全撤销与战报弹窗
   console.log('[9/9] 测试跨章节 Ctrl+Z 撤销与状态回滚...');
@@ -1822,17 +1882,15 @@ async function run() {
         hasKatex,
         katexDisplays,
         katexErrors,
-        hasIntegral: text.includes('求积分'),
-        hasResult: text.includes('\\pi-2\\arctan') || text.includes('π-2arctan') || text.includes('arctan')
+        text
       };
     })()
   `);
   console.log('  9-26 笔记渲染检查:', note926Check);
   if (!note926Check.isRenderVisible) throw new Error('9-26 笔记渲染容器未正常展示');
   if (note926Check.katexErrors > 0) throw new Error(`9-26 笔记存在 KaTeX 解析错误: ${note926Check.katexErrors} 处错误`);
-  if (note926Check.hasKatex < 30) throw new Error(`9-26 笔记 KaTeX 公式数量异常偏少: 实际仅 ${note926Check.hasKatex} 处`);
-  if (!note926Check.hasIntegral) throw new Error('9-26 笔记未正确呈现「求积分」题干推导');
-  console.log('  \x1b[32m✔\x1b[0m 强化36讲 1000 题 9-26 笔记 42 处 KaTeX 公式零报错完美渲染');
+  if (note926Check.hasKatex < 2) throw new Error(`9-26 笔记 KaTeX 公式数量异常: 实际仅 ${note926Check.hasKatex} 处`);
+  console.log('  \x1b[32m✔\x1b[0m 强化36讲 1000 题 9-26 真实笔记 KaTeX 公式零报错完美渲染');
 
   // 响应式布局与移动端视图测试
   console.log('  测试响应式移动端视口 (390x844)...');

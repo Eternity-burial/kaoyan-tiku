@@ -374,6 +374,47 @@
   animation: fadeIn 0.18s ease;
 }
 
+/* 长难句语法精析卡片 */
+.sentence-syntax {
+  margin-top: 6px;
+  padding: 8px 12px;
+  font-size: 12.5px;
+  color: #3730a3;
+  background: #f5f3ff;
+  border-left: 3.5px solid #6366f1;
+  border-radius: 4px;
+  line-height: 1.65;
+  display: none;
+}
+
+.passage-pane.show-all-trans .sentence-syntax,
+.english-app-layout.show-all-trans .sentence-syntax,
+.show-all-trans .sentence-syntax,
+.sentence-item.show-trans .sentence-syntax {
+  display: block !important;
+  animation: fadeIn 0.18s ease;
+}
+
+.syntax-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 11px;
+  color: #4f46e5;
+  margin-right: 6px;
+  background: rgba(99, 102, 241, 0.12);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.syntax-content code {
+  background: rgba(99, 102, 241, 0.1);
+  color: #4338ca;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+}
+
 /* 句子高亮状态 */
 .sentence-item.highlight-target {
   background: rgba(22, 163, 74, 0.12) !important;
@@ -443,9 +484,22 @@
 }
 
 /* ================= 纯净模考模式样式 (Pure Practice Mode) ================= */
+.mode-practice-active .english-workbench {
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 16px;
+}
+
 .mode-practice-active .passage-pane {
+  flex: 1;
+  height: auto;
+  min-height: 250px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   background: #ffffff;
-  padding: 32px 40px;
+  padding: 24px 36px;
+  border-radius: 12px;
 }
 
 .mode-practice-active .passage-topic-tag,
@@ -489,19 +543,303 @@
   font-weight: inherit !important;
 }
 
+/* 模考模式下方做题小窗 (Bottom Practice Dock) */
+.mode-practice-active .analysis-pane {
+  flex: 0 0 auto !important;
+  height: auto !important;
+  max-height: 280px !important;
+  min-height: 190px !important;
+  width: 100% !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  background: var(--bg-pane);
+  border: 1.5px solid rgba(102, 8, 116, 0.22);
+  border-radius: 12px;
+  padding: 10px 18px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  box-shadow: 0 -4px 20px rgba(102, 8, 116, 0.08);
+  box-sizing: border-box;
+}
+
+.mode-practice-active .question-toolbar {
+  background: transparent;
+  padding: 0 0 6px 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mode-practice-active .filter-row {
+  display: none !important;
+}
+
+.mode-practice-active .question-pills {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.mode-practice-active .q-pill {
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--bg-card, #f8fafc);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.mode-practice-active .q-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.mode-practice-active .q-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(102, 8, 116, 0.35);
+}
+
+.mode-practice-active .q-pill .q-pill-choice {
+  font-weight: 800;
+  color: var(--primary);
+  margin-left: 2px;
+}
+
+.mode-practice-active .q-pill.active .q-pill-choice {
+  color: #fef08a;
+}
+
+.mode-practice-active .q-pill.is-answered {
+  border-color: rgba(102, 8, 116, 0.4);
+  background: rgba(102, 8, 116, 0.08);
+}
+
+.mode-practice-active .q-pill.is-submitted.is-correct {
+  border-color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #059669 !important;
+}
+.mode-practice-active .q-pill.is-submitted.is-wrong {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+  color: #dc2626 !important;
+}
+
+.practice-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.practice-progress-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-muted, #64748b);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.practice-progress-badge.all-answered {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-weight: 700;
+}
+
+.practice-submit-btn {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(102, 8, 116, 0.25);
+}
+.practice-submit-btn:disabled,
+.practice-submit-btn.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.practice-submit-btn:not(:disabled):hover {
+  background: var(--primary-hover, #7b0a8c);
+  transform: translateY(-1px);
+}
+
+.practice-shortcut-hint {
+  font-size: 11px;
+  color: var(--text-muted, #64748b);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mode-practice-active .stem-card {
+  padding: 2px 4px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
 .mode-practice-active .stem-text {
   font-family: var(--font-serif);
-  font-size: 16.5px;
+  font-size: 15px;
   font-weight: 600;
-  color: #111827;
-  line-height: 1.6;
+  color: var(--text-color, #111827);
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+
+.mode-practice-active .options-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 12px;
+  margin-top: 4px;
+}
+
+@media (max-width: 860px) {
+  .mode-practice-active .options-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mode-practice-active .option-card {
+  padding: 8px 12px;
+  min-height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card, #ffffff);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.mode-practice-active .option-card:hover {
+  border-color: var(--primary);
+  background: rgba(102, 8, 116, 0.04);
+}
+
+.mode-practice-active .option-card.selected {
+  border-color: var(--primary) !important;
+  background: rgba(102, 8, 116, 0.09) !important;
+  box-shadow: 0 0 0 1px var(--primary) !important;
+}
+
+.mode-practice-active .option-card.selected .option-key {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.mode-practice-active .option-card.is-correct {
+  border-color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+.mode-practice-active .option-card.is-correct .option-key {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+
+.mode-practice-active .option-card.is-distractor {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.08) !important;
+}
+.mode-practice-active .option-card.is-distractor .option-key {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+.mode-practice-active .option-main-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.mode-practice-active .option-key {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .mode-practice-active .option-text {
   font-family: var(--font-serif);
-  font-size: 15.5px;
-  color: #1e293b;
-  line-height: 1.6;
+  font-size: 14.5px;
+  color: var(--text-color, #1e293b);
+  line-height: 1.4;
+}
+
+/* 交卷前隐藏复盘卡片 */
+.mode-practice-active .reflection-card {
+  display: none;
+}
+.mode-practice-active.has-submitted .reflection-card {
+  display: block;
+  margin-top: 6px;
+  padding: 10px;
+}
+
+/* 二重回车确认弹窗作答卡片 */
+.practice-confirm-summary {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 12px 0 10px 0;
+  flex-wrap: wrap;
+}
+.practice-confirm-pill {
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(102, 8, 116, 0.08);
+  border: 1px solid rgba(102, 8, 116, 0.25);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.practice-confirm-pill .pill-q {
+  color: var(--text-muted, #64748b);
+  font-weight: normal;
 }
 
 /* ================= 右栏：题目工作台 ================= */
@@ -1297,6 +1635,22 @@
   border-left-color: var(--primary) !important;
 }
 
+[data-theme="dark"] .sentence-syntax {
+  color: #c7d2fe !important;
+  background: #1e1b4b !important;
+  border-left-color: #818cf8 !important;
+}
+
+[data-theme="dark"] .syntax-badge {
+  color: #a5b4fc !important;
+  background: rgba(129, 140, 248, 0.2) !important;
+}
+
+[data-theme="dark"] .syntax-content code {
+  color: #e0e7ff !important;
+  background: rgba(129, 140, 248, 0.25) !important;
+}
+
 /* 单词高亮暗色滤镜适配（绝无刺眼亮白背景） */
 [data-theme="dark"] .vocab-word.level-red {
   color: #f87171 !important;
@@ -1322,13 +1676,35 @@
   background: #1a1b20 !important;
 }
 
+[data-theme="dark"] .mode-practice-active .analysis-pane {
+  background: #16171d !important;
+  border-color: rgba(186, 104, 200, 0.28) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
 [data-theme="dark"] .mode-practice-active .sentence-text,
 [data-theme="dark"] .mode-practice-active .stem-text {
   color: #e2e2e8 !important;
 }
 
+[data-theme="dark"] .mode-practice-active .option-card {
+  background: #20222a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .mode-practice-active .option-card:hover {
+  border-color: var(--primary-light) !important;
+  background: rgba(157, 112, 255, 0.1) !important;
+}
+
 [data-theme="dark"] .mode-practice-active .option-text {
   color: #c2c2ce !important;
+}
+
+[data-theme="dark"] .mode-practice-active .q-pill {
+  background: #20222a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e2e2e8 !important;
 }
 
 /* 右栏：题目工作台组件 */

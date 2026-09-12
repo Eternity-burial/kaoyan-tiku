@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 考研题库 · 全局统一模态确认框与通知中心 (ConfirmModal & Toast Engine)
  *
  * 规范原则：
@@ -12,6 +12,7 @@
   'use strict';
 
   var confirmModalResolve = null;
+  var currentConfirmOptions = null;
 
   function escapeHtml(str) {
     if (str === undefined || str === null) return '';
@@ -48,14 +49,26 @@
     }
 
     if (confirmModalResolve) {
-      confirmModalResolve(false);
+      var prevOpts = currentConfirmOptions;
+      var prevR = confirmModalResolve;
+      currentConfirmOptions = null;
       confirmModalResolve = null;
+      if (prevOpts && typeof prevOpts.onCancel === 'function') {
+        try { prevOpts.onCancel(); } catch (e) {}
+      }
+      prevR(false);
     }
+
+    currentConfirmOptions = options;
 
     if (iconEl) iconEl.textContent = icon;
     if (titleEl) titleEl.textContent = title;
     if (msgEl) {
-      msgEl.innerHTML = escapeHtml(message).replace(/\n/g, '<br>');
+      if (options.html) {
+        msgEl.innerHTML = options.html;
+      } else {
+        msgEl.innerHTML = escapeHtml(message).replace(/\n/g, '<br>');
+      }
     }
 
     okBtn.innerHTML = escapeHtml(confirmText) + ' <span class="key">Enter</span>';
@@ -78,10 +91,6 @@
 
     return new Promise(function (resolve) {
       confirmModalResolve = resolve;
-    }).then(function (result) {
-      if (result && typeof options.onConfirm === 'function') options.onConfirm();
-      if (!result && typeof options.onCancel === 'function') options.onCancel();
-      return result;
     });
   }
 
@@ -94,6 +103,15 @@
     if (!hasOtherModal) {
       document.body.classList.remove('modal-open');
     }
+
+    var opts = currentConfirmOptions;
+    currentConfirmOptions = null;
+    if (result && opts && typeof opts.onConfirm === 'function') {
+      try { opts.onConfirm(); } catch (e) { console.error(e); }
+    } else if (!result && opts && typeof opts.onCancel === 'function') {
+      try { opts.onCancel(); } catch (e) { console.error(e); }
+    }
+
     if (confirmModalResolve) {
       var r = confirmModalResolve;
       confirmModalResolve = null;
