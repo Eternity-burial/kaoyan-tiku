@@ -1074,7 +1074,6 @@
             if (typeof window.showConfirmModal === 'function') {
               window.showConfirmModal({
                 title: '移出同类题关联',
-                icon: '🔗',
                 message: '确定要将「' + qTitle + '」从当前题目的共同考点（' + (topicNames || '考点') + '）中移出吗？\n\n移出后该题将不再作为此题的同类题展示。',
                 confirmText: '确认移出',
                 cancelText: '取消',

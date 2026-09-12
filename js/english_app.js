@@ -947,7 +947,7 @@
           if (formattedSyntax) {
             syntaxHtml = `
               <div class="sentence-syntax">
-                <span class="syntax-badge">📐 语法解析</span>
+                <span class="syntax-badge">语法解析</span>
                 <span class="syntax-content">${formattedSyntax}</span>
               </div>
             `;
@@ -1238,36 +1238,36 @@
     if (!text) return;
     const status = getCurrentTextPracticeStatus();
 
-    let pillsHtml = '<div class="practice-confirm-summary">';
+    let gridHtml = '<div class="practice-confirm-grid">';
     status.questions.forEach(q => {
       const p = state.practiceAnswers[q.qIndex] || {};
-      pillsHtml += `
-        <div class="practice-confirm-pill">
-          <span class="pill-q">第${q.qIndex}题:</span>
-          <span>${escapeHtml(p.selected || '-')}</span>
+      const val = escapeHtml(p.selected || '-');
+      const isEmpty = !p.selected;
+      gridHtml += `
+        <div class="practice-confirm-cell ${isEmpty ? 'is-empty' : ''}">
+          <span class="cell-num">第 ${q.qIndex} 题</span>
+          <span class="cell-ans">${val}</span>
         </div>
       `;
     });
-    pillsHtml += '</div>';
+    gridHtml += '</div>';
 
     const htmlContent = `
-      <div style="text-align:center;">
-        <div style="font-size:15px;font-weight:700;color:var(--text-color);margin-bottom:6px;">
-          ${state.currentYear} 年 Text ${text.number} 模考交卷确认
+      <div class="practice-confirm-wrap">
+        <div class="practice-confirm-meta">
+          <span class="confirm-meta-badge">已作答 ${status.answered}/${status.total} 题</span>
+          <span class="confirm-meta-desc">请核对各题选项，确认无误后提交</span>
         </div>
-        <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">
-          您已完成本篇全部 ${status.total} 道题目，各题所选答案如下：
-        </div>
-        ${pillsHtml}
-        <div style="font-size:12px;color:#dc2626;font-weight:600;margin-top:10px;">
-          确认后将正式交卷判分并同步计入题库数据库 (再按 Enter 确认交卷，Esc 取消)。
+        ${gridHtml}
+        <div class="practice-confirm-tip">
+          交卷后将即刻判分并展现精读译文、长难句与题眼定位，记录自动存入题库。
         </div>
       </div>
     `;
 
     if (typeof window.showConfirmModal === 'function') {
       window.showConfirmModal({
-        title: '提交整篇答卷确认',
+        title: `${state.currentYear} 年真题 · Text ${text.number} · 模考交卷`,
         html: htmlContent,
         confirmText: '确认交卷',
         cancelText: '检查修改',

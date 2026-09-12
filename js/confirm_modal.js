@@ -32,7 +32,7 @@
     var confirmText = options.confirmText || '确定';
     var cancelText = options.cancelText || '取消';
     var isDanger = !!options.danger;
-    var icon = options.icon || (isDanger ? '⚠️' : 'ℹ️');
+    var icon = options.icon || null;
 
     var modal = document.getElementById('confirmModal');
     var card = modal ? modal.querySelector('.confirm-modal-card') : null;
@@ -61,7 +61,10 @@
 
     currentConfirmOptions = options;
 
-    if (iconEl) iconEl.textContent = icon;
+    if (iconEl) {
+      iconEl.textContent = '';
+      iconEl.style.display = 'none';
+    }
     if (titleEl) titleEl.textContent = title;
     if (msgEl) {
       if (options.html) {
@@ -168,6 +171,15 @@
         if (e.target === modal) closeConfirmModal(false);
       });
     }
+
+    document.addEventListener('keydown', function (e) {
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        closeConfirmModal(false);
+      }
+    }, true);
   }
 
   if (document.readyState === 'loading') {

@@ -869,7 +869,93 @@
   padding: 10px;
 }
 
-/* 二重回车确认弹窗作答卡片 */
+/* 二重回车确认弹窗作答卡片与横向 5 列网格 */
+.practice-confirm-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.practice-confirm-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+.confirm-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: var(--primary-alpha, rgba(121, 82, 144, 0.1));
+  color: var(--primary, #795290);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+[data-theme="dark"] .confirm-meta-badge {
+  background: rgba(168, 85, 247, 0.16);
+  color: #c084fc;
+}
+.confirm-meta-desc {
+  font-size: 13px;
+  color: var(--text-muted, #64748b);
+}
+.practice-confirm-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.practice-confirm-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 6px;
+  border-radius: 10px;
+  background: rgba(121, 82, 144, 0.05);
+  border: 1px solid rgba(121, 82, 144, 0.18);
+  transition: all 0.15s ease;
+}
+[data-theme="dark"] .practice-confirm-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.practice-confirm-cell .cell-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted, #64748b);
+  margin-bottom: 6px;
+}
+.practice-confirm-cell .cell-ans {
+  font-family: var(--font-serif, "Source Serif Pro", Georgia, serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary, #795290);
+  line-height: 1;
+}
+[data-theme="dark"] .practice-confirm-cell .cell-ans {
+  color: #c084fc;
+}
+.practice-confirm-cell.is-empty .cell-ans {
+  color: var(--text-muted, #94a3b8);
+  font-size: 18px;
+}
+.practice-confirm-tip {
+  font-size: 12px;
+  color: var(--text-muted, #64748b);
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px dashed var(--border, rgba(0, 0, 0, 0.1));
+  line-height: 1.5;
+}
+[data-theme="dark"] .practice-confirm-tip {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 兼容旧版 pills */
 .practice-confirm-summary {
   display: flex;
   gap: 8px;
