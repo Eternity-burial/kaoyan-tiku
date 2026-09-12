@@ -2041,10 +2041,14 @@ test('考研英语代码逻辑契约: 按键重映射、做题模式免回车暂
   // 6. 确认弹窗二重回车拦截
   assert.ok(engAppSrc.includes("e.key === 'Enter'") && engAppSrc.includes('closeConfirmModal(true)'), '确认弹窗激活时按 Enter 必须立即执行二重确认交卷');
 
-  // 7. 滚轮切题与右键+滚轮切文章手势
+  // 7. 滚轮切题与右键+滚轮切文章手势 (严格仿照数学题库逻辑)
   assert.ok(engAppSrc.includes('setupWheelAndRightClickGestures'), '必须包含滚轮手势与右键切文章初始化函数');
   assert.ok(engAppSrc.includes('_isRightMouseDown') && engAppSrc.includes('_suppressNextContextMenu'), '必须具备右键按下追踪与 contextmenu 屏蔽机制');
   assert.ok(engAppSrc.includes('navNextText()') && engAppSrc.includes('navPrevText()'), '右键滚轮必须联动切文章');
+  assert.ok(engAppSrc.includes("_wDir = 'h'") && engAppSrc.includes("_wDir = 'v'"), '滚轮必须严格限制仅左右横向移动切题，纵向移动绝不误切并保留页面正常滚动');
+
+  // 8. 做题模式选定选项后自动跳转下一题契约
+  assert.ok(engAppSrc.includes('_autoAdvanceTimer'), '必须包含做题选项选定后自动推进下一题机制');
 });
 
 test('考研英语 CSS 模考下方小窗与双列选项布局契约', () => {

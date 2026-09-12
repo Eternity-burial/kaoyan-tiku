@@ -1328,42 +1328,42 @@ async function run() {
 
       const rightWheelWorked = (tAfterRWheelDown !== tBeforeWheel) && (tAfterRWheelUp === tBeforeWheel) && cmPrevented;
 
-      // 8. 测试单独滚轮在题目区切题 (等效 A / D)
+      // 8. 测试单独滚轮切题 (等效 A / D，仅左右移动生效，纵向移动绝不误切并保留页面正常上下滚动)
       await new Promise(r => setTimeout(r, 350));
-      const qBeforePaneWheel = window.kyApp.state.currentQIndex;
       const pane = document.querySelector('.analysis-pane');
-      if (pane) {
-        pane.dispatchEvent(new WheelEvent('wheel', { deltaY: 100, bubbles: true }));
-      }
+      const qBeforePaneWheel = window.kyApp.state.currentQIndex;
+      // 验证纵向移动不触发切题
+      document.dispatchEvent(new WheelEvent('wheel', { deltaY: 100, bubbles: true }));
+      const qAfterVerticalWheel = window.kyApp.state.currentQIndex;
+      const verticalIgnored = (qAfterVerticalWheel === qBeforePaneWheel);
+      await new Promise(r => setTimeout(r, 350));
+
+      // 验证横向水平滚轮切题 (向右滚 deltaX: 100 切下一题，向左滚 deltaX: -100 切上一题)
+      document.dispatchEvent(new WheelEvent('wheel', { deltaX: 100, bubbles: true }));
       const qAfterPaneWheelDown = window.kyApp.state.currentQIndex;
       await new Promise(r => setTimeout(r, 350));
-      if (pane) {
-        pane.dispatchEvent(new WheelEvent('wheel', { deltaY: -100, bubbles: true }));
-      }
+      document.dispatchEvent(new WheelEvent('wheel', { deltaX: -100, bubbles: true }));
       const qAfterPaneWheelUp = window.kyApp.state.currentQIndex;
 
-      const paneWheelWorked = (qAfterPaneWheelDown !== qBeforePaneWheel) && (qAfterPaneWheelUp === qBeforePaneWheel);
+      const paneWheelWorked = verticalIgnored && (qAfterPaneWheelDown !== qBeforePaneWheel) && (qAfterPaneWheelUp === qBeforePaneWheel);
 
-      // 9. 测试选项选择后胶囊 UI 显示自适应与题号保留校验
+      // 9. 测试选项选择后自动跳下一题与胶囊 UI 显示自适应
       window.kyApp.switchQuestion(21);
       window.kyApp.selectOption(21, 'A');
-      const pill21 = document.querySelector('.q-pill');
-      const qnum21 = pill21 ? pill21.querySelector('.q-num') : null;
-      const choice21 = pill21 ? pill21.querySelector('.q-pill-choice') : null;
-      const qnumRect = qnum21 ? qnum21.getBoundingClientRect() : { left: 0, top: 0, width: 0 };
-      const choiceRect = choice21 ? choice21.getBoundingClientRect() : { left: 0, top: 0, width: 0 };
-      const pill21Width = pill21 ? pill21.offsetWidth : 0;
-      const pill21NoOverflow = pill21 ? (pill21.scrollWidth <= pill21.clientWidth + 2) : false;
-      const pillSideBySide = qnumRect.left < choiceRect.left && Math.abs(qnumRect.top - choiceRect.top) < 6;
+      // 等待 220ms 验证自动推进到下一题 (22)
+      await new Promise(r => setTimeout(r, 220));
+      const autoAdvanceWorked = (window.kyApp.state.currentQIndex === 22);
 
-      // 切到第 22 题，验证 Q21 作为已选未激活题目时方框依然自适应且题号完整保留
-      window.kyApp.switchQuestion(22);
+      // 验证 Q21 作为已选未激活题目时方框依然自适应且题号与选项完整保留
       const pill21AfterSwitch = document.querySelector('.q-pill');
       const qnum21After = pill21AfterSwitch ? pill21AfterSwitch.querySelector('.q-num') : null;
+      const choice21After = pill21AfterSwitch ? pill21AfterSwitch.querySelector('.q-pill-choice') : null;
       const pill21AfterWidth = pill21AfterSwitch ? pill21AfterSwitch.offsetWidth : 0;
       const pill21AfterNoOverflow = pill21AfterSwitch ? (pill21AfterSwitch.scrollWidth <= pill21AfterSwitch.clientWidth + 2) : false;
+      const pillSideBySide = qnum21After && choice21After && (qnum21After.getBoundingClientRect().left < choice21After.getBoundingClientRect().left);
 
-      const pillUiOk = pillSideBySide && pill21Width >= 50 && pill21NoOverflow && pill21AfterWidth >= 50 && pill21AfterNoOverflow && !!qnum21After && qnum21After.textContent === '21';
+      const pill21Width = pill21AfterWidth;
+      const pillUiOk = autoAdvanceWorked && pillSideBySide && pill21AfterWidth >= 50 && pill21AfterNoOverflow && !!qnum21After && qnum21After.textContent === '21' && !!choice21After && choice21After.textContent === 'A';
 
       // 10. 测试做题模式免回车直接暂存选项并完成 5 题整篇作答
       const text = window.kyApp.curDataset.texts[0];

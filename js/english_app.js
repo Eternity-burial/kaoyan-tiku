@@ -26,6 +26,7 @@
 
   // DOM 元素引用
   let dom = {};
+  let _autoAdvanceTimer = null;
 
   function initDom() {
     dom = {
@@ -1090,6 +1091,10 @@
 
   // 切换题目 (跨篇章自动同步与位置保存)
   function switchQuestion(qIndex) {
+    if (_autoAdvanceTimer) {
+      clearTimeout(_autoAdvanceTimer);
+      _autoAdvanceTimer = null;
+    }
     const dataset = getCurrentDataset();
     if (dataset.texts) {
       const parentText = dataset.texts.find(t => t.questions && t.questions.some(q => q.qIndex === qIndex));
@@ -1444,6 +1449,11 @@
     const q = getCurrentQuestion();
     if (!q) return;
 
+    if (_autoAdvanceTimer) {
+      clearTimeout(_autoAdvanceTimer);
+      _autoAdvanceTimer = null;
+    }
+
     const pAns = state.practiceAnswers[q.qIndex] || {};
 
     if (state.mode === 'practice' && !pAns.submitted) {
@@ -1455,6 +1465,28 @@
       savePracticeStorage();
       renderOptions(q, false);
       renderQuestionPills();
+
+      // 选了一道题后自动跳下一题 (仅在当前篇章的第 1~4 题作答后自动推进)
+      const text = getCurrentText();
+      if (text && text.questions) {
+        const curIdx = text.questions.findIndex(x => x.qIndex === q.qIndex);
+        if (curIdx >= 0 && curIdx < text.questions.length - 1) {
+          const nextQ = text.questions[curIdx + 1];
+          _autoAdvanceTimer = setTimeout(() => {
+            _autoAdvanceTimer = null;
+            if (state.currentQIndex === q.qIndex) {
+              switchQuestion(nextQ.qIndex);
+            }
+          }, 180);
+        } else if (curIdx === text.questions.length - 1) {
+          const status = getCurrentTextPracticeStatus();
+          if (status.allAnswered) {
+            if (typeof window.showToast === 'function') {
+              window.showToast('本篇 5 道题已全部作答，按 Enter 提交交卷', 'info');
+            }
+          }
+        }
+      }
     } else {
       const opt = q.options.find(o => o.key === key);
       if (opt && opt.refSentences && opt.refSentences.length > 0) {
@@ -1928,19 +1960,10 @@
         return;
       }
 
-      // ===== 单独滚轮切题 (等效 A / D) =====
+      // ===== 常规横向滚轮（等效 A / D 键，严格限制仅左右移动切题，纵向移动正常滚动不劫持） =====
       const absDX = Math.abs(dx), absDY = Math.abs(dy);
 
-      // 判定滚轮触发区域
-      const inAnalysisPane = e.target.closest && e.target.closest('.analysis-pane, #analysisPane, .question-toolbar, .question-pills, .options-list, .stem-card');
-      const inPassagePane = e.target.closest && e.target.closest('.passage-pane, #passagePane');
-
-      // 若在文章阅读区且为纯纵向滚轮：允许原生上下滚动文章内容阅读，不劫持
-      if (inPassagePane && absDY > absDX * 1.5) {
-        return;
-      }
-
-      // 重置计时器
+      // 重置计时器：每次新事件都推迟 reset
       if (_wTimer) clearTimeout(_wTimer);
       _wTimer = setTimeout(function () {
         _wDir = null; _wAccum = 0; _wLocked = false; _wTimer = null; _wIsMouse = false;
@@ -1948,40 +1971,29 @@
 
       if (_wLocked) return;
 
-      // 1. 若在题目区/选项区/做题卡片区（无论是纵向还是横向手势）：
-      if (inAnalysisPane) {
-        const delta = Math.abs(dy) >= Math.abs(dx) ? dy : dx;
-        if (Math.abs(delta) < 4) return;
-        _wAccum += delta;
-        if (Math.abs(_wAccum) > 15) {
-          if (_wAccum > 0) navNext();
-          else navPrev();
-          _wLocked = true;
-          _wAccum = 0;
-        }
-        return;
-      }
-
-      // 2. 在其他区域的横向手势（触控板两指左右横滑或水平滚轮，仿照数学题库）
+      // 方向未确定：哪个方向明显主导即锁定；同时标记设备类型
       if (_wDir === null) {
         if (absDX > absDY * 1.5 && absDX > 4) {
           _wDir = 'h';
-          _wIsMouse = absDX >= 50;
+          _wIsMouse = absDX >= 50; // 单次大增量 = 鼠标水平滚轮/拨轮
         } else if (absDY > absDX * 1.5 && absDY > 4) {
-          _wDir = 'v';
+          _wDir = 'v'; // 纵向手势，整段忽略（允许文章区与题目解析区原生正常上下滚动阅读）
         } else {
-          return;
+          return; // 方向不明确，继续观察
         }
       }
 
-      if (_wDir === 'v') return;
+      if (_wDir === 'v') return; // 纵向手势，整段忽略
 
+      // 横向手势：累积 dx，达标即切题 (A / D)
       _wAccum += dx;
       if (Math.abs(_wAccum) > 15) {
         if (_wIsMouse) {
+          // 鼠标水平滚轮：向右滚→下一题 (D)，向左滚→上一题 (A)
           if (_wAccum > 0) navNext();
           else navPrev();
         } else {
+          // 触控板：两指右滑→上一题 (A)，两指左滑→下一题 (D)
           if (_wAccum > 0) navPrev();
           else navNext();
         }
