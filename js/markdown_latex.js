@@ -150,6 +150,15 @@
       return escapeHtml(text);
     }
 
+    // 自愈容错：若整个文本被外层 $$...$$ 误包裹（常见于 OCR/AI 复制导出），且内部含有 \[、\] 或中文段落，自动剥离外层 $$
+    var trimmed = text.trim();
+    if (trimmed.startsWith('$$') && trimmed.endsWith('$$') && trimmed.length > 4) {
+      var inner = trimmed.substring(2, trimmed.length - 2).trim();
+      if (inner.includes('\\[') || inner.includes('\\]') || (/[\u4e00-\u9fa5]/.test(inner) && !inner.includes('\\text{'))) {
+        text = inner;
+      }
+    }
+
     var markedParser = (typeof window !== 'undefined' && window.marked && window.marked.parse) ? window.marked.parse :
                        (typeof marked !== 'undefined' && marked.parse ? marked.parse : null);
 

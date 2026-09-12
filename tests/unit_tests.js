@@ -1795,6 +1795,32 @@ test('MarkdownLatexEngine: 基础引擎完整性、行内与块级排版、公�
   assert.strictEqual(mockInput.value, '$x + y$', 'wrapSelection 必须正确为选区添加首尾包裹符号');
   assert.strictEqual(mockInput.selectionStart, 1);
   assert.strictEqual(mockInput.selectionEnd, 6);
+
+  // 6. 自愈容错：外层误包裹 $$ 的 Markdown 笔记自动剥离外层 $$
+  const badWrappedNote = '$$求积分\n\\[\\int_0^1 x\\,dx\\]\n$$';
+  const rendered = engine.render(badWrappedNote);
+  assert.ok(!rendered.includes('$$求积分'), '引擎应自动剥离误包裹的外层 $$');
+  assert.ok(rendered.includes('求积分'), '内部 Markdown 与中文文本应完整保留');
+
+  // 纯数学公式应不受影响
+  const pureMath = '$$\\int_0^1 x\\,dx = \\frac{1}{2}$$';
+  const renderedPure = engine.render(pureMath);
+  assert.ok(renderedPure.includes('$$\\int_0^1 x\\,dx = \\frac{1}{2}$$'), '纯数学公式 display math 绝不受自愈逻辑误伤');
+});
+
+test('强化36讲伴章 1000 题 9-26 笔记数据结构与非误包裹校验', () => {
+  const dataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../kaoyan_tiku_data.json'), 'utf8'));
+  const chRaw = dataJson.data['kaoyan.q.math::1000题::强化篇-高数::ch09'];
+  assert.ok(chRaw, '1000题强化篇高数第9章章节记录必须存在');
+  const chData = JSON.parse(chRaw);
+  assert.ok(chData['pb_9-26'], 'pb_9-26 题目记录必须存在');
+  assert.ok(chData['pb_9-26'].notes, 'pb_9-26 笔记内容必须存在');
+  const note = chData['pb_9-26'].notes.trim();
+  assert.ok(!note.startsWith('$$'), 'pb_9-26 笔记不得以外层 $$ 开头');
+  assert.ok(!note.endsWith('$$'), 'pb_9-26 笔记不得以外层 $$ 结尾');
+  assert.ok(note.includes('求积分'), '笔记必须包含完整求积分题干与推导');
+  assert.ok(note.includes('3x^2-2x-1'), '笔记必须包含原题积分式根号内因式分解');
+  assert.ok(note.includes('\\pi-2\\arctan\\sqrt{7}'), '笔记必须包含最终推导正确结果');
 });
 
 test('全站考点与笔记 Markdown/LaTeX 架构统一与无缝时序加载契约', () => {

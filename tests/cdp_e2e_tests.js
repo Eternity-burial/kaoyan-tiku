@@ -1122,8 +1122,8 @@ async function run() {
   if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
     throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
   }
-  if (dashboardCheck.expectedTotal !== 7750) {
-    throw new Error(`数学科目总题数异常: 期望 7750 (含李林880 1408题), 实际 ${dashboardCheck.expectedTotal}`);
+  if (dashboardCheck.expectedTotal !== 7753) {
+    throw new Error(`数学科目总题数异常: 期望 7753 (含李林880 1408题与强化36讲例题拆分), 实际 ${dashboardCheck.expectedTotal}`);
   }
   if (dashboardCheck.expectedDone < 1700) {
     throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);
@@ -1796,6 +1796,43 @@ async function run() {
   if (!isCh1 || undoCheck.statusAfterUndo !== undoCheck.originalStatus) {
     throw new Error(`跨章节撤销失败: 期望回滚至原始状态 "${undoCheck.originalStatus}", 实际为 "${undoCheck.statusAfterUndo}"`);
   }
+
+  // 测试强化36讲伴章 1000题 9-26 笔记的 KaTeX + Markdown 完整渲染
+  console.log('  测试强化36讲伴章 1000 题 9-26 笔记 Markdown + KaTeX 无错渲染...');
+  const note926Check = await evaluate(ws, `
+    (async () => {
+      switchSubject('math');
+      switchChapter('math::强化36讲::高数::lec09');
+      const math = SUBJECTS.find(s => s.id === 'math');
+      const lec09 = math.chapters.find(c => c.wb === '强化36讲' && c.name.includes('第9讲'));
+      const qIdx = lec09.labels.indexOf('9-26');
+      switchTo(qIdx, true);
+      await new Promise(r => setTimeout(r, 300));
+
+      const render = document.getElementById('notesRender');
+      const hasKatex = render ? render.querySelectorAll('.katex').length : 0;
+      const katexDisplays = render ? render.querySelectorAll('.katex-display').length : 0;
+      const katexErrors = render ? render.querySelectorAll('.katex-error').length : 0;
+      const text = render ? render.textContent : '';
+
+      return {
+        qIdx,
+        label: lec09.labels[qIdx],
+        isRenderVisible: render && render.style.display !== 'none',
+        hasKatex,
+        katexDisplays,
+        katexErrors,
+        hasIntegral: text.includes('求积分'),
+        hasResult: text.includes('\\pi-2\\arctan') || text.includes('π-2arctan') || text.includes('arctan')
+      };
+    })()
+  `);
+  console.log('  9-26 笔记渲染检查:', note926Check);
+  if (!note926Check.isRenderVisible) throw new Error('9-26 笔记渲染容器未正常展示');
+  if (note926Check.katexErrors > 0) throw new Error(`9-26 笔记存在 KaTeX 解析错误: ${note926Check.katexErrors} 处错误`);
+  if (note926Check.hasKatex < 30) throw new Error(`9-26 笔记 KaTeX 公式数量异常偏少: 实际仅 ${note926Check.hasKatex} 处`);
+  if (!note926Check.hasIntegral) throw new Error('9-26 笔记未正确呈现「求积分」题干推导');
+  console.log('  \x1b[32m✔\x1b[0m 强化36讲 1000 题 9-26 笔记 42 处 KaTeX 公式零报错完美渲染');
 
   // 响应式布局与移动端视图测试
   console.log('  测试响应式移动端视口 (390x844)...');
