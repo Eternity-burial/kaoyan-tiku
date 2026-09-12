@@ -1096,6 +1096,12 @@
     //   '<科目id>::<书籍wb>': { ch, slug, sub }             // 切书籍时恢复
     // }
     function saveResume() {
+      if (curSubjectId === 'english' || (curSubject && curSubject.type === 'english')) {
+        if (window.kyApp && typeof window.kyApp.saveResume === 'function') {
+          window.kyApp.saveResume();
+        }
+        return;
+      }
       if (window.StorageEngine) {
         window.StorageEngine.ResumeStore.save(curSubjectId, currentChapterId, getChapter(), current, subMode);
         notifyStorageSync();
@@ -1151,7 +1157,9 @@
       if (subjectId === 'english' || (subj && subj.type === 'english')) {
         autoSaveNotes();
         if (reviewSession) exitReviewSession();
-        saveResume();
+        if (curSubjectId !== 'english') {
+          saveResume();
+        }
         curSubjectId = subjectId;
         window.curSubjectId = subjectId;
         curSubject = subj;
@@ -1177,7 +1185,9 @@
       autoSaveNotes(); // 切科目前保存未提交的笔记（loadNotes 会重建 notesData）
       // 切科目时若有进行中的复习：提交已评级结果并清除续接会话（跨科目不保留）
       if (reviewSession) exitReviewSession();
-      saveResume(); // 先记录当前科目停的位置，再切换
+      if (curSubjectId !== 'english') {
+        saveResume(); // 先记录当前数学/822停的位置，再切换
+      }
       curSubjectId = subjectId;
       window.curSubjectId = subjectId;
       curSubject = subj;
@@ -1219,7 +1229,11 @@
       }
       wrongBookWb = null; // 无条件重置错题本书籍筛选（书籍列表按科目不同，防跨科目残留）
       closeAllTitlePanels(); // 关闭可能残留的标题下拉面板（切换后重建）
+      loadGlobalFilters(); // 恢复全局筛选偏好
       loadStatuses(); loadQBad(); loadSBad(); loadBookMismatch(); loadNotes();
+      loadAnnotations(); // 恢复图片标注
+      loadSm2(); // 恢复 SM-2 掌握度与复习算法数据
+      loadRelatedTopics(); // 恢复考点主题及题目关联
       loadSolutionPref(); renderSolDefaultBtn(); updateSolutionUI(); // 解析默认按科目记忆
       renderTitle(); renderStats(); renderNav();
       // 若全局筛选激活且恢复的位置被筛掉，则跳到第一条筛中题，避免落在不可见题上
@@ -1228,6 +1242,7 @@
         if (filtered.length > 0 && filtered.indexOf(current) === -1) current = filtered[0];
       }
       switchTo(current); updateFilterCounts();
+      updateFilterButtons(); // 恢复筛选按钮高亮
       closeSubjectPicker();
     }
     function pickSubject(id) {

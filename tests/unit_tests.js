@@ -1978,6 +1978,7 @@ test('考研英语 H 面板快捷键文案规范 (显示译文、A/D切题、W/S
   assert.ok(indexHtml.includes('<span>上一题 / 下一题</span><span class="shortcut-badge">A / D 或 ← / →</span>'), 'H 面板上一题/下一题必须更新为 A / D 或 ← / →');
   assert.ok(indexHtml.includes('<span>上一篇 / 下一篇</span><span class="shortcut-badge">W / S</span>'), 'H 面板必须包含上一篇/下一篇 W / S 快捷键');
   assert.ok(indexHtml.includes('<span>上一年 / 下一年</span><span class="shortcut-badge">Q / E</span>'), 'H 面板必须包含上一年/下一年 Q / E 快捷键');
+  assert.ok(indexHtml.includes('<span>滚轮切题 / 右键+滚轮切文章</span>'), 'H 面板必须包含滚轮切题与右键+滚轮切文章说明');
   assert.ok(indexHtml.includes('<span>做题模式整篇提交</span><span class="shortcut-badge">Enter</span>'), 'H 面板必须指明做题模式整篇提交快捷键为 Enter');
 });
 
@@ -2039,6 +2040,11 @@ test('考研英语代码逻辑契约: 按键重映射、做题模式免回车暂
 
   // 6. 确认弹窗二重回车拦截
   assert.ok(engAppSrc.includes("e.key === 'Enter'") && engAppSrc.includes('closeConfirmModal(true)'), '确认弹窗激活时按 Enter 必须立即执行二重确认交卷');
+
+  // 7. 滚轮切题与右键+滚轮切文章手势
+  assert.ok(engAppSrc.includes('setupWheelAndRightClickGestures'), '必须包含滚轮手势与右键切文章初始化函数');
+  assert.ok(engAppSrc.includes('_isRightMouseDown') && engAppSrc.includes('_suppressNextContextMenu'), '必须具备右键按下追踪与 contextmenu 屏蔽机制');
+  assert.ok(engAppSrc.includes('navNextText()') && engAppSrc.includes('navPrevText()'), '右键滚轮必须联动切文章');
 });
 
 test('考研英语 CSS 模考下方小窗与双列选项布局契约', () => {
@@ -2053,8 +2059,9 @@ test('考研英语 CSS 模考下方小窗与双列选项布局契约', () => {
   // 3. 选项双列网格布局
   assert.ok(cssSrc.includes('.mode-practice-active .options-list') && cssSrc.includes('grid-template-columns: repeat(2, 1fr)'), '模考模式选项列表必须采用 2x2 双列网格紧凑呈现');
 
-  // 4. 答题胶囊与交卷按钮
+  // 4. 答题胶囊自适应与防换行撕裂契约
   assert.ok(cssSrc.includes('.mode-practice-active .q-pill'), '必须包含做题模式答题胶囊样式');
+  assert.ok(cssSrc.includes('white-space: nowrap') && cssSrc.includes('flex: 0 0 auto'), '答题胶囊必须自适应文本宽度 (flex: 0 0 auto) 并禁止换行撕裂 (white-space: nowrap)');
   assert.ok(cssSrc.includes('.practice-submit-btn'), '必须包含整篇提交按钮样式');
 });
 
@@ -2066,6 +2073,34 @@ test('StorageSync 正则对英语模考作答 ky_english_practice_* 与掌握度
   assert.strictEqual(reg.test('ky_english_mastery_2010'), true, '必须匹配 2010 年掌握度键');
   assert.strictEqual(reg.test('ky_english_notes_2010'), true, '必须匹配 2010 年笔记键');
   assert.strictEqual(reg.test('ky_english_starred_words'), true, '必须匹配生词本键');
+});
+
+// 26. 跨科目断点隔离、英语模式持久化与考点主题自水合契约
+console.log('\n--- 26. 跨科目断点隔离、英语模式持久化与考点主题自水合契约 ---');
+
+test('ResumeStore.save 严禁污染与覆盖英语独立数据模型契约', () => {
+  const storageSrc = fs.readFileSync(path.join(__dirname, '../js/storage.js'), 'utf8');
+  assert.ok(storageSrc.includes("if (!subjId || subjId === 'english') return;"), 'ResumeStore.save 必须严格拦截 english 科目，禁止用数学章节结构覆盖英语断点');
+});
+
+test('app.js saveResume 英语委派与 switchSubject 全量子库加载契约', () => {
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/app.js'), 'utf8');
+  assert.ok(appSrc.includes("curSubjectId === 'english'") && appSrc.includes('window.kyApp.saveResume()'), 'app.js saveResume 处于英语时必须安全委派至 window.kyApp.saveResume');
+  assert.ok(appSrc.includes('loadRelatedTopics();') && appSrc.includes('loadSm2();') && appSrc.includes('loadAnnotations();') && appSrc.includes('loadGlobalFilters();'), 'switchSubject 切换到数学/822时必须完整加载考点主题、SM-2、图片标注与全局筛选');
+});
+
+test('TopicManager 自我水合与兜底防空契约', () => {
+  const topicsSrc = fs.readFileSync(path.join(__dirname, '../js/topics.js'), 'utf8');
+  assert.ok(topicsSrc.includes('_topicsLoaded'), 'TopicManager 必须具备 _topicsLoaded 状态追踪');
+  assert.ok(topicsSrc.includes('if (!_topicsLoaded) loadRelatedTopics()'), 'getTopicQidIndex/renderQuickTopicPopover 必须具备懒加载水合保护');
+  assert.ok(topicsSrc.includes('loadRelatedTopics();'), 'topics.js 脚本载入必须执行自我水合，杜绝切科目时考点丢失');
+});
+
+test('英语做题模式 (mode) 独立双轨持久化与防重置契约', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  assert.ok(engAppSrc.includes("window.StorageEngine.GlobalStore.set('english_mode',"), 'saveResume 与 setMode 必须向 GlobalStore 独立持久化 english_mode');
+  assert.ok(engAppSrc.includes("window.StorageEngine.GlobalStore.get('english_mode')"), 'loadResume 必须读取 english_mode 独立全局偏好作为防覆写兜底');
+  assert.ok(!engAppSrc.includes('const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);') || engAppSrc.includes('const subjKey = state.currentSubject || \'english\';'), 'loadResume 中不得存在未定义的 subjKey ReferenceError');
 });
 
 console.log('\n====================================================');

@@ -471,6 +471,7 @@
         resumeMap.english = entry;
         resumeMap[`english_y${state.currentYear}`] = { textId: state.currentTextId, qIndex: state.currentQIndex };
         window.StorageEngine.GlobalStore.set('resume', resumeMap);
+        window.StorageEngine.GlobalStore.set('english_mode', state.mode);
       }
       notifyStorageSync();
     } catch (e) {}
@@ -478,6 +479,7 @@
 
   function loadResume() {
     try {
+      const subjKey = state.currentSubject || 'english';
       let saved = null;
       if (window.StorageEngine && window.StorageEngine.GlobalStore) {
         const resumeMap = window.StorageEngine.GlobalStore.get('resume') || {};
@@ -509,6 +511,14 @@
         const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);
         if (savedMode && (savedMode === 'analysis' || savedMode === 'practice')) {
           state.mode = savedMode;
+        }
+      }
+
+      // 独立全局偏好回退保障（防止任何异常覆盖导致模式被重置）
+      if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+        const gm = window.StorageEngine.GlobalStore.get('english_mode');
+        if (gm && (gm === 'analysis' || gm === 'practice')) {
+          state.mode = gm;
         }
       }
     } catch (e) {}
@@ -655,7 +665,9 @@
   }
 
   // 切换真题年份：恢复该年份上次停的位置
+  let _switchYearSeq = 0;
   async function switchYear(year) {
+    const seq = ++_switchYearSeq;
     if (!window.ENGLISH_DATA || !window.ENGLISH_DATA[year]) {
       if (dom.passagePane) {
         dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#64748b;text-align:center;font-size:15px;font-weight:600;">正在加载 ${year} 年真题精读数据...</div>`;
@@ -663,12 +675,14 @@
       try {
         await loadYearDataAsync(year);
       } catch (err) {
+        if (seq !== _switchYearSeq) return;
         if (dom.passagePane) {
           dom.passagePane.innerHTML = `<div style="padding:48px 20px;color:#dc2626;text-align:center;">加载 ${year} 年真题失败，请检查题库文件是否存在</div>`;
         }
         return;
       }
     }
+    if (seq !== _switchYearSeq) return;
     state.currentYear = year;
     loadYearStorage();
 
@@ -751,6 +765,7 @@
 
     setupEventListeners();
     setupKeyboardShortcuts();
+    setupWheelAndRightClickGestures();
     updateModeClass();
   }
 
@@ -1023,7 +1038,7 @@
           pillClass += ` is-submitted ${pAns.isCorrect ? 'is-correct' : 'is-wrong'}`;
         }
         pill.className = pillClass;
-        const choiceText = pAns.selected ? `<span class="q-pill-choice">: ${escapeHtml(pAns.selected)}</span>` : '';
+        const choiceText = pAns.selected ? `<span class="q-pill-choice">${escapeHtml(pAns.selected)}</span>` : '';
         pill.innerHTML = `<span class="q-num">${q.qIndex}</span>${choiceText}`;
         pill.title = `第${q.qIndex}题 (${q.type})${pAns.selected ? ` - 已选 ${pAns.selected}` : ' - 未作答'}`;
       } else {
@@ -1309,7 +1324,11 @@
 
     if (isPractice && !pAns.submitted) {
       dom.stemCard.innerHTML = `
-        <div class="stem-text" style="font-size:16px;margin-bottom:0;">${q.qIndex}. ${escapeHtml(q.stem)}</div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span class="q-type-badge" style="font-size:11px;padding:2px 6px;">${escapeHtml(q.type)}</span>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;">第 ${q.qIndex} 题</span>
+        </div>
+        <div class="stem-text" style="font-size:15px;line-height:1.45;margin-bottom:0;font-weight:600;">${q.qIndex}. ${escapeHtml(q.stem)}</div>
       `;
     } else {
       let keywordsHtml = '';
@@ -1822,6 +1841,156 @@
     }
   }
 
+  // ===== 滚轮手势与右键切文章系统（仿照数学题库逻辑） =====
+  let _isRightMouseDown = false;
+  let _suppressNextContextMenu = false;
+  let _rwAccum = 0, _rwLocked = false, _rwTimer = null;
+  let _wDir = null, _wAccum = 0, _wLocked = false, _wTimer = null, _wIsMouse = false;
+
+  function setupWheelAndRightClickGestures() {
+    document.addEventListener('mousedown', function (e) {
+      if (e.button === 2) _isRightMouseDown = true;
+    }, true);
+
+    document.addEventListener('mouseup', function (e) {
+      if (e.button === 2) {
+        _isRightMouseDown = false;
+        _rwAccum = 0;
+        _rwLocked = false;
+        if (_rwTimer) { clearTimeout(_rwTimer); _rwTimer = null; }
+        if (_suppressNextContextMenu) {
+          setTimeout(function () { _suppressNextContextMenu = false; }, 200);
+        }
+      }
+    }, true);
+
+    window.addEventListener('blur', function () {
+      _isRightMouseDown = false;
+      _suppressNextContextMenu = false;
+      _rwAccum = 0;
+      _rwLocked = false;
+      if (_rwTimer) { clearTimeout(_rwTimer); _rwTimer = null; }
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+      if (_suppressNextContextMenu) {
+        e.preventDefault();
+        e.stopPropagation();
+        _suppressNextContextMenu = false;
+      }
+    }, true);
+
+    document.addEventListener('wheel', function (e) {
+      const isAppActive = window.curSubjectId === 'english' || (dom.layout && dom.layout.style.display !== 'none');
+      if (!isAppActive) return;
+
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+
+      // 模态框打开时禁止滚轮切题/切文章
+      const confirmModal = document.getElementById('confirmModal');
+      if (confirmModal && confirmModal.style.display !== 'none') return;
+      const isModalOpen = (dom.modalVocabBook && dom.modalVocabBook.classList.contains('show')) ||
+                          (dom.modalHelp && dom.modalHelp.classList.contains('active')) ||
+                          !!window.subjectPickerOpen;
+      if (isModalOpen) return;
+
+      const dx = e.deltaX || 0, dy = e.deltaY || 0;
+      const isRightClick = ((e.buttons & 2) !== 0) || _isRightMouseDown;
+
+      // ===== 右键 + 滚轮：切文章 (等效 W / S) =====
+      if (isRightClick) {
+        e.preventDefault();
+        _suppressNextContextMenu = true;
+
+        if (_rwTimer) clearTimeout(_rwTimer);
+        _rwTimer = setTimeout(function () {
+          _rwAccum = 0;
+          _rwLocked = false;
+          _rwTimer = null;
+        }, 250);
+
+        if (_rwLocked) return;
+
+        const delta = Math.abs(dy) >= Math.abs(dx) ? dy : dx;
+        _rwAccum += delta;
+
+        if (Math.abs(_rwAccum) >= 20) {
+          if (_rwAccum > 0) {
+            // 滚轮向下 / 向右：下一篇 (S)
+            navNextText();
+          } else {
+            // 滚轮向上 / 向左：上一篇 (W)
+            navPrevText();
+          }
+          _rwLocked = true;
+          _rwAccum = 0;
+        }
+        return;
+      }
+
+      // ===== 单独滚轮切题 (等效 A / D) =====
+      const absDX = Math.abs(dx), absDY = Math.abs(dy);
+
+      // 判定滚轮触发区域
+      const inAnalysisPane = e.target.closest && e.target.closest('.analysis-pane, #analysisPane, .question-toolbar, .question-pills, .options-list, .stem-card');
+      const inPassagePane = e.target.closest && e.target.closest('.passage-pane, #passagePane');
+
+      // 若在文章阅读区且为纯纵向滚轮：允许原生上下滚动文章内容阅读，不劫持
+      if (inPassagePane && absDY > absDX * 1.5) {
+        return;
+      }
+
+      // 重置计时器
+      if (_wTimer) clearTimeout(_wTimer);
+      _wTimer = setTimeout(function () {
+        _wDir = null; _wAccum = 0; _wLocked = false; _wTimer = null; _wIsMouse = false;
+      }, 300);
+
+      if (_wLocked) return;
+
+      // 1. 若在题目区/选项区/做题卡片区（无论是纵向还是横向手势）：
+      if (inAnalysisPane) {
+        const delta = Math.abs(dy) >= Math.abs(dx) ? dy : dx;
+        if (Math.abs(delta) < 4) return;
+        _wAccum += delta;
+        if (Math.abs(_wAccum) > 15) {
+          if (_wAccum > 0) navNext();
+          else navPrev();
+          _wLocked = true;
+          _wAccum = 0;
+        }
+        return;
+      }
+
+      // 2. 在其他区域的横向手势（触控板两指左右横滑或水平滚轮，仿照数学题库）
+      if (_wDir === null) {
+        if (absDX > absDY * 1.5 && absDX > 4) {
+          _wDir = 'h';
+          _wIsMouse = absDX >= 50;
+        } else if (absDY > absDX * 1.5 && absDY > 4) {
+          _wDir = 'v';
+        } else {
+          return;
+        }
+      }
+
+      if (_wDir === 'v') return;
+
+      _wAccum += dx;
+      if (Math.abs(_wAccum) > 15) {
+        if (_wIsMouse) {
+          if (_wAccum > 0) navNext();
+          else navPrev();
+        } else {
+          if (_wAccum > 0) navPrev();
+          else navNext();
+        }
+        _wLocked = true;
+        _wAccum = 0;
+      }
+    }, { passive: false });
+  }
+
   // 供键盘与外部调用的选项选择
   function selectOption(qIndex, key) {
     if (qIndex != null && qIndex !== state.currentQIndex) {
@@ -1974,6 +2143,9 @@
   function setMode(m) {
     if (m !== 'analysis' && m !== 'practice') return;
     state.mode = m;
+    if (window.StorageEngine && window.StorageEngine.GlobalStore) {
+      window.StorageEngine.GlobalStore.set('english_mode', m);
+    }
     saveResume();
     updateModeClass();
     renderPassage();
@@ -2210,6 +2382,8 @@
     saveResume,
     loadResume,
     switchYear,
+    switchText,
+    switchQuestion,
     setMode,
     locateSentence,
     setMastery,

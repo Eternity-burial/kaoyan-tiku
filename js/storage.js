@@ -335,6 +335,7 @@
     },
 
     save: function (subjId, chapterId, ch, idx, subMode) {
+      if (!subjId || subjId === 'english') return;
       var map = this._load();
       // 伴章自愈：若外部传入的是伴章（如 1000题 或 李范习题），自动重定向为母章与题号偏移
       var host = null;

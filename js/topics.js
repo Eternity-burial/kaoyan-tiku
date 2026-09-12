@@ -18,6 +18,7 @@
     var jumpReturnStack = [];
     var relatedModalOpen = false;
     var topicRenameModalOpen = false;
+    var _topicsLoaded = false;
 
     // 安全 HTML 转义函数
     var escapeHtml = (typeof window.escapeHtml === 'function') ? window.escapeHtml : function(str) {
@@ -232,6 +233,12 @@
         if (window.StorageEngine && window.StorageEngine.GlobalStore) {
           rawObj = window.StorageEngine.GlobalStore.get('topics');
         }
+        if (!rawObj && typeof localStorage !== 'undefined') {
+          try {
+            var rawLs = localStorage.getItem('kaoyan.g.topics');
+            if (rawLs) rawObj = JSON.parse(rawLs);
+          } catch (eLs) {}
+        }
         relatedTopics = rawObj || {};
         for (var tid in relatedTopics) {
           var t = relatedTopics[tid];
@@ -247,6 +254,7 @@
       } catch (e) {
         relatedTopics = {};
       }
+      _topicsLoaded = true;
       invalidateTopicCache();
       loadRelatedAffinity();
     }
@@ -359,6 +367,7 @@
     }
 
     function getTopicQidIndex() {
+      if (!_topicsLoaded) loadRelatedTopics();
       if (_topicQidCache) return _topicQidCache;
       var cache = new Map();
       for (var tid in relatedTopics) {
@@ -609,6 +618,7 @@
     }
 
     function renderQuickTopicPopover() {
+      if (!_topicsLoaded) loadRelatedTopics();
       var popover = document.getElementById('quickTopicPopover');
       var listEl = document.getElementById('quickTopicList');
       var searchInput = document.getElementById('inputQuickTopicSearch');
@@ -1400,6 +1410,7 @@
     var pickerSolShown = false;
 
     function openRelatedModal() {
+      if (!_topicsLoaded) loadRelatedTopics();
       relatedModalOpen = true;
       document.body.classList.add('modal-open');
       var modal = document.getElementById('relatedModal');
@@ -2865,7 +2876,10 @@
 
   // 暴露全局 TopicManager 命名空间
   window.TopicManager = {
-    getRelatedTopics: function () { return relatedTopics; },
+    getRelatedTopics: function () {
+      if (!_topicsLoaded) loadRelatedTopics();
+      return relatedTopics;
+    },
     getRelatedAffinity: function () { return relatedAffinity; },
     loadTopics: loadRelatedTopics,
     saveTopics: saveRelatedTopics,
@@ -2993,5 +3007,18 @@
       configurable: true
     });
   } catch (e) {}
+
+  // 脚本载入立即自我水合，彻底杜绝切科目/刷新导致的考点空对象问题
+  try {
+    loadRelatedTopics();
+  } catch (eInit) {}
+
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!_topicsLoaded) loadRelatedTopics();
+      });
+    }
+  }
 
 })();

@@ -1269,10 +1269,10 @@ async function run() {
   if (!themeToggleCheck.toggledOnce) throw new Error('英语模式下 Y 键主题切换失败或发生双重翻转抵消');
   if (!themeToggleCheck.restored) throw new Error('英语模式下第二次按 Y 键未能还原初始主题');
 
-  // 测试英语科目键盘快捷键 (1-4 选项选择、A/D 切题、W/S 切文章、Q/E 切年份、Enter 整篇提交与二重确认)
-  console.log('  测试英语科目键盘快捷键 (1-4选选项、A/D切题、W/S切文章、Q/E切年、双重Enter交卷)...');
+  // 测试英语科目键盘快捷键与滚轮/右键手势 (1-4 选项、A/D 切题、W/S 切文章、Q/E 切年份、滚轮切题、右键滚轮切文章、Enter 双次回车提交、UI题号胶囊自适应)
+  console.log('  测试英语科目键盘快捷键、滚轮手势、小窗胶囊UI自适应与双重Enter交卷...');
   const engKeyboardCheck = await evaluate(ws, `
-    (() => {
+    (async () => {
       // 确保在 2010 年 Text 1
       window.kyApp.switchYear('2010');
       window.kyApp.setMode('practice');
@@ -1310,11 +1310,66 @@ async function run() {
       const yAfterE = window.kyApp.state.currentYear;
       const eWorked = yAfterE === '2010';
 
-      // 7. 测试做题模式免回车直接暂存选项并完成 5 题整篇作答
+      // 7. 测试右键 + 滚轮切文章 (等效 W / S) 与 contextmenu 拦截
+      const tBeforeWheel = window.kyApp.state.currentTextId;
+      document.dispatchEvent(new MouseEvent('mousedown', { button: 2, bubbles: true }));
+      document.dispatchEvent(new WheelEvent('wheel', { deltaY: 100, buttons: 2, bubbles: true }));
+      const tAfterRWheelDown = window.kyApp.state.currentTextId;
+
+      document.dispatchEvent(new MouseEvent('mouseup', { button: 2, bubbles: true }));
+      const cmEvt = new MouseEvent('contextmenu', { button: 2, bubbles: true, cancelable: true });
+      document.dispatchEvent(cmEvt);
+      const cmPrevented = cmEvt.defaultPrevented;
+
+      document.dispatchEvent(new MouseEvent('mousedown', { button: 2, bubbles: true }));
+      document.dispatchEvent(new WheelEvent('wheel', { deltaY: -100, buttons: 2, bubbles: true }));
+      const tAfterRWheelUp = window.kyApp.state.currentTextId;
+      document.dispatchEvent(new MouseEvent('mouseup', { button: 2, bubbles: true }));
+
+      const rightWheelWorked = (tAfterRWheelDown !== tBeforeWheel) && (tAfterRWheelUp === tBeforeWheel) && cmPrevented;
+
+      // 8. 测试单独滚轮在题目区切题 (等效 A / D)
+      await new Promise(r => setTimeout(r, 350));
+      const qBeforePaneWheel = window.kyApp.state.currentQIndex;
+      const pane = document.querySelector('.analysis-pane');
+      if (pane) {
+        pane.dispatchEvent(new WheelEvent('wheel', { deltaY: 100, bubbles: true }));
+      }
+      const qAfterPaneWheelDown = window.kyApp.state.currentQIndex;
+      await new Promise(r => setTimeout(r, 350));
+      if (pane) {
+        pane.dispatchEvent(new WheelEvent('wheel', { deltaY: -100, bubbles: true }));
+      }
+      const qAfterPaneWheelUp = window.kyApp.state.currentQIndex;
+
+      const paneWheelWorked = (qAfterPaneWheelDown !== qBeforePaneWheel) && (qAfterPaneWheelUp === qBeforePaneWheel);
+
+      // 9. 测试选项选择后胶囊 UI 显示自适应与题号保留校验
+      window.kyApp.switchQuestion(21);
+      window.kyApp.selectOption(21, 'A');
+      const pill21 = document.querySelector('.q-pill');
+      const qnum21 = pill21 ? pill21.querySelector('.q-num') : null;
+      const choice21 = pill21 ? pill21.querySelector('.q-pill-choice') : null;
+      const qnumRect = qnum21 ? qnum21.getBoundingClientRect() : { left: 0, top: 0, width: 0 };
+      const choiceRect = choice21 ? choice21.getBoundingClientRect() : { left: 0, top: 0, width: 0 };
+      const pill21Width = pill21 ? pill21.offsetWidth : 0;
+      const pill21NoOverflow = pill21 ? (pill21.scrollWidth <= pill21.clientWidth + 2) : false;
+      const pillSideBySide = qnumRect.left < choiceRect.left && Math.abs(qnumRect.top - choiceRect.top) < 6;
+
+      // 切到第 22 题，验证 Q21 作为已选未激活题目时方框依然自适应且题号完整保留
+      window.kyApp.switchQuestion(22);
+      const pill21AfterSwitch = document.querySelector('.q-pill');
+      const qnum21After = pill21AfterSwitch ? pill21AfterSwitch.querySelector('.q-num') : null;
+      const pill21AfterWidth = pill21AfterSwitch ? pill21AfterSwitch.offsetWidth : 0;
+      const pill21AfterNoOverflow = pill21AfterSwitch ? (pill21AfterSwitch.scrollWidth <= pill21AfterSwitch.clientWidth + 2) : false;
+
+      const pillUiOk = pillSideBySide && pill21Width >= 50 && pill21NoOverflow && pill21AfterWidth >= 50 && pill21AfterNoOverflow && !!qnum21After && qnum21After.textContent === '21';
+
+      // 10. 测试做题模式免回车直接暂存选项并完成 5 题整篇作答
       const text = window.kyApp.curDataset.texts[0];
       const questions = text.questions;
-      // 答前 4 题
-      for (let i = 0; i < 4; i++) {
+      // 答前 4 题 (已答 21，再答 22, 23, 24)
+      for (let i = 1; i < 4; i++) {
         window.kyApp.selectOption(questions[i].qIndex, 'A');
       }
       // 4 题未满时按 Enter：不得唤起提交弹窗
@@ -1322,7 +1377,7 @@ async function run() {
       const modal = document.getElementById('confirmModal');
       const modalNotOpenedWhen4 = !modal || modal.style.display === 'none';
 
-      // 答完第 5 题
+      // 答完第 5 题 (25)
       window.kyApp.selectOption(questions[4].qIndex, 'B');
 
       // 满 5 题按 Enter：唤起提交确认弹窗
@@ -1334,9 +1389,10 @@ async function run() {
       const submittedPAns = window.kyApp.state.practiceAnswers[questions[0].qIndex];
       const submitted = submittedPAns && submittedPAns.submitted === true;
 
-      // 8. 检查 H 面板文案是否为「显示译文」
+      // 11. 检查 H 面板文案是否为「显示译文」与「滚轮切题 / 右键+滚轮切文章」
       const helpModal = document.getElementById('engModalHelp');
       const hasShowTransText = helpModal && helpModal.innerHTML.includes('显示译文');
+      const hasWheelText = helpModal && helpModal.innerHTML.includes('滚轮切题 / 右键+滚轮切文章');
 
       return {
         dWorked,
@@ -1345,26 +1401,62 @@ async function run() {
         wWorked,
         qWorked,
         eWorked,
+        rightWheelWorked,
+        paneWheelWorked,
+        qBeforePaneWheel,
+        qAfterPaneWheelDown,
+        qAfterPaneWheelUp,
+        paneFound: !!pane,
+        pillUiOk,
+        pill21Width,
+        pill21AfterWidth,
         modalNotOpenedWhen4,
         modalOpenedWhen5,
         submitted,
-        hasShowTransText
+        hasShowTransText,
+        hasWheelText
       };
     })()
   `);
-  console.log('  英语键盘做题、导航与双重回车交卷检查:', engKeyboardCheck);
+  console.log('  英语键盘做题、滚轮导航与UI自适应检查:', engKeyboardCheck);
   if (!engKeyboardCheck.dWorked || !engKeyboardCheck.aWorked) throw new Error('A/D 切题失败');
   if (!engKeyboardCheck.sWorked || !engKeyboardCheck.wWorked) throw new Error('W/S 切文章失败');
   if (!engKeyboardCheck.qWorked || !engKeyboardCheck.eWorked) throw new Error('Q/E 切年份失败');
+  if (!engKeyboardCheck.rightWheelWorked) throw new Error('右键+滚轮切文章或 contextmenu 拦截失败');
+  if (!engKeyboardCheck.paneWheelWorked) throw new Error('题目区单独滚轮切题失败');
+  if (!engKeyboardCheck.pillUiOk) throw new Error(`题号胶囊UI布局异常: width=${engKeyboardCheck.pill21Width}, afterWidth=${engKeyboardCheck.pill21AfterWidth}`);
   if (!engKeyboardCheck.modalNotOpenedWhen4) throw new Error('未满 5 题误唤起交卷弹窗');
   if (!engKeyboardCheck.modalOpenedWhen5) throw new Error('满 5 题 Enter 未能唤起交卷确认弹窗');
   if (!engKeyboardCheck.submitted) throw new Error('二重 Enter 未能正式提交答卷');
   if (!engKeyboardCheck.hasShowTransText) throw new Error('H 面板文案未包含「显示译文」');
+  if (!engKeyboardCheck.hasWheelText) throw new Error('H 面板文案未包含「滚轮切题 / 右键+滚轮切文章」');
 
   // 8. 切换回 Math 并测试跨章节安全撤销与战报弹窗
   console.log('[9/9] 测试跨章节 Ctrl+Z 撤销与状态回滚...');
   await evaluate(ws, 'switchSubject("math")');
   await sleep(500);
+
+  // 验证从英语切回 Math 后：考点主题完整保留且未被清空，英语 resume 模式未被破坏
+  console.log('  测试从英语切换回数学后考点主题保留与英语做题模式防覆写...');
+  const switchBackCheck = await evaluate(ws, `
+    (() => {
+      const topics = window.TopicManager.getRelatedTopics();
+      const topicCount = Object.keys(topics || {}).length;
+      const engResume = window.StorageEngine ? window.StorageEngine.GlobalStore.get('resume') : null;
+      const engMode = engResume && engResume.english ? engResume.english.mode : null;
+      const engGlobalMode = window.StorageEngine ? window.StorageEngine.GlobalStore.get('english_mode') : null;
+      return {
+        hasTopics: topicCount > 0,
+        topicCount,
+        engMode,
+        engGlobalMode,
+        modePreserved: engMode === 'practice' || engGlobalMode === 'practice'
+      };
+    })()
+  `);
+  console.log('  切回数学后考点与英语模式检查:', switchBackCheck);
+  if (!switchBackCheck.hasTopics) throw new Error('从英语切回数学后考点主题丢失变空');
+  if (!switchBackCheck.modePreserved) throw new Error('从英语切回数学后英语做题模式丢失');
 
   // 测试错题本打开与 setPanelTitle 标题栏恢复
   console.log('  测试错题本打开、标题渲染与切科目安全...');
