@@ -62,3 +62,7 @@
 	path = 题库/kaoyan-ecdict-data
 	url = https://github.com/Eternity-burial/kaoyan-ecdict-data.git
 	branch = main
+[submodule "题库/kaoyan-existing-data"]
+	path = 题库/kaoyan-existing-data
+	url = https://github.com/Eternity-burial/kaoyan-existing-data.git
+	branch = main
