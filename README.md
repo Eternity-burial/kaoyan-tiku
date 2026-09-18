@@ -253,7 +253,7 @@ node scripts/validate_english_render.js
 ### 1. 完整克隆（包含所有题目图片）
 ```bash
 # 克隆主仓库并递归初始化所有子模块
-git clone --recurse-submodules https://github.com/Eternity-burial/shu1-tiku.git
+git clone --recurse-submodules https://github.com/Eternity-burial/kaoyan-tiku.git
 
 # 或者在已克隆的代码仓库中一键拉取全部书籍图片：
 python scripts/sync_submodules.py pull
