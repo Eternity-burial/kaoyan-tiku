@@ -6,9 +6,13 @@ desktop.ini
 .vscode/
 .idea/
 *.bak
+*.bak_*
+*.pre_semantic_backup_*
 *计划*.md
 *审查*.md
-scripts/
+scripts/*
+!scripts/migrate_to_submodules.py
+!scripts/sync_submodules.py
 node_modules/
 package.json
 package-lock.json
@@ -22,4 +26,9 @@ data/tokens/
 *.key
 *.pem
 *.env*
+images/
+scratch/
+tools/
+rebuilt_data/
+data/
 

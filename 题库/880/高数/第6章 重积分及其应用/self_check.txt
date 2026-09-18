@@ -1,9 +1,0 @@
-Chapter 06 重积分及其应用
-Assets: 42
-PNGs: 98
-RGB24: PASS
-Width 1536px: PASS
-Question pages P01-P07 only: PASS
-Solution pages P08-P39 only: PASS
-_question_2.png fragments: 0
-Deskew pages: P09, P11, P23, P24, P25, P26, P30, P39

@@ -212,6 +212,7 @@ node scripts/validate_english_render.js
 ```text
 考研题库/
 ├── index.html                      # 主界面入口（多学科工作台布局、模态框、设计令牌）
+├── .gitmodules                     # Git 子模块配置文件（12 本书籍切图独立仓库挂载点）
 ├── css/
 │   ├── styles.css                  # 全局样式（清华紫主调、液体玻璃、KaTeX 数学排版）
 │   └── english.css                 # 考研英语专属样式（分屏阅读器、长难句卡片、生词本）
@@ -222,18 +223,61 @@ node scripts/validate_english_render.js
 │   ├── english_app.js              # 考研英语独立工作流引擎 (双轨渲染器、发音、发泡交互)
 │   ├── markdown_latex.js           # Markdown + KaTeX 专业公式排版引擎
 │   └── annotator.js                # Canvas 矢量原图标记与线框画板
-├── 题库/                           # 核心题目切片与历年真题库
-│   ├── 考研数学/                   # 数学各教材切片题库与原图
-│   ├── 822控制工程基础/            # 822 历年真题与强化题库
-│   └── 英语/                       # 1998~2026 全年份真题 JS 数据集 (data_YYYY.js)
-├── rebuilt_data/                   # 2007~2015 金牌重构源文件与单篇标准化 JSON
-│   ├── single_texts/               # 36 篇独立单篇阅读 JSON 契约
-│   └── data_YYYY.js                # 每年份重构编译结果
-├── scripts/                        # 题库自动化维护、数据归一化与回归审计脚本
-│   ├── normalize_english_data.js   # 英语题库归一化双向同步脚本
-│   └── validate_english_render.js  # 29 年全库自动化回归校验脚本
+├── 题库/                           # 核心题库目录（代码仓库仅保留纯文本真题，大图解耦至子模块）
+│   ├── 880/                        # [Submodule] 李林880 题图资源 (shu1-tiku-assets-880)
+│   ├── 1000题/                     # [Submodule] 张宇1000题 题图资源 (shu1-tiku-assets-1000ti)
+│   ├── 822教材/                    # [Submodule] 822教材 题图资源 (shu1-tiku-assets-822jiaocai)
+│   ├── 基础30讲/                   # [Submodule] 基础30讲 题图资源 (shu1-tiku-assets-jichu30jiang)
+│   ├── 夜雨强化/                   # [Submodule] 夜雨强化 题图资源 (shu1-tiku-assets-yeyuqianghua)
+│   ├── 小题300/                    # [Submodule] 822小题300 题图资源 (shu1-tiku-assets-xiaoti300)
+│   ├── 强化240/                    # [Submodule] 822强化240 题图资源 (shu1-tiku-assets-qianghua240)
+│   ├── 强化36讲/                   # [Submodule] 强化36讲 题图资源 (shu1-tiku-assets-qianghua36jiang)
+│   ├── 李范习题/                   # [Submodule] 李范强化习题 题图资源 (shu1-tiku-assets-lifanxiti)
+│   ├── 李范全书/                   # [Submodule] 李范全书 题图资源 (shu1-tiku-assets-lifanquanshu)
+│   ├── 真题分类/                   # [Submodule] 真题分类 题图资源 (shu1-tiku-assets-zhentifenlei)
+│   ├── 老姚高数/                   # [Submodule] 老姚高数 题图资源 (shu1-tiku-assets-laoyaogaoshu)
+│   └── 英语/                       # [主仓库核心数据] 1998~2026 全年份真题文本与词典缓存
+├── scripts/                        # 题库自动化维护、数据归一化与子模块同步脚本
+│   ├── sync_submodules.py          # 子模块一键按需拉取 / 全量同步工具
+│   └── migrate_to_submodules.py    # 子模块初始化与迁移解耦工具
 ├── kaoyan_tiku_data.json           # 本地核心数据库（做题记录、掌握度、笔记、复习计划）
 └── README.md                       # 项目架构、重构流程与使用说明文档
+```
+
+---
+
+## 📦 题库资源与 Git 子模块 (Submodules) 管理
+
+为保持主代码仓库轻量化（体积从 **1.98 GB 降至 ~15 MB**），题目切图大文件已全部解耦至独立的 Git 子模块中，并支持**按需拉取**。
+
+### 1. 完整克隆（包含所有题目图片）
+```bash
+# 克隆主仓库并递归初始化所有子模块
+git clone --recurse-submodules https://github.com/Eternity-burial/shu1-tiku.git
+
+# 或者在已克隆的代码仓库中一键拉取全部书籍图片：
+python scripts/sync_submodules.py pull
+# 或使用原生 git 命令：
+git submodule update --init --recursive
+```
+
+### 2. 细粒度按需克隆（推荐：节省带宽与磁盘空间）
+若当前仅专注于特定科目或书籍复习，可仅拉取指定书籍的切图：
+```bash
+# 查看本地书籍下载状态
+python scripts/sync_submodules.py status
+
+# 只拉取 880 题库图片（约 700MB，不拉取其他 1.2GB）
+python scripts/sync_submodules.py init 880
+
+# 只拉取 822 控制工程全部教材与习题（约 150MB）
+python scripts/sync_submodules.py init 822教材 小题300 强化240 真题分类
+```
+
+### 3. 子模块更新与远端同步
+```bash
+# 一键同步所有子模块至最新远程 commit
+git submodule update --remote --merge
 ```
 
 ---
