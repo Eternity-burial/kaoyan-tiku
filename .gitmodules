@@ -58,3 +58,7 @@
 	path = 题库/kaoyan-lazynote-data
 	url = https://github.com/Eternity-burial/kaoyan-lazynote-data.git
 	branch = main
+[submodule "题库/kaoyan-ecdict-data"]
+	path = 题库/kaoyan-ecdict-data
+	url = https://github.com/Eternity-burial/kaoyan-ecdict-data.git
+	branch = main
