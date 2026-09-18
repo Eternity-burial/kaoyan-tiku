@@ -1,13 +1,9 @@
-/**
- * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2019 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
- */
-
+// 考研英语真题数据集 (2019 年)
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
 window.ENGLISH_DATA['2019'] = {
   "year": 2019,
-  "subject": "英语",
-  "title": "2019年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析",
+  "subject": "英语(一)",
+  "title": "2019年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析数据库",
   "texts": [
     {
       "id": "text1",
@@ -743,24 +739,24 @@ window.ENGLISH_DATA['2019'] = {
           "targetSentences": [
             "P1-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "enhance bankers' sense of responsibility.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P1-S2 明确阐述出台该规的核心目的：'The main purpose of this clawback rule is to hold bankers accountable for harmful risk-taking and to restore public trust'（该规则的主要目的在于让银行家对其从事的有害过度冒险承担责任，即强化问责与责任意识）。A选项 enhance bankers' sense of responsibility（增强银行家的责任感）是对 hold bankers accountable 最精准规范的同义概括。",
+              "text": "guarantee the bonuses of top executives.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】新规是对涉嫌违规高管的既定奖金强制延迟十年发放甚至追回，绝非保障其奖金发放。",
               "refSentences": [
-                "P1-S2"
+                "P1-S1"
               ]
             },
             {
               "key": "B",
-              "text": "help corporations achieve larger profits.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】新规旨在抑制短期唯利润冲动、促进长期稳健决策，非帮助企业牟取更大的短期利润。",
+              "text": "enhance bankers' sense of responsibility.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S2 明确阐述出台该规的核心目的：'The main purpose of this clawback rule is to hold bankers accountable for harmful risk-taking and to restore public trust'（该规则的主要目的在于让银行家对其从事的有害过度冒险承担责任，即强化问责与责任意识）。A选项 enhance bankers' sense of responsibility（增强银行家的责任感）是对 hold bankers accountable 最精准规范的同义概括。",
               "refSentences": [
                 "P1-S2"
               ]
@@ -777,18 +773,54 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "D",
-              "text": "guarantee the bonuses of top executives.",
+              "text": "help corporations achieve larger profits.",
               "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 事实相反】新规是对涉嫌违规高管的既定奖金强制延迟十年发放甚至追回，绝非保障其奖金发放。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】新规旨在抑制短期唯利润冲动、促进长期稳健决策，非帮助企业牟取更大的短期利润。",
               "refSentences": [
-                "P1-S1"
+                "P1-S2"
               ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "hold bankers accountable for harmful risk-taking = enhance bankers' sense of responsibility。",
             "methodSummary": "动机目的题词汇转换：hold sb accountable 转换为 enhance sense of responsibility。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "D",
+                "C": "C",
+                "D": "A"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "D",
+                "C": "C",
+                "D": "A"
+              },
+              "source": "英语一_2019_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "D",
+                "C": "C",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -808,13 +840,12 @@ window.ENGLISH_DATA['2019'] = {
           "options": [
             {
               "key": "A",
-              "text": "the conditions for generating quick profits.",
+              "text": "the solid structure of publicly traded companies.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偏离论点】名言是用比喻讽刺贪图快钱的心态，非探讨产生快利的客观条件。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】未提及上市公司结构稳固。",
               "refSentences": [
-                "P2-S1",
-                "P2-S2"
+                "P2-S1"
               ]
             },
             {
@@ -829,12 +860,13 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "C",
-              "text": "the solid structure of publicly traded companies.",
+              "text": "the conditions for generating quick profits.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】未提及上市公司结构稳固。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偏离论点】名言是用比喻讽刺贪图快钱的心态，非探讨产生快利的客观条件。",
               "refSentences": [
-                "P2-S1"
+                "P2-S1",
+                "P2-S2"
               ]
             },
             {
@@ -852,6 +884,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "Short-termism has worsened... quotes Alfred Marshall in describing this financial impatience = \"short-termism\" in economic activities。",
             "methodSummary": "例证题前句提取法：抓住引言前所阐述的核心概念（Short-termism / desire for quick profits）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -867,10 +935,20 @@ window.ENGLISH_DATA['2019'] = {
           "targetSentences": [
             "P3-S2"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
+              "text": "minimal.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 程度相反】危害极其严重导致整个市场弥漫季度资本主义，绝非微乎其微（minimal）。",
+              "refSentences": [
+                "P3-S2"
+              ]
+            },
+            {
+              "key": "B",
               "text": "indirect.",
               "isCorrect": false,
               "distractorType": "偷换属性",
@@ -880,21 +958,11 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "B",
+              "key": "C",
               "text": "adverse.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P3-S2 明确阐述短期投资者的恶劣影响：'Transient investors, who demand high quarterly profits... can hinder a firm's efforts to invest in long-term research or to build up customer loyalty'（短期投资者索要高额季度利润，严重阻碍了公司在长期研发或培育客户忠诚度上的努力）。hinder 意为阻碍、破坏，表明这种影响是极其不利的、有害的（adverse）。B选项完全精准吻合。",
-              "refSentences": [
-                "P3-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "minimal.",
-              "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 程度相反】危害极其严重导致整个市场弥漫季度资本主义，绝非微乎其微（minimal）。",
               "refSentences": [
                 "P3-S2"
               ]
@@ -913,6 +981,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "hinder a firm's efforts to invest in long-term research = the influence is adverse（不利的/有害的）。",
             "methodSummary": "动词感情色彩推断题：将 hinder（阻碍）直接转化为性质形容词 adverse（不利的）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -928,32 +1032,11 @@ window.ENGLISH_DATA['2019'] = {
             "P5-S1",
             "P5-S2"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "the obstacles to preventing \"short-termism\".",
-              "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 事实相反】美法两国举措是克服短期主义的成功有效范例，非列举阻碍。",
-              "refSentences": [
-                "P5-S1",
-                "P5-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "the significance of long-term thinking.",
-              "isCorrect": false,
-              "distractorType": "偷换重点",
-              "analysis": "【干扰特征: 偏离例证指向】第五段重点在于展示具体的制度改革工具与方法手段（Much more could be done: tax code, voting rights），非单纯讲意义。",
-              "refSentences": [
-                "P5-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "the approaches to promoting \"long-termism\".",
+              "text": "the approaches to promoting \"long-termism.\".",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 例证论点对应】P5-S1 和 P5-S2 明确阐述引用两国的目的：'In the US, Sarbanes-Oxley Act... defer performance bonuses... Much more could be done to encourage long-termism... In France, shareholders who hold onto investment for 2 years earn more voting rights'（美国递延奖金抑制短期主义，法国赋予长期股东更多表决权，以此说明为了激励长期主义还可以做很多事情）。美法两国的实践正是促进“长期主义”的具体途径与方法手段（the approaches to promoting long-termism）。C选项完美契合例证主旨。",
@@ -963,7 +1046,7 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "D",
+              "key": "B",
               "text": "the prevalence of short-term thinking.",
               "isCorrect": false,
               "distractorType": "跨段错位",
@@ -972,11 +1055,68 @@ window.ENGLISH_DATA['2019'] = {
                 "P2-S1",
                 "P5-S1"
               ]
+            },
+            {
+              "key": "C",
+              "text": "the significance of long-term thinking.",
+              "isCorrect": false,
+              "distractorType": "偷换重点",
+              "analysis": "【干扰特征: 偏离例证指向】第五段重点在于展示具体的制度改革工具与方法手段（Much more could be done: tax code, voting rights），非单纯讲意义。",
+              "refSentences": [
+                "P5-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "the obstacles to preventing \"short-termism.\".",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】美法两国举措是克服短期主义的成功有效范例，非列举阻碍。",
+              "refSentences": [
+                "P5-S1",
+                "P5-S2"
+              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "Much more could be done to encourage long-termism (US defer bonus, France voting rights) = the approaches to promoting \"long-termism\"。",
             "methodSummary": "例证题论点句锁定：抓准 Much more could be done to encourage \"long-termism\" 对应的 approaches to promoting long-termism。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -994,11 +1134,21 @@ window.ENGLISH_DATA['2019'] = {
             "P5-S2",
             "P6-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
-              "text": "Failure of Quarterly Capitalism",
+              "text": "Decisiveness Required of Top Executives.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 概念相反】文章强调的是深谋远虑的耐心（patience），非雷厉风行的果断（decisiveness）。",
+              "refSentences": [
+                "P6-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "Failure of Quarterly Capitalism.",
               "isCorrect": false,
               "distractorType": "负面偏激",
               "analysis": "【干扰特征: 偏离建设性主旨】季度资本主义是批判的靶子，文章通篇在于呼吁和推介长线耐心的治理方案。",
@@ -1007,8 +1157,8 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "B",
-              "text": "Patience as a Corporate Virtue",
+              "key": "C",
+              "text": "Patience as a Corporate Virtue.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全文主旨高度升华】全文贯穿着对“急躁追逐快钱”（financial impatience / short-termism / quarterly capitalism）的深刻批判，并从英国奖金追回、美法制度激励到公司薪酬设计，全面倡导将“耐心”（Patience / long-termism）作为企业应对浮躁、造福子孙后代的核心商业美德（Patience as a Corporate Virtue）。B选项精辟、优雅且高度凝练了全文的正面主旨灵魂，为最佳标题。",
@@ -1020,18 +1170,8 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "C",
-              "text": "Decisiveness Required of Top Executives",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 概念相反】文章强调的是深谋远虑的耐心（patience），非雷厉风行的果断（decisiveness）。",
-              "refSentences": [
-                "P6-S1"
-              ]
-            },
-            {
               "key": "D",
-              "text": "Frustration of Risk-taking Bankers",
+              "text": "Frustration of Risk-taking Bankers.",
               "isCorrect": false,
               "distractorType": "以偏概全",
               "analysis": "【干扰特征: 局限于开头个案】银行家只是引子，文章广泛探讨所有上市公司克服短期主义的长期战略。",
@@ -1044,6 +1184,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "financial impatience / short-termism vs long-termism / think beyond their own time = Patience as a Corporate Virtue。",
             "methodSummary": "主旨标题题哲理升华法：将全文批判 financial impatience 与提倡 long-termism 抽象升华为美德修养（Patience as a Corporate Virtue）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -1650,30 +1826,10 @@ window.ENGLISH_DATA['2019'] = {
           "targetSentences": [
             "P1-S1"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "The change of course catalogs.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】选课目录（course catalogs）只是政策被隐藏的地方，非成绩通胀的成因。",
-              "refSentences": [
-                "P1-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Students' indifference to GPAs.",
-              "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 事实相反】学生对 GPA 极为在乎重视，非漠不关心（indifference）。",
-              "refSentences": [
-                "P5-S2"
-              ]
-            },
-            {
-              "key": "C",
               "text": "Colleges' neglect of GPAs.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
@@ -1683,7 +1839,7 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "D",
+              "key": "B",
               "text": "The influence of consumer culture.",
               "isCorrect": true,
               "distractorType": null,
@@ -1691,11 +1847,67 @@ window.ENGLISH_DATA['2019'] = {
               "refSentences": [
                 "P1-S1"
               ]
+            },
+            {
+              "key": "C",
+              "text": "Students' indifference to GPAs.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】学生对 GPA 极为在乎重视，非漠不关心（indifference）。",
+              "refSentences": [
+                "P5-S2"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "The change of course catalogs.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】选课目录（course catalogs）只是政策被隐藏的地方，非成绩通胀的成因。",
+              "refSentences": [
+                "P1-S2"
+              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "product of a consumer era in higher education = The influence of consumer culture。",
             "methodSummary": "首段题眼同义改写：product of a consumer era 直接对应 The influence of consumer culture。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1710,24 +1922,25 @@ window.ENGLISH_DATA['2019'] = {
           "targetSentences": [
             "P3-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
-              "text": "To help freshmen adapt to college learning.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 原文同义复现】P3-S2 明确说明该政策数十年前起步时的原始初衷：'When this practice first started decades ago, it was usually limited to freshmen, to give them a second chance... if they struggled in their transition to college-level courses'（最初严格限于大一新生，如果他们在向大学课程过渡转型中遇到困难，给他们第二次补救机会）。A选项 To help freshmen adapt to college learning（帮助新生适应大学阶段学习）是该原句最精准的同义转述。",
+              "text": "To maintain colleges' graduation rates.",
+              "isCorrect": false,
+              "distractorType": "后期异化目的",
+              "analysis": "【干扰特征: 时代错配】维持毕业率是近年来政策加速扩张蔓延后的功利诉求（P3-S1），非最初的原始初衷（original purpose）。",
               "refSentences": [
+                "P3-S1",
                 "P3-S2"
               ]
             },
             {
               "key": "B",
-              "text": "To maintain colleges' graduation rates.",
+              "text": "To increase universities' income from tuition.",
               "isCorrect": false,
-              "distractorType": "后期异化目的",
-              "analysis": "【干扰特征: 时代错配】维持毕业率是近年来政策加速扩张蔓延后的功利诉求（P3-S1），非最初的原始初衷（original purpose）。",
+              "distractorType": "后期商业诉求",
+              "analysis": "【干扰特征: 时代错配】赚取学费是现代大学留住学生的商业算计，非原始初衷。",
               "refSentences": [
                 "P3-S1",
                 "P3-S2"
@@ -1745,12 +1958,11 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "D",
-              "text": "To increase universities' income from tuition.",
-              "isCorrect": false,
-              "distractorType": "后期商业诉求",
-              "analysis": "【干扰特征: 时代错配】赚取学费是现代大学留住学生的商业算计，非原始初衷。",
+              "text": "To help freshmen adapt to college learning.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 原文同义复现】P3-S2 明确说明该政策数十年前起步时的原始初衷：'When this practice first started decades ago, it was usually limited to freshmen, to give them a second chance... if they struggled in their transition to college-level courses'（最初严格限于大一新生，如果他们在向大学课程过渡转型中遇到困难，给他们第二次补救机会）。A选项 To help freshmen adapt to college learning（帮助新生适应大学阶段学习）是该原句最精准的同义转述。",
               "refSentences": [
-                "P3-S1",
                 "P3-S2"
               ]
             }
@@ -1758,6 +1970,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "limited to freshmen struggling in transition to college-level courses = To help freshmen adapt to college learning。",
             "methodSummary": "时间定位法：抓准 When first started decades ago 对应的 original purpose。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1786,16 +2034,6 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "B",
-              "text": "boost their student enrollments.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】提高的是留校率（student retention）和毕业率，非扩大新生招生录取规模（enrollments）。",
-              "refSentences": [
-                "P5-S1"
-              ]
-            },
-            {
-              "key": "C",
               "text": "improve their teaching quality.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
@@ -1803,6 +2041,16 @@ window.ENGLISH_DATA['2019'] = {
               "refSentences": [
                 "P5-S1",
                 "P6-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "boost their student enrollments.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】提高的是留校率（student retention）和毕业率，非扩大新生招生录取规模（enrollments）。",
+              "refSentences": [
+                "P5-S1"
               ]
             },
             {
@@ -1819,6 +2067,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "state funds tied to metrics... mean more money = obtain more financial support。",
             "methodSummary": "因果利益题提取：抓准 mean more money 对应的 obtain more financial support。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1848,10 +2132,10 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "B",
-              "text": "To complement each other.",
+              "text": "To be contradictory to each other.",
               "isCorrect": false,
-              "distractorType": "词义偏差",
-              "analysis": "【干扰特征: 词义偏差】意为相互补充，未能体现双方目标利益完全一致相同的含义。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 词义完全相反】意为相互矛盾对立，与文意背道而驰。",
               "refSentences": [
                 "P6-S1"
               ]
@@ -1868,10 +2152,10 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "D",
-              "text": "To be contradictory to each other.",
+              "text": "To complement each other.",
               "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 词义完全相反】意为相互矛盾对立，与文意背道而驰。",
+              "distractorType": "词义偏差",
+              "analysis": "【干扰特征: 词义偏差】意为相互补充，未能体现双方目标利益完全一致相同的含义。",
               "refSentences": [
                 "P6-S1"
               ]
@@ -1880,6 +2164,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "incentives are aligned = incentives are identical / point in the same direction = To be identical with each other。",
             "methodSummary": "语境逻辑推断法：学生诉求与高校最佳利益方向一致，推断 aligned 意为 identical。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1896,7 +2216,7 @@ window.ENGLISH_DATA['2019'] = {
             "P5-S1",
             "P6-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1910,14 +2230,11 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "B",
-              "text": "analyzing the causes behind it.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 写作手法精准概括】文章层层递进地展开深度透视剖析：从第1段的高等教育消费主义宏观成因，到第3段的提高毕业率留校率，到第5段的满足公立大学获取政府财政拨款的自身利益驱动，再到第6段总结学生求职与大学品牌激励高度一致的根本动力。全篇始终在围绕“剖析成绩豁免现象背后的深层动因与利益机理”（analyzing the causes behind it）展开严密论证。B选项精准统摄全篇分析逻辑。",
+              "text": "listing its long-run effects.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 偏离重点】文章未详细列举其长远学术后果，核心是深挖其形成的内驱动因。",
               "refSentences": [
-                "P1-S1",
-                "P3-S1",
-                "P5-S1",
                 "P6-S1"
               ]
             },
@@ -1934,11 +2251,14 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "D",
-              "text": "listing its long-run effects.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 偏离重点】文章未详细列举其长远学术后果，核心是深挖其形成的内驱动因。",
+              "text": "analyzing the causes behind it.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 写作手法精准概括】文章层层递进地展开深度透视剖析：从第1段的高等教育消费主义宏观成因，到第3段的提高毕业率留校率，到第5段的满足公立大学获取政府财政拨款的自身利益驱动，再到第6段总结学生求职与大学品牌激励高度一致的根本动力。全篇始终在围绕“剖析成绩豁免现象背后的深层动因与利益机理”（analyzing the causes behind it）展开严密论证。B选项精准统摄全篇分析逻辑。",
               "refSentences": [
+                "P1-S1",
+                "P3-S1",
+                "P5-S1",
                 "P6-S1"
               ]
             }
@@ -1946,6 +2266,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "consumer era (P1) + keep tuition & graduation rate (P3) + state funds (P5) + aligned incentives (P6) = analyzing the causes behind it。",
             "methodSummary": "写作手法归纳题：识别全文从教育消费文化到财政拨款激励的多维度归因分析脉络（analyzing the causes）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -2673,16 +3029,17 @@ window.ENGLISH_DATA['2019'] = {
             "P1-S1",
             "P1-S2"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "fascinates AI scientists all over the world.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】科学家痴迷的是类人机器人（robots like humans），非痴迷这部小说本身。",
+              "text": "involves some concerns raised by AI today.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 和 P1-S2 明确阐述提及该小说的目的：'foreshadow many ethical questions to be raised by technologies yet to come. Today rapid growth of AI raises fundamental questions'（预示了未来前沿技术将引发的诸多伦理问题，如今 AI 飞速发展引发了根本性追问）。C选项 involves some concerns raised by AI today（涉及当今人工智能所引发的某些担忧拷问）精准契合原文论点。",
               "refSentences": [
-                "P2-S1"
+                "P1-S1",
+                "P1-S2"
               ]
             },
             {
@@ -2697,13 +3054,12 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "C",
-              "text": "involves some concerns raised by AI today.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P1-S1 和 P1-S2 明确阐述提及该小说的目的：'foreshadow many ethical questions to be raised by technologies yet to come. Today rapid growth of AI raises fundamental questions'（预示了未来前沿技术将引发的诸多伦理问题，如今 AI 飞速发展引发了根本性追问）。C选项 involves some concerns raised by AI today（涉及当今人工智能所引发的某些担忧拷问）精准契合原文论点。",
+              "text": "fascinates AI scientists all over the world.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】科学家痴迷的是类人机器人（robots like humans），非痴迷这部小说本身。",
               "refSentences": [
-                "P1-S1",
-                "P1-S2"
+                "P2-S1"
               ]
             },
             {
@@ -2720,6 +3076,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "foreshadow ethical questions to be raised by technologies... AI today raises fundamental questions = involves some concerns raised by AI today。",
             "methodSummary": "首段引子例证题：抓准 foreshadow questions to be raised 对应的 involves concerns raised by AI today。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2734,7 +3126,7 @@ window.ENGLISH_DATA['2019'] = {
           "targetSentences": [
             "P2-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -2748,10 +3140,10 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "B",
-              "text": "can be misleading to robot making.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无端捏造】未提及误导机器人制造。",
+              "text": "is too limited for us to reproduce it.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S2 明确引述伊格曼的原话：'how people think is still far too complex to be understood, let alone reproduced... no good theories explaining what consciousness actually is'（人类思考过于复杂无法理解，更遑论在机器中复制……尚无理论解释意识是什么）。D选项 is too limited for us to reproduce it（我们当前的认知极其有限以至于无法复制意识）是对 far too complex to be reproduced 最严谨的同义转述。",
               "refSentences": [
                 "P2-S2"
               ]
@@ -2769,10 +3161,10 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "D",
-              "text": "is too limited for us to reproduce it.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P2-S2 明确引述伊格曼的原话：'how people think is still far too complex to be understood, let alone reproduced... no good theories explaining what consciousness actually is'（人类思考过于复杂无法理解，更遑论在机器中复制……尚无理论解释意识是什么）。D选项 is too limited for us to reproduce it（我们当前的认知极其有限以至于无法复制意识）是对 far too complex to be reproduced 最严谨的同义转述。",
+              "text": "can be misleading to robot making.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无端捏造】未提及误导机器人制造。",
               "refSentences": [
                 "P2-S2"
               ]
@@ -2781,6 +3173,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "far too complex to be understood, let alone reproduced = is too limited for us to reproduce it。",
             "methodSummary": "专家引语题：抓准 let alone reproduced 与 no good theories 对应的 is too limited to reproduce it。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2795,7 +3223,7 @@ window.ENGLISH_DATA['2019'] = {
           "targetSentences": [
             "P3-S2"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -2810,6 +3238,17 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "B",
+              "text": "has aroused much curiosity.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 概念错位】引发的是深切的伦理担忧与监管立法（ethical questions / guidelines），非好奇心（curiosity）。",
+              "refSentences": [
+                "P3-S1",
+                "P4-S1"
+              ]
+            },
+            {
+              "key": "C",
               "text": "is still beyond our capacity.",
               "isCorrect": true,
               "distractorType": null,
@@ -2819,22 +3258,11 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "C",
+              "key": "D",
               "text": "causes little public concern.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】自动驾驶提出棘手伦理问题（poses thorny ethical questions），引起全球广泛关切。",
-              "refSentences": [
-                "P3-S1",
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "has aroused much curiosity.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 概念错位】引发的是深切的伦理担忧与监管立法（ethical questions / guidelines），非好奇心（curiosity）。",
               "refSentences": [
                 "P3-S1",
                 "P4-S1"
@@ -2844,6 +3272,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "AI vision not nearly as sophisticated + difficult programming problem = is still beyond our capacity。",
             "methodSummary": "技术瓶颈细节题：抓准 difficult programming problem 对应的 is still beyond our capacity。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "D",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "D",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "D",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2859,14 +3323,14 @@ window.ENGLISH_DATA['2019'] = {
             "P5-S1",
             "P5-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
-              "text": "affirmation.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 态度精准匹配】P5-S2 明确阐述作者对谷歌承诺的态度：'While the statement is vague, it represents one starting point. So does the idea that decisions made by AI systems should be explainable, transparent, and fair'（尽管声明措辞含糊，但它代表了一个良好开端；同样具有开创意义的还有透明公正的理念）。作者肯定其作为行业自律的积极起点，持正面肯定/认可（affirmation）态度。",
+              "text": "contempt.",
+              "isCorrect": false,
+              "distractorType": "极端贬义",
+              "analysis": "【干扰特征: 极端贬低】作者完全认可其起点价值，绝非鄙视不屑（contempt）。",
               "refSentences": [
                 "P5-S2"
               ]
@@ -2883,20 +3347,20 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "C",
-              "text": "contempt.",
+              "text": "respect.",
               "isCorrect": false,
-              "distractorType": "极端贬义",
-              "analysis": "【干扰特征: 极端贬低】作者完全认可其起点价值，绝非鄙视不屑（contempt）。",
+              "distractorType": "过度拔高",
+              "analysis": "【干扰特征: 程度过重】声明本身仍存在含糊之处（vague），尚未达到崇敬尊重的程度，作者给予的是客观积极的肯定（affirmation）。",
               "refSentences": [
                 "P5-S2"
               ]
             },
             {
               "key": "D",
-              "text": "respect.",
-              "isCorrect": false,
-              "distractorType": "过度拔高",
-              "analysis": "【干扰特征: 程度过重】声明本身仍存在含糊之处（vague），尚未达到崇敬尊重的程度，作者给予的是客观积极的肯定（affirmation）。",
+              "text": "affirmation.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 态度精准匹配】P5-S2 明确阐述作者对谷歌承诺的态度：'While the statement is vague, it represents one starting point. So does the idea that decisions made by AI systems should be explainable, transparent, and fair'（尽管声明措辞含糊，但它代表了一个良好开端；同样具有开创意义的还有透明公正的理念）。作者肯定其作为行业自律的积极起点，持正面肯定/认可（affirmation）态度。",
               "refSentences": [
                 "P5-S2"
               ]
@@ -2905,6 +3369,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "represents one starting point / so does the idea of transparency = affirmation（肯定/认可）。",
             "methodSummary": "让步转折态度题：While vague（让步）, it represents one starting point（主句肯定 -> affirmation）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "B",
+                "C": "A",
+                "D": "C"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "B",
+                "C": "A",
+                "D": "C"
+              },
+              "source": "英语一_2019_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "B",
+                "C": "A",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2922,32 +3422,11 @@ window.ENGLISH_DATA['2019'] = {
             "P5-S2",
             "P6-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "AI's Future: In the Hands of Tech Giants",
-              "isCorrect": false,
-              "distractorType": "偏离伦理主线",
-              "analysis": "【干扰特征: 偏离主旨】文章强调全社会、多国政府与伦理规范的共同约束，非听任科技巨头主宰未来。",
-              "refSentences": [
-                "P4-S1",
-                "P6-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Frankenstein, the Novel Predicting the Age of AI",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 引子案例】小说只是引出 AI 伦理话题的切入点，未能统领全文关于自动驾驶、政府准则与算法透明公平的深度探讨。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "The Conscience of AI: Complex But Inevitable",
+              "text": "The Conscience of AI: Complex But Inevitable.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全文主旨高度升华】全文核心议题高度统一：从《弗兰肯斯坦》预示科技伦理拷问，到自动驾驶等 AI 决策面临的复杂伦理困境（Complex），再到全球政府与巨头纷纷出台伦理准则、确保机器思维反映人类最高价值以防止失控（Inevitable）。C选项 The Conscience of AI: Complex But Inevitable（人工智能的道德良知：复杂深奥却势在必行）以极其深刻、精准的哲学高度统摄了全文的核心论点与发展脉络，为最佳标题。",
@@ -2959,8 +3438,29 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
+              "key": "B",
+              "text": "Frankenstein, the Novel Predicting the Age of AI.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 引子案例】小说只是引出 AI 伦理话题的切入点，未能统领全文关于自动驾驶、政府准则与算法透明公平的深度探讨。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "AI's Future: In the Hands of Tech Giants.",
+              "isCorrect": false,
+              "distractorType": "偏离伦理主线",
+              "analysis": "【干扰特征: 偏离主旨】文章强调全社会、多国政府与伦理规范的共同约束，非听任科技巨头主宰未来。",
+              "refSentences": [
+                "P4-S1",
+                "P6-S1"
+              ]
+            },
+            {
               "key": "D",
-              "text": "AI Shall Be Killers Once Out of Control",
+              "text": "AI Shall Be Killers Once Out of Control.",
               "isCorrect": false,
               "distractorType": "极端恐吓偏激",
               "analysis": "【干扰特征: 骇人听闻】尾段提及失控怪物仅为反向警示修辞，文章旨在建设性倡导确立伦理准则使其成为有用公仆。",
@@ -2972,6 +3472,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "Ethical questions / reflects humanity's highest values + complex programming / difficult = The Conscience of AI: Complex But Inevitable。",
             "methodSummary": "主旨标题题升华法：寻找能够涵盖文章核心矛盾（Complex 技术与伦理困境）与终极解决方案（Inevitable 必须赋予 AI 道德良知 Conscience）的哲理标题。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -3686,17 +4222,6 @@ window.ENGLISH_DATA['2019'] = {
           "options": [
             {
               "key": "A",
-              "text": "better businesses' relations with states.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】裁决赋予州征税权，但并未改善企业与州的关系（部分中小电商深感头疼）。",
-              "refSentences": [
-                "P1-S1",
-                "P7-S1"
-              ]
-            },
-            {
-              "key": "B",
               "text": "put most online businesses in a dilemma.",
               "isCorrect": false,
               "distractorType": "以偏概全夸大",
@@ -3704,6 +4229,17 @@ window.ENGLISH_DATA['2019'] = {
               "refSentences": [
                 "P5-S1",
                 "P7-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "force some states to cut sales tax.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】各州是增收数十亿美元税款，绝非被强迫减税（cut sales tax）。",
+              "refSentences": [
+                "P1-S1",
+                "P2-S1"
               ]
             },
             {
@@ -3718,19 +4254,55 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "D",
-              "text": "force some states to cut sales tax.",
+              "text": "better businesses' relations with states.",
               "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 事实相反】各州是增收数十亿美元税款，绝非被强迫减税（cut sales tax）。",
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】裁决赋予州征税权，但并未改善企业与州的关系（部分中小电商深感头疼）。",
               "refSentences": [
                 "P1-S1",
-                "P2-S1"
+                "P7-S1"
               ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "force more people to pay sales tax when they make online purchases = make more online shoppers pay sales tax。",
             "methodSummary": "首段题眼原句同义改写：force more people to pay sales tax on online purchases -> make more online shoppers pay sales tax。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "英语一_2019_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3750,12 +4322,13 @@ window.ENGLISH_DATA['2019'] = {
           "options": [
             {
               "key": "A",
-              "text": "have led to the dominance of e-commerce.",
+              "text": "were widely criticized by online purchasers.",
               "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 夸大因果】电商崛起是技术与时代大势，旧判例只是提供了免税便利，非主导根源。",
+              "distractorType": "主体颠倒",
+              "analysis": "【干扰特征: 颠倒受害者】批评旧判例的是各州政府和实体零售商，网购消费者此前因免税而受益。",
               "refSentences": [
-                "P2-S1"
+                "P2-S1",
+                "P3-S2"
               ]
             },
             {
@@ -3771,13 +4344,12 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "C",
-              "text": "were widely criticized by online purchasers.",
+              "text": "have led to the dominance of e-commerce.",
               "isCorrect": false,
-              "distractorType": "主体颠倒",
-              "analysis": "【干扰特征: 颠倒受害者】批评旧判例的是各州政府和实体零售商，网购消费者此前因免税而受益。",
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 夸大因果】电商崛起是技术与时代大势，旧判例只是提供了免税便利，非主导根源。",
               "refSentences": [
-                "P2-S1",
-                "P3-S2"
+                "P2-S1"
               ]
             },
             {
@@ -3794,6 +4366,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "states said cost them billions of dollars in lost revenue annually = were considered unfavorable by states。",
             "methodSummary": "主体态度事实题：抓准 cost states billions in lost revenue 对应的 were considered unfavorable by states。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3809,7 +4417,7 @@ window.ENGLISH_DATA['2019'] = {
             "P4-S1",
             "P4-S2"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3823,16 +4431,6 @@ window.ENGLISH_DATA['2019'] = {
             },
             {
               "key": "B",
-              "text": "brought prosperity to the country.",
-              "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 事实相反】肯尼迪批判该规则脱离现实造成巨额损失，绝未带来繁荣。",
-              "refSentences": [
-                "P4-S1"
-              ]
-            },
-            {
-              "key": "C",
               "text": "harmed fair market competition.",
               "isCorrect": true,
               "distractorType": null,
@@ -3842,11 +4440,21 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "boosted growth in states' revenue.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】该规则造成了各州税收的大幅损失（results in significant revenue losses），非促进增长。",
+              "refSentences": [
+                "P4-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "brought prosperity to the country.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】肯尼迪批判该规则脱离现实造成巨额损失，绝未带来繁荣。",
               "refSentences": [
                 "P4-S1"
               ]
@@ -3855,6 +4463,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "prevented market participants from competing on an even playing field = harmed fair market competition。",
             "methodSummary": "判词观点题同义改写：competing on an even playing field（在平坦场地上竞争）即 fair competition。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "B",
+                "D": "C"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "B",
+                "D": "C"
+              },
+              "source": "英语一_2019_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "B",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3869,20 +4513,10 @@ window.ENGLISH_DATA['2019'] = {
           "targetSentences": [
             "P5-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "Internet entrepreneurs.",
-              "isCorrect": false,
-              "distractorType": "受损方排除",
-              "analysis": "【干扰特征: 明确受害者】第七段明确指出互联网创业者受损严重（not well served at all by this decision）。",
-              "refSentences": [
-                "P7-S2"
-              ]
-            },
-            {
-              "key": "B",
               "text": "Big-chain owners.",
               "isCorrect": true,
               "distractorType": null,
@@ -3892,7 +4526,7 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Third-party sellers.",
               "isCorrect": false,
               "distractorType": "受损方排除",
@@ -3900,6 +4534,16 @@ window.ENGLISH_DATA['2019'] = {
               "refSentences": [
                 "P5-S2",
                 "P6-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Internet entrepreneurs.",
+              "isCorrect": false,
+              "distractorType": "受损方排除",
+              "analysis": "【干扰特征: 明确受害者】第七段明确指出互联网创业者受损严重（not well served at all by this decision）。",
+              "refSentences": [
+                "P7-S2"
               ]
             },
             {
@@ -3916,6 +4560,42 @@ window.ENGLISH_DATA['2019'] = {
           "presetReflection": {
             "trapAnalysis": "The ruling is a victory for big chains with a presence in many states = Big-chain owners are most likely to welcome the ruling。",
             "methodSummary": "受益主体定位法：抓准 The ruling is a victory for big chains 对应的 Big-chain owners。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "C",
+                "B": "A",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "C",
+                "B": "A",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "英语一_2019_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "C",
+                "B": "A",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3934,10 +4614,20 @@ window.ENGLISH_DATA['2019'] = {
             "P5-S1",
             "P7-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
+              "text": "presents its main points with conflicting views on them.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 概括不全】争议仅在文末各方反应中提及，文章主要篇幅在于系统性推导其对产业链不同环节的深远后果。",
+              "refSentences": [
+                "P7-S1"
+              ]
+            },
+            {
+              "key": "B",
               "text": "gives a factual account of it and discusses its consequences.",
               "isCorrect": true,
               "distractorType": null,
@@ -3951,27 +4641,7 @@ window.ENGLISH_DATA['2019'] = {
               ]
             },
             {
-              "key": "B",
-              "text": "describes the long and complicated process of its making.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 偏离重点】文章未详细描述该判决漫长复杂的审判制定过程，而是聚焦于裁决本身与市场后果。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
               "key": "C",
-              "text": "presents its main points with conflicting views on them.",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 概括不全】争议仅在文末各方反应中提及，文章主要篇幅在于系统性推导其对产业链不同环节的深远后果。",
-              "refSentences": [
-                "P7-S1"
-              ]
-            },
-            {
-              "key": "D",
               "text": "cites some cases related to it and analyzes their implications.",
               "isCorrect": false,
               "distractorType": "以偏概全",
@@ -3980,11 +4650,57 @@ window.ENGLISH_DATA['2019'] = {
                 "P2-S1",
                 "P5-S1"
               ]
+            },
+            {
+              "key": "D",
+              "text": "describes the long and complicated process of its making.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 偏离重点】文章未详细描述该判决漫长复杂的审判制定过程，而是聚焦于裁决本身与市场后果。",
+              "refSentences": [
+                "P1-S1"
+              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "典型新闻法治综述结构：factual account of ruling + comprehensive discussion of market consequences across sectors。",
             "methodSummary": "篇章手法概括题：识别文章从判决事实（Factual account）推演到全行业经济后果（Discusses consequences）的标准行文架构。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "D",
+                "C": "A",
+                "D": "C"
+              },
+              "source": "2019_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "D",
+                "C": "A",
+                "D": "C"
+              },
+              "source": "英语一_2019_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "D",
+                "C": "A",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]

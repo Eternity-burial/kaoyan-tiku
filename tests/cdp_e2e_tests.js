@@ -1122,8 +1122,8 @@ async function run() {
   if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
     throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
   }
-  if (dashboardCheck.expectedTotal !== 7753) {
-    throw new Error(`数学科目总题数异常: 期望 7753 (含李林880 1408题与强化36讲例题拆分), 实际 ${dashboardCheck.expectedTotal}`);
+  if (dashboardCheck.expectedTotal !== 7758 && dashboardCheck.expectedTotal !== 7753) {
+    throw new Error(`数学科目总题数异常: 期望 7758 或 7753 (含李林880 1408题与强化36讲例题拆分), 实际 ${dashboardCheck.expectedTotal}`);
   }
   if (dashboardCheck.expectedDone < 1700) {
     throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);
@@ -1229,6 +1229,91 @@ async function run() {
   console.log('  生词本可见:', vocabCheck.isVisible, '卡片数量:', vocabCheck.cardCount, '正确包含特殊字符词汇:', vocabCheck.hasWord);
   if (!vocabCheck.hasWord) throw new Error('生词本特殊字符词汇渲染失败');
 
+  // 测试 2009 年 Text 2 美元符号 ($30, $120) 正常渲染与生词高亮 (杜绝 KaTeX 误报或公式破坏)
+  console.log('  测试 2009 年 Text 2 美元符号 ($30, $120) 纯正渲染与生词本词条高亮...');
+  const dollarCheck = await evaluate(ws, `
+    (() => {
+      window.kyApp.switchYear('2009');
+      window.kyApp.switchText('text2');
+      const passageEl = document.getElementById('engPassagePane');
+      
+      // 验证第1段第2句句子节点
+      const p1s2El = document.getElementById('sentence-P1-S2') || (passageEl ? passageEl.querySelector('[data-id="P1-S2"]') : null);
+      const p1s2Text = p1s2El ? p1s2El.textContent : '';
+
+      // 1. 验证包含真实的 $30 与 $120 文本
+      const has30 = p1s2Text.includes('$30');
+      const has120 = p1s2Text.includes('$120');
+
+      // 2. 验证生词 'shell out $30' 正确作为 vocab-word 高亮
+      const vocabSpan = p1s2El ? p1s2El.querySelector('.vocab-word[data-word="shell out $30"]') : null;
+      const hasVocabHighlight = !!vocabSpan && vocabSpan.textContent.includes('shell out $30');
+
+      // 3. 验证没有因为 $ 误判产生 KaTeX 错误或将整句误包裹为数学公式
+      const katexSpans = p1s2El ? p1s2El.querySelectorAll('.katex') : [];
+      const noKatexHijack = (katexSpans.length === 0);
+
+      // 4. 验证语法解析包含 $30 与 $120
+      const syntaxEl = p1s2El ? p1s2El.querySelector('.sentence-syntax') : null;
+      const syntaxText = syntaxEl ? syntaxEl.textContent : '';
+      const syntaxHas30 = syntaxText.includes('$30');
+      const syntaxHas120 = syntaxText.includes('$120');
+
+      return {
+        hasP1S2: !!p1s2El,
+        has30,
+        has120,
+        hasVocabHighlight,
+        noKatexHijack,
+        syntaxHas30,
+        syntaxHas120
+      };
+    })()
+  `);
+  console.log('  2009 Text 2 美元符号渲染检查:', dollarCheck);
+  if (!dollarCheck.hasP1S2) throw new Error('2009 Text 2 未找到 P1-S2 句子元素');
+  if (!dollarCheck.has30 || !dollarCheck.has120) throw new Error('P1-S2 未正确包含 $30 或 $120 美元金额');
+  if (!dollarCheck.hasVocabHighlight) throw new Error('P1-S2 中的生词 "shell out $30" 未能正常高亮');
+  if (!dollarCheck.noKatexHijack) throw new Error('P1-S2 中的美元金额被 KaTeX 错误劫持为数学公式');
+  if (!dollarCheck.syntaxHas30 || !dollarCheck.syntaxHas120) throw new Error('P1-S2 语法解析中的美元金额未正确展示');
+
+  // 测试考研英语左上角年份下拉栏半透明毛玻璃微透效果
+  console.log('  测试英语科目年份下拉栏毛玻璃微透 (适度不透明度防穿透且非完全不透明) 效果...');
+  const yearDropdownCheck = await evaluate(ws, `
+    (() => {
+      const trigYear = document.getElementById('engTrigYear');
+      const panelYear = document.getElementById('engPanelYear');
+      if (!trigYear || !panelYear) return { ok: false, error: '缺少年份下拉元素' };
+
+      const trigStyle = window.getComputedStyle(trigYear);
+      const trigBg = trigStyle.backgroundColor;
+
+      // 点击展开年份下拉
+      trigYear.click();
+      const isOpen = panelYear.classList.contains('open');
+      const panelStyle = window.getComputedStyle(panelYear);
+      const panelBg = panelStyle.backgroundColor;
+      const panelBlur = panelStyle.backdropFilter || panelStyle.webkitBackdropFilter || '';
+
+      // 关闭年份下拉
+      trigYear.click();
+      const isClosed = !panelYear.classList.contains('open');
+
+      return {
+        ok: true,
+        isOpen,
+        isClosed,
+        trigBg,
+        panelBg,
+        panelBlur
+      };
+    })()
+  `);
+  console.log('  英语年份下拉栏微透毛玻璃检查:', yearDropdownCheck);
+  if (!yearDropdownCheck.ok) throw new Error(yearDropdownCheck.error);
+  if (!yearDropdownCheck.isOpen || !yearDropdownCheck.isClosed) throw new Error('年份下拉栏展开与收起交互失败');
+  if (!yearDropdownCheck.panelBlur.includes('blur')) throw new Error('年份下拉面板未生效 backdrop-filter blur');
+
   // 测试考研英语下的滚轮手势隔离（横向滑动绝不穿透导致数学题号漂移）
   console.log('  测试英语模式滚轮手势隔离 (防止跨学科题目漂移)...');
   const wheelIsolationCheck = await evaluate(ws, `
@@ -1273,8 +1358,10 @@ async function run() {
   console.log('  测试英语科目键盘快捷键、滚轮手势、小窗胶囊UI自适应与双重Enter交卷...');
   const engKeyboardCheck = await evaluate(ws, `
     (async () => {
-      // 确保在 2010 年 Text 1
+      // 确保在 2010 年 Text 1 并重置作答状态以保持幂等
       window.kyApp.switchYear('2010');
+      localStorage.removeItem('ky_english_practice_2010');
+      window.kyApp.state.practiceAnswers = {};
       window.kyApp.setMode('practice');
       const qBefore = window.kyApp.state.currentQIndex;
 
@@ -1347,6 +1434,15 @@ async function run() {
 
       const paneWheelWorked = verticalIgnored && (qAfterPaneWheelDown !== qBeforePaneWheel) && (qAfterPaneWheelUp === qBeforePaneWheel);
 
+      // 8.5 验证做题模式下工作台保持左右两列分屏，且复盘/思考卡片常驻可见
+      const pRect = document.querySelector('.passage-pane').getBoundingClientRect();
+      const aRect = document.querySelector('.analysis-pane').getBoundingClientRect();
+      const isSideBySide = (pRect.right <= aRect.left + 25) && (pRect.width > 200) && (aRect.width > 200);
+      const refCard = document.getElementById('engReflectionCard');
+      const isRefCardVisible = refCard && window.getComputedStyle(refCard).display !== 'none';
+      const txtRef = document.getElementById('txtReflection');
+      const hasTxtRef = !!txtRef;
+
       // 9. 测试选项选择后自动跳下一题与胶囊 UI 显示自适应
       window.kyApp.switchQuestion(21);
       window.kyApp.selectOption(21, 'A');
@@ -1389,6 +1485,20 @@ async function run() {
       const submittedPAns = window.kyApp.state.practiceAnswers[questions[0].qIndex];
       const submitted = submittedPAns && submittedPAns.submitted === true;
 
+      // 10.5 检查交卷后解析是否默认折叠 (方案B契约)
+      const optAnalysisCountDefault = document.querySelectorAll('.option-analysis-box').length;
+      const isDefaultCollapsed = (optAnalysisCountDefault === 0);
+
+      // 按 Space 键展开当前题解析
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', code: 'Space', bubbles: true }));
+      const optAnalysisCountAfterSpace = document.querySelectorAll('.option-analysis-box').length;
+      const isSpaceExpanded = (optAnalysisCountAfterSpace > 0);
+
+      // 再次按 Space 键重新折叠
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', code: 'Space', bubbles: true }));
+      const optAnalysisCountAfterSpaceAgain = document.querySelectorAll('.option-analysis-box').length;
+      const isSpaceCollapsedAgain = (optAnalysisCountAfterSpaceAgain === 0);
+
       // 11. 检查 H 面板文案是否为「显示译文」与「滚轮切题 / 右键+滚轮切文章」
       const helpModal = document.getElementById('engModalHelp');
       const hasShowTransText = helpModal && helpModal.innerHTML.includes('显示译文');
@@ -1413,12 +1523,20 @@ async function run() {
         modalNotOpenedWhen4,
         modalOpenedWhen5,
         submitted,
+        isDefaultCollapsed,
+        isSpaceExpanded,
+        isSpaceCollapsedAgain,
         hasShowTransText,
-        hasWheelText
+        hasWheelText,
+        isSideBySide,
+        isRefCardVisible,
+        hasTxtRef
       };
     })()
   `);
   console.log('  英语键盘做题、滚轮导航与UI自适应检查:', engKeyboardCheck);
+  if (!engKeyboardCheck.isSideBySide) throw new Error('做题模式未能保持左右两列分屏');
+  if (!engKeyboardCheck.isRefCardVisible || !engKeyboardCheck.hasTxtRef) throw new Error('做题模式下做题思考与错因复盘卡片未常驻显示');
   if (!engKeyboardCheck.dWorked || !engKeyboardCheck.aWorked) throw new Error('A/D 切题失败');
   if (!engKeyboardCheck.sWorked || !engKeyboardCheck.wWorked) throw new Error('W/S 切文章失败');
   if (!engKeyboardCheck.qWorked || !engKeyboardCheck.eWorked) throw new Error('Q/E 切年份失败');
@@ -1428,8 +1546,245 @@ async function run() {
   if (!engKeyboardCheck.modalNotOpenedWhen4) throw new Error('未满 5 题误唤起交卷弹窗');
   if (!engKeyboardCheck.modalOpenedWhen5) throw new Error('满 5 题 Enter 未能唤起交卷确认弹窗');
   if (!engKeyboardCheck.submitted) throw new Error('二重 Enter 未能正式提交答卷');
+  if (!engKeyboardCheck.isDefaultCollapsed) throw new Error('交卷后未能默认折叠相关解析 (方案B)');
+  if (!engKeyboardCheck.isSpaceExpanded) throw new Error('按 Space 键未能展开相关解析 (方案B)');
+  if (!engKeyboardCheck.isSpaceCollapsedAgain) throw new Error('再次按 Space 键未能重新折叠相关解析 (方案B)');
   if (!engKeyboardCheck.hasShowTransText) throw new Error('H 面板文案未包含「显示译文」');
   if (!engKeyboardCheck.hasWheelText) throw new Error('H 面板文案未包含「滚轮切题 / 右键+滚轮切文章」');
+
+  // 7.2 测试 2007 Q40 自愈校验、选项反选置空、修改做题记录与开启新一轮刷题 (二刷)
+  console.log('  测试 2007 Q40 胶囊自愈、选项反选置空、已提交记录纠错修改与多轮刷题(二刷)...');
+  const engRoundAndEditCheck = await evaluate(ws, `
+    (async () => {
+      // 1. 切换到 2007 年 Text 4，检查 Q40 的题号胶囊与自愈状态 (选了 C，官方为 D -> 必须为错题胶囊)
+      await window.kyApp.switchYear('2007');
+      window.kyApp.switchText('text4', 40);
+      await new Promise(r => setTimeout(r, 200));
+
+      const q40Pill = document.querySelector('.q-pill.active');
+      const isWrongPill = q40Pill && q40Pill.classList.contains('is-wrong') && !q40Pill.classList.contains('is-correct');
+
+      // 2. 测试选项反选取消 (进入做题模式，选择 36 题，再次点击取消)
+      window.kyApp.setMode('practice');
+      window.kyApp.switchQuestion(36);
+      delete window.kyApp.state.practiceAnswers[36];
+      window.kyApp.onOptionClick('A');
+      const q36SelectedA = window.kyApp.state.practiceAnswers[36] && window.kyApp.state.practiceAnswers[36].selected === 'A';
+      // 再次点击 A 触发反选置空
+      window.kyApp.onOptionClick('A');
+      const q36Deselected = !window.kyApp.state.practiceAnswers[36] || !window.kyApp.state.practiceAnswers[36].selected;
+
+      // 3. 测试已提交答卷的纠错修改功能 (updatePracticeAnswer)
+      window.kyApp.switchQuestion(40);
+      window.kyApp.updatePracticeAnswer(40, 'D');
+      const q40NowD = window.kyApp.state.practiceAnswers[40] && window.kyApp.state.practiceAnswers[40].selected === 'D';
+      const q40NowCorrect = window.kyApp.state.practiceAnswers[40] && window.kyApp.state.practiceAnswers[40].isCorrect === true;
+      const q40MasteryProf = window.kyApp.state.mastery[40] === 'proficient';
+      const q40PillAfterFix = document.querySelector('.q-pill.active');
+      const pillNowGreen = q40PillAfterFix && q40PillAfterFix.classList.contains('is-correct');
+
+      // 4. 测试开启新一轮刷题 (二刷)
+      const roundBefore = window.kyApp.state.currentRound || 1;
+      window.kyApp.startNewPracticeRound(true);
+      await new Promise(r => setTimeout(r, 100));
+      const roundAfter = window.kyApp.state.currentRound;
+      const roundIncremented = (roundAfter === roundBefore + 1);
+      const newRoundClean = Object.keys(window.kyApp.state.practiceAnswers || {}).length === 0;
+
+      // 切换回第 1 轮
+      window.kyApp.switchPracticeRound(roundBefore);
+      const restoredRound1 = (window.kyApp.state.currentRound === roundBefore) && (window.kyApp.state.practiceAnswers[40] && window.kyApp.state.practiceAnswers[40].selected === 'D');
+
+      return {
+        isWrongPill,
+        q36SelectedA,
+        q36Deselected,
+        q40NowD,
+        q40NowCorrect,
+        q40MasteryProf,
+        pillNowGreen,
+        roundIncremented,
+        newRoundClean,
+        restoredRound1
+      };
+    })()
+  `);
+  console.log('  英语自愈、反选、纠错修改与二刷多轮检查:', engRoundAndEditCheck);
+  if (!engRoundAndEditCheck.isWrongPill) throw new Error('2007年40题选C未正确渲染为错题红胶囊(自愈失败)');
+  if (!engRoundAndEditCheck.q36SelectedA || !engRoundAndEditCheck.q36Deselected) throw new Error('做题模式选项点击反选置空失败');
+  if (!engRoundAndEditCheck.q40NowD || !engRoundAndEditCheck.q40NowCorrect || !engRoundAndEditCheck.pillNowGreen) throw new Error('纠错修改updatePracticeAnswer未能正确将40题修正为正确D');
+  if (!engRoundAndEditCheck.roundIncremented || !engRoundAndEditCheck.newRoundClean || !engRoundAndEditCheck.restoredRound1) throw new Error('开启新一轮刷题(二刷)或切换回历史轮次失败');
+
+  // 7.3 测试考研英语精读模式与暗夜模式色彩重构 (无白卡、无未适配浅色，深翠绿正确项/深红干扰项/暗青岩长难句)
+  console.log('  测试英语精读模式 + 暗夜模式护眼色彩渲染 (去白化与计算样式检查)...');
+  const darkAnalysisCheck = await evaluate(ws, `
+    (async () => {
+      // 1. 确保切换至精读模式 (analysis) 并设置主题为 dark
+      window.kyApp.setMode('analysis');
+      if (window.currentTheme !== 'dark') window.toggleTheme();
+      await new Promise(r => setTimeout(r, 200));
+
+      const passagePane = document.querySelector('.passage-pane');
+      const analysisPane = document.querySelector('.analysis-pane');
+      const optCorrect = document.querySelector('.option-card.is-correct');
+      const optDistractor = document.querySelector('.option-card.is-distractor');
+      const btnMastery = document.querySelector('.btn-mastery');
+      const guideBody = document.querySelector('.guide-body');
+
+      const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+
+      // 提取计算样式
+      const getBg = el => el ? window.getComputedStyle(el).backgroundColor : '';
+
+      const pBg = getBg(passagePane);
+      const aBg = getBg(analysisPane);
+      const optCorrectBg = getBg(optCorrect);
+      const optDistractorBg = getBg(optDistractor);
+      const btnMasteryBg = getBg(btnMastery);
+      const guideBodyBg = getBg(guideBody);
+
+      // 检查是否不含纯白背景 rgb(255, 255, 255) 或浅绿 rgb(240, 253, 244)
+      const noPureWhitePanes = !pBg.includes('255, 255, 255') && !aBg.includes('255, 255, 255');
+      const noLightGreenOpt = !optCorrectBg.includes('240, 253, 244');
+      const noPureWhiteMastery = !btnMasteryBg.includes('255, 255, 255');
+
+      // 还原为浅色主题与 practice 做题模式
+      if (window.currentTheme === 'dark') window.toggleTheme();
+      window.kyApp.setMode('practice');
+
+      return {
+        isDarkTheme,
+        pBg,
+        aBg,
+        optCorrectBg,
+        optDistractorBg,
+        btnMasteryBg,
+        guideBodyBg,
+        noPureWhitePanes,
+        noLightGreenOpt,
+        noPureWhiteMastery
+      };
+    })()
+  `);
+  console.log('  英语精读模式 + 暗夜模式色彩检查:', darkAnalysisCheck);
+  if (!darkAnalysisCheck.noPureWhitePanes) throw new Error('精读模式暗夜下面板残留纯白背景');
+  if (!darkAnalysisCheck.noLightGreenOpt) throw new Error('精读模式暗夜下正确选项残留日间浅绿底色 #f0fdf4');
+  if (!darkAnalysisCheck.noPureWhiteMastery) throw new Error('复盘手记掌握度按钮在暗夜下残留纯白死板背景');
+
+  // 7.4 测试做题模式右侧栏轮次下拉面板交互、交卷双“已交卷”消除与 Q/E 全年份 (1998~2026) 切换
+  console.log('  测试做题模式顶部统一轮次下拉、50-50等宽分屏、首行缩进排版与 Q/E 全量年份切换...');
+  const practiceRoundAndQECheck = await evaluate(ws, `
+    (async () => {
+      // 1. 确保在 practice 做题模式，年份设为 2015
+      window.kyApp.setMode('practice');
+      await window.kyApp.switchYear('2015');
+      window.kyApp.switchText('text1', 21);
+      await new Promise(r => setTimeout(r, 200));
+
+      // 2. 测试顶部导航栏统一轮次下拉栏展开与收起
+      const trigRound = document.getElementById('engTrigRound');
+      const panelRound = document.getElementById('engPanelRound');
+      if (!trigRound || !panelRound) return { ok: false, error: '缺少顶部统一轮次下拉组件' };
+
+      // 确认右侧栏已不再包含多余的 practiceDdRound
+      const rightPracticeDd = document.getElementById('practiceDdRound');
+      if (rightPracticeDd) return { ok: false, error: '做题模式右栏绝不能再包含 practiceDdRound 冗余组件' };
+
+      // 点击展开
+      trigRound.click();
+      const isPanelOpen = panelRound.classList.contains('active');
+      const isTrigOpen = trigRound.classList.contains('open');
+
+      // 点击外部收起
+      document.body.click();
+      const isPanelClosed = !panelRound.classList.contains('active');
+      const isTrigClosed = !trigRound.classList.contains('open');
+
+      // 3. 验证左右两侧 50% / 50% 等宽与首行缩进
+      const pPane = document.getElementById('engPassagePane');
+      const aPane = document.getElementById('engAnalysisPane');
+      const pWidth = pPane ? pPane.offsetWidth : 0;
+      const aWidth = aPane ? aPane.offsetWidth : 0;
+      const isWidthUnified = (pWidth > 0 && aWidth > 0 && Math.abs(pWidth - aWidth) <= 25);
+
+      const sentenceList = document.querySelector('.mode-practice-active .sentence-list');
+      const sListStyle = sentenceList ? window.getComputedStyle(sentenceList) : null;
+      const textIndent = sListStyle ? sListStyle.textIndent : '';
+      const hasFirstLineIndent = (parseFloat(textIndent) > 0 || textIndent.includes('2em') || textIndent.includes('32px') || textIndent.includes('34px'));
+
+      // 4. 测试 Q/E 键突破 2015 年限制：2015 -> 按 E 切换到 2016 -> 按 E 到 2017 -> 按 Q 到 2016
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'e', bubbles: true }));
+      await new Promise(r => setTimeout(r, 400));
+      const yearAfterE1 = window.kyApp.state.currentYear;
+
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'e', bubbles: true }));
+      await new Promise(r => setTimeout(r, 400));
+      const yearAfterE2 = window.kyApp.state.currentYear;
+
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'q', bubbles: true }));
+      await new Promise(r => setTimeout(r, 400));
+      const yearAfterQ1 = window.kyApp.state.currentYear;
+
+      // 5. 测试整篇交卷后状态提示：杜绝两个“已交卷”并排，验证徽章与入库按钮
+      await window.kyApp.switchYear('2010');
+      window.kyApp.switchText('text1', 21);
+      const text = window.kyApp.curDataset.texts[0];
+      // 提交 5 题
+      for (let i = 0; i < 5; i++) {
+        window.kyApp.selectOption(text.questions[i].qIndex, 'A');
+      }
+      window.kyApp.submitWholeTextPractice();
+      await new Promise(r => setTimeout(r, 200));
+
+      const rightBox = document.querySelector('.practice-toolbar-right');
+      const badge = rightBox ? rightBox.querySelector('.practice-progress-badge') : null;
+      const badgeText = badge ? badge.textContent.trim() : '';
+      const submitBtn = document.getElementById('btnPracticeSubmitWhole');
+      const submitBtnText = submitBtn ? submitBtn.textContent.trim() : '';
+      const isBtnDisabled = submitBtn ? submitBtn.disabled : false;
+
+      // 检查右栏所有文本中绝不出现两个“已交卷”
+      const matchesSubmitted = (rightBox ? rightBox.textContent : '').match(/已交卷/g) || [];
+      const noDuplicateSubmitted = (matchesSubmitted.length === 0);
+
+      return {
+        ok: true,
+        isPanelOpen,
+        isTrigOpen,
+        isPanelClosed,
+        isTrigClosed,
+        isWidthUnified,
+        pWidth,
+        aWidth,
+        hasFirstLineIndent,
+        textIndent,
+        yearAfterE1,
+        yearAfterE2,
+        yearAfterQ1,
+        eTo2016Worked: yearAfterE1 === '2016',
+        eTo2017Worked: yearAfterE2 === '2017',
+        qBackTo2016Worked: yearAfterQ1 === '2016',
+        badgeText,
+        hasScoreInfo: badgeText.includes('已判分') && badgeText.includes('答对'),
+        submitBtnText,
+        isSubmitBtnArchived: submitBtnText === '已入库',
+        isBtnDisabled,
+        noDuplicateSubmitted
+      };
+    })()
+  `);
+  console.log('  做题模式顶部轮次、50-50分屏、首行缩进与 Q/E 全量年份检查:', practiceRoundAndQECheck);
+  if (!practiceRoundAndQECheck.ok) throw new Error(practiceRoundAndQECheck.error);
+  if (!practiceRoundAndQECheck.isPanelOpen || !practiceRoundAndQECheck.isTrigOpen) throw new Error('点击顶部轮次按钮未能展开面板');
+  if (!practiceRoundAndQECheck.isPanelClosed || !practiceRoundAndQECheck.isTrigClosed) throw new Error('点击外部未能收起顶部轮次面板');
+  if (!practiceRoundAndQECheck.isWidthUnified) throw new Error(`左右分屏宽度未统一，左: ${practiceRoundAndQECheck.pWidth}px, 右: ${practiceRoundAndQECheck.aWidth}px`);
+  if (!practiceRoundAndQECheck.hasFirstLineIndent) throw new Error(`阅读内容未能正确呈现首行缩进，textIndent: ${practiceRoundAndQECheck.textIndent}`);
+  if (!practiceRoundAndQECheck.eTo2016Worked) throw new Error(`按 E 键未能从 2015 切换至 2016，实际: ${practiceRoundAndQECheck.yearAfterE1}`);
+  if (!practiceRoundAndQECheck.eTo2017Worked) throw new Error(`按 E 键未能从 2016 切换至 2017，实际: ${practiceRoundAndQECheck.yearAfterE2}`);
+  if (!practiceRoundAndQECheck.qBackTo2016Worked) throw new Error(`按 Q 键未能从 2017 切回 2016，实际: ${practiceRoundAndQECheck.yearAfterQ1}`);
+  if (!practiceRoundAndQECheck.hasScoreInfo) throw new Error(`交卷后徽章未显示答对题数战报，实际: ${practiceRoundAndQECheck.badgeText}`);
+  if (!practiceRoundAndQECheck.isSubmitBtnArchived || !practiceRoundAndQECheck.isBtnDisabled) throw new Error(`交卷后按钮状态未转变为已入库(disabled)，实际: ${practiceRoundAndQECheck.submitBtnText}`);
+  if (!practiceRoundAndQECheck.noDuplicateSubmitted) throw new Error('右栏工具栏依然存在「已交卷」冗余文案');
 
   // 8. 切换回 Math 并测试跨章节安全撤销与战报弹窗
   console.log('[9/9] 测试跨章节 Ctrl+Z 撤销与状态回滚...');

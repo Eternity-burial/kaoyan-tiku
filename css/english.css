@@ -43,6 +43,38 @@
   --font-mono: "JetBrains Mono", "SF Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/* ===== 沉浸暗夜模式设计令牌 (现代护眼色系，高对比度低眩光) ===== */
+[data-theme="dark"] {
+  --primary: #c084fc;
+  --primary-dark: #9333ea;
+  --primary-light: #e879f9;
+  --primary-alpha: rgba(192, 132, 252, 0.18);
+  --primary-alpha-light: rgba(192, 132, 252, 0.10);
+
+  --bg-app: #0f1015;
+  --bg-pane: #181920;
+  --bg-card: #20222a;
+  --text-main: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.10);
+  --border-light: rgba(255, 255, 255, 0.06);
+
+  --color-success: #34d399;
+  --color-success-bg: rgba(16, 185, 129, 0.16);
+  --color-warning: #fbbf24;
+  --color-warning-bg: rgba(245, 158, 11, 0.16);
+  --color-danger: #f87171;
+  --color-danger-bg: rgba(239, 68, 68, 0.16);
+
+  --vocab-red: #fca5a5;
+  --vocab-red-bg: rgba(239, 68, 68, 0.18);
+  --vocab-green: #6ee7b7;
+  --vocab-green-bg: rgba(16, 185, 129, 0.18);
+  --vocab-blue: #7dd3fc;
+  --vocab-blue-bg: rgba(14, 165, 233, 0.18);
+}
+
 /* ================= 英语一体化容器 ================= */
 .english-app-layout {
   position: fixed;
@@ -216,13 +248,14 @@
 
 /* ================= 左栏：文章阅读区 ================= */
 .passage-pane {
-  flex: 55;
+  flex: 1 1 50%;
+  min-width: 0;
   height: 100%;
   overflow-y: auto;
   background: var(--bg-pane);
   border: 1px solid var(--border-color);
   border-radius: 14px;
-  padding: 28px 36px 80px 36px;
+  padding: 24px 28px 80px 28px;
   box-shadow: 0 4px 16px rgba(53, 58, 89, 0.04);
   scroll-behavior: smooth;
 }
@@ -476,6 +509,29 @@
   filter: brightness(0.95);
 }
 
+.vocab-word.is-self-annotated {
+  font-weight: 600 !important;
+  border-bottom-width: 2px !important;
+  box-shadow: 0 1px 2px rgba(239, 68, 68, 0.15);
+}
+
+.vocab-word.is-self-annotated::after {
+  content: '★';
+  font-size: 8px;
+  line-height: 1;
+  vertical-align: super;
+  margin-left: 1px;
+  color: #ef4444;
+}
+
+[data-theme="dark"] .vocab-word.is-self-annotated::after {
+  color: #f87171;
+}
+
+.mode-practice-active .vocab-word.is-self-annotated::after {
+  display: none !important;
+}
+
 .trans-vocab-word {
   font-weight: 600;
   display: inline;
@@ -483,23 +539,147 @@
   border-radius: 2px;
 }
 
-/* ================= 纯净模考模式样式 (Pure Practice Mode) ================= */
+/* 真题考查画线句与画线词句 (Exam Underlined Sentences & Phrases) */
+.sentence-item.is-underlined {
+  border-left: 3.5px solid #d97706;
+  background: rgba(245, 158, 11, 0.04);
+}
+
+.sentence-item.is-underlined:hover {
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.sentence-item.is-underlined .sentence-text {
+  text-decoration: underline 1.8px solid #1e293b;
+  text-underline-offset: 4.5px;
+  text-decoration-skip-ink: none;
+}
+
+/* 画线句专属考点徽章 */
+.sentence-underlined-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2.5px 7px;
+  margin-right: 6px;
+  border-radius: 9999px;
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.sentence-underlined-badge:hover {
+  background: #fde68a;
+  color: #78350f;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(180, 83, 9, 0.15);
+}
+
+.sentence-underlined-badge .badge-icon {
+  font-size: 10px;
+}
+
+/* 试题考查画线词/短语 (Exam Underlined Phrase) */
+.exam-underlined-phrase {
+  display: inline;
+  text-decoration: underline 2px solid #2563eb;
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: none;
+  font-weight: 600;
+  color: #1d4ed8;
+  cursor: pointer;
+  padding: 1px 3px;
+  margin: 0 1px;
+  border-radius: 3px;
+  background: rgba(37, 99, 235, 0.07);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exam-underlined-phrase:hover {
+  background: rgba(37, 99, 235, 0.16);
+  text-decoration-color: #1d4ed8;
+}
+
+/* 当前题目聚焦时的高亮脉冲/激活态 */
+.exam-underlined-phrase.is-active-target {
+  background: rgba(245, 158, 11, 0.25) !important;
+  color: #92400e !important;
+  text-decoration: underline 2.2px solid #d97706 !important;
+  outline: 1.5px solid #f59e0b;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+/* 暗色主题适配 (Dark Mode) */
+[data-theme="dark"] .sentence-item.is-underlined {
+  border-left-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+[data-theme="dark"] .sentence-item.is-underlined .sentence-text {
+  text-decoration-color: #94a3b8;
+}
+
+[data-theme="dark"] .sentence-underlined-badge {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+[data-theme="dark"] .sentence-underlined-badge:hover {
+  background: rgba(245, 158, 11, 0.28);
+  color: #fef08a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .exam-underlined-phrase {
+  color: #93c5fd;
+  text-decoration-color: #60a5fa;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="dark"] .exam-underlined-phrase:hover {
+  background: rgba(59, 130, 246, 0.25);
+  text-decoration-color: #93c5fd;
+}
+
+[data-theme="dark"] .exam-underlined-phrase.is-active-target {
+  background: rgba(245, 158, 11, 0.3) !important;
+  color: #fde68a !important;
+  text-decoration-color: #fbbf24 !important;
+  outline-color: #f59e0b;
+}
+
+/* ================= 纯净做题模式样式 (Pure Practice Mode) ================= */
 .mode-practice-active .english-workbench {
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 16px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 16px;
+  gap: 16px;
 }
 
 .mode-practice-active .passage-pane {
-  flex: 1;
-  height: auto;
-  min-height: 250px;
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 24px 36px;
-  border-radius: 12px;
+  flex: 1 1 50%;
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--bg-pane);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 24px 28px 80px 28px;
+  box-shadow: 0 4px 16px rgba(53, 58, 89, 0.04);
 }
 
 .mode-practice-active .passage-topic-tag,
@@ -508,7 +688,8 @@
 .mode-practice-active .paragraph-meta,
 .mode-practice-active .paragraph-main-idea,
 .mode-practice-active .sentence-id-tag,
-.mode-practice-active .sentence-trans {
+.mode-practice-active .sentence-trans,
+.mode-practice-active .sentence-underlined-badge {
   display: none !important;
 }
 
@@ -519,6 +700,12 @@
   box-shadow: none;
 }
 
+.mode-practice-active .sentence-list {
+  text-indent: 2em;
+  text-align: justify;
+  line-height: 1.85;
+}
+
 .mode-practice-active .sentence-item {
   display: inline;
   padding: 0;
@@ -527,6 +714,29 @@
   border-left: none !important;
   box-shadow: none !important;
   line-height: 2;
+}
+
+.mode-practice-active .sentence-item.highlight-target {
+  background: rgba(16, 185, 129, 0.22) !important;
+  border-radius: 4px;
+  padding: 2px 4px !important;
+}
+
+.mode-practice-active .sentence-item.highlight-distractor {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-radius: 4px;
+  padding: 2px 4px !important;
+}
+
+.mode-practice-active .sentence-item.is-underlined {
+  border-left: none !important;
+  background: transparent !important;
+}
+
+.mode-practice-active .sentence-item.is-underlined .sentence-text {
+  text-decoration: underline 1.8px solid #111827;
+  text-underline-offset: 4.5px;
+  text-decoration-skip-ink: none;
 }
 
 .mode-practice-active .sentence-text {
@@ -543,24 +753,52 @@
   font-weight: inherit !important;
 }
 
-/* 模考模式下方做题小窗 (Bottom Practice Dock) */
+.mode-practice-active .exam-underlined-phrase {
+  text-decoration: underline 1.8px solid #111827 !important;
+  text-underline-offset: 4px !important;
+  text-decoration-skip-ink: none !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  cursor: text !important;
+  background: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+[data-theme="dark"] .mode-practice-active .sentence-item.is-underlined .sentence-text {
+  text-decoration-color: #e2e8f0;
+}
+
+[data-theme="dark"] .mode-practice-active .exam-underlined-phrase {
+  text-decoration-color: #e2e8f0 !important;
+  color: inherit !important;
+  background: transparent !important;
+}
+
+[data-theme="dark"] .mode-practice-active .sentence-item.highlight-target {
+  background: rgba(16, 185, 129, 0.28) !important;
+}
+
+[data-theme="dark"] .mode-practice-active .sentence-item.highlight-distractor {
+  background: rgba(239, 68, 68, 0.26) !important;
+}
+
+/* 做题模式右栏题目工作台 (Right Practice Workbench - 与精读模式一致的左右分屏) */
 .mode-practice-active .analysis-pane {
-  flex: 0 0 auto !important;
-  height: auto !important;
-  max-height: 280px !important;
-  min-height: 190px !important;
-  width: 100% !important;
-  max-width: 1300px !important;
-  margin: 0 auto !important;
-  background: var(--bg-pane);
-  border: 1.5px solid rgba(102, 8, 116, 0.22);
-  border-radius: 12px;
-  padding: 10px 18px 12px 18px;
+  flex: 1 1 50%;
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 20px 24px 80px 24px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  overflow-y: auto;
-  box-shadow: 0 -4px 20px rgba(102, 8, 116, 0.08);
+  gap: 14px;
+  box-shadow: 0 4px 16px rgba(53, 58, 89, 0.04);
   box-sizing: border-box;
 }
 
@@ -698,18 +936,22 @@
   align-items: center;
   gap: 10px;
   margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .practice-progress-badge {
   font-size: 12px;
   font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
   background: rgba(0, 0, 0, 0.05);
   color: var(--text-muted, #64748b);
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .practice-progress-badge.all-answered {
   background: rgba(16, 185, 129, 0.15);
@@ -733,6 +975,8 @@
   gap: 4px;
   transition: all 0.15s ease;
   box-shadow: 0 2px 6px rgba(102, 8, 116, 0.25);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .practice-submit-btn:disabled,
 .practice-submit-btn.disabled {
@@ -748,9 +992,11 @@
 .practice-shortcut-hint {
   font-size: 11px;
   color: var(--text-muted, #64748b);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .mode-practice-active .stem-card {
@@ -770,22 +1016,16 @@
 }
 
 .mode-practice-active .options-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px 12px;
-  margin-top: 4px;
-}
-
-@media (max-width: 860px) {
-  .mode-practice-active .options-list {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
 }
 
 .mode-practice-active .option-card {
-  padding: 8px 12px;
-  min-height: 38px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  min-height: 42px;
+  border-radius: 10px;
   border: 1px solid var(--border-color);
   background: var(--bg-card, #ffffff);
   cursor: pointer;
@@ -859,14 +1099,10 @@
   line-height: 1.4;
 }
 
-/* 交卷前隐藏复盘卡片 */
+/* 做题模式常驻展示做题思考与错因复盘卡片 */
 .mode-practice-active .reflection-card {
-  display: none;
-}
-.mode-practice-active.has-submitted .reflection-card {
-  display: block;
+  display: block !important;
   margin-top: 6px;
-  padding: 10px;
 }
 
 /* 二重回车确认弹窗作答卡片与横向 5 列网格 */
@@ -982,7 +1218,8 @@
 
 /* ================= 右栏：题目工作台 ================= */
 .analysis-pane {
-  flex: 45;
+  flex: 1 1 50%;
+  min-width: 0;
   height: 100%;
   overflow-y: auto;
   background: rgba(255, 255, 255, 0.98);
@@ -1628,10 +1865,39 @@
   background: #ffffff;
   box-shadow: 0 0 0 2px var(--primary-alpha);
 }
-/* 英语顶部真题年份下拉面板适配 */
+/* 英语顶部真题年份下拉栏 (Quiet Liquid 毛玻璃微透，适当提升不透明度，防背景穿透) */
+#engTrigYear {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(102, 8, 116, 0.22);
+  box-shadow: 0 1px 3px rgba(32, 36, 58, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#engTrigYear:hover {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 3px 10px rgba(102, 8, 116, 0.12);
+  transform: translateY(-1px);
+}
+
+#engTrigYear.open {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-alpha), 0 4px 12px rgba(102, 8, 116, 0.12);
+}
+
 #engDdYear .title-panel {
   min-width: 140px;
   max-width: 220px;
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(71, 76, 101, 0.16);
+  box-shadow: 0 12px 30px rgba(53, 58, 89, 0.12), 0 2px 8px rgba(53, 58, 89, 0.06);
   z-index: 120;
 }
 
@@ -1667,8 +1933,8 @@
 }
 
 [data-theme="dark"] #engTrigYear {
-  background: rgba(30, 31, 38, 0.85) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(30, 31, 38, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   color: #e2e2e8 !important;
   font-size: 15px !important;
   font-weight: 700 !important;
@@ -1676,9 +1942,18 @@
 
 [data-theme="dark"] #engTrigYear:hover,
 [data-theme="dark"] #engTrigYear.open {
+  background: rgba(45, 47, 58, 0.94) !important;
   border-color: #cf6fe8 !important;
   color: #cf6fe8 !important;
   box-shadow: 0 0 12px rgba(207, 111, 232, 0.3) !important;
+}
+
+[data-theme="dark"] #engDdYear .title-panel {
+  background: rgba(26, 27, 34, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65) !important;
 }
 
 [data-theme="dark"] .text-tabs,
@@ -1705,124 +1980,189 @@
   box-shadow: 0 2px 10px rgba(207, 111, 232, 0.35) !important;
 }
 
+/* ================= 沉浸深灰暗夜模式全面深度适配 ================= */
+[data-theme="dark"] .english-workbench {
+  gap: 16px;
+}
+
 /* 左栏：文章阅读区 */
 [data-theme="dark"] .passage-pane,
 [data-theme="dark"] .analysis-pane {
-  background: #1a1b20 !important;
+  background: #181920 !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
   color: #e2e2e8 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-theme="dark"] .passage-header-box {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .passage-topic-tag {
+  background: rgba(192, 132, 252, 0.14) !important;
+  color: #d8b4fe !important;
+  border: 1px solid rgba(192, 132, 252, 0.28) !important;
 }
 
 [data-theme="dark"] .passage-title-en {
-  color: #e6e6ed !important;
+  color: #f8fafc !important;
 }
 
 [data-theme="dark"] .passage-title-zh {
-  color: #8e8e9c !important;
+  color: #94a3b8 !important;
 }
 
 [data-theme="dark"] .passage-overview-card {
-  background: #16171b !important;
-  border-left-color: var(--primary) !important;
-  color: #b0b0be !important;
+  background: rgba(32, 34, 44, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 3.5px solid #c084fc !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .passage-overview-card strong {
+  color: #f1f5f9 !important;
 }
 
 [data-theme="dark"] .paragraph-block {
-  background: #22232a !important;
-  border-color: rgba(255, 255, 255, 0.06) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  background: #20222a !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
 [data-theme="dark"] .paragraph-block:hover {
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .paragraph-index-badge {
+  background: linear-gradient(135deg, #a855f7, #7e22ce) !important;
+  color: #ffffff !important;
 }
 
 [data-theme="dark"] .paragraph-logic-role {
-  background: rgba(157, 112, 255, 0.12) !important;
-  border-color: rgba(157, 112, 255, 0.25) !important;
-  color: var(--primary-light) !important;
+  background: rgba(192, 132, 252, 0.14) !important;
+  border-color: rgba(192, 132, 252, 0.28) !important;
+  color: #d8b4fe !important;
 }
 
 [data-theme="dark"] .paragraph-main-idea {
-  color: #8e8e9c !important;
-  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+  color: #94a3b8 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .paragraph-main-idea strong {
+  color: #cbd5e1 !important;
 }
 
 [data-theme="dark"] .sentence-item {
-  color: #e2e2e8 !important;
+  color: #f1f5f9 !important;
 }
 
 [data-theme="dark"] .sentence-item:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 [data-theme="dark"] .sentence-id-tag {
-  background: #16171b !important;
-  color: #8e8e9c !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #94a3b8 !important;
 }
 
 [data-theme="dark"] .sentence-text {
-  color: #e2e2e8 !important;
+  color: #f1f5f9 !important;
 }
 
 [data-theme="dark"] .sentence-trans {
-  color: #9e9ea8 !important;
-  background: #16171b !important;
-  border-top-color: rgba(255, 255, 255, 0.06) !important;
-  border-left-color: var(--primary) !important;
+  color: #cbd5e1 !important;
+  background: rgba(30, 32, 42, 0.65) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-left: 3px solid rgba(192, 132, 252, 0.6) !important;
+  padding: 6px 12px !important;
+  border-radius: 0 6px 6px 0 !important;
 }
 
+/* 长难句语法精析：温润暗青岩深色底（告别刺眼蓝紫大黑块），优雅对比度 */
 [data-theme="dark"] .sentence-syntax {
-  color: #c7d2fe !important;
-  background: #1e1b4b !important;
-  border-left-color: #818cf8 !important;
+  color: #e0e7ff !important;
+  background: rgba(30, 33, 46, 0.85) !important;
+  border: 1px solid rgba(129, 140, 248, 0.25) !important;
+  border-left: 3.5px solid #818cf8 !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
 }
 
 [data-theme="dark"] .syntax-badge {
   color: #a5b4fc !important;
-  background: rgba(129, 140, 248, 0.2) !important;
+  background: rgba(129, 140, 248, 0.22) !important;
+}
+
+[data-theme="dark"] .sentence-syntax strong {
+  color: #c7d2fe !important;
 }
 
 [data-theme="dark"] .syntax-content code {
-  color: #e0e7ff !important;
-  background: rgba(129, 140, 248, 0.25) !important;
+  color: #f5f3ff !important;
+  background: rgba(129, 140, 248, 0.2) !important;
+  border: 1px solid rgba(129, 140, 248, 0.3) !important;
 }
 
-/* 单词高亮暗色滤镜适配（绝无刺眼亮白背景） */
+/* 单词高亮暗色滤镜适配（微荧光护眼高对比，悬浮微亮） */
 [data-theme="dark"] .vocab-word.level-red {
-  color: #f87171 !important;
-  background: rgba(239, 68, 68, 0.18) !important;
-  border-bottom: 1.5px solid #ef4444 !important;
+  color: #fca5a5 !important;
+  background: rgba(239, 68, 68, 0.20) !important;
+  border-bottom: 1.5px solid #f87171 !important;
 }
 
 [data-theme="dark"] .vocab-word.level-green {
-  color: #34d399 !important;
-  background: rgba(16, 185, 129, 0.18) !important;
-  border-bottom: 1.5px solid #10b981 !important;
+  color: #6ee7b7 !important;
+  background: rgba(16, 185, 129, 0.20) !important;
+  border-bottom: 1.5px solid #34d399 !important;
 }
 
 [data-theme="dark"] .vocab-word.level-purple,
 [data-theme="dark"] .vocab-word.level-blue {
-  color: #38bdf8 !important;
-  background: rgba(14, 165, 233, 0.18) !important;
-  border-bottom: 1.5px solid #0ea5e9 !important;
+  color: #7dd3fc !important;
+  background: rgba(14, 165, 233, 0.20) !important;
+  border-bottom: 1.5px solid #38bdf8 !important;
+}
+
+[data-theme="dark"] .vocab-word:hover {
+  filter: brightness(1.2) !important;
+}
+
+/* 句子定位高亮（与选项点击/定位按钮联动，清晰透出） */
+[data-theme="dark"] .sentence-item.highlight-target {
+  background: rgba(16, 185, 129, 0.22) !important;
+  border-left: 4px solid #34d399 !important;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25) !important;
+}
+
+[data-theme="dark"] .sentence-item.highlight-distractor {
+  background: rgba(239, 68, 68, 0.22) !important;
+  border-left: 4px solid #f87171 !important;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.25) !important;
+}
+
+[data-theme="dark"] .sentence-item.highlight-topic {
+  background: rgba(168, 85, 247, 0.22) !important;
+  border-left: 4px solid #c084fc !important;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.25) !important;
 }
 
 /* 纯净做题模考在暗色模式下的适配 */
 [data-theme="dark"] .mode-practice-active .passage-pane {
-  background: #1a1b20 !important;
+  background: #181920 !important;
 }
 
 [data-theme="dark"] .mode-practice-active .analysis-pane {
-  background: #16171d !important;
-  border-color: rgba(186, 104, 200, 0.28) !important;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4) !important;
+  background: #181920 !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
 }
 
 [data-theme="dark"] .mode-practice-active .sentence-text,
 [data-theme="dark"] .mode-practice-active .stem-text {
-  color: #e2e2e8 !important;
+  color: #f1f5f9 !important;
 }
 
 [data-theme="dark"] .mode-practice-active .option-card {
@@ -1832,48 +2172,49 @@
 
 [data-theme="dark"] .mode-practice-active .option-card:hover {
   border-color: var(--primary-light) !important;
-  background: rgba(157, 112, 255, 0.1) !important;
+  background: rgba(192, 132, 252, 0.12) !important;
 }
 
 [data-theme="dark"] .mode-practice-active .option-text {
-  color: #c2c2ce !important;
+  color: #e2e8f0 !important;
 }
 
 [data-theme="dark"] .mode-practice-active .q-pill {
   background: #20222a !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  color: #e2e2e8 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #e2e8f0 !important;
 }
 
 /* 右栏：题目工作台组件 */
 [data-theme="dark"] .question-toolbar {
-  background: #16171b !important;
+  background: #1e1f27 !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 [data-theme="dark"] .filter-chip {
-  background: #23242c !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #8e8e9c !important;
+  background: #272833 !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: #94a3b8 !important;
 }
 
 [data-theme="dark"] .filter-chip:hover {
   border-color: var(--primary) !important;
-  color: #e2e2e8 !important;
+  color: #f1f5f9 !important;
 }
 
 [data-theme="dark"] .filter-chip.active {
   background: var(--primary) !important;
+  border-color: var(--primary) !important;
   color: #ffffff !important;
 }
 
 [data-theme="dark"] .q-pill {
-  background: #23242c !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: #252632 !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
 }
 
 [data-theme="dark"] .q-pill .q-num {
-  color: #e2e2e8 !important;
+  color: #e2e8f0 !important;
 }
 
 [data-theme="dark"] .q-pill:hover {
@@ -1881,8 +2222,28 @@
 }
 
 [data-theme="dark"] .q-pill.active {
-  background: var(--primary) !important;
-  border-color: var(--primary) !important;
+  background: linear-gradient(135deg, #a855f7, #7e22ce) !important;
+  border-color: #c084fc !important;
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4) !important;
+}
+
+[data-theme="dark"] .q-pill.active .q-num {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .q-pill.status-proficient .q-state-dot {
+  background: #34d399 !important;
+  box-shadow: 0 0 6px rgba(52, 211, 153, 0.6);
+}
+
+[data-theme="dark"] .q-pill.status-vague .q-state-dot {
+  background: #fbbf24 !important;
+  box-shadow: 0 0 6px rgba(251, 191, 36, 0.6);
+}
+
+[data-theme="dark"] .q-pill.status-wrong .q-state-dot {
+  background: #f87171 !important;
+  box-shadow: 0 0 6px rgba(248, 113, 113, 0.6);
 }
 
 [data-theme="dark"] .mode-practice-active .q-pill {
@@ -1930,6 +2291,7 @@
   color: #f3e8ff !important;
 }
 
+/* 题干卡片与各卡片容器 */
 [data-theme="dark"] .stem-card,
 [data-theme="dark"] .distractor-card,
 [data-theme="dark"] .explanation-card,
@@ -1937,93 +2299,313 @@
 [data-theme="dark"] .vocab-notebook-modal,
 [data-theme="dark"] .modal-card,
 [data-theme="dark"] .guide-card {
-  background: #22232a !important;
+  background: #20222a !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
   color: #e2e2e8 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
-[data-theme="dark"] .stem-text {
-  color: #e6e6ed !important;
+[data-theme="dark"] .q-type-badge {
+  background: rgba(192, 132, 252, 0.14) !important;
+  color: #d8b4fe !important;
+  border: 1px solid rgba(192, 132, 252, 0.28) !important;
 }
 
 [data-theme="dark"] .tangchi-badge {
-  background: rgba(162, 28, 175, 0.18) !important;
-  border-color: rgba(245, 208, 254, 0.25) !important;
-  color: #e879f9 !important;
+  background: rgba(232, 121, 249, 0.14) !important;
+  border-color: rgba(232, 121, 249, 0.3) !important;
+  color: #f0abfc !important;
 }
 
+[data-theme="dark"] .stem-text {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .keyword-tag {
+  color: #d8b4fe !important;
+  background: rgba(192, 132, 252, 0.12) !important;
+  border: 1px solid rgba(192, 132, 252, 0.24) !important;
+}
+
+/* 选项卡片：深度修复白绿/白粉刺眼底色，建立统一纯净暗夜选项视觉 */
 [data-theme="dark"] .option-card {
-  background: #16171b !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #d6d7dc !important;
+  background: #20222a !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.09) !important;
+  color: #e2e8f0 !important;
 }
 
 [data-theme="dark"] .option-card:hover {
-  background: #23242c !important;
-  border-color: var(--primary) !important;
+  background: #272935 !important;
+  border-color: #c084fc !important;
 }
 
 [data-theme="dark"] .option-key {
-  background: #23242c !important;
-  color: #8e8e9c !important;
+  background: #2a2c38 !important;
+  color: #cbd5e1 !important;
 }
 
 [data-theme="dark"] .option-text {
-  color: #d6d7dc !important;
+  color: #e2e8f0 !important;
 }
 
-[data-theme="dark"] .option-card.selected {
-  background: rgba(239, 68, 68, 0.16) !important;
-  border-color: #ef4444 !important;
-}
-
+/* 精读模式：正确选项 (优雅暗翡翠绿，绝无白底刺眼) */
+[data-theme="dark"] .option-card.is-correct,
 [data-theme="dark"] .option-card.correct {
-  background: rgba(16, 185, 129, 0.16) !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1.5px solid #10b981 !important;
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.2) !important;
+}
+
+[data-theme="dark"] .option-card.is-correct .option-key,
+[data-theme="dark"] .option-card.correct .option-key {
+  background: #10b981 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .option-card.is-correct .option-text,
+[data-theme="dark"] .option-card.correct .option-text {
+  color: #ecfdf5 !important;
+  font-weight: 600 !important;
+}
+
+/* 精读模式：干扰选项 (低饱和暗红，护眼柔和) */
+[data-theme="dark"] .option-card.is-distractor {
+  background: rgba(239, 68, 68, 0.13) !important;
+  border: 1.5px solid rgba(239, 68, 68, 0.6) !important;
+}
+
+[data-theme="dark"] .option-card.is-distractor .option-key {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .option-card.is-distractor .option-text {
+  color: #fef2f2 !important;
+}
+
+/* 普通做题选中态 (紫色聚焦) */
+[data-theme="dark"] .option-card.selected:not(.is-correct):not(.is-distractor) {
+  background: rgba(168, 85, 247, 0.18) !important;
+  border: 1.5px solid #c084fc !important;
+}
+
+[data-theme="dark"] .option-card.selected:not(.is-correct):not(.is-distractor) .option-key {
+  background: #a855f7 !important;
+  color: #ffffff !important;
+}
+
+/* 选项解析框与标签 */
+[data-theme="dark"] .option-analysis-box {
+  color: #cbd5e1 !important;
+  border-top: 1px dashed rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .distractor-tag.tag-correct {
+  background: rgba(16, 185, 129, 0.22) !important;
+  color: #6ee7b7 !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+
+[data-theme="dark"] .distractor-tag.tag-trap {
+  background: rgba(239, 68, 68, 0.22) !important;
+  color: #fca5a5 !important;
+  border: 1px solid rgba(239, 68, 68, 0.35) !important;
+}
+
+[data-theme="dark"] .btn-locate-sentence {
+  color: #d8b4fe !important;
+  background: rgba(192, 132, 252, 0.14) !important;
+  border: 1px solid rgba(192, 132, 252, 0.28) !important;
+}
+
+[data-theme="dark"] .btn-locate-sentence:hover {
+  background: rgba(192, 132, 252, 0.25) !important;
+  color: #f3e8ff !important;
+  border-color: #c084fc !important;
+}
+
+/* 复盘手记卡片：彻底消灭纯白高亮按钮，全面暗色柔化 */
+[data-theme="dark"] .reflection-title {
+  color: #d8b4fe !important;
+}
+
+[data-theme="dark"] .reflection-title span:last-child {
+  color: #848e9c !important;
+}
+
+[data-theme="dark"] .btn-mastery {
+  background: #272833 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .btn-mastery:hover {
+  background: #313342 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-mastery.active-proficient {
+  background: #059669 !important;
   border-color: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-mastery.active-vague {
+  background: #d97706 !important;
+  border-color: #f59e0b !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-mastery.active-wrong {
+  background: #dc2626 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4) !important;
+}
+
+[data-theme="dark"] .mistake-reasons span:first-child {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .reason-chip {
+  background: #272833 !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .reason-chip:hover {
+  border-color: #fca5a5 !important;
+  color: #fca5a5 !important;
+}
+
+[data-theme="dark"] .reason-chip.selected {
+  background: rgba(239, 68, 68, 0.22) !important;
+  border-color: #ef4444 !important;
+  color: #fca5a5 !important;
 }
 
 [data-theme="dark"] .reflection-textarea {
-  background: #16171b !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  color: #e2e2e8 !important;
+  background: #181920 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f1f5f9 !important;
 }
 
+[data-theme="dark"] .reflection-textarea:focus {
+  border-color: #c084fc !important;
+  box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.2) !important;
+}
+
+[data-theme="dark"] .guide-accordion {
+  border-top: 1px dashed rgba(255, 255, 255, 0.10) !important;
+}
+
+[data-theme="dark"] .guide-summary {
+  color: #d8b4fe !important;
+}
+
+[data-theme="dark"] .guide-body {
+  background: rgba(30, 32, 48, 0.65) !important;
+  border: 1px solid rgba(192, 132, 252, 0.20) !important;
+  border-left: 3px solid #c084fc !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .guide-body strong {
+  color: #e2e8f0 !important;
+}
+
+/* 词汇详情浮窗 */
 [data-theme="dark"] .vocab-popover {
-  background: #25262f !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: #252733 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   color: #e2e2e8 !important;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .popover-word {
+  color: #d8b4fe !important;
+}
+
+[data-theme="dark"] .popover-ipa {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .popover-meaning {
+  color: #e2e2e8 !important;
+  border-top: 1px dashed rgba(255, 255, 255, 0.10) !important;
+}
+
+[data-theme="dark"] .popover-btn {
+  background: #313342 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .popover-btn:hover {
+  background: rgba(192, 132, 252, 0.20) !important;
+  border-color: #c084fc !important;
+  color: #f3e8ff !important;
+}
+
+[data-theme="dark"] .popover-btn.starred {
+  background: rgba(245, 158, 11, 0.22) !important;
+  border-color: #f59e0b !important;
+  color: #fbbf24 !important;
+}
+
+/* 生词本卡片 */
+[data-theme="dark"] .vocab-notebook-modal {
+  background: #181920 !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+[data-theme="dark"] .vocab-modal-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .vocab-modal-title {
+  color: #f1f5f9 !important;
 }
 
 [data-theme="dark"] .vocab-card {
-  background: #16171b !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: #20222a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 [data-theme="dark"] .vocab-word-text {
-  color: var(--primary-light) !important;
+  color: #d8b4fe !important;
+}
+
+[data-theme="dark"] .vocab-word-phonetic {
+  color: #94a3b8 !important;
 }
 
 [data-theme="dark"] .vocab-word-trans {
-  background: #22232a !important;
+  background: #272833 !important;
   color: #e2e2e8 !important;
 }
 
 [data-theme="dark"] .vocab-word-trans.blur-mode {
-  background: #16171b !important;
+  background: #1e1f26 !important;
   color: transparent !important;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.35) !important;
 }
 
-[data-theme="dark"] .guide-body {
-  background: #16171b !important;
-  color: #8e8e9c !important;
+/* 快捷键指南弹窗 */
+[data-theme="dark"] .modal-header h3 {
+  color: #d8b4fe !important;
 }
 
 [data-theme="dark"] .shortcut-row {
-  color: #e2e2e8 !important;
+  color: #cbd5e1 !important;
   border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .shortcut-badge {
+  background: rgba(255, 255, 255, 0.10) !important;
+  color: #e2e8f0 !important;
 }
 
 .passage-figure-box {
@@ -2035,6 +2617,353 @@
   border-radius: 8px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   cursor: zoom-in;
+}
+
+.currency-dollar {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* ================= 刷题轮次管理 (多轮刷题/二刷/多刷) ================= */
+.round-dropdown {
+  position: relative;
+  margin-left: 8px;
+}
+
+.round-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: rgba(102, 8, 116, 0.08);
+  border: 1px solid rgba(102, 8, 116, 0.22);
+  border-radius: 8px;
+  color: var(--primary, #660874);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.round-trigger:hover {
+  background: rgba(102, 8, 116, 0.15);
+  border-color: var(--primary, #660874);
+  box-shadow: 0 2px 8px rgba(102, 8, 116, 0.15);
+  transform: translateY(-1px);
+}
+
+.round-trigger.open {
+  background: var(--primary, #660874);
+  color: #ffffff;
+  border-color: var(--primary, #660874);
+  box-shadow: 0 2px 10px rgba(102, 8, 116, 0.25);
+}
+
+.round-trigger .round-pill-icon {
+  font-size: 13px;
+  line-height: 1;
+  opacity: 0.85;
+  transition: transform 0.2s ease;
+}
+
+.round-trigger .title-arrow {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.round-trigger.open .title-arrow {
+  transform: rotate(180deg);
+}
+
+.round-trigger.open .round-pill-icon {
+  transform: rotate(-45deg);
+}
+
+.round-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 300px;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(71, 76, 101, 0.16);
+  box-shadow: 0 14px 36px rgba(53, 58, 89, 0.16), 0 2px 8px rgba(53, 58, 89, 0.08);
+  padding: 12px;
+  z-index: 150;
+  display: none;
+}
+
+.round-panel.active {
+  display: block;
+  animation: fadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.round-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.round-list {
+  max-height: 240px;
+  overflow-y: auto;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.round-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.round-item:hover {
+  background: #f3e8ff;
+  border-color: #d8b4fe;
+}
+
+.round-item.active {
+  background: rgba(102, 8, 116, 0.08);
+  border-color: var(--primary, #660874);
+}
+
+.round-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.round-item-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.round-cur-tag {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: var(--primary, #660874);
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.round-item-meta {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.round-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-round-action {
+  background: none;
+  border: none;
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.15s;
+}
+
+.btn-round-action:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-new-round {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px dashed var(--primary, #660874);
+  background: #faf5ff;
+  color: var(--primary, #660874);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.btn-new-round:hover {
+  background: var(--primary, #660874);
+  color: #ffffff;
+  border-style: solid;
+}
+
+/* ================= 做题记录修改条 (纠错修改条) ================= */
+.practice-edit-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin: 10px 0 12px 0;
+  font-size: 12px;
+}
+
+.edit-bar-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.edit-pill-ans {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.edit-pill-ans.is-correct {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.edit-pill-ans.is-wrong {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.edit-bar-official {
+  color: #64748b;
+  margin-left: auto;
+}
+
+.edit-bar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-edit-opt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-edit-opt:hover {
+  border-color: var(--primary, #660874);
+  color: var(--primary, #660874);
+  background: #faf5ff;
+}
+
+.btn-edit-opt.active {
+  background: var(--primary, #660874);
+  color: #ffffff;
+  border-color: var(--primary, #660874);
+}
+
+.btn-edit-opt.btn-clear-opt {
+  width: auto;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.btn-edit-opt.btn-clear-opt:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] .round-trigger {
+  background: rgba(192, 132, 252, 0.12) !important;
+  border-color: rgba(192, 132, 252, 0.28) !important;
+  color: #c084fc !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-theme="dark"] .round-trigger:hover {
+  background: rgba(192, 132, 252, 0.22) !important;
+  border-color: #c084fc !important;
+  box-shadow: 0 2px 10px rgba(192, 132, 252, 0.25) !important;
+}
+
+[data-theme="dark"] .round-trigger.open {
+  background: linear-gradient(135deg, #a855f7, #7e22ce) !important;
+  color: #ffffff !important;
+  border-color: #a855f7 !important;
+  box-shadow: 0 2px 12px rgba(168, 85, 247, 0.4) !important;
+}
+
+[data-theme="dark"] .round-panel {
+  background: rgba(26, 27, 34, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65) !important;
+}
+[data-theme="dark"] .round-panel-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e2e8 !important;
+}
+[data-theme="dark"] .round-item {
+  background: #16171b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .round-item-title {
+  color: #f1f5f9 !important;
+}
+[data-theme="dark"] .practice-edit-bar {
+  background: #1a1b22 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="dark"] .btn-edit-opt {
+  background: #252630 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #cbd5e1 !important;
 }
 
 

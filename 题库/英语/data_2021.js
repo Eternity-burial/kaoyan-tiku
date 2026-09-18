@@ -1,13 +1,9 @@
-/**
- * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2021 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
- */
-
+// 考研英语真题数据集 (2021 年)
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
 window.ENGLISH_DATA['2021'] = {
   "year": 2021,
-  "subject": "英语",
-  "title": "2021年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析",
+  "subject": "英语(一)",
+  "title": "2021年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析数据库",
   "texts": [
     {
       "id": "text1",
@@ -750,10 +746,20 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S1",
             "P1-S3"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
+              "text": "will ease train operators' burden.",
+              "isCorrect": false,
+              "distractorType": "颠倒受害者",
+              "analysis": "【干扰特征: 颠倒主体】涨价是给广大普通乘客强加了沉重额外负担（imposing significant extra burden on those who use rail），非减轻运营商负担。",
+              "refSentences": [
+                "P1-S2"
+              ]
+            },
+            {
+              "key": "B",
               "text": "has kept pace with inflation.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
@@ -763,7 +769,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
+              "key": "C",
               "text": "is a big surprise to commuters.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
@@ -773,7 +779,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "C",
+              "key": "D",
               "text": "remains an unreasonable measure.",
               "isCorrect": true,
               "distractorType": null,
@@ -782,21 +788,47 @@ window.ENGLISH_DATA['2021'] = {
                 "P1-S1",
                 "P1-S3"
               ]
-            },
-            {
-              "key": "D",
-              "text": "will ease train operators' burden.",
-              "isCorrect": false,
-              "distractorType": "颠倒受害者",
-              "analysis": "【干扰特征: 颠倒主体】涨价是给广大普通乘客强加了沉重额外负担（imposing significant extra burden on those who use rail），非减轻运营商负担。",
-              "refSentences": [
-                "P1-S2"
-              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "How can operators justify yet another increase + well above inflation = remains an unreasonable measure。",
             "methodSummary": "首段修辞反问与语气词提取：How can operators possibly justify 直接锁定态度为 unreasonable。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -826,7 +858,7 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "B",
-              "text": "rail travelers.",
+              "text": "rail travellers.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 语境指代精准对应】P2-S1 和 P2-S2 紧密对应：P2-S1 阐明政府原则是铁路成本应由'those who use it, rather than general taxpayer'（实际使用铁路的人承担，而非全体纳税人）；P2-S2 紧接着用具体生动的形象做对比：'Why should a car-driving pensioner (普通纳税人) subsidise the daily commute of a stockbroker (铁路实际使用者/乘客)'。股票经纪人在文中的隐喻功能正是用来代表日常坐火车出行的铁路乘客（rail travelers）。B选项完全精准吻合。",
@@ -860,6 +892,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "borne by those who use it vs general taxpayer = daily commute of stockbroker (rail travelers) vs car-driving pensioner (general taxpayer)。",
             "methodSummary": "对比隐喻对应法：抓准 those who use rail network 对应 daily commute of stockbroker = rail travelers。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2021_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -920,6 +988,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "passengers paying substantial sums should expect a basic level of service = operators have failed to provide an adequate service。",
             "methodSummary": "弦外之音推断：should be able to expect a basic level of service 暗示当前现实中 failed to provide adequate service。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2021_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -935,30 +1039,20 @@ window.ENGLISH_DATA['2021'] = {
             "P4-S2",
             "P4-S3"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "the loss of investment.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】铁路系统依然需要更多投资（more investment is needed），非面临投资流失。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "the collapse of operations.",
-              "isCorrect": false,
-              "distractorType": "过度推断夸大",
-              "analysis": "【干扰特征: 夸大范围】面临的是被政府收归国有，非整个铁路系统彻底停止运转崩盘。",
+              "text": "a change of ownership.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S3 明确警示平息不了乘客愤怒的终极后果：'The threat of nationalisation... will return with a vengeance if the justified anger of passengers is not addressed'（如果乘客的正当愤怒未能迅速得到解决，国有化的威胁必将以复仇之势卷土重来）。nationalisation（国有化）的法律与经济本质正是从私营转为国有的“所有权变更/产权更迭”（a change of ownership）。D选项完全精准吻合。",
               "refSentences": [
                 "P4-S3"
               ]
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "a reduction of revenue.",
               "isCorrect": false,
               "distractorType": "次要表象",
@@ -968,11 +1062,21 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
+              "key": "C",
+              "text": "the loss of investment.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】铁路系统依然需要更多投资（more investment is needed），非面临投资流失。",
+              "refSentences": [
+                "P4-S2"
+              ]
+            },
+            {
               "key": "D",
-              "text": "a change of ownership.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P4-S3 明确警示平息不了乘客愤怒的终极后果：'The threat of nationalisation... will return with a vengeance if the justified anger of passengers is not addressed'（如果乘客的正当愤怒未能迅速得到解决，国有化的威胁必将以复仇之势卷土重来）。nationalisation（国有化）的法律与经济本质正是从私营转为国有的“所有权变更/产权更迭”（a change of ownership）。D选项完全精准吻合。",
+              "text": "the collapse of operations.",
+              "isCorrect": false,
+              "distractorType": "过度推断夸大",
+              "analysis": "【干扰特征: 夸大范围】面临的是被政府收归国有，非整个铁路系统彻底停止运转崩盘。",
               "refSentences": [
                 "P4-S3"
               ]
@@ -981,6 +1085,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "threat of nationalisation will return if anger not addressed = may face a change of ownership（面临所有权变更）。",
             "methodSummary": "概念本质对应法：nationalisation（国有化）抽象同义转换为 a change of ownership（所有权变更）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "D",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "D",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "C",
+                "B": "D",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -998,41 +1138,11 @@ window.ENGLISH_DATA['2021'] = {
             "P3-S2",
             "P4-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "Who are to Blame for the Strikes?",
-              "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 局部论据】罢工只是第三段讨论的痛点之一，文章核心矛盾是票价连年暴涨与服务极差的不可持续。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "Constant Complaining Doesn't Work",
-              "isCorrect": false,
-              "distractorType": "无中生有颠倒",
-              "analysis": "【干扰特征: 正反颠倒】作者完全支持乘客的正当愤怒与抱怨诉求（justified anger），呼吁必须严肃解决。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "Can Nationalisation Bring Hope?",
-              "isCorrect": false,
-              "distractorType": "以偏概全偏激",
-              "analysis": "【干扰特征: 次要结尾警告】国有化是文末作为悬在运营商头顶的惩罚之剑被提及，非全文核心探讨的主题。",
-              "refSentences": [
-                "P4-S3"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "Ever-rising Fares Aren't Sustainable",
+              "text": "Ever-rising Fares Aren't Sustainable.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全文主旨概括】全文开篇即质问票价连年上涨（another increase / annual ritual / well above inflation），中篇剖析高昂票价与劣质服务的不对等，尾段在 P4-S2 明确得出核心论点：'passengers will not be willing to pay more indefinitely if they must endure cramped, unreliable services'（如果只能得到拥挤不可靠的服务，乘客绝不可能无限期容忍票价上涨）。D选项 Ever-rising Fares Aren't Sustainable（连年暴涨的票价绝不可持续）全面、精准且有力地统领了全文的核心论述主线，为最佳标题。",
@@ -1042,11 +1152,77 @@ window.ENGLISH_DATA['2021'] = {
                 "P3-S2",
                 "P4-S2"
               ]
+            },
+            {
+              "key": "B",
+              "text": "Who Are to Blame for the Strikes?.",
+              "isCorrect": false,
+              "distractorType": "以偏概全",
+              "analysis": "【干扰特征: 局部论据】罢工只是第三段讨论的痛点之一，文章核心矛盾是票价连年暴涨与服务极差的不可持续。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Constant Complaining Doesn't Work.",
+              "isCorrect": false,
+              "distractorType": "无中生有颠倒",
+              "analysis": "【干扰特征: 正反颠倒】作者完全支持乘客的正当愤怒与抱怨诉求（justified anger），呼吁必须严肃解决。",
+              "refSentences": [
+                "P4-S3"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "Can Nationalisation Bring Hope?.",
+              "isCorrect": false,
+              "distractorType": "以偏概全偏激",
+              "analysis": "【干扰特征: 次要结尾警告】国有化是文末作为悬在运营商头顶的惩罚之剑被提及，非全文核心探讨的主题。",
+              "refSentences": [
+                "P4-S3"
+              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "passengers will not be willing to pay more indefinitely for cramped unreliable service = Ever-rising Fares Aren't Sustainable。",
             "methodSummary": "主旨标题题核心论点概括法：抓准贯穿首尾的核心命题（Ever-rising fares + not pay indefinitely = Aren't Sustainable）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -1774,20 +1950,30 @@ window.ENGLISH_DATA['2021'] = {
             "P2-S1",
             "P2-S2"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
-              "text": "facilitate healthcare reform.",
+              "text": "improve local education systems.",
               "isCorrect": false,
               "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 局部条件】定期医疗体检只是获得补贴的约束条件之一，非整个 CCT 计划的终极主旨。",
+              "analysis": "【干扰特征: 局部条件】要求儿童上学是发放补助的前提条件，非旨在改革教育系统本身。",
               "refSentences": [
                 "P2-S1"
               ]
             },
             {
               "key": "B",
+              "text": "lower deforestation rates.",
+              "isCorrect": false,
+              "distractorType": "无心插柳的意外效应",
+              "analysis": "【干扰特征: 意外副效应混淆主旨】降低森林砍伐率是后来意外发现的附加环境红利，设计 CCT 时的原始初衷并未考量环保（P3-S1: don't consider effects on environment）。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
               "text": "help poor families get better off.",
               "isCorrect": true,
               "distractorType": null,
@@ -1798,29 +1984,55 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "C",
-              "text": "improve local education systems.",
+              "key": "D",
+              "text": "facilitate health care reform.",
               "isCorrect": false,
               "distractorType": "以偏概全",
-              "analysis": "【干扰特征: 局部条件】要求儿童上学是发放补助的前提条件，非旨在改革教育系统本身。",
+              "analysis": "【干扰特征: 局部条件】定期医疗体检只是获得补贴的约束条件之一，非整个 CCT 计划的终极主旨。",
               "refSentences": [
                 "P2-S1"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "lower deforestation rates.",
-              "isCorrect": false,
-              "distractorType": "无心插柳的意外效应",
-              "analysis": "【干扰特征: 意外副效应混淆主旨】降低森林砍伐率是后来意外发现的附加环境红利，设计 CCT 时的原始初衷并未考量环保（P3-S1: don't consider effects on environment）。",
-              "refSentences": [
-                "P3-S1"
               ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "reduce inequality and break cycle of poverty = help poor families get better off。",
             "methodSummary": "项目初衷提取：抓准 designed to 后的动词短语（reduce inequality / break cycle of poverty）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "英语一_2021_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "A",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1836,11 +2048,22 @@ window.ENGLISH_DATA['2021'] = {
             "P4-S1",
             "P4-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "cattle raising has been a major means of livelihood for the poor.",
+              "text": "economic growth tends to cause environmental degradation.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 例证论点对应】P4-S1 和 P4-S2 紧密相连：P4-S1 指出传统理论假设'economic growth can be correlated with environmental degradation'（经济增长与环境恶化相关）；P4-S2 紧随其后指出'The only previous study analyzing causality, based on an area in Mexico... supported the traditional view'（此前唯一一项基于墨西哥的因果研究，恰恰支持了这一传统观点：拿到钱后伐林养牛）。引用墨西哥案例正是为了证明经济增长往往会导致环境恶化。D选项原词完全精准对应论点。",
+              "refSentences": [
+                "P4-S1",
+                "P4-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "cattle rearing has been a major means of livelihood for the poor.",
               "isCorrect": false,
               "distractorType": "次要生活细节",
               "analysis": "【干扰特征: 局部细节】养牛只是村民毁林的具体用途行为，非引用该研究旨在论证的宏观理论论点。",
@@ -1849,7 +2072,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
+              "key": "C",
               "text": "CCT programs have helped preserve traditional lifestyles.",
               "isCorrect": false,
               "distractorType": "无中生有",
@@ -1859,22 +2082,11 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "C",
+              "key": "D",
               "text": "antipoverty efforts require the participation of local farmers.",
               "isCorrect": false,
               "distractorType": "偏离论点",
               "analysis": "【干扰特征: 偏离论证主线】墨西哥案例是用来说明收入提高与环境破坏的传统对立假设。",
-              "refSentences": [
-                "P4-S1",
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "economic growth tends to cause environmental degradation.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 例证论点对应】P4-S1 和 P4-S2 紧密相连：P4-S1 指出传统理论假设'economic growth can be correlated with environmental degradation'（经济增长与环境恶化相关）；P4-S2 紧随其后指出'The only previous study analyzing causality, based on an area in Mexico... supported the traditional view'（此前唯一一项基于墨西哥的因果研究，恰恰支持了这一传统观点：拿到钱后伐林养牛）。引用墨西哥案例正是为了证明经济增长往往会导致环境恶化。D选项原词完全精准对应论点。",
               "refSentences": [
                 "P4-S1",
                 "P4-S2"
@@ -1884,6 +2096,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "economic growth correlated with environmental degradation + Mexico study supported traditional view = economic growth tends to cause environmental degradation。",
             "methodSummary": "例证题前句论点锁定法：抓准 supported the traditional view 指向前句 economic growth correlated with environmental degradation。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1898,7 +2146,7 @@ window.ENGLISH_DATA['2021'] = {
           "targetSentences": [
             "P5-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1922,20 +2170,20 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "C",
-              "text": "the relation of CCTs to its forest loss.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P5-S1 明确阐述费拉罗的研究初衷与核心假设：'Ferraro wanted to see if Indonesia's poverty-alleviation program was affecting deforestation'（费拉罗试图探究印尼的反贫困扶贫项目是否正在对森林砍伐产生实际影响）。C选项 the relation of CCTs to its forest loss（CCT 扶贫项目与其森林流失砍伐之间的关联）是 affecting deforestation 的完全等价同义改写。",
+              "text": "the role of its forests in climate change.",
+              "isCorrect": false,
+              "distractorType": "无中生有夸大",
+              "analysis": "【干扰特征: 泛化宏观】研究聚焦于特定扶贫政策对森林砍伐的具体因果效应，非泛论森林在气候变化中的整体角色。",
               "refSentences": [
                 "P5-S1"
               ]
             },
             {
               "key": "D",
-              "text": "the role of its forests in climate change.",
-              "isCorrect": false,
-              "distractorType": "无中生有夸大",
-              "analysis": "【干扰特征: 泛化宏观】研究聚焦于特定扶贫政策对森林砍伐的具体因果效应，非泛论森林在气候变化中的整体角色。",
+              "text": "the relation of CCTs to its forest loss.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P5-S1 明确阐述费拉罗的研究初衷与核心假设：'Ferraro wanted to see if Indonesia's poverty-alleviation program was affecting deforestation'（费拉罗试图探究印尼的反贫困扶贫项目是否正在对森林砍伐产生实际影响）。C选项 the relation of CCTs to its forest loss（CCT 扶贫项目与其森林流失砍伐之间的关联）是 affecting deforestation 的完全等价同义改写。",
               "refSentences": [
                 "P5-S1"
               ]
@@ -1944,6 +2192,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "see if poverty-alleviation program was affecting deforestation = the relation of CCTs to its forest loss。",
             "methodSummary": "研究目的直接对应：wanted to see if poverty program affecting deforestation 转换为 relation of CCTs to forest loss。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "英语一_2021_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1958,7 +2242,7 @@ window.ENGLISH_DATA['2021'] = {
           "targetSentences": [
             "P8-S2"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -1983,6 +2267,16 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "C",
+              "text": "it can boost grain production.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】水稻种植是机理分析中的背景，非项目最核心的生态价值体现。",
+              "refSentences": [
+                "P7-S1"
+              ]
+            },
+            {
+              "key": "D",
               "text": "it can protect the environment.",
               "isCorrect": true,
               "distractorType": null,
@@ -1990,21 +2284,47 @@ window.ENGLISH_DATA['2021'] = {
               "refSentences": [
                 "P8-S2"
               ]
-            },
-            {
-              "key": "D",
-              "text": "it can benefit grain production.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】水稻种植是机理分析中的背景，非项目最核心的生态价值体现。",
-              "refSentences": [
-                "P7-S1"
-              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "what's good for people may also be good for environment + value of avoided deforestation exceeds program costs = it can protect the environment。",
             "methodSummary": "价值定性题提取：抓准 good for environment 与 value of avoided deforestation 对应的 it can protect the environment。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "英语一_2021_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2022,10 +2342,20 @@ window.ENGLISH_DATA['2021'] = {
             "P6-S1",
             "P8-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
+              "text": "The debates over a program.",
+              "isCorrect": false,
+              "distractorType": "概念偏差",
+              "analysis": "【干扰特征: 偏离实证主线】文章是基于卫星遥感大数据的扎实实证研究，非各方对该项目展开争论辩驳（debates）。",
+              "refSentences": [
+                "P6-S1"
+              ]
+            },
+            {
+              "key": "B",
               "text": "The effects of a program.",
               "isCorrect": true,
               "distractorType": null,
@@ -2039,27 +2369,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
-              "text": "The debates over a program.",
-              "isCorrect": false,
-              "distractorType": "概念偏差",
-              "analysis": "【干扰特征: 偏离实证主线】文章是基于卫星遥感大数据的扎实实证研究，非各方对该项目展开争论辩驳（debates）。",
-              "refSentences": [
-                "P6-S1"
-              ]
-            },
-            {
               "key": "C",
-              "text": "The process of a study.",
-              "isCorrect": false,
-              "distractorType": "以偏概全方法论",
-              "analysis": "【干扰特征: 局限于研究方法】研究过程仅在第6段简要提及，文章重心在于展示 CCT 项目所带来的各项实质减贫与环保效应结果。",
-              "refSentences": [
-                "P6-S1"
-              ]
-            },
-            {
-              "key": "D",
               "text": "The transferability of a study.",
               "isCorrect": false,
               "distractorType": "末段次要细节",
@@ -2067,11 +2377,57 @@ window.ENGLISH_DATA['2021'] = {
               "refSentences": [
                 "P8-S1"
               ]
+            },
+            {
+              "key": "D",
+              "text": "The process of a study.",
+              "isCorrect": false,
+              "distractorType": "以偏概全方法论",
+              "analysis": "【干扰特征: 局限于研究方法】研究过程仅在第6段简要提及，文章重心在于展示 CCT 项目所带来的各项实质减贫与环保效应结果。",
+              "refSentences": [
+                "P6-S1"
+              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "CCT program's antipoverty effects + 30% deforestation reduction effects = The effects of a program（一个项目的多重效应）。",
             "methodSummary": "主旨中心题概括法：识别文章核心实体（CCT program）与核心探讨维度（effects on poverty and environment）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "英语一_2021_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -2834,10 +3190,21 @@ window.ENGLISH_DATA['2021'] = {
             "P1-S2",
             "P1-S3"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
+              "text": "illustrated the development of Victorian photography.",
+              "isCorrect": false,
+              "distractorType": "跨段混淆",
+              "analysis": "【干扰特征: 跨段混淆】摄影技术发展是第3、4段讨论的内容，第一段专讲推特发帖对公众认知的颠覆冲击。",
+              "refSentences": [
+                "P1-S2",
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "B",
               "text": "changed people's impression of the Victorians.",
               "isCorrect": true,
               "distractorType": null,
@@ -2849,7 +3216,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
+              "key": "C",
               "text": "highlighted social media's role in Victorian studies.",
               "isCorrect": false,
               "distractorType": "过度推断夸大",
@@ -2859,30 +3226,55 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "C",
-              "text": "re-evaluated the Victorian's notion of public image.",
+              "key": "D",
+              "text": "re-evaluated the Victorians' notion of public image.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 偷换概念】改变的是现代人对维多利亚人的看法，非维多利亚人自身的公众形象观念。",
               "refSentences": [
                 "P1-S1"
               ]
-            },
-            {
-              "key": "D",
-              "text": "illustrated the development of Victorian photography.",
-              "isCorrect": false,
-              "distractorType": "跨段混淆",
-              "analysis": "【干扰特征: 跨段混淆】摄影技术发展是第3、4段讨论的内容，第一段专讲推特发帖对公众认知的颠覆冲击。",
-              "refSentences": [
-                "P1-S2",
-                "P3-S1"
-              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "shatter image of prudery + surprised to see Victorians had fun = changed people's impression of the Victorians。",
             "methodSummary": "首段题眼归纳法：抓准 shatter the image of prudery 对应的 changed people's impression。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2897,7 +3289,7 @@ window.ENGLISH_DATA['2021'] = {
           "targetSentences": [
             "P2-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
@@ -2911,6 +3303,17 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "B",
+              "text": "They show effects of different exposure times.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 概念偏差】反映不同曝光时间的是科技史，作者搜集微笑照片是为了颠覆古板人情味刻板印象。",
+              "refSentences": [
+                "P2-S1",
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "C",
               "text": "They are rare among photographs of that age.",
               "isCorrect": true,
               "distractorType": null,
@@ -2920,7 +3323,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "C",
+              "key": "D",
               "text": "They mirror 19th-century social conventions.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
@@ -2928,22 +3331,47 @@ window.ENGLISH_DATA['2021'] = {
               "refSentences": [
                 "P2-S1"
               ]
-            },
-            {
-              "key": "D",
-              "text": "They show effects of different exposure times.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 概念偏差】反映不同曝光时间的是科技史，作者搜集微笑照片是为了颠覆古板人情味刻板印象。",
-              "refSentences": [
-                "P2-S1",
-                "P3-S1"
-              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "makes up only a tiny percentage of the vast catalogue = They are rare among photographs of that age。",
             "methodSummary": "数量特征对应法：tiny percentage 转换为 rare among photographs of that age。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "D",
+                "D": "B"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "D",
+                "D": "B"
+              },
+              "source": "英语一_2021_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "D",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2960,10 +3388,22 @@ window.ENGLISH_DATA['2021'] = {
             "P5-S1",
             "P5-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
+              "text": "Their unhealthy dental condition.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S1 指出1890年代曝光已不再是障碍，P5-S1 紧接着揭示核心深层原因：'\"Nature gave us lips to conceal our teeth,\" ran one popular Victorian maxim, alluding to the fact that before the birth of proper dentistry, mouths were often in a shocking state of hygiene'（大自然给我们嘴唇是为了掩盖牙齿，正规牙科诞生前口腔牙齿处于令人触目惊心的卫生状态，露出烂牙会丧失体面尊严）。D选项 Their unhealthy dental condition（他们不健康的牙齿卫生状况）与 shocking state of hygiene 完全精准对应。",
+              "refSentences": [
+                "P4-S1",
+                "P5-S1",
+                "P5-S2"
+              ]
+            },
+            {
+              "key": "B",
               "text": "Their inherent social sensitiveness.",
               "isCorrect": false,
               "distractorType": "空泛泛指",
@@ -2973,7 +3413,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
+              "key": "C",
               "text": "Their tension before the camera.",
               "isCorrect": false,
               "distractorType": "时代错位排除",
@@ -2984,7 +3424,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "C",
+              "key": "D",
               "text": "Their distrust of new inventions.",
               "isCorrect": false,
               "distractorType": "无中生有",
@@ -2992,23 +3432,47 @@ window.ENGLISH_DATA['2021'] = {
               "refSentences": [
                 "P4-S1"
               ]
-            },
-            {
-              "key": "D",
-              "text": "Their unhealthy dental condition.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P4-S1 指出1890年代曝光已不再是障碍，P5-S1 紧接着揭示核心深层原因：'\"Nature gave us lips to conceal our teeth,\" ran one popular Victorian maxim, alluding to the fact that before the birth of proper dentistry, mouths were often in a shocking state of hygiene'（大自然给我们嘴唇是为了掩盖牙齿，正规牙科诞生前口腔牙齿处于令人触目惊心的卫生状态，露出烂牙会丧失体面尊严）。D选项 Their unhealthy dental condition（他们不健康的牙齿卫生状况）与 shocking state of hygiene 完全精准对应。",
-              "refSentences": [
-                "P4-S1",
-                "P5-S1",
-                "P5-S2"
-              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "1890s exposure was instantaneous... mouths were often in a shocking state of hygiene = Their unhealthy dental condition。",
             "methodSummary": "时间定位因果题：排除了 1890s 的曝光技术因素后，准确定位到第5段的 shocking state of dental hygiene。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3024,11 +3488,21 @@ window.ENGLISH_DATA['2021'] = {
             "P6-S1",
             "P6-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "a deep-root belief.",
+              "text": "a thought-provoking idea.",
+              "isCorrect": false,
+              "distractorType": "泛化泛指",
+              "analysis": "【干扰特征: 过于宽泛】未能揭示全社会普遍固化信条的核心本质。",
+              "refSentences": [
+                "P6-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "a deep-rooted belief.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P6-S1 和 P6-S2 紧密相连：前文论述得体阶层普遍认为露齿笑缺乏教养；随后引述甚至连平素极其喜爱爽朗大笑的马克·吐温（Even Mark Twain, who enjoyed a hearty laugh）都坚决认为照片中定格傻笑是极其致命不可接受的（nothing more damning than a silly smile）。引用连最爱笑的标志性名人都毫不例外地坚决恪守这一信条，正是为了有力证明：在维多利亚时期，对照片中微笑的反对排斥已经是一种极其根深蒂固、深入骨髓的普遍社会观念信仰（a deep-root belief）。A选项完全精准吻合。",
@@ -3038,7 +3512,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
+              "key": "C",
               "text": "a misguided attitude.",
               "isCorrect": false,
               "distractorType": "后世主观评价偏差",
@@ -3048,21 +3522,11 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "C",
+              "key": "D",
               "text": "a controversial view.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】连爱笑的作家都完全一致赞同，说明这是当时压倒性的全社会共识，非充满争议（controversial）。",
-              "refSentences": [
-                "P6-S2"
-              ]
-            },
-            {
-              "key": "D",
-              "text": "a thought-provoking idea.",
-              "isCorrect": false,
-              "distractorType": "泛化泛指",
-              "analysis": "【干扰特征: 过于宽泛】未能揭示全社会普遍固化信条的核心本质。",
               "refSentences": [
                 "P6-S2"
               ]
@@ -3071,6 +3535,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "Even Mark Twain, a man who enjoyed hearty laugh, said nothing more damning than a silly smile = a deep-root belief（根深蒂固的信念）。",
             "methodSummary": "让步递进例证法：Even Mark Twain... 表示连最爱笑的人都在遵循，证明该观念是 deep-root belief。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3088,11 +3588,32 @@ window.ENGLISH_DATA['2021'] = {
             "P5-S1",
             "P6-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
-              "text": "Why did most Victorians look stern in photographs?",
+              "text": "When did the Victorians start to view photography differently?.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 概念偏差】文章探讨的是肖像拍照中的面部表情原因，非维多利亚人为何开始看照片。",
+              "refSentences": [
+                "P2-S1"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "What made photography develop slowly in the Victorian period?.",
+              "isCorrect": false,
+              "distractorType": "次要科技背景",
+              "analysis": "【干扰特征: 偏离核心】摄影技术演进只是辅助解释表情的背景变量，非文章探讨的主旨核心。",
+              "refSentences": [
+                "P3-S1",
+                "P4-S1"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "Why did most Victorians look stern in photographs?.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全文核心设问与主旨】文章结构极其清晰严密：第1-2段提出绝大多数维多利亚肖像照都表情僵硬严肃（posing miserably and stiffly），并在 P2-S1 提出核心问题'How do we explain this trend?'；随后第3段从早期曝光过长技术限制予以解释，第4-5段从快门提速后口腔牙齿卫生恶劣（lips conceal teeth / dental hygiene）予以解释，第6段从露齿笑缺乏阶级教养与马克·吐温信念予以文化解释。全文通篇都在严密系统地回答“为什么绝大多数维多利亚人在照片中看起来如此严肃冷峻（look stern）”这一核心议题。A选项为最完美的契合主旨选项。",
@@ -3105,29 +3626,8 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
-              "text": "Why did the Victorians start to view photographs?",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 概念偏差】文章探讨的是肖像拍照中的面部表情原因，非维多利亚人为何开始看照片。",
-              "refSentences": [
-                "P2-S1"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "What made photography develop in the Victorian period?",
-              "isCorrect": false,
-              "distractorType": "次要科技背景",
-              "analysis": "【干扰特征: 偏离核心】摄影技术演进只是辅助解释表情的背景变量，非文章探讨的主旨核心。",
-              "refSentences": [
-                "P3-S1",
-                "P4-S1"
-              ]
-            },
-            {
               "key": "D",
-              "text": "How did smiling in photographs become a post-Victorian norm?",
+              "text": "How did smiling in photographs become a post-Victorian norm?.",
               "isCorrect": false,
               "distractorType": "无中生有后维多利亚时代",
               "analysis": "【干扰特征: 时代跨越】文章完全局限在维多利亚时代（1840-1900），未探讨后维多利亚时代微笑如何演变为规范。",
@@ -3139,6 +3639,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "posing stiffly / How do we explain this trend? + exposure (P3) + dental hygiene (P5) + class etiquette (P6) = Why did most Victorians look stern in photographs?",
             "methodSummary": "核心设问主旨题：定位第2段承上启下的核心问题句（How do we explain this trend?）并提炼各段多维归因。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "C",
+                "B": "A",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "C",
+                "B": "A",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "英语一_2021_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "C",
+                "B": "A",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -3975,10 +4511,20 @@ window.ENGLISH_DATA['2021'] = {
           "targetSentences": [
             "P1-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
+              "text": "show partiality in treating clients.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P1-S1 明确阐述长期以来的核心担忧：'cable and phone companies... had the power and incentive to favor affiliated websites over their rivals'（有线电视和电信宽带巨头有权力和动机去偏袒优待自营关联网站，从而打压竞争对手）。favor affiliated websites over rivals（偏袒自营网站胜过对手）与 show partiality in treating clients（在对待客户时展现出偏袒/不公正偏心）完全精准同义对应。",
+              "refSentences": [
+                "P1-S1"
+              ]
+            },
+            {
+              "key": "B",
               "text": "bring web-based firms under control.",
               "isCorrect": false,
               "distractorType": "偷换概念",
@@ -3988,7 +4534,7 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "B",
+              "key": "C",
               "text": "slow down the traffic on their network.",
               "isCorrect": false,
               "distractorType": "以偏概全手段",
@@ -3996,16 +4542,6 @@ window.ENGLISH_DATA['2021'] = {
               "refSentences": [
                 "P1-S1",
                 "P1-S2"
-              ]
-            },
-            {
-              "key": "C",
-              "text": "show partiality in treating clients.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P1-S1 明确阐述长期以来的核心担忧：'cable and phone companies... had the power and incentive to favor affiliated websites over their rivals'（有线电视和电信宽带巨头有权力和动机去偏袒优待自营关联网站，从而打压竞争对手）。favor affiliated websites over rivals（偏袒自营网站胜过对手）与 show partiality in treating clients（在对待客户时展现出偏袒/不公正偏心）完全精准同义对应。",
-              "refSentences": [
-                "P1-S1"
               ]
             },
             {
@@ -4023,6 +4559,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "favor affiliated websites over their rivals = show partiality in treating clients（在对待客户时偏心偏袒）。",
             "methodSummary": "担忧焦点提取：favor A over B 直接转换为 show partiality in treating clients。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "英语一_2021_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "B",
+                "B": "C",
+                "C": "A",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -4038,7 +4610,7 @@ window.ENGLISH_DATA['2021'] = {
             "P2-S1",
             "P2-S3"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
@@ -4053,12 +4625,11 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "B",
-              "text": "takes an anti-regulatory stance.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P2-S1 和 P2-S3 明确阐述 FCC 在共和党主导下的做法：'pushback from anti-regulatory conservatives... eliminated strict net neutrality rules... rejected the commission's authority to require broadband providers to do much of anything. declared state governments couldn't regulate either'（废除严格网络中立规则，全盘否定自身监管权威，禁止地方政府监管）。B选项 takes an anti-regulatory stance（采取了坚决的反监管立场）是对这一系列自我剥夺监管权举措最精准的提炼。",
+              "text": "has allowed the states to intervene.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实完全相反】FCC 明令禁止各州和地方政府介入监管（declared state governments couldn't regulate either）。",
               "refSentences": [
-                "P2-S1",
                 "P2-S3"
               ]
             },
@@ -4074,11 +4645,12 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "D",
-              "text": "has allowed the states to intervene.",
-              "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 事实完全相反】FCC 明令禁止各州和地方政府介入监管（declared state governments couldn't regulate either）。",
+              "text": "takes an anti-regulatory stance.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S1 和 P2-S3 明确阐述 FCC 在共和党主导下的做法：'pushback from anti-regulatory conservatives... eliminated strict net neutrality rules... rejected the commission's authority to require broadband providers to do much of anything. declared state governments couldn't regulate either'（废除严格网络中立规则，全盘否定自身监管权威，禁止地方政府监管）。B选项 takes an anti-regulatory stance（采取了坚决的反监管立场）是对这一系列自我剥夺监管权举措最精准的提炼。",
               "refSentences": [
+                "P2-S1",
                 "P2-S3"
               ]
             }
@@ -4086,6 +4658,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "eliminated strict rules + rejected authority to require providers to do anything = takes an anti-regulatory stance。",
             "methodSummary": "监管立场概括题：抓准 eliminated rules 与 rejected authority 对应的 anti-regulatory stance。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "英语一_2021_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "D",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -4100,30 +4708,20 @@ window.ENGLISH_DATA['2021'] = {
           "targetSentences": [
             "P3-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
-              "text": "It protects against unfair competition.",
+              "text": "It is in pursuit of quality service.",
               "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 褒贬颠倒】AT&T 自身正是从事不公平竞争的实施者，非保护防范者。",
+              "distractorType": "无中生有美化",
+              "analysis": "【干扰特征: 虚假美化】文章揭露其搞流量限制和自我偏袒等不当竞争操纵，非追求优质服务。",
               "refSentences": [
                 "P3-S1"
               ]
             },
             {
               "key": "B",
-              "text": "It engages in anti-competitive practices.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 原文同义复现】P3-S1 明确引述 AT&T 的典型操纵行为：'protect against anti-competitive behavior, such as a broadband-providing conglomerate like AT&T favoring its own video-streaming service at the expense of Netflix and Apple TV'（防范反竞争行为，例如像 AT&T 这样的大财团以牺牲奈飞和苹果电视为代价偏袒自营流媒体）。B选项 It engages in anti-competitive practices（它从事反竞争操作行为）与原文定性完全精准吻合。",
-              "refSentences": [
-                "P3-S1"
-              ]
-            },
-            {
-              "key": "C",
               "text": "It is under the FCC's investigation.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
@@ -4133,11 +4731,21 @@ window.ENGLISH_DATA['2021'] = {
               ]
             },
             {
-              "key": "D",
-              "text": "It is in pursuit of quality service.",
+              "key": "C",
+              "text": "It protects against unfair competition.",
               "isCorrect": false,
-              "distractorType": "无中生有美化",
-              "analysis": "【干扰特征: 虚假美化】文章揭露其搞流量限制和自我偏袒等不当竞争操纵，非追求优质服务。",
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 褒贬颠倒】AT&T 自身正是从事不公平竞争的实施者，非保护防范者。",
+              "refSentences": [
+                "P3-S1"
+              ]
+            },
+            {
+              "key": "D",
+              "text": "It engages in anti-competitive practices.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 原文同义复现】P3-S1 明确引述 AT&T 的典型操纵行为：'protect against anti-competitive behavior, such as a broadband-providing conglomerate like AT&T favoring its own video-streaming service at the expense of Netflix and Apple TV'（防范反竞争行为，例如像 AT&T 这样的大财团以牺牲奈飞和苹果电视为代价偏袒自营流媒体）。B选项 It engages in anti-competitive practices（它从事反竞争操作行为）与原文定性完全精准吻合。",
               "refSentences": [
                 "P3-S1"
               ]
@@ -4146,6 +4754,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "anti-competitive behavior, such as AT&T favoring its own service at expense of rivals = It engages in anti-competitive practices。",
             "methodSummary": "例证事实原词对应：anti-competitive behavior such as AT&T -> engages in anti-competitive practices。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "C",
+                "B": "D",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "C",
+                "B": "D",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "C",
+                "B": "D",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -4160,26 +4804,26 @@ window.ENGLISH_DATA['2021'] = {
           "targetSentences": [
             "P4-S2"
           ],
-          "officialAnswer": "D",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
-              "text": "focus on trivialities.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偷换概念】米莱特批评的是判决脱离技术现实，非纠缠于细枝末节（trivialities）。",
-              "refSentences": [
-                "P4-S2"
-              ]
-            },
-            {
-              "key": "B",
               "text": "conveys an ambiguous message.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】判决立场清晰（全盘去监管），问题在于其违背了现代宽带现实，非信息模棱两可。",
               "refSentences": [
                 "P4-S1",
+                "P4-S2"
+              ]
+            },
+            {
+              "key": "B",
+              "text": "is out of touch with reality.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 习语同义替换】P4-S2 明确引述米莱特法官的原话：'the result is unhinged from the realities of modern broadband service... avoid trapping Internet regulation in technological anachronism'（判决结果完全脱离了现代宽带服务的现实……避免陷入技术时代错乱）。unhinged from realities 与 is out of touch with reality（脱离实际/脱离现实）完全同义对应吻合。",
+              "refSentences": [
                 "P4-S2"
               ]
             },
@@ -4195,10 +4839,10 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "D",
-              "text": "is out of touch with reality.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 习语同义替换】P4-S2 明确引述米莱特法官的原话：'the result is unhinged from the realities of modern broadband service... avoid trapping Internet regulation in technological anachronism'（判决结果完全脱离了现代宽带服务的现实……避免陷入技术时代错乱）。unhinged from realities 与 is out of touch with reality（脱离实际/脱离现实）完全同义对应吻合。",
+              "text": "focuses on trivialities.",
+              "isCorrect": false,
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偷换概念】米莱特批评的是判决脱离技术现实，非纠缠于细枝末节（trivialities）。",
               "refSentences": [
                 "P4-S2"
               ]
@@ -4207,6 +4851,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "the result is unhinged from the realities of modern broadband service = is out of touch with reality。",
             "methodSummary": "习语对应法：unhinged from realities（脱缰/脱离现实）直接转换为 is out of touch with reality。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "英语一_2021_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "D",
+                "B": "A",
+                "C": "C",
+                "D": "B"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -4220,14 +4900,14 @@ window.ENGLISH_DATA['2021'] = {
           "targetSentences": [
             "P6-S1"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "C",
           "options": [
             {
               "key": "A",
-              "text": "Congress needs to take action to ensure net neutrality.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 原文同义复现】P6-S1 明确总结全篇的核心规范性号召：'The endless legal battles and back-and-forth at the FCC cry out for Congress to act. It needs to give the commission explicit authority once and for all to bar broadband providers from meddling in the traffic... and create clear rules protecting openness and innovation'（无休止的诉讼与反复倒退大声疾呼国会必须行动，一劳永逸赋予明确权限禁止运营商干预流量，确立保障网络开放的清晰规则）。A选项 Congress needs to take action to ensure net neutrality（国会需要采取行动以切实保障网络中立）是对尾段核心主张最全面精准的凝练。",
+              "text": "Broadband providers' rights should be protected.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒保护对象",
+              "analysis": "【干扰特征: 颠倒保护主体】需要保护的是广大消费者与互联网创业者，对宽带运营商则是严禁其插手干预流量（bar meddling in traffic）。",
               "refSentences": [
                 "P6-S1"
               ]
@@ -4244,20 +4924,20 @@ window.ENGLISH_DATA['2021'] = {
             },
             {
               "key": "C",
-              "text": "Rules need to be set to diversify online services.",
-              "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "【干扰特征: 偏离主线】规则是为了保护开放性与创新（protecting openness and innovation / net neutrality），非多样化网络服务。",
+              "text": "Congress needs to take action to ensure net neutrality.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 原文同义复现】P6-S1 明确总结全篇的核心规范性号召：'The endless legal battles and back-and-forth at the FCC cry out for Congress to act. It needs to give the commission explicit authority once and for all to bar broadband providers from meddling in the traffic... and create clear rules protecting openness and innovation'（无休止的诉讼与反复倒退大声疾呼国会必须行动，一劳永逸赋予明确权限禁止运营商干预流量，确立保障网络开放的清晰规则）。A选项 Congress needs to take action to ensure net neutrality（国会需要采取行动以切实保障网络中立）是对尾段核心主张最全面精准的凝练。",
               "refSentences": [
                 "P6-S1"
               ]
             },
             {
               "key": "D",
-              "text": "Broadband providers' rights should be protected.",
+              "text": "Rules need to be set to diversify online services.",
               "isCorrect": false,
-              "distractorType": "正反颠倒保护对象",
-              "analysis": "【干扰特征: 颠倒保护主体】需要保护的是广大消费者与互联网创业者，对宽带运营商则是严禁其插手干预流量（bar meddling in traffic）。",
+              "distractorType": "偷换概念",
+              "analysis": "【干扰特征: 偏离主线】规则是为了保护开放性与创新（protecting openness and innovation / net neutrality），非多样化网络服务。",
               "refSentences": [
                 "P6-S1"
               ]
@@ -4266,6 +4946,42 @@ window.ENGLISH_DATA['2021'] = {
           "presetReflection": {
             "trapAnalysis": "cry out for Congress to act... bar providers from meddling in traffic and protect openness = Congress needs to take action to ensure net neutrality。",
             "methodSummary": "末段行动呼吁提取法：抓准 cry out for Congress to act 对应的 Congress needs to take action to ensure net neutrality。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "2021_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "英语一_2021_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "C",
+                "B": "B",
+                "C": "D",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]

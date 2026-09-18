@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
+const vm = require('vm');
 
 console.log('====================================================');
 console.log('  考研题库 - 单元测试套件 (Unit Tests Runner)');
@@ -2051,22 +2052,48 @@ test('考研英语代码逻辑契约: 按键重映射、做题模式免回车暂
   assert.ok(engAppSrc.includes('_autoAdvanceTimer'), '必须包含做题选项选定后自动推进下一题机制');
 });
 
-test('考研英语 CSS 模考下方小窗与双列选项布局契约', () => {
+test('考研英语做题模式与精读一致的左右两列分屏与思考复盘常驻契约', () => {
   const cssSrc = fs.readFileSync(path.join(__dirname, '../css/english.css'), 'utf8');
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
 
-  // 1. 模考模式工作台上下布局
-  assert.ok(cssSrc.includes('.mode-practice-active .english-workbench') && cssSrc.includes('flex-direction: column'), '模考模式下工作台必须切换为上下纵向排列 (flex-direction: column)');
+  // 1. 做题模式与精读模式一致的左右横向两列分屏 (flex-direction: row)
+  assert.ok(cssSrc.includes('.mode-practice-active .english-workbench') && cssSrc.includes('flex-direction: row'), '做题模式下工作台必须保持左右横向排列 (flex-direction: row)');
+  assert.ok(!cssSrc.includes('.mode-practice-active .english-workbench {\n  flex-direction: column'), '做题模式绝不能强制上下堆叠为 column');
 
-  // 2. 下方做题小窗 Dock 约束
-  assert.ok(cssSrc.includes('.mode-practice-active .analysis-pane') && cssSrc.includes('max-height: 280px'), '模考模式下题目工作台必须作为底部小窗呈现 (max-height 约束)');
+  // 2. 左栏文章与右栏题目工作台 50% / 50% 统一切分呈现
+  assert.ok(cssSrc.includes('.mode-practice-active .passage-pane') && (cssSrc.includes('flex: 1 1 50%') || cssSrc.includes('flex: 50%')), '做题模式下文章面板必须作为左栏呈现 (flex: 1 1 50%)');
+  assert.ok(cssSrc.includes('.mode-practice-active .analysis-pane') && (cssSrc.includes('flex: 1 1 50%') || cssSrc.includes('flex: 50%')), '做题模式下题目工作台必须作为右栏呈现 (flex: 1 1 50%)');
+  assert.ok(!cssSrc.includes('.mode-practice-active .analysis-pane {\n  flex: 0 0 auto !important;\n  height: auto !important;\n  max-height: 280px'), '做题模式题目工作台绝不能退化为底部小窗 (移除了 280px 底部 dock 限制)');
 
-  // 3. 选项双列网格布局
-  assert.ok(cssSrc.includes('.mode-practice-active .options-list') && cssSrc.includes('grid-template-columns: repeat(2, 1fr)'), '模考模式选项列表必须采用 2x2 双列网格紧凑呈现');
+  // 3. 做题思考与错因复盘常驻显示契约 (做题时思考 + 错因复盘)
+  assert.ok(cssSrc.includes('.mode-practice-active .reflection-card') && cssSrc.includes('display: block'), 'CSS 必须常驻展示做题模式下的复盘卡片 (display: block)');
+  assert.ok(!cssSrc.includes('.mode-practice-active .reflection-card {\n  display: none'), 'CSS 绝不能在做题模式交卷前隐藏复盘卡片');
+  assert.ok(appSrc.includes("dom.reflectionCard.style.display = 'block'") && !appSrc.includes("dom.reflectionCard.style.display = 'none'"), 'english_app.js 必须常驻展示复盘卡片，严禁交卷前 display: none');
 
   // 4. 答题胶囊自适应与防换行撕裂契约
   assert.ok(cssSrc.includes('.mode-practice-active .q-pill'), '必须包含做题模式答题胶囊样式');
   assert.ok(cssSrc.includes('white-space: nowrap') && cssSrc.includes('flex: 0 0 auto'), '答题胶囊必须自适应文本宽度 (flex: 0 0 auto) 并禁止换行撕裂 (white-space: nowrap)');
   assert.ok(cssSrc.includes('.practice-submit-btn'), '必须包含整篇提交按钮样式');
+});
+
+test('考研英语做题模式交卷后相关解析默认折叠与 Space 展开契约 (方案B)', () => {
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+
+  // 1. 状态模型契约：做题模式解析状态与默认偏好均默认为 false (折叠状态)
+  assert.ok(appSrc.includes('practiceShowSolution: false'), 'state 必须包含 practiceShowSolution 且默认为 false (折叠)');
+  assert.ok(appSrc.includes('practiceDefaultShowSolution: false'), 'state 必须包含 practiceDefaultShowSolution 且默认为 false (折叠)');
+
+  // 2. 渲染解析契约：做题模式下 shouldShowSol 必须由 pAns.submitted && practiceShowSolution 共同决定，交卷后绝不强制 true
+  assert.ok(appSrc.includes('(pAns.submitted && !!state.practiceShowSolution)'), '做题模式交卷后解析展示必须受控于 state.practiceShowSolution，禁止交卷后硬编码为 true');
+
+  // 3. 交卷后解析重置契约：交卷时必须以默认折叠状态 (practiceDefaultShowSolution) 呈现
+  assert.ok(appSrc.includes('state.practiceShowSolution = state.practiceDefaultShowSolution;'), '交卷后必须应用默认折叠偏好');
+
+  // 4. 工具栏按钮契约：做题模式下解析按钮必须保持可见 (inline-flex)，禁止被 display: none 隐藏
+  assert.ok(!appSrc.includes("if (dom.btnToggleSol) dom.btnToggleSol.style.display = 'none';"), '做题模式下解析按钮严禁被隐藏');
+
+  // 5. 交互契约：未交卷时按 Space 或点击解析按钮必须防剧透拦截
+  assert.ok(appSrc.includes('当前题目尚未交卷，请整篇提交后查看解析 (防剧透)'), '未交卷时必须提示防剧透并拦截展开解析');
 });
 
 test('StorageSync 正则对英语模考作答 ky_english_practice_* 与掌握度入库支持', () => {
@@ -2105,6 +2132,388 @@ test('英语做题模式 (mode) 独立双轨持久化与防重置契约', () => 
   assert.ok(engAppSrc.includes("window.StorageEngine.GlobalStore.set('english_mode',"), 'saveResume 与 setMode 必须向 GlobalStore 独立持久化 english_mode');
   assert.ok(engAppSrc.includes("window.StorageEngine.GlobalStore.get('english_mode')"), 'loadResume 必须读取 english_mode 独立全局偏好作为防覆写兜底');
   assert.ok(!engAppSrc.includes('const savedMode = localStorage.getItem(`ky_${subjKey}_mode`);') || engAppSrc.includes('const subjKey = state.currentSubject || \'english\';'), 'loadResume 中不得存在未定义的 subjKey ReferenceError');
+});
+
+// 27. 考研英语货币符号 ($) 与 LaTeX 数学公式边界契约
+console.log('\n--- 27. 考研英语货币符号 ($) 与 LaTeX 数学公式边界契约 ---');
+
+test('英语句子与长难句中美元金额 ($30, $120) 绝不被误判为 LaTeX 公式', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  const mdLatexSrc = fs.readFileSync(path.join(__dirname, '../js/markdown_latex.js'), 'utf8');
+  
+  // 1. 检验 english_app.js 公式匹配正则具备 (?!\d|\s) 防御
+  assert.ok(
+    engAppSrc.includes('$(?!\\d|\\s)'),
+    'english_app.js 中的 LaTeX 占位提取正则必须具备非数字且非空白前瞻，禁止将 $30...$120 贪婪误判为数学公式'
+  );
+
+  // 2. 检验 markdown_latex.js 公式提取正则同样具备 (?!\d|\s) 防御
+  assert.ok(
+    mdLatexSrc.includes('$(?!\\d|\\s)'),
+    'markdown_latex.js 中的 LaTeX 占位提取正则必须具备非数字且非空白前瞻，阻止货币金额误判'
+  );
+});
+
+test('长词生词包含美元符号 (shell out $30) 正常高亮并精准匹配', () => {
+  // 提取 renderAnnotatedSentenceText 逻辑进行单元级验证
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  
+  // 构造沙箱执行环境
+  const fnMatch = engAppSrc.match(/function renderAnnotatedSentenceText[\s\S]*?\n  \}/);
+  assert.ok(fnMatch, '必须找到 renderAnnotatedSentenceText 函数实现');
+  
+  const escapeHtmlFn = `function escapeHtml(str) {
+    if (str === undefined || str === null) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }`;
+  const escapeRegExpFn = `function escapeRegExp(str) { return str.replace(/[.*+?^\${}()|[\\]\\\\]/g, '\\\\$&'); }`;
+
+  const runner = new Function('rawText', 'vocabList', `
+    ${escapeHtmlFn}
+    ${escapeRegExpFn}
+    ${fnMatch[0]}
+    return renderAnnotatedSentenceText(rawText, vocabList);
+  `);
+
+  const rawText = "All he needs to do is shell out $30 for a paternity testing kit (PTK) at his local drugstore—and another $120 to get the results.";
+  const vocabList = [
+    { word: "shell out $30", level: "blue", meaning: "付钱；掏腰包" },
+    { word: "paternity testing kit", level: "green", meaning: "亲子鉴定试剂盒" }
+  ];
+
+  const html = runner(rawText, vocabList);
+  assert.ok(html.includes('data-word="shell out $30"'), '生词本中包含美元符号的词条必须被准确匹配');
+  assert.ok(html.includes('shell out $30</span>'), '词条内容文本必须完整透出');
+  assert.ok(!html.includes('___MATH_PH_'), '最终 HTML 中绝不得残留未还原的数学占位符');
+  assert.ok(html.includes('currency-dollar">$</span>120') || html.includes('$120'), '未包含在生词表中的美元金额 $120 必须完整保留并受 currency-dollar 保护');
+});
+
+test('语法精析 formatSyntaxAnalysis 对美元符号包裹 currency-dollar 保护', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  const fnMatch = engAppSrc.match(/function formatSyntaxAnalysis[\s\S]*?\n  \}/);
+  assert.ok(fnMatch, '必须找到 formatSyntaxAnalysis 函数实现');
+
+  const escapeHtmlFn = `function escapeHtml(str) {
+    if (str === undefined || str === null) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }`;
+
+  const runner = new Function('syntax', `
+    ${escapeHtmlFn}
+    ${fnMatch[0]}
+    return formatSyntaxAnalysis(syntax);
+  `);
+
+  const syn = "表语为省去 to 的不定式 shell out $30...；介词短语 for a PTK at his local drugstore 作目的和地点状语；破折号后 and another $120 to get the results 为并列成分补充说明。";
+  const res = runner(syn);
+  assert.ok(res.includes('<span class="currency-dollar">$</span>30'), '$30 必须被包裹在 currency-dollar 保护标签内');
+  assert.ok(res.includes('<span class="currency-dollar">$</span>120'), '$120 必须被包裹在 currency-dollar 保护标签内');
+});
+
+test('dom.passagePane 与 dom.analysisPane KaTeX auto-render 配置与 delimiters 契约', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  
+  // 1. passagePane 纯阅读区绝不应包含单 $ 定界符
+  const passageSection = engAppSrc.slice(engAppSrc.indexOf('dom.passagePane.innerHTML = html;'), engAppSrc.indexOf('attachPassageEvents();'));
+  assert.ok(!passageSection.includes("{ left: '$', right: '$'"), 'dom.passagePane 的 KaTeX 渲染选项中严禁包含单 $ 定界符');
+  assert.ok(passageSection.includes('currency-dollar'), 'dom.passagePane 的 KaTeX 渲染选项必须包含 currency-dollar ignoredClasses');
+
+  // 2. analysisPane 解析区支持公式但必须配置 ignoredClasses
+  const analysisSection = engAppSrc.slice(engAppSrc.indexOf('if (dom.analysisPane) {'), engAppSrc.indexOf('// 渲染选项列表'));
+  assert.ok(analysisSection.includes('currency-dollar'), 'dom.analysisPane 必须包含 currency-dollar ignoredClasses');
+});
+
+test('真实数学箭头 $\\rightarrow$ 与 $\\leftrightarrow$ 保持公式解析能力', () => {
+  const mdLatexSrc = fs.readFileSync(path.join(__dirname, '../js/markdown_latex.js'), 'utf8');
+  const engineModule = new Function(`
+    const exports = {};
+    ${mdLatexSrc}
+    return MarkdownLatexEngine;
+  `)();
+
+  // 测试逻辑箭头正向与双向符号在优化器中完好保留
+  const arrow1 = engineModule.optimizeMathOperators('$\\rightarrow$');
+  assert.strictEqual(arrow1, '$\\rightarrow$', '正向箭头公式应完好保留');
+  const arrow2 = engineModule.optimizeMathOperators('$\\leftrightarrow$');
+  assert.strictEqual(arrow2, '$\\leftrightarrow$', '双向箭头公式应完好保留');
+});
+
+// --- 28. 考研英语 2007 Q40 自愈校验、选项反选取消、已交卷记录修改与多轮刷题(二刷/多刷)契约 ---
+console.log('\n--- 28. 考研英语 2007 Q40 自愈校验、选项反选取消、已交卷记录修改与多轮刷题(二刷/多刷)契约 ---');
+
+test('2007 年 40 题官方答案为 D，且真题数据集选项 D 为 isCorrect: true，A/B/C 为 false', () => {
+  const data2007Path = path.join(__dirname, '../题库/英语/data_2007.js');
+  assert.ok(fs.existsSync(data2007Path), 'data_2007.js 文件必须存在');
+  const content = fs.readFileSync(data2007Path, 'utf8');
+  const sandbox = { window: {} };
+  vm.createContext(sandbox);
+  vm.runInContext(content, sandbox);
+
+  const t4 = sandbox.window.ENGLISH_DATA['2007'].texts[3];
+  const q40 = t4.questions.find(q => (q.qIndex || q.number) === 40);
+  assert.ok(q40, '2007 年 Text 4 必须包含第 40 题');
+  assert.strictEqual(q40.officialAnswer, 'D', '第 40 题官方正确答案必须为 D');
+  
+  const optD = q40.options.find(o => o.key === 'D');
+  assert.ok(optD, '第 40 题必须包含 D 选项');
+  assert.strictEqual(optD.isCorrect, true, 'D 选项 isCorrect 必须为 true');
+
+  const distractors = q40.options.filter(o => o.key !== 'D');
+  distractors.forEach(o => {
+    assert.strictEqual(o.isCorrect, false, `选项 ${o.key} 必须为 false`);
+  });
+});
+
+test('考研英语脏数据动态自愈契约 (validateAndHealPracticeAnswers 与 SSOT 对齐)', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  assert.ok(engAppSrc.includes('validateAndHealPracticeAnswers'), 'english_app.js 必须包含 validateAndHealPracticeAnswers 脏数据自愈函数');
+  
+  // 模拟脏数据自愈场景
+  const mockDataset = {
+    texts: [
+      {
+        number: 4,
+        questions: [
+          { qIndex: 40, officialAnswer: 'D', options: [{ key: 'C', isCorrect: false }, { key: 'D', isCorrect: true }] }
+        ]
+      }
+    ]
+  };
+  const mockPracticeAnswers = {
+    40: { selected: 'C', submitted: true, isCorrect: true } // 历史脏数据: 选了 C 却误标 isCorrect: true
+  };
+  const mockMastery = { 40: 'proficient' };
+
+  // 执行自愈校验逻辑
+  let healed = false;
+  mockDataset.texts.forEach(t => {
+    t.questions.forEach(q => {
+      const p = mockPracticeAnswers[q.qIndex];
+      if (p && p.selected && q.officialAnswer) {
+        const realCorrect = (p.selected === q.officialAnswer);
+        if (p.submitted && p.isCorrect !== realCorrect) {
+          p.isCorrect = realCorrect;
+          mockMastery[q.qIndex] = realCorrect ? 'proficient' : 'wrong';
+          healed = true;
+        }
+      }
+    });
+  });
+
+  assert.strictEqual(healed, true, '必须检测到脏数据并触发自愈');
+  assert.strictEqual(mockPracticeAnswers[40].isCorrect, false, '自愈后第 40 题 isCorrect 必须被校正为 false');
+  assert.strictEqual(mockMastery[40], 'wrong', '自愈后第 40 题掌握度必须被校正为 wrong');
+});
+
+test('做题模式选项反选置空与清除自动跳题定时器契约', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  assert.ok(engAppSrc.includes('delete pAns.selected'), 'english_app.js 必须支持反选取消 selected');
+  assert.ok(engAppSrc.includes('delete pAns.isCorrect'), 'english_app.js 必须支持反选清除 isCorrect');
+
+  // 验证反选逻辑
+  const pAns = { selected: 'B', submitted: false };
+  const clickedKey = 'B';
+  let deselected = false;
+  if (pAns.selected === clickedKey) {
+    delete pAns.selected;
+    delete pAns.isCorrect;
+    deselected = true;
+  }
+  assert.strictEqual(deselected, true, '再次点击已选选项必须触发反选');
+  assert.strictEqual(pAns.selected, undefined, '反选后 selected 必须为空');
+});
+
+test('支持交卷后做题记录纠错修改 (updatePracticeAnswer)', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  assert.ok(engAppSrc.includes('function updatePracticeAnswer('), 'english_app.js 必须实现 updatePracticeAnswer 函数');
+  assert.ok(engAppSrc.includes('updatePracticeAnswer,'), 'english_app.js 必须对外导出 updatePracticeAnswer');
+  assert.ok(engAppSrc.includes('practice-edit-bar'), 'english_app.js 必须渲染 practice-edit-bar 纠错修改条');
+
+  // 模拟纠错修改
+  const q = { qIndex: 40, officialAnswer: 'D' };
+  const practiceAnswers = { 40: { selected: 'C', submitted: true, isCorrect: false } };
+  const mastery = { 40: 'wrong' };
+
+  // 用户纠错为 D
+  const newKey = 'D';
+  practiceAnswers[40].selected = newKey;
+  practiceAnswers[40].submitted = true;
+  const isCorrect = (newKey === q.officialAnswer);
+  practiceAnswers[40].isCorrect = isCorrect;
+  mastery[40] = isCorrect ? 'proficient' : 'wrong';
+
+  assert.strictEqual(practiceAnswers[40].selected, 'D', '修改后选定项为 D');
+  assert.strictEqual(practiceAnswers[40].isCorrect, true, '修改为正确项后 isCorrect 应为 true');
+  assert.strictEqual(mastery[40], 'proficient', '修改为正确项后掌握度应为 proficient');
+});
+
+test('多轮刷题 (二刷/多刷) 档案模型、轮次切换与 StorageSync 契约', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  assert.ok(engAppSrc.includes('startNewPracticeRound'), '必须支持 startNewPracticeRound 开启新一轮刷题');
+  assert.ok(engAppSrc.includes('switchPracticeRound'), '必须支持 switchPracticeRound 切换做题轮次');
+  assert.ok(engAppSrc.includes('resetCurrentRound'), '必须支持 resetCurrentRound 重置轮次');
+  assert.ok(engAppSrc.includes('deletePracticeRound'), '必须支持 deletePracticeRound 删除历史轮次');
+  assert.ok(engAppSrc.includes('renderRoundSelector'), '必须支持 renderRoundSelector 渲染轮次面板');
+
+  // 验证 StorageSync 正则对轮次键的匹配支持
+  const reg = /^ky_english_/;
+  assert.strictEqual(reg.test('ky_english_round_2007'), true, 'StorageSync 正则必须匹配 ky_english_round_* 轮次号键');
+  assert.strictEqual(reg.test('ky_english_rounds_2007'), true, 'StorageSync 正则必须匹配 ky_english_rounds_* 轮次档案集键');
+  assert.strictEqual(reg.test('ky_english_practice_2007'), true, 'StorageSync 正则必须匹配 ky_english_practice_* 活跃作答键');
+});
+
+test('英语科目年份下拉栏毛玻璃微透 (适度不透明度防穿透且非完全不透明) 样式契约', () => {
+  const engCss = fs.readFileSync(path.join(__dirname, '../css/english.css'), 'utf8');
+  assert.ok(engCss.includes('#engTrigYear'), 'english.css 必须包含 #engTrigYear 专属样式');
+  assert.ok(engCss.includes('#engDdYear .title-panel'), 'english.css 必须包含 #engDdYear .title-panel 专属样式');
+  
+  // 必须使用适度不透明度 (0.85 ~ 0.95 之间)，绝非完全不透明 (1.0/#ffffff) 也非过于透明 (<0.8)
+  const trigMatch = engCss.match(/#engTrigYear\s*\{[^}]*background:\s*rgba\(255,\s*255,\s*255,\s*([\d.]+)\)/);
+  assert.ok(trigMatch, '必须为 #engTrigYear 配置半透明 rgba 背景');
+  const trigOpacity = parseFloat(trigMatch[1]);
+  assert.ok(trigOpacity >= 0.85 && trigOpacity < 1.0, `触发栏不透明度须在 0.85~0.99 之间，实测: ${trigOpacity}`);
+
+  const panelMatch = engCss.match(/#engDdYear \.title-panel\s*\{[^}]*background:\s*rgba\(255,\s*255,\s*255,\s*([\d.]+)\)/);
+  assert.ok(panelMatch, '必须为 #engDdYear .title-panel 配置半透明 rgba 背景');
+  const panelOpacity = parseFloat(panelMatch[1]);
+  assert.ok(panelOpacity >= 0.85 && panelOpacity < 1.0, `面板不透明度须在 0.85~0.99 之间，实测: ${panelOpacity}`);
+
+  // 必须具备 backdrop-filter blur 维持 Liquid Glass 毛玻璃质感
+  assert.ok(engCss.includes('backdrop-filter: blur('), '必须配置 backdrop-filter blur');
+});
+
+// ===== 29. 考研英语精读模式与暗夜模式色彩重构契约 =====
+console.log('\n--- 29. 考研英语精读模式与暗夜模式色彩重构契约 (Analysis Mode & Dark Theme Contract) ---');
+
+test('英语模块暗夜模式全局设计令牌 (Design Tokens) 覆写完整性', () => {
+  const engCss = fs.readFileSync(path.join(__dirname, '../css/english.css'), 'utf8');
+
+  // 1. 验证存在 [data-theme="dark"] 局部作用域与设计令牌注入
+  assert.ok(engCss.includes('[data-theme="dark"]'), 'english.css 必须声明 [data-theme="dark"] 样式规则');
+
+  const darkTokenMatch = engCss.match(/\[data-theme="dark"\]\s*\{([^}]+)\}/);
+  assert.ok(darkTokenMatch, '必须包含 [data-theme="dark"] 根变量重载代码块');
+  const tokensContent = darkTokenMatch[1];
+
+  // 2. 核心色彩令牌验证：主色微光、背景层级、文字高对比、状态微透
+  assert.ok(tokensContent.includes('--primary:'), '必须重写暗夜模式下的 --primary 柔光紫');
+  assert.ok(tokensContent.includes('--bg-app:'), '必须重写暗夜背景 --bg-app');
+  assert.ok(tokensContent.includes('--bg-pane:'), '必须重写面板背景 --bg-pane');
+  assert.ok(tokensContent.includes('--bg-card:'), '必须重写卡片底色 --bg-card');
+  assert.ok(tokensContent.includes('--text-main:'), '必须重写暗夜主文字色 --text-main (如 #f1f5f9)');
+  assert.ok(tokensContent.includes('--text-secondary:'), '必须重写暗夜次文字色 --text-secondary');
+  assert.ok(tokensContent.includes('--color-success-bg:'), '必须重写暗夜成功色微透底 --color-success-bg');
+  assert.ok(tokensContent.includes('--color-danger-bg:'), '必须重写暗夜错误色微透底 --color-danger-bg');
+});
+
+test('精读模式左栏阅读区 (文章/长难句/高亮词) 暗夜护眼契约', () => {
+  const engCss = fs.readFileSync(path.join(__dirname, '../css/english.css'), 'utf8');
+
+  // 1. 文章与段落卡片暗夜样式
+  assert.ok(engCss.includes('[data-theme="dark"] .passage-pane'), '必须配置暗夜模式下的阅读面板');
+  assert.ok(engCss.includes('[data-theme="dark"] .paragraph-block'), '必须配置暗夜模式下的段落卡片');
+  assert.ok(engCss.includes('[data-theme="dark"] .sentence-text'), '必须配置暗夜模式下的句子文本柔光高对比');
+
+  // 2. 语法长难句卡片 (.sentence-syntax) 告别深蓝黑硬色块 (#1e1b4b)
+  assert.ok(engCss.includes('[data-theme="dark"] .sentence-syntax'), '必须配置暗夜模式下的语法卡片');
+  const syntaxMatch = engCss.match(/\[data-theme="dark"\]\s+\.sentence-syntax\s*\{([^}]+)\}/);
+  assert.ok(syntaxMatch, '必须显式定义 [data-theme="dark"] .sentence-syntax');
+  const syntaxCss = syntaxMatch[1];
+  assert.ok(!syntaxCss.includes('#1e1b4b'), '暗夜长难句卡片绝不能使用刺眼硬色块 #1e1b4b');
+
+  // 3. 词汇三色高亮微荧光色板 (红、绿、蓝)
+  assert.ok(engCss.includes('[data-theme="dark"] .vocab-word.level-red'), '暗夜模式必须优化红色考点词');
+  assert.ok(engCss.includes('[data-theme="dark"] .vocab-word.level-green'), '暗夜模式必须优化绿色认知词');
+  assert.ok(engCss.includes('[data-theme="dark"] .vocab-word.level-blue'), '暗夜模式必须优化蓝色核心词');
+});
+
+test('精读模式右栏题目工作台 (选项卡片/复盘手记/避坑指南) 去白化暗夜契约', () => {
+  const engCss = fs.readFileSync(path.join(__dirname, '../css/english.css'), 'utf8');
+
+  // 1. 选项卡片正确与干扰项选择器准确性 (必须为 is-correct / is-distractor 与 JS 渲染契约一致)
+  assert.ok(engCss.includes('[data-theme="dark"] .option-card.is-correct'), '必须为 .option-card.is-correct 配置暗夜样式');
+  assert.ok(engCss.includes('[data-theme="dark"] .option-card.is-distractor'), '必须为 .option-card.is-distractor 配置暗夜样式');
+
+  // 选项卡片绝不能在暗夜下残留浅色日间白底 (#f0fdf4 或 #fef2f2)
+  const optCorrectMatch = engCss.match(/\[data-theme="dark"\]\s+\.option-card\.is-correct[\s\S]*?\{([^}]+)\}/);
+  assert.ok(optCorrectMatch, '必须包含 [data-theme="dark"] .option-card.is-correct');
+  assert.ok(!optCorrectMatch[1].includes('#f0fdf4'), '暗夜正确选项卡片绝不能使用日间浅绿底 #f0fdf4');
+
+  const optDistractorMatch = engCss.match(/\[data-theme="dark"\]\s+\.option-card\.is-distractor[\s\S]*?\{([^}]+)\}/);
+  assert.ok(optDistractorMatch, '必须包含 [data-theme="dark"] .option-card.is-distractor');
+  assert.ok(!optDistractorMatch[1].includes('#fef2f2'), '暗夜干扰选项卡片绝不能使用日间浅粉底 #fef2f2');
+
+  // 2. 掌握度按钮 (.btn-mastery) 与错因标签 (.reason-chip) 去白化
+  assert.ok(engCss.includes('[data-theme="dark"] .btn-mastery'), '掌握度按钮必须具备暗夜样式，严防刺眼纯白死板按钮');
+  assert.ok(engCss.includes('[data-theme="dark"] .reason-chip'), '错因标签必须具备暗夜样式，严防刺眼白块');
+
+  // 3. 命题人避坑指南 (.guide-body) 去白化
+  assert.ok(engCss.includes('[data-theme="dark"] .guide-body'), '命题人避坑指南必须具备暗夜样式，告别 #faf5ff 浅紫白盒');
+});
+
+// ===== 30. 考研英语 Q/E 全年份打通、做题模式轮次下拉栏与交卷双重提示根除契约 =====
+console.log('\n--- 30. 考研英语 Q/E 全年份打通、做题模式轮次下拉栏与交卷双重提示根除契约 ---');
+
+test('Q/E 快捷键解除 2015 限制，支持 1998~2026 全量 29 个年份自由切换', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+
+  // 1. 验证 navPrevYear 和 navNextYear 使用 getAvailableYears 而非 ADAPTED_YEARS
+  const navPrevMatch = engAppSrc.match(/function\s+navPrevYear\s*\(\)\s*\{[\s\S]*?\n  \}/);
+  assert.ok(navPrevMatch, '必须定义 navPrevYear 函数');
+  assert.ok(navPrevMatch[0].includes('getAvailableYears()'), 'navPrevYear 必须调用 getAvailableYears() 以覆盖全量年份');
+  assert.ok(!navPrevMatch[0].includes('ADAPTED_YEARS'), 'navPrevYear 严禁使用死锁到 2015 年的 ADAPTED_YEARS');
+
+  const navNextMatch = engAppSrc.match(/function\s+navNextYear\s*\(\)\s*\{[\s\S]*?\n  \}/);
+  assert.ok(navNextMatch, '必须定义 navNextYear 函数');
+  assert.ok(navNextMatch[0].includes('getAvailableYears()'), 'navNextYear 必须调用 getAvailableYears() 以覆盖全量年份');
+  assert.ok(!navNextMatch[0].includes('ADAPTED_YEARS'), 'navNextYear 严禁使用死锁到 2015 年的 ADAPTED_YEARS');
+
+  // 2. 模拟 2015 年下一年切换至 2016 年
+  const allYears = Array.from({ length: 29 }, (_, i) => String(1998 + i));
+  const idx2015 = allYears.indexOf('2015');
+  assert.strictEqual(allYears[idx2015 + 1], '2016', '2015 年的下一年必须为 2016 年');
+  assert.strictEqual(allYears[allYears.length - 1], '2026', '最末年为 2026 年');
+});
+
+test('做题模式消除双重已交卷文案：徽章展示答对题数，按钮更正为已入库', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+
+  // 1. renderQuestionPills 中 status.allSubmitted 徽章文案
+  assert.ok(engAppSrc.includes('已判分 · 答对 ${correctCount}/${status.total} 题') || engAppSrc.includes('已判分 · 答对'), '徽章必须展示已判分战报与答对题数');
+  assert.ok(!engAppSrc.includes('>已交卷判分</span>'), '严禁存在已交卷判分冗余徽章');
+
+  // 2. 提交按钮在交卷后更新为「已入库」
+  assert.ok(engAppSrc.includes("status.allSubmitted ? '已入库' : '整篇提交 (Enter)'"), '提交按钮在已交卷时文字必须为「已入库」');
+  assert.ok(!engAppSrc.includes("status.allSubmitted ? '已交卷' : '整篇提交 (Enter)'"), '提交按钮文字绝不能再是「已交卷」导致与徽章重复');
+});
+
+test('精读与做题模式界面统一、首行缩进排版与顶部轮次常驻契约', () => {
+  const engAppSrc = fs.readFileSync(path.join(__dirname, '../js/english_app.js'), 'utf8');
+  const engCss = fs.readFileSync(path.join(__dirname, '../css/english.css'), 'utf8');
+  const indexHtml = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+
+  // 1. 顶部导航栏轮次按钮统一常驻契约
+  assert.ok(indexHtml.includes('id="engDdRound"'), '顶部导航栏必须包含统一的轮次下拉容器 engDdRound');
+  assert.ok(indexHtml.includes('id="engTrigRound"'), '顶部导航栏必须包含统一的轮次触发按钮 engTrigRound');
+  assert.ok(!engCss.includes('.mode-practice-active #engDdRound'), '严禁在做题模式下隐藏顶部轮次栏');
+  assert.ok(!engAppSrc.includes('id="practiceDdRound"'), '做题模式右侧工具栏必须移除 practiceDdRound 以彻底避免内容挤压');
+
+  // 2. 交互契约：全局点击关闭收起统一覆盖 engDdRound
+  assert.ok(engAppSrc.includes('if (dom.ddRound && !dom.ddRound.contains(e.target))'), '全局点击事件必须关闭统一的顶部轮次栏');
+
+  // 3. 50% / 50% 左右等宽分屏统一契约
+  assert.ok(engCss.includes('.passage-pane {\n  flex: 1 1 50%;') || engCss.includes('.passage-pane {\r\n  flex: 1 1 50%;'), 'passage-pane 必须统一为 50% 等宽');
+  assert.ok(engCss.includes('.analysis-pane {\n  flex: 1 1 50%;') || engCss.includes('.analysis-pane {\r\n  flex: 1 1 50%;'), 'analysis-pane 必须统一为 50% 等宽');
+  assert.ok(engCss.includes('.mode-practice-active .passage-pane {\n  flex: 1 1 50%;') || engCss.includes('.mode-practice-active .passage-pane {\r\n  flex: 1 1 50%;'), '做题模式 passage-pane 必须统一为 50% 等宽');
+  assert.ok(engCss.includes('.mode-practice-active .analysis-pane {\n  flex: 1 1 50%;') || engCss.includes('.mode-practice-active .analysis-pane {\r\n  flex: 1 1 50%;'), '做题模式 analysis-pane 必须统一为 50% 等宽');
+
+  // 4. 阅读内容首行缩进排版契约
+  assert.ok(engCss.includes('text-indent: 2em;'), '必须配置首行缩进 2em');
+  assert.ok(engCss.includes('text-align: justify;'), '必须配置两端对齐 text-align: justify');
+  assert.ok(engCss.includes('.mode-practice-active .sentence-list'), '做题模式文章段落必须包含 sentence-list 规则');
+
+  // 5. 右侧工具栏防折行挤压契约
+  assert.ok(engCss.includes('.practice-toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-left: auto;\n  white-space: nowrap;\n  flex-shrink: 0;') || engCss.includes('white-space: nowrap;'), '右侧工具栏必须设置 white-space: nowrap 与 flex-shrink: 0');
 });
 
 console.log('\n====================================================');

@@ -1,13 +1,9 @@
-/**
- * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2020 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
- */
-
+// 考研英语真题数据集 (2020 年)
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
 window.ENGLISH_DATA['2020'] = {
   "year": 2020,
-  "subject": "英语",
-  "title": "2020年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析",
+  "subject": "英语(一)",
+  "title": "2020年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析数据库",
   "texts": [
     {
       "id": "text1",
@@ -621,6 +617,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "brought £220m investment + attracting funding and creating jobs = increase the economic strength of Britain's towns。",
             "methodSummary": "因果效益概括法：attracting funding + creating jobs 转换为 increase economic strength。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -683,6 +715,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "booby prize + fever of self-celebration in desperation to reinvent itself = a self-deceiving attempt（自欺欺人的尝试）。",
             "methodSummary": "贬义比喻推断法：booby prize（安慰奖）与 fever of self-celebration（自嗨狂热）直接对应 a self-deceiving attempt。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -712,7 +780,7 @@ window.ENGLISH_DATA['2020'] = {
             },
             {
               "key": "B",
-              "text": "meets the aspiration of its people.",
+              "text": "meets the aspirations of its people.",
               "isCorrect": false,
               "distractorType": "偷换动词",
               "analysis": "【干扰特征: 偷换动词】原文是提升改变居民的志向抱负（transform aspirations），非迎合满足既有诉求（meets）。",
@@ -747,6 +815,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "leaving lasting benefits + do much more than good press for a year + remains powerhouse today = commits to its long-term growth。",
             "methodSummary": "成功核心标准定位：抓准 lasting benefits 和 do much more than a year 对应的 long-term growth。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -810,6 +914,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "It is hard to get right... But it can be done: Glasgow's year as European capital of culture = a supporting example。",
             "methodSummary": "例证属性题：识别 But it can be done 后紧跟的正面支撑案例（a supporting example）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -871,6 +1011,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "welcome this positive, hope-filled proposal, and turn it into action = Favourable（赞同的/支持的）。",
             "methodSummary": "末句态度词定位：positive, hope-filled proposal 与 turn into action 直接锁定正面赞许态度（Favourable）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -1661,6 +1837,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "supply articles without monetary reward + peer review for free + content secured for free = content acquisition costs nothing。",
             "methodSummary": "暴利因果定位：抓准 without monetary reward 与 secured for free 对应的 costs nothing。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1724,6 +1936,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "university libraries not price sensitive + UK universities spent £210m = thrived mainly on university libraries。",
             "methodSummary": "暴利买家定位法：抓准 university libraries not sensitive 与 UK universities spent £210m。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1787,6 +2035,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "thoroughly illegal + legal ecosystem has lost legitimacy and must be transformed = Concerned（忧虑的/关切的）。",
             "methodSummary": "生态危机态度题：legal ecosystem lost legitimacy and must be transformed 表达了对体制失序的深切忧虑（Concerned）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1851,6 +2135,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "paywalled for a year or more so publishers can make a profit = allow publishers some room to make money。",
             "methodSummary": "原句细节对应：so that publishers can make a profit 转换为 allow publishers some room to make money。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1913,6 +2233,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "labour is free for status + huge profits made by a few big firms = The few feed on the many（少数人盘剥多数人）。",
             "methodSummary": "末段本质概括法：抓准 a few big firms make huge profits while labour is free 对应的 The few feed on the many。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -2720,6 +3076,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "virtue-signaling that benefits only privileged and does little to help average people = help little to reduce gender bias。",
             "methodSummary": "作者批判态度提取：does little to help average people 转换为 help little to reduce bias。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2781,6 +3173,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "probably unconstitutional + violates constitutional guarantee of equal protection = may go against the Constitution。",
             "methodSummary": "原词直接对应：probably unconstitutional 转换为 may go against the Constitution。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2799,7 +3227,7 @@ window.ENGLISH_DATA['2020'] = {
           "options": [
             {
               "key": "A",
-              "text": "the harm from arbitrary board decision.",
+              "text": "the harm from arbitrary board decisions.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 偏离论点】未提及董事会武断决策的危害。",
@@ -2843,6 +3271,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "increasing without government interference + Catalyst shows 54% increase = the needlessness of government interventions。",
             "methodSummary": "例证题前句论点提取：抓准 are government mandates even necessary + without government interference 对应的 needlessness of interventions。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2906,6 +3370,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "less experienced boards + without pool of qualified women = the entry of unqualified candidates into the board。",
             "methodSummary": "恶果细节对应法：抓准 less experienced 和 without pool of qualified women 对应的 entry of unqualified candidates。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2926,7 +3426,7 @@ window.ENGLISH_DATA['2020'] = {
           "options": [
             {
               "key": "A",
-              "text": "Women's need in employment should be considered.",
+              "text": "Women's needs in employment should be considered.",
               "isCorrect": false,
               "distractorType": "过于笼统偏离",
               "analysis": "【干扰特征: 泛指就业】文章聚焦于高管董事会席位分配立法，非普通就业需求。",
@@ -2973,6 +3473,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "unconstitutional (P3) + less experienced boards (P5) + self-serving virtue-signaling (P6) = Feasibility should be a prime concern in policymaking（可行性应是决策首要关切）。",
             "methodSummary": "全文哲理推断题：从形式主义立法的多重失败后果中，反推政策制定必须以可行性（Feasibility）为核心。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -3675,7 +4211,7 @@ window.ENGLISH_DATA['2020'] = {
             "P1-S1",
             "P1-S3"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3689,16 +4225,6 @@ window.ENGLISH_DATA['2020'] = {
             },
             {
               "key": "B",
-              "text": "protect French companies' interests.",
-              "isCorrect": false,
-              "distractorType": "过度推断",
-              "analysis": "【干扰特征: 偏离法案内容】核心在于开辟数字税源并解决跨国避税，非单纯保护本土企业。",
-              "refSentences": [
-                "P1-S1"
-              ]
-            },
-            {
-              "key": "C",
               "text": "impose a levy on tech multinationals.",
               "isCorrect": true,
               "distractorType": null,
@@ -3706,6 +4232,16 @@ window.ENGLISH_DATA['2020'] = {
               "refSentences": [
                 "P1-S1",
                 "P1-S3"
+              ]
+            },
+            {
+              "key": "C",
+              "text": "protect French companies' interests.",
+              "isCorrect": false,
+              "distractorType": "过度推断",
+              "analysis": "【干扰特征: 偏离法案内容】核心在于开辟数字税源并解决跨国避税，非单纯保护本土企业。",
+              "refSentences": [
+                "P1-S1"
               ]
             },
             {
@@ -3722,6 +4258,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "impose entirely new tax on large multinationals (Google, Apple, Facebook, Amazon) = impose a levy on tech multinationals。",
             "methodSummary": "首段题眼同义改写：impose a tax on tech multinationals 转换为 impose a levy on tech multinationals。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3736,20 +4308,30 @@ window.ENGLISH_DATA['2020'] = {
           "targetSentences": [
             "P2-S2"
           ],
-          "officialAnswer": "A",
+          "officialAnswer": "D",
           "options": [
             {
               "key": "A",
-              "text": "may trigger countermeasures against France.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P2-S2 明确指出该税项招致的后果：'with the United States trade representative opening an investigation... which in turn could lead to trade sanctions against France'（美国贸易代表已启动调查，这进而可能导致对法国实施贸易制裁）。A选项 may trigger countermeasures against France（可能引发针对法国的反制措施/制裁）是对 lead to trade sanctions against France 最精准的同义改写。",
+              "text": "will prompt the tech giants to quit France.",
+              "isCorrect": false,
+              "distractorType": "过度推断夸大",
+              "analysis": "【干扰特征: 夸大后果】巨头不会轻易放弃庞大的法国市场，文章未提及退出法国。",
               "refSentences": [
                 "P2-S2"
               ]
             },
             {
               "key": "B",
+              "text": "aims to ease international trade tensions.",
+              "isCorrect": false,
+              "distractorType": "正反颠倒",
+              "analysis": "【干扰特征: 事实相反】该法案直接加剧了美法之间的贸易紧张摩擦，绝非缓和局势（ease）。",
+              "refSentences": [
+                "P2-S2"
+              ]
+            },
+            {
+              "key": "C",
               "text": "is apt to arouse criticism at home and abroad.",
               "isCorrect": false,
               "distractorType": "张冠李戴国内支持",
@@ -3760,21 +4342,11 @@ window.ENGLISH_DATA['2020'] = {
               ]
             },
             {
-              "key": "C",
-              "text": "aims to ease international trade tensions.",
-              "isCorrect": false,
-              "distractorType": "正反颠倒",
-              "analysis": "【干扰特征: 事实相反】该法案直接加剧了美法之间的贸易紧张摩擦，绝非缓和局势（ease）。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
               "key": "D",
-              "text": "will prompt the tech giants to quit France.",
-              "isCorrect": false,
-              "distractorType": "过度推断夸大",
-              "analysis": "【干扰特征: 夸大后果】巨头不会轻易放弃庞大的法国市场，文章未提及退出法国。",
+              "text": "may trigger countermeasures against France.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P2-S2 明确指出该税项招致的后果：'with the United States trade representative opening an investigation... which in turn could lead to trade sanctions against France'（美国贸易代表已启动调查，这进而可能导致对法国实施贸易制裁）。A选项 may trigger countermeasures against France（可能引发针对法国的反制措施/制裁）是对 lead to trade sanctions against France 最精准的同义改写。",
               "refSentences": [
                 "P2-S2"
               ]
@@ -3783,6 +4355,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "could lead to trade sanctions against France = may trigger countermeasures against France。",
             "methodSummary": "反制制裁细节题：trade sanctions against France 转换为 countermeasures against France。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "英语一_2020_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "D",
+                "B": "C",
+                "C": "B",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3797,24 +4405,24 @@ window.ENGLISH_DATA['2020'] = {
           "targetSentences": [
             "P4-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "redistribution of tech giants' revenue must be ensured.",
-              "isCorrect": false,
-              "distractorType": "概念偏差",
-              "analysis": "【干扰特征: 偷换概念】焦点在于对跨国数字收入确立合法征税权，非财富二次再分配。",
+              "text": "the current international tax system needs upgrading.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 同义替换】P4-S1 明确阐述各国采取单边行动的共同根源：'they all share a view that the international tax system has failed to keep up with the current economy'（它们都普遍持有同一观点：现行国际税收体系已经严重跟不上当代数字经济的发展）。B选项 the current international tax system needs upgrading（现行的国际税收体系需要升级重塑）是对 failed to keep up with current economy 最完美的同义转述。",
               "refSentences": [
                 "P4-S1"
               ]
             },
             {
               "key": "B",
-              "text": "the current international tax system needs upgrading.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 同义替换】P4-S1 明确阐述各国采取单边行动的共同根源：'they all share a view that the international tax system has failed to keep up with the current economy'（它们都普遍持有同一观点：现行国际税收体系已经严重跟不上当代数字经济的发展）。B选项 the current international tax system needs upgrading（现行的国际税收体系需要升级重塑）是对 failed to keep up with current economy 最完美的同义转述。",
+              "text": "redistribution of tech giants' revenue must be ensured.",
+              "isCorrect": false,
+              "distractorType": "概念偏差",
+              "analysis": "【干扰特征: 偷换概念】焦点在于对跨国数字收入确立合法征税权，非财富二次再分配。",
               "refSentences": [
                 "P4-S1"
               ]
@@ -3843,6 +4451,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "share a view that international tax system has failed to keep up with current economy = current international tax system needs upgrading。",
             "methodSummary": "共识观点原句提取：failed to keep up with economy 转换为 needs upgrading。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3857,7 +4501,7 @@ window.ENGLISH_DATA['2020'] = {
           "targetSentences": [
             "P5-S1"
           ],
-          "officialAnswer": "C",
+          "officialAnswer": "B",
           "options": [
             {
               "key": "A",
@@ -3871,20 +4515,20 @@ window.ENGLISH_DATA['2020'] = {
             },
             {
               "key": "B",
-              "text": "needs to be readjusted immediately.",
-              "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "【干扰特征: 无中生有】OECD 正在按照原计划推进2020年底共识，未提及立即重新调整其工作路线。",
+              "text": "is faced with uncertain prospects.",
+              "isCorrect": true,
+              "distractorType": null,
+              "analysis": "【正确项 · 合理推断】P5-S1 明确描述 OECD 工作的严峻现实：尽管 OECD 正努力在131国间达成国际共识，但'France's digital services tax and the American response raise questions about what the future holds for the international tax system'（法国的单边开征与美方的激烈反弹，给国际税收体系的未来走向打上了巨大问号）。raise questions about what future holds 意为“使未来走向充满疑云与变数”，精准对应 C 选项 is faced with uncertain prospects（正面临着极不确定的前景）。",
               "refSentences": [
                 "P5-S1"
               ]
             },
             {
               "key": "C",
-              "text": "is faced with uncertain prospects.",
-              "isCorrect": true,
-              "distractorType": null,
-              "analysis": "【正确项 · 合理推断】P5-S1 明确描述 OECD 工作的严峻现实：尽管 OECD 正努力在131国间达成国际共识，但'France's digital services tax and the American response raise questions about what the future holds for the international tax system'（法国的单边开征与美方的激烈反弹，给国际税收体系的未来走向打上了巨大问号）。raise questions about what future holds 意为“使未来走向充满疑云与变数”，精准对应 C 选项 is faced with uncertain prospects（正面临着极不确定的前景）。",
+              "text": "needs to be readjusted immediately.",
+              "isCorrect": false,
+              "distractorType": "无中生有",
+              "analysis": "【干扰特征: 无中生有】OECD 正在按照原计划推进2020年底共识，未提及立即重新调整其工作路线。",
               "refSentences": [
                 "P5-S1"
               ]
@@ -3903,6 +4547,42 @@ window.ENGLISH_DATA['2020'] = {
           "presetReflection": {
             "trapAnalysis": "raise questions about what the future holds = is faced with uncertain prospects（面临不确定的前景）。",
             "methodSummary": "习语推断法：raise questions about what the future holds 对应 is faced with uncertain prospects。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "英语一_2020_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "C",
+                "C": "B",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3920,21 +4600,11 @@ window.ENGLISH_DATA['2020'] = {
             "P5-S1",
             "P6-S1"
           ],
-          "officialAnswer": "B",
+          "officialAnswer": "A",
           "options": [
             {
               "key": "A",
-              "text": "France Is Confronted with Trade Sanctions",
-              "isCorrect": false,
-              "distractorType": "次要危害细节",
-              "analysis": "【干扰特征: 局部细节】贸易制裁仅为第二段提到的美方潜在反击，未能统领全文关于全球税改大势与 OECD 谈判的核心主线。",
-              "refSentences": [
-                "P2-S2"
-              ]
-            },
-            {
-              "key": "B",
-              "text": "France Leads the Charge on Digital Tax",
+              "text": "France Leads the Charge on Digital Tax.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全文主旨概括】全文通篇以法国率先立法开征数字服务税（GAFA 税）为核心主角与贯穿全篇的焦点脉络（P1-2），随后深入指出法国此举正是领衔带动全球多国单边税收立法浪潮（P3-4）、倒逼 OECD 加速国际税制重塑并向全球发出警示信号的领头羊行动（P5-6）。B选项 France Leads the Charge on Digital Tax（法国领衔打响数字税冲锋战）以极其生动精炼的笔触统领全文的核心事件与引领地位，为最佳标题。",
@@ -3946,29 +4616,75 @@ window.ENGLISH_DATA['2020'] = {
               ]
             },
             {
-              "key": "C",
-              "text": "France Says \"NO\" to Tech Multinationals",
+              "key": "B",
+              "text": "France Is Confronted with Trade Sanctions.",
               "isCorrect": false,
-              "distractorType": "偷换概念偏激",
-              "analysis": "【干扰特征: 概念偏差】法国并不是拒绝或赶走跨国科技巨头，而是依法要求其对数字服务收入缴纳合理税款。",
+              "distractorType": "次要危害细节",
+              "analysis": "【干扰特征: 局部细节】贸易制裁仅为第二段提到的美方潜在反击，未能统领全文关于全球税改大势与 OECD 谈判的核心主线。",
               "refSentences": [
-                "P1-S1"
+                "P2-S2"
               ]
             },
             {
-              "key": "D",
-              "text": "France Demands a Role in the Digital Economy",
+              "key": "C",
+              "text": "France Demands a Role in the Digital Economy.",
               "isCorrect": false,
               "distractorType": "偏离税收主题",
               "analysis": "【干扰特征: 偏离税改核心】法国争夺的是数字时代的税收管辖权（taxing rights），非争夺数字产业角色。",
               "refSentences": [
                 "P4-S1"
               ]
+            },
+            {
+              "key": "D",
+              "text": "France Says \"No\" to Tech Multinationals.",
+              "isCorrect": false,
+              "distractorType": "偷换概念偏激",
+              "analysis": "【干扰特征: 概念偏差】法国并不是拒绝或赶走跨国科技巨头，而是依法要求其对数字服务收入缴纳合理税款。",
+              "refSentences": [
+                "P1-S1"
+              ]
             }
           ],
           "presetReflection": {
             "trapAnalysis": "France passes digital services tax + part of larger trend + clear warning / follow suit = France Leads the Charge on Digital Tax。",
             "methodSummary": "主旨标题题核心事件提取：抓住核心主角（France）与核心行动（Leads the Charge on Digital Tax）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "2020_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "英语一_2020_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "B",
+                "B": "A",
+                "C": "D",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]

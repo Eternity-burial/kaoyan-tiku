@@ -1,13 +1,9 @@
-/**
- * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2024 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
- */
-
+// 考研英语真题数据集 (2024 年)
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
 window.ENGLISH_DATA['2024'] = {
   "year": 2024,
-  "subject": "英语",
-  "title": "2024年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析",
+  "subject": "英语(一)",
+  "title": "2024年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析数据库",
   "texts": [
     {
       "id": "text1",
@@ -646,7 +642,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "saving them for future use",
+              "text": "saving them for future use.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 偷换动机】罗马人是败退撤离苏格兰且深埋近两千年，非留作日后自用。",
@@ -656,7 +652,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "keeping them from rusting",
+              "text": "keeping them from rusting.",
               "isCorrect": false,
               "distractorType": "无中生有防锈",
               "analysis": "【干扰特征: 荒谬错误】深埋泥土砾石中无法防锈，核心目的是防敌人抢夺。",
@@ -666,7 +662,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "letting them grow in value",
+              "text": "letting them grow in value.",
               "isCorrect": false,
               "distractorType": "无中生有增值",
               "analysis": "【干扰特征: 商业化偏差】古罗马撤军是纯军事防御考量，非为了铁钉升值囤积居奇。",
@@ -676,7 +672,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "hiding them from locals",
+              "text": "hiding them from the locals.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P2-S1 明确揭示罗马人深埋铁钉的深层目的：'The likely explanation is that the withdrawal was rushed, and they didn't want the local Caledonians getting their hands on 10 tons of weapons grade iron'（当时撤退仓促，他们不希望当地喀里多尼亚人染指获取这10吨武器级铁原料）。didn't want local Caledonians getting their hands on iron 与 hiding them from locals（向当地人隐匿藏匿这批铁钉）完全同义对应。D选项精准吻合。",
@@ -688,6 +684,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "didn't want the local Caledonians getting their hands on iron = hiding them from locals。",
             "methodSummary": "动机原句直接提取：didn't want locals to get hands on 转换为 hiding from locals。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -708,7 +740,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "highlight the thriftiness of early American colonists",
+              "text": "highlight the thriftiness of early American colonists.",
               "isCorrect": false,
               "distractorType": "字面生活偏差",
               "analysis": "【干扰特征: 概念偏差】烧毁整栋房屋并非为了单纯赞美勤俭节约美德，而是说明铁钉远比房屋贵重。",
@@ -719,7 +751,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "illustrate the high status of blacksmiths in that period",
+              "text": "illustrate the high status of blacksmiths in that period.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 偷换概念】P3-S1 强调铁匠的‘手工劳动价值’极高，非铁匠的‘社会政治地位’高。",
@@ -729,7 +761,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "contrast the attitudes of different civilizations toward nails",
+              "text": "contrast the attitudes of different civilisations towards nails.",
               "isCorrect": false,
               "distractorType": "无中生有对比",
               "analysis": "【干扰特征: 概念偏差】未对比不同文明对铁钉态度的差异，重点在于强调铁钉本身的昂贵价值。",
@@ -740,7 +772,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "show the preciousness of nail-making technology at that time",
+              "text": "show the preciousness of nail-making technology at that time.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 例证论点对应】P3-S2 叙述烧房取钉的案例，P3-S3 紧接着点明例证的论证目的：'The idea that one might burn down an entire house just to reclaim the nails underlines how scarce, costly and valuable the simple-seeming technology was'（烧毁整座房屋只为回收铁钉，深刻印证了这项表面简单的技术在当年是多么稀缺、昂贵和宝贵）。D选项 show the preciousness of nail-making technology at that time（展现制钉技术在当时的极其珍贵）完全精准吻合论点。",
@@ -753,6 +785,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "burn down house to reclaim nails underlines how scarce, costly and valuable simple technology was = show the preciousness of nail-making technology at that time。",
             "methodSummary": "例证题后句论点提取法：抓准 underlines how scarce, costly and valuable technology was 转换为 show preciousness of technology。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -772,7 +840,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "Increased productivity",
+              "text": "Increased productivity.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P4-S2 明确指出降价的最主要功劳来源：'although falling price was driven partly by cheaper iron and energy, most of the credit goes to nail manufacturers who simply found more efficient ways to turn steel into nails'（绝大部分功劳属于制钉商，他们找到了更高效将钢材制成钉子的方法）。more efficient ways（更高效的生产方式）与 Increased productivity（生产率的大幅提高）完全同义对应。A选项精准吻合。",
@@ -782,7 +850,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "wider use of new energies",
+              "text": "Wider use of new energies.",
               "isCorrect": false,
               "distractorType": "次要次级因素",
               "analysis": "【干扰特征: 次要因素】能源降价仅是部分驱动因素（partly driven），非主要作用（most of the credit）。",
@@ -792,7 +860,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "Fierce market competition",
+              "text": "Fiercer market competition.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 无端捏造】未提及市场激烈竞争。",
@@ -802,7 +870,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "reduced cost of raw material",
+              "text": "Reduced cost of raw materials.",
               "isCorrect": false,
               "distractorType": "次要次级因素",
               "analysis": "【干扰特征: 次要因素】原材料降价（cheaper iron）仅是次要原因（partly），非最核心的主要功臣。",
@@ -814,6 +882,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "most of credit goes to manufacturers found more efficient ways to turn steel into nails = Increased productivity。",
             "methodSummary": "主次因素识别法：排除 partly driven 的原料和能源，抓准 most of credit 对应的 Increased productivity。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -832,7 +936,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "have undergone many technological improvements",
+              "text": "have undergone many technological improvements.",
               "isCorrect": false,
               "distractorType": "偷换段落重点",
               "analysis": "【干扰特征: 偷换重点】第4段讲制造效率提高，第5段重心专讲铁钉产品形态本身两千年来基本未变。",
@@ -842,7 +946,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "have remained basically the same since Roman times",
+              "text": "have remained basically the same since Roman times.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P5-S1 明确阐明铁钉的恒定特征：'Sichel studied them because they haven't changed much... Roman nails are still clearly nails'（西歇尔研究铁钉是因为它们没怎么变过，两千年前的罗马铁钉依然清晰可辨就是铁钉）。haven't changed much 与 have remained basically the same since Roman times（自罗马时代以来基本保持不变）完全同义对应。B选项完全精准吻合。",
@@ -852,7 +956,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "are less studied than other everyday products",
+              "text": "are less studied than other everyday products.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】铁钉由于两千年来形态恒定，反而最适合被经济学者用来作为跨世纪价格追踪的研究对象。",
@@ -863,7 +967,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "are one of the world's most significant inventions",
+              "text": "are one of the world's most significant inventions.",
               "isCorrect": false,
               "distractorType": "夸大修饰",
               "analysis": "【干扰特征: 过度拔高】文章强调其作为日常廉价物品的研究代表性，非单列其为最伟大发明。",
@@ -876,6 +980,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "they haven't changed much... Roman nails are still clearly nails = have remained basically the same since Roman times。",
             "methodSummary": "原句同义转述：haven't changed much 转换为 remained basically the same。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -895,7 +1035,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "cheap technologies bring about revolutionary change",
+              "text": "Cheap technologies bring about revolutionary change.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全篇主旨高度提炼】P6-S1 和 P7-S1、P7-S2 明确得出贯穿全篇的核心哲理结论：'it's the cheap technologies that change the world. The Gutenberg printing press transformed civilisation by changing its cost... Solar panels transforming global energy system after becoming cheap'（真正改变世界的是廉价技术；印刷机通过大幅降低成本重塑文明，太阳能板因成本低廉正在重塑全球能源）。A选项 cheap technologies bring about revolutionary change（廉价技术带来革命性巨变）精准、周延且有力地统领了最后两段的全部论述与实证案例。",
@@ -907,7 +1047,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "technological innovation is integral to economic success",
+              "text": "Technological innovation is integral to economic success.",
               "isCorrect": false,
               "distractorType": "泛化泛指",
               "analysis": "【干扰特征: 空泛套话】遗漏了贯穿最后两段最核心的限定词‘廉价’（cheap/cost collapse）。",
@@ -917,7 +1057,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "technology defines people's understanding of the world",
+              "text": "Technology defines people's understanding of the world.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 偏离主旨】文章讨论的是廉价技术重塑人类社会与工业体系，非改变人对世界的哲学认知。",
@@ -927,7 +1067,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "Sophisticated technology developed small inventions",
+              "text": "Sophisticated technologies develop from small inventions.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】作者尖锐指出高大上技术（sophisticated technologies）往往只是空有炒作噱头，真正发力的是普及廉价发明。",
@@ -939,6 +1079,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "it's the cheap technologies that change the world + printing press cost collapse + solar panels cheap = cheap technologies bring about revolutionary change。",
             "methodSummary": "末段主旨升华题：抓准反复强调的核心命题 cheap technologies change the world，直接锁定 A。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -1570,7 +1746,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "sharing childcare among community members",
+              "text": "sharing childcare among community members.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P1-S2 和 P2-S1 明确定义了 alloparenting（共同育儿/非父母共同照护）的核心内涵：'each child is cared for by many adults... children help look after younger ones... these practices, known as alloparenting'（每个孩子都由众多成年人共同看护，年长儿童也参与照料幼童，这些做法被称为共同育儿）。A选项 sharing childcare among community members（在社区成员之间共同分担儿童照料工作）是对多成年人共同看护最精准贴切的概括定义。",
@@ -1581,7 +1757,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "assigning babies to specific adult categories",
+              "text": "assigning babies to specific adult caregivers.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 过于机械】共同育儿是全社区自然协同看护，非将婴儿死板分配给特定成年人类别。",
@@ -1591,7 +1767,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "teaching parenting skills to older children",
+              "text": "teaching parenting skills to older children.",
               "isCorrect": false,
               "distractorType": "以偏概全",
               "analysis": "【干扰特征: 局部细节】大孩子照看小孩子只是部落协作现象之一，非 alloparenting 的全部核心定义。",
@@ -1601,7 +1777,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "carrying infants around by their parents",
+              "text": "carrying infants around by their parents.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 概念偏差】背娃（baby-wearing）是照料方式，且 alloparenting 强调由父母之外的‘其他社区成年人’照料。",
@@ -1614,6 +1790,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "each child cared for by many adults in community = sharing childcare among community members。",
             "methodSummary": "术语概念定义提取：抓准 each child cared for by many adults 对应的 sharing childcare among community members。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1631,7 +1843,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "an attempt to facilitate intergenerational communication",
+              "text": "an attempt to facilitate intergenerational communication.",
               "isCorrect": false,
               "distractorType": "次要表面现象",
               "analysis": "【干扰特征: 次要副效应】代际交流只是结对的表象，引用该案例的宏观论证目的是展示如何将部落共同育儿模式融入西方社会。",
@@ -1641,7 +1853,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "an approach to integrating into western society",
+              "text": "an approach to integrating alloparenting into western society.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 例证论点对应】P2-S2 句式结构极其清晰严密：先提出观点'there are ways to incorporate them into western life'（完全有途径将这些部落育儿模式融入西方现代生活）；紧接着举出德国养老院配对幼儿园的方案作为直接例证（In Germany, one scheme has paired old people's home with nursery... akin to alloparenting）。引用德国案例正是为了生动展示将部落共同育儿模式融入西方社会的一种创新有效途径（an approach to integrating into western society）。B选项完全精准吻合论点句。",
@@ -1651,7 +1863,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "the conventional parenting style in western culture",
+              "text": "the conventional parenting style in western culture.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】德国方案是对西方传统孤立母职育儿的突破创新尝试，绝非传统方式（conventional style）。",
@@ -1662,7 +1874,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "the differences between western and African ways of living",
+              "text": "the differences between western and African ways of living.",
               "isCorrect": false,
               "distractorType": "偷换目的",
               "analysis": "【干扰特征: 偏离主旨】案例强调的是西方借鉴非洲成功经验的融合可行性，非强调不可调和的文化差异。",
@@ -1674,6 +1886,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "ways to incorporate them into western life -> In Germany one scheme paired old people home with nursery = an approach to integrating into western society。",
             "methodSummary": "例证题前句论点锁定：incorporate into western life 直接转换为 approach to integrating into western society。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1693,7 +1941,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "alleviates parenting pressures",
+              "text": "alleviates parenting pressures.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实完全相反】该叙事导致母亲身心俱疲甚至产后抑郁（lead to maternal exhaustion），极大加剧了育儿压力。",
@@ -1703,7 +1951,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "consolidates family relationships",
+              "text": "consolidates family relationships.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 无端美化】未提及巩固家庭关系。",
@@ -1713,7 +1961,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "results in the child-centered family",
+              "text": "results in the child-centred family.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 概念偏差】强调的是母亲独自承受育儿重负（mothers manage child care alone），非以儿童为中心。",
@@ -1723,7 +1971,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "departs from the course of evolution",
+              "text": "departs from the course of evolution.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P3-S1 和 P3-S2 明确阐述密集母职的本质：'western nuclear family was a recent invention which broke with evolutionary history. This abrupt shift to an intensive mothering narrative...'（西方核心家庭是一项打破人类演化历史的新发明，这种骤然转向要求母亲独自育儿的密集母职叙事是有害的）。broke with evolutionary history 与 departs from the course of evolution（背离了人类生物演化的历史进程）完全同义对应。D选项精准吻合。",
@@ -1736,6 +1984,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "broke with evolutionary history = departs from the course of evolution（背离了演化进程）。",
             "methodSummary": "原句同义改写：broke with evolutionary history 转换为 departs from the course of evolution。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1799,6 +2083,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "infant in hunter-gatherer society has 10 caregivers vs UK nursery 1 carer to 4 children = UK nurseries ought to improve their carer-to-child ratio。",
             "methodSummary": "对比反差推断法：抓准对比反差（contrasts starkly）背后的规范性改进诉求（ought to improve ratio）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1820,7 +2140,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "Instructive teaching: a dilemma for anxious parents",
+              "text": "Instructive teaching: a dilemma for anxious parents.",
               "isCorrect": false,
               "distractorType": "以偏概全末段细节",
               "analysis": "【干扰特征: 局部细节】指令式教学仅在第6段作为西方教育弊端被简要提及，无法统领全篇共同育儿主旨。",
@@ -1830,7 +2150,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "For a happier family, learn from the hunter-gatherers",
+              "text": "For a happier family, learn from the hunter-gatherers.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全文主旨高度概括】文章结构极其清晰圆融：开篇 P1-S1 提出核心主张'Parenting tips obtained from hunter-gatherers in Africa may be the key to bringing up more contented children'（从非洲狩猎采集部落获取育儿灵感是培养快乐儿童的关键），中篇深入剖析共同育儿（alloparenting）如何打破西方核心家庭密集母职的焦虑与抑郁，尾篇呼吁现代社会积极借鉴混龄互助经验。B选项 For a happier family, learn from the hunter-gatherers（为了拥有更幸福的家庭，请向狩猎采集部落学习取经）全面、准确且生动地概括了全文主旨，为最佳标题。",
@@ -1844,7 +2164,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "Mixed-aged playgroup: a better choice for lonely children",
+              "text": "Mixed-age playgroup, a better choice for lonely children.",
               "isCorrect": false,
               "distractorType": "以偏概全",
               "analysis": "【干扰特征: 局部手段】混龄游戏小组只是具体借鉴形式之一，全文核心在于整体家庭育儿模式的转变。",
@@ -1855,7 +2175,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "Tracing the history of parenting: from Africa to Europe",
+              "text": "Tracing the history of parenting: from Africa to Europe.",
               "isCorrect": false,
               "distractorType": "偷换体裁为历史编年",
               "analysis": "【干扰特征: 偏离体裁】文章是探讨演化人类学育儿启示的科普论说文，非按时间线追溯育儿演变的历史编年史。",
@@ -1868,6 +2188,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "Parenting tips from hunter-gatherers key to contented children + alloparenting brings happiness = For a happier family, learn from the hunter-gatherers。",
             "methodSummary": "首尾主旨呼应标题法：抓准首句 key to contented children 与贯穿全文的 learn from hunter-gatherers。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -2539,6 +2895,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "sudden hit in AI world + style is one of most commonly used prompts = He is popular with users of an AI art generator。",
             "methodSummary": "原句细节同义改写：commonly used prompts in Stable Diffusion 转换为 popular with users of an AI art generator。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2556,7 +2948,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "lack flexibility in responding to prompts",
+              "text": "lack flexibility in responding to prompts.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】第二段展示其能极其灵活逼真地根据任何提示词生成画作，问题在于版权侵权而非缺乏灵活性。",
@@ -2567,7 +2959,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "produce artworks in unpredictable styles",
+              "text": "produce artworks in unpredictable styles.",
               "isCorrect": false,
               "distractorType": "事实相反",
               "analysis": "【干扰特征: 事实相反】生成效果与鲁特科夫斯基风格几乎一模一样（not a million miles away），完全可预测模仿。",
@@ -2577,7 +2969,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "make unauthorized use of online images",
+              "text": "make unauthorized use of online images.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 原文同义复现】P3-S1 明确揭示开源 AI 模型的致命侵权问题：'built by scraping images from the Internet, often without permission and proper attribution to artists'（通过在网上大肆抓取图像构建而成，且往往未经授权许可，更未给予艺术家合理署名）。scraping images without permission 与 make unauthorized use of online images（未经授权使用网络图像）完全同义对应。C选项完全精准吻合。",
@@ -2587,7 +2979,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "collect user information without consent",
+              "text": "collect user information without consent.",
               "isCorrect": false,
               "distractorType": "偷换概念隐私",
               "analysis": "【干扰特征: 偷换概念】盗取的是艺术家的画作图像（images），非收集 AI 软件用户的个人隐私信息。",
@@ -2599,6 +2991,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "scraping images from Internet without permission = make unauthorized use of online images。",
             "methodSummary": "核心弊端细节对应：without permission scrape images 转换为 unauthorized use of online images。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2617,7 +3045,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "a unique way to reach audiences",
+              "text": "a unique way to reach audiences.",
               "isCorrect": false,
               "distractorType": "早先初期天真想法",
               "analysis": "【干扰特征: 初始想法】触达受众是他在搜网之前的一厢情愿想法（initially thought），搜网后发现的是侵权残酷现实。",
@@ -2627,7 +3055,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "a new method to identify AI images",
+              "text": "a new method to identify AI images.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】未提及发明鉴别 AI 图片的新方法。",
@@ -2637,7 +3065,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "AI-generated work bearing his name",
+              "text": "AI-generated work bearing his name.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P4-S3 明确交代其搜索发现：'The online search brought back work that had his name attached to it but wasn't his'（网络搜索带回了大量附带其名字但根本不是他本人创作的画作）。work that had his name attached to it but wasn't his 与 AI-generated work bearing his name（冠有他名字的 AI 生成作品）完全同义对应。C选项精准吻合。",
@@ -2647,7 +3075,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "heated disputes regarding his copyright",
+              "text": "heated disputes regarding his copyright.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 偷换概念】他搜到的是大量冒牌仿冒画作本身，非公众围绕其版权展开的争吵辩论。",
@@ -2659,6 +3087,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "work that had his name attached to it but wasn't his = AI-generated work bearing his name。",
             "methodSummary": "原句细节直接对应：work with his name attached but not his 转换为 AI work bearing his name。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2678,7 +3142,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "campaign for new policies or regulation",
+              "text": "campaign for new policies or regulation.",
               "isCorrect": false,
               "distractorType": "主体颠倒",
               "analysis": "【干扰特征: 实施主体颠倒】推动出台监管政策的是受害的艺术家联盟组织（P6-S1: coalition growing... pushing for regulations），非给 AI 公司的建议。",
@@ -2688,7 +3152,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "offer their services to public institutions",
+              "text": "offer their services to public institutions.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 偷换概念】是建议 AI 公司与博物馆合作获取合法授权数据，非向公共机构推销 AI 服务。",
@@ -2698,7 +3162,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "strengthen their relationship with AI users",
+              "text": "strengthen their relationships with AI users.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】未提及加强与 AI 用户的关系，重点在于解决与原创艺术家的版权冲突。",
@@ -2708,7 +3172,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "adopt a different strategy for AI model training",
+              "text": "adopt a different strategy for AI model training.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P6-S2 明确引述奥尔蒂斯给 AI 公司的具体建议：'One suggestion is that AI models could be trained on images in the public domain, and AI companies could forge partnerships with museums and artists'（建议 AI 模型使用公有领域图像进行训练，并与博物馆及艺术家建立合作关系）。放弃未授权网络扒图、转向公有领域图像与授权合作，本质上正是要求 AI 公司“采用一种截然不同的全新 AI 模型训练策略”（adopt a different strategy for AI model training）。D选项完全精准吻合。",
@@ -2720,6 +3184,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "trained on images in public domain and forge partnerships = adopt a different strategy for AI model training。",
             "methodSummary": "建议概括同义转换：trained on public domain 代替 scraping from internet 概括为 a different strategy for model training。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2742,7 +3242,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "Artists' responses to AI art generation",
+              "text": "Artists' responses to AI art generation.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 全篇主旨概括】全文通篇以波兰艺术家鲁特科夫斯基及整个艺术创意行业为叙事核心：第1-2段展现其画风在文生图 AI 中被狂热调用的爆红背景；第3段指出 AI 扒图侵权导致艺术家彻底忍无可忍（artists had enough）；第4-5段详述鲁特科夫斯基搜出海量冒牌画作后的震惊与对未来的深切忧虑；第6段展现艺术家行业迅速组建联盟积极推动监管和合法训练（artists' coalition）。A选项 Artists' responses to AI art generation（艺术家们对 AI 艺术生成的应对、反思与抗争）全面、深刻且周延地概括了全文的主旨脉络。",
@@ -2757,7 +3257,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "AI's expanded role in artistic creation",
+              "text": "AI's expanded role in artistic creation.",
               "isCorrect": false,
               "distractorType": "偏离批判视角",
               "analysis": "【干扰特征: 偏离主体】文章站在受侵害艺术家的批判维权视角展开，非正面赞美 AI 在艺术创作中的拓展作用。",
@@ -2768,7 +3268,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "Privacy issues in the application of AI",
+              "text": "Privacy issues in the application of AI.",
               "isCorrect": false,
               "distractorType": "偷换概念隐私",
               "analysis": "【干扰特征: 偷换概念】文章讨论的是版权侵权与署名权（ethics and copyright），非个人隐私问题（privacy）。",
@@ -2778,7 +3278,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "Opposing views on AI development",
+              "text": "Opposing views on AI development.",
               "isCorrect": false,
               "distractorType": "空泛泛指",
               "analysis": "【干扰特征: 过于宽泛】未能点明文章聚焦于‘艺术行业与插画艺术家群体’对 AI 盗图的特定维权应对。",
@@ -2791,6 +3291,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "Rutkowski's concern + artists had enough + artists coalition pushing for regulations = Artists' responses to AI art generation。",
             "methodSummary": "主旨中心提炼：抓住核心主体（Artists）与核心态度行为（responses to AI art generation）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -3544,7 +4080,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "a valuable natural environment",
+              "text": "a valuable natural environment.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P1-S1 和 P1-S2 明确阐述切萨皮克湾的崇高生态地位：'The miracle... lies in the complexity of natural construction... provide homes for hundreds of species, storing floodwaters, filtering pollutants, protecting communities from storms'（奇迹在于其复杂的自然构造，为数百种物种提供家园，蓄洪、滤污、抵御风暴潮）。A选项 a valuable natural environment（一个极具价值的自然环境）完美概括了第一段对该海湾生态奇迹与宝贵功能的描写。",
@@ -3555,7 +4091,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "a controversial conservation area",
+              "text": "a controversial conservation area.",
               "isCorrect": false,
               "distractorType": "跨段混淆",
               "analysis": "【干扰特征: 跨段混淆】第一段全篇纯描写其自然奇迹，法律争议是第二段引出的最高法院判决，第一段未提及争议性。",
@@ -3566,7 +4102,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "a place with commercial potential",
+              "text": "a place with commercial potential.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 商业化偏差】第一段盛赞的是其自然生态保护价值，非商业开发潜力。",
@@ -3576,7 +4112,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "a headache for nearby communities",
+              "text": "a headache for nearby communities.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实完全相反】浅滩是在保护周边社区免受风暴侵袭（protecting nearby communities from storms），是保护屏障而非令人头疼的麻烦。",
@@ -3588,6 +4124,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "miracle of natural construction + homes for species + storing floodwaters and filtering pollutants = a valuable natural environment。",
             "methodSummary": "首段基调概括：抓准 miracle 与一系列生态服务功能，锁定 a valuable natural environment。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3606,7 +4178,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "reinforces water pollution control",
+              "text": "reinforces water pollution control.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实完全相反】判决大幅收窄了保护范围，对全流水质和防洪带来严重负面后果（significant repercussions for water quality），严重削弱了治污控制。",
@@ -3616,7 +4188,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "weakens the EPA's regulatory power",
+              "text": "weakens the EPA's regulatory power.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P2-S1 明确揭示该判决的核心法律后果：'issued a ruling in an Idaho case that provides the U.S. Environmental Protection Agency (EPA) far less authority to regulate wetlands and waterways'（在爱达荷州案中作出判决，给予 EPA 极其微少的权力去监管湿地和水道）。far less authority to regulate（监管权限大幅减少）与 weakens the EPA's regulatory power（削弱了 EPA 的监管权力）完全同义对应。B选项完全精准吻合。",
@@ -3626,7 +4198,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "will end conflicts among local residents",
+              "text": "will end conflicts among local residents.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】判决偏袒商业开发商，损害了下游居民利益，加剧了跨州矛盾。",
@@ -3637,7 +4209,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "may face opposition from mining operators",
+              "text": "may face opposition from mining operators.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实完全相反】该判决是采矿商和建筑商的重大胜利（victory for mining operators and builders），受到其热烈欢迎而非反对。",
@@ -3649,6 +4221,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "provides the EPA far less authority to regulate wetlands = weakens the EPA's regulatory power。",
             "methodSummary": "原句细节直接提取：far less authority to regulate 转换为 weakens regulatory power。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3668,7 +4276,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "Worried",
+              "text": "Worried.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 情感基调定位】P2-S1 指出海湾面临巨大风险（put at great risk），P3-S2 深入指出水流污染物不分州界，跨越6州的大流域不可能奢望所有辖区都出台同等保护（'Will those jurisdictions extend the same protections? That seems unlikely'——指望全部保护几乎不可能）。字里行间充满了对最高法院判决后下游生态遭殃、跨州协同破产的深切担忧与忧虑（Worried）。A选项精准契合作者态度。",
@@ -3679,7 +4287,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "Puzzled",
+              "text": "Puzzled.",
               "isCorrect": false,
               "distractorType": "情感偏差",
               "analysis": "【干扰特征: 概念偏差】作者对跨州污染机理和法律漏洞洞若观火，分析极其透彻清醒，绝非困惑不解（Puzzled）。",
@@ -3690,7 +4298,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "Relieved",
+              "text": "Relieved.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 情感相反】联邦保护伞被削弱，危机四伏，作者绝无如释重负之感（Relieved）。",
@@ -3701,7 +4309,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "Encouraged",
+              "text": "Encouraged.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 情感相反】判决带来严峻生态倒退危机，绝非感到备受鼓舞（Encouraged）。",
@@ -3714,6 +4322,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "put at great risk + That seems unlikely all states will protect = Worried（深感担忧）。",
             "methodSummary": "态度题反问与定性词提取：put at great risk 与 That seems unlikely 直接锁定态度为 Worried。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3776,6 +4420,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "EPA involvement crucial to transcend special interests in neighboring states (linking PA runoff and MD harvest) = It has ensured the coordination of protection efforts。",
             "methodSummary": "机制功能推断法：transcend special interests in neighboring states 抽象概括为 ensured coordination of protection efforts。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3795,7 +4475,7 @@ window.ENGLISH_DATA['2024'] = {
           "options": [
             {
               "key": "A",
-              "text": "be cautious about the influence of landowners",
+              "text": "be cautious about the influence of land owners.",
               "isCorrect": false,
               "distractorType": "次要批判点",
               "analysis": "【干扰特征: 次要局部】第四段批判了判决偏袒土地所有者，末段作者直接对立法者的核心呼吁是审视加强湿地立法保护。",
@@ -3806,7 +4486,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "B",
-              "text": "attach due importance to wetlands protections",
+              "text": "attach due importance to wetlands protections.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 原文同义复现】P5-S1 明确交代作者在篇末发出的核心号召：'we would call on state lawmakers from Richmond to Albany to consider reviewing their own wetlands protections and see for themselves the enormous stake involved'（呼吁从里士满到奥尔巴尼的各州立法者重新审视完善自身的湿地保护，并亲眼看清其中所关乎的巨大重大利害）。reviewing wetlands protections and see enormous stake 与 attach due importance to wetlands protections（对湿地保护给予应有的高度重视）完全同义对应。B选项完全精准吻合。",
@@ -3816,7 +4496,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "C",
-              "text": "recognize the need to expand wildlife refuges",
+              "text": "recognize the need to expand wildlife refuges.",
               "isCorrect": false,
               "distractorType": "偷换目的手段",
               "analysis": "【干扰特征: 偷换手段】黑水野生动物保护区是邀请议员考察生态之美的参访地，非要求扩建保护区土地面积。",
@@ -3826,7 +4506,7 @@ window.ENGLISH_DATA['2024'] = {
             },
             {
               "key": "D",
-              "text": "improve the well-being of endangered species",
+              "text": "improve the wellbeing of endangered species.",
               "isCorrect": false,
               "distractorType": "次要生态细节",
               "analysis": "【干扰特征: 局部细节】白头海雕只是保护区的生态掠影，议员的核心法律职责在于制定健全的湿地保护法规体系。",
@@ -3839,6 +4519,42 @@ window.ENGLISH_DATA['2024'] = {
           "presetReflection": {
             "trapAnalysis": "call on state lawmakers to review wetlands protections and see enormous stake = attach due importance to wetlands protections。",
             "methodSummary": "末段行动呼吁提取：call on lawmakers to review protections and see enormous stake 转换为 attach due importance to wetlands protections。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2024_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2024_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]

@@ -18,7 +18,11 @@
     showAllTranslation: false,
     showSolution: true,
     defaultShowSolution: true,
+    practiceShowSolution: false, // 模考做题模式单题解析显示状态 (方案B：默认折叠)
+    practiceDefaultShowSolution: false, // 模考做题模式默认解析偏好 (方案B：默认折叠)
     practiceAnswers: {}, // { qIndex: { selected: 'A', submitted: true } }
+    currentRound: 1, // 当前年份刷题轮次 (1: 首刷, 2: 二刷...)
+    roundsHistory: [], // [{ round: 1, ... }] 历史轮次归档快照
     mastery: {},
     notes: {},
     initialized: false
@@ -35,6 +39,10 @@
       trigYear: document.getElementById('engTrigYear'),
       txtYear: document.getElementById('engTxtYear'),
       panelYear: document.getElementById('engPanelYear'),
+      ddRound: document.getElementById('engDdRound'),
+      trigRound: document.getElementById('engTrigRound'),
+      txtRound: document.getElementById('engTxtRound'),
+      panelRound: document.getElementById('engPanelRound'),
       passagePane: document.getElementById('engPassagePane'),
       analysisPane: document.getElementById('engAnalysisPane'),
       questionToolbar: document.querySelector('#engAnalysisPane .question-toolbar'),
@@ -297,26 +305,27 @@
     return '细节题';
   }
 
-  // 结构化长难句语法精析格式化工具
+  // 结构化长难句语法精析格式化工具（包裹货币美元符号，彻底规避 KaTeX 误伤）
   function formatSyntaxAnalysis(syntax) {
     if (!syntax) return '';
-    if (typeof syntax === 'string') return escapeHtml(syntax);
+    const cleanDollar = (str) => escapeHtml(str).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
+    if (typeof syntax === 'string') return cleanDollar(syntax);
     if (typeof syntax === 'object') {
       const parts = [];
       if (syntax.structureType) {
-        parts.push(`<strong>【句型】</strong>${escapeHtml(syntax.structureType)}`);
+        parts.push(`<strong>【句型】</strong>${cleanDollar(syntax.structureType)}`);
       }
       if (syntax.mainClause) {
-        parts.push(`<strong>【主干】</strong>${escapeHtml(syntax.mainClause)}`);
+        parts.push(`<strong>【主干】</strong>${cleanDollar(syntax.mainClause)}`);
       }
       if (syntax.subordinateClauses && syntax.subordinateClauses.length > 0) {
         const subStr = Array.isArray(syntax.subordinateClauses)
           ? syntax.subordinateClauses.join('；')
           : syntax.subordinateClauses;
-        parts.push(`<strong>【修饰从句】</strong>${escapeHtml(subStr)}`);
+        parts.push(`<strong>【修饰从句】</strong>${cleanDollar(subStr)}`);
       }
       if (syntax.corePattern) {
-        parts.push(`<strong>【核心句型】</strong><code>${escapeHtml(syntax.corePattern)}</code>`);
+        parts.push(`<strong>【核心句型】</strong><code>${cleanDollar(syntax.corePattern)}</code>`);
       }
       return parts.join(' &nbsp;|&nbsp; ');
     }
@@ -373,6 +382,9 @@
         s.translation = s.translation || s.zh || s.chinese || '';
         s.syntaxAnalysis = s.syntaxAnalysis || s.syntax || s.grammarAnalysis || null;
         s.vocab = s.vocab || [];
+        s.isUnderlined = !!s.isUnderlined;
+        s.underlinedPhrases = Array.isArray(s.underlinedPhrases) ? [...s.underlinedPhrases] : [];
+        s.underlinedByQuestions = Array.isArray(s.underlinedByQuestions) ? [...s.underlinedByQuestions] : [];
       });
     });
 
@@ -393,6 +405,9 @@
 
       q.options.forEach(opt => {
         opt.text = opt.text || '';
+        if (q.officialAnswer) {
+          opt.isCorrect = (opt.key === q.officialAnswer);
+        }
         opt.distractorType = opt.distractorDisplayName || DISTRACTOR_TYPE_MAP[opt.distractorType] || opt.distractorType || (opt.isCorrect ? '正确项' : '干扰项');
         opt.analysis = opt.analysis || opt.reason || opt.translation || '';
         opt.refSentences = opt.refSentences || [];
@@ -403,6 +418,115 @@
           trapAnalysis: q.explanation.distractorAnalysis || q.explanation.trapAnalysis || q.explanation.summary || '',
           methodSummary: q.explanation.method || q.explanation.methodSummary || ''
         };
+      }
+    });
+
+    // 自动扫描与挂载试题画线句/考查词句 (支持全库 1998~2026 全年份及显式标注)
+    const escReg = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const allTextSentences = [];
+    t.paragraphs.forEach(p => {
+      (p.sentences || []).forEach(s => {
+        allTextSentences.push({ pIndex: p.pIndex, s: s });
+      });
+    });
+
+    t.questions.forEach(q => {
+      const stem = q.stem || '';
+
+      // 1. 全句画线题识别 (如 2017 T4 Q36)
+      if (/underlined sentence/i.test(stem)) {
+        if (q.targetSentences && q.targetSentences.length > 0) {
+          q.targetSentences.forEach(sid => {
+            const found = allTextSentences.find(item => item.s.id === sid);
+            if (found) {
+              found.s.isUnderlined = true;
+              if (!found.s.underlinedByQuestions.includes(q.qIndex)) {
+                found.s.underlinedByQuestions.push(q.qIndex);
+              }
+            }
+          });
+        } else {
+          const pM = stem.match(/(?:Para\.|Paragraph|Para)\s*(\d+)/i);
+          if (pM) {
+            const pNum = parseInt(pM[1], 10);
+            const pSents = allTextSentences.filter(item => item.pIndex === pNum);
+            if (pSents.length > 0) {
+              pSents[0].s.isUnderlined = true;
+              if (!pSents[0].s.underlinedByQuestions.includes(q.qIndex)) {
+                pSents[0].s.underlinedByQuestions.push(q.qIndex);
+              }
+            }
+          }
+        }
+      }
+
+      // 2. 考查特定词汇/短语/表达识别 (如 2010 T3 Q34, 2016 T1 Q22, 2017 T1 Q23 等)
+      let phrase = null;
+      const m1 = stem.match(/(?:underlined\s+)?(?:word|phrase|expression|sentence|term)\s+["“'‘]([^"”'’]+)["”'’]/i);
+      const m2 = stem.match(/["“'‘]([^"”'’]+)["”'’]\s*(?:\([^\)]*(?:Para|Line)[^\)]*\))?\s*(?:most probably means|is closest in meaning|refers to|means|denotes)/i);
+      const m3 = stem.match(/(?:best defines|meaning of)\s+(?:the\s+)?(?:word|phrase|expression)?\s*["“'‘]([^"”'’]+)["”'’]/i);
+      const m4 = stem.match(/What does the phrase\s+["“'‘]([^"”'’]+)["”'’]/i);
+
+      if (m1) phrase = m1[1];
+      else if (m2) phrase = m2[1];
+      else if (m3) phrase = m3[1];
+      else if (m4) phrase = m4[1];
+
+      if (phrase) {
+        phrase = phrase.trim().replace(/[.,;!?_]+$/, '');
+        if (phrase.length >= 2) {
+          const pM = stem.match(/(?:Para\.|Paragraph|Para)\s*(\d+)/i);
+          const targetPara = pM ? parseInt(pM[1], 10) : null;
+          const phraseEsc = escReg(phrase);
+          const phraseReg = new RegExp('(?<![a-zA-Z0-9_])' + phraseEsc + '(?![a-zA-Z0-9_])', 'i');
+
+          let candidates = [];
+          if (q.targetSentences && q.targetSentences.length > 0) {
+            candidates = allTextSentences.filter(item => q.targetSentences.includes(item.s.id));
+          }
+          if (targetPara) {
+            const paraSents = allTextSentences.filter(item => item.pIndex === targetPara);
+            const matchingInPara = paraSents.filter(item => phraseReg.test(item.s.text));
+            if (matchingInPara.length > 0) {
+              candidates = matchingInPara;
+            }
+          }
+          if (candidates.length === 0 || !candidates.some(c => phraseReg.test(c.s.text))) {
+            candidates = allTextSentences.filter(item => phraseReg.test(item.s.text));
+          }
+
+          candidates.forEach(item => {
+            const s = item.s;
+            const hit = phraseReg.exec(s.text);
+            if (hit) {
+              s.underlinedPhrases = s.underlinedPhrases || [];
+              if (!s.underlinedPhrases.some(up => up.phrase && up.phrase.toLowerCase() === phrase.toLowerCase())) {
+                s.underlinedPhrases.push({
+                  phrase: hit[0],
+                  qIndex: q.qIndex,
+                  isUnderlined: true
+                });
+              }
+              if (!q.targetSentences || !q.targetSentences.includes(s.id)) {
+                q.targetSentences = q.targetSentences || [];
+                q.targetSentences.push(s.id);
+              }
+            }
+          });
+        }
+      }
+    });
+
+    // 3. 同步显式标记 (若原数据中已经显式标记 isUnderlined)
+    allTextSentences.forEach(item => {
+      if (item.s.isUnderlined && item.s.underlinedByQuestions.length === 0) {
+        t.questions.forEach(q => {
+          if (q.targetSentences && q.targetSentences.includes(item.s.id)) {
+            if (!item.s.underlinedByQuestions.includes(q.qIndex)) {
+              item.s.underlinedByQuestions.push(q.qIndex);
+            }
+          }
+        });
       }
     });
 
@@ -560,12 +684,39 @@
   }
 
   function toggleSolution() {
+    if (state.mode === 'practice') {
+      const q = getCurrentQuestion();
+      const pAns = (q && state.practiceAnswers[q.qIndex]) || {};
+      if (!pAns.submitted) {
+        if (typeof window.showToast === 'function') {
+          window.showToast('当前题目尚未交卷，请整篇提交后查看解析 (防剧透)', 'info');
+        }
+        return;
+      }
+      state.practiceShowSolution = !state.practiceShowSolution;
+      updateSolutionUI();
+      if (typeof window.showToast === 'function') {
+        window.showToast(state.practiceShowSolution ? '已展开当前题深度解析与避坑指南' : '已折叠题目解析 (保持纯净)', 'info');
+      }
+      return;
+    }
+
     state.showSolution = !state.showSolution;
     saveSolutionPref();
     updateSolutionUI();
   }
 
   function toggleDefaultSolution() {
+    if (state.mode === 'practice') {
+      state.practiceDefaultShowSolution = !state.practiceDefaultShowSolution;
+      state.practiceShowSolution = state.practiceDefaultShowSolution;
+      updateSolutionUI();
+      if (typeof window.showToast === 'function') {
+        window.showToast(state.practiceDefaultShowSolution ? '做题模式默认偏好已改为：展开解析' : '做题模式默认偏好已改为：折叠解析 (纯净)', 'info');
+      }
+      return;
+    }
+
     state.defaultShowSolution = !state.defaultShowSolution;
     state.showSolution = state.defaultShowSolution;
     saveSolutionPref();
@@ -573,12 +724,18 @@
   }
 
   function updateSolutionUI() {
+    const isPractice = (state.mode === 'practice');
+    const isSolActive = isPractice ? !!state.practiceShowSolution : !!state.showSolution;
+    const isDefaultActive = isPractice ? !!state.practiceDefaultShowSolution : !!state.defaultShowSolution;
+
     if (dom.txtToggleSol) {
-      dom.txtToggleSol.textContent = state.showSolution ? '解析: 显示' : '解析: 隐藏';
+      dom.txtToggleSol.textContent = isSolActive ? '解析: 显示' : '解析: 隐藏';
     }
     if (dom.btnToggleSol) {
-      dom.btnToggleSol.classList.toggle('active', state.showSolution);
-      dom.btnToggleSol.title = `快捷键: Space (单题) / Shift+Space (默认: ${state.defaultShowSolution ? '显示' : '隐藏'})`;
+      dom.btnToggleSol.classList.toggle('active', isSolActive);
+      dom.btnToggleSol.title = isPractice
+        ? `快捷键: Space (单题解析折叠/展开) / Shift+Space (默认: ${isDefaultActive ? '显示' : '隐藏'})`
+        : `快捷键: Space (单题) / Shift+Space (默认: ${state.defaultShowSolution ? '显示' : '隐藏'})`;
     }
     renderQuestion();
     if (state.mode === 'analysis') {
@@ -588,21 +745,65 @@
         document.querySelectorAll('.sentence-item').forEach(s => {
           s.classList.remove('highlight-target', 'highlight-distractor', 'highlight-topic', 'pulse-target');
         });
+        document.querySelectorAll('.exam-underlined-phrase').forEach(el => {
+          el.classList.remove('is-active-target');
+        });
+      }
+    } else if (state.mode === 'practice') {
+      if (state.practiceShowSolution) {
+        highlightCurrentQuestionGrounding();
+      } else {
+        document.querySelectorAll('.sentence-item').forEach(s => {
+          s.classList.remove('highlight-target', 'highlight-distractor', 'highlight-topic', 'pulse-target');
+        });
+        document.querySelectorAll('.exam-underlined-phrase').forEach(el => {
+          el.classList.remove('is-active-target');
+        });
       }
     }
   }
 
-  // 加载当前年份的掌握度、笔记与做题作答
+  // 加载当前年份的掌握度、笔记、做题作答与刷题轮次档案
   function loadYearStorage() {
     const subjKey = state.currentSubject || 'english';
     try {
       state.mastery = JSON.parse(localStorage.getItem(`ky_${subjKey}_mastery_${state.currentYear}`) || '{}');
       state.notes = JSON.parse(localStorage.getItem(`ky_${subjKey}_notes_${state.currentYear}`) || '{}');
       state.practiceAnswers = JSON.parse(localStorage.getItem(`ky_${subjKey}_practice_${state.currentYear}`) || '{}');
+      state.currentRound = parseInt(localStorage.getItem(`ky_${subjKey}_round_${state.currentYear}`) || '1', 10) || 1;
+      state.roundsHistory = JSON.parse(localStorage.getItem(`ky_${subjKey}_rounds_${state.currentYear}`) || '[]');
     } catch (e) {
       state.mastery = {};
       state.notes = {};
       state.practiceAnswers = {};
+      state.currentRound = 1;
+      state.roundsHistory = [];
+    }
+    validateAndHealPracticeAnswers();
+  }
+
+  // 防御性校验与脏数据自愈：确保每一题作答的 isCorrect 严格以 q.officialAnswer 为唯一事实来源 (SSOT)
+  function validateAndHealPracticeAnswers() {
+    const dataset = getCurrentDataset();
+    if (!dataset || !dataset.texts) return;
+    let dirty = false;
+    dataset.texts.forEach(t => {
+      (t.questions || []).forEach(q => {
+        const p = state.practiceAnswers[q.qIndex];
+        if (p && p.selected && q.officialAnswer) {
+          const realCorrect = (p.selected === q.officialAnswer);
+          if (p.submitted && p.isCorrect !== realCorrect) {
+            p.isCorrect = realCorrect;
+            state.mastery[q.qIndex] = realCorrect ? 'proficient' : 'wrong';
+            dirty = true;
+          }
+        }
+      });
+    });
+    if (dirty) {
+      savePracticeStorage();
+      saveMasteryStorage();
+      syncCurrentRoundSnapshot();
     }
   }
 
@@ -624,6 +825,73 @@
         window.storageSync.scheduleSave();
       }
     } catch (e) {}
+  }
+
+  function saveRoundStorage() {
+    const subjKey = state.currentSubject || 'english';
+    try {
+      localStorage.setItem(`ky_${subjKey}_round_${state.currentYear}`, String(state.currentRound || 1));
+      localStorage.setItem(`ky_${subjKey}_rounds_${state.currentYear}`, JSON.stringify(state.roundsHistory || []));
+      if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
+        window.storageSync.scheduleSave();
+      }
+    } catch (e) {}
+  }
+
+  // 统计当前年份所有文章题目作答进度
+  function calcCurrentYearPracticeStats() {
+    const dataset = getCurrentDataset();
+    let total = 0;
+    let answered = 0;
+    let correct = 0;
+    if (dataset && dataset.texts) {
+      dataset.texts.forEach(t => {
+        (t.questions || []).forEach(q => {
+          total++;
+          const p = state.practiceAnswers[q.qIndex];
+          if (p && p.selected) {
+            answered++;
+            if (p.selected === q.officialAnswer) {
+              correct++;
+            }
+          }
+        });
+      });
+    }
+    return {
+      total,
+      answered,
+      correct,
+      score: correct * 2,
+      accuracy: answered > 0 ? Math.round((correct / answered) * 100) : 0
+    };
+  }
+
+  // 同步当前活跃轮次的作答快照到 roundsHistory 归档中
+  function syncCurrentRoundSnapshot() {
+    if (!state.roundsHistory) state.roundsHistory = [];
+    const curRoundNum = state.currentRound || 1;
+    let curRecord = state.roundsHistory.find(r => r.round === curRoundNum);
+    if (!curRecord) {
+      curRecord = {
+        round: curRoundNum,
+        createdTime: new Date().toISOString(),
+        answers: {},
+        mastery: {}
+      };
+      state.roundsHistory.push(curRecord);
+    }
+    curRecord.lastUpdated = new Date().toISOString();
+    curRecord.answers = JSON.parse(JSON.stringify(state.practiceAnswers || {}));
+    curRecord.mastery = JSON.parse(JSON.stringify(state.mastery || {}));
+    const stats = calcCurrentYearPracticeStats();
+    curRecord.answered = stats.answered;
+    curRecord.total = stats.total;
+    curRecord.correct = stats.correct;
+    curRecord.score = stats.score;
+    curRecord.accuracy = stats.accuracy;
+
+    saveRoundStorage();
   }
 
   // 渲染年份标题下拉面板
@@ -663,6 +931,223 @@
   function closeYearDropdown() {
     if (dom.trigYear) dom.trigYear.classList.remove('open');
     if (dom.panelYear) dom.panelYear.classList.remove('open');
+  }
+
+  // 渲染刷题轮次管理下拉面板 (二刷/多刷)
+  function renderRoundSelector() {
+    if (dom.txtRound) dom.txtRound.textContent = `第 ${state.currentRound || 1} 轮`;
+
+    const rounds = state.roundsHistory || [];
+    const curRound = state.currentRound || 1;
+    const curStats = calcCurrentYearPracticeStats();
+
+    let roundsListHtml = '';
+    const allRoundNums = Array.from(new Set([...rounds.map(r => r.round), curRound])).sort((a, b) => a - b);
+    
+    allRoundNums.forEach(rNum => {
+      const isCur = (rNum === curRound);
+      const rData = rounds.find(r => r.round === rNum);
+      const answered = isCur ? curStats.answered : (rData ? (rData.answered || 0) : 0);
+      const total = isCur ? curStats.total : (rData ? (rData.total || 20) : 20);
+      const score = isCur ? curStats.score : (rData ? (rData.score || 0) : 0);
+      const acc = isCur ? curStats.accuracy : (rData ? (rData.accuracy || 0) : 0);
+      const timeStr = rData && rData.lastUpdated ? new Date(rData.lastUpdated).toLocaleDateString() : (isCur ? '进行中' : '未交卷');
+
+      roundsListHtml += `
+        <div class="round-item ${isCur ? 'active' : ''}" onclick="window.kyApp.switchPracticeRound(${rNum})">
+          <div class="round-item-info">
+            <div class="round-item-title">
+              第 ${rNum} 轮做题
+              ${isCur ? '<span class="round-cur-tag">当前活跃</span>' : ''}
+            </div>
+            <div class="round-item-meta">
+              已答 ${answered}/${total} 题 · 得分 ${score} 分 · 正确率 ${acc}% · ${timeStr}
+            </div>
+          </div>
+          <div class="round-actions" onclick="event.stopPropagation()">
+            ${allRoundNums.length > 1 && !isCur ? `
+              <button class="btn-round-action" onclick="window.kyApp.deletePracticeRound(${rNum})" title="删除此轮历史记录">删除</button>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    });
+
+    const panelHtml = `
+      <div class="round-panel-header">
+        <span>${state.currentYear} 年刷题轮次档案</span>
+        <button class="btn-round-action" onclick="window.kyApp.resetCurrentRound()" title="重置当前活跃轮次的所有题目作答" style="color:#ef4444;">清空本轮</button>
+      </div>
+      <div class="round-list">
+        ${roundsListHtml}
+      </div>
+      <button class="btn-new-round" onclick="window.kyApp.startNewPracticeRound()">
+        <span>+ 开启第 ${allRoundNums.length + 1} 轮做题 (二刷/重测)</span>
+      </button>
+    `;
+
+    if (dom.panelRound) dom.panelRound.innerHTML = panelHtml;
+  }
+
+  function toggleRoundDropdown(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    if (!dom.panelRound) return;
+    const isOpen = dom.panelRound.classList.contains('active');
+    if (isOpen) {
+      closeRoundDropdown();
+    } else {
+      openRoundDropdown();
+    }
+  }
+
+  function openRoundDropdown() {
+    closeYearDropdown();
+    renderRoundSelector();
+    if (dom.panelRound) {
+      dom.panelRound.classList.add('active');
+    }
+    if (dom.trigRound) dom.trigRound.classList.add('open');
+  }
+
+  function closeRoundDropdown() {
+    if (dom.panelRound) dom.panelRound.classList.remove('active');
+    if (dom.trigRound) dom.trigRound.classList.remove('open');
+  }
+
+  // 开启新一轮刷题 (二刷/多刷)
+  function startNewPracticeRound(force = false) {
+    closeRoundDropdown();
+    const nextRound = (state.roundsHistory && state.roundsHistory.length > 0)
+      ? Math.max(...state.roundsHistory.map(r => r.round), state.currentRound) + 1
+      : state.currentRound + 1;
+
+    const doStart = () => {
+      syncCurrentRoundSnapshot();
+
+      state.currentRound = nextRound;
+      state.practiceAnswers = {};
+      state.mastery = {};
+
+      savePracticeStorage();
+      saveMasteryStorage();
+      saveRoundStorage();
+      syncCurrentRoundSnapshot();
+
+      renderRoundSelector();
+      renderPassage();
+      renderQuestionPills();
+      renderQuestion();
+
+      if (typeof window.showToast === 'function') {
+        window.showToast(`已开启 ${state.currentYear} 年第 ${nextRound} 轮刷题！祝您做题顺利！`, 'success');
+      }
+    };
+
+    if (!force && typeof window.showConfirmModal === 'function') {
+      window.showConfirmModal({
+        title: `开启第 ${nextRound} 轮刷题 (二刷/多刷)`,
+        text: `确认开启 ${state.currentYear} 年第 ${nextRound} 轮做题？当前作答将完整归档至历史轮次中，卷面将重置为您提供全新的做题体验。`,
+        confirmText: '开启新一轮',
+        cancelText: '暂不开启',
+        onConfirm: doStart
+      });
+    } else {
+      doStart();
+    }
+  }
+
+  // 切换历史/当前做题轮次
+  function switchPracticeRound(targetRound) {
+    closeRoundDropdown();
+    if (targetRound === state.currentRound) return;
+
+    syncCurrentRoundSnapshot();
+
+    const record = (state.roundsHistory || []).find(r => r.round === targetRound);
+    state.currentRound = targetRound;
+    if (record) {
+      state.practiceAnswers = JSON.parse(JSON.stringify(record.answers || {}));
+      state.mastery = JSON.parse(JSON.stringify(record.mastery || {}));
+    } else {
+      state.practiceAnswers = {};
+      state.mastery = {};
+    }
+
+    savePracticeStorage();
+    saveMasteryStorage();
+    saveRoundStorage();
+
+    renderRoundSelector();
+    renderPassage();
+    renderQuestionPills();
+    renderQuestion();
+
+    if (typeof window.showToast === 'function') {
+      window.showToast(`已切换至 ${state.currentYear} 年第 ${targetRound} 轮作答记录`, 'info');
+    }
+  }
+
+  // 重置当前轮次做题数据
+  function resetCurrentRound(force = false) {
+    closeRoundDropdown();
+    const doReset = () => {
+      state.practiceAnswers = {};
+      state.mastery = {};
+      savePracticeStorage();
+      saveMasteryStorage();
+      syncCurrentRoundSnapshot();
+
+      renderRoundSelector();
+      renderPassage();
+      renderQuestionPills();
+      renderQuestion();
+
+      if (typeof window.showToast === 'function') {
+        window.showToast(`已重置第 ${state.currentRound} 轮做题记录`, 'info');
+      }
+    };
+
+    if (!force && typeof window.showConfirmModal === 'function') {
+      window.showConfirmModal({
+        title: `重置第 ${state.currentRound} 轮作答`,
+        text: `确定清空 ${state.currentYear} 年第 ${state.currentRound} 轮的做题记录吗？当前轮所有题目的选项与判题结果将被重置。`,
+        confirmText: '确认清空',
+        cancelText: '取消',
+        onConfirm: doReset
+      });
+    } else {
+      doReset();
+    }
+  }
+
+  // 删除历史轮次记录
+  function deletePracticeRound(roundNum, force = false) {
+    if (roundNum === state.currentRound) {
+      if (typeof window.showToast === 'function') {
+        window.showToast('无法删除当前正在活跃的轮次，请先切换到其他轮次', 'warning');
+      }
+      return;
+    }
+    const doDelete = () => {
+      state.roundsHistory = (state.roundsHistory || []).filter(r => r.round !== roundNum);
+      saveRoundStorage();
+      renderRoundSelector();
+      if (typeof window.showToast === 'function') {
+        window.showToast(`已删除第 ${roundNum} 轮历史记录`, 'info');
+      }
+    };
+
+    if (!force && typeof window.showConfirmModal === 'function') {
+      window.showConfirmModal({
+        title: `删除第 ${roundNum} 轮档案`,
+        text: `确定删除 ${state.currentYear} 年第 ${roundNum} 轮的历史记录吗？删除后该轮作答数据将无法恢复。`,
+        confirmText: '确认删除',
+        cancelText: '取消',
+        onConfirm: doDelete
+      });
+    } else {
+      doDelete();
+    }
   }
 
   // 切换真题年份：恢复该年份上次停的位置
@@ -718,6 +1203,7 @@
 
     saveResume();
     renderYearSelector();
+    renderRoundSelector();
     renderTextTabs();
     renderTypeFilter();
     renderPassage();
@@ -758,6 +1244,7 @@
     loadYearStorage();
 
     renderYearSelector();
+    renderRoundSelector();
     renderTextTabs();
     renderTypeFilter();
     renderPassage();
@@ -792,6 +1279,7 @@
       }
       loadYearStorage();
       renderYearSelector();
+      renderRoundSelector();
       renderTextTabs();
       renderTypeFilter();
       renderPassage();
@@ -813,7 +1301,7 @@
       if (dom.btnPracticeMode) dom.btnPracticeMode.classList.add('active');
       if (dom.btnAnalysisMode) dom.btnAnalysisMode.classList.remove('active');
       if (dom.btnToggleTrans) dom.btnToggleTrans.style.display = 'none';
-      if (dom.btnToggleSol) dom.btnToggleSol.style.display = 'none';
+      if (dom.btnToggleSol) dom.btnToggleSol.style.display = 'inline-flex';
     } else {
       dom.layout.classList.remove('mode-practice-active');
       if (dom.btnAnalysisMode) dom.btnAnalysisMode.classList.add('active');
@@ -886,7 +1374,10 @@
       state.currentQIndex = text.questions[0].qIndex;
     }
 
+    state.showSolution = state.defaultShowSolution;
+    state.practiceShowSolution = state.practiceDefaultShowSolution;
     saveResume(); // 切换篇章后保存位置（恢复时可精确到篇章+题目）
+    updateSolutionUI();
     renderPassage();
     renderQuestionPills();
     renderQuestion();
@@ -939,7 +1430,7 @@
 
       (p.sentences || []).forEach(s => {
         const vList = (s.vocab && s.vocab.length > 0) ? s.vocab : (text.vocabulary || text.vocab || []);
-        const sentenceText = renderAnnotatedSentenceText(s.text, vList);
+        const sentenceText = renderAnnotatedSentenceText(s.text, vList, s.underlinedPhrases);
         const sentenceTrans = renderAnnotatedTranslation(s.translation, vList);
 
         let syntaxHtml = '';
@@ -955,9 +1446,23 @@
           }
         }
 
+        let underlinedBadgeHtml = '';
+        if (s.isUnderlined) {
+          const qText = s.underlinedByQuestions && s.underlinedByQuestions.length > 0
+            ? `第 ${s.underlinedByQuestions.join('/')} 题`
+            : '真题考查';
+          const primaryQ = (s.underlinedByQuestions && s.underlinedByQuestions.length > 0) ? s.underlinedByQuestions[0] : '';
+          underlinedBadgeHtml = `
+            <span class="sentence-underlined-badge" data-qindex="${primaryQ}" title="真题考查画线句（点击直达对应试题）">
+              <span class="badge-icon">✍</span> 考查画线句 [${qText}]
+            </span>
+          `;
+        }
+
         html += `
-          <div class="sentence-item ${s.isTopicSentence ? 'is-topic' : ''}" id="sentence-${s.id}" data-id="${s.id}">
+          <div class="sentence-item ${s.isTopicSentence ? 'is-topic' : ''} ${s.isUnderlined ? 'is-underlined' : ''}" id="sentence-${s.id}" data-id="${s.id}">
             <span class="sentence-id-tag">[${s.id}]</span>
+            ${underlinedBadgeHtml}
             <span class="sentence-text">${sentenceText} </span>
             <div class="sentence-trans">${sentenceTrans}</div>
             ${syntaxHtml}
@@ -973,19 +1478,21 @@
 
     dom.passagePane.innerHTML = html;
 
+    const passageMathOpts = {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '\\[', right: '\\]', display: true },
+        { left: '\\(', right: '\\)', display: false }
+      ],
+      ignoredClasses: ['currency-dollar', 'vocab-word', 'trans-vocab-word'],
+      throwOnError: false
+    };
+
     if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.renderMathInElement === 'function') {
-      window.MarkdownLatexEngine.renderMathInElement(dom.passagePane);
+      window.MarkdownLatexEngine.renderMathInElement(dom.passagePane, passageMathOpts);
     } else if (window.renderMathInElement) {
       try {
-        window.renderMathInElement(dom.passagePane, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\[', right: '\\]', display: true },
-            { left: '\\(', right: '\\)', display: false }
-          ],
-          throwOnError: false
-        });
+        window.renderMathInElement(dom.passagePane, passageMathOpts);
       } catch (e) {}
     }
 
@@ -1036,7 +1543,12 @@
         let pillClass = `q-pill ${q.qIndex === state.currentQIndex ? 'active' : ''}`;
         if (pAns.selected) pillClass += ' is-answered';
         if (pAns.submitted) {
-          pillClass += ` is-submitted ${pAns.isCorrect ? 'is-correct' : 'is-wrong'}`;
+          const isCorrect = (pAns.selected === q.officialAnswer);
+          if (pAns.isCorrect !== isCorrect) {
+            pAns.isCorrect = isCorrect;
+            state.mastery[q.qIndex] = isCorrect ? 'proficient' : 'wrong';
+          }
+          pillClass += ` is-submitted ${isCorrect ? 'is-correct' : 'is-wrong'}`;
         }
         pill.className = pillClass;
         const choiceText = pAns.selected ? `<span class="q-pill-choice">${escapeHtml(pAns.selected)}</span>` : '';
@@ -1056,7 +1568,7 @@
       dom.questionPills.appendChild(pill);
     });
 
-    // 模考做题模式工具栏右侧状态区 (进度、整篇提交、快捷键提示)
+    // 模考做题模式工具栏右侧状态区 (轮次、进度、整篇提交、快捷键提示)
     const toolbar = dom.questionToolbar || (dom.analysisPane ? dom.analysisPane.querySelector('.question-toolbar') : null);
     if (toolbar) {
       let rightBox = toolbar.querySelector('.practice-toolbar-right');
@@ -1069,7 +1581,11 @@
         const status = getCurrentTextPracticeStatus();
         let badgeHtml = '';
         if (status.allSubmitted) {
-          badgeHtml = '<span class="practice-progress-badge all-answered">已交卷判分</span>';
+          const correctCount = status.questions.filter(q => {
+            const p = state.practiceAnswers[q.qIndex];
+            return p && (p.selected === q.officialAnswer || p.isCorrect);
+          }).length;
+          badgeHtml = `<span class="practice-progress-badge all-answered">已判分 · 答对 ${correctCount}/${status.total} 题</span>`;
         } else if (status.allAnswered) {
           badgeHtml = '<span class="practice-progress-badge all-answered">5/5 题已完成 · 按 Enter 提交</span>';
         } else {
@@ -1079,7 +1595,7 @@
         rightBox.innerHTML = `
           ${badgeHtml}
           <button class="practice-submit-btn ${status.allSubmitted ? 'disabled' : ''}" id="btnPracticeSubmitWhole" ${status.allSubmitted ? 'disabled' : ''} onclick="window.kyApp.handlePracticeEnter()">
-            ${status.allSubmitted ? '已交卷' : '整篇提交 (Enter)'}
+            ${status.allSubmitted ? '已入库' : '整篇提交 (Enter)'}
           </button>
           <span class="practice-shortcut-hint" title="A/D 切换小题 · 1-4 选择选项 · W/S 切换篇章 · Q/E 切换年份">A/D题 · 1-4选 · W/S篇 · Q/E年</span>
         `;
@@ -1105,6 +1621,7 @@
     }
     state.currentQIndex = qIndex;
     state.showSolution = state.defaultShowSolution;
+    state.practiceShowSolution = state.practiceDefaultShowSolution;
     saveResume();
 
     renderQuestionPills();
@@ -1173,35 +1690,37 @@
     }
   }
 
-  // 年份切换: Q (上一年) / E (下一年) (仅适配 2007~2015 年真题)
+  // 年份切换: Q (上一年) / E (下一年) (支持全库所有真题年份 1998~2026)
   function navPrevYear() {
     const curY = String(state.currentYear);
-    let idx = ADAPTED_YEARS.indexOf(curY);
+    const years = getAvailableYears();
+    let idx = years.indexOf(curY);
     if (idx === -1) {
       switchYear('2010');
       return;
     }
     if (idx > 0) {
-      switchYear(ADAPTED_YEARS[idx - 1]);
+      switchYear(years[idx - 1]);
     } else {
       if (typeof window.showToast === 'function') {
-        window.showToast('已是首年真题 (2007 年)', 'info');
+        window.showToast(`已是首年真题 (${years[0]} 年)`, 'info');
       }
     }
   }
 
   function navNextYear() {
     const curY = String(state.currentYear);
-    let idx = ADAPTED_YEARS.indexOf(curY);
+    const years = getAvailableYears();
+    let idx = years.indexOf(curY);
     if (idx === -1) {
       switchYear('2010');
       return;
     }
-    if (idx < ADAPTED_YEARS.length - 1) {
-      switchYear(ADAPTED_YEARS[idx + 1]);
+    if (idx < years.length - 1) {
+      switchYear(years[idx + 1]);
     } else {
       if (typeof window.showToast === 'function') {
-        window.showToast('已是末年真题 (2015 年)', 'info');
+        window.showToast(`已是末年真题 (${years[years.length - 1]} 年)`, 'info');
       }
     }
   }
@@ -1265,7 +1784,7 @@
         </div>
         ${gridHtml}
         <div class="practice-confirm-tip">
-          交卷后将即刻判分并展现精读译文、长难句与题眼定位，记录自动存入题库。
+          交卷后将即刻判分与对比答案（解析默认折叠，可按 Space 或点击解析按钮展开），记录自动存入题库。
         </div>
       </div>
     `;
@@ -1303,11 +1822,16 @@
       state.mastery[q.qIndex] = isCorrect ? 'proficient' : 'wrong';
     });
 
+    state.practiceShowSolution = state.practiceDefaultShowSolution;
+
     savePracticeStorage();
     saveMasteryStorage();
+    syncCurrentRoundSnapshot();
 
+    renderRoundSelector();
     renderPassage();
     renderQuestionPills();
+    updateSolutionUI();
     renderQuestion();
 
     const total = text.questions.length;
@@ -1325,7 +1849,7 @@
     const isPractice = state.mode === 'practice';
     const pAns = state.practiceAnswers[q.qIndex] || {};
     const isSubmitted = !isPractice || pAns.submitted;
-    const shouldShowSol = !isPractice ? state.showSolution : pAns.submitted;
+    const shouldShowSol = !isPractice ? state.showSolution : (pAns.submitted && !!state.practiceShowSolution);
 
     if (isPractice && !pAns.submitted) {
       dom.stemCard.innerHTML = `
@@ -1346,41 +1870,68 @@
         `;
       }
 
+      let editBarHtml = '';
+      if (pAns.submitted || pAns.selected) {
+        const selKey = pAns.selected || '未作答';
+        const isCorr = (pAns.selected === q.officialAnswer);
+        editBarHtml = `
+          <div class="practice-edit-bar">
+            <span class="edit-bar-status">
+              我的作答:
+              <span class="edit-pill-ans ${isCorr ? 'is-correct' : 'is-wrong'}">${escapeHtml(selKey)} (${isCorr ? '正确' : '错误'})</span>
+            </span>
+            <span class="edit-bar-official">官方答案: <strong style="color:var(--primary);font-size:13px;">${q.officialAnswer}</strong></span>
+            <div class="edit-bar-actions">
+              <span style="color:#64748b;font-weight:600;margin-right:2px;">纠错修改:</span>
+              ${['A', 'B', 'C', 'D'].map(k => `
+                <button class="btn-edit-opt ${pAns.selected === k ? 'active' : ''}" onclick="window.kyApp.updatePracticeAnswer(${q.qIndex}, '${k}')" title="更正为选项 ${k}">${k}</button>
+              `).join('')}
+              <button class="btn-edit-opt btn-clear-opt" onclick="window.kyApp.updatePracticeAnswer(${q.qIndex}, null)" title="清空作答">置空</button>
+            </div>
+          </div>
+        `;
+      }
+
+      const tangchiHtml = (shouldShowSol && q.tangchiModel) ? `<span class="tangchi-badge">${escapeHtml(q.tangchiModel)}</span>` : '';
+
+      const stemContent = (!isPractice || isSubmitted) && q.vocab && q.vocab.length > 0
+        ? renderAnnotatedSentenceText(q.stem, q.vocab)
+        : escapeHtml(q.stem);
+
       dom.stemCard.innerHTML = `
         <div class="stem-header">
           <span class="q-type-badge">${escapeHtml(q.type)}</span>
-          <span class="tangchi-badge">${escapeHtml(q.tangchiModel || '唐迟解题模型')}</span>
+          ${tangchiHtml}
         </div>
-        <div class="stem-text">${q.qIndex}. ${escapeHtml(q.stem)}</div>
+        <div class="stem-text">${q.qIndex}. ${stemContent}</div>
         ${keywordsHtml}
+        ${editBarHtml}
       `;
     }
 
     renderOptions(q, shouldShowSol);
 
     if (dom.reflectionCard) {
-      if (isSubmitted) {
-        dom.reflectionCard.style.display = 'block';
-        renderReflection(q, shouldShowSol);
-      } else {
-        dom.reflectionCard.style.display = 'none';
-      }
+      dom.reflectionCard.style.display = 'block';
+      renderReflection(q, shouldShowSol);
     }
 
     if (dom.analysisPane) {
+      const analysisMathOpts = {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\[', right: '\\]', display: true },
+          { left: '\\(', right: '\\)', display: false }
+        ],
+        ignoredClasses: ['currency-dollar', 'katex-ignore'],
+        throwOnError: false
+      };
       if (window.MarkdownLatexEngine && typeof window.MarkdownLatexEngine.renderMathInElement === 'function') {
-        window.MarkdownLatexEngine.renderMathInElement(dom.analysisPane);
+        window.MarkdownLatexEngine.renderMathInElement(dom.analysisPane, analysisMathOpts);
       } else if (window.renderMathInElement) {
         try {
-          window.renderMathInElement(dom.analysisPane, {
-            delimiters: [
-              { left: '$$', right: '$$', display: true },
-              { left: '$', right: '$', display: false },
-              { left: '\\[', right: '\\]', display: true },
-              { left: '\\(', right: '\\)', display: false }
-            ],
-            throwOnError: false
-          });
+          window.renderMathInElement(dom.analysisPane, analysisMathOpts);
         } catch (e) {}
       }
     }
@@ -1397,25 +1948,26 @@
     (q.options || []).forEach(opt => {
       const card = document.createElement('div');
       const isSelected = pAns.selected === opt.key;
+      const optIsCorrect = q.officialAnswer ? (opt.key === q.officialAnswer) : opt.isCorrect;
 
       let cardClass = 'option-card';
       if (isSelected) cardClass += ' selected';
-      if (shouldShowSol) {
-        if (opt.isCorrect) cardClass += ' is-correct';
-        else if (isSelected && !opt.isCorrect) cardClass += ' is-distractor';
+      if (isSubmitted) {
+        if (optIsCorrect) cardClass += ' is-correct';
+        else if (isSelected && !optIsCorrect) cardClass += ' is-distractor';
       }
 
       card.className = cardClass;
 
       let analysisHtml = '';
       if (shouldShowSol) {
-        const tagType = opt.isCorrect ? 'tag-correct' : 'tag-trap';
-        const tagText = opt.isCorrect ? '【正确项 · 同义替换】' : `【干扰特征: ${opt.distractorType || '干扰项'}】`;
+        const tagType = optIsCorrect ? 'tag-correct' : 'tag-trap';
+        const tagText = optIsCorrect ? '【正确项 · 同义替换】' : `【干扰特征: ${opt.distractorType || '干扰项'}】`;
         
         let locateBtnHtml = '';
         if (opt.refSentences && opt.refSentences.length > 0) {
           locateBtnHtml = opt.refSentences.map(sid => `
-            <button class="btn-locate-sentence" onclick="event.stopPropagation(); window.kyApp.locateSentence('${sid}', '${opt.isCorrect ? 'target' : 'distractor'}')">
+            <button class="btn-locate-sentence" onclick="event.stopPropagation(); window.kyApp.locateSentence('${sid}', '${optIsCorrect ? 'target' : 'distractor'}')">
               定位原文 ${sid}
             </button>
           `).join(' ');
@@ -1430,15 +1982,22 @@
         `;
       }
 
+      const optContent = (!isPractice || isSubmitted) && opt.vocab && opt.vocab.length > 0
+        ? renderAnnotatedSentenceText(opt.text, opt.vocab)
+        : escapeHtml(opt.text);
+
       card.innerHTML = `
         <div class="option-main-row">
           <div class="option-key">${opt.key}</div>
-          <div class="option-text">${escapeHtml(opt.text)}</div>
+          <div class="option-text">${optContent}</div>
         </div>
         ${analysisHtml}
       `;
 
-      card.onclick = () => onOptionClick(opt.key);
+      card.onclick = (e) => {
+        if (e && e.target && e.target.closest('.vocab-word, .btn-locate-sentence')) return;
+        onOptionClick(opt.key);
+      };
       dom.optionsList.appendChild(card);
     });
 
@@ -1457,12 +2016,28 @@
     const pAns = state.practiceAnswers[q.qIndex] || {};
 
     if (state.mode === 'practice' && !pAns.submitted) {
+      // 1. 如果点击已选中的选项 -> 取消选择 (反选置空)
+      if (pAns.selected === key) {
+        delete pAns.selected;
+        delete pAns.isCorrect;
+        savePracticeStorage();
+        syncCurrentRoundSnapshot();
+        renderOptions(q, false);
+        renderQuestionPills();
+        if (typeof window.showToast === 'function') {
+          window.showToast(`已取消第 ${q.qIndex} 题选项 [${key}]`, 'info');
+        }
+        return;
+      }
+
+      // 2. 正常选中选项
       if (!state.practiceAnswers[q.qIndex]) {
         state.practiceAnswers[q.qIndex] = {};
       }
       state.practiceAnswers[q.qIndex].selected = key;
       state.practiceAnswers[q.qIndex].submitted = false;
       savePracticeStorage();
+      syncCurrentRoundSnapshot();
       renderOptions(q, false);
       renderQuestionPills();
 
@@ -1489,12 +2064,57 @@
       }
     } else {
       const opt = q.options.find(o => o.key === key);
+      const optIsCorrect = q.officialAnswer ? (key === q.officialAnswer) : (opt && opt.isCorrect);
       if (opt && opt.refSentences && opt.refSentences.length > 0) {
-        locateSentence(opt.refSentences[0], opt.isCorrect ? 'target' : 'distractor');
+        locateSentence(opt.refSentences[0], optIsCorrect ? 'target' : 'distractor');
       } else if (q.targetSentences && q.targetSentences.length > 0) {
         locateSentence(q.targetSentences[0], 'target');
       }
     }
+  }
+
+  // 修改已提交题目的作答记录（录入纠错与二次修改）
+  function updatePracticeAnswer(qIndex, newKey) {
+    const dataset = getCurrentDataset();
+    if (!dataset || !dataset.texts) return;
+    let targetQ = null;
+    for (const t of dataset.texts) {
+      targetQ = (t.questions || []).find(q => q.qIndex === qIndex);
+      if (targetQ) break;
+    }
+    if (!targetQ) return;
+
+    if (!state.practiceAnswers[qIndex]) {
+      state.practiceAnswers[qIndex] = {};
+    }
+    const p = state.practiceAnswers[qIndex];
+
+    if (newKey === null || newKey === undefined || newKey === '') {
+      delete p.selected;
+      delete p.isCorrect;
+      p.submitted = false;
+      delete state.mastery[qIndex];
+      if (typeof window.showToast === 'function') {
+        window.showToast(`已清空第 ${qIndex} 题作答记录`, 'info');
+      }
+    } else {
+      p.selected = newKey;
+      p.submitted = true;
+      const isCorrect = (newKey === targetQ.officialAnswer);
+      p.isCorrect = isCorrect;
+      state.mastery[qIndex] = isCorrect ? 'proficient' : 'wrong';
+      if (typeof window.showToast === 'function') {
+        window.showToast(`第 ${qIndex} 题作答已更正为 [${newKey}] (${isCorrect ? '正确' : '错误'})`, isCorrect ? 'success' : 'warning');
+      }
+    }
+
+    savePracticeStorage();
+    saveMasteryStorage();
+    syncCurrentRoundSnapshot();
+
+    renderRoundSelector();
+    renderQuestionPills();
+    renderQuestion();
   }
 
   // 提交做题答案 (兼容转发至整篇提交与二重确认流程)
@@ -1545,7 +2165,7 @@
         `).join('')}
       </div>
 
-      <textarea class="reflection-textarea" id="txtReflection" placeholder="写下你当时为什么选错？被哪个词/逻辑误导了？正确的定位思维路径是什么？" oninput="window.kyApp.onNoteInput(${q.qIndex}, this.value)">${escapeHtml(noteData.text || '')}</textarea>
+      <textarea class="reflection-textarea" id="txtReflection" placeholder="写下你的做题思考、推导路径或错因分析..." oninput="window.kyApp.onNoteInput(${q.qIndex}, this.value)">${escapeHtml(noteData.text || '')}</textarea>
       
       ${guideHtml}
     `;
@@ -1565,7 +2185,7 @@
       window.storageSync.scheduleSave();
     }
     renderQuestionPills();
-    renderReflection(getCurrentQuestion());
+    renderQuestion();
     if (!togglingOff && typeof window.recordStudyActivity === 'function') {
       window.recordStudyActivity();
     }
@@ -1587,7 +2207,7 @@
     if (window.storageSync && typeof window.storageSync.scheduleSave === 'function') {
       window.storageSync.scheduleSave();
     }
-    renderReflection(getCurrentQuestion());
+    renderQuestion();
   }
 
   // 用户笔记输入
@@ -1606,7 +2226,7 @@
 
   // 双向定位与高亮句子
   function locateSentence(sentenceId, highlightType = 'target') {
-    if (state.mode === 'practice') return;
+    if (state.mode === 'practice' && !state.practiceShowSolution) return;
 
     const el = document.getElementById(`sentence-${sentenceId}`);
     if (!el) return;
@@ -1623,7 +2243,7 @@
 
   // 默认高亮当前题目的定位句
   function highlightCurrentQuestionGrounding() {
-    if (state.mode === 'practice') return;
+    if (state.mode === 'practice' && !state.practiceShowSolution) return;
 
     const q = getCurrentQuestion();
     if (!q) return;
@@ -1638,6 +2258,15 @@
         if (el) el.classList.add('highlight-target');
       });
     }
+
+    // 联动高亮考查画线词/短语
+    document.querySelectorAll('.exam-underlined-phrase').forEach(el => {
+      if (el.dataset.qindex && parseInt(el.dataset.qindex, 10) === q.qIndex) {
+        el.classList.add('is-active-target');
+      } else {
+        el.classList.remove('is-active-target');
+      }
+    });
   }
 
   // 文章区域事件绑定（采用事件委托，完全不受 Math/KaTeX 动态节点替换影响）
@@ -1672,7 +2301,21 @@
         return;
       }
 
-      // 2. 点击句子：切换单句译文显隐
+      // 2. 点击画线句徽章或考查词句：切换联动到对应试题
+      const badgeEl = e.target.closest('.sentence-underlined-badge');
+      const phraseEl = e.target.closest('.exam-underlined-phrase');
+      const targetUnderlineEl = badgeEl || phraseEl;
+      if (targetUnderlineEl && targetUnderlineEl.dataset.qindex) {
+        if (state.mode === 'practice') return;
+        e.stopPropagation();
+        const qIdx = parseInt(targetUnderlineEl.dataset.qindex, 10);
+        if (!isNaN(qIdx)) {
+          switchQuestion(qIdx);
+        }
+        return;
+      }
+
+      // 3. 点击句子：切换单句译文显隐
       const sEl = e.target.closest('.sentence-item');
       if (sEl) {
         if (state.mode === 'practice') return;
@@ -1706,6 +2349,55 @@
         }, 400);
       }
     };
+
+    // 题目与选项生词气泡事件支持 (Analysis Pane)
+    if (dom.analysisPane) {
+      dom.analysisPane.onclick = (e) => {
+        const vEl = e.target.closest('.vocab-word');
+        if (vEl) {
+          if (state.mode === 'practice' && !state.practiceAnswers[getCurrentQuestion()?.qIndex]?.submitted) return;
+          e.stopPropagation();
+          const word = vEl.dataset.word;
+          const ipa = vEl.dataset.ipa;
+          const meaning = vEl.dataset.meaning;
+
+          if (isVocabPinned && pinnedWordEl === vEl) {
+            isVocabPinned = false;
+            pinnedWordEl = null;
+            hideVocabPopover();
+          } else {
+            isVocabPinned = true;
+            pinnedWordEl = vEl;
+            clearTimeout(popoverHideTimer);
+            showVocabPopover(vEl, word, ipa, meaning, true);
+          }
+        }
+      };
+
+      dom.analysisPane.onmouseover = (e) => {
+        if (state.mode === 'practice' && !state.practiceAnswers[getCurrentQuestion()?.qIndex]?.submitted) return;
+        if (isVocabPinned) return;
+        const vEl = e.target.closest('.vocab-word');
+        if (vEl) {
+          clearTimeout(popoverHideTimer);
+          const word = vEl.dataset.word;
+          const ipa = vEl.dataset.ipa;
+          const meaning = vEl.dataset.meaning;
+          showVocabPopover(vEl, word, ipa, meaning, false);
+        }
+      };
+
+      dom.analysisPane.onmouseout = (e) => {
+        if (isVocabPinned) return;
+        const vEl = e.target.closest('.vocab-word');
+        if (vEl && (!e.relatedTarget || !vEl.contains(e.relatedTarget))) {
+          clearTimeout(popoverHideTimer);
+          popoverHideTimer = setTimeout(() => {
+            hideVocabPopover();
+          }, 400);
+        }
+      };
+    }
   }
 
   // 显示词汇气泡（支持点击常驻锁定与真人发音/收藏）
@@ -1782,13 +2474,25 @@
     if (dom.trigYear) {
       dom.trigYear.onclick = (e) => {
         e.stopPropagation();
+        closeRoundDropdown();
         toggleYearDropdown();
+      };
+    }
+
+    if (dom.trigRound) {
+      dom.trigRound.onclick = (e) => {
+        e.stopPropagation();
+        closeYearDropdown();
+        toggleRoundDropdown();
       };
     }
 
     document.addEventListener('click', (e) => {
       if (dom.ddYear && !dom.ddYear.contains(e.target)) {
         closeYearDropdown();
+      }
+      if (dom.ddRound && !dom.ddRound.contains(e.target)) {
+        closeRoundDropdown();
       }
       if (dom.vocabPopover && dom.vocabPopover.style.display !== 'none') {
         if (!dom.vocabPopover.contains(e.target) && !e.target.closest('.vocab-word')) {
@@ -2042,6 +2746,7 @@
       if (isModalOpen) {
         if (e.key === 'Escape') {
           closeYearDropdown();
+          closeRoundDropdown();
           closeVocabNotebook();
           hideVocabPopover();
           if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
@@ -2062,6 +2767,7 @@
       }
       if (e.key === 'Escape') {
         closeYearDropdown();
+        closeRoundDropdown();
         closeVocabNotebook();
         hideVocabPopover();
         if (typeof window.closeSubjectPicker === 'function') window.closeSubjectPicker();
@@ -2142,6 +2848,10 @@
       if (keyLow === 'z') { setMastery(q.qIndex, 'proficient'); }
       else if (keyLow === 'x') { setMastery(q.qIndex, 'vague'); }
       else if (keyLow === 'c') { setMastery(q.qIndex, 'wrong'); }
+      else if (keyLow === 'n') {
+        const txtRef = document.getElementById('txtReflection');
+        if (txtRef) { e.preventDefault(); txtRef.focus(); }
+      }
       else if (keyLow === 'm') {
         if (state.mode === 'analysis' && dom.btnPracticeMode) dom.btnPracticeMode.click();
         else if (dom.btnAnalysisMode) dom.btnAnalysisMode.click();
@@ -2160,6 +2870,7 @@
     }
     saveResume();
     updateModeClass();
+    updateSolutionUI();
     renderPassage();
     renderQuestionPills();
     renderQuestion();
@@ -2179,27 +2890,29 @@
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
-  // 安全渲染带有数学公式与生词高亮的句子（基于非重叠区间与公式保护，彻底杜绝 HTML 属性污染、标签破坏与乱码）
-  function renderAnnotatedSentenceText(rawText, vocabList) {
+  // 安全渲染带有数学公式、生词高亮与试题考查画线词句（基于非重叠区间与公式保护，彻底杜绝 HTML 属性污染、标签破坏与乱码）
+  function renderAnnotatedSentenceText(rawText, vocabList, underlinedPhrases) {
     if (!rawText) return '';
     
-    // 1. 提取并保护所有 LaTeX 数学公式 ($...$, $$...$$, \[...\], \(...\))
+    // 1. 提取并保护所有真实 LaTeX 数学公式 ($...$, $$...$$, \[...\], \(...\))
+    // 严格遵循数学规范：前置 $ 后面不可为数字或空白，规避美元货币金额 ($30, $120) 误伤
     const mathPlaceholders = [];
-    let safeText = rawText.replace(/(\$\$[\s\S]*?\$\$|\$[^\$]+?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g, (m) => {
+    let safeText = rawText.replace(/(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$(?!\d|\s)(?:[^\$\n]|\\\$)+?(?<!\s)\$)/g, (m) => {
       const idx = mathPlaceholders.length;
       mathPlaceholders.push(m);
       return `___MATH_PH_${idx}___`;
     });
 
-    if (!vocabList || vocabList.length === 0) {
-      safeText = escapeHtml(safeText);
+    const hasVocab = vocabList && vocabList.length > 0;
+    const hasPhrases = underlinedPhrases && underlinedPhrases.length > 0;
+
+    if (!hasVocab && !hasPhrases) {
+      safeText = escapeHtml(safeText).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
       return safeText.replace(/___MATH_PH_(\d+)___/g, (m, idx) => mathPlaceholders[parseInt(idx, 10)] || '');
     }
 
     // 2. 标记所有数学占位符位置为占用，禁止单词替换命中占位符内部
-    const sortedVocab = [...vocabList].sort((a, b) => (b.word.length - a.word.length));
     const occupied = new Uint8Array(safeText.length);
-    
     const phRegex = /___MATH_PH_\d+___/g;
     let phMatch;
     while ((phMatch = phRegex.exec(safeText)) !== null) {
@@ -2210,56 +2923,98 @@
 
     const matches = [];
 
-    // 3. 寻找所有匹配区间（长词优先），杜绝嵌套与属性破坏
-    sortedVocab.forEach(v => {
-      if (!v.word) return;
-      const wordEsc = escapeRegExp(v.word);
-      const regex = new RegExp(`(?<![a-zA-Z0-9_])(${wordEsc})(?![a-zA-Z0-9_])`, 'gi');
-      let m;
-      while ((m = regex.exec(safeText)) !== null) {
-        const start = m.index;
-        const end = start + m[0].length;
-        
-        let hasOverlap = false;
-        for (let i = start; i < end; i++) {
-          if (occupied[i]) {
-            hasOverlap = true;
-            break;
+    // 3. 优先匹配试题考查画线词/短语 (Exam Target Phrases)
+    if (hasPhrases) {
+      const sortedPhrases = [...underlinedPhrases].sort((a, b) => (b.phrase.length - a.phrase.length));
+      sortedPhrases.forEach(up => {
+        if (!up.phrase) return;
+        const phraseEsc = escapeRegExp(up.phrase);
+        const regex = new RegExp(`(?<![a-zA-Z0-9_])(${phraseEsc})(?![a-zA-Z0-9_])`, 'gi');
+        let m;
+        while ((m = regex.exec(safeText)) !== null) {
+          const start = m.index;
+          const end = start + m[0].length;
+          let hasOverlap = false;
+          for (let i = start; i < end; i++) {
+            if (occupied[i]) {
+              hasOverlap = true;
+              break;
+            }
+          }
+          if (!hasOverlap) {
+            for (let i = start; i < end; i++) occupied[i] = 1;
+            matches.push({
+              start,
+              end,
+              rawText: m[0],
+              type: 'phrase',
+              phraseObj: up
+            });
           }
         }
+      });
+    }
 
-        if (!hasOverlap) {
-          for (let i = start; i < end; i++) occupied[i] = 1;
-          matches.push({
-            start,
-            end,
-            rawText: m[0],
-            vocab: v
-          });
+    // 4. 寻找所有生词匹配区间（长词优先），杜绝嵌套与属性破坏
+    if (hasVocab) {
+      const sortedVocab = [...vocabList].sort((a, b) => (b.word.length - a.word.length));
+      sortedVocab.forEach(v => {
+        if (!v.word) return;
+        const wordEsc = escapeRegExp(v.word);
+        const regex = new RegExp(`(?<![a-zA-Z0-9_])(${wordEsc})(?![a-zA-Z0-9_])`, 'gi');
+        let m;
+        while ((m = regex.exec(safeText)) !== null) {
+          const start = m.index;
+          const end = start + m[0].length;
+          
+          let hasOverlap = false;
+          for (let i = start; i < end; i++) {
+            if (occupied[i]) {
+              hasOverlap = true;
+              break;
+            }
+          }
+
+          if (!hasOverlap) {
+            for (let i = start; i < end; i++) occupied[i] = 1;
+            matches.push({
+              start,
+              end,
+              rawText: m[0],
+              type: 'vocab',
+              vocab: v
+            });
+          }
         }
-      }
-    });
+      });
+    }
 
-    // 4. 按起始位置升序排列，单趟线性拼接 HTML
+    // 5. 按起始位置升序排列，单趟线性拼接 HTML
     matches.sort((a, b) => a.start - b.start);
     
     let result = '';
     let lastIdx = 0;
     matches.forEach(item => {
       if (item.start > lastIdx) {
-        result += escapeHtml(safeText.slice(lastIdx, item.start));
+        result += escapeHtml(safeText.slice(lastIdx, item.start)).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
       }
-      const v = item.vocab;
-      const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
-      result += `<span class="vocab-word level-${escapeHtml(lvl)}" data-word="${escapeHtml(v.word)}" data-ipa="${escapeHtml(v.ipa || '')}" data-meaning="${escapeHtml(v.meaning || '')}">${escapeHtml(item.rawText)}</span>`;
+      if (item.type === 'phrase') {
+        const up = item.phraseObj;
+        const qTitle = up.qIndex ? `第 ${up.qIndex} 题考查词句（点击直达对应题目）` : '真题考查词句';
+        result += `<span class="exam-underlined-phrase" data-qindex="${up.qIndex || ''}" title="${qTitle}">${escapeHtml(item.rawText)}</span>`;
+      } else {
+        const v = item.vocab;
+        const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
+        result += `<span class="vocab-word level-${escapeHtml(lvl)}" data-word="${escapeHtml(v.word)}" data-ipa="${escapeHtml(v.ipa || '')}" data-meaning="${escapeHtml(v.meaning || '')}">${escapeHtml(item.rawText)}</span>`;
+      }
       lastIdx = item.end;
     });
 
     if (lastIdx < safeText.length) {
-      result += escapeHtml(safeText.slice(lastIdx));
+      result += escapeHtml(safeText.slice(lastIdx)).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
     }
 
-    // 5. 还原 LaTeX 数学公式
+    // 6. 还原 LaTeX 数学公式
     result = result.replace(/___MATH_PH_(\d+)___/g, (m, idx) => {
       return mathPlaceholders[parseInt(idx, 10)] || '';
     });
@@ -2271,16 +3026,17 @@
   function renderAnnotatedTranslation(rawTrans, vocabList) {
     if (!rawTrans) return '';
     
-    // 1. 提取并保护所有 LaTeX 数学公式 ($...$, $$...$$, \[...\], \(...\))
+    // 1. 提取并保护所有真实 LaTeX 数学公式 ($...$, $$...$$, \[...\], \(...\))
+    // 严格遵循数学规范：前置 $ 后面不可为数字或空白，规避美元货币金额 ($30, $120) 误伤
     const mathPlaceholders = [];
-    let safeText = rawTrans.replace(/(\$\$[\s\S]*?\$\$|\$[^\$]+?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g, (m) => {
+    let safeText = rawTrans.replace(/(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$(?!\d|\s)(?:[^\$\n]|\\\$)+?(?<!\s)\$)/g, (m) => {
       const idx = mathPlaceholders.length;
       mathPlaceholders.push(m);
       return `___MATH_PH_${idx}___`;
     });
 
     if (!vocabList || vocabList.length === 0) {
-      safeText = escapeHtml(safeText);
+      safeText = escapeHtml(safeText).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
       return safeText.replace(/___MATH_PH_(\d+)___/g, (m, idx) => mathPlaceholders[parseInt(idx, 10)] || '');
     }
 
@@ -2313,7 +3069,7 @@
     });
 
     if (candidateTerms.length === 0) {
-      safeText = escapeHtml(safeText);
+      safeText = escapeHtml(safeText).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
       return safeText.replace(/___MATH_PH_(\d+)___/g, (m, idx) => mathPlaceholders[parseInt(idx, 10)] || '');
     }
 
@@ -2368,7 +3124,7 @@
     let lastIdx = 0;
     matches.forEach(item => {
       if (item.start > lastIdx) {
-        result += escapeHtml(safeText.slice(lastIdx, item.start));
+        result += escapeHtml(safeText.slice(lastIdx, item.start)).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
       }
       const v = item.vocab;
       const lvl = v.level === 'purple' ? 'blue' : (v.level || 'green');
@@ -2377,7 +3133,7 @@
     });
 
     if (lastIdx < safeText.length) {
-      result += escapeHtml(safeText.slice(lastIdx));
+      result += escapeHtml(safeText.slice(lastIdx)).replace(/\$(?=\d)/g, '<span class="currency-dollar">$</span>');
     }
 
     // 6. 还原 LaTeX 数学公式
@@ -2422,6 +3178,17 @@
     ADAPTED_YEARS,
     openFigureLightbox,
     renderQuestion,
+    onOptionClick,
+    updatePracticeAnswer,
+    startNewPracticeRound,
+    switchPracticeRound,
+    resetCurrentRound,
+    deletePracticeRound,
+    renderRoundSelector,
+    toggleRoundDropdown,
+    openRoundDropdown,
+    closeRoundDropdown,
+    validateAndHealPracticeAnswers,
     get state() { return state; },
     get curDataset() { return getCurrentDataset(); }
   };

@@ -121,10 +121,7 @@ window.ENGLISH_DATA['2007'] = {
                 },
                 "targetForQuestions": [
                   21
-                ],
-                "text": "If you were to examine the birth certificates of every soccer player in 2006's World Cup tournament, you would most likely find a noteworthy quirk: elite soccer players are more likely to have been born in the earlier months of the year than in the later months.",
-                "translation": "如果你去查看2006年世界杯锦标赛每一位足球运动员的出生证明，很有可能会发现一个耐人寻味的奇特现象：顶尖职业球员出生在上半年的几率要显著高于出生在下半年。",
-                "vocab": []
+                ]
               },
               {
                 "sIndex": 2,
@@ -142,10 +139,7 @@ window.ENGLISH_DATA['2007'] = {
                   ],
                   "corePattern": "feed the ranks（输送生源/队伍）"
                 },
-                "targetForQuestions": [],
-                "text": "If you then examined the European national youth teams that feed the World Cup and professional ranks, you would find this strange phenomenon to be even more pronounced.",
-                "translation": "如果你再去考察那些向世界杯和职业球队输送人才的欧洲各国青年队，就会发现这一奇怪现象更加明显。",
-                "vocab": []
+                "targetForQuestions": []
               }
             ]
           },
@@ -168,10 +162,7 @@ window.ENGLISH_DATA['2007'] = {
                   "subordinateClauses": [],
                   "corePattern": "account for（对……做出解释 / 占据……比例）"
                 },
-                "targetForQuestions": [],
-                "text": "What might account for this strange phenomenon?",
-                "translation": "该如何解释这种奇怪的现象呢？",
-                "vocab": []
+                "targetForQuestions": []
               },
               {
                 "sIndex": 2,
@@ -191,10 +182,7 @@ window.ENGLISH_DATA['2007'] = {
                 },
                 "targetForQuestions": [
                   22
-                ],
-                "text": "Here are a few guesses: a) certain astrological signs confer superior soccer skills; b) winter-born babies tend to have higher oxygen capacity, which increases soccer stamina; c) soccer-mad parents are more likely to conceive children in springtime, at the annual peak of soccer mania; d) none of the above.",
-                "translation": "下面是几种猜测：a）某些星座赋予人卓越的足球技能；b）冬天出生的婴儿往往肺活量更高，从而增强了足球耐力；c）酷爱足球的父母更可能在春天怀上孩子，因为春天正是每年足球狂热的巅峰期；d）以上都不是。",
-                "vocab": []
+                ]
               }
             ]
           },
@@ -219,10 +207,7 @@ window.ENGLISH_DATA['2007'] = {
                   ],
                   "corePattern": "believe strongly in sth"
                 },
-                "targetForQuestions": [],
-                "text": "Anders Ericsson, a 58-year-old psychology professor at Florida State University, says he believes strongly in \"none of the above.\"",
-                "translation": "佛罗里达州立大学58岁的心理学教授安德斯·埃里克森表示，他坚信答案是“以上都不是”。",
-                "vocab": []
+                "targetForQuestions": []
               },
               {
                 "sIndex": 2,
@@ -242,10 +227,7 @@ window.ENGLISH_DATA['2007'] = {
                   ],
                   "corePattern": "conduct research / switch to"
                 },
-                "targetForQuestions": [],
-                "text": "Ericsson grew up in Sweden, and studied nuclear engineering until he realized he would have more opportunity to conduct his own research if he switched to psychology.",
-                "translation": "埃里克森在瑞典长大，起初攻读核工程学，直到他意识到如果转向心理学，将有更多机会开展自己独立的研究。",
-                "vocab": []
+                "targetForQuestions": []
               },
               {
                 "sIndex": 3,
@@ -264,10 +246,7 @@ window.ENGLISH_DATA['2007'] = {
                   ],
                   "corePattern": "involve doing sth"
                 },
-                "targetForQuestions": [],
-                "text": "His first experiment, nearly 30 years ago, involved memory: training a person to hear and then repeat a random series of numbers.",
-                "translation": "将近30年前他所做的第一个实验与记忆力有关：训练一个人在听完一串随机数字后将其复述出来。",
-                "vocab": []
+                "targetForQuestions": []
               },
               {
                 "sIndex": 4,
@@ -283,10 +262,7 @@ window.ENGLISH_DATA['2007'] = {
                   "subordinateClauses": [],
                   "corePattern": "up from... to... / keep doing sth"
                 },
-                "targetForQuestions": [],
-                "text": "\"The first subject, after about 20 hours of training, was able to recall 20 numbers, up from seven,\" says Ericsson. \"He kept improving, and after about 200 hours of training he could recall more than 80 numbers.\"",
-                "translation": "“第一位受试者在经过大约20小时的训练后，能记住的数字从7个提高到了20个，”埃里克森回忆道，“他不断取得突破，在接受了大约200小时的训练后，能记住的数字超过了80个。”",
-                "vocab": []
+                "targetForQuestions": []
               }
             ]
           },
@@ -315,10 +291,7 @@ window.ENGLISH_DATA['2007'] = {
                 },
                 "targetForQuestions": [
                   23
-                ],
-                "text": "This success, coupled with later research showing that memory itself is not genetically determined, led Ericsson to conclude that the act of memorizing is more of a cognitive exercise than an intuitive one.",
-                "translation": "这一成功，加上后来表明记忆本身并非由基因决定的研究所提供的佐证，使埃里克森得出结论：记忆行为更多的是一种认知练习，而不是一种直觉活动。",
-                "vocab": []
+                ]
               },
               {
                 "sIndex": 2,
@@ -339,10 +312,7 @@ window.ENGLISH_DATA['2007'] = {
                 },
                 "targetForQuestions": [
                   23
-                ],
-                "text": "In other words, whatever innate differences two people may exhibit in their abilities to memorize, those differences are swamped by how well each person \"encodes\" the information.",
-                "translation": "换言之，无论两个人在记忆能力方面表现出何种先天差异，这些差异都会被各自对信息进行“编码”的高低水平所掩盖。",
-                "vocab": []
+                ]
               },
               {
                 "sIndex": 3,
@@ -365,10 +335,7 @@ window.ENGLISH_DATA['2007'] = {
                 "targetForQuestions": [
                   23,
                   25
-                ],
-                "text": "And the best way to learn how to encode information meaningfully, Ericsson determined, was a process known as deliberate practice.",
-                "translation": "而埃里克森认定，学会对信息进行有意义编码的最佳途径，正是一种被称为“刻意练习”的过程。",
-                "vocab": []
+                ]
               },
               {
                 "sIndex": 4,
@@ -384,10 +351,7 @@ window.ENGLISH_DATA['2007'] = {
                   "subordinateClauses": [],
                   "corePattern": "entail doing sth / more than simply doing"
                 },
-                "targetForQuestions": [],
-                "text": "Deliberate practice entails more than simply repeating a task.",
-                "translation": "刻意练习绝不仅仅意味着机械重复一项任务。",
-                "vocab": []
+                "targetForQuestions": []
               },
               {
                 "sIndex": 5,
@@ -405,10 +369,7 @@ window.ENGLISH_DATA['2007'] = {
                 },
                 "targetForQuestions": [
                   23
-                ],
-                "text": "Rather, it involves setting specific goals, obtaining immediate feedback and concentrating as much on technique as on outcome.",
-                "translation": "相反，它包括设定具体明确的目标、获取即时反馈，以及在关注技巧的同时同样高度关注结果。",
-                "vocab": []
+                ]
               }
             ]
           },
@@ -433,10 +394,7 @@ window.ENGLISH_DATA['2007'] = {
                 },
                 "targetForQuestions": [
                   24
-                ],
-                "text": "Ericsson and his colleagues have thus taken to studying expert performers in a wide range of pursuits, including soccer.",
-                "translation": "因此，埃里克森和他的同事们开始着手研究各类广泛领域中的顶尖高手，其中就包括足球。",
-                "vocab": []
+                ]
               },
               {
                 "sIndex": 2,
@@ -456,10 +414,7 @@ window.ENGLISH_DATA['2007'] = {
                 },
                 "targetForQuestions": [
                   24
-                ],
-                "text": "They gather all the data they can, not just performance statistics and biographical details but also the results of their own laboratory experiments with high achievers.",
-                "translation": "他们尽可能搜集所有能够获取的数据，不仅包括比赛表现统计和个人传记细节，还包括他们在实验室中对卓越成就者开展的一系列实验结果。",
-                "vocab": []
+                ]
               },
               {
                 "sIndex": 3,
@@ -482,10 +437,7 @@ window.ENGLISH_DATA['2007'] = {
                   21,
                   24,
                   25
-                ],
-                "text": "Their work makes a rather startling assertion: the trait we commonly call talent is highly overrated.",
-                "translation": "他们的研究得出了一个颇为惊人的论断：我们通常所称的“天赋”这一特质被严重高估了。",
-                "vocab": []
+                ]
               },
               {
                 "sIndex": 4,
@@ -508,10 +460,7 @@ window.ENGLISH_DATA['2007'] = {
                   21,
                   24,
                   25
-                ],
-                "text": "Or, put another way, expert performers—whether in memory or surgery, ballet or computer programming—are nearly always made, not born.",
-                "translation": "或者换句话说，各领域的顶尖专家——无论是在记忆力还是外科手术、芭蕾舞还是计算机编程领域——几乎无一例外都是后天造就的，而非先天生成的。",
-                "vocab": []
+                ]
               }
             ]
           }
@@ -527,9 +476,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "certificate: 证书，证明",
           "collocationOrDerivation": "examine the birth certificates | birth/death/medical certificate; certify v. 证明",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "出生证明",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "tournament",
@@ -540,9 +487,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "锦标赛；联赛；比赛",
           "collocationOrDerivation": "World Cup tournament | a tennis/chess tournament",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "锦标赛，比赛",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "noteworthy",
@@ -553,9 +498,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "值得注意的；重要的",
           "collocationOrDerivation": "a noteworthy quirk | note n./v.; worthy adj.; be worthy of",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "值得注意的，显著的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "quirk",
@@ -566,9 +509,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "怪癖；怪事；奇特之处",
           "collocationOrDerivation": "find a noteworthy quirk | a quirk of fate 命运的巧合",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "奇怪现象，怪异之处",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "feed",
@@ -579,9 +520,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "喂养；供给；提供；输送",
           "collocationOrDerivation": "teams that feed the World Cup | feed A into B; feed on 以……为食；熟词僻义",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "为……输送人才",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "ranks",
@@ -592,9 +531,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "等级；军衔；行列；队伍",
           "collocationOrDerivation": "professional ranks | join the ranks of; rank among; 熟词僻义",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "行列，队伍",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "pronounced",
@@ -605,9 +542,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "明显的；发音的",
           "collocationOrDerivation": "even more pronounced | pronounce v. 发音/宣布; pronunciation n.",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "明显的，显著的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "account for",
@@ -618,9 +553,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "解释；占……比例；对……负责",
           "collocationOrDerivation": "account for this strange phenomenon | account for 60%; be accountable for",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "解释，说明……的原因",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "astrological signs",
@@ -631,9 +564,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "astrological: 占星术的；sign: 标志/符号/迹象",
           "collocationOrDerivation": "certain astrological signs | astrology n. 占星术; zodiac sign 星座",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "星座",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "confer",
@@ -644,9 +575,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "授予，赋予；商议",
           "collocationOrDerivation": "signs confer superior soccer skills | confer sth on/upon sb; confer with sb",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "赋予，给予",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "superior",
@@ -657,9 +586,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "优越的；上级的；有优越感的",
           "collocationOrDerivation": "superior soccer skills | be superior to; superiority n.; inferior adj.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "更优秀的，更高超的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "skills",
@@ -670,9 +597,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "技能；技艺；能力",
           "collocationOrDerivation": "soccer skills | communication/technical skills; skilled adj.",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "技能，技巧",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "capacity",
@@ -683,9 +608,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "容量；能力；身份/职位",
           "collocationOrDerivation": "higher oxygen capacity | capacity for; in the capacity of; 熟词僻义",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "能力；这里指摄氧能力",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "stamina",
@@ -696,9 +619,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "体力；耐力；持久力",
           "collocationOrDerivation": "increases soccer stamina | physical/mental stamina",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "耐力，持久力",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "conceive",
@@ -709,9 +630,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "怀孕；构想；理解；想象",
           "collocationOrDerivation": "conceive children in springtime | conceive of; conception n.; conceivable adj.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "怀孕，孕育",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "mania",
@@ -722,9 +641,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "狂热；迷恋；躁狂症",
           "collocationOrDerivation": "the annual peak of soccer mania | football mania; craze 近义；hysteria 语气更重",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "狂热，热潮",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "conduct",
@@ -735,9 +652,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "进行；指挥；带领；行为",
           "collocationOrDerivation": "conduct his own research | conduct research/experiments; code of conduct; 熟词僻义",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "进行，开展",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "involved",
@@ -748,9 +663,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "涉及；参与；复杂的",
           "collocationOrDerivation": "His first experiment involved memory | be involved in; involve sb in sth; involvement n.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "涉及，包含",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "digit span",
@@ -761,9 +674,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "digit: 数字/手指脚趾；span: 跨度/范围",
           "collocationOrDerivation": "his digit span had risen | memory span; attention span",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "数字记忆广度",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "coupled with",
@@ -774,9 +685,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "couple: 连接；结合；一对",
           "collocationOrDerivation": "This success, coupled with later research | be coupled with; in combination with",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "加上，连同，与……结合",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "cognitive",
@@ -787,9 +696,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "与思维、理解、记忆、学习有关的",
           "collocationOrDerivation": "a cognitive exercise | cognition n.; cognitive ability/process",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "认知的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "exercise",
@@ -800,9 +707,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "练习；运动；运用/行使",
           "collocationOrDerivation": "a cognitive exercise | exercise power/control; 熟词僻义",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "练习，训练活动",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "inborn",
@@ -813,9 +718,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "与生俱来的；先天的",
           "collocationOrDerivation": "inborn differences | innate/native/inherent 近义",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "天生的，先天的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "exhibit",
@@ -826,9 +729,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "显示；展览；展品",
           "collocationOrDerivation": "differences two people may exhibit | exhibit signs of; exhibition n.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "表现出，显示出",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "swamped by",
@@ -839,9 +740,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "swamp: 淹没；使不堪承受",
           "collocationOrDerivation": "differences are swamped by how... | be swamped with work; overwhelm 近义",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "被……压倒；被……远远超过",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "how well",
@@ -852,9 +751,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "how + adv./adj. 表示程度",
           "collocationOrDerivation": "how well each person encodes | how much/how far/how likely",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "……得有多好；……的程度",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "determined",
@@ -865,9 +762,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "决定；确定；下决心的",
           "collocationOrDerivation": "Ericsson determined | determine to do; be determined to; determination n.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "断定，认定，确定",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "entails",
@@ -878,9 +773,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "牵涉；需要；使成为必然",
           "collocationOrDerivation": "Deliberate practice entails... | entail doing sth; involve/require 近义",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "需要，意味着，必然包含",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "obtaining",
@@ -891,9 +784,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "获得；取得；存在/流行",
           "collocationOrDerivation": "obtaining immediate feedback | obtain information/permission; obtainable adj.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "获得，得到",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "concentrating",
@@ -904,9 +795,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "集中；专心；浓缩",
           "collocationOrDerivation": "concentrating as much on technique as on outcome | concentrate on; concentration n.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "集中注意力，专注于",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "expert performers",
@@ -917,9 +806,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "expert: 专家的；performer: 表现者/执行者",
           "collocationOrDerivation": "studying expert performers | expertise n.; performance n.; perform v.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "专家级表现者，高手",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "pursuits",
@@ -930,9 +817,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "追求；消遣；职业/事业",
           "collocationOrDerivation": "a wide range of pursuits | the pursuit of happiness; pursue v.",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "活动，事业，领域",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "gather",
@@ -943,9 +828,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "聚集；收集；推断",
           "collocationOrDerivation": "They gather all the data | gather evidence/information; gather that...",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "收集",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "data",
@@ -956,9 +839,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "数据；资料",
           "collocationOrDerivation": "all the data they can | data analysis; dataset; datum 单数（正式）",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "数据，资料",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "statistics",
@@ -969,9 +850,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "统计资料；统计学",
           "collocationOrDerivation": "performance statistics | statistical adj.; statistically adv.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "统计数据",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "biographical details",
@@ -982,9 +861,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "biographical: 传记的；details: 细节",
           "collocationOrDerivation": "biographical details | biography n.; autobiographical adj.",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "个人生平细节",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "laboratory",
@@ -995,9 +872,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "实验室",
           "collocationOrDerivation": "laboratory experiments | lab 缩写; laboratory-based research",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "实验室的；实验室",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "high achievers",
@@ -1008,9 +883,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "achiever: 有成就的人",
           "collocationOrDerivation": "experiments with high achievers | achieve v.; achievement n.; underachiever",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "高成就者，成就突出者",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "startling",
@@ -1021,9 +894,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "使人震惊的；出人意料的",
           "collocationOrDerivation": "a rather startling assertion | startle v.; startlingly adv.",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "令人吃惊的，惊人的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "assertion",
@@ -1034,9 +905,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "声明；主张；断言",
           "collocationOrDerivation": "a startling assertion | assert v.; assertive adj.; make an assertion",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "论断，断言",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "trait",
@@ -1047,9 +916,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "性格特征；属性；特性",
           "collocationOrDerivation": "the trait we call talent | personality/genetic trait",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "特质，特点",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "commonly",
@@ -1060,9 +927,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "普遍地；通常地",
           "collocationOrDerivation": "we commonly call talent | common adj.; common sense; common ground",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "通常，一般地",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "overrated",
@@ -1073,9 +938,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "评价过高的",
           "collocationOrDerivation": "talent is highly overrated | overrate v.; underrated adj.; distinguish from overlooked",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "被高估的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "surgery",
@@ -1086,9 +949,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "外科；手术；诊所（英）",
           "collocationOrDerivation": "whether in memory or surgery | surgeon n.; surgical adj.",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "外科手术；外科医学",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "spotlight",
@@ -1099,9 +960,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "聚光灯；使受到关注",
           "collocationOrDerivation": "spotlight the soccer superstars | put/throw the spotlight on",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "突出，聚焦",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "hysteria",
@@ -1112,9 +971,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "狂乱；癔症；过度兴奋",
           "collocationOrDerivation": "mania = craze, not hysteria | mass hysteria; hysterical adj.",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "歇斯底里，情绪失控",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "meaningful",
@@ -1125,9 +982,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "重要的；意味深长的",
           "collocationOrDerivation": "meaningful processing of information | meaningless adj.; meaningful dialogue",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "有意义的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "psychological",
@@ -1138,9 +993,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "心理上的；心理学的",
           "collocationOrDerivation": "psychological factors | psychology n.; psychologist n.",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "心理的，心理学的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "overlooked",
@@ -1151,9 +1004,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "忽视；俯瞰",
           "collocationOrDerivation": "the role of talent tends to be overlooked | overlook a fact; distinguish from overrated",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "被忽视的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "nurture",
@@ -1164,9 +1015,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "养育；培养；滋养",
           "collocationOrDerivation": "owe their success mostly to nurture | nature vs. nurture; nurture talent",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "后天培养；环境影响",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "reap",
@@ -1177,9 +1026,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "收割；收获；得到",
           "collocationOrDerivation": "One reaps what one sows | reap benefits/rewards/profits",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "收割；获得",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "sow",
@@ -1190,9 +1037,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "播种；散布；引起",
           "collocationOrDerivation": "One reaps what one sows | sow seeds; sow doubt/confusion",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "播种",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "One reaps what one sows",
@@ -1203,9 +1048,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "付出什么就收获什么；因果报应",
           "collocationOrDerivation": "One reaps what one sows. | reap = 收割/获得; sow = 播种",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "种瓜得瓜，种豆得豆",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "Like father, like son",
@@ -1216,9 +1059,410 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "父子相似；强调遗传/家庭影响",
           "collocationOrDerivation": "Like father, like son. | 与本文“made, not born”观点不符",
           "frequencyRating": "★",
+          "isInObstacleList": true
+        },
+        {
+          "word": "phenomenon",
+          "location": "Q21-Stem",
+          "ipa": "[fəˈnɒmɪnən]",
+          "pos": "",
+          "contextMeaning": "现象",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q21-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "stress",
+          "location": "Q21-A",
+          "ipa": "[stres]",
+          "pos": "",
+          "contextMeaning": "强调",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q21-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "professional",
+          "location": "Q21-A",
+          "ipa": "[prəˈfeʃənl]",
+          "pos": "",
+          "contextMeaning": "专业的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q21-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "topic",
+          "location": "Q21-C",
+          "ipa": "[ˈtɒpɪk]",
+          "pos": "",
+          "contextMeaning": "话题",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q21-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "expert",
+          "location": "Q21-C",
+          "ipa": "[ˈekspɜːt]",
+          "pos": "",
+          "contextMeaning": "出色的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q21-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "performance",
+          "location": "Q21-C",
+          "ipa": "[pəˈfɔːməns]",
+          "pos": "",
+          "contextMeaning": "表现",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q21-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Paragraph",
+          "location": "Q22-Stem",
+          "ipa": "[ˈpærəɡrɑːf]",
+          "pos": "",
+          "contextMeaning": "段",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q22-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "excitement",
+          "location": "Q22-D",
+          "ipa": "[ɪkˈsaɪtmənt]",
+          "pos": "",
+          "contextMeaning": "兴奋",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q22-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "depends",
+          "location": "Q23-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "依赖于",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q23-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "results",
+          "location": "Q23-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "来自于",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q23-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "cognitive",
+          "location": "Q23-B",
+          "ipa": "[ˈkɒɡnətɪv]",
+          "pos": "",
+          "contextMeaning": "认知的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q23-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "genetic",
+          "location": "Q23-C",
+          "ipa": "[dʒəˈnetɪk]",
+          "pos": "",
+          "contextMeaning": "基因的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q23-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "factors",
+          "location": "Q23-C",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "因素",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q23-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "feedback",
+          "location": "Q23-D",
+          "ipa": "[ˈfiːdbæk]",
+          "pos": "",
+          "contextMeaning": "反馈",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q23-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "colleagues",
+          "location": "Q24-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "同事",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "talent",
+          "location": "Q24-A",
+          "ipa": "[ˈtælənt]",
+          "pos": "",
+          "contextMeaning": "天赋",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "factor",
+          "location": "Q24-A",
+          "ipa": "[ˈfæktə(r)]",
+          "pos": "",
+          "contextMeaning": "因素",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "professional",
+          "location": "Q24-A",
+          "ipa": "[prəˈfeʃənl]",
+          "pos": "",
+          "contextMeaning": "职业的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "performance",
+          "location": "Q24-B",
+          "ipa": "[pəˈfɔːməns]",
+          "pos": "",
+          "contextMeaning": "表现",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "talent",
+          "location": "Q24-C",
+          "ipa": "[ˈtælənt]",
+          "pos": "",
+          "contextMeaning": "天赋",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "tends",
+          "location": "Q24-C",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "往往会",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "overlooked",
+          "location": "Q24-C",
+          "ipa": null,
+          "pos": "",
+          "contextMeaning": "忽视",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "owe",
+          "location": "Q24-D",
+          "ipa": "[əʊ]",
+          "pos": "",
+          "contextMeaning": "把.归功于.",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-D 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
           "isInObstacleList": true,
-          "meaning": "有其父必有其子",
-          "level": "red"
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "mostly",
+          "location": "Q24-D",
+          "ipa": "[ˈməʊstli]",
+          "pos": "",
+          "contextMeaning": "主要地",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "nurture",
+          "location": "Q24-D",
+          "ipa": "[ˈnɜːtʃə(r)]",
+          "pos": "",
+          "contextMeaning": "后天的培养",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q24-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "convey",
+          "location": "Q25-Stem",
+          "ipa": "[kənˈveɪ]",
+          "pos": "",
+          "contextMeaning": "传达",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q25-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "reaps",
+          "location": "Q25-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "收获",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q25-B 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "sows",
+          "location": "Q25-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "播种",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q25-B 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "spotlight",
+          "location": "Q21-B",
+          "ipa": "[ˈspɒtlaɪt]",
+          "pos": "",
+          "contextMeaning": "突出",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q21-B 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "hysteria",
+          "location": "Q22-C",
+          "ipa": "[hɪˈsteriəˌhɪˈstɪriə]",
+          "pos": "",
+          "contextMeaning": "歇斯底里",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q22-C 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "proverbs",
+          "location": "Q25-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "谚语",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q25-Stem 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
         }
       ],
       "phrasesAndCollocations": [
@@ -1781,40 +2025,87 @@ window.ENGLISH_DATA['2007'] = {
               "text": "stress the importance of professional training.",
               "translation": "强调专业训练的重要性。",
               "isCorrect": false,
-              "distractorType": "偷换概念",
+              "distractorType": "CONCEPT_DISTORTION",
               "distractorDisplayName": "偷换概念",
               "analysis": "【偷换概念】文章强调的是科学系统的‘刻意练习’（deliberate practice），而非泛泛的一般性‘职业培训’（professional training）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "stress",
+                  "ipa": "[stres]",
+                  "meaning": "强调",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "professional",
+                  "ipa": "[prəˈfeʃənl]",
+                  "meaning": "专业的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "spotlight the soccer superstars in the World Cup.",
               "translation": "聚焦突出世界杯中的足球超级巨星。",
               "isCorrect": false,
-              "distractorType": "原词陷阱/就事论事",
+              "distractorType": "LITERAL_TRAP",
               "distractorDisplayName": "原词陷阱/就事论事",
               "analysis": "【原词陷阱/就事论事】例证题最经典的浅层干扰项。世界杯球星（soccer superstars）只是文章开头用来引人入胜的切入案例（hook），例子的目的是为了论证后面的篇章中心，而不是为了介绍案例本身。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "spotlight",
+                  "ipa": "[ˈspɒtlaɪt]",
+                  "meaning": "突出",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "C",
               "text": "introduce the topic of what makes expert performance.",
               "translation": "引出“是什么造就了卓越表现”这一核心论题。",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "distractorDisplayName": null,
               "analysis": "【正确项 · 同义替换】例证题核心法则：例子本身不重要，关键看例子所服务的篇章中心论点。第1段列举足球运动员生日怪象，第2段推翻伪假设，第3至5段通过埃里克森的研究引申出全文核心：究竟是什么造就了专家级卓越表现（expert performance）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "topic",
+                  "ipa": "[ˈtɒpɪk]",
+                  "meaning": "话题",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "expert",
+                  "ipa": "[ˈekspɜːt]",
+                  "meaning": "出色的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "performance",
+                  "ipa": "[pəˈfɔːməns]",
+                  "meaning": "表现",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "explain why some soccer teams play better than others.",
               "translation": "解释为什么某些足球队比其他球队踢得更好。",
               "isCorrect": false,
-              "distractorType": "无中生有",
+              "distractorType": "UNFOUNDED",
               "distractorDisplayName": "无中生有",
-              "analysis": "【无中生有】文章研究的是个体卓越技能习得的认知心理机制，从未对比不同足球队之间的团队胜负战术原因。",
-              "refSentences": []
+              "analysis": "【无中生有】文章研究的是个体卓越技能习得的认知心理机制，从未对比不同足球队之间的团队胜负战术原因。"
             }
           ],
           "methodologyReview": {
@@ -1826,9 +2117,51 @@ window.ENGLISH_DATA['2007'] = {
               "是否识别出选项B属于典型的‘就事论事’干扰？"
             ]
           },
-          "type": "例证题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "phenomenon",
+              "ipa": "[fəˈnɒmɪnən]",
+              "meaning": "现象",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 22,
@@ -1860,40 +2193,56 @@ window.ENGLISH_DATA['2007'] = {
               "text": "fun.",
               "translation": "乐趣。",
               "isCorrect": false,
-              "distractorType": "程度失真/范围失真",
+              "distractorType": "SCOPE_DISTORTION",
               "distractorDisplayName": "程度失真/范围失真",
-              "analysis": "【程度失真】fun 仅表示普通的好玩或娱乐乐趣，语义过轻，完全达不到与 soccer-mad（疯狂热衷）相匹配的狂热程度。",
-              "refSentences": []
+              "analysis": "【程度失真】fun 仅表示普通的好玩或娱乐乐趣，语义过轻，完全达不到与 soccer-mad（疯狂热衷）相匹配的狂热程度。"
             },
             {
               "key": "B",
               "text": "craze.",
               "translation": "狂热，狂潮。",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "distractorDisplayName": null,
-              "analysis": "【正确项 · 语境语义场对齐】前缀修饰语 soccer-mad（酷爱足球的）与 annual peak of soccer mania（每年足球狂热的高峰）构成紧密同根语义场，craze 准确表达出狂热潮流的内涵。",
-              "refSentences": []
+              "analysis": "【正确项 · 语境语义场对齐】前缀修饰语 soccer-mad（酷爱足球的）与 annual peak of soccer mania（每年足球狂热的高峰）构成紧密同根语义场，craze 准确表达出狂热潮流的内涵。"
             },
             {
               "key": "C",
               "text": "hysteria.",
               "translation": "歇斯底里。",
               "isCorrect": false,
-              "distractorType": "词义过激/绝对化",
+              "distractorType": "EXTREME_ABSOLUTE",
               "distractorDisplayName": "词义过激/绝对化",
               "analysis": "【词义过激】hysteria 带有严重的病理性和负面失控色彩（歇斯底里、癔症），偏离了球迷对体育赛事积极狂热支持的正常语义语境。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "hysteria",
+                  "ipa": "[hɪˈsteriəˌhɪˈstɪriə]",
+                  "meaning": "歇斯底里",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "D",
               "text": "excitement.",
               "translation": "兴奋。",
               "isCorrect": false,
-              "distractorType": "范围失真/程度偏淡",
+              "distractorType": "SCOPE_DISTORTION",
               "distractorDisplayName": "范围失真/程度偏淡",
               "analysis": "【范围失真】excitement 仅指常规的兴奋、激动情绪，属于宽泛词，未能精准表达出达到巅峰（peak）的风靡狂潮。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "excitement",
+                  "ipa": "[ɪkˈsaɪtmənt]",
+                  "meaning": "兴奋",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
           "methodologyReview": {
@@ -1904,9 +2253,51 @@ window.ENGLISH_DATA['2007'] = {
               "是否辨析了 craze 与 hysteria 的本质区别（健康热潮 vs 病理性歇斯底里）？"
             ]
           },
-          "type": "词义题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "Paragraph",
+              "ipa": "[ˈpærəɡrɑːf]",
+              "meaning": "段",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 23,
@@ -1941,40 +2332,90 @@ window.ENGLISH_DATA['2007'] = {
               "text": "depends on meaningful processing of information.",
               "translation": "依赖于对信息的有意义加工处理。",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "distractorDisplayName": null,
               "analysis": "【正确项 · 同义替换】P4-S2 指出先天差异被各自编码信息的能力所掩盖（swamped by how well each person encodes the information），P4-S3 紧接着强调 encode information meaningfully。认知心理学中 encode 即 processing of information。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "depends",
+                  "ipa": "",
+                  "meaning": "依赖于",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "results from intuitive rather than cognitive exercises.",
               "translation": "来自于直觉活动而非认知练习。",
               "isCorrect": false,
-              "distractorType": "正反颠倒",
+              "distractorType": "CONTRADICTION",
               "distractorDisplayName": "正反颠倒",
               "analysis": "【正反颠倒】P4-S1 明确说明：'more of a cognitive exercise than an intuitive one'（更多是一种认知活动，而非直觉活动），选项把 cognitive 和 intuitive 的位置完全颠倒！",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "results",
+                  "ipa": "",
+                  "meaning": "来自于",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "cognitive",
+                  "ipa": "[ˈkɒɡnətɪv]",
+                  "meaning": "认知的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "is determined by genetic rather than psychological factors.",
               "translation": "是由基因遗传而非心理因素决定的。",
               "isCorrect": false,
-              "distractorType": "正反颠倒/直接相悖",
+              "distractorType": "CONTRADICTION",
               "distractorDisplayName": "正反颠倒/直接相悖",
               "analysis": "【正反颠倒】P4-S1 明确指出研究表明 'memory itself is not genetically determined'（记忆本身不是由基因决定的），选项直接唱反调。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "genetic",
+                  "ipa": "[dʒəˈnetɪk]",
+                  "meaning": "基因的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "factors",
+                  "ipa": "",
+                  "meaning": "因素",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "requires immediate feedback and a high degree of concentration.",
               "translation": "需要及时的反馈和高度集中的注意力。",
               "isCorrect": false,
-              "distractorType": "张冠李戴",
+              "distractorType": "ATTRIBUTION_ERROR",
               "distractorDisplayName": "张冠李戴",
               "analysis": "【张冠李戴】P4-S5 中提到 immediate feedback 和 concentration 是 deliberate practice（刻意练习）的运作属性，题干问的是 good memory 本身由什么决定，属于偷换主体对象。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "feedback",
+                  "ipa": "[ˈfiːdbæk]",
+                  "meaning": "反馈",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
           "methodologyReview": {
@@ -1986,9 +2427,42 @@ window.ENGLISH_DATA['2007'] = {
               "是否分清了刻意练习的特征 vs 记忆力本身的决定机制？"
             ]
           },
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          }
         },
         {
           "qIndex": 24,
@@ -2021,40 +2495,118 @@ window.ENGLISH_DATA['2007'] = {
               "text": "talent is a dominating factor for professional success.",
               "translation": "天赋是职业成功的决定性因素。",
               "isCorrect": false,
-              "distractorType": "正反颠倒/主旨相反",
+              "distractorType": "CONTRADICTION",
               "distractorDisplayName": "正反颠倒/主旨相反",
               "analysis": "【正反颠倒】P5-S3 明确断言：'the trait we commonly call talent is highly overrated'（天赋被严重高估了），选项声称天赋是决定性因素，与全文结论背道而驰。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "talent",
+                  "ipa": "[ˈtælənt]",
+                  "meaning": "天赋",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "factor",
+                  "ipa": "[ˈfæktə(r)]",
+                  "meaning": "因素",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "professional",
+                  "ipa": "[prəˈfeʃənl]",
+                  "meaning": "职业的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "biographical data provide the key to excellent performance.",
               "translation": "个人生平传记资料提供了取得卓越表现的关键。",
               "isCorrect": false,
-              "distractorType": "偷换概念/因果混淆",
+              "distractorType": "CONCEPT_DISTORTION",
               "distractorDisplayName": "偷换概念/因果混淆",
               "analysis": "【偷换概念】P5-S2 提到研究者搜集 biographical details，这只是科学研究搜集的数据材料，而非选手取得卓越表现的‘关键方法’。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "performance",
+                  "ipa": "[pəˈfɔːməns]",
+                  "meaning": "表现",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "the role of talent tends to be overlooked.",
               "translation": "天赋的作用往往被忽视。",
               "isCorrect": false,
-              "distractorType": "正反颠倒/词义反转",
+              "distractorType": "CONTRADICTION",
               "distractorDisplayName": "正反颠倒/词义反转",
               "analysis": "【正反颠倒】原文是 overrated（被高估），选项用了 overlooked（被忽视/被低估），两词词义截然相反。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "talent",
+                  "ipa": "[ˈtælənt]",
+                  "meaning": "天赋",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "tends",
+                  "ipa": "",
+                  "meaning": "往往会",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "overlooked",
+                  "ipa": null,
+                  "meaning": "忽视",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "high achievers owe their success mostly to nurture.",
               "translation": "卓越成就者将他们的成功主要归功于后天的培养训练。",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "distractorDisplayName": null,
               "analysis": "【正确项 · 同义改写】哲学经典对立概念：nature（先天自然/天赋）vs nurture（后天教养/训练）。made, not born 完美对等 owe success to nurture。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "owe",
+                  "ipa": "[əʊ]",
+                  "meaning": "把.归功于.",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                },
+                {
+                  "word": "mostly",
+                  "ipa": "[ˈməʊstli]",
+                  "meaning": "主要地",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "nurture",
+                  "ipa": "[ˈnɜːtʃə(r)]",
+                  "meaning": "后天的培养",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": true
             }
           ],
           "methodologyReview": {
@@ -2065,9 +2617,51 @@ window.ENGLISH_DATA['2007'] = {
               "是否掌握了 made not born 对应 nurture 的考研经典哲学对等？"
             ]
           },
-          "type": "推断题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "colleagues",
+              "ipa": "",
+              "meaning": "同事",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 25,
@@ -2099,43 +2693,56 @@ window.ENGLISH_DATA['2007'] = {
           "options": [
             {
               "key": "A",
-              "text": "\"Faith will move mountains.\"",
+              "text": "\"Faith will move mountains.\".",
               "translation": "“精诚所至，金石为开。”（信念能移山）",
               "isCorrect": false,
-              "distractorType": "偷换概念",
+              "distractorType": "CONCEPT_DISTORTION",
               "distractorDisplayName": "偷换概念",
-              "analysis": "【偷换概念】该谚语强调精神信念（faith）的力量，而本文强调的是科学、系统、持续的‘刻意练习’（deliberate practice）。",
-              "refSentences": []
+              "analysis": "【偷换概念】该谚语强调精神信念（faith）的力量，而本文强调的是科学、系统、持续的‘刻意练习’（deliberate practice）。"
             },
             {
               "key": "B",
-              "text": "\"One reaps what one sows.\"",
+              "text": "\"One reaps what one sows.\".",
               "translation": "“种瓜得瓜，种豆得豆。”（一份耕耘，一份收获）",
               "isCorrect": false,
-              "distractorType": "范围失真/过于泛化",
+              "distractorType": "SCOPE_DISTORTION",
               "distractorDisplayName": "范围失真/过于泛化",
               "analysis": "【过于宽泛】泛谈因果与付出，未能体现‘通过针对性重复和反馈训练达到卓越技艺’的特定内涵。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "reaps",
+                  "ipa": "",
+                  "meaning": "收获",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                },
+                {
+                  "word": "sows",
+                  "ipa": "",
+                  "meaning": "播种",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "C",
-              "text": "\"Practice makes perfect.\"",
+              "text": "\"Practice makes perfect.\".",
               "translation": "“熟能生巧。”（刻意练习造就完美）",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "distractorDisplayName": null,
-              "analysis": "【正确项 · 精准概括主旨】全文核心高频词 deliberate practice 贯穿后半程，完美对应 Practice makes perfect。",
-              "refSentences": []
+              "analysis": "【正确项 · 精准概括主旨】全文核心高频词 deliberate practice 贯穿后半程，完美对应 Practice makes perfect。"
             },
             {
               "key": "D",
-              "text": "\"Like father, like son.\"",
+              "text": "\"Like father, like son.\".",
               "translation": "“有其父，必有其子。”",
               "isCorrect": false,
-              "distractorType": "正反颠倒/背道而驰",
+              "distractorType": "CONTRADICTION",
               "distractorDisplayName": "正反颠倒/背道而驰",
-              "analysis": "【与主旨背道而驰】该谚语强调血统和先天遗传基因的决定性，恰好是本文极力批驳的天赋决定论。",
-              "refSentences": []
+              "analysis": "【与主旨背道而驰】该谚语强调血统和先天遗传基因的决定性，恰好是本文极力批驳的天赋决定论。"
             }
           ],
           "methodologyReview": {
@@ -2146,429 +2753,56 @@ window.ENGLISH_DATA['2007'] = {
               "是否排除了选项D强调遗传血统的反向观点？"
             ]
           },
-          "type": "主旨题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": []
-        }
-      ],
-      "topic": "文教社科 · 认知心理学与专业技能习得",
-      "overview": "",
-      "paragraphs": [
-        {
-          "pIndex": 1,
-          "mainIdea": "指出2006年世界杯球员及欧洲青年队中普遍存在的一种奇特现象：顶尖球员出生在年初的比例远高于年末。",
-          "logicRole": "引出怪象（Hook & Phenomenon）",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P1-S1",
-              "en": "If you were to examine the birth certificates of every soccer player in 2006's World Cup tournament, you would most likely find a noteworthy quirk: elite soccer players are more likely to have been born in the earlier months of the year than in the later months.",
-              "zh": "如果你去查看2006年世界杯锦标赛每一位足球运动员的出生证明，很有可能会发现一个耐人寻味的奇特现象：顶尖职业球员出生在上半年的几率要显著高于出生在下半年。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "isLongDifficult": true,
-              "syntaxAnalysis": {
-                "structureType": "条件虚拟语气复合句 + 宾语从句 + 冒号同位解释",
-                "mainClause": "you would most likely find a noteworthy quirk（主谓宾，对将来情况的虚拟假设）",
-                "subordinateClauses": [
-                  "条件状语从句: If you were to examine...（were to + 动词原形表示对将来的假设）",
-                  "同位解释: elite soccer players are more likely to have been born...（不定式完成时表示动作发生在谓语之前）"
-                ],
-                "corePattern": "If sb were to do..., sb would do...（与将来相反的虚拟语气）"
-              },
-              "targetForQuestions": [
-                21
-              ],
-              "text": "If you were to examine the birth certificates of every soccer player in 2006's World Cup tournament, you would most likely find a noteworthy quirk: elite soccer players are more likely to have been born in the earlier months of the year than in the later months.",
-              "translation": "如果你去查看2006年世界杯锦标赛每一位足球运动员的出生证明，很有可能会发现一个耐人寻味的奇特现象：顶尖职业球员出生在上半年的几率要显著高于出生在下半年。",
-              "vocab": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
             },
-            {
-              "sIndex": 2,
-              "id": "P1-S2",
-              "en": "If you then examined the European national youth teams that feed the World Cup and professional ranks, you would find this strange phenomenon to be even more pronounced.",
-              "zh": "如果你再去考察那些向世界杯和职业球队输送人才的欧洲各国青年队，就会发现这一奇怪现象更加明显。",
-              "isTopicSentence": false,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "虚拟条件复合句 + 定语从句",
-                "mainClause": "you would find this strange phenomenon to be even more pronounced",
-                "subordinateClauses": [
-                  "定语从句: that feed the World Cup and professional ranks 修饰 European national youth teams"
-                ],
-                "corePattern": "feed the ranks（输送生源/队伍）"
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
               },
-              "targetForQuestions": [],
-              "text": "If you then examined the European national youth teams that feed the World Cup and professional ranks, you would find this strange phenomenon to be even more pronounced.",
-              "translation": "如果你再去考察那些向世界杯和职业球队输送人才的欧洲各国青年队，就会发现这一奇怪现象更加明显。",
-              "vocab": []
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
             }
-          ]
-        },
-        {
-          "pIndex": 2,
-          "mainIdea": "探讨导致这一奇特现象的各种常见假说（星座、肺活量、受孕时间），并全盘否定。",
-          "logicRole": "提出并推翻常识假说（Elimination of Common Hypotheses）",
-          "sentences": [
+          },
+          "vocab": [
             {
-              "sIndex": 1,
-              "id": "P2-S1",
-              "en": "What might account for this strange phenomenon?",
-              "zh": "该如何解释这种奇怪的现象呢？",
-              "isTopicSentence": true,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "特殊疑问句（承上启下设问句）",
-                "mainClause": "What might account for this strange phenomenon",
-                "subordinateClauses": [],
-                "corePattern": "account for（对……做出解释 / 占据……比例）"
-              },
-              "targetForQuestions": [],
-              "text": "What might account for this strange phenomenon?",
-              "translation": "该如何解释这种奇怪的现象呢？",
-              "vocab": []
+              "word": "convey",
+              "ipa": "[kənˈveɪ]",
+              "meaning": "传达",
+              "level": "green",
+              "isSelfAnnotated": false
             },
             {
-              "sIndex": 2,
-              "id": "P2-S2",
-              "en": "Here are a few guesses: a) certain astrological signs confer superior soccer skills; b) winter-born babies tend to have higher oxygen capacity, which increases soccer stamina; c) soccer-mad parents are more likely to conceive children in springtime, at the annual peak of soccer mania; d) none of the above.",
-              "zh": "下面是几种猜测：a）某些星座赋予人卓越的足球技能；b）冬天出生的婴儿往往肺活量更高，从而增强了足球耐力；c）酷爱足球的父母更可能在春天怀上孩子，因为春天正是每年足球狂热的巅峰期；d）以上都不是。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "倒装引出列举结构 + 非限制性定语从句",
-                "mainClause": "Here are a few guesses（倒装结构）",
-                "subordinateClauses": [
-                  "非限制性定语从句: which increases soccer stamina 修饰整个选项b前面的事实"
-                ],
-                "corePattern": "confer sth on sb / tend to do sth / be likely to do sth"
-              },
-              "targetForQuestions": [
-                22
-              ],
-              "text": "Here are a few guesses: a) certain astrological signs confer superior soccer skills; b) winter-born babies tend to have higher oxygen capacity, which increases soccer stamina; c) soccer-mad parents are more likely to conceive children in springtime, at the annual peak of soccer mania; d) none of the above.",
-              "translation": "下面是几种猜测：a）某些星座赋予人卓越的足球技能；b）冬天出生的婴儿往往肺活量更高，从而增强了足球耐力；c）酷爱足球的父母更可能在春天怀上孩子，因为春天正是每年足球狂热的巅峰期；d）以上都不是。",
-              "vocab": []
-            }
-          ]
-        },
-        {
-          "pIndex": 3,
-          "mainIdea": "引出心理学家安德斯·埃里克森关于记忆力扩展的突破性实验，证明常人可通过训练大幅提升能力。",
-          "logicRole": "引入核心专家研究与实验证据（Ericsson's Landmark Memory Experiment）",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P3-S1",
-              "en": "Anders Ericsson, a 58-year-old psychology professor at Florida State University, says he believes strongly in \"none of the above.\"",
-              "zh": "佛罗里达州立大学58岁的心理学教授安德斯·埃里克森表示，他坚信答案是“以上都不是”。",
-              "isTopicSentence": true,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "主谓宾复合句 + 同位语",
-                "mainClause": "Anders Ericsson says he believes strongly in 'none of the above'",
-                "subordinateClauses": [
-                  "同位语: a 58-year-old psychology professor at Florida State University 修饰 Anders Ericsson"
-                ],
-                "corePattern": "believe strongly in sth"
-              },
-              "targetForQuestions": [],
-              "text": "Anders Ericsson, a 58-year-old psychology professor at Florida State University, says he believes strongly in \"none of the above.\"",
-              "translation": "佛罗里达州立大学58岁的心理学教授安德斯·埃里克森表示，他坚信答案是“以上都不是”。",
-              "vocab": []
-            },
-            {
-              "sIndex": 2,
-              "id": "P3-S2",
-              "en": "Ericsson grew up in Sweden, and studied nuclear engineering until he realized he would have more opportunity to conduct his own research if he switched to psychology.",
-              "zh": "埃里克森在瑞典长大，起初攻读核工程学，直到他意识到如果转向心理学，将有更多机会开展自己独立的研究。",
-              "isTopicSentence": false,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "并列复合句 + 时间状语从句 + 宾语从句 + 条件状语从句",
-                "mainClause": "Ericsson grew up in Sweden, and studied nuclear engineering",
-                "subordinateClauses": [
-                  "时间状语从句: until he realized...",
-                  "宾语从句: (that) he would have more opportunity...",
-                  "条件状语从句: if he switched to psychology"
-                ],
-                "corePattern": "conduct research / switch to"
-              },
-              "targetForQuestions": [],
-              "text": "Ericsson grew up in Sweden, and studied nuclear engineering until he realized he would have more opportunity to conduct his own research if he switched to psychology.",
-              "translation": "埃里克森在瑞典长大，起初攻读核工程学，直到他意识到如果转向心理学，将有更多机会开展自己独立的研究。",
-              "vocab": []
-            },
-            {
-              "sIndex": 3,
-              "id": "P3-S3",
-              "en": "His first experiment, nearly 30 years ago, involved memory: training a person to hear and then repeat a random series of numbers.",
-              "zh": "将近30年前他所做的第一个实验与记忆力有关：训练一个人在听完一串随机数字后将其复述出来。",
-              "isTopicSentence": false,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "主谓宾简单句 + 插入语 + 冒号解释",
-                "mainClause": "His first experiment involved memory",
-                "subordinateClauses": [
-                  "时间插入语: nearly 30 years ago",
-                  "冒号后分词短语作同位语解释: training a person to hear and then repeat a random series of numbers"
-                ],
-                "corePattern": "involve doing sth"
-              },
-              "targetForQuestions": [],
-              "text": "His first experiment, nearly 30 years ago, involved memory: training a person to hear and then repeat a random series of numbers.",
-              "translation": "将近30年前他所做的第一个实验与记忆力有关：训练一个人在听完一串随机数字后将其复述出来。",
-              "vocab": []
-            },
-            {
-              "sIndex": 4,
-              "id": "P3-S4",
-              "en": "\"The first subject, after about 20 hours of training, was able to recall 20 numbers, up from seven,\" says Ericsson. \"He kept improving, and after about 200 hours of training he could recall more than 80 numbers.\"",
-              "zh": "“第一位受试者在经过大约20小时的训练后，能记住的数字从7个提高到了20个，”埃里克森回忆道，“他不断取得突破，在接受了大约200小时的训练后，能记住的数字超过了80个。”",
-              "isTopicSentence": false,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "直接引语复合句",
-                "mainClause": "says Ericsson（倒装引述句）",
-                "subordinateClauses": [],
-                "corePattern": "up from... to... / keep doing sth"
-              },
-              "targetForQuestions": [],
-              "text": "\"The first subject, after about 20 hours of training, was able to recall 20 numbers, up from seven,\" says Ericsson. \"He kept improving, and after about 200 hours of training he could recall more than 80 numbers.\"",
-              "translation": "“第一位受试者在经过大约20小时的训练后，能记住的数字从7个提高到了20个，”埃里克森回忆道，“他不断取得突破，在接受了大约200小时的训练后，能记住的数字超过了80个。”",
-              "vocab": []
-            }
-          ]
-        },
-        {
-          "pIndex": 4,
-          "mainIdea": "得出科学结论：记忆并非基因天生决定，而是认知练习；卓越表现源自“刻意练习”（目标、即时反馈、专注技巧）。",
-          "logicRole": "提出核心机制——刻意练习（Mechanism of Deliberate Practice）",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P4-S1",
-              "en": "This success, coupled with later research showing that memory itself is not genetically determined, led Ericsson to conclude that the act of memorizing is more of a cognitive exercise than an intuitive one.",
-              "zh": "这一成功，加上后来表明记忆本身并非由基因决定的研究所提供的佐证，使埃里克森得出结论：记忆行为更多的是一种认知练习，而不是一种直觉活动。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
-              "isLongDifficult": true,
-              "syntaxAnalysis": {
-                "structureType": "并列伴随主语 + 伴随分词短语 + 宾语从句 + 比较结构",
-                "mainClause": "This success led Ericsson to conclude that...",
-                "subordinateClauses": [
-                  "伴随介词短语: coupled with later research（加上随后的研究）",
-                  "现在分词定语: showing that memory itself is not genetically determined",
-                  "宾语从句: that the act of memorizing is more of a cognitive exercise than an intuitive one"
-                ],
-                "corePattern": "coupled with... / lead sb to do sth / more of A than B（与其说是B不如说是A）"
-              },
-              "targetForQuestions": [
-                23
-              ],
-              "text": "This success, coupled with later research showing that memory itself is not genetically determined, led Ericsson to conclude that the act of memorizing is more of a cognitive exercise than an intuitive one.",
-              "translation": "这一成功，加上后来表明记忆本身并非由基因决定的研究所提供的佐证，使埃里克森得出结论：记忆行为更多的是一种认知练习，而不是一种直觉活动。",
-              "vocab": []
-            },
-            {
-              "sIndex": 2,
-              "id": "P4-S2",
-              "en": "In other words, whatever innate differences two people may exhibit in their abilities to memorize, those differences are swamped by how well each person \"encodes\" the information.",
-              "zh": "换言之，无论两个人在记忆能力方面表现出何种先天差异，这些差异都会被各自对信息进行“编码”的高低水平所掩盖。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "让步状语从句 + 主句（被动语态） + 介词宾语从句",
-                "mainClause": "those differences are swamped by...",
-                "subordinateClauses": [
-                  "让步状语从句: whatever innate differences two people may exhibit in their abilities to memorize",
-                  "介词宾语从句: how well each person 'encodes' the information"
-                ],
-                "corePattern": "whatever differences sb may exhibit / be swamped by（被……淹没/掩盖）"
-              },
-              "targetForQuestions": [
-                23
-              ],
-              "text": "In other words, whatever innate differences two people may exhibit in their abilities to memorize, those differences are swamped by how well each person \"encodes\" the information.",
-              "translation": "换言之，无论两个人在记忆能力方面表现出何种先天差异，这些差异都会被各自对信息进行“编码”的高低水平所掩盖。",
-              "vocab": []
-            },
-            {
-              "sIndex": 3,
-              "id": "P4-S3",
-              "en": "And the best way to learn how to encode information meaningfully, Ericsson determined, was a process known as deliberate practice.",
-              "zh": "而埃里克森认定，学会对信息进行有意义编码的最佳途径，正是一种被称为“刻意练习”的过程。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "主系表结构 + 插入语 + 后置分词定语",
-                "mainClause": "the best way was a process",
-                "subordinateClauses": [
-                  "不定式作后置定语: to learn how to encode information meaningfully",
-                  "插入语: Ericsson determined",
-                  "过去分词作后置定语: known as deliberate practice"
-                ],
-                "corePattern": "the best way to do sth is... / known as"
-              },
-              "targetForQuestions": [
-                23,
-                25
-              ],
-              "text": "And the best way to learn how to encode information meaningfully, Ericsson determined, was a process known as deliberate practice.",
-              "translation": "而埃里克森认定，学会对信息进行有意义编码的最佳途径，正是一种被称为“刻意练习”的过程。",
-              "vocab": []
-            },
-            {
-              "sIndex": 4,
-              "id": "P4-S4",
-              "en": "Deliberate practice entails more than simply repeating a task.",
-              "zh": "刻意练习绝不仅仅意味着机械重复一项任务。",
-              "isTopicSentence": false,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "主谓宾简单句 + 动名词宾语",
-                "mainClause": "Deliberate practice entails more than simply repeating a task",
-                "subordinateClauses": [],
-                "corePattern": "entail doing sth / more than simply doing"
-              },
-              "targetForQuestions": [],
-              "text": "Deliberate practice entails more than simply repeating a task.",
-              "translation": "刻意练习绝不仅仅意味着机械重复一项任务。",
-              "vocab": []
-            },
-            {
-              "sIndex": 5,
-              "id": "P4-S5",
-              "en": "Rather, it involves setting specific goals, obtaining immediate feedback and concentrating as much on technique as on outcome.",
-              "zh": "相反，它包括设定具体明确的目标、获取即时反馈，以及在关注技巧的同时同样高度关注结果。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "转折主句 + 三个并列动名词宾语 + 平衡比较结构",
-                "mainClause": "it involves setting..., obtaining... and concentrating...",
-                "subordinateClauses": [],
-                "corePattern": "involve doing A, doing B and doing C / concentrate as much on A as on B"
-              },
-              "targetForQuestions": [
-                23
-              ],
-              "text": "Rather, it involves setting specific goals, obtaining immediate feedback and concentrating as much on technique as on outcome.",
-              "translation": "相反，它包括设定具体明确的目标、获取即时反馈，以及在关注技巧的同时同样高度关注结果。",
-              "vocab": []
-            }
-          ]
-        },
-        {
-          "pIndex": 5,
-          "mainIdea": "埃里克森将研究拓展至足球、芭蕾、外科手术等全行业，得出石破天惊的终极结论：天赋被严重高估，高手皆为后天造就。",
-          "logicRole": "升华全篇主旨与结论（Final Synthesis & Overrated Talent Thesis）",
-          "sentences": [
-            {
-              "sIndex": 1,
-              "id": "P5-S1",
-              "en": "Ericsson and his colleagues have thus taken to studying expert performers in a wide range of pursuits, including soccer.",
-              "zh": "因此，埃里克森和他的同事们开始着手研究各类广泛领域中的顶尖高手，其中就包括足球。",
-              "isTopicSentence": false,
-              "isKeyEvidence": false,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "主谓宾复合句 + 介词介词短语",
-                "mainClause": "Ericsson and his colleagues have thus taken to studying expert performers",
-                "subordinateClauses": [],
-                "corePattern": "take to doing sth（开始养成……习惯/着手从事） / in a wide range of pursuits"
-              },
-              "targetForQuestions": [
-                24
-              ],
-              "text": "Ericsson and his colleagues have thus taken to studying expert performers in a wide range of pursuits, including soccer.",
-              "translation": "因此，埃里克森和他的同事们开始着手研究各类广泛领域中的顶尖高手，其中就包括足球。",
-              "vocab": []
-            },
-            {
-              "sIndex": 2,
-              "id": "P5-S2",
-              "en": "They gather all the data they can, not just performance statistics and biographical details but also the results of their own laboratory experiments with high achievers.",
-              "zh": "他们尽可能搜集所有能够获取的数据，不仅包括比赛表现统计和个人传记细节，还包括他们在实验室中对卓越成就者开展的一系列实验结果。",
-              "isTopicSentence": false,
-              "isKeyEvidence": true,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "主谓宾简单句 + 定语从句 + not just... but also... 复合宾语",
-                "mainClause": "They gather all the data, not just A but also B",
-                "subordinateClauses": [
-                  "定语从句: (that) they can 修饰 all the data"
-                ],
-                "corePattern": "not just... but also..."
-              },
-              "targetForQuestions": [
-                24
-              ],
-              "text": "They gather all the data they can, not just performance statistics and biographical details but also the results of their own laboratory experiments with high achievers.",
-              "translation": "他们尽可能搜集所有能够获取的数据，不仅包括比赛表现统计和个人传记细节，还包括他们在实验室中对卓越成就者开展的一系列实验结果。",
-              "vocab": []
-            },
-            {
-              "sIndex": 3,
-              "id": "P5-S3",
-              "en": "Their work makes a rather startling assertion: the trait we commonly call talent is highly overrated.",
-              "zh": "他们的研究得出了一个颇为惊人的论断：我们通常所称的“天赋”这一特质被严重高估了。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "主谓宾简单句 + 冒号同位语解释 + 定语从句",
-                "mainClause": "Their work makes a rather startling assertion",
-                "subordinateClauses": [
-                  "定语从句: (that) we commonly call talent 修饰 the trait",
-                  "同位解释句: the trait is highly overrated"
-                ],
-                "corePattern": "make an assertion / highly overrated"
-              },
-              "targetForQuestions": [
-                21,
-                24,
-                25
-              ],
-              "text": "Their work makes a rather startling assertion: the trait we commonly call talent is highly overrated.",
-              "translation": "他们的研究得出了一个颇为惊人的论断：我们通常所称的“天赋”这一特质被严重高估了。",
-              "vocab": []
-            },
-            {
-              "sIndex": 4,
-              "id": "P5-S4",
-              "en": "Or, put another way, expert performers—whether in memory or surgery, ballet or computer programming—are nearly always made, not born.",
-              "zh": "或者换句话说，各领域的顶尖专家——无论是在记忆力还是外科手术、芭蕾舞还是计算机编程领域——几乎无一例外都是后天造就的，而非先天生成的。",
-              "isTopicSentence": true,
-              "isKeyEvidence": true,
-              "isLongDifficult": false,
-              "syntaxAnalysis": {
-                "structureType": "插入语 + 主系表结构 + 让步状语插入语",
-                "mainClause": "expert performers are nearly always made, not born",
-                "subordinateClauses": [
-                  "修饰插入语: put another way（换言之）",
-                  "让步状语插入语: whether in memory or surgery, ballet or computer programming"
-                ],
-                "corePattern": "made, not born（后天造就而非先天生成 / nurture vs nature）"
-              },
-              "targetForQuestions": [
-                21,
-                24,
-                25
-              ],
-              "text": "Or, put another way, expert performers—whether in memory or surgery, ballet or computer programming—are nearly always made, not born.",
-              "translation": "或者换句话说，各领域的顶尖专家——无论是在记忆力还是外科手术、芭蕾舞还是计算机编程领域——几乎无一例外都是后天造就的，而非先天生成的。",
-              "vocab": []
+              "word": "proverbs",
+              "ipa": "",
+              "meaning": "谚语",
+              "level": "red",
+              "isSelfAnnotated": true
             }
           ]
         }
@@ -2684,61 +2918,33 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "For the past several years, the Sunday newspaper supplement Parade has featured a column called \"Ask Marilyn.\"",
                 "chinese": "在过去的几年里，周日报纸副刊《大观》一直开辟着一个名为“问问玛丽莲”的专栏。",
-                "syntaxAnalysis": "主谓宾简单句。the Sunday newspaper supplement Parade 作主语；has featured 为谓语；a column 为宾语；called \"Ask Marilyn\" 为过去分词短语作后置定语修饰 column。",
-                "sIndex": 1,
-                "id": "P1-S1",
-                "text": "For the past several years, the Sunday newspaper supplement Parade has featured a column called \"Ask Marilyn.\"",
-                "translation": "在过去的几年里，周日报纸副刊《大观》一直开辟着一个名为“问问玛丽莲”的专栏。",
-                "vocab": []
+                "syntaxAnalysis": "主谓宾简单句。the Sunday newspaper supplement Parade 作主语；has featured 为谓语；a column 为宾语；called \"Ask Marilyn\" 为过去分词短语作后置定语修饰 column。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "People are invited to query Marilyn Vos Savant, who at age 10 had tested at a mental level of someone about 23 years old; that gave her an IQ of 228—the highest score ever recorded.",
                 "chinese": "读者被邀请向玛丽莲·沃斯·萨万特提问，她10岁时的智力测试显示其心智水平相当于大约23岁的成年人；这使她获得了228的智商——这是有记录以来的最高得分。",
-                "syntaxAnalysis": "复合句。People are invited to query Marilyn Vos Savant 为主句；who 引导非限制性定语从句修饰 Savant；分号后 that 引导并列句，that 指代前面的测试表现；破折号后 the highest score ever recorded 为同位语解释 228。",
-                "sIndex": 2,
-                "id": "P1-S2",
-                "text": "People are invited to query Marilyn Vos Savant, who at age 10 had tested at a mental level of someone about 23 years old; that gave her an IQ of 228—the highest score ever recorded.",
-                "translation": "读者被邀请向玛丽莲·沃斯·萨万特提问，她10岁时的智力测试显示其心智水平相当于大约23岁的成年人；这使她获得了228的智商——这是有记录以来的最高得分。",
-                "vocab": []
+                "syntaxAnalysis": "复合句。People are invited to query Marilyn Vos Savant 为主句；who 引导非限制性定语从句修饰 Savant；分号后 that 引导并列句，that 指代前面的测试表现；破折号后 the highest score ever recorded 为同位语解释 228。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "IQ tests ask you to complete verbal and visual analogies, to envision paper after it has been folded and cut, and to deduce numerical sequences, among other similar tasks.",
                 "chinese": "智商测试要求受试者完成词语和视觉图形类比，设想纸张折叠和剪切后的形状，并推断数字序列规律，此外还有其他类似任务。",
-                "syntaxAnalysis": "主谓宾补结构。IQ tests 为主语；ask 为谓语；you 为宾语；包含三个由 and 连接的并列动词不定式短语作宾补（to complete..., to envision..., and to deduce...）；after it has been folded and cut 为时间状语从句修饰 envision；among other similar tasks 为介词短语作状语。",
-                "sIndex": 3,
-                "id": "P1-S3",
-                "text": "IQ tests ask you to complete verbal and visual analogies, to envision paper after it has been folded and cut, and to deduce numerical sequences, among other similar tasks.",
-                "translation": "智商测试要求受试者完成词语和视觉图形类比，设想纸张折叠和剪切后的形状，并推断数字序列规律，此外还有其他类似任务。",
-                "vocab": []
+                "syntaxAnalysis": "主谓宾补结构。IQ tests 为主语；ask 为谓语；you 为宾语；包含三个由 and 连接的并列动词不定式短语作宾补（to complete..., to envision..., and to deduce...）；after it has been folded and cut 为时间状语从句修饰 envision；among other similar tasks 为介词短语作状语。"
               },
               {
                 "sentenceIndex": 4,
                 "english": "So it is a bit confusing when Vos Savant fields such queries from the average Joe (whose IQ is 100) as, What's the difference between love and fondness? Or what is the nature of luck and coincidence?",
                 "chinese": "因此，当沃斯·萨万特应对来自智商为100的普通大众提出的诸如“爱和喜欢有何区别？”或者“运气和巧合的本质是什么？”这类问题时，这着实让人感到有些困惑不解。",
-                "syntaxAnalysis": "主从复合句。it 为形式主语，is 为系动词，a bit confusing 为表语；when 引导时间/情境状语从句作实际主语；whose IQ is 100 为定语从句修饰 the average Joe；such... as... 引入具体的读者提问。",
-                "sIndex": 4,
-                "id": "P1-S4",
-                "text": "So it is a bit confusing when Vos Savant fields such queries from the average Joe (whose IQ is 100) as, What's the difference between love and fondness? Or what is the nature of luck and coincidence?",
-                "translation": "因此，当沃斯·萨万特应对来自智商为100的普通大众提出的诸如“爱和喜欢有何区别？”或者“运气和巧合的本质是什么？”这类问题时，这着实让人感到有些困惑不解。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。it 为形式主语，is 为系动词，a bit confusing 为表语；when 引导时间/情境状语从句作实际主语；whose IQ is 100 为定语从句修饰 the average Joe；such... as... 引入具体的读者提问。"
               },
               {
                 "sentenceIndex": 5,
                 "english": "It's not obvious how the capacity to visualize objects and to figure out numerical patterns suits one to answer questions that have eluded some of the best poets and philosophers.",
                 "chinese": "在脑海中想象物体的能力以及推算数字模式的能力，究竟如何能让一个人具备回答那些连最优秀的诗人和哲学家都无法参透的问题的资格，这一点完全不言自明（实际上令人难以信服）。",
-                "syntaxAnalysis": "主从复合句。It 为形式主语，is not obvious 为主句表语；how 引导主语从句；从句主语为 the capacity（后接两个并列动词不定式短语作后置定语）；suits 为谓语；one 为宾语；to answer questions... 为宾补；that have eluded... 为定语从句修饰 questions。",
-                "sIndex": 5,
-                "id": "P1-S5",
-                "text": "It's not obvious how the capacity to visualize objects and to figure out numerical patterns suits one to answer questions that have eluded some of the best poets and philosophers.",
-                "translation": "在脑海中想象物体的能力以及推算数字模式的能力，究竟如何能让一个人具备回答那些连最优秀的诗人和哲学家都无法参透的问题的资格，这一点完全不言自明（实际上令人难以信服）。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。It 为形式主语，is not obvious 为主句表语；how 引导主语从句；从句主语为 the capacity（后接两个并列动词不定式短语作后置定语）；suits 为谓语；one 为宾语；to answer questions... 为宾补；that have eluded... 为定语从句修饰 questions。"
               }
-            ],
-            "pIndex": 1,
-            "logicRole": "",
-            "mainIdea": "通过玛丽莲·沃斯·萨万特创纪录的228智商及其专栏答疑的矛盾现象，引出智商测试与实际智慧之间的脱节与反差。"
+            ]
           },
           {
             "paraIndex": 2,
@@ -2748,39 +2954,21 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "Clearly, intelligence encompasses more than a score on a test.",
                 "chinese": "显而易见，智力所涵盖的内涵远远超出了一次测试所给出的分数。",
-                "syntaxAnalysis": "主谓宾简单句。副词 Clearly 作评注性状语；intelligence 作主语；encompasses 作谓语；more than a score on a test 作宾语。",
-                "sIndex": 1,
-                "id": "P2-S1",
-                "text": "Clearly, intelligence encompasses more than a score on a test.",
-                "translation": "显而易见，智力所涵盖的内涵远远超出了一次测试所给出的分数。",
-                "vocab": []
+                "syntaxAnalysis": "主谓宾简单句。副词 Clearly 作评注性状语；intelligence 作主语；encompasses 作谓语；more than a score on a test 作宾语。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "Just what does it mean to be smart?",
                 "chinese": "所谓“聪明”，究竟意味着什么？",
-                "syntaxAnalysis": "特殊疑问句。what 作 mean 的宾语；it 作形式主语；to be smart 为动词不定式短语作真正主语。",
-                "sIndex": 2,
-                "id": "P2-S2",
-                "text": "Just what does it mean to be smart?",
-                "translation": "所谓“聪明”，究竟意味着什么？",
-                "vocab": []
+                "syntaxAnalysis": "特殊疑问句。what 作 mean 的宾语；it 作形式主语；to be smart 为动词不定式短语作真正主语。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "How much of intelligence can be specified, and how much can we learn about it from neurology, genetics, computer science and other fields?",
                 "chinese": "智力在多大程度上可以被精确界定？我们又能从神经学、遗传学、计算机科学以及其他学科领域中探知关于智力的多少奥秘？",
-                "syntaxAnalysis": "并列特殊疑问句。由 and 连接两个分句：前一分句使用被动语态 can be specified；后一分句使用主动语态 can we learn about it...，from... 为来源状语。",
-                "sIndex": 3,
-                "id": "P2-S3",
-                "text": "How much of intelligence can be specified, and how much can we learn about it from neurology, genetics, computer science and other fields?",
-                "translation": "智力在多大程度上可以被精确界定？我们又能从神经学、遗传学、计算机科学以及其他学科领域中探知关于智力的多少奥秘？",
-                "vocab": []
+                "syntaxAnalysis": "并列特殊疑问句。由 and 连接两个分句：前一分句使用被动语态 can be specified；后一分句使用主动语态 can we learn about it...，from... 为来源状语。"
               }
-            ],
-            "pIndex": 2,
-            "logicRole": "",
-            "mainIdea": "明确提出论点：智力所涵盖的内涵远不止一次考试的分数，并向跨学科领域抛出对智力本质的追问。"
+            ]
           },
           {
             "paraIndex": 3,
@@ -2790,61 +2978,33 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "The defining term of intelligence in humans still seems to be the IQ score, even though IQ tests are not given as often as they used to be.",
                 "chinese": "尽管如今智商测试的施测频率已远不如从前，但人类界定智力的核心标志似乎依然是智商分数。",
-                "syntaxAnalysis": "主从复合句。主句为主系表结构 The defining term... seems to be the IQ score；even though 引导让步状语从句，从句中包含 as... as they used to be 的同级比较与省略结构。",
-                "sIndex": 1,
-                "id": "P3-S1",
-                "text": "The defining term of intelligence in humans still seems to be the IQ score, even though IQ tests are not given as often as they used to be.",
-                "translation": "尽管如今智商测试的施测频率已远不如从前，但人类界定智力的核心标志似乎依然是智商分数。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。主句为主系表结构 The defining term... seems to be the IQ score；even though 引导让步状语从句，从句中包含 as... as they used to be 的同级比较与省略结构。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "The test comes primarily in two forms: the Stanford-Binet Intelligence Scale and the Wechsler Intelligence Scales (both come in adult and children's version).",
                 "chinese": "这种测试主要有两种形式：斯坦福-比奈智力量表和韦克斯勒智力量表（两者均有成人版和儿童版）。",
-                "syntaxAnalysis": "简单句。The test 为主语；comes in two forms 为谓语结构；冒号后为两个量表名称作同位语；括号内为独立补充说明分句。",
-                "sIndex": 2,
-                "id": "P3-S2",
-                "text": "The test comes primarily in two forms: the Stanford-Binet Intelligence Scale and the Wechsler Intelligence Scales (both come in adult and children's version).",
-                "translation": "这种测试主要有两种形式：斯坦福-比奈智力量表和韦克斯勒智力量表（两者均有成人版和儿童版）。",
-                "vocab": []
+                "syntaxAnalysis": "简单句。The test 为主语；comes in two forms 为谓语结构；冒号后为两个量表名称作同位语；括号内为独立补充说明分句。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "Generally costing several hundred dollars, they are usually given only by psychologists, although variations of them populate bookstores and the World Wide Web.",
                 "chinese": "这些正规测试通常花费数百美元，往往仅由专业心理学家主持施测，尽管其各种变体版本已经遍布书店和互联网。",
-                "syntaxAnalysis": "复合句。Generally costing several hundred dollars 为现在分词短语作原因/让步状语；they are usually given... 为被动语态主句；although 引导让步状语从句，从句主干为 variations... populate...",
-                "sIndex": 3,
-                "id": "P3-S3",
-                "text": "Generally costing several hundred dollars, they are usually given only by psychologists, although variations of them populate bookstores and the World Wide Web.",
-                "translation": "这些正规测试通常花费数百美元，往往仅由专业心理学家主持施测，尽管其各种变体版本已经遍布书店和互联网。",
-                "vocab": []
+                "syntaxAnalysis": "复合句。Generally costing several hundred dollars 为现在分词短语作原因/让步状语；they are usually given... 为被动语态主句；although 引导让步状语从句，从句主干为 variations... populate..."
               },
               {
                 "sentenceIndex": 4,
                 "english": "Superhigh scores like Vos Savant's are no longer possible, because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.",
                 "chinese": "像沃斯·萨万特那样超高的智商分数如今已不可能再出现，因为现在的计分是基于同龄人群体的统计人口正态分布，而不再仅仅是将心理年龄除以实足年龄再乘以100。",
-                "syntaxAnalysis": "因果复合句。Superhigh scores... are no longer possible 为主句；because 引导原因状语从句；从句核心结构为 scoring is now based on A rather than B；rather than 连接并列介词宾语短语 dividing... and multiplying...",
-                "sIndex": 4,
-                "id": "P3-S4",
-                "text": "Superhigh scores like Vos Savant's are no longer possible, because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.",
-                "translation": "像沃斯·萨万特那样超高的智商分数如今已不可能再出现，因为现在的计分是基于同龄人群体的统计人口正态分布，而不再仅仅是将心理年龄除以实足年龄再乘以100。",
-                "vocab": []
+                "syntaxAnalysis": "因果复合句。Superhigh scores... are no longer possible 为主句；because 引导原因状语从句；从句核心结构为 scoring is now based on A rather than B；rather than 连接并列介词宾语短语 dividing... and multiplying..."
               },
               {
                 "sentenceIndex": 5,
                 "english": "Other standardized tests, such as the Scholastic Assessment Test (SAT) and the Graduate Record Exam (GRE), capture the main aspects of IQ tests.",
                 "chinese": "其他标准化测试，例如学术能力评估测试（SAT）和研究生入学资格考试（GRE），也都涵盖了智商测试的主要维度。",
-                "syntaxAnalysis": "主谓宾结构。主语 Other standardized tests；such as 结构为插入列举成分；谓语 capture；宾语 the main aspects of IQ tests。",
-                "sIndex": 5,
-                "id": "P3-S5",
-                "text": "Other standardized tests, such as the Scholastic Assessment Test (SAT) and the Graduate Record Exam (GRE), capture the main aspects of IQ tests.",
-                "translation": "其他标准化测试，例如学术能力评估测试（SAT）和研究生入学资格考试（GRE），也都涵盖了智商测试的主要维度。",
-                "vocab": []
+                "syntaxAnalysis": "主谓宾结构。主语 Other standardized tests；such as 结构为插入列举成分；谓语 capture；宾语 the main aspects of IQ tests。"
               }
-            ],
-            "pIndex": 3,
-            "logicRole": "",
-            "mainIdea": "剖析当前智商测试的实施现状及其计分体系的历史变革：由早期的“心理年龄比率法”演进为现代基于同龄人的“正态统计分布法”。"
+            ]
           },
           {
             "paraIndex": 4,
@@ -2854,61 +3014,33 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "Such standardized tests may not assess all the important elements necessary to succeed in school and in life, argues Robert J. Sternberg.",
                 "chinese": "罗伯特·J·斯滕伯格认为，此类标准化考试未必能评估出在学业和人生中取得成功所需的全部关键要素。",
-                "syntaxAnalysis": "引语复合倒装句。前部为直接陈述分句，necessary to succeed in school and in life 为形容词短语作后置定语修饰 elements；后部 argues Robert J. Sternberg 为主谓倒装引述句。",
-                "sIndex": 1,
-                "id": "P4-S1",
-                "text": "Such standardized tests may not assess all the important elements necessary to succeed in school and in life, argues Robert J. Sternberg.",
-                "translation": "罗伯特·J·斯滕伯格认为，此类标准化考试未必能评估出在学业和人生中取得成功所需的全部关键要素。",
-                "vocab": []
+                "syntaxAnalysis": "引语复合倒装句。前部为直接陈述分句，necessary to succeed in school and in life 为形容词短语作后置定语修饰 elements；后部 argues Robert J. Sternberg 为主谓倒装引述句。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "In his article \"How Intelligent Is Intelligence Testing?\", Sternberg notes that traditional tests best assess analytical and verbal skills but fail to measure creativity and practical knowledge, components also critical to problem solving and life success.",
                 "chinese": "斯滕伯格在其发表的文章《智力测试到底有多聪明？》中指出，传统测试最擅长衡量分析和言语技能，却未能测量创造力与实践智慧——而这些要素对于解决现实问题和获取人生成功同样至关重要。",
-                "syntaxAnalysis": "主从复合句。In his article... 为介词短语状语；Sternberg notes 为主谓；that 引导宾语从句；从句中 best assess... but fail to measure... 为并列谓语；末尾 components... 为同位语修饰 creativity and practical knowledge。",
-                "sIndex": 2,
-                "id": "P4-S2",
-                "text": "In his article \"How Intelligent Is Intelligence Testing?\", Sternberg notes that traditional tests best assess analytical and verbal skills but fail to measure creativity and practical knowledge, components also critical to problem solving and life success.",
-                "translation": "斯滕伯格在其发表的文章《智力测试到底有多聪明？》中指出，传统测试最擅长衡量分析和言语技能，却未能测量创造力与实践智慧——而这些要素对于解决现实问题和获取人生成功同样至关重要。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。In his article... 为介词短语状语；Sternberg notes 为主谓；that 引导宾语从句；从句中 best assess... but fail to measure... 为并列谓语；末尾 components... 为同位语修饰 creativity and practical knowledge。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "Moreover, IQ tests do not necessarily predict so well once populations or situations change.",
                 "chinese": "此外，一旦受试人群或所处情境发生变化，智商测试的预测效果也未必依然良好。",
-                "syntaxAnalysis": "递进复合句。Moreover 为递进副词；IQ tests do not necessarily predict so well 为主句；once 引导条件/时间状语从句（意为‘一旦’）。",
-                "sIndex": 3,
-                "id": "P4-S3",
-                "text": "Moreover, IQ tests do not necessarily predict so well once populations or situations change.",
-                "translation": "此外，一旦受试人群或所处情境发生变化，智商测试的预测效果也未必依然良好。",
-                "vocab": []
+                "syntaxAnalysis": "递进复合句。Moreover 为递进副词；IQ tests do not necessarily predict so well 为主句；once 引导条件/时间状语从句（意为‘一旦’）。"
               },
               {
                 "sentenceIndex": 4,
                 "english": "Research has found that IQ predicted leadership skills when the tests were given under low-stress conditions, but under high-stress conditions, IQ was negatively correlated with leadership—that is, it predicted the opposite.",
                 "chinese": "研究发现，当测试在低压力环境下进行时，智商能有效预测个体的领导力；但在高压力环境下，智商与领导力却呈负相关——也就是说，它预测出的反而是相反的结果。",
-                "syntaxAnalysis": "主从复合句。Research has found 为主句；that 引导宾语从句；宾语从句由 but 连接两个分句，分别由 when 引导时间条件从句与 under high-stress conditions 介词短语形成鲜明对照；破折号后 that is, it predicted the opposite 为解释分句。",
-                "sIndex": 4,
-                "id": "P4-S4",
-                "text": "Research has found that IQ predicted leadership skills when the tests were given under low-stress conditions, but under high-stress conditions, IQ was negatively correlated with leadership—that is, it predicted the opposite.",
-                "translation": "研究发现，当测试在低压力环境下进行时，智商能有效预测个体的领导力；但在高压力环境下，智商与领导力却呈负相关——也就是说，它预测出的反而是相反的结果。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。Research has found 为主句；that 引导宾语从句；宾语从句由 but 连接两个分句，分别由 when 引导时间条件从句与 under high-stress conditions 介词短语形成鲜明对照；破折号后 that is, it predicted the opposite 为解释分句。"
               },
               {
                 "sentenceIndex": 5,
                 "english": "Anyone who has toiled through SAT will testify that test-taking skill also matters, whether it's knowing when to guess or what questions to skip.",
                 "chinese": "任何苦战熬过SAT考试的人都能证明，应试技巧同样起着重要作用——无论是懂得何时该猜测答案，还是该跳过哪些难题。",
-                "syntaxAnalysis": "主从复合句。Anyone 为主句主语，who has toiled through SAT 为定语从句修饰 Anyone；will testify 为主句谓语；that 引导宾语从句；whether 引导让步状语从句，从句主语为 it，表语为 knowing when to guess or what questions to skip（疑问词+不定式短语）。",
-                "sIndex": 5,
-                "id": "P4-S5",
-                "text": "Anyone who has toiled through SAT will testify that test-taking skill also matters, whether it's knowing when to guess or what questions to skip.",
-                "translation": "任何苦战熬过SAT考试的人都能证明，应试技巧同样起着重要作用——无论是懂得何时该猜测答案，还是该跳过哪些难题。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。Anyone 为主句主语，who has toiled through SAT 为定语从句修饰 Anyone；will testify 为主句谓语；that 引导宾语从句；whether 引导让步状语从句，从句主语为 it，表语为 knowing when to guess or what questions to skip（疑问词+不定式短语）。"
               }
-            ],
-            "pIndex": 4,
-            "logicRole": "",
-            "mainIdea": "援引罗伯特·斯滕伯格的观点，批判标准化测试无法衡量创造力与实践智慧，揭示其预测效度受情境与应试技巧的极大制约。"
+            ]
           }
         ]
       },
@@ -2922,9 +3054,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "补充物；增刊；补充剂；v. 补充。",
           "collocationOrDerivation": "the Sunday newspaper supplement Parade | newspaper supplement；dietary supplement；supplement A with B。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "（报纸的）副刊、增刊。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "featured",
@@ -2935,9 +3065,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "以……为特色；重点介绍；主演。",
           "collocationOrDerivation": "Parade has featured a column | feature a column/program；be featured in/on；feature n. 特征、专题。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "重点刊载、推出。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "query",
@@ -2948,9 +3076,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "v. 询问、质疑；n. 问题、疑问、查询。",
           "collocationOrDerivation": "query Marilyn vos Savant | query sb about sth；field queries；raise a query。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "向……提问；询问。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "mental level",
@@ -2961,9 +3087,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "心理/精神层面的水平。",
           "collocationOrDerivation": "at a mental level of someone about 23 years old | mental ability；mental age；at a ... level of...。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "智力发展水平；心理年龄水平。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "visual",
@@ -2974,9 +3098,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "视觉的；形象化的。",
           "collocationOrDerivation": "verbal and visual analogies | visual information；visual aid；辨析：visual（视觉的）≠ visible（看得见的）。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "视觉的。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "analogies",
@@ -2987,9 +3109,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "类比；相似。",
           "collocationOrDerivation": "complete verbal and visual analogies | make/draw an analogy between A and B；analogous adj. 类似的。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "类比题；相似关系。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "envision",
@@ -3000,9 +3120,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "想象；预想未来。",
           "collocationOrDerivation": "envision paper after it has been folded and cut | envision sth；envision doing sth；近义 imagine/foresee。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "想象、设想。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "numerical sequences",
@@ -3013,9 +3131,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "数值序列。",
           "collocationOrDerivation": "deduce numerical sequences | numerical pattern/sequence；numerical（数字/数量的）≠ numeral（数字符号）。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "数字序列；数列规律。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "among other",
@@ -3026,9 +3142,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "在……之中。",
           "collocationOrDerivation": "among other similar tasks | among other things；among others；between 常指两者间，among 多指三者及以上。",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "在其他……之中；除其他……外。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "fields",
@@ -3039,9 +3153,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "田野；领域；场地；v. 接住、处理。",
           "collocationOrDerivation": "vos Savant fields such queries | field questions/queries；熟词僻义：不是“田地”。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "应对、回答（问题）。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "the average Joe",
@@ -3052,9 +3164,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "普通老百姓（口语表达）。",
           "collocationOrDerivation": "queries from the average Joe | average person；Joe Public（英式）；常带口语色彩。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "普通人；平常人。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "fondness",
@@ -3065,9 +3175,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "喜爱；偏爱。",
           "collocationOrDerivation": "the difference between love and fondness | fondness for sth/sb；be fond of sth/sb；近义 liking。",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "喜爱；喜好。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "nature",
@@ -3078,9 +3186,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "自然；天性；本质。",
           "collocationOrDerivation": "the nature of luck and coincidence | the nature of sth；human nature；辨析：nature（天性/本质）≠ nurture（后天培养）。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "本质；性质。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "luck and coincidence",
@@ -3091,9 +3197,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "luck 运气；coincidence 巧合。",
           "collocationOrDerivation": "the nature of luck and coincidence | by coincidence；It is a coincidence that...；good/bad luck。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "运气与巧合。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "visualize",
@@ -3104,9 +3208,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "使形象化；想象。",
           "collocationOrDerivation": "visualize objects | visualize sth/doing sth；visualization n.；更强调“脑中画面”。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "在脑中形成图像；想象。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "suits",
@@ -3117,9 +3219,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "适合；合身；满足需要。",
           "collocationOrDerivation": "numerical patterns suit one to answer questions | suit sb/sth；suit sb to do sth；be suited to sth/doing sth。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "适合；使某人适合。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "eluded",
@@ -3130,9 +3230,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "躲避；逃避；使人想不起/理解不了。",
           "collocationOrDerivation": "questions that have eluded some of the best poets | sth eludes sb；elusive adj. 难以理解/捕捉；熟词僻义。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "使……未能理解、获得答案。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "encompasses",
@@ -3143,9 +3241,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "包括；囊括；包围。",
           "collocationOrDerivation": "intelligence encompasses more than a score | encompass a wide range of...；encompass more than...；近义 include。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "包含；涵盖。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "specified",
@@ -3156,9 +3252,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "明确指出；具体说明；规定。",
           "collocationOrDerivation": "intelligence can be specified | specify sth/that...；be specified in...；specific adj.；specification n.。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "被明确说明、界定。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "neurology",
@@ -3169,9 +3263,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "神经系统研究。",
           "collocationOrDerivation": "learn about it from neurology | neurological adj.；neurologist n.；neuron n. 神经元。",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "神经学。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "defining term",
@@ -3182,9 +3274,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "起界定作用的术语。",
           "collocationOrDerivation": "The defining term of intelligence | a defining feature/characteristic；define A as B；definition n.。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "界定某概念的核心术语/标准。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "primarily",
@@ -3195,9 +3285,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "主要地。",
           "collocationOrDerivation": "The test comes primarily in two forms | primarily because...；be used primarily for...；近义 mainly/chiefly。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "主要地；首要地。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "Scale",
@@ -3208,9 +3296,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "刻度；规模；比例；等级。",
           "collocationOrDerivation": "Stanford-Binet Intelligence Scale | rating scale；intelligence scale；on a large/small scale；本文为“量表”义。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "量表；测量等级体系。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "populate",
@@ -3221,9 +3307,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "居住于；构成……的人口；使充满。",
           "collocationOrDerivation": "variations of them populate bookstores and the World Wide Web | populate a place；be populated by...；熟词僻义：遍布、充满。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "充斥于；遍布于。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "chronological age",
@@ -3234,9 +3318,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "按时间顺序计算的年龄。",
           "collocationOrDerivation": "mental age by the chronological age | chronological order；chronology n.；对比 mental age（心理/智力年龄）。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "实际年龄；按出生日期计算的年龄。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "multiplying",
@@ -3247,9 +3329,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "乘；增加；繁殖。",
           "collocationOrDerivation": "multiplying by 100 | multiply A by B；be multiplied by...；multiplication n. 乘法。",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "乘以。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "Scholastic Assessment Test (SAT)",
@@ -3260,9 +3340,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "美国标准化考试名称。",
           "collocationOrDerivation": "the Scholastic Assessment Test (SAT) | scholastic adj. 学业的；assessment n. 评估；本文作标准化测试例子。",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "学术能力评估测试，即美国 SAT。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "Graduate Record Exam (GRE)",
@@ -3273,9 +3351,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "研究生申请标准化考试名称。",
           "collocationOrDerivation": "the Graduate Record Exam (GRE) | graduate n. 毕业生；record n. 记录；正式名称常见为 Graduate Record Examinations。",
           "frequencyRating": "★",
-          "isInObstacleList": true,
-          "meaning": "美国研究生入学考试，即 GRE。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "capture",
@@ -3286,9 +3362,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "捕获；夺取；拍摄；吸引。",
           "collocationOrDerivation": "capture the main aspects of IQ tests | capture attention；capture the essence of...；熟词僻义：准确呈现/概括。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "概括、体现。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "main aspects",
@@ -3299,9 +3373,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "主要方面；侧面；特征。",
           "collocationOrDerivation": "the main aspects of IQ tests | an aspect of sth；key/main aspects；in all aspects。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "主要方面；核心维度。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "assess",
@@ -3312,9 +3384,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "评估；评价；估算。",
           "collocationOrDerivation": "assess all the important elements | assess ability/risk/impact；be assessed on/by...；与 evaluate 比，更重系统评估。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "评估；衡量。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "analytical",
@@ -3325,9 +3395,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "分析的。",
           "collocationOrDerivation": "assess analytical and verbal skills | analytical skills/thinking；analyze v.；analysis n.。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "分析性的；善于分析的。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "measure",
@@ -3338,9 +3406,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "测量；衡量；尺寸为。",
           "collocationOrDerivation": "fail to measure creativity | measure creativity/intelligence；be measured by...；侧重量化。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "衡量；测量。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "components",
@@ -3351,9 +3417,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "部件；成分；要素。",
           "collocationOrDerivation": "creativity and practical knowledge, components also critical to... | a key/major component of...；consist of several components。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "组成部分；要素。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "predict",
@@ -3364,9 +3428,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "预测；预报；预示。",
           "collocationOrDerivation": "IQ tests do not necessarily predict so well | predict sth/that...；predict success/failure；prediction n.；predictable adj.。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "预测；预示。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "populations",
@@ -3377,9 +3439,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "人口；群体；总体。",
           "collocationOrDerivation": "once populations or situations change | a population of...；population distribution；统计语境中指“总体/样本群体”。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "人群；研究总体。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "leadership skills",
@@ -3390,9 +3450,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "领导力；领导技能。",
           "collocationOrDerivation": "IQ predicted leadership skills | leadership ability/skills；show/provide leadership；leader n. 领导者。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "领导能力。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "negatively correlated",
@@ -3403,9 +3461,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "彼此相关。",
           "collocationOrDerivation": "IQ was negatively correlated with leadership | be correlated with...；positively/negatively correlated；correlation ≠ causation。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "呈负相关：一方上升，另一方倾向下降。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "toiled through",
@@ -3416,9 +3472,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "辛苦工作；艰难进行。",
           "collocationOrDerivation": "toiled through SAT | toil through sth；toil at sth；近义 struggle through。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "艰难地熬过；费力完成。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "test-taking",
@@ -3429,9 +3483,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "与参加考试有关的。",
           "collocationOrDerivation": "test-taking skill | test-taking skills/strategy；连字符形式常作定语。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "应试的；参加考试的。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "knowing when to guess",
@@ -3442,9 +3494,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "掌握何时做某事的判断。",
           "collocationOrDerivation": "knowing when to guess or what questions to skip | know when to do sth；make a guess；guess at the answer。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "知道何时该猜答案。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "indicator",
@@ -3455,9 +3505,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "指标；指示物；信号。",
           "collocationOrDerivation": "an indicator of intelligence | an indicator of sth；indicate v. 表明；indicative adj. 表明……的。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "指标；表明智力的标志。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "computational procedures",
@@ -3468,9 +3516,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "计算程序；处理步骤。",
           "collocationOrDerivation": "different computational procedures | computational adj. 计算的；compute v. 计算；procedure n. 步骤、程序。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "计算/计分程序。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "guesswork",
@@ -3481,9 +3527,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "猜测；无根据的推断。",
           "collocationOrDerivation": "testing involves a lot of guesswork | pure/mere guesswork；be based on guesswork；guess v. 猜测。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "猜测；凭猜测作答。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "skeptical",
@@ -3494,9 +3538,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "怀疑的；不轻信的。",
           "collocationOrDerivation": "What is the author's attitude...? Skeptical. | be skeptical about/of sth；skepticism n. 怀疑态度；近义 doubtful。",
           "frequencyRating": "★★★",
-          "isInObstacleList": true,
-          "meaning": "怀疑的；持质疑态度的。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "impartial",
@@ -3507,9 +3549,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "公平的；客观的。",
           "collocationOrDerivation": "Impartial. | an impartial judge/view；impartiality n. 公正；反义 partial。",
           "frequencyRating": "★★",
-          "isInObstacleList": true,
-          "meaning": "公正的；不偏不倚的。",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "biased",
@@ -3520,9 +3560,475 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "有偏见的；不客观的。",
           "collocationOrDerivation": "Biased. | be biased against/in favor of...；bias n. 偏见；反义 unbiased。",
           "frequencyRating": "★★",
+          "isInObstacleList": true
+        },
+        {
+          "word": "intelligence",
+          "location": "Q26-Stem",
+          "ipa": "[ɪnˈtelɪdʒəns]",
+          "pos": "",
+          "contextMeaning": "智力",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q26-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "concepts",
+          "location": "Q26-C",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "概念",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q26-C 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
           "isInObstacleList": true,
-          "meaning": "有偏见的；有倾向性的。",
-          "level": "red"
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "graphs",
+          "location": "Q26-D",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "图片",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q26-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "inferred",
+          "location": "Q27-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "推断",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "intelligence",
+          "location": "Q27-Stem",
+          "ipa": "[ɪnˈtelɪdʒəns]",
+          "pos": "",
+          "contextMeaning": "智力",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Paragraph",
+          "location": "Q27-Stem",
+          "ipa": "[ˈpærəɡrɑːf]",
+          "pos": "",
+          "contextMeaning": "段",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "What",
+          "location": "Q27-Stem",
+          "ipa": "[wɒt]",
+          "pos": "",
+          "contextMeaning": "推理题",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-Stem 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "no",
+          "location": "Q27-A",
+          "ipa": "[nəʊ]",
+          "pos": "",
+          "contextMeaning": "不再",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "scores",
+          "location": "Q27-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "分数",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "intelligence",
+          "location": "Q27-A",
+          "ipa": "[ɪnˈtelɪdʒəns]",
+          "pos": "",
+          "contextMeaning": "智力",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "versions",
+          "location": "Q27-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "版本",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "available",
+          "location": "Q27-B",
+          "ipa": "[əˈveɪləbl]",
+          "pos": "",
+          "contextMeaning": "可获得的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "formats",
+          "location": "Q27-C",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "形式",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "defined",
+          "location": "Q27-D",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "明确",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "elements",
+          "location": "Q27-D",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "成分",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "intelligence",
+          "location": "Q27-D",
+          "ipa": "[ɪnˈtelɪdʒəns]",
+          "pos": "",
+          "contextMeaning": "智力",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q27-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "scores",
+          "location": "Q28-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "分数",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "scores",
+          "location": "Q28-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "分数",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "obtained",
+          "location": "Q28-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "获取",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "procedures",
+          "location": "Q28-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "程序",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-A 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "rather",
+          "location": "Q28-B",
+          "ipa": "[ˈrɑːðə(r)]",
+          "pos": "",
+          "contextMeaning": "不是",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "emphasized",
+          "location": "Q28-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "强调",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-B 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "extreme",
+          "location": "Q28-C",
+          "ipa": "[ɪkˈstriːm]",
+          "pos": "",
+          "contextMeaning": "极端的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "characteristic",
+          "location": "Q28-D",
+          "ipa": "[ˌkærəktəˈrɪstɪk]",
+          "pos": "",
+          "contextMeaning": "特征",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q28-D 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "conclude",
+          "location": "Q29-Stem",
+          "ipa": "[kənˈkluːd]",
+          "pos": "",
+          "contextMeaning": "得出结论",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "paragraph",
+          "location": "Q29-Stem",
+          "ipa": "[ˈpærəɡrɑːf]",
+          "pos": "",
+          "contextMeaning": "段",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "scores",
+          "location": "Q29-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "分数",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "reliable",
+          "location": "Q29-A",
+          "ipa": "[rɪˈlaɪəbl]",
+          "pos": "",
+          "contextMeaning": "可靠的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "scores",
+          "location": "Q29-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "分数",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "highly",
+          "location": "Q29-B",
+          "ipa": "[ˈhaɪli]",
+          "pos": "",
+          "contextMeaning": "高度",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "involves",
+          "location": "Q29-C",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "包含",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "out",
+          "location": "Q29-D",
+          "ipa": "[aʊt]",
+          "pos": "",
+          "contextMeaning": "过时的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q29-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "author's",
+          "location": "Q30-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "作者",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q30-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "attitude",
+          "location": "Q30-Stem",
+          "ipa": "[ˈætɪtjuːd]",
+          "pos": "",
+          "contextMeaning": "态度",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q30-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Skeptical",
+          "location": "Q26-B",
+          "ipa": "[ˈskeptɪk(ə)l]",
+          "pos": "",
+          "contextMeaning": "怀疑",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q26-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Impartial",
+          "location": "Q26-C",
+          "ipa": "[ɪmˈpɑːʃl]",
+          "pos": "",
+          "contextMeaning": "公正的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q26-C 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
         }
       ],
       "phrasesAndCollocations": [
@@ -4129,40 +4635,113 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "Answering philosophical questions.",
               "isCorrect": false,
-              "distractorType": "张冠李戴",
-              "analysis": "张冠李戴。第1段第4、5句提到读者向萨万特提问关于爱与喜欢、运气与巧合的本质等问题（这些问题曾难倒最优秀的诗人和哲学家），这是专栏收到的生活/哲学困惑，并非智商测试本身的要求。",
-              "refSentences": []
+              "distractorType": "ATTRIBUTION_ERROR",
+              "analysis": "张冠李戴。第1段第4、5句提到读者向萨万特提问关于爱与喜欢、运气与巧合的本质等问题（这些问题曾难倒最优秀的诗人和哲学家），这是专栏收到的生活/哲学困惑，并非智商测试本身的要求。"
             },
             {
               "key": "B",
               "text": "Folding or cutting paper into different shapes.",
               "isCorrect": false,
-              "distractorType": "望文生义",
+              "distractorType": "LITERAL_TRAP",
               "analysis": "偷换概念/断章取义。原文第1段第3句明确说明智商测试要求的是 'to envision paper after it has been folded and cut'（在头脑中设想/想象纸张折叠剪切后的样子，考查的是空间想象能力），而非让受试者亲自动手去折纸或剪纸。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "Skeptical",
+                  "ipa": "[ˈskeptɪk(ə)l]",
+                  "meaning": "怀疑",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "Telling the differences between certain concepts.",
               "isCorrect": false,
-              "distractorType": "张冠李戴",
+              "distractorType": "ATTRIBUTION_ERROR",
               "analysis": "张冠李戴。第1段第4句中区分“爱和喜欢”（love and fondness）是读者向专栏抛出的日常困惑，不是智商测试的考核题目。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "concepts",
+                  "ipa": "",
+                  "meaning": "概念",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                },
+                {
+                  "word": "Impartial",
+                  "ipa": "[ɪmˈpɑːʃl]",
+                  "meaning": "公正的",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "D",
               "text": "Choosing words or graphs similar to the given ones.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。原文第1段第3句指出智力测试要求 'complete verbal and visual analogies'（完成词语和视觉图形类比）。所谓类比（analogy），其本质就是发现词语或图形之间的相似对应逻辑，并在选项中选出具有同等相似关系的词语或图形，两者构成了极其精准的同义替换。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "graphs",
+                  "ipa": "",
+                  "meaning": "图片",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
-          "stem": "Which of the following may be required in an intelligence test?",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "intelligence",
+              "ipa": "[ɪnˈtelɪdʒəns]",
+              "meaning": "智力",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 27,
@@ -4178,40 +4757,172 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "People no longer use IQ scores as an indicator of intelligence.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
+              "distractorType": "CONTRADICTION",
               "analysis": "正反混淆/与原文矛盾。第3段第1句明确开宗明义：'The defining term of intelligence in humans still seems to be the IQ score'（定义人类智力的核心指标似乎仍然是智商分数），选项声称 'no longer use' 与原文直接事实完全相反。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "no",
+                  "ipa": "[nəʊ]",
+                  "meaning": "不再",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "scores",
+                  "ipa": "",
+                  "meaning": "分数",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "intelligence",
+                  "ipa": "[ɪnˈtelɪdʒəns]",
+                  "meaning": "智力",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "More versions of IQ tests are now available on the Internet.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "无中生有/过度推断。第3段第3句虽然提到智力测试的变体在书店和互联网上随处可见（'variations of them populate bookstores and the World Wide Web'），但原文并未进行时间先后的数量对比，未提及现在网上的版本比以前更多（'More versions' 属于无根据的主观臆造）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "versions",
+                  "ipa": "",
+                  "meaning": "版本",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "available",
+                  "ipa": "[əˈveɪləbl]",
+                  "meaning": "可获得的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "The test contents and formats for adults and children may be different.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。合理推论。第3段第2句明确交代主要的两大测试形式（斯坦福-比奈与韦克斯勒量表）均 'both come in adult and children's version'。既然专门区分成人版与儿童版，根据常理与测量学原理，针对两类人群的考查题目难度、测试内容和具体形式自然存在差异，属于严谨稳妥的推断。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "formats",
+                  "ipa": "",
+                  "meaning": "形式",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "Scientists have defined the important elements of human intelligence.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
+              "distractorType": "CONTRADICTION",
               "analysis": "正反混淆与主旨违背。第2段第3句明确设问 'How much of intelligence can be specified...'，第4段斯滕伯格更指出标准化测试根本未能衡量创造力和实践知识，表明科学界对智力要素的界定远未彻底明确与定论。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "defined",
+                  "ipa": "",
+                  "meaning": "明确",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "elements",
+                  "ipa": "",
+                  "meaning": "成分",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "intelligence",
+                  "ipa": "[ɪnˈtelɪdʒəns]",
+                  "meaning": "智力",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
-          "stem": "What can be inferred about intelligence testing from Paragraph 3?",
-          "type": "推断题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "inferred",
+              "ipa": "",
+              "meaning": "推断",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "intelligence",
+              "ipa": "[ɪnˈtelɪdʒəns]",
+              "meaning": "智力",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "Paragraph",
+              "ipa": "[ˈpærəɡrɑːf]",
+              "meaning": "段",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "What",
+              "ipa": "[wɒt]",
+              "meaning": "推理题",
+              "level": "red",
+              "isSelfAnnotated": true
+            }
+          ]
         },
         {
           "qIndex": 28,
@@ -4227,40 +4938,137 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "the scores are obtained through different computational procedures.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。第3段第4句直接给出明确因果解释：'because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.' 原文明确对比了计分方式的改变（从旧有的除法计算公式变更为现代基于同龄人的统计分布），这正是 computational procedures（计算/计分程序）的改变。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "scores",
+                  "ipa": "",
+                  "meaning": "分数",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "obtained",
+                  "ipa": "",
+                  "meaning": "获取",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "procedures",
+                  "ipa": "",
+                  "meaning": "程序",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "B",
               "text": "creativity rather than analytical skills is emphasized now.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
+              "distractorType": "CONTRADICTION",
               "analysis": "反向混淆。第4段第2句指出传统考试 'best assess analytical and verbal skills but fail to measure creativity'，说明现有考试根本没有转向强调创造力；且该论据出现在第4段，不能作为第3段计分变动的因果解释。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "rather",
+                  "ipa": "[ˈrɑːðə(r)]",
+                  "meaning": "不是",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "emphasized",
+                  "ipa": "",
+                  "meaning": "强调",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "C",
-              "text": "Vos Savant's case is an extreme one that will not repeat.",
+              "text": "vos Savant's case is an extreme one that will not repeat.",
               "isCorrect": false,
-              "distractorType": "无中生有",
+              "distractorType": "UNFOUNDED",
               "analysis": "主观臆断与因果倒置。不再出现200+超高分是因为心理测量学计分算法的整体制度性变革（正态钟形曲线在数理上限制了极端离差），而非因为萨万特作为个人的特例不可复制。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "extreme",
+                  "ipa": "[ɪkˈstriːm]",
+                  "meaning": "极端的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "the defining characteristic of IQ tests has changed.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
+              "distractorType": "CONCEPT_DISTORTION",
               "analysis": "偷换概念。第3段第1句指出 'The defining term of intelligence in humans still seems to be the IQ score'（智力测试的定义指标依然是智商分数，并未改变）；改变的仅仅是具体的计分计算规则（scoring/computational procedure），而非测试本身的定义特征。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "characteristic",
+                  "ipa": "[ˌkærəktəˈrɪstɪk]",
+                  "meaning": "特征",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             }
           ],
-          "stem": "People nowadays can no longer achieve IQ scores as high as Vos Savant's because ______.",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "scores",
+              "ipa": "",
+              "meaning": "分数",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 29,
@@ -4276,40 +5084,137 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "test scores may not be reliable indicators of one's ability.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。第4段开篇首句即为主题句，斯滕伯格明确指出标准化测试无法评估取得成功所需的全部关键要素（S1）；紧接着指出它忽视创造力与实践知识（S2）；随后进一步论证其在人群或情境变化时预测效度极不稳定（S3），高压下智力与领导力甚至呈负相关（S4）；最后指出分数还受到猜题等应试技巧的影响（S5）。全段五句话均在论证同一个中心：测试分数无法可靠、全面地反映一个人的真正综合能力。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "scores",
+                  "ipa": "",
+                  "meaning": "分数",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "reliable",
+                  "ipa": "[rɪˈlaɪəbl]",
+                  "meaning": "可靠的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "IQ scores and SAT results are highly correlated.",
               "isCorrect": false,
-              "distractorType": "无中生有",
+              "distractorType": "UNFOUNDED",
               "analysis": "无中生有。第3段末句仅提到 SAT 涵盖了智力测试的主要维度，但最后一段完全没有讨论 IQ 分数与 SAT 分数之间是否高度相关，属于脱离末段文本的凭空编造。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "scores",
+                  "ipa": "",
+                  "meaning": "分数",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "highly",
+                  "ipa": "[ˈhaɪli]",
+                  "meaning": "高度",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "testing involves a lot of guesswork.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "断章取义与以偏概全。末段末句提到应试技巧包括 'knowing when to guess'（知道何时该猜测答案），但作者只是借此说明考试包含应试技巧成分，并不能推导出整个测试涉及 'a lot of guesswork'（充斥着大量猜测）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "involves",
+                  "ipa": "",
+                  "meaning": "包含",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "traditional tests are out of date.",
               "isCorrect": false,
-              "distractorType": "夸大/绝对化",
+              "distractorType": "EXTREME_ABSOLUTE",
               "analysis": "过度绝对化。文章指出了传统测试的局限性和不完备性，但从未宣称它们已经“过时淘汰”（out of date）；第3段第1句还指出智商分数依然是定义人类智力的核心指标，第4段第2句也承认传统测试 'best assess analytical and verbal skills'，仍具备其考察价值。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "out",
+                  "ipa": "[aʊt]",
+                  "meaning": "过时的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
-          "stem": "We can conclude from the last paragraph that ______.",
-          "type": "推断题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "conclude",
+              "ipa": "[kənˈkluːd]",
+              "meaning": "得出结论",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "paragraph",
+              "ipa": "[ˈpærəɡrɑːf]",
+              "meaning": "段",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 30,
@@ -4325,278 +5230,83 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "Supportive.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "正反混淆。作者从开篇就对高智商与解决实际人生哲学问题的反差表示困惑（confusing, not obvious），随后明确指出智力远非一次考试分数所能涵盖，并借斯滕伯格之口批判其局限性，绝非支持赞同态度。",
-              "refSentences": []
+              "distractorType": "CONTRADICTION",
+              "analysis": "正反混淆。作者从开篇就对高智商与解决实际人生哲学问题的反差表示困惑（confusing, not obvious），随后明确指出智力远非一次考试分数所能涵盖，并借斯滕伯格之口批判其局限性，绝非支持赞同态度。"
             },
             {
               "key": "B",
               "text": "Skeptical.",
               "isCorrect": true,
-              "distractorType": "正确项",
-              "analysis": "正确选项。作者通篇都在对传统智商测试衡量真实人类智力与预测实际成就的有效性提出审慎质疑：第1段用 'confusing' 和 'It's not obvious how...' 质疑其解答复杂哲学生活难题的资格；第2段指出 'intelligence encompasses more than a score'；第4段全面援引斯滕伯格对传统测试忽略创造力、高压下出现负相关预测失效的学术论证，通篇鲜明体现出理性的怀疑与批判态度。",
-              "refSentences": []
+              "distractorType": null,
+              "analysis": "正确选项。作者通篇都在对传统智商测试衡量真实人类智力与预测实际成就的有效性提出审慎质疑：第1段用 'confusing' 和 'It's not obvious how...' 质疑其解答复杂哲学生活难题的资格；第2段指出 'intelligence encompasses more than a score'；第4段全面援引斯滕伯格对传统测试忽略创造力、高压下出现负相关预测失效的学术论证，通篇鲜明体现出理性的怀疑与批判态度。"
             },
             {
               "key": "C",
               "text": "Impartial.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "过度中立。作者虽然进行了科学客观的论述，但在全文的选材、设问与论点组织上具有极其鲜明的批判与反思导向，绝非毫无倾向的纯客观中立。",
-              "refSentences": []
+              "distractorType": "SCOPE_DISTORTION",
+              "analysis": "过度中立。作者虽然进行了科学客观的论述，但在全文的选材、设问与论点组织上具有极其鲜明的批判与反思导向，绝非毫无倾向的纯客观中立。"
             },
             {
               "key": "D",
               "text": "Biased.",
               "isCorrect": false,
-              "distractorType": "夸大/绝对化",
-              "analysis": "考研态度题负面极端禁忌词。Biased（有偏见的）带有主观盲目和非理性贬义色彩，考研英语阅读的学者型社论文章中，作者即使持批评态度也是基于科学证据的理性怀疑（skeptical/critical），绝不会是带有非理性成见的 biased。",
-              "refSentences": []
+              "distractorType": "EXTREME_ABSOLUTE",
+              "analysis": "考研态度题负面极端禁忌词。Biased（有偏见的）带有主观盲目和非理性贬义色彩，考研英语阅读的学者型社论文章中，作者即使持批评态度也是基于科学证据的理性怀疑（skeptical/critical），绝不会是带有非理性成见的 biased。"
             }
           ],
-          "stem": "What is the author's attitude towards IQ tests?",
-          "type": "态度题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
-        }
-      ],
-      "topic": "认知心理学与教育评估 · 萨万特超高智商专栏的悖论、比率智商向正态离差智商的算法演变、斯滕伯格对传统标准化测试的局限性批判",
-      "overview": "",
-      "paragraphs": [
-        {
-          "paraIndex": 1,
-          "paraMainIdea": "通过玛丽莲·沃斯·萨万特创纪录的228智商及其专栏答疑的矛盾现象，引出智商测试与实际智慧之间的脱节与反差。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "For the past several years, the Sunday newspaper supplement Parade has featured a column called \"Ask Marilyn.\"",
-              "chinese": "在过去的几年里，周日报纸副刊《大观》一直开辟着一个名为“问问玛丽莲”的专栏。",
-              "syntaxAnalysis": "主谓宾简单句。the Sunday newspaper supplement Parade 作主语；has featured 为谓语；a column 为宾语；called \"Ask Marilyn\" 为过去分词短语作后置定语修饰 column。",
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "For the past several years, the Sunday newspaper supplement Parade has featured a column called \"Ask Marilyn.\"",
-              "translation": "在过去的几年里，周日报纸副刊《大观》一直开辟着一个名为“问问玛丽莲”的专栏。",
-              "vocab": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
             },
-            {
-              "sentenceIndex": 2,
-              "english": "People are invited to query Marilyn Vos Savant, who at age 10 had tested at a mental level of someone about 23 years old; that gave her an IQ of 228—the highest score ever recorded.",
-              "chinese": "读者被邀请向玛丽莲·沃斯·萨万特提问，她10岁时的智力测试显示其心智水平相当于大约23岁的成年人；这使她获得了228的智商——这是有记录以来的最高得分。",
-              "syntaxAnalysis": "复合句。People are invited to query Marilyn Vos Savant 为主句；who 引导非限制性定语从句修饰 Savant；分号后 that 引导并列句，that 指代前面的测试表现；破折号后 the highest score ever recorded 为同位语解释 228。",
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "People are invited to query Marilyn Vos Savant, who at age 10 had tested at a mental level of someone about 23 years old; that gave her an IQ of 228—the highest score ever recorded.",
-              "translation": "读者被邀请向玛丽莲·沃斯·萨万特提问，她10岁时的智力测试显示其心智水平相当于大约23岁的成年人；这使她获得了228的智商——这是有记录以来的最高得分。",
-              "vocab": []
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
             },
-            {
-              "sentenceIndex": 3,
-              "english": "IQ tests ask you to complete verbal and visual analogies, to envision paper after it has been folded and cut, and to deduce numerical sequences, among other similar tasks.",
-              "chinese": "智商测试要求受试者完成词语和视觉图形类比，设想纸张折叠和剪切后的形状，并推断数字序列规律，此外还有其他类似任务。",
-              "syntaxAnalysis": "主谓宾补结构。IQ tests 为主语；ask 为谓语；you 为宾语；包含三个由 and 连接的并列动词不定式短语作宾补（to complete..., to envision..., and to deduce...）；after it has been folded and cut 为时间状语从句修饰 envision；among other similar tasks 为介词短语作状语。",
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "IQ tests ask you to complete verbal and visual analogies, to envision paper after it has been folded and cut, and to deduce numerical sequences, among other similar tasks.",
-              "translation": "智商测试要求受试者完成词语和视觉图形类比，设想纸张折叠和剪切后的形状，并推断数字序列规律，此外还有其他类似任务。",
-              "vocab": []
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text2.pdf"
             },
-            {
-              "sentenceIndex": 4,
-              "english": "So it is a bit confusing when Vos Savant fields such queries from the average Joe (whose IQ is 100) as, What's the difference between love and fondness? Or what is the nature of luck and coincidence?",
-              "chinese": "因此，当沃斯·萨万特应对来自智商为100的普通大众提出的诸如“爱和喜欢有何区别？”或者“运气和巧合的本质是什么？”这类问题时，这着实让人感到有些困惑不解。",
-              "syntaxAnalysis": "主从复合句。it 为形式主语，is 为系动词，a bit confusing 为表语；when 引导时间/情境状语从句作实际主语；whose IQ is 100 为定语从句修饰 the average Joe；such... as... 引入具体的读者提问。",
-              "sIndex": 4,
-              "id": "P1-S4",
-              "text": "So it is a bit confusing when Vos Savant fields such queries from the average Joe (whose IQ is 100) as, What's the difference between love and fondness? Or what is the nature of luck and coincidence?",
-              "translation": "因此，当沃斯·萨万特应对来自智商为100的普通大众提出的诸如“爱和喜欢有何区别？”或者“运气和巧合的本质是什么？”这类问题时，这着实让人感到有些困惑不解。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 5,
-              "english": "It's not obvious how the capacity to visualize objects and to figure out numerical patterns suits one to answer questions that have eluded some of the best poets and philosophers.",
-              "chinese": "在脑海中想象物体的能力以及推算数字模式的能力，究竟如何能让一个人具备回答那些连最优秀的诗人和哲学家都无法参透的问题的资格，这一点完全不言自明（实际上令人难以信服）。",
-              "syntaxAnalysis": "主从复合句。It 为形式主语，is not obvious 为主句表语；how 引导主语从句；从句主语为 the capacity（后接两个并列动词不定式短语作后置定语）；suits 为谓语；one 为宾语；to answer questions... 为宾补；that have eluded... 为定语从句修饰 questions。",
-              "sIndex": 5,
-              "id": "P1-S5",
-              "text": "It's not obvious how the capacity to visualize objects and to figure out numerical patterns suits one to answer questions that have eluded some of the best poets and philosophers.",
-              "translation": "在脑海中想象物体的能力以及推算数字模式的能力，究竟如何能让一个人具备回答那些连最优秀的诗人和哲学家都无法参透的问题的资格，这一点完全不言自明（实际上令人难以信服）。",
-              "vocab": []
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
             }
-          ],
-          "pIndex": 1,
-          "logicRole": "",
-          "mainIdea": "通过玛丽莲·沃斯·萨万特创纪录的228智商及其专栏答疑的矛盾现象，引出智商测试与实际智慧之间的脱节与反差。"
-        },
-        {
-          "paraIndex": 2,
-          "paraMainIdea": "明确提出论点：智力所涵盖的内涵远不止一次考试的分数，并向跨学科领域抛出对智力本质的追问。",
-          "sentences": [
+          },
+          "vocab": [
             {
-              "sentenceIndex": 1,
-              "english": "Clearly, intelligence encompasses more than a score on a test.",
-              "chinese": "显而易见，智力所涵盖的内涵远远超出了一次测试所给出的分数。",
-              "syntaxAnalysis": "主谓宾简单句。副词 Clearly 作评注性状语；intelligence 作主语；encompasses 作谓语；more than a score on a test 作宾语。",
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Clearly, intelligence encompasses more than a score on a test.",
-              "translation": "显而易见，智力所涵盖的内涵远远超出了一次测试所给出的分数。",
-              "vocab": []
+              "word": "author's",
+              "ipa": "",
+              "meaning": "作者",
+              "level": "green",
+              "isSelfAnnotated": false
             },
             {
-              "sentenceIndex": 2,
-              "english": "Just what does it mean to be smart?",
-              "chinese": "所谓“聪明”，究竟意味着什么？",
-              "syntaxAnalysis": "特殊疑问句。what 作 mean 的宾语；it 作形式主语；to be smart 为动词不定式短语作真正主语。",
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Just what does it mean to be smart?",
-              "translation": "所谓“聪明”，究竟意味着什么？",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 3,
-              "english": "How much of intelligence can be specified, and how much can we learn about it from neurology, genetics, computer science and other fields?",
-              "chinese": "智力在多大程度上可以被精确界定？我们又能从神经学、遗传学、计算机科学以及其他学科领域中探知关于智力的多少奥秘？",
-              "syntaxAnalysis": "并列特殊疑问句。由 and 连接两个分句：前一分句使用被动语态 can be specified；后一分句使用主动语态 can we learn about it...，from... 为来源状语。",
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "How much of intelligence can be specified, and how much can we learn about it from neurology, genetics, computer science and other fields?",
-              "translation": "智力在多大程度上可以被精确界定？我们又能从神经学、遗传学、计算机科学以及其他学科领域中探知关于智力的多少奥秘？",
-              "vocab": []
+              "word": "attitude",
+              "ipa": "[ˈætɪtjuːd]",
+              "meaning": "态度",
+              "level": "green",
+              "isSelfAnnotated": false
             }
-          ],
-          "pIndex": 2,
-          "logicRole": "",
-          "mainIdea": "明确提出论点：智力所涵盖的内涵远不止一次考试的分数，并向跨学科领域抛出对智力本质的追问。"
-        },
-        {
-          "paraIndex": 3,
-          "paraMainIdea": "剖析当前智商测试的实施现状及其计分体系的历史变革：由早期的“心理年龄比率法”演进为现代基于同龄人的“正态统计分布法”。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "The defining term of intelligence in humans still seems to be the IQ score, even though IQ tests are not given as often as they used to be.",
-              "chinese": "尽管如今智商测试的施测频率已远不如从前，但人类界定智力的核心标志似乎依然是智商分数。",
-              "syntaxAnalysis": "主从复合句。主句为主系表结构 The defining term... seems to be the IQ score；even though 引导让步状语从句，从句中包含 as... as they used to be 的同级比较与省略结构。",
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "The defining term of intelligence in humans still seems to be the IQ score, even though IQ tests are not given as often as they used to be.",
-              "translation": "尽管如今智商测试的施测频率已远不如从前，但人类界定智力的核心标志似乎依然是智商分数。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 2,
-              "english": "The test comes primarily in two forms: the Stanford-Binet Intelligence Scale and the Wechsler Intelligence Scales (both come in adult and children's version).",
-              "chinese": "这种测试主要有两种形式：斯坦福-比奈智力量表和韦克斯勒智力量表（两者均有成人版和儿童版）。",
-              "syntaxAnalysis": "简单句。The test 为主语；comes in two forms 为谓语结构；冒号后为两个量表名称作同位语；括号内为独立补充说明分句。",
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "The test comes primarily in two forms: the Stanford-Binet Intelligence Scale and the Wechsler Intelligence Scales (both come in adult and children's version).",
-              "translation": "这种测试主要有两种形式：斯坦福-比奈智力量表和韦克斯勒智力量表（两者均有成人版和儿童版）。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 3,
-              "english": "Generally costing several hundred dollars, they are usually given only by psychologists, although variations of them populate bookstores and the World Wide Web.",
-              "chinese": "这些正规测试通常花费数百美元，往往仅由专业心理学家主持施测，尽管其各种变体版本已经遍布书店和互联网。",
-              "syntaxAnalysis": "复合句。Generally costing several hundred dollars 为现在分词短语作原因/让步状语；they are usually given... 为被动语态主句；although 引导让步状语从句，从句主干为 variations... populate...",
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Generally costing several hundred dollars, they are usually given only by psychologists, although variations of them populate bookstores and the World Wide Web.",
-              "translation": "这些正规测试通常花费数百美元，往往仅由专业心理学家主持施测，尽管其各种变体版本已经遍布书店和互联网。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 4,
-              "english": "Superhigh scores like Vos Savant's are no longer possible, because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.",
-              "chinese": "像沃斯·萨万特那样超高的智商分数如今已不可能再出现，因为现在的计分是基于同龄人群体的统计人口正态分布，而不再仅仅是将心理年龄除以实足年龄再乘以100。",
-              "syntaxAnalysis": "因果复合句。Superhigh scores... are no longer possible 为主句；because 引导原因状语从句；从句核心结构为 scoring is now based on A rather than B；rather than 连接并列介词宾语短语 dividing... and multiplying...",
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "Superhigh scores like Vos Savant's are no longer possible, because scoring is now based on a statistical population distribution among age peers, rather than simply dividing the mental age by the chronological age and multiplying by 100.",
-              "translation": "像沃斯·萨万特那样超高的智商分数如今已不可能再出现，因为现在的计分是基于同龄人群体的统计人口正态分布，而不再仅仅是将心理年龄除以实足年龄再乘以100。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 5,
-              "english": "Other standardized tests, such as the Scholastic Assessment Test (SAT) and the Graduate Record Exam (GRE), capture the main aspects of IQ tests.",
-              "chinese": "其他标准化测试，例如学术能力评估测试（SAT）和研究生入学资格考试（GRE），也都涵盖了智商测试的主要维度。",
-              "syntaxAnalysis": "主谓宾结构。主语 Other standardized tests；such as 结构为插入列举成分；谓语 capture；宾语 the main aspects of IQ tests。",
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "Other standardized tests, such as the Scholastic Assessment Test (SAT) and the Graduate Record Exam (GRE), capture the main aspects of IQ tests.",
-              "translation": "其他标准化测试，例如学术能力评估测试（SAT）和研究生入学资格考试（GRE），也都涵盖了智商测试的主要维度。",
-              "vocab": []
-            }
-          ],
-          "pIndex": 3,
-          "logicRole": "",
-          "mainIdea": "剖析当前智商测试的实施现状及其计分体系的历史变革：由早期的“心理年龄比率法”演进为现代基于同龄人的“正态统计分布法”。"
-        },
-        {
-          "paraIndex": 4,
-          "paraMainIdea": "援引罗伯特·斯滕伯格的观点，批判标准化测试无法衡量创造力与实践智慧，揭示其预测效度受情境与应试技巧的极大制约。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "Such standardized tests may not assess all the important elements necessary to succeed in school and in life, argues Robert J. Sternberg.",
-              "chinese": "罗伯特·J·斯滕伯格认为，此类标准化考试未必能评估出在学业和人生中取得成功所需的全部关键要素。",
-              "syntaxAnalysis": "引语复合倒装句。前部为直接陈述分句，necessary to succeed in school and in life 为形容词短语作后置定语修饰 elements；后部 argues Robert J. Sternberg 为主谓倒装引述句。",
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "Such standardized tests may not assess all the important elements necessary to succeed in school and in life, argues Robert J. Sternberg.",
-              "translation": "罗伯特·J·斯滕伯格认为，此类标准化考试未必能评估出在学业和人生中取得成功所需的全部关键要素。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 2,
-              "english": "In his article \"How Intelligent Is Intelligence Testing?\", Sternberg notes that traditional tests best assess analytical and verbal skills but fail to measure creativity and practical knowledge, components also critical to problem solving and life success.",
-              "chinese": "斯滕伯格在其发表的文章《智力测试到底有多聪明？》中指出，传统测试最擅长衡量分析和言语技能，却未能测量创造力与实践智慧——而这些要素对于解决现实问题和获取人生成功同样至关重要。",
-              "syntaxAnalysis": "主从复合句。In his article... 为介词短语状语；Sternberg notes 为主谓；that 引导宾语从句；从句中 best assess... but fail to measure... 为并列谓语；末尾 components... 为同位语修饰 creativity and practical knowledge。",
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "In his article \"How Intelligent Is Intelligence Testing?\", Sternberg notes that traditional tests best assess analytical and verbal skills but fail to measure creativity and practical knowledge, components also critical to problem solving and life success.",
-              "translation": "斯滕伯格在其发表的文章《智力测试到底有多聪明？》中指出，传统测试最擅长衡量分析和言语技能，却未能测量创造力与实践智慧——而这些要素对于解决现实问题和获取人生成功同样至关重要。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 3,
-              "english": "Moreover, IQ tests do not necessarily predict so well once populations or situations change.",
-              "chinese": "此外，一旦受试人群或所处情境发生变化，智商测试的预测效果也未必依然良好。",
-              "syntaxAnalysis": "递进复合句。Moreover 为递进副词；IQ tests do not necessarily predict so well 为主句；once 引导条件/时间状语从句（意为‘一旦’）。",
-              "sIndex": 3,
-              "id": "P4-S3",
-              "text": "Moreover, IQ tests do not necessarily predict so well once populations or situations change.",
-              "translation": "此外，一旦受试人群或所处情境发生变化，智商测试的预测效果也未必依然良好。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 4,
-              "english": "Research has found that IQ predicted leadership skills when the tests were given under low-stress conditions, but under high-stress conditions, IQ was negatively correlated with leadership—that is, it predicted the opposite.",
-              "chinese": "研究发现，当测试在低压力环境下进行时，智商能有效预测个体的领导力；但在高压力环境下，智商与领导力却呈负相关——也就是说，它预测出的反而是相反的结果。",
-              "syntaxAnalysis": "主从复合句。Research has found 为主句；that 引导宾语从句；宾语从句由 but 连接两个分句，分别由 when 引导时间条件从句与 under high-stress conditions 介词短语形成鲜明对照；破折号后 that is, it predicted the opposite 为解释分句。",
-              "sIndex": 4,
-              "id": "P4-S4",
-              "text": "Research has found that IQ predicted leadership skills when the tests were given under low-stress conditions, but under high-stress conditions, IQ was negatively correlated with leadership—that is, it predicted the opposite.",
-              "translation": "研究发现，当测试在低压力环境下进行时，智商能有效预测个体的领导力；但在高压力环境下，智商与领导力却呈负相关——也就是说，它预测出的反而是相反的结果。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 5,
-              "english": "Anyone who has toiled through SAT will testify that test-taking skill also matters, whether it's knowing when to guess or what questions to skip.",
-              "chinese": "任何苦战熬过SAT考试的人都能证明，应试技巧同样起着重要作用——无论是懂得何时该猜测答案，还是该跳过哪些难题。",
-              "syntaxAnalysis": "主从复合句。Anyone 为主句主语，who has toiled through SAT 为定语从句修饰 Anyone；will testify 为主句谓语；that 引导宾语从句；whether 引导让步状语从句，从句主语为 it，表语为 knowing when to guess or what questions to skip（疑问词+不定式短语）。",
-              "sIndex": 5,
-              "id": "P4-S5",
-              "text": "Anyone who has toiled through SAT will testify that test-taking skill also matters, whether it's knowing when to guess or what questions to skip.",
-              "translation": "任何苦战熬过SAT考试的人都能证明，应试技巧同样起着重要作用——无论是懂得何时该猜测答案，还是该跳过哪些难题。",
-              "vocab": []
-            }
-          ],
-          "pIndex": 4,
-          "logicRole": "",
-          "mainIdea": "援引罗伯特·斯滕伯格的观点，批判标准化测试无法衡量创造力与实践智慧，揭示其预测效度受情境与应试技巧的极大制约。"
+          ]
         }
       ]
     },
@@ -4710,28 +5420,15 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "During the past generation, the American middle-class family that once could count on hard work and fair play to keep itself financially secure has been transformed by economic risk and new realities.",
                 "chinese": "在过去的一代人时间里，曾经依靠勤奋工作和公平竞争就能维持自身财务安全的美国中产阶级家庭，如今已被经济风险和新的现实彻底改变。",
-                "syntaxAnalysis": "主从复合句。During the past generation 为时间状语；主句主语为 the American middle-class family；that once could count on hard work and fair play to keep itself financially secure 为定语从句修饰 family（从句中包含 count on sb/sth to do sth 结构）；has been transformed 为主句谓语动词，现在完成时的被动语态；by economic risk and new realities 为介词短语作方式状语。",
-                "sIndex": 1,
-                "id": "P1-S1",
-                "text": "During the past generation, the American middle-class family that once could count on hard work and fair play to keep itself financially secure has been transformed by economic risk and new realities.",
-                "translation": "在过去的一代人时间里，曾经依靠勤奋工作和公平竞争就能维持自身财务安全的美国中产阶级家庭，如今已被经济风险和新的现实彻底改变。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。During the past generation 为时间状语；主句主语为 the American middle-class family；that once could count on hard work and fair play to keep itself financially secure 为定语从句修饰 family（从句中包含 count on sb/sth to do sth 结构）；has been transformed 为主句谓语动词，现在完成时的被动语态；by economic risk and new realities 为介词短语作方式状语。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "Now a pink slip, a bad diagnosis, or a disappearing spouse can reduce a family from solidly middle class to newly poor in a few months.",
                 "chinese": "如今，一张解雇通知书、一份坏的疾病诊断书、或者一位离家不顾的配偶，就能在短短几个月内让一个稳固的中产家庭沦落为新近致贫的底层。",
-                "syntaxAnalysis": "并列主语简单句。a pink slip, a bad diagnosis, or a disappearing spouse 为三个并列的名词短语作主语；can reduce 为谓语；a family 为宾语；from solidly middle class to newly poor 为固定介词搭配 reduce... from A to B（将……从A降低为B）；in a few months 为时间状语。",
-                "sIndex": 2,
-                "id": "P1-S2",
-                "text": "Now a pink slip, a bad diagnosis, or a disappearing spouse can reduce a family from solidly middle class to newly poor in a few months.",
-                "translation": "如今，一张解雇通知书、一份坏的疾病诊断书、或者一位离家不顾的配偶，就能在短短几个月内让一个稳固的中产家庭沦落为新近致贫的底层。",
-                "vocab": []
+                "syntaxAnalysis": "并列主语简单句。a pink slip, a bad diagnosis, or a disappearing spouse 为三个并列的名词短语作主语；can reduce 为谓语；a family 为宾语；from solidly middle class to newly poor 为固定介词搭配 reduce... from A to B（将……从A降低为B）；in a few months 为时间状语。"
               }
-            ],
-            "pIndex": 1,
-            "logicRole": "",
-            "mainIdea": "指出美国中产阶级家庭过去的财务安全神话已被经济风险打破，随时面临因失业、重病或婚变瞬间坠入新贫困阶层的现实危机。"
+            ]
           },
           {
             "paraIndex": 2,
@@ -4741,72 +5438,39 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "In just one generation, millions of mothers have gone to work, transforming basic family economics.",
                 "chinese": "仅在短短一代人时间里，数以百万计的母亲走上工作岗位，彻底重塑了家庭基本经济结构。",
-                "syntaxAnalysis": "简单句 + 现在分词短语作伴随/结果状语。millions of mothers 作主语；have gone to work 为主句谓语；transforming basic family economics 为现在分词短语作结果状语。",
-                "sIndex": 1,
-                "id": "P2-S1",
-                "text": "In just one generation, millions of mothers have gone to work, transforming basic family economics.",
-                "translation": "仅在短短一代人时间里，数以百万计的母亲走上工作岗位，彻底重塑了家庭基本经济结构。",
-                "vocab": []
+                "syntaxAnalysis": "简单句 + 现在分词短语作伴随/结果状语。millions of mothers 作主语；have gone to work 为主句谓语；transforming basic family economics 为现在分词短语作结果状语。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "Scholars, policymakers, and critics of all stripes have debated the social implications of these changes, but few have looked at the side effect: family risk has risen as well.",
                 "chinese": "各流派的学者、政策制定者以及批评家们就这些改变的社会影响展开了激烈争论，但极少有人注意到其副作用：家庭承受的风险也随之水涨船高。",
-                "syntaxAnalysis": "转折并列复合句。前一分句主语为 Scholars, policymakers, and critics of all stripes，谓语为 have debated，宾语为 the social implications of these changes；but 引导转折分句，few 作主语，have looked at 为谓语，冒号后 family risk has risen as well 为同位语从句解释 side effect。",
-                "sIndex": 2,
-                "id": "P2-S2",
-                "text": "Scholars, policymakers, and critics of all stripes have debated the social implications of these changes, but few have looked at the side effect: family risk has risen as well.",
-                "translation": "各流派的学者、政策制定者以及批评家们就这些改变的社会影响展开了激烈争论，但极少有人注意到其副作用：家庭承受的风险也随之水涨船高。",
-                "vocab": []
+                "syntaxAnalysis": "转折并列复合句。前一分句主语为 Scholars, policymakers, and critics of all stripes，谓语为 have debated，宾语为 the social implications of these changes；but 引导转折分句，few 作主语，have looked at 为谓语，冒号后 family risk has risen as well 为同位语从句解释 side effect。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "Today's families have budgeted to the limits of their new two-paycheck status.",
                 "chinese": "如今的家庭已经将开支预算安排到了双薪地位的极限。",
-                "syntaxAnalysis": "主谓宾简单句。Today's families 作主语；have budgeted 为现在完成时谓语；to the limits of their new two-paycheck status 为介词短语状语表示程度。",
-                "sIndex": 3,
-                "id": "P2-S3",
-                "text": "Today's families have budgeted to the limits of their new two-paycheck status.",
-                "translation": "如今的家庭已经将开支预算安排到了双薪地位的极限。",
-                "vocab": []
+                "syntaxAnalysis": "主谓宾简单句。Today's families 作主语；have budgeted 为现在完成时谓语；to the limits of their new two-paycheck status 为介词短语状语表示程度。"
               },
               {
                 "sentenceIndex": 4,
                 "english": "As a result, they have lost the parachute they once had in times of financial setback—a back-up earner (usually Mom) who could go into the workforce if the primary earner got laid off or fell sick.",
                 "chinese": "其结果是，他们彻底失去了以往在遭遇财务挫折时所拥有的‘降落伞’——即一位后备收入者（通常是母亲），一旦家庭主力挣钱者遭遇下岗或重病，她便能够进入劳动力市场挑起大梁。",
-                "syntaxAnalysis": "主从复合句。As a result 作状语；they have lost the parachute 为主干；they once had in times of financial setback 为省略 that 的定语从句修饰 parachute；破折号后 a back-up earner 为同位语解释 parachute；who 引导定语从句修饰 earner；if 引导从句内部的条件状语从句，含 got laid off or fell sick 并列谓语。",
-                "sIndex": 4,
-                "id": "P2-S4",
-                "text": "As a result, they have lost the parachute they once had in times of financial setback—a back-up earner (usually Mom) who could go into the workforce if the primary earner got laid off or fell sick.",
-                "translation": "其结果是，他们彻底失去了以往在遭遇财务挫折时所拥有的‘降落伞’——即一位后备收入者（通常是母亲），一旦家庭主力挣钱者遭遇下岗或重病，她便能够进入劳动力市场挑起大梁。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。As a result 作状语；they have lost the parachute 为主干；they once had in times of financial setback 为省略 that 的定语从句修饰 parachute；破折号后 a back-up earner 为同位语解释 parachute；who 引导定语从句修饰 earner；if 引导从句内部的条件状语从句，含 got laid off or fell sick 并列谓语。"
               },
               {
                 "sentenceIndex": 5,
                 "english": "This \"added-worker effect\" could support the safety net offered by unemployment insurance or disability insurance to help families weather bad times.",
                 "chinese": "这种‘额外劳动力效应’本可以有效补充失业保险或伤残保险所提供的安全网，协助家庭渡过经济难关。",
-                "syntaxAnalysis": "主谓宾补结构。This \"added-worker effect\" 作主语；could support 作谓语；the safety net 为宾语；offered by unemployment insurance or disability insurance 为过去分词短语作后置定语修饰 net；动词不定式短语 to help families weather bad times 作目的状语。",
-                "sIndex": 5,
-                "id": "P2-S5",
-                "text": "This \"added-worker effect\" could support the safety net offered by unemployment insurance or disability insurance to help families weather bad times.",
-                "translation": "这种‘额外劳动力效应’本可以有效补充失业保险或伤残保险所提供的安全网，协助家庭渡过经济难关。",
-                "vocab": []
+                "syntaxAnalysis": "主谓宾补结构。This \"added-worker effect\" 作主语；could support 作谓语；the safety net 为宾语；offered by unemployment insurance or disability insurance 为过去分词短语作后置定语修饰 net；动词不定式短语 to help families weather bad times 作目的状语。"
               },
               {
                 "sentenceIndex": 6,
                 "english": "But today, a disruption to family fortunes can no longer be made up with extra income from an otherwise-stay-at-home partner.",
                 "chinese": "然而在今天，家庭经济财富所遭受的打击，已经无法再通过原本留守在家的配偶外出赚取额外收入来进行弥补。",
-                "syntaxAnalysis": "被动语态简单句。But today 为时间状语；a disruption to family fortunes 为主语；can no longer be made up 为情态动词被动谓语；with extra income... 为方式介词状语；otherwise-stay-at-home 为复合形容词修饰 partner。",
-                "sIndex": 6,
-                "id": "P2-S6",
-                "text": "But today, a disruption to family fortunes can no longer be made up with extra income from an otherwise-stay-at-home partner.",
-                "translation": "然而在今天，家庭经济财富所遭受的打击，已经无法再通过原本留守在家的配偶外出赚取额外收入来进行弥补。",
-                "vocab": []
+                "syntaxAnalysis": "被动语态简单句。But today 为时间状语；a disruption to family fortunes 为主语；can no longer be made up 为情态动词被动谓语；with extra income... 为方式介词状语；otherwise-stay-at-home 为复合形容词修饰 partner。"
               }
-            ],
-            "pIndex": 2,
-            "logicRole": "",
-            "mainIdea": "剖析双薪家庭看似收入增加实则风险剧增的悖论：家庭开支压向极限，且彻底丧失了母亲作为备用劳动力的防风险‘降落伞’。"
+            ]
           },
           {
             "paraIndex": 3,
@@ -4816,72 +5480,39 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "During the same period, families have been asked to absorb much more risk in their retirement income.",
                 "chinese": "在同一时期，家庭还被要求在退休养老收入方面承担多得多的风险。",
-                "syntaxAnalysis": "被动语态简单句。During the same period 为时间状语；families 作主语；have been asked 为现在完成时被动谓语；动词不定式 to absorb much more risk in their retirement income 作主语补足语。",
-                "sIndex": 1,
-                "id": "P3-S1",
-                "text": "During the same period, families have been asked to absorb much more risk in their retirement income.",
-                "translation": "在同一时期，家庭还被要求在退休养老收入方面承担多得多的风险。",
-                "vocab": []
+                "syntaxAnalysis": "被动语态简单句。During the same period 为时间状语；families 作主语；have been asked 为现在完成时被动谓语；动词不定式 to absorb much more risk in their retirement income 作主语补足语。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "Steelworkers, airline employees, and now those in the auto industry are joining millions of families who must worry about interest rates, stock market fluctuation, and the harsh reality that they may outlive their retirement money.",
                 "chinese": "钢铁工人、航空公司雇员，以及如今汽车产业的从业人员，正纷纷加入数以百万计的家庭行列，他们不得不为利率波动、股市震荡以及‘退休金花光而人尚在世’的残酷现实而忧心忡忡。",
-                "syntaxAnalysis": "复合句。Steelworkers, airline employees, and now those in the auto industry 为并列主语；are joining 为谓语；millions of families 为宾语；who 引导定语从句修饰 families；从句中 worry about 后并列接三个宾语：interest rates, stock market fluctuation, 以及 the harsh reality；that they may outlive their retirement money 为同位语从句解释 reality。",
-                "sIndex": 2,
-                "id": "P3-S2",
-                "text": "Steelworkers, airline employees, and now those in the auto industry are joining millions of families who must worry about interest rates, stock market fluctuation, and the harsh reality that they may outlive their retirement money.",
-                "translation": "钢铁工人、航空公司雇员，以及如今汽车产业的从业人员，正纷纷加入数以百万计的家庭行列，他们不得不为利率波动、股市震荡以及‘退休金花光而人尚在世’的残酷现实而忧心忡忡。",
-                "vocab": []
+                "syntaxAnalysis": "复合句。Steelworkers, airline employees, and now those in the auto industry 为并列主语；are joining 为谓语；millions of families 为宾语；who 引导定语从句修饰 families；从句中 worry about 后并列接三个宾语：interest rates, stock market fluctuation, 以及 the harsh reality；that they may outlive their retirement money 为同位语从句解释 reality。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "For much of the past year, President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.",
                 "chinese": "在过去一年的大部分时间里，布什总统大张旗鼓地竞选推动将社会保障金转变为储蓄账户模式，使退休人员用大部分甚至全部有政府保证的固定给付，去换取取决于市场投资回报的款项。",
-                "syntaxAnalysis": "复合句。President Bush 作主语；campaigned 为谓语；to move Social Security to a savings-account model 为不定式短语作目的状语；with 复合结构：retirees 为逻辑主语，trading... for... 为现在分词短语作伴随状语（其中 depending on investment returns 为现在分词作后置定语修饰 payments）。",
-                "sIndex": 3,
-                "id": "P3-S3",
-                "text": "For much of the past year, President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.",
-                "translation": "在过去一年的大部分时间里，布什总统大张旗鼓地竞选推动将社会保障金转变为储蓄账户模式，使退休人员用大部分甚至全部有政府保证的固定给付，去换取取决于市场投资回报的款项。",
-                "vocab": []
+                "syntaxAnalysis": "复合句。President Bush 作主语；campaigned 为谓语；to move Social Security to a savings-account model 为不定式短语作目的状语；with 复合结构：retirees 为逻辑主语，trading... for... 为现在分词短语作伴随状语（其中 depending on investment returns 为现在分词作后置定语修饰 payments）。"
               },
               {
                 "sentenceIndex": 4,
                 "english": "For younger families, the picture is not any better.",
                 "chinese": "对于更年轻的家庭而言，前景也丝毫没有好到哪里去。",
-                "syntaxAnalysis": "主系表结构简单句。For younger families 为对象状语；the picture 作主语；is 为系动词；not any better 为表语。",
-                "sIndex": 4,
-                "id": "P3-S4",
-                "text": "For younger families, the picture is not any better.",
-                "translation": "对于更年轻的家庭而言，前景也丝毫没有好到哪里去。",
-                "vocab": []
+                "syntaxAnalysis": "主系表结构简单句。For younger families 为对象状语；the picture 作主语；is 为系动词；not any better 为表语。"
               },
               {
                 "sentenceIndex": 5,
                 "english": "Both the absolute cost of healthcare and the share of it borne by families have risen—and newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers, with much higher deductibles and a large new dose of investment risk for families' future healthcare.",
                 "chinese": "医疗保健的绝对成本以及由家庭承担的份额双双攀升——新风靡的‘健康储蓄计划’正从立法大厅一路蔓延到沃尔玛员工之中，伴随而来的是极高的免赔额，以及为家庭未来医疗注入的一剂大剂量的新投资风险。",
-                "syntaxAnalysis": "并列复合句。破折号前主语为 Both the absolute cost... and the share of it borne by families（borne by families 为过去分词作后置定语），谓语为 have risen；破折号后并列句主语为 health-savings plans，谓语为 are spreading，with 复合结构作伴随状语引出 high deductibles 和 investment risk。",
-                "sIndex": 5,
-                "id": "P3-S5",
-                "text": "Both the absolute cost of healthcare and the share of it borne by families have risen—and newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers, with much higher deductibles and a large new dose of investment risk for families' future healthcare.",
-                "translation": "医疗保健的绝对成本以及由家庭承担的份额双双攀升——新风靡的‘健康储蓄计划’正从立法大厅一路蔓延到沃尔玛员工之中，伴随而来的是极高的免赔额，以及为家庭未来医疗注入的一剂大剂量的新投资风险。",
-                "vocab": []
+                "syntaxAnalysis": "并列复合句。破折号前主语为 Both the absolute cost... and the share of it borne by families（borne by families 为过去分词作后置定语），谓语为 have risen；破折号后并列句主语为 health-savings plans，谓语为 are spreading，with 复合结构作伴随状语引出 high deductibles 和 investment risk。"
               },
               {
                 "sentenceIndex": 6,
                 "english": "Even demographics are working against the middle class family, as the odds of having a weak elderly parent—and all the attendant need for physical and financial assistance—have jumped eightfold in just one generation.",
                 "chinese": "甚至连人口统计学趋势都在与中产家庭作对，因为家中有体弱年迈父母——以及随之而来的对身体照料和经济资助的全部需求——的概率在短短一代人时间里飙升了八倍。",
-                "syntaxAnalysis": "主从复合句。Even demographics are working against the middle class family 为主句；as 引导原因状语从句；从句主干为 the odds... have jumped eightfold；of having a weak elderly parent 为后置定语修饰 odds；破折号之间 and all the attendant need... 为插入补充说明成分。",
-                "sIndex": 6,
-                "id": "P3-S6",
-                "text": "Even demographics are working against the middle class family, as the odds of having a weak elderly parent—and all the attendant need for physical and financial assistance—have jumped eightfold in just one generation.",
-                "translation": "甚至连人口统计学趋势都在与中产家庭作对，因为家中有体弱年迈父母——以及随之而来的对身体照料和经济资助的全部需求——的概率在短短一代人时间里飙升了八倍。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。Even demographics are working against the middle class family 为主句；as 引导原因状语从句；从句主干为 the odds... have jumped eightfold；of having a weak elderly parent 为后置定语修饰 odds；破折号之间 and all the attendant need... 为插入补充说明成分。"
               }
-            ],
-            "pIndex": 3,
-            "logicRole": "",
-            "mainIdea": "揭示体制性风险转嫁：政府与企业推动将养老金与医疗险转为高风险投资模式，叠加人口老龄化照护压力，全方位压向中产家庭。"
+            ]
           },
           {
             "paraIndex": 4,
@@ -4891,28 +5522,15 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "From the middle-class family perspective, much of this, understandably, looks far less like an opportunity to exercise more financial responsibility, and a good deal more like a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders.",
                 "chinese": "从中产家庭的视角来看，可以理解的是，这一切完全谈不上是展现更多财务担当的契机，而更像是在以惊人的速度，将所有的财务风险全盘甩给他们早已不堪重负的双肩。",
-                "syntaxAnalysis": "复合结构长难句。From the middle-class family perspective 为视角状语；much of this 作主语；understandably 为插入副词；looks 为谓语动词；far less like A and a good deal more like B 构成平行对比表语结构：A 为 an opportunity to exercise...；B 为 a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders。",
-                "sIndex": 1,
-                "id": "P4-S1",
-                "text": "From the middle-class family perspective, much of this, understandably, looks far less like an opportunity to exercise more financial responsibility, and a good deal more like a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders.",
-                "translation": "从中产家庭的视角来看，可以理解的是，这一切完全谈不上是展现更多财务担当的契机，而更像是在以惊人的速度，将所有的财务风险全盘甩给他们早已不堪重负的双肩。",
-                "vocab": []
+                "syntaxAnalysis": "复合结构长难句。From the middle-class family perspective 为视角状语；much of this 作主语；understandably 为插入副词；looks 为谓语动词；far less like A and a good deal more like B 构成平行对比表语结构：A 为 an opportunity to exercise...；B 为 a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "The financial fallout has begun, and the political fallout may not be far behind.",
                 "chinese": "财务上的严重后果已经开始显现，而政治上的余波震荡恐怕也为期不远了。",
-                "syntaxAnalysis": "and 连接的两个平行对仗分句。前一分句 The financial fallout has begun；后一分句 the political fallout may not be far behind（以富有警示意义的隐喻宣告政治危机的迫近）。",
-                "sIndex": 2,
-                "id": "P4-S2",
-                "text": "The financial fallout has begun, and the political fallout may not be far behind.",
-                "translation": "财务上的严重后果已经开始显现，而政治上的余波震荡恐怕也为期不远了。",
-                "vocab": []
+                "syntaxAnalysis": "and 连接的两个平行对仗分句。前一分句 The financial fallout has begun；后一分句 the political fallout may not be far behind（以富有警示意义的隐喻宣告政治危机的迫近）。"
               }
-            ],
-            "pIndex": 4,
-            "logicRole": "",
-            "mainIdea": "从中产阶层视角出发做出定性：体制所谓的财务担当实为全盘甩锅，而经济上的巨大反噬将不可避免地迅速引发政治余震。"
+            ]
           }
         ]
       },
@@ -4926,9 +5544,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "公平竞争；公平待遇",
           "collocationOrDerivation": "公平竞争；公正行为 | hard work and fair play | fair 强调“公正的”；fair play 常用于社会公平、规则、公平机会语境 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "公平竞争；公平待遇",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "pink slip",
@@ -4939,9 +5555,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "解雇通知；失业风险",
           "collocationOrDerivation": "粉色纸条；解雇通知 | a pink slip, a bad diagnosis | 熟词组合；get a pink slip = 被解雇；与 layoff 呼应 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "解雇通知；失业风险",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "spouse",
@@ -4952,9 +5566,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "配偶",
           "collocationOrDerivation": "丈夫或妻子 | a disappearing spouse | 正式词；husband / wife 更具体，partner 范围更宽 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "配偶",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "solidly",
@@ -4965,9 +5577,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "稳稳地；牢固地",
           "collocationOrDerivation": "坚固地；扎实地；确实地 | solidly middle class | solid support；solidly built；强调原本稳定属于中产 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "稳稳地；牢固地",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "of all stripes",
@@ -4978,9 +5588,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "各种各样的；各派别的",
           "collocationOrDerivation": "各类；各种立场的 | critics of all stripes | stripe 本义“条纹”；习语中指“类型、派别” | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "各种各样的；各派别的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "debate",
@@ -4991,9 +5599,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "讨论；争论",
           "collocationOrDerivation": "辩论；争议 | have debated the social implications | debate an issue；public / heated debate；学术议论文高频定位词 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "讨论；争论",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "implications",
@@ -5004,9 +5610,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "影响；可能后果",
           "collocationOrDerivation": "含义；暗示；影响 | the social implications of these changes | policy / practical / social implications；考研常作“影响、意义” | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "影响；可能后果",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "budget",
@@ -5017,9 +5621,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "安排预算；把开支安排到极限",
           "collocationOrDerivation": "预算；做预算 | have budgeted to the limits | budget for sth.；on a tight budget；budget constraints | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "安排预算；把开支安排到极限",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "parachute",
@@ -5030,9 +5632,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "保护伞；缓冲机制",
           "collocationOrDerivation": "降落伞 | lost the parachute they once had | 熟词僻义；比喻家庭经济风险中的备用缓冲 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "保护伞；缓冲机制",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "setback",
@@ -5043,9 +5643,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "挫折；经济受挫",
           "collocationOrDerivation": "挫折；倒退；阻碍 | financial setback | suffer a setback；a major setback；set back 作动词=阻碍/推迟 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "挫折；经济受挫",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "primary",
@@ -5056,9 +5654,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "主要的；首要的",
           "collocationOrDerivation": "初级的；主要的 | the primary earner | primary cause / concern；principal 也可指“主要的” | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "主要的；首要的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "weather",
@@ -5069,9 +5665,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "经受住；渡过",
           "collocationOrDerivation": "天气；使风化 | weather bad times | 熟词僻义；weather the storm / a crisis = 渡过难关 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "经受住；渡过",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "disruption",
@@ -5082,9 +5676,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "变故；扰乱；中断",
           "collocationOrDerivation": "中断；破坏 | a disruption to family fortunes | disrupt 打乱；disruptive 破坏性的；economic disruption | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "变故；扰乱；中断",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "fortunes",
@@ -5095,9 +5687,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "境况；命运；兴衰",
           "collocationOrDerivation": "财富；运气；命运 | family fortunes | 熟词僻义；political fortunes 政治命运；changing fortunes | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "境况；命运；兴衰",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "otherwise",
@@ -5108,9 +5698,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "原本；否则；在其他情况下",
           "collocationOrDerivation": "否则；另外 | an otherwise-stay-at-home partner | 高频逻辑副词；常含隐含条件 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "原本；否则；在其他情况下",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "absorb",
@@ -5121,9 +5709,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "承担；承受",
           "collocationOrDerivation": "吸收；理解；使全神贯注 | absorb much more risk | 熟词僻义；absorb costs / losses / risk | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "承担；承受",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "fluctuation",
@@ -5134,9 +5720,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "波动；起伏",
           "collocationOrDerivation": "价值、数量的变化 | stock market fluctuation | price / market fluctuation；fluctuate；volatile 易波动的 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "波动；起伏",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "outlive",
@@ -5147,9 +5731,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "比……持续更久；活得超过",
           "collocationOrDerivation": "比……活得久 | outlive their retirement money | out- 表“超过”；outperform / outweigh；outlive one’s savings | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "比……持续更久；活得超过",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "retirees",
@@ -5160,9 +5742,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "退休人员",
           "collocationOrDerivation": "已退休者 | retirees trading... | retire 退休；retired 已退休的；retirement 退休 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "退休人员",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "trade",
@@ -5173,9 +5753,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "交换；用……换……",
           "collocationOrDerivation": "贸易；交易；交换 | trading guaranteed payments for payments... | trade A for B；trade security for flexibility | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "交换；用……换……",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "guaranteed",
@@ -5186,9 +5764,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "有保障的；固定保证的",
           "collocationOrDerivation": "被保证的；有担保的 | guaranteed payments | guaranteed income / benefits；guarantee v./n. | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "有保障的；固定保证的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "returns",
@@ -5199,9 +5775,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "投资回报；收益",
           "collocationOrDerivation": "返回；回报；收益 | investment returns | 熟词僻义；return on investment；high / market returns | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "投资回报；收益",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "picture",
@@ -5212,9 +5786,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "情况；局面",
           "collocationOrDerivation": "图画；照片；整体形势 | the picture is not any better | 熟词僻义；big picture 全局 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "情况；局面",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "borne",
@@ -5225,9 +5797,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "由……承担",
           "collocationOrDerivation": "bear 的过去分词；承担；忍受 | the share of it borne by families | bear the cost / burden / responsibility | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "由……承担",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "fashionable",
@@ -5238,9 +5808,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "流行的；时兴的",
           "collocationOrDerivation": "时尚的；流行的 | newly fashionable health-savings plans | fashionable idea / policy；此处语气略带批评 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "流行的；时兴的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "deductibles",
@@ -5251,9 +5819,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "保险免赔额",
           "collocationOrDerivation": "可扣除项目；免赔额 | much higher deductibles | insurance / high deductible；保险赔付前由个人先承担的部分 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "保险免赔额",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "dose",
@@ -5264,9 +5830,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "一份；一定量",
           "collocationOrDerivation": "药剂；剂量 | a large new dose of investment risk | 熟词僻义；a dose of reality / risk / criticism | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "一份；一定量",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "demographics",
@@ -5277,9 +5841,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "人口结构；人口统计因素",
           "collocationOrDerivation": "人口统计数据 | Even demographics are working against... | demographic change；与 demonstrate（证明/展示）形近但义不同 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "人口结构；人口统计因素",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "odds",
@@ -5290,9 +5852,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "可能性；概率",
           "collocationOrDerivation": "赔率；机会；不利条件 | the odds of having a weak elderly parent | the odds of doing sth.；against the odds；非“奇数” | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "可能性；概率",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "attendant",
@@ -5303,9 +5863,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "伴随的；随之而来的",
           "collocationOrDerivation": "服务员；随从；护理员 | all the attendant need | attendant risks / costs；attend to sb. = 照顾/处理 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "伴随的；随之而来的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "perspective",
@@ -5316,9 +5874,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "角度；视角",
           "collocationOrDerivation": "观点；透视法；全局观 | middle-class family perspective | put sth. into perspective；a broader perspective | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "角度；视角",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "a good deal",
@@ -5329,9 +5885,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "很大程度上；大量",
           "collocationOrDerivation": "许多；很大程度 | a good deal more like | a good deal + 比较级；a good deal of money | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "很大程度上；大量",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "wholesale",
@@ -5342,9 +5896,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "大规模的；彻底的",
           "collocationOrDerivation": "批发的；大规模的 | the wholesale shift of financial risk | 熟词僻义；wholesale change / reform | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "大规模的；彻底的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "fallout",
@@ -5355,9 +5907,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "后果；余波；恶果",
           "collocationOrDerivation": "核尘埃；不良后果 | financial fallout | financial / political fallout；fallout from the crisis | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "后果；余波；恶果",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "compensate",
@@ -5368,9 +5918,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "弥补；补偿",
           "collocationOrDerivation": "赔偿；补偿 | compensate for the reduced pensions | compensate for losses；compensation；make up for / offset | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "弥补；补偿",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "pensions",
@@ -5381,9 +5929,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "养老金；退休金",
           "collocationOrDerivation": "退休金；抚恤金 | reduced pensions | pension plan / reform；state pension | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "养老金；退休金",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "indicator",
@@ -5394,9 +5940,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "指标；标志",
           "collocationOrDerivation": "显示信号；指示器 | an indicator of political status | economic / key indicator；indicate 表明；sign/evidence 辨析 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "指标；标志",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "diagnosis",
@@ -5407,9 +5951,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "诊断结果；疾病诊断",
           "collocationOrDerivation": "诊断；判断 | a bad diagnosis | diagnose sb. with...；medical diagnosis；prognosis 预后 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "诊断结果；疾病诊断",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "newly poor",
@@ -5420,9 +5962,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "新近陷入贫困的",
           "collocationOrDerivation": "新近地；贫穷的 | to newly poor in a few months | newly rich / newly unemployed；newly + adj. | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "新近陷入贫困的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "scholars",
@@ -5433,9 +5973,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "学者",
           "collocationOrDerivation": "学者；奖学金获得者 | Scholars, policymakers, and critics | scholarly 学术的；scholarship 学术研究/奖学金 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "学者",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "unemployment insurance / disability insurance",
@@ -5446,9 +5984,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "失业保险 / 残疾保险",
           "collocationOrDerivation": "保险制度 | offered by unemployment insurance or disability insurance | unemployment 失业；disability 残疾/丧失劳动能力 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "失业保险 / 残疾保险",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "retirement income",
@@ -5459,9 +5995,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "退休收入",
           "collocationOrDerivation": "退休后的收入 | risk in their retirement income | retirement savings / plan / money | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "退休收入",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "Steelworkers",
@@ -5472,9 +6006,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "钢铁工人",
           "collocationOrDerivation": "钢铁行业工人 | Steelworkers, airline employees | 产业工人例子，说明风险扩展到不同职业 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "钢铁工人",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "airline employees",
@@ -5485,9 +6017,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "航空公司雇员",
           "collocationOrDerivation": "航空公司员工 | airline employees | employee 雇员；employer 雇主；employment 就业 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "航空公司雇员",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "stock",
@@ -5498,9 +6028,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "股票",
           "collocationOrDerivation": "股票；库存；储备 | stock market fluctuation | 此处不是“库存”；stock market 股票市场 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "股票",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "health-savings plans",
@@ -5511,9 +6039,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "医疗储蓄计划",
           "collocationOrDerivation": "用于医疗支出的储蓄计划 | health-savings plans are spreading | 与高免赔额、投资风险同现 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "医疗储蓄计划",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "understandably",
@@ -5524,9 +6050,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "可以理解地",
           "collocationOrDerivation": "情有可原地 | much of this, understandably, looks... | understandable；体现作者对中产感受的认同 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "可以理解地",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "count on",
@@ -5537,9 +6061,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "依靠；指望",
           "collocationOrDerivation": "依赖；相信；预计 | could count on hard work and fair play | = rely on / depend on；count on sb. to do sth.；熟词 count 不作“数数”理解 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "依靠；指望",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "financially secure",
@@ -5550,9 +6072,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "经济上有保障的",
           "collocationOrDerivation": "财务安全；经济稳定 | keep itself financially secure | financially stable / independent；economic security | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "经济上有保障的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "be transformed by",
@@ -5563,9 +6083,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "被……改变",
           "collocationOrDerivation": "被转变；被彻底改变 | has been transformed by economic risk | transform A into B；强调结构性变化 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "被……改变",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "new realities",
@@ -5576,9 +6094,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "新的现实状况",
           "collocationOrDerivation": "现实；实际情况 | economic risk and new realities | social / economic realities；常用复数表示复杂现实 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "新的现实状况",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "reduce A from B to C",
@@ -5589,9 +6105,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "使 A 从 B 降为 C",
           "collocationOrDerivation": "减少；降低；使陷入某状态 | reduce a family from solidly middle class to newly poor | reduce sb. to poverty；reduce sth. by 20%；此处为“使降级” | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "使 A 从 B 降为 C",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "side effect",
@@ -5602,9 +6116,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "副作用；附带后果",
           "collocationOrDerivation": "药物副作用；连带影响 | few have looked at the side effect | 引出作者真正关注点：family risk has risen as well | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "副作用；附带后果",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "in times of",
@@ -5615,9 +6127,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "在……时期",
           "collocationOrDerivation": "在……时候 | in times of financial setback | in times of crisis / trouble / uncertainty；写作可迁移 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "在……时期",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "back-up earner",
@@ -5628,9 +6138,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "备用收入者",
           "collocationOrDerivation": "后备挣钱者 | a back-up earner (usually Mom) | 对应过去家庭的“降落伞”；earner = income provider | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "备用收入者",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "go into the workforce",
@@ -5641,9 +6149,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "进入劳动力市场",
           "collocationOrDerivation": "进入；从事 | could go into the workforce | go into business / politics；go into sth. 不只指“走进去” | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "进入劳动力市场",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "get laid off",
@@ -5654,9 +6160,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "被裁员；被解雇",
           "collocationOrDerivation": "因经济原因被裁撤 | the primary earner got laid off | layoff 裁员；get fired 语气更直接，原因更广 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "被裁员；被解雇",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "added-worker effect",
@@ -5667,9 +6171,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "附加劳动者效应",
           "collocationOrDerivation": "家庭成员补充就业现象 | This “added-worker effect” | 解释过去家庭的备用收入机制 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "附加劳动者效应",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "safety net",
@@ -5680,9 +6182,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "安全网；保障机制",
           "collocationOrDerivation": "保护网；社会保障 | support the safety net | social / welfare / financial safety net；社会保障类高频 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "安全网；保障机制",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "be made up with",
@@ -5693,9 +6193,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "用……弥补",
           "collocationOrDerivation": "补足；组成 | can no longer be made up with extra income | make up for sth. 更常见；此处为被动“被弥补” | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "用……弥补",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "otherwise-stay-at-home partner",
@@ -5706,9 +6204,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "原本会待在家中的配偶",
           "collocationOrDerivation": "原本居家的伴侣 | extra income from an otherwise-stay-at-home partner | 对应 back-up earner；stay-at-home 常指不外出工作 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "原本会待在家中的配偶",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "absorb risk",
@@ -5719,9 +6215,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "承担风险",
           "collocationOrDerivation": "吸收/承受风险 | families have been asked to absorb much more risk | 经济类高频搭配；have been asked to 含“被迫承担”意味 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "承担风险",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "interest rates",
@@ -5732,9 +6226,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "利率",
           "collocationOrDerivation": "借贷或储蓄的利息比例 | worry about interest rates | 常与 loans, savings, investment, inflation 同现 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "利率",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "harsh reality",
@@ -5745,9 +6237,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "严酷现实",
           "collocationOrDerivation": "残酷的现实 | the harsh reality that... | that 引导同位语从句，解释 reality | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "严酷现实",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "campaign to do sth.",
@@ -5758,9 +6248,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "努力推动做某事",
           "collocationOrDerivation": "开展运动；竞选 | campaigned to move Social Security | 此处不是“竞选”，而是推动政策改革 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "努力推动做某事",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "move A to B",
@@ -5771,9 +6259,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "将 A 转向 B",
           "collocationOrDerivation": "移动；转移；改变方向 | move Social Security to a savings-account model | 政策变化表达；move sth. toward / into sth. | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "将 A 转向 B",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "trade A for B",
@@ -5784,9 +6270,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "用 A 换 B",
           "collocationOrDerivation": "交换 A 以获得 B | retirees trading much or all of their guaranteed payments for... | 高频句型；常含“放弃 A 换取 B”的取舍 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "用 A 换 B",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "guaranteed payments",
@@ -5797,9 +6281,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "有保障的付款",
           "collocationOrDerivation": "保证支付款项 | their guaranteed payments | 与 depending on investment returns 形成对比：稳定 vs 波动 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "有保障的付款",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "investment returns",
@@ -5810,9 +6292,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "投资回报",
           "collocationOrDerivation": "投资收益 | payments depending on investment returns | 养老保障从固定支付转向市场收益 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "投资回报",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "legislative halls",
@@ -5823,9 +6303,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "立法机构；政策制定场所",
           "collocationOrDerivation": "立法大厅；议会机构 | from legislative halls to Wal-Mart workers | legislature 立法机关；legislative 立法的 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "立法机构；政策制定场所",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "attendant need",
@@ -5836,9 +6314,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "随之而来的需求",
           "collocationOrDerivation": "伴随产生的需要 | attendant need for physical and financial assistance | 强调老人照护带来的连带需求 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "随之而来的需求",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "physical and financial assistance",
@@ -5849,9 +6325,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "身体照护和经济援助",
           "collocationOrDerivation": "身体与财务帮助 | need for physical and financial assistance | assistance = help/support；financial aid 经济援助 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "身体照护和经济援助",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "eightfold",
@@ -5862,9 +6336,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "八倍地；八倍的",
           "collocationOrDerivation": "八重的；八倍的 | have jumped eightfold in just one generation | twofold/threefold/tenfold；a threefold rise；increase tenfold | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "八倍地；八倍的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "have jumped eightfold in one generation",
@@ -5875,9 +6347,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "在一代人时间里增长八倍",
           "collocationOrDerivation": "急剧增长八倍 | have jumped eightfold in just one generation | jump = 猛增；数据表达适合阅读定位和写作迁移 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "在一代人时间里增长八倍",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "from the ... perspective",
@@ -5888,9 +6358,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "从……角度来看",
           "collocationOrDerivation": "从……视角 | From the middle-class family perspective | from one’s perspective；作文常用视角表达 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "从……角度来看",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "look less like A and more like B",
@@ -5901,9 +6369,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "与其说像 A，不如说更像 B",
           "collocationOrDerivation": "看起来不像 A，而更像 B | looks far less like an opportunity... and more like... | far / a good deal 可加强比较程度 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "与其说像 A，不如说更像 B",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "exercise financial responsibility",
@@ -5914,9 +6380,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "履行/承担财务责任",
           "collocationOrDerivation": "行使；运用；锻炼 | exercise more financial responsibility | exercise power / control / responsibility；exercise 此处非“锻炼” | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "履行/承担财务责任",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "frightening acceleration",
@@ -5927,9 +6391,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "令人恐惧的加速",
           "collocationOrDerivation": "可怕的加快 | a frightening acceleration of the wholesale shift | 负面态度线索；acceleration of... = ……的加速 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "令人恐惧的加速",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "shift A onto B",
@@ -5940,9 +6402,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "把 A 转移/转嫁给 B",
           "collocationOrDerivation": "转移；改变 | shift financial risk onto their shoulders | shoulder 可引申为“承担负担” | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "把 A 转移/转嫁给 B",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "overburdened shoulders",
@@ -5953,9 +6413,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "已经不堪重负的肩膀",
           "collocationOrDerivation": "负担过重的肩膀 | already overburdened shoulders | overburdened families / system；shoulder the burden | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "已经不堪重负的肩膀",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "political fallout",
@@ -5966,9 +6424,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "政治后果；政治反弹",
           "collocationOrDerivation": "政治余波 | political fallout may not be far behind | 由经济压力引出的政治后果 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "政治后果；政治反弹",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "A has begun, and B may not be far behind",
@@ -5979,9 +6435,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "A 已经开始，B 可能很快随之而来",
           "collocationOrDerivation": "某后果紧随另一后果 | The financial fallout has begun, and the political fallout may not be far behind. | 结论句型；可迁移到 economic/social impact 等话题 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "A 已经开始，B 可能很快随之而来",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "in that",
@@ -5992,9 +6446,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "因为；在于",
           "collocationOrDerivation": "由于；原因是 | are at greater financial risk in that... | 题干中提示因果关系 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "因为；在于",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "vulnerable to",
@@ -6005,9 +6457,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "易受……影响的",
           "collocationOrDerivation": "脆弱的；易受伤害的 | more vulnerable to changes | vulnerable groups；vulnerable to risk / disease | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "易受……影响的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "be deprived of",
@@ -6018,9 +6468,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "被剥夺；失去",
           "collocationOrDerivation": "被阻止拥有某物 | are deprived of unemployment or disability insurance | deprive sb. of sth.；sleep-deprived 缺觉的 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "被剥夺；失去",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "popularize among",
@@ -6031,9 +6479,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "在……中普及",
           "collocationOrDerivation": "使流行；推广 | popularize among the middle class | popular adj.；popularity n.；popularize sth. among sb. | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "在……中普及",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "compensate for",
@@ -6044,9 +6490,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "弥补；补偿",
           "collocationOrDerivation": "补偿损失或不足 | compensate for the reduced pensions | 比 make up for 更正式；offset 偏“抵消” | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "弥补；补偿",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "bring about",
@@ -6057,9 +6501,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "导致；引起",
           "collocationOrDerivation": "造成；带来 | financial problems may bring about political problems | = cause / lead to；因果题高频表达 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "导致；引起",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "on the alert",
@@ -6070,9 +6512,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "处于警戒状态",
           "collocationOrDerivation": "保持警惕 | The Middle Class on the Alert | be/stay on the alert for danger | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "处于警戒状态",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "on the cliff",
@@ -6083,9 +6523,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "在危险边缘",
           "collocationOrDerivation": "在悬崖边 | The Middle Class on the Cliff | 标题比喻：中产处在跌落风险边缘 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "在危险边缘",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "in conflict",
@@ -6096,9 +6534,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "处于冲突中",
           "collocationOrDerivation": "矛盾；冲突 | The Middle Class in Conflict | in conflict with；class conflict | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "处于冲突中",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "in ruins",
@@ -6109,9 +6545,462 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "破败；毁坏",
           "collocationOrDerivation": "成为废墟；彻底受损 | The Middle Class in Ruins | lie in ruins；leave sth. in ruins；程度过重 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
+          "isInObstacleList": true
+        },
+        {
+          "word": "financial",
+          "location": "Q31-Stem",
+          "ipa": "[faɪˈnænʃ(ə)l]",
+          "pos": "",
+          "contextMeaning": "经济的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "risk",
+          "location": "Q31-Stem",
+          "ipa": "[rɪsk]",
+          "pos": "",
+          "contextMeaning": "风险",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "disappeared",
+          "location": "Q31-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "消失",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "laid",
+          "location": "Q31-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "解雇",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "more",
+          "location": "Q31-C",
+          "ipa": "[mɔː(r)]",
+          "pos": "",
+          "contextMeaning": "易受…的伤害",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-C 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
           "isInObstacleList": true,
-          "meaning": "破败；毁坏",
-          "level": "red"
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "economics",
+          "location": "Q31-C",
+          "ipa": "[ˌiːkəˈnɒmɪks]",
+          "pos": "",
+          "contextMeaning": "经济情况",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "deprived",
+          "location": "Q31-D",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "剥夺",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-D 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "unemployment",
+          "location": "Q31-D",
+          "ipa": "[ˌʌnɪmˈplɔɪmənt]",
+          "pos": "",
+          "contextMeaning": "失业",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "insurance",
+          "location": "Q31-D",
+          "ipa": "[ɪnˈʃʊərəns]",
+          "pos": "",
+          "contextMeaning": "保险",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q31-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "reform",
+          "location": "Q32-Stem",
+          "ipa": "[rɪˈfɔːm]",
+          "pos": "",
+          "contextMeaning": "改革",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q32-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "security",
+          "location": "Q32-A",
+          "ipa": "[sɪˈkjʊərəti]",
+          "pos": "",
+          "contextMeaning": "安全",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q32-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "payments",
+          "location": "Q32-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "收入",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q32-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "invest",
+          "location": "Q32-C",
+          "ipa": "[ɪnˈvest]",
+          "pos": "",
+          "contextMeaning": "投资",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q32-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "author",
+          "location": "Q33-Stem",
+          "ipa": "[ˈɔːθə(r)]",
+          "pos": "",
+          "contextMeaning": "作者",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q33-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "compensate",
+          "location": "Q33-C",
+          "ipa": "[ˈkɒmpenseɪt]",
+          "pos": "",
+          "contextMeaning": "补偿",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q33-C 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "pensions",
+          "location": "Q33-C",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "退休金",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q33-C 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "investment",
+          "location": "Q33-D",
+          "ipa": "[ɪnˈvestmənt]",
+          "pos": "",
+          "contextMeaning": "投资",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q33-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "risk",
+          "location": "Q33-D",
+          "ipa": "[rɪsk]",
+          "pos": "",
+          "contextMeaning": "风险",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q33-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "inferred",
+          "location": "Q34-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "推断",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "paragraph",
+          "location": "Q34-Stem",
+          "ipa": "[ˈpærəɡrɑːf]",
+          "pos": "",
+          "contextMeaning": "段",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "financial",
+          "location": "Q34-A",
+          "ipa": "[faɪˈnænʃ(ə)l]",
+          "pos": "",
+          "contextMeaning": "经济的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "risks",
+          "location": "Q34-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "风险",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "tend",
+          "location": "Q34-A",
+          "ipa": "[tend]",
+          "pos": "",
+          "contextMeaning": "往往",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "challenges",
+          "location": "Q34-B",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "挑战",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "financial",
+          "location": "Q34-C",
+          "ipa": "[faɪˈnænʃ(ə)l]",
+          "pos": "",
+          "contextMeaning": "经济的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "bring",
+          "location": "Q34-C",
+          "ipa": "[brɪŋ]",
+          "pos": "",
+          "contextMeaning": "引起",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "financial",
+          "location": "Q34-D",
+          "ipa": "[faɪˈnænʃ(ə)l]",
+          "pos": "",
+          "contextMeaning": "财政的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "responsibility",
+          "location": "Q34-D",
+          "ipa": "[rɪˌspɒnsəˈbɪləti]",
+          "pos": "",
+          "contextMeaning": "责任",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "status",
+          "location": "Q34-D",
+          "ipa": "[ˈsteɪtəs]",
+          "pos": "",
+          "contextMeaning": "地位",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "title",
+          "location": "Q35-Stem",
+          "ipa": "[ˈtaɪt(ə)l]",
+          "pos": "",
+          "contextMeaning": "标题",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q35-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Alert",
+          "location": "Q35-A",
+          "ipa": "[əˈlɜːt]",
+          "pos": "",
+          "contextMeaning": "警觉",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q35-A 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "Cliff",
+          "location": "Q35-B",
+          "ipa": "[klɪf]",
+          "pos": "",
+          "contextMeaning": "危机",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q35-B 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "Conflict",
+          "location": "Q35-C",
+          "ipa": "[ˈkɒnflɪkt]",
+          "pos": "",
+          "contextMeaning": "冲突",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q35-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Ruins",
+          "location": "Q35-D",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "废墟",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q35-D 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "indicator",
+          "location": "Q34-D",
+          "ipa": "[ˈɪndɪkeɪtə(r)]",
+          "pos": "",
+          "contextMeaning": "指标",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q34-D 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
         }
       ],
       "phrasesAndCollocations": [
@@ -6666,40 +7555,144 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "the safety net they used to enjoy has disappeared.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "无中生有/张冠李戴。第2段第4、5句明确指出双职工家庭失去的是家庭内部的备用劳动者降落伞（lost the parachute... a back-up earner），而由失业保险或伤残保险构成的外部安全网（safety net）依然存在，并未“彻底消失”（has disappeared 属于过度绝对化和主观夸大）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "disappeared",
+                  "ipa": "",
+                  "meaning": "消失",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "their chances of being laid off have greatly increased.",
               "isCorrect": false,
-              "distractorType": "无中生有",
+              "distractorType": "UNFOUNDED",
               "analysis": "无中生有。原文虽然提到主要挣钱者如果被解雇（got laid off）会引发危机，但全文从未提及或论证过双职工家庭被解雇的概率有了大幅度上升（have greatly increased 属于凭空捏造）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "laid",
+                  "ipa": "",
+                  "meaning": "解雇",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "they are more vulnerable to changes in family economics.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。第2段第3句指出现在的家庭开支已经预算到了双薪状态的极限（budgeted to the limits of their new two-paycheck status），第4句指出他们丧失了备用劳动力构成的缓冲降落伞（lost the parachute），第6句总结指出家庭财富一旦遭遇打击便再也无法补救。这全方位证明了双薪家庭抵御波动的冗余度几乎为零，对家庭经济的任何负面变动都极度脆弱（more vulnerable to changes in family economics），同义替换极其精准。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "more",
+                  "ipa": "[mɔː(r)]",
+                  "meaning": "易受…的伤害",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                },
+                {
+                  "word": "economics",
+                  "ipa": "[ˌiːkəˈnɒmɪks]",
+                  "meaning": "经济情况",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "D",
               "text": "they are deprived of unemployment or disability insurance.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
+              "distractorType": "CONTRADICTION",
               "analysis": "正反混淆与事实颠倒。第2段第5句明确指出 'the safety net offered by unemployment insurance or disability insurance' 依然在提供保障，双职工家庭从未被剥夺（deprived of）这两种法定的社会保险福利。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "deprived",
+                  "ipa": "",
+                  "meaning": "剥夺",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                },
+                {
+                  "word": "unemployment",
+                  "ipa": "[ˌʌnɪmˈplɔɪmənt]",
+                  "meaning": "失业",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "insurance",
+                  "ipa": "[ɪnˈʃʊərəns]",
+                  "meaning": "保险",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": true
             }
           ],
-          "stem": "Today's double-income families are at greater financial risk in that _______.",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "financial",
+              "ipa": "[faɪˈnænʃ(ə)l]",
+              "meaning": "经济的",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "risk",
+              "ipa": "[rɪsk]",
+              "meaning": "风险",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 32,
@@ -6715,40 +7708,106 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "a higher sense of security.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
+              "distractorType": "CONTRADICTION",
               "analysis": "反向混淆。改革将原本有政府信用兜底的稳定养老金变成了受股市和利率巨幅波动影响的投资性账户，退休人员面临退休金耗尽的残酷现实（harsh reality），其安全感必然大幅降低，绝不可能获得更高安全感。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "security",
+                  "ipa": "[sɪˈkjʊərəti]",
+                  "meaning": "安全",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "less secured payments.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。第3段第3句精准定位：'President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.' 退休人员被迫用大部分甚至全部有保证的固定给付（guaranteed payments）去置换取决于股市波动的款项，其直接后果就是他们拿到手里的款项安全保障度大打折扣，即 'less secured payments'，形成了词性与语义的完美转换。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "payments",
+                  "ipa": "",
+                  "meaning": "收入",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "less chance to invest.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
+              "distractorType": "CONTRADICTION",
               "analysis": "正反混淆。改革的核心正是将社保推向储蓄与投资账户模式，其投资渠道和投资参与度实际上是大大增加了，而非投资机会减少。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "invest",
+                  "ipa": "[ɪnˈvest]",
+                  "meaning": "投资",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "a guaranteed future.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "正反混淆。原文指出他们是用 guaranteed payments（有保障的给付）换取了充满未知投资风险（investment returns）的浮动款项，未来变得不可预测且岌岌可危，绝非拥有了有保证的未来。",
-              "refSentences": []
+              "distractorType": "CONTRADICTION",
+              "analysis": "正反混淆。原文指出他们是用 guaranteed payments（有保障的给付）换取了充满未知投资风险（investment returns）的浮动款项，未来变得不可预测且岌岌可危，绝非拥有了有保证的未来。"
             }
           ],
-          "stem": "As a result of President Bush's reform, retired people may have _______.",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "reform",
+              "ipa": "[rɪˈfɔːm]",
+              "meaning": "改革",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 33,
@@ -6764,40 +7823,110 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "help reduce the cost of healthcare.",
               "isCorrect": false,
-              "distractorType": "无中生有",
-              "analysis": "主观臆断与反向推论。第3段第5句开篇明确说明 'Both the absolute cost of healthcare and the share of it borne by families have risen'（医疗保健的绝对成本及家庭分担比例都在上升），作者从未指出健康储蓄计划能够降低医疗成本，这只是政客推销该计划的托词，与作者的批判立场完全相反。",
-              "refSentences": []
+              "distractorType": "UNFOUNDED",
+              "analysis": "主观臆断与反向推论。第3段第5句开篇明确说明 'Both the absolute cost of healthcare and the share of it borne by families have risen'（医疗保健的绝对成本及家庭分担比例都在上升），作者从未指出健康储蓄计划能够降低医疗成本，这只是政客推销该计划的托词，与作者的批判立场完全相反。"
             },
             {
               "key": "B",
               "text": "popularize among the middle class.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "偷换概念/断章取义。原文是说 'newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers'（正从立法机构蔓延到沃尔玛基层员工），沃尔玛蓝领工人属于工薪底层而非中产阶级核心；且该选项回避了作者对该计划致命财务危害的深刻揭示。",
-              "refSentences": []
+              "distractorType": "SCOPE_DISTORTION",
+              "analysis": "偷换概念/断章取义。原文是说 'newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers'（正从立法机构蔓延到沃尔玛基层员工），沃尔玛蓝领工人属于工薪底层而非中产阶级核心；且该选项回避了作者对该计划致命财务危害的深刻揭示。"
             },
             {
               "key": "C",
               "text": "compensate for the reduced pensions.",
               "isCorrect": false,
-              "distractorType": "张冠李戴",
+              "distractorType": "ATTRIBUTION_ERROR",
               "analysis": "张冠李戴。健康储蓄计划（HSA）针对的是家庭未来的医疗保健（future healthcare），与上文探讨的退休养老金（pensions/Social Security）属于不同的制度范畴，根本无法补偿缩水的养老金。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "compensate",
+                  "ipa": "[ˈkɒmpenseɪt]",
+                  "meaning": "补偿",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                },
+                {
+                  "word": "pensions",
+                  "ipa": "",
+                  "meaning": "退休金",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "D",
               "text": "increase the families' investment risk.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。第3段第5句破折号后直接指出：健康储蓄计划伴随着 'much higher deductibles and a large new dose of investment risk for families' future healthcare'（高得多的免赔额以及为家庭未来医疗注入的大量新投资风险），与选项 D 'increase the families' investment risk' 形成了近乎字面对应的高保真替换。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "investment",
+                  "ipa": "[ɪnˈvestmənt]",
+                  "meaning": "投资",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "risk",
+                  "ipa": "[rɪsk]",
+                  "meaning": "风险",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
-          "stem": "According to the author, health-savings plans will _______.",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "author",
+              "ipa": "[ˈɔːθə(r)]",
+              "meaning": "作者",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 34,
@@ -6813,40 +7942,165 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "financial risks tend to outweigh political risks.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "无端比较。最后一段仅以并列递进的语调指出财务后果已经显现、政治后果紧随其后（may not be far behind），从未在程度轻重上论证财务风险大于政治风险。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "financial",
+                  "ipa": "[faɪˈnænʃ(ə)l]",
+                  "meaning": "经济的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "risks",
+                  "ipa": "",
+                  "meaning": "风险",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "tend",
+                  "ipa": "[tend]",
+                  "meaning": "往往",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "the middle class may face greater political challenges.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
+              "distractorType": "CONCEPT_DISTORTION",
               "analysis": "偷换概念与主体倒置。中产阶层所承受的是财务风险转嫁（wholesale shift of financial risk）；文末所说的政治后果（political fallout）指的是执政者和政治体系即将面临选民反弹与政治动荡的惩罚，并非指中产阶级自身将面临政治挑战。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "challenges",
+                  "ipa": "",
+                  "meaning": "挑战",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "financial problems may bring about political problems.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。最后一段末句以极其对仗警示的句式断言：'The financial fallout has begun, and the political fallout may not be far behind.' fallout 意为严重后果、副作用或附带危机；财务上的危机全面爆发之后，必然直接传导并引爆政治层面的动荡与危机，选项 C 使用谨慎的 may 精准地概括了两者之间的因果演变关系。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "financial",
+                  "ipa": "[faɪˈnænʃ(ə)l]",
+                  "meaning": "经济的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "bring",
+                  "ipa": "[brɪŋ]",
+                  "meaning": "引起",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "financial responsibility is an indicator of political status.",
               "isCorrect": false,
-              "distractorType": "无中生有",
+              "distractorType": "UNFOUNDED",
               "analysis": "主观臆断与拼凑捏造。最后一段第1句提到了 exercise more financial responsibility（承担更多财务责任），但这只是体制推诿卸责的说辞，全文完全没有提及财务责任是政治地位的指标这一荒谬逻辑。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "financial",
+                  "ipa": "[faɪˈnænʃ(ə)l]",
+                  "meaning": "财政的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "responsibility",
+                  "ipa": "[rɪˌspɒnsəˈbɪləti]",
+                  "meaning": "责任",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "status",
+                  "ipa": "[ˈsteɪtəs]",
+                  "meaning": "地位",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "indicator",
+                  "ipa": "[ˈɪndɪkeɪtə(r)]",
+                  "meaning": "指标",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             }
           ],
-          "stem": "It can be inferred from the last paragraph that _______.",
-          "type": "推断题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "inferred",
+              "ipa": "",
+              "meaning": "推断",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "paragraph",
+              "ipa": "[ˈpærəɡrɑːf]",
+              "meaning": "段",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 35,
@@ -6860,262 +8114,122 @@ window.ENGLISH_DATA['2007'] = {
           "options": [
             {
               "key": "A",
-              "text": "The Middle Class on the Alert",
+              "text": "The Middle Class on the Alert.",
               "textZh": "提高警惕的中产阶级",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "轻描淡写与偏离主旨。on the alert 意为‘处于警惕防备状态’，带有主动戒备色彩；而文章通篇论证的是中产阶级在经济大风险转移的体制重压下毫无还手之力、随时跌落深渊的绝望境地，该标题严重弱化了文章强烈的危机感。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "Alert",
+                  "ipa": "[əˈlɜːt]",
+                  "meaning": "警觉",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "B",
-              "text": "The Middle Class on the Cliff",
+              "text": "The Middle Class on the Cliff.",
               "textZh": "身处悬崖边缘的中产阶级",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。贯通全文核心主旨的形象概括。文章第1段开篇即点出任何微小变故（解雇、重病、婚变）都会在数月内将稳固中产打落至赤贫；第2段揭示双薪家庭失去降落伞、预算绷至极限；第3段指出退休与医疗风险全盘转嫁；第4段指出风险重压已临界爆发。中产阶级如同站在万丈深渊的悬崖边缘（on the cliff），稍有风吹草动便会坠崖粉身碎骨，极其精准生动地体现了全文的核心论点与情感色彩。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "Cliff",
+                  "ipa": "[klɪf]",
+                  "meaning": "危机",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "C",
-              "text": "The Middle Class in Conflict",
+              "text": "The Middle Class in Conflict.",
               "textZh": "身处冲突中的中产阶级",
               "isCorrect": false,
-              "distractorType": "偷换概念",
+              "distractorType": "CONCEPT_DISTORTION",
               "analysis": "偷换概念。文章核心探讨的是‘风险的转移与经济脆弱性’（risk shift and vulnerability），而非中产阶级内部或与其他阶层之间的直接对抗与冲突（conflict）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "Conflict",
+                  "ipa": "[ˈkɒnflɪkt]",
+                  "meaning": "冲突",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
-              "text": "The Middle Class in Ruins",
+              "text": "The Middle Class in Ruins.",
               "textZh": "陷入废墟之中的中产阶级",
               "isCorrect": false,
-              "distractorType": "夸大/绝对化",
+              "distractorType": "EXTREME_ABSOLUTE",
               "analysis": "过度绝对化。文章指出中产阶级正面临空前巨大的财务风险与坠入贫困的巨大危险，正处于危险的悬崖边缘，但尚未达到彻底瓦解、化为废墟（in ruins）的地步，选项过于夸大其词。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "Ruins",
+                  "ipa": "",
+                  "meaning": "废墟",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             }
           ],
-          "stem": "Which of the following is the best title for this text?",
-          "type": "主旨题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
-        }
-      ],
-      "topic": "经济体制与社会福利 · 大风险转移浪潮、双薪家庭防御机制的瓦解、社保与医疗改革对中产阶级的全盘甩锅",
-      "overview": "",
-      "paragraphs": [
-        {
-          "paraIndex": 1,
-          "paraMainIdea": "指出美国中产阶级家庭过去的财务安全神话已被经济风险打破，随时面临因失业、重病或婚变瞬间坠入新贫困阶层的现实危机。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "During the past generation, the American middle-class family that once could count on hard work and fair play to keep itself financially secure has been transformed by economic risk and new realities.",
-              "chinese": "在过去的一代人时间里，曾经依靠勤奋工作和公平竞争就能维持自身财务安全的美国中产阶级家庭，如今已被经济风险和新的现实彻底改变。",
-              "syntaxAnalysis": "主从复合句。During the past generation 为时间状语；主句主语为 the American middle-class family；that once could count on hard work and fair play to keep itself financially secure 为定语从句修饰 family（从句中包含 count on sb/sth to do sth 结构）；has been transformed 为主句谓语动词，现在完成时的被动语态；by economic risk and new realities 为介词短语作方式状语。",
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "During the past generation, the American middle-class family that once could count on hard work and fair play to keep itself financially secure has been transformed by economic risk and new realities.",
-              "translation": "在过去的一代人时间里，曾经依靠勤奋工作和公平竞争就能维持自身财务安全的美国中产阶级家庭，如今已被经济风险和新的现实彻底改变。",
-              "vocab": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
             },
-            {
-              "sentenceIndex": 2,
-              "english": "Now a pink slip, a bad diagnosis, or a disappearing spouse can reduce a family from solidly middle class to newly poor in a few months.",
-              "chinese": "如今，一张解雇通知书、一份坏的疾病诊断书、或者一位离家不顾的配偶，就能在短短几个月内让一个稳固的中产家庭沦落为新近致贫的底层。",
-              "syntaxAnalysis": "并列主语简单句。a pink slip, a bad diagnosis, or a disappearing spouse 为三个并列的名词短语作主语；can reduce 为谓语；a family 为宾语；from solidly middle class to newly poor 为固定介词搭配 reduce... from A to B（将……从A降低为B）；in a few months 为时间状语。",
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Now a pink slip, a bad diagnosis, or a disappearing spouse can reduce a family from solidly middle class to newly poor in a few months.",
-              "translation": "如今，一张解雇通知书、一份坏的疾病诊断书、或者一位离家不顾的配偶，就能在短短几个月内让一个稳固的中产家庭沦落为新近致贫的底层。",
-              "vocab": []
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "C",
+                "D": "C"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "C",
+                "D": "C"
+              },
+              "source": "英语一_2007_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "C",
+                "D": "C"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
             }
-          ],
-          "pIndex": 1,
-          "logicRole": "",
-          "mainIdea": "指出美国中产阶级家庭过去的财务安全神话已被经济风险打破，随时面临因失业、重病或婚变瞬间坠入新贫困阶层的现实危机。"
-        },
-        {
-          "paraIndex": 2,
-          "paraMainIdea": "剖析双薪家庭看似收入增加实则风险剧增的悖论：家庭开支压向极限，且彻底丧失了母亲作为备用劳动力的防风险‘降落伞’。",
-          "sentences": [
+          },
+          "vocab": [
             {
-              "sentenceIndex": 1,
-              "english": "In just one generation, millions of mothers have gone to work, transforming basic family economics.",
-              "chinese": "仅在短短一代人时间里，数以百万计的母亲走上工作岗位，彻底重塑了家庭基本经济结构。",
-              "syntaxAnalysis": "简单句 + 现在分词短语作伴随/结果状语。millions of mothers 作主语；have gone to work 为主句谓语；transforming basic family economics 为现在分词短语作结果状语。",
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "In just one generation, millions of mothers have gone to work, transforming basic family economics.",
-              "translation": "仅在短短一代人时间里，数以百万计的母亲走上工作岗位，彻底重塑了家庭基本经济结构。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 2,
-              "english": "Scholars, policymakers, and critics of all stripes have debated the social implications of these changes, but few have looked at the side effect: family risk has risen as well.",
-              "chinese": "各流派的学者、政策制定者以及批评家们就这些改变的社会影响展开了激烈争论，但极少有人注意到其副作用：家庭承受的风险也随之水涨船高。",
-              "syntaxAnalysis": "转折并列复合句。前一分句主语为 Scholars, policymakers, and critics of all stripes，谓语为 have debated，宾语为 the social implications of these changes；but 引导转折分句，few 作主语，have looked at 为谓语，冒号后 family risk has risen as well 为同位语从句解释 side effect。",
-              "sIndex": 2,
-              "id": "P2-S2",
-              "text": "Scholars, policymakers, and critics of all stripes have debated the social implications of these changes, but few have looked at the side effect: family risk has risen as well.",
-              "translation": "各流派的学者、政策制定者以及批评家们就这些改变的社会影响展开了激烈争论，但极少有人注意到其副作用：家庭承受的风险也随之水涨船高。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 3,
-              "english": "Today's families have budgeted to the limits of their new two-paycheck status.",
-              "chinese": "如今的家庭已经将开支预算安排到了双薪地位的极限。",
-              "syntaxAnalysis": "主谓宾简单句。Today's families 作主语；have budgeted 为现在完成时谓语；to the limits of their new two-paycheck status 为介词短语状语表示程度。",
-              "sIndex": 3,
-              "id": "P2-S3",
-              "text": "Today's families have budgeted to the limits of their new two-paycheck status.",
-              "translation": "如今的家庭已经将开支预算安排到了双薪地位的极限。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 4,
-              "english": "As a result, they have lost the parachute they once had in times of financial setback—a back-up earner (usually Mom) who could go into the workforce if the primary earner got laid off or fell sick.",
-              "chinese": "其结果是，他们彻底失去了以往在遭遇财务挫折时所拥有的‘降落伞’——即一位后备收入者（通常是母亲），一旦家庭主力挣钱者遭遇下岗或重病，她便能够进入劳动力市场挑起大梁。",
-              "syntaxAnalysis": "主从复合句。As a result 作状语；they have lost the parachute 为主干；they once had in times of financial setback 为省略 that 的定语从句修饰 parachute；破折号后 a back-up earner 为同位语解释 parachute；who 引导定语从句修饰 earner；if 引导从句内部的条件状语从句，含 got laid off or fell sick 并列谓语。",
-              "sIndex": 4,
-              "id": "P2-S4",
-              "text": "As a result, they have lost the parachute they once had in times of financial setback—a back-up earner (usually Mom) who could go into the workforce if the primary earner got laid off or fell sick.",
-              "translation": "其结果是，他们彻底失去了以往在遭遇财务挫折时所拥有的‘降落伞’——即一位后备收入者（通常是母亲），一旦家庭主力挣钱者遭遇下岗或重病，她便能够进入劳动力市场挑起大梁。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 5,
-              "english": "This \"added-worker effect\" could support the safety net offered by unemployment insurance or disability insurance to help families weather bad times.",
-              "chinese": "这种‘额外劳动力效应’本可以有效补充失业保险或伤残保险所提供的安全网，协助家庭渡过经济难关。",
-              "syntaxAnalysis": "主谓宾补结构。This \"added-worker effect\" 作主语；could support 作谓语；the safety net 为宾语；offered by unemployment insurance or disability insurance 为过去分词短语作后置定语修饰 net；动词不定式短语 to help families weather bad times 作目的状语。",
-              "sIndex": 5,
-              "id": "P2-S5",
-              "text": "This \"added-worker effect\" could support the safety net offered by unemployment insurance or disability insurance to help families weather bad times.",
-              "translation": "这种‘额外劳动力效应’本可以有效补充失业保险或伤残保险所提供的安全网，协助家庭渡过经济难关。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 6,
-              "english": "But today, a disruption to family fortunes can no longer be made up with extra income from an otherwise-stay-at-home partner.",
-              "chinese": "然而在今天，家庭经济财富所遭受的打击，已经无法再通过原本留守在家的配偶外出赚取额外收入来进行弥补。",
-              "syntaxAnalysis": "被动语态简单句。But today 为时间状语；a disruption to family fortunes 为主语；can no longer be made up 为情态动词被动谓语；with extra income... 为方式介词状语；otherwise-stay-at-home 为复合形容词修饰 partner。",
-              "sIndex": 6,
-              "id": "P2-S6",
-              "text": "But today, a disruption to family fortunes can no longer be made up with extra income from an otherwise-stay-at-home partner.",
-              "translation": "然而在今天，家庭经济财富所遭受的打击，已经无法再通过原本留守在家的配偶外出赚取额外收入来进行弥补。",
-              "vocab": []
+              "word": "title",
+              "ipa": "[ˈtaɪt(ə)l]",
+              "meaning": "标题",
+              "level": "green",
+              "isSelfAnnotated": false
             }
-          ],
-          "pIndex": 2,
-          "logicRole": "",
-          "mainIdea": "剖析双薪家庭看似收入增加实则风险剧增的悖论：家庭开支压向极限，且彻底丧失了母亲作为备用劳动力的防风险‘降落伞’。"
-        },
-        {
-          "paraIndex": 3,
-          "paraMainIdea": "揭示体制性风险转嫁：政府与企业推动将养老金与医疗险转为高风险投资模式，叠加人口老龄化照护压力，全方位压向中产家庭。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "During the same period, families have been asked to absorb much more risk in their retirement income.",
-              "chinese": "在同一时期，家庭还被要求在退休养老收入方面承担多得多的风险。",
-              "syntaxAnalysis": "被动语态简单句。During the same period 为时间状语；families 作主语；have been asked 为现在完成时被动谓语；动词不定式 to absorb much more risk in their retirement income 作主语补足语。",
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "During the same period, families have been asked to absorb much more risk in their retirement income.",
-              "translation": "在同一时期，家庭还被要求在退休养老收入方面承担多得多的风险。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 2,
-              "english": "Steelworkers, airline employees, and now those in the auto industry are joining millions of families who must worry about interest rates, stock market fluctuation, and the harsh reality that they may outlive their retirement money.",
-              "chinese": "钢铁工人、航空公司雇员，以及如今汽车产业的从业人员，正纷纷加入数以百万计的家庭行列，他们不得不为利率波动、股市震荡以及‘退休金花光而人尚在世’的残酷现实而忧心忡忡。",
-              "syntaxAnalysis": "复合句。Steelworkers, airline employees, and now those in the auto industry 为并列主语；are joining 为谓语；millions of families 为宾语；who 引导定语从句修饰 families；从句中 worry about 后并列接三个宾语：interest rates, stock market fluctuation, 以及 the harsh reality；that they may outlive their retirement money 为同位语从句解释 reality。",
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "Steelworkers, airline employees, and now those in the auto industry are joining millions of families who must worry about interest rates, stock market fluctuation, and the harsh reality that they may outlive their retirement money.",
-              "translation": "钢铁工人、航空公司雇员，以及如今汽车产业的从业人员，正纷纷加入数以百万计的家庭行列，他们不得不为利率波动、股市震荡以及‘退休金花光而人尚在世’的残酷现实而忧心忡忡。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 3,
-              "english": "For much of the past year, President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.",
-              "chinese": "在过去一年的大部分时间里，布什总统大张旗鼓地竞选推动将社会保障金转变为储蓄账户模式，使退休人员用大部分甚至全部有政府保证的固定给付，去换取取决于市场投资回报的款项。",
-              "syntaxAnalysis": "复合句。President Bush 作主语；campaigned 为谓语；to move Social Security to a savings-account model 为不定式短语作目的状语；with 复合结构：retirees 为逻辑主语，trading... for... 为现在分词短语作伴随状语（其中 depending on investment returns 为现在分词作后置定语修饰 payments）。",
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "For much of the past year, President Bush campaigned to move Social Security to a savings-account model, with retirees trading much or all of their guaranteed payments for payments depending on investment returns.",
-              "translation": "在过去一年的大部分时间里，布什总统大张旗鼓地竞选推动将社会保障金转变为储蓄账户模式，使退休人员用大部分甚至全部有政府保证的固定给付，去换取取决于市场投资回报的款项。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 4,
-              "english": "For younger families, the picture is not any better.",
-              "chinese": "对于更年轻的家庭而言，前景也丝毫没有好到哪里去。",
-              "syntaxAnalysis": "主系表结构简单句。For younger families 为对象状语；the picture 作主语；is 为系动词；not any better 为表语。",
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "For younger families, the picture is not any better.",
-              "translation": "对于更年轻的家庭而言，前景也丝毫没有好到哪里去。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 5,
-              "english": "Both the absolute cost of healthcare and the share of it borne by families have risen—and newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers, with much higher deductibles and a large new dose of investment risk for families' future healthcare.",
-              "chinese": "医疗保健的绝对成本以及由家庭承担的份额双双攀升——新风靡的‘健康储蓄计划’正从立法大厅一路蔓延到沃尔玛员工之中，伴随而来的是极高的免赔额，以及为家庭未来医疗注入的一剂大剂量的新投资风险。",
-              "syntaxAnalysis": "并列复合句。破折号前主语为 Both the absolute cost... and the share of it borne by families（borne by families 为过去分词作后置定语），谓语为 have risen；破折号后并列句主语为 health-savings plans，谓语为 are spreading，with 复合结构作伴随状语引出 high deductibles 和 investment risk。",
-              "sIndex": 5,
-              "id": "P3-S5",
-              "text": "Both the absolute cost of healthcare and the share of it borne by families have risen—and newly fashionable health-savings plans are spreading from legislative halls to Wal-Mart workers, with much higher deductibles and a large new dose of investment risk for families' future healthcare.",
-              "translation": "医疗保健的绝对成本以及由家庭承担的份额双双攀升——新风靡的‘健康储蓄计划’正从立法大厅一路蔓延到沃尔玛员工之中，伴随而来的是极高的免赔额，以及为家庭未来医疗注入的一剂大剂量的新投资风险。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 6,
-              "english": "Even demographics are working against the middle class family, as the odds of having a weak elderly parent—and all the attendant need for physical and financial assistance—have jumped eightfold in just one generation.",
-              "chinese": "甚至连人口统计学趋势都在与中产家庭作对，因为家中有体弱年迈父母——以及随之而来的对身体照料和经济资助的全部需求——的概率在短短一代人时间里飙升了八倍。",
-              "syntaxAnalysis": "主从复合句。Even demographics are working against the middle class family 为主句；as 引导原因状语从句；从句主干为 the odds... have jumped eightfold；of having a weak elderly parent 为后置定语修饰 odds；破折号之间 and all the attendant need... 为插入补充说明成分。",
-              "sIndex": 6,
-              "id": "P3-S6",
-              "text": "Even demographics are working against the middle class family, as the odds of having a weak elderly parent—and all the attendant need for physical and financial assistance—have jumped eightfold in just one generation.",
-              "translation": "甚至连人口统计学趋势都在与中产家庭作对，因为家中有体弱年迈父母——以及随之而来的对身体照料和经济资助的全部需求——的概率在短短一代人时间里飙升了八倍。",
-              "vocab": []
-            }
-          ],
-          "pIndex": 3,
-          "logicRole": "",
-          "mainIdea": "揭示体制性风险转嫁：政府与企业推动将养老金与医疗险转为高风险投资模式，叠加人口老龄化照护压力，全方位压向中产家庭。"
-        },
-        {
-          "paraIndex": 4,
-          "paraMainIdea": "从中产阶层视角出发做出定性：体制所谓的财务担当实为全盘甩锅，而经济上的巨大反噬将不可避免地迅速引发政治余震。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "From the middle-class family perspective, much of this, understandably, looks far less like an opportunity to exercise more financial responsibility, and a good deal more like a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders.",
-              "chinese": "从中产家庭的视角来看，可以理解的是，这一切完全谈不上是展现更多财务担当的契机，而更像是在以惊人的速度，将所有的财务风险全盘甩给他们早已不堪重负的双肩。",
-              "syntaxAnalysis": "复合结构长难句。From the middle-class family perspective 为视角状语；much of this 作主语；understandably 为插入副词；looks 为谓语动词；far less like A and a good deal more like B 构成平行对比表语结构：A 为 an opportunity to exercise...；B 为 a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders。",
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "From the middle-class family perspective, much of this, understandably, looks far less like an opportunity to exercise more financial responsibility, and a good deal more like a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders.",
-              "translation": "从中产家庭的视角来看，可以理解的是，这一切完全谈不上是展现更多财务担当的契机，而更像是在以惊人的速度，将所有的财务风险全盘甩给他们早已不堪重负的双肩。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 2,
-              "english": "The financial fallout has begun, and the political fallout may not be far behind.",
-              "chinese": "财务上的严重后果已经开始显现，而政治上的余波震荡恐怕也为期不远了。",
-              "syntaxAnalysis": "and 连接的两个平行对仗分句。前一分句 The financial fallout has begun；后一分句 the political fallout may not be far behind（以富有警示意义的隐喻宣告政治危机的迫近）。",
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "The financial fallout has begun, and the political fallout may not be far behind.",
-              "translation": "财务上的严重后果已经开始显现，而政治上的余波震荡恐怕也为期不远了。",
-              "vocab": []
-            }
-          ],
-          "pIndex": 4,
-          "logicRole": "",
-          "mainIdea": "从中产阶层视角出发做出定性：体制所谓的财务担当实为全盘甩锅，而经济上的巨大反噬将不可避免地迅速引发政治余震。"
+          ]
         }
       ]
     },
@@ -7228,39 +8342,21 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "It never rains but it pours.",
                 "chinese": "不雨则已，一雨倾盆（祸不单行）。",
-                "syntaxAnalysis": "谚语倒装/省略否定结构。It 为形式主语；rains 为谓语；but 相当于 except that 或 without，表示‘每次下雨都必定是倾盆大雨’，常考生动引语借以引出后文连锁危机的爆发。",
-                "sIndex": 1,
-                "id": "P1-S1",
-                "text": "It never rains but it pours.",
-                "translation": "不雨则已，一雨倾盆（祸不单行）。",
-                "vocab": []
+                "syntaxAnalysis": "谚语倒装/省略否定结构。It 为形式主语；rains 为谓语；but 相当于 except that 或 without，表示‘每次下雨都必定是倾盆大雨’，常考生动引语借以引出后文连锁危机的爆发。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "Just as bosses and boards have finally sorted out their worst accounting and compliance troubles, and improved their feeble corporation governance, a new problem threatens to earn them—especially in America—the sort of nasty headlines that inevitably lead to heads rolling in the executive suite: data insecurity.",
                 "chinese": "正当企业老板和董事会好不容易理顺了最棘手的会计和合规麻烦、改善了原本薄弱的公司治理机制之际，一个新的问题却又气势汹汹地威胁要给他们——尤其是在美国——招来那种不可避免会导致高管层引咎辞职的糟糕头条丑闻：这就是数据不安全。",
-                "syntaxAnalysis": "主从复合长难句。Just as 引导时间对比状语从句，从句包含两个并列谓语结构 have finally sorted out... and improved...；主句主语为 a new problem，谓语为 threatens to earn，them 为间接宾语，especially in America 为插入语，the sort of nasty headlines 为直接宾语；that 引导定语从句修饰 headlines，从句谓语 lead to，宾语为 heads rolling in the executive suite；冒号后 data insecurity 为同位语解释 a new problem。",
-                "sIndex": 2,
-                "id": "P1-S2",
-                "text": "Just as bosses and boards have finally sorted out their worst accounting and compliance troubles, and improved their feeble corporation governance, a new problem threatens to earn them—especially in America—the sort of nasty headlines that inevitably lead to heads rolling in the executive suite: data insecurity.",
-                "translation": "正当企业老板和董事会好不容易理顺了最棘手的会计和合规麻烦、改善了原本薄弱的公司治理机制之际，一个新的问题却又气势汹汹地威胁要给他们——尤其是在美国——招来那种不可避免会导致高管层引咎辞职的糟糕头条丑闻：这就是数据不安全。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合长难句。Just as 引导时间对比状语从句，从句包含两个并列谓语结构 have finally sorted out... and improved...；主句主语为 a new problem，谓语为 threatens to earn，them 为间接宾语，especially in America 为插入语，the sort of nasty headlines 为直接宾语；that 引导定语从句修饰 headlines，从句谓语 lead to，宾语为 heads rolling in the executive suite；冒号后 data insecurity 为同位语解释 a new problem。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "Left, until now, to odd, low-level IT staff to put right, and seen as a concern only of data-rich industries such as banking, telecoms and air travel, information protection is now high on the boss's agenda in businesses of every variety.",
                 "chinese": "直到最近，信息保护还一直被甩给那些不起眼的底层IT员工去排查修补，并被视为仅仅是银行、电信和民航等数据密集型行业才需要关心的琐事；然而在今天，信息保护却已高高列入各行各业各类企业老板的议事日程之首。",
-                "syntaxAnalysis": "并列过去分词短语作状语 + 主谓宾复合结构。句首 Left... to... 和 seen as... 为两个并列的过去分词短语作让步状语；主句主语为 information protection；系动词 is；表语结构 high on the boss's agenda；in businesses of every variety 为范围状语。",
-                "sIndex": 3,
-                "id": "P1-S3",
-                "text": "Left, until now, to odd, low-level IT staff to put right, and seen as a concern only of data-rich industries such as banking, telecoms and air travel, information protection is now high on the boss's agenda in businesses of every variety.",
-                "translation": "直到最近，信息保护还一直被甩给那些不起眼的底层IT员工去排查修补，并被视为仅仅是银行、电信和民航等数据密集型行业才需要关心的琐事；然而在今天，信息保护却已高高列入各行各业各类企业老板的议事日程之首。",
-                "vocab": []
+                "syntaxAnalysis": "并列过去分词短语作状语 + 主谓宾复合结构。句首 Left... to... 和 seen as... 为两个并列的过去分词短语作让步状语；主句主语为 information protection；系动词 is；表语结构 high on the boss's agenda；in businesses of every variety 为范围状语。"
               }
-            ],
-            "pIndex": 1,
-            "logicRole": "",
-            "mainIdea": "用谚语‘祸不单行’切入，揭示企业在解决财务合规麻烦后突遭‘数据不安全’新危机，迫使高管将其列为最高议程。"
+            ]
           },
           {
             "paraIndex": 2,
@@ -7270,17 +8366,9 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "Several massive leakages of customer and employee data this year—from organizations as diverse as Time Warner, the American defense contractor Science Applications International Corp and even the University of California, Berkeley—have left managers hurriedly peering into their intricate IT systems and business processes in search of potential vulnerabilities.",
                 "chinese": "今年爆发的数起大规模客户与员工数据泄露事件——涉及的机构涵盖从时代华纳、美国国防承包商科学应用国际公司，甚至到加利福尼亚大学伯克利分校等形形色色的组织——令管理者们不得不匆忙审视自身错综复杂的IT系统与业务流程，排查潜在的脆弱漏洞。",
-                "syntaxAnalysis": "主谓宾补复合长难句。主句主语为 Several massive leakages of customer and employee data；破折号之间 from organizations as diverse as... 为举例插入语；have left 为现在完成时谓语；managers 为宾语；hurriedly peering into... 为现在分词短语作宾语补足语；in search of potential vulnerabilities 为介词短语作目的状语。",
-                "sIndex": 1,
-                "id": "P2-S1",
-                "text": "Several massive leakages of customer and employee data this year—from organizations as diverse as Time Warner, the American defense contractor Science Applications International Corp and even the University of California, Berkeley—have left managers hurriedly peering into their intricate IT systems and business processes in search of potential vulnerabilities.",
-                "translation": "今年爆发的数起大规模客户与员工数据泄露事件——涉及的机构涵盖从时代华纳、美国国防承包商科学应用国际公司，甚至到加利福尼亚大学伯克利分校等形形色色的组织——令管理者们不得不匆忙审视自身错综复杂的IT系统与业务流程，排查潜在的脆弱漏洞。",
-                "vocab": []
+                "syntaxAnalysis": "主谓宾补复合长难句。主句主语为 Several massive leakages of customer and employee data；破折号之间 from organizations as diverse as... 为举例插入语；have left 为现在完成时谓语；managers 为宾语；hurriedly peering into... 为现在分词短语作宾语补足语；in search of potential vulnerabilities 为介词短语作目的状语。"
               }
-            ],
-            "pIndex": 2,
-            "logicRole": "",
-            "mainIdea": "列举包括时代华纳、军工巨头及加州大学在内的多起重磅数据泄露事件，迫使各行业管理者紧急排查IT系统潜在漏洞。"
+            ]
           },
           {
             "paraIndex": 3,
@@ -7290,50 +8378,27 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "\"Data is becoming an asset which needs to be guarded as much as any other asset,\" says Haim Mendelson of Stanford University's Graduate School of Business.",
                 "chinese": "斯坦福大学商学院的海姆·门德尔松表示：“数据正在成为一种资产，需要像守护其他任何资产一样加以严密保护。”",
-                "syntaxAnalysis": "引语主从复合句。引号内为直接引语：主干 Data is becoming an asset；which 引导定语从句修饰 asset，从句包含 as much as any other asset 的比较状语结构；引号后 says 为谓语，Haim Mendelson 为主语。",
-                "sIndex": 1,
-                "id": "P3-S1",
-                "text": "\"Data is becoming an asset which needs to be guarded as much as any other asset,\" says Haim Mendelson of Stanford University's Graduate School of Business.",
-                "translation": "斯坦福大学商学院的海姆·门德尔松表示：“数据正在成为一种资产，需要像守护其他任何资产一样加以严密保护。”",
-                "vocab": []
+                "syntaxAnalysis": "引语主从复合句。引号内为直接引语：主干 Data is becoming an asset；which 引导定语从句修饰 asset，从句包含 as much as any other asset 的比较状语结构；引号后 says 为谓语，Haim Mendelson 为主语。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "\"The ability to protect customer data is the key to market value, which the board is responsible for on behalf of shareholders.\"",
                 "chinese": "“保护客户数据的能力是决定公司市场价值的关键，而董事会正是代表广大股东对公司的市场价值承担受托责任的。”",
-                "syntaxAnalysis": "主从复合句。主句主语为 The ability to protect customer data（不定式作定语修饰 ability）；is 为系动词；the key to market value 为表语；which 引导非限制性定语从句修饰 market value，从句谓语 is responsible for，on behalf of shareholders 为介词状语。",
-                "sIndex": 2,
-                "id": "P3-S2",
-                "text": "\"The ability to protect customer data is the key to market value, which the board is responsible for on behalf of shareholders.\"",
-                "translation": "“保护客户数据的能力是决定公司市场价值的关键，而董事会正是代表广大股东对公司的市场价值承担受托责任的。”",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。主句主语为 The ability to protect customer data（不定式作定语修饰 ability）；is 为系动词；the key to market value 为表语；which 引导非限制性定语从句修饰 market value，从句谓语 is responsible for，on behalf of shareholders 为介词状语。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "Indeed, just as there is the concept of Generally Accepted Accounting Principles (GAAP), perhaps it is time for GASP, Generally Accepted Security Practices, suggested Eli Noam of New York's Columbia Business School.",
                 "chinese": "纽约哥伦比亚大学商学院的埃利·诺姆更是建议道：确实，正如存在‘公认会计原则’（GAAP）一样，或许现在已经是确立‘公认安全实践’（GASP）的时候了。",
-                "syntaxAnalysis": "类比复合句 + 倒装引述句。just as 引导方式/类比从句 there is the concept of...；主句 it is time for GASP...；suggested 为谓语，Eli Noam 为主语。",
-                "sIndex": 3,
-                "id": "P3-S3",
-                "text": "Indeed, just as there is the concept of Generally Accepted Accounting Principles (GAAP), perhaps it is time for GASP, Generally Accepted Security Practices, suggested Eli Noam of New York's Columbia Business School.",
-                "translation": "纽约哥伦比亚大学商学院的埃利·诺姆更是建议道：确实，正如存在‘公认会计原则’（GAAP）一样，或许现在已经是确立‘公认安全实践’（GASP）的时候了。",
-                "vocab": []
+                "syntaxAnalysis": "类比复合句 + 倒装引述句。just as 引导方式/类比从句 there is the concept of...；主句 it is time for GASP...；suggested 为谓语，Eli Noam 为主语。"
               },
               {
                 "sentenceIndex": 4,
                 "english": "\"Setting the proper norms has become a management issue,\" agrees Mr Mendelson.",
                 "chinese": "门德尔松先生对此表示赞同：“树立妥善的信息安全规范已经演变成一个事关全局的管理问题。”",
-                "syntaxAnalysis": "动名词作主语简单引语。Setting the proper norms 为动名词短语作主语；has become 为谓语；a management issue 为表语；agrees Mr Mendelson 为倒装引述谓语与主语。",
-                "sIndex": 4,
-                "id": "P3-S4",
-                "text": "\"Setting the proper norms has become a management issue,\" agrees Mr Mendelson.",
-                "translation": "门德尔松先生对此表示赞同：“树立妥善的信息安全规范已经演变成一个事关全局的管理问题。”",
-                "vocab": []
+                "syntaxAnalysis": "动名词作主语简单引语。Setting the proper norms 为动名词短语作主语；has become 为谓语；a management issue 为表语；agrees Mr Mendelson 为倒装引述谓语与主语。"
               }
-            ],
-            "pIndex": 3,
-            "logicRole": "",
-            "mainIdea": "援引斯坦福与哥伦比亚大学商学院学者的权威观点，强调数据已成为核心资产，倡议建立类似GAAP的‘公认安全实践（GASP）’管理规范。"
+            ]
           },
           {
             "paraIndex": 4,
@@ -7343,28 +8408,15 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "The mystery is that this should come as a surprise to any boss.",
                 "chinese": "令人百思不得其解的是，这件事情竟然会让任何一位企业老板感到意外吃惊。",
-                "syntaxAnalysis": "主系表复合句。The mystery 作主语；is 为系动词；that 引导表语从句，从句中 should 表示竟然/居然的情感色彩，come as a surprise to sb 为固定搭配。",
-                "sIndex": 1,
-                "id": "P4-S1",
-                "text": "The mystery is that this should come as a surprise to any boss.",
-                "translation": "令人百思不得其解的是，这件事情竟然会让任何一位企业老板感到意外吃惊。",
-                "vocab": []
+                "syntaxAnalysis": "主系表复合句。The mystery 作主语；is 为系动词；that 引导表语从句，从句中 should 表示竟然/居然的情感色彩，come as a surprise to sb 为固定搭配。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "Surely it should be obvious to the dimmest executive that trust, that most valuable of economic assets, is easily destroyed and hugely expensive to restore—and that few things are more likely to destroy trust than a company letting sensitive personal data get into the wrong hands.",
                 "chinese": "显而易见，即便是最愚钝的企业高管也理当心知肚明：信任，作为最具经济价值的核心资产，极易遭到摧毁，而恢复起来却代价连城——而且，没有什么比一家公司任由敏感个人数据落入不法之徒手中更容易摧毁这种信任的了。",
-                "syntaxAnalysis": "形式主语长难句。it 为形式主语；should be obvious to the dimmest executive 为系表结构；that 引导两个并列的真正主语从句：从句1中 that most valuable of economic assets 为同位语修饰 trust，谓语为 is easily destroyed and hugely expensive to restore；and 连接主语从句2：that few things are more likely to destroy trust than...（否定词 few 构成的比较级表示最高级含义）。",
-                "sIndex": 2,
-                "id": "P4-S2",
-                "text": "Surely it should be obvious to the dimmest executive that trust, that most valuable of economic assets, is easily destroyed and hugely expensive to restore—and that few things are more likely to destroy trust than a company letting sensitive personal data get into the wrong hands.",
-                "translation": "显而易见，即便是最愚钝的企业高管也理当心知肚明：信任，作为最具经济价值的核心资产，极易遭到摧毁，而恢复起来却代价连城——而且，没有什么比一家公司任由敏感个人数据落入不法之徒手中更容易摧毁这种信任的了。",
-                "vocab": []
+                "syntaxAnalysis": "形式主语长难句。it 为形式主语；should be obvious to the dimmest executive 为系表结构；that 引导两个并列的真正主语从句：从句1中 that most valuable of economic assets 为同位语修饰 trust，谓语为 is easily destroyed and hugely expensive to restore；and 连接主语从句2：that few things are more likely to destroy trust than...（否定词 few 构成的比较级表示最高级含义）。"
               }
-            ],
-            "pIndex": 4,
-            "logicRole": "",
-            "mainIdea": "作者发出犀利批判：令管理层意外不可思议，最愚钝的高管也该懂得‘信任’是最脆弱昂贵的资产，数据泄露对企业声誉是毁灭性的。"
+            ]
           },
           {
             "paraIndex": 5,
@@ -7374,50 +8426,27 @@ window.ENGLISH_DATA['2007'] = {
                 "sentenceIndex": 1,
                 "english": "The current state of affairs may have been encouraged—though not justified—by the lack of legal penalty (in America, but not Europe) for data leakage.",
                 "chinese": "数据泄露在美国（而非欧洲）缺乏法律惩戒机制，这一现状或许助长了当前的恶劣事态——尽管这并不能成为企业推卸责任的正当借口。",
-                "syntaxAnalysis": "被动语态简单句 + 破折号让步插入语。The current state of affairs 为主语；may have been encouraged 为情态动词完成时被动谓语；though not justified 为让步状语插入语；by the lack of legal penalty 为行为主体状语；括号内 in America, but not Europe 为对比状语。",
-                "sIndex": 1,
-                "id": "P5-S1",
-                "text": "The current state of affairs may have been encouraged—though not justified—by the lack of legal penalty (in America, but not Europe) for data leakage.",
-                "translation": "数据泄露在美国（而非欧洲）缺乏法律惩戒机制，这一现状或许助长了当前的恶劣事态——尽管这并不能成为企业推卸责任的正当借口。",
-                "vocab": []
+                "syntaxAnalysis": "被动语态简单句 + 破折号让步插入语。The current state of affairs 为主语；may have been encouraged 为情态动词完成时被动谓语；though not justified 为让步状语插入语；by the lack of legal penalty 为行为主体状语；括号内 in America, but not Europe 为对比状语。"
               },
               {
                 "sentenceIndex": 2,
                 "english": "Until California recently passed a law, American firms did not have to tell anyone, even the victim, when data went astray.",
                 "chinese": "在加利福尼亚州最近通过一项法律之前，美国企业在数据发生遗失外泄时，甚至根本无需通知任何人，连受害客户本人也不例外。",
-                "syntaxAnalysis": "主从复合句。Until California recently passed a law 为时间状语从句；American firms 为主语；did not have to tell 为谓语；anyone 为间接宾语，even the victim 为同位语加强语气；when data went astray 为时间状语从句。",
-                "sIndex": 2,
-                "id": "P5-S2",
-                "text": "Until California recently passed a law, American firms did not have to tell anyone, even the victim, when data went astray.",
-                "translation": "在加利福尼亚州最近通过一项法律之前，美国企业在数据发生遗失外泄时，甚至根本无需通知任何人，连受害客户本人也不例外。",
-                "vocab": []
+                "syntaxAnalysis": "主从复合句。Until California recently passed a law 为时间状语从句；American firms 为主语；did not have to tell 为谓语；anyone 为间接宾语，even the victim 为同位语加强语气；when data went astray 为时间状语从句。"
               },
               {
                 "sentenceIndex": 3,
                 "english": "That may change fast: lots of proposed data-security legislation is now doing the rounds in Washington, D.C.",
                 "chinese": "这种局面可能会迅速发生改变：大量拟议中的数据安全立法目前正在华盛顿特区国会山紧锣密鼓地展开审议游说。",
-                "syntaxAnalysis": "冒号解释并列句。前半句 That may change fast 为主干；冒号后解释原因，lots of proposed data-security legislation 作主语，is now doing the rounds 为谓语习语（意为‘流传/展开一轮轮游说与审议’），in Washington, D.C. 为地点状语。",
-                "sIndex": 3,
-                "id": "P5-S3",
-                "text": "That may change fast: lots of proposed data-security legislation is now doing the rounds in Washington, D.C.",
-                "translation": "这种局面可能会迅速发生改变：大量拟议中的数据安全立法目前正在华盛顿特区国会山紧锣密鼓地展开审议游说。",
-                "vocab": []
+                "syntaxAnalysis": "冒号解释并列句。前半句 That may change fast 为主干；冒号后解释原因，lots of proposed data-security legislation 作主语，is now doing the rounds 为谓语习语（意为‘流传/展开一轮轮游说与审议’），in Washington, D.C. 为地点状语。"
               },
               {
                 "sentenceIndex": 4,
                 "english": "Meanwhile, the theft of information about some 40 million credit-card accounts in America, disclosed on June 17th, overshadowed a hugely important decision a day earlier by America's Federal Trade Commission (FTC) that puts corporate America on notice that regulators will act if firms fail to provide adequate data security.",
                 "chinese": "与此同时，6月17日披露的高达4000万个美国信用卡账户信息失窃丑闻，使得前一天美国联邦贸易委员会（FTC）做出的一项极其重要的决定相形见绌——该决定正式向全美企业发出严厉通告：一旦公司未能提供充分的数据安全保障，监管机构将铁腕采取惩罚行动。",
-                "syntaxAnalysis": "多重主从复合长难句。Meanwhile 为时间副词；the theft of information... 为主句主语，disclosed on June 17th 为过去分词短语作后置定语；overshadowed 为主句谓语；a hugely important decision... 为宾语；that puts corporate America on notice 为定语从句修饰 decision；put sb on notice that... 结构后接宾语从句 that regulators will act；if firms fail to provide adequate data security 为条件状语从句。",
-                "sIndex": 4,
-                "id": "P5-S4",
-                "text": "Meanwhile, the theft of information about some 40 million credit-card accounts in America, disclosed on June 17th, overshadowed a hugely important decision a day earlier by America's Federal Trade Commission (FTC) that puts corporate America on notice that regulators will act if firms fail to provide adequate data security.",
-                "translation": "与此同时，6月17日披露的高达4000万个美国信用卡账户信息失窃丑闻，使得前一天美国联邦贸易委员会（FTC）做出的一项极其重要的决定相形见绌——该决定正式向全美企业发出严厉通告：一旦公司未能提供充分的数据安全保障，监管机构将铁腕采取惩罚行动。",
-                "vocab": []
+                "syntaxAnalysis": "多重主从复合长难句。Meanwhile 为时间副词；the theft of information... 为主句主语，disclosed on June 17th 为过去分词短语作后置定语；overshadowed 为主句谓语；a hugely important decision... 为宾语；that puts corporate America on notice 为定语从句修饰 decision；put sb on notice that... 结构后接宾语从句 that regulators will act；if firms fail to provide adequate data security 为条件状语从句。"
               }
-            ],
-            "pIndex": 5,
-            "logicRole": "",
-            "mainIdea": "指出美国长期缺乏法律惩处助长了泄密，但加州率先立法、国会密集酝酿以及FTC的强硬通告表明，强制数据安全的法律体系正全面收紧。"
+            ]
           }
         ]
       },
@@ -7431,9 +8460,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "整理；处理；解决",
           "collocationOrDerivation": "分类；种类 | sorted out their accounting and compliance troubles | sort out = 解决；a sort of = 一种；sort sth. into groups = 分类 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "整理；处理；解决",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "board",
@@ -7444,9 +8471,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "董事会",
           "collocationOrDerivation": "木板；登机；伙食 | bosses and boards | board of directors = 董事会；on the board = 在董事会任职；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "董事会",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "compliance",
@@ -7457,9 +8482,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "合规；遵守法规",
           "collocationOrDerivation": "服从；顺从 | accounting and compliance troubles | comply with = 遵守；compliant = 合规的；non-compliance = 不合规 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "合规；遵守法规",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "feeble",
@@ -7470,9 +8493,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "薄弱的；无力的",
           "collocationOrDerivation": "虚弱的；无效的 | feeble corporation governance | a feeble attempt/excuse/response；近义：weak, ineffective | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "薄弱的；无力的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "threaten",
@@ -7483,9 +8504,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "可能造成；有……危险",
           "collocationOrDerivation": "威胁；恐吓 | a new problem threatens to earn them headlines | threaten to do = 可能会；threaten sb. with sth. = 以……威胁某人 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "可能造成；有……危险",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "earn",
@@ -7496,9 +8515,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "招致；使获得",
           "collocationOrDerivation": "挣钱；赢得 | earn them nasty headlines | earn sb. sth. = 为某人招来/赢得某物；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "招致；使获得",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "nasty",
@@ -7509,9 +8526,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "糟糕的；令人不快的",
           "collocationOrDerivation": "恶劣的；难处理的 | nasty headlines | nasty problem/surprise/headlines；近义：unpleasant, severe | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "糟糕的；令人不快的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "headline",
@@ -7522,9 +8537,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "新闻报道；媒体关注",
           "collocationOrDerivation": "标题；大字标题 | nasty headlines | make headlines = 成为新闻；headline news = 头条新闻；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "新闻报道；媒体关注",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "inevitably",
@@ -7535,9 +8548,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "不可避免地",
           "collocationOrDerivation": "必然地 | headlines that inevitably lead to... | inevitable = 不可避免的；avoidably = 可避免地 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "不可避免地",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "executive",
@@ -7548,9 +8559,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "高管；高管的",
           "collocationOrDerivation": "行政人员；执行的 | executive suite; the dimmest executive | senior/chief executive；executive board；executive suite = 高管层 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "高管；高管的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "suite",
@@ -7561,9 +8570,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "高管层；一套房间",
           "collocationOrDerivation": "套房；一套软件 | in the executive suite | a hotel suite；software suite；executive suite = 高管层；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "高管层；一套房间",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "odd",
@@ -7574,9 +8581,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "零散的；个别的；低级杂务的",
           "collocationOrDerivation": "奇怪的；单数的 | odd, low-level IT staff | odd jobs = 零工；odd numbers = 奇数；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "零散的；个别的；低级杂务的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "leakage",
@@ -7587,9 +8592,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "泄露；外泄",
           "collocationOrDerivation": "漏出；渗漏 | leakages of customer and employee data | data leakage = 数据泄露；leak = 泄露；leaky = 漏的 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "泄露；外泄",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "diverse",
@@ -7600,9 +8603,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "不同类型的；多样的",
           "collocationOrDerivation": "多种多样的 | organizations as diverse as Time Warner... | a diverse range of；diversity = 多样性；as diverse as = 如……这样各不相同 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "不同类型的；多样的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "contractor",
@@ -7613,9 +8614,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "承包商",
           "collocationOrDerivation": "订约人；承包人 | defense contractor | contract = 合同；defense contractor = 国防承包商 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "承包商",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "Corp.",
@@ -7626,9 +8625,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "公司",
           "collocationOrDerivation": "Corporation 的缩写 | Science Applications International Corp. | Inc. = incorporated；Ltd. = limited；Co. = company | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "公司",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "intricate",
@@ -7639,9 +8636,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "错综复杂的；精细复杂的",
           "collocationOrDerivation": "复杂的；精巧的 | intricate IT systems | intricate system/pattern/process；比 complicated 更强调细节交织 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "错综复杂的；精细复杂的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "process",
@@ -7652,9 +8647,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "流程；业务流程",
           "collocationOrDerivation": "过程；加工；处理 | business processes | business process = 业务流程；process data = 处理数据；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "流程；业务流程",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "vulnerability",
@@ -7665,9 +8658,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "漏洞；薄弱环节",
           "collocationOrDerivation": "脆弱性；易受攻击性 | potential vulnerabilities | vulnerable = 脆弱的；security vulnerability = 安全漏洞；对应 weak point | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "漏洞；薄弱环节",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "asset",
@@ -7678,9 +8669,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "资产；有价值的资源",
           "collocationOrDerivation": "资产；优点 | Data is becoming an asset | economic/financial/strategic asset；asset-liability = 资产负债 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "资产；有价值的资源",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "shareholder",
@@ -7691,9 +8680,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "股东",
           "collocationOrDerivation": "持股人 | on behalf of shareholders | shareholder value/interests；区别 stakeholder = 利益相关者 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "股东",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "concept",
@@ -7704,9 +8691,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "概念；理念",
           "collocationOrDerivation": "观念；构想 | the concept of GAAP | the concept of...；conceptual = 概念上的 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "概念；理念",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "redundancy",
@@ -7717,9 +8702,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "冗余配置；备份机制",
           "collocationOrDerivation": "过剩；裁员 | security, redundancy, and recovery | data/system redundancy = 系统冗余；make sb. redundant = 裁员；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "冗余配置；备份机制",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "dim",
@@ -7730,9 +8713,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "迟钝的；理解力差的",
           "collocationOrDerivation": "昏暗的；暗淡的 | the dimmest executive | dim-witted = 愚笨的；dim light = 微弱的光；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "迟钝的；理解力差的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "sensitive",
@@ -7743,9 +8724,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "敏感的；需保密的",
           "collocationOrDerivation": "敏感的；体贴的 | sensitive personal data | sensitive information/data；be sensitive to = 对……敏感 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "敏感的；需保密的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "affair",
@@ -7756,9 +8735,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "事务；局面",
           "collocationOrDerivation": "事件；私情 | the current state of affairs | public/current affairs = 公共/时事；state of affairs = 局面；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "事务；局面",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "encourage",
@@ -7769,9 +8746,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "助长；促成",
           "collocationOrDerivation": "鼓励；支持 | may have been encouraged by... | encourage growth/bad behavior；encouragement = 鼓励；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "助长；促成",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "justify",
@@ -7782,9 +8757,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "证明……正当；为……辩护",
           "collocationOrDerivation": "证明合理；解释 | though not justified by... | be justified in doing sth.；justification = 理由；justified = 正当的 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "证明……正当；为……辩护",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "penalty",
@@ -7795,9 +8768,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "处罚；惩罚",
           "collocationOrDerivation": "罚款；刑罚；点球 | legal penalty for data leakage | penalty for sth.；impose a penalty；death penalty；penalty clause | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "处罚；惩罚",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "overshadow",
@@ -7808,9 +8779,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "盖过；使相形见绌",
           "collocationOrDerivation": "给……蒙上阴影 | the theft ... overshadowed a decision | be overshadowed by；overshadow an achievement/event | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "盖过；使相形见绌",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "corporate",
@@ -7821,9 +8790,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "公司的；企业的",
           "collocationOrDerivation": "团体的；法人组织的 | corporate America | corporate governance/responsibility；corporation = 公司 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "公司的；企业的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "regulator",
@@ -7834,9 +8801,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "监管者；监管机构",
           "collocationOrDerivation": "调节器 | regulators will act | regulate = 监管；regulation = 规章/监管；regulatory = 监管的 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "监管者；监管机构",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "adequate",
@@ -7847,9 +8812,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "足够的；充分的",
           "collocationOrDerivation": "合格的；尚可的 | adequate data security | adequate protection/funding/security；区别 sufficient = 数量/程度足够 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "足够的；充分的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "severity",
@@ -7860,9 +8823,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "严重性",
           "collocationOrDerivation": "严厉；严重程度 | the severity of data leakage | severe = 严重的；severity of a problem/crisis/punishment | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "严重性",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "interest",
@@ -7873,9 +8834,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "利益；权益",
           "collocationOrDerivation": "兴趣；利息 | shareholders’ interests | in sb.’s interests = 符合某人利益；interest rate = 利率；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "利益；权益",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "due",
@@ -7886,9 +8845,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "应有的；适当的",
           "collocationOrDerivation": "到期的；预定的；由于 | due attention | due attention/respect/process；due to = 由于；熟词僻义 | 【红】★★★ 高频核心词",
           "frequencyRating": "★★★★☆",
-          "isInObstacleList": true,
-          "meaning": "应有的；适当的",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "data-rich industries",
@@ -7899,9 +8856,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "数据密集型行业",
           "collocationOrDerivation": "富含数据的行业 | data-rich industries such as banking... | rich 可表示“富含……的”：oil-rich/resource-rich/data-rich | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "数据密集型行业",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "telecoms",
@@ -7912,9 +8867,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "电信行业；电信公司",
           "collocationOrDerivation": "telecommunications 的缩写 | banking, telecoms and air travel | telecom company/network/industry；英式常见缩略 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "电信行业；电信公司",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "recovery",
@@ -7925,9 +8878,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "恢复；灾后恢复",
           "collocationOrDerivation": "恢复；复原 | security, redundancy, and recovery | data recovery；disaster recovery；recover = 恢复 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "恢复；灾后恢复",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "restore",
@@ -7938,9 +8889,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "恢复；修复",
           "collocationOrDerivation": "使复原；归还 | expensive to restore | restore trust/confidence/order；区别 recover = 自身恢复 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "恢复；修复",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "disclose",
@@ -7951,9 +8900,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "披露；公开",
           "collocationOrDerivation": "揭露；透露 | disclosed on June 17th | disclose information/details；disclosure = 披露 | 【绿】★★ 重要阅读词",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "披露；公开",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "statement",
@@ -7964,9 +8911,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "说法；陈述",
           "collocationOrDerivation": "声明；报表 | The statement ... is used to introduce | make a statement = 发表声明；bank statement = 银行对账单 | 【绿】★ 了解即可",
           "frequencyRating": "★★★☆☆",
-          "isInObstacleList": true,
-          "meaning": "说法；陈述",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "It never rains but it pours.",
@@ -7977,9 +8922,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "祸不单行",
           "collocationOrDerivation": "麻烦接连发生 | It never rains but it pours. | 谚语；用于引出旧麻烦刚完、新麻烦又来 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "祸不单行",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "accounting and compliance troubles",
@@ -7990,9 +8933,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "会计与合规方面的麻烦",
           "collocationOrDerivation": "财务核算和守法合规问题 | sorted out their accounting and compliance troubles | business/regulatory troubles；商业监管背景高频 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "会计与合规方面的麻烦",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "sort out",
@@ -8003,9 +8944,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "解决；处理好",
           "collocationOrDerivation": "整理；分类 | sorted out their ... troubles | sort out problems/troubles/differences；写作可迁移 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "解决；处理好",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "corporation governance",
@@ -8016,9 +8955,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "公司治理",
           "collocationOrDerivation": "公司管理和监督机制 | feeble corporation governance | 常见表达：corporate governance；governance = 治理 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "公司治理",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "the sort of",
@@ -8029,9 +8966,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "那种……；那类……",
           "collocationOrDerivation": "某种类型的 | the sort of nasty headlines | 用于分类说明；a sort of = 一种 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "那种……；那类……",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "lead to heads rolling",
@@ -8042,9 +8977,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "导致有人被撤职/问责",
           "collocationOrDerivation": "导致人头落地式问责 | headlines that lead to heads rolling | lead to + n./doing；heads roll = 有人丢官 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "导致有人被撤职/问责",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "be left to sb. to do sth.",
@@ -8055,9 +8988,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "被交给某人去做",
           "collocationOrDerivation": "由某人负责处理 | Left ... to low-level IT staff to put right | 长难句还原：it was left to sb. to do sth. | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "被交给某人去做",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "put right",
@@ -8068,9 +8999,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "纠正；解决；使恢复正常",
           "collocationOrDerivation": "改正 | IT staff to put right | put sth. right = correct/fix sth. | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "纠正；解决；使恢复正常",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "be seen as a concern only of...",
@@ -8081,9 +9010,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "被视为只是……的问题",
           "collocationOrDerivation": "被看作只与……有关 | seen as a concern only of data-rich industries | see A as B = 把 A 看作 B | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "被视为只是……的问题",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "high on the boss’s agenda",
@@ -8094,9 +9021,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "成为老板议程上的优先事项",
           "collocationOrDerivation": "被高度重视 | now high on the boss’s agenda | high on one’s agenda = 是某人的重点事项 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "成为老板议程上的优先事项",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "businesses of every variety",
@@ -8107,9 +9032,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "各种各样的企业",
           "collocationOrDerivation": "各类企业 | in businesses of every variety | of every variety = 各种类型的 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "各种各样的企业",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "leave + object + doing",
@@ -8120,9 +9043,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "使某人处于正在做某事的状态",
           "collocationOrDerivation": "让……保持某状态 | left managers hurriedly peering into... | leave sb. doing/done/adj.；长难句主干：leakages left managers... | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "使某人处于正在做某事的状态",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "peer into",
@@ -8133,9 +9054,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "仔细查看；费力地查看",
           "collocationOrDerivation": "凝视；窥视 | peering into intricate IT systems | peer at/into/through；强调费力、认真地看 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "仔细查看；费力地查看",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "in search of",
@@ -8146,9 +9065,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "寻找……",
           "collocationOrDerivation": "为了寻找 | in search of potential vulnerabilities | 相当于 looking for；go in search of sth. | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "寻找……",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "be responsible for ... on behalf of ...",
@@ -8159,9 +9076,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "代表……对……负责",
           "collocationOrDerivation": "替……承担责任 | the board is responsible for... on behalf of shareholders | on behalf of sb. = 代表某人 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "代表……对……负责",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "just as ..., perhaps it is time for ...",
@@ -8172,9 +9087,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "正如已有……，也许现在该有……了",
           "collocationOrDerivation": "类比后提出建议 | just as there is GAAP, perhaps it is time for GASP | 类比论证；适合翻译和写作迁移 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "正如已有……，也许现在该有……了",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "Generally Accepted Security Practices",
@@ -8185,9 +9098,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "公认安全实践",
           "collocationOrDerivation": "通用安全准则 | GASP, Generally Accepted Security Practices | 仿照 GAAP；强调数据安全需要标准化 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "公认安全实践",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "set the proper investment level for...",
@@ -8198,9 +9109,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "为……设定适当投资水平",
           "collocationOrDerivation": "确定投入程度 | setting the proper investment level for security... | proper = 合适的；investment level = 投资水平 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "为……设定适当投资水平",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "a management issue, not a technical one",
@@ -8211,9 +9120,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "是管理问题，而不是技术问题",
           "collocationOrDerivation": "界定问题性质 | is a management issue, not a technical one | 核心判断句；主旨定位价值高 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "是管理问题，而不是技术问题",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "should come as a surprise to sb.",
@@ -8224,9 +9131,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "竟然让某人感到意外",
           "collocationOrDerivation": "使某人感到惊讶 | this should come as a surprise to any boss | should 表惊讶；come as a shock/relief/disappointment | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "竟然让某人感到意外",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "that most valuable of economic assets",
@@ -8237,9 +9142,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "那种最有价值的经济资产",
           "collocationOrDerivation": "同位语强调结构 | trust, that most valuable of economic assets | N, that most + adj. + of + plural noun；翻译理解价值高 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "那种最有价值的经济资产",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "few things are more likely to ... than ...",
@@ -8250,9 +9153,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "几乎没有什么比……更可能……",
           "collocationOrDerivation": "……最容易导致…… | few things are more likely to destroy... than... | 比较结构表达最高级含义 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "几乎没有什么比……更可能……",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "get into the wrong hands",
@@ -8263,9 +9164,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "落入不该得到的人手中",
           "collocationOrDerivation": "落入坏人手中 | personal data get into the wrong hands | fall/get into the wrong hands；数据安全主题高频 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "落入不该得到的人手中",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "the current state of affairs",
@@ -8276,9 +9175,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "当前状况；当前局面",
           "collocationOrDerivation": "当前事务状态 | The current state of affairs may have been encouraged... | state of affairs = 局面；写作可迁移 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "当前状况；当前局面",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "encouraged — though not justified — by...",
@@ -8289,9 +9186,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "由……助长，但不能由……证明正当",
           "collocationOrDerivation": "让步插入结构 | encouraged—though not justified—by the lack... | though not... 为插入让步；逻辑理解价值高 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "由……助长，但不能由……证明正当",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "the lack of legal penalty",
@@ -8302,9 +9197,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "缺乏法律处罚",
           "collocationOrDerivation": "法律惩罚不足 | by the lack of legal penalty | lack of = 缺乏；legal penalty = 法律处罚 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "缺乏法律处罚",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "go astray",
@@ -8315,9 +9208,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "丢失；出问题",
           "collocationOrDerivation": "迷路；误入歧途 | when data went astray | go astray = 迷路/出错/丢失；数据语境中指数据丢失或泄露 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "丢失；出问题",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "proposed data-security legislation",
@@ -8328,9 +9219,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "被提出的数据安全立法",
           "collocationOrDerivation": "拟议的数据安全法律 | proposed data-security legislation is now... | proposed = 拟议的；legislation = 法律/立法 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "被提出的数据安全立法",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "do the rounds",
@@ -8341,9 +9230,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "到处流传；被广泛讨论",
           "collocationOrDerivation": "巡回；轮流传播 | doing the rounds in Washington, D.C. | legislation/news/rumours do the rounds；翻译易错 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "到处流传；被广泛讨论",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "put sb. on notice that...",
@@ -8354,9 +9241,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "正式警告某人……",
           "collocationOrDerivation": "提醒某人注意…… | puts corporate America on notice that regulators will act | 法律/监管语境高频；on notice = 已被警告 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "正式警告某人……",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "bring up the concept of...",
@@ -8367,9 +9252,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "提出/引出……概念",
           "collocationOrDerivation": "抚养；提出；呕吐 | In bringing up the concept of GASP | bring up a question/issue/topic；熟词僻义 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "提出/引出……概念",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "make the point that...",
@@ -8380,9 +9263,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "表明/说明一个观点：……",
           "collocationOrDerivation": "强调一点 | the author is making the point that... | 题干高频表达；相当于 argue/suggest that | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "表明/说明一个观点：……",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "take the lead in...",
@@ -8393,9 +9274,7 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "在……方面领先/带头",
           "collocationOrDerivation": "率先行动 | takes the lead in security legislation | take the lead in doing sth.；写作迁移价值高 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
-          "isInObstacleList": true,
-          "meaning": "在……方面领先/带头",
-          "level": "red"
+          "isInObstacleList": true
         },
         {
           "word": "security legislation",
@@ -8406,9 +9285,514 @@ window.ENGLISH_DATA['2007'] = {
           "examMeaning": "安全立法",
           "collocationOrDerivation": "安全相关法律 | security legislation | data-security legislation；legislation = 法律/立法 | 【紫】★★★ 重点短语/句型",
           "frequencyRating": "★★☆☆☆",
+          "isInObstacleList": true
+        },
+        {
+          "word": "statement",
+          "location": "Q36-Stem",
+          "ipa": "[ˈsteɪtmənt]",
+          "pos": "",
+          "contextMeaning": "陈述",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "fierce",
+          "location": "Q36-A",
+          "ipa": "[fɪəs]",
+          "pos": "",
+          "contextMeaning": "激烈的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-A 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
           "isInObstacleList": true,
-          "meaning": "安全立法",
-          "level": "red"
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "feeble",
+          "location": "Q36-B",
+          "ipa": "[ˈfiːbl]",
+          "pos": "",
+          "contextMeaning": "脆弱的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "threat",
+          "location": "Q36-C",
+          "ipa": "[θret]",
+          "pos": "",
+          "contextMeaning": "威胁",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Paragraph",
+          "location": "Q37-Stem",
+          "ipa": "[ˈpærəɡrɑːf]",
+          "pos": "",
+          "contextMeaning": "段",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q37-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "organizations",
+          "location": "Q37-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "组织",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q37-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "check",
+          "location": "Q37-Stem",
+          "ipa": "[tʃek]",
+          "pos": "",
+          "contextMeaning": "检查",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q37-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "responsible",
+          "location": "Q37-C",
+          "ipa": "[rɪˈspɒnsəb(ə)l]",
+          "pos": "",
+          "contextMeaning": "负责",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q37-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "potential",
+          "location": "Q37-D",
+          "ipa": "[pəˈtenʃ(ə)l]",
+          "pos": "",
+          "contextMeaning": "潜在的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q37-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "located",
+          "location": "Q37-D",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "找出…的准确位置",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q37-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "bringing",
+          "location": "Q38-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "提出",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "concept",
+          "location": "Q38-Stem",
+          "ipa": "[ˈkɒnsept]",
+          "pos": "",
+          "contextMeaning": "概念",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "GASP",
+          "location": "Q38-Stem",
+          "ipa": "[ɡɑːsp]",
+          "pos": "",
+          "contextMeaning": "公认安全措施（Generally",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "author",
+          "location": "Q38-Stem",
+          "ipa": "[ˈɔːθə(r)]",
+          "pos": "",
+          "contextMeaning": "作者",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "making",
+          "location": "Q38-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "证明论点",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "attended",
+          "location": "Q38-A",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "注意",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "enhance",
+          "location": "Q38-C",
+          "ipa": "[ɪnˈhɑːns]",
+          "pos": "",
+          "contextMeaning": "加强",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "security",
+          "location": "Q38-C",
+          "ipa": "[sɪˈkjʊərəti]",
+          "pos": "",
+          "contextMeaning": "安全",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "emphasized",
+          "location": "Q38-D",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "强调",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q38-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Paragraph",
+          "location": "Q39-Stem",
+          "ipa": "[ˈpærəɡrɑːf]",
+          "pos": "",
+          "contextMeaning": "段",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "puzzles",
+          "location": "Q39-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "使困惑",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "author",
+          "location": "Q39-Stem",
+          "ipa": "[ˈɔːθə(r)]",
+          "pos": "",
+          "contextMeaning": "作者",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "fail",
+          "location": "Q39-Stem",
+          "ipa": "[feɪl]",
+          "pos": "",
+          "contextMeaning": "未能",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "link",
+          "location": "Q39-A",
+          "ipa": "[lɪŋk]",
+          "pos": "",
+          "contextMeaning": "联系",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "perceive",
+          "location": "Q39-B",
+          "ipa": "[pəˈsiːv]",
+          "pos": "",
+          "contextMeaning": "感觉到",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-B 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "appreciate",
+          "location": "Q39-D",
+          "ipa": "[əˈpriːʃieɪt]",
+          "pos": "",
+          "contextMeaning": "意识到",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-D 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
+        },
+        {
+          "word": "economic",
+          "location": "Q39-D",
+          "ipa": "[ˌiːkəˈnɒmɪk]",
+          "pos": "",
+          "contextMeaning": "经济的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q39-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "inferred",
+          "location": "Q40-Stem",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "推断",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "Paragraph",
+          "location": "Q40-Stem",
+          "ipa": "[ˈpærəɡrɑːf]",
+          "pos": "",
+          "contextMeaning": "段",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-Stem 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "severe",
+          "location": "Q40-A",
+          "ipa": "[sɪˈvɪə(r)]",
+          "pos": "",
+          "contextMeaning": "严重的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-A 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "essential",
+          "location": "Q40-B",
+          "ipa": "[ɪˈsenʃl]",
+          "pos": "",
+          "contextMeaning": "对…必不可少",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "security",
+          "location": "Q40-B",
+          "ipa": "[sɪˈkjʊərəti]",
+          "pos": "",
+          "contextMeaning": "安全",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-B 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "takes",
+          "location": "Q40-C",
+          "ipa": "",
+          "pos": "",
+          "contextMeaning": "处于领先地位",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "security",
+          "location": "Q40-C",
+          "ipa": "[sɪˈkjʊərəti]",
+          "pos": "",
+          "contextMeaning": "安全",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "legislation",
+          "location": "Q40-C",
+          "ipa": "[ˌledʒɪsˈleɪʃn]",
+          "pos": "",
+          "contextMeaning": "立法",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q40-C 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "legal",
+          "location": "Q36-D",
+          "ipa": "[ˈliːɡ(ə)l]",
+          "pos": "",
+          "contextMeaning": "法律的",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "penalty",
+          "location": "Q36-D",
+          "ipa": "[ˈpenəlti]",
+          "pos": "",
+          "contextMeaning": "惩罚",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "solution",
+          "location": "Q36-D",
+          "ipa": "[səˈluːʃ(ə)n]",
+          "pos": "",
+          "contextMeaning": "解决办法",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-D 选项/题干考点",
+          "frequencyRating": "★★",
+          "level": "green",
+          "isInObstacleList": false,
+          "isSelfAnnotated": false
+        },
+        {
+          "word": "severity",
+          "location": "Q36-D",
+          "ipa": "[sɪˈverəti]",
+          "pos": "",
+          "contextMeaning": "严重性",
+          "examMeaning": "",
+          "collocationOrDerivation": "Q36-D 选项/题干考点",
+          "frequencyRating": "★★★",
+          "level": "red",
+          "isInObstacleList": true,
+          "isSelfAnnotated": true
         }
       ],
       "phrasesAndCollocations": [
@@ -8878,40 +10262,137 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "the fierce business competition.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
+              "distractorType": "CONCEPT_DISTORTION",
               "analysis": "偷换概念。文章核心探讨的是企业在公司治理中面临的突发数据泄露与信息安全危机，并未涉及企业之间的市场份额争夺或激烈的商业竞争。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "fierce",
+                  "ipa": "[fɪəs]",
+                  "meaning": "激烈的",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "B",
               "text": "the feeble boss-board relations.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "断章取义。第1段第2句虽然提到了 'improved their feeble corporation governance'（改善了原本薄弱的公司治理），但并非讨论老板与董事会之间关系的薄弱或对立。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "feeble",
+                  "ipa": "[ˈfiːbl]",
+                  "meaning": "脆弱的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
               "text": "the threat from news reports.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "以偏概全与就事论事。新闻媒体的负面头条丑闻（nasty headlines）只是数据泄露东窗事发后引发的直接舆论后果，并非该谚语引入的根本实质问题。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "threat",
+                  "ipa": "[θret]",
+                  "meaning": "威胁",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "the severity of data leakage.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。开篇引用英语经典谚语 'It never rains but it pours'（祸不单行/不雨则已一雨倾盆），紧接着以 Just as... 进行对照：管理层刚理顺最棘手的会计与合规麻烦，'data insecurity'（数据不安全/数据泄露）这一全新危机便劈头盖脸席卷而来，威胁要让高管们引咎辞职。作者引用此谚语生动形象地引出数据泄露危机的突如其来及其破坏性与严峻性（the severity of data leakage）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "legal",
+                  "ipa": "[ˈliːɡ(ə)l]",
+                  "meaning": "法律的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "penalty",
+                  "ipa": "[ˈpenəlti]",
+                  "meaning": "惩罚",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "solution",
+                  "ipa": "[səˈluːʃ(ə)n]",
+                  "meaning": "解决办法",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "severity",
+                  "ipa": "[sɪˈverəti]",
+                  "meaning": "严重性",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             }
           ],
-          "stem": "The statement \"It never rains but it pours\" is used to introduce _______.",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "statement",
+              "ipa": "[ˈsteɪtmənt]",
+              "meaning": "陈述",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 37,
@@ -8927,40 +10408,117 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "whether there is any weak point.",
               "isCorrect": true,
-              "distractorType": "正确项",
-              "analysis": "正确选项。第2段末尾指出管理者紧急排查错综复杂的IT系统与业务流程的目的为：'in search of potential vulnerabilities'。vulnerability 意为‘系统漏洞、脆弱点或易受攻击的薄弱环节’，与选项 A 'whether there is any weak point' 构成了近乎词典级的精准同义替换。",
-              "refSentences": []
+              "distractorType": null,
+              "analysis": "正确选项。第2段末尾指出管理者紧急排查错综复杂的IT系统与业务流程的目的为：'in search of potential vulnerabilities'。vulnerability 意为‘系统漏洞、脆弱点或易受攻击的薄弱环节’，与选项 A 'whether there is any weak point' 构成了近乎词典级的精准同义替换。"
             },
             {
               "key": "B",
               "text": "what sort of data has been stolen.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "偷换概念。各机构匆忙自查系统是为了‘排查潜在系统漏洞’以防患于未然，而非去统计失窃数据的种类。",
-              "refSentences": []
+              "distractorType": "CONCEPT_DISTORTION",
+              "analysis": "偷换概念。各机构匆忙自查系统是为了‘排查潜在系统漏洞’以防患于未然，而非去统计失窃数据的种类。"
             },
             {
               "key": "C",
               "text": "who is responsible for the leakage.",
               "isCorrect": false,
-              "distractorType": "无中生有",
+              "distractorType": "UNFOUNDED",
               "analysis": "无中生有。第2段全文仅说明管理层在排查系统漏洞，只字未提企业自查是为了追查谁该对泄密负责。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "responsible",
+                  "ipa": "[rɪˈspɒnsəb(ə)l]",
+                  "meaning": "负责",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "how the potential spies can be located.",
               "isCorrect": false,
-              "distractorType": "夸大/绝对化",
+              "distractorType": "EXTREME_ABSOLUTE",
               "analysis": "荒谬过度推断。文章讨论的是企业防范黑客和系统外泄漏洞，并非用于排查或抓捕间谍（spies）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "potential",
+                  "ipa": "[pəˈtenʃ(ə)l]",
+                  "meaning": "潜在的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "located",
+                  "ipa": "",
+                  "meaning": "找出…的准确位置",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
-          "stem": "According to Paragraph 2, some organizations check their systems to find out _______.",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "Paragraph",
+              "ipa": "[ˈpærəɡrɑːf]",
+              "meaning": "段",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "organizations",
+              "ipa": "",
+              "meaning": "组织",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "check",
+              "ipa": "[tʃek]",
+              "meaning": "检查",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 38,
@@ -8976,40 +10534,141 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "shareholders' interests should be properly attended to.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "偏离核心论题。股东利益是第3段第2句提到的董事会受托责任背景，并非提出 GASP 这一全新安全规范概念所旨在证明的核心论点。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "attended",
+                  "ipa": "",
+                  "meaning": "注意",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "information protection should be given due attention.",
               "isCorrect": true,
-              "distractorType": "正确项",
-              "analysis": "正确选项。第3段提出 GASP（Generally Accepted Security Practices，公认安全实践），通过类比会计行业的 GAAP 说明信息安全防护绝不能再被视为底层运维的琐事，而必须确立全行业通用的规范与标准，上升为全体管理层的高度共识，即证明了 'information protection should be given due attention'（信息保护理应受到充分应有的重视）。",
-              "refSentences": []
+              "distractorType": null,
+              "analysis": "正确选项。第3段提出 GASP（Generally Accepted Security Practices，公认安全实践），通过类比会计行业的 GAAP 说明信息安全防护绝不能再被视为底层运维的琐事，而必须确立全行业通用的规范与标准，上升为全体管理层的高度共识，即证明了 'information protection should be given due attention'（信息保护理应受到充分应有的重视）。"
             },
             {
               "key": "C",
               "text": "businesses should enhance their level of accounting security.",
               "isCorrect": false,
-              "distractorType": "张冠李戴",
+              "distractorType": "ATTRIBUTION_ERROR",
               "analysis": "张冠李戴与借词混淆。GAAP 才是会计原则，GASP 代表的是安全实践（Security Practices），选项移花接木混淆为所谓‘会计安全’。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "enhance",
+                  "ipa": "[ɪnˈhɑːns]",
+                  "meaning": "加强",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "security",
+                  "ipa": "[sɪˈkjʊərəti]",
+                  "meaning": "安全",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
               "text": "the market value of customer data should be emphasized.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "以偏概全。客户数据的市场价值是第3段第2句的支撑论据，提出 GASP 强调的是建立全套正当管理安全规范，而非仅仅强调数据本身的价值。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "emphasized",
+                  "ipa": "",
+                  "meaning": "强调",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             }
           ],
-          "stem": "In bringing up the concept of GASP the author is making the point that _______.",
-          "type": "例证题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "bringing",
+              "ipa": "",
+              "meaning": "提出",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "concept",
+              "ipa": "[ˈkɒnsept]",
+              "meaning": "概念",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "GASP",
+              "ipa": "[ɡɑːsp]",
+              "meaning": "公认安全措施（Generally",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "author",
+              "ipa": "[ˈɔːθə(r)]",
+              "meaning": "作者",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "making",
+              "ipa": "",
+              "meaning": "证明论点",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 39,
@@ -9025,292 +10684,305 @@ window.ENGLISH_DATA['2007'] = {
               "key": "A",
               "text": "see the link between trust and data protection.",
               "isCorrect": true,
-              "distractorType": "正确项",
+              "distractorType": null,
               "analysis": "正确选项。第4段第1句开宗明义：'The mystery is that this should come as a surprise to any boss.'（令作者百思不得其解的是这竟然会让任何老板吃惊）。第2句立刻给出严密逻辑：最愚钝的高管也该知道信任是最脆弱宝贵的资产，而没有什么比泄露客户敏感数据更容易彻底毁掉信任。老板们之所以感到吃惊，正是因为他们愚钝地未能看清‘数据保护’与‘商业信任’之间生死相依的直接纽带（see the link between trust and data protection）。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "link",
+                  "ipa": "[lɪŋk]",
+                  "meaning": "联系",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
               "text": "perceive the sensitivity of personal data.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "细节偏差与未达本质。作者困惑的核心在于数据泄露对企业最宝贵商业信任资产的毁灭性打击，而非单纯在于管理者能否感知个人数据是否敏感。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "perceive",
+                  "ipa": "[pəˈsiːv]",
+                  "meaning": "感觉到",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                }
+              ],
+              "selfAnnotated": true
             },
             {
               "key": "C",
               "text": "realize the high cost of data restoration.",
               "isCorrect": false,
-              "distractorType": "偷换概念",
-              "analysis": "偷换概念。原文说的是 'trust... is hugely expensive to restore'（重建客户信任的代价极其高昂），选项偷换成了恢复数据本身的代价（data restoration）。",
-              "refSentences": []
+              "distractorType": "CONCEPT_DISTORTION",
+              "analysis": "偷换概念。原文说的是 'trust... is hugely expensive to restore'（重建客户信任的代价极其高昂），选项偷换成了恢复数据本身的代价（data restoration）。"
             },
             {
               "key": "D",
               "text": "appreciate the economic value of trust.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
+              "distractorType": "SCOPE_DISTORTION",
               "analysis": "未达核心因果。商业信任具有最高经济价值是客观公认的前提（obvious），老板们之所以产生盲区，是因为他们没意识到数据泄露会直接把这项核心资产毁于一旦。",
-              "refSentences": []
+              "vocab": [
+                {
+                  "word": "appreciate",
+                  "ipa": "[əˈpriːʃieɪt]",
+                  "meaning": "意识到",
+                  "level": "red",
+                  "isSelfAnnotated": true
+                },
+                {
+                  "word": "economic",
+                  "ipa": "[ˌiːkəˈnɒmɪk]",
+                  "meaning": "经济的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": true
             }
           ],
-          "stem": "According to Paragraph 4, what puzzles the author is that some bosses fail to _______.",
-          "type": "细节题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
+          },
+          "vocab": [
+            {
+              "word": "Paragraph",
+              "ipa": "[ˈpærəɡrɑːf]",
+              "meaning": "段",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "puzzles",
+              "ipa": "",
+              "meaning": "使困惑",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "author",
+              "ipa": "[ˈɔːθə(r)]",
+              "meaning": "作者",
+              "level": "green",
+              "isSelfAnnotated": false
+            },
+            {
+              "word": "fail",
+              "ipa": "[feɪl]",
+              "meaning": "未能",
+              "level": "green",
+              "isSelfAnnotated": false
+            }
+          ]
         },
         {
           "qIndex": 40,
           "standardType": "INFERENCE",
-          "questionText": "It can be inferred from the last paragraph that _______.",
+          "questionText": "It can be inferred from Paragraph 5 that _______.",
           "officialAnswer": "D",
           "userFirstAttempt": null,
           "synonymMapping": {
-            "California passed a law ... proposed legislation doing the rounds in Washington ... FTC decision puts corporate America on notice that regulators will act": "the legal system is being improved to enforce data security (加州立法 + 国会密集酝酿新法 + FTC发出监管行动通告 -> 法律体系正在不断改进以强制执行数据安全)"
+            "encouraged... by the lack of legal penalty": "legal penalty is a major solution to data leakage (缺乏法律惩罚助长了泄露 -> 法律惩罚是解决问题的主要途径)"
+          },
+          "explanation": {
+            "summary": "推断题（依据历年真题MD标准答案）。根据第5段第1句“The current state of affairs may have been encouraged—though not justified—by the lack of legal penalty (in America, but not Europe) for data leakage.”（目前这种混乱局面在很大程度上是由缺乏对数据泄露的法律惩罚所助长的），作者明确指出“缺乏法律惩罚”是造成当前数据泄露频发的重要诱因。由反向因果逻辑合理推知：既然缺乏法律惩罚助长了数据泄露，那么实施法律惩罚就是遏制、解决数据泄露问题的关键手段。因此[D]选项“legal penalty is a major solution to data leakage”（法律惩罚是解决数据泄露的主要方案）为正确推断。",
+            "distractorAnalysis": "A项“data leakage is more severe in Europe”：正反混淆。正反混淆与无中生有。第5段第1句指出“(in America, but not Europe)”，表明欧洲对数据泄露有法律惩罚，而美国缺乏。原文仅对比了法律惩罚的有无，并未比较两地数据泄露的严重程度，不能得出“欧洲的数据泄露更严重”。\nB项“FTC's decision is essential to data security”：程度夸大。夸大绝对与过度推理。第5段末句提到FTC做出了“hugely important decision”（极其重要的决定），警告企业若失职监管部门将采取惩戒行动。但“极其重要”不等于“对数据安全是必不可少的/起决定性作用的”（essential），过度夸大了该决定的绝对地位。\nC项“California takes the lead in security legislation”：过度引申/非核心推论。非段落核心推论。第5段第2句提到加州最近通过了一项法案（Until California recently passed a law...），但作者意在说明监管环境和企业通报要求的变化，并紧接着提到国会山正在酝酿法案，并未着力强调加州处于“领先领头地位”（takes the lead）。真题标准答案选定为D。",
+            "method": "【逆向因果推断法】由原文“缺乏A助长了B问题”，反向推导出“施加/推行A是解决B问题的核心途径”。"
           },
           "options": [
             {
               "key": "A",
-              "text": "American firms are legal victims of data leakage.",
+              "text": "data leakage is more severe in Europe.",
               "isCorrect": false,
               "distractorType": "正反混淆",
-              "analysis": "颠倒是非与事实反向。美国企业是发生数据泄露的过错责任方与被监管追责对象，真正的受害者是数据外泄的广大客户（victims），企业绝非法律意义上的受害者。",
-              "refSentences": []
+              "analysis": "正反混淆与无中生有。第5段第1句指出“(in America, but not Europe)”，表明欧洲对数据泄露有法律惩罚，而美国缺乏。原文仅对比了法律惩罚的有无，并未比较两地数据泄露的严重程度，不能得出“欧洲的数据泄露更严重”。",
+              "refSentences": [
+                "P5-S1"
+              ],
+              "vocab": [
+                {
+                  "word": "severe",
+                  "ipa": "[sɪˈvɪə(r)]",
+                  "meaning": "严重的",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "B",
-              "text": "FTC has authorized corporate America to handle data security.",
+              "text": "FTC's decision is essential to data security.",
               "isCorrect": false,
-              "distractorType": "正反混淆",
-              "analysis": "曲解监管与正反混淆。FTC 发出通告明确指出如果企业未能提供足够的数据安全，监管机构将铁腕采取惩罚行动（regulators will act），这是行使监管执法权，绝非‘授权企业自行处理’。",
-              "refSentences": []
+              "distractorType": "程度夸大",
+              "analysis": "夸大绝对与过度推理。第5段末句提到FTC做出了“hugely important decision”（极其重要的决定），警告企业若失职监管部门将采取惩戒行动。但“极其重要”不等于“对数据安全是必不可少的/起决定性作用的”（essential），过度夸大了该决定的绝对地位。",
+              "refSentences": [
+                "P5-S4"
+              ],
+              "vocab": [
+                {
+                  "word": "essential",
+                  "ipa": "[ɪˈsenʃl]",
+                  "meaning": "对…必不可少",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "security",
+                  "ipa": "[sɪˈkjʊərəti]",
+                  "meaning": "安全",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "C",
-              "text": "Europe is leading America in data security legislation.",
+              "text": "California takes the lead in security legislation.",
               "isCorrect": false,
-              "distractorType": "以偏概全",
-              "analysis": "过度推断。第5段第1句仅在括号内客观提及欧洲对数据泄露有法律惩罚，但最后一段全文的推导重心与论据全景均在阐述美国正在通过加州立法、国会法案与FTC严管迅速健全法制，并非旨在论证欧洲全面领先美国。",
-              "refSentences": []
+              "distractorType": "过度引申/非核心推论",
+              "analysis": "非段落核心推论。第5段第2句提到加州最近通过了一项法案（Until California recently passed a law...），但作者意在说明监管环境和企业通报要求的变化，并紧接着提到国会山正在酝酿法案，并未着力强调加州处于“领先领头地位”（takes the lead）。真题标准答案选定为D。",
+              "refSentences": [
+                "P5-S2",
+                "P5-S3"
+              ],
+              "vocab": [
+                {
+                  "word": "takes",
+                  "ipa": "",
+                  "meaning": "处于领先地位",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "security",
+                  "ipa": "[sɪˈkjʊərəti]",
+                  "meaning": "安全",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                },
+                {
+                  "word": "legislation",
+                  "ipa": "[ˌledʒɪsˈleɪʃn]",
+                  "meaning": "立法",
+                  "level": "green",
+                  "isSelfAnnotated": false
+                }
+              ],
+              "selfAnnotated": false
             },
             {
               "key": "D",
-              "text": "the legal system is being improved to enforce data security.",
+              "text": "legal penalty is a major solution to data leakage.",
               "isCorrect": true,
               "distractorType": "正确项",
-              "analysis": "正确选项。末段层层递进地展开了美国数据安全法律制度建设的演进图景：从过去由于缺乏法律惩罚导致的放任不管，到加州率先立法强制通报（California recently passed a law），再到华盛顿国会山大量数据安全立法提案紧锣密鼓地审议酝酿（lots of proposed legislation is now doing the rounds），以及最后联邦贸易委员会（FTC）发出雷霆通告明确将对安全失职严加制裁。所有这些充分且无可辩驳地推导出一个必然趋势：整个法律与监管体系正在不断完善健全，以铁腕强制落实数据安全（the legal system is being improved to enforce data security）。",
-              "refSentences": []
+              "analysis": "正确选项（真题MD参考答案版本）。第5段第1句指出：“The current state of affairs may have been encouraged—though not justified—by the lack of legal penalty (in America, but not Europe) for data leakage.”（目前这种数据泄露局面在很大程度上是由于缺乏对数据泄露的法律惩罚所助长的）。作者通过因果关系反推：缺乏法律惩罚助长了泄露，因此法律惩罚是解决、遏制数据泄露问题的主要手段与途径（a major solution to data leakage）。",
+              "refSentences": [
+                "P5-S1"
+              ]
             }
           ],
-          "stem": "It can be inferred from the last paragraph that _______.",
+          "stem": "It can be inferred from Paragraph 5 that _______.",
           "type": "推断题",
-          "tangchiModel": "唐迟真题方法论",
-          "stemKeywords": [],
-          "targetSentences": []
-        }
-      ],
-      "topic": "信息安全与商业伦理 · 大企业数据泄露危机、商业信任资产的脆弱性、加州立法与FTC强化监管倒逼信息安全规范",
-      "overview": "",
-      "paragraphs": [
-        {
-          "paraIndex": 1,
-          "paraMainIdea": "用谚语‘祸不单行’切入，揭示企业在解决财务合规麻烦后突遭‘数据不安全’新危机，迫使高管将其列为最高议程。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "It never rains but it pours.",
-              "chinese": "不雨则已，一雨倾盆（祸不单行）。",
-              "syntaxAnalysis": "谚语倒装/省略否定结构。It 为形式主语；rains 为谓语；but 相当于 except that 或 without，表示‘每次下雨都必定是倾盆大雨’，常考生动引语借以引出后文连锁危机的爆发。",
-              "sIndex": 1,
-              "id": "P1-S1",
-              "text": "It never rains but it pours.",
-              "translation": "不雨则已，一雨倾盆（祸不单行）。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 2,
-              "english": "Just as bosses and boards have finally sorted out their worst accounting and compliance troubles, and improved their feeble corporation governance, a new problem threatens to earn them—especially in America—the sort of nasty headlines that inevitably lead to heads rolling in the executive suite: data insecurity.",
-              "chinese": "正当企业老板和董事会好不容易理顺了最棘手的会计和合规麻烦、改善了原本薄弱的公司治理机制之际，一个新的问题却又气势汹汹地威胁要给他们——尤其是在美国——招来那种不可避免会导致高管层引咎辞职的糟糕头条丑闻：这就是数据不安全。",
-              "syntaxAnalysis": "主从复合长难句。Just as 引导时间对比状语从句，从句包含两个并列谓语结构 have finally sorted out... and improved...；主句主语为 a new problem，谓语为 threatens to earn，them 为间接宾语，especially in America 为插入语，the sort of nasty headlines 为直接宾语；that 引导定语从句修饰 headlines，从句谓语 lead to，宾语为 heads rolling in the executive suite；冒号后 data insecurity 为同位语解释 a new problem。",
-              "sIndex": 2,
-              "id": "P1-S2",
-              "text": "Just as bosses and boards have finally sorted out their worst accounting and compliance troubles, and improved their feeble corporation governance, a new problem threatens to earn them—especially in America—the sort of nasty headlines that inevitably lead to heads rolling in the executive suite: data insecurity.",
-              "translation": "正当企业老板和董事会好不容易理顺了最棘手的会计和合规麻烦、改善了原本薄弱的公司治理机制之际，一个新的问题却又气势汹汹地威胁要给他们——尤其是在美国——招来那种不可避免会导致高管层引咎辞职的糟糕头条丑闻：这就是数据不安全。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 3,
-              "english": "Left, until now, to odd, low-level IT staff to put right, and seen as a concern only of data-rich industries such as banking, telecoms and air travel, information protection is now high on the boss's agenda in businesses of every variety.",
-              "chinese": "直到最近，信息保护还一直被甩给那些不起眼的底层IT员工去排查修补，并被视为仅仅是银行、电信和民航等数据密集型行业才需要关心的琐事；然而在今天，信息保护却已高高列入各行各业各类企业老板的议事日程之首。",
-              "syntaxAnalysis": "并列过去分词短语作状语 + 主谓宾复合结构。句首 Left... to... 和 seen as... 为两个并列的过去分词短语作让步状语；主句主语为 information protection；系动词 is；表语结构 high on the boss's agenda；in businesses of every variety 为范围状语。",
-              "sIndex": 3,
-              "id": "P1-S3",
-              "text": "Left, until now, to odd, low-level IT staff to put right, and seen as a concern only of data-rich industries such as banking, telecoms and air travel, information protection is now high on the boss's agenda in businesses of every variety.",
-              "translation": "直到最近，信息保护还一直被甩给那些不起眼的底层IT员工去排查修补，并被视为仅仅是银行、电信和民航等数据密集型行业才需要关心的琐事；然而在今天，信息保护却已高高列入各行各业各类企业老板的议事日程之首。",
-              "vocab": []
-            }
+          "tangchiModel": "逆向因果推断法",
+          "stemKeywords": [
+            "inferred",
+            "Paragraph 5"
           ],
-          "pIndex": 1,
-          "logicRole": "",
-          "mainIdea": "用谚语‘祸不单行’切入，揭示企业在解决财务合规麻烦后突遭‘数据不安全’新危机，迫使高管将其列为最高议程。"
-        },
-        {
-          "paraIndex": 2,
-          "paraMainIdea": "列举包括时代华纳、军工巨头及加州大学在内的多起重磅数据泄露事件，迫使各行业管理者紧急排查IT系统潜在漏洞。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "Several massive leakages of customer and employee data this year—from organizations as diverse as Time Warner, the American defense contractor Science Applications International Corp and even the University of California, Berkeley—have left managers hurriedly peering into their intricate IT systems and business processes in search of potential vulnerabilities.",
-              "chinese": "今年爆发的数起大规模客户与员工数据泄露事件——涉及的机构涵盖从时代华纳、美国国防承包商科学应用国际公司，甚至到加利福尼亚大学伯克利分校等形形色色的组织——令管理者们不得不匆忙审视自身错综复杂的IT系统与业务流程，排查潜在的脆弱漏洞。",
-              "syntaxAnalysis": "主谓宾补复合长难句。主句主语为 Several massive leakages of customer and employee data；破折号之间 from organizations as diverse as... 为举例插入语；have left 为现在完成时谓语；managers 为宾语；hurriedly peering into... 为现在分词短语作宾语补足语；in search of potential vulnerabilities 为介词短语作目的状语。",
-              "sIndex": 1,
-              "id": "P2-S1",
-              "text": "Several massive leakages of customer and employee data this year—from organizations as diverse as Time Warner, the American defense contractor Science Applications International Corp and even the University of California, Berkeley—have left managers hurriedly peering into their intricate IT systems and business processes in search of potential vulnerabilities.",
-              "translation": "今年爆发的数起大规模客户与员工数据泄露事件——涉及的机构涵盖从时代华纳、美国国防承包商科学应用国际公司，甚至到加利福尼亚大学伯克利分校等形形色色的组织——令管理者们不得不匆忙审视自身错综复杂的IT系统与业务流程，排查潜在的脆弱漏洞。",
-              "vocab": []
-            }
+          "targetSentences": [
+            "P5-S1"
           ],
-          "pIndex": 2,
-          "logicRole": "",
-          "mainIdea": "列举包括时代华纳、军工巨头及加州大学在内的多起重磅数据泄露事件，迫使各行业管理者紧急排查IT系统潜在漏洞。"
-        },
-        {
-          "paraIndex": 3,
-          "paraMainIdea": "援引斯坦福与哥伦比亚大学商学院学者的权威观点，强调数据已成为核心资产，倡议建立类似GAAP的‘公认安全实践（GASP）’管理规范。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "\"Data is becoming an asset which needs to be guarded as much as any other asset,\" says Haim Mendelson of Stanford University's Graduate School of Business.",
-              "chinese": "斯坦福大学商学院的海姆·门德尔松表示：“数据正在成为一种资产，需要像守护其他任何资产一样加以严密保护。”",
-              "syntaxAnalysis": "引语主从复合句。引号内为直接引语：主干 Data is becoming an asset；which 引导定语从句修饰 asset，从句包含 as much as any other asset 的比较状语结构；引号后 says 为谓语，Haim Mendelson 为主语。",
-              "sIndex": 1,
-              "id": "P3-S1",
-              "text": "\"Data is becoming an asset which needs to be guarded as much as any other asset,\" says Haim Mendelson of Stanford University's Graduate School of Business.",
-              "translation": "斯坦福大学商学院的海姆·门德尔松表示：“数据正在成为一种资产，需要像守护其他任何资产一样加以严密保护。”",
-              "vocab": []
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
             },
-            {
-              "sentenceIndex": 2,
-              "english": "\"The ability to protect customer data is the key to market value, which the board is responsible for on behalf of shareholders.\"",
-              "chinese": "“保护客户数据的能力是决定公司市场价值的关键，而董事会正是代表广大股东对公司的市场价值承担受托责任的。”",
-              "syntaxAnalysis": "主从复合句。主句主语为 The ability to protect customer data（不定式作定语修饰 ability）；is 为系动词；the key to market value 为表语；which 引导非限制性定语从句修饰 market value，从句谓语 is responsible for，on behalf of shareholders 为介词状语。",
-              "sIndex": 2,
-              "id": "P3-S2",
-              "text": "\"The ability to protect customer data is the key to market value, which the board is responsible for on behalf of shareholders.\"",
-              "translation": "“保护客户数据的能力是决定公司市场价值的关键，而董事会正是代表广大股东对公司的市场价值承担受托责任的。”",
-              "vocab": []
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2007_英语一_真题.md"
             },
-            {
-              "sentenceIndex": 3,
-              "english": "Indeed, just as there is the concept of Generally Accepted Accounting Principles (GAAP), perhaps it is time for GASP, Generally Accepted Security Practices, suggested Eli Noam of New York's Columbia Business School.",
-              "chinese": "纽约哥伦比亚大学商学院的埃利·诺姆更是建议道：确实，正如存在‘公认会计原则’（GAAP）一样，或许现在已经是确立‘公认安全实践’（GASP）的时候了。",
-              "syntaxAnalysis": "类比复合句 + 倒装引述句。just as 引导方式/类比从句 there is the concept of...；主句 it is time for GASP...；suggested 为谓语，Eli Noam 为主语。",
-              "sIndex": 3,
-              "id": "P3-S3",
-              "text": "Indeed, just as there is the concept of Generally Accepted Accounting Principles (GAAP), perhaps it is time for GASP, Generally Accepted Security Practices, suggested Eli Noam of New York's Columbia Business School.",
-              "translation": "纽约哥伦比亚大学商学院的埃利·诺姆更是建议道：确实，正如存在‘公认会计原则’（GAAP）一样，或许现在已经是确立‘公认安全实践’（GASP）的时候了。",
-              "vocab": []
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2007_阅读Text4.pdf"
             },
-            {
-              "sentenceIndex": 4,
-              "english": "\"Setting the proper norms has become a management issue,\" agrees Mr Mendelson.",
-              "chinese": "门德尔松先生对此表示赞同：“树立妥善的信息安全规范已经演变成一个事关全局的管理问题。”",
-              "syntaxAnalysis": "动名词作主语简单引语。Setting the proper norms 为动名词短语作主语；has become 为谓语；a management issue 为表语；agrees Mr Mendelson 为倒装引述谓语与主语。",
-              "sIndex": 4,
-              "id": "P3-S4",
-              "text": "\"Setting the proper norms has become a management issue,\" agrees Mr Mendelson.",
-              "translation": "门德尔松先生对此表示赞同：“树立妥善的信息安全规范已经演变成一个事关全局的管理问题。”",
-              "vocab": []
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
             }
-          ],
-          "pIndex": 3,
-          "logicRole": "",
-          "mainIdea": "援引斯坦福与哥伦比亚大学商学院学者的权威观点，强调数据已成为核心资产，倡议建立类似GAAP的‘公认安全实践（GASP）’管理规范。"
-        },
-        {
-          "paraIndex": 4,
-          "paraMainIdea": "作者发出犀利批判：令管理层意外不可思议，最愚钝的高管也该懂得‘信任’是最脆弱昂贵的资产，数据泄露对企业声誉是毁灭性的。",
-          "sentences": [
+          },
+          "vocab": [
             {
-              "sentenceIndex": 1,
-              "english": "The mystery is that this should come as a surprise to any boss.",
-              "chinese": "令人百思不得其解的是，这件事情竟然会让任何一位企业老板感到意外吃惊。",
-              "syntaxAnalysis": "主系表复合句。The mystery 作主语；is 为系动词；that 引导表语从句，从句中 should 表示竟然/居然的情感色彩，come as a surprise to sb 为固定搭配。",
-              "sIndex": 1,
-              "id": "P4-S1",
-              "text": "The mystery is that this should come as a surprise to any boss.",
-              "translation": "令人百思不得其解的是，这件事情竟然会让任何一位企业老板感到意外吃惊。",
-              "vocab": []
+              "word": "inferred",
+              "ipa": "",
+              "meaning": "推断",
+              "level": "green",
+              "isSelfAnnotated": false
             },
             {
-              "sentenceIndex": 2,
-              "english": "Surely it should be obvious to the dimmest executive that trust, that most valuable of economic assets, is easily destroyed and hugely expensive to restore—and that few things are more likely to destroy trust than a company letting sensitive personal data get into the wrong hands.",
-              "chinese": "显而易见，即便是最愚钝的企业高管也理当心知肚明：信任，作为最具经济价值的核心资产，极易遭到摧毁，而恢复起来却代价连城——而且，没有什么比一家公司任由敏感个人数据落入不法之徒手中更容易摧毁这种信任的了。",
-              "syntaxAnalysis": "形式主语长难句。it 为形式主语；should be obvious to the dimmest executive 为系表结构；that 引导两个并列的真正主语从句：从句1中 that most valuable of economic assets 为同位语修饰 trust，谓语为 is easily destroyed and hugely expensive to restore；and 连接主语从句2：that few things are more likely to destroy trust than...（否定词 few 构成的比较级表示最高级含义）。",
-              "sIndex": 2,
-              "id": "P4-S2",
-              "text": "Surely it should be obvious to the dimmest executive that trust, that most valuable of economic assets, is easily destroyed and hugely expensive to restore—and that few things are more likely to destroy trust than a company letting sensitive personal data get into the wrong hands.",
-              "translation": "显而易见，即便是最愚钝的企业高管也理当心知肚明：信任，作为最具经济价值的核心资产，极易遭到摧毁，而恢复起来却代价连城——而且，没有什么比一家公司任由敏感个人数据落入不法之徒手中更容易摧毁这种信任的了。",
-              "vocab": []
+              "word": "Paragraph",
+              "ipa": "[ˈpærəɡrɑːf]",
+              "meaning": "段",
+              "level": "green",
+              "isSelfAnnotated": false
             }
-          ],
-          "pIndex": 4,
-          "logicRole": "",
-          "mainIdea": "作者发出犀利批判：令管理层意外不可思议，最愚钝的高管也该懂得‘信任’是最脆弱昂贵的资产，数据泄露对企业声誉是毁灭性的。"
-        },
-        {
-          "paraIndex": 5,
-          "paraMainIdea": "指出美国长期缺乏法律惩处助长了泄密，但加州率先立法、国会密集酝酿以及FTC的强硬通告表明，强制数据安全的法律体系正全面收紧。",
-          "sentences": [
-            {
-              "sentenceIndex": 1,
-              "english": "The current state of affairs may have been encouraged—though not justified—by the lack of legal penalty (in America, but not Europe) for data leakage.",
-              "chinese": "数据泄露在美国（而非欧洲）缺乏法律惩戒机制，这一现状或许助长了当前的恶劣事态——尽管这并不能成为企业推卸责任的正当借口。",
-              "syntaxAnalysis": "被动语态简单句 + 破折号让步插入语。The current state of affairs 为主语；may have been encouraged 为情态动词完成时被动谓语；though not justified 为让步状语插入语；by the lack of legal penalty 为行为主体状语；括号内 in America, but not Europe 为对比状语。",
-              "sIndex": 1,
-              "id": "P5-S1",
-              "text": "The current state of affairs may have been encouraged—though not justified—by the lack of legal penalty (in America, but not Europe) for data leakage.",
-              "translation": "数据泄露在美国（而非欧洲）缺乏法律惩戒机制，这一现状或许助长了当前的恶劣事态——尽管这并不能成为企业推卸责任的正当借口。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 2,
-              "english": "Until California recently passed a law, American firms did not have to tell anyone, even the victim, when data went astray.",
-              "chinese": "在加利福尼亚州最近通过一项法律之前，美国企业在数据发生遗失外泄时，甚至根本无需通知任何人，连受害客户本人也不例外。",
-              "syntaxAnalysis": "主从复合句。Until California recently passed a law 为时间状语从句；American firms 为主语；did not have to tell 为谓语；anyone 为间接宾语，even the victim 为同位语加强语气；when data went astray 为时间状语从句。",
-              "sIndex": 2,
-              "id": "P5-S2",
-              "text": "Until California recently passed a law, American firms did not have to tell anyone, even the victim, when data went astray.",
-              "translation": "在加利福尼亚州最近通过一项法律之前，美国企业在数据发生遗失外泄时，甚至根本无需通知任何人，连受害客户本人也不例外。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 3,
-              "english": "That may change fast: lots of proposed data-security legislation is now doing the rounds in Washington, D.C.",
-              "chinese": "这种局面可能会迅速发生改变：大量拟议中的数据安全立法目前正在华盛顿特区国会山紧锣密鼓地展开审议游说。",
-              "syntaxAnalysis": "冒号解释并列句。前半句 That may change fast 为主干；冒号后解释原因，lots of proposed data-security legislation 作主语，is now doing the rounds 为谓语习语（意为‘流传/展开一轮轮游说与审议’），in Washington, D.C. 为地点状语。",
-              "sIndex": 3,
-              "id": "P5-S3",
-              "text": "That may change fast: lots of proposed data-security legislation is now doing the rounds in Washington, D.C.",
-              "translation": "这种局面可能会迅速发生改变：大量拟议中的数据安全立法目前正在华盛顿特区国会山紧锣密鼓地展开审议游说。",
-              "vocab": []
-            },
-            {
-              "sentenceIndex": 4,
-              "english": "Meanwhile, the theft of information about some 40 million credit-card accounts in America, disclosed on June 17th, overshadowed a hugely important decision a day earlier by America's Federal Trade Commission (FTC) that puts corporate America on notice that regulators will act if firms fail to provide adequate data security.",
-              "chinese": "与此同时，6月17日披露的高达4000万个美国信用卡账户信息失窃丑闻，使得前一天美国联邦贸易委员会（FTC）做出的一项极其重要的决定相形见绌——该决定正式向全美企业发出严厉通告：一旦公司未能提供充分的数据安全保障，监管机构将铁腕采取惩罚行动。",
-              "syntaxAnalysis": "多重主从复合长难句。Meanwhile 为时间副词；the theft of information... 为主句主语，disclosed on June 17th 为过去分词短语作后置定语；overshadowed 为主句谓语；a hugely important decision... 为宾语；that puts corporate America on notice 为定语从句修饰 decision；put sb on notice that... 结构后接宾语从句 that regulators will act；if firms fail to provide adequate data security 为条件状语从句。",
-              "sIndex": 4,
-              "id": "P5-S4",
-              "text": "Meanwhile, the theft of information about some 40 million credit-card accounts in America, disclosed on June 17th, overshadowed a hugely important decision a day earlier by America's Federal Trade Commission (FTC) that puts corporate America on notice that regulators will act if firms fail to provide adequate data security.",
-              "translation": "与此同时，6月17日披露的高达4000万个美国信用卡账户信息失窃丑闻，使得前一天美国联邦贸易委员会（FTC）做出的一项极其重要的决定相形见绌——该决定正式向全美企业发出严厉通告：一旦公司未能提供充分的数据安全保障，监管机构将铁腕采取惩罚行动。",
-              "vocab": []
-            }
-          ],
-          "pIndex": 5,
-          "logicRole": "",
-          "mainIdea": "指出美国长期缺乏法律惩处助长了泄密，但加州率先立法、国会密集酝酿以及FTC的强硬通告表明，强制数据安全的法律体系正全面收紧。"
+          ]
         }
       ]
     }

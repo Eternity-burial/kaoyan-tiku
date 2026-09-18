@@ -1,13 +1,9 @@
-/**
- * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2022 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
- */
-
+// 考研英语真题数据集 (2022 年)
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
 window.ENGLISH_DATA['2022'] = {
   "year": 2022,
-  "subject": "英语",
-  "title": "2022年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析",
+  "subject": "英语(一)",
+  "title": "2022年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析数据库",
   "texts": [
     {
       "id": "text1",
@@ -692,6 +688,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "huge headaches trying to preserve culturally important plastic objects = difficulties in maintaining their plastic items。",
             "methodSummary": "首段题眼同义改写：preserve objects 转换为 maintaining items。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -754,6 +786,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "didn't mix ingredients properly + object is already a time bomb = inherently flawed（先天存在缺陷）。",
             "methodSummary": "隐喻提炼法：a time bomb 自始即存在隐患，直接提炼为 inherently flawed。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -816,6 +884,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "vulnerable to light damage + locked away in the dark = prevent them from further damage。",
             "methodSummary": "保护行动目的定位：locked in the dark（锁入黑暗库房）的因果目的正是防光损（prevent from further damage）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -877,6 +981,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "preservation of plastics will likely get harder = challenging（充满挑战的）。",
             "methodSummary": "形容词同义替换：get harder 直接转换为 challenging。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -940,6 +1080,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "defined great material ages of human history + strong impact on how in the future we will be seen = has profound historical significance。",
             "methodSummary": "末段主旨升华题：抓准 defined great material ages 与 how in the future we will be seen 对应的 historical significance。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -1605,6 +1781,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "weigh up options + value of degree changed + degree not for everyone = reassess the necessity of college education。",
             "methodSummary": "主旨建议题定位：抓准 value of degree changed 与 degree is not for everyone 对应的 reassess necessity of college education。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1624,7 +1836,7 @@ window.ENGLISH_DATA['2022'] = {
           "options": [
             {
               "key": "A",
-              "text": "Millennial's opinions about work.",
+              "text": "Millennials' opinions about work.",
               "isCorrect": false,
               "distractorType": "主体错位",
               "analysis": "【干扰特征: 概念错配】千禧一代曾深信好文凭保一生，该数据反映的是客观劳动力市场文凭贬值现实，非主观工作观念。",
@@ -1668,6 +1880,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "degrees became universal, they became devalued + 28% in non-graduate roles = the shrinking value of a degree。",
             "methodSummary": "数据例证论点对应：抓准 28% in non-graduate roles 前句论点 degrees became devalued（文凭贬值）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1730,6 +1978,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "Thankfully... Employers see advantages of hiring school leavers and scrapping degree requirement = employers taking a realistic attitude to degrees。",
             "methodSummary": "积极信号题提取：抓准 Thankfully 后阐述的雇主破除唯学历论的用人转变（realistic attitude）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1790,6 +2074,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "have specific knowledge or skills + Postgraduates earn 40% more + have two degrees = further their studies in a specific field。",
             "methodSummary": "建议题核心概念对应：specific knowledge + postgraduates 转换为 further studies in a specific field。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1853,6 +2173,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "constantly up-skilling throughout career + Education core part of trajectory + degree won't define them = Lifelong learning will define them。",
             "methodSummary": "尾段主旨升华题：抓准 constantly up-skilling throughout career 抽象概括为 Lifelong learning。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -2608,6 +2964,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "Enlightening, stimulating, fun + almost all consider doing so in future = received favourable responses。",
             "methodSummary": "褒义情感提炼法：从 Enlightening, fun 到 consider in future 直接锁定 favourable responses。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2673,6 +3065,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "artists help reach broader audience + injecting climate data into Four Seasons = art can offer audiences easy access to science。",
             "methodSummary": "例证题前段论点锁定法：抓准 reach broader audience and make emotional connections 对应的 easy access to science。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2733,6 +3161,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "not simply assist communication, nor only object of study = their role may be underestimated（角色被低估）。",
             "methodSummary": "否定句式推断担忧：not simply assist... nor only object 暗示担心自身角色被严重低估（underestimated）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2794,6 +3258,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "explore role of tech in culture + light formed basis of collaboration = exemplified valuable art-science alliances。",
             "methodSummary": "典型案例功能定位：CAVS 作为历史典范直接对应 exemplified valuable art-science alliances。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2856,6 +3356,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "needs to go beyond the necessary purpose of research communication = should do more than communicating science。",
             "methodSummary": "末段规范性主张提取：go beyond purpose of research communication 转换为 should do more than communicating science。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -3723,6 +4259,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "designed to guard the jobs of ordinary workers = protect the rights of ordinary workers。",
             "methodSummary": "立法初衷原句提取：designed to guard the jobs of ordinary workers 转换为 protect rights of ordinary workers。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3784,6 +4356,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "create difficulties for businesses + handbrake on boosting productivity and performance = hinder business development。",
             "methodSummary": "隐喻提炼法：handbrake on boosting performance 直接转换为 hinder business development。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3844,6 +4452,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "low quality of managerial capabilities cause of poor productivity + constraint on dismissing underperforming managers = supports Dismissing poorly performing managers。",
             "methodSummary": "机构立场推断法：抓准将 low managerial capabilities 认定为生产力元凶，直接推导出支持 dismissing poorly performing managers。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3905,6 +4549,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "firms pay staff less because carry the burden of employment going wrong = Employees suffer from salary cuts。",
             "methodSummary": "原句细节直接提取：firms pay staff less 转换为 Employees suffer from salary cuts。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3968,6 +4648,42 @@ window.ENGLISH_DATA['2022'] = {
           "presetReflection": {
             "trapAnalysis": "Australia deals with the paradox by excluding high-income employees (frees business owners from handbrake) = is beneficial to business owners。",
             "methodSummary": "跨国镜鉴推断题：澳大利亚通过 high-income threshold 解决了企业主无法解雇低效高管的痛点，推导出 beneficial to business owners。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "2022_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "英语一_2022_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "D": "D"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]

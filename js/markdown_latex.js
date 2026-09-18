@@ -127,6 +127,7 @@
     try {
       autoRender(element, {
         delimiters: opts.delimiters || KATEX_DELIMITERS,
+        ignoredClasses: opts.ignoredClasses || ['currency-dollar', 'katex-ignore'],
         throwOnError: opts.throwOnError !== undefined ? opts.throwOnError : false,
         errorColor: opts.errorColor || '#cc0000'
       });
@@ -163,8 +164,9 @@
                        (typeof marked !== 'undefined' && marked.parse ? marked.parse : null);
 
     // 先抽离数学公式，以 0, 1 占位，避免 marked 的 Markdown 转义破坏 LaTeX 语法（如 \{, \\, _）
+    // 严格遵循数学公式定界符规范：前置 $ 后面不可紧跟数字或空白，后置 $ 前面不可为空白，规避货币金额 ($30, $120) 误伤
     var mathSpans = [];
-    var protectedSrc = text.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|\\\[[\s\S]+?\\\]|\\\([^$\n]+?\\\)/g, function (m) {
+    var protectedSrc = text.replace(/\$\$[\s\S]+?\$\$|\\\[[\s\S]+?\\\]|\\\([^$\n]+?\\\)|\$(?!\d|\s)(?:[^\$\n]|\\\$)+?(?<!\s)\$/g, function (m) {
       var processed = optimizeMathOperators(m);
       mathSpans.push(processed);
       return '' + (mathSpans.length - 1) + '';

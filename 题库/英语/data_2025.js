@@ -1,13 +1,9 @@
-/**
- * 考研英语 · 历年真题精读与题型分析数据库
- * 年份：2025 年真题 (按照 2010 年金牌标准纯手工与精品讲义全量重构)
- */
-
+// 考研英语真题数据集 (2025 年)
 window.ENGLISH_DATA = window.ENGLISH_DATA || {};
 window.ENGLISH_DATA['2025'] = {
   "year": 2025,
-  "subject": "英语",
-  "title": "2025年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析",
+  "subject": "英语(一)",
+  "title": "2025年全国硕士研究生招生考试英语(一)真题阅读精读与题型分析数据库",
   "texts": [
     {
       "id": "text1",
@@ -597,7 +593,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "rewrite the lines from Shakespeare",
+              "text": "rewrite the lines from Shakespeare.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 偷换概念】学生是在扮演角色写漂流瓶信件，非重写修改莎士比亚的原著台词台本。",
@@ -607,7 +603,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "watch RSC actors' performances",
+              "text": "watch RSC actors' performances.",
               "isCorrect": false,
               "distractorType": "正反颠倒被动观看",
               "analysis": "【干扰特征: 被动观看偏差】强调学生亲自上台表演扮演（act him out / drama activity），非坐在台下观看演员表演。",
@@ -618,7 +614,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "play the roles in Shakespeare",
+              "text": "play the roles in Shakespeare.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P1-S1 开篇明确限定'But only if you act him out'（只有当你亲自将莎剧表演演绎出来）；P3-S2 进一步交代实验组参与了'30-minute drama-based activity... as Ferdinand after shipwreck'（扮演斐迪南王子的沉浸式戏剧表演）。act him out / drama-based activity 与 play the roles in Shakespeare（扮演莎士比亚戏剧中的角色）完全同义对应。C选项完全精准吻合。",
@@ -629,7 +625,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "study drama under RSC artists",
+              "text": "study drama under RSC artists.",
               "isCorrect": false,
               "distractorType": "偷换主体",
               "analysis": "【干扰特征: 概念偏差】实验在45所普通小学由一线教师按戏剧法执教，非由 RSC 艺术家亲自手把手授课。",
@@ -641,6 +637,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "act him out + drama-based activity writing as Ferdinand = play the roles in Shakespeare。",
             "methodSummary": "原句细节同义改写：act him out 转换为 play the roles in Shakespeare。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -659,7 +691,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "the change in instruction enhances learning outcomes",
+              "text": "the change in instruction enhances learning outcomes.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 实验设计宗旨提炼】P3-S1 和 P3-S2 明确阐述随机对照试验（RCT）的科学逻辑：将未接触过 RSC 教学法的学生随机分为实验组（给予30分钟戏剧教学）与对照组（常规教学），比较两组在词汇、写作和情感理解等各项学习成果上的显著差异。分组实验的核心科研目的正是为了科学检验：教学方式的改变（change in instruction / drama-based approach）是否能够显著提升学生的实际学习成效（enhances learning outcomes）。A选项完全精准吻合实验目的。",
@@ -671,7 +703,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "expanding vocabulary helps develop reading fluency",
+              "text": "expanding vocabulary helps develop reading fluency.",
               "isCorrect": false,
               "distractorType": "偷换自变量因变量",
               "analysis": "【干扰特征: 变量颠倒】词汇扩展是戏剧教学带来的结果产物之一，非作为自变量去测试阅读流畅度。",
@@ -681,7 +713,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "emotion affects understanding of sophisticated works",
+              "text": "emotion affects understanding of sophisticated works.",
               "isCorrect": false,
               "distractorType": "偷换核心变量",
               "analysis": "【干扰特征: 偏离实验主线】实验的核心自变量是是否采用戏剧排练室教学法，非测试情绪对理解复杂作品的影响。",
@@ -692,7 +724,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "the classroom activity stimulates interest in the arts",
+              "text": "the classroom activity stimulates interest in the arts.",
               "isCorrect": false,
               "distractorType": "偏离主旨测量项",
               "analysis": "【干扰特征: 概念偏差】实验核心测量的是读写能力（literacy）、词汇丰富度和情感共情写作，非单纯激发艺术兴趣。",
@@ -705,6 +737,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "target group (with drama activity) vs control group (without) measured on literacy outcomes = whether the change in instruction enhances learning outcomes。",
             "methodSummary": "对照实验逻辑提炼法：识别对照组与实验组的干预变量（instruction）与测量指标（learning outcomes）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -722,7 +790,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "weakness in description",
+              "text": "weakness in description.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P5-S1 明确将对照组与实验组进行对比：'while control pupils relied on \"desert island clichés\" such as palm trees, target pupils were more expansive [giving] a broader picture of the sky, the sea and atmospheric conditions'（对照组依赖棕榈树等荒岛老套陈词滥调，而实验组则拓展描绘出天空大海气象等宏大画卷）。对照组只能写出老套俗套的套话词汇，这极其鲜明地暴露了他们在书面景物描写能力上的严重薄弱与欠缺（weakness in description）。A选项精准吻合。",
@@ -732,7 +800,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "omission of small details",
+              "text": "omission of small details.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 概念偏差】他们写了棕榈树等细节，问题在于用词俗套老旧陈腐，非遗漏小细节。",
@@ -742,7 +810,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "casual style of writing",
+              "text": "casual style of writing.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】未提及写作风格随意（casual），核心在于描写功力贫乏。",
@@ -752,7 +820,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "preference for big words",
+              "text": "preference for big words.",
               "isCorrect": false,
               "distractorType": "张冠李戴实验组",
               "analysis": "【干扰特征: 主体颠倒】使用高级罕见大词的是实验目标组学生（P4-S1: target group used rarer words），对照组使用的是俗套小词。",
@@ -765,6 +833,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "control relied on clichés vs target giving broader picture of sky and sea = weakness in description。",
             "methodSummary": "对比反差推断：relied on clichés 暴露出写作描写能力上的欠缺（weakness in description）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -827,6 +931,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "put yourself in the shoes of a literary character = Identifying with literary characters（与文学角色产生共情同理心）。",
             "methodSummary": "习语转换法：put oneself in someone's shoes 直接转换为 identify with。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -844,7 +984,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "the new teaching method may work best with Shakespeare",
+              "text": "the new teaching method may work best with Shakespeare.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 合理推断】P7-S1 面对“该成果能否在其他古代剧作家身上复制”的设问，O'Hanlon 深入分析指出：莎士比亚独有的20,000个海量词汇给儿童带来了巨大的语言扩张，结合全身体验赋予词语生命。由此可严密推断出：正是莎剧独一无二的浩瀚词汇库与戏剧张力，使得这种沉浸式排练室教学法在莎士比亚作品上能够发挥出最为显著卓越的最佳成效（may work best with Shakespeare）。A选项精准契合推理。",
@@ -854,7 +994,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "the language of Shakespeare may be formidable for pupils",
+              "text": "the language of Shakespeare may be formidable for pupils.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 褒贬颠倒】全篇强调莎剧语言给九至十岁儿童带来了巨大的语言能力腾飞，绝非令人望而生畏难以逾越（formidable）。",
@@ -865,7 +1005,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "other old dramatists may be included in primary education",
+              "text": "other old dramatists may be included in primary education.",
               "isCorrect": false,
               "distractorType": "过度推断",
               "analysis": "【干扰特征: 概念偏差】O'Hanlon 表示其他剧作家尚需更多实证研究，并未断言应将其纳入小学课程。",
@@ -875,7 +1015,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "pupils may be reluctant to work on other old dramatists",
+              "text": "pupils may be reluctant to work on other old dramatists.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 无端捏造】未提及学生不愿意学习其他古代剧作家。",
@@ -887,6 +1027,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "Shakespeare's 20,000 words vs 2,000 everyday words combined with whole body acting = the new teaching method may work best with Shakespeare。",
             "methodSummary": "末段独特优势推断：抓准莎翁两万词汇的独特结合点，推导出 work best with Shakespeare。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text1.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -1617,7 +1793,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "unwillingness to cut carbon emissions",
+              "text": "unwillingness to cut carbon emissions.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】这些科学家正是过于激进地渴望减少碳排放，甚至不惜因此自断手臂削减科研。",
@@ -1627,7 +1803,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "intention to reduce their research",
+              "text": "intention to reduce their research.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P1-S1 开篇第一句明确点题：'I was shocked to learn recently that some scientists want to scale back their research in an effort to decrease carbon emissions'（我最近震惊地获悉，某些科学家为了降低碳排放居然想缩减削减自身的科学研究）。shocked（感到震惊）与 expressed great surprise 完全同义；want to scale back their research 与 intention to reduce their research（缩减其科研工作的意图）完全同义对应。B选项完全精准吻合。",
@@ -1637,7 +1813,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "suspicions about sustainable energy",
+              "text": "suspicions about sustainable energy.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】未提及对可持续能源怀有怀疑态度。",
@@ -1647,7 +1823,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "waste of electricity in their projects",
+              "text": "waste of electricity in their projects.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 概念偏差】科研用电是探索世界的必要投入，非盲目浪费电能（waste of electricity）。",
@@ -1660,6 +1836,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "I was shocked to learn scientists want to scale back their research = expressed great surprise at intention to reduce their research。",
             "methodSummary": "首句题眼提取：shocked 对应 expressed great surprise，scale back research 转换为 reduce research。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1679,7 +1891,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "have caused grave consequences",
+              "text": "have caused grave consequences.",
               "isCorrect": false,
               "distractorType": "褒贬颠倒",
               "analysis": "【干扰特征: 贬义偏差】作者强调科研碳排带来了长远拯救地球的巨大红利，绝非造成严重恶果。",
@@ -1689,7 +1901,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "have aroused groundless worries",
+              "text": "have aroused groundless worries.",
               "isCorrect": false,
               "distractorType": "过度推断",
               "analysis": "【干扰特征: 概念偏差】高能耗是客观事实，作者并非批评担忧毫无根据，而是论证这笔投入从长远看完全物有所值。",
@@ -1700,7 +1912,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "are hard to handle at present",
+              "text": "are hard to handle at present.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 偏离主线】文章后文展示了芬兰超算等成熟解决途径，非当前难以处理。",
@@ -1710,7 +1922,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "are justifiable in the long run",
+              "text": "are justifiable in the long run.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P3-S1 和 P3-S2 明确阐述作者的核心论断：'this is a price we must pay for understanding the world... The carbon emissions from technological research are well spent: ultimately this research will safeguard the future of our planet'（这是我们认知世界必须付出的代价，科技研发的碳排放完全物有所值，终将拯救守护地球未来）。well spent / price we must pay / safeguard future 与 are justifiable in the long run（从长远来看是完全正当合理的）完全同义对应。D选项精准吻合。",
@@ -1723,6 +1935,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "price we must pay + well spent + safeguard future of planet = are justifiable in the long run。",
             "methodSummary": "核心观点提炼：price must pay / well spent 抽象概括为 justifiable in the long run。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1743,7 +1991,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "the achievements of great scientists",
+              "text": "the achievements of great scientists.",
               "isCorrect": false,
               "distractorType": "以偏概全人物成就",
               "analysis": "【干扰特征: 局限于个人】举例的宏观论证目的是证明‘科学探索投入能够带来巨大的环境与减排丰硕回报’，非单纯颂扬个人功绩。",
@@ -1754,7 +2002,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "the urgency of addressing climate change",
+              "text": "the urgency of addressing climate change.",
               "isCorrect": false,
               "distractorType": "偷换论点",
               "analysis": "【干扰特征: 偏离论点】案例展示的是科研成果带来的解决胜算与红利，非强调应对危机的紧迫性。",
@@ -1764,7 +2012,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "the rewards of scientific endeavours",
+              "text": "the rewards of scientific endeavours.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 例证论点对应】P4-S2 提出论点'demonstrating the efficacy of science will be crucial if we are to solve humanity's greatest challenges'（证明科学的巨大效力对于解决人类挑战至关重要）；P5-S1 和 P5-S2 举出千禧年科技奖得主格林教授发明 PERC 太阳能电池大幅降低全球碳排的实证。引用该案例正是为了生动论证：坚定的科学探索努力必将给全人类带来极其丰硕的伟大回报与减排红利（the rewards of scientific endeavours）。C选项完全精准对应论点。",
@@ -1776,7 +2024,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "the value of fostering human ingenuity",
+              "text": "the value of fostering human ingenuity.",
               "isCorrect": false,
               "distractorType": "次要修饰细节",
               "analysis": "【干扰特征: 次要背景】celebration of human ingenuity 是千禧年科技奖的仪式修饰语，案例核心落在格林发明带来的实质减排回报上。",
@@ -1789,6 +2037,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "Green invented PERC solar cells which gives real chance to decrease world emissions = the rewards of scientific endeavours（科学探索的丰硕回报）。",
             "methodSummary": "例证题前段论点锁定：demonstrating efficacy of science 结合太阳能减排巨大成果，提炼为 the rewards of scientific endeavours。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1808,7 +2092,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "is a model of sustainability efforts",
+              "text": "is a model of sustainability efforts.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P6-S2 明确阐明 LUMI 的标杆地位：'A great example of this is Europe's largest supercomputer, LUMI in Finland, which is astonishingly carbon negative... powered by river, heat warms town'（其绝佳典范便是芬兰超算 LUMI，实现了负碳排放，水力驱动，余热供暖）；P7-S1 进一步呼吁'deliver sustainable computing and deliver more LUMIs'（实现可持续计算并打造更多 LUMI）。A选项 is a model of sustainability efforts（是可持续发展努力的杰出典范/标杆）与 A great example... sustainable computing 完全同义对应。",
@@ -1819,7 +2103,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "is a triumph against energy shortage",
+              "text": "is a triumph against energy shortage.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 偷换概念】LUMI 解决的是算力的高能耗与碳排放污染问题，非战胜能源短缺危机。",
@@ -1829,7 +2113,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "owes much to global net-zero initiatives",
+              "text": "owes much to global net-zero initiatives.",
               "isCorrect": false,
               "distractorType": "因果倒置",
               "analysis": "【干扰特征: 因果颠倒】是全球净零目标需要依赖复制 LUMI 这样的可持续超算，非 LUMI 归功于全球倡议。",
@@ -1839,7 +2123,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "aims to explore the power of intelligence",
+              "text": "aims to explore the power of intelligence.",
               "isCorrect": false,
               "distractorType": "字面望文生义",
               "analysis": "【干扰特征: 字面拼凑】power our intelligence 是 P6-S1 的哲学修辞，LUMI 的核心事实特征在于其绿色负碳排的运作模式。",
@@ -1852,6 +2136,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "LUMI is great example of carbon negative computing + deliver sustainable computing and more LUMIs = is a model of sustainability efforts。",
             "methodSummary": "标杆典范事实对应：great example of sustainable computing 转换为 model of sustainability efforts。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -1919,6 +2239,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "instruments demand significant energy is unarguable + price we must pay to understand world = Energy-intensive research work is inevitable。",
             "methodSummary": "全文核心立场归纳：抓准 unarguable demand energy 与 price must pay 对应的 inevitable。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text2.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -2654,7 +3010,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "have drawn lessons from Hollywood",
+              "text": "have drawn lessons from Hollywood.",
               "isCorrect": false,
               "distractorType": "偷换概念主体",
               "analysis": "【干扰特征: 概念混淆】这些平台本身就是老牌好莱坞制片厂亲手打造的（old Hollywood entered streaming），非向好莱坞吸取教训。",
@@ -2664,7 +3020,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "have surpassed cable in revenue",
+              "text": "have surpassed cable in revenue.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实完全相反】华尔街深感忧虑其盈利能力永远无法企及昔日的有线电视（never be as profitable as cable）。",
@@ -2674,7 +3030,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "are unpopular with advertisers",
+              "text": "are unpopular with advertisers.",
               "isCorrect": false,
               "distractorType": "张冠李戴盗版网站",
               "analysis": "【干扰特征: 偷换对象】从广告和会员中狂敛20亿暴利的是非法盗版网站（illegitimate services rake in from ads），非正规平台不受欢迎。",
@@ -2684,7 +3040,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "are confronted with a real threat",
+              "text": "are confronted with a real threat.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P1-S1 和 P1-S2 明确展现正规流媒体平台的巨大生存危机：正规平台巨亏数十亿，而盗版平台几秒钟内盗取其片源并掠夺性狂揽20亿美元。正规合法流媒体平台显然正面临着来自非法盗版黑产的巨大现实威胁与生存挤压（are confronted with a real threat）。D选项完全精准概括了第一段的核心处境。",
@@ -2697,6 +3053,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "legitimate streamers lose billions while pirates rip shows in seconds and rake in $2 billion = legitimate streaming services are confronted with a real threat。",
             "methodSummary": "首段危机处境概括：正规平台亏损与盗版掠夺并存，直接锁定 confronted with a real threat。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2714,7 +3106,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "played a part in the fight against illegal file-sharing",
+              "text": "played a part in the fight against illegal file-sharing.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 原文同义复现】P3-S1 明确交代奈飞等流媒体的历史功绩：'Initially the rise of legitimate online businesses such as Netflix actually helped curb digital piracy, which had largely been based on file uploads'（起初，像奈飞这样的正规合法在线业务的崛起，实际上曾帮助遏制了当时主要基于文件上传的数字盗版）。curb digital piracy based on file uploads 与 played a part in the fight against illegal file-sharing（在打击非法文件共享盗版的斗争中发挥了一定作用）完全同义对应。A选项精准吻合。",
@@ -2724,7 +3116,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "reaped benefits from the war with digital pirates",
+              "text": "reaped benefits from the war with digital pirates.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实完全相反】正规平台目前因盗版每年蒙受千亿美元计的惨重经济损失（loss of revenue），绝非从中获利（reaped benefits）。",
@@ -2735,7 +3127,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "promised to become big job creators in the US",
+              "text": "promised to become big job creators in the US.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 概念偏差】第三段讲的是盗版导致美国损失了25万个就业岗位（lost 250,000 jobs），非奈飞承诺创造就业。",
@@ -2745,7 +3137,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "used to collaborate with file-uploading platforms",
+              "text": "used to collaborate with file-uploading platforms.",
               "isCorrect": false,
               "distractorType": "正反颠倒对抗关系",
               "analysis": "【干扰特征: 敌我颠倒】奈飞等合法平台是在遏制打击（curb）基于文件上传的盗版，绝非与文件上传盗版平台合作（collaborate）。",
@@ -2757,6 +3149,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "Netflix helped curb digital piracy largely based on file uploads = played a part in the fight against illegal file-sharing。",
             "methodSummary": "原句细节直接对应：helped curb piracy based on file uploads 转换为 played a part in fight against illegal file-sharing。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2775,7 +3203,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "was denied cooperation by Silicon Valley",
+              "text": "was denied cooperation by Silicon Valley.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 合理推断】P4-S2 明确交代 MPA 早先立法流产的历史原因：'the organization failed five years earlier to build consensus between Hollywood and Silicon Valley to win passage of legislation in Congress aimed at stopping online piracy'（MPA 五年前曾因未能成功在好莱坞与硅谷科技巨头之间建立起共识，导致反盗版国会法案流产）。好莱坞制片厂协会（MPA）未能与硅谷达成共识，其本质正是遭到了硅谷科技巨头的反对、抵触与拒绝合作（was denied cooperation by Silicon Valley）。A选项完全精准契合推理逻辑。",
@@ -2785,7 +3213,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "led a national protest against online piracy",
+              "text": "led a national protest against online piracy.",
               "isCorrect": false,
               "distractorType": "偷换维权手段",
               "analysis": "【干扰特征: 偷换手段】MPA 采取的是推动国会立法和组建特遣队执法缉捕，非组织领导全国性民众抗议示威（national protest）。",
@@ -2796,7 +3224,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "was urged to form an enforcement task force",
+              "text": "was urged to form an enforcement task force.",
               "isCorrect": false,
               "distractorType": "主动被动颠倒",
               "analysis": "【干扰特征: 主被动颠倒】MPA 是主动牵头组建了 ACE 执法特遣队（formed the Alliance），非被外部力量催促强迫组建。",
@@ -2806,7 +3234,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "failed to win support from local authorities",
+              "text": "failed to win support from local authorities.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】P4-S3 明确指出 ACE 正在全球各地密切协助地方执法当局（help local authorities arrest pirates），合作良好。",
@@ -2818,6 +3246,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "failed to build consensus between Hollywood (MPA) and Silicon Valley for legislation = was denied cooperation by Silicon Valley。",
             "methodSummary": "因果推断法：未能达成立法共识即意味着遭到了利益对手硅谷的拒绝配合（denied cooperation）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "A",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "A",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2837,7 +3301,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "cannot be checked in spite of new legislation",
+              "text": "cannot be checked in spite of new legislation.",
               "isCorrect": false,
               "distractorType": "过于绝对",
               "analysis": "【干扰特征: 过于绝望绝对】霍利认为到2027年可能迎来平台期，新法律也成功将北美网站压缩至126家，非完全不可遏制。",
@@ -2848,7 +3312,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "will possibly overwhelm legitimate streamers",
+              "text": "will possibly overwhelm legitimate streamers.",
               "isCorrect": false,
               "distractorType": "过度推断夸大",
               "analysis": "【干扰特征: 夸大后果】虽然造成千亿损失，但霍利并未断言盗版会彻底压垮压倒正规流媒体巨头。",
@@ -2859,7 +3323,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "is unlikely to diminish in the near future",
+              "text": "is unlikely to diminish in the near future.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P6-S2 明确引述霍利的原话：'there is no consensus among stakeholders as to when it may begin to decline'（各方利益相关者对盗版何时才会开始真正下降消退根本毫无共识，即使乐观估计也得等到2027年才可能进入平台期）。这一清醒判断表明：数字盗版在可预见的近期内绝不可能消退减少（is unlikely to diminish in the near future）。C选项精准契合分析师观点。",
@@ -2869,7 +3333,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "has been underestimated by some analysts",
+              "text": "has been underestimated by some analysts.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】未提及盗版危害被其他分析师低估。",
@@ -2881,6 +3345,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "no consensus as to when it may begin to decline (plateau only by 2027) = is unlikely to diminish in the near future。",
             "methodSummary": "时间预期推断法：何时 decline 毫无共识且2027年前仅能 plateau，推导出 unlikely to diminish in the near future。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -2947,6 +3447,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "$2 billion raked in + $30 billion lost and 250k jobs + $113 billion cumulative loss = The economic harm from illegal streaming。",
             "methodSummary": "核心数据链条归纳法：通篇围绕千亿级经济损失数据展开，直接锁定 The economic harm from illegal streaming。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text3.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
@@ -3772,7 +4308,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "introduce the coming of antiques",
+              "text": "introduce the collection of antiques.",
               "isCorrect": false,
               "distractorType": "字面望文生义",
               "analysis": "【干扰特征: 字面局限】古董店只是引入话题的生活场景，非介绍古董行业的来临。",
@@ -3782,7 +4318,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "contrast them with everyday items",
+              "text": "contrast them with everyday items.",
               "isCorrect": false,
               "distractorType": "偷换对比对象",
               "analysis": "【干扰特征: 概念偏差】对比的是有形实体文物（tangible）与无形数字信息（intangible digital formats），非日常用品。",
@@ -3793,7 +4329,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "bring up the issue of preservation",
+              "text": "bring up the issue of preservation.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 修辞功能定位】P1-S1 和 P1-S2 描写古董店里的照片信件历经数百年长存，并在 P2-S1 紧接着抛出核心论题：'Have you pondered the life cycle of intangible formats, digital information, given that those who produce these artifacts seldom make provision for their long-term preservation?'（你是否曾深思过数字信息的生命周期与长期保存问题？）。提及过往实体文物的长存正是为了极其自然地引出全文关于历史文献资料长期保存这一重大现实议题（bring up the issue of preservation）。C选项精准契合修辞目的。",
@@ -3805,7 +4341,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "comment on their historical value",
+              "text": "comment on their historical value.",
               "isCorrect": false,
               "distractorType": "以偏概全",
               "analysis": "【干扰特征: 次要表面】历史价值只是文物的属性，作者意在借其物理形态引出对数字化保存困境的深层思考。",
@@ -3818,6 +4354,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "tangible artifacts survive -> pondered life cycle of digital info long-term preservation = bring up the issue of preservation。",
             "methodSummary": "首段案例功能题：抓准实体长存引出的核心设问（long-term preservation），锁定 bring up the issue of preservation。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3837,7 +4409,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "are less subject to their creators' neglect",
+              "text": "are less subject to their creators' neglect.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】实体文物同样经常遭到原作者的漠视疏忽（despite original creators' neglect），但仍能侥幸存活。",
@@ -3847,7 +4419,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "convey information in a more direct way",
+              "text": "convey information in a more direct way.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P2-S2 明确阐述有形实体的独特属性：'For millennia, we've known what we've known due to artifacts that have survived... The thing itself is the medium that delivers the information'（实体器物本身就是承载并传递信息的物理介质，无需依赖解码设备直接肉眼可读）。The thing itself is the medium that delivers the information 与 convey information in a more direct way（以一种更为直接的方式传递信息）完全同义对应。B选项完全精准吻合。",
@@ -3857,7 +4429,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "require more intentional preservation",
+              "text": "require more intentional preservation.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实完全相反】P2-S3 和 P3-S2 明确指出实体无需刻意保存（no attempts at intentional preservation），反而是数字信息需要多得多的悉心维护照料（Digital info requires a great deal more care）。",
@@ -3868,7 +4440,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "are less likely to suffer serious damage",
+              "text": "are less likely to suffer serious damage.",
               "isCorrect": false,
               "distractorType": "无中生有物理损坏",
               "analysis": "【干扰特征: 偷换维度】实体也会风化损坏，文章强调的是实体信息与载体合一的直接性，非物理免损性。",
@@ -3880,6 +4452,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "The thing itself is the medium that delivers the information = convey information in a more direct way。",
             "methodSummary": "原句属性同义改写：thing itself is the medium 转换为 convey information in a more direct way。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3898,7 +4506,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "oversupply of materials",
+              "text": "oversupply of materials.",
               "isCorrect": false,
               "distractorType": "跨段混淆",
               "analysis": "【干扰特征: 跨段错位】资料浩瀚（embarrassment of riches）是第2段末句描述的现象，第3段专讲这一奉献导致图书馆自身地位被用户轻视。",
@@ -3909,7 +4517,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "undervaluation of libraries",
+              "text": "undervaluation of libraries.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 同义替换】P3-S1 明确交代奉献带来的荒谬反噬后果：'Librarians' selfless devotion can act against us when users point to universality of access... saying \"it's all in here\" as evidence that libraries are less vital for researchers today'（馆员的奉献反噬了我们，当用户举起手机说都在这里面了并以此为证据认为图书馆如今已不再那么至关重要）。libraries are less vital 与 undervaluation of libraries（对图书馆价值的严重低估/贬低）完全同义对应。B选项精准吻合。",
@@ -3919,7 +4527,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "researchers' underperformance",
+              "text": "researchers' underperformance.",
               "isCorrect": false,
               "distractorType": "无中生有",
               "analysis": "【干扰特征: 概念偏差】未提及科研人员业绩表现不佳。",
@@ -3929,7 +4537,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "users' overreliance on technology",
+              "text": "users' overreliance on technology.",
               "isCorrect": false,
               "distractorType": "次要表面现象",
               "analysis": "【干扰特征: 次要表象】举起手机是用户轻视图书馆的表象举动，段落核心强调的是对图书馆重要性的错误贬低与低估。",
@@ -3941,6 +4549,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "users say libraries are less vital for researchers today = undervaluation of libraries（对图书馆价值的低估）。",
             "methodSummary": "反噬效应提取：libraries are less vital 转换为 undervaluation of libraries。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "B",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "B",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -3960,7 +4604,7 @@ window.ENGLISH_DATA['2025'] = {
           "options": [
             {
               "key": "A",
-              "text": "the difficulty of retrieving files through unusual means",
+              "text": "the hazard of retrieving files through unusual means.",
               "isCorrect": false,
               "distractorType": "偷换概念",
               "analysis": "【干扰特征: 概念偏差】强调的是格式淘汰导致硬件无法读取从而丢失信息，非探讨非常规恢复手段的难度。",
@@ -3970,7 +4614,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "B",
-              "text": "the infeasibility of constantly migrating digital assets",
+              "text": "the infeasibility of constantly migrating digital assets.",
               "isCorrect": false,
               "distractorType": "正反颠倒",
               "analysis": "【干扰特征: 事实相反】持续迁移数据资产是防止信息丢失的唯一必要手段（P4-S3），绝非不可行（infeasibility）。",
@@ -3980,7 +4624,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "C",
-              "text": "the possibility of losing information in obsolete formats",
+              "text": "the possibility of losing information in obsolete formats.",
               "isCorrect": true,
               "distractorType": null,
               "analysis": "【正确项 · 例证论点对应】P4-S1 明确提出论点'As technology advances and a format becomes obsolete, the object is useless'（随着技术演进和某种格式沦为过时，该物品便彻底无用）；P4-S2 紧接着引述 ZIP 软盘作为直接例证：面对过时的 ZIP 软盘无助绝望，根本无法将文件导出。引用 ZIP 软盘正是为了生动论证：一旦存储格式过时淘汰，内部承载的历史信息就极可能彻底灭失丢失的严重风险（the possibility of losing information in obsolete formats）。C选项完全精准对应论点句。",
@@ -3991,7 +4635,7 @@ window.ENGLISH_DATA['2025'] = {
             },
             {
               "key": "D",
-              "text": "the inconvenience of storing information on analog devices",
+              "text": "the inconvenience of storing information on analog devices.",
               "isCorrect": false,
               "distractorType": "偷换属性为模拟设备",
               "analysis": "【干扰特征: 属性颠倒】ZIP 软盘是不折不扣的‘早期数字存储介质’（digital），非传统实体模拟设备（analog devices）。",
@@ -4004,6 +4648,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "format becomes obsolete, object is useless (helpless at ZIP disk) = the possibility of losing information in obsolete formats。",
             "methodSummary": "例证题前句论点锁定法：抓准 format becomes obsolete 对应的 losing information in obsolete formats。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "C",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "C",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         },
         {
@@ -4076,6 +4756,42 @@ window.ENGLISH_DATA['2025'] = {
           "presetReflection": {
             "trapAnalysis": "digital replaces analog nightmare of historical record abruptly stops + challenging preservation = Keeping digital historical records is a challenge。",
             "methodSummary": "全文核心主旨概括：识别文章核心对象（digital historical records）与核心论述属性（a challenge）。"
+          },
+          "paperVariants": {
+            "yellowBook": {
+              "officialAnswer": "D",
+              "source": "黄皮书真题试卷版 (文档化/选项内容)"
+            },
+            "standardMD": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "2025_英语一_真题.md"
+            },
+            "feishuPdf": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "英语一_2025_阅读Text4.pdf"
+            },
+            "eliNotes": {
+              "officialAnswer": "D",
+              "letterMapping": {
+                "A": "A",
+                "B": "A",
+                "C": "A",
+                "D": "A"
+              },
+              "source": "Eli田瀚博英语一真题讲解汇总笔记.pdf"
+            }
           }
         }
       ]
