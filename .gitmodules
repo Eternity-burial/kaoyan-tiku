@@ -50,3 +50,7 @@
 	path = 题库/英语精读PDF
 	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-english-pdf.git
 	branch = main
+[submodule "题库/讲义和笔记"]
+	path = 题库/讲义和笔记
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-jiangyi-biji.git
+	branch = main

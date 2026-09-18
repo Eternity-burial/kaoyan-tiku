@@ -15,7 +15,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const EXPECTED_MODULES = [
   '880', '1000题', '822教材', '基础30讲', '夜雨强化',
-  '小题300', '强化240', '强化36讲', '李范习题', '李范全书', '真题分类', '老姚高数', '英语精读PDF'
+  '小题300', '强化240', '强化36讲', '李范习题', '李范全书', '真题分类', '老姚高数', '英语精读PDF', '讲义和笔记'
 ];
 
 let passed = 0;
@@ -32,7 +32,7 @@ function runTest(name, fn) {
   }
 }
 
-runTest('1. .gitmodules 配置文件格式完整且覆盖全部 13 个资源子模块', () => {
+runTest('1. .gitmodules 配置文件格式完整且覆盖全部 14 个资源子模块', () => {
   const gmPath = path.join(ROOT_DIR, '.gitmodules');
   assert(fs.existsSync(gmPath), '.gitmodules must exist');
   const gmContent = fs.readFileSync(gmPath, 'utf8');
@@ -43,7 +43,7 @@ runTest('1. .gitmodules 配置文件格式完整且覆盖全部 13 个资源子�
   });
 });
 
-runTest('2. 13 个资源子模块本地文件与目录物理完整存在', () => {
+runTest('2. 14 个资源子模块本地文件与目录物理完整存在', () => {
   EXPECTED_MODULES.forEach(b => {
     const bookDir = path.join(ROOT_DIR, '题库', b);
     assert(fs.existsSync(bookDir), `Directory must exist: ${bookDir}`);
@@ -107,6 +107,45 @@ runTest('5. 英语精读 PDF 子模块物理结构与双轨分类完整性（48�
   assert.strictEqual(examFiles.length, 48, `考点标注版 should contain 48 PDFs, found ${examFiles.length}`);
   assert.strictEqual(personalFiles.length, 48, `个人精读版 should contain 48 PDFs, found ${personalFiles.length}`);
   assert.strictEqual(vocabFiles.length, 1, `词汇汇总 should contain 1 PDF, found ${vocabFiles.length}`);
+});
+
+runTest('6. 讲义和笔记子模块物理结构与核心分类完整性（10大分类目录 + 198份文档与高清笔记）', () => {
+  const notesBase = path.join(ROOT_DIR, '题库', '讲义和笔记');
+  assert(fs.existsSync(notesBase), '讲义和笔记 directory must exist');
+
+  const expectedDirs = [
+    '基础高数18讲整理', '基础线代6讲', '基础概率论6讲',
+    '强化高数18讲整理', '强化线代9讲', '强化概率9讲',
+    '零基础通关讲义整理', '李范复习全书整理',
+    '数学笔记', '老姚高数_源码题库'
+  ];
+
+  expectedDirs.forEach(d => {
+    const dirPath = path.join(notesBase, d);
+    assert(fs.existsSync(dirPath), `Subdirectory must exist: ${d}`);
+  });
+
+  const reportPath = path.join(notesBase, '老姚高数_例题与补充练习统计报告.md');
+  assert(fs.existsSync(reportPath), '老姚高数_例题与补充练习统计报告.md must exist');
+
+  // Count asset files (excluding .git, .gitignore, README.md)
+  let count = 0;
+  function walkDir(cur) {
+    const entries = fs.readdirSync(cur, { withFileTypes: true });
+    for (const ent of entries) {
+      if (ent.name === '.git') continue;
+      const full = path.join(cur, ent.name);
+      if (ent.isDirectory()) {
+        walkDir(full);
+      } else {
+        if (ent.name !== '.gitignore' && ent.name !== 'README.md') {
+          count++;
+        }
+      }
+    }
+  }
+  walkDir(notesBase);
+  assert.strictEqual(count, 198, `讲义和笔记 should contain exactly 198 asset files, found ${count}`);
 });
 
 console.log(`\n====================================================`);

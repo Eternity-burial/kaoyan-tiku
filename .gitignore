@@ -14,6 +14,7 @@ scripts/*
 !scripts/migrate_to_submodules.py
 !scripts/sync_submodules.py
 !scripts/migrate_english_pdf_submodule.py
+!scripts/migrate_jiangyi_biji_submodule.py
 node_modules/
 package.json
 package-lock.json
