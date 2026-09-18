@@ -392,6 +392,31 @@ test('老姚高数章节小节分类: 2.1-19 准确归类为例题而非补充�
   assert.strictEqual(classifyLaoYaoLabel(ch02, '2.1-20'), '补充练习');
 });
 
+test('老姚高数章节小节分类: 10.2-36 为例题，从 10.2-37 开始准确归类为补充练习', () => {
+  const math = SUBJECTS.find(s => s.id === 'math');
+  const ch10 = math.chapters.find(c => c.wb === '老姚高数' && c.name.includes('第10章'));
+  assert.ok(ch10, '老姚高数第10章必须存在');
+  const sec10_2 = ch10.sections.find(s => s.type.startsWith('10.2'));
+  assert.ok(sec10_2, '10.2 小节必须存在');
+  assert.strictEqual(sec10_2.exampleCount, 36, 'Section 10.2 exampleCount 应为 36 (包含 10.2-1 至 10.2-36)');
+
+  function classifyLaoYaoLabel(ch, label) {
+    const idx = ch.labels.indexOf(label);
+    if (idx >= 0) {
+      const s = ch.sections.find(function(sec) { return idx >= sec.start && idx < sec.start + sec.count; });
+      if (s && s.exampleCount !== undefined) {
+        return (idx < s.start + s.exampleCount) ? '例题' : '补充练习';
+      }
+    }
+    return 'unknown';
+  }
+
+  assert.strictEqual(classifyLaoYaoLabel(ch10, '10.2-1'), '例题');
+  assert.strictEqual(classifyLaoYaoLabel(ch10, '10.2-36'), '例题');
+  assert.strictEqual(classifyLaoYaoLabel(ch10, '10.2-37'), '补充练习');
+  assert.strictEqual(classifyLaoYaoLabel(ch10, '10.2-49'), '补充练习');
+});
+
 test('图片路径生成器: 数学例题/习题与822特例', () => {
   const math = SUBJECTS.find(s => s.id === 'math');
   const ch1 = math.chapters[0];
