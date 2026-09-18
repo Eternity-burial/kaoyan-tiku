@@ -46,3 +46,7 @@
 	path = 题库/880
 	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-880.git
 	branch = main
+[submodule "题库/英语精读PDF"]
+	path = 题库/英语精读PDF
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-english-pdf.git
+	branch = main

@@ -236,10 +236,15 @@ node scripts/validate_english_render.js
 │   ├── 李范全书/                   # [Submodule] 李范全书 题图资源 (kaoyan-tiku-assets-lifanquanshu)
 │   ├── 真题分类/                   # [Submodule] 真题分类 题图资源 (kaoyan-tiku-assets-zhentifenlei)
 │   ├── 老姚高数/                   # [Submodule] 老姚高数 题图资源 (kaoyan-tiku-assets-laoyaogaoshu)
+│   ├── 英语精读PDF/                 # [Submodule] 扇贝考研英语一精读带标注 PDF 资产 (kaoyan-tiku-assets-english-pdf)
+│   │   ├── 考点标注版/              # 48 篇考纲词、长难句与考点精解高清标注 PDF
+│   │   ├── 个人精读版/              # 48 篇个人生词与收藏难句批注 PDF
+│   │   └── 词汇汇总/                # 143 页 2005~2017 考纲生词与真题例句汇总
 │   └── 英语/                       # [主仓库核心数据] 1998~2026 全年份真题文本与词典缓存
 ├── scripts/                        # 题库自动化维护、数据归一化与子模块同步脚本
-│   ├── sync_submodules.py          # 子模块一键按需拉取 / 全量同步工具
-│   └── migrate_to_submodules.py    # 子模块初始化与迁移解耦工具
+│   ├── sync_submodules.py          # 13 个子模块一键按需拉取 / 全量同步工具
+│   ├── migrate_to_submodules.py    # 书籍切图子模块初始化与迁移解耦工具
+│   └── migrate_english_pdf_submodule.py # 扇贝英语精读 PDF 资产归整与独立子模块工具
 ├── kaoyan_tiku_data.json           # 本地核心数据库（做题记录、掌握度、笔记、复习计划）
 └── README.md                       # 项目架构、重构流程与使用说明文档
 ```
@@ -272,6 +277,9 @@ python scripts/sync_submodules.py init 880
 
 # 只拉取 822 控制工程全部教材与习题（约 150MB）
 python scripts/sync_submodules.py init 822教材 小题300 强化240 真题分类
+
+# 只拉取英语精读带标注 PDF 资产（约 69.5MB，包含48篇考点版+48篇个人版+1篇生词库）
+python scripts/sync_submodules.py init 英语精读PDF
 ```
 
 ### 3. 子模块更新与远端同步
