@@ -54,3 +54,7 @@
 	path = 题库/讲义和笔记
 	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-jiangyi-biji.git
 	branch = main
+[submodule "题库/kaoyan-lazynote-data"]
+	path = 题库/kaoyan-lazynote-data
+	url = https://github.com/Eternity-burial/kaoyan-lazynote-data.git
+	branch = main

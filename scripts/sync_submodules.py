@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 考研题库子模块管理与同步工具 (Submodule Sync Utility)
-用于一键按需拉取、全量同步或查看题库 14 个资源子模块（12 本书籍切图、英语精读 PDF 与讲义和笔记）的本地状态。
+用于一键按需拉取、全量同步或查看题库 15 个资源子模块（书籍切图、英语精读、讲义笔记与 Lazynote 数据）的本地状态。
 """
 
 import os
@@ -20,7 +20,7 @@ os.chdir(ROOT_DIR)
 
 BOOKS = [
     "真题分类", "小题300", "强化240", "老姚高数", "夜雨强化",
-    "强化36讲", "822教材", "基础30讲", "1000题", "李范习题", "李范全书", "880", "英语精读PDF", "讲义和笔记"
+    "强化36讲", "822教材", "基础30讲", "1000题", "李范习题", "李范全书", "880", "英语精读PDF", "讲义和笔记", "kaoyan-lazynote-data"
 ]
 
 def run_cmd(cmd):
@@ -77,7 +77,7 @@ def print_status():
     print(f"{'总计':<12} | {'-':<10} | {total_files:<8} | {total_size:6.1f} MB\n")
 
 def pull_all():
-    print("正在拉取/更新全部 14 个资源子模块...")
+    print("正在拉取/更新全部 15 个资源子模块...")
     res = run_cmd('git submodule update --init --recursive')
     if res.returncode == 0:
         print("[OK] 全部资源子模块同步成功！")
@@ -107,8 +107,8 @@ def main():
         print_status()
         print("可用命令:")
         print("  python scripts/sync_submodules.py status           # 查看本地资源子模块下载状态")
-        print("  python scripts/sync_submodules.py pull             # 一键拉取/更新全部 14 个子模块")
-        print("  python scripts/sync_submodules.py init 880 讲义和笔记   # 按需仅拉取指定子模块")
+        print("  python scripts/sync_submodules.py pull             # 一键拉取/更新全部 15 个子模块")
+        print("  python scripts/sync_submodules.py init 880 kaoyan-lazynote-data   # 按需仅拉取指定子模块")
     elif sys.argv[1] == 'pull':
         pull_all()
     elif sys.argv[1] == 'init':

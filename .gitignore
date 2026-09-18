@@ -15,6 +15,7 @@ scripts/*
 !scripts/sync_submodules.py
 !scripts/migrate_english_pdf_submodule.py
 !scripts/migrate_jiangyi_biji_submodule.py
+!scripts/migrate_lazynote_submodule.py
 node_modules/
 package.json
 package-lock.json

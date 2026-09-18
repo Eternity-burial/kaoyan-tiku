@@ -245,12 +245,18 @@ node scripts/validate_english_render.js
 │   │   ├── 数学笔记/               # 38 组高清手写笔记原图 (HEIC/JPG) 及整理笔记
 │   │   ├── 老姚高数_源码题库/      # LaTeX 源码、章节提取与构建脚本
 │   │   └── 零基础/李范整理/报告    # 通关讲义与全景覆盖度统计报告
+│   ├── kaoyan-lazynote-data/       # [Submodule] Lazynote 考研英语 (1998~2026) 原始全真抓取数据集
+│   │   ├── raw/pages/              # 3,986 份原始页面快照 HTML（带 sha256 溯源）
+│   │   ├── records/                # 标准化试卷、试题解析、篇章与词条例句结构化数据
+│   │   ├── indexes/ & manifests/   # 全局倒排索引、抓取清单与审计报告
+│   │   └── crawler/                # 爬虫抓取、断点续跑与数据解析完整工程工具
 │   └── 英语/                       # [主仓库核心数据] 1998~2026 全年份真题文本与词典缓存
 ├── scripts/                        # 题库自动化维护、数据归一化与子模块同步脚本
-│   ├── sync_submodules.py          # 14 个子模块一键按需拉取 / 全量同步工具
+│   ├── sync_submodules.py          # 15 个子模块一键按需拉取 / 全量同步工具
 │   ├── migrate_to_submodules.py    # 书籍切图子模块初始化与迁移解耦工具
 │   ├── migrate_english_pdf_submodule.py # 扇贝英语精读 PDF 资产归整与独立子模块工具
-│   └── migrate_jiangyi_biji_submodule.py # 数一讲义与笔记资产归整与独立子模块工具
+│   ├── migrate_jiangyi_biji_submodule.py # 数一讲义与笔记资产归整与独立子模块工具
+│   └── migrate_lazynote_submodule.py # Lazynote 原始数据归整与独立子模块工具
 ├── kaoyan_tiku_data.json           # 本地核心数据库（做题记录、掌握度、笔记、复习计划）
 └── README.md                       # 项目架构、重构流程与使用说明文档
 ```
@@ -289,6 +295,9 @@ python scripts/sync_submodules.py init 英语精读PDF
 
 # 只拉取数一讲义与高清手写笔记（约 121.6MB，198份文档与图片）
 python scripts/sync_submodules.py init 讲义和笔记
+
+# 只拉取 Lazynote 考研英语原始数据集（约 422MB，7978份快照与数据记录）
+python scripts/sync_submodules.py init kaoyan-lazynote-data
 ```
 
 ### 3. 子模块更新与远端同步

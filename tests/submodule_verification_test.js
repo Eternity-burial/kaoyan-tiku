@@ -15,7 +15,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const EXPECTED_MODULES = [
   '880', '1000题', '822教材', '基础30讲', '夜雨强化',
-  '小题300', '强化240', '强化36讲', '李范习题', '李范全书', '真题分类', '老姚高数', '英语精读PDF', '讲义和笔记'
+  '小题300', '强化240', '强化36讲', '李范习题', '李范全书', '真题分类', '老姚高数', '英语精读PDF', '讲义和笔记', 'kaoyan-lazynote-data'
 ];
 
 let passed = 0;
@@ -32,18 +32,18 @@ function runTest(name, fn) {
   }
 }
 
-runTest('1. .gitmodules 配置文件格式完整且覆盖全部 14 个资源子模块', () => {
+runTest('1. .gitmodules 配置文件格式完整且覆盖全部 15 个资源子模块', () => {
   const gmPath = path.join(ROOT_DIR, '.gitmodules');
   assert(fs.existsSync(gmPath), '.gitmodules must exist');
   const gmContent = fs.readFileSync(gmPath, 'utf8');
   EXPECTED_MODULES.forEach(b => {
     assert(gmContent.includes(`submodule "题库/${b}"`), `Must register submodule "题库/${b}" in .gitmodules`);
     assert(gmContent.includes(`path = 题库/${b}`), `Must configure path for 题库/${b}`);
-    assert(gmContent.includes(`url = https://github.com/Eternity-burial/kaoyan-tiku-assets-`), `Must point to Eternity-burial remote`);
+    assert(gmContent.includes(`url = https://github.com/Eternity-burial/`), `Must point to Eternity-burial remote`);
   });
 });
 
-runTest('2. 14 个资源子模块本地文件与目录物理完整存在', () => {
+runTest('2. 15 个资源子模块本地文件与目录物理完整存在', () => {
   EXPECTED_MODULES.forEach(b => {
     const bookDir = path.join(ROOT_DIR, '题库', b);
     assert(fs.existsSync(bookDir), `Directory must exist: ${bookDir}`);
@@ -146,6 +146,37 @@ runTest('6. 讲义和笔记子模块物理结构与核心分类完整性（10大
   }
   walkDir(notesBase);
   assert.strictEqual(count, 198, `讲义和笔记 should contain exactly 198 asset files, found ${count}`);
+});
+
+runTest('7. kaoyan-lazynote-data 子模块物理结构与原始数据集完整性（7978份文件 + records/raw/crawler/manifests）', () => {
+  const lnBase = path.join(ROOT_DIR, '题库', 'kaoyan-lazynote-data');
+  assert(fs.existsSync(lnBase), 'kaoyan-lazynote-data directory must exist');
+
+  const expectedDirs = ['audit', 'crawler', 'indexes', 'manifests', 'raw', 'records', 'schemas'];
+  expectedDirs.forEach(d => {
+    const dp = path.join(lnBase, d);
+    assert(fs.existsSync(dp), `Directory must exist: ${d}`);
+  });
+
+  const readmePath = path.join(lnBase, 'README.md');
+  assert(fs.existsSync(readmePath), 'kaoyan-lazynote-data README.md must exist');
+
+  // Count all tracked non-.git files
+  let count = 0;
+  function walkDir(cur) {
+    const entries = fs.readdirSync(cur, { withFileTypes: true });
+    for (const ent of entries) {
+      if (ent.name === '.git') continue;
+      const full = path.join(cur, ent.name);
+      if (ent.isDirectory()) {
+        walkDir(full);
+      } else {
+        count++;
+      }
+    }
+  }
+  walkDir(lnBase);
+  assert.strictEqual(count, 7978, `kaoyan-lazynote-data should contain exactly 7978 files, found ${count}`);
 });
 
 console.log(`\n====================================================`);
