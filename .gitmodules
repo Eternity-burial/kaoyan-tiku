@@ -1,48 +1,48 @@
 [submodule "题库/真题分类"]
 	path = 题库/真题分类
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-zhentifenlei.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-zhentifenlei.git
 	branch = main
 [submodule "题库/小题300"]
 	path = 题库/小题300
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-xiaoti300.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-xiaoti300.git
 	branch = main
 [submodule "题库/强化240"]
 	path = 题库/强化240
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-qianghua240.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-qianghua240.git
 	branch = main
 [submodule "题库/老姚高数"]
 	path = 题库/老姚高数
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-laoyaogaoshu.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-laoyaogaoshu.git
 	branch = main
 [submodule "题库/夜雨强化"]
 	path = 题库/夜雨强化
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-yeyuqianghua.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-yeyuqianghua.git
 	branch = main
 [submodule "题库/强化36讲"]
 	path = 题库/强化36讲
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-qianghua36jiang.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-qianghua36jiang.git
 	branch = main
 [submodule "题库/822教材"]
 	path = 题库/822教材
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-822jiaocai.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-822jiaocai.git
 	branch = main
 [submodule "题库/基础30讲"]
 	path = 题库/基础30讲
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-jichu30jiang.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-jichu30jiang.git
 	branch = main
 [submodule "题库/1000题"]
 	path = 题库/1000题
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-1000ti.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-1000ti.git
 	branch = main
 [submodule "题库/李范习题"]
 	path = 题库/李范习题
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-lifanxiti.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-lifanxiti.git
 	branch = main
 [submodule "题库/李范全书"]
 	path = 题库/李范全书
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-lifanquanshu.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-lifanquanshu.git
 	branch = main
 [submodule "题库/880"]
 	path = 题库/880
-	url = https://github.com/Eternity-burial/shu1-tiku-assets-880.git
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-880.git
 	branch = main

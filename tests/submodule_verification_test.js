@@ -39,7 +39,7 @@ runTest('1. .gitmodules 配置文件格式完整且覆盖全部 12 本书籍', (
   EXPECTED_BOOKS.forEach(b => {
     assert(gmContent.includes(`submodule "题库/${b}"`), `Must register submodule "题库/${b}" in .gitmodules`);
     assert(gmContent.includes(`path = 题库/${b}`), `Must configure path for 题库/${b}`);
-    assert(gmContent.includes(`url = https://github.com/Eternity-burial/shu1-tiku-assets-`), `Must point to Eternity-burial remote`);
+    assert(gmContent.includes(`url = https://github.com/Eternity-burial/kaoyan-tiku-assets-`), `Must point to Eternity-burial remote`);
   });
 });
 

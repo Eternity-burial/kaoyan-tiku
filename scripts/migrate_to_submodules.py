@@ -21,18 +21,18 @@ ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 os.chdir(ROOT_DIR)
 
 BOOKS = [
-    {"dir": "真题分类", "repo": "shu1-tiku-assets-zhentifenlei", "desc": "考研题库 - 控制工程真题分类题图资源"},
-    {"dir": "小题300", "repo": "shu1-tiku-assets-xiaoti300", "desc": "考研题库 - 822小题300题图资源"},
-    {"dir": "强化240", "repo": "shu1-tiku-assets-qianghua240", "desc": "考研题库 - 822强化240题图资源"},
-    {"dir": "老姚高数", "repo": "shu1-tiku-assets-laoyaogaoshu", "desc": "考研题库 - 老姚高数基础强化题图资源"},
-    {"dir": "夜雨强化", "repo": "shu1-tiku-assets-yeyuqianghua", "desc": "考研题库 - 夜雨强化题图资源"},
-    {"dir": "强化36讲", "repo": "shu1-tiku-assets-qianghua36jiang", "desc": "考研题库 - 强化36讲题图资源"},
-    {"dir": "822教材", "repo": "shu1-tiku-assets-822jiaocai", "desc": "考研题库 - 822控制工程教材题图资源"},
-    {"dir": "基础30讲", "repo": "shu1-tiku-assets-jichu30jiang", "desc": "考研题库 - 基础30讲题图资源"},
-    {"dir": "1000题", "repo": "shu1-tiku-assets-1000ti", "desc": "考研题库 - 张宇1000题题图资源"},
-    {"dir": "李范习题", "repo": "shu1-tiku-assets-lifanxiti", "desc": "考研题库 - 李范强化习题题图资源"},
-    {"dir": "李范全书", "repo": "shu1-tiku-assets-lifanquanshu", "desc": "考研题库 - 李范复习全书题图资源"},
-    {"dir": "880", "repo": "shu1-tiku-assets-880", "desc": "考研题库 - 李林880题图资源"},
+    {"dir": "真题分类", "repo": "kaoyan-tiku-assets-zhentifenlei", "desc": "考研题库 - 控制工程真题分类题图资源"},
+    {"dir": "小题300", "repo": "kaoyan-tiku-assets-xiaoti300", "desc": "考研题库 - 822小题300题图资源"},
+    {"dir": "强化240", "repo": "kaoyan-tiku-assets-qianghua240", "desc": "考研题库 - 822强化240题图资源"},
+    {"dir": "老姚高数", "repo": "kaoyan-tiku-assets-laoyaogaoshu", "desc": "考研题库 - 老姚高数基础强化题图资源"},
+    {"dir": "夜雨强化", "repo": "kaoyan-tiku-assets-yeyuqianghua", "desc": "考研题库 - 夜雨强化题图资源"},
+    {"dir": "强化36讲", "repo": "kaoyan-tiku-assets-qianghua36jiang", "desc": "考研题库 - 强化36讲题图资源"},
+    {"dir": "822教材", "repo": "kaoyan-tiku-assets-822jiaocai", "desc": "考研题库 - 822控制工程教材题图资源"},
+    {"dir": "基础30讲", "repo": "kaoyan-tiku-assets-jichu30jiang", "desc": "考研题库 - 基础30讲题图资源"},
+    {"dir": "1000题", "repo": "kaoyan-tiku-assets-1000ti", "desc": "考研题库 - 张宇1000题题图资源"},
+    {"dir": "李范习题", "repo": "kaoyan-tiku-assets-lifanxiti", "desc": "考研题库 - 李范强化习题题图资源"},
+    {"dir": "李范全书", "repo": "kaoyan-tiku-assets-lifanquanshu", "desc": "考研题库 - 李范复习全书题图资源"},
+    {"dir": "880", "repo": "kaoyan-tiku-assets-880", "desc": "考研题库 - 李林880题图资源"},
 ]
 
 def run_cmd(cmd, cwd=None, check=True, retries=1, delay=3):

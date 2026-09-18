@@ -224,18 +224,18 @@ node scripts/validate_english_render.js
 │   ├── markdown_latex.js           # Markdown + KaTeX 专业公式排版引擎
 │   └── annotator.js                # Canvas 矢量原图标记与线框画板
 ├── 题库/                           # 核心题库目录（代码仓库仅保留纯文本真题，大图解耦至子模块）
-│   ├── 880/                        # [Submodule] 李林880 题图资源 (shu1-tiku-assets-880)
-│   ├── 1000题/                     # [Submodule] 张宇1000题 题图资源 (shu1-tiku-assets-1000ti)
-│   ├── 822教材/                    # [Submodule] 822教材 题图资源 (shu1-tiku-assets-822jiaocai)
-│   ├── 基础30讲/                   # [Submodule] 基础30讲 题图资源 (shu1-tiku-assets-jichu30jiang)
-│   ├── 夜雨强化/                   # [Submodule] 夜雨强化 题图资源 (shu1-tiku-assets-yeyuqianghua)
-│   ├── 小题300/                    # [Submodule] 822小题300 题图资源 (shu1-tiku-assets-xiaoti300)
-│   ├── 强化240/                    # [Submodule] 822强化240 题图资源 (shu1-tiku-assets-qianghua240)
-│   ├── 强化36讲/                   # [Submodule] 强化36讲 题图资源 (shu1-tiku-assets-qianghua36jiang)
-│   ├── 李范习题/                   # [Submodule] 李范强化习题 题图资源 (shu1-tiku-assets-lifanxiti)
-│   ├── 李范全书/                   # [Submodule] 李范全书 题图资源 (shu1-tiku-assets-lifanquanshu)
-│   ├── 真题分类/                   # [Submodule] 真题分类 题图资源 (shu1-tiku-assets-zhentifenlei)
-│   ├── 老姚高数/                   # [Submodule] 老姚高数 题图资源 (shu1-tiku-assets-laoyaogaoshu)
+│   ├── 880/                        # [Submodule] 李林880 题图资源 (kaoyan-tiku-assets-880)
+│   ├── 1000题/                     # [Submodule] 张宇1000题 题图资源 (kaoyan-tiku-assets-1000ti)
+│   ├── 822教材/                    # [Submodule] 822教材 题图资源 (kaoyan-tiku-assets-822jiaocai)
+│   ├── 基础30讲/                   # [Submodule] 基础30讲 题图资源 (kaoyan-tiku-assets-jichu30jiang)
+│   ├── 夜雨强化/                   # [Submodule] 夜雨强化 题图资源 (kaoyan-tiku-assets-yeyuqianghua)
+│   ├── 小题300/                    # [Submodule] 822小题300 题图资源 (kaoyan-tiku-assets-xiaoti300)
+│   ├── 强化240/                    # [Submodule] 822强化240 题图资源 (kaoyan-tiku-assets-qianghua240)
+│   ├── 强化36讲/                   # [Submodule] 强化36讲 题图资源 (kaoyan-tiku-assets-qianghua36jiang)
+│   ├── 李范习题/                   # [Submodule] 李范强化习题 题图资源 (kaoyan-tiku-assets-lifanxiti)
+│   ├── 李范全书/                   # [Submodule] 李范全书 题图资源 (kaoyan-tiku-assets-lifanquanshu)
+│   ├── 真题分类/                   # [Submodule] 真题分类 题图资源 (kaoyan-tiku-assets-zhentifenlei)
+│   ├── 老姚高数/                   # [Submodule] 老姚高数 题图资源 (kaoyan-tiku-assets-laoyaogaoshu)
 │   └── 英语/                       # [主仓库核心数据] 1998~2026 全年份真题文本与词典缓存
 ├── scripts/                        # 题库自动化维护、数据归一化与子模块同步脚本
 │   ├── sync_submodules.py          # 子模块一键按需拉取 / 全量同步工具
