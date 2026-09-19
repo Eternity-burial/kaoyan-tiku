@@ -515,13 +515,9 @@
   box-shadow: 0 1px 2px rgba(239, 68, 68, 0.15);
 }
 
-.vocab-word.is-self-annotated::after {
-  content: '★';
-  font-size: 8px;
-  line-height: 1;
-  vertical-align: super;
-  margin-left: 1px;
-  color: #ef4444;
+.vocab-word.is-self-annotated::after,
+.vocab-word.is-personal-pdf::after {
+  display: none !important;
 }
 
 [data-theme="dark"] .vocab-word.is-self-annotated::after {
@@ -3005,15 +3001,6 @@
   color: #b45309;
   background: rgba(245, 158, 11, 0.12);
   border-bottom: 1.5px solid #f59e0b;
-}
-
-.vocab-word.is-personal-pdf::after {
-  content: '★';
-  font-size: 9px;
-  line-height: 1;
-  vertical-align: super;
-  margin-left: 1px;
-  color: #ef4444;
 }
 
 .vocab-word.is-proper-noun {
