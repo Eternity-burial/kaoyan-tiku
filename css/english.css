@@ -3219,72 +3219,6 @@
   text-decoration: underline;
 }
 
-.pop-corpus-stats-row {
-  display: flex;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.stat-pill {
-  flex: 1;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 4px 6px;
-  text-align: center;
-}
-
-.stat-num {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.stat-lbl {
-  display: block;
-  font-size: 10px;
-  color: #64748b;
-}
-
-/* ECDICT 字典释义 */
-.pop-dict-zh {
-  font-size: 12.5px;
-  color: #334155;
-  line-height: 1.5;
-}
-
-.pop-dict-en-details {
-  margin-top: 4px;
-  font-size: 11px;
-  color: #64748b;
-}
-
-.pop-dict-en-details summary {
-  cursor: pointer;
-  color: #3b82f6;
-}
-
-.pop-dict-en {
-  margin-top: 4px;
-  padding: 4px 6px;
-  background: #f8fafc;
-  border-radius: 4px;
-  font-size: 11px;
-  line-height: 1.4;
-  color: #475569;
-}
-
-.pop-dict-rank-note {
-  margin-top: 4px;
-  font-size: 10.5px;
-  color: #94a3b8;
-}
-
-.rank-warning {
-  color: #d97706;
-}
-
 /* 考研标记 Badge */
 .pop-tags-wrap {
   display: flex;
@@ -3656,6 +3590,201 @@
 /* ==========================================================================
    深色模式适配 (Dark Mode Overrides)
    ========================================================================== */
+.hist-text-badge, .hist-ps-badge {
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hist-meaning-badge {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.hist-star-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hist-star-btn.is-starred {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #ef4444;
+}
+
+.lex-history-sentence-en {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.lex-history-mark {
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 700;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+.lex-history-sentence-zh {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* 4. 生词本 v2 聚合卡片样式 */
+.vocab-card-subhead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.vocab-mastery-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.vocab-mastery-badge.mastery-proficient { background: #dcfce7; color: #166534; }
+.vocab-mastery-badge.mastery-vague { background: #fef3c7; color: #92400e; }
+.vocab-mastery-badge.mastery-wrong { background: #fee2e2; color: #991b1b; }
+.vocab-mastery-badge.mastery-unmarked { background: #f1f5f9; color: #64748b; }
+
+.vocab-sm2-badge {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.vocab-card-sm2-rates {
+  margin-left: auto;
+  display: flex;
+  gap: 3px;
+}
+
+.btn-quick-rate {
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-quick-rate.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.vocab-saved-occs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.occs-list-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.vocab-saved-occ-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.occ-item-loc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.occ-loc-badge {
+  font-size: 10px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.btn-occ-remove {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.btn-occ-remove:hover { color: #ef4444; }
+
+.occ-item-meaning {
+  font-size: 12px;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.occ-item-meaning.is-blurred {
+  filter: blur(5px);
+  user-select: none;
+}
+
+.vocab-card-footer {
+  margin-top: 8px;
+  text-align: right;
+}
+
+.btn-card-history {
+  background: none;
+  border: none;
+  font-size: 11px;
+  color: #3b82f6;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-card-history:hover { text-decoration: underline; }
+
+.btn-unstar-lex {
+  background: none;
+  border: 1px solid #fca5a5;
+  color: #ef4444;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-unstar-lex:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   深色模式适配 (Dark Mode Overrides)
+   ========================================================================== */
 [data-theme="dark"] .lex-token.lex-word:hover {
   background: rgba(56, 189, 248, 0.15);
   text-decoration: underline dotted #38bdf8;
@@ -3679,14 +3808,21 @@
 [data-theme="dark"] .pop-action-btn { background: #2d2e38; border-color: rgba(255, 255, 255, 0.14); color: #cbd5e1; }
 [data-theme="dark"] .pop-context-switcher { background: #262732; }
 [data-theme="dark"] .switcher-tab { border-color: rgba(255, 255, 255, 0.15); color: #94a3b8; }
-[data-theme="dark"] .pop-context-meaning-box { background: rgba(59, 130, 246, 0.15); border-left-color: #60a5fa; }
-[data-theme="dark"] .pop-context-meaning { color: #93c5fd; }
-[data-theme="dark"] .stat-pill { background: #262732; border-color: rgba(255, 255, 255, 0.08); }
-[data-theme="dark"] .stat-num { color: #f1f5f9; }
-[data-theme="dark"] .pop-dict-zh { color: #cbd5e1; }
+[data-theme="dark"] .pop-pos-badge { background: #1e293b; color: #60a5fa; border-color: rgba(96, 165, 250, 0.25); }
+[data-theme="dark"] .pop-pos-badge.domain-tag { background: #262732; color: #94a3b8; border-color: rgba(255, 255, 255, 0.1); }
+[data-theme="dark"] .pop-def-line { color: #f1f5f9; }
+[data-theme="dark"] .pop-context-tip { background: rgba(22, 101, 52, 0.2); border-color: rgba(74, 222, 128, 0.3); }
+[data-theme="dark"] .pop-context-tip-head { color: #86efac; }
+[data-theme="dark"] .pop-context-tip-head .tip-loc { color: #bbf7d0; }
+[data-theme="dark"] .pop-context-tip-val { color: #f0fdf4; }
+[data-theme="dark"] .pop-context-gloss { color: #86efac; }
+[data-theme="dark"] .pop-stats-bar { border-top-color: rgba(255, 255, 255, 0.08); color: #94a3b8; }
+[data-theme="dark"] .pop-stats-bar .stat-info strong { color: #f1f5f9; }
 [data-theme="dark"] .pop-dict-en { background: #262732; color: #94a3b8; }
 [data-theme="dark"] .btn-mastery-choice { background: #262732; border-color: rgba(255, 255, 255, 0.12); color: #cbd5e1; }
 [data-theme="dark"] .pop-note-textarea { background: #262732; border-color: rgba(255, 255, 255, 0.15); color: #f1f5f9; }
+
+.passage-pane ::selection { background: rgba(59, 130, 246, 0.25); color: inherit; }
 
 [data-theme="dark"] .lex-history-modal-card {
   background: #1e1f26;

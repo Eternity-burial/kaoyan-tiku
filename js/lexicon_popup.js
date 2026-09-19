@@ -95,6 +95,32 @@
     } catch (e) {}
   }
 
+  // 格式化 ECDICT 中文字典释义为词性分行卡片
+  function formatDictZh(defZh) {
+    if (!defZh) return '';
+    var lines = defZh.replace(/\\n/g, '\n').split('\n');
+    var html = [];
+    lines.forEach(function (line) {
+      line = line.trim();
+      if (!line) return;
+      var posMatch = line.match(/^([a-z]+\.|\[[^\]]+\])\s*(.*)$/i);
+      if (posMatch) {
+        var pos = posMatch[1];
+        var defs = posMatch[2];
+        var isDomain = pos.charAt(0) === '[';
+        html.push('<div class="pop-dict-entry">');
+        html.push('  <span class="pop-pos-badge' + (isDomain ? ' domain-tag' : '') + '">' + escapeHtml(pos) + '</span>');
+        html.push('  <span class="pop-def-line">' + escapeHtml(defs) + '</span>');
+        html.push('</div>');
+      } else {
+        html.push('<div class="pop-dict-entry">');
+        html.push('  <span class="pop-def-line">' + escapeHtml(line) + '</span>');
+        html.push('</div>');
+      }
+    });
+    return html.join('\n');
+  }
+
   // ===== 渲染 Popup v2 核心内容 =====
   function renderPopupContent(lookupResult, queryMeta) {
     var occ = lookupResult.occurrence;
@@ -152,109 +178,79 @@
       html.push('</div>');
     }
 
-    // 2. 【本句语境义】(Context Meaning)
-    var contextMeaning = occ && occ.context ? occ.context.contextMeaning : '';
-    html.push('<div class="pop-section pop-section-context">');
-    html.push('  <div class="pop-section-title">【本句真题语境义】</div>');
-    if (contextMeaning) {
-      var sourceName = (occ.context && occ.context.contextMeaningSource) || '权威语境';
-      var sourceBadgeMap = {
-        'exam-point-pdf': '考点标注版',
-        'personal-pdf': '个人精读版',
-        'Lazynote': '真题题库',
-        'existing-production': '官方真题',
-        'existing-rebuilt': '精析对照'
-      };
-      var srcLabel = sourceBadgeMap[sourceName] || sourceName;
-
-      html.push('  <div class="pop-context-meaning-box">');
-      html.push('    <div class="pop-context-meaning">' + escapeHtml(contextMeaning) + '</div>');
-      html.push('    <div class="pop-context-meta">');
-      var locText = (year ? (year + ' 年') : '') + (textNum ? (' · Text ' + textNum) : '') + (ps ? (' · ' + ps) : '');
-      html.push('      <span class="meta-loc">' + escapeHtml(locText) + '</span>');
-      html.push('      <span class="meta-src-badge src-' + escapeHtml(sourceName) + '">' + escapeHtml(srcLabel) + '</span>');
-      if (occ.annotations && occ.annotations.pdfPrintedGloss) {
-        html.push('      <span class="meta-pdf-gloss" title="PDF 印刷页边批注">印刷标注: ' + escapeHtml(occ.annotations.pdfPrintedGloss) + '</span>');
-      }
-      html.push('    </div>');
-      html.push('  </div>');
-    } else {
-      html.push('  <div class="pop-context-empty">当前句子暂无独立上下文特殊义标注，请参考下方考研真题与字典词义。</div>');
-    }
-    html.push('</div>');
-
-    // 3. 【考研真题考频与分布】(严格物理隔离 Lazynote 与 ECDICT 统计)
-    var corpus = (lex && lex.kaoyanCorpus) || {};
-    var sCount = corpus.sentenceCount;
-    var oCount = corpus.occurrenceCount;
-    var pCount = corpus.paperCount;
-    var hasCorpusStats = (typeof sCount === 'number' || typeof oCount === 'number');
-
-    html.push('<div class="pop-section pop-section-corpus">');
-    html.push('  <div class="pop-section-head-bar">');
-    html.push('    <div class="pop-section-title">【考研真题考频】</div>');
-    if (lex) {
-      html.push('    <button type="button" class="btn-history-link" data-act="open-history" data-lexeme-id="' + lex.lexemeId + '">查看历年真题语境 &gt;</button>');
-    }
-    html.push('  </div>');
-
-    if (hasCorpusStats) {
-      html.push('  <div class="pop-corpus-stats-row">');
-      html.push('    <div class="stat-pill"><span class="stat-num">' + (sCount !== null ? sCount : '-') + '</span><span class="stat-lbl">真题句</span></div>');
-      html.push('    <div class="stat-pill"><span class="stat-num">' + (oCount !== null ? oCount : '-') + '</span><span class="stat-lbl">实际出现</span></div>');
-      html.push('    <div class="stat-pill"><span class="stat-num">' + (pCount !== null ? pCount : '-') + '</span><span class="stat-lbl">涉及试卷</span></div>');
-      if (corpus.cefr) {
-        html.push('    <div class="stat-pill"><span class="stat-num stat-cefr">' + escapeHtml(corpus.cefr) + '</span><span class="stat-lbl">CEFR 等级</span></div>');
-      }
-      html.push('  </div>');
-    } else {
-      html.push('  <div class="pop-corpus-empty">此词条为补充拓展词汇，点击上方可直接检索全库历年真题语境。</div>');
-    }
-    html.push('</div>');
-
-    // 4. 【通用词义】(ECDICT 字典释义)
+    // 2. 【核心词典释义】(第一优先呈现，如同扇贝/欧路APP，词性分行清晰排版)
     var defZh = (d.generalDefinition && d.generalDefinition.zh) || '';
     var defEn = (d.generalDefinition && d.generalDefinition.en) || '';
-    var bnc = (d.generalCorpusFrequency && d.generalCorpusFrequency.bnc);
-    var frq = (d.generalCorpusFrequency && d.generalCorpusFrequency.frq);
-
-    html.push('<div class="pop-section pop-section-dictionary">');
-    html.push('  <div class="pop-section-title">【通用词典义】</div>');
     if (defZh) {
-      html.push('  <div class="pop-dict-zh">' + escapeHtml(defZh).replace(/\n/g, '<br>') + '</div>');
-    }
-    if (defEn) {
-      html.push('  <details class="pop-dict-en-details">');
-      html.push('    <summary>英文完整释义 (展开)</summary>');
-      html.push('    <div class="pop-dict-en">' + escapeHtml(defEn).replace(/\\n/g, '<br>').replace(/\n/g, '<br>') + '</div>');
-      html.push('  </details>');
-    }
-    if (bnc || frq) {
-      html.push('  <div class="pop-dict-rank-note">通用英语语料库频次：BNC #' + (bnc || '-') + ' · FRQ #' + (frq || '-') + ' <span class="rank-warning">(通用语料库排名，非考研频率)</span></div>');
-    }
-    html.push('</div>');
-
-    // 5. 【考研标记】
-    var ann = (occ && occ.annotations) || {};
-    var badges = [];
-    if (ann.obstacleWord) badges.push('<span class="exam-tag tag-obstacle">考研难词 (Obstacle)</span>');
-    if (ann.familiarWordUncommonMeaning) badges.push('<span class="exam-tag tag-rare">熟词僻义 (Rare Sense)</span>');
-    if (ann.examPointPdf) badges.push('<span class="exam-tag tag-exampoint">考点标注版高亮</span>');
-    if (ann.personalPdf) badges.push('<span class="exam-tag tag-personal">个人精读版标注 ★</span>');
-    if (ann.properNoun || (lex && lex.properNoun)) badges.push('<span class="exam-tag tag-proper">专有名词</span>');
-    if (lex && lex.type === 'phrase') badges.push('<span class="exam-tag tag-phrase">固定搭配 / 短语</span>');
-
-    if (badges.length > 0) {
-      html.push('<div class="pop-section pop-section-tags">');
-      html.push('  <div class="pop-section-title">【考研标记】</div>');
-      html.push('  <div class="pop-tags-wrap">' + badges.join(' ') + '</div>');
+      html.push('<div class="pop-dict-box">');
+      html.push(formatDictZh(defZh));
+      if (defEn) {
+        html.push('  <details class="pop-dict-en-details">');
+        html.push('    <summary>英文完整释义 (展开)</summary>');
+        html.push('    <div class="pop-dict-en">' + escapeHtml(defEn).replace(/\\n/g, '<br>').replace(/\n/g, '<br>') + '</div>');
+        html.push('  </details>');
+      }
+      html.push('</div>');
+    } else if (defEn) {
+      html.push('<div class="pop-dict-box">');
+      html.push('  <div class="pop-dict-en">' + escapeHtml(defEn).replace(/\\n/g, '<br>').replace(/\n/g, '<br>') + '</div>');
       html.push('</div>');
     }
 
-    // 6. 【个人学习与掌握度】
+    // 3. 【真题本句语境义】（仅在当前句子有特殊考义时作为高亮贴士呈现；无真题标注时彻底隐藏，不占版面）
+    var contextMeaning = occ && occ.context ? (occ.context.contextMeaning || '').trim() : '';
+    if (contextMeaning) {
+      var locText = (year ? (year + ' 年') : '') + (textNum ? (' · Text ' + textNum) : '') + (ps ? (' · ' + ps) : '');
+      html.push('<div class="pop-context-tip">');
+      html.push('  <div class="pop-context-tip-head">');
+      html.push('    <span class="tip-icon">💡</span><span class="tip-label">真题本句考义</span>');
+      if (locText) {
+        html.push('    <span class="tip-loc">' + escapeHtml(locText) + '</span>');
+      }
+      html.push('  </div>');
+      html.push('  <div class="pop-context-tip-val">' + escapeHtml(contextMeaning) + '</div>');
+      if (occ.annotations && occ.annotations.pdfPrintedGloss) {
+        html.push('  <div class="pop-context-gloss">印刷边注: ' + escapeHtml(occ.annotations.pdfPrintedGloss) + '</div>');
+      }
+      html.push('</div>');
+    }
+
+    // 4. 【考研真题考频与分布】(单行紧凑状态条)
+    var corpus = (lex && lex.kaoyanCorpus) || {};
+    var sCount = corpus.sentenceCount;
+    var pCount = corpus.paperCount;
+    var hasCorpusStats = (typeof sCount === 'number');
+    if (hasCorpusStats || lex) {
+      html.push('<div class="pop-stats-bar">');
+      if (hasCorpusStats) {
+        html.push('  <span class="stat-info">📊 考研考频: <strong>' + sCount + '</strong> 句 (' + (pCount || 0) + ' 卷)' + (corpus.cefr ? ' · <strong>' + escapeHtml(corpus.cefr) + '</strong>' : '') + '</span>');
+      } else {
+        html.push('  <span class="stat-info">📖 考研词库</span>');
+      }
+      if (lex) {
+        html.push('  <button type="button" class="btn-history-link" data-act="open-history" data-lexeme-id="' + lex.lexemeId + '">历年真题语境 &gt;</button>');
+      }
+      html.push('</div>');
+    }
+
+    // 5. 【考研标记徽章】
+    var ann = (occ && occ.annotations) || {};
+    var badges = [];
+    if (ann.obstacleWord) badges.push('<span class="exam-tag tag-obstacle">考研难词</span>');
+    if (ann.familiarWordUncommonMeaning) badges.push('<span class="exam-tag tag-rare">熟词僻义</span>');
+    if (ann.examPointPdf) badges.push('<span class="exam-tag tag-exampoint">考点重点</span>');
+    if (ann.personalPdf) badges.push('<span class="exam-tag tag-personal">个人笔记标注</span>');
+    if (ann.properNoun || (lex && lex.properNoun)) badges.push('<span class="exam-tag tag-proper">专有名词</span>');
+    if (lex && lex.type === 'phrase') badges.push('<span class="exam-tag tag-phrase">固定搭配</span>');
+
+    if (badges.length > 0) {
+      html.push('<div class="pop-tags-wrap">' + badges.join(' ') + '</div>');
+    }
+
+    // 6. 【个人掌握度与手记】
     html.push('<div class="pop-section pop-section-mastery">');
     html.push('  <div class="pop-mastery-title-row">');
-    html.push('    <span class="pop-section-title">【个人掌握度】</span>');
+    html.push('    <span class="pop-section-title">【复习掌握度】</span>');
     if (userWord && userWord.sm2 && userWord.sm2.reps > 0) {
       var nextDays = Math.max(0, Math.ceil(((userWord.sm2.nextReview || 0) - Date.now()) / (24 * 3600 * 1000)));
       html.push('    <span class="sm2-status-tag" title="SM-2 间隔重复状态">已复习 ' + userWord.sm2.reps + ' 次 · ' + (nextDays === 0 ? '今日到期' : (nextDays + '天后复习')) + '</span>');
@@ -266,7 +262,6 @@
     html.push('    <button type="button" class="btn-mastery-choice ' + (currentMastery === 'wrong' ? 'active-wrong' : '') + '" data-act="set-mastery" data-status="wrong">不会 (C)</button>');
     html.push('  </div>');
 
-    // 用户学习笔记
     var userNote = (userWord && userWord.note) || '';
     html.push('  <details class="pop-note-details" ' + (userNote ? 'open' : '') + '>');
     html.push('    <summary>个人生词手记 ' + (userNote ? '(已记)' : '+') + '</summary>');
@@ -296,23 +291,43 @@
     // 绑定内部交互事件
     attachPopoverEvents(pop, lookupResult, queryMeta);
 
+    // 先以隐藏模式撑开以精确获取真实尺寸
     pop.style.display = 'block';
+    pop.style.visibility = 'hidden';
+    pop.style.maxHeight = '';
 
-    // 精确视口边缘定位防遮挡
+    // 精确视口边缘定位防遮挡（统一优先放置于单词正下方）
     var rect = anchorEl.getBoundingClientRect();
-    var popWidth = 380;
-    var popHeight = pop.offsetHeight || 380;
+    var popWidth = pop.offsetWidth || 360;
+    var popHeight = pop.offsetHeight || 280;
+    var viewHeight = window.innerHeight;
+    var viewWidth = window.innerWidth;
+
+    // 1. 水平定位：默认对齐单词左侧，右侧贴边防溢出
     var left = rect.left;
-    if (left + popWidth > window.innerWidth - 12) {
-      left = Math.max(10, window.innerWidth - popWidth - 12);
+    if (left + popWidth > viewWidth - 14) {
+      left = Math.max(10, viewWidth - popWidth - 14);
     }
-    var top = rect.bottom + 6;
-    if (top + popHeight > window.innerHeight - 10) {
+    if (left < 10) left = 10;
+
+    // 2. 垂直定位：统一放到单词下方，除非下方空间严重不足
+    var spaceBelow = viewHeight - rect.bottom - 10;
+    var spaceAbove = rect.top - 10;
+    var top;
+
+    // 只有在下方空间严重不足（< 220px）且上方空间明显更大时，才放置在单词上方
+    if (spaceBelow < 220 && spaceAbove > spaceBelow) {
       top = Math.max(10, rect.top - popHeight - 6);
+      pop.style.maxHeight = Math.min(spaceAbove - 8, viewHeight * 0.75) + 'px';
+    } else {
+      // 绝大多数情况统一放置在单词正下方
+      top = rect.bottom + 6;
+      pop.style.maxHeight = Math.min(spaceBelow - 8, viewHeight * 0.75) + 'px';
     }
 
-    pop.style.left = left + 'px';
-    pop.style.top = top + 'px';
+    pop.style.left = Math.round(left) + 'px';
+    pop.style.top = Math.round(top) + 'px';
+    pop.style.visibility = 'visible';
 
     pop.onmouseenter = function () {
       clearTimeout(state.hideTimer);

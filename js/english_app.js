@@ -2370,8 +2370,22 @@
   function attachPassageEvents() {
     if (!dom.passagePane) return;
     
+    // 1. 拦截 mousedown 的多击全选，避免快速点击或双击单词时把整段文本选为浏览器蓝色
+    dom.passagePane.onmousedown = (e) => {
+      if (e.detail > 1) {
+        e.preventDefault();
+      }
+    };
+
     // 清除旧的直接事件绑定，改用事件委托挂载在 passagePane 上
     dom.passagePane.onclick = (e) => {
+      // 无论点击何处，立即清除任何遗留的文本选区蓝色高亮
+      if (window.getSelection) {
+        try {
+          window.getSelection().removeAllRanges();
+        } catch (err) {}
+      }
+
       // 1. 点击画线句徽章或考查词句：切换联动到对应试题
       const badgeEl = e.target.closest('.sentence-underlined-badge');
       const phraseExamEl = e.target.closest('.exam-underlined-phrase');
@@ -2395,7 +2409,13 @@
         return;
       }
 
-      // 3. 点击句子：切换单句译文显隐
+      // 3. 点击英文正文句子文本 (.sentence-text) 区域内的标点或空白：
+      // 如果点击在 .sentence-text 内部但没有命中具体 token，说明用户是在阅读英文，绝不误触展开单句译文！
+      if (e.target.closest('.sentence-text')) {
+        return;
+      }
+
+      // 4. 点击句子序号标签 (.sentence-id-tag) 或句子外部空白区：切换单句译文显隐
       const sEl = e.target.closest('.sentence-item');
       if (sEl) {
         if (state.mode === 'practice') return;
