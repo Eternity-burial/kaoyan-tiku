@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "kaoyan-lexicon-pipeline-v1.0",
+  "generatedAt": "2026-09-19T13:48:32+00:00",
+  "scope": {
+    "exam": "kaoyan English One preparation",
+    "legacy": "1998-2009 unified kaoyan English",
+    "englishOne": "2010-2026",
+    "pdfHistoricalAssets": "2007-2018",
+    "englishTwoExcluded": true
+  },
+  "counts": {
+    "lexemes": 6554,
+    "occurrences": 21262,
+    "words": 4095,
+    "phrases": 2459
+  },
+  "matchRates": {
+    "ecdict": {
+      "matchedLexemes": 3916,
+      "eligibleWordLexemes": 4095,
+      "rate": 0.956288
+    },
+    "lazynote": {
+      "matchedLexemes": 1313,
+      "eligibleLexemes": 6554,
+      "rate": 0.200336
+    }
+  },
+  "pdfAnnotations": {
+    "personal": {
+      "matched": 1725,
+      "unresolved": 512,
+      "total": 2237
+    },
+    "examPoint": {
+      "matched": 3439,
+      "unresolved": 1626,
+      "total": 5065
+    }
+  },
+  "contextMeaningSourceDistribution": {
+    "Lazynote": 8142,
+    "exam-point-pdf": 3374,
+    "existing-production": 7970,
+    "existing-rebuilt": 983,
+    "personal-pdf": 752,
+    "unresolved": 41
+  },
+  "lazynoteStatus": {
+    "found": 1313,
+    "not_found": 0,
+    "not_scraped": 5241
+  },
+  "conflicts": {
+    "total": 5837,
+    "byType": {
+      "CONTEXT_MEANING_CONFLICT": 3,
+      "LEMMA_CONFLICT": 415,
+      "PHRASE_MAPPING_CONFLICT": 772,
+      "PROPER_NOUN_CONFLICT": 200,
+      "SENTENCE_BOUNDARY_CONFLICT": 0,
+      "PDF_ALIGNMENT_UNRESOLVED": 2003,
+      "SURFACE_ALIGNMENT_CONFLICT": 2285,
+      "SOURCE_TEXT_MISMATCH": 159
+    }
+  },
+  "unresolved": {
+    "total": 6525,
+    "unlocatedOccurrences": 4384
+  },
+  "suspicious": {
+    "total": 1314
+  },
+  "properNouns": {
+    "lexemes": 467,
+    "occurrences": 749
+  },
+  "familiarWordUncommonMeaningOccurrences": 176,
+  "astraDerivedContextMeaning": 0,
+  "coverage": {
+    "1998-2006": {
+      "range": "1998-2006",
+      "yearsExpected": 9,
+      "yearsWithOccurrences": 9,
+      "years": [
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006
+      ],
+      "occurrences": 4317,
+      "canonicalArticleCount": 100,
+      "locatedOccurrences": 3647
+    },
+    "2007-2018": {
+      "range": "2007-2018",
+      "yearsExpected": 12,
+      "yearsWithOccurrences": 12,
+      "years": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "occurrences": 10926,
+      "canonicalArticleCount": 117,
+      "locatedOccurrences": 8012
+    },
+    "2019+": {
+      "range": "2019-2026",
+      "yearsExpected": 8,
+      "yearsWithOccurrences": 8,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "occurrences": 6019,
+      "canonicalArticleCount": 95,
+      "locatedOccurrences": 5219
+    }
+  },
+  "sourceFacts": {
+    "lazynoteLinksInScope": 9741,
+    "lazynoteStatisticsRecomputed": false,
+    "userWordGenerated": false
+  }
+}

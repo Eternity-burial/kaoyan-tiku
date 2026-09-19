@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "conflict.schema.json",
+  "title": "Kaoyan Fusion Conflict v1.0",
+  "type": "object",
+  "required": [
+    "conflictId",
+    "type",
+    "status",
+    "entityRef",
+    "details",
+    "evidence"
+  ],
+  "properties": {
+    "conflictId": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "CONTEXT_MEANING_CONFLICT",
+        "LEMMA_CONFLICT",
+        "PHRASE_MAPPING_CONFLICT",
+        "PROPER_NOUN_CONFLICT",
+        "SENTENCE_BOUNDARY_CONFLICT",
+        "PDF_ALIGNMENT_UNRESOLVED",
+        "SURFACE_ALIGNMENT_CONFLICT",
+        "SOURCE_TEXT_MISMATCH"
+      ]
+    },
+    "status": {
+      "const": "unresolved"
+    },
+    "entityRef": {
+      "type": "object"
+    },
+    "details": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

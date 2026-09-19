@@ -16,6 +16,8 @@ scripts/*
 !scripts/migrate_english_pdf_submodule.py
 !scripts/migrate_jiangyi_biji_submodule.py
 !scripts/migrate_lazynote_submodule.py
+!scripts/build_lexicon.py
+!scripts/validate_lexicon.py
 node_modules/
 package.json
 package-lock.json
@@ -23,6 +25,7 @@ __pycache__/
 *.pyc
 data/tokens/
 *token*
+!js/lexicon_tokenizer.js
 *session*
 *.token
 *.token.txt

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "kaoyan-lexicon-pipeline-v1.0",
+  "runId": "fusion-799d9d53aef941feaa30",
+  "generatedAt": "2026-09-19T13:48:32+00:00",
+  "builder": "build_fusion.py",
+  "sourcePriorityPolicy": "field-level priorities supplied for Lexicon Pipeline v1.0",
+  "canonicalSentenceLocator": "P{paragraph}-S{sentenceWithinParagraph}",
+  "filters": {
+    "englishTwo": "excluded",
+    "tracks": {
+      "1998-2009": "legacy",
+      "2010+": "englishOne"
+    }
+  },
+  "astraInference": {
+    "used": false,
+    "count": 0
+  },
+  "userWord": {
+    "generated": false,
+    "overwritten": false
+  },
+  "outputs": {
+    "lexemes": 6554,
+    "occurrences": 21262,
+    "words": 4095,
+    "phrases": 2459,
+    "conflicts": 5837,
+    "unresolved": 6525
+  }
+}

@@ -2966,4 +2966,734 @@
   color: #cbd5e1 !important;
 }
 
+/* ==========================================================================
+   Canonical Lexicon v2 重构样式：全词可查、精准高亮、Popup v2 与生词本 v2
+   ========================================================================== */
 
+/* 1. 正文 Token 与精准高亮 */
+.lex-token {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lex-token.lex-word:hover {
+  background: rgba(59, 130, 246, 0.08);
+  text-decoration: underline dotted #3b82f6;
+}
+
+.vocab-word.level-amber {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.12);
+  border-bottom: 1.5px solid #f59e0b;
+}
+
+.vocab-word.is-personal-pdf::after {
+  content: '★';
+  font-size: 9px;
+  line-height: 1;
+  vertical-align: super;
+  margin-left: 1px;
+  color: #ef4444;
+}
+
+.vocab-word.is-proper-noun {
+  font-style: italic;
+}
+
+.lex-phrase {
+  border-bottom: 1.5px dashed #38bdf8;
+}
+
+/* 2. Popup v2 词汇卡片 */
+.vocab-popover {
+  position: fixed;
+  z-index: 10000;
+  width: 380px;
+  max-width: calc(100vw - 24px);
+  max-height: 82vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+.vocab-popover.pinned {
+  border-color: #3b82f6;
+  box-shadow: 0 20px 42px rgba(59, 130, 246, 0.2), 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pop-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.pop-headword {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pop-ipa {
+  font-size: 12px;
+  color: #64748b;
+  margin-left: 6px;
+}
+
+.pop-pos {
+  font-size: 11px;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-left: 6px;
+  background: rgba(59, 130, 246, 0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.pop-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.pop-action-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pop-action-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.pop-star-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pop-star-btn.is-starred {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #ef4444;
+}
+
+/* 短语/单字切换条 */
+.pop-context-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.switcher-tab {
+  background: none;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.switcher-tab.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 分区样式 */
+.pop-section {
+  margin-bottom: 10px;
+}
+
+.pop-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* 本句义 */
+.pop-context-meaning-box {
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.pop-context-meaning {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.pop-context-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.meta-src-badge {
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.meta-src-badge.src-exam-point-pdf {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.meta-src-badge.src-personal-pdf {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.pop-context-empty {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* 考研真题考频 */
+.pop-section-head-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.btn-history-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-history-link:hover {
+  text-decoration: underline;
+}
+
+.pop-corpus-stats-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.stat-pill {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.stat-lbl {
+  display: block;
+  font-size: 10px;
+  color: #64748b;
+}
+
+/* ECDICT 字典释义 */
+.pop-dict-zh {
+  font-size: 12.5px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.pop-dict-en-details {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.pop-dict-en-details summary {
+  cursor: pointer;
+  color: #3b82f6;
+}
+
+.pop-dict-en {
+  margin-top: 4px;
+  padding: 4px 6px;
+  background: #f8fafc;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #475569;
+}
+
+.pop-dict-rank-note {
+  margin-top: 4px;
+  font-size: 10.5px;
+  color: #94a3b8;
+}
+
+.rank-warning {
+  color: #d97706;
+}
+
+/* 考研标记 Badge */
+.pop-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.exam-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tag-obstacle { background: #dcfce7; color: #15803d; }
+.tag-rare { background: #fef3c7; color: #b45309; }
+.tag-exampoint { background: #fee2e2; color: #b91c1c; }
+.tag-personal { background: #fae8ff; color: #86198f; }
+.tag-proper { background: #e0e7ff; color: #4338ca; }
+.tag-phrase { background: #e0f2fe; color: #0369a1; }
+
+/* 个人学习与掌握度 */
+.pop-mastery-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.sm2-status-tag {
+  font-size: 10px;
+  color: #10b981;
+  background: #ecfdf5;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.pop-mastery-btn-group {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-mastery-choice {
+  flex: 1;
+  padding: 4px 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-mastery-choice.active-proficient {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #ffffff;
+}
+
+.btn-mastery-choice.active-vague {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #ffffff;
+}
+
+.btn-mastery-choice.active-wrong {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+.pop-note-details {
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.pop-note-details summary {
+  cursor: pointer;
+  color: #64748b;
+}
+
+.pop-note-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 48px;
+}
+
+/* 3. 历年真题语境模态框 (Historical Occurrences Modal) */
+.lex-history-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 10010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lex-history-modal-card {
+  width: 820px;
+  max-width: 95vw;
+  max-height: 88vh;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lex-history-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lex-history-badge {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: normal;
+}
+
+.lex-history-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lex-history-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: all 0.15s ease;
+}
+
+.lex-history-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+.lex-history-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.loc-tags {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.hist-year-badge {
+  background: #1e293b;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hist-text-badge, .hist-ps-badge {
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hist-meaning-badge {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.hist-star-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hist-star-btn.is-starred {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #ef4444;
+}
+
+.lex-history-sentence-en {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.lex-history-mark {
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 700;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+.lex-history-sentence-zh {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* 4. 生词本 v2 聚合卡片样式 */
+.vocab-card-subhead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.vocab-mastery-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.vocab-mastery-badge.mastery-proficient { background: #dcfce7; color: #166534; }
+.vocab-mastery-badge.mastery-vague { background: #fef3c7; color: #92400e; }
+.vocab-mastery-badge.mastery-wrong { background: #fee2e2; color: #991b1b; }
+.vocab-mastery-badge.mastery-unmarked { background: #f1f5f9; color: #64748b; }
+
+.vocab-sm2-badge {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.vocab-card-sm2-rates {
+  margin-left: auto;
+  display: flex;
+  gap: 3px;
+}
+
+.btn-quick-rate {
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-quick-rate.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.vocab-saved-occs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.occs-list-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.vocab-saved-occ-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.occ-item-loc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.occ-loc-badge {
+  font-size: 10px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.btn-occ-remove {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.btn-occ-remove:hover { color: #ef4444; }
+
+.occ-item-meaning {
+  font-size: 12px;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.occ-item-meaning.is-blurred {
+  filter: blur(5px);
+  user-select: none;
+}
+
+.vocab-card-footer {
+  margin-top: 8px;
+  text-align: right;
+}
+
+.btn-card-history {
+  background: none;
+  border: none;
+  font-size: 11px;
+  color: #3b82f6;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-card-history:hover { text-decoration: underline; }
+
+.btn-unstar-lex {
+  background: none;
+  border: 1px solid #fca5a5;
+  color: #ef4444;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-unstar-lex:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   深色模式适配 (Dark Mode Overrides)
+   ========================================================================== */
+[data-theme="dark"] .lex-token.lex-word:hover {
+  background: rgba(56, 189, 248, 0.15);
+  text-decoration: underline dotted #38bdf8;
+}
+
+[data-theme="dark"] .vocab-word.level-amber {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.22);
+  border-bottom-color: #f59e0b;
+}
+
+[data-theme="dark"] .vocab-popover {
+  background: #1e1f26;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65);
+}
+
+[data-theme="dark"] .pop-headword { color: #f8fafc; }
+[data-theme="dark"] .pop-header { border-bottom-color: rgba(255, 255, 255, 0.08); }
+[data-theme="dark"] .pop-action-btn { background: #2d2e38; border-color: rgba(255, 255, 255, 0.14); color: #cbd5e1; }
+[data-theme="dark"] .pop-context-switcher { background: #262732; }
+[data-theme="dark"] .switcher-tab { border-color: rgba(255, 255, 255, 0.15); color: #94a3b8; }
+[data-theme="dark"] .pop-context-meaning-box { background: rgba(59, 130, 246, 0.15); border-left-color: #60a5fa; }
+[data-theme="dark"] .pop-context-meaning { color: #93c5fd; }
+[data-theme="dark"] .stat-pill { background: #262732; border-color: rgba(255, 255, 255, 0.08); }
+[data-theme="dark"] .stat-num { color: #f1f5f9; }
+[data-theme="dark"] .pop-dict-zh { color: #cbd5e1; }
+[data-theme="dark"] .pop-dict-en { background: #262732; color: #94a3b8; }
+[data-theme="dark"] .btn-mastery-choice { background: #262732; border-color: rgba(255, 255, 255, 0.12); color: #cbd5e1; }
+[data-theme="dark"] .pop-note-textarea { background: #262732; border-color: rgba(255, 255, 255, 0.15); color: #f1f5f9; }
+
+[data-theme="dark"] .lex-history-modal-card {
+  background: #1e1f26;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .lex-history-card {
+  background: #262732;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .lex-history-sentence-en { color: #f1f5f9; }
+[data-theme="dark"] .lex-history-sentence-zh { color: #94a3b8; }
+[data-theme="dark"] .lex-history-mark { background: #ca8a04; color: #fef08a; }
+[data-theme="dark"] .vocab-saved-occ-item { background: #262732; border-color: rgba(255, 255, 255, 0.08); }
+[data-theme="dark"] .occ-item-meaning { color: #e2e8f0; }

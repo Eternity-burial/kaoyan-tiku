@@ -138,6 +138,10 @@
   }
 
   function openVocabNotebook() {
+    if (window.LexiconNotebook && typeof window.LexiconNotebook.open === 'function') {
+      window.LexiconNotebook.open();
+      return;
+    }
     loadStarredWords();
     renderVocabNotebook();
     const modal = document.getElementById('engModalVocabBook');
@@ -1243,6 +1247,19 @@
 
     loadYearStorage();
 
+    if (window.LexiconLoader) {
+      window.LexiconLoader.initIndexes().catch(() => {});
+      const curT = getCurrentText();
+      if (curT) {
+        window.LexiconLoader.loadArticle(`ky-en1-${state.currentYear}-r-t${curT.number}`).then(() => {
+          renderPassage();
+        }).catch(() => {});
+      }
+    }
+    if (window.UserWordManager) {
+      window.UserWordManager.migrateLegacyStarredWords().catch(() => {});
+    }
+
     renderYearSelector();
     renderRoundSelector();
     renderTextTabs();
@@ -1377,6 +1394,16 @@
     state.showSolution = state.defaultShowSolution;
     state.practiceShowSolution = state.practiceDefaultShowSolution;
     saveResume(); // 切换篇章后保存位置（恢复时可精确到篇章+题目）
+
+    const targetArtId = text ? `ky-en1-${state.currentYear}-r-t${text.number}` : null;
+    if (window.LexiconLoader && targetArtId) {
+      window.LexiconLoader.loadArticle(targetArtId).then(() => {
+        if (state.currentTextId === text.id || state.currentTextId === text.aliasId) {
+          renderPassage();
+        }
+      }).catch(() => {});
+    }
+
     updateSolutionUI();
     renderPassage();
     renderQuestionPills();
@@ -1392,6 +1419,8 @@
       dom.passagePane.innerHTML = '<div style="padding:20px;color:#94a3b8;text-align:center;">暂无文章数据</div>';
       return;
     }
+
+    const articleId = text ? `ky-en1-${state.currentYear}-r-t${text.number}` : null;
 
     let figureHtml = '';
     if (text.figure && text.figure.image) {
@@ -1429,8 +1458,15 @@
       `;
 
       (p.sentences || []).forEach(s => {
+        let sentenceText = '';
+        if (window.LexiconTokenizer && window.LexiconLoader && articleId) {
+          const sentenceOccs = window.LexiconLoader.getOccurrencesByPs(articleId, s.id);
+          sentenceText = window.LexiconTokenizer.renderSentenceHtml(s.text, sentenceOccs, s.underlinedPhrases, s.id, articleId);
+        } else {
+          const vList = (s.vocab && s.vocab.length > 0) ? s.vocab : (text.vocabulary || text.vocab || []);
+          sentenceText = renderAnnotatedSentenceText(s.text, vList, s.underlinedPhrases);
+        }
         const vList = (s.vocab && s.vocab.length > 0) ? s.vocab : (text.vocabulary || text.vocab || []);
-        const sentenceText = renderAnnotatedSentenceText(s.text, vList, s.underlinedPhrases);
         const sentenceTrans = renderAnnotatedTranslation(s.translation, vList);
 
         let syntaxHtml = '';
@@ -2274,37 +2310,72 @@
   let isVocabPinned = false;
   let pinnedWordEl = null;
 
+  function handleLexiconTokenClick(tokenEl) {
+    const surface = tokenEl.dataset.surface || tokenEl.textContent.trim();
+    const ps = tokenEl.dataset.ps || tokenEl.closest('.sentence-item')?.dataset.id || '';
+    const curText = getCurrentText();
+    const articleId = tokenEl.dataset.articleId || (curText ? `ky-en1-${state.currentYear}-r-t${curText.number}` : '');
+
+    if (window.LexiconLoader && window.LexiconPopup) {
+      window.LexiconLoader.lookup(surface, articleId, ps).then(lookupRes => {
+        if (!lookupRes) return;
+        const queryMeta = {
+          surface: surface,
+          ps: ps,
+          articleId: articleId
+        };
+
+        const phraseEl = tokenEl.closest('.lex-phrase');
+        if (phraseEl && phraseEl !== tokenEl) {
+          const pSurface = phraseEl.dataset.phraseSurface || phraseEl.dataset.surface;
+          window.LexiconLoader.lookup(pSurface, articleId, ps).then(pRes => {
+            if (pRes) {
+              queryMeta.phraseContext = { surface: pSurface, lookupResult: pRes, ps: ps, articleId: articleId };
+              queryMeta.singleWordContext = { surface: surface, lookupResult: lookupRes, ps: ps, articleId: articleId };
+            }
+            window.LexiconPopup.show(tokenEl, lookupRes, queryMeta, true);
+          });
+        } else {
+          window.LexiconPopup.show(tokenEl, lookupRes, queryMeta, true);
+        }
+      });
+    } else {
+      const word = tokenEl.dataset.word || surface;
+      const ipa = tokenEl.dataset.ipa || '';
+      const meaning = tokenEl.dataset.meaning || '';
+      showVocabPopover(tokenEl, word, ipa, meaning, true);
+    }
+  }
+
+  function handleLexiconTokenHover(tokenEl) {
+    if (window.LexiconPopup && window.LexiconPopup.getState().isPinned) return;
+    const surface = tokenEl.dataset.surface || tokenEl.textContent.trim();
+    const ps = tokenEl.dataset.ps || tokenEl.closest('.sentence-item')?.dataset.id || '';
+    const curText = getCurrentText();
+    const articleId = tokenEl.dataset.articleId || (curText ? `ky-en1-${state.currentYear}-r-t${curText.number}` : '');
+
+    if (window.LexiconLoader && window.LexiconPopup) {
+      window.LexiconLoader.lookup(surface, articleId, ps).then(lookupRes => {
+        if (!lookupRes || (window.LexiconPopup && window.LexiconPopup.getState().isPinned)) return;
+        window.LexiconPopup.show(tokenEl, lookupRes, { surface, ps, articleId }, false);
+      });
+    } else {
+      const word = tokenEl.dataset.word || surface;
+      const ipa = tokenEl.dataset.ipa || '';
+      const meaning = tokenEl.dataset.meaning || '';
+      showVocabPopover(tokenEl, word, ipa, meaning, false);
+    }
+  }
+
   function attachPassageEvents() {
     if (!dom.passagePane) return;
     
     // 清除旧的直接事件绑定，改用事件委托挂载在 passagePane 上
     dom.passagePane.onclick = (e) => {
-      // 1. 点击生词：永久常驻锁定释义卡片
-      const vEl = e.target.closest('.vocab-word');
-      if (vEl) {
-        if (state.mode === 'practice') return;
-        e.stopPropagation();
-        const word = vEl.dataset.word;
-        const ipa = vEl.dataset.ipa;
-        const meaning = vEl.dataset.meaning;
-
-        if (isVocabPinned && pinnedWordEl === vEl) {
-          isVocabPinned = false;
-          pinnedWordEl = null;
-          hideVocabPopover();
-        } else {
-          isVocabPinned = true;
-          pinnedWordEl = vEl;
-          clearTimeout(popoverHideTimer);
-          showVocabPopover(vEl, word, ipa, meaning, true);
-        }
-        return;
-      }
-
-      // 2. 点击画线句徽章或考查词句：切换联动到对应试题
+      // 1. 点击画线句徽章或考查词句：切换联动到对应试题
       const badgeEl = e.target.closest('.sentence-underlined-badge');
-      const phraseEl = e.target.closest('.exam-underlined-phrase');
-      const targetUnderlineEl = badgeEl || phraseEl;
+      const phraseExamEl = e.target.closest('.exam-underlined-phrase');
+      const targetUnderlineEl = badgeEl || (phraseExamEl && phraseExamEl.dataset.qindex ? phraseExamEl : null);
       if (targetUnderlineEl && targetUnderlineEl.dataset.qindex) {
         if (state.mode === 'practice') return;
         e.stopPropagation();
@@ -2312,6 +2383,15 @@
         if (!isNaN(qIdx)) {
           switchQuestion(qIdx);
         }
+        return;
+      }
+
+      // 2. 点击生词或正文英文 Token (全词可点)
+      const tokenEl = e.target.closest('.lex-token') || e.target.closest('.vocab-word');
+      if (tokenEl) {
+        if (state.mode === 'practice') return;
+        e.stopPropagation();
+        handleLexiconTokenClick(tokenEl);
         return;
       }
 
@@ -2324,28 +2404,26 @@
       }
     };
 
-    // 鼠标划入生词：即时浮现释义
+    // 鼠标划入生词/Token：即时浮现释义预览
     dom.passagePane.onmouseover = (e) => {
       if (state.mode === 'practice') return;
-      if (isVocabPinned) return;
-      const vEl = e.target.closest('.vocab-word');
-      if (vEl) {
+      if (isVocabPinned || (window.LexiconPopup && window.LexiconPopup.getState().isPinned)) return;
+      const tokenEl = e.target.closest('.lex-token') || e.target.closest('.vocab-word');
+      if (tokenEl) {
         clearTimeout(popoverHideTimer);
-        const word = vEl.dataset.word;
-        const ipa = vEl.dataset.ipa;
-        const meaning = vEl.dataset.meaning;
-        showVocabPopover(vEl, word, ipa, meaning, false);
+        handleLexiconTokenHover(tokenEl);
       }
     };
 
-    // 鼠标划出生词：延迟消失（支持无缝滑入浮窗内部）
+    // 鼠标划出：延迟消失（支持无缝滑入浮窗内部）
     dom.passagePane.onmouseout = (e) => {
-      if (isVocabPinned) return;
-      const vEl = e.target.closest('.vocab-word');
-      if (vEl && (!e.relatedTarget || !vEl.contains(e.relatedTarget))) {
+      if (isVocabPinned || (window.LexiconPopup && window.LexiconPopup.getState().isPinned)) return;
+      const tokenEl = e.target.closest('.lex-token') || e.target.closest('.vocab-word');
+      if (tokenEl && (!e.relatedTarget || !tokenEl.contains(e.relatedTarget))) {
         clearTimeout(popoverHideTimer);
         popoverHideTimer = setTimeout(() => {
-          hideVocabPopover();
+          if (window.LexiconPopup) window.LexiconPopup.hide();
+          else hideVocabPopover();
         }, 400);
       }
     };
@@ -2353,47 +2431,32 @@
     // 题目与选项生词气泡事件支持 (Analysis Pane)
     if (dom.analysisPane) {
       dom.analysisPane.onclick = (e) => {
-        const vEl = e.target.closest('.vocab-word');
-        if (vEl) {
+        const tokenEl = e.target.closest('.lex-token') || e.target.closest('.vocab-word');
+        if (tokenEl) {
           if (state.mode === 'practice' && !state.practiceAnswers[getCurrentQuestion()?.qIndex]?.submitted) return;
           e.stopPropagation();
-          const word = vEl.dataset.word;
-          const ipa = vEl.dataset.ipa;
-          const meaning = vEl.dataset.meaning;
-
-          if (isVocabPinned && pinnedWordEl === vEl) {
-            isVocabPinned = false;
-            pinnedWordEl = null;
-            hideVocabPopover();
-          } else {
-            isVocabPinned = true;
-            pinnedWordEl = vEl;
-            clearTimeout(popoverHideTimer);
-            showVocabPopover(vEl, word, ipa, meaning, true);
-          }
+          handleLexiconTokenClick(tokenEl);
         }
       };
 
       dom.analysisPane.onmouseover = (e) => {
         if (state.mode === 'practice' && !state.practiceAnswers[getCurrentQuestion()?.qIndex]?.submitted) return;
-        if (isVocabPinned) return;
-        const vEl = e.target.closest('.vocab-word');
-        if (vEl) {
+        if (isVocabPinned || (window.LexiconPopup && window.LexiconPopup.getState().isPinned)) return;
+        const tokenEl = e.target.closest('.lex-token') || e.target.closest('.vocab-word');
+        if (tokenEl) {
           clearTimeout(popoverHideTimer);
-          const word = vEl.dataset.word;
-          const ipa = vEl.dataset.ipa;
-          const meaning = vEl.dataset.meaning;
-          showVocabPopover(vEl, word, ipa, meaning, false);
+          handleLexiconTokenHover(tokenEl);
         }
       };
 
       dom.analysisPane.onmouseout = (e) => {
-        if (isVocabPinned) return;
-        const vEl = e.target.closest('.vocab-word');
-        if (vEl && (!e.relatedTarget || !vEl.contains(e.relatedTarget))) {
+        if (isVocabPinned || (window.LexiconPopup && window.LexiconPopup.getState().isPinned)) return;
+        const tokenEl = e.target.closest('.lex-token') || e.target.closest('.vocab-word');
+        if (tokenEl && (!e.relatedTarget || !tokenEl.contains(e.relatedTarget))) {
           clearTimeout(popoverHideTimer);
           popoverHideTimer = setTimeout(() => {
-            hideVocabPopover();
+            if (window.LexiconPopup) window.LexiconPopup.hide();
+            else hideVocabPopover();
           }, 400);
         }
       };

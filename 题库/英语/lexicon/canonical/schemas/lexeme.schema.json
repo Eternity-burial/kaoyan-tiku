@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lexeme.schema.json",
+  "title": "Kaoyan Lexeme v1.0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "lexemeId",
+    "type",
+    "lemma",
+    "dictionary",
+    "kaoyanCorpus",
+    "evidence"
+  ],
+  "properties": {
+    "lexemeId": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "word",
+        "phrase"
+      ]
+    },
+    "lemma": {
+      "type": "string"
+    },
+    "properNoun": {
+      "type": "boolean"
+    },
+    "dictionary": {
+      "type": "object"
+    },
+    "kaoyanCorpus": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

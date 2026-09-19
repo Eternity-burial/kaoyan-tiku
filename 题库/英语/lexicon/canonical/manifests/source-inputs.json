@@ -1,0 +1,745 @@
+{
+  "schemaVersion": "kaoyan-lexicon-pipeline-v1.0",
+  "capturedAt": "2026-09-19T13:48:32+00:00",
+  "repositories": [
+    {
+      "name": "kaoyan-tiku",
+      "url": "https://github.com/Eternity-burial/kaoyan-tiku",
+      "commit": "9657fa8c95c47659ec24c7b6b94e9df535d9f4a0",
+      "readOnly": true,
+      "readmeSha256": "375da6cac7ff7cfaddddf609dc4c98f7375b598c2d42855180679635f8ab4ef5"
+    },
+    {
+      "name": "kaoyan-lazynote-data",
+      "url": "https://github.com/Eternity-burial/kaoyan-lazynote-data",
+      "commit": "215c16bbe5a0e20f14664c861bb7b2b245c7d821",
+      "readOnly": true,
+      "readmeSha256": "af068561edf9eafc1b457c66e6dcb28fca272a62b6194682f9149c8361b50a77"
+    },
+    {
+      "name": "kaoyan-ecdict-data",
+      "url": "https://github.com/Eternity-burial/kaoyan-ecdict-data",
+      "commit": "6eefab99ca1a382aec9c1fefaba02c810d7f039f",
+      "readOnly": true,
+      "readmeSha256": "5742a1e74d50f91a08bcf9d336505c3a04ae7982426bd6dac3dc30df4cf35273"
+    },
+    {
+      "name": "kaoyan-existing-data",
+      "url": "https://github.com/Eternity-burial/kaoyan-existing-data",
+      "commit": "f5a03295fec7938cf93b65dd49b35f22a7b0d1f9",
+      "readOnly": true,
+      "readmeSha256": "d1ab42405c51dfb29009dbb00136a1b398daa75a502645b7c984e27f90e8c1c7"
+    },
+    {
+      "name": "kaoyan-tiku-assets-english-pdf",
+      "url": "https://github.com/Eternity-burial/kaoyan-tiku-assets-english-pdf",
+      "commit": "1bdd1d869663980e931eb590d80a878d150ade97",
+      "readOnly": true,
+      "readmeSha256": "474b77d90f28f20eb36181d917b901eedf61d79a283e1a34c947a81ab33ff959"
+    }
+  ],
+  "sourceAuditsAndManifests": [
+    {
+      "path": "kaoyan-lazynote-data/manifests/run.json",
+      "sha256": "6827da96d69c38db7c20103d98fa65c3b15f190dc0edb1ec1db47bb551cf314b"
+    },
+    {
+      "path": "kaoyan-lazynote-data/audit/crawl-audit.json",
+      "sha256": "89766dabcc624fe5fb9365c93a18911fed636c9b0226fc56bd82fd193aa34314"
+    },
+    {
+      "path": "kaoyan-lazynote-data/audit/count-audit.json",
+      "sha256": "8ab3c045b804c1e89631934c2dd9fd2d971577b79399aecceb18117300a573cf"
+    },
+    {
+      "path": "kaoyan-ecdict-data/manifests/build.json",
+      "sha256": "3b2ca55883caff3b0f7be70912d1cf24c3324c2d110d5093957b6152c18a0127"
+    },
+    {
+      "path": "kaoyan-ecdict-data/audit/report.json",
+      "sha256": "9a9f32f419947d132075847e04465bc00b0c5c3118be7199ca2e27aa55b9d54e"
+    },
+    {
+      "path": "kaoyan-existing-data/manifests/build.json",
+      "sha256": "6ad01c5085464172d56ba50509430093369892036fb1392479874e4d908f4be5"
+    },
+    {
+      "path": "kaoyan-existing-data/audit/report.json",
+      "sha256": "5bf9f35542d5fe21bcc968ea2fd45341a7cc982db9a0038331eb46bebf22fe59"
+    }
+  ],
+  "pdfInputs": [
+    {
+      "namespace": "personal",
+      "year": 2007,
+      "text": 1,
+      "path": "个人精读版/英语一_2007_阅读Text1_个人精读版.pdf",
+      "sha256": "ad08de5fd6ccfed34fbff1cef593d76e44aabf2deebd918400d28dc47f9b8d17"
+    },
+    {
+      "namespace": "personal",
+      "year": 2007,
+      "text": 2,
+      "path": "个人精读版/英语一_2007_阅读Text2_个人精读版.pdf",
+      "sha256": "34ddf690bbf2790e1d071876c415996be3e24d8b3b3cec7d6303d2bee8ab0cd0"
+    },
+    {
+      "namespace": "personal",
+      "year": 2007,
+      "text": 3,
+      "path": "个人精读版/英语一_2007_阅读Text3_个人精读版.pdf",
+      "sha256": "1b55dff4d3072c144c8cc45210c14f5ed5c57c6843c5cfb89f639ae667f44805"
+    },
+    {
+      "namespace": "personal",
+      "year": 2007,
+      "text": 4,
+      "path": "个人精读版/英语一_2007_阅读Text4_个人精读版.pdf",
+      "sha256": "9c5f22d874f6ad6c12342ef6ad7f975d628dc2b36f19213be2b047240a48e5a2"
+    },
+    {
+      "namespace": "personal",
+      "year": 2008,
+      "text": 1,
+      "path": "个人精读版/英语一_2008_阅读Text1_个人精读版.pdf",
+      "sha256": "a26f3b80dff712777436dc201586b66abb0e4ad963b49dc51a1e866c806b7e75"
+    },
+    {
+      "namespace": "personal",
+      "year": 2008,
+      "text": 2,
+      "path": "个人精读版/英语一_2008_阅读Text2_个人精读版.pdf",
+      "sha256": "13a3a0ecb9241123081d5e20f90755605471d10c93dd56532ed08dfde17a0541"
+    },
+    {
+      "namespace": "personal",
+      "year": 2008,
+      "text": 3,
+      "path": "个人精读版/英语一_2008_阅读Text3_个人精读版.pdf",
+      "sha256": "2846ba7a58857c476897359a5bbc8b5b2ace81cfe5e90859c1273773fe8d0c72"
+    },
+    {
+      "namespace": "personal",
+      "year": 2008,
+      "text": 4,
+      "path": "个人精读版/英语一_2008_阅读Text4_个人精读版.pdf",
+      "sha256": "d1b3dfa4f1ddbf82a08c3dd71c79b487f603d26ebc38924b477d5e43de4cbca9"
+    },
+    {
+      "namespace": "personal",
+      "year": 2009,
+      "text": 1,
+      "path": "个人精读版/英语一_2009_阅读Text1_个人精读版.pdf",
+      "sha256": "aeacb6b22bb55d0f0416d447f560af67b2334bd96356457ff7a46a340118224b"
+    },
+    {
+      "namespace": "personal",
+      "year": 2009,
+      "text": 2,
+      "path": "个人精读版/英语一_2009_阅读Text2_个人精读版.pdf",
+      "sha256": "04d495e7d05f5bb1a354fbd79bebec2badaf18c2f6207712af8be67e8746d4e5"
+    },
+    {
+      "namespace": "personal",
+      "year": 2009,
+      "text": 3,
+      "path": "个人精读版/英语一_2009_阅读Text3_个人精读版.pdf",
+      "sha256": "461a5ff6b10d4fabc7a53db021a6b630608fa24f40742e8983276abb536ed032"
+    },
+    {
+      "namespace": "personal",
+      "year": 2009,
+      "text": 4,
+      "path": "个人精读版/英语一_2009_阅读Text4_个人精读版.pdf",
+      "sha256": "805c8965a855362d6cc9e24a424499288ccc77e622dc9fcd65aa764934e61f22"
+    },
+    {
+      "namespace": "personal",
+      "year": 2010,
+      "text": 1,
+      "path": "个人精读版/英语一_2010_阅读Text1_个人精读版.pdf",
+      "sha256": "3298aeef99b1d4e7f9060261aa58731eb4f3c17c817e958f1a9d8e0cc908d1f5"
+    },
+    {
+      "namespace": "personal",
+      "year": 2010,
+      "text": 2,
+      "path": "个人精读版/英语一_2010_阅读Text2_个人精读版.pdf",
+      "sha256": "4f5de19c7d88663d0c5d8b0a0e6da693597b957d9fa6b748e51752fecf5c5b7b"
+    },
+    {
+      "namespace": "personal",
+      "year": 2010,
+      "text": 3,
+      "path": "个人精读版/英语一_2010_阅读Text3_个人精读版.pdf",
+      "sha256": "b69ed0f028f68680a8d8ac9d8d4b7a422a57dc6f0b4d98eded5e08d880106950"
+    },
+    {
+      "namespace": "personal",
+      "year": 2010,
+      "text": 4,
+      "path": "个人精读版/英语一_2010_阅读Text4_个人精读版.pdf",
+      "sha256": "edd72af6d37ac87d252ec528271b7f28007f169be00c4f385ea335dbd24bfb34"
+    },
+    {
+      "namespace": "personal",
+      "year": 2011,
+      "text": 1,
+      "path": "个人精读版/英语一_2011_阅读Text1_个人精读版.pdf",
+      "sha256": "9e79b8e28184f1d9d0e2ff57a70ee2b8ece0c3b998bf58e29cfbd519c47bac44"
+    },
+    {
+      "namespace": "personal",
+      "year": 2011,
+      "text": 2,
+      "path": "个人精读版/英语一_2011_阅读Text2_个人精读版.pdf",
+      "sha256": "dc4190516828d167b2367bd45016ff4b5089ad1d5364cae0ca13e71eadcdf172"
+    },
+    {
+      "namespace": "personal",
+      "year": 2011,
+      "text": 3,
+      "path": "个人精读版/英语一_2011_阅读Text3_个人精读版.pdf",
+      "sha256": "ac6704543dcac281c3b0fb5131607f4c03eb4adcaeb99162d03c10fee35c922e"
+    },
+    {
+      "namespace": "personal",
+      "year": 2011,
+      "text": 4,
+      "path": "个人精读版/英语一_2011_阅读Text4_个人精读版.pdf",
+      "sha256": "846783d2e9c3ef7f7d23ea9caa3df8c1f4113f61fd42aa9ac41fb07848fb80d6"
+    },
+    {
+      "namespace": "personal",
+      "year": 2012,
+      "text": 1,
+      "path": "个人精读版/英语一_2012_阅读Text1_个人精读版.pdf",
+      "sha256": "4b32b0d4f424b43b0949c037b888fc528df6c5242b83d9de85cde88795fc70f7"
+    },
+    {
+      "namespace": "personal",
+      "year": 2012,
+      "text": 2,
+      "path": "个人精读版/英语一_2012_阅读Text2_个人精读版.pdf",
+      "sha256": "f3c4f469066751f271a84eaf2951e7f57b9ea44f3a752e147855c559eac5e8c3"
+    },
+    {
+      "namespace": "personal",
+      "year": 2012,
+      "text": 3,
+      "path": "个人精读版/英语一_2012_阅读Text3_个人精读版.pdf",
+      "sha256": "03dd3fe1f9f7c257291f431b5958825a5c51584ff1b69e5e56ffc47eb6c6b411"
+    },
+    {
+      "namespace": "personal",
+      "year": 2012,
+      "text": 4,
+      "path": "个人精读版/英语一_2012_阅读Text4_个人精读版.pdf",
+      "sha256": "8f556dee56d08eb2f70aa393542e4ecba1ce9c04fe761a76b13fcd905af3a338"
+    },
+    {
+      "namespace": "personal",
+      "year": 2013,
+      "text": 1,
+      "path": "个人精读版/英语一_2013_阅读Text1_个人精读版.pdf",
+      "sha256": "8682e3e43a4599c97c26bf9c9daf89c48fba6f0047220db481449849598f130d"
+    },
+    {
+      "namespace": "personal",
+      "year": 2013,
+      "text": 2,
+      "path": "个人精读版/英语一_2013_阅读Text2_个人精读版.pdf",
+      "sha256": "86de9ddacf5394a1852910c6c8c582989e8c44cf6c88c5bbcb8a80970d10bcbd"
+    },
+    {
+      "namespace": "personal",
+      "year": 2013,
+      "text": 3,
+      "path": "个人精读版/英语一_2013_阅读Text3_个人精读版.pdf",
+      "sha256": "264047ab3c8880b55adc05a703ec447d4be3e497e5317be8e97b789c7a03bdeb"
+    },
+    {
+      "namespace": "personal",
+      "year": 2013,
+      "text": 4,
+      "path": "个人精读版/英语一_2013_阅读Text4_个人精读版.pdf",
+      "sha256": "a87b0907e9eada99e7cfdc400b2798c4f145fdb6867e0a0980ee8156ea2f1bc7"
+    },
+    {
+      "namespace": "personal",
+      "year": 2014,
+      "text": 1,
+      "path": "个人精读版/英语一_2014_阅读Text1_个人精读版.pdf",
+      "sha256": "e222e6e8d22ad5da20d451fd6f347d8fa29d1e9aefb02c19b88adec190505816"
+    },
+    {
+      "namespace": "personal",
+      "year": 2014,
+      "text": 2,
+      "path": "个人精读版/英语一_2014_阅读Text2_个人精读版.pdf",
+      "sha256": "9d6f0c40f975edf504d42cccf28db33bf73cb53216d279aa25426265d5708365"
+    },
+    {
+      "namespace": "personal",
+      "year": 2014,
+      "text": 3,
+      "path": "个人精读版/英语一_2014_阅读Text3_个人精读版.pdf",
+      "sha256": "bbff46ecf4ea6d33b05d552f7360e5fe21662ddff0430bd43f6b85ef77b3e11d"
+    },
+    {
+      "namespace": "personal",
+      "year": 2014,
+      "text": 4,
+      "path": "个人精读版/英语一_2014_阅读Text4_个人精读版.pdf",
+      "sha256": "0e8ac6ac9bc9ef41302d2722d62de60f25c3f403f193dfb599604a30b295eff5"
+    },
+    {
+      "namespace": "personal",
+      "year": 2015,
+      "text": 1,
+      "path": "个人精读版/英语一_2015_阅读Text1_个人精读版.pdf",
+      "sha256": "eb1693e1c4e9750d75634fb10c833815a75e712754a85ff579dc1df4b565f75d"
+    },
+    {
+      "namespace": "personal",
+      "year": 2015,
+      "text": 2,
+      "path": "个人精读版/英语一_2015_阅读Text2_个人精读版.pdf",
+      "sha256": "1fd2062f59dc83f8c2823cb23e173dd91505900459d226d07552836021476e30"
+    },
+    {
+      "namespace": "personal",
+      "year": 2015,
+      "text": 3,
+      "path": "个人精读版/英语一_2015_阅读Text3_个人精读版.pdf",
+      "sha256": "43becb2e7035f68fd370a7e3c4158dbbae6d5e87451c7a5d3e9933264779717c"
+    },
+    {
+      "namespace": "personal",
+      "year": 2015,
+      "text": 4,
+      "path": "个人精读版/英语一_2015_阅读Text4_个人精读版.pdf",
+      "sha256": "7e2ca2be17d1e7b48b8555ddc93a64cce5cf4853ae60eed3a5e4a6660a048edb"
+    },
+    {
+      "namespace": "personal",
+      "year": 2016,
+      "text": 1,
+      "path": "个人精读版/英语一_2016_阅读Text1_个人精读版.pdf",
+      "sha256": "8a3b31a6744c50d050fe2fd230ffc3f742b18b82f8662772a918a92341ceeb0a"
+    },
+    {
+      "namespace": "personal",
+      "year": 2016,
+      "text": 2,
+      "path": "个人精读版/英语一_2016_阅读Text2_个人精读版.pdf",
+      "sha256": "46d22a2be7cab3be1d00005b2b8eb422b75aef464947bd9bf5815add318cefc8"
+    },
+    {
+      "namespace": "personal",
+      "year": 2016,
+      "text": 3,
+      "path": "个人精读版/英语一_2016_阅读Text3_个人精读版.pdf",
+      "sha256": "4ca47cb5c0276e05ff9e30b1c5f4aca16dc5b60772f6973e7e58243eba3f7d67"
+    },
+    {
+      "namespace": "personal",
+      "year": 2016,
+      "text": 4,
+      "path": "个人精读版/英语一_2016_阅读Text4_个人精读版.pdf",
+      "sha256": "cd72e6b6fd33194bbe560d65c2879761a3594fc0135ea75c1bdb8336c9b7e6e2"
+    },
+    {
+      "namespace": "personal",
+      "year": 2017,
+      "text": 1,
+      "path": "个人精读版/英语一_2017_阅读Text1_个人精读版.pdf",
+      "sha256": "6f3122123e04a62c0ff109703939213bc82fd7ddb84efaff5048799158e71692"
+    },
+    {
+      "namespace": "personal",
+      "year": 2017,
+      "text": 2,
+      "path": "个人精读版/英语一_2017_阅读Text2_个人精读版.pdf",
+      "sha256": "e46eadbd5ee9b71abda968b9406490f937a099f340b82e6dbc3421371dc777ea"
+    },
+    {
+      "namespace": "personal",
+      "year": 2017,
+      "text": 3,
+      "path": "个人精读版/英语一_2017_阅读Text3_个人精读版.pdf",
+      "sha256": "f2f58c5646fdcebbf62e7f193ba484fcd93e2fc1d520323d06bff46a4ced9145"
+    },
+    {
+      "namespace": "personal",
+      "year": 2017,
+      "text": 4,
+      "path": "个人精读版/英语一_2017_阅读Text4_个人精读版.pdf",
+      "sha256": "fd36c3d2d78d511fc5372952574d12ca7b1cce749b230ef8e37ba815ddea5eeb"
+    },
+    {
+      "namespace": "personal",
+      "year": 2018,
+      "text": 1,
+      "path": "个人精读版/英语一_2018_阅读Text1_个人精读版.pdf",
+      "sha256": "831c68643807c38e1bd4804d4607e8abf9dd5356a47fa2a06e2d52a8b37f253f"
+    },
+    {
+      "namespace": "personal",
+      "year": 2018,
+      "text": 2,
+      "path": "个人精读版/英语一_2018_阅读Text2_个人精读版.pdf",
+      "sha256": "66a419ed2b9c4915e9ead9df7e7c8aefe520fd8bc0e8138725396e0857802346"
+    },
+    {
+      "namespace": "personal",
+      "year": 2018,
+      "text": 3,
+      "path": "个人精读版/英语一_2018_阅读Text3_个人精读版.pdf",
+      "sha256": "1624e65bac47f333620b42f00eb23d177ff1de30dc61b263620d8075323d18ee"
+    },
+    {
+      "namespace": "personal",
+      "year": 2018,
+      "text": 4,
+      "path": "个人精读版/英语一_2018_阅读Text4_个人精读版.pdf",
+      "sha256": "c52686535dd9f3642a9c0b3e44ce4f0c38321842d83ac1d23bb3aed145736748"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2007,
+      "text": 1,
+      "path": "考点标注版/英语一_2007_阅读Text1_考点标注版.pdf",
+      "sha256": "160b845c807ec13fbb341fb152b6a3b80a82ff18647338b55199e7c2576c0d39"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2007,
+      "text": 2,
+      "path": "考点标注版/英语一_2007_阅读Text2_考点标注版.pdf",
+      "sha256": "e0695f6f02f9dc802ad16e68084091b1eb2cb3e63636c4fa0f11f2aa0dbbbccf"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2007,
+      "text": 3,
+      "path": "考点标注版/英语一_2007_阅读Text3_考点标注版.pdf",
+      "sha256": "8050f34709b44dedf54430598e857f8690cef61cd4b87b759f1dbbc85aaa3bff"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2007,
+      "text": 4,
+      "path": "考点标注版/英语一_2007_阅读Text4_考点标注版.pdf",
+      "sha256": "7898a8c86078c2842703d55b260a6101b180253ea8f6216bf1c8489addd8eb18"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2008,
+      "text": 1,
+      "path": "考点标注版/英语一_2008_阅读Text1_考点标注版.pdf",
+      "sha256": "1dd9254f76618ff0c649de7ff7077c4ef39b5536c66ab146eb9f7e7e84d9ad34"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2008,
+      "text": 2,
+      "path": "考点标注版/英语一_2008_阅读Text2_考点标注版.pdf",
+      "sha256": "6b873a2d86c29dd24777909f976cf466a75f843efc7dd67edcf9b1ebf9010a60"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2008,
+      "text": 3,
+      "path": "考点标注版/英语一_2008_阅读Text3_考点标注版.pdf",
+      "sha256": "36c9e80d8b8b06db3b33f04d9ec9e24e45eb4072df980418df95d9a872047aa6"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2008,
+      "text": 4,
+      "path": "考点标注版/英语一_2008_阅读Text4_考点标注版.pdf",
+      "sha256": "8b0e5ef97b52996ee535da7a4f6c165376d7d473083666e364a5a932f3858b28"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2009,
+      "text": 1,
+      "path": "考点标注版/英语一_2009_阅读Text1_考点标注版.pdf",
+      "sha256": "53aa633769e10a27984323d4d6ccc89b29c69fc26babf4b0c2caf15eebd0a6e0"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2009,
+      "text": 2,
+      "path": "考点标注版/英语一_2009_阅读Text2_考点标注版.pdf",
+      "sha256": "a9e33aef3171d90d439f998a766346cf3902e6838c7f7b98247ca52cd2187f05"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2009,
+      "text": 3,
+      "path": "考点标注版/英语一_2009_阅读Text3_考点标注版.pdf",
+      "sha256": "b1bf136f944dc6c58cd73bbbe85425cb854fd19f839333eb90e0d4cacae28964"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2009,
+      "text": 4,
+      "path": "考点标注版/英语一_2009_阅读Text4_考点标注版.pdf",
+      "sha256": "32a5b2ac70bb9f3dfd4b3af5d1b90ec08e6f50fadf961185a4225fd5fe0bf27a"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2010,
+      "text": 1,
+      "path": "考点标注版/英语一_2010_阅读Text1_考点标注版.pdf",
+      "sha256": "b35dd94a716d1619cb01a3238e63a270e481a35fe338d7129476c9907c4e0a04"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2010,
+      "text": 2,
+      "path": "考点标注版/英语一_2010_阅读Text2_考点标注版.pdf",
+      "sha256": "6378ee941ab6eed4eb3bf5a3b0334e453f2fc0ba0b76f7aaab86e1f9e03774d9"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2010,
+      "text": 3,
+      "path": "考点标注版/英语一_2010_阅读Text3_考点标注版.pdf",
+      "sha256": "4876928aaeb105844d6d0aae740cb2483d4f32bef40faefa63d19a38be9c3cc2"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2010,
+      "text": 4,
+      "path": "考点标注版/英语一_2010_阅读Text4_考点标注版.pdf",
+      "sha256": "295ede431f9afc960d8b39097bc2e21e097673e66099b93af87ae3227e682ffd"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2011,
+      "text": 1,
+      "path": "考点标注版/英语一_2011_阅读Text1_考点标注版.pdf",
+      "sha256": "f719d2a4013fbcfde96954018caa7029e5df7e1e62d50d7004a7c80065945048"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2011,
+      "text": 2,
+      "path": "考点标注版/英语一_2011_阅读Text2_考点标注版.pdf",
+      "sha256": "ce52ca713fa1bd3e4b0f3c02f3c91ecee8fff3b450e88ea8994285bfbb2d4cb6"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2011,
+      "text": 3,
+      "path": "考点标注版/英语一_2011_阅读Text3_考点标注版.pdf",
+      "sha256": "c5202565f9bcc7665afaa451ddf871a64c942a297c8e54496c9fba8267c31242"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2011,
+      "text": 4,
+      "path": "考点标注版/英语一_2011_阅读Text4_考点标注版.pdf",
+      "sha256": "8ac0ea68d53148dee243ec35879214ce762a9df1759a8c8df1f32871489a36b9"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2012,
+      "text": 1,
+      "path": "考点标注版/英语一_2012_阅读Text1_考点标注版.pdf",
+      "sha256": "fd05530c131c22d8395329efaf2b593a32a501340d3761adc83419f9a6108b71"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2012,
+      "text": 2,
+      "path": "考点标注版/英语一_2012_阅读Text2_考点标注版.pdf",
+      "sha256": "ad67c92b08c2ced75b76efcde29784d8cb7135f16a0a6e8392dc8b299c99e88d"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2012,
+      "text": 3,
+      "path": "考点标注版/英语一_2012_阅读Text3_考点标注版.pdf",
+      "sha256": "1cec3524a89a259a46a259ba93d51a615be3891b78bb14d2985358ca72109524"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2012,
+      "text": 4,
+      "path": "考点标注版/英语一_2012_阅读Text4_考点标注版.pdf",
+      "sha256": "c42b3dd2584f45d9f2358d333ff3421322cc21d95d5605f4fec24e5de6357be7"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2013,
+      "text": 1,
+      "path": "考点标注版/英语一_2013_阅读Text1_考点标注版.pdf",
+      "sha256": "3f35b0a244e926c35034fb0dbde1d13489dbb721bb296245b41e9332720f7f63"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2013,
+      "text": 2,
+      "path": "考点标注版/英语一_2013_阅读Text2_考点标注版.pdf",
+      "sha256": "b2adf5dc06893780413816dbdffd77097d169bf3bfb4a2b3fceae22ed7d09783"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2013,
+      "text": 3,
+      "path": "考点标注版/英语一_2013_阅读Text3_考点标注版.pdf",
+      "sha256": "873c1932b623ecfbe1bc1c6bdcf60461751a5c3eef4bd97d7d7284bd7ea683b2"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2013,
+      "text": 4,
+      "path": "考点标注版/英语一_2013_阅读Text4_考点标注版.pdf",
+      "sha256": "468c1102b6d63cc46c24769fc1bb3a3c5cf398c9a73ce7a16e36669323f4b356"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2014,
+      "text": 1,
+      "path": "考点标注版/英语一_2014_阅读Text1_考点标注版.pdf",
+      "sha256": "af247fc2cb9f10380b2da27a83d34fbfcca39260b394ba689dfd269570cf2d23"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2014,
+      "text": 2,
+      "path": "考点标注版/英语一_2014_阅读Text2_考点标注版.pdf",
+      "sha256": "38850e5f4d5dac2f6d98f131f3730fb8be4d0b0dcf04a6bf619db7b2c4dc8de5"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2014,
+      "text": 3,
+      "path": "考点标注版/英语一_2014_阅读Text3_考点标注版.pdf",
+      "sha256": "4c2f8e7115e95cee4670b037c69efbc4b444675c9b88618bb71a2101f07d7dd4"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2014,
+      "text": 4,
+      "path": "考点标注版/英语一_2014_阅读Text4_考点标注版.pdf",
+      "sha256": "285ddb934ab37ddc9d383713bf848bd7b48cd522f1fa10d7df465f54ca504d10"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2015,
+      "text": 1,
+      "path": "考点标注版/英语一_2015_阅读Text1_考点标注版.pdf",
+      "sha256": "1981986d55591b206d2d9ce42f8281eb61fed99723da5d24ad56e2811fb7f808"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2015,
+      "text": 2,
+      "path": "考点标注版/英语一_2015_阅读Text2_考点标注版.pdf",
+      "sha256": "6c9bd98c89f76152036525f320802068d9a76201e14b8b070a58ca394d6ce0f8"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2015,
+      "text": 3,
+      "path": "考点标注版/英语一_2015_阅读Text3_考点标注版.pdf",
+      "sha256": "b34061cfaf60848ff906dc54c2c02a352f8a714d07c1ca103c57e4d87a4cc4cd"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2015,
+      "text": 4,
+      "path": "考点标注版/英语一_2015_阅读Text4_考点标注版.pdf",
+      "sha256": "794eefdaaeb023963052cb1438ebb0becdd6b7cd38362e6da290794459a91014"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2016,
+      "text": 1,
+      "path": "考点标注版/英语一_2016_阅读Text1_考点标注版.pdf",
+      "sha256": "8f9dbf098d0fbed653fd452629ea8196be8dae375ddb7fed0d40d2725e8f8416"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2016,
+      "text": 2,
+      "path": "考点标注版/英语一_2016_阅读Text2_考点标注版.pdf",
+      "sha256": "79e7922927804084864c74a098b1eb4a855850866b61e3cd92b2f788e1747341"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2016,
+      "text": 3,
+      "path": "考点标注版/英语一_2016_阅读Text3_考点标注版.pdf",
+      "sha256": "0c20e282d3346564de0cfa5f93ef960852680cdffb52e2435868b5c7f33d06c7"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2016,
+      "text": 4,
+      "path": "考点标注版/英语一_2016_阅读Text4_考点标注版.pdf",
+      "sha256": "be26c9e014f4d7468fcef9c3f3dd5831317806c7f4219fad5653975e94278908"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2017,
+      "text": 1,
+      "path": "考点标注版/英语一_2017_阅读Text1_考点标注版.pdf",
+      "sha256": "8e5a64d7a563f94667d6bac1c765ad83cda7b29375aaedf06a9ea447e61457a0"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2017,
+      "text": 2,
+      "path": "考点标注版/英语一_2017_阅读Text2_考点标注版.pdf",
+      "sha256": "e09405bf1f66373e078f81f662e84a65745d2c2854239ffb83d4026079043576"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2017,
+      "text": 3,
+      "path": "考点标注版/英语一_2017_阅读Text3_考点标注版.pdf",
+      "sha256": "dc95353df6f6907b3814e474e29fbf1f8158fd6e1e00c145e1a31a8171af1a2e"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2017,
+      "text": 4,
+      "path": "考点标注版/英语一_2017_阅读Text4_考点标注版.pdf",
+      "sha256": "6bf2b3c5e28ca8633f53e54731fff475db53e127af4548d7d1298662ea51441b"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2018,
+      "text": 1,
+      "path": "考点标注版/英语一_2018_阅读Text1_考点标注版.pdf",
+      "sha256": "58aba3108779f14aaa15a1620d63489cb6aae768d47e800b148731de8fa56870"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2018,
+      "text": 2,
+      "path": "考点标注版/英语一_2018_阅读Text2_考点标注版.pdf",
+      "sha256": "58a7d0ddd6a751e37d0751338424b00ced0e692fe89c27f80ac6e76300a3acbc"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2018,
+      "text": 3,
+      "path": "考点标注版/英语一_2018_阅读Text3_考点标注版.pdf",
+      "sha256": "d7ff45f65995336154627c0349cca415f7d7747b286e55d76bbc0e00dbaebe85"
+    },
+    {
+      "namespace": "examPoint",
+      "year": 2018,
+      "text": 4,
+      "path": "考点标注版/英语一_2018_阅读Text4_考点标注版.pdf",
+      "sha256": "d0695f6cc0eb1ad4722552005c0b0c8b00ff81a135a2d9bf281ea7847af78970"
+    }
+  ]
+}

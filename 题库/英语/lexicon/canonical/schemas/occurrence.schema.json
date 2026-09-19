@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "occurrence.schema.json",
+  "title": "Kaoyan Occurrence v1.0",
+  "type": "object",
+  "required": [
+    "occurrenceId",
+    "lexemeId",
+    "surface",
+    "location",
+    "sentence",
+    "context",
+    "annotations",
+    "evidence",
+    "confidence"
+  ],
+  "properties": {
+    "occurrenceId": {
+      "type": "string"
+    },
+    "lexemeId": {
+      "type": "string"
+    },
+    "surface": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object"
+    },
+    "sentence": {
+      "type": "object"
+    },
+    "context": {
+      "type": "object"
+    },
+    "annotations": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "confidence": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
