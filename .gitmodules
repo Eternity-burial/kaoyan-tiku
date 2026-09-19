@@ -70,3 +70,7 @@
 	path = 题库/kaoyan-semantic-data
 	url = https://github.com/Eternity-burial/kaoyan-semantic-data.git
 	branch = main
+[submodule "题库/kaoyan-pdf-data"]
+	path = 题库/kaoyan-pdf-data
+	url = https://github.com/Eternity-burial/kaoyan-pdf-data.git
+	branch = main
