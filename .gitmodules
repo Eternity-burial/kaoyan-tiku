@@ -66,3 +66,7 @@
 	path = 题库/kaoyan-existing-data
 	url = https://github.com/Eternity-burial/kaoyan-existing-data.git
 	branch = main
+[submodule "题库/kaoyan-semantic-data"]
+	path = 题库/kaoyan-semantic-data
+	url = https://github.com/Eternity-burial/kaoyan-semantic-data.git
+	branch = main
