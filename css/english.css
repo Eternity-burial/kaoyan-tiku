@@ -528,7 +528,9 @@
   color: #f87171;
 }
 
-.mode-practice-active .vocab-word.is-self-annotated::after {
+.mode-practice-active .vocab-word.is-self-annotated::after,
+.mode-practice-active .vocab-word.is-personal-pdf::after,
+.mode-practice-active .vocab-word::after {
   display: none !important;
 }
 
@@ -751,6 +753,23 @@
   border-bottom: none !important;
   cursor: text !important;
   font-weight: inherit !important;
+}
+
+.mode-practice-active .lex-token {
+  cursor: text !important;
+}
+
+.mode-practice-active .lex-token.lex-word:hover {
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+.mode-practice-active .lex-phrase {
+  border-bottom: none !important;
+}
+
+.mode-practice-active .vocab-word.is-proper-noun {
+  font-style: normal !important;
 }
 
 .mode-practice-active .exam-underlined-phrase {
