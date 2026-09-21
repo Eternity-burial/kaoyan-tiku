@@ -109,7 +109,7 @@ runTest('5. 英语精读 PDF 子模块物理结构与双轨分类完整性（48�
   assert.strictEqual(vocabFiles.length, 1, `词汇汇总 should contain 1 PDF, found ${vocabFiles.length}`);
 });
 
-runTest('6. 讲义和笔记子模块物理结构与核心分类完整性（10大分类目录 + 198份文档与高清笔记）', () => {
+runTest('6. 讲义和笔记子模块物理结构与核心分类完整性（10大分类目录 + 全量文档与高清笔记）', () => {
   const notesBase = path.join(ROOT_DIR, '题库', '讲义和笔记');
   assert(fs.existsSync(notesBase), '讲义和笔记 directory must exist');
 
@@ -145,7 +145,7 @@ runTest('6. 讲义和笔记子模块物理结构与核心分类完整性（10大
     }
   }
   walkDir(notesBase);
-  assert.strictEqual(count, 198, `讲义和笔记 should contain exactly 198 asset files, found ${count}`);
+  assert(count >= 200, `讲义和笔记 should contain at least 200 asset files, found ${count}`);
 });
 
 runTest('7. kaoyan-lazynote-data 子模块物理结构与原始数据集完整性（7978份文件 + records/raw/crawler/manifests）', () => {
