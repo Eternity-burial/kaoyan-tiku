@@ -16,6 +16,9 @@ scripts/*
 !scripts/migrate_english_pdf_submodule.py
 !scripts/migrate_jiangyi_biji_submodule.py
 !scripts/migrate_lazynote_submodule.py
+!scripts/migrate_new_submodules.py
+!scripts/crawl_yanbrick_mocks.py
+!scripts/verify_yanbrick_full.py
 !scripts/build_lexicon.py
 !scripts/validate_lexicon.py
 node_modules/
