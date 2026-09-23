@@ -79,3 +79,11 @@
 	path = 题库/kaoyan-note-workbench
 	url = https://github.com/Eternity-burial/kaoyan-note-workbench.git
 	branch = main
+[submodule "题库/大观园"]
+	path = 题库/大观园
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-daguanyuan.git
+	branch = main
+[submodule "题库/研砖"]
+	path = 题库/研砖
+	url = https://github.com/Eternity-burial/kaoyan-tiku-assets-yanzhuan.git
+	branch = main
