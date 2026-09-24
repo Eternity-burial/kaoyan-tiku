@@ -3622,8 +3622,13 @@ ${cardsHTML}
         case 'v': toggleDashboard(); break;
         case 'b': toggleWrongBook(); break;
         case 'm': toggleSm2Panel(); break;
-        // 同类题关联面板
+        // 同类题关联面板与考点破题诀系统
         case 'l': if (relatedModalOpen) closeRelatedModal(); else openRelatedModal(); break;
+        case 'k':
+          e.preventDefault();
+          var curQ = (typeof getCurrentQid === 'function') ? getCurrentQid() : '';
+          window.open('exam_workbench.html' + (curQ ? '?qid=' + encodeURIComponent(curQ) : ''), '_blank');
+          break;
         // 切换科目与主题与试卷暗化与侧栏/符号盘折叠
         case 'i': toggleLeftSidebar(); break;
         case 'p': toggleMathSymbolPalette(); break;
@@ -3879,6 +3884,16 @@ ${cardsHTML}
           window.Sm2Review.resumeSession();
         }
       } catch (e) {}
+
+      // 支持从考点工作台携带 jumpQid 直接定位至目标题目
+      var urlJumpQid = urlParams.get('jumpQid');
+      if (urlJumpQid) {
+        setTimeout(function () {
+          if (typeof window.jumpToQid === 'function') {
+            window.jumpToQid(decodeURIComponent(urlJumpQid), false);
+          }
+        }, 150);
+      }
     });
 
     // 暴露核心刷新与读取方法至 window，供本地同步模块与英语模块触发联动

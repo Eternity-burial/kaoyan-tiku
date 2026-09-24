@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>考研数学考点与破题诀专题工作台</title>
+  <link rel="stylesheet" href="lib/katex/katex.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/exam_workbench.css">
+</head>
+<body>
+  <div class="ew-layout">
+    <!-- 顶部导航栏 -->
+    <header class="ew-navbar">
+      <div class="ew-brand">
+        <span class="ew-logo-badge">EXAM · KNOWLEDGE</span>
+        <span class="ew-brand-title">考研数学考点与破题诀工作台</span>
+        <span class="ew-brand-sub">三维度 · 双体系</span>
+      </div>
+
+      <!-- 核心三维度模式切换 (考点题型 / 研砖破题诀 / 知识点理论) -->
+      <div class="ew-mode-tabs" role="tablist">
+        <button type="button" class="ew-tab-btn active" data-mode="exam" title="按题型考点分类与专题同类题刷题 (快捷键 1)">
+          <span>🏷️ 题型考点</span>
+          <kbd style="font-size:10px;opacity:0.6;">1</kbd>
+        </button>
+        <button type="button" class="ew-tab-btn" data-mode="method" title="查阅研砖 199 招破题诀与解法库 (快捷键 2)">
+          <span>💡 破题诀招式</span>
+          <kbd style="font-size:10px;opacity:0.6;">2</kbd>
+        </button>
+        <button type="button" class="ew-tab-btn" data-mode="knowledge" title="理论知识点与定理索引 (快捷键 3)">
+          <span>🧠 理论知识点</span>
+          <kbd style="font-size:10px;opacity:0.6;">3</kbd>
+        </button>
+      </div>
+
+      <!-- 右侧搜索与操作 -->
+      <div class="ew-nav-actions">
+        <div class="ew-search-box">
+          <span class="ew-search-icon">🔍</span>
+          <input type="text" class="ew-search-input" id="ewSearchInput" placeholder="检索考点、招式、反证法、倒代换... (/)" />
+        </div>
+
+        <a class="ew-icon-btn" href="index.html" title="返回主刷题工作台">
+          <span>📚 主题库</span>
+        </a>
+
+        <a class="ew-icon-btn" href="最终笔记/index.html" title="打开最终笔记系统">
+          <span>📝 最终笔记</span>
+        </a>
+
+        <button type="button" class="ew-icon-btn" id="btnTheme" title="切换明亮 / 沉浸暗夜模式 (T)">
+          <span>🌗 主题</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 主工作区：左侧分类导航 + 中间同类题流 -->
+    <main class="ew-main">
+      <!-- 左侧分类侧栏 -->
+      <aside class="ew-sidebar">
+        <div class="ew-sidebar-header">
+          <span id="ewSidebarTitle">题型考点分类树</span>
+          <span style="font-size:11px;color:var(--text-muted);">键盘优先</span>
+        </div>
+        <div class="ew-sidebar-list" id="ewSidebarList">
+          <!-- 动态加载考点树或破题诀列表 -->
+        </div>
+      </aside>
+
+      <!-- 中间题目展示区 -->
+      <section class="ew-content">
+        <!-- 顶部考点/方法横幅 -->
+        <div class="ew-toolbar-banner">
+          <div class="ew-banner-left">
+            <div class="ew-current-title" id="ewBannerTitle">
+              <span>正在载入考点...</span>
+            </div>
+            <div class="ew-current-desc" id="ewBannerDesc">--</div>
+          </div>
+          <div class="ew-banner-right">
+            <span class="ew-ep-count" id="ewBannerCount" style="font-size:12.5px;padding:4px 10px;">专题同类题: 0 道</span>
+          </div>
+        </div>
+
+        <!-- 题目流列表 -->
+        <div class="ew-question-stream" id="ewQuestionStream">
+          <!-- 动态填充单道题目卡片 -->
+        </div>
+      </section>
+
+      <!-- 右侧研砖破题诀滑出抽屉 (Drawer) -->
+      <div class="ew-drawer" id="ewDrawer">
+        <div class="ew-drawer-header">
+          <div class="ew-drawer-title-wrap" id="ewDrawerTitle">
+            <span class="ew-method-code">招式</span>
+            <span>破题绝招</span>
+          </div>
+          <button type="button" class="ew-drawer-close" id="ewDrawerClose" title="关闭 (Esc)">✕</button>
+        </div>
+        <div class="ew-drawer-body" id="ewDrawerBody">
+          <!-- 动态注入研砖万字讲义与步法 -->
+        </div>
+      </div>
+      <div class="ew-drawer-backdrop" id="ewDrawerBackdrop"></div>
+    </main>
+  </div>
+
+  <!-- 依赖脚本 -->
+  <script src="lib/marked/marked.umd.min.js"></script>
+  <script src="lib/dompurify/purify.min.js"></script>
+  <script src="lib/katex/katex.min.js"></script>
+  <script src="lib/katex/contrib/auto-render.min.js"></script>
+  <script src="js/markdown_latex.js"></script>
+  <script src="js/chapters.js"></script>
+  <script src="js/exam_workbench.js"></script>
+</body>
+</html>

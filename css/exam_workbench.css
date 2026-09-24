@@ -1,0 +1,656 @@
+/* ===== 考研数学考点与破题诀专题工作台样式 (Quiet Liquid Glass Design) ===== */
+
+.ew-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 顶部导航工具栏 */
+.ew-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.ew-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ew-logo-badge {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px var(--primary-alpha);
+  letter-spacing: 0.5px;
+}
+
+.ew-brand-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ew-brand-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(121, 26, 136, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* 三维模式切换胶囊 */
+.ew-mode-tabs {
+  display: flex;
+  background: rgba(71, 76, 101, 0.08);
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  gap: 4px;
+}
+
+.ew-tab-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ew-tab-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.ew-tab-btn.active {
+  background: #ffffff;
+  color: var(--primary);
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .ew-tab-btn.active {
+  background: var(--card-bg);
+  color: var(--primary-light);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 顶部搜索与快捷操作 */
+.ew-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ew-search-box {
+  position: relative;
+  width: 260px;
+}
+
+.ew-search-input {
+  width: 100%;
+  padding: 7px 12px 7px 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ew-search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-alpha);
+}
+
+.ew-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.ew-icon-btn {
+  border: 1px solid var(--border);
+  background: var(--panel-bg);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.ew-icon-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* 主内容三栏分区 */
+.ew-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 左侧分类导航侧栏 */
+.ew-sidebar {
+  width: 320px;
+  background: var(--panel-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.25s ease;
+  flex-shrink: 0;
+}
+
+.ew-sidebar-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ew-sidebar-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 10px;
+}
+
+/* 学科分组与手风琴 */
+.ew-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 10px 4px;
+  letter-spacing: 0.5px;
+}
+
+.ew-chapter-block {
+  margin-bottom: 6px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.ew-chapter-header {
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.ew-chapter-header:hover {
+  background: rgba(121, 26, 136, 0.06);
+}
+
+.ew-chapter-badge {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: rgba(71, 76, 101, 0.08);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.ew-ep-list {
+  padding-left: 8px;
+  margin-top: 2px;
+}
+
+.ew-ep-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  margin-bottom: 2px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ew-ep-item:hover {
+  background: rgba(121, 26, 136, 0.08);
+  color: var(--text);
+}
+
+.ew-ep-item.active {
+  background: var(--primary-alpha);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.ew-ep-count {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .ew-ep-count {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* 破题诀方法卡片项 */
+.ew-method-item {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ew-method-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.ew-method-item.active {
+  border-color: var(--primary);
+  background: var(--primary-alpha);
+}
+
+.ew-method-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.ew-method-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(121, 26, 136, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.ew-method-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.ew-method-oneliner {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 中间主工作区：题目流与详情 */
+.ew-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.ew-toolbar-banner {
+  padding: 12px 24px;
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.ew-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ew-current-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ew-current-desc {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.ew-question-stream {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 单道题目卡片 */
+.ew-qcard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.ew-qcard:hover {
+  border-color: rgba(121, 26, 136, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.ew-qcard.focused {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-alpha);
+}
+
+.ew-qcard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ew-qcard-book {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ew-qcard-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.ew-pill {
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ew-pill:hover {
+  opacity: 0.85;
+}
+
+.ew-pill-ep {
+  background: rgba(121, 26, 136, 0.12);
+  color: var(--primary);
+}
+
+.ew-pill-method {
+  background: rgba(56, 158, 13, 0.12);
+  color: #2e7d32;
+}
+
+[data-theme="dark"] .ew-pill-method {
+  background: rgba(76, 175, 80, 0.2);
+  color: #81c784;
+}
+
+.ew-pill-kp {
+  background: rgba(2, 136, 209, 0.12);
+  color: #0288d1;
+}
+
+/* 题眼 Signals 提示框 */
+.ew-signals-box {
+  background: rgba(251, 192, 45, 0.1);
+  border-left: 3px solid #fbc02d;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.ew-signals-title {
+  font-weight: 600;
+  color: #f57f17;
+  margin-bottom: 2px;
+}
+
+[data-theme="dark"] .ew-signals-title {
+  color: #fbc02d;
+}
+
+/* 题目原图展示区 */
+.ew-img-wrap {
+  text-align: center;
+  margin: 14px 0;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.ew-img-wrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* 题目解答步骤与折叠解析 */
+.ew-solution-section {
+  margin-top: 14px;
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+}
+
+.ew-sol-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.ew-sol-toggle-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.ew-sol-body {
+  margin-top: 12px;
+  animation: fadeIn 0.2s ease;
+}
+
+/* 解题骨架流 */
+.ew-skeleton-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ew-skeleton-step {
+  display: flex;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.ew-step-num {
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 20px;
+}
+
+.ew-step-content {
+  color: var(--text);
+}
+
+/* 右侧破题诀抽屉 (Pojue Drawer) */
+.ew-drawer {
+  position: fixed;
+  top: 0;
+  right: -520px;
+  width: 520px;
+  height: 100vh;
+  background: var(--card-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid var(--border);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ew-drawer.open {
+  right: 0;
+}
+
+.ew-drawer-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ew-drawer-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ew-drawer-close {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.ew-drawer-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text);
+}
+
+.ew-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.ew-drawer-body h1, .ew-drawer-body h2, .ew-drawer-body h3 {
+  margin: 16px 0 8px;
+  color: var(--text);
+}
+
+.ew-drawer-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.ew-drawer-body th, .ew-drawer-body td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+}
+
+.ew-drawer-body th {
+  background: rgba(121, 26, 136, 0.08);
+}
+
+/* 抽屉背板遮罩 */
+.ew-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 999;
+  display: none;
+}
+
+.ew-drawer-backdrop.active {
+  display: block;
+}
+
+/* 动效 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
