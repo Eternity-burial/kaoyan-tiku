@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>思维导图沙箱 (Mindmap Sandbox)</title>
+  <link rel="stylesheet" href="css/simpleMindMap.min.css">
+  <link rel="stylesheet" href="css/sandbox.css">
+</head>
+<body>
+  <!-- 全屏导图挂载容器 -->
+  <div id="mindMapContainer"></div>
+
+  <!-- 顶部悬浮控制栏 -->
+  <header class="floating-toolbar">
+    <div class="toolbar-title">
+      <span>思维导图沙箱</span>
+      <span class="badge">MVP 独立版</span>
+    </div>
+
+    <div class="toolbar-group">
+      <button type="button" class="tool-btn" id="btnInsertChild" title="插入子节点 (Tab)">
+        <span class="btn-icon">↳</span>
+        <span>子节点</span>
+        <kbd>Tab</kbd>
+      </button>
+      <button type="button" class="tool-btn" id="btnInsertSibling" title="插入同级节点 (Enter)">
+        <span class="btn-icon">↓</span>
+        <span>同级节点</span>
+        <kbd>Enter</kbd>
+      </button>
+      <button type="button" class="tool-btn" id="btnDeleteNode" title="删除选中节点及其子树 (Delete)">
+        <span class="btn-icon">🗑</span>
+        <span>删除</span>
+        <kbd>Del</kbd>
+      </button>
+    </div>
+
+    <div class="toolbar-divider"></div>
+
+    <div class="toolbar-group">
+      <button type="button" class="tool-btn" id="btnUndo" title="撤销操作 (Ctrl+Z)">
+        <span class="btn-icon">↺</span>
+        <span>撤销</span>
+        <kbd>Ctrl+Z</kbd>
+      </button>
+      <button type="button" class="tool-btn" id="btnRedo" title="重做操作 (Ctrl+Y)">
+        <span class="btn-icon">↻</span>
+        <span>重做</span>
+        <kbd>Ctrl+Y</kbd>
+      </button>
+    </div>
+
+    <div class="toolbar-divider"></div>
+
+    <div class="toolbar-group">
+      <button type="button" class="tool-btn" id="btnResetView" title="重置视口到中心">
+        <span class="btn-icon">🎯</span>
+        <span>居中</span>
+      </button>
+      <button type="button" class="tool-btn" id="btnFitView" title="自适应画布大小">
+        <span class="btn-icon">⛶</span>
+        <span>全貌</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 右下角缩放控制条 -->
+  <div class="floating-viewport-bar">
+    <button type="button" class="icon-btn" id="btnZoomOut" title="缩小 (Ctrl + 滚轮向下)">−</button>
+    <span class="zoom-text" id="zoomLevelText">100%</span>
+    <button type="button" class="icon-btn" id="btnZoomIn" title="放大 (Ctrl + 滚轮向上)">+</button>
+  </div>
+
+  <!-- 左下角交互指引提示 -->
+  <aside class="shortcut-tips-card">
+    <div><b>💡 拖拽与操作指引</b></div>
+    <div><span>• <b>节点拖拽</b>：拖至上下边缘出现蓝线为<b>同级插入</b>；拖至节点中心为<b>成为子级</b></span></div>
+    <div><span>• <b>画布漫游</b>：按住 <b>Space + 鼠标左键</b> 或直接 <b>鼠标右键拖拽</b></span></div>
+    <div><span>• <b>就地编辑</b>：<b>双击节点</b> 或 <b>选中按 Enter</b> 唤起编辑输入框</span></div>
+  </aside>
+
+  <!-- 独立 Vendor 库及逻辑脚本 -->
+  <script src="js/vendor/simpleMindMap.umd.min.js"></script>
+  <script src="js/default_data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
