@@ -41,4 +41,5 @@ tools/
 rebuilt_data/
 data/
 handoff/
-
+*.zip
+.playwright-cli/
