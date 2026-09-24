@@ -121,5 +121,52 @@
     });
   }
 
+  // 7. 导出与导入纯文本导图数据
+  const btnExportJson = document.getElementById('btnExportJson');
+  const btnImportJson = document.getElementById('btnImportJson');
+  const importFileInput = document.getElementById('importFileInput');
+
+  if (btnExportJson) {
+    btnExportJson.addEventListener('click', () => {
+      const data = mindMap.getData(false);
+      const jsonStr = JSON.stringify(data, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `mindmap_export_${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  if (btnImportJson && importFileInput) {
+    btnImportJson.addEventListener('click', () => {
+      importFileInput.click();
+    });
+
+    importFileInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        try {
+          const parsed = JSON.parse(evt.target.result);
+          if (parsed && (parsed.data || parsed.root)) {
+            mindMap.setData(parsed);
+            mindMap.view.reset();
+            updateZoomDisplay();
+          } else {
+            alert('导入失败：未识别到合法的思维导图节点数据结构');
+          }
+        } catch (err) {
+          alert('导入失败：JSON 文件解析出错 - ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    });
+  }
+
   console.log('[Mindmap Sandbox] 思维导图实例初始化完成，挂载于 window._mindMapInstance');
 })();

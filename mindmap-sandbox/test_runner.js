@@ -671,11 +671,70 @@ async function run() {
     }
     console.log(`✅ 测试 15: 画布平移漫游 (Pan / translateXY) 坐标换算精准 (Δx=-60, Δy=-40)`);
 
+    console.log('\n--- 开始执行 Phase 5 数据序列化导出与导入断言项 ---');
+
+    // 测试 16: 导出纯文本树形数据结构 (getData)
+    const exportTest = await evaluate(ws, `
+      (() => {
+        const mm = window._mindMapInstance;
+        const exportedData = mm.getData(false);
+        const jsonStr = JSON.stringify(exportedData);
+        return {
+          hasData: Boolean(exportedData && exportedData.data),
+          hasChildren: Array.isArray(exportedData.children),
+          rootTitle: exportedData.data.text,
+          jsonLength: jsonStr.length,
+          childrenCount: exportedData.children.length
+        };
+      })()
+    `);
+
+    if (!exportTest.hasData || !exportTest.hasChildren || exportTest.childrenCount < 2) {
+      throw new Error('导出的数据结构不合法或子节点缺失');
+    }
+    console.log(`✅ 测试 16: 纯文本树数据结构导出 (getData) 完整 (根节点="${exportTest.rootTitle}", 子分支数=${exportTest.childrenCount}, JSON大小=${exportTest.jsonLength}B)`);
+
+    // 测试 17: 导入新纯文本导图数据 (setData)
+    const importTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const newMockData = {
+          data: { text: "2027考研专业课核心大纲（导入测试）" },
+          children: [
+            { data: { text: "数据结构与算法" }, children: [ { data: { text: "二叉搜索树与平衡树" } } ] },
+            { data: { text: "计算机网络体系" }, children: [ { data: { text: "TCP拥塞控制机制" } } ] }
+          ]
+        };
+
+        const handler = () => {
+          mm.off('node_tree_render_end', handler);
+          const rootNode = mm.renderer.root;
+          resolve({
+            newRootTitle: rootNode ? rootNode.nodeData.data.text : '',
+            branchCount: rootNode ? rootNode.children.length : 0,
+            firstBranchSubCount: (rootNode && rootNode.children[0]) ? rootNode.children[0].children.length : 0
+          });
+        };
+        mm.on('node_tree_render_end', handler);
+
+        // 导入全新数据结构
+        mm.setData(newMockData);
+      })
+    `);
+
+    if (!importTest.newRootTitle.includes('2027考研专业课')) {
+      throw new Error(`导入新数据后根节点不符: "${importTest.newRootTitle}"`);
+    }
+    if (importTest.branchCount !== 2 || importTest.firstBranchSubCount !== 1) {
+      throw new Error(`导入新数据后拓扑不符: branches=${importTest.branchCount}, sub=${importTest.firstBranchSubCount}`);
+    }
+    console.log(`✅ 测试 17: 外部数据结构导入 (setData) 成功，新知识架构已完整呈现 (根="${importTest.newRootTitle}", 分支数=${importTest.branchCount})`);
+
     console.log('\n🎉 ====================================================');
-    console.log('   Phase 2、Phase 3、Phase 4 所有 15 项测试全部通过！');
+    console.log('   所有 Phase (1~5) 共计 17 项端到端测试全部完美通过！');
     console.log('====================================================\n');
   } catch (err) {
-    console.error('\n❌ Phase 2 测试失败:', err.message);
+    console.error('\n❌ 自动化回归测试失败:', err.message);
     process.exitCode = 1;
   } finally {
     await cleanup();
