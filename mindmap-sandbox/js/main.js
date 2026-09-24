@@ -87,7 +87,13 @@
   // 4. 全局暴露实例供测试脚本与调试使用
   window._mindMapInstance = mindMap;
 
-  // 4. 视口大小自适应监听
+  // 5. 初始化飞书磁吸拖拽增强器
+  if (window.FeishuDragEnhancer) {
+    window._feishuDragEnhancerInstance = new window.FeishuDragEnhancer(mindMap);
+    console.log('[Mindmap Sandbox] 飞书磁吸拖拽增强器已挂载并激活');
+  }
+
+  // 6. 视口大小自适应监听
   window.addEventListener('resize', () => {
     mindMap.resize();
   });

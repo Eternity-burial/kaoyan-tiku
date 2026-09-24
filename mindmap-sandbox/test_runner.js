@@ -730,8 +730,230 @@ async function run() {
     }
     console.log(`[PASS] 测试 17: 外部数据结构导入 (setData) 成功，新知识架构已完整呈现 (根="${importTest.newRootTitle}", 分支数=${importTest.branchCount})`);
 
+    console.log('\n--- 开始执行 Phase 6 飞书风格视觉主题与磁吸拖拽交互专项断言项 ---');
+
+    // 测试 18: 飞书视觉主题规范验证
+    const feishuThemeTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const themeConfig = mm.getThemeConfig();
+        return {
+          currentTheme: mm.getTheme(),
+          lineColor: themeConfig.lineColor,
+          lineStyle: themeConfig.lineStyle,
+          rootFill: themeConfig.root.fillColor,
+          rootRadius: themeConfig.root.borderRadius,
+          secondBorder: themeConfig.second.borderColor,
+          secondRadius: themeConfig.second.borderRadius
+        };
+      })()
+    `);
+
+    if (feishuThemeTest.currentTheme !== 'feishu') {
+      throw new Error(`当前生效主题非 feishu: "${feishuThemeTest.currentTheme}"`);
+    }
+    if (feishuThemeTest.lineStyle !== 'curve' || feishuThemeTest.lineColor !== '#bbbfc4') {
+      throw new Error(`飞书分支曲线样式不符: style=${feishuThemeTest.lineStyle}, color=${feishuThemeTest.lineColor}`);
+    }
+    if (feishuThemeTest.rootFill !== '#3370ff') {
+      throw new Error(`飞书根节点品牌蓝不符: ${feishuThemeTest.rootFill}`);
+    }
+    console.log(`[PASS] 测试 18: 飞书视觉主题 (Feishu Theme) 生效，品牌蓝=${feishuThemeTest.rootFill}，分支连线=${feishuThemeTest.lineColor} (${feishuThemeTest.lineStyle})`);
+
+    // 测试 19: 飞书拖拽增强器实例挂载校验
+    const enhancerInitTest = await evaluate(ws, `
+      (function() {
+        const enhancer = window._feishuDragEnhancerInstance;
+        return {
+          hasEnhancer: Boolean(enhancer),
+          hasLine: Boolean(enhancer && enhancer.magneticLine),
+          hasHighlight: Boolean(enhancer && enhancer.parentHighlight),
+          lineColor: enhancer ? enhancer.options.lineColor : null,
+          captureRadius: enhancer ? enhancer.options.captureRadius : null
+        };
+      })()
+    `);
+
+    if (!enhancerInitTest.hasEnhancer || !enhancerInitTest.hasLine || !enhancerInitTest.hasHighlight) {
+      throw new Error('FeishuDragEnhancer 实例或辅助 SVG 元素未就绪');
+    }
+    console.log(`[PASS] 测试 19: 飞书拖拽增强器 (FeishuDragEnhancer) 已挂载，磁吸半径=${enhancerInitTest.captureRadius}px，线色=${enhancerInitTest.lineColor}`);
+
+    // 测试 20: 磁吸近距离捕获与动态三次贝塞尔连线渲染
+    const magneticSnapTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+
+        // 重新灌入默认导图以便定位章节节点
+        const handler = () => {
+          mm.off('node_tree_render_end', handler);
+
+          const root = mm.renderer.root;
+          const ch2 = root.children[1]; // 第二章 一元函数微分学
+          const ch3 = root.children[2]; // 第三章 一元函数积分学
+          const draggedNode = ch3.children[0];
+
+          drag.isDragging = true;
+          drag.beingDragNodeList = [draggedNode];
+          drag.clone = drag.mindMap.otherDraw.rect().size(120, 32);
+          drag.nodeTreeToList();
+
+          // 放置在距离 ch2 右侧 50px (在磁吸 140px 捕获半径内)
+          const cloneX = ch2.left + ch2.width + 50;
+          const cloneY = ch2.top + (ch2.height / 2);
+          enhancer.handleMove(cloneX, cloneY, {});
+
+          const lineVisible = enhancer.magneticLine.visible();
+          const linePathD = enhancer.magneticLine.attr('d');
+          const highlightVisible = enhancer.parentHighlight.visible();
+          const targetParentText = enhancer.activeTargetNode ? enhancer.activeTargetNode.nodeData.data.text : '';
+          const overlapNodeAssigned = drag.overlapNode === enhancer.activeTargetNode;
+
+          resolve({
+            lineVisible,
+            linePathD,
+            highlightVisible,
+            targetParentText,
+            overlapNodeAssigned
+          });
+        };
+        mm.on('node_tree_render_end', handler);
+        mm.setData(window.defaultMindMapData);
+      })
+    `);
+
+    if (!magneticSnapTest.lineVisible) {
+      throw new Error('拖拽至目标附近时磁吸蓝线未处于可见状态');
+    }
+    if (!magneticSnapTest.linePathD || !magneticSnapTest.linePathD.includes('C')) {
+      throw new Error(`磁吸连线非平滑三次贝塞尔曲线 (指令缺少 C): "${magneticSnapTest.linePathD}"`);
+    }
+    if (!magneticSnapTest.highlightVisible) {
+      throw new Error('候选父节点高亮轮廓未可见');
+    }
+    if (!magneticSnapTest.targetParentText.includes('第二章')) {
+      throw new Error(`磁吸目标识别错误: "${magneticSnapTest.targetParentText}"`);
+    }
+    if (!magneticSnapTest.overlapNodeAssigned) {
+      throw new Error('drag.overlapNode 未与磁吸目标同步');
+    }
+    console.log(`[PASS] 测试 20: 磁吸近距离捕获成功，连线指令="${magneticSnapTest.linePathD}"，目标="${magneticSnapTest.targetParentText}"`);
+
+    // 测试 21: 超出阈值自动断开 (Detach)
+    const magneticDetachTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        const ch2 = root.children[1];
+
+        // 移至远离全图所有节点的画布空白区 (向下偏移 1500px，确保超出所有节点阈值)
+        const farX = ch2.left;
+        const farY = ch2.top + 1500;
+        enhancer.handleMove(farX, farY, {});
+
+        return {
+          lineVisibleAfterMoveFar: enhancer.magneticLine.visible(),
+          highlightVisibleAfterMoveFar: enhancer.parentHighlight.visible(),
+          overlapNodeCleared: drag.overlapNode === null,
+          activeTargetCleared: enhancer.activeTargetNode === null
+        };
+      })()
+    `);
+
+    if (magneticDetachTest.lineVisibleAfterMoveFar || magneticDetachTest.highlightVisibleAfterMoveFar) {
+      throw new Error('移出磁吸有效半径后蓝线或高亮未自动消除');
+    }
+    if (!magneticDetachTest.overlapNodeCleared || !magneticDetachTest.activeTargetCleared) {
+      throw new Error('移出磁吸半径后 overlapNode 或 activeTargetNode 未及时置空');
+    }
+    console.log('[PASS] 测试 21: 超出脱离阈值 (Detach) 判定正常，蓝线与高亮平滑断开消失');
+
+    // 测试 22: 同级插槽优先级仲裁
+    const siblingPriorityTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        const ch2 = root.children[1];
+
+        // 模拟命中同级插入插槽状态 (prevNode 被置位)
+        drag.prevNode = ch2;
+        const closeX = ch2.left + ch2.width + 50;
+        const closeY = ch2.top + (ch2.height / 2);
+        enhancer.handleMove(closeX, closeY, {});
+
+        const isLineSuppressed = !enhancer.magneticLine.visible();
+        const isHighlightSuppressed = !enhancer.parentHighlight.visible();
+
+        // 状态复位
+        drag.prevNode = null;
+        enhancer.cleanup();
+        drag.clone.remove();
+        drag.reset();
+
+        return {
+          isLineSuppressed,
+          isHighlightSuppressed
+        };
+      })()
+    `);
+
+    if (!siblingPriorityTest.isLineSuppressed || !siblingPriorityTest.isHighlightSuppressed) {
+      throw new Error('处于同级插入插槽判定区时磁吸蓝线未能正确让位');
+    }
+    console.log('[PASS] 测试 22: 同级插槽优先级仲裁正常，同级插入时不触发父子磁吸干扰');
+
+    // 测试 23: 磁吸状态松开鼠标执行父子关系重构与撤销
+    const dropReparentTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const ch2 = root.children[1]; // 第二章
+        const ch3 = root.children[2]; // 第三章
+        const nodeToMove = ch3.children[0]; // 不定积分基本方法
+
+        const beforeCh2Count = ch2.children.length;
+        const beforeCh3Count = ch3.children.length;
+
+        const onRenderEnd = () => {
+          mm.off('node_tree_render_end', onRenderEnd);
+          const newCh2 = root.children[1];
+          const newCh3 = root.children[2];
+          const foundInCh2 = newCh2.children.some(n => n.nodeData.data.text.includes('不定积分基本方法'));
+
+          resolve({
+            beforeCh2Count,
+            beforeCh3Count,
+            afterCh2Count: newCh2.children.length,
+            afterCh3Count: newCh3.children.length,
+            foundInCh2
+          });
+        };
+        mm.on('node_tree_render_end', onRenderEnd);
+
+        // 执行 MOVE_NODE_TO (模拟磁吸状态释放)
+        mm.execCommand('MOVE_NODE_TO', [nodeToMove], ch2);
+      })
+    `);
+
+    if (!dropReparentTest.foundInCh2) {
+      throw new Error('磁吸释放后目标节点下未找到被迁移的子节点');
+    }
+    if (dropReparentTest.afterCh2Count !== dropReparentTest.beforeCh2Count + 1) {
+      throw new Error(`目标父节点子节点数未正确加 1: before=${dropReparentTest.beforeCh2Count}, after=${dropReparentTest.afterCh2Count}`);
+    }
+    if (dropReparentTest.afterCh3Count !== dropReparentTest.beforeCh3Count - 1) {
+      throw new Error(`源父节点子节点数未正确减 1: before=${dropReparentTest.beforeCh3Count}, after=${dropReparentTest.afterCh3Count}`);
+    }
+    console.log(`[PASS] 测试 23: 磁吸释放建立父子关系成功，第二章子节点数从 ${dropReparentTest.beforeCh2Count} 增至 ${dropReparentTest.afterCh2Count}`);
+
     console.log('\n====================================================');
-    console.log('   所有 Phase (1~5) 共计 17 项端到端测试全部通过');
+    console.log('   所有 Phase (1~6) 共计 23 项端到端测试全部通过');
     console.log('====================================================\n');
   } catch (err) {
     console.error('\n[FAIL] 自动化回归测试失败:', err.message);
