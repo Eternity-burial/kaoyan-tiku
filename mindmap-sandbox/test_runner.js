@@ -500,10 +500,8 @@ async function run() {
         const ch1SubKid = ch1.children[0]; // 子节点
 
         // 尝试将父节点 ch1 移入其自身的子孙节点 ch1SubKid 中
-        // 原生 simple-mind-map 会抛出拒绝或无操作保护
         let errorCaught = false;
         try {
-          // checkParent 是内部防御
           const isParent = ch1SubKid.isParent(ch1) || ch1.isParent(ch1SubKid);
           return {
             hasAncestorCheck: typeof ch1SubKid.isParent === 'function',
@@ -520,8 +518,161 @@ async function run() {
     }
     console.log(`✅ 测试 10: 防成环保护 (Cycle Prevention) 完备 (节点具备 isParent 拓扑层级校验)`);
 
+    console.log('\n--- 开始执行 Phase 4 节点编辑、新建、删除与画布漫游断言项 ---');
+
+    // 测试 11: 激活节点并插入子节点 (INSERT_CHILD_NODE)
+    const insertChildTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0]; // 第一章
+        const beforeKidsCount = targetNode.children.length;
+
+        // 加入激活节点列表
+        mm.renderer.addNodeToActiveList(targetNode);
+
+        const handler = () => {
+          mm.off('node_tree_render_end', handler);
+          const afterTarget = root.children[0];
+          resolve({
+            beforeKidsCount,
+            afterKidsCount: afterTarget.children.length,
+            createdNodeTitle: afterTarget.children[afterTarget.children.length - 1].nodeData.data.text
+          });
+        };
+        mm.on('node_tree_render_end', handler);
+
+        // 原生插入子节点（openEdit 设为 false 以便脚本非交互同步验证）
+        mm.execCommand('INSERT_CHILD_NODE', false, targetNode);
+      })
+    `);
+
+    if (insertChildTest.afterKidsCount !== insertChildTest.beforeKidsCount + 1) {
+      throw new Error(`新建子节点失败: before=${insertChildTest.beforeKidsCount}, after=${insertChildTest.afterKidsCount}`);
+    }
+    console.log(`✅ 测试 11: 插入子节点 (Tab / INSERT_CHILD_NODE) 成功，子节点数从 ${insertChildTest.beforeKidsCount} 增至 ${insertChildTest.afterKidsCount}`);
+
+    // 测试 12: 插入同级节点 (INSERT_NODE)
+    const insertSiblingTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0];
+        const beforeChCount = root.children.length;
+
+        mm.renderer.addNodeToActiveList(targetNode);
+
+        const handler = () => {
+          mm.off('node_tree_render_end', handler);
+          resolve({
+            beforeChCount,
+            afterChCount: root.children.length
+          });
+        };
+        mm.on('node_tree_render_end', handler);
+
+        // 原生插入同级节点
+        mm.execCommand('INSERT_NODE', false, targetNode);
+      })
+    `);
+
+    if (insertSiblingTest.afterChCount !== insertSiblingTest.beforeChCount + 1) {
+      throw new Error(`新建同级节点失败: before=${insertSiblingTest.beforeChCount}, after=${insertSiblingTest.afterChCount}`);
+    }
+    console.log(`✅ 测试 12: 插入同级节点 (Enter / INSERT_NODE) 成功，同级节点数从 ${insertSiblingTest.beforeChCount} 增至 ${insertSiblingTest.afterChCount}`);
+
+    // 测试 13: 删除节点 (REMOVE_NODE)
+    const deleteTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const beforeCount = root.children.length;
+        
+        // 激活刚才插入的同级节点进行删除
+        const nodeToDelete = root.children[1];
+        mm.renderer.addNodeToActiveList(nodeToDelete);
+
+        const handler = () => {
+          mm.off('node_tree_render_end', handler);
+          resolve({
+            beforeCount,
+            afterCount: root.children.length
+          });
+        };
+        mm.on('node_tree_render_end', handler);
+
+        // 原生删除节点
+        mm.execCommand('REMOVE_NODE', [nodeToDelete]);
+      })
+    `);
+
+    if (deleteTest.afterCount !== deleteTest.beforeCount - 1) {
+      throw new Error(`删除节点失败: before=${deleteTest.beforeCount}, after=${deleteTest.afterCount}`);
+    }
+    console.log(`✅ 测试 13: 删除节点 (Del / REMOVE_NODE) 成功，节点数减 1 还原`);
+
+    // 测试 14: 节点就地编辑 (TextEdit 文本实时修改与重新排版)
+    const textEditTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const nodeToEdit = root.children[0].children[0];
+        const newText = "【重点考点】函数的奇偶性综合题解法";
+
+        const handler = () => {
+          mm.off('node_tree_render_end', handler);
+          const updatedNode = root.children[0].children[0];
+          const textInDom = updatedNode.group.findOne('foreignObject').node.textContent;
+          resolve({
+            dataText: updatedNode.nodeData.data.text,
+            textInDom,
+            match: textInDom.includes('重点考点')
+          });
+        };
+        mm.on('node_tree_render_end', handler);
+
+        // 调用原生文本修改命令
+        mm.execCommand('SET_NODE_TEXT', nodeToEdit, newText);
+      })
+    `);
+
+    if (!textEditTest.match) {
+      throw new Error(`节点就地文本更新失败: DOM="${textEditTest.textInDom}"`);
+    }
+    console.log(`✅ 测试 14: 节点原地编辑 (TextEdit) 成功，SVG 文本与排版已同步更新为: "${textEditTest.dataText}"`);
+
+    // 测试 15: 画布漫游平移坐标 (Pan Navigation)
+    const panTest = await evaluate(ws, `
+      (() => {
+        const mm = window._mindMapInstance;
+        const initialTransform = mm.view.getTransformData();
+        const initialX = initialTransform.state ? initialTransform.state.x : 0;
+        const initialY = initialTransform.state ? initialTransform.state.y : 0;
+
+        // 向内部安全平移画布 (-60, -40)
+        mm.view.translateXY(-60, -40);
+
+        const newTransform = mm.view.getTransformData();
+        const newX = newTransform.state ? newTransform.state.x : 0;
+        const newY = newTransform.state ? newTransform.state.y : 0;
+
+        // 复位视口
+        mm.view.reset();
+
+        return {
+          dx: newX - initialX,
+          dy: newY - initialY
+        };
+      })()
+    `);
+
+    if (Math.abs(panTest.dx - (-60)) > 1 || Math.abs(panTest.dy - (-40)) > 1) {
+      throw new Error(`画布平移量不符: dx=${panTest.dx}, dy=${panTest.dy}`);
+    }
+    console.log(`✅ 测试 15: 画布平移漫游 (Pan / translateXY) 坐标换算精准 (Δx=-60, Δy=-40)`);
+
     console.log('\n🎉 ====================================================');
-    console.log('   Phase 2 & Phase 3 所有测试全部通过！拖拽与拓扑核心稳健！');
+    console.log('   Phase 2、Phase 3、Phase 4 所有 15 项测试全部通过！');
     console.log('====================================================\n');
   } catch (err) {
     console.error('\n❌ Phase 2 测试失败:', err.message);
