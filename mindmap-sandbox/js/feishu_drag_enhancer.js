@@ -175,20 +175,30 @@
         this.drag.placeHolderLine.hide();
       }
 
-      // 计算平滑三次贝塞尔曲线控制点
+      // 计算飞书标准直角阶梯折线 (带圆角平滑过渡)
       const x1 = targetParent.left + targetParent.width;
       const y1 = targetParent.top + (targetParent.height / 2);
       const x2 = cloneAnchorX;
       const y2 = cloneAnchorY;
 
-      // 水平方向曲率控制
-      const deltaX = Math.max(Math.abs(x2 - x1) * 0.5, 36);
-      const cx1 = x1 + deltaX;
-      const cy1 = y1;
-      const cx2 = x2 - deltaX;
-      const cy2 = y2;
+      let pathData;
+      if (Math.abs(y2 - y1) < 2) {
+        pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
+      } else {
+        const midX = x1 + Math.max((x2 - x1) * 0.5, 20);
+        const radius = 8;
+        const maxR = Math.min(radius, Math.abs(midX - x1) / 2, Math.abs(y2 - y1) / 2);
+        const r = Math.max(maxR, 0);
 
-      const pathData = `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`;
+        if (r < 2) {
+          pathData = `M ${x1} ${y1} L ${midX} ${y1} L ${midX} ${y2} L ${x2} ${y2}`;
+        } else {
+          const isDown = y2 > y1;
+          const dy1 = isDown ? r : -r;
+          const dy2 = isDown ? -r : r;
+          pathData = `M ${x1} ${y1} L ${midX - r} ${y1} Q ${midX} ${y1} ${midX} ${y1 + dy1} L ${midX} ${y2 + dy2} Q ${midX} ${y2} ${midX + r} ${y2} L ${x2} ${y2}`;
+        }
+      }
       this.magneticLine.plot(pathData).show();
 
       // 候选父节点吸附高亮轮廓更新

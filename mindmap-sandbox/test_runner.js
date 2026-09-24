@@ -732,7 +732,7 @@ async function run() {
 
     console.log('\n--- 开始执行 Phase 6 飞书风格视觉主题与磁吸拖拽交互专项断言项 ---');
 
-    // 测试 18: 飞书视觉主题规范验证
+    // 测试 18: 飞书视觉主题规范验证 (直角折线与下划线规范)
     const feishuThemeTest = await evaluate(ws, `
       (function() {
         const mm = window._mindMapInstance;
@@ -741,6 +741,8 @@ async function run() {
           currentTheme: mm.getTheme(),
           lineColor: themeConfig.lineColor,
           lineStyle: themeConfig.lineStyle,
+          lineRadius: themeConfig.lineRadius,
+          nodeUseLineStyle: themeConfig.nodeUseLineStyle,
           rootFill: themeConfig.root.fillColor,
           rootRadius: themeConfig.root.borderRadius,
           secondBorder: themeConfig.second.borderColor,
@@ -752,13 +754,16 @@ async function run() {
     if (feishuThemeTest.currentTheme !== 'feishu') {
       throw new Error(`当前生效主题非 feishu: "${feishuThemeTest.currentTheme}"`);
     }
-    if (feishuThemeTest.lineStyle !== 'curve' || feishuThemeTest.lineColor !== '#bbbfc4') {
-      throw new Error(`飞书分支曲线样式不符: style=${feishuThemeTest.lineStyle}, color=${feishuThemeTest.lineColor}`);
+    if (feishuThemeTest.lineStyle !== 'straight' || feishuThemeTest.lineColor !== '#bbbfc4') {
+      throw new Error(`飞书分支折线样式不符: style=${feishuThemeTest.lineStyle}, color=${feishuThemeTest.lineColor}`);
+    }
+    if (feishuThemeTest.lineRadius !== 8 || !feishuThemeTest.nodeUseLineStyle) {
+      throw new Error(`飞书圆角半径或下划线配置不符: radius=${feishuThemeTest.lineRadius}, nodeUseLineStyle=${feishuThemeTest.nodeUseLineStyle}`);
     }
     if (feishuThemeTest.rootFill !== '#3370ff') {
       throw new Error(`飞书根节点品牌蓝不符: ${feishuThemeTest.rootFill}`);
     }
-    console.log(`[PASS] 测试 18: 飞书视觉主题 (Feishu Theme) 生效，品牌蓝=${feishuThemeTest.rootFill}，分支连线=${feishuThemeTest.lineColor} (${feishuThemeTest.lineStyle})`);
+    console.log(`[PASS] 测试 18: 飞书视觉主题生效，直角折线=${feishuThemeTest.lineStyle} (圆角半径=${feishuThemeTest.lineRadius}px)，下划线模式=${feishuThemeTest.nodeUseLineStyle}，品牌蓝=${feishuThemeTest.rootFill}`);
 
     // 测试 19: 飞书拖拽增强器实例挂载校验
     const enhancerInitTest = await evaluate(ws, `
@@ -779,7 +784,7 @@ async function run() {
     }
     console.log(`[PASS] 测试 19: 飞书拖拽增强器 (FeishuDragEnhancer) 已挂载，磁吸半径=${enhancerInitTest.captureRadius}px，线色=${enhancerInitTest.lineColor}`);
 
-    // 测试 20: 磁吸近距离捕获与动态三次贝塞尔连线渲染
+    // 测试 20: 磁吸近距离捕获与直角折线渲染
     const magneticSnapTest = await evaluate(ws, `
       new Promise((resolve) => {
         const mm = window._mindMapInstance;
@@ -827,8 +832,8 @@ async function run() {
     if (!magneticSnapTest.lineVisible) {
       throw new Error('拖拽至目标附近时磁吸蓝线未处于可见状态');
     }
-    if (!magneticSnapTest.linePathD || !magneticSnapTest.linePathD.includes('C')) {
-      throw new Error(`磁吸连线非平滑三次贝塞尔曲线 (指令缺少 C): "${magneticSnapTest.linePathD}"`);
+    if (!magneticSnapTest.linePathD || !magneticSnapTest.linePathD.includes('L')) {
+      throw new Error(`磁吸连线非直角阶梯折线 (指令缺少 L): "${magneticSnapTest.linePathD}"`);
     }
     if (!magneticSnapTest.highlightVisible) {
       throw new Error('候选父节点高亮轮廓未可见');

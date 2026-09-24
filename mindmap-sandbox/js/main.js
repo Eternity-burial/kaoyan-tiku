@@ -14,12 +14,14 @@
     return;
   }
 
-  // 2. 注册飞书经典视觉主题 (Feishu / Lark Design System)
+  // 2. 注册飞书经典视觉主题 (Feishu / Lark Design System: 直角折线与下划线规范)
   MindMap.defineTheme('feishu', {
     backgroundColor: '#f8f9fa',
     lineColor: '#bbbfc4',
     lineWidth: 2,
-    lineStyle: 'curve',
+    lineStyle: 'straight',      // 直角折线模式 (包含水平延伸与垂直拐角)
+    lineRadius: 8,              // 折线拐角圆角 8px (复刻飞书圆角折线)
+    nodeUseLineStyle: true,     // 激活下划线横线模式 (二级及以下节点无边框，文字置于横线上)
     root: {
       shape: 'rectangle',
       fillColor: '#3370ff',
@@ -53,17 +55,17 @@
       shape: 'rectangle',
       marginX: 50,
       marginY: 20,
-      fillColor: '#ffffff',
+      fillColor: 'transparent',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
-      color: '#4e5969',
+      color: '#1f2329',
       fontSize: 13,
       fontWeight: 'normal',
-      borderColor: '#e5e6eb',
-      borderWidth: 1,
-      borderRadius: 4,
+      borderColor: 'transparent',
+      borderWidth: 0,
+      borderRadius: 0,
       hoverRectColor: '#3370ff',
-      paddingX: 12,
-      paddingY: 8
+      paddingX: 10,
+      paddingY: 6
     }
   });
 
