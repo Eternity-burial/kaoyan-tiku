@@ -95,7 +95,26 @@
     console.log('[Mindmap Sandbox] 飞书磁吸拖拽增强器已挂载并激活');
   }
 
-  // 6. 视口大小自适应监听
+  // 6. 初始化飞书大纲引擎与双向视图控制器
+  const outlinerContainer = document.getElementById('outlinerContainer');
+  let outliner = null;
+  let dualViewController = null;
+
+  if (window.FeishuOutliner && outlinerContainer) {
+    outliner = new window.FeishuOutliner(outlinerContainer);
+    window._outlinerInstance = outliner;
+    console.log('[Mindmap Sandbox] 飞书大纲引擎已初始化');
+  }
+
+  if (window.DualViewController && outliner) {
+    dualViewController = new window.DualViewController(mindMap, outliner, {
+      defaultView: 'mindmap'
+    });
+    window._dualViewControllerInstance = dualViewController;
+    console.log('[Mindmap Sandbox] 飞书双向视图控制器已挂载并激活');
+  }
+
+  // 7. 视口大小自适应监听
   window.addEventListener('resize', () => {
     mindMap.resize();
   });

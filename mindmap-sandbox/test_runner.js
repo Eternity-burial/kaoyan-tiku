@@ -141,6 +141,7 @@ async function run() {
     chromeProcess = spawn(chromePath, [
       `--remote-debugging-port=${CDP_PORT}`,
       '--headless=new',
+      '--window-size=1440,900',
       '--disable-gpu',
       '--no-first-run',
       '--no-default-browser-check',
@@ -957,8 +958,325 @@ async function run() {
     }
     console.log(`[PASS] 测试 23: 磁吸释放建立父子关系成功，第二章子节点数从 ${dropReparentTest.beforeCh2Count} 增至 ${dropReparentTest.afterCh2Count}`);
 
+    console.log('\n--- 开始执行 Phase 7 飞书大纲笔记与双向联动专项断言项 ---');
+
+    // 测试 24: 飞书大纲视图挂载与 DOM 结构校验
+    const outlinerMountTest = await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        const outliner = window._outlinerInstance;
+        if (!controller || !outliner) return { error: '控制器或大纲实例未就绪' };
+
+        // 切换至大纲视图
+        controller.switchView('outline');
+
+        const mmContainer = document.getElementById('mindMapContainer');
+        const outlinerContainer = document.getElementById('outlinerContainer');
+        const isMmHidden = mmContainer.style.display === 'none';
+        const isOutlinerActive = outlinerContainer.classList.contains('active');
+        const hasBodyClass = document.body.classList.contains('view-mode-outline');
+        const currentView = controller.getCurrentView();
+
+        const paperEl = outlinerContainer.querySelector('.outliner-paper');
+        const titleEl = outlinerContainer.querySelector('.outliner-title');
+        const nodes = outlinerContainer.querySelectorAll('.outliner-node');
+        const handles = outlinerContainer.querySelectorAll('.outliner-handle');
+        const bullets = outlinerContainer.querySelectorAll('.outliner-bullet');
+
+        return {
+          currentView,
+          isMmHidden,
+          isOutlinerActive,
+          hasBodyClass,
+          hasPaper: !!paperEl,
+          titleText: titleEl ? titleEl.textContent : '',
+          nodeCount: nodes.length,
+          handleCount: handles.length,
+          bulletCount: bullets.length
+        };
+      })()
+    `);
+
+    if (outlinerMountTest.error) {
+      throw new Error(outlinerMountTest.error);
+    }
+    if (outlinerMountTest.currentView !== 'outline' || !outlinerMountTest.isMmHidden || !outlinerMountTest.isOutlinerActive) {
+      throw new Error(`大纲视图激活状态异常: ${JSON.stringify(outlinerMountTest)}`);
+    }
+    if (!outlinerMountTest.hasPaper || outlinerMountTest.nodeCount === 0) {
+      throw new Error(`大纲纸张或节点渲染失败: nodeCount=${outlinerMountTest.nodeCount}`);
+    }
+    console.log(`[PASS] 测试 24: 飞书大纲视图成功挂载，纸张居中渲染，标题="${outlinerMountTest.titleText}"，大纲行节点数=${outlinerMountTest.nodeCount}`);
+
+    // 测试 25: 大纲全键盘工作流 - Enter 键插入同级兄弟节点
+    const outlinerEnterTest = await evaluate(ws, `
+      (function() {
+        const outliner = window._outlinerInstance;
+        const firstText = outliner.treeEl.querySelector('.outliner-text');
+        if (!firstText) return { error: '找不到大纲文本节点' };
+
+        const targetUid = firstText.dataset.uid;
+        const beforeNodes = outliner.treeEl.querySelectorAll('.outliner-node').length;
+
+        // 模拟按 Enter 键
+        firstText.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }));
+
+        const afterNodes = outliner.treeEl.querySelectorAll('.outliner-node').length;
+        const newFocusedUid = outliner.focusedUid;
+        const focusedEl = outliner.treeEl.querySelector('.outliner-text[data-uid="' + newFocusedUid + '"]');
+
+        return {
+          beforeNodes,
+          afterNodes,
+          targetUid,
+          newFocusedUid,
+          hasFocusedEl: !!focusedEl
+        };
+      })()
+    `);
+
+    if (outlinerEnterTest.afterNodes !== outlinerEnterTest.beforeNodes + 1) {
+      throw new Error(`Enter 插入同级节点失败: before=${outlinerEnterTest.beforeNodes}, after=${outlinerEnterTest.afterNodes}`);
+    }
+    if (!outlinerEnterTest.hasFocusedEl) {
+      throw new Error('Enter 插入后未正确聚焦新节点');
+    }
+    console.log(`[PASS] 测试 25: 大纲键盘流 Enter 测试通过，成功插入同级节点并自动聚焦 (节点数: ${outlinerEnterTest.beforeNodes} -> ${outlinerEnterTest.afterNodes})`);
+
+    // 测试 26: 大纲全键盘工作流 - Tab 键向右缩进为子节点
+    const outlinerTabTest = await evaluate(ws, `
+      (function() {
+        const outliner = window._outlinerInstance;
+        const focusedUid = outliner.focusedUid;
+        const currentText = outliner.treeEl.querySelector('.outliner-text[data-uid="' + focusedUid + '"]');
+        if (!currentText) return { error: '未找到当前聚焦文本' };
+
+        // 模拟 Tab 键
+        currentText.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true, cancelable: true }));
+
+        // 检查数据结构中该节点是否已成为前一个兄弟节点的 children
+        const nodeInfo = outliner.findNodeAndParent(outliner.data, focusedUid);
+        const parentUid = nodeInfo && nodeInfo.parent ? nodeInfo.parent.data.uid : null;
+
+        // 检查 DOM 结构中该节点是否位于父节点的 .outliner-children 内
+        const nodeDom = outliner.treeEl.querySelector('.outliner-node[data-uid="' + focusedUid + '"]');
+        const isInNestedChildren = !!(nodeDom && nodeDom.closest('.outliner-children'));
+
+        return {
+          focusedUid,
+          parentUid,
+          isInNestedChildren
+        };
+      })()
+    `);
+
+    if (!outlinerTabTest.isInNestedChildren || !outlinerTabTest.parentUid) {
+      throw new Error(`Tab 缩进失败: ${JSON.stringify(outlinerTabTest)}`);
+    }
+    console.log(`[PASS] 测试 26: 大纲键盘流 Tab 缩进测试通过，节点已成功降级为子节点，父节点UID="${outlinerTabTest.parentUid}"`);
+
+    // 测试 27: 大纲全键盘工作流 - Shift+Tab 键向左提升层级
+    const outlinerShiftTabTest = await evaluate(ws, `
+      (function() {
+        const outliner = window._outlinerInstance;
+        const focusedUid = outliner.focusedUid;
+        const currentText = outliner.treeEl.querySelector('.outliner-text[data-uid="' + focusedUid + '"]');
+        if (!currentText) return { error: '未找到当前聚焦文本' };
+
+        // 模拟 Shift+Tab 键
+        currentText.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true, cancelable: true }));
+
+        const nodeInfo = outliner.findNodeAndParent(outliner.data, focusedUid);
+        const isRootChild = nodeInfo && nodeInfo.parent === outliner.data;
+
+        return {
+          focusedUid,
+          isRootChild
+        };
+      })()
+    `);
+
+    if (!outlinerShiftTabTest.isRootChild) {
+      throw new Error(`Shift+Tab 提升层级失败: ${JSON.stringify(outlinerShiftTabTest)}`);
+    }
+    console.log(`[PASS] 测试 27: 大纲键盘流 Shift+Tab 提升层级通过，节点已成功脱离父节点晋升为一级节点`);
+
+    // 测试 28: 大纲折叠与展开交互
+    const outlinerFoldTest = await evaluate(ws, `
+      (function() {
+        const outliner = window._outlinerInstance;
+        // 寻找有子节点的 foldBtn
+        const foldBtn = outliner.treeEl.querySelector('.outliner-fold-btn');
+        if (!foldBtn) return { error: '找不到折叠按钮' };
+
+        const row = foldBtn.closest('.outliner-row');
+        const uid = row.dataset.uid;
+
+        // 点击折叠
+        foldBtn.click();
+        const isFoldedAfterFirstClick = outliner.collapsedMap.has(uid);
+        const collapsedChildren = outliner.treeEl.querySelector('.outliner-node[data-uid="' + uid + '"] .outliner-children');
+        const hasCollapsedClass = collapsedChildren ? collapsedChildren.classList.contains('collapsed') : false;
+
+        // 再次点击展开
+        const newFoldBtn = outliner.treeEl.querySelector('.outliner-node[data-uid="' + uid + '"] .outliner-fold-btn');
+        newFoldBtn.click();
+        const isFoldedAfterSecondClick = outliner.collapsedMap.has(uid);
+        const expandedChildren = outliner.treeEl.querySelector('.outliner-node[data-uid="' + uid + '"] .outliner-children');
+        const isExpanded = expandedChildren ? !expandedChildren.classList.contains('collapsed') : false;
+
+        return {
+          isFoldedAfterFirstClick,
+          hasCollapsedClass,
+          isFoldedAfterSecondClick,
+          isExpanded
+        };
+      })()
+    `);
+
+    if (!outlinerFoldTest.isFoldedAfterFirstClick || !outlinerFoldTest.hasCollapsedClass || outlinerFoldTest.isFoldedAfterSecondClick || !outlinerFoldTest.isExpanded) {
+      throw new Error(`折叠展开逻辑异常: ${JSON.stringify(outlinerFoldTest)}`);
+    }
+    console.log('[PASS] 测试 28: 大纲折叠展开交互正常，三角形箭头指示旋转并隐藏/显示子节点容器');
+
+    // 测试 29: 大纲编辑数据双向同步回思维导图
+    const roundTripSyncTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const controller = window._dualViewControllerInstance;
+        const outliner = window._outlinerInstance;
+        const mm = window._mindMapInstance;
+
+        // 在大纲中编辑聚焦的节点文本
+        const focusedUid = outliner.focusedUid;
+        const textEl = outliner.treeEl.querySelector('.outliner-text[data-uid="' + focusedUid + '"]');
+        const targetString = '飞书大纲双向联动验证节点_2026';
+        textEl.textContent = targetString;
+        textEl.dispatchEvent(new Event('input', { bubbles: true }));
+
+        const checkAndResolve = () => {
+          const mmData = mm.getData(false);
+          const jsonStr = JSON.stringify(mmData);
+          const hasInMmData = jsonStr.includes(targetString);
+
+          // 验证 SVG foreignObject 渲染
+          const foTexts = Array.from(mm.el.querySelectorAll('foreignObject')).map(f => f.textContent.trim());
+          const hasInSvg = foTexts.some(t => t.includes(targetString));
+
+          resolve({
+            currentView: controller.getCurrentView(),
+            isMmVisible: mm.el.style.display !== 'none',
+            hasInMmData,
+            hasInSvg,
+            targetString
+          });
+        };
+
+        const timer = setTimeout(() => {
+          mm.off('node_tree_render_end', onRenderEnd);
+          checkAndResolve();
+        }, 1500);
+
+        const onRenderEnd = () => {
+          clearTimeout(timer);
+          mm.off('node_tree_render_end', onRenderEnd);
+          checkAndResolve();
+        };
+
+        mm.on('node_tree_render_end', onRenderEnd);
+
+        // 切换回思维导图视图
+        controller.switchView('mindmap');
+      })
+    `);
+
+    if (roundTripSyncTest.currentView !== 'mindmap' || !roundTripSyncTest.isMmVisible) {
+      throw new Error('切换回思维导图视图失败');
+    }
+    if (!roundTripSyncTest.hasInMmData || !roundTripSyncTest.hasInSvg) {
+      throw new Error(`大纲修改内容未能正确同步至导图: hasInMmData=${roundTripSyncTest.hasInMmData}, hasInSvg=${roundTripSyncTest.hasInSvg}`);
+    }
+    console.log(`[PASS] 测试 29: 双向数据同步测试通过，大纲新编节点已无缝同步并在导图 SVG 节点中成功呈现: "${roundTripSyncTest.targetString}"`);
+
+    // 测试 30: Ctrl + / 全局快捷键双向切换
+    const shortcutToggleTest = await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        const viewBefore = controller.getCurrentView();
+
+        // 触发 Ctrl + /
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: '/', ctrlKey: true, bubbles: true, cancelable: true }));
+        const viewAfterFirst = controller.getCurrentView();
+
+        // 再次触发 Ctrl + /
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: '/', ctrlKey: true, bubbles: true, cancelable: true }));
+        const viewAfterSecond = controller.getCurrentView();
+
+        return {
+          viewBefore,
+          viewAfterFirst,
+          viewAfterSecond
+        };
+      })()
+    `);
+
+    if (shortcutToggleTest.viewBefore !== 'mindmap' || shortcutToggleTest.viewAfterFirst !== 'outline' || shortcutToggleTest.viewAfterSecond !== 'mindmap') {
+      throw new Error(`Ctrl + / 快捷键切换异常: ${JSON.stringify(shortcutToggleTest)}`);
+    }
+    console.log('[PASS] 测试 30: Ctrl + / 键盘全局快捷键无缝切换验证通过 (mindmap -> outline -> mindmap)');
+
+    // 测试 31: 大纲节点层级重排 (moveNodeRelative)
+    const outlinerMoveTest = await evaluate(ws, `
+      (function() {
+        const outliner = window._outlinerInstance;
+        const topChildren = outliner.data.children;
+        if (topChildren.length < 2) return { error: '顶级节点不足2个' };
+
+        const firstUid = topChildren[0].data.uid;
+        const secondUid = topChildren[1].data.uid;
+
+        // 将第一个节点移动到第二个节点之后
+        const success = outliner.moveNodeRelative(firstUid, secondUid, 'after');
+        const newFirstUid = outliner.data.children[0].data.uid;
+
+        return {
+          success,
+          isReordered: newFirstUid === secondUid
+        };
+      })()
+    `);
+
+    if (!outlinerMoveTest.success || !outlinerMoveTest.isReordered) {
+      throw new Error(`大纲节点重排失败: ${JSON.stringify(outlinerMoveTest)}`);
+    }
+    console.log('[PASS] 测试 31: 大纲节点重排 (moveNodeRelative) 成功，父子与兄弟层级顺序准确重构');
+
+    // 截取飞书风格导图全景预览图
+    await sleep(300);
+    const mmScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const mmScreenshotBuffer = Buffer.from(mmScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_mindmap_preview.png'), mmScreenshotBuffer);
+    const brainDir = 'C:\\Users\\Zhangwh\\.gemini\\antigravity\\brain\\ad399e82-8fac-4031-b08f-5dda2f357e6b';
+    if (fs.existsSync(brainDir)) {
+      fs.writeFileSync(path.join(brainDir, 'feishu_mindmap_preview.png'), mmScreenshotBuffer);
+    }
+    console.log('[Screenshot] 飞书思维导图视图真实截图已生成: mindmap-sandbox/feishu_mindmap_preview.png');
+
+    // 切换到大纲模式并截取精美预览图
+    await evaluate(ws, `window._dualViewControllerInstance.switchView('outline')`);
+    await sleep(400);
+    const screenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const screenshotBuffer = Buffer.from(screenshot.data, 'base64');
+    const outlinerPreviewPath = path.join(__dirname, 'feishu_outliner_preview.png');
+    fs.writeFileSync(outlinerPreviewPath, screenshotBuffer);
+
+    // 复制到 artifact 目录
+    if (fs.existsSync(brainDir)) {
+      fs.writeFileSync(path.join(brainDir, 'feishu_outliner_preview.png'), screenshotBuffer);
+    }
+    console.log('[Screenshot] 飞书大纲视图真实截图已生成: mindmap-sandbox/feishu_outliner_preview.png');
+
     console.log('\n====================================================');
-    console.log('   所有 Phase (1~6) 共计 23 项端到端测试全部通过');
+    console.log('   所有 Phase (1~7) 共计 31 项端到端测试全部通过');
     console.log('====================================================\n');
   } catch (err) {
     console.error('\n[FAIL] 自动化回归测试失败:', err.message);

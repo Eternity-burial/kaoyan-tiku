@@ -1,0 +1,275 @@
+/**
+ * 飞书思维笔记大纲视图专属样式 (Feishu Outliner Design System)
+ * 1. 沉浸式纸张居中排版 (Paper Canvas)
+ * 2. 纯净圆点手柄与级联竖向导向线 (Bullet & Guide Lines)
+ * 3. 悬浮双向视图切换胶囊 (Dual-View Switcher)
+ * 4. 全程零表情符号
+ */
+
+/* 大纲视图容器 */
+#outlinerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+  z-index: 50;
+  display: none; /* 默认激活导图视图，点击切换后设为 block */
+  -webkit-overflow-scrolling: touch;
+}
+
+#outlinerContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+#outlinerContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(31, 35, 41, 0.15);
+  border-radius: 3px;
+}
+
+#outlinerContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#outlinerContainer.active {
+  display: block;
+}
+
+/* 当处于大纲模式时，隐藏思维导图专属的悬浮工具栏、缩放条与提示卡片 */
+body.view-mode-outline .floating-toolbar,
+body.view-mode-outline .floating-viewport-bar,
+body.view-mode-outline .shortcut-tips-card {
+  display: none !important;
+}
+
+/* 沉浸式白色文档纸张 */
+.outliner-paper {
+  max-width: 860px;
+  min-height: calc(100vh - 64px);
+  margin: 40px auto 80px auto;
+  background-color: #ffffff;
+  border: 1px solid #dee0e3;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(31, 35, 41, 0.05);
+  padding: 48px 64px 80px 64px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1100px) {
+  .outliner-paper {
+    margin-left: 140px;
+    margin-right: 24px;
+    max-width: calc(100% - 164px);
+    padding: 32px 36px 60px 36px;
+  }
+}
+
+/* 文档标题 (同步根节点) */
+.outliner-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1f2329;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dee0e3;
+  outline: none;
+  word-break: break-word;
+}
+
+.outliner-title:empty::before {
+  content: "点击输入导图根节点标题...";
+  color: #8f959e;
+  pointer-events: none;
+}
+
+/* 大纲树根部 */
+.outliner-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 单个大纲行容器 */
+.outliner-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.outliner-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+  position: relative;
+}
+
+.outliner-row:hover {
+  background-color: #f2f3f5;
+}
+
+/* 圆点与手柄区域 */
+.outliner-handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 24px;
+  flex-shrink: 0;
+  cursor: grab;
+  user-select: none;
+  position: relative;
+}
+
+.outliner-handle:active {
+  cursor: grabbing;
+}
+
+/* 实心小圆点 */
+.outliner-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #646a73;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.outliner-handle:hover .outliner-bullet {
+  background-color: #3370ff;
+  transform: scale(1.3);
+}
+
+/* 折叠展开小三角箭头 */
+.outliner-fold-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  font-size: 10px;
+  color: #8f959e;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: -4px;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.outliner-fold-btn:hover {
+  color: #1f2329;
+  background-color: #e5e6eb;
+}
+
+.outliner-fold-btn.folded {
+  transform: rotate(-90deg);
+}
+
+/* 文本编辑框 */
+.outliner-text {
+  flex: 1;
+  min-height: 24px;
+  line-height: 24px;
+  font-size: 15px;
+  color: #1f2329;
+  outline: none;
+  word-break: break-word;
+  white-space: pre-wrap;
+  padding: 0 2px;
+}
+
+.outliner-text:empty::before {
+  content: "输入内容...";
+  color: #bbbfc4;
+  pointer-events: none;
+}
+
+/* 一级节点字号与字重微调 */
+.outliner-node.level-1 > .outliner-row > .outliner-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2329;
+}
+
+/* 子节点缩进容器与级联竖向导向线 */
+.outliner-children {
+  padding-left: 24px;
+  margin-left: 9px;
+  border-left: 1px solid #dee0e3;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.outliner-children.collapsed {
+  display: none;
+}
+
+/* 拖拽排序指示线 */
+.outliner-row.drag-over-top {
+  border-top: 2px solid #3370ff;
+}
+
+.outliner-row.drag-over-bottom {
+  border-bottom: 2px solid #3370ff;
+}
+
+.outliner-row.drag-over-child {
+  background-color: #e8f3ff;
+}
+
+/* 悬浮双向视图切换器 (Dual-View Switcher) */
+.dual-view-switcher {
+  position: fixed;
+  top: 16px;
+  left: 24px;
+  z-index: 120;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #dee0e3;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(31, 35, 41, 0.08);
+  padding: 3px;
+  gap: 2px;
+}
+
+.view-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  color: #646a73;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.view-switch-btn:hover {
+  color: #1f2329;
+  background: #f2f3f5;
+}
+
+.view-switch-btn.active {
+  background: #3370ff;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.view-switch-btn .view-icon {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: bold;
+}
