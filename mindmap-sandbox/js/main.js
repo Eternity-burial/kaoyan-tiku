@@ -14,24 +14,77 @@
     return;
   }
 
-  // 2. 实例化思维导图（完全采用官方原生能力）
+  // 2. 注册飞书经典视觉主题 (Feishu / Lark Design System)
+  MindMap.defineTheme('feishu', {
+    backgroundColor: '#f8f9fa',
+    lineColor: '#bbbfc4',
+    lineWidth: 2,
+    lineStyle: 'curve',
+    root: {
+      shape: 'rectangle',
+      fillColor: '#3370ff',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
+      color: '#ffffff',
+      fontSize: 16,
+      fontWeight: '600',
+      borderColor: 'transparent',
+      borderWidth: 0,
+      borderRadius: 8,
+      paddingX: 20,
+      paddingY: 12
+    },
+    second: {
+      shape: 'rectangle',
+      marginX: 80,
+      marginY: 32,
+      fillColor: '#ffffff',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
+      color: '#1f2329',
+      fontSize: 14,
+      fontWeight: '500',
+      borderColor: '#dee0e3',
+      borderWidth: 1.5,
+      borderRadius: 6,
+      hoverRectColor: '#3370ff',
+      paddingX: 16,
+      paddingY: 10
+    },
+    node: {
+      shape: 'rectangle',
+      marginX: 50,
+      marginY: 20,
+      fillColor: '#ffffff',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
+      color: '#4e5969',
+      fontSize: 13,
+      fontWeight: 'normal',
+      borderColor: '#e5e6eb',
+      borderWidth: 1,
+      borderRadius: 4,
+      hoverRectColor: '#3370ff',
+      paddingX: 12,
+      paddingY: 8
+    }
+  });
+
+  // 3. 实例化思维导图
   const mindMap = new MindMap({
     el: container,
     data: window.defaultMindMapData || { data: { text: '根节点' }, children: [] },
     layout: 'logicalStructure', // 经典逻辑结构图（向右水平展开）
-    theme: 'classic4',          // 清爽商务浅色主题
-    enableFreeDrag: false,      // 禁用自由散落拖拽，强制严密的树状插槽吸附
+    theme: 'feishu',            // 飞书专属商务质感主题
+    enableFreeDrag: false,      // 禁用自由散落拖拽，强制树状吸附
     autoMoveWhenMouseInEdgeOnDrag: true, // 拖动靠近视口边缘时自动滚动画布
     useLeftKeySelectionRightKeyDrag: true, // 空白处左键框选，右键拖拽平移画布
     mouseScaleCenterUseMousePosition: true, // 鼠标滚轮缩放以当前光标所在点为中心
     dragPlaceholderLineConfig: {
-      color: '#2563eb',
-      width: 3
+      color: '#3370ff',
+      width: 2.5
     },
-    dragPlaceholderRectFill: 'rgba(37, 99, 235, 0.12)'
+    dragPlaceholderRectFill: 'rgba(51, 112, 255, 0.15)'
   });
 
-  // 3. 全局暴露实例供测试脚本与调试使用
+  // 4. 全局暴露实例供测试脚本与调试使用
   window._mindMapInstance = mindMap;
 
   // 4. 视口大小自适应监听
