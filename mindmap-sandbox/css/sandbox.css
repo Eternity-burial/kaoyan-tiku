@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
@@ -26,7 +28,21 @@ html, body {
   z-index: 1;
 }
 
-/* 顶部悬浮控制栏（飞书风格极简毛玻璃浮动条） */
+/* 核心修复：彻底清除 SVG foreignObject 节点内部 p/div 的默认浏览器边距，保证文字完美居中且不被裁切 */
+#mindMapContainer foreignObject,
+#mindMapContainer foreignObject p,
+#mindMapContainer foreignObject div,
+#mindMapContainer foreignObject span,
+.smm-richtext-node-wrap,
+.smm-richtext-node-wrap p {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  line-height: inherit !important;
+  display: block !important;
+}
+
+/* 顶部悬浮控制栏 */
 .floating-toolbar {
   position: fixed;
   top: 16px;
@@ -37,23 +53,26 @@ html, body {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: 24px;
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  white-space: nowrap;
 }
 
 .toolbar-title {
   font-size: 13px;
   font-weight: 600;
   color: #1e293b;
-  padding-right: 8px;
+  padding-right: 12px;
   border-right: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .toolbar-title .badge {
@@ -69,6 +88,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 4px;
+  flex-shrink: 0;
 }
 
 .toolbar-divider {
@@ -76,6 +96,7 @@ html, body {
   height: 18px;
   background-color: #e2e8f0;
   margin: 0 2px;
+  flex-shrink: 0;
 }
 
 .tool-btn {
@@ -104,11 +125,6 @@ html, body {
   transform: translateY(1px);
 }
 
-.tool-btn .btn-icon {
-  font-size: 14px;
-  line-height: 1;
-}
-
 .tool-btn kbd {
   font-size: 10px;
   font-family: inherit;
@@ -130,7 +146,7 @@ html, body {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.9);
@@ -156,6 +172,8 @@ html, body {
   border: none;
   background: transparent;
   color: #475569;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -171,7 +189,7 @@ html, body {
   bottom: 20px;
   left: 20px;
   z-index: 90;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.85);
@@ -180,15 +198,12 @@ html, body {
   font-size: 11px;
   color: #64748b;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-  line-height: 1.7;
+  line-height: 1.8;
   pointer-events: none;
 }
 
-.shortcut-tips-card b {
+.shortcut-tips-card .shortcut-tips-title {
   color: #1e293b;
-}
-
-.shortcut-tips-card span {
-  display: inline-block;
-  margin-right: 12px;
+  font-weight: 600;
+  margin-bottom: 2px;
 }

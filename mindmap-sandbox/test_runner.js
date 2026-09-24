@@ -190,10 +190,10 @@ async function run() {
 
     // 检查是否有未捕获异常
     if (exceptions.length > 0) {
-      console.error('❌ 页面存在运行时异常:', exceptions);
+      console.error('[FAIL] 页面存在运行时异常:', exceptions);
       throw new Error(`页面抛出 ${exceptions.length} 个异常`);
     } else {
-      console.log('✅ 测试 1: 页面零控制台异常通过');
+      console.log('[PASS] 测试 1: 页面零控制台异常通过');
     }
 
     // 检查 window._mindMapInstance 是否挂载
@@ -201,7 +201,7 @@ async function run() {
       Boolean(window._mindMapInstance && window._mindMapInstance.render && window._mindMapInstance.view)
     `);
     if (!instanceCheck) throw new Error('window._mindMapInstance 未正确实例化挂载');
-    console.log('✅ 测试 2: SimpleMindMap 原生实例成功挂载并在 window._mindMapInstance 可用');
+    console.log('[PASS] 测试 2: SimpleMindMap 原生实例成功挂载并在 window._mindMapInstance 可用');
 
     // 检查 SVG 与节点元素渲染数量
     const nodeStats = await evaluate(ws, `
@@ -248,7 +248,7 @@ async function run() {
     if (!nodeStats.hasSvg) throw new Error('容器内未找到 SVG 画布元素');
     if (nodeStats.foreignObjectCount < 10) throw new Error(`渲染节点数量过低: foreignObjectCount=${nodeStats.foreignObjectCount}`);
     if (!nodeStats.rootText.includes('高等数学')) throw new Error(`根节点文本不匹配: ${nodeStats.rootText}`);
-    console.log(`✅ 测试 3: SVG 画布正常渲染，根节点="${nodeStats.rootText}"，渲染节点卡片数=${nodeStats.foreignObjectCount}，总树节点数=${nodeStats.totalNodeInTree}`);
+    console.log(`[PASS] 测试 3: SVG 画布正常渲染，根节点="${nodeStats.rootText}"，渲染节点卡片数=${nodeStats.foreignObjectCount}，总树节点数=${nodeStats.totalNodeInTree}`);
 
     // 测试视口控制能力 (缩小、放大、复位)
     const zoomTest = await evaluate(ws, `
@@ -287,14 +287,14 @@ async function run() {
     if (zoomTest.enlargedScale <= zoomTest.narrowedScale) {
       throw new Error(`缩放比率关系异常: enlarged=${zoomTest.enlargedScale}, narrowed=${zoomTest.narrowedScale}`);
     }
-    console.log(`✅ 测试 4: 视口缩放与复位 API 正常 (放大至 ${(zoomTest.enlargedScale * 100).toFixed(0)}%, 缩小至 ${(zoomTest.narrowedScale * 100).toFixed(0)}%, 复位=${(zoomTest.resetScale * 100).toFixed(0)}%, UI标签="${zoomTest.zoomText}")`);
+    console.log(`[PASS] 测试 4: 视口缩放与复位 API 正常 (放大至 ${(zoomTest.enlargedScale * 100).toFixed(0)}%, 缩小至 ${(zoomTest.narrowedScale * 100).toFixed(0)}%, 复位=${(zoomTest.resetScale * 100).toFixed(0)}%, UI标签="${zoomTest.zoomText}")`);
 
     // 测试原生 Drag 插件是否已成功激活挂载
     const dragPluginCheck = await evaluate(ws, `
       Boolean(window._mindMapInstance.drag)
     `);
     if (!dragPluginCheck) throw new Error('Drag 插件未在 mindMap 实例上激活');
-    console.log('✅ 测试 5: 官方 Drag 插件已成功注入并激活 (mindMap.drag 存在)');
+    console.log('[PASS] 测试 5: 官方 Drag 插件已成功注入并激活 (mindMap.drag 存在)');
 
     console.log('\n--- 开始执行 Phase 3 核心拖拽、拓扑变更与历史栈断言项 ---');
 
@@ -322,7 +322,7 @@ async function run() {
     if (treeTopology.chCount !== 3) {
       throw new Error(`根节点子节点数量异常: ${treeTopology.chCount}`);
     }
-    console.log(`✅ 测试 6: 初始拓扑结构验证通过 (三大章节: ${treeTopology.ch1KidsCount}节 / ${treeTopology.ch2KidsCount}节 / ${treeTopology.ch3KidsCount}节)`);
+    console.log(`[PASS] 测试 6: 初始拓扑结构验证通过 (三大章节: ${treeTopology.ch1KidsCount}节 / ${treeTopology.ch2KidsCount}节 / ${treeTopology.ch3KidsCount}节)`);
 
     // 测试 7: 父子关系迁移 (Reparenting) 与 Subtree 完整性
     // 将第二章第3节 "微分中值定理体系"（带有4个子定理）移入第三章作为子节点
@@ -382,7 +382,7 @@ async function run() {
     if (reparentTest.movedSubtreeKidsCount !== reparentTest.beforeSubtreeKidsCount) {
       throw new Error(`Subtree 子树完整性丢失: 原有${reparentTest.beforeSubtreeKidsCount}个子定理，迁移后剩${reparentTest.movedSubtreeKidsCount}个`);
     }
-    console.log(`✅ 测试 7: 改变父子关系 (Reparenting) 成功，4个子定理完整保留 (${reparentTest.movedSubtreeKidTitles.join(', ')})`);
+    console.log(`[PASS] 测试 7: 改变父子关系 (Reparenting) 成功，4个子定理完整保留 (${reparentTest.movedSubtreeKidTitles.join(', ')})`);
 
     // 测试 8: 历史栈撤销与重做 (Undo / Redo) 拓扑还原验证
     const undoRedoTest = await evaluate(ws, `
@@ -439,7 +439,7 @@ async function run() {
     if (!undoRedoTest.inCh3AfterRedo) {
       throw new Error('Redo (重做) 未能重新应用拓扑迁移');
     }
-    console.log('✅ 测试 8: 历史栈撤销 (Undo) 与重做 (Redo) 拓扑还原 100% 精准');
+    console.log('[PASS] 测试 8: 历史栈撤销 (Undo) 与重做 (Redo) 拓扑还原 100% 精准');
 
     // 撤销回初始状态以供后续测试保持基准
     await evaluate(ws, `
@@ -489,7 +489,7 @@ async function run() {
     if (!siblingReorderTest.reorderedCorrectly) {
       throw new Error(`同级排序异常: 原=${JSON.stringify(siblingReorderTest.originalTitles)}, 现=${JSON.stringify(siblingReorderTest.newTitles)}`);
     }
-    console.log(`✅ 测试 9: 同级节点重新排序 (Sibling Reorder) 正常: ${siblingReorderTest.newTitles[0]} -> ${siblingReorderTest.newTitles[1]} -> ${siblingReorderTest.newTitles[2]}`);
+    console.log(`[PASS] 测试 9: 同级节点重新排序 (Sibling Reorder) 正常: ${siblingReorderTest.newTitles[0]} -> ${siblingReorderTest.newTitles[1]} -> ${siblingReorderTest.newTitles[2]}`);
 
     // 测试 10: 防成环与异常拖拽保护 (Cycle Prevention)
     const cycleTest = await evaluate(ws, `
@@ -516,7 +516,7 @@ async function run() {
     if (!cycleTest.hasAncestorCheck) {
       throw new Error('未找到节点防成环检测方法 isParent');
     }
-    console.log(`✅ 测试 10: 防成环保护 (Cycle Prevention) 完备 (节点具备 isParent 拓扑层级校验)`);
+    console.log('[PASS] 测试 10: 防成环保护 (Cycle Prevention) 完备 (节点具备 isParent 拓扑层级校验)');
 
     console.log('\n--- 开始执行 Phase 4 节点编辑、新建、删除与画布漫游断言项 ---');
 
@@ -550,7 +550,7 @@ async function run() {
     if (insertChildTest.afterKidsCount !== insertChildTest.beforeKidsCount + 1) {
       throw new Error(`新建子节点失败: before=${insertChildTest.beforeKidsCount}, after=${insertChildTest.afterKidsCount}`);
     }
-    console.log(`✅ 测试 11: 插入子节点 (Tab / INSERT_CHILD_NODE) 成功，子节点数从 ${insertChildTest.beforeKidsCount} 增至 ${insertChildTest.afterKidsCount}`);
+    console.log(`[PASS] 测试 11: 插入子节点 (Tab / INSERT_CHILD_NODE) 成功，子节点数从 ${insertChildTest.beforeKidsCount} 增至 ${insertChildTest.afterKidsCount}`);
 
     // 测试 12: 插入同级节点 (INSERT_NODE)
     const insertSiblingTest = await evaluate(ws, `
@@ -579,7 +579,7 @@ async function run() {
     if (insertSiblingTest.afterChCount !== insertSiblingTest.beforeChCount + 1) {
       throw new Error(`新建同级节点失败: before=${insertSiblingTest.beforeChCount}, after=${insertSiblingTest.afterChCount}`);
     }
-    console.log(`✅ 测试 12: 插入同级节点 (Enter / INSERT_NODE) 成功，同级节点数从 ${insertSiblingTest.beforeChCount} 增至 ${insertSiblingTest.afterChCount}`);
+    console.log(`[PASS] 测试 12: 插入同级节点 (Enter / INSERT_NODE) 成功，同级节点数从 ${insertSiblingTest.beforeChCount} 增至 ${insertSiblingTest.afterChCount}`);
 
     // 测试 13: 删除节点 (REMOVE_NODE)
     const deleteTest = await evaluate(ws, `
@@ -609,7 +609,7 @@ async function run() {
     if (deleteTest.afterCount !== deleteTest.beforeCount - 1) {
       throw new Error(`删除节点失败: before=${deleteTest.beforeCount}, after=${deleteTest.afterCount}`);
     }
-    console.log(`✅ 测试 13: 删除节点 (Del / REMOVE_NODE) 成功，节点数减 1 还原`);
+    console.log(`[PASS] 测试 13: 删除节点 (Del / REMOVE_NODE) 成功，节点数减 1 还原`);
 
     // 测试 14: 节点就地编辑 (TextEdit 文本实时修改与重新排版)
     const textEditTest = await evaluate(ws, `
@@ -639,7 +639,7 @@ async function run() {
     if (!textEditTest.match) {
       throw new Error(`节点就地文本更新失败: DOM="${textEditTest.textInDom}"`);
     }
-    console.log(`✅ 测试 14: 节点原地编辑 (TextEdit) 成功，SVG 文本与排版已同步更新为: "${textEditTest.dataText}"`);
+    console.log(`[PASS] 测试 14: 节点原地编辑 (TextEdit) 成功，SVG 文本与排版已同步更新为: "${textEditTest.dataText}"`);
 
     // 测试 15: 画布漫游平移坐标 (Pan Navigation)
     const panTest = await evaluate(ws, `
@@ -669,7 +669,7 @@ async function run() {
     if (Math.abs(panTest.dx - (-60)) > 1 || Math.abs(panTest.dy - (-40)) > 1) {
       throw new Error(`画布平移量不符: dx=${panTest.dx}, dy=${panTest.dy}`);
     }
-    console.log(`✅ 测试 15: 画布平移漫游 (Pan / translateXY) 坐标换算精准 (Δx=-60, Δy=-40)`);
+    console.log(`[PASS] 测试 15: 画布平移漫游 (Pan / translateXY) 坐标换算精准 (Δx=-60, Δy=-40)`);
 
     console.log('\n--- 开始执行 Phase 5 数据序列化导出与导入断言项 ---');
 
@@ -692,7 +692,7 @@ async function run() {
     if (!exportTest.hasData || !exportTest.hasChildren || exportTest.childrenCount < 2) {
       throw new Error('导出的数据结构不合法或子节点缺失');
     }
-    console.log(`✅ 测试 16: 纯文本树数据结构导出 (getData) 完整 (根节点="${exportTest.rootTitle}", 子分支数=${exportTest.childrenCount}, JSON大小=${exportTest.jsonLength}B)`);
+    console.log(`[PASS] 测试 16: 纯文本树数据结构导出 (getData) 完整 (根节点="${exportTest.rootTitle}", 子分支数=${exportTest.childrenCount}, JSON大小=${exportTest.jsonLength}B)`);
 
     // 测试 17: 导入新纯文本导图数据 (setData)
     const importTest = await evaluate(ws, `
@@ -728,13 +728,13 @@ async function run() {
     if (importTest.branchCount !== 2 || importTest.firstBranchSubCount !== 1) {
       throw new Error(`导入新数据后拓扑不符: branches=${importTest.branchCount}, sub=${importTest.firstBranchSubCount}`);
     }
-    console.log(`✅ 测试 17: 外部数据结构导入 (setData) 成功，新知识架构已完整呈现 (根="${importTest.newRootTitle}", 分支数=${importTest.branchCount})`);
+    console.log(`[PASS] 测试 17: 外部数据结构导入 (setData) 成功，新知识架构已完整呈现 (根="${importTest.newRootTitle}", 分支数=${importTest.branchCount})`);
 
-    console.log('\n🎉 ====================================================');
-    console.log('   所有 Phase (1~5) 共计 17 项端到端测试全部完美通过！');
+    console.log('\n====================================================');
+    console.log('   所有 Phase (1~5) 共计 17 项端到端测试全部通过');
     console.log('====================================================\n');
   } catch (err) {
-    console.error('\n❌ 自动化回归测试失败:', err.message);
+    console.error('\n[FAIL] 自动化回归测试失败:', err.message);
     process.exitCode = 1;
   } finally {
     await cleanup();

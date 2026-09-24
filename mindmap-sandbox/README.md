@@ -5,7 +5,7 @@
 
 ---
 
-## 🌟 核心特性与架构设计
+## 核心特性与架构设计
 
 1. **物理隔离**：
    * 独立宿主入口 (`index.html`)、独立样式表 (`css/sandbox.css`)、独立主脚本 (`js/main.js`)；
@@ -32,7 +32,7 @@
 
 ---
 
-## 🚀 启动与体验方式
+## 启动与体验方式
 
 ### 方式 1：本地极简静态服务器启动（推荐）
 在仓库根目录下运行：
@@ -50,7 +50,7 @@ node -e "const http=require('http'),fs=require('fs'),path=require('path');http.c
 
 ---
 
-## 🧪 自动化回归测试套件 (CDP E2E)
+## 自动化回归测试套件 (CDP E2E)
 
 沙箱配套提供全流程端到端自动化测试脚本 `test_runner.js`，基于 Chrome DevTools 协议对 17 项核心指标进行全自动断言：
 

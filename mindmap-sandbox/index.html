@@ -20,17 +20,14 @@
 
     <div class="toolbar-group">
       <button type="button" class="tool-btn" id="btnInsertChild" title="插入子节点 (Tab)">
-        <span class="btn-icon">↳</span>
         <span>子节点</span>
         <kbd>Tab</kbd>
       </button>
       <button type="button" class="tool-btn" id="btnInsertSibling" title="插入同级节点 (Enter)">
-        <span class="btn-icon">↓</span>
         <span>同级节点</span>
         <kbd>Enter</kbd>
       </button>
       <button type="button" class="tool-btn" id="btnDeleteNode" title="删除选中节点及其子树 (Delete)">
-        <span class="btn-icon">🗑</span>
         <span>删除</span>
         <kbd>Del</kbd>
       </button>
@@ -40,12 +37,10 @@
 
     <div class="toolbar-group">
       <button type="button" class="tool-btn" id="btnUndo" title="撤销操作 (Ctrl+Z)">
-        <span class="btn-icon">↺</span>
         <span>撤销</span>
         <kbd>Ctrl+Z</kbd>
       </button>
       <button type="button" class="tool-btn" id="btnRedo" title="重做操作 (Ctrl+Y)">
-        <span class="btn-icon">↻</span>
         <span>重做</span>
         <kbd>Ctrl+Y</kbd>
       </button>
@@ -55,12 +50,10 @@
 
     <div class="toolbar-group">
       <button type="button" class="tool-btn" id="btnResetView" title="重置视口到中心">
-        <span class="btn-icon">🎯</span>
         <span>居中</span>
       </button>
       <button type="button" class="tool-btn" id="btnFitView" title="自适应画布大小">
-        <span class="btn-icon">⛶</span>
-        <span>全貌</span>
+        <span>自适应</span>
       </button>
     </div>
 
@@ -68,11 +61,9 @@
 
     <div class="toolbar-group">
       <button type="button" class="tool-btn" id="btnExportJson" title="导出思维导图数据为 JSON">
-        <span class="btn-icon">📥</span>
         <span>导出</span>
       </button>
       <button type="button" class="tool-btn" id="btnImportJson" title="导入 JSON 思维导图数据">
-        <span class="btn-icon">📤</span>
         <span>导入</span>
       </button>
       <input type="file" id="importFileInput" accept=".json" style="display: none;">
@@ -81,17 +72,17 @@
 
   <!-- 右下角缩放控制条 -->
   <div class="floating-viewport-bar">
-    <button type="button" class="icon-btn" id="btnZoomOut" title="缩小 (Ctrl + 滚轮向下)">−</button>
+    <button type="button" class="icon-btn" id="btnZoomOut" title="缩小 (Ctrl + 滚轮向下)">-</button>
     <span class="zoom-text" id="zoomLevelText">100%</span>
     <button type="button" class="icon-btn" id="btnZoomIn" title="放大 (Ctrl + 滚轮向上)">+</button>
   </div>
 
   <!-- 左下角交互指引提示 -->
   <aside class="shortcut-tips-card">
-    <div><b>💡 拖拽与操作指引</b></div>
-    <div><span>• <b>节点拖拽</b>：拖至上下边缘出现蓝线为<b>同级插入</b>；拖至节点中心为<b>成为子级</b></span></div>
-    <div><span>• <b>画布漫游</b>：按住 <b>Space + 鼠标左键</b> 或直接 <b>鼠标右键拖拽</b></span></div>
-    <div><span>• <b>就地编辑</b>：<b>双击节点</b> 或 <b>选中按 Enter</b> 唤起编辑输入框</span></div>
+    <div class="shortcut-tips-title">操作指引</div>
+    <div>节点拖拽：拖至上下边缘出现蓝线为同级插入；拖至节点中心为成为子级</div>
+    <div>画布漫游：按住 Space 配合鼠标左键拖拽，或直接使用鼠标右键拖拽</div>
+    <div>就地编辑：双击节点或选中按 Enter 唤起编辑输入框</div>
   </aside>
 
   <!-- 独立 Vendor 库及逻辑脚本 -->
