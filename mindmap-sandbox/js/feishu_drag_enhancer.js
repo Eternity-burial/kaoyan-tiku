@@ -217,8 +217,9 @@
 
         const envLeft = node.left - 8;
         const envRight = node.left + node.width + apronW;
-        const envTop = node.top - 10;
-        const envBottom = node.top + node.height + 10;
+        // 收紧垂直投影区间，严格锁定在节点自身高度内，杜绝垂直溢出侵入兄弟物理间隙通道
+        const envTop = node.top - 2;
+        const envBottom = node.top + node.height + 2;
 
         const isCursorInEnv = (cursorCanvasX >= envLeft && cursorCanvasX <= envRight && cursorCanvasY >= envTop && cursorCanvasY <= envBottom);
         const isAnchorInEnv = (cloneAnchorX >= envLeft && cloneAnchorX <= envRight && cloneAnchorY >= envTop && cloneAnchorY <= envBottom);
@@ -260,7 +261,7 @@
       }
     }
 
-    // 检测当前是否命中兄弟节点之间的物理间隙插槽 (基于画布局部坐标)
+    // 检测当前是否命中兄弟节点之间的物理间隙插槽 (基于画布局部坐标，拥有物理通道垄断权)
     detectSiblingGutterSlot(candidates, cursorCanvasX, cursorCanvasY) {
       const parentMap = new Map();
       candidates.forEach((node) => {
@@ -283,21 +284,25 @@
           if (i === 0) {
             const slotTop = current.top - 18;
             const slotBottom = current.top + 2;
-            const slotLeft = current.left - 16;
-            const slotRight = current.left + current.width + 30;
+            const slotLeft = current.left - 10;
+            const slotRight = current.left + current.width + 40;
             if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: null, nextNode: current };
             }
           }
 
-          // 2. 两个相邻兄弟节点之间的物理缝隙槽
+          // 2. 两个相邻兄弟节点之间的物理缝隙槽 (通道垄断：覆盖完整净间距与全卡片横向跨度)
           if (i < siblings.length - 1) {
             const next = siblings[i + 1];
-            const gapCenter = (current.top + current.height + next.top) / 2;
-            const slotTop = gapCenter - 14;
-            const slotBottom = gapCenter + 14;
-            const slotLeft = Math.min(current.left, next.left) - 16;
-            const slotRight = Math.max(current.left + current.width, next.left + next.width) + 30;
+            const gapTop = current.top + current.height;
+            const gapBottom = next.top;
+            const gapCenter = (gapTop + gapBottom) / 2;
+
+            const slotTop = Math.min(gapTop - 2, gapCenter - 14);
+            const slotBottom = Math.max(gapBottom + 2, gapCenter + 14);
+            const slotLeft = Math.min(current.left, next.left) - 10;
+            const slotRight = Math.max(current.left + current.width, next.left + next.width);
+
             if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: current, nextNode: next };
             }
@@ -308,8 +313,8 @@
             const currentBottom = current.top + current.height;
             const slotTop = currentBottom - 2;
             const slotBottom = currentBottom + 18;
-            const slotLeft = current.left - 16;
-            const slotRight = current.left + current.width + 30;
+            const slotLeft = current.left - 10;
+            const slotRight = current.left + current.width + 40;
             if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: current, nextNode: null };
             }

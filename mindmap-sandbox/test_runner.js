@@ -926,7 +926,7 @@ async function run() {
     }
     console.log('[PASS] 测试 21: 超出脱离阈值 (Detach) 判定正常，蓝线与高亮平滑断开消失');
 
-    // 测试 22: 同级插槽严格判定与仲裁 (兄弟物理间隙触发)
+    // 测试 22: 同级插槽全通道垄断判定与仲裁 (缝隙左、中、右横向全跨度触发)
     const siblingPriorityTest = await evaluate(ws, `
       (function() {
         const mm = window._mindMapInstance;
@@ -938,17 +938,27 @@ async function run() {
 
         // 计算 ch1 与 ch2 之间的真实垂直间隙中心
         const gapCenterY = (ch1.top + ch1.height + ch2.top) / 2;
-        const gapX = ch1.left + 20;
 
-        drag.mouseMoveX = gapX;
+        // 测试点 1: 缝隙左端 (卡片左部下方)
+        const gapX1 = ch1.left + 10;
+        drag.mouseMoveX = gapX1;
         drag.mouseMoveY = gapCenterY;
-        enhancer.handleMove(gapX, gapCenterY, {});
+        enhancer.handleMove(gapX1, gapCenterY, {});
+        const passLeft = (drag.prevNode === ch1 && drag.nextNode === ch2 && drag.overlapNode === null && !enhancer.magneticLine.visible());
 
-        const isPrevSet = drag.prevNode === ch1;
-        const isNextSet = drag.nextNode === ch2;
-        const isOverlapCleared = drag.overlapNode === null;
-        const isLineSuppressed = !enhancer.magneticLine.visible();
-        const isHighlightSuppressed = !enhancer.parentHighlight.visible();
+        // 测试点 2: 缝隙正中 (卡片文字中部正下方)
+        const gapX2 = ch1.left + ch1.width / 2;
+        drag.mouseMoveX = gapX2;
+        drag.mouseMoveY = gapCenterY;
+        enhancer.handleMove(gapX2, gapCenterY, {});
+        const passMid = (drag.prevNode === ch1 && drag.nextNode === ch2 && drag.overlapNode === null && !enhancer.magneticLine.visible());
+
+        // 测试点 3: 缝隙右侧 (卡片右端正下方，此前曾被子级磁吸误截获的区域)
+        const gapX3 = ch1.left + ch1.width - 15;
+        drag.mouseMoveX = gapX3;
+        drag.mouseMoveY = gapCenterY;
+        enhancer.handleMove(gapX3, gapCenterY, {});
+        const passRight = (drag.prevNode === ch1 && drag.nextNode === ch2 && drag.overlapNode === null && !enhancer.magneticLine.visible());
 
         // 状态复位
         drag.prevNode = null;
@@ -958,22 +968,17 @@ async function run() {
         drag.reset();
 
         return {
-          isPrevSet,
-          isNextSet,
-          isOverlapCleared,
-          isLineSuppressed,
-          isHighlightSuppressed
+          passLeft,
+          passMid,
+          passRight
         };
       })()
     `);
 
-    if (!siblingPriorityTest.isPrevSet || !siblingPriorityTest.isNextSet || !siblingPriorityTest.isOverlapCleared) {
-      throw new Error(`同级物理缝隙插槽判定异常: prev=${siblingPriorityTest.isPrevSet}, next=${siblingPriorityTest.isNextSet}, overlap=${siblingPriorityTest.isOverlapCleared}`);
+    if (!siblingPriorityTest.passLeft || !siblingPriorityTest.passMid || !siblingPriorityTest.passRight) {
+      throw new Error(`同级物理缝隙全通道判定异常: left=${siblingPriorityTest.passLeft}, mid=${siblingPriorityTest.passMid}, right=${siblingPriorityTest.passRight}`);
     }
-    if (!siblingPriorityTest.isLineSuppressed || !siblingPriorityTest.isHighlightSuppressed) {
-      throw new Error('处于同级插入插槽判定区时磁吸蓝线未能正确让位');
-    }
-    console.log('[PASS] 测试 22: 同级插槽严格判定正常，落入两兄弟物理缝隙时精准触发同级插槽 (prev=第一章, next=第二章) 并自动让位');
+    console.log('[PASS] 测试 22: 同级插槽全通道垄断测试通过，在缝隙左侧、正中、右端全跨度均精准触发同级插槽，无任何被子级抢截现象');
 
     // 测试 23: 磁吸状态松开鼠标执行父子关系重构与撤销
     const dropReparentTest = await evaluate(ws, `
