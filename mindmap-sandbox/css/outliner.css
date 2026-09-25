@@ -6,7 +6,7 @@
  * 4. 全程零表情符号
  */
 
-/* 大纲视图容器 */
+/* 大纲视图容器 (全白画布，彻底移除灰底与浮窗大框框) */
 #outlinerContainer {
   position: absolute;
   top: 0;
@@ -15,7 +15,7 @@
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   z-index: 50;
   display: none; /* 默认激活导图视图，点击切换后设为 block */
   -webkit-overflow-scrolling: touch;
@@ -45,25 +45,24 @@ body.view-mode-outline .shortcut-tips-card {
   display: none !important;
 }
 
-/* 沉浸式白色文档纸张 */
+/* 沉浸式白色文档正文区域 (彻底移除浮动卡片大框框与灯笼感，直呈纯净白底排版) */
 .outliner-paper {
-  max-width: 860px;
-  min-height: calc(100vh - 64px);
-  margin: 40px auto 80px auto;
-  background-color: #ffffff;
-  border: 1px solid #dee0e3;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(31, 35, 41, 0.05);
-  padding: 48px 64px 80px 64px;
+  max-width: 880px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 64px 64px 120px 64px;
   box-sizing: border-box;
 }
 
 @media (max-width: 1100px) {
   .outliner-paper {
-    margin-left: 140px;
-    margin-right: 24px;
-    max-width: calc(100% - 164px);
-    padding: 32px 36px 60px 36px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 64px 32px 120px 32px;
   }
 }
 
@@ -169,17 +168,75 @@ body.view-mode-outline .shortcut-tips-card {
   transform: rotate(-90deg);
 }
 
-/* 文本编辑框 */
+/* 双态文本区域容器与防跳动 (Anti-Layout Shift) 机制 */
+.outliner-text-wrap {
+  flex: 1;
+  min-height: 26px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* 渲染展示层 (浏览态) */
+.outliner-display-view {
+  width: 100%;
+  min-height: 24px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #1f2329;
+  cursor: text;
+  padding: 1px 4px;
+  border-radius: 4px;
+  word-break: break-word;
+  white-space: normal;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.outliner-display-view:empty::before {
+  content: "输入内容...";
+  color: #bbbfc4;
+  pointer-events: none;
+}
+
+.outliner-display-view .katex {
+  font-size: 1.05em;
+  vertical-align: -0.1em;
+  margin: 0 2px;
+  line-height: normal;
+}
+
+.outliner-display-view .katex-display {
+  margin: 4px 0;
+  display: inline-block;
+}
+
+.outliner-display-view code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 0.9em;
+}
+
+/* 源码输入层 (编辑态) */
 .outliner-text {
   flex: 1;
   min-height: 24px;
-  line-height: 24px;
+  line-height: 1.6;
   font-size: 15px;
   color: #1f2329;
   outline: none;
   word-break: break-word;
   white-space: pre-wrap;
-  padding: 0 2px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Consolas, Monaco, monospace;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(51, 112, 255, 0.25);
 }
 
 .outliner-text:empty::before {
@@ -188,8 +245,13 @@ body.view-mode-outline .shortcut-tips-card {
   pointer-events: none;
 }
 
+.outliner-row.is-editing {
+  background-color: #f7f9fc;
+}
+
 /* 一级节点字号与字重微调 */
-.outliner-node.level-1 > .outliner-row > .outliner-text {
+.outliner-node.level-1 > .outliner-row .outliner-text,
+.outliner-node.level-1 > .outliner-row .outliner-display-view {
   font-size: 16px;
   font-weight: 600;
   color: #1f2329;
@@ -273,3 +335,56 @@ body.view-mode-outline .shortcut-tips-card {
   line-height: 1;
   font-weight: bold;
 }
+
+/* ─────────────────────────────────────────────────────────────
+   大纲实时悬浮渲染胶囊 (编辑行输入含公式/Markdown时展示富文本实时预览)
+   ───────────────────────────────────────────────────────────── */
+.outliner-preview-capsule {
+  position: fixed;
+  z-index: 1001;
+  box-sizing: border-box;
+  min-width: 120px;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #dee0e3;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(31, 35, 41, 0.12);
+  padding: 8px 12px;
+  pointer-events: none;
+  transition: top 0.08s ease, left 0.08s ease;
+}
+
+.outliner-preview-capsule .capsule-content {
+  font-size: 13px;
+  color: #1f2329;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.outliner-preview-capsule .capsule-content .katex {
+  font-size: 1.05em;
+  vertical-align: -0.1em;
+  margin: 0 2px;
+}
+
+/* 大纲 7 色高亮标记 */
+.outliner-row.feishu-highlight-red .outliner-bullet { background: #ff4d4f !important; }
+.outliner-row.feishu-highlight-yellow .outliner-bullet { background: #faad14 !important; }
+.outliner-row.feishu-highlight-purple .outliner-bullet { background: #722ed1 !important; }
+.outliner-row.feishu-highlight-blue .outliner-bullet { background: #1677ff !important; }
+.outliner-row.feishu-highlight-cyan .outliner-bullet { background: #13c2c2 !important; }
+.outliner-row.feishu-highlight-orange .outliner-bullet { background: #fa541c !important; }
+.outliner-row.feishu-highlight-green .outliner-bullet { background: #52c41a !important; }
+
+.outliner-row.feishu-highlight-red { background: #ffece8; border-radius: 4px; }
+.outliner-row.feishu-highlight-yellow { background: #fffbe6; border-radius: 4px; }
+.outliner-row.feishu-highlight-purple { background: #f9f0ff; border-radius: 4px; }
+.outliner-row.feishu-highlight-blue { background: #e6f4ff; border-radius: 4px; }
+.outliner-row.feishu-highlight-cyan { background: #e6fffb; border-radius: 4px; }
+.outliner-row.feishu-highlight-orange { background: #fff2e8; border-radius: 4px; }
+.outliner-row.feishu-highlight-green { background: #f6ffed; border-radius: 4px; }

@@ -47,7 +47,7 @@
       const switcherEl = document.createElement('div');
       switcherEl.className = 'dual-view-switcher';
       switcherEl.innerHTML = `
-        <button type="button" class="view-switch-btn ${this.currentView === 'outline' ? 'active' : ''}" data-view="outline" title="切换到大纲笔记视图 (Ctrl + /)">
+        <button type="button" class="view-switch-btn ${this.currentView === 'outline' ? 'active' : ''}" data-view="outline" title="切换到大纲笔记视图 (M)">
           <svg class="view-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="8" y1="6" x2="21" y2="6"></line>
             <line x1="8" y1="12" x2="21" y2="12"></line>
@@ -58,7 +58,7 @@
           </svg>
           <span>大纲</span>
         </button>
-        <button type="button" class="view-switch-btn ${this.currentView === 'mindmap' ? 'active' : ''}" data-view="mindmap" title="切换到思维导图视图 (Ctrl + /)">
+        <button type="button" class="view-switch-btn ${this.currentView === 'mindmap' ? 'active' : ''}" data-view="mindmap" title="切换到思维导图视图 (M)">
           <svg class="view-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="10" width="4" height="4" rx="1"></rect>
             <rect x="17" y="4" width="4" height="4" rx="1"></rect>
@@ -78,7 +78,7 @@
       this.outlinerContainer = document.getElementById('outlinerContainer');
     }
 
-    // 绑定切换交互与快捷键
+    // 绑定切换交互
     bindEvents() {
       // 点击切换
       this.btnOutline.addEventListener('click', () => {
@@ -89,11 +89,22 @@
         this.switchView('mindmap');
       });
 
-      // 键盘快捷键 Ctrl + / (或 Cmd + /) 全局切换
+      // 快捷键 M 在非编辑态切换两种模式
       window.addEventListener('keydown', (e) => {
-        if ((e.ctrlKey || e.metaKey) && e.key === '/') {
-          e.preventDefault();
-          this.toggleView();
+        if ((e.key === 'm' || e.key === 'M') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          const el = document.activeElement;
+          const isTyping = el && (
+            el.tagName === 'INPUT' || 
+            el.tagName === 'TEXTAREA' || 
+            (el.isContentEditable && (el.offsetParent !== null || el.style.display !== 'none'))
+          );
+          const isOutlinerFocused = !!(this.outliner && this.outliner.focusedUid);
+          const isNodeEditorOpen = !!(window._feishuNodeEditorInstance && window._feishuNodeEditorInstance.isEditing);
+          if (!isTyping && !isOutlinerFocused && !isNodeEditorOpen) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            this.toggleView();
+          }
         }
       });
     }

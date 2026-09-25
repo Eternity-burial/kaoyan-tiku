@@ -18,11 +18,13 @@
     return 'node_' + Math.random().toString(36).substr(2, 9);
   }
 
-  function stripHtmlTags(html) {
-    if (!html) return '';
-    const tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || '';
+  function stripOuterParagraph(str) {
+    if (!str || typeof str !== 'string') return '';
+    let s = str.trim();
+    if (s.startsWith('<p>') && s.endsWith('</p>') && s.indexOf('<p>', 3) === -1) {
+      s = s.slice(3, -4);
+    }
+    return s;
   }
 
   class FeishuOutliner {
@@ -59,6 +61,56 @@
       this.paper = this.container.querySelector('.outliner-paper');
       this.titleEl = this.container.querySelector('.outliner-title');
       this.treeEl = this.container.querySelector('.outliner-tree');
+
+      // 实时公式与排版悬浮预览胶囊
+      this.previewCapsule = document.createElement('div');
+      this.previewCapsule.className = 'outliner-preview-capsule';
+      this.previewCapsule.style.display = 'none';
+      this.previewCapsuleContent = document.createElement('div');
+      this.previewCapsuleContent.className = 'capsule-content';
+      this.previewCapsule.appendChild(this.previewCapsuleContent);
+      document.body.appendChild(this.previewCapsule);
+
+      // 选区悬浮气泡菜单 (Bubble Menu)
+      this.bubbleMenu = document.createElement('div');
+      this.bubbleMenu.className = 'feishu-bubble-menu';
+      this.bubbleMenu.innerHTML = `
+        <button type="button" class="bubble-btn" data-action="bold" title="加粗 (Ctrl+B)">
+          <strong style="font-size: 13px;">B</strong>
+        </button>
+        <button type="button" class="bubble-btn" data-action="italic" title="斜体 (Ctrl+I)">
+          <em style="font-size: 13px; font-style: italic;">I</em>
+        </button>
+        <button type="button" class="bubble-btn" data-action="underline" title="下划线 (Ctrl+U)">
+          <span style="font-size: 13px; text-decoration: underline;">U</span>
+        </button>
+        <button type="button" class="bubble-btn" data-action="strikethrough" title="删除线 (Ctrl+Shift+X)">
+          <del style="font-size: 12px;">S</del>
+        </button>
+        <div class="bubble-divider"></div>
+        <button type="button" class="bubble-btn" data-action="code" title="行内代码 (Ctrl+E)">
+          <code style="font-size: 11px;">&lt;/&gt;</code>
+        </button>
+        <button type="button" class="bubble-btn" data-action="math" title="行内公式 ($)">
+          <span style="font-size: 12px; font-style: italic;">$f_x$</span>
+        </button>
+        <div class="bubble-divider"></div>
+        <button type="button" class="bubble-btn" data-action="color-trigger" title="局部文字高亮">
+          <span style="font-weight: bold; border-bottom: 2px solid #3370ff; padding-bottom: 1px; font-size: 12px;">A</span>
+        </button>
+        <div class="feishu-bubble-popover">
+          <button type="button" class="color-dot color-swatch-btn" data-color="red" title="红色 (Alt+R)" style="background-color: #ffc5c0;">A</button>
+          <button type="button" class="color-dot color-swatch-btn" data-color="yellow" title="黄色 (Alt+Y)" style="background-color: #ffe699;">A</button>
+          <button type="button" class="color-dot color-swatch-btn" data-color="purple" title="紫色 (Alt+P)" style="background-color: #f6d5f8;">A</button>
+          <button type="button" class="color-dot color-swatch-btn" data-color="blue" title="蓝色 (Alt+B)" style="background-color: #badbff;">A</button>
+          <button type="button" class="color-dot color-swatch-btn" data-color="cyan" title="青色 (Alt+C)" style="background-color: #a8f0eb;">A</button>
+          <button type="button" class="color-dot color-swatch-btn" data-color="green" title="绿色 (Alt+G)" style="background-color: #e0f3a0;">A</button>
+          <button type="button" class="color-dot color-swatch-btn" data-color="gray" title="灰色 (Alt+O)" style="background-color: #dee2e6;">A</button>
+          <button type="button" class="color-dot color-swatch-btn is-clear" data-color="none" title="清除高亮">&empty;</button>
+        </div>
+      `;
+      this.bubblePopover = this.bubbleMenu.querySelector('.feishu-bubble-popover');
+      document.body.appendChild(this.bubbleMenu);
     }
 
     // 载入思维导图标准树数据并渲染
@@ -75,12 +127,12 @@
       return JSON.parse(JSON.stringify(this.data));
     }
 
-    // 确保每个节点均拥有唯一 uid，并过滤富文本 HTML 标签为纯文本
+    // 确保每个节点均拥有唯一 uid，并过滤可能的外层段落标签
     ensureUidsAndCleanText(node) {
       if (!node.data) node.data = {};
       if (!node.data.uid) node.data.uid = generateUid();
       if (typeof node.data.text === 'string') {
-        node.data.text = stripHtmlTags(node.data.text);
+        node.data.text = stripOuterParagraph(node.data.text);
       }
       if (Array.isArray(node.children)) {
         node.children.forEach(child => this.ensureUidsAndCleanText(child));
@@ -92,7 +144,7 @@
       if (!this.data) return;
 
       // 渲染根节点标题
-      const rootText = stripHtmlTags(this.data.data.text || '未命名思维导图');
+      const rootText = stripOuterParagraph(this.data.data.text || '未命名思维导图');
       this.titleEl.textContent = rootText;
 
       // 渲染子节点列表
@@ -109,19 +161,25 @@
       }
     }
 
-    // 递归渲染单节点
+    // 递归渲染单节点（双态结构：浏览态富文本/公式展示层 + 编辑态源码输入层）
     renderNode(nodeData, level = 1) {
       const uid = nodeData.data.uid;
-      const text = stripHtmlTags(nodeData.data.text || '');
+      const text = stripOuterParagraph(nodeData.data.text || '');
       const hasChildren = Array.isArray(nodeData.children) && nodeData.children.length > 0;
       const isCollapsed = this.collapsedMap.has(uid);
+      const isCurrentlyFocused = (this.focusedUid === uid);
 
       const nodeEl = document.createElement('div');
       nodeEl.className = `outliner-node level-${level}`;
       nodeEl.dataset.uid = uid;
 
+      let rowClasses = `outliner-row ${isCurrentlyFocused ? 'is-editing' : ''}`;
+      if (nodeData.data && nodeData.data.highlightColor) {
+        rowClasses += ` feishu-highlight-${nodeData.data.highlightColor}`;
+      }
+
       const rowEl = document.createElement('div');
-      rowEl.className = 'outliner-row';
+      rowEl.className = rowClasses;
       rowEl.dataset.uid = uid;
 
       // 折叠小箭头
@@ -155,14 +213,43 @@
       handleEl.appendChild(bulletEl);
       rowEl.appendChild(handleEl);
 
-      // 可编辑文本域
-      const textEl = document.createElement('div');
-      textEl.className = 'outliner-text';
-      textEl.contentEditable = 'true';
-      textEl.spellcheck = false;
-      textEl.dataset.uid = uid;
-      textEl.textContent = text;
-      rowEl.appendChild(textEl);
+      // 双态文本区域容器
+      const textWrap = document.createElement('div');
+      textWrap.className = 'outliner-text-wrap';
+      textWrap.dataset.uid = uid;
+
+      // 1. 渲染呈现视图 (浏览态：KaTeX 数学公式与 Markdown 完美排版)
+      let renderedHtml = '';
+      if (global.MarkdownLatexEngine && typeof global.MarkdownLatexEngine.renderInline === 'function') {
+        renderedHtml = global.MarkdownLatexEngine.renderInline(text);
+      } else {
+        renderedHtml = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      const displayView = document.createElement('div');
+      displayView.className = 'outliner-display-view';
+      displayView.dataset.uid = uid;
+      displayView.innerHTML = renderedHtml || '&nbsp;';
+      displayView.style.display = isCurrentlyFocused ? 'none' : 'inline-flex';
+
+      // 单击浏览层平滑切入编辑态
+      displayView.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.focusNode(uid);
+      });
+
+      // 2. 源码输入视图 (编辑态：保留 .outliner-text 兼容全键盘协议与自动化测试)
+      const inputView = document.createElement('div');
+      inputView.className = 'outliner-input-view outliner-text';
+      inputView.contentEditable = 'true';
+      inputView.spellcheck = false;
+      inputView.dataset.uid = uid;
+      inputView.textContent = text;
+      inputView.style.display = isCurrentlyFocused ? 'block' : 'none';
+
+      textWrap.appendChild(displayView);
+      textWrap.appendChild(inputView);
+      rowEl.appendChild(textWrap);
 
       nodeEl.appendChild(rowEl);
 
@@ -189,23 +276,355 @@
       this.render();
     }
 
-    // 聚焦指定节点并放置光标于末尾
+    // 更新大纲行悬浮实时公式预览胶囊
+    updatePreviewCapsule(uid) {
+      if (!this.previewCapsule) return;
+      const row = this.container.querySelector(`.outliner-row[data-uid="${uid}"]`);
+      if (!row) {
+        this.previewCapsule.style.display = 'none';
+        return;
+      }
+      const input = row.querySelector('.outliner-input-view');
+      if (!input) {
+        this.previewCapsule.style.display = 'none';
+        return;
+      }
+      const text = (input.textContent || '').trim();
+      if (!text) {
+        this.previewCapsule.style.display = 'none';
+        this.previewCapsuleContent.innerHTML = '';
+        return;
+      }
+
+      let renderedHtml = '';
+      if (global.MarkdownLatexEngine && typeof global.MarkdownLatexEngine.renderInline === 'function') {
+        try {
+          renderedHtml = global.MarkdownLatexEngine.renderInline(text);
+        } catch (e) {
+          renderedHtml = text;
+        }
+      } else {
+        renderedHtml = text;
+      }
+
+      this.previewCapsuleContent.innerHTML = renderedHtml;
+
+      const rect = input.getBoundingClientRect();
+      const top = rect.bottom + 6;
+      const left = Math.max(16, rect.left);
+
+      this.previewCapsule.style.top = `${Math.round(top)}px`;
+      this.previewCapsule.style.left = `${Math.round(left)}px`;
+      this.previewCapsule.style.display = 'block';
+    }
+
+    // 聚焦指定节点并激活编辑态
     focusNode(uid) {
+      if (this.focusedUid && this.focusedUid !== uid) {
+        this.commitNode(this.focusedUid);
+      }
       this.focusedUid = uid;
-      const targetEl = this.container.querySelector(`.outliner-text[data-uid="${uid}"]`);
-      if (targetEl) {
-        targetEl.focus();
-        const selection = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(targetEl);
-        range.collapse(false);
-        selection.removeAllRanges();
-        selection.addRange(range);
+
+      const row = this.container.querySelector(`.outliner-row[data-uid="${uid}"]`);
+      if (row) {
+        row.classList.add('is-editing');
+        const disp = row.querySelector('.outliner-display-view');
+        const input = row.querySelector('.outliner-input-view');
+        if (disp) disp.style.display = 'none';
+        if (input) {
+          input.style.display = 'block';
+          input.focus();
+          const selection = window.getSelection();
+          const range = document.createRange();
+          range.selectNodeContents(input);
+          range.collapse(false);
+          selection.removeAllRanges();
+          selection.addRange(range);
+          this.updatePreviewCapsule(uid);
+        }
+      }
+    }
+
+    // 检测当前聚焦节点是否有文字选区
+    hasSelection() {
+      const sel = window.getSelection();
+      if (!sel || sel.rangeCount === 0 || sel.isCollapsed) return false;
+      if (!this.focusedUid) return false;
+      const row = this.container.querySelector(`.outliner-row[data-uid="${this.focusedUid}"]`);
+      if (!row) return false;
+      const input = row.querySelector('.outliner-input-view');
+      return !!(input && (input.contains(sel.anchorNode) || input === sel.anchorNode));
+    }
+
+    // 检测选区状态并控制气泡菜单展现
+    checkSelection() {
+      if (!this.focusedUid) {
+        this.hideBubbleMenu();
+        return;
+      }
+      if (this.hasSelection()) {
+        this.showBubbleMenu();
+      } else {
+        this.hideBubbleMenu();
+      }
+    }
+
+    // 显示选区悬浮气泡菜单并智能定位
+    showBubbleMenu() {
+      if (!this.focusedUid) return;
+      const sel = window.getSelection();
+      if (!sel || sel.rangeCount === 0) return;
+      const range = sel.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+
+      let left = rect.left + rect.width / 2;
+      let top = rect.top - 8;
+
+      if (!rect.width && !rect.height) {
+        const row = this.container.querySelector(`.outliner-row[data-uid="${this.focusedUid}"]`);
+        if (!row) return;
+        const rowRect = row.getBoundingClientRect();
+        left = rowRect.left + 100;
+        top = rowRect.top - 8;
+      }
+
+      left = Math.max(160, Math.min(window.innerWidth - 160, left));
+      if (top - 45 < 0) {
+        top = rect.bottom + 38;
+      }
+
+      this.bubbleMenu.style.left = `${Math.round(left)}px`;
+      this.bubbleMenu.style.top = `${Math.round(top)}px`;
+      this.bubbleMenu.style.display = 'flex';
+    }
+
+    // 隐藏气泡菜单
+    hideBubbleMenu() {
+      if (this.bubbleMenu) {
+        this.bubbleMenu.style.display = 'none';
+      }
+      if (this.bubblePopover) {
+        this.bubblePopover.classList.remove('show');
+      }
+    }
+
+    // 选区富文本排版算法 (大纲 contenteditable)
+    formatSelection(type, extra) {
+      if (!this.focusedUid) return;
+      const row = this.container.querySelector(`.outliner-row[data-uid="${this.focusedUid}"]`);
+      if (!row) return;
+      const input = row.querySelector('.outliner-input-view');
+      if (!input) return;
+
+      const sel = window.getSelection();
+      if (!sel || sel.rangeCount === 0) return;
+      const range = sel.getRangeAt(0);
+      const selectedText = range.toString();
+
+      if (!selectedText) {
+        let insert = '';
+        if (type === 'bold') insert = '****';
+        else if (type === 'italic') insert = '**';
+        else if (type === 'underline') insert = '<u></u>';
+        else if (type === 'strikethrough') insert = '~~~~';
+        else if (type === 'code') insert = '``';
+        else if (type === 'math') insert = '$$';
+        else if (type === 'color' && extra && extra !== 'none') insert = `<mark class="feishu-inline-hl-${extra}"></mark>`;
+
+        if (insert) {
+          const textNode = document.createTextNode(insert);
+          range.insertNode(textNode);
+          const newRange = document.createRange();
+          newRange.setStart(textNode, insert.length / 2);
+          newRange.setEnd(textNode, insert.length / 2);
+          sel.removeAllRanges();
+          sel.addRange(newRange);
+          this.syncNodeTextFromInput(input);
+        }
+        return;
+      }
+
+      let formatted = selectedText;
+      if (type === 'bold') {
+        if (selectedText.startsWith('**') && selectedText.endsWith('**') && selectedText.length >= 4) {
+          formatted = selectedText.slice(2, -2);
+        } else {
+          formatted = `**${selectedText}**`;
+        }
+      } else if (type === 'italic') {
+        if (selectedText.startsWith('*') && !selectedText.startsWith('**') && selectedText.endsWith('*') && !selectedText.endsWith('**') && selectedText.length >= 2) {
+          formatted = selectedText.slice(1, -1);
+        } else {
+          formatted = `*${selectedText}*`;
+        }
+      } else if (type === 'underline') {
+        if (selectedText.startsWith('<u>') && selectedText.endsWith('</u>') && selectedText.length >= 7) {
+          formatted = selectedText.slice(3, -4);
+        } else {
+          formatted = `<u>${selectedText}</u>`;
+        }
+      } else if (type === 'strikethrough') {
+        if (selectedText.startsWith('~~') && selectedText.endsWith('~~') && selectedText.length >= 4) {
+          formatted = selectedText.slice(2, -2);
+        } else {
+          formatted = `~~${selectedText}~~`;
+        }
+      } else if (type === 'code') {
+        if (selectedText.startsWith('`') && selectedText.endsWith('`') && selectedText.length >= 2) {
+          formatted = selectedText.slice(1, -1);
+        } else {
+          formatted = `\`${selectedText}\``;
+        }
+      } else if (type === 'math') {
+        if (selectedText.startsWith('$') && selectedText.endsWith('$') && selectedText.length >= 2) {
+          formatted = selectedText.slice(1, -1);
+        } else {
+          formatted = `$${selectedText}$`;
+        }
+      } else if (type === 'color') {
+        const colorKey = extra;
+        const markRegex = /^<mark class="feishu-inline-hl-([a-z]+)">([\s\S]+?)<\/mark>$/;
+        const match = selectedText.match(markRegex);
+        if (match) {
+          const curColor = match[1];
+          const inner = match[2];
+          if (colorKey === 'none' || colorKey === curColor) {
+            formatted = inner;
+          } else {
+            formatted = `<mark class="feishu-inline-hl-${colorKey}">${inner}</mark>`;
+          }
+        } else if (colorKey === 'none') {
+          // 清除选区内部残留的高亮标签
+          formatted = selectedText.replace(/<(?:mark|span)\s+class="feishu-(?:inline|text)-hl-[a-z]+">([\s\S]*?)<\/(?:mark|span)>/gi, '$1');
+        } else {
+          // 清洗嵌套后包裹
+          const clean = selectedText.replace(/<(?:mark|span)\s+class="feishu-(?:inline|text)-hl-[a-z]+">/gi, '').replace(/<\/(?:mark|span)>/gi, '');
+          formatted = `<mark class="feishu-inline-hl-${colorKey}">${clean}</mark>`;
+        }
+      }
+
+      range.deleteContents();
+      const newNode = document.createTextNode(formatted);
+      range.insertNode(newNode);
+
+      const newRange = document.createRange();
+      newRange.selectNodeContents(newNode);
+      sel.removeAllRanges();
+      sel.addRange(newRange);
+
+      this.syncNodeTextFromInput(input);
+      this.showBubbleMenu();
+    }
+
+    syncNodeTextFromInput(input) {
+      if (!input || !this.focusedUid) return;
+      const text = input.textContent.trim();
+      const found = this.findNode(this.focusedUid);
+      if (found) {
+        found.data.text = text;
+        const row = input.closest('.outliner-row');
+        if (row) {
+          const disp = row.querySelector('.outliner-display-view');
+          if (disp && global.MarkdownLatexEngine) {
+            disp.innerHTML = global.MarkdownLatexEngine.renderInline(text) || '&nbsp;';
+          }
+        }
+        this.updatePreviewCapsule(this.focusedUid);
+        this.emitChange();
+      }
+    }
+
+    // 提交节点编辑内容并切换回浏览展示态
+    commitNode(uid) {
+      if (!uid) return;
+      this.hideBubbleMenu();
+      if (this.previewCapsule) {
+        this.previewCapsule.style.display = 'none';
+      }
+      const row = this.container.querySelector(`.outliner-row[data-uid="${uid}"]`);
+      if (row) {
+        row.classList.remove('is-editing');
+        const disp = row.querySelector('.outliner-display-view');
+        const input = row.querySelector('.outliner-input-view');
+        if (input) {
+          const newText = input.textContent.trim();
+          const found = this.findNode(uid);
+          if (found && found.data.text !== newText) {
+            found.data.text = newText;
+            this.emitChange();
+          }
+          if (disp) {
+            if (global.MarkdownLatexEngine && typeof global.MarkdownLatexEngine.renderInline === 'function') {
+              disp.innerHTML = global.MarkdownLatexEngine.renderInline(newText) || '&nbsp;';
+            } else {
+              disp.textContent = newText || '';
+            }
+            disp.style.display = 'inline-flex';
+          }
+          input.blur();
+          input.style.display = 'none';
+        }
+      }
+      if (document.activeElement && (document.activeElement.classList.contains('outliner-input-view') || document.activeElement.classList.contains('outliner-text'))) {
+        document.activeElement.blur();
+      }
+      if (this.focusedUid === uid) {
+        this.focusedUid = null;
       }
     }
 
     // 绑定大纲编辑核心事件与键盘机制
     bindEvents() {
+      // 0. 点击外部非编辑区域时提交当前正在编辑的节点
+      document.addEventListener('mousedown', (e) => {
+        if (!this.focusedUid) return;
+        const row = this.container.querySelector(`.outliner-row[data-uid="${this.focusedUid}"]`);
+        if (row && (row.contains(e.target) || this.bubbleMenu.contains(e.target))) {
+          return;
+        }
+        const bottomToolbar = document.querySelector('.feishu-bottom-toolbar');
+        if (bottomToolbar && bottomToolbar.contains(e.target)) {
+          return;
+        }
+        this.commitNode(this.focusedUid);
+      });
+
+      // 气泡菜单防失焦与点击委托
+      this.bubbleMenu.addEventListener('mousedown', (e) => e.preventDefault());
+      this.bubbleMenu.addEventListener('click', (e) => {
+        const btn = e.target.closest('.bubble-btn');
+        if (btn) {
+          const action = btn.dataset.action;
+          if (action === 'color-trigger') {
+            this.bubblePopover.classList.toggle('show');
+            return;
+          }
+          if (action) {
+            this.formatSelection(action);
+            this.bubblePopover.classList.remove('show');
+          }
+          return;
+        }
+        const dot = e.target.closest('.color-dot');
+        if (dot) {
+          const color = dot.dataset.color;
+          this.formatSelection('color', color);
+          this.bubblePopover.classList.remove('show');
+        }
+      });
+
+      // 选区变化检测
+      document.addEventListener('selectionchange', () => {
+        if (this.focusedUid) {
+          this.checkSelection();
+        }
+      });
+
+      // 滚动时隐藏预览胶囊
+      this.container.addEventListener('scroll', () => {
+        if (this.previewCapsule) this.previewCapsule.style.display = 'none';
+      });
+
       // 1. 标题输入联动根节点文本
       this.titleEl.addEventListener('input', () => {
         if (!this.data) return;
@@ -235,6 +654,14 @@
         const found = this.findNode(uid);
         if (found) {
           found.data.text = target.textContent.trim();
+          const row = target.closest('.outliner-row');
+          if (row) {
+            const disp = row.querySelector('.outliner-display-view');
+            if (disp && global.MarkdownLatexEngine) {
+              disp.innerHTML = global.MarkdownLatexEngine.renderInline(found.data.text) || '&nbsp;';
+            }
+          }
+          this.updatePreviewCapsule(uid);
           this.emitChange();
         }
       });
@@ -306,18 +733,18 @@
           }
         }
 
-        // 上下方向键：行间导航
+        // 上下方向键：行间导航与双态流转
         if (e.key === 'ArrowUp') {
           const prevEl = this.getPreviousTextEl(target);
-          if (prevEl) {
+          if (prevEl && prevEl.dataset.uid) {
             e.preventDefault();
-            prevEl.focus();
+            this.focusNode(prevEl.dataset.uid);
           }
         } else if (e.key === 'ArrowDown') {
           const nextEl = this.getNextTextEl(target);
-          if (nextEl) {
+          if (nextEl && nextEl.dataset.uid) {
             e.preventDefault();
-            nextEl.focus();
+            this.focusNode(nextEl.dataset.uid);
           }
         }
       });
@@ -501,6 +928,31 @@
 
     emitChange() {
       this.emit('change', this.getData());
+    }
+
+    // 全部展开大纲节点
+    expandAll() {
+      this.collapsedMap.clear();
+      this.render();
+    }
+
+    // 全部折叠大纲节点 (折叠所有有一级子级及以上的行)
+    collapseAll() {
+      this.collapsedMap.clear();
+      const walk = (node) => {
+        if (node && node.data && node.data.uid) {
+          if (Array.isArray(node.children) && node.children.length > 0) {
+            this.collapsedMap.add(node.data.uid);
+          }
+        }
+        if (node && Array.isArray(node.children)) {
+          node.children.forEach(walk);
+        }
+      };
+      if (this.data && Array.isArray(this.data.children)) {
+        this.data.children.forEach(walk);
+      }
+      this.render();
     }
   }
 

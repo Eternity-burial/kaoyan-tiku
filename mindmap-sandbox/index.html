@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>思维导图沙箱 (Mindmap Sandbox)</title>
   <link rel="stylesheet" href="css/simpleMindMap.min.css">
+  <link rel="stylesheet" href="../lib/katex/katex.min.css">
   <link rel="stylesheet" href="css/sandbox.css">
   <link rel="stylesheet" href="css/outliner.css">
 </head>
@@ -18,8 +19,7 @@
   <!-- 顶部悬浮控制栏 -->
   <header class="floating-toolbar">
     <div class="toolbar-title">
-      <span>思维导图沙箱</span>
-      <span class="badge">MVP 独立版</span>
+      <span>思维导图</span>
     </div>
 
     <div class="toolbar-group">
@@ -59,6 +59,12 @@
       <button type="button" class="tool-btn" id="btnFitView" title="自适应画布大小">
         <span>自适应</span>
       </button>
+      <button type="button" class="tool-btn" id="btnExpandAll" title="全部展开 (Alt+Shift+.)">
+        <span>全部展开</span>
+      </button>
+      <button type="button" class="tool-btn" id="btnCollapseAll" title="全部折叠 (Alt+Shift+.)">
+        <span>全部折叠</span>
+      </button>
     </div>
 
     <div class="toolbar-divider"></div>
@@ -74,27 +80,25 @@
     </div>
   </header>
 
-  <!-- 右下角缩放控制条 -->
-  <div class="floating-viewport-bar">
-    <button type="button" class="icon-btn" id="btnZoomOut" title="缩小 (Ctrl + 滚轮向下)">-</button>
-    <span class="zoom-text" id="zoomLevelText">100%</span>
-    <button type="button" class="icon-btn" id="btnZoomIn" title="放大 (Ctrl + 滚轮向上)">+</button>
-  </div>
-
-  <!-- 左下角交互指引提示 -->
-  <aside class="shortcut-tips-card">
-    <div class="shortcut-tips-title">操作指引</div>
-    <div>节点拖拽：拖至目标节点附近触发动态蓝线磁吸成为子级；拖至上下边缘为同级插入</div>
-    <div>画布漫游：按住 Space 配合鼠标左键拖拽，或直接使用鼠标右键拖拽</div>
-    <div>就地编辑：双击节点或选中按 Enter 唤起编辑输入框</div>
-  </aside>
+  <!-- 根目录复用 Marked / KaTeX / DOMPurify 与 MarkdownLatexEngine (零重复依赖) -->
+  <script src="../lib/dompurify/purify.min.js"></script>
+  <script src="../lib/marked/marked.umd.min.js"></script>
+  <script src="../lib/katex/katex.min.js"></script>
+  <script src="../lib/katex/contrib/auto-render.min.js"></script>
+  <script src="../js/markdown_latex.js"></script>
 
   <!-- 独立 Vendor 库及逻辑脚本 -->
   <script src="js/vendor/simpleMindMap.umd.min.js"></script>
   <script src="js/default_data.js"></script>
   <script src="js/feishu_drag_enhancer.js"></script>
+  <script src="js/feishu_node_renderer.js"></script>
+  <script src="js/feishu_node_editor.js"></script>
   <script src="js/feishu_outliner.js"></script>
   <script src="js/dual_view_controller.js"></script>
+  <script src="js/feishu_shortcut_drawer.js"></script>
+  <script src="js/feishu_bottom_toolbar.js"></script>
+  <script src="js/feishu_structure_controller.js"></script>
+  <script src="js/feishu_shortcut_manager.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -224,53 +224,9 @@
       }
 
       // -------------------------------------------------------------
-      // 判定 3: 侧翼引流子级磁吸 (Right-Flank Apron Snap - 严格纵向限幅)
+      // 判定 3: 侧翼引流子级磁吸 (Multi-Direction Apron Snap)
       // -------------------------------------------------------------
-      let bestCandidate = null;
-      let minScore = Infinity;
-
-      for (let i = 0; i < candidates.length; i++) {
-        const node = candidates[i];
-        const hasChildren = Array.isArray(node.children) && node.children.length > 0;
-        const apronW = hasChildren ? 40 : 80;
-
-        // 侧翼引流区：位于卡片右半部至外展区
-        const envLeft = node.left + node.width * 0.3;
-        const envRight = node.left + node.width + apronW;
-        // 严格限制在卡片实体自身高度区间内，严禁向同级缝隙溢出
-        const envTop = node.top;
-        const envBottom = node.top + node.height;
-
-        // 纵向必须严格在卡片高度范围内
-        if (cursorCanvasY < envTop || cursorCanvasY > envBottom) {
-          continue;
-        }
-
-        const isCursorInEnv = (cursorCanvasX >= envLeft && cursorCanvasX <= envRight);
-
-        let distance;
-        if (isCursorInEnv) {
-          distance = 0;
-        } else {
-          const dx = Math.max(envLeft - cursorCanvasX, 0, cursorCanvasX - envRight);
-          distance = dx;
-        }
-
-        const isCurrentActive = (this.activeTargetNode && this.activeTargetNode.uid === node.uid);
-        const effectiveRadius = isCurrentActive ? this.options.releaseRadius : this.options.captureRadius;
-
-        if (distance <= effectiveRadius) {
-          const anchorX = node.left + node.width;
-          const anchorY = node.top + (node.height / 2);
-          const rawDist = Math.hypot(cloneAnchorX - anchorX, cloneAnchorY - anchorY);
-          const score = distance * 10 + rawDist;
-
-          if (score < minScore) {
-            minScore = score;
-            bestCandidate = node;
-          }
-        }
-      }
+      const bestCandidate = this.checkApronSnap(candidates, cursorCanvasX, cursorCanvasY, cloneAnchorX, cloneAnchorY);
 
       // -------------------------------------------------------------
       // 判定 4: 执行磁吸或复位 (Far-Field Detach)
@@ -281,6 +237,98 @@
         this.drag.overlapNode = null;
         this.cleanup();
       }
+    }
+
+    // 获取当前布局下节点的子级自然引流朝向 (向右 / 向左 / 向下)
+    getNodeDirection(node) {
+      const layout = this.mindMap.getLayout();
+      if (layout === 'logicalStructureLeft') return 'left';
+      if (layout === 'organizationStructure' || layout === 'catalogOrganization') return 'bottom';
+      if (layout === 'mindMap') {
+        const root = this.mindMap.renderer && this.mindMap.renderer.root;
+        if (root && node) {
+          if (node.uid === root.uid) {
+            return 'right';
+          }
+          return node.left >= root.left ? 'right' : 'left';
+        }
+      }
+      return 'right';
+    }
+
+    onLayoutChange() {
+      this.cleanup();
+      this.activeTargetNode = null;
+    }
+
+    // 侧翼引流子级磁吸判定
+    checkApronSnap(candidates, cursorCanvasX, cursorCanvasY, cloneAnchorX, cloneAnchorY) {
+      let bestCandidate = null;
+      let minScore = Infinity;
+
+      for (let i = 0; i < candidates.length; i++) {
+        const node = candidates[i];
+        const hasChildren = Array.isArray(node.children) && node.children.length > 0;
+        const apronW = hasChildren ? 40 : 80;
+        const dir = this.getNodeDirection(node);
+
+        let envLeft, envRight, envTop, envBottom, anchorX, anchorY;
+
+        if (dir === 'left') {
+          // 向左展开引流区
+          envLeft = node.left - apronW;
+          envRight = node.left + node.width * 0.7;
+          envTop = node.top;
+          envBottom = node.top + node.height;
+          anchorX = node.left;
+          anchorY = node.top + (node.height / 2);
+          if (cursorCanvasY < envTop || cursorCanvasY > envBottom) continue;
+        } else if (dir === 'bottom') {
+          // 向下展开引流区
+          envLeft = node.left;
+          envRight = node.left + node.width;
+          envTop = node.top + node.height * 0.3;
+          envBottom = node.top + node.height + apronW;
+          anchorX = node.left + (node.width / 2);
+          anchorY = node.top + node.height;
+          if (cursorCanvasX < envLeft || cursorCanvasX > envRight) continue;
+        } else {
+          // 向右展开引流区 (默认)
+          envLeft = node.left + node.width * 0.3;
+          envRight = node.left + node.width + apronW;
+          envTop = node.top;
+          envBottom = node.top + node.height;
+          anchorX = node.left + node.width;
+          anchorY = node.top + (node.height / 2);
+          if (cursorCanvasY < envTop || cursorCanvasY > envBottom) continue;
+        }
+
+        const isCursorInEnv = (cursorCanvasX >= envLeft && cursorCanvasX <= envRight && cursorCanvasY >= envTop && cursorCanvasY <= envBottom);
+
+        let distance;
+        if (isCursorInEnv) {
+          distance = 0;
+        } else {
+          const dx = Math.max(envLeft - cursorCanvasX, 0, cursorCanvasX - envRight);
+          const dy = Math.max(envTop - cursorCanvasY, 0, cursorCanvasY - envBottom);
+          distance = Math.hypot(dx, dy);
+        }
+
+        const isCurrentActive = (this.activeTargetNode && this.activeTargetNode.uid === node.uid);
+        const effectiveRadius = isCurrentActive ? this.options.releaseRadius : this.options.captureRadius;
+
+        if (distance <= effectiveRadius) {
+          const rawDist = Math.hypot(cloneAnchorX - anchorX, cloneAnchorY - anchorY);
+          const score = distance * 10 + rawDist;
+
+          if (score < minScore) {
+            minScore = score;
+            bestCandidate = node;
+          }
+        }
+      }
+
+      return bestCandidate;
     }
 
     // 递归获取节点及其子树的最低物理底沿
@@ -384,33 +432,59 @@
         this.drag.placeHolderLine.hide();
       }
 
-      // 计算飞书标准直角阶梯折线 (从父节点右侧中心精准连入子节点左侧中心)
-      const x1 = targetParent.left + targetParent.width;
-      const y1 = targetParent.top + (targetParent.height / 2);
+      // 计算飞书标准直角阶梯折线 (智能自适应向右、向左、向下对接)
+      const dir = this.getNodeDirection(targetParent);
+      let x1, y1;
+      if (dir === 'left') {
+        x1 = targetParent.left;
+        y1 = targetParent.top + (targetParent.height / 2);
+      } else if (dir === 'bottom') {
+        x1 = targetParent.left + (targetParent.width / 2);
+        y1 = targetParent.top + targetParent.height;
+      } else {
+        x1 = targetParent.left + targetParent.width;
+        y1 = targetParent.top + (targetParent.height / 2);
+      }
       const x2 = cloneAnchorX;
       const y2 = cloneAnchorY;
 
       let pathData;
-      if (x2 <= x1 + 4) {
-        // 重叠覆盖或位于父节点左侧：平滑直线直连
-        pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
-      } else if (Math.abs(y2 - y1) < 2) {
-        // 水平齐平：水平直线
-        pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
-      } else {
-        // 正交直角折线与 8px 圆角平滑过渡
-        const midX = x1 + Math.max((x2 - x1) * 0.5, 16);
-        const radius = 8;
-        const maxR = Math.min(radius, Math.abs(midX - x1) / 2, Math.abs(y2 - y1) / 2);
-        const r = Math.max(maxR, 0);
-
-        if (r < 2) {
-          pathData = `M ${x1} ${y1} L ${midX} ${y1} L ${midX} ${y2} L ${x2} ${y2}`;
+      if (dir === 'bottom') {
+        if (Math.abs(x2 - x1) < 2) {
+          pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
         } else {
-          const isDown = y2 > y1;
-          const dy1 = isDown ? r : -r;
-          const dy2 = isDown ? -r : r;
-          pathData = `M ${x1} ${y1} L ${midX - r} ${y1} Q ${midX} ${y1} ${midX} ${y1 + dy1} L ${midX} ${y2 + dy2} Q ${midX} ${y2} ${midX + r} ${y2} L ${x2} ${y2}`;
+          const midY = y1 + Math.max((y2 - y1) * 0.5, 16);
+          pathData = `M ${x1} ${y1} L ${x1} ${midY} L ${x2} ${midY} L ${x2} ${y2}`;
+        }
+      } else if (dir === 'left') {
+        if (x2 >= x1 - 4) {
+          pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else if (Math.abs(y2 - y1) < 2) {
+          pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else {
+          const midX = x1 - Math.max((x1 - x2) * 0.5, 16);
+          pathData = `M ${x1} ${y1} L ${midX} ${y1} L ${midX} ${y2} L ${x2} ${y2}`;
+        }
+      } else {
+        // right (向右展开标准阶梯折线)
+        if (x2 <= x1 + 4) {
+          pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else if (Math.abs(y2 - y1) < 2) {
+          pathData = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else {
+          const midX = x1 + Math.max((x2 - x1) * 0.5, 16);
+          const radius = 8;
+          const maxR = Math.min(radius, Math.abs(midX - x1) / 2, Math.abs(y2 - y1) / 2);
+          const r = Math.max(maxR, 0);
+
+          if (r < 2) {
+            pathData = `M ${x1} ${y1} L ${midX} ${y1} L ${midX} ${y2} L ${x2} ${y2}`;
+          } else {
+            const isDown = y2 > y1;
+            const dy1 = isDown ? r : -r;
+            const dy2 = isDown ? -r : r;
+            pathData = `M ${x1} ${y1} L ${midX - r} ${y1} Q ${midX} ${y1} ${midX} ${y1 + dy1} L ${midX} ${y2 + dy2} Q ${midX} ${y2} ${midX + r} ${y2} L ${x2} ${y2}`;
+          }
         }
       }
 

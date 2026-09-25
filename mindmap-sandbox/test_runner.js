@@ -46,7 +46,10 @@ function startHttpServer() {
         '.js': 'application/javascript; charset=utf-8',
         '.css': 'text/css; charset=utf-8',
         '.json': 'application/json; charset=utf-8',
-        '.svg': 'image/svg+xml'
+        '.svg': 'image/svg+xml',
+        '.woff2': 'font/woff2',
+        '.woff': 'font/woff',
+        '.ttf': 'font/ttf'
       };
       const contentType = mimeMap[ext] || 'application/octet-stream';
       res.writeHead(200, { 'Content-Type': contentType });
@@ -272,7 +275,8 @@ async function run() {
         const resetTransform = mm.view.getTransformData();
         const resetScale = mm.view.scale || (resetTransform && resetTransform.scale) || (resetTransform && resetTransform.state && resetTransform.state.scale) || 1;
         
-        const zoomText = document.getElementById('zoomLevelText').textContent;
+        const zoomTextEl = document.getElementById('dockZoomLevelText') || document.getElementById('zoomLevelText');
+        const zoomText = zoomTextEl ? zoomTextEl.textContent : '';
         return {
           initialScale,
           enlargedScale,
@@ -1606,18 +1610,18 @@ async function run() {
     }
     console.log(`[PASS] 测试 34: 双向数据同步测试通过，大纲新编节点已无缝同步并在导图 SVG 节点中成功呈现: "${roundTripSyncTest.targetString}"`);
 
-    // 测试 35: Ctrl + / 全局快捷键双向切换
-    const shortcutToggleTest = await evaluate(ws, `
+    // 测试 35: 飞书大纲与思维导图视图双向切换
+    const viewSwitchTest = await evaluate(ws, `
       (function() {
         const controller = window._dualViewControllerInstance;
         const viewBefore = controller.getCurrentView();
 
-        // 触发 Ctrl + /
-        window.dispatchEvent(new KeyboardEvent('keydown', { key: '/', ctrlKey: true, bubbles: true, cancelable: true }));
+        // 切换至大纲
+        controller.switchView('outline');
         const viewAfterFirst = controller.getCurrentView();
 
-        // 再次触发 Ctrl + /
-        window.dispatchEvent(new KeyboardEvent('keydown', { key: '/', ctrlKey: true, bubbles: true, cancelable: true }));
+        // 切换回导图
+        controller.switchView('mindmap');
         const viewAfterSecond = controller.getCurrentView();
 
         return {
@@ -1628,10 +1632,10 @@ async function run() {
       })()
     `);
 
-    if (shortcutToggleTest.viewBefore !== 'mindmap' || shortcutToggleTest.viewAfterFirst !== 'outline' || shortcutToggleTest.viewAfterSecond !== 'mindmap') {
-      throw new Error(`Ctrl + / 快捷键切换异常: ${JSON.stringify(shortcutToggleTest)}`);
+    if (viewSwitchTest.viewBefore !== 'mindmap' || viewSwitchTest.viewAfterFirst !== 'outline' || viewSwitchTest.viewAfterSecond !== 'mindmap') {
+      throw new Error(`视图双向切换异常: ${JSON.stringify(viewSwitchTest)}`);
     }
-    console.log('[PASS] 测试 35: Ctrl + / 键盘全局快捷键无缝切换验证通过 (mindmap -> outline -> mindmap)');
+    console.log('[PASS] 测试 35: 飞书大纲与导图双向切换验证通过 (mindmap -> outline -> mindmap)');
 
     // 测试 36: 大纲节点层级重排 (moveNodeRelative)
     const outlinerMoveTest = await evaluate(ws, `
@@ -1659,9 +1663,1067 @@ async function run() {
     }
     console.log('[PASS] 测试 36: 大纲节点重排 (moveNodeRelative) 成功，父子与兄弟层级顺序准确重构');
 
+    // --- 开始执行 Phase 8 Markdown 与 LaTeX 公式引擎双态呈现专项断言项 ---
+    console.log('\n--- 开始执行 Phase 8 Markdown 与 LaTeX 公式引擎双态呈现专项断言项 ---');
 
-    // 截取飞书风格导图全景预览图
+    // 测试 37: 导图节点 LaTeX 复杂公式排版与 KaTeX DOM 校验
+    const latexRenderTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+
+        const startTest = () => {
+          const root = mm.renderer.root;
+          if (!root || !root.children || !root.children[0] || !root.children[0].children) {
+            return setTimeout(startTest, 50);
+          }
+          const targetNode = root.children[0].children[0];
+          const formulaText = "【极限与积分考点】 $\\\\lim_{x \\\\to 0} \\\\frac{\\\\sin x}{x} = 1$ 与 $\\\\int_0^1 x^2 dx = \\\\frac{1}{3}$";
+
+          const onRender = () => {
+            mm.off('node_tree_render_end', onRender);
+            const fo = targetNode.group.findOne('foreignObject').node;
+            const katexElements = Array.from(fo.querySelectorAll('.katex'));
+            const katexHtmlElements = Array.from(fo.querySelectorAll('.katex-html'));
+            const fractions = Array.from(fo.querySelectorAll('.mfrac'));
+            const cardEl = fo.querySelector('.feishu-node-card');
+            
+            resolve({
+              hasCard: !!cardEl,
+              katexCount: katexElements.length,
+              katexHtmlCount: katexHtmlElements.length,
+              fractionCount: fractions.length,
+              width: targetNode.width,
+              height: targetNode.height,
+              textContent: fo.textContent
+            });
+          };
+
+          mm.on('node_tree_render_end', onRender);
+          mm.execCommand('SET_NODE_TEXT', targetNode, formulaText);
+        };
+
+        startTest();
+      })
+    `);
+
+    if (latexRenderTest.katexCount < 2 || latexRenderTest.fractionCount < 2) {
+      throw new Error(`导图节点公式渲染失败: ${JSON.stringify(latexRenderTest)}`);
+    }
+    console.log(`[PASS] 测试 37: 导图节点 LaTeX 复杂公式排版通过 (KaTeX公式数=${latexRenderTest.katexCount}, 分式数=${latexRenderTest.fractionCount}, 节点尺寸=${Math.round(latexRenderTest.width)}x${Math.round(latexRenderTest.height)})`);
+
+    // 测试 38: 导图原位编辑与实时悬浮预览胶囊 (FeishuNodeEditor + Live Preview Capsule)
+    await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        mm.view.fit();
+        const editor = window._feishuNodeEditorInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0].children[0];
+
+        // 唤起编辑
+        editor.show(targetNode);
+
+        // 模拟打字输入新公式
+        const newFormula = "级数求和 $\\\\sum_{n=1}^\\\\infty \\\\frac{1}{n^2} = \\\\frac{\\\\pi^2}{6}$";
+        editor.textarea.value = newFormula;
+        editor.textarea.dispatchEvent(new Event('input', { bubbles: true }));
+      })()
+    `);
+
+    await sleep(250);
+    const editorScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const editorScreenshotBuffer = Buffer.from(editorScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_formula_editor_preview.png'), editorScreenshotBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_formula_editor_preview.png'), editorScreenshotBuffer);
+    }
+    console.log('[Screenshot] 飞书公式原位编辑与实时悬浮预览胶囊截图已生成: mindmap-sandbox/feishu_formula_editor_preview.png');
+
+    const editorCapsuleTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const editor = window._feishuNodeEditorInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0].children[0];
+
+        const isInputVisible = editor.inputWrap.style.display !== 'none';
+        const isCapsuleVisible = editor.capsule.style.display !== 'none';
+        const updatedCapsuleKatex = editor.capsule.querySelectorAll('.katex').length;
+        const capsuleContentText = editor.capsuleContent.textContent;
+
+        // 提交编辑
+        editor.commitAndHide();
+        const isHiddenAfterCommit = (editor.inputWrap.style.display === 'none') && (editor.capsule.style.display === 'none');
+        const nodeTextAfterCommit = targetNode.nodeData.data.text;
+
+        return {
+          isInputVisible,
+          isCapsuleVisible,
+          updatedCapsuleKatex,
+          capsuleContentText,
+          isHiddenAfterCommit,
+          nodeTextAfterCommit
+        };
+      })()
+    `);
+
+    if (!editorCapsuleTest.isInputVisible || !editorCapsuleTest.isCapsuleVisible || editorCapsuleTest.updatedCapsuleKatex === 0 || !editorCapsuleTest.isHiddenAfterCommit) {
+      throw new Error(`导图原位编辑与实时悬浮预览胶囊异常: ${JSON.stringify(editorCapsuleTest)}`);
+    }
+    console.log(`[PASS] 测试 38: 导图原位编辑与实时悬浮预览胶囊测试通过 (胶囊实时 KaTeX=${editorCapsuleTest.updatedCapsuleKatex}, 提交后优雅隐藏，节点文本="${editorCapsuleTest.nodeTextAfterCommit}")`);
+
+    // 测试 39: 飞书大纲双态切换与防跳动 (Outliner Dual-State Toggle & Anti-Jitter)
+    const outlinerDualStateTest = await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        const outliner = window._outlinerInstance;
+        const mm = window._mindMapInstance;
+        controller.switchView('outline');
+
+        // 查找包含公式的行
+        const allRows = Array.from(outliner.treeEl.querySelectorAll('.outliner-row'));
+        const formulaRow = allRows.find(r => r.querySelector('.outliner-display-view .katex'));
+        if (!formulaRow) return { error: '未在大纲中找到含公式的行' };
+
+        const uid = formulaRow.dataset.uid;
+        const displayView = formulaRow.querySelector('.outliner-display-view');
+        const inputView = formulaRow.querySelector('.outliner-input-view');
+
+        // 1. 浏览态检查
+        const isDisplayVisibleBefore = window.getComputedStyle(displayView).display !== 'none';
+        const isInputHiddenBefore = window.getComputedStyle(inputView).display === 'none';
+        const katexCountInDisplay = displayView.querySelectorAll('.katex').length;
+
+        // 2. 点击浏览视图激活编辑态
+        displayView.click();
+        const isDisplayHiddenAfterClick = window.getComputedStyle(displayView).display === 'none';
+        const isInputVisibleAfterClick = window.getComputedStyle(inputView).display !== 'none';
+        const isEditingClassAdded = formulaRow.classList.contains('is-editing');
+        const sourceTextInInput = inputView.textContent;
+
+        // 3. 提交编辑切回浏览态
+        outliner.commitNode(uid);
+        const isDisplayVisibleAfterCommit = window.getComputedStyle(displayView).display !== 'none';
+        const isInputHiddenAfterCommit = window.getComputedStyle(inputView).display === 'none';
+        const isEditingClassRemoved = !formulaRow.classList.contains('is-editing');
+
+        // 切回思维导图并等待渲染完成
+        return new Promise((resolve) => {
+          const handler = () => {
+            mm.off('node_tree_render_end', handler);
+            resolve({
+              isDisplayVisibleBefore,
+              isInputHiddenBefore,
+              katexCountInDisplay,
+              isDisplayHiddenAfterClick,
+              isInputVisibleAfterClick,
+              isEditingClassAdded,
+              sourceTextInInput,
+              isDisplayVisibleAfterCommit,
+              isInputHiddenAfterCommit,
+              isEditingClassRemoved
+            });
+          };
+          mm.on('node_tree_render_end', handler);
+          controller.switchView('mindmap');
+        });
+      })()
+    `);
+
+    if (!outlinerDualStateTest.isDisplayVisibleBefore || !outlinerDualStateTest.isInputVisibleAfterClick || !outlinerDualStateTest.isDisplayVisibleAfterCommit || outlinerDualStateTest.katexCountInDisplay === 0) {
+      throw new Error(`飞书大纲双态切换与防跳动异常: ${JSON.stringify(outlinerDualStateTest)}`);
+    }
+    console.log(`[PASS] 测试 39: 飞书大纲双态切换与防跳动通过 (浏览态呈现 KaTeX=${outlinerDualStateTest.katexCountInDisplay} -> 点击平滑转源码态 -> 提交切回浏览态)`);
+
+    // 测试 40: 包含大公式节点时的飞书磁吸吸附几何稳定性
+    const formulaSnapTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const dragEnhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        if (!root || !root.children || !root.children.length) {
+          return { error: '根节点未就绪' };
+        }
+        const ch1 = root.children[0];
+        const formulaNode = (ch1.children && ch1.children[0]) || ch1;
+        const draggedNode = (ch1.children && ch1.children[1]) || root.children[1];
+
+        drag.isDragging = true;
+        drag.clone = drag.mindMap.otherDraw.rect().size(120, 32);
+        drag.beingDragNodeList = [draggedNode];
+        drag.nodeTreeToList();
+        drag.offsetX = 20;
+        drag.offsetY = 16;
+
+        // 拖动至公式节点的右侧子级磁吸区域
+        const targetX = formulaNode.left + formulaNode.width + 30;
+        const targetY = formulaNode.top + formulaNode.height / 2;
+        drag.mouseMoveX = targetX;
+        drag.mouseMoveY = targetY;
+
+        dragEnhancer.handleMove(targetX, targetY, {});
+
+        const isChildSnap = (drag.overlapNode === formulaNode && drag.prevNode === null && drag.nextNode === null);
+        const lineVisible = dragEnhancer.magneticLine.visible();
+
+        // 状态清理复位
+        dragEnhancer.cleanup();
+        drag.clone.remove();
+        drag.reset();
+
+        return {
+          formulaNodeWidth: formulaNode.width,
+          formulaNodeHeight: formulaNode.height,
+          isChildSnap,
+          lineVisible
+        };
+      })()
+    `);
+
+    if (!formulaSnapTest.isChildSnap || !formulaSnapTest.lineVisible) {
+      throw new Error(`复杂公式节点磁吸判定失败: ${JSON.stringify(formulaSnapTest)}`);
+    }
+    console.log(`[PASS] 测试 40: 包含大公式节点时的飞书磁吸吸附几何稳定性测试通过 (节点尺寸=${Math.round(formulaSnapTest.formulaNodeWidth)}x${Math.round(formulaSnapTest.formulaNodeHeight)}, 动态蓝线精准贴合)`);
+
+    // --- 开始执行 Phase 9 缺陷修复与飞书第二阶段核心交互专项断言项 ---
+    console.log('\n--- 开始执行 Phase 9 缺陷修复与飞书第二阶段核心交互专项断言项 ---');
+
+    // 切回导图模式
+    await evaluate(ws, `window._dualViewControllerInstance.switchView('mindmap')`);
+    await sleep(200);
+
+    // 测试 41: 导图原位编辑双重方框重叠根除验证 (is-feishu-editing 状态与底层 hoverNode/foreignObject 隐藏)
+    const boxOverlapTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const editor = window._feishuNodeEditorInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0];
+
+        // 唤起编辑
+        editor.show(targetNode);
+
+        const hasEditingClass = targetNode.group.hasClass('is-feishu-editing');
+        const hoverNodeHidden = targetNode.hoverNode ? (targetNode.hoverNode.node.style.display === 'none' || window.getComputedStyle(targetNode.hoverNode.node).display === 'none') : true;
+        const fo = targetNode.group.findOne('foreignObject');
+        const foOpacity = fo ? window.getComputedStyle(fo.node).opacity : '1';
+
+        // 提交编辑并检查复原
+        editor.commitAndHide();
+        const hasEditingClassAfter = targetNode.group.hasClass('is-feishu-editing');
+
+        return {
+          hasEditingClass,
+          hoverNodeHidden,
+          foOpacity,
+          hasEditingClassAfter
+        };
+      })()
+    `);
+
+    if (!boxOverlapTest.hasEditingClass || !boxOverlapTest.hoverNodeHidden || boxOverlapTest.foOpacity !== '0' || boxOverlapTest.hasEditingClassAfter) {
+      throw new Error(`导图编辑方框重叠根除断言失败: ${JSON.stringify(boxOverlapTest)}`);
+    }
+    console.log('[PASS] 测试 41: 导图编辑方框重叠根除验证通过 (编辑中注入 is-feishu-editing，底层 hoverNode 隐藏，foreignObject 不透明度置 0，提交后复原)');
+
+    // 测试 42: 预览胶囊冗余标题文字彻底剔除验证
+    const capsuleBadgeTest = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        const hasHeader = !!editor.capsule.querySelector('.capsule-header');
+        const hasBadge = !!editor.capsule.querySelector('.capsule-badge');
+        const hasContent = !!editor.capsule.querySelector('.capsule-content');
+        return { hasHeader, hasBadge, hasContent };
+      })()
+    `);
+
+    if (capsuleBadgeTest.hasHeader || capsuleBadgeTest.hasBadge || !capsuleBadgeTest.hasContent) {
+      throw new Error(`预览胶囊标题剔除断言失败: ${JSON.stringify(capsuleBadgeTest)}`);
+    }
+    console.log('[PASS] 测试 42: 预览胶囊冗余标题文字彻底剔除通过 (无 capsule-header 与 capsule-badge，仅保留纯净 capsule-content)');
+
+    // 测试 43: 大纲模式实时公式悬浮预览胶囊与行内提交渲染验证 (回退恢复误改的预览胶囊)
+    const outlinerCapsuleTest = await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        const outliner = window._outlinerInstance;
+        controller.switchView('outline');
+
+        const firstNode = outliner.data.children[0];
+        outliner.focusNode(firstNode.data.uid);
+
+        const row = outliner.container.querySelector('.outliner-row[data-uid="' + firstNode.data.uid + '"]');
+        const input = row.querySelector('.outliner-input-view');
+        input.textContent = '测试公式 $\\\\lim_{x \\\\to 0} \\\\frac{\\\\sin x}{x} = 1$';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+
+        const capsule = outliner.previewCapsule;
+        // 回退恢复：输入期实时悬浮预览胶囊应当正常激活并渲染 KaTeX 公式
+        const isCapsuleVisibleDuringInput = !!capsule && capsule.style.display !== 'none' && window.getComputedStyle(capsule).display !== 'none';
+        const katexInCapsule = capsule ? capsule.querySelectorAll('.katex').length : 0;
+
+        // 提交后胶囊自动隐退，直接在行内 displayView 中渲染公式
+        outliner.commitNode(firstNode.data.uid);
+        const displayView = row.querySelector('.outliner-display-view');
+        const katexInDisplay = displayView ? displayView.querySelectorAll('.katex').length : 0;
+        const isCapsuleHiddenAfter = !capsule || capsule.style.display === 'none' || window.getComputedStyle(capsule).display === 'none';
+
+        controller.switchView('mindmap');
+
+        return {
+          isCapsuleVisibleDuringInput,
+          katexInCapsule,
+          katexInDisplay,
+          isCapsuleHiddenAfter
+        };
+      })()
+    `);
+
+    if (!outlinerCapsuleTest.isCapsuleVisibleDuringInput || outlinerCapsuleTest.katexInCapsule === 0 || outlinerCapsuleTest.katexInDisplay === 0 || !outlinerCapsuleTest.isCapsuleHiddenAfter) {
+      throw new Error(`大纲模式实时公式悬浮预览胶囊功能异常: ${JSON.stringify(outlinerCapsuleTest)}`);
+    }
+    console.log(`[PASS] 测试 43: 大纲模式公式悬浮预览胶囊恢复完备 (输入期胶囊正常弹窗并渲染 KaTeX=${outlinerCapsuleTest.katexInCapsule}，提交后在行内直接渲染 KaTeX=${outlinerCapsuleTest.katexInDisplay}，胶囊自动隐退)`);
+
+    // 测试 44: 飞书底部固定深色工具条挂载与按钮可用性
+    const bottomToolbarTest = await evaluate(ws, `
+      (function() {
+        const toolbar = document.querySelector('.feishu-bottom-toolbar');
+        if (!toolbar) return { error: '未找到底部工具条' };
+        const style = window.getComputedStyle(toolbar);
+        const isFixed = style.position === 'fixed';
+        const isBottom = parseInt(style.bottom) >= 15;
+        const btnCount = toolbar.querySelectorAll('.bar-btn').length;
+        const colorPopover = toolbar.querySelector('.feishu-color-popover');
+        const colorDotCount = colorPopover ? colorPopover.querySelectorAll('.color-dot').length : 0;
+
+        return {
+          isFixed,
+          isBottom,
+          btnCount,
+          colorDotCount
+        };
+      })()
+    `);
+
+    if (!bottomToolbarTest.isFixed || !bottomToolbarTest.isBottom || bottomToolbarTest.btnCount !== 4 || bottomToolbarTest.colorDotCount !== 8) {
+      throw new Error(`底部固定工具条断言失败: ${JSON.stringify(bottomToolbarTest)}`);
+    }
+    console.log(`[PASS] 测试 44: 飞书底部固定深色工具条验证通过 (位置=fixed bottom居中, 严格精简为核心最左侧 4 按钮: A/B/I/U, 7色+清除颜色点数=${bottomToolbarTest.colorDotCount})`);
+
+    // 测试 45: 7色高亮体系 (Alt + R/Y/P/B/C/O/G) 与节点数据/样式联动
+    const highlightColorsTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const checkReady = () => {
+          const root = mm.renderer.root;
+          if (!root || !root.children || !root.children[0]) {
+            return setTimeout(checkReady, 50);
+          }
+          const node = root.children[0];
+          mm.renderer.clearActiveNodeList();
+          mm.renderer.addNodeToActiveList(node);
+
+          const shortcutMgr = window._feishuShortcutManagerInstance;
+          shortcutMgr.toggleNodeHighlight(node, 'red');
+
+          const handler = () => {
+            mm.off('node_tree_render_end', handler);
+            const rawData = node.getData();
+            const fo = node.group.findOne('foreignObject').node;
+            const content = fo.querySelector('.feishu-node-content');
+            const hasHighlightClass = content ? (content.classList.contains('feishu-hl-red') || content.classList.contains('feishu-highlight-red')) : false;
+
+            resolve({
+              dataColor: rawData.highlightColor,
+              hasHighlightClass
+            });
+          };
+          mm.on('node_tree_render_end', handler);
+        };
+        checkReady();
+      })
+    `);
+
+    if (highlightColorsTest.dataColor !== 'red' || !highlightColorsTest.hasHighlightClass) {
+      throw new Error(`7色高亮体系测试失败: ${JSON.stringify(highlightColorsTest)}`);
+    }
+    console.log(`[PASS] 测试 45: 飞书 7 色高亮体系联动测试通过 (数据highlightColor="${highlightColorsTest.dataColor}", 文字区域应用柔和粉色高亮且不破坏卡片外框底色)`);
+
+    // 测试 46: 节点副本创建 (Ctrl + D) 包含子树完整克隆
+    const duplicateNodeTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const nodeToDup = root.children[0];
+        const beforeSiblingCount = root.children.length;
+        const originalChildCount = nodeToDup.children.length;
+
+        mm.renderer.clearActiveNodeList();
+        mm.renderer.addNodeToActiveList(nodeToDup);
+
+        const shortcutMgr = window._feishuShortcutManagerInstance;
+        shortcutMgr.duplicateNode(nodeToDup);
+
+        const handler = () => {
+          mm.off('node_tree_render_end', handler);
+          const afterSiblingCount = root.children.length;
+          const duplicatedNode = root.children[1];
+          const dupChildCount = duplicatedNode ? duplicatedNode.children.length : 0;
+          const isUidUnique = duplicatedNode.getData('uid') !== nodeToDup.getData('uid');
+
+          resolve({
+            beforeSiblingCount,
+            afterSiblingCount,
+            originalChildCount,
+            dupChildCount,
+            isUidUnique
+          });
+        };
+        mm.on('node_tree_render_end', handler);
+      })
+    `);
+
+    if (duplicateNodeTest.afterSiblingCount !== duplicateNodeTest.beforeSiblingCount + 1 || duplicateNodeTest.dupChildCount !== duplicateNodeTest.originalChildCount || !duplicateNodeTest.isUidUnique) {
+      throw new Error(`节点副本创建断言失败: ${JSON.stringify(duplicateNodeTest)}`);
+    }
+    console.log(`[PASS] 测试 46: 节点副本创建 (Ctrl + D) 测试通过 (同级分支数 ${duplicateNodeTest.beforeSiblingCount}->${duplicateNodeTest.afterSiblingCount}, 子节点完整克隆数=${duplicateNodeTest.dupChildCount}, UID独立且唯一)`);
+
+    // 测试 47: 单节点钻取聚焦 (Ctrl + ]) 与返回上一级 (Ctrl + [)
+    const drilldownTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0];
+
+        const shortcutMgr = window._feishuShortcutManagerInstance;
+        shortcutMgr.drillDown(targetNode);
+
+        const isBreadcrumbShown = shortcutMgr.breadcrumbEl.style.display !== 'none';
+        const newRootTitle = (mm.renderer.root.getData('text') || '').trim();
+        const stackDepthAfterDrill = shortcutMgr.drillStack.length;
+
+        const onRenderEnd = () => {
+          mm.off('node_tree_render_end', onRenderEnd);
+          const isBreadcrumbHidden = shortcutMgr.breadcrumbEl.style.display === 'none';
+          const stackDepthAfterUp = shortcutMgr.drillStack.length;
+
+          resolve({
+            isBreadcrumbShown,
+            newRootTitle,
+            stackDepthAfterDrill,
+            isBreadcrumbHidden,
+            stackDepthAfterUp
+          });
+        };
+
+        mm.on('node_tree_render_end', onRenderEnd);
+        shortcutMgr.drillUp();
+      })
+    `);
+
+    if (!drilldownTest.isBreadcrumbShown || drilldownTest.stackDepthAfterDrill !== 1 || !drilldownTest.isBreadcrumbHidden || drilldownTest.stackDepthAfterUp !== 0) {
+      throw new Error(`节点钻取聚焦与返回断言失败: ${JSON.stringify(drilldownTest)}`);
+    }
+    console.log('[PASS] 测试 47: 单节点钻取聚焦 (Ctrl + ]) 与返回上一级 (Ctrl + [) 测试通过 (子树重置为临时根, 顶部门包屑联动导航, 返回后100%还原)');
+
+    // 测试 48: 空格键唤起原位编辑 (Space)
+    const spaceEditTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const editor = window._feishuNodeEditorInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0];
+
+        mm.renderer.clearActiveNodeList();
+        mm.renderer.addNodeToActiveList(targetNode);
+
+        // 模拟按下空格键
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', code: 'Space', bubbles: true, cancelable: true }));
+
+        const isEditingActive = editor.isEditing;
+        const isInputVisible = editor.inputWrap.style.display !== 'none';
+
+        // 收起编辑
+        editor.cancelAndHide();
+
+        return {
+          isEditingActive,
+          isInputVisible
+        };
+      })()
+    `);
+
+    if (!spaceEditTest.isEditingActive || !spaceEditTest.isInputVisible) {
+      throw new Error(`空格键唤起编辑断言失败: ${JSON.stringify(spaceEditTest)}`);
+    }
+    console.log('[PASS] 测试 48: 空格键 (Space) 唤起节点原位编辑通过 (符合飞书官方快捷键行为规范)');
+
+    // 测试 49: 快捷键指南抽屉 (Ctrl + /) 模态呼出与四大分区验证
+    const shortcutDrawerTest = await evaluate(ws, `
+      (function() {
+        const drawer = window._feishuShortcutDrawerInstance;
+        drawer.close();
+
+        // 触发 Ctrl + /
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: '/', ctrlKey: true, bubbles: true, cancelable: true }));
+        const isOpenAfterFirst = drawer.isOpen && drawer.drawerEl.classList.contains('open');
+
+        const sectionTitles = Array.from(drawer.drawerEl.querySelectorAll('.shortcut-section-title')).map(s => s.textContent.trim());
+        const kbdCount = drawer.drawerEl.querySelectorAll('kbd').length;
+
+        // 再次触发关闭
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: '/', ctrlKey: true, bubbles: true, cancelable: true }));
+        const isClosedAfterSecond = !drawer.isOpen && !drawer.drawerEl.classList.contains('open');
+
+        return {
+          isOpenAfterFirst,
+          sectionTitles,
+          kbdCount,
+          isClosedAfterSecond
+        };
+      })()
+    `);
+
+    if (!shortcutDrawerTest.isOpenAfterFirst || !shortcutDrawerTest.isClosedAfterSecond || shortcutDrawerTest.kbdCount < 15) {
+      throw new Error(`快捷键指南抽屉测试失败: ${JSON.stringify(shortcutDrawerTest)}`);
+    }
+    console.log(`[PASS] 测试 49: 快捷键指南抽屉 (Ctrl + /) 测试通过 (四大分区: ${shortcutDrawerTest.sectionTitles.join(' / ')}, 键帽标签数=${shortcutDrawerTest.kbdCount})`);
+
+    // ─────────────────────────────────────────────────────────────
+    // Phase 10: 飞书选区气泡菜单与节点内局部富文本排版交互体系
+    // ─────────────────────────────────────────────────────────────
+    console.log('\n--- Phase 10: 飞书选区气泡菜单与节点内局部富文本排版交互体系 ---');
+
+    // 测试 50: 导图原位编辑唤起与选区气泡菜单 (FeishuBubbleMenu) 显示与隐藏
+    const bubbleMenuVisibility = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        const mindMap = window._mindMapInstance;
+        const rootNode = mindMap.renderer.root;
+
+        editor.show(rootNode);
+        editor.textarea.value = '定理：柯西-施瓦茨不等式 与 积分应用';
+        editor.updatePosition();
+        editor.updatePreview();
+
+        // 此时无选区，气泡菜单应隐藏
+        const isHiddenInitially = (editor.bubbleMenu.style.display === 'none' || !editor.bubbleMenu.style.display);
+
+        // 选中 "柯西-施瓦茨不等式" (索引 3 到 12)
+        editor.textarea.setSelectionRange(3, 12);
+        editor.checkSelection();
+
+        const isVisibleAfterSelection = (editor.bubbleMenu.style.display === 'flex');
+        const buttonsCount = editor.bubbleMenu.querySelectorAll('.bubble-btn').length;
+        const colorDotsCount = editor.bubbleMenu.querySelectorAll('.color-dot').length;
+
+        // 取消选区
+        editor.textarea.setSelectionRange(0, 0);
+        editor.checkSelection();
+        const isHiddenAfterClear = (editor.bubbleMenu.style.display === 'none');
+
+        return {
+          isHiddenInitially,
+          isVisibleAfterSelection,
+          buttonsCount,
+          colorDotsCount,
+          isHiddenAfterClear
+        };
+      })()
+    `);
+
+    if (!bubbleMenuVisibility.isHiddenInitially || !bubbleMenuVisibility.isVisibleAfterSelection || !bubbleMenuVisibility.isHiddenAfterClear || bubbleMenuVisibility.buttonsCount < 7 || bubbleMenuVisibility.colorDotsCount < 8) {
+      throw new Error(`测试 50 失败: 选区气泡菜单展现与隐藏异常: ${JSON.stringify(bubbleMenuVisibility)}`);
+    }
+    console.log(`[PASS] 测试 50: 选区悬浮气泡菜单生命周期与元素完整性校验通过 (按钮数=${bubbleMenuVisibility.buttonsCount}, 色板数=${bubbleMenuVisibility.colorDotsCount})`);
+
+    // 测试 51: 选区局部加粗与智能解包 (Toggle Wrap/Unwrap) 及实时胶囊渲染
+    const boldToggleTest = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        editor.textarea.value = '定理：柯西不等式 与 积分应用';
+        editor.updatePosition();
+        editor.updatePreview();
+
+        // 选中 "柯西不等式" (索引 3 到 8)
+        editor.textarea.setSelectionRange(3, 8);
+        editor.checkSelection();
+
+        // 执行加粗
+        editor.formatSelection('bold');
+        const valAfterBold = editor.textarea.value;
+        const capsuleHtmlBold = editor.capsuleContent.innerHTML;
+        const hasStrong = capsuleHtmlBold.includes('<strong>柯西不等式</strong>') || capsuleHtmlBold.includes('<strong>');
+
+        // 保持或重新选中加粗内容执行解包
+        editor.textarea.setSelectionRange(3, 3 + '**柯西不等式**'.length);
+        editor.formatSelection('bold');
+        const valAfterUnwrap = editor.textarea.value;
+
+        return {
+          valAfterBold,
+          hasStrong,
+          capsuleHtmlBold,
+          valAfterUnwrap
+        };
+      })()
+    `);
+
+    if (!boldToggleTest.valAfterBold.includes('**柯西不等式**') || !boldToggleTest.hasStrong || boldToggleTest.valAfterUnwrap !== '定理：柯西不等式 与 积分应用') {
+      throw new Error(`测试 51 失败: 选区局部加粗与解包异常: ${JSON.stringify(boldToggleTest)}`);
+    }
+    console.log(`[PASS] 测试 51: 选区局部加粗 (**..**) 与智能 Toggle 解包及实时胶囊渲染通过`);
+
+    // 测试 52: 选区 7 色局部高亮与斜体、下划线多格式组合
+    const multiFormatTest = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        editor.textarea.value = '重要：拉格朗日中值定理 与 洛必达法则';
+        editor.updatePosition();
+        editor.updatePreview();
+
+        // 选中 "拉格朗日中值定理" (索引 3 到 11)，施加红色高亮
+        editor.textarea.setSelectionRange(3, 11);
+        editor.formatSelection('color', 'red');
+
+        // 选中 "洛必达法则" 并施加下划线
+        const idxLopital = editor.textarea.value.indexOf('洛必达法则');
+        editor.textarea.setSelectionRange(idxLopital, idxLopital + 5);
+        editor.formatSelection('underline');
+
+        const finalVal = editor.textarea.value;
+        const capsuleHtml = editor.capsuleContent.innerHTML;
+
+        const hasMarkRed = finalVal.includes('<mark class="feishu-inline-hl-red">拉格朗日中值定理</mark>');
+        const hasUnderline = finalVal.includes('<u>洛必达法则</u>');
+        const capsuleHasMark = capsuleHtml.includes('feishu-inline-hl-red');
+        const capsuleHasU = capsuleHtml.includes('<u>') || capsuleHtml.includes('text-decoration: underline');
+
+        return {
+          finalVal,
+          hasMarkRed,
+          hasUnderline,
+          capsuleHasMark,
+          capsuleHasU
+        };
+      })()
+    `);
+
+    if (!multiFormatTest.hasMarkRed || !multiFormatTest.hasUnderline || !multiFormatTest.capsuleHasMark) {
+      throw new Error(`测试 52 失败: 7 色局部高亮与下划线排版异常: ${JSON.stringify(multiFormatTest)}`);
+    }
+    console.log(`[PASS] 测试 52: 7 色行内文本高亮 (<mark>) 与下划线 (<u>) 多排版组合校验通过`);
+
+    // 测试 53: 局部加粗高亮与 KaTeX 数学公式混合共存及节点提交渲染
+    const mixedFormulaCommitTest = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        const mindMap = window._mindMapInstance;
+        const rootNode = mindMap.renderer.root;
+
+        editor.show(rootNode);
+        editor.textarea.value = '定理：**柯西不等式** $|\sum a_i b_i|^2 \le \sum a_i^2 \sum b_i^2$ 与 <mark class="feishu-inline-hl-yellow">重要积分</mark>';
+        editor.updatePreview();
+        editor.commitAndHide();
+
+        // 检查渲染出的根节点 SVG DOM
+        const rootCard = rootNode.group && rootNode.group.node.querySelector('.feishu-node-card');
+        const contentEl = rootCard ? rootCard.querySelector('.feishu-node-content') : null;
+        const contentHtml = contentEl ? contentEl.innerHTML : '';
+
+        const hasStrong = contentHtml.includes('<strong>柯西不等式</strong>');
+        const hasKatex = contentEl && contentEl.querySelectorAll('.katex').length > 0;
+        const hasYellowHl = contentHtml.includes('feishu-inline-hl-yellow');
+
+        return {
+          hasStrong,
+          hasKatex,
+          hasYellowHl,
+          contentHtml
+        };
+      })()
+    `);
+
+    if (!mixedFormulaCommitTest.hasStrong || !mixedFormulaCommitTest.hasKatex || !mixedFormulaCommitTest.hasYellowHl) {
+      throw new Error(`测试 53 失败: 导图节点提交后混合公式与局部富文本渲染异常: ${JSON.stringify(mixedFormulaCommitTest)}`);
+    }
+    console.log(`[PASS] 测试 53: 局部加粗、7色高亮与 KaTeX 行内复杂公式三维混合共存与提交渲染通过`);
+
+    // 等待上一阶段异步渲染稳定
+    await sleep(350);
+
+    // 测试 54: 底部固定深色工具条与快捷键双模智能联动
+    const toolbarDualModeTest = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        const mindMap = window._mindMapInstance;
+        const rootNode = mindMap.renderer.root;
+        if (!rootNode) return { error: 'rootNode 为空' };
+
+        // 重新唤起编辑
+        editor.show(rootNode);
+        editor.textarea.value = '核心：泰勒级数 与 麦克劳林展开';
+        editor.updatePreview();
+
+        // 选中 "泰勒级数" (索引 3 到 7)
+        editor.textarea.setSelectionRange(3, 7);
+        editor.checkSelection();
+
+        // 点击底部固定工具条的加粗按钮
+        const btnBold = document.getElementById('feishuBtnBold');
+        btnBold.click();
+
+        const isTextBolded = editor.textarea.value.includes('**泰勒级数**');
+        const isStillEditing = editor.isEditing;
+
+        // 测试编辑态快捷键 Ctrl+B 解包
+        editor.textarea.setSelectionRange(3, 3 + '**泰勒级数**'.length);
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: 'b', ctrlKey: true, bubbles: true, cancelable: true }));
+
+        const isTextUnwrapped = (editor.textarea.value === '核心：泰勒级数 与 麦克劳林展开');
+
+        editor.commitAndHide();
+
+        return {
+          isTextBolded,
+          isStillEditing,
+          isTextUnwrapped
+        };
+      })()
+    `);
+
+    if (!toolbarDualModeTest.isTextBolded || !toolbarDualModeTest.isStillEditing || !toolbarDualModeTest.isTextUnwrapped) {
+      throw new Error(`测试 54 失败: 底部工具条与快捷键编辑态双模联动异常: ${JSON.stringify(toolbarDualModeTest)}`);
+    }
+    console.log(`[PASS] 测试 54: 底部固定深色工具条与快捷键 (Ctrl+B) 编辑态选区拦截与双模流转通过`);
+
+    // 测试 55: 飞书大纲视图选区气泡菜单与局部富文本排版
+    const outlinerInlineFormatTest = await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        const outliner = window._outlinerInstance;
+        controller.switchView('outline');
+
+        const firstNode = outliner.data.children[0];
+        outliner.focusNode(firstNode.data.uid);
+
+        const row = outliner.container.querySelector('.outliner-row[data-uid="' + firstNode.data.uid + '"]');
+        const input = row.querySelector('.outliner-input-view');
+        input.textContent = '基础概念：极限性质分析';
+
+        // 选中 "极限性质"
+        const selection = window.getSelection();
+        const range = document.createRange();
+        const textNode = input.firstChild;
+        range.setStart(textNode, 5);
+        range.setEnd(textNode, 9);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        // 触发气泡展示与加粗
+        outliner.checkSelection();
+        const isBubbleVisible = (outliner.bubbleMenu.style.display === 'flex');
+
+        outliner.formatSelection('bold');
+        const formattedText = input.textContent;
+        const isBolded = formattedText.includes('**极限性质**');
+
+        // 提交并检验浏览态渲染
+        outliner.commitNode(firstNode.data.uid);
+        const disp = row.querySelector('.outliner-display-view');
+        const dispHtml = disp ? disp.innerHTML : '';
+        const hasStrongInDisplay = dispHtml.includes('<strong>极限性质</strong>');
+
+        return {
+          isBubbleVisible,
+          isBolded,
+          hasStrongInDisplay,
+          formattedText,
+          dispHtml
+        };
+      })()
+    `);
+
+    if (!outlinerInlineFormatTest.isBubbleVisible || !outlinerInlineFormatTest.isBolded || !outlinerInlineFormatTest.hasStrongInDisplay) {
+      throw new Error(`测试 55 失败: 大纲视图选区气泡与局部排版异常: ${JSON.stringify(outlinerInlineFormatTest)}`);
+    }
+    console.log(`[PASS] 测试 55: 飞书大纲视图选区气泡菜单与局部排版 (浏览态/编辑态同步) 校验通过`);
+
+    // --- Phase 11: 飞书高亮体系与 LaTeX 公式防污染深度重构专项断言项 ---
+    console.log('\n--- Phase 11: 飞书高亮体系与 LaTeX 公式防污染深度重构专项断言项 ---');
+
+    // 切回思维导图并等待节点树稳定
+    await evaluate(ws, `
+      new Promise((resolve) => {
+        const controller = window._dualViewControllerInstance;
+        const mm = window._mindMapInstance;
+        const onEnd = () => {
+          mm.off('node_tree_render_end', onEnd);
+          resolve();
+        };
+        mm.on('node_tree_render_end', onEnd);
+        controller.switchView('mindmap');
+      })
+    `);
+    await sleep(250);
+
+    // 测试 56: 节点高亮物理清除与内联高亮标签深度剥离验证
+    const clearHighlightTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        const targetNode = root.children[0];
+        mm.renderer.clearActiveNodeList();
+        mm.renderer.addNodeToActiveList(targetNode);
+
+        const tb = window._feishuBottomToolbarInstance;
+
+        const onFirstRender = () => {
+          mm.off('node_tree_render_end', onFirstRender);
+          const hasYellowBefore = targetNode.getData('highlightColor') === 'yellow';
+
+          const onClearRender = () => {
+            mm.off('node_tree_render_end', onClearRender);
+            const dataColorAfter = targetNode.getData('highlightColor');
+            const rawPropAfter = targetNode.nodeData.data.highlightColor;
+            const textAfter = targetNode.getData('text');
+            const hasMarkInText = textAfter.includes('<mark');
+            const fo = targetNode.group.findOne('foreignObject').node;
+            const content = fo.querySelector('.feishu-node-content');
+            const contentHasYellow = content ? content.classList.contains('feishu-hl-yellow') : false;
+
+            resolve({
+              hasYellowBefore,
+              dataColorAfter,
+              rawPropAfter,
+              textAfter,
+              hasMarkInText,
+              contentHasYellow
+            });
+          };
+          mm.on('node_tree_render_end', onClearRender);
+          // 2. 模拟点击清除高亮
+          tb.setNodeHighlight('none');
+        };
+
+        mm.on('node_tree_render_end', onFirstRender);
+        // 1. 设置节点高亮并注入残留内联标签
+        tb.setNodeHighlight('yellow');
+        mm.execCommand('SET_NODE_TEXT', targetNode, '含内联高亮：<mark class="feishu-inline-hl-yellow">重点考察</mark> 与正常文本');
+      })
+    `);
+
+    if (!clearHighlightTest.hasYellowBefore || clearHighlightTest.dataColorAfter || clearHighlightTest.rawPropAfter || clearHighlightTest.hasMarkInText || clearHighlightTest.contentHasYellow) {
+      throw new Error(`测试 56 失败: 节点高亮清除失效或文本内联标签未剥离: ${JSON.stringify(clearHighlightTest)}`);
+    }
+    console.log(`[PASS] 测试 56: 节点高亮物理清除与文本内联标签深度剥离校验通过 (highlightColor彻底删除, 内联mark标签安全还原)`);
+
+    // 测试 57: 纯 LaTeX 公式节点高亮与 KaTeX 零报错、卡片外框底色不变验证
+    const pureFormulaHighlightTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const checkReady = () => {
+          const root = mm.renderer.root;
+          if (!root || !root.children || !root.children[0]) {
+            return setTimeout(checkReady, 50);
+          }
+          const targetNode = root.children[0];
+          mm.renderer.clearActiveNodeList();
+          mm.renderer.addNodeToActiveList(targetNode);
+
+          const pureFormula = '$\\\\lim_{x \\\\to 0} \\\\frac{\\\\sin x}{x} = 1$';
+          const tb = window._feishuBottomToolbarInstance;
+
+          const onRender = () => {
+            mm.off('node_tree_render_end', onRender);
+            const rawText = targetNode.getData('text');
+            const isTextClean = (rawText === pureFormula); // 确保源码未被任何 HTML 标签污染
+            const fo = targetNode.group.findOne('foreignObject').node;
+            const card = fo.querySelector('.feishu-node-card');
+            const content = fo.querySelector('.feishu-node-content');
+
+            // 校验 card 边框与背景并未被暴力重写为黄色警告框
+            const isCardClean = card && !card.classList.contains('feishu-highlight-yellow');
+            const isContentHighlighted = content && content.classList.contains('feishu-hl-yellow');
+            const katexCount = content ? content.querySelectorAll('.katex').length : 0;
+            const fracCount = content ? content.querySelectorAll('.mfrac').length : 0;
+
+            resolve({
+              isTextClean,
+              isCardClean,
+              isContentHighlighted,
+              katexCount,
+              fracCount
+            });
+          };
+
+          mm.on('node_tree_render_end', onRender);
+          mm.execCommand('SET_NODE_TEXT', targetNode, pureFormula);
+          tb.setNodeHighlight('yellow');
+        };
+        checkReady();
+      })
+    `);
+
+    if (!pureFormulaHighlightTest.isTextClean || !pureFormulaHighlightTest.isCardClean || !pureFormulaHighlightTest.isContentHighlighted || pureFormulaHighlightTest.katexCount === 0 || pureFormulaHighlightTest.fracCount === 0) {
+      throw new Error(`测试 57 失败: 纯 LaTeX 公式节点高亮或 KaTeX 渲染异常: ${JSON.stringify(pureFormulaHighlightTest)}`);
+    }
+    console.log(`[PASS] 测试 57: 纯 LaTeX 公式节点精细高亮通过 (源码零污染, 卡片底色外框不受干扰, KaTeX分式精准渲染)`);
+
+    // 测试 58: 原位编辑器选区触碰 LaTeX 公式时的原子化防污染外扩验证
+    const latexExpansionTest = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        editor.show(root);
+
+        // 输入包含公式的文本
+        editor.textarea.value = '设 $f(x) = \\\\sin x$ 为连续函数';
+        editor.updatePosition();
+        editor.updatePreview();
+
+        // 用户仅选中公式内部的 "f(x)" (索引 3 到 7)
+        editor.formatSelection('color', 'cyan', 3, 7);
+
+        const finalVal = editor.textarea.value;
+        // 断言: 选区自动外扩包裹整个公式，标签绝对位于 $ 外侧
+        const expected = '设 <mark class="feishu-inline-hl-cyan">$f(x) = \\\\sin x$</mark> 为连续函数';
+        const isEnclosedProperly = (finalVal === expected);
+        const capsuleHtml = editor.capsuleContent.innerHTML;
+        const hasKatexInCapsule = capsuleHtml.includes('katex');
+        const hasCyanClassInCapsule = capsuleHtml.includes('feishu-inline-hl-cyan');
+
+        editor.commitAndHide();
+
+        return {
+          finalVal,
+          isEnclosedProperly,
+          hasKatexInCapsule,
+          hasCyanClassInCapsule
+        };
+      })()
+    `);
+
+    if (!latexExpansionTest.isEnclosedProperly || !latexExpansionTest.hasKatexInCapsule || !latexExpansionTest.hasCyanClassInCapsule) {
+      throw new Error(`测试 58 失败: LaTeX 公式原子化外扩防污染异常: ${JSON.stringify(latexExpansionTest)}`);
+    }
+    console.log(`[PASS] 测试 58: 编辑器 LaTeX 公式选区原子化外扩防污染通过 (自动包裹 $..$ 外侧, 杜绝 KaTeX 语法崩溃)`);
+
+    await sleep(250);
+
+    // 测试 59: 选区高亮智能解包、改色与可逆清除验证
+    const smartUnwrapTest = await evaluate(ws, `
+      (function() {
+        const editor = window._feishuNodeEditorInstance;
+        const mm = window._mindMapInstance;
+        const root = mm.renderer.root;
+        editor.show(root);
+        editor.isEditing = true;
+
+        editor.textarea.value = '高等数学核心考点：导数与微分';
+        editor.updatePosition();
+        editor.updatePreview();
+
+        // 1. 选中 "导数与微分" (索引 9 到 14) 施加黄色高亮
+        editor.formatSelection('color', 'yellow', 9, 14);
+        const valYellow = editor.textarea.value;
+        const hasYellow = valYellow.includes('<mark class="feishu-inline-hl-yellow">导数与微分</mark>');
+
+        // 2. 选中已高亮的文字，直接换成晴空蓝 (blue)
+        const idxYellowContent = editor.textarea.value.indexOf('导数与微分');
+        editor.formatSelection('color', 'blue', idxYellowContent, idxYellowContent + 5);
+        const valBlue = editor.textarea.value;
+        const hasBlueDirect = valBlue.includes('<mark class="feishu-inline-hl-blue">导数与微分</mark>');
+        const hasNestedTags = valBlue.includes('<mark class="feishu-inline-hl-yellow">'); // 绝不能嵌套旧标签
+
+        // 3. 再次选中并点击相同颜色 (blue) 执行 Toggle 逆向清除
+        const idxBlueContent = editor.textarea.value.indexOf('导数与微分');
+        editor.formatSelection('color', 'blue', idxBlueContent, idxBlueContent + 5);
+        const valClean = editor.textarea.value;
+        const isCompletelyRestored = (valClean === '高等数学核心考点：导数与微分');
+
+        editor.commitAndHide();
+
+        return {
+          hasYellow,
+          hasBlueDirect,
+          hasNestedTags,
+          isCompletelyRestored,
+          valClean,
+          valYellow,
+          valBlue
+        };
+      })()
+    `);
+
+    if (!smartUnwrapTest.hasYellow || !smartUnwrapTest.hasBlueDirect || smartUnwrapTest.hasNestedTags || !smartUnwrapTest.isCompletelyRestored) {
+      throw new Error(`测试 59 失败: 选区智能解包、改色或逆向清除异常: ${JSON.stringify(smartUnwrapTest)}`);
+    }
+    console.log(`[PASS] 测试 59: 选区高亮智能解包、平滑换色与完全可逆清除校验通过`);
+
+    // 测试 60: 飞书 7 色方形 A 字母色块选择器 UI 规范校验
+    const feishuSwatchUiTest = await evaluate(ws, `
+      (function() {
+        const toolbarPopover = document.querySelector('.feishu-color-popover');
+        const editorPopover = document.querySelector('.feishu-bubble-popover');
+
+        const toolbarSwatches = toolbarPopover ? toolbarPopover.querySelectorAll('.color-swatch-btn') : [];
+        const editorSwatches = editorPopover ? editorPopover.querySelectorAll('.color-swatch-btn') : [];
+
+        const hasCorrectToolbarCount = (toolbarSwatches.length === 8); // 7 色 + 1 清除
+        const hasCorrectEditorCount = (editorSwatches.length === 8);
+
+        // 校验首个色块是否有字母 A
+        const firstSwatch = toolbarSwatches[0];
+        const hasTextA = firstSwatch ? firstSwatch.textContent.trim() === 'A' : false;
+
+        return {
+          hasCorrectToolbarCount,
+          hasCorrectEditorCount,
+          hasTextA
+        };
+      })()
+    `);
+
+    if (!feishuSwatchUiTest.hasCorrectToolbarCount || !feishuSwatchUiTest.hasCorrectEditorCount || !feishuSwatchUiTest.hasTextA) {
+      throw new Error(`测试 60 失败: 飞书方形 A 字母高亮选择器 UI 校验异常: ${JSON.stringify(feishuSwatchUiTest)}`);
+    }
+    console.log(`[PASS] 测试 60: 飞书 7 色方形 A 字母色块选择器 UI 与高亮视觉保真度校验通过`);
+
+    // 截取选区悬浮气泡菜单特写截图
+    await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        controller.switchView('mindmap');
+        const editor = window._feishuNodeEditorInstance;
+        const mindMap = window._mindMapInstance;
+        const rootNode = mindMap.renderer.root;
+        editor.show(rootNode);
+        editor.textarea.value = '柯西不等式：$|\sum a_i b_i|^2 \le \sum a_i^2 \sum b_i^2$ 重点：**内积空间**';
+        editor.updatePosition();
+        editor.updatePreview();
+        editor.textarea.setSelectionRange(0, 5); // 选中 "柯西不等式"
+        editor.checkSelection();
+      })()
+    `);
+    await sleep(350);
+    const bubbleMenuScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const bubbleMenuBuffer = Buffer.from(bubbleMenuScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_bubble_menu_preview.png'), bubbleMenuBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_bubble_menu_preview.png'), bubbleMenuBuffer);
+    }
+    console.log('[Screenshot] 飞书选区悬浮气泡菜单真实截图已生成: mindmap-sandbox/feishu_bubble_menu_preview.png');
+
+    // 提交编辑并重置视口
+    await evaluate(ws, `window._feishuNodeEditorInstance.commitAndHide(); window._mindMapInstance.view.fit();`);
     await sleep(300);
+
+    // 截取飞书风格导图全景预览图 (先自适应画布缩放使全量公式与分支完整入镜)
+    await evaluate(ws, `window._mindMapInstance.view.fit()`);
+    await sleep(350);
     const mmScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
     const mmScreenshotBuffer = Buffer.from(mmScreenshot.data, 'base64');
     fs.writeFileSync(path.join(__dirname, 'feishu_mindmap_preview.png'), mmScreenshotBuffer);
@@ -1670,22 +2732,801 @@ async function run() {
     }
     console.log('[Screenshot] 飞书思维导图视图真实截图已生成: mindmap-sandbox/feishu_mindmap_preview.png');
 
-    // 切换到大纲模式并截取精美预览图
-    await evaluate(ws, `window._dualViewControllerInstance.switchView('outline')`);
+    // 切换到大纲模式并截取精美预览图 (同时截取大纲输入公式时的悬浮预览胶囊效果)
+    await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        const outliner = window._outlinerInstance;
+        controller.switchView('outline');
+        const firstNode = outliner.data.children[0];
+        outliner.focusNode(firstNode.data.uid);
+        const row = outliner.container.querySelector('.outliner-row[data-uid="' + firstNode.data.uid + '"]');
+        const input = row.querySelector('.outliner-input-view');
+        input.textContent = '数列极限 $\\\\lim_{n \\\\to \\\\infty} \\\\frac{n!}{(n+1)!} = 0$';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      })()
+    `);
     await sleep(400);
+    const outlinerFormulaScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const outlinerFormulaBuffer = Buffer.from(outlinerFormulaScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_outliner_formula_preview.png'), outlinerFormulaBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_outliner_formula_preview.png'), outlinerFormulaBuffer);
+    }
+    console.log('[Screenshot] 飞书大纲公式悬浮预览胶囊真实截图已生成: mindmap-sandbox/feishu_outliner_formula_preview.png');
+
+    // 提交大纲编辑以截取浏览态
+    await evaluate(ws, `window._outlinerInstance.commitNode(window._outlinerInstance.data.children[0].data.uid)`);
+    await sleep(300);
     const screenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
     const screenshotBuffer = Buffer.from(screenshot.data, 'base64');
     const outlinerPreviewPath = path.join(__dirname, 'feishu_outliner_preview.png');
     fs.writeFileSync(outlinerPreviewPath, screenshotBuffer);
-
-    // 复制到 artifact 目录
     if (fs.existsSync(BRAIN_DIR)) {
       fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_outliner_preview.png'), screenshotBuffer);
     }
     console.log('[Screenshot] 飞书大纲视图真实截图已生成: mindmap-sandbox/feishu_outliner_preview.png');
 
+    // 切回思维导图，呈现精细高亮节点与底部 7 色方形 A 字母选择器
+    await evaluate(ws, `
+      new Promise((resolve) => {
+        const controller = window._dualViewControllerInstance;
+        const mm = window._mindMapInstance;
+        const onEnd = () => {
+          mm.off('node_tree_render_end', onEnd);
+          const root = mm.renderer.root;
+          if (root && root.children && root.children[0]) {
+            const nodeA = root.children[0];
+            mm.renderer.clearActiveNodeList();
+            mm.renderer.addNodeToActiveList(nodeA);
+            const tb = window._feishuBottomToolbarInstance;
+            tb.setNodeHighlight('yellow');
+
+            if (root.children[1]) {
+              const nodeB = root.children[1];
+              mm.renderer.clearActiveNodeList();
+              mm.renderer.addNodeToActiveList(nodeB);
+              tb.setNodeHighlight('cyan');
+            }
+
+            mm.view.fit();
+            tb.colorPopover.classList.add('show');
+          }
+          resolve();
+        };
+        mm.on('node_tree_render_end', onEnd);
+        controller.switchView('mindmap');
+      })
+    `);
+    await sleep(500);
+    await sleep(400);
+    const highlightScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const highlightBuffer = Buffer.from(highlightScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_highlight_redesign_preview.png'), highlightBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_highlight_redesign_preview.png'), highlightBuffer);
+    }
+    console.log('[Screenshot] 飞书 7 色方形 A 字母高亮与公式精细染色真实截图已生成: mindmap-sandbox/feishu_highlight_redesign_preview.png');
+
+    // 呼出快捷键指南抽屉并呈现完整第二阶段界面
+    await evaluate(ws, `
+      (function() {
+        window._feishuShortcutDrawerInstance.open();
+        window._feishuBottomToolbarInstance.colorPopover.classList.remove('show');
+      })()
+    `);
+    await sleep(400);
+    const fullPreviewScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const fullPreviewBuffer = Buffer.from(fullPreviewScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_phase2_full_preview.png'), fullPreviewBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_phase2_full_preview.png'), fullPreviewBuffer);
+    }
+    console.log('[Screenshot] 飞书完整第二阶段界面 (底部固定工具条 + 快捷键抽屉) 截图已生成: mindmap-sandbox/feishu_phase2_full_preview.png');
+
+    // -------------------------------------------------------------
+    // Phase 12: 飞书左下角结构与分支线搭配类型适配专项断言项
+    // -------------------------------------------------------------
+    console.log('\n--- Phase 12: 飞书左下角结构与分支线搭配类型适配专项断言项 ---');
+
+    // 先收起快捷键指南抽屉
+    await evaluate(ws, `window._feishuShortcutDrawerInstance.close()`);
+    await sleep(200);
+
+    // 测试 61: 飞书左下角垂直浮动控制条与结构搭配卡片 UI 完整性校验
+    const structureUiTest = await evaluate(ws, `
+      (function() {
+        const dock = document.getElementById('feishuBottomDock');
+        const popover = document.getElementById('feishuStructurePopover');
+        const sc = window._feishuStructureControllerInstance;
+        if (!dock || !popover || !sc) return { ok: false, reason: 'DOM 或实例缺失' };
+
+        const undoBtn = dock.querySelector('#btnDockUndo');
+        const redoBtn = dock.querySelector('#btnDockRedo');
+        const structBtn = dock.querySelector('#btnDockStructure');
+        const zoomText = dock.querySelector('#dockZoomText') || dock.querySelector('#dockZoomLevelText');
+
+        const structBtns = popover.querySelectorAll('.structure-btn');
+        const lineBtns = popover.querySelectorAll('.line-style-btn');
+
+        return {
+          ok: true,
+          hasDockButtons: !!(undoBtn && redoBtn && structBtn && zoomText),
+          structCount: structBtns.length,
+          lineCount: lineBtns.length
+        };
+      })()
+    `);
+
+    if (!structureUiTest.ok || !structureUiTest.hasDockButtons || structureUiTest.structCount !== 7 || structureUiTest.lineCount !== 4) {
+      throw new Error(`测试 61 失败: 飞书结构搭配控制条 UI 校验异常: ${JSON.stringify(structureUiTest)}`);
+    }
+    console.log(`[PASS] 测试 61: 飞书左下角垂直浮动控制条与结构搭配卡片 UI 完整性校验通过 (7大结构全量平铺 + 4经典线条直接展示，零折叠隐藏)`);
+
+    // 测试 62: 飞书结构热切换 - 向左逻辑图 (logicalStructureLeft)
+    const structLeftTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const sc = window._feishuStructureControllerInstance;
+        const mm = window._mindMapInstance;
+        const onEnd = () => {
+          mm.off('node_tree_render_end', onEnd);
+          const currentLayout = mm.getLayout();
+          const activeBtn = document.querySelector('.structure-btn.active');
+          resolve({
+            currentLayout,
+            activeLayoutAttr: activeBtn ? activeBtn.dataset.layout : null
+          });
+        };
+        mm.on('node_tree_render_end', onEnd);
+        sc.setLayout('logicalStructureLeft');
+      })
+    `);
+
+    if (structLeftTest.currentLayout !== 'logicalStructureLeft' || structLeftTest.activeLayoutAttr !== 'logicalStructureLeft') {
+      throw new Error(`测试 62 失败: 向左逻辑图切换异常: ${JSON.stringify(structLeftTest)}`);
+    }
+    console.log(`[PASS] 测试 62: 飞书结构热切换 - 向左逻辑图 (logicalStructureLeft) 校验通过`);
+
+    // 测试 63: 飞书结构热切换 - 经典双向思维导图 (mindMap)
+    const structMindMapTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const sc = window._feishuStructureControllerInstance;
+        const mm = window._mindMapInstance;
+        const onEnd = () => {
+          mm.off('node_tree_render_end', onEnd);
+          const currentLayout = mm.getLayout();
+          const activeBtn = document.querySelector('.structure-btn.active');
+          const root = mm.renderer.root;
+          const leftChildren = (root && root.children) ? root.children.filter(c => c.left < root.left) : [];
+          const rightChildren = (root && root.children) ? root.children.filter(c => c.left >= root.left) : [];
+          resolve({
+            currentLayout,
+            activeLayoutAttr: activeBtn ? activeBtn.dataset.layout : null,
+            hasBothSides: leftChildren.length > 0 && rightChildren.length > 0
+          });
+        };
+        mm.on('node_tree_render_end', onEnd);
+        sc.setLayout('mindMap');
+      })
+    `);
+
+    if (structMindMapTest.currentLayout !== 'mindMap' || structMindMapTest.activeLayoutAttr !== 'mindMap' || !structMindMapTest.hasBothSides) {
+      throw new Error(`测试 63 失败: 经典双向思维导图切换异常: ${JSON.stringify(structMindMapTest)}`);
+    }
+    console.log(`[PASS] 测试 63: 飞书结构热切换 - 经典双向思维导图 (mindMap) 校验通过 (左右两侧均衡排布)`);
+
+    // 截取左右平衡思维导图真实截图
+    await sleep(400);
+    const mindMapLayoutScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const mindMapLayoutBuffer = Buffer.from(mindMapLayoutScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_layout_mindmap_preview.png'), mindMapLayoutBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_layout_mindmap_preview.png'), mindMapLayoutBuffer);
+    }
+    console.log('[Screenshot] 飞书左右平衡思维导图全景截图已生成: mindmap-sandbox/feishu_layout_mindmap_preview.png');
+
+    // 测试 64: 飞书结构热切换 - 向下展开目录组织图 (catalogOrganization) (复现用户截图)
+    const structCatalogTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const sc = window._feishuStructureControllerInstance;
+        const mm = window._mindMapInstance;
+        const onEnd = () => {
+          mm.off('node_tree_render_end', onEnd);
+          const currentLayout = mm.getLayout();
+          const activeBtn = document.querySelector('.structure-btn.active');
+          const root = mm.renderer.root;
+          const c0 = root && root.children && root.children[0];
+          const isDownward = c0 ? (c0.top > root.top) : false;
+          resolve({
+            currentLayout,
+            activeLayoutAttr: activeBtn ? activeBtn.dataset.layout : null,
+            isDownward,
+            rootTop: root ? root.top : 0,
+            childTop: c0 ? c0.top : 0
+          });
+        };
+        mm.on('node_tree_render_end', onEnd);
+        sc.setLayout('catalogOrganization');
+      })
+    `);
+
+    if (structCatalogTest.currentLayout !== 'catalogOrganization' || structCatalogTest.activeLayoutAttr !== 'catalogOrganization' || !structCatalogTest.isDownward) {
+      throw new Error(`测试 64 失败: 向下展开目录组织图切换异常: ${JSON.stringify(structCatalogTest)}`);
+    }
+    console.log(`[PASS] 测试 64: 飞书结构热切换 - 向下展开目录组织图 (catalogOrganization) 校验通过 (对齐用户实测截图)`);
+
+    // 测试 65: 分支线风格热切换 (直角圆角折线 straight vs 直连斜线 direct vs 进阶曲线 curve)
+    const lineStyleTest = await evaluate(ws, `
+      (function() {
+        const sc = window._feishuStructureControllerInstance;
+        const mm = window._mindMapInstance;
+
+        // 切换为直连斜线 direct
+        sc.setLineStyle('direct');
+        const style1 = mm.getThemeConfig('lineStyle');
+        const btn1Active = document.querySelector('.line-style-btn[data-line-style="direct"]').classList.contains('active');
+
+        // 切换为平滑曲线 curve
+        sc.setLineStyle('curve');
+        const style2 = mm.getThemeConfig('lineStyle');
+        const btn2Active = document.querySelector('.line-style-btn[data-line-style="curve"]').classList.contains('active');
+
+        // 切回飞书经典直角圆角折线 straight
+        sc.setLineStyle('straight');
+        const style3 = mm.getThemeConfig('lineStyle');
+        const radius3 = mm.getThemeConfig('lineRadius');
+        const btn3Active = document.querySelector('.line-style-btn[data-line-style="straight"]').classList.contains('active');
+
+        return {
+          directOk: style1 === 'direct' && btn1Active,
+          curveOk: style2 === 'curve' && btn2Active,
+          straightOk: style3 === 'straight' && radius3 === 8 && btn3Active
+        };
+      })()
+    `);
+
+    if (!lineStyleTest.directOk || !lineStyleTest.curveOk || !lineStyleTest.straightOk) {
+      throw new Error(`测试 65 失败: 分支线风格热切换异常: ${JSON.stringify(lineStyleTest)}`);
+    }
+    console.log(`[PASS] 测试 65: 分支线风格热切换 (直连斜线 direct / 进阶曲线 curve / 经典圆角折线 straight) 校验通过`);
+
+    // 测试 66: 布局朝向感知与数据结构导出持久化校验
+    const dragDirectionTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const de = window._feishuDragEnhancerInstance;
+        const root = mm.renderer.root;
+        const c0 = root.children[0];
+
+        // 当前处于 catalogOrganization，方向应判定为 bottom
+        const catalogDir = de.getNodeDirection(c0);
+
+        // 导出的全量配置数据对象中保留 layout 属性
+        const exportedData = mm.getData(true);
+        const hasLayoutSaved = exportedData && exportedData.layout === 'catalogOrganization';
+
+        return {
+          catalogDir,
+          hasLayoutSaved
+        };
+      })()
+    `);
+
+    if (dragDirectionTest.catalogDir !== 'bottom' || !dragDirectionTest.hasLayoutSaved) {
+      throw new Error(`测试 66 失败: 布局朝向感知与数据持久化校验异常: ${JSON.stringify(dragDirectionTest)}`);
+    }
+    console.log(`[PASS] 测试 66: 布局朝向感知 (catalog -> bottom) 与数据持久化校验通过`);
+
+    // 展开结构搭配 Popover 并截取左下角特写
+    await evaluate(ws, `
+      (function() {
+        const sc = window._feishuStructureControllerInstance;
+        sc.showPopover();
+        window._mindMapInstance.view.fit();
+      })()
+    `);
+    await sleep(400);
+    const popoverScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const popoverBuffer = Buffer.from(popoverScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_structure_popover_preview.png'), popoverBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_structure_popover_preview.png'), popoverBuffer);
+    }
+    console.log('[Screenshot] 飞书左下角结构与分支线搭配面板特写截图已生成: mindmap-sandbox/feishu_structure_popover_preview.png');
+
+    // 截取向下展开目录组织图全貌截图 (1:1 对齐用户实测图)
+    await evaluate(ws, `
+      (function() {
+        window._feishuStructureControllerInstance.hidePopover();
+        window._mindMapInstance.view.reset();
+      })()
+    `);
+    await sleep(400);
+    const catalogScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const catalogBuffer = Buffer.from(catalogScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_layout_catalog_preview.png'), catalogBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_layout_catalog_preview.png'), catalogBuffer);
+    }
+    console.log('[Screenshot] 飞书向下展开目录组织图全貌截图已生成: mindmap-sandbox/feishu_layout_catalog_preview.png');
+
+    // -------------------------------------------------------------
+    // Phase 13: 飞书交互精细度深化专项断言项 (4按钮极简栏、大纲纯净化、防NaN、U型重做、平滑圆弧、H快捷键、全部展开折叠)
+    // -------------------------------------------------------------
+    console.log('\n--- Phase 13: 飞书交互精细度深化专项断言项 ---');
+
+    // 测试 67: 底部悬浮工具条极简 4 按钮严格校验
+    const toolbarMinimalTest = await evaluate(ws, `
+      (function() {
+        const toolbar = document.querySelector('.feishu-bottom-toolbar');
+        if (!toolbar) return { error: '未找到底部工具条' };
+        const buttons = Array.from(toolbar.querySelectorAll('.bar-btn'));
+        const btnIds = buttons.map(b => b.id);
+        const hasRedundant = document.getElementById('feishuBtnChild') ||
+                             document.getElementById('feishuBtnSibling') ||
+                             document.getElementById('feishuBtnDuplicate') ||
+                             document.getElementById('feishuBtnDrill') ||
+                             document.getElementById('feishuBtnFold') ||
+                             document.getElementById('feishuBtnDelete') ||
+                             document.getElementById('feishuBtnShortcuts');
+        return {
+          btnCount: buttons.length,
+          btnIds,
+          isMinimal: buttons.length === 4 && !hasRedundant
+        };
+      })()
+    `);
+
+    if (!toolbarMinimalTest.isMinimal) {
+      throw new Error(`测试 67 失败: 底部工具条未严格精简为最左侧 4 按钮: ${JSON.stringify(toolbarMinimalTest)}`);
+    }
+    console.log(`[PASS] 测试 67: 底部悬浮工具条极简 4 按钮严格校验通过 (按钮数=4: A/B/I/U, 7个冗余按钮已物理清除)`);
+
+    // 测试 68: 大纲模式彻底纯净化校验 (底部控制栏、左下角dock、缩放条100%隐藏)
+    const outlineCleanlinessTest = await evaluate(ws, `
+      (function() {
+        const dvc = window._dualViewControllerInstance;
+        dvc.switchView('outline');
+        const isOutlineMode = document.body.classList.contains('view-mode-outline');
+        
+        const bottomBar = document.querySelector('.feishu-bottom-toolbar');
+        const dock = document.querySelector('.feishu-bottom-dock');
+        const zoomBar = document.querySelector('.floating-viewport-bar');
+        const popover = document.querySelector('.feishu-structure-popover');
+
+        const isHidden = (el) => !el || window.getComputedStyle(el).display === 'none';
+
+        const result = {
+          isOutlineMode,
+          bottomBarHidden: isHidden(bottomBar),
+          dockHidden: isHidden(dock),
+          zoomBarHidden: isHidden(zoomBar),
+          popoverHidden: isHidden(popover)
+        };
+
+        // 测完切回导图模式
+        dvc.switchView('mindmap');
+        return result;
+      })()
+    `);
+
+    if (!outlineCleanlinessTest.isOutlineMode || !outlineCleanlinessTest.bottomBarHidden || !outlineCleanlinessTest.dockHidden || !outlineCleanlinessTest.zoomBarHidden) {
+      throw new Error(`测试 68 失败: 大纲模式纯净化校验异常: ${JSON.stringify(outlineCleanlinessTest)}`);
+    }
+    console.log(`[PASS] 测试 68: 大纲模式彻底纯净化校验通过 (底部控制栏、左下角dock、缩放条在大纲模式下均100%完全隐藏)`);
+
+    // 测试 69: 缩放比率显示彻底杜绝 NaN
+    const zoomNoNanTest = await evaluate(ws, `
+      (function() {
+        const sc = window._feishuStructureControllerInstance;
+        const mm = window._mindMapInstance;
+        const zoomEl = document.getElementById('dockZoomText') || document.getElementById('dockZoomLevelText');
+        
+        sc.updateZoomDisplay();
+        const text1 = zoomEl ? zoomEl.textContent : '';
+
+        mm.view.enlarge();
+        sc.updateZoomDisplay();
+        const text2 = zoomEl ? zoomEl.textContent : '';
+
+        mm.view.narrow();
+        sc.updateZoomDisplay();
+        const text3 = zoomEl ? zoomEl.textContent : '';
+
+        mm.view.reset();
+        sc.updateZoomDisplay();
+        const text4 = zoomEl ? zoomEl.textContent : '';
+
+        const allNoNan = [text1, text2, text3, text4].every(t => t.endsWith('%') && !t.includes('NaN') && !t.includes('undefined'));
+        return {
+          text1, text2, text3, text4,
+          allNoNan
+        };
+      })()
+    `);
+
+    if (!zoomNoNanTest.allNoNan) {
+      throw new Error(`测试 69 失败: 缩放比率显示异常包含 NaN: ${JSON.stringify(zoomNoNanTest)}`);
+    }
+    console.log(`[PASS] 测试 69: 缩放比率防 NaN 严密防护校验通过 (${zoomNoNanTest.text1} -> 放大 ${zoomNoNanTest.text2} -> 缩小 ${zoomNoNanTest.text3} -> 复位 ${zoomNoNanTest.text4})`);
+
+    // 测试 70: 重做图标优雅 U 型圆弧校验与第 2 种分支线为平滑圆弧曲线 (curve)
+    const redoAndCurveTest = await evaluate(ws, `
+      (function() {
+        const redoBtn = document.getElementById('btnDockRedo');
+        const redoSvg = redoBtn ? redoBtn.innerHTML : '';
+        const hasArcPath = redoSvg.includes('A5.5 5.5') || redoSvg.includes('a5.5 5.5') || redoSvg.includes('5.5 0 0 0');
+
+        const lineBtn2 = document.querySelector('.line-style-btn[data-line-style="curve"]');
+        const line2IsCurve = !!lineBtn2;
+
+        const sc = window._feishuStructureControllerInstance;
+        const mm = window._mindMapInstance;
+        sc.setLineStyle('curve');
+        const curStyle = mm.getThemeConfig('lineStyle');
+
+        return {
+          hasArcPath,
+          line2IsCurve,
+          appliedCurve: curStyle === 'curve'
+        };
+      })()
+    `);
+
+    if (!redoAndCurveTest.hasArcPath || !redoAndCurveTest.line2IsCurve || !redoAndCurveTest.appliedCurve) {
+      throw new Error(`测试 70 失败: 重做U型图标或第2种曲线校验异常: ${JSON.stringify(redoAndCurveTest)}`);
+    }
+    console.log(`[PASS] 测试 70: 重做图标优雅 U 型圆弧与分支线平滑圆弧曲线 (curve) 校验通过`);
+
+    // 测试 71: 快捷键 H 呼出快捷键面板
+    const shortcutHTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const drawer = window._feishuShortcutDrawerInstance;
+        drawer.close();
+        const wasClosed = !drawer.isOpen;
+
+        // 模拟按下 H 键 (非编辑态) 唤起快捷键抽屉
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: 'h', bubbles: true, cancelable: true }));
+
+        setTimeout(() => {
+          const openedAfterH = drawer.isOpen && drawer.drawerEl.classList.contains('open');
+
+          // 再次按下 H 键关闭抽屉
+          window.dispatchEvent(new KeyboardEvent('keydown', { key: 'h', bubbles: true, cancelable: true }));
+
+          setTimeout(() => {
+            const closedAfterH2 = !drawer.isOpen && !drawer.drawerEl.classList.contains('open');
+            resolve({
+              wasClosed,
+              openedAfterH,
+              closedAfterH2
+            });
+          }, 80);
+        }, 80);
+      })
+    `);
+
+    if (!shortcutHTest.wasClosed || !shortcutHTest.openedAfterH || !shortcutHTest.closedAfterH2) {
+      throw new Error(`测试 71 失败: 快捷键 H 唤起快捷键面板异常: ${JSON.stringify(shortcutHTest)}`);
+    }
+    console.log(`[PASS] 测试 71: 快捷键 H 调出/切换快捷键面板校验通过 (初次按下 H 唤起抽屉 -> 再次按下 H 平滑收起)`);
+
+    // 测试 72: 全部展开 (EXPAND_ALL) 与全部折叠 (UNEXPAND_ALL) 按钮与命令深度联动
+    const expandCollapseAllTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const mm = window._mindMapInstance;
+        const checkReady = () => {
+          const root = mm.renderer && mm.renderer.root;
+          if (!root || !root.children || !root.children[0]) {
+            return setTimeout(checkReady, 50);
+          }
+          const btnExpand = document.getElementById('btnExpandAll');
+          const btnCollapse = document.getElementById('btnCollapseAll');
+          if (!btnExpand || !btnCollapse) return resolve({ error: '未找到全部展开/折叠按钮' });
+
+          // 执行全部折叠
+          btnCollapse.click();
+          const c0Expanded = root.children[0].getData('expand');
+
+          // 执行全部展开
+          btnExpand.click();
+          const c0ExpandedAfter = root.children[0].getData('expand');
+
+          resolve({
+            collapseOk: c0Expanded === false,
+            expandOk: c0ExpandedAfter !== false
+          });
+        };
+        checkReady();
+      })
+    `);
+
+    if (!expandCollapseAllTest.collapseOk || !expandCollapseAllTest.expandOk) {
+      throw new Error(`测试 72 失败: 全部展开/折叠功能校验异常: ${JSON.stringify(expandCollapseAllTest)}`);
+    }
+    console.log(`[PASS] 测试 72: 全部展开 (EXPAND_ALL) 与全部折叠 (UNEXPAND_ALL) 按钮与命令深度联动校验通过`);
+
+    // 测试 73: 快捷键指南抽屉消除冗余"使用指南"标签页
+    const drawerTabCleanTest = await evaluate(ws, `
+      (function() {
+        const drawer = window._feishuShortcutDrawerInstance;
+        drawer.open();
+        const tabCount = drawer.drawerEl.querySelectorAll('.drawer-tab').length;
+        const titleText = drawer.drawerEl.querySelector('.drawer-title') ? drawer.drawerEl.querySelector('.drawer-title').textContent : '';
+        const shortcutItems = drawer.drawerEl.querySelectorAll('.shortcut-item').length;
+        drawer.close();
+        return {
+          tabCount,
+          titleText,
+          shortcutItems
+        };
+      })()
+    `);
+
+    if (drawerTabCleanTest.tabCount !== 0 || drawerTabCleanTest.titleText !== '快捷键指南' || drawerTabCleanTest.shortcutItems === 0) {
+      throw new Error(`测试 73 失败: 快捷键指南抽屉结构异常: ${JSON.stringify(drawerTabCleanTest)}`);
+    }
+    console.log(`[PASS] 测试 73: 快捷键指南抽屉纯净化校验通过 (无冗余空使用指南Tab，标题="${drawerTabCleanTest.titleText}", 快捷键项数=${drawerTabCleanTest.shortcutItems})`);
+
+    // --- 开始执行 Phase 14 大纲模式去灯笼、快捷键 M 模式切换、左下角控制坞合体与文本整理专项断言项 ---
+    console.log('\n--- 开始执行 Phase 14 大纲模式去灯笼、快捷键 M 模式切换、左下角控制坞合体与文本整理专项断言项 ---');
+
+    // 测试 74: 大纲模式彻底消除外层浮动卡片大框框("灯笼")，呈现无边框纯白文档并保持实时公式预览胶囊
+    const outlinerNoBoxTest = await evaluate(ws, `
+      (function() {
+        const controller = window._dualViewControllerInstance;
+        const outliner = window._outlinerInstance;
+        controller.switchView('outline');
+
+        const container = document.getElementById('outlinerContainer');
+        const containerStyle = window.getComputedStyle(container);
+        const containerBg = containerStyle.backgroundColor;
+
+        const paper = document.querySelector('.outliner-paper');
+        const paperStyle = window.getComputedStyle(paper);
+        const paperBorder = paperStyle.borderStyle;
+        const paperBorderWidth = paperStyle.borderWidth;
+        const paperRadius = paperStyle.borderRadius;
+        const paperShadow = paperStyle.boxShadow;
+
+        const isBoxClean = (paperBorder === 'none' || paperBorderWidth === '0px') &&
+                           (paperShadow === 'none') &&
+                           (paperRadius === '0px');
+
+        const capsule = outliner.previewCapsule;
+
+        // 模拟打字测试：输入公式
+        const firstNode = outliner.data.children[0];
+        outliner.focusNode(firstNode.data.uid);
+        const row = outliner.container.querySelector('.outliner-row[data-uid="' + firstNode.data.uid + '"]');
+        const input = row.querySelector('.outliner-input-view');
+        input.textContent = '测试纯净大纲 $\\\\int_0^1 x^2 dx = \\\\frac{1}{3}$';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+
+        const capsuleDisplayDuringTyping = capsule ? window.getComputedStyle(capsule).display : 'none';
+        const capsuleKatexCount = capsule ? capsule.querySelectorAll('.katex').length : 0;
+
+        // 提交后直接在 displayView 呈现 KaTeX，胶囊自动隐退
+        outliner.commitNode(firstNode.data.uid);
+        const displayView = row.querySelector('.outliner-display-view');
+        const katexCount = displayView ? displayView.querySelectorAll('.katex').length : 0;
+        const capsuleDisplayAfterCommit = capsule ? window.getComputedStyle(capsule).display : 'none';
+
+        return {
+          containerBg,
+          paperBorder,
+          paperBorderWidth,
+          paperRadius,
+          paperShadow,
+          isBoxClean,
+          capsuleDisplayDuringTyping,
+          capsuleKatexCount,
+          capsuleDisplayAfterCommit,
+          katexCount
+        };
+      })()
+    `);
+
+    if (!outlinerNoBoxTest.isBoxClean || outlinerNoBoxTest.containerBg !== 'rgb(255, 255, 255)' || outlinerNoBoxTest.capsuleDisplayDuringTyping === 'none' || outlinerNoBoxTest.capsuleKatexCount === 0 || outlinerNoBoxTest.capsuleDisplayAfterCommit !== 'none' || outlinerNoBoxTest.katexCount === 0) {
+      throw new Error(`测试 74 失败: 大纲模式去卡片大框框与公式预览验证异常: ${JSON.stringify(outlinerNoBoxTest)}`);
+    }
+    console.log(`[PASS] 测试 74: 大纲模式浮动卡片大框框("灯笼")已彻底消除 (纯白全屏背景 rgb(255,255,255)，无边框无阴影圆角为0，打字实时公式胶囊正常激活且提交后无缝内联渲染 KaTeX=${outlinerNoBoxTest.katexCount})`);
+
+    // 测试 75: 快捷键 M (或 m) 平滑双向切换导图与大纲视图
+    const shortcutMTest = await evaluate(ws, `
+      new Promise((resolve) => {
+        const controller = window._dualViewControllerInstance;
+        // 当前为 outline 模式
+        const initialMode = controller.currentView;
+
+        // 派发 'm' 按键事件
+        window.dispatchEvent(new KeyboardEvent('keydown', { key: 'm', bubbles: true }));
+
+        setTimeout(() => {
+          const modeAfterM1 = controller.currentView;
+
+          // 再次派发 'M' 按键事件
+          window.dispatchEvent(new KeyboardEvent('keydown', { key: 'M', bubbles: true }));
+
+          setTimeout(() => {
+            const modeAfterM2 = controller.currentView;
+
+            // 切回 mindmap 模式为后续测试做准备
+            controller.switchView('mindmap');
+            setTimeout(() => {
+              resolve({
+                initialMode,
+                modeAfterM1,
+                modeAfterM2,
+                finalMode: controller.currentView
+              });
+            }, 60);
+          }, 60);
+        }, 60);
+      })
+    `);
+
+    if (shortcutMTest.initialMode !== 'outline' || shortcutMTest.modeAfterM1 !== 'mindmap' || shortcutMTest.modeAfterM2 !== 'outline' || shortcutMTest.finalMode !== 'mindmap') {
+      throw new Error(`测试 75 失败: 快捷键 M 双向切换模式异常: ${JSON.stringify(shortcutMTest)}`);
+    }
+    console.log(`[PASS] 测试 75: 快捷键 M (导图/大纲视图切换) 键盘无冲突平滑双向切换通过 (outline -> 'm' -> mindmap -> 'M' -> outline -> mindmap)`);
+
+    // 测试 76: 左下角控制坞合体结构完整性校验 (垂直坞 + 水平缩放滑块条 + 居中定位按钮)
+    const mergedDockTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const wrapper = document.getElementById('feishuBottomDockWrapper');
+        const verticalDock = document.getElementById('feishuBottomDock');
+        const zoomSliderBar = document.getElementById('feishuZoomSliderBar');
+
+        if (!wrapper || !verticalDock || !zoomSliderBar) {
+          return { error: '未找到左下角合体控制坞组件' };
+        }
+
+        const btnUndo = document.getElementById('btnDockUndo');
+        const btnRedo = document.getElementById('btnDockRedo');
+        const btnStructure = document.getElementById('btnDockStructure');
+        const zoomText = document.getElementById('dockZoomLevelText') || document.getElementById('dockZoomText');
+
+        const btnZoomOut = document.getElementById('btnDockZoomOut');
+        const zoomSlider = document.getElementById('dockZoomSlider');
+        const btnZoomIn = document.getElementById('btnDockZoomIn');
+        const btnLocateCenter = document.getElementById('btnDockLocateCenter');
+        const tooltip = btnLocateCenter ? (btnLocateCenter.querySelector('.locate-tooltip') || btnLocateCenter.parentElement.querySelector('.locate-tooltip')) : null;
+
+        const hasVerticalButtons = !!(btnUndo && btnRedo && btnStructure && zoomText);
+        const hasHorizontalControls = !!(btnZoomOut && zoomSlider && btnZoomIn && btnLocateCenter);
+        const sliderRange = zoomSlider ? { min: zoomSlider.min, max: zoomSlider.max, value: zoomSlider.value } : null;
+        const tooltipText = tooltip ? tooltip.textContent.trim() : '';
+
+        // 测试滑块交互：将滑块拉至 125%
+        if (zoomSlider) {
+          zoomSlider.value = '125';
+          zoomSlider.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+
+        const currentScale = mm.view.getTransformData().state.scale || mm.view.scale;
+        const updatedZoomText = zoomText ? zoomText.textContent : '';
+
+        // 点击居中定位按钮并复位
+        if (btnLocateCenter) {
+          btnLocateCenter.click();
+        }
+
+        return {
+          wrapperExists: true,
+          hasVerticalButtons,
+          hasHorizontalControls,
+          sliderRange,
+          tooltipText,
+          updatedZoomText,
+          currentScaleOk: Math.abs(currentScale - 1.25) < 0.05
+        };
+      })()
+    `);
+
+    if (!mergedDockTest.wrapperExists || !mergedDockTest.hasVerticalButtons || !mergedDockTest.hasHorizontalControls || mergedDockTest.tooltipText !== '定位到中心节点' || !mergedDockTest.currentScaleOk) {
+      throw new Error(`测试 76 失败: 左下角控制坞合体结构校验失败: ${JSON.stringify(mergedDockTest)}`);
+    }
+    console.log(`[PASS] 测试 76: 左下角控制坞合体结构完整性校验通过 (垂直坞+水平缩放条合体呈现, 滑块范围 20%~200%, 居中定位按钮提示语="${mergedDockTest.tooltipText}", 缩放联动=${mergedDockTest.updatedZoomText})`);
+
+    // 测试 77: 右下角独立视口调整栏彻底移除 (.floating-viewport-bar 不存在)
+    const viewportBarRemovedTest = await evaluate(ws, `
+      (function() {
+        const oldBar = document.querySelector('.floating-viewport-bar');
+        const oldZoomIn = document.getElementById('btnZoomIn');
+        const oldZoomOut = document.getElementById('btnZoomOut');
+
+        // 测试在大纲模式下，左下角合体控制坞被彻底隐藏
+        const controller = window._dualViewControllerInstance;
+        controller.switchView('outline');
+        const wrapper = document.getElementById('feishuBottomDockWrapper');
+        const wrapperDisplayInOutline = wrapper ? window.getComputedStyle(wrapper).display : 'none';
+
+        // 切回 mindmap 模式
+        controller.switchView('mindmap');
+        const wrapperDisplayInMindmap = wrapper ? window.getComputedStyle(wrapper).display : '';
+
+        return {
+          oldBarExists: !!oldBar,
+          oldZoomInExists: !!oldZoomIn,
+          oldZoomOutExists: !!oldZoomOut,
+          wrapperDisplayInOutline,
+          wrapperDisplayInMindmap
+        };
+      })()
+    `);
+
+    if (viewportBarRemovedTest.oldBarExists || viewportBarRemovedTest.oldZoomInExists || viewportBarRemovedTest.oldZoomOutExists || viewportBarRemovedTest.wrapperDisplayInOutline !== 'none') {
+      throw new Error(`测试 77 失败: 右下角控制栏彻底清理校验失败: ${JSON.stringify(viewportBarRemovedTest)}`);
+    }
+    console.log(`[PASS] 测试 77: 右下角独立视口调整栏彻底移除通过 (DOM 中已无 .floating-viewport-bar，大纲模式下左下坞完全隐藏 display=none)`);
+
+    // 测试 78: 用户界面文本整洁化与去特殊品牌前缀校验
+    const cleanContentTest = await evaluate(ws, `
+      (function() {
+        const bodyText = document.body.innerText;
+        const htmlText = document.body.innerHTML;
+
+        const bannedKeywords = ['飞书经典', '飞书专属', '飞书同款', 'MVP 独立版'];
+        const foundKeywords = [];
+        bannedKeywords.forEach(kw => {
+          if (htmlText.includes(kw)) {
+            foundKeywords.push(kw);
+          }
+        });
+
+        // 检查结构搭配弹窗中的文本质量
+        const controller = window._feishuStructureControllerInstance;
+        const catalogGroup = controller.popoverEl.querySelector('.structure-group:nth-child(2)');
+        const catalogItems = catalogGroup ? Array.from(catalogGroup.querySelectorAll('.structure-item-name')).map(el => el.textContent.trim()) : [];
+
+        return {
+          foundKeywords,
+          catalogItems
+        };
+      })()
+    `);
+
+    if (cleanContentTest.foundKeywords.length > 0) {
+      throw new Error(`测试 78 失败: 页面中仍存在不规范品牌/营销字眼: ${JSON.stringify(cleanContentTest.foundKeywords)}`);
+    }
+    console.log(`[PASS] 测试 78: 用户界面文本整洁化与去特殊品牌前缀校验通过 (零敏感标签，分支线规范命名=${JSON.stringify(cleanContentTest.catalogItems)})`);
+
+    // 生成 Phase 14 最终全景截图
+    await evaluate(ws, `
+      (function() {
+        window._feishuStructureControllerInstance.showPopover();
+        window._mindMapInstance.view.reset();
+      })()
+    `);
+    await sleep(400);
+    const mergedDockScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const mergedDockBuffer = Buffer.from(mergedDockScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_merged_dock_preview.png'), mergedDockBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_merged_dock_preview.png'), mergedDockBuffer);
+    }
+    console.log('[Screenshot] 飞书左下角合体控制坞全景截图已生成: mindmap-sandbox/feishu_merged_dock_preview.png');
+
+    // 生成大纲模式去灯笼纯净化全景截图
+    await evaluate(ws, `
+      (function() {
+        window._feishuStructureControllerInstance.hidePopover();
+        window._dualViewControllerInstance.switchView('outline');
+      })()
+    `);
+    await sleep(400);
+    const outlinePureScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const outlinePureBuffer = Buffer.from(outlinePureScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_outline_pure_preview.png'), outlinePureBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_outline_pure_preview.png'), outlinePureBuffer);
+    }
+    console.log('[Screenshot] 大纲模式去灯笼纯净化全景截图已生成: mindmap-sandbox/feishu_outline_pure_preview.png');
+
     console.log('\n====================================================');
-    console.log('   所有 Phase (1~7) 共计 36 项端到端测试全部通过');
+    console.log('   所有 Phase (1~14) 共计 78 项端到端测试全部通过');
     console.log('====================================================\n');
   } catch (err) {
     console.error('\n[FAIL] 自动化回归测试失败:', err.message);

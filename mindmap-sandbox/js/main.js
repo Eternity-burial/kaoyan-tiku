@@ -83,16 +83,28 @@
       color: '#3370ff',
       width: 2.5
     },
-    dragPlaceholderRectFill: 'rgba(51, 112, 255, 0.15)'
+    dragPlaceholderRectFill: 'rgba(51, 112, 255, 0.15)',
+    isUseCustomNodeContent: true,
+    customCreateNodeContent: (node) => {
+      if (window.FeishuNodeRenderer) {
+        return window.FeishuNodeRenderer.render(node);
+      }
+      return null;
+    }
   });
 
   // 4. 全局暴露实例供测试脚本与调试使用
   window._mindMapInstance = mindMap;
 
-  // 5. 初始化飞书磁吸拖拽增强器
+  // 5. 初始化飞书磁吸拖拽增强器与原位编辑器
   if (window.FeishuDragEnhancer) {
-    window._feishuDragEnhancerInstance = new window.FeishuDragEnhancer(mindMap);
+    window._feishuDragEnhancer = window._feishuDragEnhancerInstance = new window.FeishuDragEnhancer(mindMap);
     console.log('[Mindmap Sandbox] 飞书磁吸拖拽增强器已挂载并激活');
+  }
+
+  if (window.FeishuNodeEditor) {
+    window._feishuNodeEditorInstance = new window.FeishuNodeEditor(mindMap);
+    console.log('[Mindmap Sandbox] 飞书导图原位编辑与实时悬浮预览胶囊已激活');
   }
 
   // 6. 初始化飞书大纲引擎与双向视图控制器
@@ -114,7 +126,35 @@
     console.log('[Mindmap Sandbox] 飞书双向视图控制器已挂载并激活');
   }
 
-  // 7. 视口大小自适应监听
+  // 7. 初始化飞书快捷键指南抽屉、底部固定工具条与全局快捷键管理器
+  let shortcutDrawer = null;
+  if (window.FeishuShortcutDrawer) {
+    shortcutDrawer = new window.FeishuShortcutDrawer();
+    window._feishuShortcutDrawerInstance = shortcutDrawer;
+    console.log('[Mindmap Sandbox] 飞书快捷键指南抽屉已就绪');
+  }
+
+  if (window.FeishuBottomToolbar) {
+    window._feishuBottomToolbarInstance = new window.FeishuBottomToolbar(mindMap, {
+      shortcutDrawer: shortcutDrawer
+    });
+    console.log('[Mindmap Sandbox] 飞书底部固定深色工具条已挂载并就绪');
+  }
+
+  if (window.FeishuShortcutManager) {
+    window._feishuShortcutManagerInstance = new window.FeishuShortcutManager(mindMap, {
+      shortcutDrawer: shortcutDrawer
+    });
+    console.log('[Mindmap Sandbox] 飞书全局快捷键交互管理器已挂载并激活');
+  }
+
+  // 8. 初始化飞书左下角结构与分支线搭配控制器
+  if (window.FeishuStructureController) {
+    window._feishuStructureController = window._feishuStructureControllerInstance = new window.FeishuStructureController(mindMap);
+    console.log('[Mindmap Sandbox] 飞书结构与分支线搭配控制器已挂载并激活');
+  }
+
+  // 9. 视口大小自适应监听
   window.addEventListener('resize', () => {
     mindMap.resize();
   });
@@ -184,6 +224,29 @@
     btnFitView.addEventListener('click', () => {
       mindMap.view.fit();
       updateZoomDisplay();
+    });
+  }
+
+  const btnExpandAll = document.getElementById('btnExpandAll');
+  const btnCollapseAll = document.getElementById('btnCollapseAll');
+
+  if (btnExpandAll) {
+    btnExpandAll.addEventListener('click', () => {
+      if (window._feishuShortcutManagerInstance) {
+        window._feishuShortcutManagerInstance.expandAll();
+      } else {
+        mindMap.execCommand('EXPAND_ALL');
+      }
+    });
+  }
+
+  if (btnCollapseAll) {
+    btnCollapseAll.addEventListener('click', () => {
+      if (window._feishuShortcutManagerInstance) {
+        window._feishuShortcutManagerInstance.collapseAll();
+      } else {
+        mindMap.execCommand('UNEXPAND_ALL');
+      }
     });
   }
 
