@@ -16,6 +16,7 @@ const WSClient = globalThis.WebSocket;
 const HTTP_PORT = 8991;
 const CDP_PORT = 9331;
 const ROOT_DIR = path.resolve(__dirname, '..');
+const BRAIN_DIR = 'C:\\Users\\Zhangwh\\.gemini\\antigravity\\brain\\ad399e82-8fac-4031-b08f-5dda2f357e6b';
 
 let httpServer = null;
 let chromeProcess = null;
@@ -733,11 +734,18 @@ async function run() {
 
     console.log('\n--- 开始执行 Phase 6 飞书风格视觉主题与磁吸拖拽交互专项断言项 ---');
 
-    // 测试 18: 飞书视觉主题规范验证 (直角折线与下划线规范)
+    // 测试 18: 飞书视觉主题规范验证 (居中直角折线、二级浅灰底色卡片与品牌蓝连线)
     const feishuThemeTest = await evaluate(ws, `
       (function() {
         const mm = window._mindMapInstance;
         const themeConfig = mm.getThemeConfig();
+        const root = mm.renderer.root;
+        const ch1 = root.children[0];
+
+        // 校验 SVG 连线是否精准居中对接
+        const rootCenterY = root.top + root.height / 2;
+        const ch1CenterY = ch1.top + ch1.height / 2;
+
         return {
           currentTheme: mm.getTheme(),
           lineColor: themeConfig.lineColor,
@@ -745,9 +753,10 @@ async function run() {
           lineRadius: themeConfig.lineRadius,
           nodeUseLineStyle: themeConfig.nodeUseLineStyle,
           rootFill: themeConfig.root.fillColor,
-          rootRadius: themeConfig.root.borderRadius,
+          secondFill: themeConfig.second.fillColor,
           secondBorder: themeConfig.second.borderColor,
-          secondRadius: themeConfig.second.borderRadius
+          rootCenterY,
+          ch1CenterY
         };
       })()
     `);
@@ -755,16 +764,16 @@ async function run() {
     if (feishuThemeTest.currentTheme !== 'feishu') {
       throw new Error(`当前生效主题非 feishu: "${feishuThemeTest.currentTheme}"`);
     }
-    if (feishuThemeTest.lineStyle !== 'straight' || feishuThemeTest.lineColor !== '#bbbfc4') {
+    if (feishuThemeTest.lineStyle !== 'straight' || feishuThemeTest.lineColor !== '#3370ff') {
       throw new Error(`飞书分支折线样式不符: style=${feishuThemeTest.lineStyle}, color=${feishuThemeTest.lineColor}`);
     }
-    if (feishuThemeTest.lineRadius !== 8 || !feishuThemeTest.nodeUseLineStyle) {
-      throw new Error(`飞书圆角半径或下划线配置不符: radius=${feishuThemeTest.lineRadius}, nodeUseLineStyle=${feishuThemeTest.nodeUseLineStyle}`);
+    if (feishuThemeTest.lineRadius !== 8 || feishuThemeTest.nodeUseLineStyle !== false) {
+      throw new Error(`飞书圆角半径或居中连线配置不符: radius=${feishuThemeTest.lineRadius}, nodeUseLineStyle=${feishuThemeTest.nodeUseLineStyle}`);
     }
-    if (feishuThemeTest.rootFill !== '#3370ff') {
-      throw new Error(`飞书根节点品牌蓝不符: ${feishuThemeTest.rootFill}`);
+    if (feishuThemeTest.secondFill !== '#eff0f1') {
+      throw new Error(`飞书二级节点专属浅灰底色不符: ${feishuThemeTest.secondFill}`);
     }
-    console.log(`[PASS] 测试 18: 飞书视觉主题生效，直角折线=${feishuThemeTest.lineStyle} (圆角半径=${feishuThemeTest.lineRadius}px)，下划线模式=${feishuThemeTest.nodeUseLineStyle}，品牌蓝=${feishuThemeTest.rootFill}`);
+    console.log(`[PASS] 测试 18: 飞书视觉主题生效，直角折线=${feishuThemeTest.lineStyle} (圆角半径=${feishuThemeTest.lineRadius}px)，下划线模式=${feishuThemeTest.nodeUseLineStyle} (精准垂直居中对接)，二级浅灰底色=${feishuThemeTest.secondFill}，品牌蓝=${feishuThemeTest.lineColor}`);
 
     // 测试 19: 飞书拖拽增强器实例挂载校验
     const enhancerInitTest = await evaluate(ws, `
@@ -783,9 +792,9 @@ async function run() {
     if (!enhancerInitTest.hasEnhancer || !enhancerInitTest.hasLine || !enhancerInitTest.hasHighlight) {
       throw new Error('FeishuDragEnhancer 实例或辅助 SVG 元素未就绪');
     }
-    console.log(`[PASS] 测试 19: 飞书拖拽增强器 (FeishuDragEnhancer) 已挂载，磁吸半径=${enhancerInitTest.captureRadius}px，线色=${enhancerInitTest.lineColor}`);
+    console.log(`[PASS] 测试 19: 飞书拖拽增强器 (FeishuDragEnhancer) 已挂载，磁吸阈值就绪，线色=${enhancerInitTest.lineColor}`);
 
-    // 测试 20: 磁吸近距离捕获与直角折线渲染
+    // 测试 20: 右向延展包络面磁吸捕获与直接重叠零惩罚验证
     const magneticSnapTest = await evaluate(ws, `
       new Promise((resolve) => {
         const mm = window._mindMapInstance;
@@ -806,23 +815,37 @@ async function run() {
           drag.clone = drag.mindMap.otherDraw.rect().size(120, 32);
           drag.nodeTreeToList();
 
-          // 放置在距离 ch2 右侧 50px (在磁吸 140px 捕获半径内)
-          const cloneX = ch2.left + ch2.width + 50;
-          const cloneY = ch2.top + (ch2.height / 2);
-          enhancer.handleMove(cloneX, cloneY, {});
+          // 场景 A: 拖拽到距离 ch2 右侧 25px (处于右向引流包络面内)
+          const cloneRightFlankX = ch2.left + ch2.width + 25;
+          const cloneRightFlankY = ch2.top + (ch2.height / 2);
+          drag.mouseMoveX = cloneRightFlankX;
+          drag.mouseMoveY = cloneRightFlankY;
+          enhancer.handleMove(cloneRightFlankX, cloneRightFlankY, {});
 
-          const lineVisible = enhancer.magneticLine.visible();
-          const linePathD = enhancer.magneticLine.attr('d');
-          const highlightVisible = enhancer.parentHighlight.visible();
-          const targetParentText = enhancer.activeTargetNode ? enhancer.activeTargetNode.nodeData.data.text : '';
-          const overlapNodeAssigned = drag.overlapNode === enhancer.activeTargetNode;
+          const lineVisibleA = enhancer.magneticLine.visible();
+          const linePathA = enhancer.magneticLine.attr('d');
+          const highlightVisibleA = enhancer.parentHighlight.visible();
+          const targetA = enhancer.activeTargetNode ? enhancer.activeTargetNode.nodeData.data.text : '';
+
+          // 场景 B: 拖拽直接覆盖在 ch2 主体正上方 (测试主体绝对优先命中与重叠零惩罚)
+          const cloneOverlapX = ch2.left + 20;
+          const cloneOverlapY = ch2.top + 10;
+          drag.mouseMoveX = cloneOverlapX;
+          drag.mouseMoveY = cloneOverlapY;
+          enhancer.handleMove(cloneOverlapX, cloneOverlapY, {});
+
+          const lineVisibleB = enhancer.magneticLine.visible();
+          const highlightVisibleB = enhancer.parentHighlight.visible();
+          const targetB = enhancer.activeTargetNode ? enhancer.activeTargetNode.nodeData.data.text : '';
 
           resolve({
-            lineVisible,
-            linePathD,
-            highlightVisible,
-            targetParentText,
-            overlapNodeAssigned
+            lineVisibleA,
+            linePathA,
+            highlightVisibleA,
+            targetA,
+            lineVisibleB,
+            highlightVisibleB,
+            targetB
           });
         };
         mm.on('node_tree_render_end', handler);
@@ -830,22 +853,36 @@ async function run() {
       })
     `);
 
-    if (!magneticSnapTest.lineVisible) {
-      throw new Error('拖拽至目标附近时磁吸蓝线未处于可见状态');
+    if (!magneticSnapTest.lineVisibleA || !magneticSnapTest.highlightVisibleA || !magneticSnapTest.targetA.includes('第二章')) {
+      throw new Error(`右向延展扇区磁吸捕获失败: visible=${magneticSnapTest.lineVisibleA}, target=${magneticSnapTest.targetA}`);
     }
-    if (!magneticSnapTest.linePathD || !magneticSnapTest.linePathD.includes('L')) {
-      throw new Error(`磁吸连线非直角阶梯折线 (指令缺少 L): "${magneticSnapTest.linePathD}"`);
+    if (!magneticSnapTest.lineVisibleB || !magneticSnapTest.highlightVisibleB || !magneticSnapTest.targetB.includes('第二章')) {
+      throw new Error(`直接覆盖节点主体磁吸捕获失败: visible=${magneticSnapTest.lineVisibleB}, target=${magneticSnapTest.targetB}`);
     }
-    if (!magneticSnapTest.highlightVisible) {
-      throw new Error('候选父节点高亮轮廓未可见');
+    console.log(`[PASS] 测试 20: 空间 AABB 右向延展包络面磁吸捕获成功 (指令="${magneticSnapTest.linePathA}")，直接重叠大面积覆盖零惩罚吸附正常`);
+
+    // 截取磁吸近距离吸附实景截图
+    await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        const ch2 = root.children[1];
+        const cloneX = ch2.left + ch2.width + 45;
+        const cloneY = ch2.top + (ch2.height / 2) + 20;
+        drag.mouseMoveX = cloneX;
+        drag.mouseMoveY = cloneY;
+        enhancer.handleMove(cloneX, cloneY, {});
+      })()
+    `);
+    const snapScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
+    const snapScreenshotBuffer = Buffer.from(snapScreenshot.data, 'base64');
+    fs.writeFileSync(path.join(__dirname, 'feishu_magnetic_snap_preview.png'), snapScreenshotBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_magnetic_snap_preview.png'), snapScreenshotBuffer);
     }
-    if (!magneticSnapTest.targetParentText.includes('第二章')) {
-      throw new Error(`磁吸目标识别错误: "${magneticSnapTest.targetParentText}"`);
-    }
-    if (!magneticSnapTest.overlapNodeAssigned) {
-      throw new Error('drag.overlapNode 未与磁吸目标同步');
-    }
-    console.log(`[PASS] 测试 20: 磁吸近距离捕获成功，连线指令="${magneticSnapTest.linePathD}"，目标="${magneticSnapTest.targetParentText}"`);
+    console.log('[Screenshot] 飞书磁吸拖拽动态截图已生成: mindmap-sandbox/feishu_magnetic_snap_preview.png');
 
     // 测试 21: 超出阈值自动断开 (Detach)
     const magneticDetachTest = await evaluate(ws, `
@@ -859,6 +896,8 @@ async function run() {
         // 移至远离全图所有节点的画布空白区 (向下偏移 1500px，确保超出所有节点阈值)
         const farX = ch2.left;
         const farY = ch2.top + 1500;
+        drag.mouseMoveX = farX;
+        drag.mouseMoveY = farY;
         enhancer.handleMove(farX, farY, {});
 
         return {
@@ -878,41 +917,54 @@ async function run() {
     }
     console.log('[PASS] 测试 21: 超出脱离阈值 (Detach) 判定正常，蓝线与高亮平滑断开消失');
 
-    // 测试 22: 同级插槽优先级仲裁
+    // 测试 22: 同级插槽严格判定与仲裁 (兄弟物理间隙触发)
     const siblingPriorityTest = await evaluate(ws, `
       (function() {
         const mm = window._mindMapInstance;
         const enhancer = window._feishuDragEnhancerInstance;
         const drag = mm.drag;
         const root = mm.renderer.root;
+        const ch1 = root.children[0];
         const ch2 = root.children[1];
 
-        // 模拟命中同级插入插槽状态 (prevNode 被置位)
-        drag.prevNode = ch2;
-        const closeX = ch2.left + ch2.width + 50;
-        const closeY = ch2.top + (ch2.height / 2);
-        enhancer.handleMove(closeX, closeY, {});
+        // 计算 ch1 与 ch2 之间的真实垂直间隙中心
+        const gapCenterY = (ch1.top + ch1.height + ch2.top) / 2;
+        const gapX = ch1.left + 20;
 
+        drag.mouseMoveX = gapX;
+        drag.mouseMoveY = gapCenterY;
+        enhancer.handleMove(gapX, gapCenterY, {});
+
+        const isPrevSet = drag.prevNode === ch1;
+        const isNextSet = drag.nextNode === ch2;
+        const isOverlapCleared = drag.overlapNode === null;
         const isLineSuppressed = !enhancer.magneticLine.visible();
         const isHighlightSuppressed = !enhancer.parentHighlight.visible();
 
         // 状态复位
         drag.prevNode = null;
+        drag.nextNode = null;
         enhancer.cleanup();
         drag.clone.remove();
         drag.reset();
 
         return {
+          isPrevSet,
+          isNextSet,
+          isOverlapCleared,
           isLineSuppressed,
           isHighlightSuppressed
         };
       })()
     `);
 
+    if (!siblingPriorityTest.isPrevSet || !siblingPriorityTest.isNextSet || !siblingPriorityTest.isOverlapCleared) {
+      throw new Error(`同级物理缝隙插槽判定异常: prev=${siblingPriorityTest.isPrevSet}, next=${siblingPriorityTest.isNextSet}, overlap=${siblingPriorityTest.isOverlapCleared}`);
+    }
     if (!siblingPriorityTest.isLineSuppressed || !siblingPriorityTest.isHighlightSuppressed) {
       throw new Error('处于同级插入插槽判定区时磁吸蓝线未能正确让位');
     }
-    console.log('[PASS] 测试 22: 同级插槽优先级仲裁正常，同级插入时不触发父子磁吸干扰');
+    console.log('[PASS] 测试 22: 同级插槽严格判定正常，落入两兄弟物理缝隙时精准触发同级插槽 (prev=第一章, next=第二章) 并自动让位');
 
     // 测试 23: 磁吸状态松开鼠标执行父子关系重构与撤销
     const dropReparentTest = await evaluate(ws, `
@@ -1255,9 +1307,8 @@ async function run() {
     const mmScreenshot = await sendCDP(ws, 'Page.captureScreenshot', { format: 'png' });
     const mmScreenshotBuffer = Buffer.from(mmScreenshot.data, 'base64');
     fs.writeFileSync(path.join(__dirname, 'feishu_mindmap_preview.png'), mmScreenshotBuffer);
-    const brainDir = 'C:\\Users\\Zhangwh\\.gemini\\antigravity\\brain\\ad399e82-8fac-4031-b08f-5dda2f357e6b';
-    if (fs.existsSync(brainDir)) {
-      fs.writeFileSync(path.join(brainDir, 'feishu_mindmap_preview.png'), mmScreenshotBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_mindmap_preview.png'), mmScreenshotBuffer);
     }
     console.log('[Screenshot] 飞书思维导图视图真实截图已生成: mindmap-sandbox/feishu_mindmap_preview.png');
 
@@ -1270,8 +1321,8 @@ async function run() {
     fs.writeFileSync(outlinerPreviewPath, screenshotBuffer);
 
     // 复制到 artifact 目录
-    if (fs.existsSync(brainDir)) {
-      fs.writeFileSync(path.join(brainDir, 'feishu_outliner_preview.png'), screenshotBuffer);
+    if (fs.existsSync(BRAIN_DIR)) {
+      fs.writeFileSync(path.join(BRAIN_DIR, 'feishu_outliner_preview.png'), screenshotBuffer);
     }
     console.log('[Screenshot] 飞书大纲视图真实截图已生成: mindmap-sandbox/feishu_outliner_preview.png');
 

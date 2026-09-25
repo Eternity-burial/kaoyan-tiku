@@ -14,14 +14,14 @@
     return;
   }
 
-  // 2. 注册飞书经典视觉主题 (Feishu / Lark Design System: 直角折线与下划线规范)
+  // 2. 注册飞书经典视觉主题 (Feishu / Lark Design System: 居中直角折线与二级浅灰底色卡片规范)
   MindMap.defineTheme('feishu', {
     backgroundColor: '#f8f9fa',
-    lineColor: '#bbbfc4',
+    lineColor: '#3370ff',       // 飞书品牌蓝分支连线
     lineWidth: 2,
     lineStyle: 'straight',      // 直角折线模式 (包含水平延伸与垂直拐角)
     lineRadius: 8,              // 折线拐角圆角 8px (复刻飞书圆角折线)
-    nodeUseLineStyle: true,     // 激活下划线横线模式 (二级及以下节点无边框，文字置于横线上)
+    nodeUseLineStyle: false,    // 关闭下划线横线模式，使连线精准垂直居中对接 (y = top + height / 2)
     root: {
       shape: 'rectangle',
       fillColor: '#3370ff',
@@ -38,24 +38,24 @@
     second: {
       shape: 'rectangle',
       marginX: 80,
-      marginY: 32,
-      fillColor: '#ffffff',
+      marginY: 24,
+      fillColor: '#eff0f1',     // 飞书二级节点专属浅灰底色卡片
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
       color: '#1f2329',
       fontSize: 14,
       fontWeight: '500',
-      borderColor: '#dee0e3',
-      borderWidth: 1.5,
+      borderColor: 'transparent',
+      borderWidth: 0,
       borderRadius: 6,
       hoverRectColor: '#3370ff',
       paddingX: 16,
-      paddingY: 10
+      paddingY: 8
     },
     node: {
       shape: 'rectangle',
       marginX: 50,
-      marginY: 20,
-      fillColor: 'transparent',
+      marginY: 16,
+      fillColor: 'transparent', // 三级及以上纯文本无底色
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif',
       color: '#1f2329',
       fontSize: 13,
@@ -64,8 +64,8 @@
       borderWidth: 0,
       borderRadius: 0,
       hoverRectColor: '#3370ff',
-      paddingX: 10,
-      paddingY: 6
+      paddingX: 8,
+      paddingY: 4
     }
   });
 
