@@ -21,6 +21,8 @@ scripts/*
 !scripts/verify_yanbrick_full.py
 !scripts/build_lexicon.py
 !scripts/validate_lexicon.py
+!scripts/generate_math_knowledge_data.js
+!scripts/compiled_math_knowledge_data.json
 node_modules/
 package.json
 package-lock.json

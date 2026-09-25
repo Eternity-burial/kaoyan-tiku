@@ -1467,6 +1467,7 @@
 
     // ===== 题号分区手风琴折叠状态存储与题号网格渲染 =====
     const collapsedSections = new Set();
+    const collapsedSubSections = new Set();
     let isAccordionMode = false; // 手风琴单分区聚焦模式（默认 false：保持展开；仅当用户主动点击「全部折叠」时开启）
 
     function renderNav() {
@@ -1614,37 +1615,95 @@
         // 若被折叠，不渲染下方题号按钮
         if (isCollapsed) return;
 
-        var curSubType = null;
+        var curSecObj = null;
+        var curSubObj = null;
+        var isCurrentSubCollapsed = false;
+
         secGroups.forEach(function(g) {
-          // 插入题型二级子标题（老姚高数在小节内分 subSections 或 例题 / 补充练习；其余书籍按 sections 题型）
-          if (ch.wb === '老姚高数' && ch.sections) {
-            var s = ch.sections.find(function(sec) { return g.startIdx >= sec.start && g.startIdx < sec.start + sec.count; });
-            var rawLabel = ch.labels[g.startIdx] || '';
-            var subType;
+          // 插入题型二级/三级标题抽屉
+          if (ch.sections) {
+            var s = ch.sections.find(function(sec) {
+              return g.startIdx >= sec.start && g.startIdx < sec.start + sec.count;
+            });
+
+            // 1. Level 2 大考点/大节分割线
+            if (s && s !== curSecObj) {
+              curSecObj = s;
+              curSubObj = null;
+              if (s.type !== part.label) {
+                var secDiv = document.createElement('div');
+                secDiv.className = 'section-divider';
+                secDiv.innerHTML = '<span class="sec-divider-title">' + s.type + '</span>';
+                frag.appendChild(secDiv);
+              }
+            }
+
+            // 2. Level 3 微观考点/微观题型/子小节抽屉
+            var matchedSub = null;
             if (s && s.subSections) {
-              var sub = s.subSections.find(function(ss) { return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count; });
-              subType = sub ? sub.type : ((g.startIdx < s.start + (s.exampleCount || 0)) ? '例题' : '补充练习');
-            } else if (s && s.exampleCount !== undefined) {
-              subType = (g.startIdx < s.start + s.exampleCount) ? '例题' : '补充练习';
-            } else {
-              subType = /例/.test(rawLabel) ? '例题' : '补充练习';
+              matchedSub = s.subSections.find(function(ss) {
+                return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count;
+              });
+            } else if (ch.wb === '老姚高数' && s && s.exampleCount !== undefined) {
+              var isEx = g.startIdx < s.start + s.exampleCount;
+              matchedSub = {
+                type: isEx ? '例题' : '补充练习',
+                start: isEx ? s.start : s.start + s.exampleCount,
+                count: isEx ? s.exampleCount : s.count - s.exampleCount
+              };
             }
-            if (subType !== curSubType) {
-              curSubType = subType;
+
+            if (matchedSub && matchedSub !== curSubObj) {
+              curSubObj = matchedSub;
+              const subKey = (curSubjectId || 'default') + '::' + currentChapterId + '::' + (s ? s.type : '') + '::' + matchedSub.type + '::' + matchedSub.start;
+
+              // 当前做题所在微观考点必须保持展开，绝不折叠
+              const isCurrentInSub = (current >= matchedSub.start && current < matchedSub.start + matchedSub.count);
+              if (isCurrentInSub) {
+                collapsedSubSections.delete(subKey);
+              }
+              const isSubCollapsed = isCurrentInSub ? false : collapsedSubSections.has(subKey);
+              isCurrentSubCollapsed = isSubCollapsed;
+
+              // 计算该小节已完成题数与总题数
+              let totalSubQ = 0;
+              let completedSubQ = 0;
+              for (var sk = 0; sk < matchedSub.count; sk++) {
+                totalSubQ++;
+                if (statuses[matchedSub.start + sk]) completedSubQ++;
+              }
+
+              var subTitle = document.createElement('div');
+              subTitle.className = 'subsection-header' + (isSubCollapsed ? ' collapsed' : '') + (isCurrentInSub ? ' current-locked' : '');
+              subTitle.title = isCurrentInSub ? '当前做题小节（保持展开）' : (isSubCollapsed ? '点击展开小节' : '点击收起小节');
+              subTitle.innerHTML = '<div class="subsec-left">' +
+                '<span class="sec-arrow">' + (isSubCollapsed ? '▸' : '▾') + '</span>' +
+                '<span class="subsec-title-text">' + matchedSub.type + '</span>' +
+                '</div>' +
+                '<span class="sec-badge">' + completedSubQ + '/' + totalSubQ + '</span>';
+
+              subTitle.onclick = function(e) {
+                e.stopPropagation();
+                if (isCurrentInSub) return;
+                if (collapsedSubSections.has(subKey)) {
+                  collapsedSubSections.delete(subKey);
+                } else {
+                  collapsedSubSections.add(subKey);
+                }
+                renderNav();
+              };
+              frag.appendChild(subTitle);
+            } else if (!matchedSub && s && s.start === g.startIdx && s.type !== part.label && !s.subSections) {
               var subTitle = document.createElement('div');
               subTitle.className = 'subsection-header';
-              subTitle.textContent = subType;
+              subTitle.textContent = s.type;
               frag.appendChild(subTitle);
-            }
-          } else if (ch.sections) {
-            var matchingSec = ch.sections.find(function(s) { return s.start === g.startIdx; });
-            if (matchingSec) {
-              var subTitle = document.createElement('div');
-              subTitle.className = 'subsection-header';
-              subTitle.textContent = matchingSec.type;
-              frag.appendChild(subTitle);
+              isCurrentSubCollapsed = false;
             }
           }
+
+          // 若所属小节被折叠，不渲染该题号按钮
+          if (isCurrentSubCollapsed) return;
 
           var dispLabel = (ch.displayLabels && ch.displayLabels[g.startIdx]) ? ch.displayLabels[g.startIdx] : g.parentLabel;
           var secInfo = ch.sections ? ch.sections.find(function(s) { return g.startIdx >= s.start && g.startIdx < s.start + s.count; }) : null;
@@ -1654,14 +1713,14 @@
           var btn = document.createElement('button');
           btn.setAttribute('data-group-start', g.startIdx);
           if (desc) {
-            var pfx = (secInfo && !desc.includes(secInfo.type)) ? (secInfo.type + ' · ') : '';
+            var pfx = (secInfo && !desc.includes(secInfo.type) && secInfo.type !== '例题' && secInfo.type !== '习题') ? (secInfo.type + ' · ') : '';
             var sfx = (g.parentLabel && !desc.includes(g.parentLabel)) ? (' (' + g.parentLabel + ')') : '';
             btn.title = pfx + desc + sfx;
           } else if (secInfo) {
             var subSecTitle = '';
             if (secInfo.subSections) {
-              var matchedSub = secInfo.subSections.find(function(ss) { return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count; });
-              if (matchedSub) subSecTitle = ' · ' + matchedSub.type;
+              var matchedSub2 = secInfo.subSections.find(function(ss) { return g.startIdx >= ss.start && g.startIdx < ss.start + ss.count; });
+              if (matchedSub2) subSecTitle = ' · ' + matchedSub2.type;
             }
             btn.title = secInfo.type + subSecTitle + (isK ? ' · ' : ' 第') + dispLabel + (isK ? '' : '题') + ' (' + g.parentLabel + ')';
           } else {
@@ -1968,6 +2027,29 @@
       }
     }
 
+    function getQLabelText(idx) {
+      const ch = getChapter();
+      if (!ch) return '';
+      ensureGroups(ch);
+      const g = ch.groupForIdx ? ch.groupForIdx[idx] : null;
+      const labels = ch.labels;
+      const secInfo = ch.sections ? ch.sections.find(function(s) { return idx >= s.start && idx < s.start + s.count; }) : null;
+      const isK = ch.isKnowledge && ch.isKnowledge[idx];
+      const desc = ch.itemDescs && ch.itemDescs[idx];
+      if (desc) {
+        const pfx = (secInfo && !desc.includes(secInfo.type) && secInfo.type !== '例题' && secInfo.type !== '习题') ? (secInfo.type + ' · ') : '';
+        return pfx + desc;
+      } else if (secInfo && ch.displayLabels && ch.displayLabels[idx] !== undefined) {
+        return secInfo.type + (isK ? ' · ' : ' 第') + ch.displayLabels[idx] + (isK ? '' : '题');
+      } else if (subMode) {
+        return labels[idx];
+      } else if (g && g.isParent) {
+        return g.parentLabel;
+      } else {
+        return labels[idx];
+      }
+    }
+
     // F：切换小题选择模式（全局开关，跨章保持；当前题无子题时仅切换开关，导航仍正常逐题/逐组）
     function toggleSubMode() {
       const g = currentGroup();
@@ -1980,9 +2062,8 @@
       renderNav();
       renderSubSelectBar(g);
       // 同步更新题号标签
-      const ch = getChapter();
-      const labels = ch.labels;
-      document.getElementById('qLabel').textContent = subMode ? labels[current] : g.parentLabel;
+      const qLabelEl = document.getElementById('qLabel');
+      if (qLabelEl) qLabelEl.textContent = getQLabelText(current);
     }
 
     // ===== 切换题目 =====
@@ -2217,26 +2298,8 @@
       renderQuestionAnnotations(); // 叠加已保存的图片标注（切题即见）
       updateSolutionUI();
       // 更新题号标签
-      ensureGroups(ch);
-      const g = ch.groupForIdx ? ch.groupForIdx[current] : null;
-      const labels = ch.labels;
-      let qLabelText;
-      const secInfo = ch.sections ? ch.sections.find(function(s) { return current >= s.start && current < s.start + s.count; }) : null;
-      const isK = ch.isKnowledge && ch.isKnowledge[current];
-      const desc = ch.itemDescs && ch.itemDescs[current];
-      if (desc) {
-        qLabelText = (secInfo ? secInfo.type + ' · ' : '') + desc;
-      } else if (secInfo && ch.displayLabels && ch.displayLabels[current] !== undefined) {
-        qLabelText = secInfo.type + (isK ? ' · ' : ' 第') + ch.displayLabels[current] + (isK ? '' : '题');
-      } else if (subMode) {
-        qLabelText = labels[current];
-      } else if (g && g.isParent) {
-        qLabelText = g.parentLabel;
-      } else {
-        qLabelText = labels[current];
-      }
       const qLabelEl = document.getElementById('qLabel');
-      if (qLabelEl) qLabelEl.textContent = qLabelText || '';
+      if (qLabelEl) qLabelEl.textContent = getQLabelText(current) || '';
       updateStatusBtns(); updateQBadBtn(); updateSBadBtn(); updateBookMismatchBtn(); updateImgBadWarnings();
       renderNotes();
       recordRecentQuestion(getCurrentQid());

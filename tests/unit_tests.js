@@ -2541,6 +2541,84 @@ test('精读与做题模式界面统一、首行缩进排版与顶部轮次常�
   assert.ok(engCss.includes('.practice-toolbar-right {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-left: auto;\n  white-space: nowrap;\n  flex-shrink: 0;') || engCss.includes('white-space: nowrap;'), '右侧工具栏必须设置 white-space: nowrap 与 flex-shrink: 0');
 });
 
+// --- 31. 数学习题册知识层级与微观小点事实层契约 (Math Knowledge Hierarchy SSOT & 3-Tier Navigation Contract) ---
+console.log('\n--- 31. 数学习题册知识层级与微观小点事实层契约 (Math Knowledge Hierarchy & Scheme 2 Navigation) ---');
+
+test('数学4大习题册微观小点与知识层级覆盖率 100% 契约', () => {
+  const mathSubj = SUBJECTS.find(s => s.id === 'math');
+  assert.ok(mathSubj, '必须包含数学科目');
+
+  // 1. 基础30讲 高数 18 讲
+  const jichuChs = mathSubj.chapters.filter(c => c.wb === '基础30讲' && c.subj === '高数' && !c.statsWb);
+  assert.strictEqual(jichuChs.length, 18, '基础30讲高数应包含 18 讲');
+  jichuChs.forEach(c => {
+    assert.ok(c.sections && c.sections.length > 0, `${c.name} 必须包含 sections`);
+    assert.ok(c.sections.some(s => s.subSections && s.subSections.length > 0), `${c.name} 必须包含微观知识点 subSections`);
+    assert.ok(c.itemDescs && c.itemDescs.length === c.ownTotal, `${c.name} 的 itemDescs 长度 (${c.itemDescs ? c.itemDescs.length : 0}) 必须与 ownTotal (${c.ownTotal}) 精确一致`);
+  });
+
+  // 2. 强化36讲 高数 18 讲
+  const qianghuaChs = mathSubj.chapters.filter(c => c.wb === '强化36讲' && c.subj === '高数');
+  assert.strictEqual(qianghuaChs.length, 18, '强化36讲高数应包含 18 讲');
+  qianghuaChs.forEach(c => {
+    assert.ok(c.sections && c.sections.length > 0, `${c.name} 必须包含 sections`);
+    assert.ok(c.sections.some(s => s.subSections && s.subSections.length > 0), `${c.name} 必须包含微观题型 subSections`);
+    assert.ok(c.itemDescs && c.itemDescs.length === c.ownTotal, `${c.name} 的 itemDescs 长度 (${c.itemDescs ? c.itemDescs.length : 0}) 必须与 ownTotal (${c.ownTotal}) 精确一致`);
+  });
+
+  // 3. 李范全书 高数 11 章
+  const lifanChs = mathSubj.chapters.filter(c => c.wb === '李范全书' && c.subj === '高数');
+  assert.strictEqual(lifanChs.length, 11, '李范全书高数应包含 11 章');
+  lifanChs.forEach(c => {
+    assert.ok(c.sections && c.sections.length > 0, `${c.name} 必须包含 sections`);
+    assert.ok(c.sections.some(s => s.subSections && s.subSections.length > 0), `${c.name} 必须包含题型子层级 subSections`);
+    assert.ok(c.itemDescs && c.itemDescs.length === c.ownTotal, `${c.name} 的 itemDescs 长度 (${c.itemDescs ? c.itemDescs.length : 0}) 必须与 ownTotal (${c.ownTotal}) 精确一致`);
+  });
+
+  // 4. 老姚高数 12 章
+  const laoyaoChs = mathSubj.chapters.filter(c => c.wb === '老姚高数');
+  assert.strictEqual(laoyaoChs.length, 12, '老姚高数应包含 12 章');
+  laoyaoChs.forEach(c => {
+    assert.ok(c.sections && c.sections.length > 0, `${c.name} 必须包含 sections`);
+    assert.ok(c.sections.every(s => s.subSections && s.subSections.length > 0), `${c.name} 的每个节必须包含例题/补充练习 subSections`);
+    assert.ok(c.itemDescs && c.itemDescs.length === c.labels.length, `${c.name} 的 itemDescs 长度必须与 labels 长度完全匹配`);
+  });
+  // 校验老姚第12章题目总数严格为 93
+  const ch12 = laoyaoChs.find(c => c.uid === 'math::老姚高数::高数::ch12' || c.id === 'ch66');
+  assert.ok(ch12, '老姚高数第12章必须存在');
+  assert.strictEqual(ch12.labels.length, 93, '老姚高数第12章题目总数必须严格为 93');
+  assert.strictEqual(ch12.itemDescs.length, 93, '老姚高数第12章 itemDescs 必须严格为 93');
+});
+
+test('822 控制工程基础隔离性与命名规范契约', () => {
+  const shu822 = SUBJECTS.find(s => s.id === '822');
+  assert.ok(shu822, '必须包含 822 科目');
+  const wbs = Array.from(new Set(shu822.chapters.map(c => c.wb)));
+  assert.ok(wbs.includes('822教材'), '822 科目教材必须规范命名为 822教材');
+  assert.ok(!wbs.includes('控制工程基础'), '822 科目已彻底移除歧义的控制工程基础练习册名');
+
+  // 822 不受数学微观知识层级侵入
+  shu822.chapters.forEach(c => {
+    assert.strictEqual(c.itemDescs, undefined, `822 章节 ${c.name} 绝不能被注入未验证的 itemDescs`);
+  });
+});
+
+test('题目面包屑标签与导航提示无重复前缀 (Anti-Stutter QLabel) 契约', () => {
+  const appSrc = fs.readFileSync(path.join(__dirname, '../js/app.js'), 'utf8');
+  assert.ok(appSrc.includes('function getQLabelText(idx)'), 'app.js 必须具备统一的 getQLabelText 纯函数');
+  assert.ok(appSrc.includes('!desc.includes(secInfo.type)'), 'app.js 面包屑与导航 title 必须校验避免重复前缀');
+
+  // 验证提取逻辑契约
+  const mathSubj = SUBJECTS.find(s => s.id === 'math');
+  const c30 = mathSubj.chapters.find(c => c.uid === 'math::基础30讲::高数::lec01');
+  const desc30 = c30.itemDescs[0];
+  assert.ok(desc30.startsWith('① 函数：定义'), '30讲第一题必须准确对应微观考点');
+
+  const cYao = mathSubj.chapters.find(c => c.uid === 'math::老姚高数::高数::ch01');
+  const descYao = cYao.itemDescs[0];
+  assert.strictEqual(descYao, '1.1 映射与函数 · 例题 · 1.1-1', '老姚高数第一题面包屑必须精准且无重复');
+});
+
 console.log('\n====================================================');
 console.log(`  测试结果: ${passedTests} passed, ${failedTests} failed`);
 console.log('====================================================\n');
