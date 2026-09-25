@@ -1,15 +1,13 @@
 /**
- * 飞书思维导图磁吸拖拽与意图仲裁引擎 (FeishuDragEnhancer - Refined Version)
+ * 飞书思维导图磁吸拖拽与意图仲裁引擎 (FeishuDragEnhancer - Unified Canvas Space Version)
  * 核心特性：
- * 1. 节点主体优先命中与中心加权 (Body Hit Priority & Center Weighting)
- *    - 拖到节点正上方、正中心或边缘，100% 极速吸附该目标节点，杜绝父祖跨层越界截获
- * 2. 空间 AABB + 右向宽域延展包络面 (AABB with Right-Flank Apron)
- *    - 覆盖目标右侧扇区，向右引力丝滑连线
- * 3. 严格兄弟物理间隙插槽仲裁 (Strict Sibling Gutter Slot Decider)
- *    - 仅在兄弟节点缝隙处且未直接覆盖节点身体时激活同级插入，杜绝误截获
- * 4. 垂直居中直角圆角折线动态渲染 (Centered Step Orthogonal Magnetic Line)
- * 5. 迟滞脱离阈值防抖 (Hysteresis Snap Radius)
- * 6. 全程零表情符号规范
+ * 1. 严格统一至 SVG Canvas 内部局部坐标系 (scale / pan 变换完全归一)
+ * 2. 节点主体绝对优先命中与中心加权 (Body Hit Priority & Center Weighting)
+ * 3. 空间 AABB + 右向宽域延展包络面 (AABB with Right-Flank Apron)
+ * 4. 严格兄弟物理间隙插槽仲裁 (Strict Sibling Gutter Slot Decider)
+ * 5. 垂直居中直角圆角折线动态渲染 (Centered Step Orthogonal Magnetic Line)
+ * 6. 迟滞脱离阈值防抖 (Hysteresis Snap Radius)
+ * 7. 全程零表情符号规范
  */
 (function (global) {
   'use strict';
@@ -24,8 +22,8 @@
       this.mindMap = mindMap;
       this.drag = mindMap.drag;
       this.options = Object.assign({
-        captureRadius: 80,   // 包络面外欧氏距离捕获阈值
-        releaseRadius: 140,  // 迟滞脱离阈值 (防止临界值抖动)
+        captureRadius: 80,   // 包络面外欧氏距离捕获阈值 (画布单位)
+        releaseRadius: 140,  // 迟滞脱离阈值 (画布单位，防止临界值抖动)
         lineColor: '#3370ff',
         lineWidth: 2,
         highlightColor: '#3370ff',
@@ -38,7 +36,7 @@
       this.hookDragLifecycle();
     }
 
-    // 初始化 SVG 磁吸辅助绘图元素 (挂载于 otherDraw 顶层容器)
+    // 初始化 SVG 磁吸辅助绘图元素 (挂载于 otherDraw 顶层容器，与 draw 享受完全相同的 transform 矩阵)
     initSvgElements() {
       // 动态直角圆角折线磁吸连线
       this.magneticLine = this.mindMap.otherDraw.path()
@@ -90,6 +88,24 @@
       });
     }
 
+    // 将视口容器像素坐标 (vx, vy) 准确映射至 SVG Canvas 内部局部坐标系
+    toCanvasPos(vx, vy) {
+      const transform = this.mindMap.draw.transform();
+      const scaleX = transform.scaleX || 1;
+      const scaleY = transform.scaleY || 1;
+      const translateX = transform.translateX || 0;
+      const translateY = transform.translateY || 0;
+
+      return {
+        x: (vx - translateX) / scaleX,
+        y: (vy - translateY) / scaleY,
+        scaleX,
+        scaleY,
+        translateX,
+        translateY
+      };
+    }
+
     // 核心位移处理与意图仲裁机
     handleMove(cloneX, cloneY, e) {
       if (!this.drag.isDragging || !this.drag.clone) {
@@ -101,14 +117,32 @@
         return;
       }
 
-      const mouseX = (this.drag.mouseMoveX !== undefined) ? this.drag.mouseMoveX : cloneX;
-      const mouseY = (this.drag.mouseMoveY !== undefined) ? this.drag.mouseMoveY : cloneY;
-      const cloneW = draggedNode.width;
-      const cloneH = draggedNode.height;
-      const cloneAnchorX = cloneX;
-      const cloneAnchorY = cloneY + (cloneH / 2);
+      // 1. 获取当前视口变换矩阵 (平移与缩放)
+      const transform = this.mindMap.draw.transform();
+      const scaleX = transform.scaleX || 1;
+      const scaleY = transform.scaleY || 1;
+      const translateX = transform.translateX || 0;
+      const translateY = transform.translateY || 0;
 
-      // 剪枝获取所有合法候选节点列表 (排除当前拖拽子树)
+      // 2. 提取视口容器坐标 (vx, vy)
+      const vx = (this.drag.mouseMoveX !== undefined) ? this.drag.mouseMoveX : (cloneX || 0);
+      const vy = (this.drag.mouseMoveY !== undefined) ? this.drag.mouseMoveY : (cloneY || 0);
+
+      // 3. 映射光标至统一 SVG 画布局部坐标系
+      const cursorCanvasX = (vx - translateX) / scaleX;
+      const cursorCanvasY = (vy - translateY) / scaleY;
+
+      // 4. 映射克隆节点锚点至统一 SVG 画布局部坐标系
+      const offX = (typeof this.drag.offsetX === 'number') ? this.drag.offsetX : 0;
+      const offY = (typeof this.drag.offsetY === 'number') ? this.drag.offsetY : 0;
+
+      const cloneCanvasX = (vx - offX - translateX) / scaleX;
+      const cloneCanvasY = (vy - offY - translateY) / scaleY;
+
+      const cloneAnchorX = cloneCanvasX;
+      const cloneAnchorY = cloneCanvasY + (draggedNode.height / 2);
+
+      // 5. 剪枝获取所有合法候选节点列表 (排除当前拖拽子树)
       const rawCandidates = this.drag.nodeList || [];
       const candidates = rawCandidates.filter((node) => {
         if (node.isGeneralization) return false;
@@ -132,13 +166,13 @@
         const bTop = node.top - padY;
         const bBottom = node.top + node.height + padY;
 
-        const isMouseInBody = (mouseX >= bLeft && mouseX <= bRight && mouseY >= bTop && mouseY <= bBottom);
+        const isCursorInBody = (cursorCanvasX >= bLeft && cursorCanvasX <= bRight && cursorCanvasY >= bTop && cursorCanvasY <= bBottom);
         const isAnchorInBody = (cloneAnchorX >= bLeft && cloneAnchorX <= bRight && cloneAnchorY >= bTop && cloneAnchorY <= bBottom);
 
-        if (isMouseInBody || isAnchorInBody) {
+        if (isCursorInBody || isAnchorInBody) {
           const cX = node.left + node.width / 2;
           const cY = node.top + node.height / 2;
-          const distToCenter = Math.hypot(mouseX - cX, mouseY - cY);
+          const distToCenter = Math.hypot(cursorCanvasX - cX, cursorCanvasY - cY);
           if (distToCenter < minBodyCenterDist) {
             minBodyCenterDist = distToCenter;
             directBodyHitNode = node;
@@ -155,7 +189,7 @@
       // -------------------------------------------------------------
       // 判定 2: 严格同级插入插槽判定 (Strict Sibling Gutter Check)
       // -------------------------------------------------------------
-      const siblingSlot = this.detectSiblingGutterSlot(candidates, mouseX, mouseY);
+      const siblingSlot = this.detectSiblingGutterSlot(candidates, cursorCanvasX, cursorCanvasY);
       if (siblingSlot) {
         this.drag.overlapNode = null;
         this.drag.prevNode = siblingSlot.prevNode;
@@ -186,11 +220,11 @@
         const envTop = node.top - 10;
         const envBottom = node.top + node.height + 10;
 
-        const isMouseInEnv = (mouseX >= envLeft && mouseX <= envRight && mouseY >= envTop && mouseY <= envBottom);
+        const isCursorInEnv = (cursorCanvasX >= envLeft && cursorCanvasX <= envRight && cursorCanvasY >= envTop && cursorCanvasY <= envBottom);
         const isAnchorInEnv = (cloneAnchorX >= envLeft && cloneAnchorX <= envRight && cloneAnchorY >= envTop && cloneAnchorY <= envBottom);
 
         let distance;
-        if (isMouseInEnv || isAnchorInEnv) {
+        if (isCursorInEnv || isAnchorInEnv) {
           distance = 0;
         } else {
           const dx = Math.max(envLeft - cloneAnchorX, 0, cloneAnchorX - envRight);
@@ -221,15 +255,13 @@
       if (bestCandidate) {
         this.applyMagneticSnap(bestCandidate, cloneAnchorX, cloneAnchorY);
       } else {
-        if (this.activeTargetNode && this.drag.overlapNode === this.activeTargetNode) {
-          this.drag.overlapNode = null;
-        }
+        this.drag.overlapNode = null;
         this.cleanup();
       }
     }
 
-    // 检测当前是否命中兄弟节点之间的物理间隙插槽
-    detectSiblingGutterSlot(candidates, mouseX, mouseY) {
+    // 检测当前是否命中兄弟节点之间的物理间隙插槽 (基于画布局部坐标)
+    detectSiblingGutterSlot(candidates, cursorCanvasX, cursorCanvasY) {
       const parentMap = new Map();
       candidates.forEach((node) => {
         if (node.isRoot || !node.parent) return;
@@ -253,7 +285,7 @@
             const slotBottom = current.top + 2;
             const slotLeft = current.left - 16;
             const slotRight = current.left + current.width + 30;
-            if (mouseY >= slotTop && mouseY <= slotBottom && mouseX >= slotLeft && mouseX <= slotRight) {
+            if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: null, nextNode: current };
             }
           }
@@ -266,7 +298,7 @@
             const slotBottom = gapCenter + 14;
             const slotLeft = Math.min(current.left, next.left) - 16;
             const slotRight = Math.max(current.left + current.width, next.left + next.width) + 30;
-            if (mouseY >= slotTop && mouseY <= slotBottom && mouseX >= slotLeft && mouseX <= slotRight) {
+            if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: current, nextNode: next };
             }
           }
@@ -278,7 +310,7 @@
             const slotBottom = currentBottom + 18;
             const slotLeft = current.left - 16;
             const slotRight = current.left + current.width + 30;
-            if (mouseY >= slotTop && mouseY <= slotBottom && mouseX >= slotLeft && mouseX <= slotRight) {
+            if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: current, nextNode: null };
             }
           }
@@ -288,7 +320,7 @@
       return null;
     }
 
-    // 激活并渲染磁吸状态
+    // 激活并渲染磁吸状态 (在统一 SVG Canvas 坐标空间中绘制)
     applyMagneticSnap(targetParent, cloneAnchorX, cloneAnchorY) {
       this.activeTargetNode = targetParent;
       this.drag.overlapNode = targetParent;
@@ -350,6 +382,12 @@
       }
       if (this.parentHighlight) {
         this.parentHighlight.hide();
+      }
+      if (this.drag && this.drag.placeholder) {
+        this.drag.placeholder.size(0, 0);
+      }
+      if (this.drag && this.drag.placeHolderLine) {
+        this.drag.placeHolderLine.hide();
       }
     }
   }

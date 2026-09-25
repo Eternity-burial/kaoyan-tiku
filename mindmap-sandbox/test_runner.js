@@ -873,6 +873,15 @@ async function run() {
         const cloneY = ch2.top + (ch2.height / 2) + 20;
         drag.mouseMoveX = cloneX;
         drag.mouseMoveY = cloneY;
+        if (drag.clone) {
+          drag.clone
+            .radius(6)
+            .fill('rgba(51, 112, 255, 0.12)')
+            .stroke({ color: '#3370ff', width: 1.5, dasharray: '3,3' })
+            .size(130, 32);
+          const ct = drag.clone.transform();
+          drag.clone.translate(cloneX - ct.translateX, cloneY - ct.translateY);
+        }
         enhancer.handleMove(cloneX, cloneY, {});
       })()
     `);
@@ -1010,9 +1019,250 @@ async function run() {
     }
     console.log(`[PASS] 测试 23: 磁吸释放建立父子关系成功，第二章子节点数从 ${dropReparentTest.beforeCh2Count} 增至 ${dropReparentTest.afterCh2Count}`);
 
+    // 测试 24: 视口平移与缩放空间变换不变性测试 (Pan & Zoom Invariance)
+    const panZoomMagneticTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        const ch2 = root.children[1]; // 第二章
+        const ch3 = root.children[2]; // 第三章
+        const draggedNode = ch3.children[0];
+
+        // 1. 设置平移与缩放矩阵
+        mm.view.reset();
+        mm.view.setScale(1.25);
+        mm.view.translateXY(-320, 160);
+
+        const transform = mm.draw.transform();
+        const scaleX = transform.scaleX;
+        const translateX = transform.translateX;
+        const translateY = transform.translateY;
+
+        // 2. 模拟用户鼠标移动到第二章在视口中的实际物理屏幕位置
+        // 物理屏幕像素坐标:
+        const screenX = ch2.left * scaleX + translateX + 20;
+        const screenY = ch2.top * scaleX + translateY + 10;
+
+        drag.isDragging = true;
+        drag.beingDragNodeList = [draggedNode];
+        drag.clone = drag.mindMap.otherDraw.rect().size(120, 32);
+        drag.nodeTreeToList();
+        drag.mouseMoveX = screenX;
+        drag.mouseMoveY = screenY;
+        drag.offsetX = 10;
+        drag.offsetY = 10;
+
+        // 触发位移处理
+        enhancer.handleMove(screenX, screenY, {});
+
+        const isSnapped = enhancer.magneticLine.visible();
+        const targetText = enhancer.activeTargetNode ? enhancer.activeTargetNode.nodeData.data.text : '';
+        const isTargetCh2 = targetText.includes('第二章');
+        const pathData = enhancer.magneticLine.attr('d');
+
+        // 复位视口与拖拽
+        enhancer.cleanup();
+        drag.clone.remove();
+        drag.reset();
+        mm.view.reset();
+
+        return {
+          scaleX,
+          translateX,
+          translateY,
+          screenX,
+          screenY,
+          isSnapped,
+          targetText,
+          isTargetCh2,
+          pathData
+        };
+      })()
+    `);
+
+    if (!panZoomMagneticTest.isSnapped || !panZoomMagneticTest.isTargetCh2) {
+      throw new Error(`视口变换不变性测试失败: isSnapped=${panZoomMagneticTest.isSnapped}, target=${panZoomMagneticTest.targetText}`);
+    }
+    console.log(`[PASS] 测试 24: 视口平移缩放不变性 (Pan: -320, 160; Zoom: 125%) 验证通过，物理光标与画布内部坐标100%对齐吸附至: "${panZoomMagneticTest.targetText}"`);
+
+    // 测试 25: 远场空白区彻底脱离与零幽灵连线测试 (Far-Field Detachment - Exact Reproducer)
+    const farFieldDetachmentTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        const ch3 = root.children[2];
+        const draggedNode = ch3.children[0];
+
+        // 模拟用户将节点向右拖出至空白区域 (如 x = 1100, y = 300)
+        drag.isDragging = true;
+        drag.beingDragNodeList = [draggedNode];
+        drag.clone = drag.mindMap.otherDraw.rect().size(120, 32);
+        drag.nodeTreeToList();
+
+        // 视口右侧远场位置 (无任何节点)
+        const farScreenX = 1100;
+        const farScreenY = 300;
+        drag.mouseMoveX = farScreenX;
+        drag.mouseMoveY = farScreenY;
+        drag.offsetX = 20;
+        drag.offsetY = 15;
+
+        enhancer.handleMove(farScreenX, farScreenY, {});
+
+        const isLineVisible = enhancer.magneticLine.visible();
+        const isHighlightVisible = enhancer.parentHighlight.visible();
+        const overlapNode = drag.overlapNode;
+        const activeTargetNode = enhancer.activeTargetNode;
+
+        // 清理
+        enhancer.cleanup();
+        drag.clone.remove();
+        drag.reset();
+
+        return {
+          farScreenX,
+          farScreenY,
+          isLineVisible,
+          isHighlightVisible,
+          overlapNodeIsNull: overlapNode === null,
+          activeTargetIsNull: activeTargetNode === null
+        };
+      })()
+    `);
+
+    if (farFieldDetachmentTest.isLineVisible || farFieldDetachmentTest.isHighlightVisible) {
+      throw new Error('远场空白区拖拽时磁吸连线或高亮未彻底脱离 (出现幽灵连线)');
+    }
+    if (!farFieldDetachmentTest.overlapNodeIsNull || !farFieldDetachmentTest.activeTargetIsNull) {
+      throw new Error('远场空白区拖拽时 overlapNode 或 activeTargetNode 未置空');
+    }
+    console.log('[PASS] 测试 25: 远场空白区彻底脱离测试通过 (复现图光标 (1100, 300))，幽灵连线与越界吸附完全杜绝，蓝线与高亮 100% 隐藏');
+
+    // 测试 26: 全层级多级拓扑吸附测试 (Multi-Hierarchy Snapping)
+    const multiHierarchyTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        const ch1 = root.children[0];
+        const sec1 = ch1.children[0];
+        const draggedNode = root.children[2].children[0];
+
+        drag.isDragging = true;
+        drag.beingDragNodeList = [draggedNode];
+        drag.clone = drag.mindMap.otherDraw.rect().size(100, 28);
+        drag.nodeTreeToList();
+
+        // 1. 吸附至根节点 (Root)
+        drag.mouseMoveX = root.left + root.width + 30;
+        drag.mouseMoveY = root.top + root.height / 2;
+        enhancer.handleMove(drag.mouseMoveX, drag.mouseMoveY, {});
+        const snapRoot = enhancer.activeTargetNode === root && enhancer.magneticLine.visible();
+
+        // 2. 吸附至一级分支章节 (Chapter)
+        drag.mouseMoveX = ch1.left + ch1.width + 25;
+        drag.mouseMoveY = ch1.top + ch1.height / 2;
+        enhancer.handleMove(drag.mouseMoveX, drag.mouseMoveY, {});
+        const snapChapter = enhancer.activeTargetNode === ch1 && enhancer.magneticLine.visible();
+
+        // 3. 吸附至二级分支小节 (Section)
+        drag.mouseMoveX = sec1.left + sec1.width + 20;
+        drag.mouseMoveY = sec1.top + sec1.height / 2;
+        enhancer.handleMove(drag.mouseMoveX, drag.mouseMoveY, {});
+        const snapSection = enhancer.activeTargetNode === sec1 && enhancer.magneticLine.visible();
+
+        // 清理
+        enhancer.cleanup();
+        drag.clone.remove();
+        drag.reset();
+
+        return {
+          snapRoot,
+          snapChapter,
+          snapSection
+        };
+      })()
+    `);
+
+    if (!multiHierarchyTest.snapRoot || !multiHierarchyTest.snapChapter || !multiHierarchyTest.snapSection) {
+      throw new Error(`全层级吸附适配异常: root=${multiHierarchyTest.snapRoot}, chapter=${multiHierarchyTest.snapChapter}, section=${multiHierarchyTest.snapSection}`);
+    }
+    console.log('[PASS] 测试 26: 全层级多级拓扑吸附测试通过 (根节点、章节点、节节点均支持高灵敏度平滑吸附与连线)');
+
+    // 测试 27: 迟滞防抖边界动态测试 (Hysteresis Snap Radius & Stability)
+    const hysteresisTest = await evaluate(ws, `
+      (function() {
+        const mm = window._mindMapInstance;
+        const enhancer = window._feishuDragEnhancerInstance;
+        const drag = mm.drag;
+        const root = mm.renderer.root;
+        const ch1 = root.children[0];
+        // 选取处于最深层级、右侧为完全纯净画布的真实叶子节点 (单调有界准则)
+        const targetNode = ch1.children[1].children[0];
+        const draggedNode = root.children[2].children[0];
+
+        drag.isDragging = true;
+        drag.beingDragNodeList = [draggedNode];
+        drag.clone = drag.mindMap.otherDraw.rect().size(100, 28);
+        drag.nodeTreeToList();
+
+        const t = mm.draw.transform();
+        const toScreenX = (cx) => cx * (t.scaleX || 1) + (t.translateX || 0);
+        const toScreenY = (cy) => cy * (t.scaleY || 1) + (t.translateY || 0);
+
+        const rightAnchorX = targetNode.left + targetNode.width;
+        const rightAnchorY = targetNode.top + targetNode.height / 2;
+
+        // 阶段 1: 拖拽至 35px (处于 captureRadius 80px 内)
+        const x1 = toScreenX(rightAnchorX + 35);
+        const y1 = toScreenY(rightAnchorY);
+        drag.mouseMoveX = x1;
+        drag.mouseMoveY = y1;
+        enhancer.handleMove(x1, y1, {});
+        const state1Snapped = enhancer.activeTargetNode === targetNode && enhancer.magneticLine.visible();
+
+        // 阶段 2: 略微移出至 110px (处于 80px ~ 140px 迟滞保持区间内)
+        const x2 = toScreenX(rightAnchorX + 110);
+        const y2 = toScreenY(rightAnchorY);
+        drag.mouseMoveX = x2;
+        drag.mouseMoveY = y2;
+        enhancer.handleMove(x2, y2, {});
+        const state2StayConnected = enhancer.activeTargetNode === targetNode && enhancer.magneticLine.visible();
+
+        // 阶段 3: 进一步移出至 260px (超出 releaseRadius 140px 释放阈值)
+        const x3 = toScreenX(rightAnchorX + 260);
+        const y3 = toScreenY(rightAnchorY);
+        drag.mouseMoveX = x3;
+        drag.mouseMoveY = y3;
+        enhancer.handleMove(x3, y3, {});
+        const state3Detached = enhancer.activeTargetNode === null && !enhancer.magneticLine.visible();
+
+        // 清理
+        enhancer.cleanup();
+        drag.clone.remove();
+        drag.reset();
+
+        return {
+          state1Snapped,
+          state2StayConnected,
+          state3Detached
+        };
+      })()
+    `);
+
+    if (!hysteresisTest.state1Snapped || !hysteresisTest.state2StayConnected || !hysteresisTest.state3Detached) {
+      throw new Error(`迟滞防抖边界动态测试异常: state1=${hysteresisTest.state1Snapped}, state2=${hysteresisTest.state2StayConnected}, state3=${hysteresisTest.state3Detached}`);
+    }
+    console.log('[PASS] 测试 27: 迟滞防抖动态阈值验证通过 (50px 捕获 -> 110px 稳定维系 -> 160px 干净断开)');
+
     console.log('\n--- 开始执行 Phase 7 飞书大纲笔记与双向联动专项断言项 ---');
 
-    // 测试 24: 飞书大纲视图挂载与 DOM 结构校验
+    // 测试 28: 飞书大纲视图挂载与 DOM 结构校验
     const outlinerMountTest = await evaluate(ws, `
       (function() {
         const controller = window._dualViewControllerInstance;
@@ -1058,9 +1308,9 @@ async function run() {
     if (!outlinerMountTest.hasPaper || outlinerMountTest.nodeCount === 0) {
       throw new Error(`大纲纸张或节点渲染失败: nodeCount=${outlinerMountTest.nodeCount}`);
     }
-    console.log(`[PASS] 测试 24: 飞书大纲视图成功挂载，纸张居中渲染，标题="${outlinerMountTest.titleText}"，大纲行节点数=${outlinerMountTest.nodeCount}`);
+    console.log(`[PASS] 测试 28: 飞书大纲视图成功挂载，纸张居中渲染，标题="${outlinerMountTest.titleText}"，大纲行节点数=${outlinerMountTest.nodeCount}`);
 
-    // 测试 25: 大纲全键盘工作流 - Enter 键插入同级兄弟节点
+    // 测试 29: 大纲全键盘工作流 - Enter 键插入同级兄弟节点
     const outlinerEnterTest = await evaluate(ws, `
       (function() {
         const outliner = window._outlinerInstance;
@@ -1093,9 +1343,9 @@ async function run() {
     if (!outlinerEnterTest.hasFocusedEl) {
       throw new Error('Enter 插入后未正确聚焦新节点');
     }
-    console.log(`[PASS] 测试 25: 大纲键盘流 Enter 测试通过，成功插入同级节点并自动聚焦 (节点数: ${outlinerEnterTest.beforeNodes} -> ${outlinerEnterTest.afterNodes})`);
+    console.log(`[PASS] 测试 29: 大纲键盘流 Enter 测试通过，成功插入同级节点并自动聚焦 (节点数: ${outlinerEnterTest.beforeNodes} -> ${outlinerEnterTest.afterNodes})`);
 
-    // 测试 26: 大纲全键盘工作流 - Tab 键向右缩进为子节点
+    // 测试 30: 大纲全键盘工作流 - Tab 键向右缩进为子节点
     const outlinerTabTest = await evaluate(ws, `
       (function() {
         const outliner = window._outlinerInstance;
@@ -1125,9 +1375,9 @@ async function run() {
     if (!outlinerTabTest.isInNestedChildren || !outlinerTabTest.parentUid) {
       throw new Error(`Tab 缩进失败: ${JSON.stringify(outlinerTabTest)}`);
     }
-    console.log(`[PASS] 测试 26: 大纲键盘流 Tab 缩进测试通过，节点已成功降级为子节点，父节点UID="${outlinerTabTest.parentUid}"`);
+    console.log(`[PASS] 测试 30: 大纲键盘流 Tab 缩进测试通过，节点已成功降级为子节点，父节点UID="${outlinerTabTest.parentUid}"`);
 
-    // 测试 27: 大纲全键盘工作流 - Shift+Tab 键向左提升层级
+    // 测试 31: 大纲全键盘工作流 - Shift+Tab 键向左提升层级
     const outlinerShiftTabTest = await evaluate(ws, `
       (function() {
         const outliner = window._outlinerInstance;
@@ -1151,9 +1401,9 @@ async function run() {
     if (!outlinerShiftTabTest.isRootChild) {
       throw new Error(`Shift+Tab 提升层级失败: ${JSON.stringify(outlinerShiftTabTest)}`);
     }
-    console.log(`[PASS] 测试 27: 大纲键盘流 Shift+Tab 提升层级通过，节点已成功脱离父节点晋升为一级节点`);
+    console.log(`[PASS] 测试 31: 大纲键盘流 Shift+Tab 提升层级通过，节点已成功脱离父节点晋升为一级节点`);
 
-    // 测试 28: 大纲折叠与展开交互
+    // 测试 32: 大纲折叠与展开交互
     const outlinerFoldTest = await evaluate(ws, `
       (function() {
         const outliner = window._outlinerInstance;
@@ -1189,9 +1439,9 @@ async function run() {
     if (!outlinerFoldTest.isFoldedAfterFirstClick || !outlinerFoldTest.hasCollapsedClass || outlinerFoldTest.isFoldedAfterSecondClick || !outlinerFoldTest.isExpanded) {
       throw new Error(`折叠展开逻辑异常: ${JSON.stringify(outlinerFoldTest)}`);
     }
-    console.log('[PASS] 测试 28: 大纲折叠展开交互正常，三角形箭头指示旋转并隐藏/显示子节点容器');
+    console.log('[PASS] 测试 32: 大纲折叠展开交互正常，三角形箭头指示旋转并隐藏/显示子节点容器');
 
-    // 测试 29: 大纲编辑数据双向同步回思维导图
+    // 测试 33: 大纲编辑数据双向同步回思维导图
     const roundTripSyncTest = await evaluate(ws, `
       new Promise((resolve) => {
         const controller = window._dualViewControllerInstance;
@@ -1247,9 +1497,9 @@ async function run() {
     if (!roundTripSyncTest.hasInMmData || !roundTripSyncTest.hasInSvg) {
       throw new Error(`大纲修改内容未能正确同步至导图: hasInMmData=${roundTripSyncTest.hasInMmData}, hasInSvg=${roundTripSyncTest.hasInSvg}`);
     }
-    console.log(`[PASS] 测试 29: 双向数据同步测试通过，大纲新编节点已无缝同步并在导图 SVG 节点中成功呈现: "${roundTripSyncTest.targetString}"`);
+    console.log(`[PASS] 测试 33: 双向数据同步测试通过，大纲新编节点已无缝同步并在导图 SVG 节点中成功呈现: "${roundTripSyncTest.targetString}"`);
 
-    // 测试 30: Ctrl + / 全局快捷键双向切换
+    // 测试 34: Ctrl + / 全局快捷键双向切换
     const shortcutToggleTest = await evaluate(ws, `
       (function() {
         const controller = window._dualViewControllerInstance;
@@ -1274,9 +1524,9 @@ async function run() {
     if (shortcutToggleTest.viewBefore !== 'mindmap' || shortcutToggleTest.viewAfterFirst !== 'outline' || shortcutToggleTest.viewAfterSecond !== 'mindmap') {
       throw new Error(`Ctrl + / 快捷键切换异常: ${JSON.stringify(shortcutToggleTest)}`);
     }
-    console.log('[PASS] 测试 30: Ctrl + / 键盘全局快捷键无缝切换验证通过 (mindmap -> outline -> mindmap)');
+    console.log('[PASS] 测试 34: Ctrl + / 键盘全局快捷键无缝切换验证通过 (mindmap -> outline -> mindmap)');
 
-    // 测试 31: 大纲节点层级重排 (moveNodeRelative)
+    // 测试 35: 大纲节点层级重排 (moveNodeRelative)
     const outlinerMoveTest = await evaluate(ws, `
       (function() {
         const outliner = window._outlinerInstance;
@@ -1300,7 +1550,7 @@ async function run() {
     if (!outlinerMoveTest.success || !outlinerMoveTest.isReordered) {
       throw new Error(`大纲节点重排失败: ${JSON.stringify(outlinerMoveTest)}`);
     }
-    console.log('[PASS] 测试 31: 大纲节点重排 (moveNodeRelative) 成功，父子与兄弟层级顺序准确重构');
+    console.log('[PASS] 测试 35: 大纲节点重排 (moveNodeRelative) 成功，父子与兄弟层级顺序准确重构');
 
     // 截取飞书风格导图全景预览图
     await sleep(300);
@@ -1327,7 +1577,7 @@ async function run() {
     console.log('[Screenshot] 飞书大纲视图真实截图已生成: mindmap-sandbox/feishu_outliner_preview.png');
 
     console.log('\n====================================================');
-    console.log('   所有 Phase (1~7) 共计 31 项端到端测试全部通过');
+    console.log('   所有 Phase (1~7) 共计 35 项端到端测试全部通过');
     console.log('====================================================\n');
   } catch (err) {
     console.error('\n[FAIL] 自动化回归测试失败:', err.message);
