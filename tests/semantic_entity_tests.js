@@ -77,7 +77,7 @@ test('2. 题目 Slug 严格对应物理切图命名规范', () => {
   assert.strictEqual(chLifan03.getLabelBySlug('ex_3-14_(I)'), '例3-14 (I)');
 });
 
-test('3. 822 科目与小题300题目实体命名验证', () => {
+test('3. 822 科目与小题300及822教材题目实体命名验证', () => {
   const subj822 = SUBJECTS.find(s => s.id === '822');
   const ch300_01 = subj822.chapters.find(c => c.id === '822::小题300::控制工程基础::ch01');
   assert(ch300_01, '822::小题300::控制工程基础::ch01 must exist');
@@ -85,6 +85,12 @@ test('3. 822 科目与小题300题目实体命名验证', () => {
   assert.strictEqual(ch300_01.id, '822::小题300::控制工程基础::ch01');
   assert.strictEqual(ch300_01.getQuestionSlug(0), 'q001');
   assert.strictEqual(ch300_01.getQuestionUID(0), '822::小题300::控制工程基础::ch01::q001');
+
+  const ch822_01 = subj822.chapters.find(c => c.id === '822::822教材::控制工程基础::ch01');
+  assert(ch822_01, '822::822教材::控制工程基础::ch01 must exist');
+  assert.strictEqual(ch822_01.uid, '822::822教材::控制工程基础::ch01');
+  assert.strictEqual(ch822_01.book, '822教材');
+  assert.strictEqual(ch822_01.getQuestionSlug(0), 'pb_1-1_(1)');
 });
 
 test('4. 抗错位破坏性测试 (Anti-Drift Resilience Test)', () => {
