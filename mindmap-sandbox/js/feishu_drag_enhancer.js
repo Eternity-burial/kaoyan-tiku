@@ -152,24 +152,62 @@
       });
 
       // -------------------------------------------------------------
-      // 判定 1: 是否直接处于某个候选节点的主体区域 (Direct Body Hit)
+      // 判定 1: 严格同级插入插槽判定 (Strict Sibling Gutter Check - 绝对第一优先)
+      // -------------------------------------------------------------
+      const siblingSlot = this.detectSiblingGutterSlot(candidates, cursorCanvasX, cursorCanvasY);
+      if (siblingSlot) {
+        this.drag.overlapNode = null;
+        this.drag.prevNode = siblingSlot.prevNode;
+        this.drag.nextNode = siblingSlot.nextNode;
+        this.cleanup();
+
+        // 渲染同级插入水平蓝色指引线
+        if (this.drag.placeholder && typeof this.drag.setPlaceholderRect === 'function') {
+          const refNode = siblingSlot.prevNode || siblingSlot.nextNode;
+          if (refNode) {
+            const pX = refNode.left;
+            let pY;
+            if (siblingSlot.prevNode && siblingSlot.nextNode) {
+              pY = (siblingSlot.prevNode.top + siblingSlot.prevNode.height + siblingSlot.nextNode.top) / 2 - 5;
+            } else if (siblingSlot.prevNode) {
+              pY = siblingSlot.prevNode.top + siblingSlot.prevNode.height + 6;
+            } else {
+              pY = siblingSlot.nextNode.top - 14;
+            }
+            try {
+              this.drag.setPlaceholderRect({
+                x: pX,
+                y: pY,
+                dir: 'right'
+              });
+            } catch (e) {
+              // 容错捕获
+            }
+          }
+        }
+        return;
+      }
+
+      // -------------------------------------------------------------
+      // 判定 2: 卡片核心躯干命中 (Core Body Hit - 内收保护，光标主导)
       // -------------------------------------------------------------
       let directBodyHitNode = null;
       let minBodyCenterDist = Infinity;
 
       for (let i = 0; i < candidates.length; i++) {
         const node = candidates[i];
-        const padX = 8;
-        const padY = 8;
+        const padX = 4;
+        // 垂直内收 4px，仅命中卡片中央 60% 核心区，绝不侵占上下边缘与缝隙
+        const padY = -4;
         const bLeft = node.left - padX;
         const bRight = node.left + node.width + padX;
         const bTop = node.top - padY;
         const bBottom = node.top + node.height + padY;
 
+        // 仅由用户眼睛注视的光标点决定，彻底杜绝克隆中心偏移干扰
         const isCursorInBody = (cursorCanvasX >= bLeft && cursorCanvasX <= bRight && cursorCanvasY >= bTop && cursorCanvasY <= bBottom);
-        const isAnchorInBody = (cloneAnchorX >= bLeft && cloneAnchorX <= bRight && cloneAnchorY >= bTop && cloneAnchorY <= bBottom);
 
-        if (isCursorInBody || isAnchorInBody) {
+        if (isCursorInBody) {
           const cX = node.left + node.width / 2;
           const cY = node.top + node.height / 2;
           const distToCenter = Math.hypot(cursorCanvasX - cX, cursorCanvasY - cY);
@@ -180,64 +218,48 @@
         }
       }
 
-      // 如果直接落在某个节点身体上，以绝对第一优先级锁定该节点为父级
       if (directBodyHitNode) {
         this.applyMagneticSnap(directBodyHitNode, cloneAnchorX, cloneAnchorY);
         return;
       }
 
       // -------------------------------------------------------------
-      // 判定 2: 严格同级插入插槽判定 (Strict Sibling Gutter Check)
-      // -------------------------------------------------------------
-      const siblingSlot = this.detectSiblingGutterSlot(candidates, cursorCanvasX, cursorCanvasY);
-      if (siblingSlot) {
-        this.drag.overlapNode = null;
-        this.drag.prevNode = siblingSlot.prevNode;
-        this.drag.nextNode = siblingSlot.nextNode;
-        this.cleanup();
-
-        if (this.drag.renderPlaceHolderLine) {
-          this.drag.renderPlaceHolderLine();
-        }
-        return;
-      }
-
-      // -------------------------------------------------------------
-      // 判定 3: 子节点右向宽域延展包络面 (Right-Flank Apron Proximity)
+      // 判定 3: 侧翼引流子级磁吸 (Right-Flank Apron Snap - 严格纵向限幅)
       // -------------------------------------------------------------
       let bestCandidate = null;
       let minScore = Infinity;
 
       for (let i = 0; i < candidates.length; i++) {
         const node = candidates[i];
-
-        // 对无子节点的节点给予 80px 右延展，有子节点的节点给予 40px 引流区
         const hasChildren = Array.isArray(node.children) && node.children.length > 0;
         const apronW = hasChildren ? 40 : 80;
 
-        const envLeft = node.left - 8;
+        // 侧翼引流区：位于卡片右半部至外展区
+        const envLeft = node.left + node.width * 0.3;
         const envRight = node.left + node.width + apronW;
-        // 收紧垂直投影区间，严格锁定在节点自身高度内，杜绝垂直溢出侵入兄弟物理间隙通道
-        const envTop = node.top - 2;
-        const envBottom = node.top + node.height + 2;
+        // 严格限制在卡片实体自身高度区间内，严禁向同级缝隙溢出
+        const envTop = node.top;
+        const envBottom = node.top + node.height;
 
-        const isCursorInEnv = (cursorCanvasX >= envLeft && cursorCanvasX <= envRight && cursorCanvasY >= envTop && cursorCanvasY <= envBottom);
-        const isAnchorInEnv = (cloneAnchorX >= envLeft && cloneAnchorX <= envRight && cloneAnchorY >= envTop && cloneAnchorY <= envBottom);
+        // 纵向必须严格在卡片高度范围内
+        if (cursorCanvasY < envTop || cursorCanvasY > envBottom) {
+          continue;
+        }
+
+        const isCursorInEnv = (cursorCanvasX >= envLeft && cursorCanvasX <= envRight);
 
         let distance;
-        if (isCursorInEnv || isAnchorInEnv) {
+        if (isCursorInEnv) {
           distance = 0;
         } else {
-          const dx = Math.max(envLeft - cloneAnchorX, 0, cloneAnchorX - envRight);
-          const dy = Math.max(envTop - cloneAnchorY, 0, cloneAnchorY - envBottom);
-          distance = Math.hypot(dx, dy);
+          const dx = Math.max(envLeft - cursorCanvasX, 0, cursorCanvasX - envRight);
+          distance = dx;
         }
 
         const isCurrentActive = (this.activeTargetNode && this.activeTargetNode.uid === node.uid);
         const effectiveRadius = isCurrentActive ? this.options.releaseRadius : this.options.captureRadius;
 
         if (distance <= effectiveRadius) {
-          // 以右侧连接锚点为辅助权重点
           const anchorX = node.left + node.width;
           const anchorY = node.top + (node.height / 2);
           const rawDist = Math.hypot(cloneAnchorX - anchorX, cloneAnchorY - anchorY);
@@ -251,7 +273,7 @@
       }
 
       // -------------------------------------------------------------
-      // 判定 4: 执行磁吸或复位
+      // 判定 4: 执行磁吸或复位 (Far-Field Detach)
       // -------------------------------------------------------------
       if (bestCandidate) {
         this.applyMagneticSnap(bestCandidate, cloneAnchorX, cloneAnchorY);
@@ -259,6 +281,28 @@
         this.drag.overlapNode = null;
         this.cleanup();
       }
+    }
+
+    // 递归获取节点及其子树的最低物理底沿
+    getNodeSubtreeBottom(node) {
+      let maxBottom = node.top + node.height;
+      if (Array.isArray(node.children) && node.children.length > 0) {
+        node.children.forEach((child) => {
+          maxBottom = Math.max(maxBottom, this.getNodeSubtreeBottom(child));
+        });
+      }
+      return maxBottom;
+    }
+
+    // 递归获取节点及其子树的最高物理顶沿
+    getNodeSubtreeTop(node) {
+      let minTop = node.top;
+      if (Array.isArray(node.children) && node.children.length > 0) {
+        node.children.forEach((child) => {
+          minTop = Math.min(minTop, this.getNodeSubtreeTop(child));
+        });
+      }
+      return minTop;
     }
 
     // 检测当前是否命中兄弟节点之间的物理间隙插槽 (基于画布局部坐标，拥有物理通道垄断权)
@@ -282,10 +326,10 @@
 
           // 1. 第一个兄弟节点上方的同级插入槽
           if (i === 0) {
-            const slotTop = current.top - 18;
-            const slotBottom = current.top + 2;
-            const slotLeft = current.left - 10;
-            const slotRight = current.left + current.width + 40;
+            const slotTop = current.top - 20;
+            const slotBottom = current.top + 6;
+            const slotLeft = current.left - 20;
+            const slotRight = current.left + current.width;
             if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: null, nextNode: current };
             }
@@ -296,11 +340,11 @@
             const next = siblings[i + 1];
             const gapTop = current.top + current.height;
             const gapBottom = next.top;
-            const gapCenter = (gapTop + gapBottom) / 2;
 
-            const slotTop = Math.min(gapTop - 2, gapCenter - 14);
-            const slotBottom = Math.max(gapBottom + 2, gapCenter + 14);
-            const slotLeft = Math.min(current.left, next.left) - 10;
+            const slotTop = gapTop - 6;
+            const slotBottom = gapBottom + 6;
+            const slotLeft = Math.min(current.left, next.left) - 20;
+            // 严格截止于卡片右边缘，不向右侵入子级磁吸引流区
             const slotRight = Math.max(current.left + current.width, next.left + next.width);
 
             if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
@@ -311,10 +355,10 @@
           // 3. 最后一个兄弟节点下方的同级插入槽
           if (i === siblings.length - 1) {
             const currentBottom = current.top + current.height;
-            const slotTop = currentBottom - 2;
-            const slotBottom = currentBottom + 18;
-            const slotLeft = current.left - 10;
-            const slotRight = current.left + current.width + 40;
+            const slotTop = currentBottom - 6;
+            const slotBottom = currentBottom + 20;
+            const slotLeft = current.left - 20;
+            const slotRight = current.left + current.width;
             if (cursorCanvasY >= slotTop && cursorCanvasY <= slotBottom && cursorCanvasX >= slotLeft && cursorCanvasX <= slotRight) {
               return { prevNode: current, nextNode: null };
             }
