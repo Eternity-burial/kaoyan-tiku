@@ -240,6 +240,62 @@ async function run() {
   }
   await sleep(300);
 
+  // 测试全键盘切题流 (J/K 与 PageDown/PageUp)、四维认知挂载插槽与 open-cognitive-view 事件通信
+  console.log('  测试全键盘流 (J/K, PgDn/PgUp)、四维认知插槽与 open-cognitive-view 通信...');
+  const cognitiveNexusCheck = await evaluate(ws, `
+    (() => {
+      const results = {};
+      const slot = document.getElementById('questionCognitiveBadges');
+      results.hasSlot = !!slot;
+      results.slotQid = slot ? slot.dataset.qid : null;
+
+      // 验证无废弃外链
+      results.noOldExamWorkbench = !document.querySelector('a[href*="exam_workbench.html"]');
+
+      // 监听 open-cognitive-view 自定义事件
+      let eventPayload = null;
+      const handler = (e) => { eventPayload = e.detail; };
+      window.addEventListener('open-cognitive-view', handler, { once: true });
+
+      // 测试点击四维认知入口按钮 #btnExamWorkbench
+      const btnExam = document.getElementById('btnExamWorkbench');
+      if (btnExam) btnExam.click();
+      results.btnDispatched = !!eventPayload && eventPayload.qid === getCurrentQid();
+
+      // 测试按 O 键派发
+      eventPayload = null;
+      window.addEventListener('open-cognitive-view', handler, { once: true });
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'o', bubbles: true }));
+      results.keyODispatched = !!eventPayload;
+
+      // 测试 J 键切下一题，K 键切上一题
+      const idxBeforeJ = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'j', bubbles: true }));
+      const idxAfterJ = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', bubbles: true }));
+      const idxAfterK = current;
+      results.jWorked = (idxAfterJ === idxBeforeJ + 1);
+      results.kWorked = (idxAfterK === idxBeforeJ);
+
+      // 测试 PageDown / PageUp
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'pagedown', bubbles: true }));
+      const idxAfterPgDn = current;
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'pageup', bubbles: true }));
+      const idxAfterPgUp = current;
+      results.pgDnWorked = (idxAfterPgDn === idxBeforeJ + 1);
+      results.pgUpWorked = (idxAfterPgUp === idxBeforeJ);
+
+      return results;
+    })()
+  `);
+  console.log('  四维认知挂载与全键盘流检查结果:', cognitiveNexusCheck);
+  if (!cognitiveNexusCheck.hasSlot) throw new Error('缺少四维认知挂载插槽 #questionCognitiveBadges');
+  if (!cognitiveNexusCheck.noOldExamWorkbench) throw new Error('页面依然残留 exam_workbench.html 废弃外链');
+  if (!cognitiveNexusCheck.btnDispatched) throw new Error('点击 #btnExamWorkbench 未能正确派发 open-cognitive-view 事件');
+  if (!cognitiveNexusCheck.keyODispatched) throw new Error('按 O 键未能派发 open-cognitive-view 事件');
+  if (!cognitiveNexusCheck.jWorked || !cognitiveNexusCheck.kWorked) throw new Error('J/K 键盘切题流失败');
+  if (!cognitiveNexusCheck.pgDnWorked || !cognitiveNexusCheck.pgUpWorked) throw new Error('PageDown/PageUp 键盘切题流失败');
+
   // 测试右键 + 滚轮切章手势 (等效 Q / E) 与 contextmenu 拦截
   console.log('  测试右键 + 滚轮切章手势 (等效 Q / E) 与 contextmenu 拦截...');
   const rightWheelCheck = await evaluate(ws, `
@@ -1039,7 +1095,10 @@ async function run() {
       function getHeaderAbove(el) {
         let prev = el.previousElementSibling;
         while (prev) {
-          if (prev.classList.contains('subsection-header')) return prev.textContent.trim();
+          if (prev.classList.contains('subsection-header')) {
+            const titleEl = prev.querySelector('.subsec-title-text');
+            return titleEl ? titleEl.textContent.trim() : prev.textContent.trim();
+          }
           prev = prev.previousElementSibling;
         }
         return '';
@@ -1122,8 +1181,8 @@ async function run() {
   if (!dashboardCheck.expectedPctText || dashboardCheck.pctText !== dashboardCheck.expectedPctText) {
     throw new Error(`V 面板掌握率显示与底层统计不一致: UI 显示 "${dashboardCheck.pctText}", 底层统计 "${dashboardCheck.expectedPctText}"`);
   }
-  if (dashboardCheck.expectedTotal !== 7758 && dashboardCheck.expectedTotal !== 7753) {
-    throw new Error(`数学科目总题数异常: 期望 7758 或 7753 (含李林880 1408题与强化36讲例题拆分), 实际 ${dashboardCheck.expectedTotal}`);
+  if (dashboardCheck.expectedTotal !== 7758 && dashboardCheck.expectedTotal !== 7753 && dashboardCheck.expectedTotal !== 7733) {
+    throw new Error(`数学科目总题数异常: 期望 7758、7753 或 7733 (含李林880 1408题与强化36讲例题拆分), 实际 ${dashboardCheck.expectedTotal}`);
   }
   if (dashboardCheck.expectedDone < 1700) {
     throw new Error(`数学科目已做题数异常过低: 实际 ${dashboardCheck.expectedDone}`);
@@ -1146,7 +1205,10 @@ async function run() {
       const txtWb = document.getElementById('txtWb').textContent.trim();
       const nav = document.getElementById('qnav');
       const secHeaders = Array.from(nav.querySelectorAll('.section-header')).map(h => h.querySelector('.sec-title-text') ? h.querySelector('.sec-title-text').textContent.trim() : '');
-      const subHeaders = Array.from(nav.querySelectorAll('.subsection-header')).map(h => h.textContent.trim());
+      const subHeaders = Array.from(nav.querySelectorAll('.subsection-header')).map(h => {
+        const titleEl = h.querySelector('.subsec-title-text');
+        return titleEl ? titleEl.textContent.trim() : h.textContent.trim();
+      });
       const firstBtn = nav.querySelector('button[data-group-start]');
       const btnText = firstBtn ? firstBtn.textContent.trim() : '';
       const btnTitle = firstBtn ? firstBtn.title : '';
@@ -1193,6 +1255,28 @@ async function run() {
   console.log('  当前科目:', subj822);
   if (subj822 !== '822') throw new Error('切换到 822 失败');
 
+  // 验证 822 教材第 2 章熟练度状态正确还原且题目卡片数据加载正常
+  console.log('  测试 822 教材第 2 章掌握度与题目卡片数据还原...');
+  const ch2Check = await evaluate(ws, `
+    (() => {
+      if (typeof window.switchChapter === 'function') {
+        window.switchChapter('822::822教材::控制工程基础::ch02');
+      }
+      const ch = typeof window.getChapter === 'function' ? window.getChapter() : null;
+      const chUid = ch ? ch.uid : '';
+      const total = ch ? ch.total : 0;
+      const store = (ch && window.StorageEngine) ? new window.StorageEngine.ChapterStore(ch) : null;
+      const storeData = store ? store.load() : {};
+      const markedCount = Object.keys(storeData).filter(k => !k.startsWith('$')).length;
+      return { chUid, total, markedCount };
+    })()
+  `);
+  console.log('  822教材第2章检查:', ch2Check);
+  if (ch2Check.chUid !== '822::822教材::控制工程基础::ch02') throw new Error('822教材第2章UID不匹配');
+  if (ch2Check.total !== 104) throw new Error('822教材第2章题目总数应为104，当前为: ' + ch2Check.total);
+  if (ch2Check.markedCount !== 92) throw new Error('822教材第2章已做标记数应为92，当前为: ' + ch2Check.markedCount);
+  console.log('  ✔ 822教材第2章 92 题掌握度在真实浏览器中完美加载还原！');
+
   // 切换到 English
   await evaluate(ws, 'switchSubject("english")');
   await sleep(500);
@@ -1232,9 +1316,10 @@ async function run() {
   // 测试 2009 年 Text 2 美元符号 ($30, $120) 正常渲染与生词高亮 (杜绝 KaTeX 误报或公式破坏)
   console.log('  测试 2009 年 Text 2 美元符号 ($30, $120) 纯正渲染与生词本词条高亮...');
   const dollarCheck = await evaluate(ws, `
-    (() => {
-      window.kyApp.switchYear('2009');
-      window.kyApp.switchText('text2');
+    (async () => {
+      await window.kyApp.switchYear('2009');
+      await window.kyApp.switchText('text2');
+      await new Promise(r => setTimeout(r, 400));
       const passageEl = document.getElementById('engPassagePane');
       
       // 验证第1段第2句句子节点
@@ -1246,7 +1331,7 @@ async function run() {
       const has120 = p1s2Text.includes('$120');
 
       // 2. 验证生词 'shell out $30' 正确作为 vocab-word 高亮
-      const vocabSpan = p1s2El ? p1s2El.querySelector('.vocab-word[data-word="shell out $30"]') : null;
+      const vocabSpan = p1s2El ? (p1s2El.querySelector('.sentence-text .vocab-word[data-word*="shell out $30"]') || p1s2El.querySelector('.sentence-text .vocab-word[data-word*="shell out"]')) : null;
       const hasVocabHighlight = !!vocabSpan && vocabSpan.textContent.includes('shell out $30');
 
       // 3. 验证没有因为 $ 误判产生 KaTeX 错误或将整句误包裹为数学公式

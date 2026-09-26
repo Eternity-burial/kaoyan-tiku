@@ -117,6 +117,36 @@ savedRaw = JSON.parse(mockLS.getItem('kaoyan.q.math::test::unmark'));
 assert.strictEqual(savedRaw['ex_1-1'], undefined, '当全部属性清空后，整题 slug 键彻底清理');
 console.log('  ✔ 取消掌握度标记/取消qBad/清空笔记后持久化彻底清除，刷新零复活验证通过！');
 
+// 2.2 验证 822 教材历史别名运行时自愈迁移
+console.log('\n--- 1.2 822 教材历史别名运行时自愈迁移测试 ---');
+const legacy822Ch = {
+  uid: '822::822教材::控制工程基础::ch02',
+  id: '822::822教材::控制工程基础::ch02',
+  total: 2, ownTotal: 2,
+  labels: ['ex_2-1', 'ex_2-2'],
+  getQuestionSlug(i) { return this.labels[i]; }
+};
+// 预置旧键
+mockLS.setItem('kaoyan.q.822::控制工程基础::控制工程基础::ch02', JSON.stringify({
+  $v: 3,
+  $chapterUid: '822::控制工程基础::控制工程基础::ch02',
+  'ex_2-1': { status: 'proficient' }
+}));
+assert.strictEqual(mockLS.getItem('kaoyan.q.822::822教材::控制工程基础::ch02'), null);
+
+const store822 = new ChapterStore(legacy822Ch);
+const loaded822 = store822.load();
+assert.strictEqual(loaded822['ex_2-1'].status, 'proficient', '能成功读取历史旧键中的数据');
+
+// 断言新键已自动写入，旧键已自动安全清理
+const newKeyRaw = mockLS.getItem('kaoyan.q.822::822教材::控制工程基础::ch02');
+assert.ok(newKeyRaw, '新键必须已被自愈写入');
+const parsedNewKey = JSON.parse(newKeyRaw);
+assert.strictEqual(parsedNewKey.$chapterUid, '822::822教材::控制工程基础::ch02', '自愈写入的新键 chapterUid 必须对齐规范');
+assert.strictEqual(parsedNewKey['ex_2-1'].status, 'proficient');
+assert.strictEqual(mockLS.getItem('kaoyan.q.822::控制工程基础::控制工程基础::ch02'), null, '历史旧键必须已被彻底移除');
+console.log('  ✔ 822 教材历史别名读取、自愈写入与旧键安全清理测试通过！');
+
 // 3. 破坏性测试：模拟题目中间插入新题
 console.log('\n--- 2. 章节动态插入/拆题抗漂移破坏性测试 ---');
 // 假设我们在 ex_3-1 与 ex_3-2 之间插入一道新题 ex_3-1_inserted
@@ -216,6 +246,18 @@ assert.strictEqual(q339_2.sm2.interval, 2);
 assert.strictEqual(q339_3.sm2.interval, 1);
 
 console.log('  ✔ 例3-39各小题 (I)~(VI) 独立掌握度、SM-2与笔记断言完全一致，无覆盖');
+
+// 4.1 重点断言：822 教材第 2 章数据完备性与零旧键残留
+const ch822Key = 'kaoyan.q.822::822教材::控制工程基础::ch02';
+assert.ok(db.data[ch822Key], '数据库必须包含规范的 822 教材第 2 章');
+const oldCh822Key = 'kaoyan.q.822::控制工程基础::控制工程基础::ch02';
+assert.strictEqual(db.data[oldCh822Key], undefined, '数据库严禁残留旧键 822::控制工程基础::控制工程基础::ch02');
+const ch822Data = JSON.parse(db.data[ch822Key]);
+assert.strictEqual(ch822Data.$chapterUid, '822::822教材::控制工程基础::ch02');
+const ch822Questions = Object.keys(ch822Data).filter(s => !s.startsWith('$'));
+assert.strictEqual(ch822Questions.length, 92, '822教材第2章必须包含全部92题数据');
+assert.strictEqual(ch822Data['ex_2-1'].status, 'proficient', 'ex_2-1 必须为 proficient');
+console.log('  ✔ 822 教材第 2 章 92 题掌握度与规范存储键断言完全一致，零旧键残留');
 
 // 5. 验证 100% 标注切图物理存在
 let validAnnotCount = 0;

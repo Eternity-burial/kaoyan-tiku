@@ -23,6 +23,7 @@ scripts/*
 !scripts/validate_lexicon.py
 !scripts/generate_math_knowledge_data.js
 !scripts/compiled_math_knowledge_data.json
+!scripts/migrate_822_data.js
 node_modules/
 package.json
 package-lock.json

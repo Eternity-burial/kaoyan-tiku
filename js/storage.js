@@ -121,10 +121,38 @@
     this._dirty = false;
   }
 
+  // 历史章节别名自愈表：当规范更名后，用于浏览器本地旧键无损平滑升级至规范 UID
+  var CHAPTER_LEGACY_ALIASES = {
+    '822::822教材::控制工程基础::ch01': '822::控制工程基础::控制工程基础::ch01',
+    '822::822教材::控制工程基础::ch02': '822::控制工程基础::控制工程基础::ch02',
+    '822::822教材::控制工程基础::ch03': '822::控制工程基础::控制工程基础::ch03',
+    '822::822教材::控制工程基础::ch04': '822::控制工程基础::控制工程基础::ch04',
+    '822::822教材::控制工程基础::ch05': '822::控制工程基础::控制工程基础::ch05',
+    '822::822教材::控制工程基础::ch06': '822::控制工程基础::控制工程基础::ch06',
+    '822::822教材::控制工程基础::ch07': '822::控制工程基础::控制工程基础::ch07',
+    '822::822教材::控制工程基础::ch09': '822::控制工程基础::控制工程基础::ch09'
+  };
+
   ChapterStore.prototype = {
     _loadRaw: function () {
       try {
         var raw = localStorage.getItem(this.key);
+        // 智能向前兼容与自愈迁移：若当前键不存在，尝试从已知历史别名读取并无损自愈写回
+        if (!raw && this.ch && this.ch.uid && CHAPTER_LEGACY_ALIASES[this.ch.uid]) {
+          var legacyKey = 'kaoyan.q.' + CHAPTER_LEGACY_ALIASES[this.ch.uid];
+          var legacyRaw = localStorage.getItem(legacyKey);
+          if (legacyRaw) {
+            var legacyObj = JSON.parse(legacyRaw);
+            if (legacyObj && legacyObj.$v === 3) {
+              console.info('[StorageEngine] 检测到章节历史存储键，自动执行自愈升级:', legacyKey, '->', this.key);
+              legacyObj.$chapterUid = this.ch.uid;
+              legacyObj.$saved = new Date().toISOString();
+              safeLSSet(this.key, JSON.stringify(legacyObj));
+              try { localStorage.removeItem(legacyKey); } catch (e) {}
+              return legacyObj;
+            }
+          }
+        }
         if (!raw) return null;
         var obj = JSON.parse(raw);
         if (!obj || obj.$v !== 3) return null;
@@ -370,6 +398,9 @@
     loadChapter: function (subjId, chapterId, ch) {
       var map = this._load();
       var r = map[subjId + '::ch::' + chapterId];
+      if (!r && CHAPTER_LEGACY_ALIASES[chapterId]) {
+        r = map[subjId + '::ch::' + CHAPTER_LEGACY_ALIASES[chapterId]];
+      }
       if (!r || !ch || ch.total === 0) return null;
 
       var idx = (r.slug && ch.getIdxBySlug) ? ch.getIdxBySlug(r.slug) : -1;
@@ -389,7 +420,7 @@
 
       var ch = null;
       for (var i = 0; i < chapters.length; i++) {
-        if (chapters[i].id === r.ch) {
+        if (chapters[i].id === r.ch || CHAPTER_LEGACY_ALIASES[chapters[i].id] === r.ch) {
           ch = chapters[i];
           break;
         }
@@ -426,14 +457,15 @@
       // 若请求 1000题 或 李范习题，自动映射至母章书名
       if (wb === '1000题') wb = '基础30讲';
       if (wb === '李范习题') wb = '李范全书';
+      if (wb === '控制工程基础') wb = '822教材';
 
       var key = subjId + '::' + wb;
-      var r = map[key];
+      var r = map[key] || (wb === '822教材' ? map[subjId + '::控制工程基础'] : null);
       if (!r || !r.ch) return null;
 
       var ch = null;
       for (var i = 0; i < chapters.length; i++) {
-        if (chapters[i].id === r.ch && chapters[i].wb === wb) {
+        if ((chapters[i].id === r.ch || CHAPTER_LEGACY_ALIASES[chapters[i].id] === r.ch) && chapters[i].wb === wb) {
           ch = chapters[i];
           break;
         }
